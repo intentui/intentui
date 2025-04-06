@@ -59,12 +59,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           <SidebarSection title="Last 5 Articles">
             {articles.map((item) => (
               <SidebarItem key={item.href}>
-                {({ isCollapsed, isHovered }) => (
+                {({ isCollapsed }) => (
                   <>
                     <SidebarLink href="#discount">
                       <SidebarLabel>{item.label}</SidebarLabel>
                     </SidebarLink>
-                    {!isCollapsed && isHovered && (
+                    {!isCollapsed && (
                       <Menu>
                         <Menu.Trigger aria-label="Manage">
                           <IconDotsHorizontal />
