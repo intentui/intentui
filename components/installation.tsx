@@ -43,7 +43,7 @@ export function Installation({ className, ...props }: InstallationProps) {
   const [isCopied, setIsCopied] = useState(false)
 
   React.useEffect(() => {
-    let timer: Timer
+    let timer: NodeJS.Timeout
     if (isCopied) {
       timer = setTimeout(() => setIsCopied(false), 2000)
     }
