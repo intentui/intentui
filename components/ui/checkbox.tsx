@@ -113,4 +113,4 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
 }
 
 export type { CheckboxGroupProps, CheckboxProps }
-export { Checkbox, CheckboxGroup }
+export { CheckboxGroup, Checkbox }

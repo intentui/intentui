@@ -156,7 +156,7 @@ const DrawerContent = ({
   )
 }
 
-const Header = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+const DrawerHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       slot="header"
@@ -166,15 +166,15 @@ const Header = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) =
   )
 }
 
-const Title = ({ className, ...props }: HeadingProps) => (
+const DrawerTitle = ({ className, ...props }: HeadingProps) => (
   <Heading slot="title" className={twMerge("font-semibold text-lg/8", className)} {...props} />
 )
 
-const Description = ({ className, ...props }: TextProps) => (
+const DrawerDescription = ({ className, ...props }: TextProps) => (
   <Text slot="description" className={twMerge("text-muted-fg text-sm", className)} {...props} />
 )
 
-const Body = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+const DrawerBody = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     slot="body"
     className={twMerge(
@@ -185,7 +185,7 @@ const Body = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => 
   />
 )
 
-const Footer = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+const DrawerFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       slot="footer"
@@ -198,18 +198,18 @@ const Footer = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) =
   )
 }
 
-const Close = ({ className, intent = "outline", ref, ...props }: ButtonProps) => {
+const DrawerClose = ({ className, intent = "outline", ref, ...props }: ButtonProps) => {
   return <Button slot="close" className={className} ref={ref} intent={intent} {...props} />
 }
 
 Drawer.Trigger = ButtonPrimitive
-Drawer.Footer = Footer
-Drawer.Header = Header
-Drawer.Title = Title
-Drawer.Description = Description
-Drawer.Body = Body
+Drawer.Footer = DrawerFooter
+Drawer.Header = DrawerHeader
+Drawer.Title = DrawerTitle
+Drawer.Description = DrawerDescription
+Drawer.Body = DrawerBody
 Drawer.Content = DrawerContent
-Drawer.Close = Close
+Drawer.Close = DrawerClose
 
 export { Drawer }
 export type { DrawerContentProps }
