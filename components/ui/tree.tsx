@@ -4,7 +4,7 @@ import { IconChevronRight } from "@intentui/icons"
 import type { TreeItemProps, TreeProps } from "react-aria-components"
 import {
   Button,
-  TreeItemContent as TreeItemContentPrimitive,
+  TreeItemContent as TreeContentPrimitive,
   TreeItem as TreeItemPrimitive,
   Tree as TreePrimitive,
   composeRenderProps,
@@ -12,7 +12,7 @@ import {
 import { tv } from "tailwind-variants"
 
 import { composeTailwindRenderProps } from "@/components/ui/primitive"
-import { twJoin } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 import { Checkbox } from "./checkbox"
 
 const Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {
@@ -26,13 +26,11 @@ const Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {
         ),
       )}
       {...props}
-    >
-      {props.children}
-    </TreePrimitive>
+    />
   )
 }
 
-const itemStyles = tv({
+const treeItemStyles = tv({
   base: [
     "p-[0.286rem_0.286rem_0.286rem_0.571rem] pl-[calc((var(--tree-item-level)-1)*20px+0.571rem+var(--padding))] outline-hidden [--padding:20px] [&_[data-expanded]_[slot=chevron]_[data-slot=icon]]:rotate-90",
     "[&_[slot=chevron]]:outline-hidden [&_[slot=chevron]_[data-slot=icon]]:text-muted-fg",
@@ -55,7 +53,7 @@ const TreeItem = <T extends object>({ className, ...props }: TreeItemProps<T>) =
   return (
     <TreeItemPrimitive
       className={composeRenderProps(className, (className, renderProps) =>
-        itemStyles({
+        treeItemStyles({
           ...renderProps,
           className,
         }),
@@ -67,11 +65,17 @@ const TreeItem = <T extends object>({ className, ...props }: TreeItemProps<T>) =
   )
 }
 
-const TreeItemContent = (props: React.ComponentProps<typeof TreeItemContentPrimitive>) => {
+interface TreeContentProps extends React.ComponentProps<typeof TreeContentPrimitive> {
+  className?: string
+}
+
+const TreeContent = ({ className, ...props }: TreeContentProps) => {
   return (
-    <TreeItemContentPrimitive {...props}>
-      <div className="flex items-center">{props.children as React.ReactNode}</div>
-    </TreeItemContentPrimitive>
+    <TreeContentPrimitive {...props}>
+      <div className={twMerge("flex items-center", className)}>
+        {props.children as React.ReactNode}
+      </div>
+    </TreeContentPrimitive>
   )
 }
 
@@ -83,18 +87,13 @@ const TreeIndicator = () => {
   )
 }
 
-const TreeItemCheckbox = () => {
+const TreeCheckbox = () => {
   return <Checkbox slot="selection" />
 }
 
-const TreeItemLabel = (props: React.ComponentProps<"span">) => {
+const TreeLabel = (props: React.ComponentProps<"span">) => {
   return <span {...props} />
 }
 
-TreeItem.Label = TreeItemLabel
-TreeItem.Indicator = TreeIndicator
-TreeItem.Checkbox = TreeItemCheckbox
-TreeItem.Content = TreeItemContent
-
 export type { TreeProps, TreeItemProps }
-export { Tree, TreeItem }
+export { Tree, TreeItem, TreeLabel, TreeIndicator, TreeCheckbox, TreeContent }

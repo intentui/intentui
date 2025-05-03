@@ -4,10 +4,6 @@ import TableResizeDemo from "@/components/docs/collections/table/table-resize-de
 
 export default function Page() {
   return (
-    <div className="grid gap-6 p-32">
-      <TableBulkDemo />
-      <TableResizeDemo />
-      <TableDragDemo />
-    </div>
+    <div/>
   )
 }
