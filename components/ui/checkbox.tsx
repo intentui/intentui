@@ -23,16 +23,20 @@ interface CheckboxGroupProps extends CheckboxGroupPrimitiveProps {
   errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-const CheckboxGroup = ({ className, ...props }: CheckboxGroupProps) => {
+const CheckboxGroup = ({ className, children, ...props }: CheckboxGroupProps) => {
   return (
     <CheckboxGroupPrimitive
       {...props}
       className={composeTailwindRenderProps(className, "flex flex-col gap-y-2")}
     >
-      {props.label && <Label>{props.label}</Label>}
-      {props.children as React.ReactNode}
-      {props.description && <Description className="block">{props.description}</Description>}
-      <FieldError>{props.errorMessage}</FieldError>
+      {(values) => (
+        <>
+          {props.label && <Label>{props.label}</Label>}
+          {typeof children === "function" ? children(values) : children}
+          {props.description && <Description className="block">{props.description}</Description>}
+          <FieldError>{props.errorMessage}</FieldError>
+        </>
+      )}
     </CheckboxGroupPrimitive>
   )
 }
