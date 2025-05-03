@@ -182,9 +182,9 @@ const TableHeader = <T extends object>({
       className={twMerge("border-b", className)}
       {...props}
     >
-      {allowsDragging && <Column className="w-0" />}
+      {allowsDragging && <Column className="w-0 max-w-6" />}
       {selectionBehavior === "toggle" && (
-        <Column className="w-0 pl-4">
+        <Column className="w-0 max-w-8 pl-4">
           {selectionMode === "multiple" && <Checkbox slot="selection" />}
         </Column>
       )}

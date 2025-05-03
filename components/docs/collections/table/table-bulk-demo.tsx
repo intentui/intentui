@@ -19,7 +19,7 @@ export default function TableBulkDemo() {
           onSelectionChange={setSelectedKeys}
         >
           <Table.Header>
-            <Table.Column>#</Table.Column>
+            <Table.Column className="w-0">#</Table.Column>
             <Table.Column isRowHeader>Title</Table.Column>
             <Table.Column>Author</Table.Column>
             <Table.Column>Genre</Table.Column>

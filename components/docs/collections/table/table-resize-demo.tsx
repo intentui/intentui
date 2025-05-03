@@ -8,7 +8,7 @@ export default function TableResizeDemo() {
     <Card className="py-0">
       <Table allowResize aria-label="Vocalists">
         <Table.Header>
-          <Table.Column className="max-w-0">ID</Table.Column>
+          <Table.Column className="max-w-10">ID</Table.Column>
           <Table.Column isRowHeader isResizable>
             Name
           </Table.Column>

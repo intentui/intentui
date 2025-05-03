@@ -26,7 +26,12 @@ export default function TableDragDemo() {
   })
   return (
     <Card className="py-0">
-      <Table aria-label="Movies" selectionMode="multiple" dragAndDropHooks={dragAndDropHooks}>
+      <Table
+        allowResize
+        aria-label="Movies"
+        selectionMode="multiple"
+        dragAndDropHooks={dragAndDropHooks}
+      >
         <Table.Header>
           <Table.Column>#</Table.Column>
           <Table.Column isRowHeader>Name</Table.Column>
