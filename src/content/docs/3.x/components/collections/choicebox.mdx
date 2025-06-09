@@ -1,0 +1,59 @@
+---
+title: "Choicebox"
+description: A bigger, juiced-up version of a Radio or Checkbox, giving users a chunky tap target and extra deets.
+order: 8
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/GridList.html#props"]
+---
+
+## Basic
+The Choicebox is an enhanced version of a GridList, offering users a larger tap target and additional details.
+
+<How isCenter={false} toUse="collections/choicebox/choicebox-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['choicebox']} />
+
+## Composed Components
+<Composed components={['field', 'checkbox']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']} />
+
+<SourceCode toShow='choicebox' />
+
+## Anatomy
+<Anatomy show='choicebox-anatomy'/>
+
+## Single Selection
+Although the Choicebox defaults to allowing multiple selections, it can be configured for single selection by setting the `selectionMode` prop.
+
+<How isCenter={false} toUse="collections/choicebox/choicebox-single-selection-demo" />
+
+## Columns and Gap
+The Choicebox default layout is set with `columns={2}` and a `gap={4}` between items. You can customize these settings by providing your own `columns` and `gap` props.
+
+<How isCenter={false} withNoPadding={true} toUse="collections/choicebox/choicebox-columns-demo" />
+
+## No Gap
+If you set `gap={0}` and `columns={1}`, the Choicebox items will lose their individual rounded corners, and the rounded corners will be applied to the parent container instead.
+
+<How isCenter={false} toUse="collections/choicebox/choicebox-no-gap-demo" />
+
+## Icons
+You can add icons to the Choicebox items by providing the `icon` prop.
+<How isCenter={false} toUse="collections/choicebox/choicebox-icon-demo" />
+
+## Controlled
+This component can `function` as either controlled or uncontrolled. For controlled use, provide the `selectedKeys` prop and manage updates with the `onSelectionChange` event handler.
+<How isCenter={false} toUse="collections/choicebox/choicebox-controlled-demo" />
+
+## Disabled
+Disable the entire Choicebox by applying the `isDisabled` prop.
+<How isCenter={false} withNoPadding={true} toUse="collections/choicebox/choicebox-disabled-demo" />
+
+Individual items can also be disabled by specifying their keys in the `disabledKeys` prop.
+
+```tsx
+<Choicebox disabledKeys={['sm', 'lg']} />
+```

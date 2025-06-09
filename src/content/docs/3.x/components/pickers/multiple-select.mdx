@@ -1,0 +1,75 @@
+---
+title: Multiple Select
+description: A flexible dropdown input that enables users to select multiple options, ideal for tagging, categorization, and filtering tasks.
+order: 3
+status: alpha
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/ComboBox.html#props", "https://react-spectrum.adobe.com/react-aria/TagGroup.html#props"]
+---
+
+## Basic
+
+The basic multiple select component lets you select multiple options from a list. It displays selected options with Tag components.
+<How toUse="pickers/multiple-select/multiple-select-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['multiple-select']} />
+
+## Composed Components
+<Composed components={['field', 'list-box', 'popover', 'tag-group', 'visually-hidden']} />
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', 'react-aria', '@intentui/icons']} />
+
+<SourceCode toShow='multiple-select' />
+
+## Anatomy
+<Anatomy show='multiple-select-anatomy'/>
+
+## Intent
+
+By default, the multiple select component uses the `primary` intent. But it has a `secondary` intent as well.
+
+<How minW72 toUse="pickers/multiple-select/multiple-select-intent-demo" />
+
+## Shape
+
+Customize the tag field’s shape using the `shape` prop.
+
+<How minW72 toUse="pickers/multiple-select/multiple-select-shape-demo" />
+
+## Controlled
+This component lets you select tags dynamically, updating the list with callbacks on add and remove. It displays selected tags with Tag components and logs each action.
+<How toUse="pickers/multiple-select/multiple-select-controlled-demo" />
+
+## Max Items
+You can limit the number of selected items using the `maxItems` prop.
+<How toUse="pickers/multiple-select/multiple-select-max-items-demo" />
+
+## Invalid
+When the component is invalid, it displays an error message.
+<How toUse="pickers/multiple-select/multiple-select-invalid-demo" />
+
+## Disabled
+When the component is disabled, it prevents the user from adding or removing tags.
+<How toUse="pickers/multiple-select/multiple-select-disabled-demo" />
+
+## Props
+Here's the fixed table:
+
+| Prop              | Type             | Default   | Description                                  |
+|-------------------|------------------|-----------|----------------------------------------------|
+| label             | string           | -         | The label of the multiple select             |
+| description       | string           | -         | The description of the multiple select       |
+| placeholder       | string           | -         | The placeholder of the multiple select       |
+| className         | string           | -         | The class name of the multiple select        |
+| name              | string           | -         | The name of the  multiple select             |
+| items             | array of objects | -         | The list of multiple select items (options)  |
+| selectedKeys      | Selection        | -         | The selected keys of the multiple select     |
+| onSelectionChange | function         | -         | The callback function for selection          |
+| maxItems          | number           | -         | The max number of items that can be selected |
+| isDisabled        | boolean          | -         | The disabled state of the multiple select    |
+| isInvalid         | boolean          | -         | The invalid state of the multiple select     |
+| errorMessage      | string           | -         | The error message if invalid                 |
+| intent            | string           | 'primary' | 'primary', 'secondary'                       |
+| shape             | string           | 'square'  | 'square', 'circle'                           |

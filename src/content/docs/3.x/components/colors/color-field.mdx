@@ -1,0 +1,64 @@
+---
+title: "Color Field"
+description: A text input for specifying color values, supporting formats like HEX, RGB, and HSL for precise color selection.
+order: 2
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/ColorField.html"]
+---
+
+## Basic
+A color field allows users to adjust a hex color or manipulate individual color channels.
+<How toUse="colors/color-field/color-field-demo" />
+
+## Installation
+<Installation options={{isComponent: true}} items={['color-field']}/>
+
+## Composed Components
+<Composed components={['field', 'color-swatch', 'color-picker']}/>
+
+## Manual Installation
+<Installation options={{isManual: true}} items={['react-aria-components']}/>
+
+<SourceCode toShow='color-field'/>
+
+## Anatomy
+<Anatomy show='color-field-anatomy'/>
+
+## Prefix
+A color field can include a prefix to provide context or functionality.
+<How toUse="colors/color-field/color-field-with-prefix-demo" />
+
+## Suffix
+A color field can also have a suffix.
+<How toUse="colors/color-field/color-field-with-suffix-demo" />
+
+## Controlled
+Manage the color field in a controlled manner to automatically update the [ColorSwatch](/docs/components/colors/color-swatch) and display the current color.
+<How toUse="colors/color-field/color-field-controlled-demo" />
+You can typically click the color swatch to open the color picker. To disable this feature, set `enableColorPicker` to false.
+```
+<ColorField enableColorPicker={false}/>
+```
+
+## Disabled
+You can disable the color field, making it non-interactive.
+<How toUse="colors/color-field/color-field-disabled-demo" />
+
+## Validation
+In this example, we’ll ensure it’s treated as a strict requirement.
+<How toUse="colors/color-field/color-field-validation-demo" />
+
+
+## Props
+The `ColorField` component includes all standard props from `react-aria-components`, plus these additional features:
+
+| Property          | Type                                                 | Optional             |
+|-------------------|------------------------------------------------------|----------------------|
+| label             | string                                               | Yes                  |
+| description       | string                                               | Yes                  |
+| errorMessage      | string \| ((validation: ValidationResult) => string) | Yes                  |
+| placeholder       | string                                               | Yes                  |
+| prefix            | React.ReactNode                                      | Yes                  |
+| suffix            | React.ReactNode                                      | Yes                  |
+| isLoading         | boolean                                              | Yes                  |
+| enableColorPicker | boolean                                              | Yes ( default: true) |

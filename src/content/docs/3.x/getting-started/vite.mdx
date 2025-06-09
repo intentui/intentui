@@ -1,0 +1,52 @@
+---
+title: "Vite"
+description: "Set up Intent in your Vite project with React and Tailwind CSS using a quick and efficient installation process."
+---
+
+## Installation
+Start a new project with the following command:
+<Installation command='npm create vite@latest app -- --template react-ts' />
+
+Next, install Tailwind CSS along with the Tailwind CSS Vite plugin:
+<Installation command='npm install tailwindcss @tailwindcss/vite' />
+
+Now, open your `vite.config.ts` file and add the following to the `plugins` array:
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+    react()
+  ],
+})
+```
+
+## Using Intent CLI
+Run Intent CLI to initialize your project:
+<Installation command='npx @intentui/cli@latest init' />
+
+You'll be guided through a few setup questions. Just follow the prompts, and you're good to go!
+```
+✔ Initializing.
+✔ Components folder: src/components
+✔ Utils folder: src/utils
+✔ Where would you like to place the CSS file? src/index.css
+✔ Paths added to tsconfig.app.json.
+✔ Pick your desired base gray: zinc
+✔ Installing dependencies.
+✔ Configuring.
+✔ UI folder created at `src/components/ui`
+✔ Primitive file saved to `src/components/ui/primitive.tsx`
+✔ Theme Provider file saved to `"src/components/theme-provider.ts"`
+✔ Providers file saved to `"src/components/providers.tsx"`
+✔ Configuration saved to `intentui.json`
+✔ Installation complete.
+```
+
+## Other Framework
+You might be interested in using Intent with other frameworks.
+<FrameworkGuides/>

@@ -1,0 +1,141 @@
+---
+title: "Modal"
+description: A Centered overlay that requires user interaction before returning to the main interface.
+order: 1
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Modal.html#props"]
+---
+
+
+## Basic
+A modal is a pop-up window that demands your attention. You have to deal with it before doing anything else on the page.
+<How toUse="overlays/modal/modal-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['modal']}/>
+
+## Composed Components
+<Composed components={['button', 'dialog']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+
+<SourceCode toShow='modal'/>
+
+## Anatomy
+<Anatomy show='modal-anatomy'/>
+
+## Alert Dialog
+Alert dialogs are meant to interrupt the user with a critical message, so use 'em only when it's absolutely necessary. The fix? Set the role to `alertdialog`, and you're golden.
+<How toUse="overlays/modal/alert-dialog-demo" />
+Notice how the modal is dismissable and the close button is hidden? That's 'cause the role is set to `alertdialog`.
+
+```tsx
+<ModalOverlay isDismissable={false}/>
+```
+
+## Controlled
+You can control the modal programmatically.
+<How toUse="overlays/modal/modal-controlled-demo" />
+
+## Sizes
+The modal is set to `lg` by default. You can adjust it to any size from the available options.
+<How toUse="overlays/modal/modal-size-demo" />
+
+## Blur
+If you want to blur the background, you can use `isBlurred` prop.
+<How toUse="overlays/modal/modal-blur-demo" />
+
+## Sticky
+You can use the `Modal.Body` component to make the modal sticky.
+<How toUse="overlays/modal/modal-sticky-demo" />
+
+## Nested
+You can also nest modals. Try open it and confirm!
+<How toUse="overlays/modal/modal-nested-demo" />
+
+## Header
+This setup’s super flexible. If you skip adding `ModalTitle` and just drop a string as its child, it'll auto-render as the title. Like this:
+```
+<Modal.Header>
+  Title
+</Modal.Header>
+```
+Wanna customize more? Throw in props like `title` and `description` for a tailored header:
+```
+<Modal.Header title='Title' description='Description' />
+```
+
+## Custom Styles
+To apply custom styles such as background colors or borders to the header, follow this guide:
+<How toUse="overlays/modal/modal-custom-style-demo" />
+
+## Class Names
+To add custom class names to your content or overlay, refer to this demonstration:
+<How toUse="overlays/modal/modal-custom-classnames-demo" />
+
+## Triggered By Menu
+You can also trigger the modal by clicking on a menu item.
+<How toUse="overlays/modal/modal-triggered-by-menu-demo" />
+It might be a good idea to extract the modal into a separate component for better organization.
+
+```
+interface ModalActionProps {
+  state: string | null
+  onOpenChange: () => void
+  actionType: { description: string; action: () => void; confirmText: string; title: string }
+  disabled: boolean
+}
+
+const ModalAction = (props: ModalActionProps) => (
+  <Modal.Content isOpen={props.state !== null} onOpenChange={props.onOpenChange}>
+    <Modal.Header>
+      <Modal.Title>{props.actionType?.title}</Modal.Title>
+      <Modal.Description>{props.actionType?.description}</Modal.Description>
+    </Modal.Header>
+    <Modal.Footer>
+      <Modal.Close>Cancel</Modal.Close>
+      <Button
+        intent={props.state === "ban" ? "danger" : "primary"}
+        className="min-w-24"
+        isDisabled={props.disabled}
+        onPress={props.actionType?.action}
+      >
+        {props.disabled ? <Loader variant="spin" /> : props.actionType?.confirmText}
+      </Button>
+    </Modal.Footer>
+  </Modal.Content>
+)
+```
+
+Then you can use it like this.
+
+```
+<ModalAction
+  state={state}
+  onOpenChange={closeModal}
+  actionType={actionType(state)}
+  disabled={loading}
+/>
+```
+
+With that, now we can modify the `actionType` function to return the initial state.
+
+```tsx
+const actionType = (t: string | null) => {
+  const initialsState = {
+    title: '',
+    description: '',
+    confirmText: '',
+    action: () => {}
+  }
+
+  switch (t) {
+    case 'delete': ...
+    case 'ban': ...
+    case 'restore': ...
+    default:
+      return initialsState
+  }
+}
+```

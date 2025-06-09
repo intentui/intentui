@@ -1,0 +1,64 @@
+---
+title: "Checkbox"
+description: An interactive input that allows users to toggle a selection on or off, often used for settings or multiple-choice selections.
+
+
+
+
+
+
+
+
+order: 8
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Checkbox.html#props"]
+---
+
+## Basic
+
+A checkbox is a small box you can tick to select an option. It’s either on or off.
+<How toUse="forms/checkbox/checkbox-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['checkbox']}/>
+
+## Composed Components
+<Composed components={['field']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+
+<SourceCode toShow='checkbox'/>
+
+## Anatomy
+<Anatomy show='checkbox-anatomy'/>
+
+## Label Prop
+You can add a label to the checkbox by passing the `label` prop.
+```
+<Checkbox label="Enable Notifications" />
+```
+
+## Description Prop
+Add a description to the checkbox group by passing the `description` prop.
+<How minW72 toUse="forms/checkbox/checkbox-description-demo" />
+
+## Invalid
+The checkbox is in an error state.
+<How toUse="forms/checkbox/checkbox-invalid-demo" />
+
+## Indeterminate
+The checkbox is in an indeterminate state.
+<How toUse="forms/checkbox/checkbox-indeterminate-demo" />
+
+## Controlled
+You can control the checkbox value by using the `value` prop.
+<How minW72 toUse="forms/checkbox/checkbox-controlled-demo" />
+
+## Uncontrolled
+You can control the checkbox value by using the `defaultValue` prop.
+<How toUse="forms/checkbox/checkbox-uncontrolled-demo" />
+
+## Disabled
+The checkbox is disabled.
+<How toUse="forms/checkbox/checkbox-disabled-demo" />

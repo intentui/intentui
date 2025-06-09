@@ -1,0 +1,50 @@
+---
+title: "Tabs"
+description: A component that organizes content into separate panels, allowing users to switch between sections without reloading the page.
+order: 3
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Tabs.html#props"]
+---
+
+
+## Basic
+Tabs divide content into sections, allowing users to easily switch between them.
+<How isCenter={false} toUse="navigation/tabs/tabs-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['tabs']} />
+
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', 'motion']} />
+
+<SourceCode toShow='tabs' />
+
+## Anatomy
+<Anatomy show='tabs-anatomy'/>
+
+## With Icons
+If you want to include icons in your tabs, it's simple to do. This tab setup handles icons smoothly, maintaining a clean design.
+<How isCenter={false} toUse="navigation/tabs/tabs-icons-demo" />
+
+## Orientation
+You can set the orientation of the tabs to either `horizontal` or `vertical`.
+<How isCenter={false} toUse="navigation/tabs/tabs-orientation-demo" />
+
+## Collections
+Tabs can also be used within collections.
+<How isCenter={false} toUse="navigation/tabs/tabs-collections-demo" />
+
+## Links
+If you want to use tabs as navigational links, you can add the `href` prop to the `Tab` component. This will automatically change the cursor to a pointer.
+<How isCenter={false} toUse="navigation/tabs/tabs-link-demo" />
+
+## Disabled
+You can disable all tabs by setting the `isDisabled` prop to `true`.
+<How isCenter={false} toUse="navigation/tabs/tabs-disabled-demo" />
+
+You can also disable individual tabs by setting the `isDisabled` prop for each one, like this:
+```tsx
+<Tab isDisabled id="c">Contact</Tab>
+<Tab isDisabled id="a">About Us</Tab>
+```

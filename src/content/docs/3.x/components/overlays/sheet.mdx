@@ -1,0 +1,75 @@
+---
+title: Sheet
+description: A slide-in panel for presenting additional content without disrupting the main screen.
+order: 2
+references: ["https://react-spectrum.adobe.com/react-aria/Modal.html#props"]
+
+published: true
+---
+
+## Basic
+A sheet is a modal component that slides in from the side of the screen. It's used to display a small amount of content that is related to the main content.
+<How toUse="overlays/sheet/sheet-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['sheet']} />
+
+## Composed Components
+<Composed components={['dialog']} />
+
+## Manual Installation
+
+<Installation options={{ isManual: true }} items={['react-aria-components']} />
+
+<SourceCode toShow='sheet' />
+
+## Anatomy
+<Anatomy show='sheet-anatomy'/>
+
+
+## Like Github
+This example is like Github's profile page. You can see the sheet component is used to display the profile information.
+
+<How toUse="overlays/sheet/sheet-menu-demo" />
+
+## Controlled
+You can control the open state of the sheet by using the `isOpen` prop. You can also use the `onOpenChange` prop to listen to the open state change.
+<How toUse="overlays/sheet/sheet-controlled-demo" />
+
+## Positioning
+You can position the modal component in different ways. You can use the `side` prop to position the modal component in the different directions.
+
+<How toUse="overlays/sheet/sheet-position-demo" />
+
+## Custom Close Button
+You can customize the close button by using the `SheetClose` component. This example demonstrates how to use the `SheetClose` component to create a custom close button.
+
+<How toUse="overlays/sheet/sheet-custom-close-demo" />
+
+## Float
+By default, the sheet will stack, but you can change this behavior by using the `isFloat` prop. This example demonstrates how to use the `isFloat` prop to create a sheet that does not stack.
+<How toUse="overlays/sheet/sheet-float-demo" />
+
+## Sticky
+You can use the `Sheet.Body` component to make the sheet sticky.
+<How toUse="overlays/sheet/sheet-sticky-demo" />
+
+## Header
+This setup’s super flexible. If you skip adding `Sheet.Title` and just drop a string as its child, it'll auto-render as the title. Like this:
+```
+<Sheet.Header>
+  Title
+</Sheet.Header>
+```
+Wanna customize more? Throw in props like `title` and `description` for a tailored header:
+```
+<Sheet.Header title='Title' description='Description' />
+```
+
+## Custom Styles
+To apply custom styles such as background colors or borders to the header, follow this guide:
+<How toUse="overlays/sheet/sheet-custom-style-demo" />
+
+## Class Names
+To add custom class names to your content or overlay, refer to this demonstration:
+<How toUse="overlays/sheet/sheet-classnames-demo" />

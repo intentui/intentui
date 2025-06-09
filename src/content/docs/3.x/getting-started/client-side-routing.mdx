@@ -1,0 +1,110 @@
+---
+title: "Client Side Routing"
+description: React Aria components like Link, Menu, and Tabs function as navigational links with `href`, supporting attributes like target and download.
+order: 3
+published: true
+---
+
+## Introduction
+React Aria components such as [Link](/docs/2.x/components/navigation/link), [Menu](/docs/2.x/components/collections/menu), [Tabs](/docs/2.x/components/navigation/tabs), and [Table](/docs/2.x/components/collections/table) transform elements into clickable links that navigate when clicked. These components utilize the `href` prop to render as an `<a>` tag, supporting attributes like `target` and `download`.
+
+User interactions with these links vary by component. For instance, one might use arrow keys to navigate tabs or press enter to open a link within a ComboBox. With the href prop, React Aria facilitates seamless navigation for each component.
+
+Typically, links perform the default browser action when clicked. However, many applications employ client-side routers to prevent full page reloads. The RouterProvider configures React Aria components to integrate with your client-side router. Simply set it up at the root, and any React Aria component with an href will automatically utilize your router.
+
+Note that links to external sites will default to the browser's native navigation, and links not targeting "_self", using the download attribute, or modified with keys like Command or Alt, will also follow the browser's native behavior.
+
+## Router Provider
+The `RouterProvider` component accepts two properties: `navigate`. Assign `navigate` to a function from your routing framework that handles client-side navigation. Below are setup examples for various frameworks.
+```tsx
+import { RouterProvider } from 'react-aria-components';
+import { useNavigate } from 'your-router';
+
+export default function Layout() {
+  let navigate = useNavigate();
+
+  return (
+    <RouterProvider navigate={navigate}>
+      {/* ... */}
+    </RouterProvider>
+  );
+}
+```
+
+## Inertia.js
+The Ziggy JS library, when running Laravel, is located in the `vendor` folder. To use it, we need to configure it by updating your `tsconfig` and `vite.config` files as follows:
+<CodeBlock
+    source={{
+        'vite.config.ts': 'csr/inertia/vite.config.ts',
+        'tsconfig.json': 'csr/inertia/tsconfig.json',
+    }} />
+
+### Global Declaration
+To integrate with Inertia.js, you must first declare it in your `.d.ts` file, such as in `global.d.ts`.
+<CodeBlock
+    source={{
+        'types/global.d.ts': 'csr/inertia/global.d.ts',
+    }} />
+
+
+### Providers
+Next, you'll need to create a provider for this, but because we're using react aria components, I also show you how to combine your router provider with the theme provider. So we need 2 files:
+1. `providers/index.tsx`
+2. `providers/theme-provider.tsx`
+
+<CodeBlock
+    source={{
+        'providers/theme-provider.tsx': 'csr/inertia/theme-provider.tsx',
+        'providers/index.tsx': 'csr/inertia/index.tsx',
+    }} />
+
+### Usage
+After you create the provider files, you can use them in your `app.tsx` file like this:
+
+<CodeBlock
+    source={{
+        'app.tsx': 'csr/inertia/app.tsx',
+    }} />
+
+## Next.js
+### Providers
+Let's create a providers folder in your root folder, and create two files called `index.tsx` and `theme-provider.tsx` inside it.
+<CodeBlock
+    source={{
+        'providers/theme-provider.tsx': 'dark-mode/nextjs/theme-provider.tsx',
+        'providers/index.tsx': 'csr/nextjs/index.tsx',
+    }} />
+### Usage
+After you create the provider files, you can use them in your `app/layout.tsx` file like this:
+
+<CodeBlock
+    source={{
+        'app/layout.tsx': 'csr/nextjs/layout.tsx',
+    }} />
+
+
+## Remix
+For Remix, we can use the `useNavigate` hooks. First, let's create a file `route-provider.tsx` in `app/components` folder.
+
+For comprehensive details, consult the [Remix documentation](https://remix.run/docs/en/main/file-conventions/root).
+<CodeBlock
+    source={{
+        'app/router-provider.tsx': 'csr/remix/router-provider.tsx',
+    }} />
+
+### Usage
+Then in `app/root.tsx` or your main layout file you can use the `RouteProvider` component to encompass all pages.
+<CodeBlock
+    source={{
+        'app/root.tsx': 'csr/remix/root.tsx',
+    }} />
+
+## Tanstack Router
+Use these providers if you are using Tanstack Router in your project.
+<CodeBlock
+    source={{
+        'app/index.tsx': 'csr/tanstack/index.tsx',
+    }} />
+
+## Others
+If you are using a different framework or router provider not mentioned above, refer to the [React Aria Components Docs](https://react-spectrum.adobe.com/react-aria/routing.html) for additional information on integrating React Aria components with various routers and frameworks.

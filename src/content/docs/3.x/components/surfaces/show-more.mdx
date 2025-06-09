@@ -1,0 +1,52 @@
+---
+title: "Show More"
+description: An expandable UI component that reveals hidden content on demand, optimizing space while maintaining accessibility.
+order: 4
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/ToggleButton.html#props"]
+---
+
+## Basic
+The `ShowMore` component is primarily used to encapsulate content that can be expanded or collapsed. It renders the content as initially hidden, and it expands to show more when interacted with by the user.
+<How isCenter={false} toUse="surfaces/show-more/show-more-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['show-more']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+<SourceCode toShow='show-more'/>
+
+## Anatomy
+Import the components and use them as shown below, adapting the structure to fit each component.
+```
+import { IconChevronLgDown } from "@intentui/icons"
+import { ShowMore } from "@/components/ui/show-more"
+import { twMerge } from "tailwind-merge"
+
+<ShowMore>
+  {({ isSelected }) => (
+    <>
+      Show {isSelected ? "less" : "more"}
+      <IconChevronLgDown
+        className={twMerge(
+          isSelected ? "rotate-180" : "",
+          "size-4 transition-transform duration-200"
+        )}
+      />
+    </>
+  )}
+</ShowMore>
+```
+
+## As Text
+While the default behavior utilizes a button for interactions, the `ShowMore` component can also be configured to function as a clickable text element.
+<How isCenter={false} toUse="surfaces/show-more/show-more-as-text-demo" />
+
+## Controlled
+Gain fine-grained control over the `ShowMore` component's behavior. This setup ensures you can manage the expanded state externally, ideal for more complex interactions.
+<How isCenter={false} toUse="surfaces/show-more/show-more-controlled-demo" />
+
+## Orientation
+The default orientation for the `ShowMore` component is horizontal. However, it can easily be adjusted to a vertical layout to suit different design needs.
+<How toUse="surfaces/show-more/show-more-orientation-demo" />

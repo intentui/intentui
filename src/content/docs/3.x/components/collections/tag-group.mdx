@@ -1,0 +1,51 @@
+---
+title: "Tag Group"
+description: A collection of tags displayed together, allowing users to categorize, filter, or manage multiple labels efficiently.
+order: 4
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/TagGroup.html#props"]
+---
+
+## Basic
+A tag group is a focusable collection of labels, categories, keywords, filters, or other elements, equipped with keyboard navigation, selection, and removal functionalities.
+<How toUse="collections/tag-group/tag-group-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['tag-group']}/>
+
+## Composed Components
+<Composed components={['field', 'badge']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow='tag-group'/>
+
+## Anatomy
+<Anatomy show='tag-group-anatomy'/>
+
+## With Remove Button
+Tags within the group can include a removal button.
+<How toUse="collections/tag-group/tag-group-with-remove-demo" />
+
+## Intent
+The default intent is `primary`. You can also use `secondary`, `success`, `warning`, and `danger`.
+<How toUse="collections/tag-group/tag-group-intent-demo" />
+
+## Controlled
+Manage the values of the tag group through the `value` prop.
+<How toUse="collections/tag-group/tag-group-controlled-demo" />
+
+## Href
+Incorporate a hyperlink within the tag group using the `href` prop.
+<How toUse="collections/tag-group/tag-group-href-demo" />
+
+
+
+## Shape
+The tag group can be shaped to be a square or a circle. Just like the badge component, see [badge](/badge) documentation for more information.
+<How toUse="collections/tag-group/tag-group-shape-demo" />
+
+## Disabled
+Disable tags either by setting the `isDisabled` prop or using `disabledKeys` on the `TagGroup`.
+<How toUse="collections/tag-group/tag-group-disabled-demo" />

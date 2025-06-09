@@ -1,0 +1,55 @@
+---
+title: "List Box"
+description: "ListBox are designed to present and manage lists of options or data entries, allowing users to view and select from multiple choices efficiently."
+order: 2
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/ListBox.html#props"]
+---
+
+## Basic
+ListBoxes can be enhanced with features such as multi-selection, filtering, and dynamic data updates. They are commonly used in applications to display and manage lists of options or data entries.
+<How toUse="collections/list-box/list-box-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['list-box']}/>
+
+## Composed Components
+<Composed components={['dropdown']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow='list-box'/>
+
+## Anatomy
+<Anatomy show='list-box-anatomy'/>
+
+## Multiple Selection
+To enable multiple selections, set the `selectionMode` prop to `multiple`. This prop has no default value, so it must be explicitly defined.
+<How toUse="collections/list-box/list-box-multiple-demo" />
+
+## Description
+You can enhance list items by providing additional details using the `Listbox.Description` component.
+<How toUse="collections/list-box/list-box-description-demo" />
+
+## Section
+Group items in a ListBox using sections for better organization.
+<How toUse="collections/list-box/list-box-section-demo" />
+
+## Rearrange
+Enable drag-and-drop functionality in the ListBox by using the `dragAndDropHooks` prop with the `useDragAndDrop` hook. This allows users to rearrange items, insert new entries, or manage data across the list.
+<How toUse="collections/list-box/list-box-rearrange-demo" />
+
+## Controlled
+To enable controlled mode, set the `selectionMode` prop to `single`. This allows you to manage the ListBox selection using the `selectedKey` prop.
+<How toUse="collections/list-box/list-box-controlled-demo" />
+
+## Disabled
+Disable specific ListBox items to restrict user interaction.
+<How toUse="collections/list-box/list-box-disabled-demo" />
+
+You can also disable an item directly by passing the `isDisabled` prop to `ListBoxItem`.
+
+```tsx
+<ListBoxItem isDisabled>Disabled</ListBoxItem>
+```

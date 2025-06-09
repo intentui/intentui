@@ -1,0 +1,43 @@
+---
+title: "Meter"
+description: A graphical representation of a measured value within a fixed range, perfect for showing scores, ratings, or resource usage.
+order: 4
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Meter.html#props"]
+---
+
+
+## Basic
+
+A meter displays a value within a specified range, showing how much of the total range is currently occupied. Unlike a progress bar, which typically indicates progress towards completing a task over time, a meter reflects a specific measurement or quantity at a given moment.
+
+<How toUse="statuses/meter/meter-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['meter']}/>
+
+
+## Composed Components
+<Composed components={['field']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons', 'motion']}/>
+
+<SourceCode toShow='meter'/>
+
+## Anatomy
+<Anatomy show='meter-anatomy'/>
+
+## Decimal Format
+By default, the meter will display the value as a percentage. You can change the format of the value by passing a `formatOptions` prop. This example is shown decimal format.
+
+<How toUse="statuses/meter/meter-decimal-format-demo" />
+
+## Currency Format
+You can also change the currency format of the value by passing a `formatOptions` prop. This example is shown currency format.
+
+<How toUse="statuses/meter/meter-currency-format-demo" />
+
+## Custom Value Label
+You also customize the value label by passing a `valueLabel` prop. This example is shown value label.
+<How toUse="statuses/meter/meter-value-label-demo" />

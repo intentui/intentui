@@ -1,0 +1,31 @@
+---
+title: "Colors"
+description: "The Intent color system is designed to provide a consistent and accessible color palette across your application. It includes a range of colors, including primary, secondary, accent, and muted colors."
+order: 6
+published: true
+---
+
+## Colors
+The Intent color system is crafted to ensure a consistent and accessible color palette throughout your application. It features a diverse range of colors, including primary, secondary, accent, and muted shades.
+
+This is the default theme in Intent. You can personalize it by customizing settings on the [themes](/themes) page.
+<GeneratedTheme className='max-h-120 not-prose' />
+
+## Color Usage
+The table below shows the color classes used in the Intent components and their corresponding components.
+| **Background Class** | **Used in Components**                                                                                                                                                                      |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **primary**          | pagination, slider, radio, date-field, tag-group, drop-zone, switch, calendar, grid-list, range-calendar, progress-bar, badge, number-field, sidebar, table, toggle, command-menu, checkbox |
+| **accent**           | list-box, dropdown, command-menu                                                                                                                                                            |
+| **overlay**          | popover, chart, sheet, drawer, tooltip, modal, command-menu                                                                                                                                 |
+| **secondary**        | note, list-box, pagination, choicebox, calendar, range-calendar, dialog, progress-bar, badge, number-field, sidebar, table, button, toggle, command-menu, toast                             |
+| **muted**            | navbar, card, slider, radio, meter, color-slider, switch, dropdown, badge, color-wheel, checkbox, color-area                                                                                |
+| **warning**          | tag-group                                                                                                                                                                                   |
+| **success**          | note, tag-group                                                                                                                                                                             |
+
+## Change Gray
+When you install Intent using the CLI, you'll be prompted to select your preferred gray scale. Options include Tailwind's default grays such as `gray`, `slate`, `zinc`, `stone`, and `neutral`. If needed, you can always visit the [themes](/themes) page to change your selection.
+Or by running the following command:
+<Installation options={{isExecutor: true}} command='npx @intentui/cli@latest change-gray' items={['']} />
+
+Learn more about the CLI in the [CLI](/cli) documentation.

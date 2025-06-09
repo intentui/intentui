@@ -1,0 +1,37 @@
+---
+title: Next.js
+description: Turning your Next.js app into a night owl? Follow this smooth guide to light up the dark mode magic.
+order: 4
+published: true
+---
+
+## Next Themes
+Because you are using Next.js, you can use `next-themes` to implement dark mode. And since you're using `@intentui/icons`, you can use the `IconSun` and `IconMoon` icons.
+<Installation options={{ isManual: false }}  items={['next-themes', '@intentui/icons']}/>
+
+## Provider and Switcher
+Next, you need to create a theme provider component. You can do it like this:
+<CodeBlock
+    source={{
+        'theme-provider.tsx': 'dark-mode/nextjs/theme-provider.tsx',
+        'providers.tsx': 'dark-mode/nextjs/providers.tsx',
+        'theme-switcher.tsx': 'dark-mode/nextjs/theme-switcher.tsx',
+    }} />
+## Usage
+After that, you can use it in your root layout file like so:
+
+```tsx {1} {7-9}
+import { Providers } from '@/components/providers'
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
+    </html>
+  )
+}
+```

@@ -1,0 +1,58 @@
+---
+title: Popover
+description: A small, floating UI element that appears near a trigger to show contextual information or actions.
+order: 4
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Popover.html#props"]
+---
+
+## Basic
+Popovers are small overlays that display additional information about an element when the user clicks on it.
+<How toUse="overlays/popover/popover-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['popover']}/>
+
+## Composed Components
+<Composed components={['button', 'dialog']}/>
+
+## Manual Installation
+
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+
+<SourceCode toShow='popover'/>
+
+## Anatomy
+<Anatomy show='popover-anatomy'/>
+
+## Controlled
+You can control the popover programmatically.
+<How toUse="overlays/popover/popover-controlled-demo" />
+
+## Overlay Arrow
+The default has an arrow, but you can disable it by passing the `showArrow` prop.
+<How toUse="overlays/popover/popover-arrow-demo" />
+
+## Placement
+You can change the placement of the popover by passing the `placement` prop.
+<How toUse="overlays/popover/popover-placement-demo" />
+
+The list above shows the primary directions, but you can also use specific placements like `bottom left` or `top right`. Here are all the available placement options:
+
+| Primary Direction | Placement       |
+|-------------------|-----------------|
+| `bottom`          | `bottom`, `bottom left`, `bottom right`, `bottom start`, `bottom end` |
+| `top`             | `top`, `top left`, `top right`, `top start`, `top end` |
+| `left`            | `left`, `left top`, `left bottom` |
+| `start`           | `start`, `start top`, `start bottom` |
+| `right`           | `right`, `right top`, `right bottom` |
+| `end`             | `end`, `end top`, `end bottom` |
+
+
+## Custom Close
+The popover can be customized to include a custom close button.
+<How toUse="overlays/popover/popover-custom-close" />
+
+## Popover Trigger
+All the examples above use `<Button/>` as the trigger, but what if you wanna switch it up, like using `<Avatar/>` instead? No sweat, just roll with PopoverTrigger like this:
+<How toUse="overlays/popover/popover-trigger-demo" />

@@ -1,0 +1,82 @@
+---
+title: "Upgrade Guide"
+description: "This guide explains how to seamlessly upgrade from Tailwind 3 to Tailwind 4 and transition from documentation version 1.x to 2.x."
+order: 2
+published: true
+---
+
+## Introduction
+Not sure what's new or what has changed? Don’t worry! You can find all the updates in [Release v2](/blog/release-v2).
+
+## Getting Started
+### Upgrading from Tailwind v3 to v4
+Upgrading from Tailwind v3 to v4 involves different steps depending on your setup. If you’re using Vite, you’ll need the `@tailwindcss/vite` plugin. For PostCSS, you’ll need the `@tailwindcss/postcss` plugin. It’s highly recommended to check out the <NewTab href="https://tailwindcss.com/docs/v4-beta#getting-started">official Tailwind v4 guide</NewTab>. 
+
+Ready? Let’s dive in! We’ll start with Vite.
+
+### Vite
+Install the latest version of Tailwind and the Vite plugin:
+```
+npm install tailwindcss@next @tailwindcss/vite@next
+```
+Next, update your `vite.config.ts` file to include the plugin:
+```ts {2,6}
+import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  plugins: [
+    tailwindcss()
+  ],
+});
+```
+
+### PostCSS
+If you’re using Next.js, you’ll likely use PostCSS. To get started, install the latest versions of Tailwind and the PostCSS plugin:
+```
+npm install tailwindcss@next @tailwindcss/postcss@next
+```
+Then, update your `postcss.config.js` file to include the plugin:
+```js {3}
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+};
+```
+After updating your setup, you can now remove your `tailwind.config.ts` file.
+
+## Updating CSS and Primitives
+Tailwind 4 introduces OKLCH color spaces, which we also adopt. Update your main CSS file (e.g., `app/globals.css`) and your primitives file (`ui/primitive.tsx`) as shown below:
+<CodeBlock
+    source={{
+        'app/globals.css': 'installation/main.css',
+        'ui/primitive.tsx': 'installation/primitive.tsx',
+    }} />
+Looking for custom themes? Head over to our <NewTab href="/themes">theme customization</NewTab> page to tweak it however you like.
+
+## Intent v2 Schema
+Open your `intentui.json` file and update it to the latest schema:
+<CodeBlock
+    source={{
+        './intentui.json': 'upgrade/intentui.json',
+    }} />
+
+## Hooks and Classes
+The `use-media-query` hook now resides in the **utils/** folder. Additionally, all components now utilize the `cn()` function from **utils/classes.ts**. Ensure you have these updated files:
+<CodeBlock
+    source={{
+        'utils/classes.ts': 'utils/classes.ts',
+        'utils/use-media-query.ts': 'utils/use-media-query.ts',
+    }} />
+<Note>
+    If you’re using the CLI, this update will be applied automatically.
+</Note>
+
+## Checking Differences
+To see what has changed, run the following command:
+<Installation options={{isExecutor: true}} command='npx @intentui/cli@latest diff' items={['']} />
+When prompted, press `a` to apply updates to all existing components.
+
+## Conclusion
+That’s it! You’re now ready to use Intent v2. If you have any questions, feel free to reach out on <NewTab href="https://x.com/irsyadadl">Twitter</NewTab>.

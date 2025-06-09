@@ -1,0 +1,50 @@
+---
+title: "Date Range Picker"
+description: Date Range Pickers are essential for displaying date-based information clearly and enhancing user interaction with precise date selections.
+order: 6
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/DateRangePicker.html#props"]
+---
+
+## Basic
+
+A range calendar displays one or more date grids and allows users to select a range of dates in a single interaction.
+<How minW72 toUse="date-and-time/date-range-picker/date-range-picker-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['date-range-picker']}/>
+
+## Composed Components
+<Composed components={['date-picker', 'date-field', 'field']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow='date-range-picker'/>
+
+## Validation
+Ensure that the date range picker is properly filled out by using the `isRequired` prop.
+<How minW72 toUse="date-and-time/date-range-picker/date-range-picker-validation-demo" />
+
+## Custom Validation
+Use the `validate` function to implement custom validation rules. It evaluates the current date range and returns error messages if the value doesn't meet your criteria.
+<How minW72 toUse="date-and-time/date-range-picker/date-range-picker-custom-validation-demo" />
+
+## Visible Duration
+You can control the duration of the visible date range by using the `visibleDuration` prop. It accepts an object with the following properties:
+* `years`: The number of years to add or subtract.
+* `months`: The number of months to add or subtract.
+* `weeks`: The number of weeks to add or subtract.
+* `days`: The number of days to add or subtract.
+
+Learn more about the <NewTab href='https://react-spectrum.adobe.com/react-aria/RangeCalendar.html#multi-month'>visible duration</NewTab> in the rac documentation.
+
+<How minW72 toUse="date-and-time/date-range-picker/date-range-picker-visible-duration-demo" />
+
+## Controlled
+Take control of your date range picker by passing a `value` prop to manage the selected date range.
+<How minW72 toUse="date-and-time/date-range-picker/date-range-picker-controlled-demo" />
+
+## Disabled
+When the date range picker is disabled, it becomes non-interactive and is visually represented in a disabled state.
+<How minW72 toUse="date-and-time/date-range-picker/date-range-picker-disabled-demo" />

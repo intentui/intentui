@@ -1,0 +1,51 @@
+---
+title: "Textarea"
+description: A multi-line text input field for entering longer content, such as comments, descriptions, or messages.
+order: 4
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1"]
+---
+
+## Basic
+
+A textarea is a larger box where you can type in text, like your name, email, or a longer message.
+<How minW72 toUse="forms/textarea/textarea-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['textarea']}/>
+
+## Composed Components
+<Composed components={['field']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+
+<SourceCode toShow='textarea'/>
+
+## Anatomy
+<Anatomy show='textarea-anatomy'/>
+
+## Description
+You can add a description to the textarea by using the `description` prop.
+<How minW72 toUse="forms/textarea/textarea-description-demo" />
+
+
+## Controlled
+You can control the textarea value by using the `value` prop.
+<How minW72 toUse="forms/textarea/textarea-controlled-demo" />
+
+## Uncontrolled
+You can control the textarea value by using the `defaultValue` prop.
+<How minW72 toUse="forms/textarea/textarea-uncontrolled-demo" />
+
+## Validation
+Try submitting the form without filling it out to see the error state in action.
+<How minW72 toUse="forms/textarea/textarea-validation-demo" />
+
+## Readonly
+When the textarea is set to readonly, it cannot be edited.
+<How minW72 toUse="forms/textarea/textarea-readonly-demo" />
+
+## Disabled
+When the textarea is disabled, it becomes non-editable and appears inactive.
+<How minW72 toUse="forms/textarea/textarea-disabled-demo" />

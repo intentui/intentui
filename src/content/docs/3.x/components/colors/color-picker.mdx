@@ -1,0 +1,61 @@
+---
+title: "Color Picker"
+description: A versatile UI component that provides multiple ways to choose colors, including sliders, swatches, and manual input.
+order: 1
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/ColorPicker.html"]
+---
+
+## Basic
+The basic color picker allows users to select a color.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-demo" />
+
+## Installation
+<Installation options={{isComponent: true}} items={['color-picker']}/>
+
+## Composed Components
+<Composed components={['color-area', 'color-field', 'color-slider', 'color-swatch', 'field', 'popover']}/>
+
+## Manual Installation
+<Installation options={{isManual: true}} items={['react-aria-components', '@intentui/icons']}/>
+<SourceCode toShow='color-picker'/>
+
+## Anatomy
+<Anatomy show='color-picker-anatomy'/>
+
+## Enable Format Selection
+Enable users to select the format of the color value (e.g., RGB, HSL).
+<How className='min-w-40' toUse="colors/color-picker/color-picker-enable-selection-format-demo" />
+
+## Combination
+Combine both swatch and selection format options in the color picker.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-combination-demo" />
+
+## Eye Dropper
+Add an eye dropper button to the color picker to allow users to select a color from the screen.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-eye-dropper-demo" />
+
+## Label
+Add a label to the color picker for better accessibility and user guidance.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-with-label-demo" />
+
+## Dynamic Label
+Dynamically update the label based on the selected color.
+```
+import { ColorPicker, defaultColor } from "ui"
+
+const [color, setColor] = useState(defaultColor)
+return <ColorPicker label={color.toString('hex')} value={color} onChange={setColor} />
+```
+
+## Description
+Include a description to provide additional information or instructions.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-with-description-demo" />
+
+## Controlled
+Control the selected color with the `value` prop to sync it with your application's state.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-controlled-demo" />
+
+## Disabled
+Disable the color picker by setting the `isDisabled` prop, making it non-interactive.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-disabled-demo" />

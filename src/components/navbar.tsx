@@ -57,17 +57,17 @@ export function Navbar() {
                   <NavLink
                     isNextLink
                     isActive={
-                      pathname?.startsWith("/docs/2.x") &&
-                      !pathname?.includes("/docs/2.x/components")
+                      pathname?.startsWith("/docs/3.x") &&
+                      !pathname?.includes("/docs/3.x/components")
                     }
-                    href="/docs/2.x/getting-started/introduction"
+                    href="/docs/3.x/getting-started/introduction"
                   >
                     Docs
                   </NavLink>
                   <NavLink
                     isNextLink
                     isActive={
-                      pathname?.startsWith("/docs/2.x/components") || pathname === "/components"
+                      pathname?.startsWith("/docs/3.x/components") || pathname === "/components"
                     }
                     href="/components"
                   >

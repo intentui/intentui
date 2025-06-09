@@ -1,0 +1,62 @@
+---
+title: "Table"
+description: A high-performance, customizable table component for efficiently displaying large datasets.
+order: 5
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Table.html#props"]
+---
+
+## Basic
+A table displays data in rows and columns, allowing navigation via directional keys. It can optionally support row selection and sorting.
+<How isCenter={false} withNoPadding toUse="collections/table/table-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['table']}/>
+
+## Composed Components
+<Composed components={['checkbox']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow='table'/>
+
+## Anatomy
+<Anatomy show='table-anatomy'/>
+
+## Bulk Actions
+Tables may require bulk actions for handling multiple entries at once.
+<How isCenter={false} withNoPadding toUse="collections/table/table-bulk-demo" />
+
+## Drag and Drop
+Similar to [GridList](/docs/components/collections/grid-list), tables can also support drag and drop functionality.
+<How isCenter={false} withNoPadding toUse="collections/table/table-drag-demo" />
+
+## Sorting
+Tables can be made sortable. Activate sorting by clicking on a column header.
+<How isCenter={false} withNoPadding toUse="collections/table/table-sorting-demo" />
+
+## Resizable
+Tables can be made resizable. To enable resizing, set the `allowResize` prop to `true`. And to make a column resizable, set the `isResizable` prop to `true` on the column.
+<How isCenter={false} withNoPadding toUse="collections/table/table-resize-demo" />
+
+## Href
+To create a clickable link within a table row, use the `href` prop.
+
+```jsx
+<TableRow href='/collections/table-demo'/>
+```
+
+## Bleed
+Use the `bleed` prop to make the table stretch to the edges of its container. This is especially useful in layouts like sidebars, where you want the table to align with the container's outer padding.
+
+```tsx
+<Table bleed className="[--gutter:--spacing(6)] sm:[--gutter:--spacing(4)]" aria-label="..."/>
+```
+
+## With Card
+When placing a table inside a card, you can use bleed and adjust the `--spacing` variable to align with the card’s padding, allowing the table to span the full width.
+<How isCenter={false} withNoPadding toUse="surfaces/card/card-table-demo"/>
+
+
+See the full demo at [Sidebar 15](/blocks/sidebar/sidebar-15).

@@ -1,0 +1,51 @@
+---
+title: "Time Field"
+description: A time-specific input that lets users enter and adjust time values, supporting 12-hour or 24-hour formats.
+order: 4
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/TimeField.html#props"]
+---
+
+## Basic
+
+A time field allows users to input and adjust time values using a keyboard, with each segment of the time shown as its own editable unit.
+<How toUse="date-and-time/time-field/time-field-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['time-field']}/>
+
+## Composed Components
+<Composed components={['field', 'date-field']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+
+<SourceCode toShow='time-field'/>
+
+## Hour Cycles
+Change the hour format in the time field by using the `hourCycle` prop.
+<How toUse="date-and-time/time-field/time-field-hc-demo" />
+
+## Prefix
+A demonstration of how to add a prefix to the time field component for enhanced clarity or customization.
+<How toUse="date-and-time/time-field/time-field-prefix-demo" />
+
+## Suffix
+A demonstration of how to add a suffix to the time field component to provide additional context or customization.
+<How toUse="date-and-time/time-field/time-field-suffix-demo" />
+
+## Validation
+To ensure the time field is properly filled out, use the `isRequired` prop.
+<How toUse="date-and-time/time-field/time-field-validation-demo" />
+
+## Controlled
+In a controlled time field, the value is provided as a prop, and the field is not editable by the user.
+<How toUse="date-and-time/time-field/time-field-controlled-demo" />
+
+## Readonly
+In a readonly time field, the value is provided as a prop, and the field is not editable by the user.
+<How toUse="date-and-time/time-field/time-field-readonly-demo" />
+
+## Disabled
+A disabled time field cannot be interacted with and is visually represented as being inactive.
+<How toUse="date-and-time/time-field/time-field-disabled-demo" />

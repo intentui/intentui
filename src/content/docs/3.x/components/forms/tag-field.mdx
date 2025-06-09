@@ -1,0 +1,106 @@
+---
+title: "Tag Field"
+description: An input component that allows users to enter, display, and manage multiple tags or keywords dynamically.
+order: 9
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/TagGroup.html#props"]
+---
+
+## Basic
+
+The basic tag field lets you add tags to your content.
+
+<How minW72 toUse="forms/tag-field/tag-field-demo" />
+
+## Installation
+
+To install, run the following command:
+
+<Installation options={{ isComponent: true }} items={['tag-field']} />
+
+## Composed Components
+
+This tag field integrates with components like:
+
+<Composed components={['field', 'tag-group']} />
+
+## Manual Installation
+
+For manual installation, use:
+
+<Installation options={{ isManual: true }} items={['react-aria-components']} />
+
+<SourceCode toShow='tag-field' />
+
+## Anatomy
+Import the components and use them as shown below, adapting the structure to fit each component.
+```
+import { TagField } from 'ui'
+
+const selectedItems = useListData({
+  initialItems: [
+    {
+      id: 1,
+      name: "Laravel"
+    },
+    // ...
+  ]
+})
+
+<TagField className="max-w-xs" label="Add tag" list={selectedItems} />
+```
+
+## Appearance
+
+Customize the tag field’s appearance using the `appearance` prop.
+
+<How isCenter={false} withNoPadding toUse="forms/tag-field/tag-field-appearance-demo" />
+
+## Max Entry
+
+Set a limit on the number of tags that can be added.
+
+<How minW72 toUse="forms/tag-field/tag-field-max-demo" />
+
+## Intent
+
+By default, the tag field component uses the `primary` intent. But it has a `secondary` intent as well.
+
+<How minW72 toUse="forms/tag-field/tag-field-intent-demo" />
+
+## Shape
+
+Customize the tag field’s shape using the `shape` prop.
+
+<How minW72 toUse="forms/tag-field/tag-field-shape-demo" />
+
+## Controlled
+
+The tag field is controlled by default. This example demonstrates how to access its value.
+
+<How minW72 toUse="forms/tag-field/tag-field-controlled-demo" />
+
+
+## Disabled
+
+Disable the tag field by using the `isDisabled` prop.
+
+<How toUse="forms/tag-field/tag-field-disabled-demo" />
+
+## Props
+Here's the fixed table:
+
+| Prop           | Type                        | Default   | Description                                  |
+|----------------|-----------------------------|-----------|----------------------------------------------|
+| label          | string                      | -         | The label of the tag field                   |
+| description    | string                      | -         | The description of the tag field             |
+| placeholder    | string                      | -         | The placeholder of the tag field             |
+| max            | number                      | -         | The maximum number of tags that can be added |
+| className      | string                      | -         | The class name of the tag field              |
+| name           | string                      | -         | The name of the tag field                    |
+| list           | ListData                    | -         | The list of tags                             |
+| onItemInserted | (tag: TagItemProps) => void | -         | The callback function when a tag is inserted |
+| onItemCleared  | (tag: TagItemProps) => void | -         | The callback function when a tag is cleared  |
+| isDisabled     | boolean                     | -         | The disabled state of the tag field          |
+| intent         | string                      | 'primary' | 'primary', 'secondary'                       |
+| shape          | string                      | 'square'  | 'square', 'circle'                           |

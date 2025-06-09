@@ -1,0 +1,30 @@
+---
+title: Inertia.js
+description: Ready to give your Inertia.js project that sleek, dark mode look? Check out this guide and get your app looking smooth and stylish in the dark.
+order: 2
+published: true
+---
+
+## Provider and Switcher
+First of all, let's create a folder called `providers` inside the `resources/js` directory. Inside this folder, create a file called `theme-provider.tsx`. After that, you of course need a switcher right, so create a file called `theme-switcher.tsx` inside the `Components` folder. So your folder structure now is likes this:
+```
+resources/js
+├── Components
+│   └── theme-switcher.tsx
+│   └── ...
+├── providers
+│   └── theme-provider.tsx
+│   ...
+```
+<CodeBlock
+    source={{
+        'providers/theme-provider.tsx': 'dark-mode/vite/theme-provider.tsx',
+        'Components/theme-switcher.tsx': 'dark-mode/vite/theme-switcher.tsx',
+    }} />
+
+## Usage
+Next, you'll use it insdie the `app.tsx` file like this:
+<CodeBlock
+    source={{
+        'app.tsx': 'dark-mode/inertia/app.tsx',
+    }} />

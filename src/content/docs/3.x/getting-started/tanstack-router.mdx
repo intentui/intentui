@@ -1,0 +1,35 @@
+---
+title: "TanStack Router"
+description: "Set up Intent in your TanStack Router project with Tailwind CSS using a simple and efficient installation process."
+---
+
+## Installation
+Start a new project with the following command:
+<Installation command='npx create-tsrouter-app@latest app --template file-router --tailwind' />
+
+Next, initialize Intent in your project:
+<Installation command='npx @intentui/cli@latest init --force' />
+
+You'll be asked a few setup questions. For example, here we specify a custom CSS location:
+```
+✔ Initializing.
+✔ Components folder: src/components
+✔ Utils folder: src/utils
+✔ Where would you like to place the CSS file? src/styles.css
+✔ Pick your desired base gray: zinc
+✔ Installing dependencies.
+✔ Configuring.
+✔ UI folder created at `src/components/ui`
+✔ Primitive file saved to `src/components/ui/primitive.tsx`
+✔ Theme Provider file saved to `"src/components/theme-provider.ts"`
+✔ Providers file saved to `"src/components/providers.tsx"`
+✔ Configuration saved to `intentui.json`
+✔ Installation complete.
+```
+
+## Adding Components
+Add Intent components to your project with the following command:
+<Installation command='npx @intentui/cli@latest add text-field button menu' />
+
+## Starter Kit
+Get started quickly with our TanStack Router Starter Kit, which includes Intent preconfigured. Clone the repository [here](https://github.com/intentuilabs/tanstack-router) and start building your project immediately.

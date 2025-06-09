@@ -1,0 +1,265 @@
+---
+title: "Installation"
+description: Install the necessary packages and set up your project. This tool automates the process, streamlining your setup with no extra steps required.
+order: 2
+published: true
+---
+
+## Framework Guides
+You can choose from a list of frameworks to get started with Intent.
+<FrameworkGuides/>
+
+## Installation via CLI
+Before executing the command, ensure that **tailwind** is installed. If not, follow the instructions [here](https://tailwindcss.com/docs/installation) for installation.
+
+<Note intent='info'>
+  <p>
+      Running this command will overwrite your **main css** file. It is recommended to use this in a
+      **new project** rather than an existing one to avoid manual file additions.
+  </p>
+</Note>
+
+### Initial Setup
+Begin by executing this command:
+
+<Installation options={{ isInit: true }} items={['initial setup']} />
+
+When you're run this command, it will ask a couple of questions. Like where's your components folder, utils, your main css file, and lastly is the theme you want like so:
+```
+✔ Initializing.
+? Components folder: src/components
+? Utils folder: src/utils
+? Where would you like to place the CSS file? src/app/globals.css
+? Select a base gray: (Use arrow keys)
+❯ zinc
+  gray
+  slate
+  neutral
+  stone
+```
+If it's all good, you will see the following:
+```
+Not sure what to do next?
+Visit our documentation at: https://intentui.com
+
+Now try to add some components to your project
+by running: npx @intentui/cli@latest add
+```
+
+### Intent Config
+After running the `init` command, a `intentui.json` file will appear in your project. This file holds your project's configuration, including settings for gray tones, paths, and more.
+```
+{
+  "$schema": "https://intentui.com/schema.json",
+  "ui": "src/components/ui",
+  "utils": "src/utils",
+  "gray": "zinc",
+  "css": "src/app/globals.css",
+  "alias": "@",
+  "language": "typescript",
+}
+```
+
+### Add Components
+Next, use `add [component-name]` to include a specific component in your project. This allows for selective installation without the need for a full setup. If you need a file-trigger or even a button, this command facilitates that. Install only what you need, or refer to the documentation to manually include components. Here's how to add a `combo-box`:
+<Installation options={{ isComponent: true, noText: true }} items={['combo-box']} />
+
+This command will ensure all necessary components are installed:
+```
+✔ Checking.
+✔ Installing dependencies.
+✔ Created 7 files:
+  - src/components/ui/combo-box.tsx
+  - src/components/ui/field.tsx
+  - src/components/ui/list-box.tsx
+  - src/components/ui/dropdown.tsx
+  - src/components/ui/popover.tsx
+  - src/components/ui/dialog.tsx
+  - src/components/ui/button.tsx
+```
+
+Sometimes, you may want to add components individually, such as `select` and `text-field`. You can easily do this by using the following command:
+<Installation options={{ isComponent: true, noText: true }} items={['select', 'text-field']} />
+If you need to include grouped components, refer to the documentation which organizes related components under a single namespace, such as collections, overlays, and forms. This allows you to add them all at once, like so:
+
+<Installation options={{ isComponent: true, noText: true }} items={['overlays']} />
+Using this command, you will install all components under the overlays namespace.
+```
+✓ button created
+✓ dialog created
+✓ modal created
+✓ sheet created
+✓ drawer created
+✓ popover created
+✓ tooltip created
+```
+
+### Override
+You can override the existing components by using the `-o` flag. This will overwrite the existing files with the new ones.
+<Installation options={{ isComponent: true, noText: true }} items={['button modal -o']} />
+
+### Select and Add Components
+You might prefer to select the components you want to include by adding them without specifying any items. Just use the following command to add components:
+<Installation options={{ isComponent: true, noText: true }} items={['']} />
+This command will present a list of available components, which you can navigate and select using the arrow keys and spacebar.
+
+```
+? Select components to add: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to
+  proceed)
+  ◯ dropdown
+  ◯ dialog
+  ◯ field
+  ◯ forms
+  ◯ collections
+  ◯ date-and-time
+  ```
+
+### Diff
+Compare your current setup with the new one using the following command:
+
+<Installation options={{isExecutor: true}} command='npx @intentui/cli@latest diff' items={['']} />
+
+If you're unsure, check out [this tweet](https://x.com/irsyadadl/status/1823355475020402781).
+
+To diff specific components, use:
+
+<Installation command='npx @intentui/cli@latest diff multiple-select menu modal' items={['']}/>
+
+
+
+## Formatter
+Intent utilizes the <NewTab href='https://biomejs.dev/'>Biome</NewTab> formatter for code formatting. To use the Biome formatter with Intent components, we recommend the following configuration:
+
+<CodeBlock
+    source={{
+        'biome.json': 'installation/biome.json',
+    }} />
+
+## Manual Installation
+To begin setting up the design system, start by installing these packages:
+
+<Installation options={{isManual: true}} items={['react-aria-components', 'tailwindcss-react-aria-components']} />
+
+Next, add **Tailwind Variant**, **Tailwind Merge**, and for utility functions:
+
+<Installation options={{isManual: true}} items={['tailwind-variants', 'tailwind-merge', 'clsx']} />
+
+Following that, include the **Tailwind Animate** for managing animations and **Intent Icons** for icons:
+
+<Installation options={{isManual: true}} items={['@intentui/icons', 'tw-animate-css']} />
+
+### Style and Primitive
+After installing the required packages, you can copy the CSS below into your global CSS file and move the primitives to your UI folder. Primitives serve as utilities for managing states, including `focusRing`, `focusStyles`, and `focusButtonStyles`.
+
+<CodeBlock
+    source={{
+        'app/globals.css': 'installation/main.css',
+        'lib/primitive.ts': 'installation/primitive.ts',
+    }} />
+
+### Classes and Hooks
+
+Hooks are only used in specific components like the **Navbar**, **Sidebar**, **Popover**, and **Command Menu**. If you're using the **Intent CLI**, it will handle this automatically; otherwise, download the file below.
+
+<CodeBlock
+    source={{
+        'hooks/use-media-query.ts': 'hooks/use-media-query.ts',
+    }} />
+
+
+### Simple Import
+Indeed, it's efficient because the `index.ts` file in your UI folder serves as a hub. Even if the button and badge components are in separate files, you can import them together easily. First, create a `ui/index.ts` file:
+
+```ts title="ui/index.ts"
+export * from "./sidebar";
+export * from "./navbar";
+export * from "./tree";
+export * from "./table";
+export * from "./text-field";
+export * from "./button";
+export * from "./card";
+// ...
+```
+
+So, here's the scoop: your UI folder contains an `index.ts` file, right? This file consolidates all your components for straightforward access. Simply tell TypeScript where to find it and import them as needed, hassle-free!
+
+<CodeBlock
+    source={{
+        'component.tsx': 'installation/component.tsx',
+        'tsconfig.json': 'installation/not-tsconfig.json',
+    }} />
+
+If you're using a `src` folder, you can use the following config:
+
+```json
+"paths": {
+  "@/*": ["./src/*"],
+  "ui": ["./src/components/ui"]
+}
+```
+
+### Fonts
+This is currently using the [Inter font](https://rsms.me/inter/). If you want to use a different font, you can define your font-family in your JS or CSS file.
+
+### Stylesheet
+When you're working with a stylesheet, you can define your `@font-face` in your css file.
+
+```
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("InterVariable.woff2") format("woff2");
+}
+```
+
+### Next.js
+If you're using Next.js, you don't event need css files. Just define your font in your layout file.
+
+```
+import localFont from 'next/font/local'
+
+const fontSans = localFont({
+  src: [{path: './fonts/Inter.woff2'}],
+  variable: '--font-sans'
+})
+```
+
+Then, apply the `fontSans` to the `body` tag like this:
+
+```tsx
+<body
+  className={`font-sans antialiased ${fontSans.variable}`}
+/>
+```
+
+Then, you can use the variable in your main css file like this:
+
+```css
+@theme {
+  --font-sans: var(--font-inter-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-geist-mono), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji";
+
+  // Your other variables
+}
+```
+
+For more information, refer to the [Tailwind documentation](https://tailwindcss.com/docs/font-family#customizing-the-default-font) and [Next.js documentation](https://nextjs.org/docs/app/building-your-application/optimizing/fonts).
+
+## IntelliSense
+If you want your development environment to be more intelligent, you can follow instructions here at [Tailwind Variants](https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional).
+
+## Dark Mode
+Intent supports dark mode out of the box. Every framework has its own way of implementing dark mode. So you better check the docs list below:
+- [Vite](/docs/dark-mode/vite)
+- [Inertia.js](/docs/dark-mode/inertia-js)
+- [Next.js](/docs/dark-mode/next-js)
+- [Remix](/docs/dark-mode/remix)
+- [Astro](/docs/dark-mode/astro)
+
+## Prologue
+- [Contribution Guide](/docs/prologue/contribution-guide)
+- [Release Notes](/docs/prologue/release-notes)

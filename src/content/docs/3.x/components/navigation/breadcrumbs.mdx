@@ -1,0 +1,60 @@
+---
+title: "Breadcrumbs"
+description: A navigational aid that displays a hierarchical path, helping users track their location and easily navigate back within a website.
+order: 2
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html#props"]
+---
+
+## Basic
+
+Breadcrumbs display a trail of links that guide users to the current page or resource in an app, helping them understand their location and navigation path.
+<How toUse="navigation/breadcrumbs/breadcrumbs-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['breadcrumbs']}/>
+
+## Composed Components
+<Composed components={['link']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow={'breadcrumbs'}/>
+
+## Anatomy
+<Anatomy show='breadcrumbs-anatomy'/>
+
+## Separator
+The separator appears when the breadcrumb changes. By default, it uses a chevron. You can disable it with `separator="false"` or switch to a slash with `separator="slash"`.
+<How toUse="navigation/breadcrumbs/breadcrumbs-separator-demo" />
+
+If you need a unique separator for each item (not recommended), set the `separator` prop directly:
+
+```
+<Breadcrumbs.Item href="#" separator="slash"/>
+```
+
+## Menu
+You can also combine breadcrumbs with menus to create a more complex navigation structure.
+<How toUse="navigation/breadcrumbs/breadcrumbs-menu-demo" />
+
+## Collections
+You can also use breadcrumbs to navigate between collections.
+<How toUse="navigation/breadcrumbs/breadcrumbs-collections-demo" />
+
+## Current
+The current breadcrumb indicates the active page in the breadcrumb navigation. It is automatically added as the last item and its color is updated accordingly. But you can also control the color of the current breadcrumb by passing a `className` prop to the `Breadcrumbs.Item` component.
+<How toUse="navigation/breadcrumbs/breadcrumbs-current-demo" />
+
+if you think you want to render an element inside that current breadcrumb, you can do it like this:
+```
+<Breadcrumbs.Item className="data-current:text-primary">
+  {({ isCurrent }: { isCurrent: boolean }) => (
+    <span className="flex items-center gap-x-2">
+      Navbar
+      {isCurrent && <IconChevronLgDown />}
+    </span>
+  )}
+</Breadcrumbs.Item>
+```

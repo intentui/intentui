@@ -1,0 +1,187 @@
+---
+title: Navbar
+description: A horizontal navigation bar for primary site links, branding, and interactive elements.
+order: 6
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Link.html#props"]
+---
+
+## Basic
+A navbar provides a variety of actions or options for users to select.
+
+<CodeSandbox
+  src='/blocks/navbar/navbar-00'
+  source={{
+    preview: 'blocks/navbar/navbar-00/app-navbar',
+    'page.tsx': 'blocks/navbar/navbar-00/page',
+    'layout.tsx': 'blocks/navbar/navbar-00/layout',
+    'app-navbar.tsx': 'blocks/navbar/navbar-00/app-navbar',
+  }} />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['navbar']} />
+
+## Composed Components
+<Composed components={['button', 'sheet']} />
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', 'motion']} />
+
+<SourceCode toShow={'navbar'} />
+
+## Anatomy
+<Anatomy show='navbar-anatomy' />
+
+## Intent
+There are three types of intents: `navbar`, `floating`, and `inset`, each with distinct behaviors.
+
+### Navbar
+The default intent of the navbar is `navbar`. You can change it to `floating` or `inset` by setting the `intent` prop.
+
+<CodeSandbox isIframe={false}
+  src='/blocks/navbar/navbar-01'
+  source={{
+    preview: 'blocks/navbar/navbar-01/app-navbar',
+    'page.tsx': 'blocks/navbar/navbar-01/page',
+    'layout.tsx': 'blocks/navbar/navbar-01/layout',
+    'app-navbar.tsx': 'blocks/navbar/navbar-01/app-navbar',
+  }} />
+
+### Floating
+The floating intent will have a border inside the navbar itself, the wrapper will have a padding to the content.
+<CodeSandbox isIframe={false}
+  src='/blocks/navbar/navbar-02'
+  source={{
+    preview: 'blocks/navbar/navbar-02/app-navbar',
+    'page.tsx': 'blocks/navbar/navbar-02/page',
+    'layout.tsx': 'blocks/navbar/navbar-02/layout',
+    'app-navbar.tsx': 'blocks/navbar/navbar-02/app-navbar',
+  }} />
+
+
+### Inset
+The inset one will have the padding to inset main content. You can of course see what's going on the demo, but you can also see the [live example here](/blocks/navbar/navbar-03).
+<CodeSandbox isIframe={false}
+  src='/blocks/navbar/navbar-03'
+  source={{
+    preview: 'blocks/navbar/navbar-03/app-navbar',
+    'page.tsx': 'blocks/navbar/navbar-03/page',
+    'layout.tsx': 'blocks/navbar/navbar-03/layout',
+    'app-navbar.tsx': 'blocks/navbar/navbar-03/app-navbar',
+  }} />
+
+## Using the Layout
+There are several ways to use the layout, depending on your framework. Or, if you're not using any framework, you can simply apply the layout component.
+
+### Common Usage
+A typical approach is to wrap your content with the layout like this:
+```
+<AppLayout>
+  {/* your main content */}
+</AppLayout>
+```
+### Inertia.js
+If you're using Inertia.js, you can implement a persistent layout. Here's how it looks:
+```
+Home.layout = (page: React.ReactNode) => <AppLayout children={page} />
+```
+When using **Inertia.js** with **Laravel**, the **layout**, **components**, and **pages** files are typically located in the resources/js folder. All the examples below assume they are within this directory.
+
+<EditorText
+  source={{
+    'layouts/app-layout.tsx': 'docs/navbar/app-layout',
+    'layouts/app-navbar.tsx': 'docs/navbar/app-navbar',
+    'pages/home.tsx': 'docs/navbar/home',
+  }} />
+
+### Next.js
+If you're using Next.js, there's no extra configuration needed. Simply create a page component and ensure it inherits the layout like this:
+```
+app/
+├── app-navbar.tsx
+├── layout.tsx
+└── page.tsx
+```
+
+## Logo
+The logo is typically the first item in the navbar, usually representing the brand or company.
+```
+<Navbar>
+  <Navbar.Nav>
+    <Navbar.Logo href="#">
+      <IconBrandApple className="size-5" />
+    </Navbar.Logo>
+    <Navbar.Section>
+      <Navbar.Item href="#">Store</Navbar.Item>
+```
+
+## Current
+Highlight the current page in the navbar for better navigation clarity by setting the `isCurrent` prop to `true`.
+```
+<Navbar.Item isCurrent href="#"/>
+```
+
+
+## Sticky
+You also make the navbar sticky by setting the `isSticky` prop to `true`.
+```
+<Navbar isSticky />
+```
+
+## Using Icons
+If you'd like to use icons on the navbar items, that's no problem at all. The navbar is already designed and optimized to accommodate icons seamlessly. First of all, you need to install the `@intentui/icons` package.
+<Installation className='mb-6' options={{ isManual: false }} items={['@intentui/icons']} />
+<CodeSandbox isIframe={false}
+  src='/blocks/navbar/navbar-05'
+  source={{
+    preview: 'blocks/navbar/navbar-05/app-navbar',
+    'page.tsx': 'blocks/navbar/navbar-05/page',
+    'layout.tsx': 'blocks/navbar/navbar-05/layout',
+    'app-navbar.tsx': 'blocks/navbar/navbar-05/app-navbar',
+  }} />
+
+## Disabled
+Disable individual navbar items when needed.
+<CodeSandbox isIframe={false}
+  src='/blocks/navbar/navbar-04'
+  source={{
+    preview: 'blocks/navbar/navbar-04/app-navbar',
+    'page.tsx': 'blocks/navbar/navbar-04/page',
+    'layout.tsx': 'blocks/navbar/navbar-04/layout',
+    'app-navbar.tsx': 'blocks/navbar/navbar-04/app-navbar',
+  }} />
+
+## Controlled
+On mobile devices, the navbar is hidden by default. You can open it using `Navbar.Trigger`, but there are times when you might want to manage its state by clicking one of the links within the navbar. You can achieve this because it shares the sheet properties, specifically `isOpen` and `onOpenChange`. There are multiple ways to control the state, but the simplest method is to listen for path changes and set `isOpen` to `true` or `false` accordingly.
+
+### Inertia.js
+When you are using inertia.js, you can listen the path by using `usePage` hooks. If you're not sure, you can always see the real example here at [starter kit inertia.js](https://github.com/intentuilabs/inertia.ts).
+```
+import { usePage } from '@inertiajs/react';
+
+export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Navbar>) {
+  const page = usePage();
+  const [isOpen, setIsOpen] = useState(false);
+
+  React.useEffect(() => setIsOpen(false), [page.url]);
+
+  return (
+    <Navbar isOpen={isOpen} onOpenChange={setIsOpen} {...props}/>
+  )
+}
+```
+
+### Next.js
+On next.js, you can listen the path by using `usePathname` hooks. If you're not sure, you can always see the real example here at [starter kit next.js](https://github.com/intentuilabs/next.js). or see live example [here](/blocks/navbar/navbar-01).
+```
+import { usePathname } from "next/navigation"
+
+export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Navbar>) {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  React.useEffect(() => setIsOpen(false), [pathname]);
+
+  return (
+    <Navbar isOpen={isOpen} onOpenChange={setIsOpen} {...props}>
+```

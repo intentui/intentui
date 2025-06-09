@@ -1,0 +1,66 @@
+---
+title: "Grid List"
+description: A structured list format that arranges items in a grid layout, ideal for displaying media, products, or cards.
+published: true
+order: 7
+references: ["https://react-spectrum.adobe.com/react-aria/GridList.html#props"]
+---
+
+## Basic
+A basic grid list is an excellent way for users to browse through items, perfect for selecting one or multiple items, and also supports row actions.
+<How minW72 toUse="collections/grid-list/grid-list-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['grid-list']}/>
+
+## Composed Components
+<Composed components={['checkbox']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+
+<SourceCode toShow='grid-list'/>
+
+## Anatomy
+<Anatomy show='grid-list-anatomy'/>
+
+## Multiple Selection
+To enable multiple selections, set the `selectionMode` prop to `multiple`. Since this prop has no default value, you must define it explicitly.
+<How minW72 toUse="collections/grid-list/grid-list-multiple-demo" />
+Note that I haven't set an `id` for the grid list item as the items already have default IDs. However, you should specify the `id` prop for each grid list item like this:
+```
+{(item) => <GridListItem id={item.name}>{item.name}</GridListItem>}
+```
+
+## Drag and Drop
+The grid list supports drag and drop functionalities if you use the `dragAndDropHooks` prop along with the `useDragAndDrop` hook. You can drop data on the entire list, individual items, add new items between existing ones, or rearrange items.
+<How minW72 toUse="collections/grid-list/grid-list-drag-demo" />
+
+## Dragging Between Items
+You can move items between positions within the grid list.
+<How withNoPadding isCenter={false} toUse="collections/grid-list/grid-list-drag-between-item-demo" />
+
+## Render Empty State
+The grid list can display an empty state when no items are available using the `renderEmptyState` prop.
+<How minW72 toUse="collections/grid-list/grid-list-render-empty-state-demo" />
+
+## Controlled
+The grid list can be controlled, which means the parent component manages the selection state of each item.
+<How minW72 toUse="collections/grid-list/grid-list-controlled-demo" />
+
+## Disabled
+Similar to how the [Tag Group](/docs/components/collections/tag-group) component can be disabled using `isDisabled` for children and `disabledKeys` for the parent, the Grid List supports similar functionality. For example, items "Led Zeppelin" and "The Rolling Stones" are disabled.
+<How minW72 toUse="collections/grid-list/grid-list-disabled-demo" />
+
+To disable items via the parent component, you can use the `disabledKeys` prop like this:
+```tsx {5}
+<GridList
+  items={items}
+  aria-label="Select your favorite bands"
+  selectionMode="multiple"
+  disabledKeys={[2,5]}
+  className="min-w-64"
+>
+  {(item) => <GridListItem id={item.id}>{item.name}</GridListItem>}
+</GridList>
+```

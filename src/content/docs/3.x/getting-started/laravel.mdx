@@ -1,0 +1,36 @@
+---
+title: "Laravel"
+description: "Learn how to install and set up Intent in your Laravel project using the Laravel Installer or Composer."
+---
+
+## Using Intent CLI
+Just run init command to start a new project:
+<Installation command='npx @intentui/cli@latest init' />
+With that command, Intent will ask you a few questions about your project.
+```
+✔ No setup project detected. Do you want to start a new project? (Y/n) Yes
+✔ What language do you want to use? Typescript
+? Which framework do you want to use?
+❯ Laravel
+  Next.js
+  Remix
+  Vite
+```
+
+## Laravel Installer
+If you prefer the Laravel Installer, you can set up Intent by running the following command:
+<Installation command='laravel new app --using=intentui/laravel'/>
+
+## Composer
+Alternatively, if you're using Composer, install Intent with the command below:
+<Installation command='composer create-project intentui/laravel app'/>
+
+Once installed, you can start adding components to your project by running:
+<Installation command='npx @intentui/cli@latest add table'/>
+
+## Source Code
+You can also clone the repository to get started right away. Clone the latest version from the [GitHub repository](https://github.com/intentuilabs/laravel).
+
+## Other Framework
+You might be interested in using Intent with other frameworks.
+<FrameworkGuides/>

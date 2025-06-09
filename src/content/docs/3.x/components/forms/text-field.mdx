@@ -1,0 +1,67 @@
+---
+title: "Text Field"
+description: A basic input field for entering short text, commonly used for forms, user input, and data entry.
+order: 2
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/TextField.html#props"]
+---
+
+
+## Text Field
+
+A text field is a box where you can type in text, like your name or email.
+<How minW72 toUse="forms/text-field/text-field-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['text-field']}/>
+
+## Composed Components
+<Composed components={['field']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components' ,'@intentui/icons']}/>
+
+<SourceCode toShow='text-field'/>
+
+## Anatomy
+<Anatomy show='text-field-anatomy'/>
+
+## Suffix and Prefix
+Enhance your TextField by adding a prefix or suffix. Whether it’s text or icons, it’s flexible to fit your design.
+<How minW72 toUse="forms/text-field/text-field-prefix-suffix-demo" />
+
+## Suffix with Button
+Add a button to the suffix by simply including it in the suffix prop. While you can do the same with a prefix, it’s more common to see it as a suffix.
+<How minW72 toUse="forms/text-field/text-field-suffix-button-demo" />
+
+## Pending
+Activate the loading state on your TextField with the `isPending` prop.
+<How minW72 toUse="forms/text-field/text-field-pending-demo" />
+
+## Revealable
+When using a text field as a password input, you may want the option to reveal the password. To enable this feature, simply add the `isRevealable` prop. However, ensure that the input type is explicitly set to 'password', as this is a required condition.
+<How minW72 toUse="forms/text-field/text-field-revealable-demo" />
+
+## Validation
+In this example, we’ll ensure it’s treated as a strict requirement.
+<How minW72 toUse="forms/text-field/text-field-validation-demo" />
+
+## Controlled
+Manage the TextField value through the `value` prop for controlled usage.
+<How minW72 toUse="forms/text-field/text-field-controlled-demo" />
+
+## Uncontrolled
+Manage the TextField value through the `defaultValue` prop for uncontrolled usage.
+<How minW72 toUse="forms/text-field/text-field-uncontrolled-demo" />
+
+## Description
+You can add a description to the text field by using the `description` prop.
+<How minW72 toUse="forms/text-field/text-field-description-demo" />
+
+## Readonly
+Set the TextField to readonly, preventing any edits.
+<How minW72 toUse="forms/text-field/text-field-readonly-demo" />
+
+## Disabled
+When the TextField is disabled, it becomes non-editable and appears inactive.
+<How minW72 toUse="forms/text-field/text-field-disabled-demo" />

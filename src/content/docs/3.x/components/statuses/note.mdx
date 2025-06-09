@@ -1,0 +1,28 @@
+---
+title: Note
+description: A styled text component for highlighting important information, warnings, or contextual messages within a UI.
+order: 4
+published: true
+---
+
+## Basic
+The Note component displays a note with a title and description, providing an easy way to highlight important information.
+<How isCenter={false} toUse="statuses/note/note-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['note']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+<SourceCode toShow='note'/>
+
+## Anatomy
+<Anatomy show='note-anatomy'/>
+
+## Intent
+By default, the note is displayed with a primary intent. You can change the intent by passing the `intent` prop. This example demonstrates different intents.
+<How toUse="statuses/note/note-intent-demo" />
+
+## No Indicator
+If you don't want an indicator, you can set the `indicator` prop to `false`.
+<How isCenter={false} toUse="statuses/note/note-no-indicator-demo" />

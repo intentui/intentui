@@ -1,0 +1,137 @@
+---
+title: "Command Menu"
+description: A command menu is an enhanced button that opens a menu of options, making it a powerful alternative to a combobox, perfect for command palettes, menus, and more.
+order: 4
+published: true
+status: beta
+references: ["https://react-spectrum.adobe.com/react-aria/Autocomplete.html#props", "https://react-spectrum.adobe.com/react-aria/Modal.html#props"]
+---
+
+## Basic
+This command menu is straightforward and always under your control, allowing you to open and close it as needed.
+<How toUse="controls/command-menu/command-menu-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['command-menu']} />
+
+## Composed Components
+<Composed components={['modal', 'menu', 'keyboard']} />
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']} />
+<SourceCode toShow='command-menu' />
+
+## Anatomy
+<Anatomy show='command-menu-anatomy'/>
+
+## Section
+While you can operate the command menu solo, utilizing sections can organize commands more effectively.
+<How toUse="controls/command-menu/command-menu-section-demo" />
+
+## Separator
+Creating a separator is super simple—just use `CommandMenu.Separator`. However, make sure to place it within a `CommandMenu.Section` for proper structure.
+<How toUse="controls/command-menu/command-menu-separator-demo" />
+
+## Blurred
+The `isBlurred` prop can be used to blur-sm the background of the `CommandMenu` component. To do that, simply add the prop to the `CommandMenu` component:
+<How toUse="controls/command-menu/command-menu-blur-demo" />
+
+## Keyboard
+Integrate keyboard interaction with the command menu. Note that keyboard functionality may be limited on smaller screens.
+<How toUse="controls/command-menu/command-menu-keyboard-demo" />
+
+## Trigger by Keyboard
+Activate the command menu via keyboard commands, ideal for initiating command palettes.
+<How toUse="controls/command-menu/command-menu-trigger-by-keyboard-demo" />
+
+## Danger
+Highlight a command item as dangerous by changing its color to red, indicating a warning.
+<How toUse="controls/command-menu/command-menu-danger-item-demo" />
+
+## Controlled
+Dynamically manage the command palette with the `inputValue` and `onInputChange` props, ensuring it stays responsive to updates from the parent component. Additionally, ensure each `CommandMenu.Item` includes a `textValue` prop, enabling seamless item filtering through the search input.
+<How toUse="controls/command-menu/command-menu-controlled-demo" />
+Additionally, control the execution of an action upon selecting an item:
+```
+<CommandItem onAction={() => console.log('share intentui.com/d/command')} />
+```
+
+## Pending
+The `isPending` prop can be used to indicate that the command menu is loading data. This can be useful when you need to display a loading indicator while the data is being fetched.
+<How toUse="controls/command-menu/command-menu-pending-demo" />
+
+## Disabled
+Disable items in the command menu to make them non-interactive, appearing grayed out.
+<How toUse="controls/command-menu/command-menu-disabled-demo" />
+
+## Hide Escape Button
+To hide the escape button, set `escapeButton` to `false`. View this setup in the [Command Description](#description) section.
+```
+<CommandMenu
+  escapeButton={false}
+  isOpen={isOpen}
+  onOpenChange={setIsOpen}
+/>
+```
+
+## Description
+Enhance command items with descriptions using the `CommandDescription` component. Be aware that keyboard accessibility might be limited on smaller screens.
+<How toUse="controls/command-menu/command-menu-description-demo" />
+
+## Hide Scrollbar
+To hide the scrollbar, set `className` to `scrollbar-hidden`. But before you do that, make sure to add this snippet into your css file.
+```css
+@utility scrollbar-hidden {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+```
+
+```
+<CommandMenu.List className="scrollbar-hidden">
+```
+
+## Navigating
+Indeed, when using this command palette within client-side frameworks like Next.js or Inertia.js, it’s practical to automatically close the palette upon navigating via a link. Here’s how you can manage that:
+
+### Inertia.js
+In Inertia.js, utilize the `router.on('navigate')` event to automatically close the command palette when navigation occurs. Here’s an example:
+This setup ensures that the command palette closes seamlessly when the user navigates to a new page, maintaining a clean and distraction-free user interface.
+
+```tsx
+export function CommandPalette({ open, setOpen }: Props) {
+  React.useEffect(() => {
+    router.on('navigate', () => setOpen(false))
+  }, [pathname, setOpen])
+  return (...)
+```
+
+### Next.js
+When using Next.js, you can use the `usePathname` hook to close the command palette when you navigate to a new page.
+
+```
+export function CommandPalette({ open, setOpen }: Props) {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+  return (...)
+```
+
+### On Action
+
+To close the command palette when an action is performed, use the `onAction` prop. This prop accepts a callback function that is called when an action is performed. The callback function receives the action object as an argument.
+
+```
+<CommandMenu
+  onAction={(action) => {
+    if (action.type === 'close') {
+      setIsOpen(false)
+    }
+  }}
+/>
+```

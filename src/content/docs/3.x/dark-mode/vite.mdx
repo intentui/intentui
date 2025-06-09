@@ -1,0 +1,39 @@
+---
+title: Vite
+description: Got a Vite project? Let's flip the switch to dark mode and get that cool, sleek look in a snap. Here’s how to do it.
+order: 1
+published: true
+---
+
+## Starter Kit
+If you want, you always use the starter kit to get started. You can find it <NewTab href='https://github.com/intentuilabs/vite'>Here</NewTab>.
+
+## Provider and Switcher
+First of all, you need to install the `@intentui/icons` package.
+<Installation options={{ isManual: false }}  items={['@intentui/icons']} />
+
+After that, we need two files: `theme-provider.tsx` and `theme-switcher.tsx`.
+<CodeBlock
+    source={{
+        'theme-provider.tsx': 'dark-mode/vite/theme-provider.tsx',
+        'theme-switcher.tsx': 'dark-mode/vite/theme-switcher.tsx',
+    }} />
+
+## Usage
+Then you can wrap your app with the provider. For example if you are using Laravel with Inertia.js, you can put it inside your `app.tsx` like so:
+
+```tsx {5} {9-11}
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.tsx'
+import './index.css'
+import { ThemeProvider } from './components/theme-provider.tsx'
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
+)
+```

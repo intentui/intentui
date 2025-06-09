@@ -1,0 +1,68 @@
+---
+title: "Button"
+description: Buttons play a crucial role in functionality, whether for submitting a form or navigating to another page.
+order: 1
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Button.html#props"]
+---
+
+## Basic
+A button allows users to perform actions through clicks, presses, taps, or keystrokes.
+<How toUse="buttons/button/button-basic-demo" />
+
+## Installation
+<Installation options={{isComponent: true}} items={['button']}/>
+
+## Manual Installation
+
+<Installation options={{isManual: true}} items={['react-aria-components', 'tailwind-variants']}/>
+
+<SourceCode toShow='button'/>
+
+## Anatomy
+<Anatomy show='button-anatomy'/>
+
+
+## Intent
+Buttons come in different intents, each with its own color scheme.
+
+<How toUse="buttons/button/button-intent-demo" />
+
+## Shape
+Buttons support various shapes to fit different design needs.
+
+<How toUse="buttons/button/button-shape-demo" />
+
+## Size
+Buttons are available in multiple sizes.
+
+<How toUse="buttons/button/button-size-demo" />
+
+## With Icon
+You can add icons to buttons, and their color will match the button's color.
+
+<How toUse="buttons/button/button-icon-demo" />
+
+## With Only Icon
+For icon-only buttons, use the `size="square-petite"` prop to make them more compact.
+
+<How toUse="buttons/button/button-only-icon-demo" />
+
+## Disabled
+A disabled button cannot be interacted with and is visually styled to reflect its state.
+
+<How toUse="buttons/button/button-disabled-demo" />
+
+## Pending
+A button can indicate a pending state using the `isPending` prop. This provides feedback for actions that take time, communicates the status to assistive technologies, and disables interactions except for focus.
+
+<How toUse="buttons/button/button-pending-demo" />
+
+## With Loader
+You can add a loader to indicate ongoing processes.
+
+<How toUse="buttons/button/button-loader-demo" />
+
+## Link
+Sometimes, you need to use styles from buttons for links. Just use the link and use the `buttonStyles` to the className prop.
+<How toUse="buttons/button/button-link-demo" />

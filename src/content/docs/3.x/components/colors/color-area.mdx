@@ -1,0 +1,44 @@
+---
+title: "Color Area"
+description: An interactive color selection tool that enables users to pick a color by adjusting both hue and saturation within a 2D space.
+order: 3
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/ColorArea.html#props"]
+---
+
+## Basic
+A color area allows users to select a color interactively.
+<How toUse="colors/color-area/color-area-demo" />
+
+## Composed Components
+<Composed components={['color-thumb']}/>
+
+## Installation
+<Installation options={{isComponent: true}} items={['color-area']}/>
+
+## Manual Installation
+<Installation options={{isManual: true}} items={['react-aria-components']}/>
+<SourceCode toShow='color-area'/>
+
+## Anatomy
+<Anatomy show='color-area-anatomy'/>
+
+## Channel
+Specify the color channels for the horizontal and vertical axes using the `xChannel` and `yChannel` properties.
+<How toUse="colors/color-area/color-area-channel-demo" />
+
+## Space
+Define the color space for operation, which must align with the xChannel and yChannel. The default is set based on the `color` or `defaultColor` value. Valid types include `rgb`, `hsl`, and `hsb`.
+<How toUse="colors/color-area/color-area-space-demo" />
+
+## Controlled
+Control the color area by specifying channels for the horizontal (`xChannel`) and vertical (`yChannel`) axes.
+<How toUse="colors/color-area/color-area-controlled-demo" />
+
+## Disabled
+Disable the color area component. While it's possible to disable the thumb component, it's generally not advisable.
+<How toUse="colors/color-area/color-area-disabled-demo" />
+
+## Color Area with Slider
+You can use the color area with the slider to control the color.
+<How toUse="colors/color-area/color-area-with-slider-demo" />

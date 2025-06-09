@@ -1,0 +1,118 @@
+---
+title: "Pagination"
+description: A structured navigation system that divides content into multiple pages, improving load performance and user experience.
+order: 3
+published: true
+status: beta
+references: ["https://react-spectrum.adobe.com/react-aria/ListBox.html#props"]
+---
+
+
+## Basic
+Pagination is a navigation component that allows users to move through multiple pages. It’s composed of several elements working together to provide a smooth user experience.
+<How isCenter={false} toUse="navigation/pagination/pagination-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['pagination']}/>
+
+## Composed Components
+<Composed components={['button']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow='pagination'/>
+
+## Anatomy
+<Anatomy show='pagination-anatomy'/>
+
+## Simple
+The simple pagination setup doesn’t display page numbers, using only basic arrow navigation.
+<How isCenter={false} toUse="navigation/pagination/simple-pagination-demo" />
+
+## Using Collections
+Since the pagination list is part of the `GridList` primitive, handling collections is easy. Just pass the collections into the `PaginationList` using the `items` prop.
+<How isCenter={false} toUse="navigation/pagination/pagination-dynamic-demo" />
+
+## Preserving Scroll
+Sometimes, you need to prevent the page from scrolling to the top when users interact with pagination. You can do this by passing scroll-related props from your routerOptions into the `PaginationLink` component.
+
+### Inertia.js
+When using [Inertia.js](https://inertiajs.com/scroll-management#scroll-preservation), you can use the `preserveScroll` prop to keep the page from scrolling to the top during pagination interactions.
+```tsx {4}
+<PaginationList aria-label="Pagination Segment" items={pages}>
+  {(item) => (
+    <PaginationItem
+      routerOptions={{ preserveScroll: true }}
+      id={item.label.toString()}
+      isCurrent={item.isCurrent}
+      href={item.url ?? ''}
+    >
+```
+
+### Next.js
+When using [Next.js](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#disabling-scroll-restoration), apply the `scroll` prop to stop the page from scrolling to the top when users navigate through pagination.
+```tsx {4}
+<PaginationList aria-label="Pagination Segment" items={pages}>
+  {(item) => (
+    <PaginationItem
+      routerOptions={{ scroll: false }}
+      id={item.label.toString()}
+      isCurrent={item.isCurrent}
+      href={item.url ?? ''}
+    >
+```
+
+### Remix
+When using [Remix](https://remix.run/docs/en/main/components/scroll-restoration#preventing-scroll-reset), you can add the `preventScrollReset` prop to prevent the page from scrolling to the top when users interact with pagination.
+
+```tsx {4}
+<PaginationList aria-label="Pagination Segment" items={pages}>
+  {(item) => (
+    <PaginationItem
+      routerOptions={{ preventScrollReset: true }}
+      id={item.label.toString()}
+      isCurrent={item.isCurrent}
+      href={item.url ?? ''}
+    >
+```
+
+### React Router
+If you're using React Router, check out this [tutorial](https://youtu.be/4_H8j3rkpjI?t=61) for guidance. After that, give it a go on your own. Apologies, I'm not fully up to speed with the latest updates in React Router.
+
+### Considering
+You might be thinking, "Why not just bake this functionality directly into the Pagination component, right?" But it's not that simple. I tried integrating it into the Pagination setup, but when you start mixing in other functionalities, like those Inertia.js router options, things can get messy. So, I kept it straightforward to avoid any conflicts.
+```tsx {10}
+const renderListItem = (
+  props: ListBoxItemProps & {
+    textValue?: string
+    ariaCurrent?: string | undefined
+    isDisabled?: boolean
+    className?: string
+  },
+  children: React.ReactNode
+) => (
+  <ListBoxItem routerOptions={{ preserveScroll: true, ...props.routerOptions }} {...props}>
+    {children}
+  </ListBoxItem>
+)
+```
+So here's how I roll with it:
+```tsx {4}
+ <PaginationList aria-label="Pagination Segment" items={paginate.pages}>
+  {(item) => (
+    <PaginationItem
+      routerOptions={{ only: ['series'] }}
+      id={item.label.toString()}
+      isCurrent={item.isCurrent}
+      href={item.url ?? ''}
+    >
+      {item.label}
+    </PaginationItem>
+  )}
+</PaginationList>
+```
+I figured it'd be chill, but nah, it ain't cuttin' it. That’s why I’m throwin' this idea your way: toss that option in when you're rockin' the pagination component. Ain’t sayin' it's top shelf, but it’s one way to roll.
+
+## Client Side Routing
+Make sure you have read [Client Side Routing](/docs/getting-started/client-side-routing) before using this component.

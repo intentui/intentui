@@ -1,0 +1,23 @@
+---
+title: Astro
+description: Want making your Astro project slick with dark mode? Here’s the playbook for getting that moody vibe on lock.
+order: 5
+published: true
+---
+
+
+## Inline Scripts
+Astro supports inline scripts, so we can get localStorage and set the theme.
+<CodeBlock
+    source={{
+        'inline-script.tsx': 'dark-mode/astro/inline-script.tsx',
+    }} />
+
+## Theme Switcher
+First, install the `@intentui/icons` package.
+<Installation options={{ isManual: true }}  items={['@intentui/icons']} />
+And then, add the following code the component where you want to use the theme switcher.
+<CodeBlock
+    source={{
+        'theme-switcher.tsx': 'dark-mode/astro/theme-switcher.tsx',
+    }} />

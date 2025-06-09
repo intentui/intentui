@@ -1,0 +1,58 @@
+---
+title: "Search Field"
+description: A text input designed for searching, often featuring built-in filtering, suggestions, and a clear button.
+order: 3
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/SearchField.html#props"]
+---
+
+## Basic
+
+A search field is a box where you can type in keywords to search for something, like finding content on a website.
+<How toUse="forms/search-field/search-field-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['search-field']}/>
+
+## Composed Components
+<Composed components={['field', 'button']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow='search-field'/>
+
+## Anatomy
+<Anatomy show='search-field-anatomy'/>
+
+## With Label
+You can add a label to the search field by using the `label` prop.
+<How toUse="forms/search-field/search-field-with-label-demo" />
+
+## Validation
+Add a validation message to the search field by setting the `validationMessage` prop.
+<How toUse="forms/search-field/search-field-validation-demo" />
+
+## Pending
+Show a loading indicator to indicate that the search field is in a pending state by using the `isPending` prop.
+<How toUse="forms/search-field/search-field-pending-demo" />
+
+## Description
+You can add a description to the search field by using the `description` prop.
+<How toUse="forms/search-field/search-field-description-demo" />
+
+## Controlled
+Like other fields, the search field can be controlled by managing its value through the `value` prop.
+<How toUse="forms/search-field/search-field-controlled-demo" />
+
+## Uncontrolled
+Like other fields, the search field can be controlled by managing its value through the `defaultValue` prop.
+<How toUse="forms/search-field/search-field-uncontrolled-demo" />
+
+## Readonly
+When the search field is set to readonly, it cannot be edited.
+<How toUse="forms/search-field/search-field-readonly-demo" />
+
+## Disabled
+Disable the search field by using the `isDisabled` prop.
+<How toUse="forms/search-field/search-field-disabled-demo" />

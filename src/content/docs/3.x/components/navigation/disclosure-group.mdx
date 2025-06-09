@@ -1,0 +1,64 @@
+---
+title: Disclosure Group
+description: A collection of disclosure components that manage multiple collapsible sections while maintaining structured content visibility.
+order: 6
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html#props"]
+---
+
+## Basic
+A disclosure group, also known as an accordion, is a set of collapsible sections that help organize content in a structured, easy-to-navigate format. Users can expand or collapse each section as needed, improving readability and making it easier to browse large amounts of information.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-demo" />
+
+## Installation
+<Installation options={{isComponent: true}} items={['disclosure']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow='disclosure'/>
+
+## Anatomy
+<Anatomy show='disclosure-group-anatomy'/>
+
+## Default Expanded
+Set the initially expanded sections by providing an array of keys to the `defaultExpandedKeys` prop. These keys can be either numbers or strings.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-default-expand-demo" />
+
+## Allow Multiple Expanded
+Allow multiple sections to be expanded at once by using the `allowsMultipleExpanded` prop.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-allow-multiple-expand-demo" />
+
+
+## Nested
+Disclosure Groups can be nested to create a hierarchy of sections. Use the DisclosurePanel component to add content to each nested group. To ensure a polished appearance, make sure the trigger within the nested group includes a span, as shown below:
+```tsx {6}
+<DisclosurePanel className="bg-muted">
+  <DisclosureGroup allowsMultipleExpanded>
+    {item.children.map((child, childIndex) => (
+      <Disclosure key={childIndex} id={childIndex}>
+        <DisclosureTrigger>
+          <span>
+```
+Check out the example below to see it in action.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-nested-demo" />
+
+## With Icon
+You can add icons to the disclosure group to make it more visually appealing.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-with-icon-demo" />
+
+## Hide Border
+To remove the border between sections, simply apply standard Tailwind CSS classes.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-border-hidden-demo" />
+
+## Hide Indicator
+To remove the visual indicator (arrow), use standard Tailwind CSS classes.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-hide-indicator-demo" />
+
+## Hide Everything
+If you want to hide both the border and the indicator, use the `hideBorder` and `hideIndicator` props.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-hide-everything-demo" />
+
+## Disabled
+Disable specific sections by adding the `isDisabled` prop to the corresponding item.
+<How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-disabled-demo" />

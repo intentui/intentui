@@ -1,0 +1,55 @@
+---
+title: "Checkbox Group"
+description: A collection of checkboxes that enables users to select multiple options from a predefined list.
+order: 7
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html#props"]
+---
+
+## Basic
+A group of checkboxes that lets you select multiple options at once.
+<How toUse="forms/checkbox/checkbox-group-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['checkbox']}/>
+
+## Composed Components
+<Composed components={['field']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+
+<SourceCode toShow='checkbox'/>
+
+## Anatomy
+<Anatomy show='checkbox-group-anatomy'/>
+
+## Description
+Add a description to the checkbox group using the `description` prop.
+<How minW72 toUse="forms/checkbox/checkbox-group-description-demo" />
+
+## Validation
+The checkbox group is in an error state.
+<How toUse="forms/checkbox/checkbox-group-validation-demo" />
+
+## Indeterminate
+The checkbox group is in an indeterminate state.
+<How toUse="forms/checkbox/checkbox-group-indeterminate-demo" />
+
+## Controlled
+Control the checkbox group value with the `value` prop.
+<How minW72 toUse="forms/checkbox/checkbox-group-controlled-demo" />
+
+## Uncontrolled
+Control the checkbox group value with the `defaultValue` prop.
+<How minW72 toUse="forms/checkbox/checkbox-group-uncontrolled-demo" />
+
+## Disabled
+Disable the entire checkbox group by passing the `isDisabled` prop.
+<How minW72 toUse="forms/checkbox/checkbox-group-disabled-demo" />
+
+## Read Only
+When you need just a read-only checkbox group, pass the `isReadOnly` prop.
+```
+<CheckboxGroup isReadOnly/>
+```

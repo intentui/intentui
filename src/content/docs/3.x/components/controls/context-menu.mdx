@@ -1,0 +1,54 @@
+---
+title: "Context Menu"
+description: Opens a menu at the exact spot you right-click, providing quick access to relevant options.
+order: 6
+published: true
+status: beta
+---
+
+## Basic
+This component excels in desktop applications but has significant limitations. Its lack of accessibility and mobile compatibility are notable drawbacks. **React Aria** hasn't released an official version of this component yet, possibly due to these issues.
+
+Unless it's absolutely necessary for your project, I'd advise against using it. For most scenarios requiring accessible, rich interfaces, consider alternatives like [Menus](/docs/components/collections/menu) or [Popovers](/docs/components/overlays/popover) instead. These components typically offer better cross-platform support and accessibility features.
+
+The initial release will be an alpha version due to ongoing issues with cursor positioning accuracy. If you're able to contribute, I'd appreciate your help in submitting a [pull request](https://github.com/irsyadadl/intentui) to address this component's limitations.
+<How toUse="controls/context-menu/context-menu-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['context-menu']}/>
+
+## Composed Components
+<Composed components={['menu']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']} />
+
+<SourceCode toShow='context-menu' />
+
+## Description
+You can add details to menu items by using the `ContextMenu.Description` component.
+<How toUse="controls/context-menu/context-menu-detail-description-demo" />
+
+## Danger
+Designate a menu item as dangerous.
+<How toUse="controls/context-menu/context-menu-danger-demo" />
+
+## With Icon
+Enhance context menu item by adding icons.
+<How toUse="controls/context-menu/context-menu-with-icon-demo" />
+
+## Separator
+Separate context menu items with a separator.
+<How toUse="controls/context-menu/context-menu-separator-demo" />
+
+
+## Context Sub Menu
+Sorry, this component doesn't exist yet. It's on our roadmap.
+
+## Disabled
+Disable specific menu items.
+<How toUse="controls/context-menu/context-menu-disabled-demo" />
+Also, you can disable items directly in `MenuContent` by using the `disabledKeys` prop.
+```tsx
+<ContextMenu.Content disabledKeys={['gsu']} />
+```

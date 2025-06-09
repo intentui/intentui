@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "area-chart",
+    "line-chart",
+    "bar-chart",
+    "pie-chart",
+    "radar-chart",
+    "radial-bar-chart",
+    "scatter-chart",
+    "tooltip-chart"
+  ]
+}

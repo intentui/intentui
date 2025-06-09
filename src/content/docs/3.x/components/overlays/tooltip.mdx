@@ -1,0 +1,52 @@
+---
+title: Tooltip
+description: A brief, informative message that appears when hovering or focusing on an element.
+order: 5
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/Tooltip.html#props"]
+---
+
+
+## Basic
+Tooltips are small overlays that display information about an element when the user hovers over or interacts with it.
+<How toUse="overlays/tooltip/tooltip-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['tooltip']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+<SourceCode toShow='tooltip'/>
+
+## Anatomy
+<Anatomy show='tooltip-anatomy'/>
+
+
+## Placement
+By default, the tooltip appears at the top, but you can change its position by using the `placement` prop.
+<How isCenter={false} toUse="overlays/tooltip/tooltip-placement-demo" />
+
+## Intent
+Tooltip has two intents: `default` and `inverse`. You can change the intent by using the `intent` prop.
+<How toUse="overlays/tooltip/tooltip-intent-demo" />
+
+## Without Arrow
+You can remove the arrow from the tooltip by setting the `showArrow` prop to `false`.
+<How toUse="overlays/tooltip/tooltip-without-arrow-demo" />
+
+## Directions
+
+The list above shows the primary directions, but you can also use more specific placements like `bottom left` or `top right`. Here are all the available placement options:
+
+| Primary Direction | Placement                                                             |
+|-------------------|-----------------------------------------------------------------------|
+| `bottom`          | `bottom`, `bottom left`, `bottom right`, `bottom start`, `bottom end` |
+| `top`             | `top`, `top left`, `top right`, `top start`, `top end`                |
+| `left`            | `left`, `left top`, `left bottom`                                     |
+| `start`           | `start`, `start top`, `start bottom`                                  |
+| `right`           | `right`, `right top`, `right bottom`                                  |
+| `end`             | `end`, `end top`, `end bottom`                                        |
+
+## Delay
+Tooltip rolls out the welcome mat after you hover for 1.5 secs. Wanna speed it up or slow it down? Just slide in a `delay` prop. Peep these [guidelines](https://spectrum.adobe.com/page/tooltip/#Immediate-or-delayed-appearance) for the scoop.
+<How toUse="overlays/tooltip/tooltip-delay-demo" />

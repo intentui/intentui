@@ -1,0 +1,43 @@
+---
+title: "Date Picker"
+description: A UI component that provides an interactive way to select a single date from a calendar view.
+order: 5
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/DatePicker.html#props"]
+---
+
+## Basic
+
+A date picker combines a DateField with a Calendar popover, allowing users to either type in or select a date and time.
+<How minW72 toUse="date-and-time/date-picker/date-picker-demo" />
+
+## Installation
+<Installation options={{ isComponent: true }} items={['date-picker']}/>
+
+## Composed Components
+<Composed components={['date-field', 'button', 'calendar', 'popover']}/>
+
+## Manual Installation
+<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+
+<SourceCode toShow='date-picker'/>
+
+## Date and Time
+While not a full-fledged date-time picker, this setup lets you edit both date and time in a segmented field.
+<How minW72 toUse="date-and-time/date-picker/date-time-demo" />
+
+## Validation
+To ensure that the date picker is filled out, use the `isRequired` prop.
+<How minW72 toUse="date-and-time/date-picker/date-picker-required-demo" />
+
+## Custom Validation
+The `validate` function is your go-to for custom validation rules. It checks the current date value and returns an error message string or strings if the value doesn't meet your criteria.
+<How minW72 toUse="date-and-time/date-picker/date-picker-custom-validation-demo" />
+
+## Controlled
+Take control of your date picker by passing a `value` prop, which allows you to manage the selected date.
+<How minW72 toUse="date-and-time/date-picker/date-picker-controlled-demo" />
+
+## Disabled
+When the date picker is disabled, it becomes non-interactive and visually represents a disabled state.
+<How minW72 toUse="date-and-time/date-picker/date-picker-disabled-demo" />
