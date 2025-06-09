@@ -100,7 +100,7 @@ const ComboBoxInput = (props: InputProps) => {
     <FieldGroup className="relative pl-0">
       <Input {...props} placeholder={props?.placeholder} />
       <Button
-        size="square-petite"
+        size="sq-sm"
         intent="plain"
         className="h-7 w-8 rounded pressed:bg-transparent outline-offset-0 hover:bg-transparent active:bg-transparent **:data-[slot=icon]:pressed:text-fg **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:hover:text-fg"
       >

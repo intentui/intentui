@@ -8,7 +8,7 @@ export default function ToastActionDemo() {
     <div className="flex gap-3">
       <Button
         intent="outline"
-        size="small"
+        size="sm"
         onPress={() =>
           toast("New comment on your post!", {
             action: {
@@ -22,7 +22,7 @@ export default function ToastActionDemo() {
       </Button>
       <Button
         intent="outline"
-        size="small"
+        size="sm"
         onPress={() =>
           toast("New comment on your post!", {
             action: {
@@ -40,7 +40,7 @@ export default function ToastActionDemo() {
       </Button>
       <Button
         intent="outline"
-        size="small"
+        size="sm"
         onPress={() =>
           toast("New comment on your post!", {
             cancel: {

@@ -63,7 +63,7 @@ async function generate() {
     const section = String(parts[0]).toLowerCase()
     const name = path.basename(file, ".mdx")
     const slug = `/docs/${siteConfig.currentVersion}/${file.replace(/\.mdx$/, "").replace(/\\/g, "/")}`
-    const title = titleize(name)
+    const title = name === "cli" ? "CLI" : titleize(name)
 
     if (section === "components") {
       const subsection = parts[1]

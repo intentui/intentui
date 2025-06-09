@@ -38,7 +38,7 @@ export function Controller({ searchParams }: SearchParamsProps) {
               aria-label={`Change filter to ${isSelected === "solid" ? "regular" : "solid"}`}
               intent="outline"
               className="size-10"
-              size="square-petite"
+              size="sq-sm"
               onPress={() => onFilter(isSelected === "solid" ? "regular" : "solid")}
             >
               {isSelected === "solid" ? <IconBulletFill /> : <IconBullet />}

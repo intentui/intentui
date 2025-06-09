@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/sidebar"
 import { Tabs } from "@/components/ui/tabs"
 import { Toggle } from "@/components/ui/toggle"
+import { siteConfig } from "@/config/site"
 import quotes from "@/json/quotes.json"
 import type { RegistryItem } from "@/types"
 import {
@@ -212,7 +213,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                 <Link
                   href={fullscreen}
                   target="_blank"
-                  className={buttonStyles({ intent: "plain", size: "square-petite" })}
+                  className={buttonStyles({ intent: "plain", size: "sq-sm" })}
                   aria-label="Open in fullscreen"
                 >
                   <IconFullscreen />
@@ -277,7 +278,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                       `)
                     }}
                     className="-mr-2 hover:bg-transparent **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:duration-200 hover:**:data-[slot=icon]:rotate-90"
-                    size="square-petite"
+                    size="sq-sm"
                     intent="plain"
                   >
                     <IconX />
@@ -319,7 +320,7 @@ const ToggleDevice = (props: React.ComponentProps<typeof Toggle>) => {
   return (
     <Toggle
       intent="plain"
-      size="square-petite"
+      size="sq-sm"
       className="relative size-7.5 selected:bg-bg hover:bg-bg selected:*:data-[slot=icon]:fill-primary/20 selected:*:data-[slot=icon]:text-primary hover:*:data-[slot=icon]:text-primary"
       {...props}
     />

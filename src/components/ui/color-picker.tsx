@@ -48,7 +48,7 @@ const ColorPicker = ({
         <Popover>
           <Button
             isDisabled={isDisabled}
-            size={label ? "medium" : "square-petite"}
+            size={label ? "md" : "sq-sm"}
             intent="plain"
             className={twJoin(
               "*:data-[slot=color-swatch]:-mx-0.5 w-auto px-2.5",
@@ -99,7 +99,7 @@ const EyeDropper = () => {
   return (
     <Button
       aria-label="Eye dropper"
-      size="square-petite"
+      size="sq-sm"
       intent="outline"
       onPress={() => {
         const eyeDropper = window.EyeDropper ? new window.EyeDropper() : null

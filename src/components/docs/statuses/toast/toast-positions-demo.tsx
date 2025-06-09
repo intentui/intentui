@@ -18,7 +18,7 @@ export default function ToastPositionsDemo() {
       {positions.map((position) => (
         <Button
           intent="outline"
-          size="small"
+          size="sm"
           key={position}
           onPress={() =>
             toast("The registration is successful, click here to continue.", { position })

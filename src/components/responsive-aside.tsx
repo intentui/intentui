@@ -64,7 +64,7 @@ export function ResponsiveAside({
             <IconSearch />
           </ButtonPrimitive>
 
-          <ThemeSwitcher intent="plain" shape="circle" />
+          <ThemeSwitcher intent="plain" isCircle />
 
           <LinkIcon
             aria-label="Open Intent X / Twitter"
@@ -138,8 +138,8 @@ function LinkIcon({ className, ...props }: React.ComponentProps<typeof Link>) {
       {...props}
       className={buttonStyles({
         intent: "plain",
-        size: "square-petite",
-        shape: "circle",
+        size: "sq-sm",
+        isCircle: true,
       })}
     />
   )

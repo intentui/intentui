@@ -18,7 +18,7 @@ export default function MenuWithIconDemo() {
   return (
     <Menu>
       <Menu.Trigger aria-label="Open Menu">
-        <Avatar alt="kurt cobain" size="large" src="/images/avatar/cobain.jpg" />
+        <Avatar alt="kurt cobain" size="lg" src="/images/avatar/cobain.jpg" />
       </Menu.Trigger>
       <Menu.Content placement="bottom" showArrow className="sm:min-w-64">
         <Menu.Header separator>

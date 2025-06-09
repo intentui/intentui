@@ -23,7 +23,7 @@ export function Cta() {
           <Link
             target="_blank"
             href={siteConfig.repo}
-            className={buttonStyles({ size: "large", intent: "outline" })}
+            className={buttonStyles({ size: "lg", intent: "outline" })}
           >
             <IconBrandGithub />
             GitHub

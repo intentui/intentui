@@ -2,7 +2,7 @@
 
 import { createContext, use } from "react"
 
-import { badgeIntents, badgeShapes, badgeStyles } from "@/components/ui/badge"
+import { badgeIntents, badgeStyles } from "@/components/ui/badge"
 import { Description, Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconX } from "@intentui/icons"
@@ -20,6 +20,8 @@ import {
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
+
+type CircleProps = { isCircle?: boolean }
 
 const intents = {
   primary: {
@@ -78,21 +80,17 @@ type RestrictedIntent = "primary" | "secondary"
 
 type Intent = "primary" | "secondary" | "warning" | "danger" | "success"
 
-type Shape = keyof typeof badgeShapes
-
-type TagGroupContextValue = {
+interface TagGroupContextValue extends CircleProps {
   intent: Intent
-  shape: Shape
 }
 
 const TagGroupContext = createContext<TagGroupContextValue>({
   intent: "primary",
-  shape: "square",
+  isCircle: true,
 })
 
-interface TagGroupProps extends TagGroupPrimitiveProps {
+interface TagGroupProps extends TagGroupPrimitiveProps, CircleProps {
   intent?: Intent
-  shape?: "square" | "circle"
   errorMessage?: string
   label?: string
   description?: string
@@ -109,7 +107,7 @@ const TagGroup = ({ children, ref, className, ...props }: TagGroupProps) => {
       <TagGroupContext.Provider
         value={{
           intent: props.intent || "primary",
-          shape: props.shape || "square",
+          isCircle: props.isCircle ?? true,
         }}
       >
         {props.label && <Label className="mb-1">{props.label}</Label>}
@@ -139,12 +137,11 @@ const tagStyles = tv({
   },
 })
 
-interface TagProps extends TagPrimitiveProps {
+interface TagProps extends TagPrimitiveProps, CircleProps {
   intent?: Intent
-  shape?: Shape
 }
 
-const Tag = ({ className, intent, shape, ...props }: TagProps) => {
+const Tag = ({ className, intent, isCircle = true, ...props }: TagProps) => {
   const textValue = typeof props.children === "string" ? props.children : undefined
   const groupContext = use(TagGroupContext)
 
@@ -154,14 +151,14 @@ const Tag = ({ className, intent, shape, ...props }: TagProps) => {
       {...props}
       className={composeRenderProps(className, (_, renderProps) => {
         const finalIntent = intent || groupContext.intent
-        const finalShape = shape || groupContext.shape
+        const finalShape = isCircle || groupContext.isCircle
 
         return tagStyles({
           ...renderProps,
           isLink: "href" in props,
           className: twJoin([
             intents[finalIntent]?.base,
-            badgeShapes[finalShape],
+            finalShape ? "rounded-full px-2" : "rounded-md px-1.5",
             renderProps.isSelected ? intents[finalIntent].selected : undefined,
           ]),
         })

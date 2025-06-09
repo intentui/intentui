@@ -15,7 +15,7 @@ export function ThemeSwitcher() {
   return (
     <Button
       intent="outline"
-      size="square-petite"
+      size="sq-sm"
       aria-label="Switch theme"
       onPress={switchTheme}
     >

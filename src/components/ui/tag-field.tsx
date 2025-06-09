@@ -32,7 +32,7 @@ interface TagItemProps {
   name: string
 }
 
-interface TagFieldProps extends Pick<TagGroupProps, "shape">, FieldProps {
+interface TagFieldProps extends Pick<TagGroupProps, "isCircle">, FieldProps {
   intent?: RestrictedIntent
   isDisabled?: boolean
   max?: number
@@ -144,7 +144,7 @@ const TagField = ({
       <Group className={twJoin("flex flex-col", props.isDisabled && "opacity-50")}>
         <TagGroup
           intent={props.intent}
-          shape={props.shape}
+          isCircle={props.isCircle}
           aria-label="List item inserted"
           onRemove={onRemove}
         >
@@ -156,7 +156,7 @@ const TagField = ({
                   list.items.length !== 0
                     ? appearance === "outline" && "gap-1.5 px-1 py-1.5"
                     : "gap-0",
-                  props.shape === "square" && "[&_.jdt3lr2x]:rounded-[calc(var(--radius-lg)-4px)]",
+                  !props.isCircle && "[&_.jdt3lr2x]:rounded-[calc(var(--radius-lg)-4px)]",
                   "[&_.jdt3lr2x]:last:-mr-1 outline-hidden [&_.jdt3lr2x]:cursor-default",
                 )}
               >

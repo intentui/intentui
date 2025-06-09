@@ -17,7 +17,7 @@ export default function LinkButtonDemo() {
       </Link>
       <Link
         className={(renderProps) =>
-          buttonStyles({ ...renderProps, intent: "plain", shape: "circle" })
+          buttonStyles({ ...renderProps, intent: "plain", isCircle: true })
         }
         href="#use-as-button"
       >

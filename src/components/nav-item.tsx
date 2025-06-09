@@ -6,16 +6,6 @@ import type React from "react"
 import { Link } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 
-// const navLinkStyles = tv({
-//   base: "**:[svg]:-mx-0.5 relative flex outline-hidden items-center gap-x-2 py-4.5 text-muted-fg text-sm tracking-tight transition-colors focus-visible:text-fg focus:outline-hidden sm:py-3",
-//   variants: {
-//     isActive: {
-//       false: "text-muted-fg hover:text-fg forced-colors:text-[Gray]",
-//       true: "text-fg forced-colors:text-[WindowText]",
-//     },
-//   },
-// })
-
 interface NavLinkProps {
   href: string
   isActive?: boolean

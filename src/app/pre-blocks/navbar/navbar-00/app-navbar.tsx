@@ -52,10 +52,10 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
 
         <Navbar.Section className="ml-auto hidden md:flex">
           <Navbar.Flex className="sm:gap-x-1">
-            <Button intent="plain" size="square-petite" aria-label="Search for products">
+            <Button intent="plain" size="sq-sm" aria-label="Search for products">
               <IconSearch />
             </Button>
-            <Button intent="plain" size="square-petite" aria-label="Your Bag">
+            <Button intent="plain" size="sq-sm" aria-label="Your Bag">
               <IconShoppingBag />
             </Button>
             <ThemeSwitcher intent="plain" />
@@ -78,10 +78,10 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
         </Navbar.Flex>
         <Navbar.Flex>
           <Navbar.Flex>
-            <Button intent="plain" size="square-petite" aria-label="Search for products">
+            <Button intent="plain" size="sq-sm" aria-label="Search for products">
               <IconSearch />
             </Button>
-            <Button intent="plain" size="square-petite" aria-label="Your Bag">
+            <Button intent="plain" size="sq-sm" aria-label="Your Bag">
               <IconShoppingBag />
             </Button>
             <ThemeSwitcher intent="plain" />
@@ -151,7 +151,7 @@ function UserMenu() {
   return (
     <Menu>
       <Menu.Trigger aria-label="Open Menu">
-        <Avatar alt="cobain" size="small" shape="square" src="/images/avatar/cobain.jpg" />
+        <Avatar alt="cobain" size="sm" isCircle={false} src="/images/avatar/cobain.jpg" />
       </Menu.Trigger>
       <Menu.Content placement="bottom right" className="sm:min-w-56">
         <Menu.Section>

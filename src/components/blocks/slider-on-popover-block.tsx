@@ -22,7 +22,7 @@ export function SliderOnPopoverBlock() {
         ref={button}
         onPress={() => setIsOpen(true)}
         aria-label="Slider on Popover"
-        size="square-petite"
+        size="sq-sm"
         intent="outline"
       >
         <IconAdjustment />

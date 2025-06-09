@@ -5,7 +5,7 @@ import { IconBrandParsinta } from "@intentui/icons"
 
 export default function ButtonOnlyIconDemo() {
   return (
-    <Button size="square-petite" intent="outline">
+    <Button size="sq-sm" intent="outline">
       <IconBrandParsinta />
     </Button>
   )

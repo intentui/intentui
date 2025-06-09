@@ -33,7 +33,7 @@ interface MultipleSelectProps<T>
       "isRequired" | "validate" | "validationBehavior"
     >,
     FieldProps,
-    Pick<TagGroupProps, "shape">,
+    Pick<TagGroupProps, "isCircle">,
     Pick<GroupProps, "isDisabled" | "isInvalid"> {
   className?: string
   errorMessage?: string
@@ -137,7 +137,7 @@ const MultipleSelect = <T extends object>({
             <TagGroup
               onRemove={removeItem}
               aria-hidden
-              shape={props.shape}
+              isCircle={props.isCircle}
               intent={props.intent}
               aria-label="Selected items"
             >
@@ -145,7 +145,7 @@ const MultipleSelect = <T extends object>({
                 className={twMerge(
                   [...selectedKeys].length !== 0 && "flex flex-1 flex-wrap py-1.5 pl-2",
                   "[&_.jdt3lr2x]:last:-mr-1 gap-1.5 outline-hidden",
-                  props.shape === "square" && "[&_.jdt3lr2x]:rounded-[calc(var(--radius-lg)-4px)]",
+                  !props.isCircle && "[&_.jdt3lr2x]:rounded-[calc(var(--radius-lg)-4px)]",
                 )}
                 items={[...selectedKeys].map((key) => ({
                   id: key,

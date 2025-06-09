@@ -8,7 +8,7 @@ import { IconPin, IconUnpin } from "@intentui/icons"
 export default function ToggleControlledDemo() {
   const [isSelected, setSelected] = useState(false)
   return (
-    <Toggle size="square-petite" isSelected={isSelected} onChange={setSelected}>
+    <Toggle size="sq-sm" isSelected={isSelected} onChange={setSelected}>
       {({ isSelected }) => <>{isSelected ? <IconUnpin /> : <IconPin />}</>}
     </Toggle>
   )

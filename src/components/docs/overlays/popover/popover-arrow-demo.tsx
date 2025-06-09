@@ -7,7 +7,7 @@ import { IconBell } from "@intentui/icons"
 export default function PopoverArrowDemo() {
   return (
     <Popover>
-      <Button intent="outline" size="square-petite">
+      <Button intent="outline" size="sq-sm">
         <IconBell />
       </Button>
       <Popover.Content showArrow={false} className="p-4 sm:min-w-72">

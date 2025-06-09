@@ -55,14 +55,14 @@ export const metadata: Metadata = {
   ],
 }
 
-export default async function Page({
-  searchParams,
-}: {
+interface Props {
   searchParams: Promise<{
     query: string
     t: "solid" | "regular"
   }>
-}) {
+}
+
+export default async function Page({ searchParams }: Props) {
   const { query, t } = await searchParams
   return (
     <>
@@ -70,7 +70,7 @@ export default async function Page({
         Ico
         <span className="text-muted-fg">ns</span>
       </Header>
-      <PageContainer className="py-4 sm:py-16">
+      <PageContainer>
         <Suspense
           fallback={
             <div className="flex min-h-96 items-center justify-center">

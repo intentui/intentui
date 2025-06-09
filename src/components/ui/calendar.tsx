@@ -97,18 +97,18 @@ const CalendarHeader = ({
       />
       <div className="flex items-center gap-1">
         <Button
-          size="square-petite"
+          size="sq-sm"
           className="size-8 **:data-[slot=icon]:text-fg sm:size-7"
-          shape="circle"
+          isCircle
           intent="plain"
           slot="previous"
         >
           {direction === "rtl" ? <IconChevronLgRight /> : <IconChevronLgLeft />}
         </Button>
         <Button
-          size="square-petite"
+          size="sq-sm"
           className="size-8 **:data-[slot=icon]:text-fg sm:size-7"
-          shape="circle"
+          isCircle
           intent="plain"
           slot="next"
         >

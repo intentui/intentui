@@ -49,7 +49,7 @@ export default function LineChartControlledDemo() {
             Tracking daily revenue and expenses over the last 3 months
           </Card.Description>
         </div>
-        <ToggleGroup size="extra-small">
+        <ToggleGroup size="xs">
           {["revenue", "expenses"].map((key) => {
             const chart = key as keyof typeof chartConfig
             return (

@@ -103,7 +103,7 @@ export default function DrawerStickyDemo() {
           </div>
         </Drawer.Body>
         <Drawer.Footer>
-          <Drawer.Close shape="circle">Close</Drawer.Close>
+          <Drawer.Close isCircle>Close</Drawer.Close>
         </Drawer.Footer>
       </Drawer.Content>
     </Drawer>

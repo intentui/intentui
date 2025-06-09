@@ -38,7 +38,7 @@ export function ThemeContainer() {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   return (
-    <div className="py-4 sm:py-16">
+    <>
       <PageContainer>
         <div className="flex flex-col divide-y rounded-lg border lg:flex-row lg:divide-x lg:divide-y-0">
           <div className="w-full p-4 lg:w-1/2 lg:p-6">
@@ -134,6 +134,6 @@ export function ThemeContainer() {
           </Button>
         </Sheet.Footer>
       </Sheet.Content>
-    </div>
+    </>
   )
 }

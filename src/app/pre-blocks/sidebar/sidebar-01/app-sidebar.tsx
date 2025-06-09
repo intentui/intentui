@@ -204,7 +204,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
       <SidebarFooter>
         <Menu>
           <Menu.Trigger className="group" aria-label="Profile">
-            <Avatar shape="square" src="/images/avatar/cobain.jpg" />
+            <Avatar isCircle={false} src="/images/avatar/cobain.jpg" />
             <div className="in-data-[sidebar-collapsible=dock]:hidden text-sm">
               <SidebarLabel>Kurt Cobain</SidebarLabel>
               <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>

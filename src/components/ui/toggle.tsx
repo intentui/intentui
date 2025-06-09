@@ -11,14 +11,14 @@ type ToggleGroupContextProps = {
   gap?: 0 | 1 | 2 | 3 | 4
   intent?: "plain" | "outline" | "solid"
   orientation?: "horizontal" | "vertical"
-  size?: "extra-small" | "small" | "medium" | "large" | "square-petite"
+  size?: "xs" | "sm" | "md" | "lg" | "sq-sm"
 }
 
 const ToggleGroupContext = createContext<ToggleGroupContextProps>({
   gap: 1,
   intent: "outline",
   orientation: "horizontal",
-  size: "medium",
+  size: "md",
 })
 
 type BaseToggleGroupProps = Omit<ToggleGroupContextProps, "gap" | "intent">
@@ -78,7 +78,7 @@ const ToggleGroup = ({
   ref,
   intent = "outline",
   gap = 0,
-  size = "medium",
+  size = "md",
   orientation = "horizontal",
   ...props
 }: ToggleGroupProps) => {
@@ -129,21 +129,21 @@ const toggleStyles = tv({
       vertical: "flex",
     },
     size: {
-      "extra-small": "h-8 px-3 text-xs/4 *:data-[slot=icon]:size-3.5",
-      small: "h-9 px-3.5",
-      medium: "h-10 px-4",
-      large: "h-11 px-5 *:data-[slot=icon]:size-4.5 sm:text-base",
-      "square-petite": "size-9 shrink-0",
+      xs: "h-8 px-3 text-xs/4 *:data-[slot=icon]:size-3.5",
+      sm: "h-9 px-3.5",
+      md: "h-10 px-4",
+      lg: "h-11 px-5 *:data-[slot=icon]:size-4.5 sm:text-base",
+      "sq-sm": "size-9 shrink-0",
     },
-    shape: {
-      square: "rounded-lg",
-      circle: "rounded-full",
+    isCircle: {
+      true: "rounded-full",
+      false: "rounded-lg",
     },
   },
   defaultVariants: {
     intent: "outline",
-    size: "small",
-    shape: "square",
+    size: "sm",
+    isCircle: false,
   },
   compoundVariants: [
     {
@@ -176,7 +176,7 @@ const Toggle = ({ className, intent, ref, ...props }: ToggleProps) => {
           intent: intent ?? groupIntent,
           size: props.size ?? size,
           orientation,
-          shape: props.shape,
+          isCircle: props.isCircle,
           noGap: gap === 0,
           className,
         }),

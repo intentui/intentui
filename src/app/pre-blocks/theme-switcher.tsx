@@ -6,7 +6,7 @@ import { IconDeviceDesktop2, IconMoon, IconSun } from "@intentui/icons"
 import { useTheme } from "next-themes"
 
 export function ThemeSwitcher({
-  shape = "square",
+  isCircle = false,
   intent = "outline",
   className,
   ...props
@@ -20,9 +20,9 @@ export function ThemeSwitcher({
 
   return (
     <Button
-      shape={shape}
+      isCircle={isCircle}
       intent={intent}
-      size="square-petite"
+      size="sq-sm"
       className={composeTailwindRenderProps(className, "**:data-[slot=icon]:text-fg")}
       aria-label="Switch theme"
       onPress={toggleTheme}

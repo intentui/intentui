@@ -23,22 +23,22 @@ export default function ToolbarDisabledDemo() {
   return (
     <Toolbar aria-label="Toolbox">
       <Toolbar.Group aria-label="Toolbox">
-        <Toggle isDisabled aria-label="Cursor" size="square-petite" intent="outline">
+        <Toggle isDisabled aria-label="Cursor" size="sq-sm" intent="outline">
           {({ isSelected }) => <>{isSelected ? <IconCursorFill /> : <IconCursor />}</>}
         </Toggle>
-        <Toggle aria-label="Pencil Box" size="square-petite" intent="outline">
+        <Toggle aria-label="Pencil Box" size="sq-sm" intent="outline">
           {({ isSelected }) => <>{isSelected ? <IconPencilBoxFill /> : <IconPencilBox />}</>}
         </Toggle>
-        <Toggle aria-label="Pencil Box" size="square-petite" intent="outline">
+        <Toggle aria-label="Pencil Box" size="sq-sm" intent="outline">
           {({ isSelected }) => <>{isSelected ? <IconToolboxFill /> : <IconToolbox />}</>}
         </Toggle>
       </Toolbar.Group>
       <Toolbar.Separator />
       <Toolbar.Group isDisabled aria-label="Gallery">
-        <Toolbar.Item aria-label="Camera" size="square-petite" intent="outline">
+        <Toolbar.Item aria-label="Camera" size="sq-sm" intent="outline">
           {({ isSelected }) => <>{isSelected ? <IconCameraFill /> : <IconCamera />}</>}
         </Toolbar.Item>
-        <Toolbar.Item aria-label="Gallery" size="square-petite" intent="outline">
+        <Toolbar.Item aria-label="Gallery" size="sq-sm" intent="outline">
           {({ isSelected }) => <>{isSelected ? <IconGalleryFill /> : <IconGallery />}</>}
         </Toolbar.Item>
       </Toolbar.Group>

@@ -28,7 +28,7 @@ export function Hero() {
           <div className="mt-6 flex items-center gap-x-2">
             <Link
               className={buttonStyles({
-                size: "large",
+                size: "lg",
                 className: "inset-ring-white/10 shadow-none",
               })}
               href="/docs/3.x/getting-started/installation"
@@ -37,7 +37,7 @@ export function Hero() {
             </Link>
             <Link
               className={buttonStyles({
-                size: "large",
+                size: "lg",
                 intent: "outline",
                 className: "shadow-none",
               })}

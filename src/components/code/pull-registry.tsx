@@ -34,7 +34,7 @@ export function PullRegistry({ className, processedSourceCode, blockDemo }: Pull
           onPress={() => handleCopy("code", processedSourceCode as string)}
           intent="plain"
           className="size-7 rounded-xs"
-          size="square-petite"
+          size="sq-sm"
         >
           {copy.code ? <IconCheck /> : <IconDuplicate />}
         </Button>
@@ -45,7 +45,7 @@ export function PullRegistry({ className, processedSourceCode, blockDemo }: Pull
           onPress={() => handleCopy("command", `npx ${siteConfig.cliCommand} add -b ${blockDemo}`)}
           intent="plain"
           className="size-7 rounded-xs"
-          size="square-petite"
+          size="sq-sm"
         >
           {copy.command ? <IconCheck /> : <IconTerminal />}
         </Button>
@@ -56,7 +56,7 @@ export function PullRegistry({ className, processedSourceCode, blockDemo }: Pull
           href={openInV0Url(blockDemo as string)}
           target="_blank"
           className={buttonStyles({
-            size: "square-petite",
+            size: "sq-sm",
             intent: "plain",
             className: "size-7 rounded-xs",
           })}

@@ -16,7 +16,7 @@ export default function DrawerWithoutNotchDemo() {
           </Drawer.Description>
         </Drawer.Header>
         <Drawer.Footer>
-          <Drawer.Close shape="circle">Close</Drawer.Close>
+          <Drawer.Close isCircle>Close</Drawer.Close>
         </Drawer.Footer>
       </Drawer.Content>
     </Drawer>

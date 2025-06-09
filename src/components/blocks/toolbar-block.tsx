@@ -20,23 +20,23 @@ export function ToolbarBlock() {
       <div className="flex justify-center gap-2">
         <Toolbar aria-label="Toolbars" className="flex justify-between">
           <Toolbar.Group aria-label="Actions">
-            <Toolbar.Item size="square-petite" aria-label="Support" intent="outline">
+            <Toolbar.Item size="sq-sm" aria-label="Support" intent="outline">
               {({ isSelected }) => <>{isSelected ? <IconHeartFill /> : <IconHeart />}</>}
             </Toolbar.Item>
-            <Toolbar.Item size="square-petite" aria-label="Duplicate" intent="outline">
+            <Toolbar.Item size="sq-sm" aria-label="Duplicate" intent="outline">
               {({ isSelected }) => <>{isSelected ? <IconDuplicateFill /> : <IconDuplicate />}</>}
             </Toolbar.Item>
             <SliderOnPopoverBlock />
           </Toolbar.Group>
           <Toolbar.Separator className="hidden sm:flex" />
           <Toolbar.Group className="hidden gap-2 sm:flex" aria-label="Gallery">
-            <Toolbar.Item aria-label="Camera" size="square-petite" intent="outline">
+            <Toolbar.Item aria-label="Camera" size="sq-sm" intent="outline">
               {({ isSelected }) => <>{isSelected ? <IconCameraFill /> : <IconCamera />}</>}
             </Toolbar.Item>
-            <Toolbar.Item aria-label="Gallery" size="square-petite" intent="outline">
+            <Toolbar.Item aria-label="Gallery" size="sq-sm" intent="outline">
               {({ isSelected }) => <>{isSelected ? <IconGalleryFill /> : <IconGallery />}</>}
             </Toolbar.Item>
-            <Toolbar.Item aria-label="Playlist" size="square-petite" intent="outline">
+            <Toolbar.Item aria-label="Playlist" size="sq-sm" intent="outline">
               {({ isSelected }) => (
                 <>{isSelected ? <IconVideoPlaylistFill /> : <IconVideoPlaylist />}</>
               )}

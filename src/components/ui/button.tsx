@@ -5,7 +5,7 @@ import {
   type ButtonProps as ButtonPrimitiveProps,
   composeRenderProps,
 } from "react-aria-components"
-import { tv } from "tailwind-variants"
+import { type VariantProps, tv } from "tailwind-variants"
 
 const buttonStyles = tv({
   base: [
@@ -38,17 +38,15 @@ const buttonStyles = tv({
       ],
     },
     size: {
-      "extra-small":
-        "h-8 px-[calc(var(--spacing)*2.7)] text-xs/4 **:data-[slot=avatar]:*:size-3.5 **:data-[slot=avatar]:size-3.5 **:data-[slot=icon]:size-3 lg:text-[0.800rem]/4",
-      small: "h-9 px-3.5 text-sm/5 sm:text-sm/5",
-      medium: "h-10 px-4 text-base sm:text-sm/6",
-      large:
-        "h-11 px-4.5 text-base *:data-[slot=icon]:mx-[-1.5px] sm:*:data-[slot=icon]:size-5 lg:text-base/7",
-      "square-petite": "size-9 shrink-0",
+      xs: "h-8 px-[calc(var(--spacing)*2.7)] text-xs/4 **:data-[slot=avatar]:*:size-3.5 **:data-[slot=avatar]:size-3.5 **:data-[slot=icon]:size-3 lg:text-[0.800rem]/4",
+      sm: "h-9 px-3.5 text-sm/5 sm:text-sm/5",
+      md: "h-10 px-4 text-base sm:text-sm/6",
+      lg: "h-11 px-4.5 text-base *:data-[slot=icon]:mx-[-1.5px] sm:*:data-[slot=icon]:size-5 lg:text-base/7",
+      "sq-sm": "size-9 shrink-0",
     },
-    shape: {
-      square: "rounded-lg",
-      circle: "rounded-full",
+    isCircle: {
+      true: "rounded-full",
+      false: "rounded-lg",
     },
     isDisabled: {
       true: "inset-ring-0 opacity-50 forced-colors:text-[GrayText]",
@@ -59,19 +57,16 @@ const buttonStyles = tv({
   },
   defaultVariants: {
     intent: "primary",
-    size: "medium",
-    shape: "square",
+    size: "md",
+    isCircle: false,
   },
 })
 
-interface ButtonProps extends ButtonPrimitiveProps {
-  intent?: "primary" | "secondary" | "danger" | "warning" | "outline" | "plain"
-  size?: "medium" | "large" | "square-petite" | "extra-small" | "small"
-  shape?: "square" | "circle"
+interface ButtonProps extends ButtonPrimitiveProps, VariantProps<typeof buttonStyles> {
   ref?: React.Ref<HTMLButtonElement>
 }
 
-const Button = ({ className, intent, size, shape, ref, ...props }: ButtonProps) => {
+const Button = ({ className, intent, size, isCircle, ref, ...props }: ButtonProps) => {
   return (
     <ButtonPrimitive
       ref={ref}
@@ -81,7 +76,7 @@ const Button = ({ className, intent, size, shape, ref, ...props }: ButtonProps) 
           ...renderProps,
           intent,
           size,
-          shape,
+          isCircle,
           className,
         }),
       )}

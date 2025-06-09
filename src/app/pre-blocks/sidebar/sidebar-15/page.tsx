@@ -41,7 +41,7 @@ export default function Page() {
               <Table.Cell>{item.country}</Table.Cell>
               <Table.Cell>{item.postalCode}</Table.Cell>
               <Table.Cell>
-                <Avatar size="extra-small" src={item.avatar} alt="Avatar" />
+                <Avatar size="xs" src={item.avatar} alt="Avatar" />
               </Table.Cell>
               <Table.Cell>{item.status}</Table.Cell>
               <Table.Cell>{item.role}</Table.Cell>

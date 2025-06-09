@@ -5,7 +5,7 @@ import { IconPin } from "@intentui/icons"
 
 export default function ToggleDisabledDemo() {
   return (
-    <Toggle size="square-petite" isDisabled>
+    <Toggle size="sq-sm" isDisabled>
       <IconPin />
     </Toggle>
   )

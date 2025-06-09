@@ -18,7 +18,7 @@ export default function BreadcrumbsMenuDemo() {
 
       <Breadcrumbs.Item separator>
         <Menu>
-          <Button intent="plain" size="square-petite" className="-mx-1 h-6">
+          <Button intent="plain" size="sq-sm" className="-mx-1 h-6">
             <IconDotsHorizontal />
           </Button>
           <Menu.Content placement="bottom">

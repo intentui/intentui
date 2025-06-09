@@ -176,7 +176,7 @@ const NavbarTrigger = ({ className, onPress, ref, ...props }: NavbarTriggerProps
       data-navbar-trigger="true"
       intent="plain"
       aria-label={props["aria-label"] || "Toggle Navbar"}
-      size="square-petite"
+      size="sq-sm"
       className={className}
       onPress={(event) => {
         onPress?.(event)

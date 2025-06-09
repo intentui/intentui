@@ -15,7 +15,7 @@ export default function CardActionDemo() {
         </Card.Description>
         <Card.Action>
           <Menu>
-            <Button size="small" intent="outline">
+            <Button size="sm" intent="outline">
               Export... <IconChevronLgDown />
             </Button>
             <Menu.Content placement="bottom end">

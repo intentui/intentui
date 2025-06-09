@@ -12,7 +12,7 @@ export default function TooltipDelayDemo() {
           aria-label="Follow me"
           className={buttonStyles({
             intent: "outline",
-            size: "square-petite",
+            size: "sq-sm",
           })}
         >
           <IconBrandX />

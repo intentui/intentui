@@ -201,11 +201,7 @@ function ChoosePkgManager({
 
   return (
     <Menu>
-      <Button
-        size="square-petite"
-        intent="plain"
-        className="pressed:bg-transparent hover:bg-transparent"
-      >
+      <Button size="sq-sm" intent="plain" className="pressed:bg-transparent hover:bg-transparent">
         {isCopied ? <IconCheck /> : <IconDuplicate />}
       </Button>
       <Menu.Content showArrow placement="bottom end">

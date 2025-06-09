@@ -11,7 +11,7 @@ export default function TooltipIntentDemo() {
         aria-label="Follow My Twitter"
         className={buttonStyles({
           intent: "outline",
-          size: "square-petite",
+          size: "sq-sm",
         })}
       >
         <IconCircleInfo />

@@ -43,14 +43,14 @@ export default function FileTriggerAvatarDemo() {
         )}
       >
         {droppedImage ? (
-          <Avatar src={droppedImage} size="large" />
+          <Avatar src={droppedImage} size="lg" />
         ) : (
-          <Avatar initials="IA" size="large" />
+          <Avatar initials="IA" size="lg" />
         )}
         <input type="hidden" name="image" value={droppedImage} />
       </DropZone>
       <FileTrigger
-        size="small"
+        size="sm"
         withIcon={false}
         acceptedFileTypes={["image/png", "image/jpeg"]}
         onSelect={onSelectHandler}

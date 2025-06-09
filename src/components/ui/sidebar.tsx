@@ -471,7 +471,7 @@ const SidebarItem = ({
           {badge &&
             (state !== "collapsed" ? (
               <Badge
-                shape="square"
+                isCircle={false}
                 intent="primary"
                 data-slot="sidebar-badge"
                 className="-translate-y-1/2 absolute inset-ring-1 inset-ring-ring/20 inset-y-1/2 right-1.5 h-5.5 w-auto text-[10px] transition-colors group-data-current:inset-ring-transparent"
@@ -679,7 +679,7 @@ const SidebarTrigger = ({ onPress, children, ...props }: React.ComponentProps<ty
       aria-label={props["aria-label"] || "Toggle Sidebar"}
       data-sidebar-trigger="true"
       intent={props.intent || "plain"}
-      size={props.size || "square-petite"}
+      size={props.size || "sq-sm"}
       onPress={(event) => {
         onPress?.(event)
         toggleSidebar()

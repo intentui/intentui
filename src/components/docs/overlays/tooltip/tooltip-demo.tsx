@@ -21,7 +21,7 @@ export default function TooltipDemo() {
         aria-label="Manage Layout"
         className={buttonStyles({
           intent: "outline",
-          size: "square-petite",
+          size: "sq-sm",
         })}
       >
         <IconLayoutColumnVerticalAdd />

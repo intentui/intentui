@@ -36,7 +36,7 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
       </div>
       <Menu>
         <Button
-          size="square-petite"
+          size="sq-sm"
           intent="outline"
           className="size-7 rounded-sm"
           aria-label="Copy npm command"

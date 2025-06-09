@@ -18,8 +18,8 @@ interface FileTriggerProps extends FileTriggerPrimitiveProps, VariantProps<typeo
 
 const FileTrigger = ({
   intent = "outline",
-  size = "medium",
-  shape = "square",
+  size = "md",
+  isCircle = false,
   withIcon = true,
   ref,
   className,
@@ -32,7 +32,7 @@ const FileTrigger = ({
         isDisabled={props.isDisabled}
         intent={intent}
         size={size}
-        shape={shape}
+        isCircle={isCircle}
       >
         {withIcon &&
           (props.defaultCamera ? (

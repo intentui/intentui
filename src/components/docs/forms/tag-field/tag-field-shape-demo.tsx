@@ -17,5 +17,5 @@ export default function TagFieldShapeDemo() {
     ],
   })
 
-  return <TagField shape="circle" className="max-w-xs" label="Add tag" list={selectedItems} />
+  return <TagField isCircle className="max-w-xs" label="Add tag" list={selectedItems} />
 }

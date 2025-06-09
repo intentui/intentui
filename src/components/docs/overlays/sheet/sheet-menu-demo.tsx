@@ -76,7 +76,7 @@ export default function SheetMenuDemo() {
         </Sheet.Trigger>
         <Sheet.Content isFloat={false} closeButton={false}>
           <Sheet.Header className="flex flex-row gap-x-3.5 border-b sm:gap-x-3 sm:px-4 sm:pt-3 sm:pb-2">
-            <Avatar src="/images/avatar/cobain.jpg" shape="square" alt="cobain" />
+            <Avatar src="/images/avatar/cobain.jpg" isCircle={false} alt="cobain" />
             <div>
               <Sheet.Title className="text-base/4 sm:text-base/4">Kurt Cobain</Sheet.Title>
               <Sheet.Description>@cobain</Sheet.Description>
@@ -138,7 +138,7 @@ export default function SheetMenuDemo() {
             </MenuPrimitive>
           </Sheet.Body>
           <Sheet.Footer className="border-t bg-muted/20 sm:p-4">
-            <Button size="small" className="w-full justify-between bg-bg" intent="outline">
+            <Button size="sm" className="w-full justify-between bg-bg" intent="outline">
               <span>Sign out</span>
               <IconLogout />
             </Button>

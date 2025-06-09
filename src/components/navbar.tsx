@@ -108,20 +108,20 @@ export function Navbar() {
                   <>
                     <Button
                       onPress={() => setOpen((open: boolean) => !open)}
-                      size="square-petite"
-                      shape="circle"
+                      size="sq-sm"
+                      isCircle
                       intent="plain"
                     >
                       <IconSearch />
                     </Button>
-                    <ThemeSwitcher intent="plain" shape="circle" />
+                    <ThemeSwitcher intent="plain" isCircle />
 
                     <Link
                       aria-label="Join Discord"
                       className={buttonStyles({
                         intent: "plain",
-                        shape: "circle",
-                        size: "square-petite",
+                        isCircle: true,
+                        size: "sq-sm",
                         className:
                           "**:data-[slot=icon]:text-indigo-500 hover:**:data-[slot=icon]:text-indigo-600",
                       })}
@@ -134,8 +134,8 @@ export function Navbar() {
                       aria-label="Follow Update on X"
                       className={buttonStyles({
                         intent: "plain",
-                        shape: "circle",
-                        size: "square-petite",
+                        isCircle: true,
+                        size: "sq-sm",
                         className: "**:data-[slot=icon]:text-fg",
                       })}
                       target="_blank"
@@ -147,8 +147,8 @@ export function Navbar() {
                       aria-label="Follow Update on X"
                       className={buttonStyles({
                         intent: "plain",
-                        size: "square-petite",
-                        shape: "circle",
+                        size: "sq-sm",
+                        isCircle: true,
                         className: "hover:border-blue-500/20**:data-[slot=icon]:text-fg",
                       })}
                       target="_blank"

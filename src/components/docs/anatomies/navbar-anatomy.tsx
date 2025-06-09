@@ -25,10 +25,10 @@ export default function NavbarAnatomy() {
           </Navbar.Logo>
         </Navbar.Flex>
         <Navbar.Flex>
-          <Button intent="plain" size="square-petite" aria-label="Search for products">
+          <Button intent="plain" size="sq-sm" aria-label="Search for products">
             <IconSearch />
           </Button>
-          <Button intent="plain" size="square-petite" aria-label="Your Bag">
+          <Button intent="plain" size="sq-sm" aria-label="Your Bag">
             <IconShoppingBag />
           </Button>
         </Navbar.Flex>

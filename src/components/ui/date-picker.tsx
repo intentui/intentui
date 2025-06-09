@@ -56,7 +56,7 @@ const DatePickerOverlay = ({
       )}
       {closeButton && (
         <div className="mx-auto flex w-full max-w-[inherit] justify-center py-2.5 sm:hidden">
-          <Popover.Close shape="circle" className="w-full">
+          <Popover.Close isCircle className="w-full">
             Close
           </Popover.Close>
         </div>
@@ -67,7 +67,7 @@ const DatePickerOverlay = ({
 
 const DatePickerIcon = () => (
   <Button
-    size="square-petite"
+    size="sq-sm"
     intent="plain"
     className="mr-1 h-7 w-8 rounded outline-offset-0hover:bg-transparent pressed:bg-transparent **:data-[slot=icon]:text-muted-fg"
   >

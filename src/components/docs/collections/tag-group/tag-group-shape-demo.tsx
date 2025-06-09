@@ -13,10 +13,10 @@ const carModels = [
 export default function TagGroupShapeDemo() {
   return (
     <div className="max-w-sm space-y-6">
-      <TagGroup shape="square" intent="danger" label="Car Models" selectionMode="multiple">
+      <TagGroup isCircle={false} intent="danger" label="Car Models" selectionMode="multiple">
         <TagList items={carModels}>{(item) => <Tag>{item.name}</Tag>}</TagList>
       </TagGroup>
-      <TagGroup shape="circle" intent="warning" label="Car Models" selectionMode="multiple">
+      <TagGroup isCircle intent="warning" label="Car Models" selectionMode="multiple">
         <TagList items={carModels}>{(item) => <Tag>{item.name}</Tag>}</TagList>
       </TagGroup>
     </div>

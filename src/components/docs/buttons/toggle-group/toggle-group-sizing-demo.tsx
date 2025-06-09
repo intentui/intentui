@@ -10,7 +10,7 @@ import {
 export default function ToggleGroupSizingDemo() {
   return (
     <div className="flex flex-col gap-y-6">
-      <ToggleGroup size="square-petite" defaultSelectedKeys={["center"]} selectionMode="single">
+      <ToggleGroup size="sq-sm" defaultSelectedKeys={["center"]} selectionMode="single">
         <Toggle id="left">
           <IconAlignmentLeft />
         </Toggle>
@@ -25,7 +25,7 @@ export default function ToggleGroupSizingDemo() {
         </Toggle>
       </ToggleGroup>
       <Separator />
-      <ToggleGroup size="small" defaultSelectedKeys={["center"]} selectionMode="single">
+      <ToggleGroup size="sm" defaultSelectedKeys={["center"]} selectionMode="single">
         <Toggle id="left">
           <IconAlignmentLeft /> Left
         </Toggle>
@@ -40,7 +40,7 @@ export default function ToggleGroupSizingDemo() {
         </Toggle>
       </ToggleGroup>
       <Separator />
-      <ToggleGroup size="medium" defaultSelectedKeys={["center"]} selectionMode="single">
+      <ToggleGroup size="md" defaultSelectedKeys={["center"]} selectionMode="single">
         <Toggle id="left">
           <IconAlignmentLeft /> Left
         </Toggle>
@@ -55,7 +55,7 @@ export default function ToggleGroupSizingDemo() {
         </Toggle>
       </ToggleGroup>
       <Separator />
-      <ToggleGroup size="large" defaultSelectedKeys={["center"]} selectionMode="single">
+      <ToggleGroup size="lg" defaultSelectedKeys={["center"]} selectionMode="single">
         <Toggle id="left">
           <IconAlignmentLeft /> Left
         </Toggle>

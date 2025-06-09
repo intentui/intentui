@@ -200,8 +200,8 @@ const CarouselButton = ({
   segment,
   className,
   intent = "outline",
-  shape = "circle",
-  size = "square-petite",
+  isCircle = true,
+  size = "sq-sm",
   ref,
   ...props
 }: ButtonProps & { segment: "previous" | "next" }) => {
@@ -218,7 +218,7 @@ const CarouselButton = ({
       intent={intent}
       ref={ref}
       size={size}
-      shape={shape}
+      isCircle={isCircle}
       className={composeTailwindRenderProps(
         className,
         orientation === "vertical" ? "rotate-90" : "",

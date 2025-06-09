@@ -4,7 +4,7 @@ import { MultipleSelect } from "@/components/ui/multiple-select"
 
 export default function MultipleSelectShapeDemo() {
   return (
-    <MultipleSelect className="max-w-xs" label="Fruits" shape="circle" items={fruits}>
+    <MultipleSelect className="max-w-xs" label="Fruits" isCircle items={fruits}>
       {(item) => {
         return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
       }}

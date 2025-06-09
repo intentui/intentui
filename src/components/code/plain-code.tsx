@@ -138,7 +138,7 @@ function CopyButton({
       type="button"
       className={twMerge(
         buttonStyles({
-          size: "square-petite",
+          size: "sq-sm",
           intent: "plain",
           className: twMerge(
             "transition-opacity hover:bg-transparent group-hover:opacity-100",

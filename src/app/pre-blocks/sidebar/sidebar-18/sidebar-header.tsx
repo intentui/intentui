@@ -28,14 +28,14 @@ export function SidebarHeader() {
         <SidebarLabel className="font-medium text-sm">intentui.com</SidebarLabel>
       </Link>
       <div className="-mr-2 flex items-center gap-x-0.5 text-muted-fg **:[button]:text-muted-fg **:[button]:hover:text-fg **:[button]:*:data-[slot=icon]:size-3.5">
-        <Button className="size-7" size="square-petite" intent="plain" aria-label="Collapse">
+        <Button className="size-7" size="sq-sm" intent="plain" aria-label="Collapse">
           <IconArrowUp />
         </Button>
-        <Button className="size-7" size="square-petite" intent="plain" aria-label="Shrink All">
+        <Button className="size-7" size="sq-sm" intent="plain" aria-label="Shrink All">
           <IconArrowShrink />
         </Button>
         <Menu>
-          <Button className="size-7" size="square-petite" intent="plain" aria-label="Options">
+          <Button className="size-7" size="sq-sm" intent="plain" aria-label="Options">
             <IconDotsVertical />
           </Button>
           <Menu.Content className="sm:min-w-56">
@@ -149,7 +149,7 @@ export function SidebarHeader() {
         <Button
           onPress={toggleSidebar}
           className="size-7"
-          size="square-petite"
+          size="sq-sm"
           intent="plain"
           aria-label="Minimize"
         >

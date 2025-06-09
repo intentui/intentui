@@ -20,7 +20,7 @@ export function ThemeSwitcher({
     <Button
       shape={shape}
       intent={appearance}
-      size="square-petite"
+      size="sq-sm"
       aria-label="Switch theme"
       onPress={toggleTheme}
       {...props}

@@ -8,7 +8,7 @@ export default function TooltipWithoutArrowDemo() {
   return (
     <Tooltip>
       <Tooltip.Trigger aria-label="Fresh drop alert">
-        <Badge shape="circle">New</Badge>
+        <Badge isCircle>New</Badge>
       </Tooltip.Trigger>
       <Tooltip.Content showArrow={false}>
         <strong className="font-semibold">Fresh drop alert</strong> <br />

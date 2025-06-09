@@ -31,8 +31,8 @@ export default function Page() {
                     <Avatar
                       alt={item.author}
                       src={`https://github.com/${item.author}.png`}
-                      shape="square"
-                      size="small"
+                      isCircle={false}
+                      size="sm"
                     />
                     <span className="font-mono text-muted-fg text-sm">
                       {dayjs(item.published).format("MMMM D, YYYY")}
