@@ -17,10 +17,10 @@ export const makeRegistry = () => {
   const generatedFilePath = "__registry__/generated.ts"
 
   const sources = [
-    { type: "ui", path: "components/ui" },
-    { type: "anatomies", path: "components/docs/anatomies" },
-    { type: "demo", path: "components/docs" },
-    { type: "blocks", path: "app/pre-blocks" },
+    { type: "ui", path: "src/components/ui" },
+    { type: "anatomies", path: "src/components/docs/anatomies" },
+    { type: "demo", path: "src/components/docs" },
+    { type: "blocks", path: "src/app/pre-blocks" },
   ]
 
   const getAllFiles = (dirPath: string, arrayOfFiles: string[] = []): string[] => {
@@ -93,7 +93,7 @@ export const makeRegistry = () => {
           type: "registry:${type}",
           registryDependencies: undefined,
           files: ["${relativePath}"],
-          component: React.lazy(() => import("@/${relativePath}")),
+          component: React.lazy(() => import("@/${relativePath.replace("src", "")}")),
           source: "",
           category: "undefined",
           subcategory: "undefined",

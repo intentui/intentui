@@ -239,10 +239,10 @@ const generateComponentRegistry = () => {
 
   const sources = [
     ...blockSources,
-    { type: "block", path: "components/anatomies" },
-    { type: "ui", path: "components/ui" },
-    { type: "lib", path: "lib" },
-    { type: "hook", path: "hooks" },
+    { type: "block", path: "src/components/anatomies" },
+    { type: "ui", path: "src/components/ui" },
+    { type: "lib", path: "src/lib" },
+    { type: "hook", path: "src/hooks" },
   ]
 
   // const sources = [
