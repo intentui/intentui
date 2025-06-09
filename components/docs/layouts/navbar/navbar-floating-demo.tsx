@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandApple, IconSearch, IconShoppingBag } from "justd-icons"
+import { IconBrandApple, IconSearch, IconShoppingBag } from "@intentui/icons"
 import { Button, Navbar } from "ui"
 
 export default function NavbarFloatingDemo() {

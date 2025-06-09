@@ -25,7 +25,7 @@ import {
   IconUnderline,
   IconUnderlineFill,
   IconUndo
-} from "justd-icons"
+} from "@intentui/icons"
 import { Button, Checkbox, Menu, Toolbar } from "ui"
 
 export default function ToolbarDemo() {

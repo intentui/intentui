@@ -1,7 +1,7 @@
 "use client"
 
+import { IconDotsVertical } from "@intentui/icons"
 import { NumberFormatter } from "@internationalized/number"
-import { IconDotsVertical } from "justd-icons"
 import { Card, Menu, Table } from "ui"
 
 export default function TableDemo() {

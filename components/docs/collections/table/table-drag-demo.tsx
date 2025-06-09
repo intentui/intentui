@@ -1,6 +1,6 @@
 "use client"
 
-import { IconStarFill } from "justd-icons"
+import { IconStarFill } from "@intentui/icons"
 import { useDragAndDrop } from "react-aria-components"
 import { useListData } from "react-stately"
 import { Card, Table } from "ui"

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 
-import { IconCheck, IconCircleInfo, IconDuplicate } from "justd-icons"
+import { IconCheck, IconCircleInfo, IconDuplicate } from "@intentui/icons"
 import { AnimatePresence, motion } from "motion/react"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeStringify from "rehype-stringify"

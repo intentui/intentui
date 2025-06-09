@@ -1,6 +1,6 @@
 "use client"
 
-import { IconCircleInfo } from "justd-icons"
+import { IconCircleInfo } from "@intentui/icons"
 import { buttonStyles, Tooltip } from "ui"
 
 export default function TooltipIntentDemo() {

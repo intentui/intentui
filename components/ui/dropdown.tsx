@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/utils/classes"
-import { IconCheck } from "justd-icons"
+import { IconCheck } from "@intentui/icons"
 import {
   Collection,
   composeRenderProps,

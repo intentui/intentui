@@ -7,13 +7,13 @@ import {
   IconBrandYarn,
   IconCheck,
   IconDuplicate
-} from "justd-icons"
+} from "@intentui/icons"
 import { Button, Menu } from "ui"
 import { copyToClipboard } from "usemods"
 
 type Tool = "Bun" | "Yarn" | "PNPM" | "NPM"
 
-export function Install({ pkg = "justd-icons" }: { pkg?: string }) {
+export function Install({ pkg = "@intentui/icons" }: { pkg?: string }) {
   const [isCopied, setIsCopied] = React.useState(false)
   const [command, setCommand] = React.useState("")
   const commandArgs = pkg

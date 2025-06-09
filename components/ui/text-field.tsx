@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
+import { IconEye, IconEyeClosed } from "@intentui/icons"
 import type { TextInputDOMProps } from "@react-types/shared"
-import { IconEye, IconEyeClosed } from "justd-icons"
 import {
   Button as ButtonPrimitive,
   TextField as TextFieldPrimitive,

@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/resources/lib/utils"
-import { IconChevronLgLeft, IconChevronLgRight } from "justd-icons"
+import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
 import Link from "next/link"
 import { buttonStyles } from "ui"
 

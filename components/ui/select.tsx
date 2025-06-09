@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
+import { IconChevronLgDown } from "@intentui/icons"
 import type { Placement } from "@react-types/overlays"
-import { IconChevronLgDown } from "justd-icons"
 import type { ButtonProps } from "react-aria-components"
 import {
   Button,

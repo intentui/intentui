@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/utils/classes"
-import { IconChevronLgRight } from "justd-icons"
+import { IconChevronLgRight } from "@intentui/icons"
 import type { BreadcrumbProps, BreadcrumbsProps } from "react-aria-components"
 import {
   Breadcrumb,

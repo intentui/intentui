@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconPlus } from "justd-icons"
+import { IconPlus } from "@intentui/icons"
 import { Button, Modal, TextField } from "ui"
 
 export default function TextFieldSuffixButtonDemo() {

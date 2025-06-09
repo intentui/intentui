@@ -1,4 +1,4 @@
-import { IconCreditCard, IconShoppingBag } from "justd-icons"
+import { IconCreditCard, IconShoppingBag } from "@intentui/icons"
 import { Sidebar } from "ui"
 
 export default function SidebarAnatomy() {

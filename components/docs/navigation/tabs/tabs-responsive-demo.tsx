@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconHamburger } from "justd-icons"
+import { IconHamburger } from "@intentui/icons"
 import { Collection } from "react-aria-components"
 import { Select, Tabs, useMediaQuery } from "ui"
 

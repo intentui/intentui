@@ -14,7 +14,7 @@ import {
   IconPersonAdd,
   IconPlus,
   IconSettings
-} from "justd-icons"
+} from "@intentui/icons"
 import { Button, Menu } from "ui"
 
 export function Menus() {

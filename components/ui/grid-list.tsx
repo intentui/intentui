@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconHamburger } from "justd-icons"
+import { IconHamburger } from "@intentui/icons"
 import type { GridListItemProps, GridListProps } from "react-aria-components"
 import {
   Button,

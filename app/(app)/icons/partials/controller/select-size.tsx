@@ -1,7 +1,7 @@
 import React from "react"
 
+import { IconChevronLgDown } from "@intentui/icons"
 import { useQueryString } from "hooks/use-query-string"
-import { IconChevronLgDown } from "justd-icons"
 import { usePathname, useRouter } from "next/navigation"
 import type { Selection } from "react-aria-components"
 import title from "title"

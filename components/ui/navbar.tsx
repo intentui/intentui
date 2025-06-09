@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { IconHamburger } from "justd-icons"
+import { IconHamburger } from "@intentui/icons"
 import { LayoutGroup, motion } from "motion/react"
 import type { LinkProps } from "react-aria-components"
 import { composeRenderProps, Link } from "react-aria-components"

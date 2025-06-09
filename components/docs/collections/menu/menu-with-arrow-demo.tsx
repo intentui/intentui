@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconHashtag, IconHeadphones, IconLogout, IconPlus, IconSettings } from "justd-icons"
+import { IconHashtag, IconHeadphones, IconLogout, IconPlus, IconSettings } from "@intentui/icons"
 import { Avatar, Menu } from "ui"
 
 export default function MenuWithArrowDemo() {

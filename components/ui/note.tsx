@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { IconCircleCheck, IconCircleInfo, IconTriangleExclamation } from "justd-icons"
+import { IconCircleCheck, IconCircleInfo, IconTriangleExclamation } from "@intentui/icons"
 import { Text } from "react-aria-components"
 import { tv, type VariantProps } from "tailwind-variants"
 

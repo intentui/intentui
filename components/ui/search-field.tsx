@@ -1,6 +1,6 @@
 "use client"
 
-import { IconSearch, IconX } from "justd-icons"
+import { IconSearch, IconX } from "@intentui/icons"
 import {
   SearchField as SearchFieldPrimitive,
   type SearchFieldProps as SearchFieldPrimitiveProps,

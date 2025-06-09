@@ -14,7 +14,7 @@ import {
   IconMagicFill,
   IconVideoPlaylist,
   IconVideoPlaylistFill
-} from "justd-icons"
+} from "@intentui/icons"
 import { Card, Toolbar } from "ui"
 
 export function ToolbarBlock() {

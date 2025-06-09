@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { snippetVariants } from "@/components/docs/rehype/code"
-import { IconCheck, IconDuplicate } from "justd-icons"
+import { IconCheck, IconDuplicate } from "@intentui/icons"
 import { AnimatePresence, motion } from "motion/react"
 import { usePathname } from "next/navigation"
 import { toast } from "sonner"
@@ -13,8 +13,8 @@ export function TakeCurrentUrl() {
   const [copied, setCopied] = React.useState(false)
   const pathname = usePathname()
   const text = pathname.includes("/docs")
-    ? "https://getjustd.com/" + pathname.split("/").pop()
-    : "https://getjustd.com" + pathname
+    ? "https://intentui.com/" + pathname.split("/").pop()
+    : "https://intentui.com" + pathname
   const handleCopy = async () => {
     if (navigator.clipboard && window.isSecureContext) {
       try {

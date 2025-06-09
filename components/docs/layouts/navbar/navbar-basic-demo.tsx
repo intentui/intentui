@@ -10,7 +10,7 @@ import {
   IconSearch,
   IconSettings,
   IconShoppingBag
-} from "justd-icons"
+} from "@intentui/icons"
 import { Avatar, Button, Container, Heading, Menu, Navbar, Separator } from "ui"
 
 export default function NavbarBasicDemo() {

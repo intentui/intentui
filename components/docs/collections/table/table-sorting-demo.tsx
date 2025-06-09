@@ -1,7 +1,7 @@
 "use client"
 
+import { IconLoader } from "@intentui/icons"
 import { useAsyncList } from "@react-stately/data"
-import { IconLoader } from "justd-icons"
 import { Card, Table } from "ui"
 
 interface Character {

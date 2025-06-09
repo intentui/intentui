@@ -3,15 +3,15 @@
 import React from "react"
 
 import { siteConfig } from "@/resources/config/site"
-import { IconBrandJustd } from "justd-icons"
+import { IconBrandIntentui } from "@intentui/icons"
 import { Container, Link } from "ui"
 
 const navigation = {
   starterKits: [
-    { name: "Inertia.js", href: "https://github.com/justdlabs/inertia.ts/" },
-    { name: "Next.js", href: "https://next.getjustd.com/" },
-    { name: "Remix", href: "https://remix.getjustd.com/" },
-    { name: "Astro", href: "https://astro.getjustd.com/" }
+    { name: "Inertia.js", href: "https://github.com/intentuilabs/inertia.ts/" },
+    { name: "Next.js", href: "https://next.intentui.com/" },
+    { name: "Remix", href: "https://remix.intentui.com/" },
+    { name: "Astro", href: "https://astro.intentui.com/" }
   ],
   resources: [
     { name: "Icons", href: "/icons" },
@@ -20,12 +20,12 @@ const navigation = {
     { name: "Showcase", href: "/showcase" }
   ],
   labs: [
-    { name: "Github", href: "https://github.com/justdlabs" },
+    { name: "Github", href: "https://github.com/intentuilabs" },
     { name: "X / Formerly Twitter", href: "https://x.com/intent/follow?screen_name=irsyadadl" },
-    { name: "CLI", href: "https://github.com/justdlabs/cli" },
+    { name: "CLI", href: "https://github.com/intentuilabs/cli" },
     { name: "Templates", href: "https://irsyad.co/templates" }
   ],
-  legal: [{ name: "MIT", href: "https://github.com/justdlabs/justd/blob/main/LICENSE" }]
+  legal: [{ name: "MIT", href: "https://github.com/intentuilabs/justd/blob/main/LICENSE" }]
 }
 
 export function Footer() {
@@ -36,7 +36,7 @@ export function Footer() {
       </h2>
       <div className="mx-auto relative z-20 max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:pb-32 lg:pt-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <IconBrandJustd className="size-7" />
+          <IconBrandIntentui className="size-7" />
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
@@ -145,7 +145,7 @@ export function Footer() {
             Vercel
           </Link>
           . The source code's got the{" "}
-          <Link href="https://github.com/justdlabs/justd/blob/main/LICENSE">MIT</Link> license.
+          <Link href="https://github.com/intentuilabs/justd/blob/main/LICENSE">MIT</Link> license.
         </p>
       </Container>
     </footer>

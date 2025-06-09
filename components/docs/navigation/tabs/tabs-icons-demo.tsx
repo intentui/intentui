@@ -1,6 +1,6 @@
 "use client"
 
-import { IconApple, IconClock, IconCut } from "justd-icons"
+import { IconApple, IconClock, IconCut } from "@intentui/icons"
 import { Tabs } from "ui"
 
 export default function TabsIconsDemo() {

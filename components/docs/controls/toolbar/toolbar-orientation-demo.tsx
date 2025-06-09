@@ -24,7 +24,7 @@ import {
   IconToolbox,
   IconToolboxFill,
   IconUndo
-} from "justd-icons"
+} from "@intentui/icons"
 import { Button, Menu, Toggle, Toolbar } from "ui"
 
 export default function ToolbarOrientationDemo() {

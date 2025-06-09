@@ -7,7 +7,7 @@ import { siteConfig } from "@/resources/config/site"
 import {
   IconBrandAdobe,
   IconBrandGithub,
-  IconBrandJustd,
+  IconBrandIntentui,
   IconBrandTailwindcss,
   IconBrandX,
   IconChevronLgDown,
@@ -19,7 +19,7 @@ import {
   IconMoon,
   IconSearch,
   IconSun
-} from "justd-icons"
+} from "@intentui/icons"
 import { LayoutGroup } from "motion/react"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation"
@@ -108,9 +108,9 @@ export function Navbar() {
                         <IconChevronLgDown className="duration-200 size-3 group-pressed:rotate-180" />
                       </Button>
                       <Menu.Content placement="bottom right" className="sm:min-w-10">
-                        <Menu.Item href='/'>1.x</Menu.Item>
-                        <Menu.Item href='https://2x.intentui.com'>2.x</Menu.Item>
-                        <Menu.Item href='https://intentui.com'>3.x</Menu.Item>
+                        <Menu.Item href="/">1.x</Menu.Item>
+                        <Menu.Item href="https://2x.intentui.com">2.x</Menu.Item>
+                        <Menu.Item href="https://intentui.com">3.x</Menu.Item>
                       </Menu.Content>
                     </Menu>
 
@@ -158,7 +158,7 @@ export function NavbarDropdown() {
       <Menu>
         <Button aria-label="Menu." appearance="plain" className="group -ml-1">
           <span className="flex items-center gap-x-2">
-            <IconBrandJustd className="-ml-1 size-5" />
+            <IconBrandIntentui className="-ml-1 size-5" />
             <span className="font-mono text-base tracking-tight sm:text-sm">{siteConfig.name}</span>
             <IconChevronLgDown className="-mr-1 ml-3 size-3.5 text-muted-fg transition duration-300 group-hover:text-fg group-pressed:rotate-180 group-pressed:text-fg" />
             <span className="sr-only">Open menu</span>
@@ -179,7 +179,7 @@ export function NavbarDropdown() {
               Colors
             </Menu.Item>
             <Menu.Item href="/icons">
-              <IconBrandJustd />
+              <IconBrandIntentui />
               Icons
             </Menu.Item>
             <Menu.Item href="/themes">
@@ -191,7 +191,7 @@ export function NavbarDropdown() {
             <Menu.Item href="https://x.com/intent/follow?screen_name=irsyadadl" target="_blank">
               <IconBrandX />X / Twitter
             </Menu.Item>
-            <Menu.Item href="https://github.com/justdlabs" target="_blank">
+            <Menu.Item href="https://github.com/intentuilabs" target="_blank">
               <IconBrandGithub />
               Github
             </Menu.Item>

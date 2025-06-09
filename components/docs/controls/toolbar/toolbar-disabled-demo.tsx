@@ -17,7 +17,7 @@ import {
   IconPencilBoxFill,
   IconToolbox,
   IconToolboxFill
-} from "justd-icons"
+} from "@intentui/icons"
 import { Toggle, Toolbar } from "ui"
 
 export default function ToolbarDisabledDemo() {

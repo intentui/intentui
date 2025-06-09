@@ -1,6 +1,6 @@
 "use client"
 
-import { IconChevronDown, IconChevronUp, IconMinus, IconPlus } from "justd-icons"
+import { IconChevronDown, IconChevronUp, IconMinus, IconPlus } from "@intentui/icons"
 import {
   Button,
   type ButtonProps,

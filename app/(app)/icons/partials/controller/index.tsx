@@ -1,7 +1,7 @@
 import React from "react"
 
+import { IconBullet, IconBulletFill } from "@intentui/icons"
 import { useQueryString } from "hooks/use-query-string"
-import { IconBullet, IconBulletFill } from "justd-icons"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "ui"
 

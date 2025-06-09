@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { IconTriangleExclamation } from "justd-icons"
+import { IconTriangleExclamation } from "@intentui/icons"
 import { motion } from "motion/react"
 import {
   Meter as MeterPrimitive,

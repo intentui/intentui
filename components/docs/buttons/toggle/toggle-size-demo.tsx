@@ -1,6 +1,6 @@
 "use client"
 
-import { IconAccessible, IconAccessibleFill } from "justd-icons"
+import { IconAccessible, IconAccessibleFill } from "@intentui/icons"
 import { Toggle } from "ui"
 
 export default function ToggleSizeDemo() {

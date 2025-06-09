@@ -2,8 +2,8 @@
 
 import React from "react"
 
+import { IconGallery } from "@intentui/icons"
 import type { DropEvent } from "@react-types/shared"
-import { IconGallery } from "justd-icons"
 import { isFileDropItem } from "react-aria-components"
 import { Description, DropZone, FileTrigger } from "ui"
 

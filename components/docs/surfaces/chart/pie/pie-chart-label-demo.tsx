@@ -1,6 +1,6 @@
 "use client"
 
-import { IconChartTrending } from "justd-icons"
+import { IconChartTrending } from "@intentui/icons"
 import { Pie, PieChart } from "recharts"
 import { Card, Chart, type ChartConfig } from "ui"
 

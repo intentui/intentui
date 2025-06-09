@@ -2,7 +2,14 @@
 
 import React from "react"
 
-import { IconCreditCard, IconCube, IconGear, IconHome2, IconNotes, IconShield } from "justd-icons"
+import {
+  IconCreditCard,
+  IconCube,
+  IconGear,
+  IconHome2,
+  IconNotes,
+  IconShield
+} from "@intentui/icons"
 import Link from "next/link"
 import { CommandMenu } from "ui"
 

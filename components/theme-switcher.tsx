@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 
 import { cn } from "@/utils/classes"
-import { IconDeviceDesktop2, IconMoon, IconSun } from "justd-icons"
+import { IconDeviceDesktop2, IconMoon, IconSun } from "@intentui/icons"
 import { useTheme } from "next-themes"
 import { Button } from "ui"
 

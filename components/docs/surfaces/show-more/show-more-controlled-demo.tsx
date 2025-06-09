@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { IconChevronLgDown } from "justd-icons"
+import { IconChevronLgDown } from "@intentui/icons"
 import { ShowMore } from "ui"
 
 export default function ShowMoreControlledDemo() {

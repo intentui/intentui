@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandParsinta } from "justd-icons"
+import { IconBrandParsinta } from "@intentui/icons"
 import { Button } from "ui"
 
 export default function ButtonOnlyIconDemo() {

@@ -1,6 +1,6 @@
 "use client"
 
-import { IconChevronLgLeft, IconChevronLgRight } from "justd-icons"
+import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
 import {
   Calendar as CalendarPrimitive,
   CalendarCell,

@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandGoogle, IconSearch, IconShoppingBag } from "justd-icons"
+import { IconBrandGoogle, IconSearch, IconShoppingBag } from "@intentui/icons"
 import { Button, Navbar } from "ui"
 
 export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {

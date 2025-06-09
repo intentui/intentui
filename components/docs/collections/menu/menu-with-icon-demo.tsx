@@ -11,7 +11,7 @@ import {
   IconMoon,
   IconSettings,
   IconSun
-} from "justd-icons"
+} from "@intentui/icons"
 import { useTheme } from "next-themes"
 import { Avatar, Menu } from "ui"
 

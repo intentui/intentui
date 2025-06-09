@@ -17,7 +17,7 @@ import {
   IconSearch,
   IconSettings,
   IconShoppingBag
-} from "justd-icons"
+} from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { Avatar, Button, Menu, Navbar, Separator } from "ui"
 

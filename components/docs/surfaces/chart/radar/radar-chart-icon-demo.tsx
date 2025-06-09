@@ -1,6 +1,6 @@
 "use client"
 
-import { IconArrowWall2Down, IconArrowWallUp, IconChartTrending } from "justd-icons"
+import { IconArrowWall2Down, IconArrowWallUp, IconChartTrending } from "@intentui/icons"
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts"
 import { Card, Chart, type ChartConfig } from "ui"
 

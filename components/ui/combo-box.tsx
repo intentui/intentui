@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconChevronLgDown, IconX } from "justd-icons"
+import { IconChevronLgDown, IconX } from "@intentui/icons"
 import type { InputProps } from "react-aria-components"
 import {
   ComboBox as ComboboxPrimitive,

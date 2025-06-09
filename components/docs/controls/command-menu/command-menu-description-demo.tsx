@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconCube } from "justd-icons"
+import { IconCube } from "@intentui/icons"
 import { Button, CommandMenu } from "ui"
 
 export default function CommandMenuDescriptionDemo() {

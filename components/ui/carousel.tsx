@@ -3,8 +3,8 @@
 import * as React from "react"
 
 import { cn } from "@/utils/classes"
+import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react"
-import { IconChevronLgLeft, IconChevronLgRight } from "justd-icons"
 import type { ListBoxItemProps, SectionProps } from "react-aria-components"
 import { ListBox, ListBoxItem, ListBoxSection } from "react-aria-components"
 

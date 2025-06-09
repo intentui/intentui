@@ -1,6 +1,6 @@
 import React from "react"
 
-import { IconHome } from "justd-icons"
+import { IconHome } from "@intentui/icons"
 import { CommandMenu, Link } from "ui"
 
 export default function CommandMenuAnatomy() {

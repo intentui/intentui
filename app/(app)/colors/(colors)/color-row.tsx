@@ -7,8 +7,8 @@ import {
   getColorName,
   tailwindColorNames
 } from "@/resources/lib/colors"
+import { IconBrandTailwindcss } from "@intentui/icons"
 import type { ColorFormat } from "@react-types/color"
-import { IconBrandTailwindcss } from "justd-icons"
 import { ListBox, Text, ToggleButton } from "react-aria-components"
 import type { ColorItemProps, FormatOnlyForTailwindVariableType } from "resources/types"
 import { toast } from "sonner"

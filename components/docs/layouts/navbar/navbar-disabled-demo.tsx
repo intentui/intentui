@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandApple } from "justd-icons"
+import { IconBrandApple } from "@intentui/icons"
 import { Navbar } from "ui"
 
 export default function NavbarDisabledDemo() {

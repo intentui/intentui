@@ -92,7 +92,7 @@ export default function RootLayout({
       <head>
         <script
           defer
-          data-site-id="1x.getjustd.com"
+          data-site-id="1x.intentui.com"
           src="https://assets.onedollarstats.com/tracker.js"
         ></script>
       </head>

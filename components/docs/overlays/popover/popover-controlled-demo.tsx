@@ -3,7 +3,7 @@
 import React from "react"
 
 import { wait } from "@/resources/lib/utils"
-import { IconCircleCheckFill, IconTrash } from "justd-icons"
+import { IconCircleCheckFill, IconTrash } from "@intentui/icons"
 import { Button, Loader, Popover } from "ui"
 
 export default function PopoverControlledDemo() {

@@ -1,6 +1,6 @@
 "use client"
 
-import { IconColors } from "justd-icons"
+import { IconColors } from "@intentui/icons"
 import { ColorField } from "ui"
 
 export default function ColorFieldWithPrefixDemo() {

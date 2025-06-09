@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/utils/classes"
-import { IconLoader } from "justd-icons"
+import { IconLoader } from "@intentui/icons"
 import { ProgressBar } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"

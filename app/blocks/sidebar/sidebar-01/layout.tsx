@@ -10,7 +10,7 @@ import {
   IconSearch,
   IconSettings,
   IconShield
-} from "justd-icons"
+} from "@intentui/icons"
 import { Avatar, Button, Menu, SearchField, Separator, Sidebar } from "ui"
 
 export default function Layout({ children }: { children: React.ReactNode }) {

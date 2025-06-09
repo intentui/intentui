@@ -3,7 +3,7 @@
 import React from "react"
 
 import { wait } from "@/resources/lib/utils"
-import { IconDotsVertical } from "justd-icons"
+import { IconDotsVertical } from "@intentui/icons"
 import { Button, buttonStyles, Loader, Menu, Modal } from "ui"
 
 export default function ModalTriggeredByMenuDemo() {

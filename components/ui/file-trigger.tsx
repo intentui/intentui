@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconCamera, IconFolder, IconPaperclip } from "justd-icons"
+import { IconCamera, IconFolder, IconPaperclip } from "@intentui/icons"
 import {
   FileTrigger as FileTriggerPrimitive,
   type FileTriggerProps as FileTriggerPrimitiveProps

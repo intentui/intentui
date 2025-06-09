@@ -31,7 +31,7 @@ export function ListSites({ sites }: Props) {
                 target="_blank"
                 className="flex items-center focus:outline-none focus-visible:ring-1 focus-visible:ring-ring gap-x-3 bg-secondary/70 hover:bg-secondary transition ring-1 ring-border rounded-lg px-3 py-2.5"
                 textValue={item.name}
-                href={`${item.url}?ref=getjustd.com/showcase`}
+                href={`${item.url}?ref=intentui.com/showcase`}
                 id={getSiteName(item.url)}
               >
                 <Avatar

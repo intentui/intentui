@@ -1,6 +1,6 @@
 import {
   IconBrandApple,
-  IconBrandJustd,
+  IconBrandIntentui,
   IconChartBar,
   IconChevronLgDown,
   IconColors,
@@ -13,7 +13,7 @@ import {
   IconSettings,
   IconShoppingBag,
   IconSidebar
-} from "justd-icons"
+} from "@intentui/icons"
 import { Avatar, Button, Menu, Navbar, Separator } from "ui"
 
 export default function NavbarIconDemo() {
@@ -21,7 +21,7 @@ export default function NavbarIconDemo() {
     <Navbar>
       <Navbar.Nav>
         <Navbar.Logo href="/docs/components/layouts/navbar">
-          <IconBrandJustd className="size-5" />
+          <IconBrandIntentui className="size-5" />
           <strong className="font-semibold">Justd</strong>
         </Navbar.Logo>
         <Navbar.Section>
@@ -29,13 +29,13 @@ export default function NavbarIconDemo() {
             <IconNotes />
             Documentation
           </Navbar.Item>
-          <Navbar.Item href="https://getjustd.com/docs/components/layouts/sidebar">
+          <Navbar.Item href="https://intentui.com/docs/components/layouts/sidebar">
             <IconSidebar /> Sidebar
           </Navbar.Item>
-          <Navbar.Item href="https://getjustd.com/themes">
+          <Navbar.Item href="https://intentui.com/themes">
             <IconColors /> Themes
           </Navbar.Item>
-          <Navbar.Item href="https://getjustd.com/charts">
+          <Navbar.Item href="https://intentui.com/charts">
             <IconChartBar /> Charts
           </Navbar.Item>
         </Navbar.Section>

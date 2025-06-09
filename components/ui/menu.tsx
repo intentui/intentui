@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/utils/classes"
-import { IconBulletFill, IconCheck, IconChevronLgRight } from "justd-icons"
+import { IconBulletFill, IconCheck, IconChevronLgRight } from "@intentui/icons"
 import type {
   MenuItemProps as MenuItemPrimitiveProps,
   MenuProps as MenuPrimitiveProps,

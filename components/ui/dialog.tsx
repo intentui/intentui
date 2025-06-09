@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { IconX } from "justd-icons"
+import { IconX } from "@intentui/icons"
 import type {
   ButtonProps as ButtonPrimitiveProps,
   DialogProps,

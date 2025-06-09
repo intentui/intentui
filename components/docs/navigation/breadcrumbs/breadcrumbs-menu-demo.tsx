@@ -1,6 +1,6 @@
 "use client"
 
-import { IconDotsHorizontal } from "justd-icons"
+import { IconDotsHorizontal } from "@intentui/icons"
 import { Breadcrumbs, Menu } from "ui"
 
 export default function BreadcrumbsMenuDemo() {

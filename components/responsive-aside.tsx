@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconBrandJustd, IconBrandX, IconHamburger, IconSearch } from "justd-icons"
+import { IconBrandIntentui, IconBrandX, IconHamburger, IconSearch } from "@intentui/icons"
 import { LayoutGroup } from "motion/react"
 import { usePathname } from "next/navigation"
 import { Button, buttonStyles, Link, Sheet } from "ui"
@@ -39,7 +39,7 @@ export function ResponsiveAside({
           <IconHamburger />
         </Button>
         <Link className="focus:outline-none -mr-6 rounded" href="/" aria-label="Logo">
-          <IconBrandJustd className="size-6" />
+          <IconBrandIntentui className="size-6" />
         </Link>
         <div className="flex items-center gap-x-1">
           <Button

@@ -3,16 +3,16 @@
 import React, { useState } from "react"
 
 import sidebar from "@/resources/lib/sidebar.json"
-import { useCommandState } from "cmdk"
 import {
-  IconBrandJustd,
+  IconBrandIntentui,
   IconColors,
   IconColorSwatch,
   IconCube,
   IconHashtag,
   IconHome,
   IconNotes
-} from "justd-icons"
+} from "@intentui/icons"
+import { useCommandState } from "cmdk"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { CommandMenu, useMediaQuery } from "ui"
@@ -160,7 +160,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
           </CommandMenu.Item>
           <CommandMenu.Item value="icons" asChild>
             <Link href="/icons">
-              <IconBrandJustd /> Icons
+              <IconBrandIntentui /> Icons
             </Link>
           </CommandMenu.Item>
           <CommandMenu.Item value="themes" asChild>

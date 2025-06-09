@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/utils/classes"
-import { IconChevronLeft } from "justd-icons"
+import { IconChevronLeft } from "@intentui/icons"
 import type {
   ButtonProps,
   DisclosureGroupProps as DisclosureGroupPrimitiveProps,

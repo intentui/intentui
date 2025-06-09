@@ -3,8 +3,8 @@
 import * as React from "react"
 
 import { cn } from "@/utils/classes"
+import { IconBulletFill } from "@intentui/icons"
 import { OTPInput, OTPInputContext } from "input-otp"
-import { IconBulletFill } from "justd-icons"
 
 interface InputOTPType
   extends React.ForwardRefExoticComponent<

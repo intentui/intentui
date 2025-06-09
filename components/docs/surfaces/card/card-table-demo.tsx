@@ -1,6 +1,6 @@
 "use client"
 
-import { IconDotsVertical, IconEye, IconHighlight, IconTrash } from "justd-icons"
+import { IconDotsVertical, IconEye, IconHighlight, IconTrash } from "@intentui/icons"
 import { Card, Menu, Pagination, Table } from "ui"
 
 export default function CardTableDemo() {

@@ -3,8 +3,8 @@
 import React from "react"
 
 import { CodeHighlighter } from "@/components/docs/rehype/code"
+import { IconCheck, IconDuplicate } from "@intentui/icons"
 import { trackEvent } from "@openpanel/nextjs"
-import { IconCheck, IconDuplicate } from "justd-icons"
 import { AnimatePresence, motion } from "motion/react"
 import { Button, type ButtonProps } from "react-aria-components"
 import { tv } from "tailwind-variants"

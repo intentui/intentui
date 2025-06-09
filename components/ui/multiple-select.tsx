@@ -4,7 +4,7 @@ import * as React from "react"
 import { useState } from "react"
 
 import { cn } from "@/utils/classes"
-import { IconChevronLgDown } from "justd-icons"
+import { IconChevronLgDown } from "@intentui/icons"
 import { useFilter } from "react-aria"
 import type {
   ComboBoxProps as ComboBoxPrimitiveProps,

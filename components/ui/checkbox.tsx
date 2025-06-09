@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/utils/classes"
-import { IconCheck, IconMinus } from "justd-icons"
+import { IconCheck, IconMinus } from "@intentui/icons"
 import {
   Checkbox as CheckboxPrimitive,
   CheckboxGroup as CheckboxGroupPrimitive,

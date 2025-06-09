@@ -3,7 +3,7 @@
 import React from "react"
 
 import { cn } from "@/utils/classes"
-import { IconChevronLgDown, IconHamburger } from "justd-icons"
+import { IconChevronLgDown, IconHamburger } from "@intentui/icons"
 import type {
   CellProps,
   ColumnProps,

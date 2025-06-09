@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-import { IconCircleCheckFill, IconKey } from "justd-icons"
+import { IconCircleCheckFill, IconKey } from "@intentui/icons"
 import { Button, Loader } from "ui"
 
 export default function ButtonLoaderDemo() {

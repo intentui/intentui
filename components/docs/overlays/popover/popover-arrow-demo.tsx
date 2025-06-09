@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBell } from "justd-icons"
+import { IconBell } from "@intentui/icons"
 import { Button, Popover } from "ui"
 
 export default function PopoverArrowDemo() {

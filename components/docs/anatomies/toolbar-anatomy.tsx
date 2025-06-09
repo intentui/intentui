@@ -1,4 +1,4 @@
-import { IconBold, IconBoldFill, IconItalic, IconItalicFill } from "justd-icons"
+import { IconBold, IconBoldFill, IconItalic, IconItalicFill } from "@intentui/icons"
 import { Checkbox, Toolbar } from "ui"
 
 export default function ToolbarAnatomy() {

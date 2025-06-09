@@ -9,10 +9,10 @@ import {
   IconBrandAdobe,
   IconBrandFramer,
   IconBrandGithub,
-  IconBrandJustd,
+  IconBrandIntentui,
   IconChartBar,
   IconCommandFill
-} from "justd-icons"
+} from "@intentui/icons"
 import { Menu, MenuItem } from "react-aria-components"
 import { buttonStyles, cn } from "ui"
 
@@ -28,7 +28,7 @@ export function DocRefs({ references }: { references: string[] }) {
         break
       case url.includes("icons"):
         title = "Justd Icons"
-        icon = IconBrandJustd
+        icon = IconBrandIntentui
         break
       case url.includes("recharts"):
         title = "Recharts"

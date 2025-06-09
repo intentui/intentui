@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandGithub } from "justd-icons"
+import { IconBrandGithub } from "@intentui/icons"
 import { buttonStyles, Tooltip } from "ui"
 
 export default function TooltipDelayDemo() {

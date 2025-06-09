@@ -1,6 +1,6 @@
 "use client"
 
-import { IconDeviceDesktop, IconDevicePhone, IconMacbook } from "justd-icons"
+import { IconDeviceDesktop, IconDevicePhone, IconMacbook } from "@intentui/icons"
 import { Select } from "ui"
 
 export default function SelectWithIconDemo() {

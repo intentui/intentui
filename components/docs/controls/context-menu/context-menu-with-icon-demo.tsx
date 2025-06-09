@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconDuplicate, IconFolder, IconHighlight, IconTrash, IconUpload } from "justd-icons"
+import { IconDuplicate, IconFolder, IconHighlight, IconTrash, IconUpload } from "@intentui/icons"
 import { ContextMenu } from "ui"
 
 export default function ContextMenuWithIconDemo() {

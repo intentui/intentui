@@ -2,8 +2,8 @@
 
 import React, { useRef } from "react"
 
-import * as icons from "justd-icons"
-import { IconDownload } from "justd-icons"
+import * as icons from "@intentui/icons"
+import { IconDownload } from "@intentui/icons"
 import { useSearchParams } from "next/navigation"
 import { ListBox, ListBoxItem } from "react-aria-components"
 import * as ReactDOMServer from "react-dom/server"

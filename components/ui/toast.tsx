@@ -3,7 +3,7 @@
 import React from "react"
 
 import { useTheme } from "@/components/theme-provider"
-import { IconCheck, IconCircleExclamationFill, IconTriangleExclamationFill } from "justd-icons"
+import { IconCheck, IconCircleExclamationFill, IconTriangleExclamationFill } from "@intentui/icons"
 import { Toaster as ToasterPrimitive, type ToasterProps } from "sonner"
 import { twJoin } from "tailwind-merge"
 

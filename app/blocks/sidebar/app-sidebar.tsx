@@ -23,7 +23,7 @@ import {
   IconShield,
   IconSun,
   IconWindow
-} from "justd-icons"
+} from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { Avatar, Button, Link, Menu, Modal, Sidebar, useSidebar } from "ui"
 

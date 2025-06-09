@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { IconChevronDown, IconChevronRight, IconHamburger, IconSidebarFill } from "justd-icons"
+import { IconChevronDown, IconChevronRight, IconHamburger, IconSidebarFill } from "@intentui/icons"
 import type { DisclosureProps, LinkProps } from "react-aria-components"
 import { composeRenderProps, Disclosure, DisclosurePanel, Link } from "react-aria-components"
 import { tv } from "tailwind-variants"

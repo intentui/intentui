@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
+import { IconSearch, IconX } from "@intentui/icons"
 import { Command as CommandPrimitive } from "cmdk"
-import { IconSearch, IconX } from "justd-icons"
 import type { ModalOverlayProps, SeparatorProps, TextProps } from "react-aria-components"
 import { Button, Dialog, Modal, ModalOverlay, Text } from "react-aria-components"
 import { twJoin } from "tailwind-merge"

@@ -1,4 +1,4 @@
-import { IconBrandApple, IconSearch, IconShoppingBag } from "justd-icons"
+import { IconBrandApple, IconSearch, IconShoppingBag } from "@intentui/icons"
 import { Button, Navbar, Separator } from "ui"
 
 export default function NavbarAnatomy() {

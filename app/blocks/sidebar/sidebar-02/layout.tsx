@@ -10,7 +10,7 @@ import {
   IconLogout,
   IconSettings,
   IconShield
-} from "justd-icons"
+} from "@intentui/icons"
 import { Avatar, Breadcrumbs, Menu, Separator, Sidebar } from "ui"
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { IconAdjustment } from "justd-icons"
+import { IconAdjustment } from "@intentui/icons"
 import { Button, Description, Popover, Slider } from "ui"
 
 export function SliderOnPopoverBlock() {

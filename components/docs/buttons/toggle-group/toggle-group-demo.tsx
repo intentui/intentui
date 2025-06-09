@@ -1,4 +1,4 @@
-import { IconBulletList, IconGrid4 } from "justd-icons"
+import { IconBulletList, IconGrid4 } from "@intentui/icons"
 import { Toggle, ToggleGroup } from "ui"
 
 export default function ToggleGroupDemo() {

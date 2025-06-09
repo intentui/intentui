@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/utils/classes"
-import { IconCheck, IconHamburger } from "justd-icons"
+import { IconCheck, IconHamburger } from "@intentui/icons"
 import {
   composeRenderProps,
   ListBox as ListBoxPrimitive,

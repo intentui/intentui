@@ -33,7 +33,7 @@ When designing a layout, a navbar that links to all your pages is essential. Let
 
 <PlainCode title='layouts/navbar.tsx' code={`'use client'
 
-  import { IconBrandApple } from "justd-icons"
+  import { IconBrandApple } from "@intentui/icons"
   import { Navbar } from "ui"
 
   export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Navbar>) {
@@ -140,7 +140,7 @@ Disable individual navbar items when needed.
 On mobile devices, the navbar is hidden by default. You can open it using `Navbar.Trigger`, but there are times when you might want to manage its state by clicking one of the links within the navbar. You can achieve this because it shares the sheet properties, specifically `isOpen` and `onOpenChange`. There are multiple ways to control the state, but the simplest method is to listen for path changes and set `isOpen` to `true` or `false` accordingly.
 
 ### Inertia.js
-When you are using inertia.js, you can listen the path by using `usePage` hooks. If you're not sure, you can always see the real example here at [starter kit inertia.js](https://github.com/justdlabs/inertia.ts).
+When you are using inertia.js, you can listen the path by using `usePage` hooks. If you're not sure, you can always see the real example here at [starter kit inertia.js](https://github.com/intentuilabs/inertia.ts).
 ```
 import { usePage } from '@inertiajs/react';
 
@@ -157,7 +157,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
 ```
 
 ### Next.js
-On next.js, you can listen the path by using `usePathname` hooks. If you're not sure, you can always see the real example here at [starter kit next.js](https://github.com/justdlabs/next.js). or see live example [here](/blocks/navbar/navbar-01).
+On next.js, you can listen the path by using `usePathname` hooks. If you're not sure, you can always see the real example here at [starter kit next.js](https://github.com/intentuilabs/next.js). or see live example [here](/blocks/navbar/navbar-01).
 ```
 import { usePathname } from "next/navigation"
 

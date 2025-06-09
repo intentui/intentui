@@ -1,7 +1,7 @@
 "use client"
 
+import { IconClock } from "@intentui/icons"
 import { Time } from "@internationalized/date"
-import { IconClock } from "justd-icons"
 import { TimeField } from "ui"
 
 export default function TimeFieldSuffixDemo() {

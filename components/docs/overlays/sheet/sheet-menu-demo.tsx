@@ -19,7 +19,7 @@ import {
   IconPeople,
   IconPerson,
   IconStar
-} from "justd-icons"
+} from "@intentui/icons"
 import { Group } from "react-aria-components"
 import { Avatar, Button, Checkbox, Description, Menu, Modal, Select, Sheet, TextField } from "ui"
 

@@ -19,6 +19,7 @@
     "preview": "next build && next start -p 3001"
   },
   "dependencies": {
+    "@intentui/icons": "^1.11.0",
     "@openpanel/nextjs": "^0.0.10-beta",
     "@radix-ui/react-collapsible": "^1.1.2",
     "@shikijs/transformers": "^1.24.2",
@@ -29,7 +30,6 @@
     "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
     "input-otp": "^1.4.1",
-    "justd-icons": "^1.10.4",
     "motion": "^11.15.0",
     "next": "^15.1.1",
     "next-themes": "^0.2.1",
@@ -85,7 +85,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justdlabs/justd.git"
+    "url": "git+https://github.com/intentuilabs/justd.git"
   },
   "trustedDependencies": [
     "@vercel/speed-insights",

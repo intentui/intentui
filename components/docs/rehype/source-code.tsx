@@ -4,7 +4,7 @@ import * as React from "react"
 
 import jsonPreviews from "@/components/docs/generated/previews.json"
 import { Code } from "@/components/docs/rehype/code"
-import { IconBrandReactjs } from "justd-icons"
+import { IconBrandReactjs } from "@intentui/icons"
 
 interface SourceCodeProps extends React.HTMLAttributes<HTMLDivElement> {
   toShow: string

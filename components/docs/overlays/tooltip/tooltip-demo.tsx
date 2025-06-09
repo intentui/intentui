@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandX } from "justd-icons"
+import { IconBrandX } from "@intentui/icons"
 import { buttonStyles, Tooltip } from "ui"
 
 export default function TooltipDemo() {

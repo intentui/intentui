@@ -9,7 +9,7 @@ import {
   IconChevronsLgLeft,
   IconChevronsLgRight,
   IconDotsHorizontal
-} from "justd-icons"
+} from "@intentui/icons"
 import {
   composeRenderProps,
   ListBox,

@@ -4,8 +4,8 @@ import React, { useState } from "react"
 
 import { ColorRow } from "@/app/(app)/colors/(colors)/color-row"
 import { generateColorScale, getColorName } from "@/resources/lib/colors"
+import { IconArrowWallRight } from "@intentui/icons"
 import { parseColor } from "@react-stately/color"
-import { IconArrowWallRight } from "justd-icons"
 import { ColorField, defaultColor, useMediaQuery } from "ui"
 
 export function ColorGenerator() {
