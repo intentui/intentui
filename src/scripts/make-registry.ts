@@ -20,7 +20,7 @@ export const makeRegistry = () => {
     { type: "ui", path: "src/components/ui" },
     { type: "anatomies", path: "src/components/docs/anatomies" },
     { type: "demo", path: "src/components/docs" },
-    { type: "blocks", path: "src/app/pre-blocks" },
+    { type: "pre-blocks", path: "src/app/pre-blocks" },
   ]
 
   const getAllFiles = (dirPath: string, arrayOfFiles: string[] = []): string[] => {
@@ -93,7 +93,7 @@ export const makeRegistry = () => {
           type: "registry:${type}",
           registryDependencies: undefined,
           files: ["${relativePath}"],
-          component: React.lazy(() => import("@/${relativePath.replace("src", "")}")),
+          component: React.lazy(() => import("@${relativePath.replace("src", "")}")),
           source: "",
           category: "undefined",
           subcategory: "undefined",

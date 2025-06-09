@@ -105,6 +105,6 @@ const detect = (directories: string[]) => {
 /**
  * Directory to scan for duplicate classes
  */
-const directoriesToScan = ["app", "components"]
+const directoriesToScan = ["src/app", "src/components"]
 
 detect(directoriesToScan)
