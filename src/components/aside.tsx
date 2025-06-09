@@ -3,6 +3,7 @@
 import { Heading } from "@/components/ui/heading"
 import { Link, type LinkProps } from "@/components/ui/link"
 import { Separator } from "@/components/ui/separator"
+import { siteConfig } from "@/config/site"
 import { source } from "@/lib/source"
 import type { PageTree } from "fumadocs-core/server"
 import { usePathname } from "next/navigation"
@@ -68,7 +69,7 @@ const SidebarComposed = ({
   if (node.type === "folder") {
     return (
       <div className="mb-6">
-        {!Number(node.name) && node.name !== "2.x" && (
+        {!Number(node.name) && node.name !== siteConfig.currentVersion && (
           <Heading
             className="mb-2 flex items-center gap-x-2 font-medium text-base sm:text-sm"
             level={3}
@@ -78,7 +79,7 @@ const SidebarComposed = ({
         )}
 
         {node.children
-          .filter((i) => i.name !== "2.x")
+          .filter((i) => i.name !== siteConfig.currentVersion)
           .map((child, index) => (
             <SidebarComposed key={index} node={child} />
           ))}

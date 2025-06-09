@@ -3,6 +3,7 @@
 import type { FC, SVGProps } from "react"
 
 import { Logo } from "@/components/logo"
+import { siteConfig } from "@/config/site"
 import {
   IconBell,
   IconBrandAdobe,
@@ -40,7 +41,7 @@ export function DocRefs({ references }: { references: string[] }) {
         title = "Motion"
         icon = IconBrandFramer
         break
-      case url.includes("docs/2.x/components"):
+      case url.includes(`docs/${siteConfig.currentVersion}/components`):
         title = "Internal"
         icon = Logo
         break

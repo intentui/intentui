@@ -57,17 +57,18 @@ export function Navbar() {
                   <NavLink
                     isNextLink
                     isActive={
-                      pathname?.startsWith("/docs/3.x") &&
-                      !pathname?.includes("/docs/3.x/components")
+                      pathname?.startsWith(`/docs/${siteConfig.currentVersion}`) &&
+                      !pathname?.includes(`/docs/${siteConfig.currentVersion}/components`)
                     }
-                    href="/docs/3.x/getting-started/introduction"
+                    href={`/docs/${siteConfig.currentVersion}/getting-started/introduction`}
                   >
                     Docs
                   </NavLink>
                   <NavLink
                     isNextLink
                     isActive={
-                      pathname?.startsWith("/docs/3.x/components") || pathname === "/components"
+                      pathname?.startsWith(`/docs/${siteConfig.currentVersion}/components`) ||
+                      pathname === "/components"
                     }
                     href="/components"
                   >

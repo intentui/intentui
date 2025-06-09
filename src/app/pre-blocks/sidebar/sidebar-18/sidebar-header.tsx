@@ -22,7 +22,7 @@ export function SidebarHeader() {
     <Header className="flex h-12 flex-row items-center justify-between border-b bg-linear-to-b py-0">
       <Link
         className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
-        href="/docs/2.x/components/layouts/sidebar"
+        href="/docs/3.x/components/layouts/sidebar"
       >
         <IconFolderFill className="size-4.5" />
         <SidebarLabel className="font-medium text-sm">intentui.com</SidebarLabel>

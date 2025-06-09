@@ -22,7 +22,7 @@ export default function AppNavbar() {
       <Navbar.Nav>
         <Navbar.Logo
           aria-label="Goto documenation of Navbar"
-          href="/docs/2.x/components/layouts/navbar"
+          href="/docs/3.x/components/layouts/navbar"
         >
           <IconBrandApple className="size-6 sm:size-5" />
         </Navbar.Logo>
@@ -40,7 +40,7 @@ export default function AppNavbar() {
           <Separator orientation="vertical" className="h-6 sm:mx-1" />
           <Navbar.Logo
             aria-label="Goto documenation of Navbar"
-            href="/docs/2.x/components/layouts/navbar"
+            href="/docs/3.x/components/layouts/navbar"
           >
             <IconBrandApple className="size-5" />
           </Navbar.Logo>

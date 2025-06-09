@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Navbar } from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
+import { siteConfig } from "@/config/site"
 import { IconBrandApple, IconSearch, IconShoppingBag } from "@intentui/icons"
 
 export default function NavbarAnatomy() {
@@ -19,7 +20,7 @@ export default function NavbarAnatomy() {
         <Navbar.Flex>
           <Navbar.Trigger className="-ml-2" />
           <Separator orientation="vertical" className="mx-2 h-6" />
-          <Navbar.Logo href="/docs/2.x/components/navigation/navbar">
+          <Navbar.Logo href={`/docs/${siteConfig.currentVersion}/components/navigation/navbar`}>
             <IconBrandApple className="size-5" />
           </Navbar.Logo>
         </Navbar.Flex>
