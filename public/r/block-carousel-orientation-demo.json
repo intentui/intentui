@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-carousel-orientation-demo",
+  "type": "registry:block",
+  "title": "Carousel orientation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/media/carousel/carousel-orientation-demo.tsx",
+      "content": "import { Card } from \"@/components/ui/card\"\nimport { Carousel } from \"@/components/ui/carousel\"\n\nexport default function CarouselOrientationDemo() {\n  return (\n    <Carousel orientation=\"vertical\" className=\"relative w-full max-w-xs\">\n      <Carousel.Content className=\"h-64 snap-y py-4\">\n        {items.map((item) => (\n          <Carousel.Item key={item.id} className=\"basis-1/2 snap-center pt-1 md:basis-1/3\">\n            <Card>\n              <Card.Header>\n                <Card.Title>{item.title}</Card.Title>\n                <Card.Description>{item.description}</Card.Description>\n              </Card.Header>\n            </Card>\n          </Carousel.Item>\n        ))}\n      </Carousel.Content>\n\n      <Carousel.Handler>\n        <Carousel.Button segment=\"previous\" />\n        <Carousel.Button segment=\"next\" />\n      </Carousel.Handler>\n    </Carousel>\n  )\n}\n\nconst items = [\n  {\n    id: 1,\n    title: \"Vintage Leather Jacket\",\n    description: \"Classic brown leather jacket, perfect for a stylish retro look.\",\n  },\n  {\n    id: 2,\n    title: \"Wireless Bluetooth Headphones\",\n    description:\n      \"Experience high-quality sound with these comfortable, noise-canceling headphones.\",\n  },\n  {\n    id: 3,\n    title: \"Organic Cotton T-Shirt\",\n    description: \"Soft and eco-friendly t-shirt made from 100% organic cotton.\",\n  },\n  {\n    id: 4,\n    title: \"Stainless Steel Water Bottle\",\n    description: \"Keep your drinks cold or hot with this durable, insulated water bottle.\",\n  },\n  {\n    id: 5,\n    title: \"Running Shoes\",\n    description: \"Lightweight and comfortable shoes designed for optimal performance.\",\n  },\n  {\n    id: 6,\n    title: \"Smartwatch\",\n    description: \"Stay connected and track your fitness with this sleek smartwatch.\",\n  },\n  {\n    id: 7,\n    title: \"Portable Charger\",\n    description: \"Never run out of battery with this high-capacity portable charger.\",\n  },\n  {\n    id: 8,\n    title: \"Noise-Canceling Earbuds\",\n    description: \"Compact and powerful earbuds that block out unwanted noise.\",\n  },\n  {\n    id: 9,\n    title: \"Yoga Mat\",\n    description: \"Non-slip, cushioned yoga mat for a comfortable workout experience.\",\n  },\n  {\n    id: 10,\n    title: \"LED Desk Lamp\",\n    description: \"Bright and energy-efficient LED lamp with adjustable brightness.\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

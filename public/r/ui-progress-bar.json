@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-progress-bar",
+  "type": "registry:component",
+  "title": "Progress bar",
+  "description": "",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/progress-bar.tsx",
+      "content": "\"use client\"\n\nimport { motion } from \"motion/react\"\nimport {\n  ProgressBar as ProgressBarPrimitive,\n  type ProgressBarProps as ProgressBarPrimitiveProps,\n} from \"react-aria-components\"\n\nimport { Label } from \"@/components/ui/field\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\n\ninterface ProgressBarProps extends ProgressBarPrimitiveProps {\n  label?: string\n  ref?: React.RefObject<HTMLDivElement>\n}\n\nconst ProgressBar = ({ label, ref, className, ...props }: ProgressBarProps) => {\n  return (\n    <ProgressBarPrimitive\n      ref={ref}\n      className={composeTailwindRenderProps(className, \"flex flex-col\")}\n      {...props}\n    >\n      {({ percentage, valueText, isIndeterminate }) => (\n        <>\n          <div className=\"flex justify-between gap-2\">\n            {label && <Label>{label}</Label>}\n            <span className=\"text-muted-fg text-sm tabular-nums\">{valueText}</span>\n          </div>\n          <div className=\"-outline-offset-1 relative mt-1 h-2 min-w-64 overflow-hidden rounded-full bg-secondary outline-1 outline-transparent\">\n            {!isIndeterminate ? (\n              <motion.div\n                data-slot=\"progress-content\"\n                className=\"absolute top-0 left-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight]\"\n                initial={{ width: \"0%\" }}\n                animate={{ width: `${percentage}%` }}\n                transition={{ duration: 0.5, ease: \"easeInOut\" }}\n              />\n            ) : (\n              <motion.div\n                data-slot=\"progress-content\"\n                className=\"absolute top-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight]\"\n                initial={{ left: \"0%\", width: \"40%\" }}\n                animate={{ left: [\"0%\", \"100%\", \"0%\"] }}\n                transition={{\n                  repeat: Number.POSITIVE_INFINITY,\n                  duration: 2,\n                  ease: \"easeInOut\",\n                }}\n              />\n            )}\n          </div>\n        </>\n      )}\n    </ProgressBarPrimitive>\n  )\n}\n\nexport type { ProgressBarProps }\nexport { ProgressBar }\n",
+      "type": "registry:component"
+    }
+  ]
+}

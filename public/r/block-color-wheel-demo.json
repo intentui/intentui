@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-wheel-demo",
+  "type": "registry:block",
+  "title": "Color wheel demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-wheel/color-wheel-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorWheel } from \"@/components/ui/color-wheel\"\n\nexport default function ColorWheelDemo() {\n  return <ColorWheel aria-label=\"Background color\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-group-disabled-demo",
+  "type": "registry:block",
+  "title": "Toggle group disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle-group/toggle-group-disabled-demo.tsx",
+      "content": "import { Separator } from \"@/components/ui/separator\"\nimport { Toggle, ToggleGroup } from \"@/components/ui/toggle\"\n\nexport default function ToggleGroupSelectionModeDemo() {\n  return (\n    <div className=\"flex flex-col gap-y-6\">\n      <ToggleGroup isDisabled>\n        <Toggle id=\"left\">Left</Toggle>\n        <Toggle id=\"justify\">Justify</Toggle>\n        <Toggle id=\"center\">Center</Toggle>\n        <Toggle id=\"right\">Right</Toggle>\n      </ToggleGroup>\n      <Separator />\n      <ToggleGroup>\n        <Toggle id=\"left\">Left</Toggle>\n        <Toggle id=\"justify\" isDisabled>\n          Justify\n        </Toggle>\n        <Toggle id=\"center\" isDisabled>\n          Center\n        </Toggle>\n        <Toggle id=\"right\">Right</Toggle>\n      </ToggleGroup>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

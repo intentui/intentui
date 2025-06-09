@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-list-box-description-demo",
+  "type": "registry:block",
+  "title": "List box description demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/list-box/list-box-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ListBox } from \"@/components/ui/list-box\"\nimport type { Selection } from \"react-aria-components\"\n\nexport default function ListBoxDescriptionDemo() {\n  const [selected, setSelected] = useState<Selection>(new Set([1]))\n  return (\n    <ListBox\n      selectedKeys={selected}\n      onSelectionChange={setSelected}\n      items={roles}\n      aria-label=\"Bands\"\n      className=\"max-w-60\"\n    >\n      {(item) => (\n        <ListBox.Item id={item.id} textValue={item.name}>\n          <ListBox.Label>{item.name}</ListBox.Label>\n          <ListBox.Description>{item.description}</ListBox.Description>\n        </ListBox.Item>\n      )}\n    </ListBox>\n  )\n}\n\nconst roles = [\n  { id: 1, name: \"Admin\", description: \"Has full access to all resources\" },\n  { id: 2, name: \"Editor\", description: \"Can edit content but has limited access to settings\" },\n  { id: 3, name: \"Viewer\", description: \"Can view content but cannot make changes\" },\n  { id: 4, name: \"Contributor\", description: \"Can contribute content for review\" },\n  { id: 5, name: \"Guest\", description: \"Limited access, mostly for viewing purposes\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

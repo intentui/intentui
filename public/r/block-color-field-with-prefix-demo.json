@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-field-with-prefix-demo",
+  "type": "registry:block",
+  "title": "Color field with prefix demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-field/color-field-with-prefix-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorField } from \"@/components/ui/color-field\"\nimport { IconColors } from \"@intentui/icons\"\n\nexport default function ColorFieldWithPrefixDemo() {\n  return <ColorField label=\"Color\" prefix={<IconColors />} placeholder=\"#FAFAFA\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

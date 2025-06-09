@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-area-space-demo",
+  "type": "registry:block",
+  "title": "Color area space demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-area/color-area-space-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorArea } from \"@/components/ui/color-area\"\nimport { ColorThumb } from \"@/components/ui/color-thumb\"\n\nexport default function ColorAreaSpaceDemo() {\n  return (\n    <ColorArea colorSpace=\"rgb\">\n      <ColorThumb />\n    </ColorArea>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-card-demo",
+  "type": "registry:block",
+  "title": "Card demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/card/card-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Card } from \"@/components/ui/card\"\n\nexport default function CardDemo() {\n  return (\n    <Card className=\"max-w-lg\">\n      <Card.Header>\n        <Card.Title>Monthly Report</Card.Title>\n        <Card.Description>Financial summary for June</Card.Description>\n      </Card.Header>\n      <Card.Content>\n        The monthly financial report shows a 15% increase in revenue compared to last month.\n      </Card.Content>\n      <Card.Footer>\n        <Button>View Details</Button>\n      </Card.Footer>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

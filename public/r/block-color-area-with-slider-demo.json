@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-area-with-slider-demo",
+  "type": "registry:block",
+  "title": "Color area with slider demo",
+  "description": "",
+  "dependencies": [
+    "@react-stately/color"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-area/color-area-with-slider-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { parseColor } from \"@react-stately/color\"\n\nimport { ColorArea } from \"@/components/ui/color-area\"\nimport { ColorField } from \"@/components/ui/color-field\"\nimport { ColorSlider } from \"@/components/ui/color-slider\"\n\nexport default function ColorAreaWithSliderDemo() {\n  const [color, setColor] = useState(parseColor(\"hsl(50, 100%, 50%)\"))\n  return (\n    <div className=\"flex max-w-60 flex-col gap-y-2\">\n      <ColorArea\n        className=\"w-full shrink-0\"\n        value={color}\n        onChange={setColor}\n        xChannel=\"saturation\"\n        yChannel=\"lightness\"\n      />\n      <ColorSlider\n        label=\"Fill Color\"\n        className=\"orientation-horizontal:w-full\"\n        channel=\"hue\"\n        value={color}\n        onChange={setColor}\n      />\n\n      <ColorField label=\"Current Color\" enableColorPicker={false} value={color.toString(\"hex\")} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-card-action-demo",
+  "type": "registry:block",
+  "title": "Card action demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/card/card-action-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Card } from \"@/components/ui/card\"\nimport { Menu } from \"@/components/ui/menu\"\nimport { IconChevronLgDown } from \"@intentui/icons\"\n\nexport default function CardActionDemo() {\n  return (\n    <Card>\n      <Card.Header>\n        <Card.Title>Customers</Card.Title>\n        <Card.Description>\n          Manage and view customer details with available actions aligned to the right.\n        </Card.Description>\n        <Card.Action>\n          <Menu>\n            <Button size=\"sm\" intent=\"outline\">\n              Export... <IconChevronLgDown />\n            </Button>\n            <Menu.Content placement=\"bottom end\">\n              <Menu.Item>Export to PDF</Menu.Item>\n              <Menu.Item>Export to CSV</Menu.Item>\n            </Menu.Content>\n          </Menu>\n        </Card.Action>\n      </Card.Header>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

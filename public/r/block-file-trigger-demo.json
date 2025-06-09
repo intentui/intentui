@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-file-trigger-demo",
+  "type": "registry:block",
+  "title": "File trigger demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/file-trigger/file-trigger-demo.tsx",
+      "content": "\"use client\"\n\nimport { FileTrigger } from \"@/components/ui/file-trigger\"\n\nexport default function FileTriggerDemo() {\n  return <FileTrigger />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

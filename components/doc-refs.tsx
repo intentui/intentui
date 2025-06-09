@@ -27,7 +27,7 @@ export function DocRefs({ references }: { references: string[] }) {
         icon = IconBrandAdobe
         break
       case url.includes("icons"):
-        title = "Justd Icons"
+        title = "Intent UI Icons"
         icon = IconBrandIntentui
         break
       case url.includes("recharts"):

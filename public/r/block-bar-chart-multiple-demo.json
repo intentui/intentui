@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-multiple-demo",
+  "type": "registry:block",
+  "title": "Bar chart multiple demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-multiple-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst chartData = Array.from({ length: 12 }, (_, i) => {\n  const months = [\n    \"Jan\",\n    \"Feb\",\n    \"Mar\",\n    \"Apr\",\n    \"May\",\n    \"Jun\",\n    \"Jul\",\n    \"Aug\",\n    \"Sep\",\n    \"Oct\",\n    \"Nov\",\n    \"Dec\",\n  ]\n  return {\n    month: months[i],\n    sales: 1000 + Math.floor(Math.random() * 300), // Random value for Sales\n    expenses: 800 + Math.floor(Math.random() * 400), // Random value for Expenses\n    profit: 200 + Math.floor(Math.random() * 900), // Random value for Profit\n  }\n})\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n    color: \"var(--chart-1)\",\n  },\n  expenses: {\n    label: \"Expenses\",\n    color: \"var(--chart-2)\",\n  },\n  profit: {\n    label: \"Profit\",\n    color: \"var(--chart-4)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartMultipleDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Sales vs Expenses\"\n        description=\"The chart shows the sales and expenses for the last year.\"\n        className=\"items-center pb-4\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"max-h-[300px] w-full\">\n          <BarChart accessibilityLayer data={chartData}>\n            <CartesianGrid vertical={false} />\n            <XAxis dataKey=\"month\" tickLine={false} tickMargin={10} axisLine={false} />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator=\"dashed\" />} />\n            <Bar dataKey=\"sales\" fill=\"var(--color-sales)\" radius={4} />\n            <Bar dataKey=\"expenses\" fill=\"var(--color-expenses)\" radius={4} />\n            <Bar dataKey=\"profit\" fill=\"var(--color-profit)\" radius={4} />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

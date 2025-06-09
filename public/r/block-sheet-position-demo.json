@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-sheet-position-demo",
+  "type": "registry:block",
+  "title": "Sheet position demo",
+  "description": "",
+  "dependencies": [
+    "usemods"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/sheet/sheet-position-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Sheet } from \"@/components/ui/sheet\"\nimport { titleCase } from \"usemods\"\n\ntype Side = \"left\" | \"right\" | \"top\" | \"bottom\"\nexport default function SheetPositionDemo() {\n  const [sheetSide, setSheetSide] = useState<Side>(\"left\")\n  const [isOpen, setIsOpen] = useState(false)\n\n  const sides: Side[] = [\"left\", \"right\", \"top\", \"bottom\"]\n\n  const pressHandler = (side: Side, open: boolean) => {\n    setSheetSide(side)\n    setIsOpen(open)\n  }\n\n  return (\n    <>\n      <div className=\"grid grid-cols-2 gap-2\">\n        {sides.map((side, idx) => (\n          <Button intent=\"outline\" onPress={() => pressHandler(side, true)} key={idx}>\n            {titleCase(side)}\n          </Button>\n        ))}\n      </div>\n      <Sheet.Content isOpen={isOpen} onOpenChange={setIsOpen} side={sheetSide}>\n        <Sheet.Header>\n          <Sheet.Title>{titleCase(sheetSide)}</Sheet.Title>\n          <Sheet.Description>The sheet will go from {sheetSide} side.</Sheet.Description>\n        </Sheet.Header>\n      </Sheet.Content>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

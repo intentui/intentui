@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-slider-step-demo",
+  "type": "registry:block",
+  "title": "Slider step demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/slider/slider-step-demo.tsx",
+      "content": "\"use client\"\n\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function SliderStepDemo() {\n  return <Slider step={10} description=\"Step in 10\" label=\"Progress tracking\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

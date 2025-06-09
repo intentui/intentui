@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-picker-controlled-demo",
+  "type": "registry:block",
+  "title": "Date picker controlled demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date",
+    "@react-aria/i18n"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-picker/date-picker-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { getLocalTimeZone, parseDate, today } from \"@internationalized/date\"\nimport { useDateFormatter } from \"@react-aria/i18n\"\n\nimport { DatePicker } from \"@/components/ui/date-picker\"\n\nexport default function DatePickerControlledDemo() {\n  const now = today(getLocalTimeZone())\n\n  const [value, setValue] = useState(parseDate(now.toString()))\n\n  const formatter = useDateFormatter({ dateStyle: \"full\" })\n\n  return (\n    <div className=\"space-y-3\">\n      <div className=\"divide-y [&_p]:py-2\">\n        <p>{value ? formatter.format(value.toDate(getLocalTimeZone())) : \"--\"}</p>\n        <p>{value ? value.toString() : \"--\"}</p>\n      </div>\n      <DatePicker value={value} onChange={(newValue) => setValue(newValue!)} label=\"Event date\" />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

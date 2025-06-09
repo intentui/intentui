@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-group-disabled-demo",
+  "type": "registry:block",
+  "title": "Disclosure group disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure-group/disclosure-group-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  Disclosure,\n  DisclosureGroup,\n  DisclosurePanel,\n  DisclosureTrigger,\n} from \"@/components/ui/disclosure\"\n\nexport default function DisclosureGroupDisabledDemo() {\n  return (\n    <DisclosureGroup>\n      {faqs.map((item, index) => (\n        <Disclosure isDisabled={index === 2} key={index} id={index}>\n          <DisclosureTrigger>{item.q}</DisclosureTrigger>\n          <DisclosurePanel>{item.a}</DisclosurePanel>\n        </Disclosure>\n      ))}\n    </DisclosureGroup>\n  )\n}\n\nconst faqs = [\n  {\n    q: \"Do you offer gift wrapping options?\",\n    a: \"Yes, we provide gift wrapping services for a small additional charge at checkout.\",\n  },\n  {\n    q: \"Can I return a gift card?\",\n    a: \"Sorry, gift cards are non-refundable and cannot be returned.\",\n  },\n  {\n    q: \"What are your store hours?\",\n    a: \"Our store is open from 9 AM to 9 PM on weekdays and 10 AM to 6 PM on weekends.\",\n  },\n  {\n    q: \"Do you have a loyalty program?\",\n    a: \"Yes, we have a loyalty program where you can earn points for every purchase and redeem them for discounts.\",\n  },\n  {\n    q: \"How do I update my billing information?\",\n    a: \"You can update your billing information through your account settings on our website.\",\n  },\n  {\n    q: \"Are there any discounts for bulk orders?\",\n    a: \"Yes, we offer discounts on bulk orders. Please contact our sales team for more details.\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

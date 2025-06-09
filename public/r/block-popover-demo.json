@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-popover-demo",
+  "type": "registry:block",
+  "title": "Popover demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/popover/popover-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Popover } from \"@/components/ui/popover\"\n\nexport default function PopoverDemo() {\n  return (\n    <Popover>\n      <Button intent=\"outline\">Forgot Password</Button>\n      <Popover.Content className=\"sm:max-w-72\">\n        <Popover.Header>\n          <Popover.Title>Email</Popover.Title>\n          <Popover.Description>We'll send you an email to log in.</Popover.Description>\n        </Popover.Header>\n      </Popover.Content>\n    </Popover>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

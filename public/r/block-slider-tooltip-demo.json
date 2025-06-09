@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-slider-tooltip-demo",
+  "type": "registry:block",
+  "title": "Slider tooltip demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/slider/slider-tooltip-demo.tsx",
+      "content": "\"use client\"\n\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function SliderTooltipDemo() {\n  return (\n    <div className=\"flex w-full flex-col gap-y-1\">\n      <div className=\"flex w-full items-center justify-between text-sm\">\n        <span>Soft</span>\n        <span>Loud</span>\n      </div>\n      <Slider aria-label=\"volume\" output=\"tooltip\" defaultValue={30} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

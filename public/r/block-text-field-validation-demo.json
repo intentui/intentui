@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-text-field-validation-demo",
+  "type": "registry:block",
+  "title": "Text field validation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/text-field/text-field-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Form } from \"@/components/ui/form\"\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function TextFieldValidationDemo() {\n  return (\n    <Form className=\"space-y-4\">\n      <TextField isRequired label=\"Name\" />\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

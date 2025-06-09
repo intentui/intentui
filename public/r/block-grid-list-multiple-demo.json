@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-grid-list-multiple-demo",
+  "type": "registry:block",
+  "title": "Grid list multiple demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/grid-list/grid-list-multiple-demo.tsx",
+      "content": "\"use client\"\n\nimport { GridList } from \"@/components/ui/grid-list\"\n\nexport default function GridListMultipleDemo() {\n  return (\n    <div>\n      <GridList\n        items={items}\n        aria-label=\"Select items\"\n        selectionMode=\"multiple\"\n        className=\"min-w-64\"\n      >\n        {(item) => <GridList.Item>{item.name}</GridList.Item>}\n      </GridList>\n    </div>\n  )\n}\n\nconst items = [\n  { id: \"1\", name: \"The Beatles\" },\n  { id: \"2\", name: \"Led Zeppelin\" },\n  { id: \"3\", name: \"Pink Floyd\" },\n  { id: \"4\", name: \"Queen\" },\n  { id: \"5\", name: \"The Rolling Stones\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

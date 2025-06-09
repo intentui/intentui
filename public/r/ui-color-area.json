@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-color-area",
+  "type": "registry:component",
+  "title": "Color area",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/color-area.tsx",
+      "content": "\"use client\"\nimport type { ColorAreaProps } from \"react-aria-components\"\nimport { ColorArea as ColorAreaPrimitive } from \"react-aria-components\"\n\nimport { ColorThumb } from \"@/components/ui/color-thumb\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\n\nconst ColorArea = ({ className, ...props }: ColorAreaProps) => {\n  return (\n    <ColorAreaPrimitive\n      {...props}\n      data-slot=\"color-area\"\n      className={composeTailwindRenderProps(\n        className,\n        \"size-56 shrink-0 rounded-md bg-muted forced-colors:bg-[GrayText]\",\n      )}\n      style={({ defaultStyle, isDisabled }) => ({\n        ...defaultStyle,\n        background: isDisabled ? undefined : defaultStyle.background,\n      })}\n    >\n      <ColorThumb />\n    </ColorAreaPrimitive>\n  )\n}\n\nexport { ColorArea }\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-skeleton",
+  "type": "registry:component",
+  "title": "Skeleton",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/skeleton.tsx",
+      "content": "import type React from \"react\"\nimport { twMerge } from \"tailwind-merge\"\n\ninterface SkeletonProps extends React.ComponentProps<\"div\"> {\n  soft?: boolean\n}\n\nconst Skeleton = ({ ref, soft = false, className, ...props }: SkeletonProps) => {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      ref={ref}\n      className={twMerge(\n        \"shrink-0 animate-pulse rounded-lg\",\n        soft ? \"bg-muted\" : \"bg-secondary\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nexport type { SkeletonProps }\nexport { Skeleton }\n",
+      "type": "registry:component"
+    }
+  ]
+}

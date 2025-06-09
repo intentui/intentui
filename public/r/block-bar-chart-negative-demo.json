@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-negative-demo",
+  "type": "registry:block",
+  "title": "Bar chart negative demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-negative-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, CartesianGrid, Cell, LabelList } from \"recharts\"\n\nconst chartData = [\n  { month: \"Jan\", profitLoss: 1200 },\n  { month: \"Feb\", profitLoss: 1500 },\n  { month: \"Mar\", profitLoss: -700 },\n  { month: \"Apr\", profitLoss: 2000 },\n  { month: \"May\", profitLoss: -1500 },\n  { month: \"Jun\", profitLoss: 1700 },\n  { month: \"Jul\", profitLoss: -1200 },\n  { month: \"Aug\", profitLoss: 1900 },\n  { month: \"Sep\", profitLoss: -1400 },\n  { month: \"Oct\", profitLoss: -1800 },\n  { month: \"Nov\", profitLoss: 2100 },\n  { month: \"Dec\", profitLoss: 1600 },\n]\n\nconst chartConfig = {\n  profitLoss: {\n    label: \"Profit/Loss\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartNegativeDemo() {\n  return (\n    <Card>\n      <Card.Header title=\"Monthly Profit and Loss\" description=\"January - December 2024\" />\n      <Card.Content>\n        <Chart className=\"aspect-[15/15] sm:aspect-[17/7]\" config={chartConfig}>\n          <BarChart accessibilityLayer data={chartData}>\n            <CartesianGrid vertical={false} />\n            <ChartTooltip\n              cursor={false}\n              content={<ChartTooltipContent hideLabel hideIndicator />}\n            />\n            <Bar dataKey=\"profitLoss\">\n              <LabelList position=\"top\" dataKey=\"month\" fillOpacity={1} />\n              {chartData.map((item) => (\n                <Cell\n                  key={item.month}\n                  fill={item.profitLoss > 0 ? \"var(--chart-1)\" : \"var(--chart-2)\"}\n                />\n              ))}\n            </Bar>\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

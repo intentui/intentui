@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-grid-list",
+  "type": "registry:component",
+  "title": "Grid list",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "react-aria-components",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/grid-list.tsx",
+      "content": "import type React from \"react\"\n\nimport { IconHamburger } from \"@intentui/icons\"\nimport type { GridListItemProps, GridListProps } from \"react-aria-components\"\nimport {\n  Button,\n  GridListItem as GridListItemPrimitive,\n  GridList as GridListPrimitive,\n  composeRenderProps,\n} from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\nimport { Checkbox } from \"@/components/ui/checkbox\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { twMerge } from \"tailwind-merge\"\n\nconst GridList = <T extends object>({ children, className, ...props }: GridListProps<T>) => (\n  <GridListPrimitive\n    className={composeTailwindRenderProps(\n      className,\n      \"relative max-h-96 scroll-py-1 overflow-y-scroll overscroll-contain rounded-lg border *:data-drop-target:border *:data-drop-target:border-accent\",\n    )}\n    {...props}\n  >\n    {children}\n  </GridListPrimitive>\n)\n\nconst itemStyles = tv({\n  base: \"group -mb-px -outline-offset-2 relative flex cursor-default select-none gap-3 border-y px-3 py-2 text-fg outline-hidden transition [--selected-item-hovered:--color-muted]/70 [--selected-item:var(--color-muted)]/80 first:rounded-t-md first:border-t-0 last:mb-0 last:rounded-b-md last:border-b-0 sm:text-sm\",\n  variants: {\n    isHovered: { true: \"bg-subtle\" },\n    isSelected: {\n      true: \"z-20 border-border/50 bg-(--selected-item) hover:bg-(--selected-item-hovered)\",\n    },\n    isFocused: {\n      true: \"outline-hidden\",\n    },\n    isFocusVisible: {\n      true: \"bg-(--selected-item) selected:bg-(--selected-item) outline-hidden ring-1 ring-ring hover:bg-(--selected-item-hovered)\",\n    },\n    isDisabled: {\n      true: \"text-muted-fg/70 forced-colors:text-[GrayText]\",\n    },\n  },\n})\n\nconst GridListItem = ({ className, children, ...props }: GridListItemProps) => {\n  const textValue = props.textValue || (typeof children === \"string\" ? children : undefined)\n  return (\n    <GridListItemPrimitive\n      textValue={textValue}\n      {...props}\n      className={composeRenderProps(className, (className, renderProps) =>\n        itemStyles({ ...renderProps, className }),\n      )}\n    >\n      {(values) => (\n        <>\n          {values.allowsDragging && (\n            <Button\n              slot=\"drag\"\n              className=\"cursor-grab data-dragging:cursor-grabbing *:data-[slot=icon]:text-muted-fg\"\n            >\n              <IconHamburger />\n            </Button>\n          )}\n\n          <span\n            aria-hidden\n            className=\"absolute inset-y-0 left-0 hidden h-full w-0.5 bg-primary group-selected:block\"\n          />\n          {values.selectionMode === \"multiple\" && values.selectionBehavior === \"toggle\" && (\n            <Checkbox className=\"-mr-2\" slot=\"selection\" />\n          )}\n          {typeof children === \"function\" ? children(values) : children}\n        </>\n      )}\n    </GridListItemPrimitive>\n  )\n}\n\nconst GridEmptyState = ({ ref, className, ...props }: React.ComponentProps<\"div\">) => (\n  <div ref={ref} className={twMerge(\"p-6\", className)} {...props} />\n)\n\nGridList.Item = GridListItem\nGridList.EmptyState = GridEmptyState\n\nexport type { GridListProps, GridListItemProps }\nexport { GridList }\n",
+      "type": "registry:component"
+    }
+  ]
+}

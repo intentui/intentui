@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-respect-screen-demo",
+  "type": "registry:block",
+  "title": "Menu respect screen demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-respect-screen-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Menu } from \"@/components/ui/menu\"\nimport { IconDashboard, IconSettings, IconShield } from \"@intentui/icons\"\n\nexport default function MenuRespectScreenDemo() {\n  return (\n    <Menu respectScreen={false}>\n      <Button intent=\"outline\">Open</Button>\n      <Menu.Content placement=\"bottom\" className=\"min-w-48\">\n        <Menu.Item>\n          <IconDashboard />\n          <Menu.Label>Dashboard</Menu.Label>\n        </Menu.Item>\n        <Menu.Item>\n          <IconSettings />\n          <Menu.Label>Settings</Menu.Label>\n        </Menu.Item>\n        <Menu.Item>\n          <IconShield /> <Menu.Label>Security</Menu.Label>\n        </Menu.Item>\n        <Menu.Item>\n          <Menu.Label>Reports</Menu.Label>\n        </Menu.Item>\n        <Menu.Item>\n          <Menu.Label>Privacy</Menu.Label>\n        </Menu.Item>\n        <Menu.Item>\n          <Menu.Label>Help</Menu.Label>\n        </Menu.Item>\n      </Menu.Content>\n    </Menu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

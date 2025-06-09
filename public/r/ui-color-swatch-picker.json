@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-color-swatch-picker",
+  "type": "registry:component",
+  "title": "Color swatch picker",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/color-swatch-picker.tsx",
+      "content": "\"use client\"\n\nimport type { ColorSwatchPickerItemProps, ColorSwatchPickerProps } from \"react-aria-components\"\nimport {\n  ColorSwatchPickerItem as ColorSwatchPickerItemPrimitive,\n  ColorSwatchPicker as ColorSwatchPickerPrimitive,\n} from \"react-aria-components\"\n\nimport { ColorSwatch } from \"@/components/ui/color-swatch\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { twMerge } from \"tailwind-merge\"\n\nconst ColorSwatchPicker = ({\n  children,\n  className,\n  layout = \"grid\",\n  ...props\n}: ColorSwatchPickerProps) => {\n  return (\n    <ColorSwatchPickerPrimitive\n      layout={layout}\n      className={composeTailwindRenderProps(className, \"flex gap-1\")}\n      {...props}\n    >\n      {children}\n    </ColorSwatchPickerPrimitive>\n  )\n}\n\nconst ColorSwatchPickerItem = ({ className, children, ...props }: ColorSwatchPickerItemProps) => {\n  return (\n    <ColorSwatchPickerItemPrimitive\n      className={composeTailwindRenderProps(\n        className,\n        \"relative overflow-hidden rounded-md outline-hidden disabled:opacity-50\",\n      )}\n      {...props}\n    >\n      {(values) => (\n        <>\n          {!children ? (\n            <>\n              <ColorSwatch\n                className={twMerge(\n                  (values.isSelected || values.isFocused || values.isPressed) && \"inset-ring-fg/30\",\n                  values.isDisabled && \"opacity-50\",\n                )}\n              />\n              {(values.isSelected || values.isFocused || values.isPressed) && (\n                <span aria-hidden className=\"absolute right-1 bottom-1 size-1 rounded-full bg-fg\" />\n              )}\n            </>\n          ) : typeof children === \"function\" ? (\n            children(values)\n          ) : (\n            children\n          )}\n        </>\n      )}\n    </ColorSwatchPickerItemPrimitive>\n  )\n}\n\nColorSwatchPicker.Item = ColorSwatchPickerItem\n\nexport { ColorSwatchPicker }\n",
+      "type": "registry:component"
+    }
+  ]
+}

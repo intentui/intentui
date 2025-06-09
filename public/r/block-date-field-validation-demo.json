@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-field-validation-demo",
+  "type": "registry:block",
+  "title": "Date field validation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-field/date-field-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { DateField } from \"@/components/ui/date-field\"\nimport { Form } from \"@/components/ui/form\"\n\nexport default function DateFieldValidationDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()}>\n      <DateField isRequired label=\"Event date\" className=\"mb-2\" />\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

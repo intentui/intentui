@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-number-field-controlled-demo",
+  "type": "registry:block",
+  "title": "Number field controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/number-field/number-field-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { NumberField } from \"@/components/ui/number-field\"\n\nexport default function NumberFieldControlledDemo() {\n  const [number, setNumber] = useState(1280)\n  return (\n    <div>\n      <NumberField label=\"Width\" value={number} onChange={setNumber} />\n\n      <Description className=\"mt-2 block [&>strong]:text-fg\">\n        You have typed: <strong>{number ?? \"-\"}</strong>\n      </Description>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tooltip-chart-no-indicator-demo",
+  "type": "registry:block",
+  "title": "Tooltip chart no indicator demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/tooltip/tooltip-chart-no-indicator-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, XAxis } from \"recharts\"\n\nconst chartData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index).toLocaleDateString(\"en-US\", {\n    month: \"short\",\n    year: \"numeric\",\n  })\n  return {\n    date,\n    revenue: Math.floor(Math.random() * 500 + 300),\n    cost: Math.floor(Math.random() * 300 + 150),\n  }\n})\n\nconst chartConfig = {\n  revenue: {\n    label: \"Revenue\",\n    color: \"var(--chart-1)\",\n  },\n  cost: {\n    label: \"Cost\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function TooltipChartNoIndicatorDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Monthly Revenue and Costs\"\n        description=\"Tracking revenue and costs over the last 24 months\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <BarChart accessibilityLayer data={chartData}>\n            <XAxis\n              dataKey=\"date\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n              tickFormatter={(value) => value}\n            />\n            <Bar dataKey=\"revenue\" stackId=\"a\" fill=\"var(--color-revenue)\" radius={[0, 0, 4, 4]} />\n            <Bar dataKey=\"cost\" stackId=\"a\" fill=\"var(--color-cost)\" radius={[4, 4, 0, 0]} />\n            <ChartTooltip\n              content={<ChartTooltipContent hideIndicator />}\n              cursor={false}\n              defaultIndex={1}\n            />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

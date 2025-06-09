@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-custom-label-demo",
+  "type": "registry:block",
+  "title": "Bar chart custom label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-custom-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from \"recharts\"\n\nconst projectData = [\n  { team: \"Engineering\", completed: 42, ongoing: 15 },\n  { team: \"Design\", completed: 30, ongoing: 5 },\n  { team: \"Marketing\", completed: 25, ongoing: 10 },\n  { team: \"Sales\", completed: 20, ongoing: 8 },\n  { team: \"Support\", completed: 35, ongoing: 12 },\n  { team: \"Engineering\", completed: 42, ongoing: 15 },\n  { team: \"Design\", completed: 30, ongoing: 5 },\n  { team: \"Marketing\", completed: 25, ongoing: 10 },\n  { team: \"Sales\", completed: 20, ongoing: 8 },\n  { team: \"Support\", completed: 35, ongoing: 12 },\n  { team: \"Engineering\", completed: 42, ongoing: 15 },\n  { team: \"Design\", completed: 30, ongoing: 5 },\n]\n\nconst chartConfig = {\n  completed: {\n    label: \"Completed\",\n    color: \"var(--chart-1)\",\n  },\n  ongoing: {\n    label: \"Ongoing\",\n    color: \"var(--chart-2)\",\n  },\n  label: {\n    color: \"var(--bg)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartCustomLabelDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Team Project Status\"\n        description=\"Completed vs Ongoing Projects by Team\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <BarChart\n            accessibilityLayer\n            data={projectData}\n            layout=\"vertical\"\n            margin={{\n              right: 16,\n            }}\n          >\n            <CartesianGrid horizontal={false} />\n            <YAxis\n              dataKey=\"team\"\n              type=\"category\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n            />\n            <XAxis dataKey=\"completed\" type=\"number\" hide />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator=\"line\" />} />\n            <Bar dataKey=\"completed\" layout=\"vertical\" fill=\"var(--color-completed)\" radius={4}>\n              <LabelList\n                dataKey=\"team\"\n                position=\"insideLeft\"\n                offset={8}\n                className=\"fill-(--color-label)\"\n                fontSize={12}\n              />\n              <LabelList\n                dataKey=\"completed\"\n                position=\"right\"\n                offset={8}\n                className=\"fill-fg\"\n                fontSize={12}\n              />\n            </Bar>\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

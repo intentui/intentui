@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-indeterminate-progress-bar-demo",
+  "type": "registry:block",
+  "title": "Indeterminate progress bar demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/progres-bar/indeterminate-progress-bar-demo.tsx",
+      "content": "\"use client\"\n\nimport { ProgressBar } from \"@/components/ui/progress-bar\"\n\nexport default function ProgressBarDemo() {\n  return <ProgressBar label=\"Loading…\" isIndeterminate />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

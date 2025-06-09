@@ -1,0 +1,9 @@
+{
+  "name": "csr/inertia/global.d.ts.stub",
+  "files": [
+    {
+      "name": "csr/inertia/global.d.ts.stub",
+      "content": "import type { PageProps as InertiaPageProps, VisitOptions } from \"@inertiajs/core\";\nimport { AxiosInstance } from \"axios\";\nimport { route as ziggyRoute } from \"ziggy-js\";\nimport { PageProps as AppPageProps } from \"./\";\n\ndeclare module \"react-aria-components\" {\n  interface RouterConfig {\n    routerOptions: VisitOptions;\n  }\n}\n\ndeclare global {\n  interface Window {\n    axios: AxiosInstance;\n  }\n\n  /* eslint-disable no-var */\n  var route: typeof ziggyRoute;\n}\n\ndeclare module \"@inertiajs/core\" {\n  interface PageProps extends InertiaPageProps, AppPageProps {}\n}\n"
+    }
+  ]
+}

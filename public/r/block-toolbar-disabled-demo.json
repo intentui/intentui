@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toolbar-disabled-demo",
+  "type": "registry:block",
+  "title": "Toolbar disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/toolbar/toolbar-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Toggle } from \"@/components/ui/toggle\"\nimport { Toolbar } from \"@/components/ui/toolbar\"\nimport {\n  IconAlignmentJustify,\n  IconAlignmentJustifyFill,\n  IconAlignmentRight,\n  IconAlignmentRightFill,\n  IconCamera,\n  IconCameraFill,\n  IconCursor,\n  IconCursorFill,\n  IconGallery,\n  IconGalleryFill,\n  IconPencilBox,\n  IconPencilBoxFill,\n  IconToolbox,\n  IconToolboxFill,\n} from \"@intentui/icons\"\n\nexport default function ToolbarDisabledDemo() {\n  return (\n    <Toolbar aria-label=\"Toolbox\">\n      <Toolbar.Group aria-label=\"Toolbox\">\n        <Toggle isDisabled aria-label=\"Cursor\" size=\"sq-sm\" intent=\"outline\">\n          {({ isSelected }) => <>{isSelected ? <IconCursorFill /> : <IconCursor />}</>}\n        </Toggle>\n        <Toggle aria-label=\"Pencil Box\" size=\"sq-sm\" intent=\"outline\">\n          {({ isSelected }) => <>{isSelected ? <IconPencilBoxFill /> : <IconPencilBox />}</>}\n        </Toggle>\n        <Toggle aria-label=\"Pencil Box\" size=\"sq-sm\" intent=\"outline\">\n          {({ isSelected }) => <>{isSelected ? <IconToolboxFill /> : <IconToolbox />}</>}\n        </Toggle>\n      </Toolbar.Group>\n      <Toolbar.Separator />\n      <Toolbar.Group isDisabled aria-label=\"Gallery\">\n        <Toolbar.Item aria-label=\"Camera\" size=\"sq-sm\" intent=\"outline\">\n          {({ isSelected }) => <>{isSelected ? <IconCameraFill /> : <IconCamera />}</>}\n        </Toolbar.Item>\n        <Toolbar.Item aria-label=\"Gallery\" size=\"sq-sm\" intent=\"outline\">\n          {({ isSelected }) => <>{isSelected ? <IconGalleryFill /> : <IconGallery />}</>}\n        </Toolbar.Item>\n      </Toolbar.Group>\n      <Toolbar.Separator />\n      <Toolbar.Group aria-label=\"Alignment\">\n        <Toggle aria-label=\"Align Right\" intent=\"outline\">\n          {({ isSelected }) => (\n            <>{isSelected ? <IconAlignmentRightFill /> : <IconAlignmentRight />}</>\n          )}\n        </Toggle>\n        <Toggle aria-label=\"Align Justify\" intent=\"outline\">\n          {({ isSelected }) => (\n            <>{isSelected ? <IconAlignmentJustifyFill /> : <IconAlignmentJustify />}</>\n          )}\n        </Toggle>\n      </Toolbar.Group>\n    </Toolbar>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

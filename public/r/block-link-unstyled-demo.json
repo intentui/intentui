@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-link-unstyled-demo",
+  "type": "registry:block",
+  "title": "Link unstyled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/link/link-unstyled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Link } from \"@/components/ui/link\"\n\nexport default function LinkUnstyledDemo() {\n  return <Link href=\"#unstyled\">Label</Link>\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

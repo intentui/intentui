@@ -1,0 +1,9 @@
+{
+  "name": "csr/remix/root.tsx.stub",
+  "files": [
+    {
+      "name": "csr/remix/root.tsx.stub",
+      "content": "import { RouterProvider } from \"@/components/router-provider\"\n\nexport default function AppWithProviders() {\n  const data = useLoaderData<typeof loader>()\n  return (\n    <RouterProvider>\n      <App />\n    </RouterProvider>\n  )\n}\n"
+    }
+  ]
+}

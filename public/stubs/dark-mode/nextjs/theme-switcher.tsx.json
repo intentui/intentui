@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/nextjs/theme-switcher.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/nextjs/theme-switcher.tsx.stub",
+      "content": "\"use client\"\n\nimport { IconDeviceDesktop2, IconMoon, IconSun } from \"@intentui/icons\"\nimport { useTheme } from \"next-themes\"\nimport { Button } from \"@/components/ui/button\"\n\nexport function ThemeSwitcher({\n  shape = \"square\",\n  appearance = \"outline\",\n  ...props\n}: React.ComponentProps<typeof Button>) {\n  const { theme, setTheme } = useTheme()\n\n  const toggleTheme = () => {\n    const nextTheme = theme === \"light\" ? \"dark\" : theme === \"dark\" ? \"system\" : \"light\"\n    setTheme(nextTheme)\n  }\n\n  return (\n    <Button\n      shape={shape}\n      intent={appearance}\n      size=\"sq-sm\"\n      aria-label=\"Switch theme\"\n      onPress={toggleTheme}\n      {...props}\n    >\n      {theme === \"light\" ? <IconSun /> : theme === \"dark\" ? <IconMoon /> : <IconDeviceDesktop2 />}\n    </Button>\n  )\n}\n"
+    }
+  ]
+}

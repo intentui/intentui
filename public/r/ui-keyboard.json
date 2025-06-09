@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-keyboard",
+  "type": "registry:component",
+  "title": "Keyboard",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/keyboard.tsx",
+      "content": "\"use client\"\n\nimport { Keyboard as KeyboardPrimitive } from \"react-aria-components\"\nimport { twMerge } from \"tailwind-merge\"\n\ninterface KeyboardProps extends React.HTMLAttributes<HTMLElement> {\n  keys: string | string[]\n  classNames?: {\n    base?: string\n    kbd?: string\n  }\n}\n\nconst Keyboard = ({ keys, classNames, className, ...props }: KeyboardProps) => {\n  return (\n    <KeyboardPrimitive\n      className={twMerge(\n        \"hidden font-mono text-current/60 group-hover:text-fg group-focus:text-fg group-focus:opacity-90 group-disabled:opacity-50 lg:inline-flex forced-colors:group-focus:text-[HighlightText] forced-colors:group-focus:text-[HighlightText]\",\n        classNames?.base,\n      )}\n      {...props}\n    >\n      {(Array.isArray(keys) ? keys : keys.split(\"\")).map((char, index) => (\n        <kbd\n          key={index}\n          className={twMerge(\n            \"tracking-widest\",\n            index > 0 && char.length > 1 && \"pl-1\",\n            classNames?.kbd,\n          )}\n        >\n          {char}\n        </kbd>\n      ))}\n    </KeyboardPrimitive>\n  )\n}\n\nexport type { KeyboardProps }\nexport { Keyboard }\n",
+      "type": "registry:component"
+    }
+  ]
+}

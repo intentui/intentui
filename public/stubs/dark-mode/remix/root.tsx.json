@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/remix/root.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/remix/root.tsx.stub",
+      "content": "import { RouterProvider } from \"@/components/router-provider\"\nimport stylesheet from \"@/tailwind.css?url\"\nimport { LinksFunction, LoaderFunctionArgs } from \"@remix-run/node\"\nimport { Links, LiveReload, Meta, Scripts, ScrollRestoration, useLoaderData } from \"@remix-run/react\"\nimport { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from \"./theme-provider\"\n\nimport { themeSessionResolver } from \"./sessions.server\"\n\nexport async function loader({ request }: LoaderFunctionArgs) {\n  const { getTheme } = await themeSessionResolver(request)\n  return {\n    theme: getTheme()\n  }\n}\n\nexport const links: LinksFunction = () => [{ rel: \"stylesheet\", href: stylesheet }]\n\nexport default function AppWithProviders() {\n  const data = useLoaderData<typeof loader>()\n  return (\n    <RouteProvider>\n      <ThemeProvider specifiedTheme={data.theme} themeAction=\"/action/set-theme\">\n        <App />\n      </ThemeProvider>\n    </RouteProvider>\n  )\n}\n\nfunction App() {\n  const data = useLoaderData<typeof loader>()\n  const [theme] = useTheme()\n  return (\n    <html lang=\"en\" data-theme={theme ?? \"\"} className={theme ?? \"\"}>\n      <head>\n        <meta charSet=\"utf-8\" />\n        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n        <Meta />\n        <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />\n        <Links />\n      </head>\n      <body className=\"font-sans antialiased min-h-svh\">\n        <ScrollRestoration />\n        <Scripts />\n        {process.env.NODE_ENV === \"development\" && <LiveReload />}\n      </body>\n    </html>\n  )\n}\n"
+    }
+  ]
+}

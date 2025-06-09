@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-heading-demo",
+  "type": "registry:block",
+  "title": "Heading demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/heading/heading-demo.tsx",
+      "content": "\"use client\"\n\nimport { Heading } from \"@/components/ui/heading\"\n\nexport default function HeadingDemo() {\n  return <Heading level={2}>The quick brown fox jumps over the lazy dog</Heading>\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

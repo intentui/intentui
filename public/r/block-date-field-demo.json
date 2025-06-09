@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-field-demo",
+  "type": "registry:block",
+  "title": "Date field demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-field/date-field-demo.tsx",
+      "content": "\"use client\"\n\nimport { DateField } from \"@/components/ui/date-field\"\n\nexport default function DateFieldDemo() {\n  return <DateField label=\"Event date\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

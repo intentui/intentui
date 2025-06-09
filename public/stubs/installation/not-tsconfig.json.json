@@ -1,0 +1,9 @@
+{
+  "name": "installation/not-tsconfig.json.stub",
+  "files": [
+    {
+      "name": "installation/not-tsconfig.json.stub",
+      "content": "{\n  \"compilerOptions\": {\n    \"paths\": {\n      \"@/*\": [\"./*\"],\n      \"ui\": [\"./components/ui\"]\n    }\n  }\n}\n"
+    }
+  ]
+}

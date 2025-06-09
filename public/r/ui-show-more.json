@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-show-more",
+  "type": "registry:component",
+  "title": "Show more",
+  "description": "",
+  "dependencies": [
+    "react-aria-components",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/show-more.tsx",
+      "content": "\"use client\"\n\nimport { Text, ToggleButton, composeRenderProps } from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\nimport { buttonStyles } from \"@/components/ui/button\"\n\nconst showMoreStyles = tv({\n  base: \"text-sm leading-6 before:border-muted after:border-muted\",\n  variants: {\n    orientation: {\n      vertical: \"mx-1 h-auto self-stretch\",\n      horizontal: \"my-0.5 h-px w-full self-stretch\",\n    },\n  },\n  compoundVariants: [\n    {\n      orientation: \"vertical\",\n      className:\n        \"mx-2 flex flex-col items-center before:mb-2 before:flex-1 before:border-l after:mt-2 after:flex-1 after:border-r\",\n    },\n    {\n      orientation: \"horizontal\",\n      className:\n        \"my-2 flex items-center self-stretch before:mr-2 before:flex-1 before:border-t after:ml-2 after:flex-1 after:border-t\",\n    },\n  ],\n  defaultVariants: {\n    orientation: \"horizontal\",\n  },\n})\n\ninterface ShowMoreProps extends React.ComponentProps<typeof ToggleButton> {\n  className?: string\n  orientation?: \"horizontal\" | \"vertical\"\n  as?: \"text\" | \"button\"\n  text?: string\n}\n\nconst ShowMore = ({\n  as = \"button\",\n  orientation = \"horizontal\",\n  className,\n  ...props\n}: ShowMoreProps) => {\n  return (\n    <div className={showMoreStyles({ orientation, className })}>\n      {as === \"button\" ? (\n        <ToggleButton\n          {...props}\n          className={buttonStyles({ isCircle: true, intent: \"outline\", size: \"sm\" })}\n        >\n          {composeRenderProps(props.children, (children) => (\n            <>{children}</>\n          ))}\n        </ToggleButton>\n      ) : (\n        <Text slot=\"description\">{props.text}</Text>\n      )}\n    </div>\n  )\n}\n\nexport type { ShowMoreProps }\nexport { ShowMore }\n",
+      "type": "registry:component"
+    }
+  ]
+}

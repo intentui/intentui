@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-command-menu-trigger-by-keyboard-demo",
+  "type": "registry:block",
+  "title": "Command menu trigger by keyboard demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/command-menu/command-menu-trigger-by-keyboard-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport {\n  IconCreditCard,\n  IconCube,\n  IconGear,\n  IconHome2,\n  IconNotes,\n  IconShield,\n} from \"@intentui/icons\"\n\nimport { CommandMenu } from \"@/components/ui/command-menu\"\n\nexport default function CommandMenuTriggerByKeyboardDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  return (\n    <>\n      ⌘ /\n      <CommandMenu shortcut=\"/\" isOpen={isOpen} onOpenChange={setIsOpen}>\n        <CommandMenu.Search placeholder=\"Quick search...\" />\n        <CommandMenu.List>\n          <CommandMenu.Section className=\"mt-2\" title=\"Pages\">\n            <CommandMenu.Item href=\"#\" textValue=\"home\">\n              <IconHome2 /> Home\n            </CommandMenu.Item>\n            <CommandMenu.Item href=\"#\" textValue=\"docs\">\n              <IconNotes /> Docs\n              <CommandMenu.Keyboard keys=\"⌘k\" />\n            </CommandMenu.Item>\n            <CommandMenu.Item href=\"#\" textValue=\"components\">\n              <IconCube /> Components\n            </CommandMenu.Item>\n          </CommandMenu.Section>\n          <CommandMenu.Section title=\"Dashboard\">\n            <CommandMenu.Item href=\"#\" textValue=\"billing\">\n              <IconCreditCard /> Billing\n            </CommandMenu.Item>\n            <CommandMenu.Item href=\"#\" textValue=\"settings\">\n              <IconGear /> Settings\n              <CommandMenu.Keyboard keys=\"⌘s\" />\n            </CommandMenu.Item>\n            <CommandMenu.Item href=\"#\" textValue=\"security\">\n              <IconShield /> Security\n            </CommandMenu.Item>\n          </CommandMenu.Section>\n        </CommandMenu.List>\n      </CommandMenu>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

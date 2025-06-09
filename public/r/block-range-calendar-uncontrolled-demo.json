@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-range-calendar-uncontrolled-demo",
+  "type": "registry:block",
+  "title": "Range calendar uncontrolled demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/calendar/range-calendar-uncontrolled-demo.tsx",
+      "content": "\"use client\"\n\nimport { getLocalTimeZone, today } from \"@internationalized/date\"\n\nimport { RangeCalendar } from \"@/components/ui/range-calendar\"\n\nexport default function RangeCalendarUncontrolledDemo() {\n  return (\n    <RangeCalendar\n      className=\"**:data-[slot=calendar-header]:items-center\"\n      aria-label=\"Date range (uncontrolled)\"\n      defaultValue={{\n        start: today(getLocalTimeZone()),\n        end: today(getLocalTimeZone()).add({ days: 12 }),\n      }}\n    />\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

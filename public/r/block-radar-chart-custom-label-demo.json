@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radar-chart-custom-label-demo",
+  "type": "registry:block",
+  "title": "Radar chart custom label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/radar/radar-chart-custom-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { PolarAngleAxis, PolarGrid, Radar, RadarChart } from \"recharts\"\n\nconst chartData = [\n  { month: \"Jan\", revenue: 45000, expenses: 30000 },\n  { month: \"Feb\", revenue: 50000, expenses: 32000 },\n  { month: \"Mar\", revenue: 47000, expenses: 31000 },\n  { month: \"Apr\", revenue: 52000, expenses: 35000 },\n  { month: \"May\", revenue: 48000, expenses: 33000 },\n  { month: \"Jun\", revenue: 51000, expenses: 34000 },\n  { month: \"Jul\", revenue: 53000, expenses: 36000 },\n  { month: \"Aug\", revenue: 55000, expenses: 37000 },\n  { month: \"Sep\", revenue: 54000, expenses: 35000 },\n  { month: \"Oct\", revenue: 56000, expenses: 38000 },\n  { month: \"Nov\", revenue: 58000, expenses: 39000 },\n  { month: \"Dec\", revenue: 60000, expenses: 40000 },\n]\n\nconst chartConfig = {\n  revenue: {\n    label: \"Revenue\",\n    color: \"var(--chart-1)\",\n  },\n  expenses: {\n    label: \"Expenses\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function RadarChartCustomLabelDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-4\"\n        title=\"Monthly Financial Overview\"\n        description=\"Revenue and expenses for Jan - Dec 2024\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <RadarChart\n            data={chartData}\n            margin={{\n              top: 10,\n              right: 10,\n              bottom: 10,\n              left: 10,\n            }}\n          >\n            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator=\"line\" />} />\n            <PolarAngleAxis\n              dataKey=\"month\"\n              tick={({ x, y, textAnchor, index, ...props }) => {\n                const data = chartData[index]!\n\n                return (\n                  <text\n                    x={x}\n                    y={index === 0 ? y - 10 : y}\n                    textAnchor={textAnchor}\n                    fontSize={13}\n                    fontWeight={500}\n                    {...props}\n                  >\n                    <tspan>{data.revenue}</tspan>\n                    <tspan className=\"fill-muted-fg\">/</tspan>\n                    <tspan>{data.expenses}</tspan>\n                    <tspan x={x} dy={\"1rem\"} fontSize={12} className=\"fill-muted-fg\">\n                      {data.month}\n                    </tspan>\n                  </text>\n                )\n              }}\n            />\n\n            <PolarGrid />\n            <Radar dataKey=\"revenue\" fill=\"var(--color-revenue)\" fillOpacity={0.6} />\n            <Radar dataKey=\"expenses\" fill=\"var(--color-expenses)\" />\n          </RadarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

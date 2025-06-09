@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-search-field-description-demo",
+  "type": "registry:block",
+  "title": "Search field description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/search-field/search-field-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { SearchField } from \"@/components/ui/search-field\"\n\nexport default function SearchFieldDescriptionDemo() {\n  return <SearchField aria-label=\"Search\" placeholder=\"Search\" description=\"Search for a product\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

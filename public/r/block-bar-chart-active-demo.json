@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-active-demo",
+  "type": "registry:block",
+  "title": "Bar chart active demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-active-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, CartesianGrid, Rectangle, XAxis } from \"recharts\"\n\nconst chartData = [\n  { os: \"Windows\", users: 320, fill: \"var(--chart-1)\" },\n  { os: \"MacOS\", users: 200, fill: \"var(--chart-2)\" },\n  { os: \"Linux\", users: 150, fill: \"var(--chart-3)\" },\n  { os: \"Android\", users: 250, fill: \"var(--chart-4)\" },\n  { os: \"iOS\", users: 180, fill: \"var(--chart-5)\" },\n  { os: \"ChromeOS\", users: 90, fill: \"var(--chart-1)\" },\n  { os: \"Ubuntu\", users: 130, fill: \"var(--chart-2)\" },\n  { os: \"Fedora\", users: 100, fill: \"var(--chart-3)\" },\n  { os: \"FreeBSD\", users: 60, fill: \"var(--chart-5)\" },\n]\n\nconst chartConfig = {\n  users: {\n    label: \"Users\",\n  },\n  windows: {\n    label: \"Windows\",\n    color: \"var(--chart-1)\",\n  },\n  macos: {\n    label: \"MacOS\",\n    color: \"var(--chart-2)\",\n  },\n  linux: {\n    label: \"Linux\",\n    color: \"var(--chart-3)\",\n  },\n  android: {\n    label: \"Android\",\n    color: \"var(--chart-4)\",\n  },\n  ios: {\n    label: \"iOS\",\n    color: \"var(--chart-5)\",\n  },\n  chromeos: {\n    label: \"ChromeOS\",\n    color: \"var(--chart-1)\",\n  },\n  ubuntu: {\n    label: \"Ubuntu\",\n    color: \"var(--chart-2)\",\n  },\n  fedora: {\n    label: \"Fedora\",\n    color: \"var(--chart-3)\",\n  },\n  harmonyos: {\n    label: \"HarmonyOS\",\n    color: \"var(--chart-4)\",\n  },\n  freebsd: {\n    label: \"FreeBSD\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartActiveDemo() {\n  return (\n    <Card>\n      <Card.Header title=\"Operating System Usage\" description=\"User distribution by OS in 2024\" />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <BarChart accessibilityLayer data={chartData}>\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"os\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n              tickFormatter={(value) =>\n                chartConfig[value.toLowerCase() as keyof typeof chartConfig]?.label\n              }\n            />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Bar\n              dataKey=\"users\"\n              strokeWidth={2}\n              radius={8}\n              activeIndex={1}\n              activeBar={({ ...props }) => {\n                return (\n                  <Rectangle\n                    {...props}\n                    fillOpacity={0.8}\n                    stroke={props.payload.fill}\n                    strokeDasharray={4}\n                    strokeDashoffset={4}\n                  />\n                )\n              }}\n            />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

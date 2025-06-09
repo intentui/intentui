@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-radio",
+  "type": "registry:component",
+  "title": "Radio",
+  "description": "",
+  "dependencies": [
+    "react-aria-components",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/radio.tsx",
+      "content": "\"use client\"\n\nimport type {\n  RadioGroupProps as RadioGroupPrimitiveProps,\n  RadioProps as RadioPrimitiveProps,\n  ValidationResult,\n} from \"react-aria-components\"\nimport { RadioGroup as RadioGroupPrimitive, Radio as RadioPrimitive } from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\nimport { Description, FieldError, Label } from \"@/components/ui/field\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\n\ninterface RadioGroupProps extends Omit<RadioGroupPrimitiveProps, \"children\"> {\n  label?: string\n  children?: React.ReactNode\n  description?: string\n  errorMessage?: string | ((validation: ValidationResult) => string)\n  ref?: React.Ref<HTMLDivElement>\n}\n\nconst RadioGroup = ({\n  label,\n  description,\n  errorMessage,\n  children,\n  ref,\n  ...props\n}: RadioGroupProps) => {\n  return (\n    <RadioGroupPrimitive\n      ref={ref}\n      {...props}\n      className={composeTailwindRenderProps(props.className, \"group flex flex-col gap-2\")}\n    >\n      {label && <Label>{label}</Label>}\n      <div className=\"flex select-none gap-2 group-data-[orientation=vertical]:flex-col group-data-[orientation=horizontal]:flex-wrap group-data-[orientation=horizontal]:gap-2 sm:group-data-[orientation=horizontal]:gap-4\">\n        {children}\n      </div>\n      {description && <Description>{description}</Description>}\n      <FieldError>{errorMessage}</FieldError>\n    </RadioGroupPrimitive>\n  )\n}\n\nconst radioStyles = tv({\n  base: \"size-4 shrink-0 rounded-full border bg-muted transition\",\n  variants: {\n    isSelected: {\n      false: \"border-input\",\n      true: \"border-[4.5px] border-primary\",\n    },\n    isFocused: {\n      true: [\n        \"border-ring bg-primary/20 ring-4 ring-ring/20\",\n        \"group-invalid:border-danger/70 group-invalid:bg-danger/20 group-invalid:ring-danger/20\",\n      ],\n    },\n    isInvalid: {\n      true: \"border-danger/70 bg-danger/20\",\n    },\n    isDisabled: {\n      true: \"opacity-50\",\n    },\n  },\n})\n\ninterface RadioProps extends RadioPrimitiveProps {\n  description?: string\n  label?: string\n  ref?: React.Ref<HTMLLabelElement>\n}\n\nconst Radio = ({ description, label, ref, className, ...props }: RadioProps) => {\n  return (\n    <RadioPrimitive\n      ref={ref}\n      className={composeTailwindRenderProps(\n        className,\n        \"group flex items-center gap-2 text-fg text-sm transition disabled:text-fg/50 forced-colors:disabled:text-[GrayText]\",\n      )}\n      {...props}\n    >\n      {(renderProps) => (\n        <div className=\"flex gap-2\">\n          <div\n            className={radioStyles({\n              ...renderProps,\n              className: \"description\" in props ? \"mt-1\" : \"mt-0.5\",\n            })}\n          />\n          <div className=\"flex flex-col gap-1\">\n            {label || description ? (\n              <>\n                {label && <Label>{label}</Label>}\n                {description && <Description className=\"block\">{description}</Description>}\n              </>\n            ) : (\n              (props.children as React.ReactNode)\n            )}\n          </div>\n        </div>\n      )}\n    </RadioPrimitive>\n  )\n}\n\nexport type { RadioGroupProps, RadioProps }\nexport { Radio, RadioGroup }\n",
+      "type": "registry:component"
+    }
+  ]
+}

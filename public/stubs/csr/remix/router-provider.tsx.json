@@ -1,0 +1,9 @@
+{
+  "name": "csr/remix/router-provider.tsx.stub",
+  "files": [
+    {
+      "name": "csr/remix/router-provider.tsx.stub",
+      "content": "import { useNavigate, useHref } from \"@remix-run/react\"\nimport { RouterProvider as RouterProviderPrimitive } from \"react-aria-components\"\nimport type { NavigateOptions } from \"react-router-dom\"\n\ndeclare module \"react-aria-components\" {\n  interface RouterConfig {\n    routerOptions: NavigateOptions\n  }\n}\n\nexport function RouterProvider({ children }: { children: React.ReactNode }) {\n  const navigate = useNavigate()\n  return (\n    <RouterProviderPrimitive navigate={navigate} useHref={useHref}>\n      {children}\n    </RouterProviderPrimitive>\n  )\n}\n"
+    }
+  ]
+}

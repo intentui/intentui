@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-button-pending-demo",
+  "type": "registry:block",
+  "title": "Button pending demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/button/button-pending-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { ProgressCircle } from \"@/components/ui/progress-circle\"\nimport { IconPlus } from \"@intentui/icons\"\n\nexport default function ButtonPendingDemo() {\n  const [isLoading, setLoading] = useState(false)\n\n  const handlePress = () => {\n    setLoading(true)\n    setTimeout(() => {\n      setLoading(false)\n    }, 4500)\n  }\n  return (\n    <Button onPress={handlePress} isPending={isLoading}>\n      {({ isPending }) => (\n        <>\n          {isPending ? <ProgressCircle isIndeterminate aria-label=\"Creating...\" /> : <IconPlus />}\n          {isLoading ? \"Creating...\" : \"Create\"}\n        </>\n      )}\n    </Button>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-select-searchable-demo",
+  "type": "registry:block",
+  "title": "Select searchable demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/select/select-searchable-demo.tsx",
+      "content": "\"use client\"\n\nimport { ListBox } from \"@/components/ui/list-box\"\nimport { PopoverContent } from \"@/components/ui/popover\"\nimport { SearchField } from \"@/components/ui/search-field\"\nimport { Select } from \"@/components/ui/select\"\nimport { Autocomplete, useFilter } from \"react-aria-components\"\nconst languages = [\n  { id: \"en\", name: \"English\" },\n  { id: \"es\", name: \"Spanish\" },\n  { id: \"fr\", name: \"French\" },\n  { id: \"de\", name: \"German\" },\n  { id: \"it\", name: \"Italian\" },\n  { id: \"pt\", name: \"Portuguese\" },\n  { id: \"ru\", name: \"Russian\" },\n  { id: \"ja\", name: \"Japanese\" },\n  { id: \"zh\", name: \"Chinese\" },\n  { id: \"ar\", name: \"Arabic\" },\n]\n\nexport default function SelectSearchableDemo() {\n  const { contains } = useFilter({ sensitivity: \"base\" })\n  return (\n    <Select label=\"Select a language\">\n      <Select.Trigger />\n      <PopoverContent\n        showArrow={false}\n        respectScreen={false}\n        className=\"min-w-(--trigger-width) overflow-hidden\"\n      >\n        <Autocomplete filter={contains}>\n          <div className=\"border-b bg-muted p-2\">\n            <SearchField className=\"rounded-lg bg-bg\" autoFocus />\n          </div>\n          <ListBox className=\"border-0 shadow-none\" items={languages}>\n            {(item) => <Select.Option>{item.name}</Select.Option>}\n          </ListBox>\n        </Autocomplete>\n      </PopoverContent>\n    </Select>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

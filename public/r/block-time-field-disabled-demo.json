@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-time-field-disabled-demo",
+  "type": "registry:block",
+  "title": "Time field disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/time-field/time-field-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { TimeField } from \"@/components/ui/time-field\"\n\nexport default function TimeFieldDisabledDemo() {\n  return <TimeField isDisabled label=\"Event time\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

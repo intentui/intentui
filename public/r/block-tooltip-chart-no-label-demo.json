@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tooltip-chart-no-label-demo",
+  "type": "registry:block",
+  "title": "Tooltip chart no label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/tooltip/tooltip-chart-no-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, XAxis } from \"recharts\"\n\nconst chartData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index).toLocaleDateString(\"en-US\", {\n    month: \"short\",\n    year: \"numeric\",\n  })\n  return {\n    date,\n    products: Math.floor(Math.random() * 600 + 200),\n    services: Math.floor(Math.random() * 400 + 100),\n  }\n})\n\nconst chartConfig = {\n  products: {\n    label: \"Products\",\n    color: \"var(--chart-1)\",\n  },\n  services: {\n    label: \"Services\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function TooltipChartNoLabelDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Monthly Products and Services Data\"\n        description=\"Displaying products and services data over the last 24 months\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <BarChart accessibilityLayer data={chartData}>\n            <XAxis\n              dataKey=\"date\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n              tickFormatter={(value) => value}\n            />\n            <Bar\n              dataKey=\"products\"\n              stackId=\"a\"\n              fill=\"var(--color-products)\"\n              radius={[0, 0, 4, 4]}\n            />\n            <Bar\n              dataKey=\"services\"\n              stackId=\"a\"\n              fill=\"var(--color-services)\"\n              radius={[4, 4, 0, 0]}\n            />\n            <ChartTooltip\n              content={<ChartTooltipContent hideIndicator hideLabel />}\n              cursor={false}\n              defaultIndex={1}\n            />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

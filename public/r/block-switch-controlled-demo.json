@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-switch-controlled-demo",
+  "type": "registry:block",
+  "title": "Switch controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/switch/switch-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { Switch } from \"@/components/ui/switch\"\n\nexport default function SwitchControlledDemo() {\n  const [darkMode, setDarkMode] = useState(false)\n  return (\n    <>\n      <Switch isSelected={darkMode} onChange={setDarkMode} value=\"dark_mode\">\n        Enable Dark Mode\n      </Switch>\n\n      <Description className=\"mt-2 block [&>strong]:text-fg\">\n        Dark Mode is <strong>{darkMode ? \"enabled\" : \"disabled\"}</strong>\n      </Description>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

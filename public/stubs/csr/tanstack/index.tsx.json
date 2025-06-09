@@ -1,0 +1,9 @@
+{
+  "name": "csr/tanstack/index.tsx.stub",
+  "files": [
+    {
+      "name": "csr/tanstack/index.tsx.stub",
+      "content": "import { type NavigateOptions, type ToOptions, useRouter } from '@tanstack/react-router';\nimport { RouterProvider } from 'react-aria-components';\n\ndeclare module 'react-aria-components' {\n  interface RouterConfig {\n    href: ToOptions['to'];\n    routerOptions: Omit<NavigateOptions, keyof ToOptions>;\n  }\n}\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  const router = useRouter();\n\n  return (\n    <RouterProvider navigate={(to, options) => router.navigate({ to, ...options })}>\n      {children}\n    </RouterProvider>\n  );\n}\n"
+    }
+  ]
+}

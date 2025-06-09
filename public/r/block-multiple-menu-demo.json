@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-multiple-menu-demo",
+  "type": "registry:block",
+  "title": "Multiple menu demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/multiple-menu-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Menu } from \"@/components/ui/menu\"\nimport type { Selection } from \"react-aria-components\"\n\nexport default function MultipleMenuDemo() {\n  const [selected, setSelected] = useState<Selection>(new Set([\"autoPlay\"]))\n  return (\n    <Menu>\n      <Button intent=\"outline\">Open</Button>\n      <Menu.Content\n        placement=\"bottom\"\n        selectionMode=\"multiple\"\n        selectedKeys={selected}\n        onSelectionChange={setSelected}\n        items={items}\n      >\n        {(item) => (\n          <Menu.Item id={item.slug} textValue={item.name}>\n            <Menu.Label>{item.name}</Menu.Label>\n          </Menu.Item>\n        )}\n      </Menu.Content>\n    </Menu>\n  )\n}\n\nconst items = [\n  {\n    name: \"Auto-Play Videos\",\n    slug: \"autoPlay\",\n  },\n  {\n    name: \"High-Quality Streaming\",\n    slug: \"highQuality\",\n  },\n  {\n    name: \"Exclusive Releases\",\n    slug: \"exclusiveContent\",\n  },\n  {\n    name: \"Default Subtitles\",\n    slug: \"subtitles\",\n  },\n  {\n    name: \"Personalized Recommendations\",\n    slug: \"recommendations\",\n  },\n  {\n    name: \"Background Play\",\n    slug: \"backgroundPlay\",\n  },\n  {\n    name: \"Allow Downloads\",\n    slug: \"download\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

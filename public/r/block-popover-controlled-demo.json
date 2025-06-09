@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-popover-controlled-demo",
+  "type": "registry:block",
+  "title": "Popover controlled demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/popover/popover-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Loader } from \"@/components/ui/loader\"\nimport { Popover } from \"@/components/ui/popover\"\nimport { wait } from \"@/lib/utils\"\nimport { IconCircleCheckFill, IconTrash } from \"@intentui/icons\"\n\nexport default function PopoverControlledDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  const [loading, setLoading] = useState<\"idle\" | \"loading\" | \"success\">(\"idle\")\n  const triggerRef = React.useRef(null)\n\n  const deleteAccount = async () => {\n    setLoading(\"loading\")\n    await wait(3000)\n    setLoading(\"success\")\n\n    await wait(2000)\n    setLoading(\"idle\")\n    setIsOpen(false)\n  }\n  return (\n    <>\n      <Button ref={triggerRef} onPress={() => setIsOpen(true)} intent=\"danger\">\n        Delete Account\n      </Button>\n      <Popover.Content\n        triggerRef={triggerRef}\n        isOpen={isOpen}\n        onOpenChange={setIsOpen}\n        className=\"sm:max-w-sm\"\n      >\n        <Popover.Header>\n          <Popover.Title>Confirm Deletion</Popover.Title>\n          <Popover.Description>\n            Are you sure you want to delete your account? This action cannot be undone.\n          </Popover.Description>\n        </Popover.Header>\n        <Popover.Footer>\n          <Button intent=\"outline\" onPress={() => setIsOpen(false)} className=\"mr-2\">\n            Cancel\n          </Button>\n          <Button\n            isDisabled={loading === \"loading\"}\n            onPress={deleteAccount}\n            intent={[\"loading\", \"idle\"].includes(loading) ? \"danger\" : \"primary\"}\n          >\n            {loading === \"loading\" ? (\n              <>\n                <Loader variant=\"spin\" />\n                Deleting...\n              </>\n            ) : loading === \"success\" ? (\n              <>\n                <IconCircleCheckFill />\n                Deleted\n              </>\n            ) : (\n              <>\n                <IconTrash />\n                Delete\n              </>\n            )}\n          </Button>\n        </Popover.Footer>\n      </Popover.Content>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

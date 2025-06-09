@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-card-login-form-demo",
+  "type": "registry:block",
+  "title": "Card login form demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/card/card-login-form-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Card } from \"@/components/ui/card\"\nimport { Checkbox } from \"@/components/ui/checkbox\"\nimport { Link } from \"@/components/ui/link\"\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function CardLoginFormDemo() {\n  return (\n    <Card className=\"mx-auto w-full max-w-md\">\n      <Card.Header>\n        <Card.Title>Login</Card.Title>\n        <Card.Description>Don't loose the level, just keep on going.</Card.Description>\n      </Card.Header>\n      <Card.Content className=\"space-y-6\">\n        <TextField isRequired label=\"Email\" placeholder=\"Enter your email\" />\n        <TextField\n          isRequired\n          label=\"Password\"\n          isRevealable\n          type=\"password\"\n          placeholder=\"Enter your password\"\n        />\n        <div className=\"flex items-center justify-between\">\n          <Checkbox>Remember me</Checkbox>\n          <Link intent=\"primary\" className=\"text-sm\" href=\"#\">\n            Forgot password?\n          </Link>\n        </div>\n      </Card.Content>\n      <Card.Footer>\n        <Button className=\"w-full\">Login</Button>\n      </Card.Footer>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

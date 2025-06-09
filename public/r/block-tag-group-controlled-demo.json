@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-group-controlled-demo",
+  "type": "registry:block",
+  "title": "Tag group controlled demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/tag-group/tag-group-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { Tag, TagGroup, TagList } from \"@/components/ui/tag-group\"\nimport type { Selection } from \"react-aria-components\"\n\nconst fruitList = [\n  { id: \"1\", name: \"Apple\", available: false },\n  { id: \"2\", name: \"Banana\", available: true },\n  { id: \"3\", name: \"Cherry\", available: true },\n  { id: \"4\", name: \"Date\", available: false },\n]\n\nexport default function TagGroupControlledDemo() {\n  const [selected, setSelected] = useState<Selection>(new Set([]))\n  return (\n    <div>\n      <TagGroup selectionMode=\"multiple\" selectedKeys={selected} onSelectionChange={setSelected}>\n        <TagList items={fruitList}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n      </TagGroup>\n\n      <Description className=\"mt-2 block text-muted-fg [&>strong]:text-fg\">\n        You have selected: <strong>{Array.from(selected).join(\", \")}</strong>\n      </Description>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

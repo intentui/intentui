@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-context-menu-demo",
+  "type": "registry:block",
+  "title": "Context menu demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/context-menu/context-menu-demo.tsx",
+      "content": "\"use client\"\n\nimport { ContextMenu } from \"@/components/ui/context-menu\"\n\nexport default function ContextMenuDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenu.Trigger className=\"grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed\">\n        Right click me\n      </ContextMenu.Trigger>\n      <ContextMenu.Content className=\"sm:min-w-56\">\n        <ContextMenu.Item>Back</ContextMenu.Item>\n        <ContextMenu.Item isDisabled>Forward</ContextMenu.Item>\n        <ContextMenu.Item>Reload</ContextMenu.Item>\n        <ContextMenu.Separator />\n        <ContextMenu.Item>Bookmark</ContextMenu.Item>\n        <ContextMenu.Item>Save as</ContextMenu.Item>\n        <ContextMenu.Item>\n          Select all\n          <ContextMenu.Keyboard keys=\"⌘A\" />\n        </ContextMenu.Item>\n        <ContextMenu.Separator />\n        <ContextMenu.Item>View source</ContextMenu.Item>\n        <ContextMenu.Item>Inspect Accessibility</ContextMenu.Item>\n        <ContextMenu.Item>Inspect</ContextMenu.Item>\n      </ContextMenu.Content>\n    </ContextMenu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

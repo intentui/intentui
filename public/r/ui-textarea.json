@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-textarea",
+  "type": "registry:component",
+  "title": "Textarea",
+  "description": "",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/textarea.tsx",
+      "content": "\"use client\"\n\nimport {\n  TextArea as TextAreaPrimitive,\n  TextField as TextFieldPrimitive,\n  type TextFieldProps as TextFieldPrimitiveProps,\n  type ValidationResult,\n  composeRenderProps,\n} from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\nimport { Description, FieldError, Label } from \"@/components/ui/field\"\nimport { composeTailwindRenderProps, focusStyles } from \"@/lib/primitive\"\n\nconst textareaStyles = tv({\n  extend: focusStyles,\n  base: \"field-sizing-content max-h-96 min-h-16 w-full min-w-0 rounded-lg border border-input px-2.5 py-2 text-base placeholder-muted-fg shadow-xs outline-hidden transition duration-200 disabled:opacity-50 sm:text-sm\",\n})\n\ninterface TextareaProps extends TextFieldPrimitiveProps {\n  autoSize?: boolean\n  label?: string\n  placeholder?: string\n  description?: string\n  errorMessage?: string | ((validation: ValidationResult) => string)\n  className?: string\n}\n\nconst Textarea = ({\n  className,\n  placeholder,\n  label,\n  description,\n  errorMessage,\n  ...props\n}: TextareaProps) => {\n  return (\n    <TextFieldPrimitive\n      {...props}\n      className={composeTailwindRenderProps(className, \"group flex flex-col gap-y-1.5\")}\n    >\n      {label && <Label>{label}</Label>}\n      <TextAreaPrimitive\n        placeholder={placeholder}\n        className={composeRenderProps(className, (className, renderProps) =>\n          textareaStyles({\n            ...renderProps,\n            className,\n          }),\n        )}\n      />\n      {description && <Description>{description}</Description>}\n      <FieldError>{errorMessage}</FieldError>\n    </TextFieldPrimitive>\n  )\n}\n\nexport type { TextareaProps }\nexport { Textarea }\n",
+      "type": "registry:component"
+    }
+  ]
+}

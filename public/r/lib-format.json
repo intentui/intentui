@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-format",
+  "type": "registry:lib",
+  "title": "Format",
+  "description": "",
+  "dependencies": [
+    "react-aria"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/format.ts",
+      "content": "\"use client\"\n\nimport { useDateFormatter } from \"react-aria\"\n\nexport function format(date: Date) {\n  const formatter = useDateFormatter()\n  return formatter.format(date)\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

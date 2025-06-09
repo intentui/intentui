@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radio-group-controlled-demo",
+  "type": "registry:block",
+  "title": "Radio group controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/radio-group/radio-group-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { Radio, RadioGroup } from \"@/components/ui/radio\"\n\nexport default function RadioGroupControlledDemo() {\n  const [selected, setSelected] = useState(\"\")\n  return (\n    <>\n      <RadioGroup label=\"Features\" value={selected} onChange={setSelected}>\n        <Radio value=\"theme\">Theme</Radio>\n        <Radio value=\"language\">Language</Radio>\n        <Radio value=\"timezone\">Timezone</Radio>\n        <Radio value=\"notifications\">Notifications</Radio>\n        <Radio value=\"privacy\">Privacy</Radio>\n      </RadioGroup>\n      <Description className=\"mt-2 block [&>strong]:text-fg\">\n        You have selected: <strong>{selected ?? \"-\"}</strong>\n      </Description>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

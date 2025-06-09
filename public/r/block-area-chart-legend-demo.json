@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-area-chart-legend-demo",
+  "type": "registry:block",
+  "title": "Area chart legend demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/area/area-chart-legend-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport {\n  Chart,\n  type ChartConfig,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/components/ui/chart\"\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst salesData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index)\n  const month = date.toLocaleDateString(\"en-US\", { month: \"long\" })\n  return {\n    month,\n    wholesale: Math.floor(Math.random() * 1000 + 500),\n    retail: Math.floor(Math.random() * 1000 + 1500),\n  }\n})\n\nconst salesConfig = {\n  wholesale: {\n    label: \"Wholesale\",\n    color: \"var(--chart-1)\",\n  },\n  retail: {\n    label: \"Retail\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function AreaChartLegendDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Sales Overview\"\n        description=\"Distribution of wholesale and retail sales over the last 24 months\"\n      />\n      <Card.Content>\n        <Chart config={salesConfig}>\n          <AreaChart\n            accessibilityLayer\n            data={salesData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              axisLine={false}\n              tickMargin={8}\n              tickFormatter={(value) => value.slice(0, 3)}\n            />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator=\"line\" />} />\n            <Area\n              dataKey=\"retail\"\n              type=\"natural\"\n              fill=\"var(--color-retail)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-retail)\"\n              stackId=\"a\"\n            />\n            <Area\n              dataKey=\"wholesale\"\n              type=\"natural\"\n              fill=\"var(--color-wholesale)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-wholesale)\"\n              stackId=\"a\"\n            />\n            <ChartLegend content={<ChartLegendContent />} />\n          </AreaChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

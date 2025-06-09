@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-breadcrumbs-collections-demo",
+  "type": "registry:block",
+  "title": "Breadcrumbs collections demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-collections-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Breadcrumbs } from \"@/components/ui/breadcrumbs\"\nimport type { Key } from \"react-aria-components\"\n\nexport default function BreadcrumbsCollectionsDemo() {\n  const [breadcrumbs, setBreadcrumbs] = useState([\n    { id: 1, label: \"Dashboard\", href: \"#\" },\n    { id: 2, label: \"Reports\", href: \"#\" },\n    { id: 3, label: \"2024 Quarterly Review\" },\n  ])\n\n  const navigate = (id: Key) => {\n    const i = breadcrumbs.findIndex((item) => item.id === id)\n    setBreadcrumbs(breadcrumbs.slice(0, i + 1))\n  }\n  return (\n    <Breadcrumbs items={breadcrumbs} onAction={navigate}>\n      {(item) => (\n        <>\n          <Breadcrumbs.Item href={item.href}>{item.label}</Breadcrumbs.Item>\n        </>\n      )}\n    </Breadcrumbs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

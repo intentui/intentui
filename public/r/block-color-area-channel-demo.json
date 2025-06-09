@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-area-channel-demo",
+  "type": "registry:block",
+  "title": "Color area channel demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-area/color-area-channel-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorArea } from \"@/components/ui/color-area\"\n\nexport default function ColorAreaChannelDemo() {\n  return <ColorArea xChannel=\"alpha\" yChannel=\"blue\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-command-menu-pending-demo",
+  "type": "registry:block",
+  "title": "Command menu pending demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/command-menu/command-menu-pending-demo.tsx",
+      "content": "\"use client\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { Button } from \"@/components/ui/button\"\nimport { CommandMenu } from \"@/components/ui/command-menu\"\nimport { useState } from \"react\"\n\nexport default function CommandMenuControlledDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  const [search, setSearch] = useState(\"\")\n  const [isSearching, setIsSearching] = useState(false)\n  const [results, setResults] = useState(users)\n\n  const handleSearch = async (value: string) => {\n    setIsSearching(true)\n    setSearch(value)\n    await new Promise((resolve) => setTimeout(resolve, 2000))\n    const filteredResults = users.filter((user) =>\n      user.name.toLowerCase().includes(value.toLowerCase()),\n    )\n    setResults(filteredResults)\n    setIsSearching(false)\n  }\n\n  return (\n    <>\n      <Button intent=\"outline\" onPress={() => setIsOpen(true)}>\n        Open\n      </Button>\n      <CommandMenu\n        isPending={isSearching}\n        onInputChange={handleSearch}\n        inputValue={search}\n        isOpen={isOpen}\n        onOpenChange={setIsOpen}\n      >\n        <CommandMenu.Search placeholder=\"Quick search...\" />\n        <CommandMenu.List items={results}>\n          {(user) => (\n            <CommandMenu.Item textValue={user.name} key={user.name}>\n              <Avatar src={user.image_url} />\n              {user.name}\n            </CommandMenu.Item>\n          )}\n        </CommandMenu.List>\n      </CommandMenu>\n    </>\n  )\n}\n\nconst users = [\n  { id: 1, name: \"Barbara Kirlin Sr.\", image_url: \"https://i.pravatar.cc/150?img=1\" },\n  { id: 2, name: \"Rosemarie Koch\", image_url: \"https://i.pravatar.cc/150?img=2\" },\n  { id: 3, name: \"Mrs. Reva Heaney Jr.\", image_url: \"https://i.pravatar.cc/150?img=3\" },\n  { id: 4, name: \"Ms. Ettie Abshire DVM\", image_url: \"https://i.pravatar.cc/150?img=4\" },\n  { id: 5, name: \"Bria Ziemann\", image_url: \"https://i.pravatar.cc/150?img=5\" },\n  { id: 6, name: \"Heloise Borer Sr.\", image_url: \"https://i.pravatar.cc/150?img=6\" },\n  {\n    id: 7,\n    name: \"Miss Jacinthe Gerlach DVM\",\n    image_url: \"https://i.pravatar.cc/150?img=7\",\n  },\n  {\n    id: 8,\n    name: \"Miss Stephania Schaefer Sr.\",\n    image_url: \"https://i.pravatar.cc/150?img=8\",\n  },\n  { id: 9, name: \"Kevon Hackett MD\", image_url: \"https://i.pravatar.cc/150?img=9\" },\n  { id: 10, name: \"Tom Ledner\", image_url: \"https://i.pravatar.cc/150?img=10\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

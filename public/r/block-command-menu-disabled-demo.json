@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-command-menu-disabled-demo",
+  "type": "registry:block",
+  "title": "Command menu disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/command-menu/command-menu-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { CommandMenu } from \"@/components/ui/command-menu\"\n\nexport default function CommandMenuDisabledDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  return (\n    <>\n      <Button intent=\"outline\" onPress={() => setIsOpen(true)}>\n        Open\n      </Button>\n      <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>\n        <CommandMenu.Search placeholder=\"Quick search...\" />\n        <CommandMenu.List>\n          <CommandMenu.Section title=\"Suggestions\">\n            <CommandMenu.Item>\n              PhpStorm\n              <CommandMenu.Description>Application</CommandMenu.Description>\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"webstorm\">\n              WebStorm\n              <CommandMenu.Description>Application</CommandMenu.Description>\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"disabled warp\" isDisabled>\n              Warp\n              <CommandMenu.Description>Need to enable</CommandMenu.Description>\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"disabled sublime text\" isDisabled>\n              Sublime Text\n              <CommandMenu.Description>Need to enable</CommandMenu.Description>\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"application vscode\">\n              VS Code\n              <CommandMenu.Description>Application</CommandMenu.Description>\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"atom\" isDisabled>\n              Atom\n              <CommandMenu.Description>Killed</CommandMenu.Description>\n            </CommandMenu.Item>\n          </CommandMenu.Section>\n        </CommandMenu.List>\n      </CommandMenu>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

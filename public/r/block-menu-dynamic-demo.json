@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-dynamic-demo",
+  "type": "registry:block",
+  "title": "Menu dynamic demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-dynamic-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Menu } from \"@/components/ui/menu\"\n\nexport default function MenuDynamicDemo() {\n  return (\n    <Menu>\n      <Button intent=\"outline\">Open</Button>\n      <Menu.Content placement=\"bottom\" items={categories}>\n        {(item) => (\n          <Menu.Item id={item.slug}>\n            <Menu.Label>{item.name}</Menu.Label>\n          </Menu.Item>\n        )}\n      </Menu.Content>\n    </Menu>\n  )\n}\n\nconst categories = [\n  {\n    name: \"Technology\",\n    slug: \"technology\",\n  },\n  {\n    name: \"Health\",\n    slug: \"health\",\n  },\n  {\n    name: \"Business\",\n    slug: \"business\",\n  },\n  {\n    name: \"Travel\",\n    slug: \"travel\",\n  },\n  {\n    name: \"Education\",\n    slug: \"education\",\n  },\n  {\n    name: \"Entertainment\",\n    slug: \"entertainment\",\n  },\n  {\n    name: \"Sports\",\n    slug: \"sports\",\n  },\n  {\n    name: \"Fashion\",\n    slug: \"fashion\",\n  },\n  {\n    name: \"Food\",\n    slug: \"food\",\n  },\n  {\n    name: \"Science\",\n    slug: \"science\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

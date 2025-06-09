@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-toolbar",
+  "type": "registry:component",
+  "title": "Toolbar",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/toolbar.tsx",
+      "content": "\"use client\"\n\nimport { createContext, useContext } from \"react\"\n\nimport type { GroupProps, SeparatorProps, ToolbarProps } from \"react-aria-components\"\nimport { Group, Toolbar as ToolbarPrimitive, composeRenderProps } from \"react-aria-components\"\n\nimport { Separator } from \"@/components/ui/separator\"\nimport { Toggle, type ToggleProps } from \"@/components/ui/toggle\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { twMerge } from \"tailwind-merge\"\n\nconst ToolbarContext = createContext<{ orientation?: ToolbarProps[\"orientation\"] }>({\n  orientation: \"horizontal\",\n})\n\nconst Toolbar = ({ orientation = \"horizontal\", className, ...props }: ToolbarProps) => {\n  return (\n    <ToolbarContext.Provider value={{ orientation }}>\n      <ToolbarPrimitive\n        orientation={orientation}\n        {...props}\n        className={composeRenderProps(className, (className, { orientation }) =>\n          twMerge(\n            \"group flex flex-row gap-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden\",\n            orientation === \"horizontal\"\n              ? \"flex-row [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden\"\n              : \"flex-col items-start\",\n          ),\n        )}\n      />\n    </ToolbarContext.Provider>\n  )\n}\n\nconst ToolbarGroupContext = createContext<{ isDisabled?: boolean }>({})\n\ntype ToolbarGroupProps = GroupProps\nconst ToolbarGroup = ({ isDisabled, className, ...props }: ToolbarGroupProps) => {\n  return (\n    <ToolbarGroupContext.Provider value={{ isDisabled }}>\n      <Group\n        className={composeTailwindRenderProps(\n          className,\n          \"flex gap-2 group-data-[orientation=vertical]:flex-col group-data-[orientation=vertical]:items-start\",\n        )}\n        {...props}\n      >\n        {props.children}\n      </Group>\n    </ToolbarGroupContext.Provider>\n  )\n}\n\ntype ToggleItemProps = ToggleProps\nconst ToolbarItem = ({ isDisabled, ref, ...props }: ToggleItemProps) => {\n  const context = useContext(ToolbarGroupContext)\n  const effectiveIsDisabled = isDisabled || context.isDisabled\n\n  return <Toggle ref={ref} isDisabled={effectiveIsDisabled} {...props} />\n}\ntype ToolbarSeparatorProps = SeparatorProps\nconst ToolbarSeparator = ({ className, ...props }: ToolbarSeparatorProps) => {\n  const { orientation } = useContext(ToolbarContext)\n  const effectiveOrientation = orientation === \"vertical\" ? \"horizontal\" : \"vertical\"\n  return (\n    <Separator\n      orientation={effectiveOrientation}\n      className={twMerge(effectiveOrientation === \"vertical\" ? \"mx-1.5\" : \"my-1.5 w-9\", className)}\n      {...props}\n    />\n  )\n}\n\nToolbar.Group = ToolbarGroup\nToolbar.Separator = ToolbarSeparator\nToolbar.Item = ToolbarItem\n\nexport type { ToolbarGroupProps, ToolbarProps, ToggleItemProps, ToolbarSeparatorProps }\nexport { Toolbar }\n",
+      "type": "registry:component"
+    }
+  ]
+}

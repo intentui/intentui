@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-combo-box-validation-demo",
+  "type": "registry:block",
+  "title": "Combo box validation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/combo-box/combo-box-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { Button } from \"@/components/ui/button\"\nimport { ComboBox } from \"@/components/ui/combo-box\"\nimport { Form } from \"@/components/ui/form\"\n\nconst users = [\n  { id: 1, name: \"Barbara Kirlin Sr.\", image_url: \"https://i.pravatar.cc/150?img=1\" },\n  //...\n]\nexport default function ComboBoxValidationDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()} className=\"space-y-2\">\n      <ComboBox placeholder=\"Select a user\" label=\"Users\" isRequired>\n        <ComboBox.Input />\n        <ComboBox.List items={users}>\n          {(item) => (\n            <ComboBox.Option key={item.id} id={item.id} textValue={item.name}>\n              <Avatar src={item.image_url} />\n              <ComboBox.Label>{item.name}</ComboBox.Label>\n            </ComboBox.Option>\n          )}\n        </ComboBox.List>\n      </ComboBox>\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

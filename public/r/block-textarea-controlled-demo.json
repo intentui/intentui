@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-textarea-controlled-demo",
+  "type": "registry:block",
+  "title": "Textarea controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/textarea/textarea-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Textarea } from \"@/components/ui/textarea\"\n\nexport default function TextareaControlledDemo() {\n  const [value, setValue] = useState(\"\")\n  return (\n    <>\n      <Textarea value={value} onChange={setValue} label=\"Address\" className=\"mb-2\" />\n      <p className=\"mt-2\">You have typed: {value ?? \"-\"}</p>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

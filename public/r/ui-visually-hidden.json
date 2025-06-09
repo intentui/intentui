@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-visually-hidden",
+  "type": "registry:component",
+  "title": "Visually hidden",
+  "description": "",
+  "dependencies": [
+    "react-aria"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/visually-hidden.tsx",
+      "content": "\"use client\"\n\nimport { useVisuallyHidden } from \"react-aria\"\n\ntype VisuallyHiddenSpanProps = {\n  children: React.ReactNode\n}\n\nconst VisuallyHidden = ({ children }: VisuallyHiddenSpanProps) => {\n  const { visuallyHiddenProps } = useVisuallyHidden()\n\n  return <span {...visuallyHiddenProps}>{children}</span>\n}\n\nexport { VisuallyHidden }\n",
+      "type": "registry:component"
+    }
+  ]
+}

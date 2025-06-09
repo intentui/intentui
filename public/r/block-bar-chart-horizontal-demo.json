@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-horizontal-demo",
+  "type": "registry:block",
+  "title": "Bar chart horizontal demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-horizontal-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, XAxis, YAxis } from \"recharts\"\n\nconst performanceData = [\n  { dataCenter: \"NY\", uptime: 99.9 },\n  { dataCenter: \"SF\", uptime: 97.5 },\n  { dataCenter: \"L\", uptime: 95.3 },\n  { dataCenter: \"T\", uptime: 94.8 },\n  { dataCenter: \"Syd\", uptime: 99.9 },\n  { dataCenter: \"S\", uptime: 97.5 },\n]\n\nconst chartConfig = {\n  uptime: {\n    label: \"Uptime (%)\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartHorizontalDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Data Center Uptime\"\n        description=\"Uptime percentage by region for Q1 2024\"\n      />\n      <Card.Content>\n        <Chart className=\"aspect-[20/12] sm:aspect-[17/5]\" config={chartConfig}>\n          <BarChart\n            accessibilityLayer\n            data={performanceData}\n            layout=\"vertical\"\n            margin={{\n              left: -20,\n            }}\n          >\n            <XAxis type=\"number\" dataKey=\"uptime\" hide />\n            <YAxis\n              dataKey=\"dataCenter\"\n              type=\"category\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n            />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Bar dataKey=\"uptime\" fill=\"var(--color-uptime)\" radius={5} />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

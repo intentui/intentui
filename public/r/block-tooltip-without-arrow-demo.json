@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tooltip-without-arrow-demo",
+  "type": "registry:block",
+  "title": "Tooltip without arrow demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/tooltip/tooltip-without-arrow-demo.tsx",
+      "content": "\"use client\"\n\nimport { Badge } from \"@/components/ui/badge\"\nimport { Description } from \"@/components/ui/field\"\nimport { Tooltip } from \"@/components/ui/tooltip\"\n\nexport default function TooltipWithoutArrowDemo() {\n  return (\n    <Tooltip>\n      <Tooltip.Trigger aria-label=\"Fresh drop alert\">\n        <Badge isCircle>New</Badge>\n      </Tooltip.Trigger>\n      <Tooltip.Content showArrow={false}>\n        <strong className=\"font-semibold\">Fresh drop alert</strong> <br />\n        <Description>Scope the newest addition to our stash.</Description>\n      </Tooltip.Content>\n    </Tooltip>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

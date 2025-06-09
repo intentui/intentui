@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-form",
+  "type": "registry:component",
+  "title": "Form",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/form.tsx",
+      "content": "\"use client\"\n\nimport type { FormProps as FormPrimitiveProps } from \"react-aria-components\"\nimport { Form as FormPrimitive } from \"react-aria-components\"\n\ninterface FormProps extends FormPrimitiveProps {\n  ref?: React.RefObject<HTMLFormElement>\n}\n\nconst Form = ({ ref, ...props }: FormProps) => {\n  return <FormPrimitive ref={ref} {...props} />\n}\n\nexport type { FormProps }\nexport { Form }\n",
+      "type": "registry:component"
+    }
+  ]
+}

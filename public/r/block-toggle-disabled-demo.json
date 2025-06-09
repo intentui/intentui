@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-disabled-demo",
+  "type": "registry:block",
+  "title": "Toggle disabled demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle/toggle-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Toggle } from \"@/components/ui/toggle\"\nimport { IconPin } from \"@intentui/icons\"\n\nexport default function ToggleDisabledDemo() {\n  return (\n    <Toggle size=\"sq-sm\" isDisabled>\n      <IconPin />\n    </Toggle>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

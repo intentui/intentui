@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-line-chart-linear-demo",
+  "type": "registry:block",
+  "title": "Line chart linear demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/line/line-chart-linear-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { CartesianGrid, Line, LineChart, XAxis } from \"recharts\"\n\nconst chartData = [\n  { month: \"Jan\", revenue: 186 },\n  { month: \"Feb\", revenue: 305 },\n  { month: \"Mar\", revenue: 237 },\n  { month: \"Apr\", revenue: 73 },\n  { month: \"May\", revenue: 209 },\n  { month: \"Jun\", revenue: 214 },\n  { month: \"Jul\", revenue: 250 },\n  { month: \"Aug\", revenue: 320 },\n  { month: \"Sep\", revenue: 280 },\n  { month: \"Oct\", revenue: 350 },\n  { month: \"Nov\", revenue: 400 },\n  { month: \"Dec\", revenue: 450 },\n]\n\nconst chartConfig = {\n  revenue: {\n    label: \"Revenue\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function LineChartLinearDemo() {\n  return (\n    <Card>\n      <Card.Header title=\"Annual Revenue Overview\" description=\"Jan - Dec 2024\" />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <LineChart\n            accessibilityLayer\n            data={chartData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis dataKey=\"month\" tickLine={false} axisLine={false} tickMargin={8} />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Line\n              dataKey=\"revenue\"\n              type=\"linear\"\n              stroke=\"var(--color-revenue)\"\n              strokeWidth={2}\n              dot={false}\n            />\n          </LineChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-table-drag-demo",
+  "type": "registry:block",
+  "title": "Table drag demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "react-aria-components",
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/table/table-drag-demo.tsx",
+      "content": "\"use client\"\nimport { Table } from \"@/components/ui/table\"\nimport { IconStarFill } from \"@intentui/icons\"\nimport { useDragAndDrop } from \"react-aria-components\"\nimport { useListData } from \"react-stately\"\n\nexport default function TableDragDemo() {\n  const list = useListData({\n    initialItems: movies,\n  })\n\n  const { dragAndDropHooks } = useDragAndDrop({\n    getItems: (keys) =>\n      [...keys].map((key) => ({\n        \"text/plain\": list.getItem(key)?.name ?? \"\",\n      })),\n    onReorder(e) {\n      if (e.target.dropPosition === \"before\") {\n        list.moveBefore(e.target.key, e.keys)\n      } else if (e.target.dropPosition === \"after\") {\n        list.moveAfter(e.target.key, e.keys)\n      }\n    },\n  })\n  return (\n    <Table\n      allowResize\n      aria-label=\"Movies\"\n      selectionMode=\"multiple\"\n      dragAndDropHooks={dragAndDropHooks}\n    >\n      <Table.Header>\n        <Table.Column>#</Table.Column>\n        <Table.Column isRowHeader>Name</Table.Column>\n        <Table.Column>Genre</Table.Column>\n        <Table.Column>Release</Table.Column>\n        <Table.Column>Rating</Table.Column>\n      </Table.Header>\n      <Table.Body items={list.items}>\n        {(item) => (\n          <Table.Row>\n            <Table.Cell>{item.id}</Table.Cell>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.genre}</Table.Cell>\n            <Table.Cell>{item.releaseYear}</Table.Cell>\n            <Table.Cell>\n              <div className=\"flex items-center gap-x-2\">\n                <IconStarFill className=\"size-3.5 text-warning\" /> <span>{item.rating}</span>\n              </div>\n            </Table.Cell>\n          </Table.Row>\n        )}\n      </Table.Body>\n    </Table>\n  )\n}\n\nconst movies = [\n  {\n    id: \"1\",\n    name: \"The Matrix\",\n    genre: \"Sci-Fi\",\n    releaseYear: 1999,\n    director: \"Wachowskis\",\n    rating: 8.7,\n  },\n  {\n    id: \"2\",\n    name: \"Inception\",\n    genre: \"Sci-Fi\",\n    releaseYear: 2010,\n    director: \"Christopher Nolan\",\n    rating: 8.8,\n  },\n  {\n    id: \"3\",\n    name: \"The Godfather\",\n    genre: \"Crime\",\n    releaseYear: 1972,\n    director: \"Francis Ford Coppola\",\n    rating: 9.2,\n  },\n  {\n    id: \"4\",\n    name: \"Pulp Fiction\",\n    genre: \"Crime\",\n    releaseYear: 1994,\n    director: \"Quentin Tarantino\",\n    rating: 8.9,\n  },\n  {\n    id: \"5\",\n    name: \"The Dark Knight\",\n    genre: \"Action\",\n    releaseYear: 2008,\n    director: \"Christopher Nolan\",\n    rating: 9.0,\n  },\n  {\n    id: \"6\",\n    name: \"Fight Club\",\n    genre: \"Drama\",\n    releaseYear: 1999,\n    director: \"David Fincher\",\n    rating: 8.8,\n  },\n  {\n    id: \"7\",\n    name: \"Forrest Gump\",\n    genre: \"Drama\",\n    releaseYear: 1994,\n    director: \"Robert Zemeckis\",\n    rating: 8.8,\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

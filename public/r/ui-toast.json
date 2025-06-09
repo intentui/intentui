@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-toast",
+  "type": "registry:component",
+  "title": "Toast",
+  "description": "",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/toast.tsx",
+      "content": "\"use client\"\n\nimport { useTheme } from \"@/components/theme-provider\"\nimport { Toaster as ToasterPrimitive, type ToasterProps } from \"sonner\"\n\nconst Toast = ({ ...props }: ToasterProps) => {\n  const { theme = \"system\" } = useTheme()\n  return (\n    <ToasterPrimitive\n      theme={theme as ToasterProps[\"theme\"]}\n      className=\"toaster group\"\n      richColors\n      toastOptions={{\n        classNames: {\n          toast: \"toast border-0! inset-ring! inset-ring-fg/10!\",\n          title: \"title\",\n          description: \"description\",\n          actionButton: \"bg-primary! hover:bg-primary/90! text-primary-fg!\",\n          cancelButton: \"bg-transparent! hover:bg-secondary! hover:text-secondary-fg!\",\n          closeButton: \"close-button\",\n        },\n      }}\n      {...props}\n    />\n  )\n}\n\nexport type { ToasterProps }\nexport { Toast }\n",
+      "type": "registry:component"
+    }
+  ]
+}

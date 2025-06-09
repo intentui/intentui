@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-slider-range-demo",
+  "type": "registry:block",
+  "title": "Slider range demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/slider/slider-range-demo.tsx",
+      "content": "\"use client\"\n\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function SliderRangeDemo() {\n  return <Slider defaultValue={[25, 75]} label=\"Distance Range\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

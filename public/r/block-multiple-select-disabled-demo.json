@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-multiple-select-disabled-demo",
+  "type": "registry:block",
+  "title": "Multiple select disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/multiple-select/multiple-select-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { MultipleSelect } from \"@/components/ui/multiple-select\"\n\nexport default function MultipleSelectDisabledDemo() {\n  return (\n    <MultipleSelect isDisabled className=\"max-w-xs\" label=\"Fruits\" items={fruits}>\n      {(item) => {\n        return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>\n      }}\n    </MultipleSelect>\n  )\n}\n\nconst fruits = [{ id: 1, name: \"Apple\" }]\n",
+      "type": "registry:block"
+    }
+  ]
+}

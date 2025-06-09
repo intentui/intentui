@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-picker-required-demo",
+  "type": "registry:block",
+  "title": "Date picker required demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-picker/date-picker-required-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { DatePicker } from \"@/components/ui/date-picker\"\nimport { Form } from \"@/components/ui/form\"\n\nexport default function DatePickerRequiredDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()}>\n      <DatePicker label=\"Delivery date\" name=\"deliveryDate\" isRequired className=\"mb-2\" />\n\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

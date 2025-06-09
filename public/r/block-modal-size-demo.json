@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-modal-size-demo",
+  "type": "registry:block",
+  "title": "Modal size demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/modal/modal-size-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Modal } from \"@/components/ui/modal\"\n\ntype Size = Pick<React.ComponentProps<typeof Modal.Content>, \"size\">[\"size\"]\nconst sizes: Size[] = [\"xs\", \"sm\", \"md\", \"lg\", \"xl\", \"2xl\", \"3xl\", \"4xl\", \"5xl\"]\nexport default function ModalSizeDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  const [modalSize, setModalSize] = useState<Size>(\"md\")\n\n  const handlePress = (size: Size, open: boolean) => {\n    setModalSize(size)\n    setIsOpen(open)\n  }\n  return (\n    <>\n      <div className=\"grid gap-4 sm:grid-cols-4\">\n        {sizes.map((size, idx) => (\n          <div key={idx}>\n            <Button intent=\"outline\" onPress={() => handlePress(size, true)}>\n              Open {size}\n            </Button>\n          </div>\n        ))}\n      </div>\n\n      <Modal.Content isOpen={isOpen} onOpenChange={setIsOpen} size={modalSize}>\n        <Modal.Header>\n          <Modal.Title>Project Update</Modal.Title>\n          <Modal.Description>\n            Dive deep into our project’s latest updates where we've streamlined workflow and\n            improved user interfaces.\n          </Modal.Description>\n        </Modal.Header>\n        <Modal.Footer>\n          <Button intent=\"outline\" onPress={() => setIsOpen(false)}>\n            Close\n          </Button>\n          <Button onPress={() => setIsOpen(false)}>Confirm</Button>\n        </Modal.Footer>\n      </Modal.Content>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

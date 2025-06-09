@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-slider-description-demo",
+  "type": "registry:block",
+  "title": "Slider description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/slider/slider-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function SliderDescriptionDemo() {\n  return <Slider label=\"Opacity\" description=\"Brightness of the image\" defaultValue={30} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

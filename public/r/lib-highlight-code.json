@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-highlight-code",
+  "type": "registry:lib",
+  "title": "Highlight code",
+  "description": "",
+  "dependencies": [
+    "shiki"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/highlight-code.ts",
+      "content": "import { codeToHtml } from \"shiki\"\n\nexport async function highlightCode(code: string) {\n  const html = await codeToHtml(code, {\n    lang: \"jsx\",\n    theme: \"github-dark-default\",\n    transformers: [\n      {\n        code(node) {\n          node.properties[\"data-line-numbers\"] = \"\"\n        },\n      },\n    ],\n  })\n\n  return html\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

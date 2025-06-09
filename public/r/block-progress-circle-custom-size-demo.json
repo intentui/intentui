@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-progress-circle-custom-size-demo",
+  "type": "registry:block",
+  "title": "Progress circle custom size demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/progress-circle/progress-circle-custom-size-demo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport { ProgressCircle } from \"@/components/ui/progress-circle\"\n\nexport default function ProgressCircleCustomSizeDemo() {\n  const [value, setValue] = useState(1)\n\n  React.useEffect(() => {\n    const interval = setInterval(() => {\n      setValue((prev) => (prev < 100 ? prev + 1 : 100))\n    }, 100)\n\n    return () => clearInterval(interval)\n  }, [])\n\n  return <ProgressCircle className=\"size-10\" aria-label=\"Loading…\" isIndeterminate value={value} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

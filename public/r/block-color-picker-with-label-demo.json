@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-picker-with-label-demo",
+  "type": "registry:block",
+  "title": "Color picker with label demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-picker/color-picker-with-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ColorPicker } from \"@/components/ui/color-picker\"\nimport { defaultColor } from \"@/components/ui/color-swatch\"\n\nexport default function ColorPickerWithLabelDemo() {\n  const [color, setColor] = useState(defaultColor)\n  return <ColorPicker label=\"Theme Color\" value={color} onChange={setColor} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

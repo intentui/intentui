@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-color-field",
+  "type": "registry:component",
+  "title": "Color field",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/color-field.tsx",
+      "content": "\"use client\"\n\nimport type {\n  ColorFieldProps as ColorFieldPrimitiveProps,\n  ValidationResult,\n} from \"react-aria-components\"\nimport { ColorField as ColorFieldPrimitive } from \"react-aria-components\"\n\nimport { ColorPicker } from \"@/components/ui/color-picker\"\nimport { ColorSwatch } from \"@/components/ui/color-swatch\"\nimport { Description, FieldError, FieldGroup, Input, Label } from \"@/components/ui/field\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { twJoin } from \"tailwind-merge\"\n\ninterface ColorFieldProps extends ColorFieldPrimitiveProps {\n  label?: string\n  description?: string\n  errorMessage?: string | ((validation: ValidationResult) => string)\n  placeholder?: string\n  prefix?: React.ReactNode\n  suffix?: React.ReactNode\n  isLoading?: boolean\n  enableColorPicker?: boolean\n}\n\nconst ColorField = ({\n  label,\n  description,\n  errorMessage,\n  placeholder,\n  prefix,\n  suffix,\n  isLoading,\n  enableColorPicker = true,\n  className,\n  ...props\n}: ColorFieldProps) => {\n  const value = props.value ?? props.defaultValue\n  return (\n    <ColorFieldPrimitive\n      {...props}\n      aria-label={props[\"aria-label\"] ?? \"Color field\"}\n      className={composeTailwindRenderProps(\n        className,\n        \"**:data-[slot=color-swatch]:-ml-0.5 group flex w-full flex-col gap-y-1\",\n      )}\n    >\n      {label && <Label>{label}</Label>}\n      <FieldGroup data-loading={isLoading ? \"true\" : undefined}>\n        {prefix && typeof prefix === \"string\" ? (\n          <span className=\"ml-2 text-muted-fg\">{prefix}</span>\n        ) : (\n          prefix\n        )}\n        <div className={twJoin(\"flex w-full items-center\", prefix && \"ml-6\")}>\n          {value && (\n            <span className=\"ml-1\">\n              {enableColorPicker ? (\n                <ColorPicker\n                  className=\"*:[button]:size-8 *:[button]:rounded-sm *:[button]:ring-0\"\n                  onChange={props.onChange}\n                  defaultValue={value}\n                />\n              ) : (\n                <ColorSwatch className=\"size-6\" color={value.toString(\"hex\")} />\n              )}\n            </span>\n          )}\n\n          <Input placeholder={placeholder} />\n        </div>\n        {suffix && typeof suffix === \"string\" ? (\n          <span className=\"mr-2 text-muted-fg\">{suffix}</span>\n        ) : (\n          suffix\n        )}\n      </FieldGroup>\n      {description && <Description>{description}</Description>}\n      <FieldError>{errorMessage}</FieldError>\n    </ColorFieldPrimitive>\n  )\n}\n\nexport type { ColorFieldProps }\nexport { ColorField }\n",
+      "type": "registry:component"
+    }
+  ]
+}

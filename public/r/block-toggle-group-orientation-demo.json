@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-group-orientation-demo",
+  "type": "registry:block",
+  "title": "Toggle group orientation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle-group/toggle-group-orientation-demo.tsx",
+      "content": "import { Toggle, ToggleGroup } from \"@/components/ui/toggle\"\nimport {\n  IconBell,\n  IconBellFill,\n  IconMoonFill,\n  IconSun,\n  IconTranslate,\n  IconTranslateFill,\n} from \"@intentui/icons\"\n\nexport default function ToggleGroupOrientationDemo() {\n  return (\n    <div>\n      <ToggleGroup orientation=\"vertical\">\n        <Toggle>\n          {({ isSelected }) => (\n            <>\n              {isSelected ? <IconMoonFill /> : <IconSun />}\n              {isSelected ? \"Dark\" : \"Light\"} Mode\n            </>\n          )}\n        </Toggle>\n        <Toggle>\n          {({ isSelected }) => (\n            <>\n              {isSelected ? <IconBellFill /> : <IconBell />}\n              Notifications {isSelected ? \"On\" : \"Off\"}\n            </>\n          )}\n        </Toggle>\n        <Toggle>\n          {({ isSelected }) => (\n            <>\n              {isSelected ? <IconTranslateFill /> : <IconTranslate />}\n              Always Translate\n            </>\n          )}\n        </Toggle>\n      </ToggleGroup>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

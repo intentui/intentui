@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-list-box",
+  "type": "registry:component",
+  "title": "List box",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/list-box.tsx",
+      "content": "\"use client\"\n\nimport { IconCheck, IconHamburger } from \"@intentui/icons\"\nimport type { ListBoxItemProps, ListBoxProps } from \"react-aria-components\"\nimport {\n  ListBoxItem as ListBoxItemPrimitive,\n  ListBox as ListBoxPrimitive,\n  composeRenderProps,\n} from \"react-aria-components\"\n\nimport {\n  DropdownDescription,\n  DropdownLabel,\n  DropdownSection,\n  dropdownItemStyles,\n} from \"@/components/ui/dropdown\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { twMerge } from \"tailwind-merge\"\n\nconst ListBox = <T extends object>({ className, ...props }: ListBoxProps<T>) => (\n  <ListBoxPrimitive\n    {...props}\n    className={composeTailwindRenderProps(\n      className,\n      \"grid max-h-96 w-full min-w-56 scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-scroll overscroll-contain rounded-xl border p-1 shadow-lg outline-hidden [scrollbar-width:thin] [&::-webkit-scrollbar]:size-0.5 *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1\",\n    )}\n  />\n)\n\nconst ListBoxItem = <T extends object>({ children, className, ...props }: ListBoxItemProps<T>) => {\n  const textValue = typeof children === \"string\" ? children : undefined\n  return (\n    <ListBoxItemPrimitive\n      textValue={textValue}\n      {...props}\n      className={composeRenderProps(className, (className, renderProps) =>\n        dropdownItemStyles({\n          ...renderProps,\n          className,\n        }),\n      )}\n    >\n      {(renderProps) => {\n        const { allowsDragging, isSelected, isFocused, isDragging } = renderProps\n\n        return (\n          <>\n            {allowsDragging && (\n              <IconHamburger\n                className={twMerge(\n                  \"size-4 shrink-0 text-muted-fg transition\",\n                  isFocused && \"text-fg\",\n                  isDragging && \"text-fg\",\n                  isSelected && \"text-accent-fg/70\",\n                )}\n              />\n            )}\n            {isSelected && <IconCheck className=\"-mx-0.5 mr-2\" data-slot=\"checked-icon\" />}\n            {typeof children === \"function\" ? (\n              children(renderProps)\n            ) : typeof children === \"string\" ? (\n              <DropdownLabel>{children}</DropdownLabel>\n            ) : (\n              children\n            )}\n          </>\n        )\n      }}\n    </ListBoxItemPrimitive>\n  )\n}\n\ntype ListBoxSectionProps = React.ComponentProps<typeof DropdownSection>\nconst ListBoxSection = ({ className, ...props }: ListBoxSectionProps) => {\n  return (\n    <DropdownSection\n      className={twMerge(\"[&_.lbi:last-child]:-mb-1.5 gap-y-1\", className)}\n      {...props}\n    />\n  )\n}\n\nconst ListBoxLabel = DropdownLabel\nconst ListBoxDescription = DropdownDescription\n\nListBox.Section = ListBoxSection\nListBox.Label = ListBoxLabel\nListBox.Description = ListBoxDescription\nListBox.Item = ListBoxItem\n\nexport type { ListBoxItemProps, ListBoxSectionProps }\nexport { ListBox, ListBoxSection, ListBoxItem, ListBoxLabel, ListBoxDescription }\n",
+      "type": "registry:component"
+    }
+  ]
+}

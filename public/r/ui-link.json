@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-link",
+  "type": "registry:component",
+  "title": "Link",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/link.tsx",
+      "content": "\"use client\"\n\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { Link as LinkPrimitive, type LinkProps as LinkPrimitiveProps } from \"react-aria-components\"\nimport { twJoin } from \"tailwind-merge\"\n\ninterface LinkProps extends LinkPrimitiveProps {\n  intent?: \"primary\" | \"secondary\" | \"unstyled\"\n  ref?: React.RefObject<HTMLAnchorElement>\n}\n\nconst Link = ({ className, ref, intent = \"unstyled\", ...props }: LinkProps) => {\n  return (\n    <LinkPrimitive\n      ref={ref}\n      {...props}\n      className={composeTailwindRenderProps(\n        className,\n        twJoin([\n          \"outline-0 outline-offset-2 transition-[color,_opacity] focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]\",\n          \"disabled:cursor-default disabled:opacity-60 forced-colors:disabled:text-[GrayText]\",\n          intent === \"unstyled\" && \"text-current\",\n          intent === \"primary\" && \"text-primary hover:underline\",\n          intent === \"secondary\" && \"text-secondary-fg hover:underline\",\n        ]),\n      )}\n    >\n      {(values) => (\n        <>{typeof props.children === \"function\" ? props.children(values) : props.children}</>\n      )}\n    </LinkPrimitive>\n  )\n}\n\nexport type { LinkProps }\nexport { Link }\n",
+      "type": "registry:component"
+    }
+  ]
+}

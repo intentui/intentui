@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-description-list",
+  "type": "registry:component",
+  "title": "Description list",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/description-list.tsx",
+      "content": "import { twMerge } from \"tailwind-merge\"\n\nconst DescriptionList = ({ className, ref, ...props }: React.ComponentProps<\"dl\">) => {\n  return (\n    <dl\n      ref={ref}\n      className={twMerge(\n        \"grid grid-cols-1 text-base/6 sm:grid-cols-[min(50%,calc(var(--spacing)*80))_auto] sm:text-sm/6\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nconst DescriptionTerm = ({ className, ref, ...props }: React.ComponentProps<\"dt\">) => {\n  return (\n    <dt\n      ref={ref}\n      className={twMerge(\n        \"col-start-1 border-t pt-3 text-muted-fg first:border-none sm:py-3\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nconst DescriptionDetails = ({ className, ...props }: React.ComponentProps<\"dd\">) => {\n  return (\n    <dd\n      {...props}\n      className={twMerge(\"pt-1 pb-3 text-fg sm:border-t sm:nth-2:border-none sm:py-3\", className)}\n    />\n  )\n}\n\nDescriptionList.Term = DescriptionTerm\nDescriptionList.Details = DescriptionDetails\nexport { DescriptionList }\n",
+      "type": "registry:component"
+    }
+  ]
+}

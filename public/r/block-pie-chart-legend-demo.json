@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-pie-chart-legend-demo",
+  "type": "registry:block",
+  "title": "Pie chart legend demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/pie/pie-chart-legend-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartLegend, ChartLegendContent } from \"@/components/ui/chart\"\nimport { Pie, PieChart } from \"recharts\"\n\nconst chartData = [\n  { region: \"tesla\", visitors: 275, fill: \"var(--color-tesla)\" },\n  { region: \"rivian\", visitors: 200, fill: \"var(--color-rivian)\" },\n  { region: \"ford\", visitors: 187, fill: \"var(--color-ford)\" },\n  { region: \"lucid\", visitors: 173, fill: \"var(--color-lucid)\" },\n  { region: \"other\", visitors: 90, fill: \"var(--color-other)\" },\n]\n\nconst chartConfig = {\n  visitors: {\n    label: \"Visitors\",\n  },\n  tesla: {\n    label: \"Tesla\",\n    color: \"var(--chart-1)\",\n  },\n  rivian: {\n    label: \"Rivian\",\n    color: \"var(--chart-2)\",\n  },\n  ford: {\n    label: \"Ford\",\n    color: \"var(--chart-3)\",\n  },\n  lucid: {\n    label: \"Lucid\",\n    color: \"var(--chart-4)\",\n  },\n  other: {\n    label: \"Other\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function PieChartLegendDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"EV Market\"\n        description=\"Showing total visitors for the first half of 2024 by region\"\n        className=\"items-center pb-0\"\n      />\n      <Card.Content className=\"flex-1 pb-0\">\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[300px]\">\n          <PieChart>\n            <Pie data={chartData} dataKey=\"visitors\" />\n            <ChartLegend\n              content={<ChartLegendContent nameKey=\"region\" />}\n              className=\"-translate-y-2 flex-wrap gap-2 *:basis-1/4 *:justify-center\"\n            />\n          </PieChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

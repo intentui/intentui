@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-pie-chart-label-demo",
+  "type": "registry:block",
+  "title": "Pie chart label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/pie/pie-chart-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Pie, PieChart } from \"recharts\"\n\nconst chartData = [\n  { category: \"Electronics\", sales: 275, fill: \"var(--color-electronics)\" },\n  { category: \"Clothing\", sales: 200, fill: \"var(--color-clothing)\" },\n  { category: \"Groceries\", sales: 187, fill: \"var(--color-groceries)\" },\n  { category: \"Furniture\", sales: 173, fill: \"var(--color-furniture)\" },\n  { category: \"Books\", sales: 90, fill: \"var(--color-books)\" },\n]\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n  },\n  electronics: {\n    label: \"Electronics\",\n    color: \"var(--chart-1)\",\n  },\n  clothing: {\n    label: \"Clothing\",\n    color: \"var(--chart-2)\",\n  },\n  groceries: {\n    label: \"Groceries\",\n    color: \"var(--chart-3)\",\n  },\n  furniture: {\n    label: \"Furniture\",\n    color: \"var(--chart-4)\",\n  },\n  books: {\n    label: \"Books\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function PieChartLabelDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Sales Allocation by Category\"\n        description=\"Jan - Jun 2024\"\n      />\n      <Card.Content className=\"flex-1 pb-0\">\n        <Chart\n          config={chartConfig}\n          className=\"mx-auto aspect-square max-h-[250px] pb-0 [&_.recharts-pie-label-text]:fill-fg\"\n        >\n          <PieChart>\n            <ChartTooltip content={<ChartTooltipContent hideLabel />} />\n            <Pie data={chartData} dataKey=\"sales\" label nameKey=\"category\" />\n          </PieChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

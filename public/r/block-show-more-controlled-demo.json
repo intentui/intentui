@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-show-more-controlled-demo",
+  "type": "registry:block",
+  "title": "Show more controlled demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/show-more/show-more-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ShowMore } from \"@/components/ui/show-more\"\nimport { IconChevronLgDown } from \"@intentui/icons\"\n\nexport default function ShowMoreControlledDemo() {\n  const [isExpanded, setIsExpanded] = useState(false)\n  return (\n    <div className=\"py-6\">\n      <ShowMore onChange={setIsExpanded} isSelected={isExpanded}>\n        {isExpanded ? \"Expand\" : \"Collapse\"}\n        <IconChevronLgDown\n          className={`${isExpanded ? \"rotate-180\" : \"\"} size-4 transition-transform duration-200`}\n        />\n      </ShowMore>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

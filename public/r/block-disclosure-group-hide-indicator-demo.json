@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-group-hide-indicator-demo",
+  "type": "registry:block",
+  "title": "Disclosure group hide indicator demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure-group/disclosure-group-hide-indicator-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  Disclosure,\n  DisclosureGroup,\n  DisclosurePanel,\n  DisclosureTrigger,\n} from \"@/components/ui/disclosure\"\n\nexport default function DisclosureGroupHideIndicatorDemo() {\n  return (\n    <DisclosureGroup className=\"**:data-[slot=disclosure-chevron]:hidden\">\n      {faqs.map((item, index) => (\n        <Disclosure key={index} id={index}>\n          <DisclosureTrigger>{item.q}</DisclosureTrigger>\n          <DisclosurePanel>{item.a}</DisclosurePanel>\n        </Disclosure>\n      ))}\n    </DisclosureGroup>\n  )\n}\n\nconst faqs = [\n  {\n    q: \"What payment methods are accepted?\",\n    a: \"We accept all major credit cards, PayPal, and Apple Pay.\",\n  },\n  {\n    q: \"How long does shipping take?\",\n    a: \"Shipping times vary by location but typically take between 3-7 business days.\",\n  },\n  {\n    q: \"Can I track my order?\",\n    a: \"Yes, you can track your order using the tracking link provided in your shipping confirmation email.\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

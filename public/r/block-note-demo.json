@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-note-demo",
+  "type": "registry:block",
+  "title": "Note demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/note/note-demo.tsx",
+      "content": "\"use client\"\n\nimport { Note } from \"@/components/ui/note\"\n\nexport default function NoteDemo() {\n  return (\n    <Note>\n      We hook you up with top-tier migration services in our startup plan. Wanna roll with it? Hit\n      us up here.\n    </Note>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

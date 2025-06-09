@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tabs-demo",
+  "type": "registry:block",
+  "title": "Tabs demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/tabs/tabs-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tabs } from \"@/components/ui/tabs\"\n\nexport default function TabsDemo() {\n  return (\n    <Tabs aria-label=\"Recipe App\">\n      <Tabs.List>\n        <Tabs.Tab id=\"r\">Recipes</Tabs.Tab>\n        <Tabs.Tab id=\"i\">Ingredients</Tabs.Tab>\n        <Tabs.Tab id=\"m\">Meal Plans</Tabs.Tab>\n        <Tabs.Tab id=\"v\">Videos</Tabs.Tab>\n      </Tabs.List>\n      <Tabs.Panel id=\"r\">\n        Browse through a wide selection of recipes for all occasions and dietary preferences.\n      </Tabs.Panel>\n      <Tabs.Panel id=\"i\">Check the list of ingredients needed for your chosen recipes.</Tabs.Panel>\n      <Tabs.Panel id=\"m\">Discover curated meal plans to simplify your weekly cooking.</Tabs.Panel>\n      <Tabs.Panel id=\"v\">Watch cooking videos to learn new techniques and recipes.</Tabs.Panel>\n    </Tabs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

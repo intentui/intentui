@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-picker-with-description-demo",
+  "type": "registry:block",
+  "title": "Color picker with description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-picker/color-picker-with-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ColorPicker } from \"@/components/ui/color-picker\"\nimport { defaultColor } from \"@/components/ui/color-swatch\"\n\nexport default function ColorPickerWithDescriptionDemo() {\n  const [color, setColor] = useState(defaultColor)\n  return (\n    <ColorPicker\n      label=\"Theme Color\"\n      description=\"Snag a color for the app theme\"\n      value={color}\n      onChange={setColor}\n    />\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

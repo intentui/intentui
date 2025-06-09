@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-multiple-select-invalid-demo",
+  "type": "registry:block",
+  "title": "Multiple select invalid demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/multiple-select/multiple-select-invalid-demo.tsx",
+      "content": "\"use client\"\n\nimport { type FormEvent, useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Form } from \"@/components/ui/form\"\nimport { MultipleSelect } from \"@/components/ui/multiple-select\"\nimport type { Selection } from \"react-aria-components\"\n\nexport default function MultipleSelectInvalidDemo() {\n  const [invalid, setInvalid] = useState<boolean>(false)\n  const [selectedItems, setSelectedItems] = useState<Selection>(new Set([]))\n\n  function submit(e: FormEvent<HTMLFormElement>) {\n    if ([...selectedItems].length === 0) {\n      setInvalid(true)\n      e.preventDefault()\n      return\n    }\n    setInvalid(false)\n  }\n\n  return (\n    <Form className=\"space-y-2\" onSubmit={submit}>\n      <MultipleSelect\n        className=\"max-w-xs\"\n        label=\"Fruits\"\n        selectedKeys={selectedItems}\n        onSelectionChange={setSelectedItems}\n        items={fruits}\n        isInvalid={invalid}\n        errorMessage={invalid ? \"Please select at least one fruit\" : undefined}\n      >\n        {(item) => {\n          return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>\n        }}\n      </MultipleSelect>\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n\nconst fruits = [\n  { id: 1, name: \"Apple\" },\n  { id: 2, name: \"Banana\" },\n  { id: 3, name: \"Cherry\" },\n  { id: 4, name: \"Date\" },\n  { id: 9, name: \"Kiwi\" },\n  { id: 10, name: \"Lemon\" },\n  { id: 11, name: \"Mango\" },\n  { id: 12, name: \"Nectarine\" },\n  { id: 13, name: \"Orange\" },\n  { id: 14, name: \"Papaya\" },\n  { id: 15, name: \"Quince\" },\n  { id: 16, name: \"Raspberry\" },\n  { id: 17, name: \"Strawberry\" },\n  { id: 18, name: \"Tangerine\" },\n  { id: 19, name: \"Ugli Fruit\" },\n  { id: 20, name: \"Watermelon\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

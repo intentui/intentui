@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-time-field-suffix-demo",
+  "type": "registry:block",
+  "title": "Time field suffix demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/time-field/time-field-suffix-demo.tsx",
+      "content": "\"use client\"\n\nimport { IconClock } from \"@intentui/icons\"\nimport { Time } from \"@internationalized/date\"\n\nimport { TimeField } from \"@/components/ui/time-field\"\n\nexport default function TimeFieldSuffixDemo() {\n  return <TimeField suffix={<IconClock />} defaultValue={new Time()} label=\"Event time\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

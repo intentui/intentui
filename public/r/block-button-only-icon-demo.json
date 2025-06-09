@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-button-only-icon-demo",
+  "type": "registry:block",
+  "title": "Button only icon demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/button/button-only-icon-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { IconBrandParsinta } from \"@intentui/icons\"\n\nexport default function ButtonOnlyIconDemo() {\n  return (\n    <Button size=\"sq-sm\" intent=\"outline\">\n      <IconBrandParsinta />\n    </Button>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

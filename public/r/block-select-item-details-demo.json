@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-select-item-details-demo",
+  "type": "registry:block",
+  "title": "Select item details demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://localhost:3000/r/ui-select.json"
+  ],
+  "files": [
+    {
+      "path": "components/docs/pickers/select/select-item-details-demo.tsx",
+      "content": "\"use client\"\n\nimport { Select } from \"@/components/ui/select\"\n\nexport default function SelectItemDetailsDemo() {\n  return (\n    <Select label=\"Roles\" placeholder=\"Select a role\">\n      <Select.Trigger />\n      <Select.List className=\"max-w-(--trigger-width)\" items={roles}>\n        {(item) => (\n          <Select.Option id={item.id} textValue={item.name}>\n            <Select.Label>{item.name}</Select.Label>\n            <Select.Description>{item.description}</Select.Description>\n          </Select.Option>\n        )}\n      </Select.List>\n    </Select>\n  )\n}\n\nexport const roles = [\n  { id: 1, name: \"Admin\", description: \"Has full access to all resources\" },\n  { id: 2, name: \"Editor\", description: \"Can edit content but has limited access to settings\" },\n  { id: 3, name: \"Viewer\", description: \"Can view content but cannot make changes\" },\n  { id: 4, name: \"Contributor\", description: \"Can contribute content for review\" },\n  { id: 5, name: \"Guest\", description: \"Limited access, mostly for viewing purposes\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-description-list-heading-demo",
+  "type": "registry:block",
+  "title": "Description list heading demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/description-list/description-list-heading-demo.tsx",
+      "content": "\"use client\"\n\nimport { DescriptionList } from \"@/components/ui/description-list\"\nimport { Heading } from \"@/components/ui/heading\"\n\nexport default function DescriptionListHeadingDemo() {\n  return (\n    <div>\n      <Heading className=\"sm:text-lg\">Product Details</Heading>\n      <DescriptionList>\n        <DescriptionList.Term>Product Name</DescriptionList.Term>\n        <DescriptionList.Details>Wireless Headphones</DescriptionList.Details>\n        <DescriptionList.Term>Battery Life</DescriptionList.Term>\n        <DescriptionList.Details>20 hours</DescriptionList.Details>\n        <DescriptionList.Term>Weight</DescriptionList.Term>\n        <DescriptionList.Details>250 grams</DescriptionList.Details>\n        <DescriptionList.Term>Color</DescriptionList.Term>\n        <DescriptionList.Details>Black</DescriptionList.Details>\n        <DescriptionList.Term>Warranty</DescriptionList.Term>\n        <DescriptionList.Details>2 years</DescriptionList.Details>\n      </DescriptionList>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-group-description-demo",
+  "type": "registry:block",
+  "title": "Checkbox group description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-group-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox, CheckboxGroup } from \"@/components/ui/checkbox\"\n\nexport default function CheckboxGroupDescriptionDemo() {\n  return (\n    <CheckboxGroup\n      label=\"User Permissions\"\n      description=\"Select the permissions you want to grant to the user.\"\n    >\n      <Checkbox value=\"read\">Read</Checkbox>\n      <Checkbox value=\"write\">Write</Checkbox>\n      <Checkbox value=\"delete\">Delete</Checkbox>\n      <Checkbox value=\"admin\">Admin</Checkbox>\n    </CheckboxGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

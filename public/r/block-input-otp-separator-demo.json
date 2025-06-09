@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-input-otp-separator-demo",
+  "type": "registry:block",
+  "title": "Input otp separator demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/input-otp/input-otp-separator-demo.tsx",
+      "content": "\"use client\"\n\nimport { InputOTP } from \"@/components/ui/input-otp\"\n\nexport default function InputOtpSeparatorDemo() {\n  return (\n    <InputOTP maxLength={6}>\n      <InputOTP.Group>\n        <InputOTP.Slot index={0} />\n        <InputOTP.Slot index={1} />\n        <InputOTP.Slot index={2} />\n      </InputOTP.Group>\n      <InputOTP.Separator />\n      <InputOTP.Group>\n        <InputOTP.Slot index={3} />\n        <InputOTP.Slot index={4} />\n        <InputOTP.Slot index={5} />\n      </InputOTP.Group>\n    </InputOTP>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

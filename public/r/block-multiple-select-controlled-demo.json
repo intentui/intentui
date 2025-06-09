@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-multiple-select-controlled-demo",
+  "type": "registry:block",
+  "title": "Multiple select controlled demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/multiple-select/multiple-select-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { MultipleSelect } from \"@/components/ui/multiple-select\"\nimport { useState } from \"react\"\nimport type { Selection } from \"react-aria-components\"\n\nconst tags = [\n  { id: 1, name: \"Travel\" },\n  { id: 2, name: \"Food\" },\n  { id: 3, name: \"Fashion\" },\n  { id: 4, name: \"Music\" },\n  { id: 5, name: \"Photography\" },\n]\n\nexport default function MultipleSelectControlledDemo() {\n  const [selectedItems, setSelectedItems] = useState<Selection>(new Set([2, 4]))\n\n  return (\n    <>\n      <MultipleSelect\n        className=\"max-w-xs\"\n        label=\"Select tags\"\n        selectedKeys={selectedItems}\n        onSelectionChange={setSelectedItems}\n        items={tags}\n      >\n        {(item) => {\n          return (\n            <MultipleSelect.Item id={item.id} textValue={item.name}>\n              {item.name}\n            </MultipleSelect.Item>\n          )\n        }}\n      </MultipleSelect>\n      {[...selectedItems].length > 0 && (\n        <Description className=\"mt-2 block max-w-xs text-muted-fg [&>strong]:text-fg\">\n          You have selected: <strong>{[...selectedItems]}</strong>\n        </Description>\n      )}\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

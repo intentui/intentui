@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-picker-disabled-demo",
+  "type": "registry:block",
+  "title": "Date picker disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-picker/date-picker-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { DatePicker } from \"@/components/ui/date-picker\"\n\nexport default function DatePickerDisabledDemo() {\n  return <DatePicker isDisabled label=\"Event date\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

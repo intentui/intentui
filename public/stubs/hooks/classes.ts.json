@@ -1,0 +1,9 @@
+{
+  "name": "hooks/classes.ts.stub",
+  "files": [
+    {
+      "name": "hooks/classes.ts.stub",
+      "content": "import { twMerge } from \"tailwind-merge\"\nimport { clsx, type ClassValue } from \"clsx\";\n\nexport const cn = (...inputs: ClassValue[]): string => twMerge(clsx(...inputs))\n"
+    }
+  ]
+}

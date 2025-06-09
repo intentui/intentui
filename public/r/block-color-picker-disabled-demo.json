@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-picker-disabled-demo",
+  "type": "registry:block",
+  "title": "Color picker disabled demo",
+  "description": "",
+  "dependencies": [
+    "@react-stately/color"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-picker/color-picker-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ColorPicker } from \"@/components/ui/color-picker\"\nimport { parseColor } from \"@react-stately/color\"\n\nexport default function ColorPickerDisabledDemo() {\n  const [color, setColor] = useState(parseColor(\"hsl(216, 98%, 52%)\"))\n  return <ColorPicker isDisabled label=\"Color Picker\" value={color} onChange={setColor} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

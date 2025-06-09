@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-range-calendar-controlled-demo",
+  "type": "registry:block",
+  "title": "Range calendar controlled demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/calendar/range-calendar-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { getLocalTimeZone, today } from \"@internationalized/date\"\n\nimport { RangeCalendar } from \"@/components/ui/range-calendar\"\n\nexport default function RangeCalendarControlledDemo() {\n  const now = today(getLocalTimeZone())\n  const tomorrowWeek = today(getLocalTimeZone()).add({ days: 20 })\n  const [value, setValue] = useState({\n    start: now,\n    end: tomorrowWeek,\n  })\n  return (\n    <RangeCalendar\n      className=\"**:data-[slot=calendar-header]:items-center\"\n      aria-label=\"Date range (controlled)\"\n      value={value}\n      onChange={setValue}\n    />\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

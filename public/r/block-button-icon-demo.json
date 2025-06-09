@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-button-icon-demo",
+  "type": "registry:block",
+  "title": "Button icon demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/button/button-icon-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { IconBrandLaravel } from \"@intentui/icons\"\n\nexport default function ButtonIconDemo() {\n  return (\n    <Button intent=\"danger\">\n      <IconBrandLaravel />\n      Laravel\n    </Button>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

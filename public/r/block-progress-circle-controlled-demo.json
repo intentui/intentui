@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-progress-circle-controlled-demo",
+  "type": "registry:block",
+  "title": "Progress circle controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/progress-circle/progress-circle-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ProgressCircle } from \"@/components/ui/progress-circle\"\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function ProgressCircleControlledDemo() {\n  const [value, setValue] = useState(10)\n\n  return (\n    <div className=\"flex min-w-56 flex-col items-center gap-y-6\">\n      <ProgressCircle className=\"size-10\" value={value} />\n      <Slider label=\"Track\" value={value} onChange={(v) => setValue(v as number)} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

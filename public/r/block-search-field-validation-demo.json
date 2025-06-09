@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-search-field-validation-demo",
+  "type": "registry:block",
+  "title": "Search field validation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/search-field/search-field-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Form } from \"@/components/ui/form\"\nimport { SearchField } from \"@/components/ui/search-field\"\n\nexport default function SearchFieldValidationDemo() {\n  return (\n    <Form>\n      <SearchField isRequired label=\"Name\" className=\"mb-2\" />\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

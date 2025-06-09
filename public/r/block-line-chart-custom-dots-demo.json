@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-line-chart-custom-dots-demo",
+  "type": "registry:block",
+  "title": "Line chart custom dots demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/line/line-chart-custom-dots-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { IconMoneybag } from \"@intentui/icons\"\nimport { CartesianGrid, Line, LineChart, XAxis } from \"recharts\"\n\nconst months = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"]\n\nconst chartData = months.map((month) => ({\n  month,\n  sales: Math.floor(Math.random() * 300) + 150,\n  profit: Math.floor(Math.random() * 150) + 50,\n}))\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n    color: \"var(--chart-1)\",\n  },\n  profit: {\n    label: \"Profit\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function LineChartCustomDotsDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Monthly Sales & Profit\"\n        description=\"Visualizing Monthly Sales & Profit for Jan - Dec 2024\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <LineChart\n            accessibilityLayer\n            data={chartData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis dataKey=\"month\" tickLine={false} axisLine={false} tickMargin={8} />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Line\n              dataKey=\"sales\"\n              type=\"natural\"\n              stroke=\"var(--color-sales)\"\n              strokeWidth={2}\n              dot={({ cx, cy, payload }) => {\n                const r = 24\n                return (\n                  <IconMoneybag\n                    className=\"text-(--color-profit)\"\n                    key={payload.month}\n                    x={cx - r / 2}\n                    y={cy - r / 2}\n                    width={r}\n                    height={r}\n                    fill=\"var(--bg)\"\n                    stroke=\"var(--color-sales)\"\n                  />\n                )\n              }}\n            />\n          </LineChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

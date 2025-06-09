@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-single-menu-demo",
+  "type": "registry:block",
+  "title": "Single menu demo",
+  "description": "",
+  "dependencies": [
+    "@react-types/overlays",
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/single-menu-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Menu } from \"@/components/ui/menu\"\nimport type { Placement } from \"@react-types/overlays\"\nimport type { Selection } from \"react-aria-components\"\n\nexport const placements = [\n  \"bottom\",\n  \"bottom left\",\n  \"bottom right\",\n  \"bottom start\",\n  \"bottom end\",\n  \"top\",\n  \"top left\",\n  \"top right\",\n  \"top start\",\n  \"top end\",\n  \"left\",\n  \"left top\",\n  \"left bottom\",\n  \"start\",\n  \"start top\",\n  \"start bottom\",\n  \"right\",\n  \"right top\",\n  \"right bottom\",\n  \"end\",\n  \"end top\",\n  \"end bottom\",\n].map((item, i) => ({ id: i, name: item }))\n\nexport default function SingleMenuDemo() {\n  const [selected, setSelected] = useState<Selection>(new Set([\"bottom\"]))\n  return (\n    <Menu>\n      <Button intent=\"outline\">Placement</Button>\n      <Menu.Content\n        placement={Array.from(selected)[0] as Placement}\n        selectionMode=\"single\"\n        selectedKeys={selected}\n        onSelectionChange={setSelected}\n        items={placements}\n        className=\"max-h-72 min-w-52\"\n      >\n        {(item) => (\n          <Menu.Item id={item.name}>\n            <Menu.Label>{item.name}</Menu.Label>\n          </Menu.Item>\n        )}\n      </Menu.Content>\n    </Menu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-button-loader-demo",
+  "type": "registry:block",
+  "title": "Button loader demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/button/button-loader-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Loader } from \"@/components/ui/loader\"\nimport { IconCircleCheckFill, IconKey } from \"@intentui/icons\"\n\nexport default function ButtonLoaderDemo() {\n  const [loading, setLoading] = useState<\"idle\" | \"loading\" | \"success\">(\"idle\")\n\n  const pressHandler = () => {\n    setLoading(\"loading\")\n\n    setTimeout(() => setLoading(\"success\"), 3000)\n\n    setTimeout(() => setLoading(\"idle\"), 6000)\n  }\n\n  return (\n    <Button\n      isPending={loading === \"loading\"}\n      className=\"w-52 justify-between\"\n      onPress={pressHandler}\n      intent=\"primary\"\n    >\n      {loading === \"success\" ? (\n        <IconCircleCheckFill />\n      ) : loading === \"loading\" ? (\n        <Loader variant=\"spin\" />\n      ) : (\n        <IconKey />\n      )}\n      {loading === \"loading\"\n        ? \"Generating Key...\"\n        : loading === \"success\"\n          ? \"Key Generated!\"\n          : \"Generate API Key\"}\n    </Button>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

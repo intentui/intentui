@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-source",
+  "type": "registry:lib",
+  "title": "Source",
+  "description": "",
+  "dependencies": [
+    "#site/content",
+    "fumadocs-core/source",
+    "fumadocs-mdx"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/source.ts",
+      "content": "import { loader } from \"fumadocs-core/source\"\nimport { createMDXSource } from \"fumadocs-mdx\"\nimport { docs, meta } from \"#site/content\"\n\nexport const source = loader({\n  baseUrl: \"/docs\",\n  source: createMDXSource(docs, meta),\n})\n",
+      "type": "registry:lib"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-colors",
+  "type": "registry:lib",
+  "title": "Colors",
+  "description": "",
+  "dependencies": [
+    "culori",
+    "ntcjs",
+    "usemods"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/colors.ts",
+      "content": "import { parse, rgb } from \"culori\"\nimport ntc from \"ntcjs\"\nimport { slugify } from \"usemods\"\n\nexport const getTextColor = (bgColor: string): string => {\n  const parsedColor = parse(bgColor)\n  if (!parsedColor) {\n    throw new Error(\"Invalid color format\")\n  }\n\n  const rgbColor = rgb(parsedColor)\n  if (!rgbColor) {\n    throw new Error(\"Failed to convert color to RGB\")\n  }\n\n  const { r, g, b } = rgbColor\n\n  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b\n\n  return luminance > 0.5 ? \"#000000\" : \"#FFFFFF\"\n}\n\nexport const getColorName = (hex: string, slug = true) => {\n  const n_match = ntc.name(hex)\n  return slug ? slugify(n_match[1]) : n_match[1]\n}\n\nexport const adjustLightness = (oklchColor: string, adjustBy: number): string => {\n  const match = oklchColor.match(/oklch\\((\\d+(\\.\\d+)?) (\\d+(\\.\\d+)?) (\\d+(\\.\\d+)?)\\)/)\n  if (!match) throw new Error(\"Invalid OKLCH color format\")\n\n  const [_, l, , c, , h] = match\n\n  if (!l || !c || !h) throw new Error(\"Invalid OKLCH color format\")\n\n  const lightness = Number.parseFloat(l)\n  const newLightness = Math.min(1, Math.max(0, lightness + adjustBy / 100))\n\n  return `oklch(${newLightness.toFixed(3)} ${c} ${h})`\n}\n\nexport const neutralColors = [\"slate\", \"gray\", \"zinc\", \"neutral\", \"stone\"]\nexport const accentColors300 = [\"yellow\", \"lime\"]\nexport const accentColors400 = [\"amber\", \"yellow\", \"lime\", \"cyan\"]\nexport const accentColors500 = [\"sky\", \"orange\", \"rose\", \"fuchsia\", \"purple\", \"violet\", \"indigo\"]\n",
+      "type": "registry:lib"
+    }
+  ]
+}

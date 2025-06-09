@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-carousel-demo",
+  "type": "registry:block",
+  "title": "Carousel demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/media/carousel/carousel-demo.tsx",
+      "content": "import { Carousel } from \"@/components/ui/carousel\"\nimport Image from \"next/image\"\n\nexport default function CarouselDemo() {\n  return (\n    <Carousel className=\"w-full max-w-xs\">\n      <Carousel.Content>\n        <Carousel.Item className=\"basis-1/2\">\n          <Image\n            className=\"rounded-xl\"\n            src=\"/slides/slide-1.jpg\"\n            alt=\"image 1\"\n            width={400}\n            height={300}\n          />\n        </Carousel.Item>\n        <Carousel.Item className=\"basis-1/2\">\n          <Image\n            className=\"rounded-xl\"\n            src=\"/slides/slide-2.jpg\"\n            alt=\"image 2\"\n            width={400}\n            height={300}\n          />\n        </Carousel.Item>\n        <Carousel.Item className=\"basis-1/2\">\n          <Image\n            className=\"rounded-xl\"\n            src=\"/slides/slide-3.jpg\"\n            alt=\"image 3\"\n            width={400}\n            height={300}\n          />\n        </Carousel.Item>\n        <Carousel.Item className=\"basis-1/2\">\n          <Image\n            className=\"rounded-xl\"\n            src=\"/slides/slide-4.jpg\"\n            alt=\"image 4\"\n            width={400}\n            height={300}\n          />\n        </Carousel.Item>\n        <Carousel.Item className=\"basis-1/2\">\n          <Image\n            className=\"rounded-xl\"\n            src=\"/slides/slide-5.jpg\"\n            alt=\"image 5\"\n            width={400}\n            height={300}\n          />\n        </Carousel.Item>\n        <Carousel.Item className=\"basis-1/2\">\n          <Image\n            className=\"rounded-xl\"\n            src=\"/slides/slide-6.jpg\"\n            alt=\"image 6\"\n            width={400}\n            height={300}\n          />\n        </Carousel.Item>\n        <Carousel.Item className=\"basis-1/2\">\n          <Image\n            className=\"rounded-xl\"\n            src=\"/slides/slide-7.jpg\"\n            alt=\"image 7\"\n            width={400}\n            height={300}\n          />\n        </Carousel.Item>\n      </Carousel.Content>\n\n      <Carousel.Handler>\n        <Carousel.Button segment=\"previous\" />\n        <Carousel.Button segment=\"next\" />\n      </Carousel.Handler>\n    </Carousel>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

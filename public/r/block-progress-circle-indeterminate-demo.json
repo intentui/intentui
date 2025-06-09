@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-progress-circle-indeterminate-demo",
+  "type": "registry:block",
+  "title": "Progress circle indeterminate demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/progress-circle/progress-circle-indeterminate-demo.tsx",
+      "content": "\"use client\"\n\nimport { ProgressCircle } from \"@/components/ui/progress-circle\"\n\nexport default function ProgressCircleIndeterminateDemo() {\n  return <ProgressCircle aria-label=\"Loading…\" isIndeterminate />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

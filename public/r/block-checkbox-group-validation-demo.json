@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-group-validation-demo",
+  "type": "registry:block",
+  "title": "Checkbox group validation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-group-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Checkbox, CheckboxGroup } from \"@/components/ui/checkbox\"\nimport { Form } from \"@/components/ui/form\"\n\nexport default function CheckboxValidationDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()}>\n      <CheckboxGroup className=\"mb-4\" label=\"Settings\" isRequired>\n        <Checkbox value=\"notifications\">Enable notifications</Checkbox>\n        <Checkbox value=\"auto_update\">Auto-update applications</Checkbox>\n        <Checkbox value=\"dark_mode\">Enable dark mode</Checkbox>\n        <Checkbox value=\"location_access\">Allow location access</Checkbox>\n        <Checkbox value=\"two_factor_auth\">Enable two-factor authentication</Checkbox>\n      </CheckboxGroup>\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

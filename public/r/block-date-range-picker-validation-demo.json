@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-range-picker-validation-demo",
+  "type": "registry:block",
+  "title": "Date range picker validation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { DateRangePicker } from \"@/components/ui/date-range-picker\"\nimport { Form } from \"@/components/ui/form\"\n\nexport default function DateRangePickerValidationDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()}>\n      <DateRangePicker isRequired label=\"Event date\" className=\"mb-2\" />\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

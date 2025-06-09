@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-uncontrolled-demo",
+  "type": "registry:block",
+  "title": "Checkbox uncontrolled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-uncontrolled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox } from \"@/components/ui/checkbox\"\n\nexport default function CheckboxUncontrolledDemo() {\n  return (\n    <Checkbox defaultSelected value=\"updates\">\n      Receive Updates\n    </Checkbox>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

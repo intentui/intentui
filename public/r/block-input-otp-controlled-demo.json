@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-input-otp-controlled-demo",
+  "type": "registry:block",
+  "title": "Input otp controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/input-otp/input-otp-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { InputOTP } from \"@/components/ui/input-otp\"\n\nexport default function InputOtpControlledDemo() {\n  const [value, setValue] = useState(\"\")\n  return (\n    <div className=\"space-y-2\">\n      <InputOTP maxLength={6} value={value} onChange={setValue}>\n        <InputOTP.Group>\n          {[...Array(6)].map((_, index) => (\n            <InputOTP.Slot key={index} index={index} />\n          ))}\n        </InputOTP.Group>\n      </InputOTP>\n\n      <div className=\"text-center text-sm\">\n        {value === \"\" ? <>Enter your one-time password.</> : <>You entered: {value}</>}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

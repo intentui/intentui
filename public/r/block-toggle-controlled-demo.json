@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-controlled-demo",
+  "type": "registry:block",
+  "title": "Toggle controlled demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle/toggle-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Toggle } from \"@/components/ui/toggle\"\nimport { IconPin, IconUnpin } from \"@intentui/icons\"\n\nexport default function ToggleControlledDemo() {\n  const [isSelected, setSelected] = useState(false)\n  return (\n    <Toggle size=\"sq-sm\" isSelected={isSelected} onChange={setSelected}>\n      {({ isSelected }) => <>{isSelected ? <IconUnpin /> : <IconPin />}</>}\n    </Toggle>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tabs-disabled-demo",
+  "type": "registry:block",
+  "title": "Tabs disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/tabs/tabs-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tabs } from \"@/components/ui/tabs\"\n\nexport default function TabsDisabledDemo() {\n  return (\n    <Tabs disabledKeys={[\"c\", \"a\"]} aria-label=\"Services\">\n      <Tabs.List>\n        <Tabs.Tab id=\"o\">Overview</Tabs.Tab>\n        <Tabs.Tab id=\"c\">Contact</Tabs.Tab>\n        <Tabs.Tab id=\"a\">About Us</Tabs.Tab>\n      </Tabs.List>\n      <Tabs.Panel id=\"o\">\n        Welcome to our service! Here, you’ll find a brief overview of what we offer, our mission,\n        and how we strive to provide value to our customers.\n      </Tabs.Panel>\n      <Tabs.Panel id=\"c\">\n        Get in touch with us through our contact page. We are here to help you with any inquiries,\n        support requests, or feedback you may have.\n      </Tabs.Panel>\n      <Tabs.Panel id=\"a\">\n        Learn more about our company, our history, and the team behind our success. We are dedicated\n        to delivering the best service to our customers.\n      </Tabs.Panel>\n    </Tabs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

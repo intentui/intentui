@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-select-section-demo",
+  "type": "registry:block",
+  "title": "Select section demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/select/select-section-demo.tsx",
+      "content": "\"use client\"\n\nimport { Select } from \"@/components/ui/select\"\n\nexport default function SelectSectionDemo() {\n  return (\n    <Select defaultSelectedKey={1} aria-label=\"Countries\" placeholder=\"Select a country\">\n      <Select.Trigger />\n      <Select.List items={countries}>\n        {(country) => (\n          <Select.Section title={country.name} items={country.cities}>\n            {(city) => <Select.Option textValue={city.name}>{city.name}</Select.Option>}\n          </Select.Section>\n        )}\n      </Select.List>\n    </Select>\n  )\n}\n\nconst countries = [\n  {\n    id: 1,\n    name: \"Egypt\",\n    cities: [\n      {\n        id: 101,\n        name: \"Cairo\",\n      },\n      {\n        id: 102,\n        name: \"Alexandria\",\n      },\n      {\n        id: 103,\n        name: \"Giza\",\n      },\n      {\n        id: 104,\n        name: \"Luxor\",\n      },\n    ],\n  },\n  {\n    id: 2,\n    name: \"Indonesia\",\n    cities: [\n      {\n        id: 201,\n        name: \"Jakarta\",\n      },\n      {\n        id: 202,\n        name: \"Bali\",\n      },\n      {\n        id: 203,\n        name: \"Surabaya\",\n      },\n      {\n        id: 204,\n        name: \"Bandung\",\n      },\n      {\n        id: 205,\n        name: \"Medan\",\n      },\n    ],\n  },\n  {\n    id: 3,\n    name: \"United States\",\n    cities: [\n      {\n        id: 301,\n        name: \"New York City\",\n      },\n      {\n        id: 302,\n        name: \"Los Angeles\",\n      },\n      {\n        id: 303,\n        name: \"Chicago\",\n      },\n      {\n        id: 304,\n        name: \"Houston\",\n      },\n    ],\n  },\n  {\n    id: 4,\n    name: \"Canada\",\n    cities: [\n      {\n        id: 401,\n        name: \"Toronto\",\n      },\n      {\n        id: 402,\n        name: \"Vancouver\",\n      },\n      {\n        id: 403,\n        name: \"Montreal\",\n      },\n    ],\n  },\n  {\n    id: 5,\n    name: \"Australia\",\n    cities: [\n      {\n        id: 501,\n        name: \"Sydney\",\n      },\n      {\n        id: 502,\n        name: \"Melbourne\",\n      },\n      {\n        id: 503,\n        name: \"Brisbane\",\n      },\n    ],\n  },\n  {\n    id: 6,\n    name: \"Germany\",\n    cities: [\n      {\n        id: 601,\n        name: \"Berlin\",\n      },\n      {\n        id: 602,\n        name: \"Munich\",\n      },\n      {\n        id: 603,\n        name: \"Frankfurt\",\n      },\n      {\n        id: 604,\n        name: \"Hamburg\",\n      },\n    ],\n  },\n  {\n    id: 7,\n    name: \"Japan\",\n    cities: [\n      {\n        id: 701,\n        name: \"Tokyo\",\n      },\n      {\n        id: 702,\n        name: \"Osaka\",\n      },\n      {\n        id: 703,\n        name: \"Kyoto\",\n      },\n    ],\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

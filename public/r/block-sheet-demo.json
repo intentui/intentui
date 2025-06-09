@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-sheet-demo",
+  "type": "registry:block",
+  "title": "Sheet demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/sheet/sheet-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Sheet } from \"@/components/ui/sheet\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function SheetDemo() {\n  return (\n    <Sheet>\n      <Button intent=\"outline\">Edit Settings</Button>\n      <Sheet.Content>\n        <Sheet.Header>\n          <Sheet.Title>Update User Settings</Sheet.Title>\n          <Sheet.Description>Adjust your preferences and configurations here.</Sheet.Description>\n        </Sheet.Header>\n        <Sheet.Body className=\"space-y-4\">\n          <TextField label=\"Username\" type=\"text\" placeholder=\"Enter your username\" />\n          <TextField label=\"Email\" type=\"email\" placeholder=\"Enter your email address\" />\n          <Switch>Enable Notifications</Switch>\n        </Sheet.Body>\n        <Sheet.Footer>\n          <Sheet.Close>Cancel</Sheet.Close>\n          <Button intent=\"primary\" type=\"submit\">\n            Save Changes\n          </Button>\n        </Sheet.Footer>\n      </Sheet.Content>\n    </Sheet>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

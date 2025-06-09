@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-skeleton-soft-demo",
+  "type": "registry:block",
+  "title": "Skeleton soft demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/skeleton/skeleton-soft-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Skeleton } from \"@/components/ui/skeleton\"\n\nexport default function SkeletonSoftDemo() {\n  return (\n    <Card className=\"p-4\">\n      <div className=\"flex gap-2\">\n        <Skeleton className=\"size-8\" />\n        <div className=\"space-y-1\">\n          <Skeleton soft className=\"h-3.5 w-20\" />\n          <Skeleton soft className=\"h-3.5 w-48\" />\n        </div>\n      </div>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

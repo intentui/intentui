@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-file-trigger-controlled-demo",
+  "type": "registry:block",
+  "title": "File trigger controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/file-trigger/file-trigger-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { FileTrigger } from \"@/components/ui/file-trigger\"\n\nexport default function FileTriggerDemo() {\n  const [file, setFile] = useState<string[] | null>(null)\n  return (\n    <>\n      <FileTrigger\n        onSelect={(e) => {\n          const files = Array.from(e ?? [])\n          const filenames = files.map((file) => file.name)\n          setFile(filenames)\n        }}\n      />\n      {file && (\n        <Description className=\"mt-2 block max-w-60 truncate [&>strong]:font-medium [&>strong]:text-fg\">\n          Your file: <strong>{file}</strong>\n        </Description>\n      )}\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

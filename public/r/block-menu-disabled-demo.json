@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-disabled-demo",
+  "type": "registry:block",
+  "title": "Menu disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Menu } from \"@/components/ui/menu\"\n\nexport default function MenuDisabledDemo() {\n  return (\n    <Menu>\n      <Menu.Trigger>Open</Menu.Trigger>\n      <Menu.Content placement=\"bottom\">\n        <Menu.Item id=\"view\">\n          <Menu.Label>View</Menu.Label>\n        </Menu.Item>\n        <Menu.Item id=\"edit\">\n          <Menu.Label>Edit</Menu.Label>\n        </Menu.Item>\n        <Menu.Item id=\"gsu\" isDisabled>\n          <Menu.Label>Generate Short URL</Menu.Label>\n        </Menu.Item>\n      </Menu.Content>\n    </Menu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

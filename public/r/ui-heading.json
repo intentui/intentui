@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-heading",
+  "type": "registry:component",
+  "title": "Heading",
+  "description": "",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/heading.tsx",
+      "content": "import { tv } from \"tailwind-variants\"\n\nconst headingStyles = tv({\n  base: \"font-sans text-fg tracking-tight\",\n  variants: {\n    level: {\n      1: \"font-semibold text-xl sm:text-2xl\",\n      2: \"font-semibold text-lg sm:text-xl\",\n      3: \"font-semibold text-base sm:text-lg\",\n      4: \"font-semibold text-base\",\n    },\n    tracking: {\n      tighter: \"tracking-tighter\",\n      tight: \"tracking-tight\",\n      normal: \"tracking-normal\",\n      wide: \"tracking-wide\",\n      wider: \"tracking-wider\",\n      widest: \"tracking-widest\",\n    },\n  },\n})\ntype HeadingType = { level?: 1 | 2 | 3 | 4 } & React.ComponentPropsWithoutRef<\n  \"h1\" | \"h2\" | \"h3\" | \"h4\"\n>\n\ninterface HeadingProps extends HeadingType {\n  tracking?: \"tighter\" | \"tight\" | \"normal\" | \"wide\" | \"wider\" | \"widest\"\n  className?: string | undefined\n}\n\nconst Heading = ({ className, tracking = \"normal\", level = 1, ...props }: HeadingProps) => {\n  const Element: `h${typeof level}` = `h${level}`\n  return (\n    <Element\n      className={headingStyles({\n        level,\n        tracking,\n        className,\n      })}\n      {...props}\n    />\n  )\n}\n\nexport type { HeadingProps }\nexport { Heading }\n",
+      "type": "registry:component"
+    }
+  ]
+}

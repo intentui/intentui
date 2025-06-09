@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-breadcrumbs-menu-demo",
+  "type": "registry:block",
+  "title": "Breadcrumbs menu demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-menu-demo.tsx",
+      "content": "\"use client\"\n\nimport { Breadcrumbs } from \"@/components/ui/breadcrumbs\"\nimport { Button } from \"@/components/ui/button\"\nimport { Menu } from \"@/components/ui/menu\"\nimport { siteConfig } from \"@/config/site\"\nimport {\n  IconDotsHorizontal,\n  IconLayoutAlignLeft,\n  IconLayoutAlignTop,\n  IconWindowVisit,\n} from \"@intentui/icons\"\n\nexport default function BreadcrumbsMenuDemo() {\n  return (\n    <Breadcrumbs>\n      <Breadcrumbs.Item href=\"#\">Home</Breadcrumbs.Item>\n\n      <Breadcrumbs.Item separator>\n        <Menu>\n          <Button intent=\"plain\" size=\"sq-sm\" className=\"-mx-1 h-6\">\n            <IconDotsHorizontal />\n          </Button>\n          <Menu.Content placement=\"bottom\">\n            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/layouts/sidebar`}>\n              <IconLayoutAlignLeft /> <Menu.Label>Sidebar</Menu.Label>\n            </Menu.Item>\n            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/layouts/navbar`}>\n              <IconLayoutAlignTop /> <Menu.Label>Navbar</Menu.Label>\n            </Menu.Item>\n            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/overlays/modal`}>\n              <IconWindowVisit /> <Menu.Label>Modal</Menu.Label>\n            </Menu.Item>\n            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/collections/menu`}>\n              <Menu.Label>Menu</Menu.Label>\n            </Menu.Item>\n            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/charts/setting-up`}>\n              <Menu.Label>Chart</Menu.Label>\n            </Menu.Item>\n            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/collections/table`}>\n              <Menu.Label>Table</Menu.Label>\n            </Menu.Item>\n          </Menu.Content>\n        </Menu>\n      </Breadcrumbs.Item>\n\n      <Breadcrumbs.Item>Navbar</Breadcrumbs.Item>\n    </Breadcrumbs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

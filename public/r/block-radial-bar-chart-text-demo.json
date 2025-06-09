@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radial-bar-chart-text-demo",
+  "type": "registry:block",
+  "title": "Radial bar chart text demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/radial-bar/radial-bar-chart-text-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { Chart } from \"@/components/ui/chart\"\nimport { Label, PolarGrid, PolarRadiusAxis, RadialBar, RadialBarChart } from \"recharts\"\n\nconst chartData = [{ product: \"Laptops\", sales: 200, fill: \"var(--color-laptops)\" }]\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n  },\n  laptops: {\n    label: \"Laptops\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function ProductSalesOverview() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0 text-center\"\n        title=\"Laptop Sales Performance\"\n        description=\"Tracking sales data for Jan - Dec 2024\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <RadialBarChart\n            data={chartData}\n            startAngle={0}\n            endAngle={250}\n            innerRadius={80}\n            outerRadius={110}\n          >\n            <PolarGrid\n              gridType=\"circle\"\n              radialLines={false}\n              stroke=\"none\"\n              className=\"first:fill-muted last:fill-bg\"\n              polarRadius={[86, 74]}\n            />\n            <RadialBar dataKey=\"sales\" background cornerRadius={10} />\n            <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>\n              <Label\n                content={({ viewBox }) => {\n                  if (viewBox && \"cx\" in viewBox && \"cy\" in viewBox) {\n                    return (\n                      <text\n                        x={viewBox.cx}\n                        y={viewBox.cy}\n                        textAnchor=\"middle\"\n                        dominantBaseline=\"middle\"\n                      >\n                        <tspan x={viewBox.cx} y={viewBox.cy} className=\"fill-fg font-bold text-4xl\">\n                          {chartData[0]!.sales.toLocaleString()}\n                        </tspan>\n                        <tspan x={viewBox.cx} y={(viewBox.cy || 0) + 24} className=\"fill-muted-fg\">\n                          Sales\n                        </tspan>\n                      </text>\n                    )\n                  }\n                }}\n              />\n            </PolarRadiusAxis>\n          </RadialBarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-area-chart-linear-demo",
+  "type": "registry:block",
+  "title": "Area chart linear demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/area/area-chart-linear-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst visitorData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index)\n  const month = date.toLocaleDateString(\"en-US\", { month: \"long\" })\n  return {\n    month,\n    uniqueVisitors: Math.floor(Math.random() * 500 + 1000),\n  }\n})\n\nconst visitorConfig = {\n  uniqueVisitors: {\n    label: \"Unique Visitors\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function AreaChartLinearDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Visitor Insights\"\n        description=\"Monthly unique visitors over the last 24 months\"\n      />\n      <Card.Content>\n        <Chart config={visitorConfig}>\n          <AreaChart\n            accessibilityLayer\n            data={visitorData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              axisLine={false}\n              tickMargin={8}\n              tickFormatter={(value) => value.slice(0, 3)}\n            />\n            <ChartTooltip\n              cursor={false}\n              content={<ChartTooltipContent indicator=\"dot\" hideLabel />}\n            />\n            <Area\n              dataKey=\"uniqueVisitors\"\n              type=\"linear\"\n              fill=\"var(--color-uniqueVisitors)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-uniqueVisitors)\"\n            />\n          </AreaChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

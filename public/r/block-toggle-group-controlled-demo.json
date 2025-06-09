@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-group-controlled-demo",
+  "type": "registry:block",
+  "title": "Toggle group controlled demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle-group/toggle-group-controlled-demo.tsx",
+      "content": "import { useState } from \"react\"\n\nimport { Toggle, ToggleGroup } from \"@/components/ui/toggle\"\nimport type { Key } from \"react-aria-components\"\n\nexport default function ToggleGroupControlledDemo() {\n  const [selected, setSelected] = useState(new Set<Key>([\"bold\"]))\n\n  return (\n    <>\n      <ToggleGroup selectionMode=\"multiple\" selectedKeys={selected} onSelectionChange={setSelected}>\n        <Toggle id=\"bold\">Bold</Toggle>\n        <Toggle id=\"italic\">Italic</Toggle>\n        <Toggle id=\"underline\">Underline</Toggle>\n      </ToggleGroup>\n      {[...selected].length > 0 && (\n        <p className=\"mt-4 text-muted-fg\">\n          Selected: <strong className=\"font-semibold text-fg\">{[...selected].join(\", \")}</strong>\n        </p>\n      )}\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

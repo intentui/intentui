@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radio-group-disabled-demo",
+  "type": "registry:block",
+  "title": "Radio group disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/radio-group/radio-group-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Radio, RadioGroup } from \"@/components/ui/radio\"\n\nexport default function RadioGroupDisabledDemo() {\n  return (\n    <RadioGroup isDisabled label=\"Features\">\n      <Radio value=\"fs\">Font size: Small, Medium, Large</Radio>\n      <Radio value=\"dr\">Display resolution: 1080p, 1440p, 4K</Radio>\n      <Radio value=\"ss\">Sound settings: Mute, Low, Medium, High</Radio>\n      <Radio value=\"bi\">Background image: Default, Custom</Radio>\n      <Radio value=\"ks\">Keyboard shortcuts: Enabled, Disabled</Radio>\n    </RadioGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

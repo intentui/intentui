@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-multiple-select-demo",
+  "type": "registry:block",
+  "title": "Multiple select demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/multiple-select/multiple-select-demo.tsx",
+      "content": "\"use client\"\n\nimport { MultipleSelect } from \"@/components/ui/multiple-select\"\n\nexport default function MultipleSelectDemo() {\n  return (\n    <MultipleSelect className=\"max-w-xs\" label=\"Fruits\" items={fruits}>\n      {(item) => {\n        return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>\n      }}\n    </MultipleSelect>\n  )\n}\n\nconst fruits = [\n  { id: 1, name: \"Apple\" },\n  { id: 2, name: \"Banana\" },\n  { id: 3, name: \"Cherry\" },\n  { id: 4, name: \"Date\" },\n  { id: 5, name: \"Elderberry\" },\n  { id: 6, name: \"Fig\" },\n  { id: 7, name: \"Grape\" },\n  { id: 8, name: \"Honeydew\" },\n  { id: 9, name: \"Kiwi\" },\n  { id: 10, name: \"Lemon\" },\n  { id: 11, name: \"Mango\" },\n  { id: 12, name: \"Nectarine\" },\n  { id: 13, name: \"Orange\" },\n  { id: 14, name: \"Papaya\" },\n  { id: 15, name: \"Quince\" },\n  { id: 16, name: \"Raspberry\" },\n  { id: 17, name: \"Strawberry\" },\n  { id: 18, name: \"Tangerine\" },\n  { id: 19, name: \"Ugli Fruit\" },\n  { id: 20, name: \"Watermelon\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

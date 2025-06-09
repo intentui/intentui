@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-alert-dialog-demo",
+  "type": "registry:block",
+  "title": "Alert dialog demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/modal/alert-dialog-demo.tsx",
+      "content": "\"use client\"\nimport { Button } from \"@/components/ui/button\"\nimport { Modal } from \"@/components/ui/modal\"\n\nexport default function AlertDialogDemo() {\n  return (\n    <Modal>\n      <Button intent=\"danger\">Delete</Button>\n      <Modal.Content role=\"alertdialog\">\n        <Modal.Header>\n          <Modal.Title>Delete file</Modal.Title>\n          <Modal.Description>\n            This will permanently delete the selected file. Continue?\n          </Modal.Description>\n        </Modal.Header>\n        <Modal.Footer>\n          <Modal.Close>Cancel</Modal.Close>\n          <Button intent=\"danger\">Continue</Button>\n        </Modal.Footer>\n      </Modal.Content>\n    </Modal>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

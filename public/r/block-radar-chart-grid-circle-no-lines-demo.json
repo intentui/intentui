@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radar-chart-grid-circle-no-lines-demo",
+  "type": "registry:block",
+  "title": "Radar chart grid circle no lines demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/radar/radar-chart-grid-circle-no-lines-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { PolarAngleAxis, PolarGrid, Radar, RadarChart } from \"recharts\"\n\nconst chartData = [\n  { month: \"Jan\", revenue: 186 },\n  { month: \"Feb\", revenue: 305 },\n  { month: \"Mar\", revenue: 237 },\n  { month: \"Apr\", revenue: 203 },\n  { month: \"May\", revenue: 209 },\n  { month: \"Jun\", revenue: 214 },\n  { month: \"Jul\", revenue: 220 },\n  { month: \"Aug\", revenue: 250 },\n  { month: \"Sep\", revenue: 270 },\n  { month: \"Oct\", revenue: 290 },\n  { month: \"Nov\", revenue: 310 },\n  { month: \"Dec\", revenue: 330 },\n]\n\nconst chartConfig = {\n  revenue: {\n    label: \"Revenue\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function Component() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-4\"\n        title=\"Monthly Revenue Breakdown\"\n        description=\"Revenue data displayed for Jan - Dec 2024\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <RadarChart data={chartData}>\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <PolarGrid gridType=\"circle\" radialLines={false} />\n            <PolarAngleAxis dataKey=\"month\" />\n            <Radar\n              dataKey=\"revenue\"\n              fill=\"var(--color-revenue)\"\n              fillOpacity={0.6}\n              dot={{\n                r: 4,\n                fillOpacity: 1,\n              }}\n            />\n          </RadarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

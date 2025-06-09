@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-modal-controlled-demo",
+  "type": "registry:block",
+  "title": "Modal controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/modal/modal-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Modal } from \"@/components/ui/modal\"\n\nexport default function ModalControlledDemo() {\n  const [open, setOpen] = useState(false)\n  return (\n    <>\n      <Button onPress={() => setOpen(true)} intent=\"primary\">\n        Subscribe\n      </Button>\n      <Modal.Content isOpen={open} onOpenChange={setOpen}>\n        <Modal.Header>\n          <Modal.Title>Subscribe to Our Newsletter</Modal.Title>\n          <Modal.Description>\n            Get the latest news and updates right to your inbox.\n          </Modal.Description>\n        </Modal.Header>\n        <Modal.Footer>\n          <Button onPress={() => setOpen(false)}>Sign Up</Button>\n        </Modal.Footer>\n      </Modal.Content>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

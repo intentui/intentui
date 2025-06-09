@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radial-bar-chart-label-demo",
+  "type": "registry:block",
+  "title": "Radial bar chart label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/radial-bar/radial-bar-chart-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { LabelList, RadialBar, RadialBarChart } from \"recharts\"\n\nconst chartData = [\n  { category: \"Apples\", quantity: 320, fill: \"var(--color-apples)\" },\n  { category: \"Oranges\", quantity: 250, fill: \"var(--color-oranges)\" },\n  { category: \"Bananas\", quantity: 200, fill: \"var(--color-bananas)\" },\n  { category: \"Grapes\", quantity: 180, fill: \"var(--color-grapes)\" },\n  { category: \"Berries\", quantity: 100, fill: \"var(--color-berries)\" },\n]\n\nconst chartConfig = {\n  quantity: {\n    label: \"Quantity\",\n  },\n  apples: {\n    label: \"Apples\",\n    color: \"var(--chart-1)\",\n  },\n  oranges: {\n    label: \"Oranges\",\n    color: \"var(--chart-2)\",\n  },\n  bananas: {\n    label: \"Bananas\",\n    color: \"var(--chart-3)\",\n  },\n  grapes: {\n    label: \"Grapes\",\n    color: \"var(--chart-4)\",\n  },\n  berries: {\n    label: \"Berries\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function SalesDistribution() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0 text-center\"\n        title=\"Fruit Sales Distribution\"\n        description=\"Sales data of various fruit categories for Jan - Dec 2024\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <RadialBarChart\n            data={chartData}\n            startAngle={-90}\n            endAngle={380}\n            innerRadius={30}\n            outerRadius={110}\n          >\n            <ChartTooltip\n              cursor={false}\n              content={<ChartTooltipContent hideLabel nameKey=\"category\" />}\n            />\n            <RadialBar dataKey=\"quantity\" background>\n              <LabelList\n                position=\"insideStart\"\n                dataKey=\"category\"\n                className=\"fill-white capitalize mix-blend-luminosity\"\n                fontSize={11}\n              />\n            </RadialBar>\n          </RadialBarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

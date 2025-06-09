@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-calendar-demo",
+  "type": "registry:block",
+  "title": "Calendar demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/calendar/calendar-demo.tsx",
+      "content": "\"use client\"\n\nimport { Calendar } from \"@/components/ui/calendar\"\n\nexport default function CalendarDemo() {\n  return <Calendar aria-label=\"Event date\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

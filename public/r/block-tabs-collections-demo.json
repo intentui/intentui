@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tabs-collections-demo",
+  "type": "registry:block",
+  "title": "Tabs collections demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/tabs/tabs-collections-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tabs } from \"@/components/ui/tabs\"\nimport { Collection } from \"react-aria-components\"\n\nconst tabs = [\n  { id: 1, title: \"Overview\", content: \"This is the overview tab content.\" },\n  { id: 2, title: \"Features\", content: \"Details about the features are listed here.\" },\n  { id: 3, title: \"Pricing\", content: \"Find the pricing information on this tab.\" },\n  { id: 4, title: \"Reviews\", content: \"Read user reviews and ratings here.\" },\n]\n\nexport default function TabsCollectionsDemo() {\n  return (\n    <Tabs aria-label=\"Project Management\">\n      <Tabs.List aria-label=\"Dynamic tabs\" items={tabs}>\n        {(item) => <Tabs.Tab>{item.title}</Tabs.Tab>}\n      </Tabs.List>\n\n      <Collection items={tabs}>\n        {(item) => <Tabs.Panel key={item.id}>{item.content}</Tabs.Panel>}\n      </Collection>\n    </Tabs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

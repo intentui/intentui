@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-field-prefix-demo",
+  "type": "registry:block",
+  "title": "Date field prefix demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-field/date-field-prefix-demo.tsx",
+      "content": "\"use client\"\n\nimport { IconCalendar2 } from \"@intentui/icons\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { DateField } from \"@/components/ui/date-field\"\nimport { Form } from \"@/components/ui/form\"\n\nexport default function DateFieldPrefixDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()}>\n      <DateField prefix={<IconCalendar2 />} isRequired label=\"Event date\" className=\"mb-2\" />\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

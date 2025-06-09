@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-list-box-rearrange-demo",
+  "type": "registry:block",
+  "title": "List box rearrange demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components",
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/list-box/list-box-rearrange-demo.tsx",
+      "content": "\"use client\"\n\nimport { ListBox } from \"@/components/ui/list-box\"\nimport { useDragAndDrop } from \"react-aria-components\"\nimport { useListData } from \"react-stately\"\n\nexport default function ListBoxRearrangeDemo() {\n  const list = useListData({\n    initialItems: [\n      { id: \"1\", name: \"Nirvana\" },\n      { id: \"2\", name: \"Radiohead\" },\n      { id: \"3\", name: \"Foo Fighters\" },\n      { id: \"4\", name: \"Arctic Monkeys\" },\n      { id: \"5\", name: \"The Strokes\" },\n    ],\n  })\n\n  const { dragAndDropHooks } = useDragAndDrop({\n    getItems: (keys) => [...keys].map((key) => ({ \"text/plain\": list.getItem(key)?.name ?? \"\" })),\n    onReorder(e) {\n      if (e.target.dropPosition === \"before\") {\n        list.moveBefore(e.target.key, e.keys)\n      } else if (e.target.dropPosition === \"after\") {\n        list.moveAfter(e.target.key, e.keys)\n      }\n    },\n  })\n\n  return (\n    <ListBox\n      items={list.items}\n      aria-label=\"Bands\"\n      selectionMode=\"multiple\"\n      dragAndDropHooks={dragAndDropHooks}\n    >\n      {(item) => <ListBox.Item key={item.id}>{item.name}</ListBox.Item>}\n    </ListBox>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

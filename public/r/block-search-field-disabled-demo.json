@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-search-field-disabled-demo",
+  "type": "registry:block",
+  "title": "Search field disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/search-field/search-field-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { SearchField } from \"@/components/ui/search-field\"\n\nexport default function SearchFieldDisabledDemo() {\n  return <SearchField isDisabled />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

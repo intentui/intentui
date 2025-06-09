@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-group-with-remove-demo",
+  "type": "registry:block",
+  "title": "Tag group with remove demo",
+  "description": "",
+  "dependencies": [
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/tag-group/tag-group-with-remove-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tag, TagGroup, TagList } from \"@/components/ui/tag-group\"\nimport { useListData } from \"react-stately\"\n\nexport default function TagGroupWithRemoveDemo() {\n  const list = useListData({\n    initialItems: [\n      { id: \"1\", name: \"Ferrari\", available: true },\n      { id: \"2\", name: \"Lamborghini\", available: false },\n      { id: \"3\", name: \"Porsche\", available: true },\n      { id: \"4\", name: \"Bugatti\", available: false },\n      { id: \"5\", name: \"McLaren\", available: true },\n      { id: \"6\", name: \"Aston Martin\", available: true },\n      { id: \"7\", name: \"Bentley\", available: false },\n      { id: \"8\", name: \"Rolls-Royce\", available: true },\n      { id: \"9\", name: \"Maserati\", available: false },\n      { id: \"10\", name: \"Jaguar\", available: true },\n    ],\n  })\n\n  return (\n    <TagGroup\n      selectionMode=\"multiple\"\n      className=\"max-w-sm\"\n      onRemove={(keys) => list.remove(...keys)}\n    >\n      <TagList items={list.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n    </TagGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

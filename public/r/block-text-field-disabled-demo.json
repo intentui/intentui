@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-text-field-disabled-demo",
+  "type": "registry:block",
+  "title": "Text field disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/text-field/text-field-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function TextFieldDisabledDemo() {\n  return <TextField isDisabled label=\"Name\" placeholder=\"Kurt Cobain\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

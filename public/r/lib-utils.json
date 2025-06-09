@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-utils",
+  "type": "registry:lib",
+  "title": "Utils",
+  "description": "",
+  "dependencies": [
+    "usemods"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { titleCase } from \"usemods\"\n\nexport function title(title: string) {\n  const minorWords = [\n    \"and\",\n    \"but\",\n    \"for\",\n    \"or\",\n    \"nor\",\n    \"a\",\n    \"an\",\n    \"the\",\n    \"as\",\n    \"at\",\n    \"by\",\n    \"for\",\n    \"in\",\n    \"of\",\n    \"on\",\n    \"per\",\n    \"to\",\n    \"vs\",\n    \"via\",\n  ]\n  const spacedTitle = title\n    .replace(/([a-z])([A-Z])/g, \"$1 $2\")\n    .replace(/([a-z])([A-Z])/g, \"$1 $2\")\n    .toLowerCase()\n\n  return spacedTitle\n    .split(\" \")\n    .map((word, index) => {\n      const lowerWord = word.toLowerCase()\n      if (\n        index === 0 ||\n        index === spacedTitle.split(\" \").length - 1 ||\n        !minorWords.includes(lowerWord)\n      ) {\n        return word.charAt(0).toUpperCase() + word.slice(1)\n      }\n      return lowerWord\n    })\n    .join(\" \")\n    .replaceAll(\"-\", \" \")\n}\n\nexport function wait(number: number) {\n  return new Promise((resolve) => setTimeout(resolve, number))\n}\n\nexport function getSiteName(url: string): string {\n  return url.replace(/^(https?:\\/\\/)?(www\\.)?/, \"\").split(\".\")[0]!\n}\n\nexport function extractJSX(code: string) {\n  // biome-ignore lint/correctness/noEmptyCharacterClassInRegex: <explanation>\n  const match = code.match(/return\\s*(\\([^]*?\\)|.*?);?\\s*}/)\n  if (match?.[1]) {\n    const jsx = match[1].replace(/^\\(|\\)$/g, \"\").trim()\n    const lines = jsx.split(\"\\n\")\n\n    if (lines.length === 1) {\n      return jsx\n    }\n\n    return lines\n      .map((line) => {\n        // @ts-ignore\n        const indent = line.match(/^\\s*/)[0]\n        return indent.slice(4) + line.trim()\n      })\n      .join(\"\\n\")\n      .trim()\n  }\n  return null\n}\n\nexport function extractImports(code: string) {\n  const importRegex = /^(import\\s+(?:\\{[^}]*}|[^;]+)\\s*from\\s*['\"][^'\"]+['\"]\\s*;?)$/gm\n  const matches = code.match(importRegex)\n  return matches ? matches.join(\"\\n\") : \"\"\n}\n\nexport const openInV0Url = (blockName: string) => {\n  const title = titleCase(blockName.replace(/-/g, \" \"))\n  const url = `https://intentui.com/r/block/${blockName}`\n  return `https://v0.dev/chat/api/open?title=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

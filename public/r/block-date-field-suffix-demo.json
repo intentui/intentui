@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-field-suffix-demo",
+  "type": "registry:block",
+  "title": "Date field suffix demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-field/date-field-suffix-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { DateField } from \"@/components/ui/date-field\"\nimport { Form } from \"@/components/ui/form\"\nimport { IconCalendar2 } from \"@intentui/icons\"\n\nexport default function DateFieldSuffixDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()}>\n      <DateField suffix={<IconCalendar2 />} isRequired label=\"Event date\" className=\"mb-2\" />\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

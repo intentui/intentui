@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-time-field-demo",
+  "type": "registry:block",
+  "title": "Time field demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/time-field/time-field-demo.tsx",
+      "content": "\"use client\"\n\nimport { Time } from \"@internationalized/date\"\n\nimport { TimeField } from \"@/components/ui/time-field\"\n\nexport default function TimeFieldDemo() {\n  return <TimeField defaultValue={new Time()} label=\"Event time\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-time-field-controlled-demo",
+  "type": "registry:block",
+  "title": "Time field controlled demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/time-field/time-field-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Time } from \"@internationalized/date\"\n\nimport { TimeField } from \"@/components/ui/time-field\"\n\nexport default function TimeFieldControlledDemo() {\n  const [value, setValue] = useState(new Time(11, 45))\n  return (\n    <div className=\"space-y-3\">\n      <div className=\"[&_p]:py-2\">\n        <p>{value ? value.toString() : \"--\"}</p>\n      </div>\n      <TimeField label=\"Event time\" value={value} onChange={(newValue) => setValue(newValue!)} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

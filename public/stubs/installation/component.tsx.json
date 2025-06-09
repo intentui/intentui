@@ -1,0 +1,9 @@
+{
+  "name": "installation/component.tsx.stub",
+  "files": [
+    {
+      "name": "installation/component.tsx.stub",
+      "content": "import { Button, Table } from \"ui\"\n\nexport function Component() {\n  return (\n    <>\n      <Table />\n\n      <Button />\n    </>\n  )\n}\n"
+    }
+  ]
+}

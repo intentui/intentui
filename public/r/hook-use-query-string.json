@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hook-use-query-string",
+  "type": "registry:hook",
+  "title": "Use query string",
+  "description": "",
+  "dependencies": [
+    "next/navigation"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/hooks/use-query-string.ts",
+      "content": "import { useCallback } from \"react\"\n\nimport { useSearchParams } from \"next/navigation\"\n\nexport function useQueryString() {\n  const searchParams = useSearchParams()\n\n  const createQueryString = useCallback(\n    (name: string, value: string) => {\n      const params = new URLSearchParams(searchParams.toString())\n      params.set(name, value)\n      return params.toString()\n    },\n    [searchParams],\n  )\n\n  return { createQueryString }\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

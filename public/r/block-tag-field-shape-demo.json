@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-field-shape-demo",
+  "type": "registry:block",
+  "title": "Tag field shape demo",
+  "description": "",
+  "dependencies": [
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/tag-field/tag-field-shape-demo.tsx",
+      "content": "\"use client\"\n\nimport { TagField } from \"@/components/ui/tag-field\"\nimport { useListData } from \"react-stately\"\n\nexport default function TagFieldShapeDemo() {\n  const selectedItems = useListData({\n    initialItems: [\n      {\n        id: 1,\n        name: \"Laravel\",\n      },\n      {\n        id: 2,\n        name: \"Inertia.js\",\n      },\n    ],\n  })\n\n  return <TagField isCircle className=\"max-w-xs\" label=\"Add tag\" list={selectedItems} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

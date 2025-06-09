@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-disabled-demo",
+  "type": "registry:block",
+  "title": "Checkbox disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox } from \"@/components/ui/checkbox\"\n\nexport default function CheckboxDisabledDemo() {\n  return <Checkbox isDisabled>Enable notifications</Checkbox>\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

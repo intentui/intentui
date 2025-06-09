@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-heading-tracking-demo",
+  "type": "registry:block",
+  "title": "Heading tracking demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/heading/heading-tracking-demo.tsx",
+      "content": "\"use client\"\n\nimport { Heading } from \"@/components/ui/heading\"\n\nexport default function HeadingTrackingDemo() {\n  return (\n    <Heading level={2} tracking=\"tighter\">\n      The quick brown fox jumps over the lazy dog\n    </Heading>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

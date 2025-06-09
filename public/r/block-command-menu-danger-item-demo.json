@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-command-menu-danger-item-demo",
+  "type": "registry:block",
+  "title": "Command menu danger item demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/command-menu/command-menu-danger-item-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { CommandMenu } from \"@/components/ui/command-menu\"\n\nexport default function CommandMenuDangerItemDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  return (\n    <>\n      <Button intent=\"outline\" onPress={() => setIsOpen(true)}>\n        Open\n      </Button>\n      <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>\n        <CommandMenu.Search placeholder=\"Quick search...\" />\n        <CommandMenu.List>\n          <CommandMenu.Section>\n            <CommandMenu.Item textValue=\"system shutdown\">System Shutdown</CommandMenu.Item>\n            <CommandMenu.Item isDanger>Format Disk</CommandMenu.Item>\n            <CommandMenu.Item textValue=\"restart service\">Restart Service</CommandMenu.Item>\n            <CommandMenu.Item textValue=\"empty trash\">Empty Trash</CommandMenu.Item>\n            <CommandMenu.Item textValue=\"overwrite file\">Overwrite File</CommandMenu.Item>\n            <CommandMenu.Item textValue=\"reset factory settings\" isDanger>\n              Reset Factory Settings\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"disconnect network\">Disconnect Network</CommandMenu.Item>\n          </CommandMenu.Section>\n        </CommandMenu.List>\n      </CommandMenu>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

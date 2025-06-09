@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-range-picker-time-demo",
+  "type": "registry:block",
+  "title": "Date range picker time demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-time-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { getLocalTimeZone, now, parseZonedDateTime } from \"@internationalized/date\"\n\nimport { DateRangePicker } from \"@/components/ui/date-range-picker\"\n\nexport default function DateRangePickerTimeDemo() {\n  const today = parseZonedDateTime(now(getLocalTimeZone()).toString())\n  const tomorrowWeek = today.add({ days: 12 })\n\n  const [value, setValue] = useState({\n    start: today,\n    end: tomorrowWeek,\n  })\n  return (\n    <DateRangePicker\n      hideTimeZone\n      label=\"Date time range\"\n      value={value}\n      onChange={(newValue) => setValue(newValue!)}\n      hourCycle={24}\n    />\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

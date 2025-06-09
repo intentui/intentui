@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-wheel-disabled-demo",
+  "type": "registry:block",
+  "title": "Color wheel disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-wheel/color-wheel-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorWheel } from \"@/components/ui/color-wheel\"\n\nexport default function ColorWheelDisabledDemo() {\n  return <ColorWheel aria-label=\"Background color is disabled\" isDisabled />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

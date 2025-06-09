@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-group-selection-mode-demo",
+  "type": "registry:block",
+  "title": "Toggle group selection mode demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle-group/toggle-group-selection-mode-demo.tsx",
+      "content": "import { Toggle, ToggleGroup } from \"@/components/ui/toggle\"\nimport {\n  IconAlignmentCenter,\n  IconAlignmentJustify,\n  IconAlignmentLeft,\n  IconAlignmentRight,\n} from \"@intentui/icons\"\n\nexport default function ToggleGroupSelectionModeDemo() {\n  return (\n    <ToggleGroup defaultSelectedKeys={[\"center\"]} selectionMode=\"single\">\n      <Toggle id=\"left\">\n        <IconAlignmentLeft /> Left\n      </Toggle>\n      <Toggle id=\"justify\">\n        <IconAlignmentJustify /> Justify\n      </Toggle>\n      <Toggle id=\"center\">\n        <IconAlignmentCenter /> Center\n      </Toggle>\n      <Toggle id=\"right\">\n        <IconAlignmentRight /> Right\n      </Toggle>\n    </ToggleGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

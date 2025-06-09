@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/nextjs/theme-provider.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/nextjs/theme-provider.tsx.stub",
+      "content": "\"use client\"\n\nimport { ThemeProvider as NextThemesProvider, type ThemeProviderProps, useTheme } from \"next-themes\"\n\nconst ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {\n  return (\n    <NextThemesProvider enableSystem storageKey=\"intentui-theme\" {...props}>\n      {children}\n    </NextThemesProvider>\n  )\n}\n\nexport { ThemeProvider, useTheme }\n"
+    }
+  ]
+}

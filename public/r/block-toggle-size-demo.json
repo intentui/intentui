@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-size-demo",
+  "type": "registry:block",
+  "title": "Toggle size demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle/toggle-size-demo.tsx",
+      "content": "\"use client\"\n\nimport { Toggle } from \"@/components/ui/toggle\"\nimport { IconAccessible, IconAccessibleFill } from \"@intentui/icons\"\n\nexport default function ToggleSizeDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Toggle intent=\"outline\" size=\"sq-sm\">\n        {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}\n      </Toggle>\n      <Toggle intent=\"outline\" size=\"sm\">\n        {({ isSelected }) => <>{isSelected ? \"Unpin\" : \"Pin\"}</>}\n      </Toggle>\n      <Toggle intent=\"outline\" size=\"md\">\n        {({ isSelected }) => <>{isSelected ? \"Unpin\" : \"Pin\"}</>}\n      </Toggle>\n      <Toggle intent=\"outline\" size=\"lg\">\n        {({ isSelected }) => <>{isSelected ? \"Unpin\" : \"Pin\"}</>}\n      </Toggle>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-choicebox-demo",
+  "type": "registry:block",
+  "title": "Choicebox demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/choicebox/choicebox-demo.tsx",
+      "content": "\"use client\"\n\nimport { Choicebox } from \"@/components/ui/choicebox\"\n\nexport default function ChoiceboxDemo() {\n  return (\n    <Choicebox aria-label=\"Select items\" selectionMode=\"multiple\">\n      <Choicebox.Item label=\"Basic\" description=\"Just the essentials to get started.\" />\n      <Choicebox.Item label=\"Standard\" description=\"A step up with more features and support.\" />\n      <Choicebox.Item label=\"Premium\" description=\"Advanced options for growing needs.\" />\n      <Choicebox.Item label=\"Deluxe\" description=\"Top-tier features for maximum performance.\" />\n      <Choicebox.Item\n        label=\"Ultimate\"\n        description=\"All-inclusive plan with every feature available.\"\n      />\n      <Choicebox.Item\n        label=\"Enterprise\"\n        description=\"Custom solutions for large-scale operations.\"\n      />\n    </Choicebox>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

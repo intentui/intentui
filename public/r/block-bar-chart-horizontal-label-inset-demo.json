@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-horizontal-label-inset-demo",
+  "type": "registry:block",
+  "title": "Bar chart horizontal label inset demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-horizontal-label-inset-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, Rectangle, XAxis, YAxis } from \"recharts\"\n\nconst chartData = [\n  {\n    country: \"United States\",\n    count: 45000,\n    percentage: 45.0,\n  },\n  {\n    country: \"Canada\",\n    count: 34000,\n    percentage: 18.0,\n  },\n  {\n    country: \"United Kingdom\",\n    count: 30000,\n    percentage: 12.0,\n  },\n  {\n    country: \"Germany\",\n    count: 25000,\n    percentage: 9.0,\n  },\n  {\n    country: \"Australia\",\n    count: 22000,\n    percentage: 7.5,\n  },\n  {\n    country: \"France\",\n    count: 18000,\n    percentage: 6.0,\n  },\n  {\n    country: \"Japan\",\n    count: 15000,\n    percentage: 4.5,\n  },\n  {\n    country: \"Brazil\",\n    count: 13000,\n    percentage: 5.0,\n  },\n  {\n    country: \"Indonesia\",\n    count: 10030,\n    percentage: 6.0,\n  },\n]\n\nconst chartConfig = {\n  count: {\n    label: \"Count\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartHorizontalLabelInsetDemo() {\n  return (\n    <Card className=\"h-full w-full\">\n      <Card.Header>\n        <Card.Title>Traffic by Country</Card.Title>\n        <Card.Description>Since Aug 17, 2014</Card.Description>\n      </Card.Header>\n      <Card.Content>\n        <Chart config={chartConfig} className=\"aspect-[15/15] sm:aspect-[17/7]\">\n          <BarChart\n            accessibilityLayer\n            data={chartData}\n            layout=\"vertical\"\n            barSize={30}\n            margin={{ left: 0, right: 0 }}\n          >\n            <YAxis dataKey=\"name\" type=\"category\" hide />\n            <XAxis dataKey=\"count\" type=\"number\" hide />\n            <Bar\n              dataKey=\"count\"\n              layout=\"vertical\"\n              fill=\"var(--color-count)\"\n              background={{ radius: 6, fill: \"var(--chart-1)\", opacity: 0.2 }}\n              radius={6}\n              shape={(props: any) => (\n                <>\n                  <Rectangle {...props} />\n                  <text x={props.x + 10} y={props.y + 20} fill=\"white\">\n                    {props.country}\n                  </text>\n                  <text\n                    x={props.background.width - 10}\n                    y={props.y + 20}\n                    textAnchor=\"end\"\n                    fill=\"var(--fg)\"\n                  >\n                    {props.count.toLocaleString()} ({props.percentage.toFixed(1)}%)\n                  </text>\n                </>\n              )}\n            />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator=\"dot\" />} />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

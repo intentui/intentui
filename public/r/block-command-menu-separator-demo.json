@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-command-menu-separator-demo",
+  "type": "registry:block",
+  "title": "Command menu separator demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/command-menu/command-menu-separator-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { CommandMenu } from \"@/components/ui/command-menu\"\n\nexport default function CommandMenuSeparatorDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  return (\n    <>\n      <Button intent=\"outline\" onPress={() => setIsOpen(true)}>\n        Open\n      </Button>\n      <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>\n        <CommandMenu.Search placeholder=\"Quick search...\" />\n        <CommandMenu.List>\n          <CommandMenu.Section>\n            <CommandMenu.Item textValue=\"profile overview\" href=\"#\">\n              Profile Overview\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"profile settings\" href=\"#\">\n              Profile Settings\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"security settings\" href=\"#\">\n              Security Settings\n            </CommandMenu.Item>\n            <CommandMenu.Separator />\n            <CommandMenu.Item textValue=\"notification preferences\" href=\"#\">\n              Notification Preferences\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"privacy settings\" href=\"#\">\n              Privacy Settings\n            </CommandMenu.Item>\n            <CommandMenu.Separator />\n\n            <CommandMenu.Item textValue=\"billing information\" href=\"#\">\n              Billing Information\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"subscription plans\" href=\"#\">\n              Subscription Plans\n            </CommandMenu.Item>\n            <CommandMenu.Separator />\n            <CommandMenu.Item textValue=\"connected apps\" href=\"#\">\n              Connected Apps\n            </CommandMenu.Item>\n          </CommandMenu.Section>\n        </CommandMenu.List>\n      </CommandMenu>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

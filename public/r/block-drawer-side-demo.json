@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-drawer-side-demo",
+  "type": "registry:block",
+  "title": "Drawer side demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/drawer/drawer-side-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Drawer, type DrawerContentProps } from \"@/components/ui/drawer\"\nimport { Radio, RadioGroup } from \"@/components/ui/radio\"\nimport { Separator } from \"@/components/ui/separator\"\nimport { useState } from \"react\"\n\nexport default function DrawerSideDemo() {\n  const [side, setSide] = useState(\"bottom\")\n  return (\n    <>\n      <RadioGroup orientation=\"horizontal\" aria-label=\"Side\" value={side} onChange={setSide}>\n        {[\"top\", \"bottom\", \"left\", \"right\"].map((side) => (\n          <Radio key={side} className=\"capitalize\" value={side}>\n            {side}\n          </Radio>\n        ))}\n      </RadioGroup>\n      <Separator className=\"my-6 h-px w-full\" />\n      <Drawer>\n        <Button intent=\"outline\" className=\"capitalize\">\n          {side}\n        </Button>\n        <Drawer.Content side={side as DrawerContentProps[\"side\"]}>\n          <Drawer.Header>\n            <Drawer.Title className=\"capitalize\">{side}</Drawer.Title>\n            <Drawer.Description>\n              The drawer will be positioned on the {side} side of the screen.\n            </Drawer.Description>\n          </Drawer.Header>\n        </Drawer.Content>\n      </Drawer>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

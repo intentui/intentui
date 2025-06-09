@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-picker-custom-validation-demo",
+  "type": "registry:block",
+  "title": "Date picker custom validation demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-picker/date-picker-custom-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { DatePicker } from \"@/components/ui/date-picker\"\nimport { Form } from \"@/components/ui/form\"\nimport { getLocalTimeZone, parseDate, startOfYear, today } from \"@internationalized/date\"\n\nexport default function DatePickerInvalidDemo() {\n  const ly = startOfYear(today(getLocalTimeZone()))\n  const now = today(getLocalTimeZone())\n  const [value, setValue] = useState(parseDate(ly.toString()))\n  return (\n    <Form onSubmit={(e) => e.preventDefault()}>\n      <DatePicker\n        validate={(date) => (date < now ? \"Select a future date, please.\" : null)}\n        value={value}\n        onChange={(newValue) => setValue(newValue!)}\n        label=\"Delivery date\"\n        className=\"mb-2\"\n      />\n\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

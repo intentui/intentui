@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-textarea-uncontrolled-demo",
+  "type": "registry:block",
+  "title": "Textarea uncontrolled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/textarea/textarea-uncontrolled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Textarea } from \"@/components/ui/textarea\"\n\nexport default function TextareaUncontrolledDemo() {\n  return <Textarea defaultValue=\"Brooklyn New York, USA\" label=\"Address\" className=\"mb-2\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

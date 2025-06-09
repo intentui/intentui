@@ -1,0 +1,9 @@
+{
+  "name": "csr/inertia/tsconfig.json.stub",
+  "files": [
+    {
+      "name": "csr/inertia/tsconfig.json.stub",
+      "content": "{\n  \"compilerOptions\": {\n    ...\n    \"paths\": {\n      \"@/*\": [\"./resources/js/*\"],\n      \"ziggy-js\": [\"./vendor/tightenco/ziggy\"],\n      \"ui\": [\"./resources/js/components/ui/index.ts\"]\n    }\n  },\n}\n"
+    }
+  ]
+}

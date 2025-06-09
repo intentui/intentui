@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-date-field",
+  "type": "registry:component",
+  "title": "Date field",
+  "description": "",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/date-field.tsx",
+      "content": "\"use client\"\n\nimport { Description, FieldError, FieldGroup, Label } from \"@/components/ui/field\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport {\n  DateField as DateFieldPrimitive,\n  type DateFieldProps as DateFieldPrimitiveProps,\n  DateInput as DateInputPrimitive,\n  type DateInputProps,\n  DateSegment,\n  type DateValue,\n  type ValidationResult,\n} from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\ninterface DateFieldProps<T extends DateValue> extends DateFieldPrimitiveProps<T> {\n  label?: string\n  description?: string\n  errorMessage?: string | ((validation: ValidationResult) => string)\n  prefix?: React.ReactNode\n  suffix?: React.ReactNode\n}\n\nconst DateField = <T extends DateValue>({\n  prefix,\n  suffix,\n  label,\n  description,\n  errorMessage,\n  ...props\n}: DateFieldProps<T>) => {\n  return (\n    <DateFieldPrimitive\n      {...props}\n      className={composeTailwindRenderProps(props.className, \"group flex flex-col gap-y-1.5\")}\n    >\n      {label && <Label>{label}</Label>}\n      <FieldGroup>\n        {prefix && typeof prefix === \"string\" ? (\n          <span className=\"ml-2 text-muted-fg\">{prefix}</span>\n        ) : (\n          prefix\n        )}\n        <DateInput />\n        {suffix ? (\n          typeof suffix === \"string\" ? (\n            <span className=\"mr-2 text-muted-fg\">{suffix}</span>\n          ) : (\n            suffix\n          )\n        ) : null}\n      </FieldGroup>\n      {description && <Description>{description}</Description>}\n      <FieldError>{errorMessage}</FieldError>\n    </DateFieldPrimitive>\n  )\n}\n\nconst segmentStyles = tv({\n  base: \"inline shrink-0 rounded p-0.5 type-literal:px-0 text-fg tabular-nums tracking-wider caret-transparent outline-0 forced-color-adjust-none sm:text-sm forced-colors:text-[ButtonText]\",\n  variants: {\n    isPlaceholder: {\n      true: \"text-muted-fg\",\n    },\n    isDisabled: {\n      true: \"text-fg/50 forced-colors:text-[GrayText]\",\n    },\n    isFocused: {\n      true: [\n        \"bg-accent text-accent-fg forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]\",\n        \"data-invalid:bg-danger data-invalid:text-danger-fg\",\n      ],\n    },\n  },\n})\n\nconst DateInput = ({ className, ...props }: Omit<DateInputProps, \"children\">) => {\n  return (\n    <DateInputPrimitive\n      className={composeTailwindRenderProps(\n        className,\n        \"bg-transparent p-2 text-base text-fg placeholder-muted-fg\",\n      )}\n      {...props}\n    >\n      {(segment) => <DateSegment segment={segment} className={segmentStyles} />}\n    </DateInputPrimitive>\n  )\n}\n\nexport type { DateFieldProps }\nexport { DateField, DateInput, segmentStyles }\n",
+      "type": "registry:component"
+    }
+  ]
+}

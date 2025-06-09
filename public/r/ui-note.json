@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-note",
+  "type": "registry:component",
+  "title": "Note",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/note.tsx",
+      "content": "import { IconCircleCheckFill, IconCircleExclamationFill, IconCircleInfoFill } from \"@intentui/icons\"\nimport { type VariantProps, tv } from \"tailwind-variants\"\n\nconst noteStyles = tv({\n  base: [\n    \"inset-ring-1 inset-ring-current/10 w-full overflow-hidden rounded-lg p-4 sm:text-sm/6\",\n    \"[&_a]:underline hover:[&_a]:underline **:[strong]:font-semibold\",\n  ],\n  variants: {\n    intent: {\n      default: [\n        \"border-border bg-secondary/50 text-secondary-fg **:data-[slot=icon]:text-secondary-fg [&_a]:text-secondary-fg\",\n        \"dark:**:data-[slot=icon]:text-secondary-fg dark:[&_a]:text-secondary-fg\",\n      ],\n      info: [\n        \"bg-sky-500/5 text-sky-700 group-hover:bg-sky-500/25 dark:bg-sky-500/10 dark:text-sky-300 dark:group-hover:bg-sky-500/20\",\n      ],\n      warning:\n        \"bg-amber-400/20 text-amber-700 group-hover:bg-amber-400/30 dark:bg-amber-400/10 dark:text-amber-400 dark:group-hover:bg-amber-400/15\",\n      danger:\n        \"bg-red-500/15 text-red-700 group-hover:bg-red-500/25 dark:bg-red-500/10 dark:text-red-400 dark:group-hover:bg-red-500/20\",\n      success: [\n        \"border-success/20 bg-success/50 text-emerald-900 leading-4 **:data-[slot=icon]:text-success [&_a]:text-emerald-600\",\n        \"dark:bg-success/10 dark:text-emerald-200 dark:**:data-[slot=icon]:text-emerald-400 dark:[&_a]:text-emerald-50\",\n      ],\n    },\n  },\n  defaultVariants: {\n    intent: \"default\",\n  },\n})\n\ninterface NoteProps\n  extends React.HtmlHTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof noteStyles> {\n  indicator?: boolean\n}\n\nconst Note = ({ indicator = true, intent = \"default\", className, ...props }: NoteProps) => {\n  const iconMap: Record<string, React.ElementType | null> = {\n    info: IconCircleInfoFill,\n    warning: IconCircleExclamationFill,\n    danger: IconCircleExclamationFill,\n    success: IconCircleCheckFill,\n    default: null,\n  }\n\n  const IconComponent = iconMap[intent] || null\n\n  return (\n    <div className={noteStyles({ intent, className })} {...props}>\n      <div className=\"flex grow items-start\">\n        {IconComponent && indicator && (\n          <div className=\"shrink-0\">\n            <IconComponent className=\"mr-3 size-5 rounded-full leading-loose ring-4 ring-current/30\" />\n          </div>\n        )}\n        <div className=\"text-pretty\">{props.children}</div>\n      </div>\n    </div>\n  )\n}\n\nexport type { NoteProps }\nexport { Note }\n",
+      "type": "registry:component"
+    }
+  ]
+}

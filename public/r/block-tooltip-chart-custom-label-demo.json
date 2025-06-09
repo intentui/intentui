@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tooltip-chart-custom-label-demo",
+  "type": "registry:block",
+  "title": "Tooltip chart custom label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/tooltip/tooltip-chart-custom-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, XAxis } from \"recharts\"\n\nconst chartData = [\n  { date: \"2024-07-15\", sales: 450, profit: 300 },\n  { date: \"2024-07-16\", sales: 380, profit: 420 },\n  { date: \"2024-07-17\", sales: 520, profit: 120 },\n  { date: \"2024-07-18\", sales: 140, profit: 550 },\n  { date: \"2024-07-19\", sales: 600, profit: 350 },\n  { date: \"2024-07-20\", sales: 480, profit: 400 },\n]\n\nconst chartConfig = {\n  metrics: {\n    label: \"Metrics\",\n  },\n  sales: {\n    label: \"Sales\",\n    color: \"var(--chart-1)\",\n  },\n  profit: {\n    label: \"Profit\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function TooltipChartCustomLabelDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Weekly Performance Metrics\"\n        description=\"Analyzing sales and profit trends for Jul 2024\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <BarChart accessibilityLayer data={chartData}>\n            <XAxis\n              dataKey=\"date\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n              tickFormatter={(value) => {\n                return new Date(value).toLocaleDateString(\"en-US\", {\n                  weekday: \"short\",\n                })\n              }}\n            />\n            <Bar dataKey=\"sales\" stackId=\"a\" fill=\"var(--color-sales)\" radius={[0, 0, 4, 4]} />\n            <Bar dataKey=\"profit\" stackId=\"a\" fill=\"var(--color-profit)\" radius={[4, 4, 0, 0]} />\n            <ChartTooltip\n              content={<ChartTooltipContent labelKey=\"metrics\" indicator=\"line\" />}\n              cursor={false}\n              defaultIndex={1}\n            />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

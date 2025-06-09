@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-choicebox-no-gap-demo",
+  "type": "registry:block",
+  "title": "Choicebox no gap demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/choicebox/choicebox-no-gap-demo.tsx",
+      "content": "\"use client\"\n\nimport { Choicebox } from \"@/components/ui/choicebox\"\n\nexport default function ChoiceboxNoGapDemo() {\n  return (\n    <Choicebox\n      className=\"mx-auto max-w-sm\"\n      selectionMode=\"single\"\n      defaultSelectedKeys={[\"Standard\"]}\n      aria-label=\"Select prices\"\n      gap={0}\n      columns={1}\n      items={prices}\n    >\n      {(item) => <Choicebox.Item {...item} />}\n    </Choicebox>\n  )\n}\n\nconst prices = [\n  { id: 1, label: \"Basic\", description: \"Essentials, get started\" },\n  { id: 2, label: \"Standard\", description: \"More features, support\" },\n  { id: 3, label: \"Premium\", description: \"Advanced, growing needs\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

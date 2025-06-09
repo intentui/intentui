@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-group-intent-demo",
+  "type": "registry:block",
+  "title": "Tag group intent demo",
+  "description": "",
+  "dependencies": [
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/tag-group/tag-group-intent-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tag, TagGroup, TagList } from \"@/components/ui/tag-group\"\nimport { useListData } from \"react-stately\"\n\nconst shoes = [\n  { id: \"1\", name: \"Nike\", available: true },\n  { id: \"2\", name: \"Adidas\", available: false },\n  { id: \"3\", name: \"Puma\", available: true },\n  { id: \"4\", name: \"Reebok\", available: true },\n]\n\nexport default function TagGroupIntentDemo() {\n  const shoesList = useListData({\n    initialItems: shoes,\n  })\n  return (\n    <div className=\"max-w-sm space-y-2\">\n      <TagGroup\n        intent=\"primary\"\n        aria-label=\"Primary Intent\"\n        selectionMode=\"multiple\"\n        onRemove={(keys) => shoesList.remove(...keys)}\n      >\n        <TagList items={shoesList.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n      </TagGroup>\n      <TagGroup\n        intent=\"secondary\"\n        aria-label=\"Secondary Intent\"\n        selectionMode=\"multiple\"\n        onRemove={(keys) => shoesList.remove(...keys)}\n      >\n        <TagList items={shoesList.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n      </TagGroup>\n      <TagGroup\n        intent=\"success\"\n        aria-label=\"Success Intent\"\n        selectionMode=\"multiple\"\n        onRemove={(keys) => shoesList.remove(...keys)}\n      >\n        <TagList items={shoesList.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n      </TagGroup>\n      <TagGroup\n        intent=\"warning\"\n        aria-label=\"Warning Intent\"\n        selectionMode=\"multiple\"\n        onRemove={(keys) => shoesList.remove(...keys)}\n      >\n        <TagList items={shoesList.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n      </TagGroup>\n      <TagGroup\n        intent=\"danger\"\n        aria-label=\"Danger Intent\"\n        selectionMode=\"multiple\"\n        onRemove={(keys) => shoesList.remove(...keys)}\n      >\n        <TagList items={shoesList.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n      </TagGroup>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-tooltip",
+  "type": "registry:component",
+  "title": "Tooltip",
+  "description": "",
+  "dependencies": [
+    "react-aria-components",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/tooltip.tsx",
+      "content": "\"use client\"\n\nimport type { TooltipProps as TooltipPrimitiveProps } from \"react-aria-components\"\nimport {\n  Button,\n  OverlayArrow,\n  Tooltip as TooltipPrimitive,\n  TooltipTrigger as TooltipTriggerPrimitive,\n  composeRenderProps,\n} from \"react-aria-components\"\nimport type { VariantProps } from \"tailwind-variants\"\nimport { tv } from \"tailwind-variants\"\n\nconst tooltipStyles = tv({\n  base: [\n    \"group rounded-lg border px-2.5 py-1.5 text-sm will-change-transform dark:shadow-none [&_strong]:font-medium\",\n  ],\n  variants: {\n    intent: {\n      default: \"bg-overlay text-overlay-fg [&_.arx]:fill-overlay [&_.arx]:stroke-border\",\n      inverse:\n        \"border-transparent bg-fg text-bg [&_.arx]:fill-fg [&_.arx]:stroke-transparent dark:[&_.arx]:fill-white [&_.text-muted-fg]:text-bg/70 dark:[&_.text-muted-fg]:text-fg/70\",\n    },\n    isEntering: {\n      true: [\n        \"fade-in animate-in\",\n        \"data-[placement=left]:slide-in-from-right-1 data-[placement=right]:slide-in-from-left-1 data-[placement=top]:slide-in-from-bottom-1 data-[placement=bottom]:slide-in-from-top-1\",\n      ],\n    },\n    isExiting: {\n      true: [\n        \"fade-in direction-reverse animate-in\",\n        \"data-[placement=left]:slide-out-to-right-1 data-[placement=right]:slide-out-to-left-1 data-[placement=top]:slide-out-to-bottom-1 data-[placement=bottom]:slide-out-to-top-1\",\n      ],\n    },\n  },\n  defaultVariants: {\n    intent: \"default\",\n  },\n})\n\ntype TooltipProps = React.ComponentProps<typeof TooltipTriggerPrimitive>\nconst Tooltip = (props: TooltipProps) => <TooltipTriggerPrimitive {...props} />\n\ninterface TooltipContentProps\n  extends Omit<TooltipPrimitiveProps, \"children\">,\n    VariantProps<typeof tooltipStyles> {\n  showArrow?: boolean\n  children: React.ReactNode\n}\n\nconst TooltipContent = ({\n  offset = 10,\n  showArrow = true,\n  intent = \"default\",\n  children,\n  ...props\n}: TooltipContentProps) => {\n  return (\n    <TooltipPrimitive\n      {...props}\n      offset={offset}\n      className={composeRenderProps(props.className, (className, renderProps) =>\n        tooltipStyles({\n          ...renderProps,\n          intent,\n          className,\n        }),\n      )}\n    >\n      {showArrow && (\n        <OverlayArrow>\n          <svg\n            width={12}\n            height={12}\n            viewBox=\"0 0 12 12\"\n            className=\"arx group-data-[placement=left]:-rotate-90 group-data-[placement=bottom]:rotate-180 group-data-[placement=right]:rotate-90 forced-colors:fill-[Canvas] forced-colors:stroke-[ButtonBorder]\"\n          >\n            <path d=\"M0 0 L6 6 L12 0\" />\n          </svg>\n        </OverlayArrow>\n      )}\n      {children}\n    </TooltipPrimitive>\n  )\n}\n\nconst TooltipTrigger = Button\n\nTooltip.Trigger = TooltipTrigger\nTooltip.Content = TooltipContent\n\nexport type { TooltipProps, TooltipContentProps }\nexport { Tooltip }\n",
+      "type": "registry:component"
+    }
+  ]
+}

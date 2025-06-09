@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-popover-placement-demo",
+  "type": "registry:block",
+  "title": "Popover placement demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/popover/popover-placement-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Popover } from \"@/components/ui/popover\"\nimport type { TooltipProps } from \"react-aria-components\"\n\ntype Placement = Pick<TooltipProps, \"placement\">[\"placement\"]\nconst placements: Placement[] = [\"bottom\", \"top\", \"left\", \"start\", \"right\", \"end\"]\nexport default function PopoverPlacementDemo() {\n  return (\n    <div className=\"grid grid-cols-2 gap-2 sm:grid-cols-3\">\n      {placements.map((placement, idx) => (\n        <Popover key={idx}>\n          <Button className=\"mx-auto\" size=\"sm\" intent=\"outline\">\n            {placement}\n          </Button>\n          <Popover.Content className=\"p-4\" placement={placement}>\n            Popover shown at {placement}.\n          </Popover.Content>\n        </Popover>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-pie-chart-donut-with-text-demo",
+  "type": "registry:block",
+  "title": "Pie chart donut with text demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/pie/pie-chart-donut-with-text-demo.tsx",
+      "content": "\"use client\"\n\nimport { useMemo } from \"react\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Label, Pie, PieChart } from \"recharts\"\n\nconst chartData = [\n  { category: \"Electronics\", sales: 275, fill: \"var(--color-electronics)\" },\n  { category: \"Clothing\", sales: 200, fill: \"var(--color-clothing)\" },\n  { category: \"Groceries\", sales: 287, fill: \"var(--color-groceries)\" },\n  { category: \"Furniture\", sales: 173, fill: \"var(--color-furniture)\" },\n  { category: \"Books\", sales: 190, fill: \"var(--color-books)\" },\n]\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n  },\n  electronics: {\n    label: \"Electronics\",\n    color: \"var(--chart-1)\",\n  },\n  clothing: {\n    label: \"Clothing\",\n    color: \"var(--chart-2)\",\n  },\n  groceries: {\n    label: \"Groceries\",\n    color: \"var(--chart-3)\",\n  },\n  furniture: {\n    label: \"Furniture\",\n    color: \"var(--chart-4)\",\n  },\n  books: {\n    label: \"Books\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function PieChartDonutWithTextDemo() {\n  const totalSales = useMemo(() => {\n    return chartData.reduce((acc, curr) => acc + curr.sales, 0)\n  }, [])\n\n  return (\n    <Card>\n      <Card.Header className=\"text-center\">\n        <Card.Title>Sales Allocation by Category</Card.Title>\n        <Card.Description>Jan - Jun 2024</Card.Description>\n      </Card.Header>\n      <Card.Content className=\"flex-1 pb-0\">\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <PieChart>\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Pie\n              data={chartData}\n              dataKey=\"sales\"\n              nameKey=\"category\"\n              innerRadius={60}\n              strokeWidth={5}\n            >\n              <Label\n                content={({ viewBox }) => {\n                  if (viewBox && \"cx\" in viewBox && \"cy\" in viewBox) {\n                    return (\n                      <text\n                        x={viewBox.cx}\n                        y={viewBox.cy}\n                        textAnchor=\"middle\"\n                        dominantBaseline=\"middle\"\n                      >\n                        <tspan x={viewBox.cx} y={viewBox.cy} className=\"fill-fg font-bold text-3xl\">\n                          {totalSales.toLocaleString()}\n                        </tspan>\n                        <tspan x={viewBox.cx} y={(viewBox.cy || 0) + 24} className=\"fill-muted-fg\">\n                          Sales\n                        </tspan>\n                      </text>\n                    )\n                  }\n                }}\n              />\n            </Pie>\n          </PieChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

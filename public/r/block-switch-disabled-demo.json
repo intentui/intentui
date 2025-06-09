@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-switch-disabled-demo",
+  "type": "registry:block",
+  "title": "Switch disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/switch/switch-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Switch } from \"@/components/ui/switch\"\n\nexport default function SwitchDisabledDemo() {\n  return <Switch isDisabled>Dark Mode</Switch>\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

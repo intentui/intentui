@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-danger-demo",
+  "type": "registry:block",
+  "title": "Menu danger demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-danger-demo.tsx",
+      "content": "\"use client\"\n\nimport { Menu } from \"@/components/ui/menu\"\nimport { IconHighlight, IconTrash } from \"@intentui/icons\"\n\nexport default function MenuDangerDemo() {\n  return (\n    <Menu>\n      <Menu.Trigger>Open</Menu.Trigger>\n      <Menu.Content placement=\"bottom\">\n        <Menu.Item>\n          <Menu.Label>View</Menu.Label>\n        </Menu.Item>\n        <Menu.Item>\n          <IconHighlight />\n          <Menu.Label>Edit</Menu.Label>\n        </Menu.Item>\n        <Menu.Separator />\n        <Menu.Item isDanger>\n          <IconTrash />\n          <Menu.Label>Delete</Menu.Label>\n        </Menu.Item>\n      </Menu.Content>\n    </Menu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-slider-prefix-suffix-demo",
+  "type": "registry:block",
+  "title": "Slider prefix suffix demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/slider/slider-prefix-suffix-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { IconVolumeFull, IconVolumeOff } from \"@intentui/icons\"\n\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function SliderPrefixSuffixDemo() {\n  const [volume, setVolume] = useState<number>(0.5)\n  return (\n    <div className=\"flex max-w-2xl items-center gap-4 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:translate-y-3.5\">\n      <IconVolumeOff />\n      <Slider value={volume} onChange={(v) => setVolume(v as number)} label=\"Volume\" />\n      <IconVolumeFull />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/astro/inline-script.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/astro/inline-script.tsx.stub",
+      "content": "<script is:inline>\n  const getThemePreference = () => {\n    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {\n      return localStorage.getItem('theme')\n    }\n    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'\n  }\n  const isDark = getThemePreference() === 'dark'\n  document.documentElement.classList[isDark ? 'add' : 'remove']('dark')\n\n  if (typeof localStorage !== 'undefined') {\n    const observer = new MutationObserver(() => {\n      const isDark = document.documentElement.classList.contains('dark')\n      localStorage.setItem('theme', isDark ? 'dark' : 'light')\n    })\n    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })\n  }\n</script>\n"
+    }
+  ]
+}

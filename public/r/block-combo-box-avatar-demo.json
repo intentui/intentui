@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-combo-box-avatar-demo",
+  "type": "registry:block",
+  "title": "Combo box avatar demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/combo-box/combo-box-avatar-demo.tsx",
+      "content": "\"use client\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { ComboBox } from \"@/components/ui/combo-box\"\n\nexport default function ComboBoxAvatarDemo() {\n  return (\n    <ComboBox placeholder=\"Select a user\" label=\"Users\" isRequired>\n      <ComboBox.Input />\n      <ComboBox.List items={users}>\n        {(item) => (\n          <ComboBox.Option id={item.id} textValue={item.name}>\n            <Avatar src={item.image_url} />\n            <ComboBox.Label>{item.name}</ComboBox.Label>\n          </ComboBox.Option>\n        )}\n      </ComboBox.List>\n    </ComboBox>\n  )\n}\n\nexport const users = [\n  { id: 1, name: \"Barbara Kirlin Sr.\", image_url: \"https://i.pravatar.cc/150?img=1\" },\n  { id: 2, name: \"Rosemarie Koch\", image_url: \"https://i.pravatar.cc/150?img=2\" },\n  { id: 3, name: \"Mrs. Reva Heaney Jr.\", image_url: \"https://i.pravatar.cc/150?img=3\" },\n  { id: 4, name: \"Ms. Ettie Abshire DVM\", image_url: \"https://i.pravatar.cc/150?img=4\" },\n  { id: 5, name: \"Bria Ziemann\", image_url: \"https://i.pravatar.cc/150?img=5\" },\n  { id: 6, name: \"Heloise Borer Sr.\", image_url: \"https://i.pravatar.cc/150?img=6\" },\n  {\n    id: 7,\n    name: \"Miss Jacinthe Gerlach DVM\",\n    image_url: \"https://i.pravatar.cc/150?img=7\",\n  },\n  {\n    id: 8,\n    name: \"Miss Stephania Schaefer Sr.\",\n    image_url: \"https://i.pravatar.cc/150?img=8\",\n  },\n  { id: 9, name: \"Kevon Hackett MD\", image_url: \"https://i.pravatar.cc/150?img=9\" },\n  { id: 10, name: \"Tom Ledner\", image_url: \"https://i.pravatar.cc/150?img=10\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

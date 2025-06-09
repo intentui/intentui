@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-group-border-hidden-demo",
+  "type": "registry:block",
+  "title": "Disclosure group border hidden demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure-group/disclosure-group-border-hidden-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  Disclosure,\n  DisclosureGroup,\n  DisclosurePanel,\n  DisclosureTrigger,\n} from \"@/components/ui/disclosure\"\nimport {\n  IconBell,\n  IconCreditCard,\n  IconDownload,\n  IconSettings,\n  IconShield,\n  IconSupport,\n} from \"@intentui/icons\"\n\nexport default function DisclosureGroupBorderHiddenDemo() {\n  return (\n    <DisclosureGroup>\n      {items.map((item, index) => (\n        <Disclosure className=\"border-b-0\" key={index} id={index}>\n          <DisclosureTrigger className=\"py-1.5\">{item.title}</DisclosureTrigger>\n          <DisclosurePanel>{item.description}</DisclosurePanel>\n        </Disclosure>\n      ))}\n    </DisclosureGroup>\n  )\n}\n\nconst items = [\n  {\n    icon: <IconSettings />,\n    title: \"Personal Settings\",\n    description:\n      \"You can update your profile, change your password, and manage your account settings here.\",\n  },\n  {\n    icon: <IconBell />,\n    title: \"Notifications\",\n    description:\n      \"Manage your notifications preferences, including alerts, emails, and push notifications.\",\n  },\n  {\n    icon: <IconShield />,\n    title: \"Privacy Options\",\n    description:\n      \"Adjust your privacy settings to control who can see your information and contact you.\",\n  },\n  {\n    icon: <IconCreditCard />,\n    title: \"Payment Methods\",\n    description:\n      \"Add, remove, or update your payment methods including credit cards and digital wallets.\",\n  },\n  {\n    icon: <IconSupport />,\n    title: \"Support Center\",\n    description: \"Find help with common issues, or contact support for further assistance.\",\n  },\n  {\n    icon: <IconDownload />,\n    title: \"Download Data\",\n    description:\n      \"Request a download of all your data we have stored, including account activity and user data.\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

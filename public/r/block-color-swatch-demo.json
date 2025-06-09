@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-swatch-demo",
+  "type": "registry:block",
+  "title": "Color swatch demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-swatch/color-swatch-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorSwatch } from \"@/components/ui/color-swatch\"\n\nexport default function ColorSwatchDemo() {\n  return <ColorSwatch aria-label=\"Current color\" color=\"#0d6efd\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

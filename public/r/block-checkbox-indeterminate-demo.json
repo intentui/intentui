@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-indeterminate-demo",
+  "type": "registry:block",
+  "title": "Checkbox indeterminate demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-indeterminate-demo.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox } from \"@/components/ui/checkbox\"\n\nexport default function CheckboxIndeterminateDemo() {\n  return (\n    <Checkbox value=\"read\" isIndeterminate>\n      Read\n    </Checkbox>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

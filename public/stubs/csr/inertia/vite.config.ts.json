@@ -1,0 +1,9 @@
+{
+  "name": "csr/inertia/vite.config.ts.stub",
+  "files": [
+    {
+      "name": "csr/inertia/vite.config.ts.stub",
+      "content": "...\nimport { resolve } from 'path';\n\nexport default defineConfig({\n  plugins: [...],\n  resolve: {\n    alias: {\n      // if you want simple import\n      ui: resolve('resources/js/components/ui/index.ts'),\n\n      // resolve ziggy-js\n      'ziggy-js': resolve('vendor/tightenco/ziggy')\n    }\n  }\n});\n"
+    }
+  ]
+}

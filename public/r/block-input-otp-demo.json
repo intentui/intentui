@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-input-otp-demo",
+  "type": "registry:block",
+  "title": "Input otp demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/input-otp/input-otp-demo.tsx",
+      "content": "\"use client\"\n\nimport { InputOTP } from \"@/components/ui/input-otp\"\n\nexport default function InputOtpDemo() {\n  return (\n    <div>\n      <InputOTP maxLength={6}>\n        <InputOTP.Group>\n          {[...Array(6)].map((_, index) => (\n            <InputOTP.Slot key={index} index={index} />\n          ))}\n        </InputOTP.Group>\n      </InputOTP>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

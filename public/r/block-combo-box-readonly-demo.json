@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-combo-box-readonly-demo",
+  "type": "registry:block",
+  "title": "Combo box readonly demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/combo-box/combo-box-readonly-demo.tsx",
+      "content": "\"use client\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { ComboBox } from \"@/components/ui/combo-box\"\n\nconst users = [\n  { id: 1, name: \"Barbara Kirlin Sr.\", image_url: \"https://i.pravatar.cc/150?img=1\" },\n  //...\n]\nexport default function ComboBoxReadonlyDemo() {\n  return (\n    <ComboBox defaultSelectedKey={1} placeholder=\"Select a user\" label=\"Users\" isReadOnly>\n      <ComboBox.Input />\n      <ComboBox.List items={users}>\n        {(item) => (\n          <ComboBox.Option key={item.id} id={item.id} textValue={item.name}>\n            <Avatar src={item.image_url} />\n            <ComboBox.Label>{item.name}</ComboBox.Label>\n          </ComboBox.Option>\n        )}\n      </ComboBox.List>\n    </ComboBox>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

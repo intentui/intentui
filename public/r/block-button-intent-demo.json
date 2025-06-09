@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-button-intent-demo",
+  "type": "registry:block",
+  "title": "Button intent demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/button/button-intent-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\n\nexport default function ButtonIntentDemo() {\n  return (\n    <div className=\"grid grid-cols-2 gap-2 *:flex *:flex-col *:gap-y-2\">\n      <div>\n        <Button intent=\"primary\">Label</Button>\n        <Button intent=\"secondary\">Label</Button>\n        <Button intent=\"warning\">Label</Button>\n      </div>\n      <div>\n        <Button intent=\"danger\">Label</Button>\n        <Button intent=\"outline\">Label</Button>\n        <Button intent=\"plain\">Label</Button>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-meter",
+  "type": "registry:component",
+  "title": "Meter",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/meter.tsx",
+      "content": "\"use client\"\n\nimport { IconCircleExclamation } from \"@intentui/icons\"\nimport { motion } from \"motion/react\"\nimport {\n  Meter as MeterPrimitive,\n  type MeterProps as MeterPrimitiveProps,\n} from \"react-aria-components\"\n\nimport { Label } from \"@/components/ui/field\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\n\ninterface MeterProps extends MeterPrimitiveProps {\n  label?: string\n}\n\nconst Meter = ({ label, className, ...props }: MeterProps) => {\n  return (\n    <MeterPrimitive\n      {...props}\n      className={composeTailwindRenderProps(className, \"flex min-w-56 flex-col gap-1\")}\n    >\n      {({ percentage, valueText }) => (\n        <>\n          <div className=\"flex w-full justify-between gap-2\">\n            <Label>{label}</Label>\n            <span\n              className={`text-sm tabular-nums ${percentage >= 80 ? \"text-danger\" : \"text-muted-fg\"}`}\n            >\n              {percentage >= 80 && (\n                <IconCircleExclamation\n                  aria-label=\"Alert\"\n                  className=\"inline-block size-4 fill-danger/20 align-text-bottom text-danger\"\n                />\n              )}\n              {` ${valueText}`}\n            </span>\n          </div>\n          <div className=\"-outline-offset-1 relative h-2 rounded-full bg-muted outline outline-transparent\">\n            <motion.div\n              className=\"absolute top-0 left-0 h-full rounded-full forced-colors:bg-[Highlight]\"\n              initial={{ width: \"0%\", backgroundColor: getColor(0) }}\n              animate={{\n                width: `${percentage}%`,\n                backgroundColor: getColor(percentage),\n              }}\n              transition={{ duration: 0.5 }}\n            />\n          </div>\n        </>\n      )}\n    </MeterPrimitive>\n  )\n}\n\nconst getColor = (percentage: number) => {\n  if (percentage < 30) {\n    return \"var(--primary)\"\n  }\n\n  if (percentage < 50) {\n    return \"var(--success)\"\n  }\n\n  if (percentage < 70) {\n    return \"#eab308\"\n  }\n\n  if (percentage < 80) {\n    return \"var(--warning)\"\n  }\n\n  return \"var(--danger)\"\n}\n\nexport type { MeterProps }\nexport { Meter }\n",
+      "type": "registry:component"
+    }
+  ]
+}

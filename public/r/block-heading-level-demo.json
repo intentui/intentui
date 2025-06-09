@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-heading-level-demo",
+  "type": "registry:block",
+  "title": "Heading level demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/heading/heading-level-demo.tsx",
+      "content": "\"use client\"\n\nimport { Heading } from \"@/components/ui/heading\"\n\nexport default function HeadingLevelDemo() {\n  return (\n    <div className=\"space-y-2\">\n      <Heading>The quick brown fox jumps over the lazy dog</Heading>\n      <Heading level={2}>The quick brown fox jumps over the lazy dog</Heading>\n      <Heading level={3}>The quick brown fox jumps over the lazy dog</Heading>\n      <Heading level={4}>The quick brown fox jumps over the lazy dog</Heading>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

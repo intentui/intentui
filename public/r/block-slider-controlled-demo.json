@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-slider-controlled-demo",
+  "type": "registry:block",
+  "title": "Slider controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/slider/slider-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function SliderControlledDemo() {\n  const [temperature, setTemperature] = useState<number>(31)\n  const [saturation, setSaturation] = useState<number[]>([21, 86])\n  return (\n    <div className=\"space-y-6\">\n      <div>\n        <Slider\n          value={temperature}\n          onChange={(v) => setTemperature(v as number)}\n          label=\"Temperature\"\n          description={`Current temperature: ${temperature ?? \"-\"}`}\n        />\n      </div>\n      <div>\n        <Slider\n          value={saturation}\n          onChange={(v) => setSaturation(v as number[])}\n          label=\"Saturation\"\n          description={`Current saturation: ${saturation ?? \"-\"}`}\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-fetch-registry",
+  "type": "registry:lib",
+  "title": "Fetch registry",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/fetch-registry.ts",
+      "content": "import { cache } from \"react\"\n\nexport const createFetchRegistryFile = (basePath: string) =>\n  cache(async (key: string): Promise<string | null> => {\n    try {\n      const response = await fetch(`${basePath}/${key}.json`)\n      if (response.ok) {\n        const registryEntry = await response.json()\n        return registryEntry.files?.[0]?.content || null\n      }\n      console.error(`Failed to fetch registry file at ${basePath}:`, response.status)\n      return null\n    } catch (error) {\n      console.error(`Error loading source code from ${basePath}:`, error)\n      return null\n    }\n  })\n",
+      "type": "registry:lib"
+    }
+  ]
+}

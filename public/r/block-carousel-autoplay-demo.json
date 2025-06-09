@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-carousel-autoplay-demo",
+  "type": "registry:block",
+  "title": "Carousel autoplay demo",
+  "description": "",
+  "dependencies": [
+    "embla-carousel-autoplay"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/media/carousel/carousel-autoplay-demo.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Carousel } from \"@/components/ui/carousel\"\nimport Autoplay from \"embla-carousel-autoplay\"\n\nexport default function CarouselAutoplayDemo() {\n  const plugin = useRef(Autoplay({ delay: 1000, stopOnInteraction: true }))\n\n  return (\n    <Carousel\n      onMouseEnter={plugin.current.stop}\n      onMouseLeave={plugin.current.reset}\n      plugins={[plugin.current as any]}\n      opts={{\n        loop: true,\n        align: \"center\",\n      }}\n      className=\"w-full max-w-xs\"\n    >\n      <Carousel.Content>\n        {items.map((item) => (\n          <Carousel.Item key={item.id}>\n            <div className=\"p-1\">\n              <Card>\n                <Card.Header>\n                  <Card.Title className=\"line-clamp-1 sm:text-lg\">{item.title}</Card.Title>\n                  <Card.Description className=\"line-clamp-2\">{item.description}</Card.Description>\n                </Card.Header>\n              </Card>\n            </div>\n          </Carousel.Item>\n        ))}\n      </Carousel.Content>\n\n      <Carousel.Handler>\n        <Carousel.Button segment=\"previous\" />\n        <Carousel.Button segment=\"next\" />\n      </Carousel.Handler>\n    </Carousel>\n  )\n}\n\nconst items = [\n  {\n    id: 1,\n    title: \"Vintage Leather Jacket\",\n    description: \"Classic brown leather jacket, perfect for a stylish retro look.\",\n  },\n  {\n    id: 2,\n    title: \"Wireless Bluetooth Headphones\",\n    description:\n      \"Experience high-quality sound with these comfortable, noise-canceling headphones.\",\n  },\n  {\n    id: 3,\n    title: \"Organic Cotton T-Shirt\",\n    description: \"Soft and eco-friendly t-shirt made from 100% organic cotton.\",\n  },\n  {\n    id: 4,\n    title: \"Stainless Steel Water Bottle\",\n    description: \"Keep your drinks cold or hot with this durable, insulated water bottle.\",\n  },\n  {\n    id: 5,\n    title: \"Running Shoes\",\n    description: \"Lightweight and comfortable shoes designed for optimal performance.\",\n  },\n  {\n    id: 6,\n    title: \"Smartwatch\",\n    description: \"Stay connected and track your fitness with this sleek smartwatch.\",\n  },\n  {\n    id: 7,\n    title: \"Portable Charger\",\n    description: \"Never run out of battery with this high-capacity portable charger.\",\n  },\n  {\n    id: 8,\n    title: \"Noise-Canceling Earbuds\",\n    description: \"Compact and powerful earbuds that block out unwanted noise.\",\n  },\n  {\n    id: 9,\n    title: \"Yoga Mat\",\n    description: \"Non-slip, cushioned yoga mat for a comfortable workout experience.\",\n  },\n  {\n    id: 10,\n    title: \"LED Desk Lamp\",\n    description: \"Bright and energy-efficient LED lamp with adjustable brightness.\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

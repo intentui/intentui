@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-area-demo",
+  "type": "registry:block",
+  "title": "Color area demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-area/color-area-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorArea } from \"@/components/ui/color-area\"\n\nexport default function ColorAreaDemo() {\n  return <ColorArea />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

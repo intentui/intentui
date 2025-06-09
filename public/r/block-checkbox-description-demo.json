@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-description-demo",
+  "type": "registry:block",
+  "title": "Checkbox description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox } from \"@/components/ui/checkbox\"\n\nexport default function CheckboxDescriptionDemo() {\n  return <Checkbox label=\"Postal Mail\" description=\"Receive notifications via postal mail\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

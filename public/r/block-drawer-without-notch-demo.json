@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-drawer-without-notch-demo",
+  "type": "registry:block",
+  "title": "Drawer without notch demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/drawer/drawer-without-notch-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Drawer } from \"@/components/ui/drawer\"\n\nexport default function DrawerWithoutNotchDemo() {\n  return (\n    <Drawer>\n      <Button intent=\"outline\">Open</Button>\n      <Drawer.Content notch={false}>\n        <Drawer.Header>\n          <Drawer.Title>The Beatles</Drawer.Title>\n          <Drawer.Description>\n            The Beatles were an English rock band formed in Liverpool in 1960, comprising John\n            Lennon, Paul McCartney, George Harrison and Ringo Starr.\n          </Drawer.Description>\n        </Drawer.Header>\n        <Drawer.Footer>\n          <Drawer.Close isCircle>Close</Drawer.Close>\n        </Drawer.Footer>\n      </Drawer.Content>\n    </Drawer>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

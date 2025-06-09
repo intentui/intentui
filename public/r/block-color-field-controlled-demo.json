@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-field-controlled-demo",
+  "type": "registry:block",
+  "title": "Color field controlled demo",
+  "description": "",
+  "dependencies": [
+    "@react-stately/color"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-field/color-field-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ControlledValues } from \"@/components/docs/colors/controlled-values\"\nimport { ColorField } from \"@/components/ui/color-field\"\nimport { type Color, parseColor } from \"@react-stately/color\"\n\nexport default function ColorFieldControlledDemo() {\n  const [color, setColor] = useState(parseColor(\"#FAFAFA\"))\n  return (\n    <div className=\"flex flex-col gap-2 lg:flex-row lg:gap-4\">\n      <ColorField\n        className=\"min-w-56\"\n        value={color}\n        aria-label=\"Pick a color\"\n        onChange={(newColor: Color | null) => newColor && setColor(newColor)}\n        placeholder=\"#FAFAFA\"\n      />\n      <ControlledValues color={color} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

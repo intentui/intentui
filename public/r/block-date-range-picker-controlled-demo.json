@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-range-picker-controlled-demo",
+  "type": "registry:block",
+  "title": "Date range picker controlled demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date",
+    "@react-aria/i18n"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { getLocalTimeZone, today } from \"@internationalized/date\"\nimport { useDateFormatter } from \"@react-aria/i18n\"\n\nimport { DateRangePicker } from \"@/components/ui/date-range-picker\"\n\nexport default function DateRangePickerControlledDemo() {\n  const now = today(getLocalTimeZone())\n  const tomorrowWeek = today(getLocalTimeZone()).add({ days: 12 })\n  const formatter = useDateFormatter({ dateStyle: \"full\" })\n\n  const [value, setValue] = useState({\n    start: now,\n    end: tomorrowWeek,\n  })\n\n  return (\n    <div className=\"space-y-3\">\n      <div className=\"divide-y [&_p]:py-2\">\n        <p>\n          {value\n            ? `${formatter.format(value.start.toDate(getLocalTimeZone()))} to ${formatter.format(value.end.toDate(getLocalTimeZone()))}`\n            : \"-- to --\"}\n        </p>\n        <p>{value ? `${value.start.toString()} to ${value.end.toString()}` : \"-- to --\"}</p>\n      </div>\n      <DateRangePicker\n        value={value}\n        onChange={(newValue) => setValue(newValue!)}\n        label=\"Event date\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

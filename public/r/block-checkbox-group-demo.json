@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-group-demo",
+  "type": "registry:block",
+  "title": "Checkbox group demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-group-demo.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox, CheckboxGroup } from \"@/components/ui/checkbox\"\n\nexport default function CheckboxGroupDemo() {\n  return (\n    <CheckboxGroup label=\"Settings\">\n      <Checkbox value=\"notifications\">Enable notifications</Checkbox>\n      <Checkbox value=\"auto_update\">Auto-update applications</Checkbox>\n      <Checkbox value=\"dark_mode\">Enable dark mode</Checkbox>\n      <Checkbox value=\"location_access\">Allow location access</Checkbox>\n      <Checkbox value=\"two_factor_auth\">Enable two-factor authentication</Checkbox>\n    </CheckboxGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

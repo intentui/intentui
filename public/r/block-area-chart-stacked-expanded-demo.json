@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-area-chart-stacked-expanded-demo",
+  "type": "registry:block",
+  "title": "Area chart stacked expanded demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/area/area-chart-stacked-expanded-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst trafficData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index)\n  const month = date.toLocaleDateString(\"en-US\", { month: \"long\" })\n  return {\n    month,\n    organic: Math.floor(Math.random() * 100 + 150),\n    paid: Math.floor(Math.random() * 50 + 100),\n    referral: Math.floor(Math.random() * 50 + 50),\n  }\n})\n\nconst trafficConfig = {\n  organic: {\n    label: \"Organic\",\n    color: \"var(--chart-1)\",\n  },\n  paid: {\n    label: \"Paid\",\n    color: \"var(--chart-2)\",\n  },\n  referral: {\n    label: \"Referral\",\n    color: \"var(--chart-3)\",\n  },\n} satisfies ChartConfig\n\nexport default function AreaChartStackedExpandedDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Traffic Analysis\"\n        description=\"Distribution of traffic sources over the last 24 months\"\n      />\n      <Card.Content>\n        <Chart config={trafficConfig}>\n          <AreaChart\n            accessibilityLayer\n            data={trafficData}\n            margin={{\n              left: 20,\n              right: 20,\n              top: 20,\n            }}\n            stackOffset=\"expand\"\n          >\n            <CartesianGrid vertical={false} strokeDasharray=\"3 3\" />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              axisLine={false}\n              tickMargin={8}\n              tickFormatter={(value) => value.slice(0, 3)}\n            />\n            <ChartTooltip cursor content={<ChartTooltipContent indicator=\"line\" />} />\n            <Area\n              dataKey=\"referral\"\n              type=\"monotone\"\n              fill=\"var(--chart-3)\"\n              fillOpacity={0.1}\n              stroke=\"var(--chart-3)\"\n              stackId=\"a\"\n            />\n            <Area\n              dataKey=\"paid\"\n              type=\"monotone\"\n              fill=\"var(--chart-2)\"\n              fillOpacity={0.4}\n              stroke=\"var(--chart-2)\"\n              stackId=\"a\"\n            />\n            <Area\n              dataKey=\"organic\"\n              type=\"monotone\"\n              fill=\"var(--chart-1)\"\n              fillOpacity={0.4}\n              stroke=\"var(--chart-1)\"\n              stackId=\"a\"\n            />\n          </AreaChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

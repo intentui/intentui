@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-sheet-custom-style-demo",
+  "type": "registry:block",
+  "title": "Sheet custom style demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/sheet/sheet-custom-style-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Form } from \"@/components/ui/form\"\nimport { Note } from \"@/components/ui/note\"\nimport { Sheet } from \"@/components/ui/sheet\"\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function SheetCustomStyleDemo() {\n  return (\n    <Sheet>\n      <Button intent=\"warning\">Archive Project</Button>\n      <Sheet.Content role=\"dialog\">\n        <Sheet.Header\n          className=\"mb-4 border-b\"\n          title=\"Archive Project\"\n          description=\"Archiving this project will disable access and hide it from active projects.\"\n        >\n          <Note intent=\"warning\" className=\"mt-2\">\n            You can restore the project anytime from the archive!\n          </Note>\n        </Sheet.Header>\n        <Form className=\"flex-1 overflow-y-auto\" onSubmit={() => {}}>\n          <Sheet.Body className=\"space-y-4\">\n            <TextField\n              isRequired\n              autoFocus\n              label=\"Confirm by typing the project name\"\n              type=\"text\"\n              placeholder=\"team/project-name\"\n            />\n            <TextField isRequired label='To verify, type \"archive my project\" below' type=\"text\" />\n          </Sheet.Body>\n          <Sheet.Footer>\n            <Sheet.Close>Cancel</Sheet.Close>\n            <Button intent=\"warning\" type=\"submit\">\n              Archive Project\n            </Button>\n          </Sheet.Footer>\n        </Form>\n      </Sheet.Content>\n    </Sheet>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

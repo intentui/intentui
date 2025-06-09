@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-field-validation-demo",
+  "type": "registry:block",
+  "title": "Color field validation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-field/color-field-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { ColorField } from \"@/components/ui/color-field\"\nimport { Form } from \"@/components/ui/form\"\n\nexport default function ColorFieldValidationDemo() {\n  function submit(e: React.FormEvent) {\n    e.preventDefault()\n  }\n\n  return (\n    <Form onSubmit={submit} className=\"space-y-4\">\n      <ColorField label=\"Color\" isRequired placeholder=\"#FAFAFA\" />\n      <Button type=\"submit\">Save</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

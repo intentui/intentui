@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-choicebox-icon-demo",
+  "type": "registry:block",
+  "title": "Choicebox icon demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/choicebox/choicebox-icon-demo.tsx",
+      "content": "import { Choicebox } from \"@/components/ui/choicebox\"\nimport { IconBrandLaravel, IconBrandReactjs, IconBrandTypescript } from \"@intentui/icons\"\n\nexport default function ChoiceboxIconDemo() {\n  return (\n    <Choicebox\n      className=\"mx-auto max-w-lg\"\n      selectionMode=\"single\"\n      defaultSelectedKeys={[\"Standard\"]}\n      aria-label=\"Select prices\"\n      gap={0}\n      columns={1}\n      items={frameworks}\n    >\n      {(item) => (\n        <Choicebox.Item textValue={item.id}>\n          <item.icon />\n          <Choicebox.Label>{item.label}</Choicebox.Label>\n          <Choicebox.Description>{item.description}</Choicebox.Description>\n        </Choicebox.Item>\n      )}\n    </Choicebox>\n  )\n}\n\nconst frameworks = [\n  {\n    id: \"laravel\",\n    label: \"Laravel\",\n    description: \"Laravel is a web application framework with expressive, elegant syntax.\",\n    icon: IconBrandLaravel,\n  },\n  {\n    id: \"react\",\n    label: \"React\",\n    description: \"React is a JavaScript library for building user interfaces.\",\n    icon: IconBrandReactjs,\n  },\n  {\n    id: \"ts\",\n    label: \"Typescript\",\n    description: \"Typescript is a typed superset of JavaScript that compiles to plain JavaScript.\",\n    icon: IconBrandTypescript,\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

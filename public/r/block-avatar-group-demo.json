@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-avatar-group-demo",
+  "type": "registry:block",
+  "title": "Avatar group demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/media/avatar/avatar-group-demo.tsx",
+      "content": "import { Avatar } from \"@/components/ui/avatar\"\n\nexport default function AvatarGroupDemo() {\n  return (\n    <div className=\"-space-x-2 flex items-center justify-center\">\n      {users.map((user) => (\n        <Avatar\n          key={user.id}\n          src={user.image_url}\n          className=\"size-8 ring-2 ring-white dark:ring-zinc-900\"\n        />\n      ))}\n    </div>\n  )\n}\n\nexport const users = [\n  { id: 1, name: \"Robert Plant\", image_url: \"/images/avatar/robert.jpg\" },\n  { id: 2, name: \"Jimmy Page\", image_url: \"/images/avatar/page.jpg\" },\n  { id: 5, name: \"Irsyad\", image_url: \"/images/avatar/irsyad.jpg\" },\n  { id: 3, name: \"Slash\", image_url: \"/images/avatar/slash.jpg\" },\n  { id: 4, name: \"Kurt Cobain\", image_url: \"/images/avatar/cobain.jpg\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

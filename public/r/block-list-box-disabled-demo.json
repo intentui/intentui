@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-list-box-disabled-demo",
+  "type": "registry:block",
+  "title": "List box disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/list-box/list-box-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { ListBox } from \"@/components/ui/list-box\"\n\nexport default function ListBoxDisabledDemo() {\n  return (\n    <>\n      <ListBox\n        disabledKeys={[2, 3, 4, 5]}\n        items={fruits}\n        aria-label=\"Fruits\"\n        selectionMode=\"multiple\"\n      >\n        {(fruit) => <ListBox.Item id={fruit.id}>{fruit.name}</ListBox.Item>}\n      </ListBox>\n    </>\n  )\n}\n\nconst fruits = [\n  {\n    id: 1,\n    name: \"Apple\",\n  },\n  {\n    id: 2,\n    name: \"Banana\",\n  },\n  {\n    id: 3,\n    name: \"Orange\",\n  },\n  {\n    id: 4,\n    name: \"Strawberry\",\n  },\n  {\n    id: 5,\n    name: \"Grapes\",\n  },\n  {\n    id: 6,\n    name: \"Mango\",\n  },\n  {\n    id: 7,\n    name: \"Pineapple\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-loader-size-demo",
+  "type": "registry:block",
+  "title": "Loader size demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/loader/loader-size-demo.tsx",
+      "content": "\"use client\"\n\nimport { Loader } from \"@/components/ui/loader\"\n\nexport default function LoaderSizeDemo() {\n  return (\n    <div className=\"flex gap-6\">\n      <Loader size=\"sm\" />\n      <Loader size=\"md\" />\n      <Loader size=\"lg\" />\n      <Loader size=\"xl\" />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-command-menu-dynamic-demo",
+  "type": "registry:block",
+  "title": "Command menu dynamic demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/command-menu/command-menu-dynamic-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { Button } from \"@/components/ui/button\"\nimport { CommandMenu } from \"@/components/ui/command-menu\"\n\nexport default function CommandMenuDynamicDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  return (\n    <>\n      <Button intent=\"outline\" onPress={() => setIsOpen(true)}>\n        Open\n      </Button>\n      <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>\n        <CommandMenu.Search placeholder=\"Quick search...\" />\n        <CommandMenu.List>\n          <CommandMenu.Section title=\"Pages\">\n            <CommandMenu.Item textValue=\"Home\" href=\"#\">\n              Home\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"Docs\" href=\"#\">\n              Docs\n            </CommandMenu.Item>\n            <CommandMenu.Item textValue=\"Components\" href=\"#\">\n              Components\n            </CommandMenu.Item>\n          </CommandMenu.Section>\n          <CommandMenu.Separator />\n          <CommandMenu.Section title=\"Users\" items={users}>\n            {(user) => (\n              <CommandMenu.Item>\n                <Avatar src={user.image_url} alt={user.name} initials={user.name.slice(0, 2)} />\n                {user.name}\n              </CommandMenu.Item>\n            )}\n          </CommandMenu.Section>\n        </CommandMenu.List>\n      </CommandMenu>\n    </>\n  )\n}\n\nconst users = [\n  { id: 1, name: \"Barbara Kirlin Sr.\", image_url: \"https://i.pravatar.cc/150?img=1\" },\n  { id: 2, name: \"Rosemarie Koch\", image_url: \"https://i.pravatar.cc/150?img=2\" },\n  { id: 3, name: \"Mrs. Reva Heaney Jr.\", image_url: \"https://i.pravatar.cc/150?img=3\" },\n  { id: 4, name: \"Ms. Ettie Abshire DVM\", image_url: \"https://i.pravatar.cc/150?img=4\" },\n  { id: 5, name: \"Bria Ziemann\", image_url: \"https://i.pravatar.cc/150?img=5\" },\n  { id: 6, name: \"Heloise Borer Sr.\", image_url: \"https://i.pravatar.cc/150?img=6\" },\n  {\n    id: 7,\n    name: \"Miss Jacinthe Gerlach DVM\",\n    image_url: \"https://i.pravatar.cc/150?img=7\",\n  },\n  {\n    id: 8,\n    name: \"Miss Stephania Schaefer Sr.\",\n    image_url: \"https://i.pravatar.cc/150?img=8\",\n  },\n  { id: 9, name: \"Kevon Hackett MD\", image_url: \"https://i.pravatar.cc/150?img=9\" },\n  { id: 10, name: \"Tom Ledner\", image_url: \"https://i.pravatar.cc/150?img=10\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-select-with-icon-demo",
+  "type": "registry:block",
+  "title": "Select with icon demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/select/select-with-icon-demo.tsx",
+      "content": "\"use client\"\n\nimport { Select } from \"@/components/ui/select\"\nimport { IconBrandDiscord, IconBrandGithub } from \"@intentui/icons\"\n\nexport default function SelectWithIconDemo() {\n  return (\n    <Select aria-label=\"Devices\" defaultSelectedKey=\"desktop\" placeholder=\"Select a device\">\n      <Select.Trigger />\n      <Select.List>\n        <Select.Option id=\"discord\" textValue=\"Discord\">\n          <IconBrandDiscord />\n          <Select.Label>Discord</Select.Label>\n        </Select.Option>\n        <Select.Separator />\n        <Select.Option id=\"github\" textValue=\"GitHub\">\n          <IconBrandGithub />\n          <Select.Label>GitHub</Select.Label>\n        </Select.Option>\n        <Select.Option id=\"gitlab\" textValue=\"GitLab\">\n          GitLab\n        </Select.Option>\n      </Select.List>\n    </Select>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

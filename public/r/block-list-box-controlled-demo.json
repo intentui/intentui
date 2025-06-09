@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-list-box-controlled-demo",
+  "type": "registry:block",
+  "title": "List box controlled demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/list-box/list-box-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { ListBox } from \"@/components/ui/list-box\"\nimport type { Selection } from \"react-aria-components\"\n\nexport default function ListBoxControlledDemo() {\n  const [selected, setSelected] = useState<Selection>(new Set([1]))\n  return (\n    <>\n      <ListBox\n        selectedKeys={selected}\n        onSelectionChange={setSelected}\n        items={fruits}\n        aria-label=\"Fruits\"\n        selectionMode=\"single\"\n      >\n        {(fruit) => (\n          <ListBox.Item id={fruit.id} textValue={fruit.name}>\n            {fruit.name}\n          </ListBox.Item>\n        )}\n      </ListBox>\n\n      {selected && (\n        <Description className=\"mt-4 block [&>strong]:font-medium [&>strong]:text-fg\">\n          Selected: <strong>{selected}</strong>\n        </Description>\n      )}\n    </>\n  )\n}\n\nconst fruits = [\n  {\n    id: 1,\n    name: \"Apple\",\n  },\n  {\n    id: 2,\n    name: \"Banana\",\n  },\n  {\n    id: 3,\n    name: \"Orange\",\n  },\n  {\n    id: 4,\n    name: \"Strawberry\",\n  },\n  {\n    id: 5,\n    name: \"Grapes\",\n  },\n  {\n    id: 6,\n    name: \"Mango\",\n  },\n  {\n    id: 7,\n    name: \"Pineapple\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

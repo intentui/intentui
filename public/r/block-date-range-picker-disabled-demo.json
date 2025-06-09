@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-range-picker-disabled-demo",
+  "type": "registry:block",
+  "title": "Date range picker disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { DateRangePicker } from \"@/components/ui/date-range-picker\"\n\nexport default function DateRangePickerDisabledDemo() {\n  return <DateRangePicker isDisabled label=\"Event date\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

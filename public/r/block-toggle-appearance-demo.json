@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-appearance-demo",
+  "type": "registry:block",
+  "title": "Toggle appearance demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle/toggle-appearance-demo.tsx",
+      "content": "\"use client\"\n\nimport { Toggle } from \"@/components/ui/toggle\"\n\nexport default function ToggleAppearanceDemo() {\n  return (\n    <div className=\"flex gap-2\">\n      <Toggle>{({ isSelected }) => <>{isSelected ? \"Unpin\" : \"Pin\"}</>}</Toggle>\n      <Toggle intent=\"outline\">{({ isSelected }) => <>{isSelected ? \"Unpin\" : \"Pin\"}</>}</Toggle>\n      <Toggle intent=\"solid\">{({ isSelected }) => <>{isSelected ? \"Unpin\" : \"Pin\"}</>}</Toggle>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

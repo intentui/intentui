@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-popover-custom-close",
+  "type": "registry:block",
+  "title": "Popover custom close",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/popover/popover-custom-close.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Checkbox } from \"@/components/ui/checkbox\"\nimport { Form } from \"@/components/ui/form\"\nimport { Link } from \"@/components/ui/link\"\nimport { Popover } from \"@/components/ui/popover\"\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function PopoverCustomClose() {\n  return (\n    <Popover>\n      <Button>Login</Button>\n      <Popover.Content className=\"sm:min-w-96\">\n        <Popover.Header>\n          <Popover.Title>Login</Popover.Title>\n          <Popover.Description>Enter your credentials to sign in.</Popover.Description>\n        </Popover.Header>\n        <Form onSubmit={() => {}}>\n          <Popover.Body>\n            <div className=\"space-y-4\">\n              <TextField\n                autoFocus\n                isRequired\n                type=\"email\"\n                label=\"Email\"\n                placeholder=\"Enter your email\"\n              />\n              <TextField\n                isRequired\n                label=\"Password\"\n                type=\"password\"\n                placeholder=\"Enter your password\"\n              />\n              <div className=\"flex items-center justify-between\">\n                <Checkbox name=\"remember-me\">Remember me</Checkbox>\n                <Link intent=\"primary\" href=\"#\">\n                  Forgot password?\n                </Link>\n              </div>\n            </div>\n          </Popover.Body>\n          <Popover.Footer>\n            <Popover.Close>Cancel</Popover.Close>\n            <Button type=\"submit\">Login</Button>\n          </Popover.Footer>\n        </Form>\n      </Popover.Content>\n    </Popover>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

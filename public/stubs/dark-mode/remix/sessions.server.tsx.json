@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/remix/sessions.server.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/remix/sessions.server.tsx.stub",
+      "content": "import { createCookieSessionStorage } from '@remix-run/node'\nimport { createThemeSessionResolver } from 'remix-themes'\n\nconst isProduction = process.env.NODE_ENV === 'production'\n\nconst sessionStorage = createCookieSessionStorage({\n  cookie: {\n    name: 'theme',\n    path: '/',\n    httpOnly: true,\n    sameSite: 'lax',\n    secrets: ['s3cr3t'],\n    ...(isProduction ? { domain: 'your-production-domain.com', secure: true } : {})\n  }\n})\n\nexport const themeSessionResolver = createThemeSessionResolver(sessionStorage)\n"
+    }
+  ]
+}

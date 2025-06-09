@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-context-menu-item-details-demo",
+  "type": "registry:block",
+  "title": "Context menu item details demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://localhost:3000/r/ui-context-menu.json"
+  ],
+  "files": [
+    {
+      "path": "components/docs/controls/context-menu/context-menu-item-details-demo.tsx",
+      "content": "\"use client\"\n\nimport { ContextMenu } from \"@/components/ui/context-menu\"\n\nexport default function ContextMenuItemDetailsDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenu.Trigger className=\"grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed\">\n        Right click me\n      </ContextMenu.Trigger>\n      <ContextMenu.Content items={roles}>\n        {(item) => (\n          <ContextMenu.Item id={item.id} textValue={item.name}>\n            <ContextMenu.ItemDetails label={item.name} description={item.description} />\n          </ContextMenu.Item>\n        )}\n      </ContextMenu.Content>\n    </ContextMenu>\n  )\n}\n\nconst roles = [\n  { id: 1, name: \"Admin\", description: \"Has full access to all resources\" },\n  { id: 2, name: \"Editor\", description: \"Can edit content but has limited access to settings\" },\n  { id: 3, name: \"Viewer\", description: \"Can view content but cannot make changes\" },\n  { id: 4, name: \"Contributor\", description: \"Can contribute content for review\" },\n  { id: 5, name: \"Guest\", description: \"Limited access, mostly for viewing purposes\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

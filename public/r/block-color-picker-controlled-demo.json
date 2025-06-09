@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-picker-controlled-demo",
+  "type": "registry:block",
+  "title": "Color picker controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-picker/color-picker-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ControlledValues } from \"@/components/docs/colors/controlled-values\"\nimport { ColorPicker } from \"@/components/ui/color-picker\"\nimport { defaultColor } from \"@/components/ui/color-swatch\"\n\nexport default function ColorPickerControlledDemo() {\n  const [color, setColor] = useState(defaultColor)\n\n  return (\n    <div className=\"flex flex-col gap-2 lg:flex-row lg:gap-4\">\n      <ColorPicker value={color} onChange={setColor} />\n      <ControlledValues color={color} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

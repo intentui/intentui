@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-combo-box-controlled-selection-demo",
+  "type": "registry:block",
+  "title": "Combo box controlled selection demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/combo-box/combo-box-controlled-selection-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ComboBox } from \"@/components/ui/combo-box\"\nimport { Description } from \"@/components/ui/field\"\nimport type { Key } from \"react-aria-components\"\n\nexport default function ComboBoxControlledSelectionDemo() {\n  const [country, setCountry] = useState<Key | null>(null)\n  return (\n    <>\n      <ComboBox\n        label=\"Country\"\n        placeholder=\"Country\"\n        onSelectionChange={setCountry}\n        selectedKey={country}\n      >\n        <ComboBox.Input />\n        <ComboBox.List items={countries}>\n          {(item) => <ComboBox.Option id={item.id}>{item.name}</ComboBox.Option>}\n        </ComboBox.List>\n      </ComboBox>\n\n      <Description className=\"mt-2 block text-muted-fg [&>strong]:text-fg\">\n        You have selected: <strong>{country}</strong>\n      </Description>\n    </>\n  )\n}\n\nconst countries = [\n  { id: 1, name: \"Argentina\" },\n  { id: 2, name: \"Australia\" },\n  { id: 3, name: \"Austria\" },\n  { id: 4, name: \"Belgium\" },\n  { id: 5, name: \"Brazil\" },\n  { id: 6, name: \"Canada\" },\n  { id: 7, name: \"China\" },\n  { id: 8, name: \"Denmark\" },\n  { id: 9, name: \"France\" },\n  { id: 10, name: \"Germany\" },\n  { id: 11, name: \"India\" },\n  { id: 12, name: \"Italy\" },\n  { id: 13, name: \"Japan\" },\n  { id: 14, name: \"Mexico\" },\n  { id: 15, name: \"Netherlands\" },\n  { id: 16, name: \"New Zealand\" },\n  { id: 17, name: \"Norway\" },\n  { id: 18, name: \"South Korea\" },\n  { id: 19, name: \"Sweden\" },\n  { id: 20, name: \"United Kingdom\" },\n  { id: 21, name: \"United States\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

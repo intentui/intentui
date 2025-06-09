@@ -1,0 +1,9 @@
+{
+  "name": "components/navbar/home.tsx.stub",
+  "files": [
+    {
+      "name": "components/navbar/home.tsx.stub",
+      "content": "import { Container } from \"@/components/ui/container\"\nimport { Heading} from \"@/components/ui/heading\"\n\nimport { AppLayout } from \"./app-layout.tsx.sutbs\"\n\nexport default function Home() {\n  return (\n    <Container>\n      <Heading>Home</Heading>\n    </Container>\n  )\n}\n\nHome.layout = (page: React.ReactNode) => <AppLayout children={page} />\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-group-default-expand-demo",
+  "type": "registry:block",
+  "title": "Disclosure group default expand demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure-group/disclosure-group-default-expand-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  Disclosure,\n  DisclosureGroup,\n  DisclosurePanel,\n  DisclosureTrigger,\n} from \"@/components/ui/disclosure\"\n\nexport default function DisclosureGroupDefaultExpandDemo() {\n  return (\n    <DisclosureGroup defaultExpandedKeys={[1]}>\n      {faqs.map((item, index) => (\n        <Disclosure key={index} id={index}>\n          <DisclosureTrigger>{item.q}</DisclosureTrigger>\n          <DisclosurePanel>{item.a}</DisclosurePanel>\n        </Disclosure>\n      ))}\n    </DisclosureGroup>\n  )\n}\n\nconst faqs = [\n  {\n    q: \"How do I reset my password?\",\n    a: \"You can reset your password by going to the settings page and clicking on 'Reset Password'.\",\n  },\n  {\n    q: \"Can I change my subscription plan?\",\n    a: \"Yes, you can upgrade or downgrade your subscription plan at any time from your account settings.\",\n  },\n  {\n    q: \"Where can I view my past orders?\",\n    a: \"Your past orders can be viewed in the 'Orders' section of your account dashboard.\",\n  },\n  {\n    q: \"What is the return policy?\",\n    a: \"Our return policy allows you to return products within 30 days of purchase for a full refund or exchange.\",\n  },\n  {\n    q: \"How do I contact customer support?\",\n    a: \"You can contact customer support via email at support@example.com or through our online chat system.\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

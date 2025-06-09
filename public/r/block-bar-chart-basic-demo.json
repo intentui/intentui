@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-basic-demo",
+  "type": "registry:block",
+  "title": "Bar chart basic demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-basic-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst salesData = Array.from({ length: 48 }, (_, index) => {\n  const month = new Date(new Date().getFullYear() - 4, Math.floor(index / 2)).toLocaleDateString(\n    \"en-US\",\n    {\n      month: \"short\",\n    },\n  )\n  const startDay = index % 2 === 0 ? 1 : 15\n  const endDay = index % 2 === 0 ? 14 : 28\n  return {\n    period: `${month} ${startDay} - ${month} ${endDay}`,\n    revenue: Math.floor(Math.random() * 5000 + 2000),\n  }\n})\n\nconst salesConfig = {\n  revenue: {\n    label: \"Revenue\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartBasicDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Biweekly Revenue\"\n        description=\"Revenue breakdown every 2 weeks (Jan - Dec 2024)\"\n        className=\"items-center pb-0\"\n      />\n      <Card.Content>\n        <Chart className=\"aspect-[20/15] sm:aspect-[17/7]\" config={salesConfig}>\n          <BarChart accessibilityLayer data={salesData}>\n            <CartesianGrid vertical={false} />\n            <XAxis dataKey=\"period\" tickLine={false} tickMargin={10} axisLine={false} />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Bar dataKey=\"revenue\" fill=\"var(--color-revenue)\" radius={0} />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

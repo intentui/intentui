@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-sub-demo",
+  "type": "registry:block",
+  "title": "Menu sub demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-sub-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Menu } from \"@/components/ui/menu\"\n\nexport default function MenuSubDemo() {\n  return (\n    <Menu>\n      <Button intent=\"outline\">Open</Button>\n      <Menu.Content placement=\"bottom\">\n        <Menu.Item>\n          <Menu.Label>Dashboard</Menu.Label>\n        </Menu.Item>\n        <Menu.Item>\n          <Menu.Label>Reports</Menu.Label>\n        </Menu.Item>\n        <Menu.Separator />\n        <Menu.Submenu>\n          <Menu.Item>\n            <Menu.Label>Settings</Menu.Label>\n          </Menu.Item>\n          <Menu.Content>\n            <Menu.Item>\n              <Menu.Label>General</Menu.Label>\n            </Menu.Item>\n            <Menu.Item>\n              <Menu.Label>Security</Menu.Label>\n            </Menu.Item>\n            <Menu.Separator />\n            <Menu.Submenu>\n              <Menu.Item>\n                <Menu.Label>Privacy</Menu.Label>\n              </Menu.Item>\n              <Menu.Content>\n                <Menu.Item>\n                  <Menu.Label>Data Sharing</Menu.Label>\n                </Menu.Item>\n                <Menu.Item>\n                  <Menu.Label>Cookies</Menu.Label>\n                </Menu.Item>\n                <Menu.Separator />\n                <Menu.Submenu>\n                  <Menu.Item>\n                    <Menu.Label>Advanced</Menu.Label>\n                  </Menu.Item>\n                  <Menu.Content>\n                    <Menu.Item>\n                      <Menu.Label>Encryption</Menu.Label>\n                    </Menu.Item>\n                    <Menu.Item>\n                      <Menu.Label>Access Logs</Menu.Label>\n                    </Menu.Item>\n                    <Menu.Item>\n                      <Menu.Label>API Keys</Menu.Label>\n                    </Menu.Item>\n                  </Menu.Content>\n                </Menu.Submenu>\n              </Menu.Content>\n            </Menu.Submenu>\n          </Menu.Content>\n        </Menu.Submenu>\n        <Menu.Item>\n          <Menu.Label>Help</Menu.Label>\n        </Menu.Item>\n      </Menu.Content>\n    </Menu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

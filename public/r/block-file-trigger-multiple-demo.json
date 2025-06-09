@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-file-trigger-multiple-demo",
+  "type": "registry:block",
+  "title": "File trigger multiple demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/file-trigger/file-trigger-multiple-demo.tsx",
+      "content": "\"use client\"\n\nimport { FileTrigger } from \"@/components/ui/file-trigger\"\n\nexport default function FileTriggerMultipleDemo() {\n  return <FileTrigger allowsMultiple />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-popover-arrow-demo",
+  "type": "registry:block",
+  "title": "Popover arrow demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/popover/popover-arrow-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Popover } from \"@/components/ui/popover\"\nimport { IconBell } from \"@intentui/icons\"\n\nexport default function PopoverArrowDemo() {\n  return (\n    <Popover>\n      <Button intent=\"outline\" size=\"sq-sm\">\n        <IconBell />\n      </Button>\n      <Popover.Content showArrow={false} className=\"p-4 sm:min-w-72\">\n        You have 3 new notifications.\n      </Popover.Content>\n    </Popover>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

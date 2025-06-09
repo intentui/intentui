@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-context-menu-separator-demo",
+  "type": "registry:block",
+  "title": "Context menu separator demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/context-menu/context-menu-separator-demo.tsx",
+      "content": "\"use client\"\n\nimport { ContextMenu } from \"@/components/ui/context-menu\"\n\nexport default function ContextMenuSeparatorDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenu.Trigger className=\"grid h-28 place-content-center rounded-lg border-2 border-dashed sm:min-w-60\">\n        Right click me\n      </ContextMenu.Trigger>\n      <ContextMenu.Content className=\"sm:min-w-60\">\n        <ContextMenu.Item>Go to Definition</ContextMenu.Item>\n        <ContextMenu.Item>Go to Type Definition</ContextMenu.Item>\n        <ContextMenu.Item>Go to Source Definition</ContextMenu.Item>\n        <ContextMenu.Item>Go to Implementations</ContextMenu.Item>\n        <ContextMenu.Item>\n          Go to References\n          <ContextMenu.Keyboard keys={[\"⌘F12\"]} />\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          Peek\n          <ContextMenu.Keyboard keys={[\"⇧F12\"]} />\n        </ContextMenu.Item>\n        <ContextMenu.Separator />\n        <ContextMenu.Item>\n          Find All References\n          <ContextMenu.Keyboard keys={[\"⌘⇧F\"]} />\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          Find All Implementations\n          <ContextMenu.Keyboard keys={[\"⌘⇧I\"]} />\n        </ContextMenu.Item>\n        <ContextMenu.Item>Show Call Hierarchy</ContextMenu.Item>\n        <ContextMenu.Separator />\n        <ContextMenu.Item>Rename Symbol</ContextMenu.Item>\n        <ContextMenu.Item>Change All Occurrences</ContextMenu.Item>\n        <ContextMenu.Item>Format Document</ContextMenu.Item>\n        <ContextMenu.Item>\n          Refactor...\n          <ContextMenu.Keyboard keys={[\"⌘⇧R\"]} />\n        </ContextMenu.Item>\n      </ContextMenu.Content>\n    </ContextMenu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

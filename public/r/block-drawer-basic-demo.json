@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-drawer-basic-demo",
+  "type": "registry:block",
+  "title": "Drawer basic demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/drawer/drawer-basic-demo.tsx",
+      "content": "\"use client\"\n\nimport { buttonStyles } from \"@/components/ui/button\"\nimport { Drawer } from \"@/components/ui/drawer\"\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function DrawerBasicDemo() {\n  return (\n    <Drawer>\n      <Drawer.Trigger className={buttonStyles({ intent: \"outline\" })}>Login</Drawer.Trigger>\n      <Drawer.Content>\n        <Drawer.Header>\n          <Drawer.Title>Login</Drawer.Title>\n          <Drawer.Description>\n            Please enter your credentials to access your account.\n          </Drawer.Description>\n        </Drawer.Header>\n        <Drawer.Body className=\"space-y-4\">\n          <TextField label=\"Email\" type=\"email\" placeholder=\"john.doe@example.com\" />\n          <TextField label=\"Password\" type=\"password\" placeholder=\"••••••••••••\" isRevealable />\n        </Drawer.Body>\n        <Drawer.Footer>\n          <Drawer.Close className=\"w-full\">Login</Drawer.Close>\n        </Drawer.Footer>\n      </Drawer.Content>\n    </Drawer>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

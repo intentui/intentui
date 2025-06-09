@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-field-intent-demo",
+  "type": "registry:block",
+  "title": "Tag field intent demo",
+  "description": "",
+  "dependencies": [
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/tag-field/tag-field-intent-demo.tsx",
+      "content": "\"use client\"\n\nimport { TagField } from \"@/components/ui/tag-field\"\nimport { useListData } from \"react-stately\"\n\nexport default function TagFieldIntentDemo() {\n  const selectedItems = useListData({\n    initialItems: [\n      {\n        id: 1,\n        name: \"Laravel\",\n      },\n      {\n        id: 2,\n        name: \"Inertia.js\",\n      },\n      {\n        id: 3,\n        name: \"React\",\n      },\n      {\n        id: 4,\n        name: \"Tailwind CSS\",\n      },\n    ],\n  })\n\n  return (\n    <TagField intent=\"secondary\" className=\"max-w-xs\" aria-label=\"Add tag\" list={selectedItems} />\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

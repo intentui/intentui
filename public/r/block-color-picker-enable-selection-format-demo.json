@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-picker-enable-selection-format-demo",
+  "type": "registry:block",
+  "title": "Color picker enable selection format demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-picker/color-picker-enable-selection-format-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ColorArea } from \"@/components/ui/color-area\"\nimport { ColorField } from \"@/components/ui/color-field\"\nimport { ColorPicker } from \"@/components/ui/color-picker\"\nimport { defaultColor } from \"@/components/ui/color-swatch\"\nimport { Select } from \"@/components/ui/select\"\nimport { type ColorSpace, getColorChannels } from \"react-aria-components\"\n\nexport default function ColorPickerEnableSelectionFormatDemo() {\n  const [color, setColor] = useState(defaultColor)\n  const [isHexFormat, setIsHexFormat] = useState(false)\n  const [space, setSpace] = useState<ColorSpace>(\"rgb\")\n  return (\n    <ColorPicker label={color.toString(space)} value={color} onChange={setColor}>\n      <>\n        <ColorArea />\n        <Select\n          aria-label=\"Color Space\"\n          selectedKey={space}\n          defaultSelectedKey={space}\n          onSelectionChange={(s) => {\n            setSpace(s as ColorSpace)\n            setIsHexFormat(s === \"hex\")\n          }}\n        >\n          <Select.Trigger />\n          <Select.List>\n            {[\"rgb\", \"hex\", \"hsl\", \"hsb\"].map((s) => (\n              <Select.Option key={s} id={s} textValue={s}>\n                {s}\n              </Select.Option>\n            ))}\n          </Select.List>\n        </Select>\n        {isHexFormat ? (\n          <ColorField aria-label=\"Hex color\" colorSpace={space} />\n        ) : getColorChannels(space).length > 0 ? (\n          <div className=\"flex gap-2 sm:max-w-56\">\n            {getColorChannels(space).map((channel) => (\n              <ColorField colorSpace={space} channel={channel} key={channel} />\n            ))}\n          </div>\n        ) : null}\n      </>\n    </ColorPicker>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-scatter-chart-basic-demo",
+  "type": "registry:block",
+  "title": "Scatter chart basic demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/scatter/scatter-chart-basic-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { CartesianGrid, Scatter, ScatterChart, XAxis, YAxis, ZAxis } from \"recharts\"\n\nconst data = Array.from({ length: 30 }, (_, index) => ({\n  x: Math.floor(Math.random() * 500 + 50),\n  y: Math.floor(Math.random() * 30000 + 2000),\n  z: Math.floor(Math.random() * 200 + 10),\n  store: `Store ${index + 1}`,\n}))\n\nconst chartConfig = {\n  performance: {\n    label: \"Store Performance\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function StorePerformanceAnalysis() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center\"\n        title=\"Store Performance Analysis\"\n        description=\"Insights into revenue, footfall, and average order value across stores\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"max-h-min min-h-32\">\n          <ScatterChart>\n            <CartesianGrid strokeDasharray=\"3 3\" />\n            <XAxis\n              type=\"number\"\n              dataKey=\"x\"\n              name=\"Footfall\"\n              unit=\"k\"\n              tickLine={false}\n              axisLine={false}\n            />\n            <YAxis\n              type=\"number\"\n              dataKey=\"y\"\n              name=\"Revenue\"\n              unit=\"$\"\n              tickLine={false}\n              axisLine={false}\n            />\n            <ZAxis type=\"number\" dataKey=\"z\" name=\"Avg Order Value\" unit=\"k\" />\n            <ChartTooltip content={<ChartTooltipContent indicator=\"dashed\" />} />\n            <Scatter data={data} fill=\"var(--chart-1)\" />\n          </ScatterChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

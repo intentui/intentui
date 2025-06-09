@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-meter-demo",
+  "type": "registry:block",
+  "title": "Meter demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/meter/meter-demo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport { Meter } from \"@/components/ui/meter\"\n\nexport default function MeterDemo() {\n  const [value, setValue] = useState(1)\n\n  React.useEffect(() => {\n    const interval = setInterval(() => {\n      setValue((prev) => (prev < 100 ? prev + 1 : 100))\n    }, 50)\n\n    return () => clearInterval(interval)\n  }, [])\n  return <Meter label=\"Storage space\" value={value} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

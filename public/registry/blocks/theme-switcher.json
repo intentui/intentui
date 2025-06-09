@@ -1,0 +1,11 @@
+{
+  "name": "theme-switcher",
+  "files": [
+    {
+      "name": "theme-switcher.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { IconDeviceDesktop2, IconMoon, IconSun } from \"@intentui/icons\"\nimport { useTheme } from \"next-themes\"\n\nexport function ThemeSwitcher({\n  isCircle = false,\n  intent = \"outline\",\n  className,\n  ...props\n}: React.ComponentProps<typeof Button>) {\n  const { theme, setTheme } = useTheme()\n\n  const toggleTheme = () => {\n    const nextTheme = theme === \"light\" ? \"dark\" : theme === \"dark\" ? \"system\" : \"light\"\n    setTheme(nextTheme)\n  }\n\n  return (\n    <Button\n      isCircle={isCircle}\n      intent={intent}\n      size=\"sq-sm\"\n      className={composeTailwindRenderProps(className, \"**:data-[slot=icon]:text-fg\")}\n      aria-label=\"Switch theme\"\n      onPress={toggleTheme}\n      {...props}\n    >\n      {theme === \"light\" ? <IconSun /> : theme === \"dark\" ? <IconMoon /> : <IconDeviceDesktop2 />}\n    </Button>\n  )\n}\n"
+    }
+  ],
+  "type": "components:blocks",
+  "componentPath": "src/app/pre-blocks/theme-switcher.tsx"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/astro/theme-switcher.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/astro/theme-switcher.tsx.stub",
+      "content": "'use client'\n\nimport { IconMoon, IconSun } from '@intentui/icons'\nimport { useEffect, useState } from 'react'\nimport { Button } from 'ui'\nimport { twMerge } from 'tailwind-merge';\nexport function ThemeSwitcher() {\nconst [theme, setTheme] = useState('light')\nconst [isMounted, setIsMounted] = useState(false)\n\nuseEffect(() => {\n  const savedTheme = localStorage.getItem('theme') || 'light'\n  setTheme(savedTheme)\n  if (savedTheme === 'dark') {\n    document.documentElement.classList.add('dark')\n  } else {\n    document.documentElement.classList.remove('dark')\n  }\n  setIsMounted(true)\n}, [])\n\nif (!isMounted) return null\n\nconst handleSwitchTheme = () => {\n  const newTheme = theme === 'light' ? 'dark' : 'light'\n  setTheme(newTheme)\n  if (newTheme === 'dark') {\n    document.documentElement.classList.add('dark')\n  } else {\n    document.documentElement.classList.remove('dark')\n  }\n  localStorage.setItem('theme', newTheme)\n}\n\nreturn (\n  <Button\n    intent=\"outline\"\n    size=\"sq-sm\"\n    aria-label='Switch theme'\n    onPress={handleSwitchTheme}\n  >\n    <IconSun\n      className={twMerge(\n        'h-[1.2rem] w-[1.2rem] transition-all',\n        theme === 'dark' ? 'opacity-0 scale-0 -rotate-90' : 'opacity-100 scale-100 rotate-0'\n      )}\n    />\n    <IconMoon\n      className={twMerge(\n        'absolute h-[1.2rem] w-[1.2rem] transition-all',\n        theme === 'dark' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-0 rotate-90'\n      )}\n    />\n  </Button>\n)\n}\n"
+    }
+  ]
+}

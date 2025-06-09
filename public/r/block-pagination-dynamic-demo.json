@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-pagination-dynamic-demo",
+  "type": "registry:block",
+  "title": "Pagination dynamic demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/pagination/pagination-dynamic-demo.tsx",
+      "content": "\"use client\"\n\nimport { Pagination } from \"@/components/ui/pagination\"\n\nconst pages = Array.from({ length: 6 }, (_, i) => ({ value: i + 1 }))\nexport default function PaginationDynamicDemo() {\n  return (\n    <Pagination>\n      <Pagination.List>\n        <Pagination.Item segment=\"first\" href=\"#\" />\n        <Pagination.Item segment=\"previous\" href=\"#\" />\n        <Pagination.Section aria-label=\"Pagination Segment\" className=\"rounded-lg border lg:hidden\">\n          <Pagination.Item segment=\"label\">1</Pagination.Item>\n          <Pagination.Item segment=\"separator\" />\n          <Pagination.Item className=\"text-muted-fg\" segment=\"label\">\n            10\n          </Pagination.Item>\n        </Pagination.Section>\n        <Pagination.Section\n          aria-label=\"Pagination Segment\"\n          className=\"hidden lg:flex\"\n          items={pages}\n        >\n          {(item) => (\n            <Pagination.Item id={item.value.toString()} isCurrent={item.value === 4} href=\"#\">\n              {item.value}\n            </Pagination.Item>\n          )}\n        </Pagination.Section>\n        <Pagination.Item segment=\"next\" href=\"#\" />\n        <Pagination.Item segment=\"last\" href=\"#\" />\n      </Pagination.List>\n    </Pagination>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

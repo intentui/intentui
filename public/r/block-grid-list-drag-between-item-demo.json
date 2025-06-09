@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-grid-list-drag-between-item-demo",
+  "type": "registry:block",
+  "title": "Grid list drag between item demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components",
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/grid-list/grid-list-drag-between-item-demo.tsx",
+      "content": "\"use client\"\n\nimport GridListDragDemo from \"@/components/docs/collections/grid-list/grid-list-drag-demo\"\nimport { GridList } from \"@/components/ui/grid-list\"\nimport { useDragAndDrop } from \"react-aria-components\"\nimport { useListData } from \"react-stately\"\n\nexport default function GridListDragBetweenItemDemo() {\n  const list = useListData({\n    initialItems: [\n      { id: 6, name: \"The Byrds\" },\n      { id: 7, name: \"The Yardbirds\" },\n    ],\n  })\n\n  const { dragAndDropHooks } = useDragAndDrop({\n    async onInsert(e) {\n      const items = await Promise.all(\n        e.items.map(async (item) => {\n          const name = item.kind === \"text\" ? await item.getText(\"text/plain\") : item.name\n          return { id: Math.random(), name }\n        }),\n      )\n\n      if (e.target.dropPosition === \"before\") {\n        list.insertBefore(e.target.key, ...items)\n      } else if (e.target.dropPosition === \"after\") {\n        list.insertAfter(e.target.key, ...items)\n      }\n    },\n  })\n\n  return (\n    <div className=\"grid gap-4 lg:grid-cols-3\">\n      <GridListDragDemo />\n      <GridList aria-label=\"Droppable list\" items={list.items} dragAndDropHooks={dragAndDropHooks}>\n        {(item) => <GridList.Item>{item.name}</GridList.Item>}\n      </GridList>\n      <OtherEmptyList />\n    </div>\n  )\n}\n\nexport function OtherEmptyList() {\n  const list = useListData({\n    initialItems: [{ id: 7, name: \"The Who\" }],\n  })\n\n  const { dragAndDropHooks } = useDragAndDrop({\n    async onInsert(e) {\n      const items = await Promise.all(\n        e.items.map(async (item) => {\n          const name = item.kind === \"text\" ? await item.getText(\"text/plain\") : item.name\n          return { id: Math.random(), name }\n        }),\n      )\n\n      if (e.target.dropPosition === \"before\") {\n        list.insertBefore(e.target.key, ...items)\n      } else if (e.target.dropPosition === \"after\") {\n        list.insertAfter(e.target.key, ...items)\n      }\n    },\n  })\n\n  return (\n    <GridList\n      aria-label=\"Droppable list\"\n      items={list.items}\n      dragAndDropHooks={dragAndDropHooks}\n      renderEmptyState={() => <GridList.EmptyState>No bands selected</GridList.EmptyState>}\n    >\n      {(item) => <GridList.Item>{item.name}</GridList.Item>}\n    </GridList>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

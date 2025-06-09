@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-time-demo",
+  "type": "registry:block",
+  "title": "Date time demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-picker/date-time-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { getLocalTimeZone, now, parseZonedDateTime } from \"@internationalized/date\"\n\nimport { DatePicker } from \"@/components/ui/date-picker\"\n\nexport default function DateTimeDemo() {\n  const today = parseZonedDateTime(now(getLocalTimeZone()).toString())\n  const [value, setValue] = useState(today)\n\n  return (\n    <DatePicker\n      hideTimeZone\n      hourCycle={24}\n      className=\"max-w-xs\"\n      value={value}\n      onChange={(newValue) => setValue(newValue!)}\n      label=\"Event date\"\n    />\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

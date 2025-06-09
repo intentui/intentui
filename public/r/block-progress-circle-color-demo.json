@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-progress-circle-color-demo",
+  "type": "registry:block",
+  "title": "Progress circle color demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/progress-circle/progress-circle-color-demo.tsx",
+      "content": "\"use client\"\n\nimport { ProgressCircle } from \"@/components/ui/progress-circle\"\n\nexport default function ProgressCircleColorDemo() {\n  return (\n    <div className=\"flex gap-2\">\n      <ProgressCircle isIndeterminate className=\"text-red-500\" />\n      <ProgressCircle isIndeterminate className=\"text-blue-500\" />\n      <ProgressCircle isIndeterminate className=\"text-warning\" />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

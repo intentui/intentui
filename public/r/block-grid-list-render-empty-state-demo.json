@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-grid-list-render-empty-state-demo",
+  "type": "registry:block",
+  "title": "Grid list render empty state demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/grid-list/grid-list-render-empty-state-demo.tsx",
+      "content": "\"use client\"\n\nimport { GridList } from \"@/components/ui/grid-list\"\n\nexport default function GridListRenderEmptyStateDemo() {\n  return (\n    <GridList\n      items={items}\n      aria-label=\"Select items\"\n      selectionMode=\"multiple\"\n      className=\"min-w-64\"\n      renderEmptyState={() => <GridList.EmptyState>No bands selected</GridList.EmptyState>}\n    />\n  )\n}\n\nconst items: Iterable<any> | undefined = []\n",
+      "type": "registry:block"
+    }
+  ]
+}

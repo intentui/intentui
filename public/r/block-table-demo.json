@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-table-demo",
+  "type": "registry:block",
+  "title": "Table demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "@internationalized/number"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/table/table-demo.tsx",
+      "content": "\"use client\"\nimport { Menu } from \"@/components/ui/menu\"\nimport { Table } from \"@/components/ui/table\"\nimport { IconDotsVertical } from \"@intentui/icons\"\nimport { NumberFormatter } from \"@internationalized/number\"\n\nexport default function TableDemo() {\n  return (\n    <Table aria-label=\"Products\">\n      <Table.Header>\n        <Table.Column className=\"w-0\">#</Table.Column>\n        <Table.Column isRowHeader>Name</Table.Column>\n        <Table.Column>Category</Table.Column>\n        <Table.Column>Price</Table.Column>\n        <Table.Column>Stock</Table.Column>\n        <Table.Column />\n      </Table.Header>\n      <Table.Body items={products}>\n        {(item) => (\n          <Table.Row href=\"d\" id={item.id}>\n            <Table.Cell>{item.id}</Table.Cell>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell>\n              {new NumberFormatter(\"en-US\", { style: \"currency\", currency: \"USD\" }).format(\n                item.price,\n              )}\n            </Table.Cell>\n            <Table.Cell>{item.stock}</Table.Cell>\n            <Table.Cell>\n              <div className=\"flex justify-end\">\n                <Menu>\n                  <Menu.Trigger className=\"size-6\">\n                    <IconDotsVertical />\n                  </Menu.Trigger>\n                  <Menu.Content aria-label=\"Actions\" placement=\"left top\">\n                    <Menu.Item>View</Menu.Item>\n                    <Menu.Item>Edit</Menu.Item>\n                    <Menu.Separator />\n                    <Menu.Item isDanger>Delete</Menu.Item>\n                  </Menu.Content>\n                </Menu>\n              </div>\n            </Table.Cell>\n          </Table.Row>\n        )}\n      </Table.Body>\n    </Table>\n  )\n}\n\nexport const products = [\n  { id: \"1\", name: \"iPhone 13\", category: \"Electronics\", price: 799, brand: \"Apple\", stock: 150 },\n  {\n    id: \"2\",\n    name: \"Galaxy S21\",\n    category: \"Electronics\",\n    price: 699,\n    brand: \"Samsung\",\n    stock: 200,\n  },\n  { id: \"3\", name: \"MacBook Pro\", category: \"Computers\", price: 1299, brand: \"Apple\", stock: 80 },\n  { id: \"4\", name: \"Dell XPS 13\", category: \"Computers\", price: 999, brand: \"Dell\", stock: 50 },\n  {\n    id: \"5\",\n    name: \"Sony WH-1000XM4\",\n    category: \"Headphones\",\n    price: 349,\n    brand: \"Sony\",\n    stock: 120,\n  },\n  { id: \"6\", name: \"AirPods Pro\", category: \"Headphones\", price: 249, brand: \"Apple\", stock: 180 },\n  {\n    id: \"7\",\n    name: \"Fitbit Charge 5\",\n    category: \"Wearables\",\n    price: 179,\n    brand: \"Fitbit\",\n    stock: 75,\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

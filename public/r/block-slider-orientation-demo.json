@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-slider-orientation-demo",
+  "type": "registry:block",
+  "title": "Slider orientation demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/slider/slider-orientation-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Description } from \"@/components/ui/field\"\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function SliderOrientationDemo() {\n  const [equalizer, setEqualizer] = useState({\n    subBass: 40,\n    bass: 50,\n    lowMid: 60,\n    mid: 70,\n    highMid: 65,\n    presence: 75,\n    brilliance: 80,\n  })\n\n  const handleSliderChange = (name: string, value: number) => {\n    setEqualizer((prev) => ({ ...prev, [name]: value }))\n  }\n\n  return (\n    <Card className=\"p-4\">\n      <div className=\"flex justify-center gap-4 *:w-6\">\n        <Slider\n          output=\"tooltip\"\n          aria-label=\"Sub Bass\"\n          value={equalizer.subBass}\n          onChange={(newValue) => handleSliderChange(\"subBass\", newValue as number)}\n          orientation=\"vertical\"\n        />\n        <Slider\n          output=\"tooltip\"\n          aria-label=\"Bass\"\n          value={equalizer.bass}\n          onChange={(newValue) => handleSliderChange(\"bass\", newValue as number)}\n          orientation=\"vertical\"\n        />\n        <Slider\n          output=\"tooltip\"\n          aria-label=\"Low Mid\"\n          value={equalizer.lowMid}\n          onChange={(newValue) => handleSliderChange(\"lowMid\", newValue as number)}\n          orientation=\"vertical\"\n        />\n        <Slider\n          output=\"tooltip\"\n          aria-label=\"Mid\"\n          value={equalizer.mid}\n          onChange={(newValue) => handleSliderChange(\"mid\", newValue as number)}\n          orientation=\"vertical\"\n        />\n        <Slider\n          output=\"tooltip\"\n          aria-label=\"High Mid\"\n          value={equalizer.highMid}\n          onChange={(newValue) => handleSliderChange(\"highMid\", newValue as number)}\n          orientation=\"vertical\"\n        />\n        <Slider\n          output=\"tooltip\"\n          aria-label=\"Presence\"\n          value={equalizer.presence}\n          onChange={(newValue) => handleSliderChange(\"presence\", newValue as number)}\n          orientation=\"vertical\"\n        />\n        <Slider\n          output=\"tooltip\"\n          aria-label=\"Brilliance\"\n          value={equalizer.brilliance}\n          onChange={(newValue) => handleSliderChange(\"brilliance\", newValue as number)}\n          orientation=\"vertical\"\n        />\n      </div>\n      <Description className=\"mt-6 block text-center\">Equilizer</Description>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-group-uncontrolled-demo",
+  "type": "registry:block",
+  "title": "Checkbox group uncontrolled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-group-uncontrolled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox, CheckboxGroup } from \"@/components/ui/checkbox\"\n\nexport default function CheckboxGroupUncontrolledDemo() {\n  return (\n    <CheckboxGroup defaultValue={[\"sound\", \"wifi\"]} label=\"Options\">\n      <Checkbox value=\"sound\">Sound</Checkbox>\n      <Checkbox value=\"wifi\">Wi-Fi</Checkbox>\n      <Checkbox value=\"sync\">Sync</Checkbox>\n    </CheckboxGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-label-demo",
+  "type": "registry:block",
+  "title": "Bar chart label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, CartesianGrid, LabelList, XAxis } from \"recharts\"\n\nconst surveyData = [\n  { category: \"Customer Support\", satisfaction: 85 },\n  { category: \"Product Quality\", satisfaction: 90 },\n  { category: \"Delivery Speed\", satisfaction: 78 },\n  { category: \"Ease of Use\", satisfaction: 88 },\n  { category: \"Value for Money\", satisfaction: 82 },\n  { category: \"Customer Service\", satisfaction: 85 },\n  { category: \"Product Quality\", satisfaction: 90 },\n  { category: \"Delivery Speed\", satisfaction: 78 },\n  { category: \"Ease of Use\", satisfaction: 88 },\n  { category: \"Value for Money\", satisfaction: 82 },\n  { category: \"Customer Service\", satisfaction: 85 },\n  { category: \"Product Quality\", satisfaction: 90 },\n  { category: \"Delivery Speed\", satisfaction: 78 },\n  { category: \"Ease of Use\", satisfaction: 88 },\n  { category: \"Value for Money\", satisfaction: 82 },\n  { category: \"Customer Service\", satisfaction: 85 },\n  { category: \"Product Quality\", satisfaction: 90 },\n  { category: \"Delivery Speed\", satisfaction: 78 },\n  { category: \"Ease of Use\", satisfaction: 88 },\n  { category: \"Value for Money\", satisfaction: 82 },\n  { category: \"Customer Service\", satisfaction: 85 },\n  { category: \"Product Quality\", satisfaction: 90 },\n  { category: \"Delivery Speed\", satisfaction: 78 },\n  { category: \"Ease of Use\", satisfaction: 88 },\n  { category: \"Value for Money\", satisfaction: 82 },\n]\n\nconst chartConfig = {\n  satisfaction: {\n    label: \"Satisfaction\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartLabelDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Customer Satisfaction Survey\"\n        description=\"Satisfaction scores by category\"\n      />\n      <Card.Content>\n        <Chart className=\"h-[250px] w-full\" config={chartConfig}>\n          <BarChart\n            accessibilityLayer\n            data={surveyData}\n            margin={{\n              top: 20,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis dataKey=\"category\" tickLine={false} tickMargin={10} axisLine={false} />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Bar dataKey=\"satisfaction\" fill=\"var(--color-satisfaction)\" radius={8}>\n              <LabelList position=\"top\" offset={12} className=\"fill-fg\" fontSize={12} />\n            </Bar>\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

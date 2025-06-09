@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-meter-currency-format-demo",
+  "type": "registry:block",
+  "title": "Meter currency format demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/meter/meter-currency-format-demo.tsx",
+      "content": "\"use client\"\n\nimport { Meter } from \"@/components/ui/meter\"\n\nexport default function MeterCurrencyFormatDemo() {\n  return <Meter label=\"Revenue\" formatOptions={{ style: \"currency\", currency: \"USD\" }} value={15} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

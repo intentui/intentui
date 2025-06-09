@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Justd",
+  name: "Intent UI",
   url: "https://1x.intentui.com",
   description:
     "Justd offers customizable, accessible React components with Tailwind CSS, ready for easy copy and paste into your projects.",
@@ -10,7 +10,7 @@ export const siteConfig = {
     personalSite: "https://irsyad.co"
   },
   repo: "https://github.com/intentuilabs/justd",
-  version: "2.x"
+  version: "1.x"
 }
 
 export type SiteConfig = typeof siteConfig

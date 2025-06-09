@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-date-range-picker-custom-validation-demo",
+  "type": "registry:block",
+  "title": "Date range picker custom validation demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-custom-validation-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { DateRangePicker } from \"@/components/ui/date-range-picker\"\nimport { Form } from \"@/components/ui/form\"\nimport { getLocalTimeZone, today } from \"@internationalized/date\"\n\nexport default function DateRangePickerCustomValidationDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()}>\n      <DateRangePicker\n        label=\"Room Booking Dates\"\n        validate={(range) =>\n          range?.end.compare(range.start) > 7 ? \"Maximum booking duration is 1 week.\" : null\n        }\n        defaultValue={{\n          start: today(getLocalTimeZone()),\n          end: today(getLocalTimeZone()).add({ weeks: 2 }),\n        }}\n        className=\"mb-2\"\n      />\n      <Button type=\"submit\">Book Room</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

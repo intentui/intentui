@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-drop-zone",
+  "type": "registry:component",
+  "title": "Drop zone",
+  "description": "",
+  "dependencies": [
+    "react-aria-components",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/drop-zone.tsx",
+      "content": "\"use client\"\nimport type { DropZoneProps } from \"react-aria-components\"\nimport { DropZone as DropPrimitiveZone, composeRenderProps } from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\nimport { focusStyles } from \"@/lib/primitive\"\n\nconst dropZoneStyles = tv({\n  extend: focusStyles,\n  base: \"group flex max-h-[200px] max-w-xl flex-col items-center justify-center gap-2 rounded-md border border-dashed p-6 text-sm has-[slot=description]:text-center\",\n  variants: {\n    isDropTarget: {\n      true: \"border-primary border-solid bg-primary/10 ring-4 ring-ring/20 [&_.text-muted-fg]:text-primary-fg\",\n    },\n  },\n})\n\nconst DropZone = ({ className, ...props }: DropZoneProps) => (\n  <DropPrimitiveZone\n    className={composeRenderProps(className, (className, renderProps) =>\n      dropZoneStyles({ ...renderProps, className }),\n    )}\n    {...props}\n  />\n)\nexport { DropZone }\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-time-field",
+  "type": "registry:component",
+  "title": "Time field",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/time-field.tsx",
+      "content": "\"use client\"\n\nimport {\n  TimeField as TimeFieldPrimitive,\n  type TimeFieldProps as TimeFieldPrimitiveProps,\n  type TimeValue,\n  type ValidationResult,\n} from \"react-aria-components\"\n\nimport { DateInput } from \"@/components/ui/date-field\"\nimport { Description, FieldError, FieldGroup, Label } from \"@/components/ui/field\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\n\ninterface TimeFieldProps<T extends TimeValue> extends TimeFieldPrimitiveProps<T> {\n  label?: string\n  description?: string\n  errorMessage?: string | ((validation: ValidationResult) => string)\n  prefix?: React.ReactNode\n  suffix?: React.ReactNode\n}\n\nconst TimeField = <T extends TimeValue>({\n  prefix,\n  suffix,\n  label,\n  className,\n  description,\n  errorMessage,\n  ...props\n}: TimeFieldProps<T>) => {\n  return (\n    <TimeFieldPrimitive\n      {...props}\n      className={composeTailwindRenderProps(className, \"group/time-field flex flex-col gap-y-1\")}\n    >\n      {label && <Label>{label}</Label>}\n      <FieldGroup>\n        {prefix && typeof prefix === \"string\" ? (\n          <span className=\"ml-2 text-muted-fg\">{prefix}</span>\n        ) : (\n          prefix\n        )}\n        <DateInput className=\"flex w-fit min-w-28 justify-around whitespace-nowrap p-2 sm:text-sm\" />\n        {suffix ? (\n          typeof suffix === \"string\" ? (\n            <span className=\"mr-2 text-muted-fg\">{suffix}</span>\n          ) : (\n            suffix\n          )\n        ) : null}\n      </FieldGroup>\n      {description && <Description>{description}</Description>}\n      <FieldError>{errorMessage}</FieldError>\n    </TimeFieldPrimitive>\n  )\n}\n\nexport type { TimeFieldProps }\nexport { TimeField }\n",
+      "type": "registry:component"
+    }
+  ]
+}

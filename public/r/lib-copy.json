@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-copy",
+  "type": "registry:lib",
+  "title": "Copy",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/copy.ts",
+      "content": "\"use client\"\nimport { type MouseEventHandler, useCallback, useEffect, useRef, useState } from \"react\"\n\nexport function copyToClipboard(text: string): Promise<void> {\n  return navigator.clipboard.writeText(text)\n}\n\nexport function useCopyButton(onCopy: () => void): [checked: boolean, onClick: MouseEventHandler] {\n  const [checked, setChecked] = useState(false)\n  const timeoutRef = useRef<number | null>(null)\n  const callbackRef = useRef(onCopy)\n  callbackRef.current = onCopy\n\n  const onClick: MouseEventHandler = useCallback(() => {\n    if (timeoutRef.current) window.clearTimeout(timeoutRef.current)\n    timeoutRef.current = window.setTimeout(() => {\n      setChecked(false)\n    }, 1500)\n    callbackRef.current()\n    setChecked(true)\n  }, [])\n\n  // Avoid updates after being unmounted\n  useEffect(() => {\n    return () => {\n      if (timeoutRef.current) window.clearTimeout(timeoutRef.current)\n    }\n  }, [])\n\n  return [checked, onClick]\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

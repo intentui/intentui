@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tooltip-intent-demo",
+  "type": "registry:block",
+  "title": "Tooltip intent demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/tooltip/tooltip-intent-demo.tsx",
+      "content": "\"use client\"\n\nimport { buttonStyles } from \"@/components/ui/button\"\nimport { Tooltip } from \"@/components/ui/tooltip\"\nimport { IconCircleInfo } from \"@intentui/icons\"\n\nexport default function TooltipIntentDemo() {\n  return (\n    <Tooltip>\n      <Tooltip.Trigger\n        aria-label=\"Follow My Twitter\"\n        className={buttonStyles({\n          intent: \"outline\",\n          size: \"sq-sm\",\n        })}\n      >\n        <IconCircleInfo />\n      </Tooltip.Trigger>\n      <Tooltip.Content intent=\"inverse\">\n        <div className=\"relative\">\n          <strong className=\"font-semibold\">Attention</strong>\n          <p>This is a warning message.</p>\n        </div>\n      </Tooltip.Content>\n    </Tooltip>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

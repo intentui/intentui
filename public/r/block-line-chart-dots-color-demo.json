@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-line-chart-dots-color-demo",
+  "type": "registry:block",
+  "title": "Line chart dots color demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/line/line-chart-dots-color-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { CartesianGrid, Dot, Line, LineChart } from \"recharts\"\n\nconst chartData = [\n  { department: \"Marketing\", expenses: 275, fill: \"var(--color-marketing)\" },\n  { department: \"Sales\", expenses: 200, fill: \"var(--color-sales)\" },\n  { department: \"IT\", expenses: 187, fill: \"var(--color-it)\" },\n  { department: \"HR\", expenses: 173, fill: \"var(--color-hr)\" },\n  { department: \"Operations\", expenses: 90, fill: \"var(--color-operations)\" },\n]\n\nconst chartConfig = {\n  expenses: {\n    label: \"Expenses\",\n    color: \"var(--chart-2)\",\n  },\n  marketing: {\n    label: \"Marketing\",\n    color: \"var(--chart-1)\",\n  },\n  sales: {\n    label: \"Sales\",\n    color: \"var(--chart-2)\",\n  },\n  it: {\n    label: \"IT\",\n    color: \"var(--chart-3)\",\n  },\n  hr: {\n    label: \"HR\",\n    color: \"var(--chart-4)\",\n  },\n  operations: {\n    label: \"Operations\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function LineChartDotsColorDemo() {\n  return (\n    <Card>\n      <Card.Header title=\"Departmental Expenses Overview\" description=\"Jan - Jun 2024\" />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <LineChart\n            accessibilityLayer\n            data={chartData}\n            margin={{\n              top: 24,\n              left: 24,\n              right: 24,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <ChartTooltip\n              cursor={false}\n              content={<ChartTooltipContent indicator=\"line\" nameKey=\"expenses\" hideLabel />}\n            />\n            <Line\n              dataKey=\"expenses\"\n              type=\"natural\"\n              stroke=\"var(--color-expenses)\"\n              strokeWidth={2}\n              dot={({ payload, ...props }) => {\n                return (\n                  <Dot\n                    key={payload.department}\n                    r={5}\n                    cx={props.cx}\n                    cy={props.cy}\n                    fill={payload.fill}\n                    stroke={payload.fill}\n                  />\n                )\n              }}\n            />\n          </LineChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

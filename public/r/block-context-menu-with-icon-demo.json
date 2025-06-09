@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-context-menu-with-icon-demo",
+  "type": "registry:block",
+  "title": "Context menu with icon demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/context-menu/context-menu-with-icon-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  IconDuplicate,\n  IconFile,\n  IconFolder,\n  IconHighlight,\n  IconTrash,\n  IconTrashPaper,\n} from \"@intentui/icons\"\n\nimport { ContextMenu } from \"@/components/ui/context-menu\"\n\nexport default function ContextMenuWithIconDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenu.Trigger className=\"grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed\">\n        Right click me\n      </ContextMenu.Trigger>\n      <ContextMenu.Content className=\"sm:min-w-52\">\n        <ContextMenu.Item>\n          <IconFolder />\n          <ContextMenu.Label>Open Folder</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          <IconFile />\n          <ContextMenu.Label>Open File</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          <ContextMenu.Label>Open with...</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Separator />\n        <ContextMenu.Item>\n          <IconHighlight />\n          <ContextMenu.Label>Rename</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          <IconDuplicate />\n          <ContextMenu.Label>Duplicate</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          <ContextMenu.Label>Share</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Separator />\n        <ContextMenu.Item>\n          <IconTrash />\n          <ContextMenu.Label>Delete</ContextMenu.Label>\n          <ContextMenu.Keyboard keys=\"⌘←\" />\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          <IconTrashPaper />\n          <ContextMenu.Label>Bin</ContextMenu.Label>\n        </ContextMenu.Item>\n      </ContextMenu.Content>\n    </ContextMenu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

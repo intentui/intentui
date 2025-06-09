@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-with-icon-demo",
+  "type": "registry:block",
+  "title": "Menu with icon demo",
+  "description": "",
+  "dependencies": [
+    "next-themes"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-with-icon-demo.tsx",
+      "content": "\"use client\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { Menu } from \"@/components/ui/menu\"\nimport {\n  IconCommandRegular,\n  IconDashboard,\n  IconDeviceDesktop,\n  IconLogout,\n  IconMoon,\n  IconSettings,\n  IconSun,\n} from \"@intentui/icons\"\nimport { useTheme } from \"next-themes\"\n\nexport default function MenuWithIconDemo() {\n  const { resolvedTheme, setTheme } = useTheme()\n  return (\n    <Menu>\n      <Menu.Trigger aria-label=\"Open Menu\">\n        <Avatar alt=\"kurt cobain\" size=\"lg\" src=\"/images/avatar/cobain.jpg\" />\n      </Menu.Trigger>\n      <Menu.Content placement=\"bottom\" showArrow className=\"sm:min-w-64\">\n        <Menu.Header separator>\n          <span className=\"block\">Kurt Cobain</span>\n          <span className=\"font-normal text-muted-fg\">@cobain</span>\n        </Menu.Header>\n\n        <Menu.Section>\n          <Menu.Item href=\"#dashboard\">\n            <IconDashboard />\n            <Menu.Label>Dashboard</Menu.Label>\n          </Menu.Item>\n          <Menu.Item href=\"#settings\">\n            <IconSettings />\n            <Menu.Label>Settings</Menu.Label>\n          </Menu.Item>\n        </Menu.Section>\n        <Menu.Separator />\n        <Menu.Item>\n          <IconCommandRegular />\n          <Menu.Label>Command Menu</Menu.Label>\n        </Menu.Item>\n        <Menu.Submenu>\n          <Menu.Item>\n            {resolvedTheme === \"light\" ? (\n              <IconSun />\n            ) : resolvedTheme === \"dark\" ? (\n              <IconMoon />\n            ) : (\n              <IconDeviceDesktop />\n            )}\n            <Menu.Label>Switch theme</Menu.Label>\n          </Menu.Item>\n          <Menu.Content>\n            <Menu.Item onAction={() => setTheme(\"system\")}>\n              <IconDeviceDesktop /> System\n            </Menu.Item>\n            <Menu.Item onAction={() => setTheme(\"dark\")}>\n              <IconMoon /> Dark\n            </Menu.Item>\n            <Menu.Item onAction={() => setTheme(\"light\")}>\n              <IconSun /> Light\n            </Menu.Item>\n          </Menu.Content>\n        </Menu.Submenu>\n        <Menu.Separator />\n        <Menu.Item href=\"#contact-s\">\n          <Menu.Label>Contact Support</Menu.Label>\n        </Menu.Item>\n        <Menu.Separator />\n        <Menu.Item href=\"#logout\">\n          <IconLogout />\n          <Menu.Label>Log out</Menu.Label>\n        </Menu.Item>\n      </Menu.Content>\n    </Menu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

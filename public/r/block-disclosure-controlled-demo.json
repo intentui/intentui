@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-controlled-demo",
+  "type": "registry:block",
+  "title": "Disclosure controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure/disclosure-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Disclosure, DisclosurePanel, DisclosureTrigger } from \"@/components/ui/disclosure\"\n\nexport default function DisclosureControlledDemo() {\n  const [expanded, setExpanded] = useState(false)\n\n  return (\n    <div>\n      The disclosure is <strong className=\"text-info\">{expanded ? \"expanded\" : \"collapsed\"}</strong>\n      .\n      <Disclosure isExpanded={expanded} onExpandedChange={setExpanded}>\n        <DisclosureTrigger>What is your return policy?</DisclosureTrigger>\n        <DisclosurePanel>\n          <p>\n            You can return any item within 30 days of purchase, provided it is in its original\n            condition with proof of purchase.\n          </p>\n        </DisclosurePanel>\n      </Disclosure>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

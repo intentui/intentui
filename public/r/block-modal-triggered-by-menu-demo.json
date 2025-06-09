@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-modal-triggered-by-menu-demo",
+  "type": "registry:block",
+  "title": "Modal triggered by menu demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/modal/modal-triggered-by-menu-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Loader } from \"@/components/ui/loader\"\nimport { Menu } from \"@/components/ui/menu\"\nimport { Modal } from \"@/components/ui/modal\"\nimport { wait } from \"@/lib/utils\"\nimport { IconBlock, IconChevronLgDown, IconTrash } from \"@intentui/icons\"\n\nexport default function ModalTriggeredByMenuDemo() {\n  const [state, setState] = useState<string | null>(null)\n  const [loading, setLoading] = useState<boolean>(false)\n  const closeModal = () => setState(null)\n  const executeAction = (action: string) => {\n    setLoading(true)\n    wait(2000).then(() => {\n      setLoading(false)\n      closeModal()\n    })\n  }\n\n  const actionType = (t: string | null) => {\n    switch (t) {\n      case \"delete\":\n        return {\n          title: \"Delete User\",\n          description: \"Are you sure you want to delete this item?\",\n          confirmText: \"Delete\",\n          action: () => executeAction(t),\n        }\n\n      case \"ban\":\n        return {\n          title: \"Ban User\",\n          description: \"Are you sure you want to ban this user?\",\n          confirmText: \"Ban\",\n          action: () => executeAction(t),\n        }\n\n      case \"restore\":\n        return {\n          title: \"Restore User\",\n          description: \"Are you sure you want to restore this user?\",\n          confirmText: \"Restore\",\n          action: () => executeAction(t),\n        }\n      default:\n        return\n    }\n  }\n  return (\n    <>\n      <Menu>\n        <Button intent=\"outline\" className=\"group\">\n          Actions...\n          <IconChevronLgDown className=\"decoration-200 transition-transform group-pressed:rotate-180\" />\n        </Button>\n        <Menu.Content placement=\"bottom\">\n          <Menu.Item onAction={() => setState(\"delete\")}>\n            <IconTrash /> <Menu.Label>Delete</Menu.Label>\n          </Menu.Item>\n          <Menu.Item isDanger onAction={() => setState(\"ban\")}>\n            <IconBlock />\n            <Menu.Label>Ban</Menu.Label>\n          </Menu.Item>\n          <Menu.Item onAction={() => setState(\"restore\")}>\n            <Menu.Label>Restore</Menu.Label>\n          </Menu.Item>\n        </Menu.Content>\n      </Menu>\n\n      <Modal.Content isOpen={state !== null} onOpenChange={closeModal}>\n        <Modal.Header>\n          <Modal.Title>{actionType(state)?.title}</Modal.Title>\n          <Modal.Description>{actionType(state)?.description}</Modal.Description>\n        </Modal.Header>\n        <Modal.Footer>\n          <Modal.Close>Cancel</Modal.Close>\n          <Button\n            intent={state === \"ban\" ? \"danger\" : \"primary\"}\n            className=\"min-w-24\"\n            isDisabled={loading}\n            onPress={actionType(state)?.action}\n          >\n            {loading ? <Loader variant=\"spin\" /> : actionType(state)?.confirmText}\n          </Button>\n        </Modal.Footer>\n      </Modal.Content>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

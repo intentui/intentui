@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-breadcrumbs-separator-demo",
+  "type": "registry:block",
+  "title": "Breadcrumbs separator demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-separator-demo.tsx",
+      "content": "\"use client\"\n\nimport { Breadcrumbs } from \"@/components/ui/breadcrumbs\"\n\nexport default function BreadcrumbsSeparatorDemo() {\n  return (\n    <Breadcrumbs separator=\"slash\">\n      <Breadcrumbs.Item separator=\"slash\" href=\"#\">\n        Home\n      </Breadcrumbs.Item>\n      <Breadcrumbs.Item href=\"#\">Design System</Breadcrumbs.Item>\n      <Breadcrumbs.Item>Collections</Breadcrumbs.Item>\n    </Breadcrumbs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

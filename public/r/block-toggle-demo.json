@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-demo",
+  "type": "registry:block",
+  "title": "Toggle demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle/toggle-demo.tsx",
+      "content": "\"use client\"\n\nimport { Toggle } from \"@/components/ui/toggle\"\n\nexport default function ToggleDemo() {\n  return <Toggle>{({ isSelected }) => <>{isSelected ? \"Unpin\" : \"Pin\"}</>}</Toggle>\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

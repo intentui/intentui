@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-description-list-card-demo",
+  "type": "registry:block",
+  "title": "Description list card demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/description-list/description-list-card-demo.tsx",
+      "content": "\"use client\"\n\nimport { buttonStyles } from \"@/components/ui/button\"\nimport { Card } from \"@/components/ui/card\"\nimport { DescriptionList } from \"@/components/ui/description-list\"\nimport { Link } from \"@/components/ui/link\"\n\nexport default function DescriptionListCardDemo() {\n  return (\n    <Card>\n      <Card.Header>\n        <Card.Title>Product Details</Card.Title>\n        <Card.Description>\n          The product details card is a great way to display information about a product.\n        </Card.Description>\n      </Card.Header>\n      <Card.Content>\n        <DescriptionList>\n          <DescriptionList.Term>Product Name</DescriptionList.Term>\n          <DescriptionList.Details>Wireless Headphones</DescriptionList.Details>\n          <DescriptionList.Term>Battery Life</DescriptionList.Term>\n          <DescriptionList.Details>20 hours</DescriptionList.Details>\n          <DescriptionList.Term>Weight</DescriptionList.Term>\n          <DescriptionList.Details>250 grams</DescriptionList.Details>\n          <DescriptionList.Term>Color</DescriptionList.Term>\n          <DescriptionList.Details>Black</DescriptionList.Details>\n          <DescriptionList.Term>Warranty</DescriptionList.Term>\n          <DescriptionList.Details>2 years</DescriptionList.Details>\n        </DescriptionList>\n      </Card.Content>\n      <Card.Footer>\n        <Link className={buttonStyles()} href=\"#\">\n          Edit\n        </Link>\n      </Card.Footer>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

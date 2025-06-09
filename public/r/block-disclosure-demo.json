@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-demo",
+  "type": "registry:block",
+  "title": "Disclosure demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure/disclosure-demo.tsx",
+      "content": "import { Disclosure, DisclosurePanel, DisclosureTrigger } from \"@/components/ui/disclosure\"\n\nexport default function DisclosureDemo() {\n  return (\n    <Disclosure>\n      <DisclosureTrigger>What are the benefits of regular exercise?</DisclosureTrigger>\n      <DisclosurePanel>\n        <p>\n          Regular exercise can improve your overall health, boost your mood, increase energy levels,\n          and help you maintain a healthy weight.\n        </p>\n      </DisclosurePanel>\n    </Disclosure>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tabs-link-demo",
+  "type": "registry:block",
+  "title": "Tabs link demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/tabs/tabs-link-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tabs } from \"@/components/ui/tabs\"\n\nconst navs = [\n  { url: \"/\", label: \"Home\" },\n  { url: \"/themes\", label: \"Themes\" },\n  { url: \"/colors\", label: \"Colors\" },\n  { url: \"https://intentui.com/icons\", label: \"Icons\" },\n  { url: \"https://irsyad.co/templates\", label: \"Templates\" },\n]\n\nexport default function TabsLinkDemo() {\n  return (\n    <Tabs aria-label=\"Navbar\">\n      <Tabs.List items={navs}>\n        {(item) => (\n          <Tabs.Tab id={item.label} href={item.url}>\n            {item.label}\n          </Tabs.Tab>\n        )}\n      </Tabs.List>\n    </Tabs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-section-level-selection",
+  "type": "registry:block",
+  "title": "Menu section level selection",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-section-level-selection.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Menu } from \"@/components/ui/menu\"\nimport {\n  IconAlignmentCenter,\n  IconAlignmentLeft,\n  IconAlignmentRight,\n  IconBold,\n  IconClipboard,\n  IconCut,\n  IconDuplicate,\n  IconItalic,\n  IconUnderline,\n} from \"@intentui/icons\"\nimport type { Selection } from \"react-aria-components\"\n\nexport default function MenuSectionLevelSelection() {\n  const [style, setStyle] = useState<Selection>(new Set([\"bold\"]))\n  const [align, setAlign] = useState<Selection>(new Set([\"left\"]))\n  return (\n    <Menu>\n      <Menu.Trigger>Open</Menu.Trigger>\n      <Menu.Content placement=\"bottom\" className=\"sm:min-w-52\">\n        <Menu.Section title=\"Actions\">\n          <Menu.Item textValue=\"Cut\">\n            <IconCut />\n            <Menu.Label>Cut</Menu.Label>\n          </Menu.Item>\n          <Menu.Item textValue=\"Copy\">\n            <IconDuplicate />\n            <Menu.Label>Copy</Menu.Label>\n          </Menu.Item>\n          <Menu.Item textValue=\"Paste\">\n            <IconClipboard />\n            <Menu.Label>Paste</Menu.Label>\n          </Menu.Item>\n        </Menu.Section>\n        <Menu.Section\n          selectionMode=\"multiple\"\n          selectedKeys={style}\n          onSelectionChange={setStyle}\n          title=\"Text style\"\n        >\n          <Menu.Item id=\"bold\" textValue=\"Bold\">\n            <IconBold />\n            <Menu.Label>Bold</Menu.Label>\n          </Menu.Item>\n          <Menu.Item id=\"italic\" textValue=\"Italic\">\n            <IconItalic />\n            <Menu.Label>Italic</Menu.Label>\n          </Menu.Item>\n          <Menu.Item id=\"underline\" textValue=\"Underline\">\n            <IconUnderline />\n            <Menu.Label>Underline</Menu.Label>\n          </Menu.Item>\n        </Menu.Section>\n        <Menu.Section\n          selectionMode=\"single\"\n          selectedKeys={align}\n          onSelectionChange={setAlign}\n          title=\"Text alignment\"\n        >\n          <Menu.Item id=\"left\" textValue=\"Left\">\n            <IconAlignmentLeft />\n            <Menu.Label>Left</Menu.Label>\n          </Menu.Item>\n          <Menu.Item id=\"center\" textValue=\"Cente\">\n            <IconAlignmentCenter />\n            <Menu.Label>Center</Menu.Label>\n          </Menu.Item>\n          <Menu.Item id=\"right\" textValue=\"Right\">\n            <IconAlignmentRight />\n            <Menu.Label>Right</Menu.Label>\n          </Menu.Item>\n        </Menu.Section>\n      </Menu.Content>\n    </Menu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

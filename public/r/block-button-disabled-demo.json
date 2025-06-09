@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-button-disabled-demo",
+  "type": "registry:block",
+  "title": "Button disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/button/button-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\n\nexport default function ButtonDisabledDemo() {\n  return <Button isDisabled>Label</Button>\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

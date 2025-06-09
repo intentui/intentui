@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-color-slider",
+  "type": "registry:component",
+  "title": "Color slider",
+  "description": "",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/color-slider.tsx",
+      "content": "\"use client\"\n\nimport {\n  ColorSlider as ColorSliderPrimitive,\n  type ColorSliderProps as ColorSliderPrimitiveProps,\n  SliderOutput,\n  SliderTrack,\n  composeRenderProps,\n} from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\nimport { ColorThumb } from \"@/components/ui/color-thumb\"\nimport { Label } from \"@/components/ui/field\"\n\nconst trackStyles = tv({\n  base: \"group col-span-2 rounded-lg\",\n  variants: {\n    orientation: {\n      horizontal: \"h-6 w-full\",\n      vertical: \"-translate-x-[50%] ml-[50%] h-56 w-6\",\n    },\n    isDisabled: {\n      true: \"bg-muted opacity-75 forced-colors:bg-[GrayText]\",\n    },\n  },\n})\n\ninterface ColorSliderProps extends ColorSliderPrimitiveProps {\n  label?: string\n  showOutput?: boolean\n}\n\nconst colorSliderStyles = tv({\n  base: \"group relative\",\n  variants: {\n    orientation: {\n      horizontal: \"grid min-w-56 grid-cols-[1fr_auto]\",\n      vertical: \"flex flex-col items-center justify-center\",\n    },\n    isDisabled: {\n      true: \"bg-muted opacity-75 forced-colors:bg-[GrayText]\",\n    },\n  },\n})\nconst ColorSlider = ({ showOutput = true, label, className, ...props }: ColorSliderProps) => {\n  return (\n    <ColorSliderPrimitive\n      {...props}\n      data-slot=\"color-slider\"\n      className={composeRenderProps(className, (className, renderProps) =>\n        colorSliderStyles({ ...renderProps, className }),\n      )}\n    >\n      <div className=\"flex items-center\">\n        {label && <Label className=\"text-sm [grid-area:label]\">{label}</Label>}\n        {showOutput && (\n          <SliderOutput className=\"text-sm [grid-area:output] data-[orientation=horizontal]:ml-auto\" />\n        )}\n      </div>\n      <SliderTrack\n        className={trackStyles}\n        style={({ defaultStyle, isDisabled }) => ({\n          ...defaultStyle,\n          background: isDisabled\n            ? undefined\n            : `${defaultStyle.background}, repeating-conic-gradient(#CCC 0% 25%, white 0% 50%) 50% / 16px 16px`,\n        })}\n      >\n        <ColorThumb />\n      </SliderTrack>\n    </ColorSliderPrimitive>\n  )\n}\n\nexport type { ColorSliderProps }\nexport { ColorSlider }\n",
+      "type": "registry:component"
+    }
+  ]
+}

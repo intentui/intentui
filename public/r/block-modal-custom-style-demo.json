@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-modal-custom-style-demo",
+  "type": "registry:block",
+  "title": "Modal custom style demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/modal/modal-custom-style-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Form } from \"@/components/ui/form\"\nimport { Modal } from \"@/components/ui/modal\"\nimport { Note } from \"@/components/ui/note\"\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function ModalCustomStyleDemo() {\n  return (\n    <Modal>\n      <Button intent=\"danger\">Delete Project</Button>\n      <Modal.Content classNames={{ content: \"\" }} role=\"alertdialog\">\n        <Modal.Header\n          className=\"bg-secondary/80\"\n          title=\"Delete Project\"\n          description=\"This project’s gonna get wiped, including all its Deployments, Domains, Env Variables, Serverless Functions, and Settings.\"\n        >\n          <Note intent=\"danger\" className=\"mt-2\">\n            No undo button here, so be sure!\n          </Note>\n        </Modal.Header>\n        <Form onSubmit={() => {}}>\n          <Modal.Body className=\"space-y-4 border-t pt-6\">\n            <TextField\n              isRequired\n              autoFocus\n              label=\"Enter the project name\"\n              type=\"text\"\n              placeholder=\"team/project-name\"\n            />\n            <TextField isRequired label='To verify, type \"delete my project\" below' type=\"text\" />\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close>Cancel</Modal.Close>\n            <Button intent=\"danger\" type=\"submit\">\n              Delete Project\n            </Button>\n          </Modal.Footer>\n        </Form>\n      </Modal.Content>\n    </Modal>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

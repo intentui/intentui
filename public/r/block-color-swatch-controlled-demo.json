@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-swatch-controlled-demo",
+  "type": "registry:block",
+  "title": "Color swatch controlled demo",
+  "description": "",
+  "dependencies": [
+    "@react-stately/color"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-swatch/color-swatch-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ControlledValues } from \"@/components/docs/colors/controlled-values\"\nimport { ColorSwatchPicker } from \"@/components/ui/color-swatch-picker\"\nimport { parseColor } from \"@react-stately/color\"\n\nexport default function ColorSwatchPickerDemo() {\n  const [value, setValue] = useState(parseColor(\"#0d6efd\"))\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <ColorSwatchPicker\n        aria-label=\"Pick color\"\n        value={value}\n        onChange={setValue}\n        className=\"flex justify-center gap-2\"\n      >\n        <ColorSwatchPicker.Item color=\"#f59e0b\" />\n        <ColorSwatchPicker.Item color=\"#84cc16\" />\n        <ColorSwatchPicker.Item color=\"#0d6efd\" />\n        <ColorSwatchPicker.Item color=\"#ec4899\" />\n        <ColorSwatchPicker.Item color=\"#f43f5e\" />\n      </ColorSwatchPicker>\n      <ControlledValues color={value} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

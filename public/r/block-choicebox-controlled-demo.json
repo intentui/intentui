@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-choicebox-controlled-demo",
+  "type": "registry:block",
+  "title": "Choicebox controlled demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/choicebox/choicebox-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Choicebox } from \"@/components/ui/choicebox\"\nimport { Description } from \"@/components/ui/field\"\nimport type { Selection } from \"react-aria-components\"\n\nexport default function ChoiceboxControlledDemo() {\n  const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set([packages[0].id]))\n  return (\n    <>\n      <Choicebox\n        aria-label=\"Select packages\"\n        selectionMode=\"multiple\"\n        selectedKeys={selectedKeys}\n        onSelectionChange={setSelectedKeys}\n        items={packages}\n      >\n        {(item) => <Choicebox.Item {...item} />}\n      </Choicebox>\n\n      <Description className=\"mt-2 block text-muted-fg [&>strong]:text-fg\">\n        You have selected: <strong>{Array.from(selectedKeys).join(\", \")}</strong>\n      </Description>\n    </>\n  )\n}\n\nconst packages = [\n  {\n    id: \"sm\",\n    label: \"Small\",\n    description: \"Perfect for beginners. Basic resources for light projects.\",\n  },\n  {\n    id: \"md\",\n    label: \"Medium\",\n    description: \"Great for growing sites. More power and storage.\",\n  },\n  {\n    id: \"lg\",\n    label: \"Large\",\n    description: \"Ideal for busy sites. Lots of resources and support.\",\n  },\n  {\n    id: \"xl\",\n    label: \"Extra Large\",\n    description: \"Max power for demanding applications. Top-tier performance.\",\n  },\n] as const\n",
+      "type": "registry:block"
+    }
+  ]
+}

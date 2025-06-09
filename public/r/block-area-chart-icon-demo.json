@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-area-chart-icon-demo",
+  "type": "registry:block",
+  "title": "Area chart icon demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/area/area-chart-icon-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport {\n  Chart,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/components/ui/chart\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { IconShoppingBag, IconStore } from \"@intentui/icons\"\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst revenueData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index)\n  const month = date.toLocaleDateString(\"en-US\", { month: \"long\" })\n  return {\n    month,\n    ecommerce: Math.floor(Math.random() * 5000 + 10000),\n    retail: Math.floor(Math.random() * 3000 + 7000),\n  }\n})\n\nconst revenueConfig = {\n  ecommerce: {\n    label: \"E-Commerce\",\n    color: \"var(--chart-1)\",\n    icon: IconShoppingBag,\n  },\n  retail: {\n    label: \"Retail\",\n    color: \"var(--chart-2)\",\n    icon: IconStore,\n  },\n} satisfies ChartConfig\n\nexport default function AreaChartIconDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Revenue Overview\"\n        description=\"Monthly revenue comparison between E-Commerce and Retail over the last 24 months\"\n      />\n      <Card.Content>\n        <Chart config={revenueConfig}>\n          <AreaChart\n            accessibilityLayer\n            data={revenueData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              axisLine={false}\n              tickMargin={8}\n              tickFormatter={(value) => value.slice(0, 3)}\n            />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator=\"line\" />} />\n            <Area\n              dataKey=\"retail\"\n              type=\"natural\"\n              fill=\"var(--color-retail)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-retail)\"\n              stackId=\"a\"\n            />\n            <Area\n              dataKey=\"ecommerce\"\n              type=\"natural\"\n              fill=\"var(--color-ecommerce)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-ecommerce)\"\n              stackId=\"a\"\n            />\n            <ChartLegend content={<ChartLegendContent />} />\n          </AreaChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

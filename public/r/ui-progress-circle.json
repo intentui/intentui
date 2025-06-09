@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-progress-circle",
+  "type": "registry:component",
+  "title": "Progress circle",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/progress-circle.tsx",
+      "content": "\"use client\"\n\nimport { ProgressBar, type ProgressBarProps } from \"react-aria-components\"\nimport { twMerge } from \"tailwind-merge\"\n\ninterface ProgressCircleProps extends Omit<ProgressBarProps, \"className\"> {\n  className?: string\n  ref?: React.RefObject<HTMLDivElement>\n}\n\nconst ProgressCircle = ({ className, ref, ...props }: ProgressCircleProps) => {\n  const c = \"50%\"\n  const r = \"calc(50% - 2px)\"\n  return (\n    <ProgressBar {...props} ref={ref}>\n      {({ percentage, isIndeterminate }) => (\n        <svg\n          className={twMerge(\"size-4 shrink-0\", className)}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          data-slot=\"icon\"\n        >\n          <circle cx={c} cy={c} r={r} strokeWidth={3} stroke=\"currentColor\" strokeOpacity={0.25} />\n          {!isIndeterminate ? (\n            <circle\n              cx={c}\n              cy={c}\n              r={r}\n              strokeWidth={3}\n              stroke=\"currentColor\"\n              pathLength={100}\n              strokeDasharray=\"100 200\"\n              strokeDashoffset={100 - (percentage ?? 0)}\n              strokeLinecap=\"round\"\n              transform=\"rotate(-90)\"\n              className=\"origin-center\"\n            />\n          ) : (\n            <circle\n              cx={c}\n              cy={c}\n              r={r}\n              strokeWidth={3}\n              stroke=\"currentColor\"\n              pathLength={100}\n              strokeDasharray=\"100 200\"\n              strokeDashoffset={100 - 30}\n              strokeLinecap=\"round\"\n              className=\"origin-center animate-[spin_1s_cubic-bezier(0.4,_0,_0.2,_1)_infinite]\"\n            />\n          )}\n        </svg>\n      )}\n    </ProgressBar>\n  )\n}\n\nexport type { ProgressCircleProps }\nexport { ProgressCircle }\n",
+      "type": "registry:component"
+    }
+  ]
+}

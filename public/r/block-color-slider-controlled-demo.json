@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-slider-controlled-demo",
+  "type": "registry:block",
+  "title": "Color slider controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-slider/color-slider-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ControlledValues } from \"@/components/docs/colors/controlled-values\"\nimport { ColorSlider } from \"@/components/ui/color-slider\"\nimport { defaultColor } from \"@/components/ui/color-swatch\"\n\nexport default function ColorSliderControlledDemo() {\n  const [value, setValue] = useState(defaultColor)\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <ColorSlider channel=\"hue\" value={value} onChange={setValue} />\n      <ControlledValues color={value} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

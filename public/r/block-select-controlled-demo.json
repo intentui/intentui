@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-select-controlled-demo",
+  "type": "registry:block",
+  "title": "Select controlled demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/select/select-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { Select } from \"@/components/ui/select\"\nimport type { Key } from \"react-aria-components\"\n\nexport const movies = [\n  { id: 1, title: \"Inception\" },\n  { id: 2, title: \"The Dark Knight\" },\n  { id: 3, title: \"Interstellar\" },\n  { id: 4, title: \"The Matrix\" },\n  { id: 5, title: \"Pulp Fiction\" },\n]\n\nexport default function SelectControlledDemo() {\n  const [movie, setMovie] = useState<Key | null>(\"\")\n  return (\n    <>\n      <Select\n        selectedKey={movie}\n        onSelectionChange={setMovie}\n        label=\"Movies\"\n        placeholder=\"Select a movie\"\n      >\n        <Select.Trigger />\n        <Select.List items={movies}>\n          {(item) => (\n            <Select.Option id={item.id} textValue={item.title}>\n              {item.title}\n            </Select.Option>\n          )}\n        </Select.List>\n      </Select>\n      <Description className=\"mt-2 block text-muted-fg [&>strong]:text-fg\">\n        You have selected: <strong>{movie}</strong>\n      </Description>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

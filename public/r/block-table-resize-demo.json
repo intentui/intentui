@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-table-resize-demo",
+  "type": "registry:block",
+  "title": "Table resize demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/table/table-resize-demo.tsx",
+      "content": "\"use client\"\nimport { Table } from \"@/components/ui/table\"\n\nexport default function TableResizeDemo() {\n  return (\n    <Table allowResize aria-label=\"Vocalists\">\n      <Table.Header>\n        <Table.Column className=\"max-w-10\">ID</Table.Column>\n        <Table.Column isRowHeader isResizable>\n          Name\n        </Table.Column>\n        <Table.Column isResizable>Email</Table.Column>\n        <Table.Column>Age</Table.Column>\n        <Table.Column>Role</Table.Column>\n        <Table.Column isResizable>Band</Table.Column>\n        <Table.Column>Status</Table.Column>\n      </Table.Header>\n      <Table.Body items={items}>\n        {(item) => (\n          <Table.Row id={item.id}>\n            <Table.Cell>{item.id}</Table.Cell>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.email}</Table.Cell>\n            <Table.Cell>{item.age}</Table.Cell>\n            <Table.Cell>{item.role}</Table.Cell>\n            <Table.Cell>{item.band}</Table.Cell>\n            <Table.Cell>{item.status}</Table.Cell>\n          </Table.Row>\n        )}\n      </Table.Body>\n    </Table>\n  )\n}\n\nconst items = [\n  {\n    id: 1,\n    name: \"Randy Blythe\",\n    email: \"randy.blythe@example.com\",\n    age: 52,\n    role: \"Vocalist\",\n    band: \"Lamb of God\",\n    status: \"Active\",\n  },\n  {\n    id: 2,\n    name: \"Phil Anselmo\",\n    email: \"phil.anselmo@example.com\",\n    age: 55,\n    role: \"Vocalist\",\n    band: \"Pantera\",\n    status: \"Active\",\n  },\n  {\n    id: 3,\n    name: \"George Fisher\",\n    email: \"george.fisher@example.com\",\n    age: 53,\n    role: \"Vocalist\",\n    band: \"Cannibal Corpse\",\n    status: \"Active\",\n  },\n  {\n    id: 4,\n    name: \"Corey Taylor\",\n    email: \"corey.taylor@example.com\",\n    age: 50,\n    role: \"Vocalist\",\n    band: \"Slipknot\",\n    status: \"Active\",\n  },\n  {\n    id: 5,\n    name: \"Trevor Strnad\",\n    email: \"trevor.strnad@example.com\",\n    age: 41,\n    role: \"Vocalist\",\n    band: \"The Black Dahlia Murder\",\n    status: \"Inactive\",\n  },\n  {\n    id: 6,\n    name: \"Chuck Schuldiner\",\n    email: \"chuck.schuldiner@example.com\",\n    age: 34,\n    role: \"Vocalist\",\n    band: \"Death\",\n    status: \"Deceased\",\n  },\n  {\n    id: 7,\n    name: \"Mitch Lucker\",\n    email: \"mitch.lucker@example.com\",\n    age: 28,\n    role: \"Vocalist\",\n    band: \"Suicide Silence\",\n    status: \"Deceased\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

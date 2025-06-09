@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-link-button-demo",
+  "type": "registry:block",
+  "title": "Link button demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/link/link-button-demo.tsx",
+      "content": "\"use client\"\n\nimport { buttonStyles } from \"@/components/ui/button\"\nimport { Link } from \"@/components/ui/link\"\n\nexport default function LinkButtonDemo() {\n  return (\n    <div className=\"flex gap-2\">\n      <Link className={(renderProps) => buttonStyles({ ...renderProps })} href=\"#use-as-button\">\n        Link\n      </Link>\n      <Link\n        className={(renderProps) => buttonStyles({ ...renderProps, intent: \"outline\" })}\n        href=\"#use-as-button\"\n      >\n        Link\n      </Link>\n      <Link\n        className={(renderProps) =>\n          buttonStyles({ ...renderProps, intent: \"plain\", isCircle: true })\n        }\n        href=\"#use-as-button\"\n      >\n        Link\n      </Link>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

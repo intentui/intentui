@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-select-disabled-demo",
+  "type": "registry:block",
+  "title": "Select disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/select/select-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Select } from \"@/components/ui/select\"\n\nconst software = [\n  { id: 1, name: \"Adobe Photoshop\" },\n  //...\n]\n\nexport default function SelectDisabledDemo() {\n  return (\n    <Select label=\"Design software\" isDisabled placeholder=\"Select a software\">\n      <Select.Trigger />\n      <Select.List items={software}>\n        {(item) => (\n          <Select.Option id={item.id} textValue={item.name}>\n            {item.name}\n          </Select.Option>\n        )}\n      </Select.List>\n    </Select>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

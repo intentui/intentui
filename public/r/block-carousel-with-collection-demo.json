@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-carousel-with-collection-demo",
+  "type": "registry:block",
+  "title": "Carousel with collection demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://localhost:3000/r/ui-card.json",
+    "http://localhost:3000/r/ui-carousel.json"
+  ],
+  "files": [
+    {
+      "path": "components/docs/media/carousel/carousel-with-collection-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Carousel } from \"@/components/ui/carousel\"\nimport Image from \"next/image\"\n\nexport default function CarouselWithCollectionDemo() {\n  return (\n    <Carousel className=\"w-full max-w-xs **:data-[slot=card]:flex **:data-[slot=card]:flex-col **:data-[slot=card]:overflow-hidden\">\n      <Carousel.Content items={items}>\n        {(item) => (\n          <Carousel.Item id={item.id}>\n            <Card className=\"p-1\">\n              <Image\n                className=\"h-40 rounded-md object-cover object-center\"\n                src={`/slides/slide-${item.id}.jpg`}\n                alt=\"image 5\"\n                width={400}\n                height={300}\n              />\n              <Card.Header className=\"p-3\">\n                <Card.Title className=\"line-clamp-1 sm:text-lg\">{item.title}</Card.Title>\n                <Card.Description className=\"line-clamp-2\">{item.description}</Card.Description>\n              </Card.Header>\n            </Card>\n          </Carousel.Item>\n        )}\n      </Carousel.Content>\n\n      <Carousel.Handler>\n        <Carousel.Button segment=\"previous\" />\n        <Carousel.Button segment=\"next\" />\n      </Carousel.Handler>\n    </Carousel>\n  )\n}\n\nconst items = [\n  {\n    id: 1,\n    title: \"Vintage Leather Jacket\",\n    description: \"Classic brown leather jacket, perfect for a stylish retro look.\",\n  },\n  {\n    id: 2,\n    title: \"Wireless Bluetooth Headphones\",\n    description:\n      \"Experience high-quality sound with these comfortable, noise-canceling headphones.\",\n  },\n  {\n    id: 3,\n    title: \"Organic Cotton T-Shirt\",\n    description: \"Soft and eco-friendly t-shirt made from 100% organic cotton.\",\n  },\n  {\n    id: 4,\n    title: \"Stainless Steel Water Bottle\",\n    description: \"Keep your drinks cold or hot with this durable, insulated water bottle.\",\n  },\n  {\n    id: 5,\n    title: \"Running Shoes\",\n    description: \"Lightweight and comfortable shoes designed for optimal performance.\",\n  },\n  {\n    id: 6,\n    title: \"Smartwatch\",\n    description: \"Stay connected and track your fitness with this sleek smartwatch.\",\n  },\n  {\n    id: 7,\n    title: \"Portable Charger\",\n    description: \"Never run out of battery with this high-capacity portable charger.\",\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

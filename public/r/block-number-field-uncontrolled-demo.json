@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-number-field-uncontrolled-demo",
+  "type": "registry:block",
+  "title": "Number field uncontrolled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/number-field/number-field-uncontrolled-demo.tsx",
+      "content": "\"use client\"\n\nimport { NumberField } from \"@/components/ui/number-field\"\n\nexport default function NumberFieldUncontrolledDemo() {\n  return <NumberField label=\"Width\" defaultValue={1997} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

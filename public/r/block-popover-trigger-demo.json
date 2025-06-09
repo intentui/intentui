@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-popover-trigger-demo",
+  "type": "registry:block",
+  "title": "Popover trigger demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/popover/popover-trigger-demo.tsx",
+      "content": "\"use client\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { Button } from \"@/components/ui/button\"\nimport { Popover } from \"@/components/ui/popover\"\n\nexport default function PopoverTriggerDemo() {\n  return (\n    <Popover>\n      <Popover.Trigger aria-label=\"Open Popover\">\n        <Avatar alt=\"cobain\" src=\"/images/avatar/cobain.jpg\" />\n      </Popover.Trigger>\n      <Popover.Content className=\"min-w-72\">\n        <Popover.Header>\n          <Popover.Title>Email</Popover.Title>\n          <Popover.Description>We'll send you an email to log in.</Popover.Description>\n        </Popover.Header>\n        <Popover.Footer>\n          <Button>Send Login Link</Button>\n        </Popover.Footer>\n      </Popover.Content>\n    </Popover>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

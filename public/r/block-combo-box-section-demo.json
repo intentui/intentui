@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-combo-box-section-demo",
+  "type": "registry:block",
+  "title": "Combo box section demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/combo-box/combo-box-section-demo.tsx",
+      "content": "\"use client\"\n\nimport { ComboBox } from \"@/components/ui/combo-box\"\n\nexport default function ComboBoxSectionDemo() {\n  return (\n    <ComboBox placeholder=\"Select a author\" label=\"Authors\">\n      <ComboBox.Input />\n      <ComboBox.List defaultSelectedKeys={[1]} items={movies}>\n        {(movie) => (\n          <ComboBox.Section title={movie.title} items={movie.genres}>\n            {(genre) => <ComboBox.Option textValue={genre.name}>{genre.name}</ComboBox.Option>}\n          </ComboBox.Section>\n        )}\n      </ComboBox.List>\n    </ComboBox>\n  )\n}\n\nconst movies = [\n  {\n    id: 1,\n    title: \"Inception\",\n    genres: [\n      {\n        id: 101,\n        name: \"Sci-Fi\",\n      },\n      {\n        id: 102,\n        name: \"Thriller\",\n      },\n    ],\n  },\n  {\n    id: 2,\n    title: \"Titanic\",\n    genres: [\n      {\n        id: 201,\n        name: \"Romance\",\n      },\n      {\n        id: 202,\n        name: \"Drama\",\n      },\n    ],\n  },\n  {\n    id: 3,\n    title: \"The Matrix\",\n    genres: [\n      {\n        id: 301,\n        name: \"Action\",\n      },\n      {\n        id: 302,\n        name: \"Sci-Fi\",\n      },\n    ],\n  },\n  {\n    id: 4,\n    title: \"Gladiator\",\n    genres: [\n      {\n        id: 401,\n        name: \"Action\",\n      },\n      {\n        id: 402,\n        name: \"Drama\",\n      },\n    ],\n  },\n  {\n    id: 5,\n    title: \"Casablanca\",\n    genres: [\n      {\n        id: 501,\n        name: \"Romance\",\n      },\n      {\n        id: 502,\n        name: \"Drama\",\n      },\n    ],\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

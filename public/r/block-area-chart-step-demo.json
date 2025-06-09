@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-area-chart-step-demo",
+  "type": "registry:block",
+  "title": "Area chart step demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/area/area-chart-step-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { IconGraph } from \"@intentui/icons\"\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst enrollmentData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index)\n  const month = date.toLocaleDateString(\"en-US\", { month: \"long\" })\n  return {\n    month,\n    newEnrollments: Math.floor(Math.random() * 20 + 40),\n  }\n})\n\nconst enrollmentConfig = {\n  newEnrollments: {\n    label: \"New Enrollments\",\n    color: \"var(--chart-1)\",\n    icon: IconGraph,\n  },\n} satisfies ChartConfig\n\nexport default function AreaChartStepDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0\"\n        title=\"Enrollment Growth\"\n        description=\"Monthly student enrollments over the last 24 months\"\n      />\n      <Card.Content>\n        <Chart config={enrollmentConfig}>\n          <AreaChart\n            accessibilityLayer\n            data={enrollmentData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              axisLine={false}\n              tickMargin={8}\n              tickFormatter={(value) => value.slice(0, 3)}\n            />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Area\n              dataKey=\"newEnrollments\"\n              type=\"step\"\n              fill=\"var(--color-newEnrollments)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-newEnrollments)\"\n            />\n          </AreaChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

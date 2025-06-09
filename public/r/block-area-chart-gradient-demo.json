@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-area-chart-gradient-demo",
+  "type": "registry:block",
+  "title": "Area chart gradient demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/area/area-chart-gradient-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst salesData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index)\n  const month = date.toLocaleDateString(\"en-US\", { month: \"long\" })\n  return {\n    month,\n    online: Math.floor(Math.random() * 2000 + 3000),\n    inStore: Math.floor(Math.random() * 1000 + 1500),\n  }\n})\n\nconst chartConfig = {\n  online: {\n    label: \"Online Sales\",\n    color: \"var(--chart-1)\",\n  },\n  inStore: {\n    label: \"In-Store Sales\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function AreaChartGradientDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Sales Channel Analysis\"\n        description=\"Monthly comparison of online and in-store sales over the last 24 months\"\n        className=\"items-center pb-4\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"max-h-[300px] w-full\">\n          <AreaChart\n            accessibilityLayer\n            data={salesData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              axisLine={false}\n              tickMargin={8}\n              tickFormatter={(value) => value.slice(0, 3)}\n            />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />\n            <defs>\n              <linearGradient id=\"fillOnline\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n                <stop offset=\"5%\" stopColor=\"var(--color-online)\" stopOpacity={0.8} />\n                <stop offset=\"95%\" stopColor=\"var(--color-online)\" stopOpacity={0.1} />\n              </linearGradient>\n              <linearGradient id=\"fillInStore\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n                <stop offset=\"5%\" stopColor=\"var(--color-inStore)\" stopOpacity={0.8} />\n                <stop offset=\"95%\" stopColor=\"var(--color-inStore)\" stopOpacity={0.1} />\n              </linearGradient>\n            </defs>\n            <Area\n              dataKey=\"inStore\"\n              type=\"natural\"\n              fill=\"url(#fillInStore)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-inStore)\"\n              stackId=\"a\"\n            />\n            <Area\n              dataKey=\"online\"\n              type=\"natural\"\n              fill=\"url(#fillOnline)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-online)\"\n              stackId=\"a\"\n            />\n          </AreaChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/remix/theme-provider.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/remix/theme-provider.tsx.stub",
+      "content": "export { type Theme, useTheme, PreventFlashOnWrongTheme } from 'remix-themes'\n"
+    }
+  ]
+}

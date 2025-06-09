@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-tree",
+  "type": "registry:component",
+  "title": "Tree",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "react-aria-components",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/tree.tsx",
+      "content": "\"use client\"\n\nimport { IconChevronRight } from \"@intentui/icons\"\nimport type { TreeItemProps, TreeProps } from \"react-aria-components\"\nimport {\n  Button,\n  TreeItemContent as TreeContentPrimitive,\n  TreeItem as TreeItemPrimitive,\n  Tree as TreePrimitive,\n  composeRenderProps,\n} from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\nimport { Checkbox } from \"@/components/ui/checkbox\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { twJoin, twMerge } from \"tailwind-merge\"\n\nconst Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {\n  return (\n    <TreePrimitive\n      className={composeTailwindRenderProps(\n        className,\n        twJoin(\n          \"flex max-h-96 min-w-72 cursor-default flex-col overflow-auto rounded-lg border py-2 outline-hidden forced-color-adjust-none [scrollbar-width:thin] sm:text-sm [&::-webkit-scrollbar]:size-0.5\",\n          \"focus-visible:outline-2 focus-visible:outline-ring/70 focus-visible:outline-offset-[-1px]\",\n        ),\n      )}\n      {...props}\n    />\n  )\n}\n\nconst treeItemStyles = tv({\n  base: [\n    \"p-[0.286rem_0.286rem_0.286rem_0.571rem] pl-[calc((var(--tree-item-level)-1)*20px+0.571rem+var(--padding))] outline-hidden [--padding:20px] [&_[data-expanded]_[slot=chevron]_[data-slot=icon]]:rotate-90\",\n    \"[&_[slot=chevron]]:outline-hidden [&_[slot=chevron]_[data-slot=icon]]:text-muted-fg\",\n    \"data-has-child-rows:[--padding:0px]\",\n  ],\n  variants: {\n    isExpanded: {\n      true: \"[&_[slot=chevron]_[data-slot=icon]]:rotate-90 [&_[slot=chevron]_[data-slot=icon]]:text-fg [&_[slot=chevron]_[data-slot=icon]]:transition [&_[slot=chevron]_[data-slot=icon]]:duration-200\",\n    },\n    isFocusVisible: {\n      true: \"focus:outline-hidden focus-visible:ring-1 focus-visible:ring-primary [&_[slot=chevron]_[data-slot=icon]]:text-fg\",\n    },\n    isDisabled: {\n      true: \"opacity-50 forced-colors:text-[GrayText]\",\n    },\n  },\n})\n\nconst TreeItem = <T extends object>({ className, ...props }: TreeItemProps<T>) => {\n  return (\n    <TreeItemPrimitive\n      className={composeRenderProps(className, (className, renderProps) =>\n        treeItemStyles({\n          ...renderProps,\n          className,\n        }),\n      )}\n      {...props}\n    >\n      {props.children}\n    </TreeItemPrimitive>\n  )\n}\n\ninterface TreeContentProps extends React.ComponentProps<typeof TreeContentPrimitive> {\n  className?: string\n}\n\nconst TreeContent = ({ className, ...props }: TreeContentProps) => {\n  return (\n    <TreeContentPrimitive {...props}>\n      <div className={twMerge(\"flex items-center\", className)}>\n        {props.children as React.ReactNode}\n      </div>\n    </TreeContentPrimitive>\n  )\n}\n\nconst TreeIndicator = () => {\n  return (\n    <Button className=\"relative shrink-0\" slot=\"chevron\">\n      <IconChevronRight className=\"size-5\" />\n    </Button>\n  )\n}\n\nconst TreeCheckbox = () => {\n  return <Checkbox slot=\"selection\" />\n}\n\nconst TreeLabel = (props: React.ComponentProps<\"span\">) => {\n  return <span {...props} />\n}\n\nexport type { TreeProps, TreeItemProps }\nexport { Tree, TreeItem, TreeLabel, TreeIndicator, TreeCheckbox, TreeContent }\n",
+      "type": "registry:component"
+    }
+  ]
+}

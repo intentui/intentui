@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-breadcrumbs",
+  "type": "registry:component",
+  "title": "Breadcrumbs",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/breadcrumbs.tsx",
+      "content": "\"use client\"\nimport { Link } from \"@/components/ui/link\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { IconChevronLgRight } from \"@intentui/icons\"\nimport { createContext, use } from \"react\"\nimport type { BreadcrumbProps, BreadcrumbsProps, LinkProps } from \"react-aria-components\"\nimport { Breadcrumb, Breadcrumbs as BreadcrumbsPrimitive } from \"react-aria-components\"\nimport { twMerge } from \"tailwind-merge\"\n\ntype BreadcrumbsContextProps = { separator?: \"chevron\" | \"slash\" | boolean }\nconst BreadcrumbsProvider = createContext<BreadcrumbsContextProps>({\n  separator: \"chevron\",\n})\n\nconst Breadcrumbs = <T extends object>({\n  className,\n  ...props\n}: BreadcrumbsProps<T> & BreadcrumbsContextProps) => {\n  return (\n    <BreadcrumbsProvider value={{ separator: props.separator }}>\n      <BreadcrumbsPrimitive {...props} className={twMerge(\"flex items-center gap-2\", className)} />\n    </BreadcrumbsProvider>\n  )\n}\n\ninterface BreadcrumbsItemProps extends BreadcrumbProps, BreadcrumbsContextProps {\n  href?: string\n}\n\nconst BreadcrumbsItem = ({\n  href,\n  separator = true,\n  className,\n  ...props\n}: BreadcrumbsItemProps & Partial<Omit<LinkProps, \"className\">>) => {\n  const { separator: contextSeparator } = use(BreadcrumbsProvider)\n  separator = contextSeparator ?? separator\n  const separatorValue = separator === true ? \"chevron\" : separator\n\n  return (\n    <Breadcrumb\n      {...props}\n      className={composeTailwindRenderProps(className, \"flex items-center gap-2 text-sm\")}\n    >\n      {({ isCurrent }) => (\n        <>\n          <Link href={href} {...props} />\n          {!isCurrent && separator !== false && <Separator separator={separatorValue} />}\n        </>\n      )}\n    </Breadcrumb>\n  )\n}\n\nconst Separator = ({\n  separator = \"chevron\",\n}: { separator?: BreadcrumbsItemProps[\"separator\"] }) => {\n  return (\n    <span className=\"*:shrink-0 *:text-muted-fg *:data-[slot=icon]:size-3.5\">\n      {separator === \"chevron\" && <IconChevronLgRight />}\n      {separator === \"slash\" && <span className=\"text-muted-fg\">/</span>}\n    </span>\n  )\n}\n\nBreadcrumbs.Item = BreadcrumbsItem\n\nexport type { BreadcrumbsProps, BreadcrumbsItemProps }\nexport { Breadcrumbs, BreadcrumbsItem }\n",
+      "type": "registry:component"
+    }
+  ]
+}

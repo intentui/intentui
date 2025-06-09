@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-text-field-description-demo",
+  "type": "registry:block",
+  "title": "Text field description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/text-field/text-field-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function TextFieldDescriptionDemo() {\n  return <TextField label=\"Name\" description=\"Please enter your legal name.\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

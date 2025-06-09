@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-line-chart-multiple-demo",
+  "type": "registry:block",
+  "title": "Line chart multiple demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/line/line-chart-multiple-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { CartesianGrid, Line, LineChart, XAxis } from \"recharts\"\n\nconst chartData = Array.from({ length: 24 }, (_, index) => {\n  const date = new Date(new Date().getFullYear() - 1, index)\n  const month = date.toLocaleDateString(\"en-US\", { month: \"short\" })\n  return {\n    month,\n    revenue: Math.floor(Math.random() * 300 + 200),\n    expenses: Math.floor(Math.random() * 150 + 50),\n  }\n})\n\nconst chartConfig = {\n  revenue: {\n    label: \"Revenue\",\n    color: \"var(--chart-1)\",\n  },\n  expenses: {\n    label: \"Expenses\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function LineChartMultipleDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Revenue and Expenses Trend\"\n        description=\"Monthly trends for revenue and expenses over the last 24 months\"\n        className=\"items-center pb-0\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <LineChart\n            accessibilityLayer\n            data={chartData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis dataKey=\"month\" tickLine={false} axisLine={false} tickMargin={8} />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />\n            <Line\n              dataKey=\"revenue\"\n              type=\"monotone\"\n              stroke=\"var(--color-revenue)\"\n              strokeWidth={2}\n              dot={false}\n            />\n            <Line\n              dataKey=\"expenses\"\n              type=\"monotone\"\n              stroke=\"var(--color-expenses)\"\n              strokeWidth={2}\n              dot={false}\n            />\n          </LineChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

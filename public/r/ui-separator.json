@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-separator",
+  "type": "registry:component",
+  "title": "Separator",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/separator.tsx",
+      "content": "\"use client\"\n\nimport { Separator as Divider, type SeparatorProps } from \"react-aria-components\"\nimport { twMerge } from \"tailwind-merge\"\n\nconst Separator = ({ orientation = \"horizontal\", className, ...props }: SeparatorProps) => {\n  return (\n    <Divider\n      {...props}\n      className={twMerge(\n        \"shrink-0 bg-border forced-colors:bg-[ButtonBorder]\",\n        orientation === \"horizontal\" ? \"h-px w-full\" : \"h-full w-px\",\n        className,\n      )}\n    />\n  )\n}\n\nexport type { SeparatorProps }\nexport { Separator }\n",
+      "type": "registry:component"
+    }
+  ]
+}

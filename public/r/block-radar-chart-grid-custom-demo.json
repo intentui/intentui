@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radar-chart-grid-custom-demo",
+  "type": "registry:block",
+  "title": "Radar chart grid custom demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/radar/radar-chart-grid-custom-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { PolarGrid, PolarRadiusAxis, Radar, RadarChart } from \"recharts\"\n\nconst chartData = [\n  { month: \"Jan\", sales: 186, expenses: 80 },\n  { month: \"Feb\", sales: 305, expenses: 200 },\n  { month: \"Mar\", sales: 237, expenses: 120 },\n  { month: \"Apr\", sales: 73, expenses: 190 },\n  { month: \"May\", sales: 209, expenses: 130 },\n  { month: \"Jun\", sales: 214, expenses: 140 },\n  { month: \"Jul\", sales: 230, expenses: 150 },\n  { month: \"Aug\", sales: 250, expenses: 170 },\n  { month: \"Sep\", sales: 270, expenses: 180 },\n  { month: \"Oct\", sales: 290, expenses: 200 },\n  { month: \"Nov\", sales: 310, expenses: 220 },\n  { month: \"Dec\", sales: 330, expenses: 250 },\n]\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n    color: \"var(--chart-1)\",\n  },\n  expenses: {\n    label: \"Expenses\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function Component() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-4\"\n        title=\"Annual Sales vs Expenses\"\n        description=\"Comparing sales and expenses for Jan - Dec 2024\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <RadarChart data={chartData}>\n            <ChartTooltip\n              cursor={false}\n              content={<ChartTooltipContent indicator=\"line\" labelKey=\"month\" />}\n            />\n            <PolarGrid />\n            <Radar dataKey=\"sales\" fill=\"var(--color-sales)\" fillOpacity={0.6} />\n            <Radar dataKey=\"expenses\" fill=\"var(--color-expenses)\" />\n            <PolarRadiusAxis angle={60} stroke=\"var(--fg)\" orientation=\"middle\" axisLine={false} />\n          </RadarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

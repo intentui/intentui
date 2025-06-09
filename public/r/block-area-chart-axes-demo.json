@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-area-chart-axes-demo",
+  "type": "registry:block",
+  "title": "Area chart axes demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/area/area-chart-axes-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Area, AreaChart, CartesianGrid, XAxis, YAxis } from \"recharts\"\n\nconst chartData = [\n  { month: \"January\", desktop: 186, mobile: 80 },\n  { month: \"February\", desktop: 305, mobile: 200 },\n  { month: \"March\", desktop: 237, mobile: 120 },\n  { month: \"April\", desktop: 73, mobile: 190 },\n  { month: \"May\", desktop: 209, mobile: 130 },\n  { month: \"June\", desktop: 214, mobile: 140 },\n]\n\nconst chartConfig = {\n  desktop: {\n    label: \"Desktop\",\n    color: \"var(--chart-1)\",\n  },\n  mobile: {\n    label: \"Mobile\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function AreaChartAxesDemo() {\n  return (\n    <Card>\n      <Card.Header>\n        <Card.Title>Area Chart - Axes</Card.Title>\n        <Card.Description>Showing total visitors for the last 6 months</Card.Description>\n      </Card.Header>\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <AreaChart\n            accessibilityLayer\n            data={chartData}\n            margin={{\n              left: -20,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              axisLine={false}\n              tickMargin={8}\n              tickFormatter={(value) => value.slice(0, 3)}\n            />\n            <YAxis tickLine={false} axisLine={false} tickMargin={8} tickCount={3} />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />\n            <Area\n              dataKey=\"mobile\"\n              type=\"natural\"\n              fill=\"var(--color-mobile)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-mobile)\"\n              stackId=\"a\"\n            />\n            <Area\n              dataKey=\"desktop\"\n              type=\"natural\"\n              fill=\"var(--color-desktop)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-desktop)\"\n              stackId=\"a\"\n            />\n          </AreaChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

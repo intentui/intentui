@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-sheet-controlled-demo",
+  "type": "registry:block",
+  "title": "Sheet controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/sheet/sheet-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Sheet } from \"@/components/ui/sheet\"\nimport { Textarea } from \"@/components/ui/textarea\"\n\nexport default function SheetControlledDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  return (\n    <>\n      <Button onPress={() => setIsOpen(true)}>Feedback</Button>\n      <Sheet.Content isOpen={isOpen} onOpenChange={setIsOpen}>\n        <Sheet.Header>\n          <Sheet.Title>Submit Feedback</Sheet.Title>\n          <Sheet.Description>\n            Please let us know your thoughts and how we can improve our service.\n          </Sheet.Description>\n        </Sheet.Header>\n        <Sheet.Body>\n          <Textarea label=\"Your Feedback\" placeholder=\"Type your feedback here...\" />\n        </Sheet.Body>\n        <Sheet.Footer>\n          <Button intent=\"outline\" onPress={() => setIsOpen(false)}>\n            Close\n          </Button>\n          <Button intent=\"primary\" onPress={() => setIsOpen(false)}>\n            Submit Feedback\n          </Button>\n        </Sheet.Footer>\n      </Sheet.Content>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

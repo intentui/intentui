@@ -1,0 +1,9 @@
+{
+  "name": "csr/nextjs/index.tsx.stub",
+  "files": [
+    {
+      "name": "csr/nextjs/index.tsx.stub",
+      "content": "\"use client\"\n\nimport { ThemeProvider } from \"@/components/theme-provider\"\nimport { useRouter } from \"next/navigation\"\nimport { RouterProvider } from \"react-aria-components\"\n\ndeclare module \"react-aria-components\" {\n  interface RouterConfig {\n    routerOptions: NonNullable<Parameters<ReturnType<typeof useRouter>[\"push\"]>[1]>\n  }\n}\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  const router = useRouter()\n\n  return (\n    <RouterProvider navigate={router.push}>\n      <ThemeProvider attribute=\"class\">{children}</ThemeProvider>\n    </RouterProvider>\n  )\n}\n"
+    }
+  ]
+}

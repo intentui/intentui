@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hook-use-scroll-position",
+  "type": "registry:hook",
+  "title": "Use scroll position",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/hooks/use-scroll-position.ts",
+      "content": "import { useEffect, useState } from \"react\"\n\nexport function useScrollPosition(ref: React.RefObject<HTMLElement | null>) {\n  const [scrollPosition, setScrollPosition] = useState(0)\n\n  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>\n  useEffect(() => {\n    const handleScroll = () => {\n      setScrollPosition(ref.current?.scrollTop || 0)\n    }\n\n    ref.current?.addEventListener(\"scroll\", handleScroll)\n\n    return () => {\n      ref.current?.removeEventListener(\"scroll\", handleScroll)\n    }\n  }, [])\n\n  return scrollPosition\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

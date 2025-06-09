@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-description-list-demo",
+  "type": "registry:block",
+  "title": "Description list demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/description-list/description-list-demo.tsx",
+      "content": "import { DescriptionList } from \"@/components/ui/description-list\"\n\nexport default function DescriptionListDemo() {\n  return (\n    <DescriptionList>\n      <DescriptionList.Term>Invoice Number</DescriptionList.Term>\n      <DescriptionList.Details>INV-12345</DescriptionList.Details>\n      <DescriptionList.Term>Invoice Date</DescriptionList.Term>\n      <DescriptionList.Details>September 21, 2024</DescriptionList.Details>\n      <DescriptionList.Term>Due Date</DescriptionList.Term>\n      <DescriptionList.Details>October 21, 2024</DescriptionList.Details>\n      <DescriptionList.Term>Customer Name</DescriptionList.Term>\n      <DescriptionList.Details>John Doe</DescriptionList.Details>\n      <DescriptionList.Term>Total Amount</DescriptionList.Term>\n      <DescriptionList.Details>$1,250.00</DescriptionList.Details>\n      <DescriptionList.Term>Status</DescriptionList.Term>\n      <DescriptionList.Details>Pending</DescriptionList.Details>\n    </DescriptionList>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

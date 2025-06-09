@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-number-field-demo",
+  "type": "registry:block",
+  "title": "Number field demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/number-field/number-field-demo.tsx",
+      "content": "\"use client\"\n\nimport { NumberField } from \"@/components/ui/number-field\"\n\nexport default function NumberFieldDemo() {\n  return <NumberField label=\"Cookies\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

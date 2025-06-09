@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-with-arrow-demo",
+  "type": "registry:block",
+  "title": "Menu with arrow demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-with-arrow-demo.tsx",
+      "content": "\"use client\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { Menu } from \"@/components/ui/menu\"\nimport { IconHashtag, IconHeadphones, IconLogout, IconPlus, IconSettings } from \"@intentui/icons\"\n\nexport default function MenuWithArrowDemo() {\n  return (\n    <>\n      <Menu>\n        <Menu.Trigger aria-label=\"Open Menu\">\n          <Avatar src=\"/images/avatar/cobain.jpg\" />\n        </Menu.Trigger>\n        <Menu.Content placement=\"bottom\" showArrow className=\"sm:min-w-54\">\n          <Menu.Section>\n            <Menu.Header separator>\n              <span className=\"block\">Irsyad A. Panjaitan</span>\n              <span className=\"font-normal text-muted-fg\">@irsyadadl</span>\n            </Menu.Header>\n          </Menu.Section>\n          <Menu.Item>\n            <IconSettings />\n            <Menu.Label>Settings</Menu.Label>\n          </Menu.Item>\n          <Menu.Item href=\"#\">\n            <IconPlus />\n            <Menu.Label>Create Team</Menu.Label>\n          </Menu.Item>\n          <Menu.Item href=\"#\">\n            <IconHashtag />\n            <Menu.Label>Command Menu</Menu.Label>\n            <Menu.Keyboard keys=\"⌘K\" />\n          </Menu.Item>\n          <Menu.Separator />\n          <Menu.Item href=\"#\">\n            <IconHeadphones />\n            <Menu.Label>Contact Support</Menu.Label>\n          </Menu.Item>\n          <Menu.Separator />\n          <Menu.Item>\n            <IconLogout />\n            <Menu.Label>Log out</Menu.Label>\n          </Menu.Item>\n        </Menu.Content>\n      </Menu>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

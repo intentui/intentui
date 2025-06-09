@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-button-link-demo",
+  "type": "registry:block",
+  "title": "Button link demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/button/button-link-demo.tsx",
+      "content": "\"use client\"\n\nimport { buttonStyles } from \"@/components/ui/button\"\nimport { Link } from \"@/components/ui/link\"\nimport { siteConfig } from \"@/config/site\"\n\nexport default function ButtonLinkDemo() {\n  return (\n    <Link\n      className={(renderProps) => buttonStyles({ ...renderProps, intent: \"primary\" })}\n      href={`/docs/${siteConfig.currentVersion}/components/collections/choicebox`}\n    >\n      Choicebox\n    </Link>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

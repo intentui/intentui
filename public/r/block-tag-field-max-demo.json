@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-field-max-demo",
+  "type": "registry:block",
+  "title": "Tag field max demo",
+  "description": "",
+  "dependencies": [
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/tag-field/tag-field-max-demo.tsx",
+      "content": "\"use client\"\n\nimport { TagField } from \"@/components/ui/tag-field\"\nimport { useListData } from \"react-stately\"\n\nexport default function TagFieldMaxDemo() {\n  const selectedItems = useListData({\n    initialItems: [],\n  })\n\n  return (\n    <TagField\n      className=\"max-w-sm\"\n      max={3}\n      label=\"Add tag\"\n      description=\"You can only add 3 tags\"\n      list={selectedItems}\n    />\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

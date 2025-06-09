@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-drawer-controlled-demo",
+  "type": "registry:block",
+  "title": "Drawer controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/drawer/drawer-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Drawer } from \"@/components/ui/drawer\"\nimport { TextField } from \"@/components/ui/text-field\"\n\nexport default function DrawerControlledDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  return (\n    <>\n      <Button onPress={() => setIsOpen(!isOpen)} intent=\"outline\">\n        Login\n      </Button>\n      <Drawer isOpen={isOpen} onOpenChange={setIsOpen}>\n        <Drawer.Content>\n          <Drawer.Header>\n            <Drawer.Title>Login</Drawer.Title>\n            <Drawer.Description>\n              Please enter your credentials to access your account.\n            </Drawer.Description>\n          </Drawer.Header>\n          <Drawer.Body className=\"flex flex-col gap-4\">\n            <TextField label=\"Email\" isRequired type=\"email\" placeholder=\"Enter your email\" />\n            <TextField\n              label=\"Password\"\n              isRequired\n              type=\"password\"\n              placeholder=\"Enter your password\"\n            />\n          </Drawer.Body>\n          <Drawer.Footer>\n            <Drawer.Close>Close</Drawer.Close>\n            <Button onPress={() => setIsOpen(false)}>Login</Button>\n          </Drawer.Footer>\n        </Drawer.Content>\n      </Drawer>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

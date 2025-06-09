@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-color-thumb",
+  "type": "registry:component",
+  "title": "Color thumb",
+  "description": "",
+  "dependencies": [
+    "react-aria-components",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/color-thumb.tsx",
+      "content": "\"use client\"\n\nimport { ColorThumb as ColorThumbPrimitive, type ColorThumbProps } from \"react-aria-components\"\nimport { tv } from \"tailwind-variants\"\n\nconst thumbStyles = tv({\n  base: \"top-[50%] left-[50%] size-6 rounded-full border-2 border-white [box-shadow:0_0_0_1px_black,_inset_0_0_0_1px_black]\",\n  variants: {\n    isFocusVisible: {\n      true: \"size-8\",\n    },\n    isDragging: {\n      true: \"bg-gray-700 dark:bg-gray-300 forced-colors:bg-[ButtonBorder]\",\n    },\n    isDisabled: {\n      true: \"opacity-50 forced-colors:border-[GrayText] forced-colors:bg-[GrayText]\",\n    },\n  },\n})\n\nconst ColorThumb = (props: ColorThumbProps) => {\n  return (\n    <ColorThumbPrimitive\n      {...props}\n      style={({ defaultStyle, isDisabled }) => ({\n        ...defaultStyle,\n        backgroundColor: isDisabled ? undefined : defaultStyle.backgroundColor,\n      })}\n      className={thumbStyles}\n    />\n  )\n}\n\nexport { ColorThumb }\n",
+      "type": "registry:component"
+    }
+  ]
+}

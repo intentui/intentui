@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-carousel-options-demo",
+  "type": "registry:block",
+  "title": "Carousel options demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/media/carousel/carousel-options-demo.tsx",
+      "content": "import { Card } from \"@/components/ui/card\"\nimport { Carousel } from \"@/components/ui/carousel\"\n\nexport default function CarouselOptionsDemo() {\n  return (\n    <Carousel\n      opts={{\n        align: \"center\",\n        loop: true,\n      }}\n      className=\"w-full max-w-2xl\"\n    >\n      <Carousel.Content>\n        {Array.from({ length: 16 }, (_, id) => ({ id: id + 1 })).map(({ id }) => (\n          <Carousel.Item key={id} className=\"basis-1/2 lg:basis-1/3\">\n            <Card className=\"flex aspect-square items-center justify-center\">\n              <Card.Title>{id}</Card.Title>\n            </Card>\n          </Carousel.Item>\n        ))}\n      </Carousel.Content>\n\n      <Carousel.Handler>\n        <Carousel.Button segment=\"previous\" />\n        <Carousel.Button segment=\"next\" />\n      </Carousel.Handler>\n    </Carousel>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

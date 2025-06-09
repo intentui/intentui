@@ -1,0 +1,11 @@
+{
+  "name": "app-sidebar-nav",
+  "files": [
+    {
+      "name": "app-sidebar-nav.tsx",
+      "content": "\"use client\"\n\nimport { Breadcrumbs } from \"@/components/ui/breadcrumbs\"\nimport { SidebarNav, SidebarTrigger } from \"@/components/ui/sidebar\"\nimport { IconLayoutAlignRight } from \"@intentui/icons\"\n\nexport default function AppSidebarNav() {\n  return (\n    <SidebarNav>\n      <span className=\"flex items-center gap-x-4\">\n        <Breadcrumbs className=\"hidden md:flex\">\n          <Breadcrumbs.Item href=\"/blocks/sidebar/sidebar-01\">Dashboard</Breadcrumbs.Item>\n          <Breadcrumbs.Item>Newsletter</Breadcrumbs.Item>\n        </Breadcrumbs>\n      </span>\n\n      <SidebarTrigger className=\"-mr-2 ml-auto\">\n        <IconLayoutAlignRight />\n      </SidebarTrigger>\n    </SidebarNav>\n  )\n}\n"
+    }
+  ],
+  "type": "components:blocks",
+  "componentPath": "src/app/pre-blocks/sidebar/sidebar-16/app-sidebar-nav.tsx"
+}

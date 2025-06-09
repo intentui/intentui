@@ -17,7 +17,7 @@ export function SourceCode({ title, message, ext = "tsx", toShow, ...props }: So
   const [codeString, setCodeString] = React.useState<{ name: string; code: string } | null>(null)
 
   React.useEffect(() => {
-    // @ts-expect-error
+    // @ts-ignore
     const componentData = jsonPreviews[toShow]
     if (componentData) {
       setCodeString({

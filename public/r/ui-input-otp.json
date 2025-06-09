@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-input-otp",
+  "type": "registry:component",
+  "title": "Input otp",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "input-otp"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/input-otp.tsx",
+      "content": "\"use client\"\n\nimport { use } from \"react\"\n\nimport { IconBulletFill } from \"@intentui/icons\"\nimport { OTPInput, OTPInputContext } from \"input-otp\"\nimport { twMerge } from \"tailwind-merge\"\n\ntype InputOTOPProps = React.ComponentProps<typeof OTPInput>\nconst InputOTP = ({\n  className,\n  autoFocus = true,\n  containerClassName,\n  ref,\n  ...props\n}: InputOTOPProps) => (\n  <OTPInput\n    data-1p-ignore\n    ref={ref}\n    autoFocus={autoFocus}\n    containerClassName={twMerge(\n      \"flex items-center gap-2 has-disabled:opacity-50\",\n      containerClassName,\n    )}\n    className={twMerge(\"mt-auto h-[2.5rem] bg-red-500 disabled:cursor-not-allowed\", className)}\n    {...props}\n  />\n)\n\ntype InputOTPGroupProps = React.ComponentProps<\"div\">\nconst InputOTPGroup = ({ className, ref, ...props }: InputOTPGroupProps) => (\n  <div ref={ref} className={twMerge(\"flex items-center gap-x-1.5\", className)} {...props} />\n)\n\ninterface InputOTPSlotProps extends React.ComponentProps<\"div\"> {\n  index: number\n}\n\nconst InputOTPSlot = ({ index, className, ref, ...props }: InputOTPSlotProps) => {\n  const inputOTPContext = use(OTPInputContext)\n  const slot = inputOTPContext.slots[index]\n\n  if (!slot) {\n    throw new Error(\"Slot not found\")\n  }\n\n  const { char, hasFakeCaret, isActive } = slot\n\n  return (\n    <div\n      ref={ref}\n      className={twMerge(\n        \"relative flex size-10 items-center justify-center rounded-md border border-input text-sm tabular-nums transition-all\",\n        isActive && \"z-10 border-ring/70 ring-4 ring-ring/20\",\n        className,\n      )}\n      {...props}\n    >\n      {char}\n      {hasFakeCaret && (\n        <div className=\"pointer-events-none absolute inset-0 flex items-center justify-center\">\n          <div className=\"h-4 w-px animate-caret-blink bg-fg duration-1000\" />\n        </div>\n      )}\n    </div>\n  )\n}\n\ntype InputOTPSeparatorProps = React.ComponentProps<\"div\">\nconst InputOTPSeparator = ({ ref, ...props }: InputOTPSeparatorProps) => (\n  <div ref={ref} {...props}>\n    <IconBulletFill className=\"size-2\" />\n  </div>\n)\n\nInputOTP.Group = InputOTPGroup\nInputOTP.Slot = InputOTPSlot\nInputOTP.Separator = InputOTPSeparator\n\nexport type { InputOTPGroupProps, InputOTOPProps, InputOTPSlotProps, InputOTPSeparatorProps }\nexport { InputOTP }\n",
+      "type": "registry:component"
+    }
+  ]
+}

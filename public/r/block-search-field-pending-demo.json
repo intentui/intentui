@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-search-field-pending-demo",
+  "type": "registry:block",
+  "title": "Search field pending demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/search-field/search-field-pending-demo.tsx",
+      "content": "\"use client\"\n\nimport { SearchField } from \"@/components/ui/search-field\"\n\nexport default function SearchFieldPendingDemo() {\n  return <SearchField isPending aria-label=\"Search\" placeholder=\"Search\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

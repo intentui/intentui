@@ -1,0 +1,9 @@
+{
+  "name": "csr/inertia/index.tsx.stub",
+  "files": [
+    {
+      "name": "csr/inertia/index.tsx.stub",
+      "content": "import { ThemeProvider } from \"@/providers/theme-provider\"\nimport { router } from \"@inertiajs/react\"\nimport React from \"react\"\nimport { RouterProvider } from \"react-aria-components\"\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  return (\n    <RouterProvider navigate={(to, options) => router.visit(to, options)}>\n      <ThemeProvider>{children}</ThemeProvider>\n    </RouterProvider>\n  )\n}\n"
+    }
+  ]
+}

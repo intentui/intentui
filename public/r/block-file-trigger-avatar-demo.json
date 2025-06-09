@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-file-trigger-avatar-demo",
+  "type": "registry:block",
+  "title": "File trigger avatar demo",
+  "description": "",
+  "dependencies": [
+    "@react-types/shared",
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/file-trigger/file-trigger-avatar-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Avatar } from \"@/components/ui/avatar\"\nimport { DropZone } from \"@/components/ui/drop-zone\"\nimport { FileTrigger } from \"@/components/ui/file-trigger\"\nimport type { DropEvent } from \"@react-types/shared\"\nimport { isFileDropItem } from \"react-aria-components\"\nimport { twJoin } from \"tailwind-merge\"\n\nexport default function FileTriggerAvatarDemo() {\n  const [droppedImage, setDroppedImage] = useState<string | undefined>(undefined)\n\n  const onDropHandler = async (e: DropEvent) => {\n    const item = e.items\n      .filter(isFileDropItem)\n      .find((item) => item.type === \"image/jpeg\" || item.type === \"image/png\")\n    if (item) {\n      const file = await item.getFile()\n      setDroppedImage(URL.createObjectURL(file))\n    }\n  }\n\n  async function onSelectHandler(e: any) {\n    if (e) {\n      const files = Array.from([...e])\n      const item = files[0]\n\n      if (item) {\n        setDroppedImage(URL.createObjectURL(item))\n      }\n    }\n  }\n\n  return (\n    <div className=\"flex items-center gap-2\">\n      <DropZone\n        getDropOperation={() => \"copy\"}\n        onDrop={onDropHandler}\n        className={twJoin(\n          \"size-10 overflow-hidden rounded-full p-0 **:data-[slot=avatar]:bg-transparent **:data-[slot=avatar]:outline-hidden\",\n        )}\n      >\n        {droppedImage ? (\n          <Avatar src={droppedImage} size=\"lg\" />\n        ) : (\n          <Avatar initials=\"IA\" size=\"lg\" />\n        )}\n        <input type=\"hidden\" name=\"image\" value={droppedImage} />\n      </DropZone>\n      <FileTrigger\n        size=\"sm\"\n        withIcon={false}\n        acceptedFileTypes={[\"image/png\", \"image/jpeg\"]}\n        onSelect={onSelectHandler}\n      >\n        Upload avatar\n      </FileTrigger>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

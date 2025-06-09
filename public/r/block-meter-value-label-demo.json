@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-meter-value-label-demo",
+  "type": "registry:block",
+  "title": "Meter value label demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/meter/meter-value-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Meter } from \"@/components/ui/meter\"\n\nexport default function MeterValueLabelDemo() {\n  return (\n    <Meter\n      formatOptions={{\n        style: \"decimal\",\n        minimumFractionDigits: 2,\n        maximumFractionDigits: 2,\n      }}\n      valueLabel=\"25GB of 100GB\"\n      label=\"Progress\"\n      value={25}\n    />\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

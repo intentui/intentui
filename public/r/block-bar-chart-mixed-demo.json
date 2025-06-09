@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-mixed-demo",
+  "type": "registry:block",
+  "title": "Bar chart mixed demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-mixed-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Bar, BarChart, CartesianGrid, Legend, XAxis, YAxis } from \"recharts\"\n\nconst chartData = [\n  {\n    browser: \"chrome\",\n    visitors: 275,\n    bounceRate: 40,\n    avgSession: 5.6,\n    fill: \"var(--color-chrome)\",\n  },\n  {\n    browser: \"safari\",\n    visitors: 200,\n    bounceRate: 35,\n    avgSession: 6.3,\n    fill: \"var(--color-safari)\",\n  },\n  {\n    browser: \"firefox\",\n    visitors: 187,\n    bounceRate: 45,\n    avgSession: 4.2,\n    fill: \"var(--color-firefox)\",\n  },\n  { browser: \"edge\", visitors: 173, bounceRate: 30, avgSession: 5.0, fill: \"var(--color-edge)\" },\n  { browser: \"other\", visitors: 90, bounceRate: 50, avgSession: 3.7, fill: \"var(--color-other)\" },\n]\n\nconst chartConfig = {\n  visitors: {\n    label: \"Visitors\",\n    color: \"var(--chart-1)\",\n  },\n  bounceRate: {\n    label: \"Bounce Rate (%)\",\n    color: \"var(--chart-2)\",\n  },\n  avgSession: {\n    label: \"Avg Session (min)\",\n    color: \"var(--chart-3)\",\n  },\n  chrome: {\n    label: \"Chrome\",\n    color: \"var(--chart-1)\",\n  },\n  safari: {\n    label: \"Safari\",\n    color: \"var(--chart-2)\",\n  },\n  firefox: {\n    label: \"Firefox\",\n    color: \"var(--chart-3)\",\n  },\n  edge: {\n    label: \"Edge\",\n    color: \"var(--chart-4)\",\n  },\n  other: {\n    label: \"Other\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartGroupedDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Browser Metrics\"\n        description=\"Grouped data for visitors, bounce rate, and average session duration\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <BarChart\n            accessibilityLayer\n            data={chartData}\n            layout=\"vertical\"\n            margin={{\n              left: 0,\n            }}\n          >\n            <CartesianGrid horizontal={false} />\n            <YAxis\n              dataKey=\"browser\"\n              type=\"category\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n              tickFormatter={(value) => chartConfig[value as keyof typeof chartConfig]?.label}\n            />\n            <XAxis type=\"number\" hide />\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <Legend />\n            <Bar dataKey=\"visitors\" layout=\"vertical\" fill=\"var(--color-chrome)\" radius={5} />\n            <Bar dataKey=\"bounceRate\" layout=\"vertical\" fill=\"var(--color-safari)\" radius={5} />\n            <Bar dataKey=\"avgSession\" layout=\"vertical\" fill=\"var(--color-firefox)\" radius={5} />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

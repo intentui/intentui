@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-note-intent-demo",
+  "type": "registry:block",
+  "title": "Note intent demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/note/note-intent-demo.tsx",
+      "content": "import { Note } from \"@/components/ui/note\"\n\nconst notes = [\"info\", \"default\", \"warning\", \"danger\", \"success\"] as const\n\nexport default function NoteIntentDemo() {\n  return (\n    <div className=\"max-w-md space-y-2\">\n      {notes.map((it) => (\n        <Note key={it} intent={it}>\n          We hook you up with top-tier migration services in our startup plan. Wanna roll with it?\n          Hit us up here.\n        </Note>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

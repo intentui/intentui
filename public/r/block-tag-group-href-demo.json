@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-group-href-demo",
+  "type": "registry:block",
+  "title": "Tag group href demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/tag-group/tag-group-href-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tag, TagGroup, TagList } from \"@/components/ui/tag-group\"\n\nconst articles = [\n  { name: \"React Tutorial\", url: \"#\" },\n  { name: \"TypeScript Handbook\", url: \"#\" },\n  { name: \"JavaScript Guide\", url: \"#\" },\n]\n\nexport default function TagGroupHrefDemo() {\n  return (\n    <TagGroup>\n      <TagList items={articles}>\n        {(item) => (\n          <Tag id={item.name} href={item.url}>\n            {item.name}\n          </Tag>\n        )}\n      </TagList>\n    </TagGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

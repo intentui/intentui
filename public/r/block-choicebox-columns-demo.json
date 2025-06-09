@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-choicebox-columns-demo",
+  "type": "registry:block",
+  "title": "Choicebox columns demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/choicebox/choicebox-columns-demo.tsx",
+      "content": "\"use client\"\n\nimport { Choicebox } from \"@/components/ui/choicebox\"\n\nexport default function ChoiceboxColumnsDemo() {\n  return (\n    <div className=\"p-1\">\n      <Choicebox\n        aria-label=\"Select prices\"\n        gap={2}\n        columns={3}\n        selectionMode=\"multiple\"\n        items={prices}\n      >\n        {(item) => <Choicebox.Item {...item} />}\n      </Choicebox>\n    </div>\n  )\n}\n\nconst prices = [\n  { id: 1, label: \"Basic\", description: \"Essentials, get started\" },\n  { id: 2, label: \"Standard\", description: \"More features, support\" },\n  { id: 3, label: \"Premium\", description: \"Advanced, growing needs\" },\n  { id: 4, label: \"Deluxe\", description: \"Top-tier, maximum performance\" },\n  { id: 5, label: \"Ultimate\", description: \"All-inclusive, every feature\" },\n  { id: 6, label: \"Enterprise\", description: \"Custom, large-scale operations\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

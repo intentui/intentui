@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-line-chart-custom-label-demo",
+  "type": "registry:block",
+  "title": "Line chart custom label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/line/line-chart-custom-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { CartesianGrid, LabelList, Line, LineChart } from \"recharts\"\n\nconst chartData = [\n  { platform: \"Instagram\", users: 275, fill: \"var(--color-instagram)\" },\n  { platform: \"TikTok\", users: 200, fill: \"var(--color-tiktok)\" },\n  { platform: \"Twitter\", users: 187, fill: \"var(--color-twitter)\" },\n  { platform: \"LinkedIn\", users: 173, fill: \"var(--color-linkedin)\" },\n  { platform: \"Other\", users: 90, fill: \"var(--color-other)\" },\n]\n\nconst chartConfig = {\n  users: {\n    label: \"Users\",\n    color: \"var(--chart-2)\",\n  },\n  Instagram: {\n    label: \"Instagram\",\n    color: \"var(--chart-1)\",\n  },\n  TikTok: {\n    label: \"TikTok\",\n    color: \"var(--chart-2)\",\n  },\n  Twitter: {\n    label: \"Twitter\",\n    color: \"var(--chart-3)\",\n  },\n  LinkedIn: {\n    label: \"LinkedIn\",\n    color: \"var(--chart-4)\",\n  },\n  Other: {\n    label: \"Other\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function LineChartCustomLabelDemo() {\n  return (\n    <Card>\n      <Card.Header title=\"Platform User Growth\" description=\"Jan - Dec 2024\" />\n      <Card.Content>\n        <Chart config={chartConfig}>\n          <LineChart\n            accessibilityLayer\n            data={chartData}\n            margin={{\n              top: 24,\n              left: 24,\n              right: 24,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <ChartTooltip\n              cursor={false}\n              content={<ChartTooltipContent indicator=\"line\" nameKey=\"users\" hideLabel />}\n            />\n            <Line\n              dataKey=\"users\"\n              type=\"natural\"\n              stroke=\"var(--color-users)\"\n              strokeWidth={2}\n              dot={{\n                fill: \"var(--color-users)\",\n              }}\n              activeDot={{\n                r: 6,\n              }}\n            >\n              <LabelList\n                position=\"top\"\n                offset={12}\n                className=\"fill-fg\"\n                fontSize={12}\n                dataKey=\"platform\"\n                formatter={(value: keyof typeof chartConfig) => chartConfig[value]?.label}\n              />\n            </Line>\n          </LineChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

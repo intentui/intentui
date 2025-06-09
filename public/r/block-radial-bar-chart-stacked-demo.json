@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radial-bar-chart-stacked-demo",
+  "type": "registry:block",
+  "title": "Radial bar chart stacked demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/radial-bar/radial-bar-chart-stacked-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { Label, PolarRadiusAxis, RadialBar, RadialBarChart } from \"recharts\"\n\nconst chartData = [{ month: \"January\", sales: 1260, profit: 570 }]\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n    color: \"var(--chart-1)\",\n  },\n  profit: {\n    label: \"Profit\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function SalesPerformanceOverview() {\n  const totalRevenue = chartData[0]!.sales + chartData[0]!.profit\n\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0 text-center\"\n        title=\"Monthly Revenue Distribution\"\n        description=\"Visualizing sales and profit for Jan - Dec 2024\"\n      />\n      <Card.Content className=\"flex flex-1 items-center pb-0\">\n        <Chart config={chartConfig} className=\"mx-auto aspect-square w-full max-w-[250px]\">\n          <RadialBarChart data={chartData} endAngle={180} innerRadius={80} outerRadius={130}>\n            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />\n            <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>\n              <Label\n                content={({ viewBox }) => {\n                  if (viewBox && \"cx\" in viewBox && \"cy\" in viewBox) {\n                    return (\n                      <text x={viewBox.cx} y={viewBox.cy} textAnchor=\"middle\">\n                        <tspan\n                          x={viewBox.cx}\n                          y={(viewBox.cy || 0) - 16}\n                          className=\"fill-fg font-bold text-2xl\"\n                        >\n                          {totalRevenue.toLocaleString()}\n                        </tspan>\n                        <tspan x={viewBox.cx} y={(viewBox.cy || 0) + 4} className=\"fill-muted-fg\">\n                          Total Revenue\n                        </tspan>\n                      </text>\n                    )\n                  }\n                }}\n              />\n            </PolarRadiusAxis>\n            <RadialBar\n              dataKey=\"sales\"\n              stackId=\"a\"\n              cornerRadius={5}\n              fill=\"var(--color-sales)\"\n              className=\"stroke-2 stroke-transparent\"\n            />\n            <RadialBar\n              dataKey=\"profit\"\n              fill=\"var(--color-profit)\"\n              stackId=\"a\"\n              cornerRadius={5}\n              className=\"stroke-2 stroke-transparent\"\n            />\n          </RadialBarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-search-field-controlled-demo",
+  "type": "registry:block",
+  "title": "Search field controlled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/search-field/search-field-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { SearchField } from \"@/components/ui/search-field\"\n\nexport default function SearchFieldControlledDemo() {\n  const [value, setValue] = useState(\"\")\n  return (\n    <>\n      <SearchField value={value} onChange={setValue} className=\"mb-2\" />\n      <Description className=\"mt-2 block [&>strong]:text-fg\">\n        You have typed: <strong>{value ?? \"-\"}</strong>\n      </Description>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-sheet-custom-close-demo",
+  "type": "registry:block",
+  "title": "Sheet custom close demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/sheet/sheet-custom-close-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Checkbox, CheckboxGroup } from \"@/components/ui/checkbox\"\nimport { Sheet } from \"@/components/ui/sheet\"\n\nexport default function SheetControlledDemo() {\n  return (\n    <Sheet>\n      <Button intent=\"outline\">Notifications</Button>\n      <Sheet.Content aria-label=\"Notifications\">\n        <Sheet.Header>\n          <Sheet.Title>Manage Notifications</Sheet.Title>\n          <Sheet.Description>Adjust your notification settings below.</Sheet.Description>\n        </Sheet.Header>\n        <Sheet.Body>\n          <CheckboxGroup aria-label=\"Notification Settings\">\n            <Checkbox\n              value=\"n1\"\n              label=\"Email Notifications\"\n              description=\"Receive updates via email.\"\n            />\n            <Checkbox\n              value=\"n2\"\n              label=\"SMS Notifications\"\n              description=\"Receive updates via SMS messages.\"\n            />\n            <Checkbox\n              value=\"n3\"\n              label=\"Push Notifications\"\n              description=\"Receive real-time notifications on your device.\"\n            />\n          </CheckboxGroup>\n        </Sheet.Body>\n        <Sheet.Footer>\n          <Sheet.Close>Cancel</Sheet.Close>\n          <Button intent=\"primary\">Save Settings</Button>\n        </Sheet.Footer>\n      </Sheet.Content>\n    </Sheet>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

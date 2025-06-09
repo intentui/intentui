@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-wheel-controlled-demo",
+  "type": "registry:block",
+  "title": "Color wheel controlled demo",
+  "description": "",
+  "dependencies": [
+    "@react-stately/color"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-wheel/color-wheel-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ControlledValues } from \"@/components/docs/colors/controlled-values\"\nimport { ColorWheel } from \"@/components/ui/color-wheel\"\nimport { parseColor } from \"@react-stately/color\"\n\nexport default function ColorWheelControlledDemo() {\n  const [color, setColor] = useState(parseColor(\"hsl(0, 100%, 50%)\"))\n  return (\n    <div className=\"grid items-center justify-center gap-4 sm:grid-cols-2\">\n      <div className=\"grid shrink-0 place-content-center\">\n        <ColorWheel aria-label=\"Background color\" value={color} onChange={setColor} />\n      </div>\n      <ControlledValues color={color} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

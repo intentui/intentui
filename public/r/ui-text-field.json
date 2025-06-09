@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-text-field",
+  "type": "registry:component",
+  "title": "Text field",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/text-field.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport type { FieldProps } from \"@/components/ui/field\"\nimport { Description, FieldError, FieldGroup, Input, Label } from \"@/components/ui/field\"\nimport { Loader } from \"@/components/ui/loader\"\nimport { composeTailwindRenderProps } from \"@/lib/primitive\"\nimport { IconEye, IconEyeClosed } from \"@intentui/icons\"\nimport { Button as ButtonPrimitive, TextField as TextFieldPrimitive } from \"react-aria-components\"\nimport type { InputProps, TextFieldProps as TextFieldPrimitiveProps } from \"react-aria-components\"\n\ntype InputType = Exclude<InputProps[\"type\"], \"password\">\n\ninterface BaseTextFieldProps extends TextFieldPrimitiveProps, FieldProps {\n  prefix?: React.ReactNode\n  suffix?: React.ReactNode\n  isPending?: boolean\n  className?: string\n}\n\ninterface RevealableTextFieldProps extends BaseTextFieldProps {\n  isRevealable: true\n  type: \"password\"\n}\n\ninterface NonRevealableTextFieldProps extends BaseTextFieldProps {\n  isRevealable?: never\n  type?: InputType\n}\n\ntype TextFieldProps = RevealableTextFieldProps | NonRevealableTextFieldProps\n\nconst TextField = ({\n  placeholder,\n  label,\n  description,\n  errorMessage,\n  prefix,\n  suffix,\n  isPending,\n  className,\n  isRevealable,\n  type,\n  ...props\n}: TextFieldProps) => {\n  const [isPasswordVisible, setIsPasswordVisible] = useState(false)\n  const inputType = isRevealable ? (isPasswordVisible ? \"text\" : \"password\") : type\n  const handleTogglePasswordVisibility = () => {\n    setIsPasswordVisible((prev) => !prev)\n  }\n  return (\n    <TextFieldPrimitive\n      type={inputType}\n      {...props}\n      className={composeTailwindRenderProps(className, \"group flex flex-col gap-y-1\")}\n    >\n      {!props.children ? (\n        <>\n          {label && <Label>{label}</Label>}\n          <FieldGroup\n            isDisabled={props.isDisabled}\n            isInvalid={!!errorMessage}\n            data-loading={isPending ? \"true\" : undefined}\n          >\n            {prefix && typeof prefix === \"string\" ? (\n              <span className=\"ml-2 text-muted-fg\">{prefix}</span>\n            ) : (\n              prefix\n            )}\n            <Input placeholder={placeholder} />\n            {isRevealable ? (\n              <ButtonPrimitive\n                type=\"button\"\n                aria-label=\"Toggle password visibility\"\n                onPress={handleTogglePasswordVisibility}\n                className=\"relative mr-1 grid shrink-0 place-content-center rounded-sm border-transparent outline-hidden *:data-[slot=icon]:text-muted-fg focus-visible:*:data-[slot=icon]:text-primary\"\n              >\n                {isPasswordVisible ? <IconEyeClosed /> : <IconEye />}\n              </ButtonPrimitive>\n            ) : isPending ? (\n              <Loader variant=\"spin\" />\n            ) : suffix ? (\n              typeof suffix === \"string\" ? (\n                <span className=\"mr-2 text-muted-fg\">{suffix}</span>\n              ) : (\n                suffix\n              )\n            ) : null}\n          </FieldGroup>\n          {description && <Description>{description}</Description>}\n          <FieldError>{errorMessage}</FieldError>\n        </>\n      ) : (\n        props.children\n      )}\n    </TextFieldPrimitive>\n  )\n}\n\nexport type { TextFieldProps }\nexport { TextField }\n",
+      "type": "registry:component"
+    }
+  ]
+}

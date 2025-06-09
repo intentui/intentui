@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-file-trigger",
+  "type": "registry:component",
+  "title": "File trigger",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/file-trigger.tsx",
+      "content": "\"use client\"\n\nimport { IconCamera, IconFolder, IconPaperclip45 } from \"@intentui/icons\"\nimport {\n  FileTrigger as FileTriggerPrimitive,\n  type FileTriggerProps as FileTriggerPrimitiveProps,\n} from \"react-aria-components\"\n\nimport { Button, type buttonStyles } from \"@/components/ui/button\"\nimport type { VariantProps } from \"tailwind-variants\"\n\ninterface FileTriggerProps extends FileTriggerPrimitiveProps, VariantProps<typeof buttonStyles> {\n  withIcon?: boolean\n  isDisabled?: boolean\n  ref?: React.RefObject<HTMLInputElement>\n  className?: string\n}\n\nconst FileTrigger = ({\n  intent = \"outline\",\n  size = \"md\",\n  isCircle = false,\n  withIcon = true,\n  ref,\n  className,\n  ...props\n}: FileTriggerProps) => {\n  return (\n    <FileTriggerPrimitive ref={ref} {...props}>\n      <Button\n        className={className}\n        isDisabled={props.isDisabled}\n        intent={intent}\n        size={size}\n        isCircle={isCircle}\n      >\n        {withIcon &&\n          (props.defaultCamera ? (\n            <IconCamera />\n          ) : props.acceptDirectory ? (\n            <IconFolder />\n          ) : (\n            <IconPaperclip45 />\n          ))}\n        {props.children ? (\n          props.children\n        ) : (\n          <>\n            {props.allowsMultiple\n              ? \"Browse a files\"\n              : props.acceptDirectory\n                ? \"Browse\"\n                : \"Browse a file\"}\n            ...\n          </>\n        )}\n      </Button>\n    </FileTriggerPrimitive>\n  )\n}\n\nexport type { FileTriggerProps }\nexport { FileTrigger }\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-note-no-indicator-demo",
+  "type": "registry:block",
+  "title": "Note no indicator demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/note/note-no-indicator-demo.tsx",
+      "content": "import { Note } from \"@/components/ui/note\"\n\nexport default function NoteNoIndicatorDemo() {\n  return <Note>Your account is not safe! Please change your password immediately.</Note>\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

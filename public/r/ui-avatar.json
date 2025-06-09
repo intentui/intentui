@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-avatar",
+  "type": "registry:component",
+  "title": "Avatar",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/avatar.tsx",
+      "content": "import { twMerge } from \"tailwind-merge\"\n\ninterface AvatarProps {\n  src?: string | null\n  initials?: string\n  alt?: string\n  className?: string\n  isCircle?: boolean\n  size?: \"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"\n}\n\nconst Avatar = ({\n  src = null,\n  isCircle = true,\n  size = \"md\",\n  initials,\n  alt = \"\",\n  className,\n  ...props\n}: AvatarProps & React.ComponentPropsWithoutRef<\"span\">) => {\n  return (\n    <span\n      data-slot=\"avatar\"\n      {...props}\n      className={twMerge(\n        \"-outline-offset-1 inline-grid shrink-0 align-middle outline-1 outline-fg/(--ring-opacity) [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1\",\n        size === \"xs\" && \"size-5 *:size-5\",\n        size === \"sm\" && \"size-6 *:size-6\",\n        size === \"md\" && \"size-8 *:size-8\",\n        size === \"lg\" && \"size-10 *:size-10\",\n        size === \"xl\" && \"size-12 *:size-12\",\n        isCircle\n          ? \"rounded-full *:rounded-full\"\n          : \"rounded-(--avatar-radius) *:rounded-(--avatar-radius)\",\n        className,\n      )}\n    >\n      {initials && (\n        <svg\n          className=\"size-full select-none fill-current p-[5%] font-md text-[48px] uppercase\"\n          viewBox=\"0 0 100 100\"\n          aria-hidden={alt ? undefined : \"true\"}\n        >\n          {alt && <title>{alt}</title>}\n          <text\n            x=\"50%\"\n            y=\"50%\"\n            alignmentBaseline=\"middle\"\n            dominantBaseline=\"middle\"\n            textAnchor=\"middle\"\n            dy=\".125em\"\n          >\n            {initials}\n          </text>\n        </svg>\n      )}\n      {src && <img className=\"size-full\" src={src} alt={alt} />}\n    </span>\n  )\n}\n\nexport type { AvatarProps }\nexport { Avatar }\n",
+      "type": "registry:component"
+    }
+  ]
+}

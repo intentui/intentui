@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-pie-chart-stacked-demo",
+  "type": "registry:block",
+  "title": "Pie chart stacked demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/pie/pie-chart-stacked-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Pie, PieChart } from \"recharts\"\n\nconst northAmericaData = [\n  { region: \"North America\", sales: 500, fill: \"var(--color-north-america)\" },\n  { region: \"Europe\", sales: 300, fill: \"var(--color-europe)\" },\n  { region: \"Asia\", sales: 400, fill: \"var(--color-asia)\" },\n  { region: \"Africa\", sales: 150, fill: \"var(--color-africa)\" },\n  { region: \"South America\", sales: 100, fill: \"var(--color-south-america)\" },\n]\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n  },\n  northAmerica: {\n    label: \"North America\",\n    color: \"var(--chart-1)\",\n  },\n  europe: {\n    label: \"Europe\",\n    color: \"var(--chart-2)\",\n  },\n  asia: {\n    label: \"Asia\",\n    color: \"var(--chart-3)\",\n  },\n  africa: {\n    label: \"Africa\",\n    color: \"var(--chart-4)\",\n  },\n  southAmerica: {\n    label: \"South America\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function PieChartStackedDemo() {\n  return (\n    <Card>\n      <Card.Header title=\"Sales Distribution by Region\" description=\"January - June 2024\" />\n      <Card.Content className=\"flex-1 pb-0\">\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <PieChart>\n            <ChartTooltip\n              content={\n                <ChartTooltipContent\n                  labelKey=\"sales\"\n                  nameKey=\"region\"\n                  indicator=\"line\"\n                  labelFormatter={(_, payload) => {\n                    return chartConfig[payload?.[0]!.dataKey as keyof typeof chartConfig].label\n                  }}\n                />\n              }\n            />\n            <Pie data={northAmericaData} dataKey=\"sales\" outerRadius={60} />\n          </PieChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

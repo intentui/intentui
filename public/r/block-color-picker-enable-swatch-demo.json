@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-picker-enable-swatch-demo",
+  "type": "registry:block",
+  "title": "Color picker enable swatch demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-picker/color-picker-enable-swatch-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { ColorArea } from \"@/components/ui/color-area\"\nimport { ColorField } from \"@/components/ui/color-field\"\nimport { ColorPicker } from \"@/components/ui/color-picker\"\nimport { ColorSlider } from \"@/components/ui/color-slider\"\nimport { defaultColor } from \"@/components/ui/color-swatch\"\nimport { ColorSwatchPicker } from \"@/components/ui/color-swatch-picker\"\nimport type { Color } from \"react-aria-components\"\n\nexport default function ColorPickerEnableSwatchDemo() {\n  const [color, setColor] = useState(defaultColor)\n  const colorChangeHandler = (v: Color) => {\n    setColor(v)\n  }\n  return (\n    <ColorPicker value={color} onChange={(v) => colorChangeHandler(v)}>\n      <ColorArea colorSpace=\"hsb\" xChannel=\"saturation\" yChannel=\"brightness\" />\n      <ColorSlider colorSpace=\"hsb\" channel=\"hue\" />\n      <ColorField aria-label=\"Hex color\" />\n      <ColorSwatchPicker\n        aria-label=\"Color swatch picker\"\n        layout=\"grid\"\n        className=\"flex flex-wrap gap-2\"\n      >\n        {colors.map((color) => (\n          <ColorSwatchPicker.Item key={color} color={color} />\n        ))}\n      </ColorSwatchPicker>\n    </ColorPicker>\n  )\n}\n\nconst colors = [\n  \"#f59e0b\",\n  \"#84cc16\",\n  \"#0d6efd\",\n  \"#ec4899\",\n  \"#f43f5e\",\n  \"#d4b990\",\n  \"#b19f73\",\n  \"#9370db\",\n  \"#7d60df\",\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

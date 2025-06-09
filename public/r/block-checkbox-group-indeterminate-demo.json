@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-checkbox-group-indeterminate-demo",
+  "type": "registry:block",
+  "title": "Checkbox group indeterminate demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/checkbox/checkbox-group-indeterminate-demo.tsx",
+      "content": "\"use client\"\n\nimport { Checkbox, CheckboxGroup } from \"@/components/ui/checkbox\"\n\nexport default function CheckboxGroupIndeterminateDemo() {\n  return (\n    <CheckboxGroup defaultValue={[\"encryption\"]} className=\"ml-6\">\n      <Checkbox isIndeterminate value=\"encryption\" description=\"Enable encryption.\" isReadOnly>\n        Encryption\n      </Checkbox>\n      <Checkbox value=\"firewall\" description=\"Enable firewall protection.\">\n        Firewall\n      </Checkbox>\n      <Checkbox value=\"backup\" description=\"Enable automatic backups.\">\n        Backup\n      </Checkbox>\n      <Checkbox isIndeterminate value=\"anomalyDetection\" description=\"Enable anomaly detection.\">\n        Anomaly Detection\n      </Checkbox>\n    </CheckboxGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

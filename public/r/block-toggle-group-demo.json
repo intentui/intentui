@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-group-demo",
+  "type": "registry:block",
+  "title": "Toggle group demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle-group/toggle-group-demo.tsx",
+      "content": "import { Toggle, ToggleGroup } from \"@/components/ui/toggle\"\nimport { IconBulletList, IconGrid4 } from \"@intentui/icons\"\n\nexport default function ToggleGroupDemo() {\n  return (\n    <ToggleGroup>\n      <Toggle>\n        <IconGrid4 />\n        Grid\n      </Toggle>\n      <Toggle>\n        <IconBulletList />\n        List\n      </Toggle>\n    </ToggleGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

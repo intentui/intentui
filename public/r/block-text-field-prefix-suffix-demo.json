@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-text-field-prefix-suffix-demo",
+  "type": "registry:block",
+  "title": "Text field prefix suffix demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/text-field/text-field-prefix-suffix-demo.tsx",
+      "content": "\"use client\"\n\nimport { TextField } from \"@/components/ui/text-field\"\nimport { IconAt, IconBrandTwitter } from \"@intentui/icons\"\n\nexport default function TextFieldPrefixSuffixDemo() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <TextField\n        label=\"Twitter\"\n        placeholder=\"irsyadadl\"\n        prefix={<IconAt />}\n        suffix={<IconBrandTwitter />}\n      />\n      <TextField label=\"Sites\" prefix=\"https://\" suffix=\".com\" />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

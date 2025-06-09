@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-separator-demo",
+  "type": "registry:block",
+  "title": "Separator demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/separator/separator-demo.tsx",
+      "content": "\"use client\"\n\nimport { Separator } from \"@/components/ui/separator\"\n\nexport default function SeparatorDemo() {\n  return <Separator />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

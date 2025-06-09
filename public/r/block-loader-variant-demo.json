@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-loader-variant-demo",
+  "type": "registry:block",
+  "title": "Loader variant demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/loader/loader-variant-demo.tsx",
+      "content": "\"use client\"\n\nimport { Loader } from \"@/components/ui/loader\"\n\nexport default function LoaderVariantDemo() {\n  return (\n    <div className=\"flex gap-6\">\n      <Loader variant=\"ring\" />\n      <Loader variant=\"spin\" />\n      <Loader variant=\"bars\" />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

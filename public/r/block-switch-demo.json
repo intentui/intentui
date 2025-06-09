@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-switch-demo",
+  "type": "registry:block",
+  "title": "Switch demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/switch/switch-demo.tsx",
+      "content": "\"use client\"\n\nimport { Switch } from \"@/components/ui/switch\"\n\nexport default function SwitchDemo() {\n  return <Switch>Switch Theme</Switch>\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

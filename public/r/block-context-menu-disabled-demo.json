@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-context-menu-disabled-demo",
+  "type": "registry:block",
+  "title": "Context menu disabled demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/context-menu/context-menu-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { IconClipboard, IconDuplicate, IconHighlight } from \"@intentui/icons\"\n\nimport { ContextMenu } from \"@/components/ui/context-menu\"\n\nexport default function ContextMenuDisabledDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenu.Trigger className=\"grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed\">\n        Right click me\n      </ContextMenu.Trigger>\n      <ContextMenu.Content>\n        <ContextMenu.Item>\n          <IconDuplicate /> <ContextMenu.Label>Copy</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Item isDisabled>\n          <IconClipboard /> <ContextMenu.Label>Paste</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          <ContextMenu.Label>Convert</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Separator />\n        <ContextMenu.Item isDisabled>\n          <IconHighlight /> <ContextMenu.Label>Rename</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          <ContextMenu.Label>Refactor</ContextMenu.Label>\n        </ContextMenu.Item>\n        <ContextMenu.Item>\n          <ContextMenu.Label>Generate</ContextMenu.Label>\n        </ContextMenu.Item>\n      </ContextMenu.Content>\n    </ContextMenu>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

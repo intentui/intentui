@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-badge",
+  "type": "registry:component",
+  "title": "Badge",
+  "description": "",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/badge.tsx",
+      "content": "\"use client\"\n\nimport { type VariantProps, tv } from \"tailwind-variants\"\n\nconst badgeIntents = {\n  primary: [\n    \"[--badge-primary:color-mix(in_oklab,var(--color-primary)_10%,white_90%)] [--badge-primary-fg:color-mix(in_oklab,var(--color-primary)_60%,white_40%)] bg-(--badge-primary)\",\n    \"dark:bg-primary/15 text-primary dark:text-(--badge-primary-fg) dark:group-hover:bg-primary/25\",\n    \"group-hover:bg-[color-mix(in_oklab,var(--color-primary)_15%,white_85%)] dark:group-hover:bg-primary/20\",\n  ],\n  secondary: [\n    \"bg-secondary group-hover:bg-muted dark:bg-secondary dark:group-hover:bg-muted text-secondary-fg\",\n  ],\n  success: [\n    \"bg-emerald-500/15 text-emerald-700 group-hover:bg-emerald-500/25 dark:bg-emerald-500/10 dark:text-emerald-400 dark:group-hover:bg-emerald-500/20\",\n  ],\n  info: \"bg-sky-500/15 text-sky-700 group-hover:bg-sky-500/25 dark:bg-sky-500/10 dark:text-sky-300 dark:group-hover:bg-sky-500/20\",\n  warning:\n    \"bg-amber-400/20 text-amber-700 group-hover:bg-amber-400/30 dark:bg-amber-400/10 dark:text-amber-400 dark:group-hover:bg-amber-400/15\",\n  danger:\n    \"bg-red-500/15 text-red-700 group-hover:bg-red-500/25 dark:bg-red-500/10 dark:text-red-400 dark:group-hover:bg-red-500/20\",\n}\nconst badgeStyles = tv({\n  base: \"inline-flex items-center gap-x-1.5 py-0.5 font-medium text-xs/5 **:data-[slot=icon]:size-3 forced-colors:outline\",\n  variants: {\n    intent: { ...badgeIntents },\n    isCircle: {\n      true: \"rounded-full px-2\",\n      false: \"rounded-md px-1.5\",\n    },\n  },\n  defaultVariants: {\n    intent: \"primary\",\n    isCircle: true,\n  },\n})\n\ninterface BadgeProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof badgeStyles> {\n  className?: string\n  children: React.ReactNode\n}\n\nconst Badge = ({ children, intent, isCircle = true, className, ...props }: BadgeProps) => {\n  return (\n    <span {...props} className={badgeStyles({ intent, isCircle, className })}>\n      {children}\n    </span>\n  )\n}\n\nexport type { BadgeProps }\nexport { Badge, badgeIntents, badgeStyles }\n",
+      "type": "registry:component"
+    }
+  ]
+}

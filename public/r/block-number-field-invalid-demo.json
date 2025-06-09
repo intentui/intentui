@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-number-field-invalid-demo",
+  "type": "registry:block",
+  "title": "Number field invalid demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/number-field/number-field-invalid-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Form } from \"@/components/ui/form\"\nimport { NumberField } from \"@/components/ui/number-field\"\n\nexport default function NumberFieldInvalidDemo() {\n  return (\n    <Form onSubmit={(e) => e.preventDefault()} className=\"space-y-4\">\n      <NumberField isRequired label=\"Cookies\" />\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

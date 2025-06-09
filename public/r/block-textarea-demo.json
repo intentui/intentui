@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-textarea-demo",
+  "type": "registry:block",
+  "title": "Textarea demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/textarea/textarea-demo.tsx",
+      "content": "\"use client\"\n\nimport { Textarea } from \"@/components/ui/textarea\"\n\nexport default function TextareaDemo() {\n  return <Textarea label=\"Address\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

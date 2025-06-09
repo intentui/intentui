@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toast-status-demo",
+  "type": "registry:block",
+  "title": "Toast status demo",
+  "description": "",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/toast/toast-status-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { toast } from \"sonner\"\n\nexport default function ToastStatusDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-3\">\n      <Button intent=\"outline\" onPress={() => toast.error(\"The registration failed\")}>\n        Error\n      </Button>\n      <Button intent=\"outline\" onPress={() => toast.success(\"The registration was successful.\")}>\n        Success\n      </Button>\n      <Button\n        intent=\"outline\"\n        onPress={() => toast.warning(\"There was an issue during registration\")}\n      >\n        Warning\n      </Button>\n      <Button intent=\"outline\" onPress={() => toast.info(\"Email is already registered.\")}>\n        Info\n      </Button>\n      <Button\n        intent=\"outline\"\n        onPress={() => {\n          toast.promise(wait(2000), {\n            loading: \"Deleting database...\",\n            success: \"Database deleted.\",\n            error: \"Failed to delete database.\",\n          })\n        }}\n      >\n        Promise / Loading\n      </Button>\n    </div>\n  )\n}\n\nfunction wait(number: number) {\n  return new Promise((resolve) => setTimeout(resolve, number))\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/inertia/app.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/inertia/app.tsx.stub",
+      "content": "import \"../css/app.css\"\n\nimport \"./bootstrap\"\n\nimport { createInertiaApp } from \"@inertiajs/react\"\nimport { resolvePageComponent } from \"laravel-vite-plugin/inertia-helpers\"\nimport { createRoot, hydrateRoot } from \"react-dom/client\"\nimport { ThemeProvider } from \"@/providers/theme-provider\"\n\nconst appName = import.meta.env.VITE_APP_NAME || \"Laravel\"\n\ncreateInertiaApp({\n    title: (title) => `${title} - ${appName}`,\n    resolve: (name) =>\n        resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob(\"./Pages/**/*.tsx\")),\n    setup({ el, App, props }) {\n        const renderApp = (\n            <ThemeProvider>\n                <App {...props} />\n            </ThemeProvider>\n        )\n        if (import.meta.env.SSR) {\n            hydrateRoot(el, renderApp)\n        } else {\n            createRoot(el).render(renderApp)\n        }\n    },\n    progress: {\n        color: \"#4B5563\",\n    },\n})\n"
+    }
+  ]
+}

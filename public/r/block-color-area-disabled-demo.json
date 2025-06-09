@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-area-disabled-demo",
+  "type": "registry:block",
+  "title": "Color area disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-area/color-area-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorArea } from \"@/components/ui/color-area\"\nimport { ColorThumb as Thumb } from \"@/components/ui/color-thumb\"\n\nexport default function ColorAreaDisabledDemo() {\n  return (\n    <ColorArea isDisabled>\n      <Thumb />\n    </ColorArea>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

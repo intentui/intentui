@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radial-bar-chart-grid-demo",
+  "type": "registry:block",
+  "title": "Radial bar chart grid demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/radial-bar/radial-bar-chart-grid-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport type { ChartConfig } from \"@/components/ui/chart\"\nimport { PolarGrid, RadialBar, RadialBarChart } from \"recharts\"\n\nconst chartData = [\n  { category: \"Electronics\", sales: 320, fill: \"var(--color-electronics)\" },\n  { category: \"Furniture\", sales: 250, fill: \"var(--color-furniture)\" },\n  { category: \"Clothing\", sales: 200, fill: \"var(--color-clothing)\" },\n  { category: \"Sports\", sales: 180, fill: \"var(--color-sports)\" },\n  { category: \"Books\", sales: 100, fill: \"var(--color-books)\" },\n]\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n  },\n  electronics: {\n    label: \"Electronics\",\n    color: \"var(--chart-1)\",\n  },\n  furniture: {\n    label: \"Furniture\",\n    color: \"var(--chart-2)\",\n  },\n  clothing: {\n    label: \"Clothing\",\n    color: \"var(--chart-3)\",\n  },\n  sports: {\n    label: \"Sports\",\n    color: \"var(--chart-4)\",\n  },\n  books: {\n    label: \"Books\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function RadialBarChartGridDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-0 text-center\"\n        title=\"Category Sales Overview\"\n        description=\"Visualizing sales distribution across categories for Jan - Dec 2024\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <RadialBarChart data={chartData} innerRadius={30} outerRadius={100}>\n            <ChartTooltip\n              cursor={false}\n              content={<ChartTooltipContent hideLabel nameKey=\"category\" />}\n            />\n            <PolarGrid gridType=\"circle\" />\n            <RadialBar dataKey=\"sales\" />\n          </RadialBarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-field-appearance-demo",
+  "type": "registry:block",
+  "title": "Tag field appearance demo",
+  "description": "",
+  "dependencies": [
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/tag-field/tag-field-appearance-demo.tsx",
+      "content": "\"use client\"\n\nimport { TagField } from \"@/components/ui/tag-field\"\nimport { useListData } from \"react-stately\"\n\nexport default function TagFieldAppearanceDemo() {\n  const selectedItems = useListData({\n    initialItems: [],\n  })\n\n  return <TagField appearance=\"plain\" placeholder=\"Tags...\" list={selectedItems} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

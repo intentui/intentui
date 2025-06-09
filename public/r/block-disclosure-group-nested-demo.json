@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-group-nested-demo",
+  "type": "registry:block",
+  "title": "Disclosure group nested demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure-group/disclosure-group-nested-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  Disclosure,\n  DisclosureGroup,\n  DisclosurePanel,\n  DisclosureTrigger,\n} from \"@/components/ui/disclosure\"\nimport { IconChevronRight } from \"@intentui/icons\"\n\nexport default function DisclosureGroupNestedDemo() {\n  return (\n    <DisclosureGroup\n      className=\"rounded-xl border **:data-[slot=disclosure]:last:border-b-0\"\n      defaultExpandedKeys={[1]}\n    >\n      {items.map((item, index) => (\n        <Disclosure key={index} id={index}>\n          <DisclosureTrigger className=\"px-4\">{item.title}</DisclosureTrigger>\n          <DisclosurePanel className=\"bg-muted\">\n            <DisclosureGroup allowsMultipleExpanded>\n              {item.children.map((child, childIndex) => (\n                <Disclosure key={childIndex} id={childIndex}>\n                  <DisclosureTrigger className=\"group\">\n                    <span>\n                      <IconChevronRight className=\"size-5 duration-300 group-aria-expanded:rotate-90\" />\n                      {child.title}\n                    </span>\n                  </DisclosureTrigger>\n                  <DisclosurePanel>{child.description}</DisclosurePanel>\n                </Disclosure>\n              ))}\n            </DisclosureGroup>\n          </DisclosurePanel>\n        </Disclosure>\n      ))}\n    </DisclosureGroup>\n  )\n}\n\nconst items = [\n  {\n    id: 1,\n    title: \"Clothing Categories\",\n    description: \"Explore our wide range of clothing options for every season.\",\n    children: [\n      {\n        id: 101,\n        title: \"Men's Wear\",\n        description: \"Stylish and comfortable outfits for men.\",\n      },\n      {\n        id: 102,\n        title: \"Women's Wear\",\n        description: \"Elegant and trendy fashion for women.\",\n      },\n      {\n        id: 103,\n        title: \"Kids' Wear\",\n        description: \"Colorful and playful clothing for kids.\",\n      },\n    ],\n  },\n  {\n    id: 2,\n    title: \"Electronics\",\n    description: \"Discover the latest in technology and gadgets.\",\n    children: [\n      {\n        id: 201,\n        title: \"Smartphones\",\n        description: \"Top brands and the latest models.\",\n      },\n      {\n        id: 202,\n        title: \"Laptops\",\n        description: \"High-performance laptops for work and play.\",\n      },\n      {\n        id: 203,\n        title: \"Accessories\",\n        description: \"Chargers, cases, and other must-have gadgets.\",\n      },\n    ],\n  },\n  {\n    id: 3,\n    title: \"Home & Living\",\n    description: \"Everything you need to make your house a home.\",\n    children: [\n      {\n        id: 301,\n        title: \"Furniture\",\n        description: \"Comfortable and stylish furniture for every room.\",\n      },\n      {\n        id: 302,\n        title: \"Decor\",\n        description: \"Beautiful decor items to personalize your space.\",\n      },\n      {\n        id: 303,\n        title: \"Kitchen Essentials\",\n        description: \"Practical and modern kitchen tools.\",\n      },\n    ],\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

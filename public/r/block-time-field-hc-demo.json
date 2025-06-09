@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-time-field-hc-demo",
+  "type": "registry:block",
+  "title": "Time field hc demo",
+  "description": "",
+  "dependencies": [
+    "@internationalized/date"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/date-and-time/time-field/time-field-hc-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { OptionPreview } from \"@/components/docs/outside/option-preview\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { TimeField } from \"@/components/ui/time-field\"\nimport { Time } from \"@internationalized/date\"\n\nexport default function TimeFieldHcDemo() {\n  const [hc, setHc] = useState<12 | 24>(24)\n  const [value, setValue] = useState(new Time(13, 45))\n  return (\n    <>\n      <OptionPreview>\n        <Switch\n          isSelected={hc === 24}\n          onChange={() => setHc((prevHc) => (prevHc === 24 ? 12 : 24))}\n        >\n          {hc} hour\n        </Switch>\n      </OptionPreview>\n      <TimeField\n        value={value}\n        onChange={(newValue) => setValue(newValue!)}\n        hourCycle={hc}\n        label=\"Event time\"\n      />\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-emitter",
+  "type": "registry:lib",
+  "title": "Emitter",
+  "description": "",
+  "dependencies": [
+    "mitt"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/emitter.ts",
+      "content": "// import mitt from \"mitt\"\n//\n// type Events = {\n//   thereIsAnAdVisibilityChange: \"hidden\" | \"visible\"\n// }\n//\n// export const emitter = mitt<Events>()\n",
+      "type": "registry:lib"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-select-uncontrolled-demo",
+  "type": "registry:block",
+  "title": "Select uncontrolled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/select/select-uncontrolled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Select } from \"@/components/ui/select\"\n\nexport const movies = [\n  { id: 1, title: \"Inception\" },\n  { id: 2, title: \"The Dark Knight\" },\n  { id: 3, title: \"Interstellar\" },\n  { id: 4, title: \"The Matrix\" },\n  { id: 5, title: \"Pulp Fiction\" },\n]\n\nexport default function SelectUncontrolledDemo() {\n  return (\n    <Select defaultSelectedKey={2} label=\"Movies\" placeholder=\"Select a movie\">\n      <Select.Trigger />\n      <Select.List items={movies}>\n        {(item) => (\n          <Select.Option id={item.id} textValue={item.title}>\n            {item.title}\n          </Select.Option>\n        )}\n      </Select.List>\n    </Select>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

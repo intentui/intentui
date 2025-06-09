@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-loader-intent-demo",
+  "type": "registry:block",
+  "title": "Loader intent demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/loader/loader-intent-demo.tsx",
+      "content": "\"use client\"\n\nimport { Loader } from \"@/components/ui/loader\"\n\nexport default function LoaderIntentDemo() {\n  return (\n    <div className=\"flex gap-6\">\n      <Loader variant=\"spin\" size=\"md\" intent=\"current\" />\n      <Loader variant=\"spin\" size=\"md\" intent=\"primary\" />\n      <Loader variant=\"spin\" size=\"md\" intent=\"secondary\" />\n      <Loader variant=\"spin\" size=\"md\" intent=\"success\" />\n      <Loader variant=\"spin\" size=\"md\" intent=\"warning\" />\n      <Loader variant=\"spin\" size=\"md\" intent=\"danger\" />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

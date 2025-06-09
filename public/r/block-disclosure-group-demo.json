@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-group-demo",
+  "type": "registry:block",
+  "title": "Disclosure group demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure-group/disclosure-group-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  Disclosure,\n  DisclosureGroup,\n  DisclosurePanel,\n  DisclosureTrigger,\n} from \"@/components/ui/disclosure\"\n\nexport default function DisclosureGroupDemo() {\n  return (\n    <DisclosureGroup>\n      <Disclosure id={1}>\n        <DisclosureTrigger>What is a VPS?</DisclosureTrigger>\n        <DisclosurePanel>\n          A VPS is a Virtual Private Server, which provides dedicated resources on a server shared\n          with other users, offering more control and customization than shared hosting.\n        </DisclosurePanel>\n      </Disclosure>\n\n      <Disclosure id={2}>\n        <DisclosureTrigger>What is cloud hosting?</DisclosureTrigger>\n        <DisclosurePanel>\n          Cloud hosting utilizes multiple servers to balance load and maximize uptime. Instead of\n          being hosted on a single server, your data and resources are spread across multiple\n          servers.\n        </DisclosurePanel>\n      </Disclosure>\n\n      <Disclosure id={3}>\n        <DisclosureTrigger>What is shared hosting?</DisclosureTrigger>\n        <DisclosurePanel>\n          Shared hosting is a type of web hosting where multiple websites share the same server and\n          its resources. It's an affordable option, but may have limitations on performance and\n          customization.\n        </DisclosurePanel>\n      </Disclosure>\n      <Disclosure id={4}>\n        <DisclosureTrigger>What is dedicated hosting?</DisclosureTrigger>\n        <DisclosurePanel>\n          Dedicated hosting means your website is hosted on a single server exclusively reserved for\n          your site. This provides maximum performance and customization, but at a higher cost.\n        </DisclosurePanel>\n      </Disclosure>\n    </DisclosureGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

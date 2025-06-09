@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-group-shape-demo",
+  "type": "registry:block",
+  "title": "Tag group shape demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/tag-group/tag-group-shape-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tag, TagGroup, TagList } from \"@/components/ui/tag-group\"\n\nconst carModels = [\n  { id: \"1\", name: \"Tesla Model S\", available: true },\n  { id: \"2\", name: \"Ford Mustang\", available: false },\n  { id: \"3\", name: \"Chevrolet Camaro\", available: true },\n  { id: \"4\", name: \"BMW M3\", available: false },\n  { id: \"5\", name: \"Audi R8\", available: true },\n]\n\nexport default function TagGroupShapeDemo() {\n  return (\n    <div className=\"max-w-sm space-y-6\">\n      <TagGroup isCircle={false} intent=\"danger\" label=\"Car Models\" selectionMode=\"multiple\">\n        <TagList items={carModels}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n      </TagGroup>\n      <TagGroup isCircle intent=\"warning\" label=\"Car Models\" selectionMode=\"multiple\">\n        <TagList items={carModels}>{(item) => <Tag>{item.name}</Tag>}</TagList>\n      </TagGroup>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

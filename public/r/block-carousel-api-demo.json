@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-carousel-api-demo",
+  "type": "registry:block",
+  "title": "Carousel api demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/media/carousel/carousel-api-demo.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Carousel, type CarouselApi } from \"@/components/ui/carousel\"\nimport { Button } from \"react-aria-components\"\nimport { twJoin } from \"tailwind-merge\"\n\nexport default function CarouselDApiDemo() {\n  const [api, setApi] = useState<CarouselApi>()\n  const [current, setCurrent] = useState(0)\n  const [count, setCount] = useState(0)\n\n  useEffect(() => {\n    if (!api) {\n      return\n    }\n\n    setCount(api.scrollSnapList().length)\n    setCurrent(api.selectedScrollSnap() + 1)\n    api.on(\"select\", () => {\n      setCurrent(api.selectedScrollSnap() + 1)\n    })\n  }, [api])\n\n  const handleSelect = (index: number) => {\n    if (api) {\n      api.scrollTo(index)\n      setCurrent(index + 1)\n    }\n  }\n\n  return (\n    <Carousel setApi={setApi} className=\"w-full max-w-sm\">\n      <Carousel.Content>\n        {Array.from({ length: 10 }, (_, id) => ({ id: id + 1 })).map(({ id }) => (\n          <Carousel.Item key={id}>\n            <Card>\n              <Card.Content className=\"flex aspect-square items-center justify-center p-6\">\n                <span className=\"font-semibold text-4xl\">{id}</span>\n              </Card.Content>\n            </Card>\n          </Carousel.Item>\n        ))}\n      </Carousel.Content>\n      <div className=\"mt-4 flex items-center justify-between\">\n        <div className=\"flex gap-1 py-2 text-center text-muted-fg text-sm\">\n          {Array.from({ length: 10 }).map((_, index) => (\n            <Button\n              className={twJoin(\n                \"rounded-xl transition focus:outline-hidden\",\n                current === index + 1\n                  ? \"h-3 w-5 bg-primary transition-all hover:bg-primary/80\"\n                  : \"h-3 w-3 bg-fg/10 hover:bg-fg/15\",\n              )}\n              aria-label={`Slide ${current} of ${count}`}\n              onPress={() => handleSelect(index)}\n              key={index}\n            />\n          ))}\n        </div>\n\n        <div className=\"space-x-2\">\n          <Carousel.Button segment=\"previous\" />\n          <Carousel.Button segment=\"next\" />\n        </div>\n      </div>\n    </Carousel>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

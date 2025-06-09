@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-switch-uncontrolled-demo",
+  "type": "registry:block",
+  "title": "Switch uncontrolled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/switch/switch-uncontrolled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Switch } from \"@/components/ui/switch\"\n\nexport default function SwitchUncontrolledDemo() {\n  return (\n    <>\n      <Switch defaultSelected>\n        {({ isSelected }) => <>{isSelected ? \"Enable Dark Mode\" : \"Disable Dark Mode\"}</>}\n      </Switch>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

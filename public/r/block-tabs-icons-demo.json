@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tabs-icons-demo",
+  "type": "registry:block",
+  "title": "Tabs icons demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/tabs/tabs-icons-demo.tsx",
+      "content": "\"use client\"\n\nimport { Tabs } from \"@/components/ui/tabs\"\nimport { IconApple, IconClock, IconCut } from \"@intentui/icons\"\n\nexport default function TabsIconsDemo() {\n  return (\n    <Tabs aria-label=\"Fitness App\">\n      <Tabs.List>\n        <Tabs.Tab id=\"w\">\n          <IconCut /> Workouts\n        </Tabs.Tab>\n        <Tabs.Tab id=\"n\">\n          <IconApple /> Nutrition\n        </Tabs.Tab>\n        <Tabs.Tab id=\"t\">\n          <IconClock /> Tracker\n        </Tabs.Tab>\n      </Tabs.List>\n      <Tabs.Panel id=\"w\">\n        Find a variety of workout plans tailored to your fitness level and goals.\n      </Tabs.Panel>\n      <Tabs.Panel id=\"n\">\n        Get nutrition tips and meal plans to complement your fitness journey.\n      </Tabs.Panel>\n      <Tabs.Panel id=\"t\">Track your progress with detailed statistics and analytics.</Tabs.Panel>\n    </Tabs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

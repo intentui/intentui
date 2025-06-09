@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radar-chart-basic-demo",
+  "type": "registry:block",
+  "title": "Radar chart basic demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/radar/radar-chart-basic-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { PolarAngleAxis, PolarGrid, Radar, RadarChart } from \"recharts\"\n\nconst chartData = [\n  { category: \"Electronics\", sales: 186 },\n  { category: \"Clothing\", sales: 305 },\n  { category: \"Groceries\", sales: 237 },\n  { category: \"Furniture\", sales: 273 },\n  { category: \"Toys\", sales: 209 },\n  { category: \"Beauty\", sales: 214 },\n]\n\nconst chartConfig = {\n  sales: {\n    label: \"Sales\",\n    color: \"var(--chart-1)\",\n  },\n} satisfies ChartConfig\n\nexport default function RadarChartBasicDemo() {\n  return (\n    <Card>\n      <Card.Header\n        className=\"items-center pb-4\"\n        title=\"By Category\"\n        description=\"Sales performance by category (Jan - Jun 2024)\"\n      />\n      <Card.Content>\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px]\">\n          <RadarChart data={chartData}>\n            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />\n            <PolarAngleAxis dataKey=\"category\" />\n            <PolarGrid />\n            <Radar dataKey=\"sales\" fill=\"var(--color-sales)\" fillOpacity={0.6} />\n          </RadarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "csr/nextjs/layout.tsx.stub",
+  "files": [
+    {
+      "name": "csr/nextjs/layout.tsx.stub",
+      "content": "import { Providers } from '@/providers';\n\nexport default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {\n  return (\n    <html>\n      <body>\n        <Providers>{children}</Providers>\n      </body>\n    </html>\n  );\n}\n"
+    }
+  ]
+}

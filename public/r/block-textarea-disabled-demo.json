@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-textarea-disabled-demo",
+  "type": "registry:block",
+  "title": "Textarea disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/textarea/textarea-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Textarea } from \"@/components/ui/textarea\"\n\nexport default function TextareaDisabledDemo() {\n  return <Textarea isDisabled label=\"Address\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

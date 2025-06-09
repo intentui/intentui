@@ -1,0 +1,160 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "extends": "none",
+  "name": "indigo",
+  "type": "registry:style",
+  "title": "Indigo style",
+  "description": "",
+  "dependencies": [
+    "tw-animate-css",
+    "@intentui/icons",
+    "tailwindcss-react-aria-components",
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/lib-primitive.json"
+  ],
+  "files": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Inter\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "font-mono": "\"Geist Mono\", 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '\"Liberation Mono\"', '\"Courier New\"', 'monospace'",
+      "color-border": "var(--border)",
+      "color-input": "var(--input)",
+      "color-ring": "var(--ring)",
+      "color-bg": "var(--bg)",
+      "color-fg": "var(--fg)",
+      "color-primary": "var(--primary)",
+      "color-primary-fg": "var(--primary-fg)",
+      "color-secondary": "var(--secondary)",
+      "color-secondary-fg": "var(--secondary-fg)",
+      "color-accent": "var(--accent)",
+      "color-accent-fg": "var(--accent-fg)",
+      "color-success": "var(--success)",
+      "color-success-fg": "var(--success-fg)",
+      "color-danger": "var(--danger)",
+      "color-danger-fg": "var(--danger-fg)",
+      "color-warning": "var(--warning)",
+      "color-warning-fg": "var(--warning-fg)",
+      "color-muted": "var(--muted)",
+      "color-muted-fg": "var(--muted-fg)",
+      "color-overlay": "var(--overlay)",
+      "color-overlay-fg": "var(--overlay-fg)",
+      "color-navbar": "var(--navbar)",
+      "color-navbar-fg": "var(--navbar-fg)",
+      "color-sidebar": "var(--sidebar)",
+      "color-sidebar-fg": "var(--sidebar-fg)",
+      "color-chart-1": "var(--chart-1)",
+      "color-chart-2": "var(--chart-2)",
+      "color-chart-3": "var(--chart-3)",
+      "color-chart-4": "var(--chart-4)",
+      "color-chart-5": "var(--chart-5)"
+    },
+    "light": {
+      "bg": "oklch(1 0 0)",
+      "fg": "oklch(0.13 0.028 261.692)",
+      "primary": "oklch(0.585 0.233 277.117)",
+      "primary-fg": "oklch(1 0 0)",
+      "secondary": "oklch(0.928 0.006 264.531)",
+      "secondary-fg": "oklch(0.13 0.028 261.692)",
+      "overlay": "oklch(1 0 0)",
+      "overlay-fg": "oklch(0.13 0.028 261.692)",
+      "accent": "oklch(0.928 0.006 264.531)",
+      "accent-fg": "oklch(0.13 0.028 261.692)",
+      "muted": "oklch(0.967 0.003 264.542)",
+      "muted-fg": "oklch(0.551 0.027 264.364)",
+      "success": "oklch(0.596 0.145 163.225)",
+      "success-fg": "oklch(1 0 0)",
+      "warning": "oklch(0.828 0.189 84.429)",
+      "warning-fg": "oklch(0.279 0.077 45.635)",
+      "danger": "oklch(0.577 0.245 27.325)",
+      "danger-fg": "oklch(0.971 0.013 17.38)",
+      "border": "oklch(0.912 0.01 258.338)",
+      "input": "oklch(0.872 0.01 258.338)",
+      "ring": "oklch(0.511 0.262 276.966)",
+      "navbar": "oklch(0.967 0.003 264.542)",
+      "navbar-fg": "oklch(0.13 0.028 261.692)",
+      "sidebar": "oklch(0.967 0.003 264.542)",
+      "sidebar-fg": "oklch(0.13 0.028 261.692)",
+      "chart-1": "oklch(0.511 0.262 276.966)",
+      "chart-2": "oklch(0.673 0.182 276.935)",
+      "chart-3": "oklch(0.785 0.115 274.713)",
+      "chart-4": "oklch(0.87 0.065 274.039)",
+      "chart-5": "oklch(0.93 0.034 272.788)",
+      "radius-lg": "0.5rem",
+      "radius-xs": "calc(var(--radius-lg) * 0.5)",
+      "radius-sm": "calc(var(--radius-lg) * 0.75)",
+      "radius-md": "calc(var(--radius-lg) * 0.9)",
+      "radius-xl": "calc(var(--radius-lg) * 1.25)",
+      "radius-2xl": "calc(var(--radius-lg) * 1.5)",
+      "radius-3xl": "calc(var(--radius-lg) * 2)",
+      "radius-4xl": "calc(var(--radius-lg) * 3)"
+    },
+    "dark": {
+      "bg": "oklch(0.080 0.028 261.692)",
+      "fg": "oklch(0.985 0.002 247.839)",
+      "primary": "oklch(0.585 0.233 277.117)",
+      "primary-fg": "oklch(1 0 0)",
+      "secondary": "oklch(0.248 0.033 256.848)",
+      "secondary-fg": "oklch(0.985 0.002 247.839)",
+      "accent": "oklch(0.278 0.033 256.848)",
+      "accent-fg": "oklch(0.985 0.002 247.839)",
+      "muted": "oklch(0.21 0.034 264.665)",
+      "muted-fg": "oklch(0.707 0.022 261.325)",
+      "overlay": "oklch(0.170 0.034 264.665)",
+      "overlay-fg": "oklch(0.985 0.002 247.839)",
+      "success": "oklch(0.596 0.145 163.225)",
+      "success-fg": "oklch(1 0 0)",
+      "warning": "oklch(0.828 0.189 84.429)",
+      "warning-fg": "oklch(0.279 0.077 45.635)",
+      "danger": "oklch(0.577 0.245 27.325)",
+      "danger-fg": "oklch(0.971 0.013 17.38)",
+      "border": "oklch(0.273 0.034 259.733)",
+      "input": "oklch(0.323 0.034 259.733)",
+      "ring": "oklch(0.511 0.262 276.966)",
+      "navbar": "oklch(0.170 0.034 264.665)",
+      "navbar-fg": "oklch(0.985 0.002 247.839)",
+      "sidebar": "oklch(0.160 0.034 264.665)",
+      "sidebar-fg": "oklch(0.985 0.002 247.839)",
+      "chart-1": "oklch(0.457 0.24 277.023)",
+      "chart-2": "oklch(0.585 0.233 277.117)",
+      "chart-3": "oklch(0.673 0.182 276.935)",
+      "chart-4": "oklch(0.785 0.115 274.713)",
+      "chart-5": "oklch(0.87 0.065 274.039)"
+    }
+  },
+  "css": {
+    "@layer base": {
+      "*, ::after, ::before, ::backdrop, ::file-selector-button": {
+        "border-color": "var(--border, currentColor)"
+      },
+      "*": {
+        "scrollbar-width": "thin",
+        "scrollbar-color": "var(--border) transparent"
+      },
+      "html": {
+        "font-feature-settings": "\"cv02\", \"cv03\", \"cv04\", \"cv11\"",
+        "font-variation-settings": "normal",
+        "scroll-behavior": "smooth",
+        "height": "100%",
+        "-webkit-font-smoothing": "antialiased",
+        "-moz-osx-font-smoothing": "grayscale",
+        "-webkit-tap-highlight-color": "transparent"
+      },
+      "body": {
+        "background-color": "var(--bg)",
+        "color": "var(--fg)"
+      },
+      "::-webkit-scrollbar": {
+        "width": "4px"
+      },
+      "::-webkit-scrollbar-track": {
+        "background": "transparent"
+      },
+      "::-webkit-scrollbar-thumb": {
+        "background": "var(--border)",
+        "border-radius": "4px"
+      }
+    }
+  }
+}

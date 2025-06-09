@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-avatar-initials-demo",
+  "type": "registry:block",
+  "title": "Avatar initials demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/media/avatar/avatar-initials-demo.tsx",
+      "content": "import { Avatar } from \"@/components/ui/avatar\"\n\nexport default function AvatarInitialsDemo() {\n  return <Avatar src=\"\" initials=\"SH\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

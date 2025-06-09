@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-tag-field-controlled-demo",
+  "type": "registry:block",
+  "title": "Tag field controlled demo",
+  "description": "",
+  "dependencies": [
+    "react-stately"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/tag-field/tag-field-controlled-demo.tsx",
+      "content": "\"use client\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { TagField } from \"@/components/ui/tag-field\"\nimport { useListData } from \"react-stately\"\n\nexport default function TagFieldControlledDemo() {\n  const selectedItems = useListData({\n    initialItems: [{ id: 1, name: \"Ferrari\" }],\n  })\n\n  return (\n    <div className=\"max-w-xs\">\n      <TagField\n        appearance=\"outline\"\n        label=\"Add tag\"\n        onItemInserted={(key) => console.info(\"onItemInserted\", key)}\n        onItemCleared={(key) => console.info(\"onItemCleared\", key)}\n        description=\"You can add multiple tags\"\n        list={selectedItems}\n      />\n      <Description className=\"mt-4 block max-w-xs [&>strong]:text-fg [&>strong]:text-medium\">\n        {JSON.stringify(selectedItems.items)}\n      </Description>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

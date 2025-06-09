@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-radio-group-description-demo",
+  "type": "registry:block",
+  "title": "Radio group description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/radio-group/radio-group-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { Radio, RadioGroup } from \"@/components/ui/radio\"\n\nexport default function RadioGroupDescriptionDemo() {\n  return (\n    <RadioGroup\n      description=\"Select your preferred shipping method for the delivery of your items.\"\n      label=\"Shipping Method\"\n    >\n      <Radio value=\"standard\">Standard</Radio>\n      <Radio value=\"express\">Express</Radio>\n      <Radio value=\"overnight\">Overnight</Radio>\n      <Radio value=\"international\">International</Radio>\n      <Radio value=\"pickup\">Pickup</Radio>\n    </RadioGroup>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

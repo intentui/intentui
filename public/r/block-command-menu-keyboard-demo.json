@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-command-menu-keyboard-demo",
+  "type": "registry:block",
+  "title": "Command menu keyboard demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/command-menu/command-menu-keyboard-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { CommandMenu } from \"@/components/ui/command-menu\"\n\nexport default function CommandMenuKeyboardDemo() {\n  const [isOpen, setIsOpen] = useState(false)\n  return (\n    <>\n      <Button intent=\"outline\" onPress={() => setIsOpen(true)}>\n        Open\n      </Button>\n      <CommandMenu key=\"k\" isOpen={isOpen} onOpenChange={setIsOpen}>\n        <CommandMenu.Search placeholder=\"Quick search...\" />\n        <CommandMenu.List>\n          <CommandMenu.Item textValue=\"account settings\">\n            Account Settings\n            <CommandMenu.Keyboard keys=\"⌘A\" />\n          </CommandMenu.Item>\n\n          <CommandMenu.Item textValue=\"profile\">\n            Profile\n            <CommandMenu.Keyboard keys=\"⌘P\" />\n          </CommandMenu.Item>\n\n          <CommandMenu.Item textValue=\"notifications\">\n            Notifications\n            <CommandMenu.Keyboard keys=\"⌘N\" />\n          </CommandMenu.Item>\n\n          <CommandMenu.Item textValue=\"privacy settings\">\n            Privacy Settings\n            <CommandMenu.Keyboard keys=\"⌘S\" />\n          </CommandMenu.Item>\n\n          <CommandMenu.Item textValue=\"billing information\">\n            Billing Information\n            <CommandMenu.Keyboard keys=\"⌘B\" />\n          </CommandMenu.Item>\n\n          <CommandMenu.Item textValue=\"logout\">\n            Logout\n            <CommandMenu.Keyboard keys=\"⌘L\" />\n          </CommandMenu.Item>\n        </CommandMenu.List>\n      </CommandMenu>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

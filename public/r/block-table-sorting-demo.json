@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-table-sorting-demo",
+  "type": "registry:block",
+  "title": "Table sorting demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons",
+    "@react-stately/data"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/table/table-sorting-demo.tsx",
+      "content": "\"use client\"\nimport { Table } from \"@/components/ui/table\"\nimport { IconLoader } from \"@intentui/icons\"\nimport { useAsyncList } from \"@react-stately/data\"\n\ninterface Character {\n  title: string\n  director: number\n  producer: number\n  release_date: number\n}\n\nexport default function TableSortingDemo() {\n  const list = useAsyncList<Character>({\n    async load({ signal }) {\n      const res = await fetch(\"https://swapi.py4e.com/api/films\", {\n        signal,\n      })\n      const json = await res.json()\n      return {\n        items: json.results,\n      }\n    },\n    async sort({ items, sortDescriptor }) {\n      return {\n        items: items.sort((a, b) => {\n          // @ts-ignore\n          const first = a[sortDescriptor.column]\n          // @ts-ignore\n          const second = b[sortDescriptor.column]\n          let cmp = (Number.parseInt(first) || first) < (Number.parseInt(second) || second) ? -1 : 1\n          if (sortDescriptor.direction === \"descending\") {\n            cmp *= -1\n          }\n          return cmp\n        }),\n      }\n    },\n  })\n  return (\n    <Table aria-label=\"Movies\" sortDescriptor={list.sortDescriptor} onSortChange={list.sort}>\n      <Table.Header>\n        <Table.Column id=\"title\" isRowHeader>\n          Title\n        </Table.Column>\n        <Table.Column id=\"director\" allowsSorting>\n          Director\n        </Table.Column>\n        <Table.Column id=\"producer\">Producer</Table.Column>\n        <Table.Column id=\"release_date\" allowsSorting>\n          Release Date\n        </Table.Column>\n      </Table.Header>\n      <Table.Body\n        items={list.items}\n        renderEmptyState={() => (\n          <div className=\"grid place-content-center p-10\">\n            <IconLoader className=\"animate-spin\" />\n          </div>\n        )}\n      >\n        {(item) => (\n          <Table.Row id={item.title}>\n            <Table.Cell className=\"whitespace-nowrap\">{item.title}</Table.Cell>\n            <Table.Cell className=\"whitespace-nowrap\">{item.director}</Table.Cell>\n            <Table.Cell className=\"whitespace-nowrap\">{item.producer}</Table.Cell>\n            <Table.Cell>{item.release_date}</Table.Cell>\n          </Table.Row>\n        )}\n      </Table.Body>\n    </Table>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

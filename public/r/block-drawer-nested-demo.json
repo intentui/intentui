@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-drawer-nested-demo",
+  "type": "registry:block",
+  "title": "Drawer nested demo",
+  "description": "",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/drawer/drawer-nested-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Drawer } from \"@/components/ui/drawer\"\nimport { Form } from \"@/components/ui/form\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { toast } from \"sonner\"\n\nexport default function DrawerNestedDemo() {\n  const [isRegistrationDrawerOpen, setIsRegistrationDrawerOpen] = useState(false)\n  const [isProfileSetupDrawerOpen, setIsProfileSetupDrawerOpen] = useState(false)\n  const [isTyping, setIsTyping] = useState(false)\n\n  return (\n    <>\n      <Button intent=\"outline\" onPress={() => setIsRegistrationDrawerOpen(true)}>\n        Register\n      </Button>\n\n      <Drawer\n        isOpen={isRegistrationDrawerOpen}\n        onOpenChange={() => setIsRegistrationDrawerOpen(false)}\n      >\n        <Drawer.Content>\n          <Drawer.Header>\n            <Drawer.Title>Confirm Registration</Drawer.Title>\n            <Drawer.Description>Please confirm your registration details.</Drawer.Description>\n          </Drawer.Header>\n          <Drawer.Footer>\n            <Drawer.Close>Cancel</Drawer.Close>\n            <Button\n              onPress={() => {\n                setIsProfileSetupDrawerOpen(true)\n              }}\n            >\n              Confirm\n            </Button>\n          </Drawer.Footer>\n        </Drawer.Content>\n      </Drawer>\n\n      <Drawer\n        isOpen={isProfileSetupDrawerOpen}\n        onOpenChange={(isOpen) => {\n          if (!isOpen && isTyping) toast(\"Profile setup incomplete\", { position: \"top-center\" })\n          setIsProfileSetupDrawerOpen(isOpen)\n        }}\n      >\n        <Drawer.Content>\n          <Drawer.Header>\n            <Drawer.Title>Set Up Your Profile</Drawer.Title>\n            <Drawer.Description>\n              We need a bit more information before you can get started.\n            </Drawer.Description>\n          </Drawer.Header>\n          <Form\n            onSubmit={(e) => {\n              e.preventDefault()\n              toast.success(\"Profile setup complete\", { position: \"top-center\" })\n              setIsProfileSetupDrawerOpen(false)\n              setIsRegistrationDrawerOpen(false)\n            }}\n          >\n            <Drawer.Body className=\"space-y-4\">\n              <Textarea\n                isRequired\n                label=\"Bio\"\n                placeholder=\"Tell us something about yourself\"\n                onInput={() => setIsTyping(true)}\n              />\n            </Drawer.Body>\n            <Drawer.Footer>\n              <Drawer.Close>Skip for now</Drawer.Close>\n              <Button type=\"submit\">Complete Setup</Button>\n            </Drawer.Footer>\n          </Form>\n        </Drawer.Content>\n      </Drawer>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/remix/action.set-theme.ts.stub",
+  "files": [
+    {
+      "name": "dark-mode/remix/action.set-theme.ts.stub",
+      "content": "import { themeSessionResolver } from '@/sessions.server'\nimport { createThemeAction } from 'remix-themes'\n\nexport const action = createThemeAction(themeSessionResolver)\n"
+    }
+  ]
+}

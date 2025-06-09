@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-modal-nested-demo",
+  "type": "registry:block",
+  "title": "Modal nested demo",
+  "description": "",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/overlays/modal/modal-nested-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Form } from \"@/components/ui/form\"\nimport { Modal } from \"@/components/ui/modal\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { toast } from \"sonner\"\n\nexport default function ModalNestedDemo() {\n  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false)\n  const [isProfileSetupModalOpen, setIsProfileSetupModalOpen] = useState(false)\n  const [isTyping, setIsTyping] = useState(false)\n\n  return (\n    <>\n      <Button onPress={() => setIsRegistrationModalOpen(true)}>Register</Button>\n\n      <Modal.Content\n        isOpen={isRegistrationModalOpen}\n        onOpenChange={() => setIsRegistrationModalOpen(false)}\n        aria-label=\"Confirm Registration\"\n      >\n        <Modal.Header>\n          <Modal.Title>Confirm Registration</Modal.Title>\n          <Modal.Description>Please confirm your registration details.</Modal.Description>\n        </Modal.Header>\n        <Modal.Footer>\n          <Modal.Close>Cancel</Modal.Close>\n          <Button\n            onPress={() => {\n              setIsProfileSetupModalOpen(true)\n            }}\n          >\n            Confirm\n          </Button>\n        </Modal.Footer>\n      </Modal.Content>\n\n      <Modal.Content\n        isOpen={isProfileSetupModalOpen}\n        onOpenChange={(isOpen) => {\n          if (!isOpen && isTyping) {\n            toast(\"Profile setup incomplete\")\n          }\n          setIsProfileSetupModalOpen(isOpen)\n        }}\n        aria-label=\"Profile Setup\"\n      >\n        <Modal.Header>\n          <Modal.Title>Set Up Your Profile</Modal.Title>\n          <Modal.Description>\n            We need a bit more information before you can get started.\n          </Modal.Description>\n        </Modal.Header>\n        <Form\n          onSubmit={(e) => {\n            e.preventDefault()\n            toast.success(\"Profile setup complete\")\n            setIsProfileSetupModalOpen(false)\n            setIsRegistrationModalOpen(false)\n          }}\n        >\n          <Modal.Body className=\"space-y-4\">\n            <Textarea\n              isRequired\n              label=\"Bio\"\n              placeholder=\"Tell us something about yourself\"\n              onInput={() => setIsTyping(true)}\n            />\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close>Skip for now</Modal.Close>\n            <Button type=\"submit\">Complete Setup</Button>\n          </Modal.Footer>\n        </Form>\n      </Modal.Content>\n    </>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

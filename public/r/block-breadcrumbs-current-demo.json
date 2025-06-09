@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-breadcrumbs-current-demo",
+  "type": "registry:block",
+  "title": "Breadcrumbs current demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-current-demo.tsx",
+      "content": "\"use client\"\nimport { Breadcrumbs } from \"@/components/ui/breadcrumbs\"\n\nexport default function BreadcrumbsCurrentDemo() {\n  return (\n    <Breadcrumbs>\n      <Breadcrumbs.Item href=\"#\">Home</Breadcrumbs.Item>\n      <Breadcrumbs.Item href=\"#\">Components</Breadcrumbs.Item>\n\n      <Breadcrumbs.Item className=\"data-current:text-primary\">Navbar</Breadcrumbs.Item>\n    </Breadcrumbs>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

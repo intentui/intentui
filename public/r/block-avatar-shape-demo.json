@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-avatar-shape-demo",
+  "type": "registry:block",
+  "title": "Avatar shape demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/media/avatar/avatar-shape-demo.tsx",
+      "content": "import { Avatar } from \"@/components/ui/avatar\"\n\nexport default function AvatarShapeDemo() {\n  return (\n    <div className=\"flex items-end gap-4\">\n      <Avatar src=\"/images/avatar/slash.jpg\" isCircle />\n      <Avatar src=\"/images/avatar/cobain.jpg\" isCircle={false} />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

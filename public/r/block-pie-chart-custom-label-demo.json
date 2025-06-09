@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-pie-chart-custom-label-demo",
+  "type": "registry:block",
+  "title": "Pie chart custom label demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/pie/pie-chart-custom-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from \"@/components/ui/chart\"\nimport { Pie, PieChart } from \"recharts\"\n\nconst chartData = [\n  { category: \"Sales\", amount: 275, fill: \"var(--color-sales)\" },\n  { category: \"Marketing\", amount: 200, fill: \"var(--color-marketing)\" },\n  { category: \"IT\", amount: 187, fill: \"var(--color-it)\" },\n  { category: \"HR\", amount: 173, fill: \"var(--color-hr)\" },\n  { category: \"Operations\", amount: 90, fill: \"var(--color-operations)\" },\n]\n\nconst chartConfig = {\n  amount: {\n    label: \"Amount\",\n  },\n  sales: {\n    label: \"Sales\",\n    color: \"var(--chart-1)\",\n  },\n  marketing: {\n    label: \"Marketing\",\n    color: \"var(--chart-2)\",\n  },\n  it: {\n    label: \"IT\",\n    color: \"var(--chart-3)\",\n  },\n  hr: {\n    label: \"HR\",\n    color: \"var(--chart-4)\",\n  },\n  operations: {\n    label: \"Operations\",\n    color: \"var(--chart-5)\",\n  },\n} satisfies ChartConfig\n\nexport default function PieChartCustomLabelDemo() {\n  return (\n    <Card>\n      <Card.Header className=\"items-center pb-0\">\n        <Card.Title>Departmental Budget Allocation</Card.Title>\n        <Card.Description>Jan - Jun 2024</Card.Description>\n      </Card.Header>\n      <Card.Content className=\"flex-1 pb-0\">\n        <Chart config={chartConfig} className=\"mx-auto aspect-square max-h-[250px] px-0\">\n          <PieChart>\n            <ChartTooltip content={<ChartTooltipContent nameKey=\"amount\" hideLabel />} />\n            <Pie\n              data={chartData}\n              dataKey=\"amount\"\n              labelLine={false}\n              label={({ payload, ...props }) => {\n                return (\n                  <text\n                    cx={props.cx}\n                    cy={props.cy}\n                    x={props.x}\n                    y={props.y}\n                    textAnchor={props.textAnchor}\n                    dominantBaseline={props.dominantBaseline}\n                    fill=\"var(--fg)\"\n                  >\n                    {payload.amount}\n                  </text>\n                )\n              }}\n              nameKey=\"category\"\n            />\n          </PieChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

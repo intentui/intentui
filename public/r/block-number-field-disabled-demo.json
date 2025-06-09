@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-number-field-disabled-demo",
+  "type": "registry:block",
+  "title": "Number field disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/number-field/number-field-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { NumberField } from \"@/components/ui/number-field\"\n\nexport default function NumberFieldDisabledDemo() {\n  return <NumberField isDisabled label=\"Cookies\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

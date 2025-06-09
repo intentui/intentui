@@ -1,0 +1,9 @@
+{
+  "name": "dark-mode/remix/theme-switcher.tsx.stub",
+  "files": [
+    {
+      "name": "dark-mode/remix/theme-switcher.tsx.stub",
+      "content": "import { Button } from 'ui'\nimport { IconMoon, IconSun } from '@intentui/icons'\nimport { Theme, useTheme } from '@/components/theme-provider'\n\nexport function ThemeSwitcher() {\n  const [theme, setTheme] = useTheme()\n  const switchTheme = () => {\n    if (theme === 'dark') {\n      setTheme(Theme.LIGHT)\n    } else {\n      setTheme(Theme.DARK)\n    }\n  }\n\n  return (\n    <Button\n      intent=\"outline\"\n      size=\"sq-sm\"\n      aria-label=\"Switch theme\"\n      onPress={switchTheme}\n    >\n      <IconSun className=\"transition-all scale-100 rotate-0 dark:scale-0 dark:-rotate-90 h-[1.2rem] w-[1.2rem]\" />\n      <IconMoon className=\"absolute transition-all scale-0 rotate-90 dark:scale-100 dark:rotate-0 h-[1.2rem] w-[1.2rem]\" />\n    </Button>\n  )\n}\n"
+    }
+  ]
+}

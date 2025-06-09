@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-combo-box-detail-description-demo",
+  "type": "registry:block",
+  "title": "Combo box detail description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/pickers/combo-box/combo-box-detail-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { ComboBox } from \"@/components/ui/combo-box\"\n\nexport default function ComboBoxDetailDescriptionDemo() {\n  return (\n    <ComboBox label=\"Roles\" placeholder=\"ComboBox a role\">\n      <ComboBox.Input />\n      <ComboBox.List className=\"max-w-(--trigger-width)\" items={roles}>\n        {(item) => (\n          <ComboBox.Option id={item.id} textValue={item.name}>\n            <ComboBox.Label>{item.name}</ComboBox.Label>\n            <ComboBox.Description>{item.description}</ComboBox.Description>\n          </ComboBox.Option>\n        )}\n      </ComboBox.List>\n    </ComboBox>\n  )\n}\n\nexport const roles = [\n  { id: 1, name: \"Admin\", description: \"Has full access to all resources\" },\n  { id: 2, name: \"Editor\", description: \"Can edit content but has limited access to settings\" },\n  { id: 3, name: \"Viewer\", description: \"Can view content but cannot make changes\" },\n  { id: 4, name: \"Contributor\", description: \"Can contribute content for review\" },\n  { id: 5, name: \"Guest\", description: \"Limited access, mostly for viewing purposes\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

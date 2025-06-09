@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-table-bulk-demo",
+  "type": "registry:block",
+  "title": "Table bulk demo",
+  "description": "",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/table/table-bulk-demo.tsx",
+      "content": "\"use client\"\n\nimport { Description } from \"@/components/ui/field\"\nimport { Table } from \"@/components/ui/table\"\nimport { useState } from \"react\"\nimport type { Selection } from \"react-aria-components\"\n\nexport default function TableBulkDemo() {\n  const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set())\n  return (\n    <>\n      <Table\n        aria-label=\"Books\"\n        selectionMode=\"multiple\"\n        selectedKeys={selectedKeys}\n        onSelectionChange={setSelectedKeys}\n      >\n        <Table.Header>\n          <Table.Column className=\"w-0\">#</Table.Column>\n          <Table.Column isRowHeader>Title</Table.Column>\n          <Table.Column>Author</Table.Column>\n          <Table.Column>Genre</Table.Column>\n          <Table.Column>Published</Table.Column>\n        </Table.Header>\n        <Table.Body items={books}>\n          {(item) => (\n            <Table.Row>\n              <Table.Cell>{item.id}</Table.Cell>\n              <Table.Cell className=\"whitespace-nowrap\">{item.title}</Table.Cell>\n              <Table.Cell className=\"whitespace-nowrap\">{item.author}</Table.Cell>\n              <Table.Cell>{item.genre}</Table.Cell>\n              <Table.Cell>{item.publishedYear}</Table.Cell>\n            </Table.Row>\n          )}\n        </Table.Body>\n      </Table>\n      <Description className=\"mt-2 block text-muted-fg [&>strong]:text-fg\">\n        {Array.from(selectedKeys).length > 0 ? (\n          <>\n            You have selected: <strong>{Array.from(selectedKeys).join(\", \")}</strong>\n          </>\n        ) : (\n          \"You have not selected anything.\"\n        )}\n      </Description>\n    </>\n  )\n}\n\nexport const books = [\n  {\n    id: \"1\",\n    title: \"To Kill a Mockingbird\",\n    author: \"Harper Lee\",\n    genre: \"Fiction\",\n    publishedYear: 1960,\n  },\n  { id: \"2\", title: \"1984\", author: \"George Orwell\", genre: \"Dystopian\", publishedYear: 1949 },\n  {\n    id: \"3\",\n    title: \"The Great Gatsby\",\n    author: \"F. Scott Fitzgerald\",\n    genre: \"Fiction\",\n    publishedYear: 1925,\n  },\n  {\n    id: \"4\",\n    title: \"The Catcher in the Rye\",\n    author: \"J.D. Salinger\",\n    genre: \"Fiction\",\n    publishedYear: 1951,\n  },\n  {\n    id: \"5\",\n    title: \"Pride and Prejudice\",\n    author: \"Jane Austen\",\n    genre: \"Romance\",\n    publishedYear: 1813,\n  },\n  {\n    id: \"6\",\n    title: \"The Lord of the Rings\",\n    author: \"J.R.R. Tolkien\",\n    genre: \"Fantasy\",\n    publishedYear: 1954,\n  },\n  {\n    id: \"7\",\n    title: \"Harry Potter and the Sorcerer's Stone\",\n    author: \"J.K. Rowling\",\n    genre: \"Fantasy\",\n    publishedYear: 1997,\n  },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

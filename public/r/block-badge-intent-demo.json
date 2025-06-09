@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-badge-intent-demo",
+  "type": "registry:block",
+  "title": "Badge intent demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/statuses/badge/badge-intent-demo.tsx",
+      "content": "\"use client\"\n\nimport { Badge } from \"@/components/ui/badge\"\n\nexport default function BadgeIntentDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {[\"primary\", \"secondary\", \"success\", \"info\", \"warning\", \"danger\"].map((intent, index) => (\n        <Badge key={index} intent={intent as any}>\n          {intent}\n        </Badge>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

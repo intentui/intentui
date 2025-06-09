@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-menu-item-description-demo",
+  "type": "registry:block",
+  "title": "Menu item description demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/collections/menu/menu-item-description-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Menu } from \"@/components/ui/menu\"\n\nexport default function MenuItemDescriptionDemo() {\n  return (\n    <Menu>\n      <Button intent=\"outline\">Open</Button>\n      <Menu.Content className=\"sm:min-w-60 sm:max-w-min\" placement=\"bottom\" items={roles}>\n        {(item) => (\n          <Menu.Item id={item.id} textValue={item.name}>\n            <Menu.Label>{item.name}</Menu.Label>\n            <Menu.Description>{item.description}</Menu.Description>\n          </Menu.Item>\n        )}\n      </Menu.Content>\n    </Menu>\n  )\n}\n\nconst roles = [\n  { id: 1, name: \"Admin\", description: \"Has full access to all resources\" },\n  { id: 2, name: \"Editor\", description: \"Can edit content but has limited access to settings\" },\n  { id: 3, name: \"Viewer\", description: \"Can view content but cannot make changes\" },\n  { id: 4, name: \"Contributor\", description: \"Can contribute content for review\" },\n  { id: 5, name: \"Guest\", description: \"Limited access, mostly for viewing purposes\" },\n]\n",
+      "type": "registry:block"
+    }
+  ]
+}

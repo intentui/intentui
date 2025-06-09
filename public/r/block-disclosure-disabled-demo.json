@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-disclosure-disabled-demo",
+  "type": "registry:block",
+  "title": "Disclosure disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/navigation/disclosure/disclosure-disabled-demo.tsx",
+      "content": "import { Disclosure, DisclosurePanel, DisclosureTrigger } from \"@/components/ui/disclosure\"\n\nexport default function DisclosureDisabledDemo() {\n  return (\n    <Disclosure isDisabled>\n      <DisclosureTrigger>What is your return policy?</DisclosureTrigger>\n      <DisclosurePanel>\n        <p>\n          You can return any item within 30 days of purchase, provided it is in its original\n          condition with proof of purchase.\n        </p>\n      </DisclosurePanel>\n    </Disclosure>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

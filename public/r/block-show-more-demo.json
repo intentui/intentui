@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-show-more-demo",
+  "type": "registry:block",
+  "title": "Show more demo",
+  "description": "",
+  "dependencies": [
+    "@intentui/icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/surfaces/show-more/show-more-demo.tsx",
+      "content": "\"use client\"\nimport { ShowMore } from \"@/components/ui/show-more\"\nimport { IconChevronLgDown } from \"@intentui/icons\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport default function ShowMoreDemo() {\n  return (\n    <div className=\"py-6\">\n      <ShowMore>\n        {({ isSelected }) => (\n          <>\n            Show {isSelected ? \"less\" : \"more\"}\n            <IconChevronLgDown\n              className={twMerge(\n                isSelected ? \"rotate-180\" : \"\",\n                \"size-4 transition-transform duration-200\",\n              )}\n            />\n          </>\n        )}\n      </ShowMore>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

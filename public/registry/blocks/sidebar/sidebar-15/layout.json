@@ -1,0 +1,11 @@
+{
+  "name": "layout",
+  "files": [
+    {
+      "name": "layout.tsx",
+      "content": "import { SidebarInset, SidebarProvider } from \"@/components/ui/sidebar\"\n\nimport { twJoin } from \"tailwind-merge\"\nimport AppSidebar from \"../app-sidebar\"\nimport AppSidebarNav from \"../app-sidebar-nav\"\n\nexport default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {\n  return (\n    <SidebarProvider>\n      <AppSidebar collapsible=\"dock\" />\n      <SidebarInset>\n        <AppSidebarNav />\n        <div\n          className={twJoin(\n            \"[--layout-padding:--spacing(4)] sm:[--layout-padding:--spacing(6)]\",\n            \"flex flex-col gap-y-(--layout-padding) p-(--layout-padding) lg:p-(--layout-padding)\",\n          )}\n        >\n          {children}\n        </div>\n      </SidebarInset>\n    </SidebarProvider>\n  )\n}\n"
+    }
+  ],
+  "type": "components:blocks",
+  "componentPath": "src/app/pre-blocks/sidebar/sidebar-15/layout.tsx"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-bar-chart-stacked-legend-demo",
+  "type": "registry:block",
+  "title": "Bar chart stacked legend demo",
+  "description": "",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/charts/bar/bar-chart-stacked-legend-demo.tsx",
+      "content": "\"use client\"\n\nimport { Card } from \"@/components/ui/card\"\nimport {\n  Chart,\n  type ChartConfig,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/components/ui/chart\"\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\"\n\nconst chartData = [\n  { month: \"Jan\", revenue: 3200, expenses: 2400 },\n  { month: \"Feb\", revenue: 2800, expenses: 2000 },\n  { month: \"Mar\", revenue: 3500, expenses: 2700 },\n  { month: \"Apr\", revenue: 3000, expenses: 2200 },\n  { month: \"May\", revenue: 3600, expenses: 2800 },\n  { month: \"Jun\", revenue: 3400, expenses: 2600 },\n  { month: \"Jul\", revenue: 3900, expenses: 3100 },\n  { month: \"Aug\", revenue: 4100, expenses: 3300 },\n  { month: \"Sep\", revenue: 3700, expenses: 2900 },\n  { month: \"Oct\", revenue: 4200, expenses: 3400 },\n  { month: \"Nov\", revenue: 4000, expenses: 3100 },\n  { month: \"Dec\", revenue: 4300, expenses: 3500 },\n]\n\nconst chartConfig = {\n  revenue: {\n    label: \"Revenue\",\n    color: \"var(--chart-1)\",\n  },\n  expenses: {\n    label: \"Expenses\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig\n\nexport default function BarChartStackedLegendDemo() {\n  return (\n    <Card>\n      <Card.Header\n        title=\"Biweekly Revenue\"\n        description=\"Revenue breakdown every 2 weeks (Jan - Dec 2024)\"\n      />\n      <Card.Content>\n        <Chart className=\"aspect-[20/15] sm:aspect-[17/7]\" config={chartConfig}>\n          <BarChart accessibilityLayer data={chartData}>\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickLine={false}\n              tickMargin={10}\n              axisLine={false}\n              tickFormatter={(value) => value}\n            />\n            <ChartTooltip content={<ChartTooltipContent hideLabel />} />\n            <ChartLegend content={<ChartLegendContent />} />\n            <Bar dataKey=\"revenue\" stackId=\"a\" fill=\"var(--chart-1)\" radius={[0, 0, 4, 4]} />\n            <Bar dataKey=\"expenses\" stackId=\"a\" fill=\"var(--chart-2)\" radius={[4, 4, 0, 0]} />\n          </BarChart>\n        </Chart>\n      </Card.Content>\n    </Card>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

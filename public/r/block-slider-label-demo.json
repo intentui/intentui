@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-slider-label-demo",
+  "type": "registry:block",
+  "title": "Slider label demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/controls/slider/slider-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { Slider } from \"@/components/ui/slider\"\n\nexport default function SliderLabelDemo() {\n  return <Slider label=\"Opacity\" defaultValue={30} />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

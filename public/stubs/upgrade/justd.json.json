@@ -1,0 +1,9 @@
+{
+  "name": "upgrade/justd.json.stub",
+  "files": [
+    {
+      "name": "upgrade/justd.json.stub",
+      "content": "{\n  \"$schema\": \"https://intentui.com/schema.json\",\n  \"ui\": \"src/components/ui\",\n  \"utils\": \"src/utils\",\n  \"gray\": \"zinc\",\n  \"css\": \"src/app/globals.css\",\n  \"alias\": \"@\"\n}\n"
+    }
+  ]
+}

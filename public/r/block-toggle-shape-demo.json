@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-toggle-shape-demo",
+  "type": "registry:block",
+  "title": "Toggle shape demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/buttons/toggle/toggle-shape-demo.tsx",
+      "content": "\"use client\"\n\nimport { Toggle } from \"@/components/ui/toggle\"\n\nexport default function ToggleShapeDemo() {\n  return (\n    <Toggle intent=\"outline\" isCircle>\n      {({ isSelected }) => <>{isSelected ? \"Disabled\" : \"Enabled\"}</>}\n    </Toggle>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

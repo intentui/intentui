@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-search-field-with-label-demo",
+  "type": "registry:block",
+  "title": "Search field with label demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/forms/search-field/search-field-with-label-demo.tsx",
+      "content": "\"use client\"\n\nimport { SearchField } from \"@/components/ui/search-field\"\n\nexport default function SearchFieldWithLabelDemo() {\n  return <SearchField label=\"Search\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}

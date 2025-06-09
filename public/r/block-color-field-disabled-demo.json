@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-color-field-disabled-demo",
+  "type": "registry:block",
+  "title": "Color field disabled demo",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/docs/colors/color-field/color-field-disabled-demo.tsx",
+      "content": "\"use client\"\n\nimport { ColorField } from \"@/components/ui/color-field\"\n\nexport default function ColorFieldDisabledDemo() {\n  return <ColorField isDisabled label=\"Color\" placeholder=\"#FAFAFA\" />\n}\n",
+      "type": "registry:block"
+    }
+  ]
+}
