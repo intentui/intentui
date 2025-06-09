@@ -68,27 +68,11 @@ export function Navbar() {
                     >
                       Docs
                     </NavLink>
-                    <NavLink
-                      isNextLink
-                      isActive={
-                        pathname?.startsWith("/docs/1.x/components") || pathname === "/components"
-                      }
-                      href="/components"
-                    >
-                      Components
-                    </NavLink>
                     <NavLink isNextLink isActive={pathname === "/colors"} href="/colors">
                       Colors
                     </NavLink>
                     <NavLink isNextLink isActive={pathname === "/icons"} href="/icons">
                       Icons
-                    </NavLink>
-                    <NavLink
-                      isNextLink
-                      isActive={pathname?.startsWith("/charts") || pathname === "/charts"}
-                      href="/charts"
-                    >
-                      Charts
                     </NavLink>
                     <NavLink isNextLink isActive={pathname === "/themes"} href="/themes">
                       Themes

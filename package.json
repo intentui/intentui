@@ -14,6 +14,7 @@
     "build:sidebar": "bun run resources/scripts/build-sidebar.ts",
     "postbuild": "bun run build:sidebar",
     "generate-preview": "bun run resources/scripts/create-pr-content.ts",
+    "prebuild": "bun run b",
     "b": "bun run generate-preview",
     "preview": "next build && next start -p 3001"
   },
