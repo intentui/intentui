@@ -108,8 +108,9 @@ export function Navbar() {
                         <IconChevronLgDown className="duration-200 size-3 group-pressed:rotate-180" />
                       </Button>
                       <Menu.Content placement="bottom right" className="sm:min-w-10">
-                        <Menu.Item href={pathname.replace(/\/\d+\.x/, "/1.x")}>1.x</Menu.Item>
-                        <Menu.Item href={pathname.replace(/\/\d+\.x/, "/2.x")}>2.x</Menu.Item>
+                        <Menu.Item href='/'>1.x</Menu.Item>
+                        <Menu.Item href='https://2x.intentui.com'>2.x</Menu.Item>
+                        <Menu.Item href='https://intentui.com'>3.x</Menu.Item>
                       </Menu.Content>
                     </Menu>
 
