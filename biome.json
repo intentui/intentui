@@ -7,11 +7,11 @@
     "ignore": [
       "**/*.js",
       "public/**/*",
-      "resources/lib/sidebar.json",
-      "resources/stubs/**/*",
+      "src/lib/sidebar.json",
+      "src/stubs/**/*",
       "**/*.css",
       "**/.next/**",
-      "resource/content",
+      "src/content",
       ".source",
       "components/docs/generated/**/*"
     ]
