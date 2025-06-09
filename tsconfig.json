@@ -22,7 +22,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
+      "@/*": ["./src/*"],
       "content-collections": ["./.content-collections/generated"],
       "#site/content": ["./.source"]
     }
@@ -31,9 +31,9 @@
   "exclude": [
     ".next",
     "node_modules",
-    "resources/stubs",
-    "resources/content/**/*.mdx",
-    "resources/scripts/build-registry.mts",
+    "src/stubs",
+    "src/content/**/*.mdx",
+    "src/scripts/build-registry.mts",
     "__registry__"
   ]
 }
