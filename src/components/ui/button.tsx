@@ -9,44 +9,67 @@ import { type VariantProps, tv } from "tailwind-variants"
 
 const buttonStyles = tv({
   base: [
-    "relative isolate inline-flex items-center justify-center gap-x-2 font-medium",
-    "outline-0 outline-offset-2 hover:no-underline focus-visible:outline-2",
-    "inset-ring inset-ring-fg/20 bg-(--btn-bg) pressed:bg-(--btn-overlay) text-(--btn-fg) shadow-[shadow:inset_0_2px_--theme(--color-white/15%)] hover:bg-(--btn-overlay) dark:inset-ring-fg/15 dark:shadow-none",
-    "forced-colors:outline-[Highlight] forced-colors:[--btn-icon:ButtonText] forced-colors:hover:[--btn-icon:ButtonText]",
-    "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-1 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-current/60 pressed:*:data-[slot=icon]:text-current *:data-[slot=icon]:transition hover:*:data-[slot=icon]:text-current/90",
-    "*:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:my-1 *:data-[slot=avatar]:*:size-4 *:data-[slot=avatar]:size-4 *:data-[slot=avatar]:shrink-0",
+    "relative inset-ring inset-ring-fg/15 isolate inline-flex items-center justify-center font-medium",
+    "focus-visible:outline focus-visible:outline-offset-2 focus-visible:ring-2 focus-visible:ring-offset-3 focus-visible:ring-offset-bg",
+    "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-0.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-(--btn-icon) sm:*:data-[slot=icon]:my-1 forced-colors:[--btn-icon:ButtonText] forced-colors:hover:[--btn-icon:ButtonText]",
   ],
   variants: {
     intent: {
       primary: [
-        "outline-primary [--btn-bg:var(--color-primary)]/95 [--btn-fg:var(--color-primary-fg)] [--btn-overlay:var(--color-primary)]",
+        "bg-primary text-primary-fg outline-primary ring-primary/50 hover:bg-primary/85",
+        "[--btn-icon:color-mix(in_oklab,var(--primary-fg)_70%,var(--primary))] hover:[--btn-icon:var(--primary-fg)]",
       ],
       secondary: [
-        "outline-primary [--btn-bg:var(--color-secondary)]/90 [--btn-fg:var(--color-secondary-fg)] [--btn-overlay:var(--color-secondary)]",
+        "bg-secondary text-secondary-fg outline-secondary-fg ring-secondary-fg/20 hover:bg-secondary/85",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] hover:[--btn-icon:var(--secondary-fg)]",
       ],
       warning: [
-        "outline-warning [--btn-bg:var(--color-warning)]/95 [--btn-fg:var(--color-warning-fg)] [--btn-overlay:var(--color-warning)]",
+        "bg-warning text-warning-fg outline-warning ring-warning/20 hover:bg-warning/85",
+        "[--btn-icon:color-mix(in_oklab,var(--warning-fg)_50%,var(--warning))] hover:[--btn-icon:var(--warning-fg)]",
       ],
       danger: [
-        "outline-danger [--btn-bg:var(--color-danger)]/95 [--btn-fg:var(--color-danger-fg)] [--btn-overlay:var(--color-danger)]",
+        "bg-danger text-danger-fg outline-danger ring-danger/25 hover:bg-danger/85",
+        "[--btn-icon:color-mix(in_oklab,var(--danger-fg)_70%,var(--danger))] hover:[--btn-icon:var(--danger-fg)]",
       ],
       outline: [
-        "shadow-none outline-primary [--btn-fg:var(--color-fg)] [--btn-overlay:var(--color-secondary)]/90",
+        "bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] hover:[--btn-icon:var(--secondary-fg)]",
       ],
       plain: [
-        "inset-ring-transparent shadow-none outline-primary [--btn-fg:var(--color-fg)] [--btn-overlay:var(--color-secondary)]/90 dark:inset-ring-transparent",
+        "inset-ring-transparent bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] hover:[--btn-icon:var(--secondary-fg)]",
       ],
     },
     size: {
-      xs: "h-8 px-[calc(var(--spacing)*2.7)] text-xs/4 **:data-[slot=avatar]:*:size-3.5 **:data-[slot=avatar]:size-3.5 **:data-[slot=icon]:size-3 lg:text-[0.800rem]/4",
-      sm: "h-9 px-3.5 text-sm/5 sm:text-sm/5",
-      md: "h-10 px-4 text-base sm:text-sm/6",
-      lg: "h-11 px-4.5 text-base *:data-[slot=icon]:mx-[-1.5px] sm:*:data-[slot=icon]:size-5 lg:text-base/7",
-      "sq-sm": "size-9 shrink-0",
+      xs: [
+        "gap-x-1",
+        "px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1.5)-1px)] text-sm sm:px-[calc(--spacing(2.5)-1px)] sm:py-[calc(--spacing(1)-1px)] sm:text-xs/4",
+        "*:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
+      ],
+      sm: [
+        "gap-x-1.5",
+        "px-[calc(--spacing(3)-1px)] py-[calc(--spacing(2)-1px)] sm:px-[calc(--spacing(2.5)-1px)] sm:py-[calc(--spacing(1)-1px)] sm:text-sm/5",
+        "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
+      ],
+      md: [
+        "gap-x-2",
+        "px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/6",
+        "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4",
+      ],
+      lg: [
+        "gap-x-2.5",
+        "px-[calc(--spacing(4)-1px)] py-[calc(--spacing(3)-1px)] sm:px-[calc(--spacing(3.5)-1px)] sm:py-[calc(--spacing(2)-1px)] sm:text-base/4",
+        "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
+      ],
+      "sq-xs": "size-8",
+      "sq-sm": "size-9",
+      "sq-md": "size-9.5",
+      "sq-lg": "size-10",
     },
+
     isCircle: {
       true: "rounded-full",
-      false: "rounded-lg",
+      false: "rounded-[calc(var(--radius-lg)-1px)]",
     },
     isDisabled: {
       true: "inset-ring-0 opacity-50 forced-colors:text-[GrayText]",
