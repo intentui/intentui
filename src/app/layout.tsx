@@ -13,6 +13,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Intent UI",
+    url: "https://intentui.com",
+    logo: "https://intentui.com/icon.svg",
+  }
+
   const js = String.raw
   return (
     <html
@@ -23,6 +31,12 @@ export default function RootLayout({
     >
       <head>
         <script defer src="https://assets.onedollarstats.com/stonks.js" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: js`
