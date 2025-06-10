@@ -64,7 +64,7 @@ const TextField = ({
             data-loading={isPending ? "true" : undefined}
           >
             {prefix && typeof prefix === "string" ? (
-              <span className="ml-2 text-muted-fg">{prefix}</span>
+              <span className="pl-2 text-muted-fg">{prefix}</span>
             ) : (
               prefix
             )}

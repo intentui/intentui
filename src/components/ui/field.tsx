@@ -76,19 +76,20 @@ const FieldError = ({ className, ref, ...props }: FieldErrorProps) => {
 
 const fieldGroupStyles = tv({
   base: [
-    "[--gutter-x:--spacing(2.5)] [--padding-inset:--spacing(6)]",
-    "group flex h-10 items-center overflow-hidden rounded-lg border border-input shadow-xs transition duration-200 ease-out",
-    "relative focus-within:ring-4 group-invalid:focus-within:border-danger group-invalid:focus-within:ring-danger/20",
+    "[--gutter-inset:--spacing(6)] [--gutter-x:--spacing(2.5)]",
+    "*:text-base/6 *:sm:text-sm/6",
+    "group flex items-center overflow-hidden rounded-[calc(var(--radius-lg)-1px)] border border-input shadow-xs transition duration-200 ease-out not-data-focus-within:hover:border-[color-mix(in_oklab,var(--color-fg)_10%,var(--color-border))]",
+    "relative focus-within:ring-3 group-invalid:focus-within:border-danger group-invalid:focus-within:ring-danger/20",
     "[&>[role=progressbar]:first-child]:ml-(--gutter-x) [&>[role=progressbar]:last-child]:mr-(--gutter-x)",
     "*:data-[slot=icon]:z-10 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:[button]:shrink-0",
     "[&>button:has([data-slot=icon]):first-child]:left-0 [&>button:has([data-slot=icon]):last-child]:right-0 [&>button:has([data-slot=icon])]:absolute",
-    "*:data-[slot=icon]:pointer-events-none *:data-[slot=icon]:absolute *:data-[slot=icon]:top-[calc(var(--spacing)*2.7)] *:data-[slot=icon]:text-muted-fg",
+    "*:data-[slot=icon]:-translate-y-1/2 *:data-[slot=icon]:pointer-events-none *:data-[slot=icon]:absolute *:data-[slot=icon]:top-1/2 *:data-[slot=icon]:text-muted-fg",
     "[&>[data-slot=icon]:first-child]:left-(--gutter-x) [&>[data-slot=icon]:last-child]:right-(--gutter-x)",
-    "[&:has([data-slot=icon]+input)]:pl-(--padding-inset) [&:has(input+[data-slot=icon])]:pr-(--padding-inset)",
-    "[&:has([data-slot=icon]+[role=group])]:pl-(--padding-inset) [&:has([role=group]+[data-slot=icon])]:pr-(--padding-inset)",
-    "has-[[data-slot=icon]:last-child]:[&_input]:pr-[calc(var(--padding-inset)+1)]",
-    "*:[button]:h-8 *:[button]:rounded-[calc(var(--radius-sm)-1px)] *:[button]:px-(--gutter-x)",
-    "[&>button:first-child]:ml-[calc(var(--spacing)*0.7)] [&>button:last-child]:mr-[calc(var(--spacing)*0.7)]",
+    "[&:has([data-slot=icon]+input)]:pl-(--gutter-inset) [&:has(input+[data-slot=icon])]:pr-(--gutter-inset)",
+    "[&:has([data-slot=icon]+[role=group])]:pl-(--gutter-inset) [&:has([role=group]+[data-slot=icon])]:pr-(--gutter-inset)",
+    "has-[[data-slot=icon]:last-child]:[&_input]:pr-[calc(var(--gutter-inset)+1)]",
+    "*:[button]:rounded-[calc(var(--radius-lg)-4px)] *:[button]:px-(--gutter-x) *:[button]:py-[calc(--spacing(1)-1px)]",
+    "*:[button]:first:ml-0.5 *:[button]:last:mr-0.5",
   ],
   variants: {
     isFocusWithin: focusStyles.variants.isFocused,
@@ -128,7 +129,7 @@ const Input = ({ className, ref, ...props }: InputProps) => {
       {...props}
       className={composeTailwindRenderProps(
         className,
-        "w-full min-w-0 bg-transparent px-(--gutter-x) py-2 text-base text-fg placeholder-muted-fg outline-hidden focus:outline-hidden sm:text-sm/6 [&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden",
+        "relative block w-full appearance-none rounded-lg px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] placeholder-muted-fg focus:outline-hidden sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)]",
       )}
     />
   )
