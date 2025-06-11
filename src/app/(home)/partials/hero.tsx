@@ -13,7 +13,7 @@ export function Hero() {
         <PageContainer>
           <Header className="text-left">
             <h1 className="mt-4 mb-4 max-w-6xl pb-1 font-semibold text-3xl text-fg tracking-tight lg:mb-6 lg:text-6xl">
-              Accessible React components made for you to copy, customize, and own.
+              Accessible React Component Library – Copy, Customize & Own Your UI
             </h1>
             <p className="block max-w-2xl text-base text-muted-fg leading-relaxed md:leading-relaxed lg:text-xl [&_strong]:font-medium [&_strong]:text-fg">
               <strong className="text-white">{siteConfig.name}</strong> is a chill set of React
