@@ -52,7 +52,7 @@ const Note = ({ indicator = true, intent = "default", className, ...props }: Not
       <div className="flex grow items-start">
         {IconComponent && indicator && (
           <div className="shrink-0">
-            <IconComponent className="mr-3 size-5 rounded-full leading-loose ring-4 ring-current/30" />
+            <IconComponent className="mr-3 size-5 rounded-full leading-loose ring-3 ring-current/30" />
           </div>
         )}
         <div className="text-pretty">{props.children}</div>

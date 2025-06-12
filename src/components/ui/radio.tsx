@@ -52,7 +52,7 @@ const radioStyles = tv({
     },
     isFocused: {
       true: [
-        "border-ring bg-primary/20 ring-4 ring-ring/20",
+        "border-ring bg-primary/20 ring-3 ring-ring/20",
         "group-invalid:border-danger/70 group-invalid:bg-danger/20 group-invalid:ring-danger/20",
       ],
     },

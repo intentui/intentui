@@ -9,7 +9,7 @@ const styles = tv({
       "selected:bg-primary selected:text-primary-fg",
       "data-[open=true]:bg-primary data-[open=true]:text-primary-fg",
       "hover:bg-secondary hover:text-secondary-fg",
-      "focus-visible:ring-4 focus-visible:ring-primary-fg/15",
+      "focus-visible:ring-3 focus-visible:ring-primary-fg/15",
     ],
   },
 })

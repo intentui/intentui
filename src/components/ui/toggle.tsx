@@ -114,7 +114,7 @@ const toggleStyles = tv({
       true: "opacity-50 forced-colors:border-[GrayText]",
     },
     isFocusVisible: {
-      true: "inset-ring-ring/70 z-20 ring-4 ring-ring/20",
+      true: "inset-ring-ring/70 z-20 ring-3 ring-ring/20",
     },
     intent: {
       plain: "inset-ring-0 selected:bg-secondary selected:text-secondary-fg",

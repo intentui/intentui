@@ -2,10 +2,10 @@
 
 import type React from "react"
 
-import colors from "@/colors/colors.json"
 import { useTheme } from "@/components/theme-provider"
 import { Badge } from "@/components/ui/badge"
 import { Select } from "@/components/ui/select"
+import colors from "@/json/colors.json"
 import { neutralColors } from "@/lib/colors"
 import type { Key } from "react-aria-components"
 import { twMerge } from "tailwind-merge"

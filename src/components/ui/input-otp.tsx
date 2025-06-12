@@ -51,7 +51,7 @@ const InputOTPSlot = ({ index, className, ref, ...props }: InputOTPSlotProps) =>
       ref={ref}
       className={twMerge(
         "relative flex size-10 items-center justify-center rounded-md border border-input text-sm tabular-nums transition-all",
-        isActive && "z-10 border-ring/70 ring-4 ring-ring/20",
+        isActive && "z-10 border-ring/70 ring-3 ring-ring/20",
         className,
       )}
       {...props}

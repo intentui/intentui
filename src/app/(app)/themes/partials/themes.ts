@@ -1,4 +1,4 @@
-import colors from "@/colors/colors.json"
+import colors from "@/json/colors.json"
 import {
   accentColors300,
   accentColors400,

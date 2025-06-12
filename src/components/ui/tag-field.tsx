@@ -20,7 +20,7 @@ const tagFieldsStyles = tv({
       outline: [
         "rounded-lg border px-1 shadow-xs",
         "has-[input[data-invalid=true][focus=true]]:border-danger has-[input[data-invalid=true]]:border-danger has-[input[data-invalid=true]]:ring-danger/20",
-        "has-[input[focus=true]]:border-ring/70 has-[input[focus=true]]:ring-4 has-[input[focus=true]]:ring-ring/20",
+        "has-[input[focus=true]]:border-ring/70 has-[input[focus=true]]:ring-3 has-[input[focus=true]]:ring-ring/20",
       ],
       plain: "has-[input[focus=true]]:border-transparent",
     },

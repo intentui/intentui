@@ -96,7 +96,7 @@ const PaginationItem = ({
           intent: "outline",
           size: "sm",
           className: twMerge(
-            "cursor-default font-normal text-fg focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-4 focus-visible:ring-ring/20",
+            "cursor-default font-normal text-fg focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
             className,
           ),
         }),
@@ -132,7 +132,7 @@ const PaginationItem = ({
         {
           textValue: "More pages",
           className: twMerge(
-            "flex size-9 items-center justify-center rounded-lg border border-transparent focus:outline-hidden focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-4 focus-visible:ring-ring/20",
+            "flex size-9 items-center justify-center rounded-lg border border-transparent focus:outline-hidden focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
             className,
           ),
           ...props,
@@ -159,7 +159,7 @@ const PaginationItem = ({
             intent: isCurrent ? "primary" : intent,
             size,
             className: twMerge(
-              "cursor-default font-normal min-w-10 tabular-nums disabled:cursor-default disabled:opacity-100 focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-4 focus-visible:ring-ring/20",
+              "cursor-default font-normal min-w-10 tabular-nums disabled:cursor-default disabled:opacity-100 focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
               className,
             ),
           }),
