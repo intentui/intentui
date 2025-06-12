@@ -78,7 +78,7 @@ const fieldGroupStyles = tv({
   base: [
     "[--gutter-inset:--spacing(6)] [--gutter-x:--spacing(2.5)]",
     "*:text-base/6 *:sm:text-sm/6",
-    "group flex items-center overflow-hidden rounded-[calc(var(--radius-lg)-1px)] border border-input shadow-xs transition duration-200 ease-out not-data-focus-within:hover:border-[color-mix(in_oklab,var(--color-fg)_10%,var(--color-border))]",
+    "group flex items-center overflow-hidden rounded-lg border border-input shadow-xs transition duration-200 ease-out not-data-focus-within:hover:border-[color-mix(in_oklab,var(--color-fg)_10%,var(--color-border))]",
     "relative focus-within:ring-3 group-invalid:focus-within:border-danger group-invalid:focus-within:ring-danger/20",
     "[&>[role=progressbar]:first-child]:ml-(--gutter-x) [&>[role=progressbar]:last-child]:mr-(--gutter-x)",
     "*:data-[slot=icon]:z-10 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:[button]:shrink-0",

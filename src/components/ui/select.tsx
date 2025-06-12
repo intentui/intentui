@@ -28,7 +28,7 @@ import { tv } from "tailwind-variants"
 const selectTriggerStyles = tv({
   extend: focusStyles,
   base: [
-    "relative isolate inline-flex w-full cursor-default items-center gap-x-2 rounded-[calc(var(--radius-lg)-1px)] border border-input text-start shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition group-disabled:opacity-50 **:data-[slot=icon]:size-4 dark:shadow-none",
+    "relative isolate inline-flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input text-start shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition group-disabled:opacity-50 **:data-[slot=icon]:size-4 dark:shadow-none",
     "px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:pr-[calc(--spacing(2)-1px)] sm:pl-[calc(--spacing(3)-1px)] sm:text-sm/6 sm:*:text-sm/6",
     "group-data-open:border-ring/70 group-data-open:ring-3 group-data-open:ring-ring/20",
     "text-fg group-invalid:border-danger group-invalid:ring-danger/20 forced-colors:group-invalid:border-[Mark]",

@@ -1,12 +1,23 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { IconBrandParsinta } from "@intentui/icons"
+import { IconBrandTwitter } from "@intentui/icons"
 
 export default function ButtonOnlyIconDemo() {
   return (
-    <Button size="sq-sm" intent="outline">
-      <IconBrandParsinta />
-    </Button>
+    <div className="flex items-center gap-2">
+      <Button size="sq-xs">
+        <IconBrandTwitter />
+      </Button>
+      <Button size="sq-sm">
+        <IconBrandTwitter />
+      </Button>
+      <Button size="sq-md">
+        <IconBrandTwitter />
+      </Button>
+      <Button size="sq-lg">
+        <IconBrandTwitter />
+      </Button>
+    </div>
   )
 }
