@@ -175,11 +175,11 @@ const Tag = ({ className, intent, isCircle, children, ...props }: TagProps) => {
             <Button
               slot="remove"
               className={twJoin([
-                "-mx-0.5 grid size-3.5 shrink-0 place-content-center outline-hidden *:data-[slot=icon]:size-3",
+                "-mx-0.5 grid size-3.5 shrink-0 place-content-center outline-hidden",
                 finalShape ? "rounded-full" : "rounded-[calc(var(--radius-xs)-1px)]",
               ])}
             >
-              <IconX />
+              <IconX data-slot="close" className="size-3" />
             </Button>
           )}
         </>

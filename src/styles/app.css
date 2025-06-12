@@ -6,9 +6,10 @@
 @plugin 'tailwindcss-react-aria-components';
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: var(--font-geist-mono), 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace';
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-geist-mono), "ui-monospace", "SFMono-Regular", "Menlo", "Monaco",
+    "Consolas", '"Liberation Mono"', '"Courier New"', "monospace";
   --color-shiki-bg: var(--shiki-bg);
   --color-shiki-border: var(--input);
 
@@ -161,8 +162,8 @@
     --danger: oklch(0.577 0.245 27.325);
     --danger-fg: oklch(0.971 0.013 17.38);
 
-    --border: oklch(0.270 0.013 285.805);
-    --input: oklch(0.290 0.013 285.805);
+    --border: oklch(0.27 0.013 285.805);
+    --input: oklch(0.29 0.013 285.805);
 
     --navbar: oklch(0.17 0.006 285.885);
     --navbar-fg: oklch(0.985 0 0);

@@ -18,7 +18,7 @@ const tagFieldsStyles = tv({
   variants: {
     appearance: {
       outline: [
-        "rounded-lg border px-1.5 shadow-xs",
+        "rounded-lg border px-1.5 shadow-xs hover:border-[color-mix(in_oklab,var(--color-fg)_10%,var(--color-border))]",
         "has-[input[data-invalid=true][focus=true]]:border-danger has-[input[data-invalid=true]]:border-danger has-[input[data-invalid=true]]:ring-danger/20",
         "has-[input[focus=true]]:border-ring/70 has-[input[focus=true]]:ring-3 has-[input[focus=true]]:ring-ring/20",
       ],
@@ -144,35 +144,30 @@ const TagField = ({
       {props.label && <Label>{props.label}</Label>}
       <Group className={twJoin("flex flex-col", props.isDisabled && "opacity-50")}>
         <TagGroup
-          intent="secondary"
+          intent="primary"
           isCircle={isCircle}
           aria-label="List item inserted"
           onRemove={onRemove}
         >
           <div className={tagFieldsStyles({ appearance })}>
-            <div className="flex flex-1 flex-wrap items-center">
-              <TagList
-                items={list.items}
-                className={twMerge("[[role='row']]:last:-mr-1 outline-hidden")}
-              >
-                {(item) => <Tag isCircle={isCircle}>{item.name}</Tag>}
-              </TagList>
-              <TextField
-                isDisabled={props.isDisabled}
-                aria-label={props?.label ?? (props["aria-label"] || props.placeholder)}
-                isInvalid={isInvalid}
-                onKeyDown={onKeyDown}
-                onChange={setInputValue}
-                value={inputValue}
-                className="flex-1"
-                {...props}
-              >
-                <Input
-                  className="-mx-1 inline"
-                  placeholder={maxTagsToAdd <= 0 ? "Remove one to add more" : props.placeholder}
-                />
-              </TextField>
-            </div>
+            <TagList items={list.items}>
+              {(item) => <Tag isCircle={isCircle}>{item.name}</Tag>}
+            </TagList>
+            <TextField
+              isDisabled={props.isDisabled}
+              aria-label={props?.label ?? (props["aria-label"] || props.placeholder)}
+              isInvalid={isInvalid}
+              onKeyDown={onKeyDown}
+              onChange={setInputValue}
+              value={inputValue}
+              className="flex-1"
+              {...props}
+            >
+              <Input
+                className="ml-1.5 inline px-0 sm:px-0"
+                placeholder={maxTagsToAdd <= 0 ? "Remove one to add more" : props.placeholder}
+              />
+            </TextField>
           </div>
         </TagGroup>
         {name && (
