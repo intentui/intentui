@@ -33,6 +33,12 @@ const gs = menus[1] as SidebarItem
 const dm = menus[2] as SidebarItem
 const components = menus[3] as ComponentProps
 
+const orderGs = ["Introduction", "Installation", "Client Side Routing", "Colors", "CLI"]
+const sortedGsChildren =
+  gs?.children
+    ?.filter((item) => orderGs.includes(item.title))
+    .sort((a, b) => orderGs.indexOf(a.title) - orderGs.indexOf(b.title)) ?? []
+
 export function Aside() {
   return (
     <ListBox
@@ -49,7 +55,7 @@ export function Aside() {
       </ListBoxSection>
       <ListBoxSection>
         <AsideHeader>{gs?.section}</AsideHeader>
-        {gs?.children?.map((item) => (
+        {sortedGsChildren.map((item) => (
           <AsideLink key={item.slug} href={item.slug}>
             {item.title}
           </AsideLink>
