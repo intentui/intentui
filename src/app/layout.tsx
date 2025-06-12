@@ -8,11 +8,96 @@ import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
 import { twJoin } from "tailwind-merge"
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export const metadata: Metadata = {
+  metadataBase: new URL("https://intentui.com"),
+  title: {
+    default: `${siteConfig.name}`,
+    template: `%s / ${siteConfig.name}`,
+  },
+
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: "https://intentui.com",
+    siteName: siteConfig.name,
+  },
+  description: siteConfig.description,
+  alternates: {
+    canonical: "./",
+  },
+  keywords: [
+    "React",
+    "Next.js",
+    "Inertia.js",
+    "Tailwind CSS",
+    "UI Components",
+    "UI Kit",
+    "UI Library",
+    "UI Framework",
+    "Intent",
+    "React Aria",
+    "React Aria Components",
+    "Server Components",
+    "React Components",
+    "Next UI Components",
+    "UI Design System",
+    "UI for Laravel Inertia",
+    "Laravel Inertia UI",
+    "Laravel Inertia Components",
+    "Laravel Inertia UI Components",
+    "Laravel Inertia UI Kit",
+    "Laravel Inertia UI Library",
+    "Laravel Inertia UI Framework",
+    "Laravel Inertia Intent",
+    "Laravel Intent",
+    "Intent Components",
+    "Intent UI Components",
+    "Intent UI Kit",
+    "Intent UI Library",
+    "Intent UI Framework",
+    "Intent Laravel Inertia",
+    "Intent Laravel",
+    "Intent Inertia",
+    "Intent UI",
+  ],
+  manifest: "/manifest.json",
+  authors: [
+    {
+      name: "irsyadadl",
+      url: "https://x.com/irsyadadl",
+    },
+  ],
+  creator: "irsyadadl",
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  viewportFit: "cover",
+  width: "device-width",
+  initialScale: 1,
+}
+
+const fontSans = localFont({
+  src: [
+    { path: "./fonts/InterVariable.woff2", weight: "100 900", style: "normal" },
+    { path: "./fonts/InterVariable-Italic.woff2", weight: "100 900", style: "italic" },
+  ],
+  variable: "--font-inter",
+})
+
+const fontMono = localFont({
+  src: [{ path: "./fonts/GeistMono[wght].woff2", weight: "100 900", style: "normal" }],
+  variable: "--font-geist-mono",
+})
+
+interface Props {
   children: React.ReactNode
-}>) {
+}
+
+export default function RootLayout({ children }: Readonly<Props>) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -98,88 +183,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://intentui.com"),
-  title: {
-    default: `${siteConfig.name}`,
-    template: `%s / ${siteConfig.name}`,
-  },
-
-  openGraph: {
-    title: siteConfig.name,
-    description: siteConfig.description,
-    url: "https://intentui.com",
-    siteName: siteConfig.name,
-  },
-  description: siteConfig.description,
-  alternates: {
-    canonical: "./",
-  },
-  keywords: [
-    "React",
-    "Next.js",
-    "Inertia.js",
-    "Tailwind CSS",
-    "UI Components",
-    "UI Kit",
-    "UI Library",
-    "UI Framework",
-    "Intent",
-    "React Aria",
-    "React Aria Components",
-    "Server Components",
-    "React Components",
-    "Next UI Components",
-    "UI Design System",
-    "UI for Laravel Inertia",
-    "Laravel Inertia UI",
-    "Laravel Inertia Components",
-    "Laravel Inertia UI Components",
-    "Laravel Inertia UI Kit",
-    "Laravel Inertia UI Library",
-    "Laravel Inertia UI Framework",
-    "Laravel Inertia Intent",
-    "Laravel Intent",
-    "Intent Components",
-    "Intent UI Components",
-    "Intent UI Kit",
-    "Intent UI Library",
-    "Intent UI Framework",
-    "Intent Laravel Inertia",
-    "Intent Laravel",
-    "Intent Inertia",
-    "Intent UI",
-  ],
-  manifest: "/manifest.json",
-  authors: [
-    {
-      name: "irsyadadl",
-      url: "https://x.com/irsyadadl",
-    },
-  ],
-  creator: "irsyadadl",
-}
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-  viewportFit: "cover",
-  width: "device-width",
-  initialScale: 1,
-}
-
-const fontSans = localFont({
-  src: [
-    { path: "./fonts/InterVariable.woff2", weight: "100 900", style: "normal" },
-    { path: "./fonts/InterVariable-Italic.woff2", weight: "100 900", style: "italic" },
-  ],
-  variable: "--font-inter",
-})
-
-const fontMono = localFont({
-  src: [{ path: "./fonts/GeistMono[wght].woff2", weight: "100 900", style: "normal" }],
-  variable: "--font-geist-mono",
-})

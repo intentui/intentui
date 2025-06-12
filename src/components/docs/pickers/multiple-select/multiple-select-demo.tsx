@@ -4,7 +4,7 @@ import { MultipleSelect } from "@/components/ui/multiple-select"
 
 export default function MultipleSelectDemo() {
   return (
-    <MultipleSelect className="max-w-xs" label="Fruits" items={fruits}>
+    <MultipleSelect className="max-w-xs" aria-label="Fruits" items={fruits}>
       {(item) => {
         return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
       }}

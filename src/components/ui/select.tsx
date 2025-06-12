@@ -130,7 +130,10 @@ const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
         data-slot="select-value"
         className="grid flex-1 grid-cols-[auto_1fr] items-center text-base data-placeholder:text-muted-fg [&_[slot=description]]:hidden"
       />
-      <IconChevronsY className="shrink-0 text-muted-fg duration-300 group-disabled:opacity-50 group-data-open:text-fg forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]" />
+      <IconChevronsY
+        data-slot="chevron"
+        className="shrink-0 text-muted-fg group-disabled:opacity-50 group-data-open:text-fg forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
+      />
     </Button>
   )
 }

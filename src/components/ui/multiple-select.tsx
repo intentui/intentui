@@ -12,7 +12,7 @@ import {
   TagList,
 } from "@/components/ui/tag-group"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconChevronLgDown } from "@intentui/icons"
+import { IconChevronsY } from "@intentui/icons"
 import {
   Children,
   type KeyboardEvent,
@@ -123,7 +123,10 @@ const MultipleSelect = <T extends object>({
     <Group
       isDisabled={props.isDisabled}
       isInvalid={props.isInvalid}
-      className={composeTailwindRenderProps(className, "group flex h-fit flex-col gap-y-1")}
+      className={composeTailwindRenderProps(
+        className,
+        "group flex h-fit min-w-[16rem] flex-col gap-y-1",
+      )}
     >
       {({ isInvalid, isDisabled }) => (
         <>
@@ -132,7 +135,7 @@ const MultipleSelect = <T extends object>({
             ref={triggerRef as RefObject<HTMLDivElement>}
             isDisabled={isDisabled}
             isInvalid={isInvalid}
-            className="flex h-fit min-h-10 flex-wrap items-center"
+            className="flex h-fit flex-wrap items-center"
           >
             <TagGroup
               onRemove={removeItem}
@@ -171,7 +174,7 @@ const MultipleSelect = <T extends object>({
               inputValue={inputValue}
               onInputChange={isMax ? () => {} : setInputValue}
             >
-              <div className="flex w-full flex-row items-center justify-between px-2">
+              <div className="flex w-full flex-row items-center justify-between pr-[calc(--spacing(2)-1px)]">
                 <Input
                   onFocus={() => triggerButtonRef.current?.click()}
                   ref={inputRef as RefObject<HTMLInputElement>}
@@ -187,8 +190,9 @@ const MultipleSelect = <T extends object>({
                   aria-label="Chevron"
                   className="ml-auto inline-flex items-center justify-center rounded-lg text-muted-fg outline-hidden"
                 >
-                  <IconChevronLgDown
-                    className={twMerge("group-has-open:-rotate-180 size-4 transition")}
+                  <IconChevronsY
+                    data-slot="chevron"
+                    className="size-4 text-muted-fg group-open:text-fg"
                   />
                 </Button>
               </div>

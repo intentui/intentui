@@ -97,19 +97,21 @@ interface TagGroupProps extends TagGroupPrimitiveProps, CircleProps {
   ref?: React.RefObject<HTMLDivElement>
 }
 
-const TagGroup = ({ children, ref, className, ...props }: TagGroupProps) => {
+const TagGroup = ({
+  children,
+  ref,
+  intent = "primary",
+  isCircle = true,
+  className,
+  ...props
+}: TagGroupProps) => {
   return (
     <TagGroupPrimitive
       ref={ref}
       className={twMerge("flex flex-col flex-wrap", className)}
       {...props}
     >
-      <TagGroupContext.Provider
-        value={{
-          intent: props.intent || "primary",
-          isCircle: props.isCircle ?? true,
-        }}
-      >
+      <TagGroupContext.Provider value={{ intent, isCircle }}>
         {props.label && <Label className="mb-1">{props.label}</Label>}
         {children}
         {props.description && <Description>{props.description}</Description>}
@@ -130,7 +132,6 @@ const TagList = <T extends object>({ className, ...props }: TagListProps<T>) => 
 const tagStyles = tv({
   base: [badgeStyles.base, "outline-hidden"],
   variants: {
-    isLink: { true: "cursor-pointer", false: "cursor-default" },
     isFocusVisible: { true: "inset-ring inset-ring-current/10" },
     isDisabled: { true: "opacity-50" },
     allowsRemoving: { true: "pr-1" },
@@ -141,44 +142,48 @@ interface TagProps extends TagPrimitiveProps, CircleProps {
   intent?: Intent
 }
 
-const Tag = ({ className, intent, isCircle = true, ...props }: TagProps) => {
-  const textValue = typeof props.children === "string" ? props.children : undefined
-  const groupContext = use(TagGroupContext)
+const Tag = ({ className, intent, isCircle, children, ...props }: TagProps) => {
+  const textValue = typeof children === "string" ? children : undefined
+  const { intent: groupIntent, isCircle: groupIsCircle } = use(TagGroupContext)
 
+  const finalIntent = intent ?? groupIntent
+  const finalShape = isCircle !== undefined ? isCircle : groupIsCircle
+  const baseClasses = intents[finalIntent].base
+  const selectedClasses = intents[finalIntent].selected
+  const shapeClasses = finalShape
+    ? "rounded-full px-2"
+    : "rounded-[calc(var(--radius-sm)-1px)] px-1.5"
   return (
     <TagPrimitive
       textValue={textValue}
       {...props}
-      className={composeRenderProps(className, (_, renderProps) => {
-        const finalIntent = intent || groupContext.intent
-        const finalShape = isCircle || groupContext.isCircle
-
-        return tagStyles({
+      className={composeRenderProps(className, (_, renderProps) =>
+        tagStyles({
           ...renderProps,
-          isLink: "href" in props,
           className: twJoin([
-            intents[finalIntent]?.base,
-            finalShape ? "rounded-full px-2" : "rounded-md px-1.5",
-            renderProps.isSelected ? intents[finalIntent].selected : undefined,
+            baseClasses,
+            shapeClasses,
+            renderProps.isSelected ? selectedClasses : undefined,
           ]),
-        })
-      })}
+        }),
+      )}
     >
-      {({ allowsRemoving }) => {
-        return (
-          <>
-            {props.children as React.ReactNode}
-            {allowsRemoving && (
-              <Button
-                slot="remove"
-                className="-mr-0.5 grid size-3.5 place-content-center rounded outline-hidden [&>[data-slot=icon]]:size-3 [&>[data-slot=icon]]:shrink-0"
-              >
-                <IconX />
-              </Button>
-            )}
-          </>
-        )
-      }}
+      {({ allowsRemoving }) => (
+        <>
+          {children}
+          {allowsRemoving && (
+            <Button
+              slot="remove"
+              className={twJoin([
+                "-mx-0.5 grid size-3.5 shrink-0 place-content-center outline-hidden *:data-[slot=icon]:size-3",
+                finalShape ? "rounded-full" : "rounded-[calc(var(--radius-xs)-1px)]",
+              ])}
+            >
+              <IconX />
+            </Button>
+          )}
+        </>
+      )}
     </TagPrimitive>
   )
 }
