@@ -1,8 +1,7 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import { Select } from "@/components/ui/select"
-import { TextField } from "@/components/ui/text-field"
-import { Button } from "@/components/ui/button";
 
 const software = [
   { id: 1, name: "Adobe Photoshop" },
@@ -14,9 +13,7 @@ const software = [
 export default function Page() {
   return (
     <div className="mx-auto flex max-w-sm items-end gap-x-2">
-      <Button>
-        Save
-      </Button>
+      <Button>Save</Button>
       <Select label="Design software" placeholder="Select a software">
         <Select.Trigger />
         <Select.List items={software}>

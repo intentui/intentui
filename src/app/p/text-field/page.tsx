@@ -18,23 +18,23 @@ export default function Page() {
       </div>
       <div className="grid grid-cols-2 gap-6">
         <TextField label="Email" placeholder="you@domain.com" />
-      <TextField label="Username" prefix="https://intentui.com/" placeholder="irsyadadl" />
-      <TextField label="Username" prefix={<IconBrandTwitter />} placeholder="irsyadadl" />
-      <TextField label="Price" placeholder="1000" suffix="USD" />
-      <TextField label="Search" placeholder="Something..." suffix={<IconSearch />} />
-      <TextField label="Email" placeholder="you@domain.com" suffix={<Button>Subscribe</Button>} />
-      <TextField label="Email" placeholder="you@domain.com" isPending />
-      <TextField>
-        <div className="flex items-center justify-between">
-          <Label>Password</Label>
-          <Link href="#" intent="secondary" className="text-sm">
-            Forgot password?
-          </Link>
-        </div>
-        <FieldGroup>
-          <Input />
-        </FieldGroup>
-      </TextField>
+        <TextField label="Username" prefix="https://intentui.com/" placeholder="irsyadadl" />
+        <TextField label="Username" prefix={<IconBrandTwitter />} placeholder="irsyadadl" />
+        <TextField label="Price" placeholder="1000" suffix="USD" />
+        <TextField label="Search" placeholder="Something..." suffix={<IconSearch />} />
+        <TextField label="Email" placeholder="you@domain.com" suffix={<Button>Subscribe</Button>} />
+        <TextField label="Email" placeholder="you@domain.com" isPending />
+        <TextField>
+          <div className="flex items-center justify-between">
+            <Label>Password</Label>
+            <Link href="#" intent="secondary" className="text-sm">
+              Forgot password?
+            </Link>
+          </div>
+          <FieldGroup>
+            <Input />
+          </FieldGroup>
+        </TextField>
       </div>
     </div>
   )
