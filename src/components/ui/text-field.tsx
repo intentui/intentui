@@ -74,7 +74,7 @@ const TextField = ({
                 type="button"
                 aria-label="Toggle password visibility"
                 onPress={handleTogglePasswordVisibility}
-                className="relative mr-1 grid shrink-0 place-content-center rounded-sm border-transparent outline-hidden *:data-[slot=icon]:text-muted-fg focus-visible:*:data-[slot=icon]:text-primary"
+                className="relative mr-0.5 grid shrink-0 place-content-center rounded-sm border-transparent outline-hidden *:data-[slot=icon]:text-muted-fg focus-visible:*:data-[slot=icon]:text-primary"
               >
                 {isPasswordVisible ? <IconEyeClosed /> : <IconEye />}
               </ButtonPrimitive>

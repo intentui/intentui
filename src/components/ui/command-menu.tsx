@@ -147,7 +147,7 @@ const CommandMenuSearch = ({ className, placeholder, ...props }: CommandMenuSear
       )}
       <Input
         placeholder={placeholder ?? "Search..."}
-        className="w-full min-w-0 bg-transparent px-2.5 py-2 text-base text-fg placeholder-muted-fg outline-hidden focus:outline-hidden sm:text-sm [&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden"
+        className="w-full min-w-0 bg-transparent px-2 py-1.5 text-base text-fg placeholder-muted-fg outline-hidden focus:outline-hidden sm:text-sm [&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden"
       />
       {escapeButton && (
         <Button
@@ -206,7 +206,7 @@ const CommandMenuItem = ({ className, ...props }: React.ComponentProps<typeof Me
     <Menu.Item
       {...props}
       textValue={textValue}
-      className={composeTailwindRenderProps(className, "gap-y-0.5 px-2.5 py-2")}
+      className={composeTailwindRenderProps(className, "gap-y-0.5 px-2 py-1.5")}
     />
   )
 }
@@ -263,7 +263,7 @@ const CommandMenuFooter = ({ className, ...props }: React.ComponentProps<"div">)
   return (
     <div
       className={twMerge(
-        "col-span-full border-t px-2.5 py-2 text-muted-fg text-sm",
+        "col-span-full border-t px-2 py-1.5 text-muted-fg text-sm",
         "*:[kbd]:inset-ring *:[kbd]:inset-ring-fg/10 *:[kbd]:mx-1 *:[kbd]:inline-grid *:[kbd]:h-4 *:[kbd]:min-w-4 *:[kbd]:place-content-center *:[kbd]:rounded-xs *:[kbd]:bg-secondary ",
         className,
       )}

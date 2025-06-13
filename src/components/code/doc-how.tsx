@@ -116,7 +116,7 @@ export const DocHow = ({
             <div
               className={twMerge(
                 "max-h-[inherit] w-full overflow-y-auto rounded-lg border bg-white p-6 dark:bg-zinc-900/50",
-                isCenter && "flex items-center justify-center",
+                isCenter && "flex items-center justify-center *:min-w-60",
               )}
             >
               <Component />
