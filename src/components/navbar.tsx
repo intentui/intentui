@@ -4,11 +4,9 @@ import { useId, useState } from "react"
 import { GithubLink } from "@/components/github-link"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveAside } from "@/components/responsive-aside"
-import { Badge } from "@/components/ui/badge"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
-import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import {
@@ -19,6 +17,7 @@ import {
   IconBrandIntentui,
   IconBrandTailwindcss,
   IconBrandX,
+  IconChevronDown,
   IconChevronLgDown,
   IconColorPalette,
   IconColors,
@@ -50,25 +49,22 @@ export function Navbar() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-x-6">
                   <NavbarDropdown />
-                  <Separator orientation="vertical" className="-ml-4 mr-1 h-6" />
                   <NavLink isNextLink isActive={pathname === "/"} href="/">
                     Home
                   </NavLink>
                   <NavLink
                     isNextLink
                     isActive={
-                      pathname?.startsWith(`/docs/${siteConfig.currentVersion}`) &&
-                      !pathname?.includes(`/docs/${siteConfig.currentVersion}/components`)
+                      pathname?.startsWith("/docs") && !pathname?.includes("/docs/components")
                     }
-                    href={`/docs/${siteConfig.currentVersion}/getting-started/introduction`}
+                    href="/docs/getting-started/introduction"
                   >
                     Docs
                   </NavLink>
                   <NavLink
                     isNextLink
                     isActive={
-                      pathname?.startsWith(`/docs/${siteConfig.currentVersion}/components`) ||
-                      pathname === "/components"
+                      pathname?.startsWith("/docs/components") || pathname === "/components"
                     }
                     href="/components"
                   >
@@ -171,18 +167,18 @@ export function Navbar() {
 }
 
 export function NavbarDropdown() {
-  const pathname = usePathname()
-
   return (
-    <div className="flex items-center gap-x-1">
+    <div className="flex items-center">
       <Menu>
-        <Button aria-label={siteConfig.name} intent="plain" className="-ml-1 group">
-          <span className="flex items-center gap-x-2">
-            <IconBrandIntentui className="-ml-1 size-6" />
-            <span className="font-mono text-base tracking-tight sm:text-sm">{siteConfig.name}</span>
-            <Badge intent="secondary">
-              {pathname.includes("/docs/") ? pathname.split("/")[2] : siteConfig.currentVersion}
-            </Badge>
+        <Button
+          aria-label={siteConfig.name}
+          intent="plain"
+          size="sm"
+          className="-ml-1 group pressed:bg-transparent hover:bg-transparent"
+        >
+          <span className="flex items-center">
+            <IconBrandIntentui className="mr-1.5 size-5" data-slot="logo" />
+            <span className="font-semibold text-sm">{siteConfig.name}</span>
           </span>
         </Button>
         <Menu.Content placement="bottom" className="sm:min-w-64">
@@ -243,6 +239,24 @@ export function NavbarDropdown() {
               <Menu.Label>Tailwind CSS</Menu.Label>
             </Menu.Item>
           </Menu.Section>
+        </Menu.Content>
+      </Menu>
+      <span className="mx-2 text-muted-fg">/</span>
+      <Menu>
+        <Button intent="plain" size="xs">
+          3.x
+          <IconChevronDown />
+        </Button>
+        <Menu.Content>
+          <Menu.Item href="https://intentui.com/docs/getting-started/introduction">
+            3.x (latest)
+          </Menu.Item>
+          <Menu.Item href="https://2x.intentui.com/docs/getting-started/introduction">
+            2.x
+          </Menu.Item>
+          <Menu.Item href="https://1x.intentui.com/docs/getting-started/introduction">
+            1.x
+          </Menu.Item>
         </Menu.Content>
       </Menu>
     </div>

@@ -66,8 +66,12 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
         </p>
         {props.title && <figcaption data-rehype-pretty-code-title="">{props.title}</figcaption>}
         <div className="mb-1 flex items-center justify-between">
-          <div className="flex items-center gap-x-2 font-mono text-[13px] tracking-tight">
-            <IconBrandReactjs className="size-4 text-cyan-600 dark:text-cyan-500" /> {toShow}.tsx
+          <div className="flex items-center font-mono text-[13px]/6 text-muted-fg tracking-tight">
+            <IconBrandReactjs
+              data-slot="brand-icon"
+              className="mr-1.5 size-3.5 text-cyan-600 dark:text-cyan-500"
+            />{" "}
+            {toShow}.tsx
           </div>
           <CopyMotionButton
             className="absolute top-20 right-2 hidden rounded-sm group-hover:opacity-100 sm:inline"

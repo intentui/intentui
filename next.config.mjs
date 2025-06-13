@@ -10,23 +10,23 @@ const config = {
   async redirects() {
     return [
       {
-        source: "/docs/3.x/components/layouts/aside",
-        destination: "/docs/3.x/components/layouts/sidebar",
+        source: "/docs/components/layouts/aside",
+        destination: "/docs/components/layouts/sidebar",
         permanent: true,
       },
       {
-        source: "/docs/3.x/components/charts/setup",
-        destination: "/docs/3.x/components/charts/area-chart",
+        source: "/docs/components/charts/setup",
+        destination: "/docs/components/charts/area-chart",
         permanent: true,
       },
       {
-        source: "/docs/3.x/components/surfaces/chart",
-        destination: "/docs/3.x/components/charts/area-chart",
+        source: "/docs/components/surfaces/chart",
+        destination: "/docs/components/charts/area-chart",
         permanent: true,
       },
       {
-        source: "/docs/3.x/components/collections/accordion",
-        destination: "/docs/3.x/components/navigation/disclosure-group",
+        source: "/docs/components/collections/accordion",
+        destination: "/docs/components/navigation/disclosure-group",
         permanent: true,
       },
     ]

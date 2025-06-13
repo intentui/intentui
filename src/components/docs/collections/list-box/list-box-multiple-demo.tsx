@@ -9,7 +9,7 @@ import type { Selection } from "react-aria-components"
 export default function ListBoxMultipleDemo() {
   const [selected, setSelected] = useState<Selection>(new Set([3]))
   return (
-    <>
+    <div>
       <ListBox
         selectedKeys={selected}
         onSelectionChange={setSelected}
@@ -29,7 +29,7 @@ export default function ListBoxMultipleDemo() {
           Selected: {selected === "all" ? "All selected" : [...selected].join(", ")}
         </Description>
       )}
-    </>
+    </div>
   )
 }
 

@@ -4,16 +4,15 @@ import { ListBox } from "@/components/ui/list-box"
 
 export default function ListBoxDisabledDemo() {
   return (
-    <>
-      <ListBox
-        disabledKeys={[2, 3, 4, 5]}
-        items={fruits}
-        aria-label="Fruits"
-        selectionMode="multiple"
-      >
-        {(fruit) => <ListBox.Item id={fruit.id}>{fruit.name}</ListBox.Item>}
-      </ListBox>
-    </>
+    <ListBox
+      className="max-w-2xs"
+      disabledKeys={[2, 3, 4, 5]}
+      items={fruits}
+      aria-label="Fruits"
+      selectionMode="multiple"
+    >
+      {(fruit) => <ListBox.Item id={fruit.id}>{fruit.name}</ListBox.Item>}
+    </ListBox>
   )
 }
 

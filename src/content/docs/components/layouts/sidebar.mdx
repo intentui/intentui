@@ -60,7 +60,7 @@ The sidebar comes in three variations: `"sidebar"`, `"float"`, and `"inset"`. By
 ### Sidebar
 The default variation is a traditional sidebar often used for navigation. <NewTab href='/pre-blocks/sidebar/sidebar-02'/>.
 ```
-<Sidebar intent="default" />
+<Sidebar intent="sidebar" />
 ```
 
 ### Inset
@@ -74,17 +74,6 @@ The `float` variation introduces an inner border within the sidebar, while the w
 ```
 <Sidebar intent="float" />
 ```
-
-### Fleet
-The `fleet` variation removes horizontal padding from the items. Check out how it works in action: <NewTab href='/pre-blocks/sidebar/sidebar-18'/>
-<EditorText
-  source={{
-    'folders.ts': 'pre-blocks/sidebar/sidebar-18/folders.ts',
-    'sidebar-header.tsx': 'pre-blocks/sidebar/sidebar-18/sidebar-header',
-    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-18/app-sidebar',
-    'layout.tsx': 'pre-blocks/sidebar/sidebar-18/layout',
-    'page.tsx': 'pre-blocks/sidebar/sidebar-18/page',
-  }} />
 
 ## Collapsible
 The sidebar can be made collapsible by using the `collapsible` prop in the `SidebarProvider`. The default collapsible behavior is `"hidden"`.
@@ -316,12 +305,12 @@ The preview can be seen in the <NewTab href='/pre-blocks/sidebar/sidebar-10'>Sid
 ## Props
 The sidebar supports the following props:
 ### Sidebar
-| **Property**  | **Type**                                           | **Default** |
-|---------------|----------------------------------------------------|-------------|
-| `intent`      | `"default" \| "float" \| \| "fleet" \| "inset"` | `"default"` |
-| `collapsible` | `"hidden" \| "dock" \| "none"`                     | `"hidden"`  |
-| `side`        | `"left" \| "right"`                                | `"left"`    |
-| `closeButton` | `boolean`                                          | `"true"`    |
+| **Property**  | **Type**                          | **Default** |
+|---------------|-----------------------------------|-------------|
+| `intent`      | `"default" \| "float" \| "inset"` | `"default"` |
+| `collapsible` | `"hidden" \| "dock" \| "none"`    | `"hidden"`  |
+| `side`        | `"left" \| "right"`               | `"left"`    |
+| `closeButton` | `boolean`                         | `"true"`    |
 
 ### SidebarContextProps
 

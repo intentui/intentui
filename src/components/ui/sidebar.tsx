@@ -126,7 +126,8 @@ const SidebarProvider = ({
     <SidebarContext value={contextValue}>
       <div
         className={twMerge(
-          "@container [--margin-icon:--spacing(1.5)] [--padding-x:--spacing(2)] [--padding-y:--spacing(1)] **:data-[slot=icon]:shrink-0",
+          "@container **:data-[slot=icon]:shrink-0",
+          "[--default-px:--spacing(2.5)]",
           "[--sidebar-width-dock:3.25rem] [--sidebar-width:17rem]",
           "[--sidebar-border:color-mix(in_oklch,var(--color-sidebar)_25%,black_6%)]",
           "dark:[--sidebar-border:color-mix(in_oklch,var(--color-sidebar)_55%,white_10%)]",
@@ -166,7 +167,7 @@ const sidebar = tv({
   base: [
     "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) not-has-data-sidebar-footer:pb-2 transition-[left,right,width] duration-200 ease-linear md:flex",
     "min-h-svh bg-sidebar",
-    "**:data-[slot=disclosure]:border-0 **:data-[slot=disclosure]:px-(--padding-x)",
+    "**:data-[slot=disclosure]:border-0 **:data-[slot=disclosure]:px-2.5",
   ],
   variants: {
     side: {
@@ -308,7 +309,7 @@ const footer = tv({
     },
     collapsed: {
       false: [
-        "**:data-[slot=avatar]:*:size-8 **:data-[slot=menu-trigger]:**:data-[slot=avatar]:mr-(--margin-icon) **:data-[slot=avatar]:size-8",
+        "**:data-[slot=avatar]:*:size-8 **:data-[slot=menu-trigger]:**:data-[slot=avatar]:mr-1.5 **:data-[slot=avatar]:size-8",
         "**:data-[slot=menu-trigger]:**:data-[slot=chevron]:ml-auto **:data-[slot=menu-trigger]:pressed:**:data-[slot=chevron]:rotate-180 **:data-[slot=menu-trigger]:**:data-[slot=chevron]:transition-transform **:data-[slot=menu-trigger]:w-full",
       ],
       true: [
@@ -378,13 +379,13 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
       data-sidebar-section="true"
       className={twMerge(
         "col-span-full flex flex-col gap-y-0.5 **:data-sidebar-section:**:gap-y-0 **:data-sidebar-section:pr-0",
-        state === "expanded" && "px-(--padding-x)",
+        state === "expanded" && "px-2.5",
         className,
       )}
       {...props}
     >
       {state !== "collapsed" && "label" in props && (
-        <Header className="group-data-[sidebar-collapsible=dock]/sidebar-container:-mt-8 mb-1 flex shrink-0 items-center rounded-md px-(--padding-x) font-medium text-sidebar-fg/70 text-xs outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear focus-visible:ring-2 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[sidebar-collapsible=dock]/sidebar-container:opacity-0">
+        <Header className="group-data-[sidebar-collapsible=dock]/sidebar-container:-mt-8 mb-1 flex shrink-0 items-center rounded-md px-2.5 font-medium text-sidebar-fg/70 text-xs outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear focus-visible:ring-2 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[sidebar-collapsible=dock]/sidebar-container:opacity-0">
           {props.label}
         </Header>
       )}
@@ -395,14 +396,14 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
 
 const sidebarItemStyles = tv({
   base: [
-    "group/sidebar-item relative col-span-full cursor-pointer overflow-hidden rounded-lg px-(--padding-x) py-(--padding-y) text-sidebar-fg/70 focus-visible:outline-hidden sm:text-sm/6",
-    "**:data-[slot=menu-trigger]:-mr-1 **:data-[slot=menu-trigger]:absolute **:data-[slot=menu-trigger]:right-0 **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:h-full **:data-[slot=menu-trigger]:w-[calc(var(--sidebar-width)-90%)] **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:justify-end **:data-[slot=menu-trigger]:pr-(--padding-x) **:data-[slot=menu-trigger]:opacity-0 **:data-[slot=menu-trigger]:pressed:opacity-100 pressed:**:data-[slot=menu-trigger]:opacity-100 **:data-[slot=menu-trigger]:has-data-focus:opacity-100 **:data-[slot=menu-trigger]:focus-visible:opacity-100 hover:**:data-[slot=menu-trigger]:opacity-100",
+    "group/sidebar-item relative col-span-full cursor-pointer overflow-hidden rounded-lg px-[calc(var(--spacing)*2.3)] py-[calc(var(--spacing)*1.3)] text-sidebar-fg/70 focus-visible:outline-hidden sm:text-sm/6",
+    "**:data-[slot=menu-trigger]:-mr-1 **:data-[slot=menu-trigger]:absolute **:data-[slot=menu-trigger]:right-0 **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:h-full **:data-[slot=menu-trigger]:w-[calc(var(--sidebar-width)-90%)] **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:justify-end **:data-[slot=menu-trigger]:pr-2.5 **:data-[slot=menu-trigger]:opacity-0 **:data-[slot=menu-trigger]:pressed:opacity-100 pressed:**:data-[slot=menu-trigger]:opacity-100 **:data-[slot=menu-trigger]:has-data-focus:opacity-100 **:data-[slot=menu-trigger]:focus-visible:opacity-100 hover:**:data-[slot=menu-trigger]:opacity-100",
     "**:data-[slot=avatar]:*:size-4 **:data-[slot=avatar]:size-4 **:data-[slot=icon]:size-4 **:data-[slot=avatar]:shrink-0 **:data-[slot=icon]:shrink-0",
   ],
   variants: {
     collapsed: {
       false:
-        "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] items-center **:data-[slot=avatar]:*:mr-(--margin-icon) **:data-[slot=avatar]:mr-(--margin-icon) **:data-[slot=icon]:mr-(--margin-icon) supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
+        "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] items-center **:data-[slot=avatar]:*:mr-1.5 **:data-[slot=avatar]:mr-1.5 **:data-[slot=icon]:mr-1.5 supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
       true: "flex not-has-data-[slot=icon]:hidden size-9 items-center justify-center gap-x-0 p-0 **:data-[slot=menu-trigger]:hidden",
     },
     isCurrent: {
@@ -571,7 +572,7 @@ const SidebarDisclosure = ({ className, ref, ...props }: SidebarDisclosureProps)
       data-sidebar-disclosure="true"
       className={composeTailwindRenderProps(
         className,
-        state === "expanded" ? "px-(--padding-x)" : "col-span-full",
+        state === "expanded" ? "px-2.5" : "col-span-full",
       )}
       {...props}
     />
@@ -580,11 +581,11 @@ const SidebarDisclosure = ({ className, ref, ...props }: SidebarDisclosureProps)
 
 const sidebarDisclosureTrigger = tv({
   base: [
-    "group relative flex w-full cursor-default items-center overflow-hidden rounded-lg px-(--padding-x) py-(--padding-y) text-sidebar-fg/70 outline-hidden sm:text-sm/6",
+    "group relative flex w-full cursor-default items-center overflow-hidden rounded-lg px-[calc(var(--spacing)*2.3)] py-[calc(var(--spacing)*1.3)] text-sidebar-fg/70 outline-hidden sm:text-sm/6",
   ],
   variants: {
     collapsed: {
-      false: "col-span-full **:data-[slot=icon]:mr-(--margin-icon)",
+      false: "col-span-full **:data-[slot=icon]:mr-1.5",
       true: "size-9 justify-center p-0",
     },
     isActive: {
@@ -654,7 +655,7 @@ const SidebarSeparator = ({ className, ...props }: SidebarSeparatorProps) => {
     <Separator
       orientation="horizontal"
       className={twMerge(
-        "col-span-full mx-auto my-(--padding-x) h-px w-[calc(var(--sidebar-width)--spacing(6))] bg-border",
+        "col-span-full mx-auto my-2.5 h-px w-[calc(var(--sidebar-width)--spacing(6))] bg-border",
         className,
       )}
       {...props}

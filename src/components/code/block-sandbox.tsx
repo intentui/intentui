@@ -6,7 +6,6 @@ import generated from "@/../__registry__/generated"
 import { BrandIcon } from "@/components/brand-icon"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
-import { IconDevicePhone } from "@/components/icon-device"
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/resizable"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
@@ -26,22 +25,12 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar"
 import { Tabs } from "@/components/ui/tabs"
-import { Toggle } from "@/components/ui/toggle"
+import { Toggle, ToggleGroup } from "@/components/ui/toggle"
 import { siteConfig } from "@/config/site"
 import quotes from "@/json/quotes.json"
 import type { RegistryItem } from "@/types"
-import {
-  IconCube,
-  IconDeviceDesktop2,
-  IconFolderFill,
-  IconFolderOpenFill,
-  IconFullscreen,
-  IconLayoutAlignBottom,
-  IconLayoutAlignLeft,
-  IconLayoutAlignTop,
-  IconX,
-} from "@intentui/icons"
-import { type Key, Tab, TabList, ToggleButtonGroup } from "react-aria-components"
+import { IconFolderFill, IconFolderOpenFill, IconX } from "@intentui/icons"
+import { type Key, Tab, TabList } from "react-aria-components"
 import type { ImperativePanelHandle } from "react-resizable-panels"
 import { twMerge } from "tailwind-merge"
 
@@ -104,7 +93,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
         return isString ? (
           <SidebarItem
             key={key}
-            className="pl-[calc(var(--nested-level)*16px)]"
+            className="rounded-none pl-[calc(var(--nested-level)*16px)]"
             style={{ "--nested-level": nestedLevel } as React.CSSProperties}
             onPress={() => {
               setRegistryKey(value)
@@ -123,7 +112,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
             element={({ isExpanded }) => (
               <>
                 <SidebarDisclosureTrigger
-                  className="pl-[calc(var(--nested-level)*16px)]"
+                  className="rounded-none pl-[calc(var(--nested-level)*16px)] *:data-[slot=chevron]:hidden"
                   style={{ "--nested-level": nestedLevel } as React.CSSProperties}
                 >
                   {isExpanded ? (
@@ -149,109 +138,117 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
   return (
     <div className="not-prose relative isolate flex">
       <Tabs className="w-full gap-0">
-        <div className="px-px">
-          <div className="-mb-px relative z-30 flex items-center justify-between overflow-hidden rounded-t-lg bg-navbar ring-1 ring-border">
-            <h2 className="ml-3.5 inline-flex items-center gap-x-1.5 font-medium text-sm **:data-[slot=icon]:text-muted-fg">
-              {title.includes("Sidebar") ? (
-                <IconLayoutAlignLeft />
-              ) : title.includes("Navbar") ? (
-                <IconLayoutAlignTop />
-              ) : (
-                <IconCube />
-              )}
-              {title}
-            </h2>
-            <div className="flex items-center rounded-s-2xl bg-bg px-2 py-1 shadow-sm ring-1 ring-transparent dark:ring-border">
-              <TabList className="flex items-center text-xs">
-                <Tab
-                  className={({ isSelected }) =>
-                    twMerge(
-                      "cursor-default rounded-sm px-2.5 py-1.5 outline-hidden",
-                      isSelected && "bg-primary text-primary-fg",
-                    )
-                  }
-                  id="preview"
-                >
-                  Preview
-                </Tab>
-                <Tab
-                  className={({ isSelected }) =>
-                    twMerge(
-                      "cursor-default rounded-sm px-2.5 py-1.5 outline-hidden",
-                      isSelected && "bg-primary text-primary-fg",
-                    )
-                  }
-                  id="code"
-                >
-                  Code
-                </Tab>
-              </TabList>
-              <Separator orientation="vertical" className="mx-2 h-6" />
-              <ToggleButtonGroup
-                selectionMode="single"
-                className="hidden items-center gap-x-0.5 **:data-[slot=icon]:size-4.5 sm:flex *:[[role=radio]]:rounded-none"
-                selectedKeys={width}
-                onSelectionChange={(v) => {
-                  setWidth(v)
-                  if (resizablePanelRef?.current) {
-                    resizablePanelRef.current.resize(+[...v].join())
-                  }
-                }}
+        <div className="mb-0.5 flex items-center justify-between">
+          <h2 className="inline-flex items-center gap-x-1.5 font-medium text-sm **:data-[slot=icon]:text-muted-fg">
+            {title}
+          </h2>
+          <div className="flex items-center px-2 py-1 shadow-sm">
+            <TabList className="flex items-center text-sm/6">
+              <Tab
+                className={({ isSelected }) =>
+                  twMerge(
+                    "hidden cursor-default px-2 py-1.5 outline-hidden hover:text-fg sm:block",
+                    isSelected ? "font-semibold text-fg" : "text-muted-fg",
+                  )
+                }
+                id="preview"
               >
-                <ToggleDevice aria-label="Switch to phone display" id={30}>
-                  <IconDevicePhone />
-                </ToggleDevice>
-                <ToggleDevice aria-label="Switch to ipad/tablet display" id={60}>
-                  <IconLayoutAlignBottom />
-                </ToggleDevice>
-                <ToggleDevice aria-label="Switch to desktop / large screen display" id={100}>
-                  <IconDeviceDesktop2 />
-                </ToggleDevice>
-              </ToggleButtonGroup>
-              <Separator orientation="vertical" className="mx-2 hidden h-6 sm:block" />
-              {fullscreen && (
-                <Link
-                  href={fullscreen}
-                  target="_blank"
-                  className={buttonStyles({ intent: "plain", size: "sq-sm" })}
-                  aria-label="Open in fullscreen"
-                >
-                  <IconFullscreen />
-                </Link>
-              )}
-            </div>
+                Preview
+              </Tab>
+              <Tab
+                className={({ isSelected }) =>
+                  twMerge(
+                    "hidden cursor-default px-2 py-1.5 outline-hidden hover:text-fg sm:block",
+                    isSelected ? "font-semibold text-fg" : "text-muted-fg",
+                  )
+                }
+                id="code"
+              >
+                Code
+              </Tab>
+            </TabList>
+            <Separator orientation="vertical" className="mx-1 hidden h-4 rotate-12 sm:block" />
+            <ToggleGroup
+              selectionMode="single"
+              intent="plain"
+              size="sm"
+              className="hidden sm:flex"
+              selectedKeys={width}
+              onSelectionChange={(v) => {
+                setWidth(v)
+                if (resizablePanelRef?.current) {
+                  resizablePanelRef.current.resize(+[...v].join())
+                }
+              }}
+            >
+              <Toggle
+                className="font-normal selected:font-semibold"
+                aria-label="Switch to phone display"
+                id={30}
+              >
+                Smartphone
+              </Toggle>
+              <Toggle
+                className="font-normal selected:font-semibold"
+                aria-label="Switch to ipad/tablet display"
+                id={60}
+              >
+                Tablet
+              </Toggle>
+              <Toggle
+                className="font-normal selected:font-semibold"
+                aria-label="Switch to desktop / large screen display"
+                id={100}
+              >
+                Desktop
+              </Toggle>
+            </ToggleGroup>
+            <Separator orientation="vertical" className="mx-1 hidden h-4 rotate-12 sm:block" />
+            {fullscreen && (
+              <Link
+                href={fullscreen}
+                target="_blank"
+                className={buttonStyles({
+                  intent: "plain",
+                  size: "sm",
+                  className:
+                    "font-normal pressed:text-fg pressed:text-transparent text-muted-fg hover:bg-transparent hover:text-fg",
+                })}
+                aria-label="Open in fullscreen"
+              >
+                Fullscreen
+              </Link>
+            )}
           </div>
         </div>
         <Tabs.Panel id="preview">
-          <div className="w-full">
-            <ResizablePanelGroup autoSaveId="persistence" direction="horizontal">
-              <ResizablePanel
-                ref={resizablePanelRef}
-                defaultSize={100}
-                minSize={30}
-                className="relative w-full rounded-b-lg border bg-bg"
-              >
-                {isIframe ? (
-                  <IframeComponent
-                    title="preview"
-                    src={props.preview}
-                    className="min-h-[45rem] w-full overflow-y-auto sm:max-h-min"
-                  />
-                ) : (
-                  <div className="min-h-[45rem] w-full overflow-y-auto sm:max-h-min">
-                    <ComponentRegistry />
-                  </div>
-                )}
-              </ResizablePanel>
-              <ResizableHandle className="relative z-50 hidden w-0 bg-transparent p-0 after:absolute after:right-0 after:h-full after:w-0 md:block" />
-              <ResizablePanel defaultSize={0} minSize={0} />
-            </ResizablePanelGroup>
-          </div>
+          <ResizablePanelGroup autoSaveId="persistence" direction="horizontal">
+            <ResizablePanel
+              ref={resizablePanelRef}
+              defaultSize={100}
+              minSize={30}
+              className="relative w-full rounded-lg border bg-bg"
+            >
+              {isIframe ? (
+                <IframeComponent
+                  title="preview"
+                  src={props.preview}
+                  className="min-h-[45rem] w-full overflow-y-auto sm:max-h-min"
+                />
+              ) : (
+                <div className="min-h-[45rem] w-full overflow-y-auto sm:max-h-min">
+                  <ComponentRegistry />
+                </div>
+              )}
+            </ResizablePanel>
+            <ResizableHandle className="relative z-50 hidden w-0 bg-transparent p-0 after:absolute after:right-0 after:h-full after:w-0 md:block" />
+            <ResizablePanel defaultSize={0} minSize={0} />
+          </ResizablePanelGroup>
         </Tabs.Panel>
         <Tabs.Panel id="code">
-          <div className="flex max-h-(--height) min-h-(--height) overflow-hidden rounded-b-lg ring-1 ring-border [--height:85vh]">
+          <div className="flex max-h-(--height) min-h-(--height) overflow-hidden rounded-lg ring-1 ring-border [--height:85vh]">
             <SidebarProvider className="min-h-full">
-              <Sidebar intent="fleet" className="h-full" collapsible="none">
+              <Sidebar className="h-full" collapsible="none">
                 <SidebarHeader className="flex h-12 flex-row items-center justify-between border-b bg-linear-to-b py-0">
                   <Link
                     className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
@@ -310,20 +307,9 @@ function DisclosureGroup(props: {
   element: ({ isExpanded }: { isExpanded: any }) => React.ReactNode
 }) {
   return (
-    <SidebarDisclosureGroup defaultExpandedKeys={props.defaultExpandedKeys}>
+    <SidebarDisclosureGroup className="-mx-2.5" defaultExpandedKeys={props.defaultExpandedKeys}>
       <SidebarDisclosure id={props.id}>{props.element}</SidebarDisclosure>
     </SidebarDisclosureGroup>
-  )
-}
-
-const ToggleDevice = (props: React.ComponentProps<typeof Toggle>) => {
-  return (
-    <Toggle
-      intent="plain"
-      size="sq-sm"
-      className="relative size-7.5 selected:bg-bg hover:bg-bg selected:*:data-[slot=icon]:fill-primary/20 selected:*:data-[slot=icon]:text-primary hover:*:data-[slot=icon]:text-primary"
-      {...props}
-    />
   )
 }
 

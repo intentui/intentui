@@ -1,20 +1,51 @@
 "use client"
 
-import { IconBrandV0 } from "@/components/icons/icon-brand-v0"
-import { Button, buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
-import { Tooltip } from "@/components/ui/tooltip"
 import { siteConfig } from "@/config/site"
 import { copyToClipboard } from "@/lib/copy"
 import { openInV0Url } from "@/lib/utils"
-import { IconCheck, IconDuplicate, IconTerminal } from "@intentui/icons"
 import { useState } from "react"
-import { twMerge } from "tailwind-merge"
+import { Button } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
 
 interface PullRegistryProps {
   processedSourceCode: string | null
   blockDemo: string
   className?: string
+}
+
+interface CopyButtonProps {
+  label: string
+  copiedLabel: string
+  value: string
+  isCopied: boolean
+  onCopy: () => void
+}
+
+function CopyButton({ label, copiedLabel, value, isCopied, onCopy }: CopyButtonProps) {
+  return (
+    <Button
+      className="relative h-8 w-14 overflow-hidden p-2 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
+      onPress={onCopy}
+    >
+      <span
+        className={twJoin(
+          "absolute inset-0 flex items-center justify-center transition duration-300",
+          isCopied ? "-translate-y-1.5 text-fg opacity-0" : "translate-y-0 opacity-100",
+        )}
+      >
+        {label}
+      </span>
+      <span
+        className={twJoin(
+          "absolute inset-0 flex items-center justify-center transition duration-300",
+          isCopied ? "translate-y-0 text-fg opacity-100" : "translate-y-1.5 opacity-0",
+        )}
+      >
+        {copiedLabel}
+      </span>
+    </Button>
+  )
 }
 
 export function PullRegistry({ className, processedSourceCode, blockDemo }: PullRegistryProps) {
@@ -28,43 +59,30 @@ export function PullRegistry({ className, processedSourceCode, blockDemo }: Pull
   }
 
   return (
-    <div className={twMerge("flex items-center gap-x-1", className)}>
-      <Tooltip>
-        <Button
-          onPress={() => handleCopy("code", processedSourceCode as string)}
-          intent="plain"
-          className="size-7 rounded-xs"
-          size="sq-sm"
-        >
-          {copy.code ? <IconCheck /> : <IconDuplicate />}
-        </Button>
-        <Tooltip.Content>Copy code</Tooltip.Content>
-      </Tooltip>
-      <Tooltip>
-        <Button
-          onPress={() => handleCopy("command", `npx ${siteConfig.cliCommand} add -b ${blockDemo}`)}
-          intent="plain"
-          className="size-7 rounded-xs"
-          size="sq-sm"
-        >
-          {copy.command ? <IconCheck /> : <IconTerminal />}
-        </Button>
-        <Tooltip.Content>Copy registry command</Tooltip.Content>
-      </Tooltip>
-      <Tooltip>
-        <Link
-          href={openInV0Url(blockDemo as string)}
-          target="_blank"
-          className={buttonStyles({
-            size: "sq-sm",
-            intent: "plain",
-            className: "size-7 rounded-xs",
-          })}
-        >
-          <IconBrandV0 />
-        </Link>
-        <Tooltip.Content>Open in V0</Tooltip.Content>
-      </Tooltip>
+    <div className="relative flex items-center gap-x-0.5">
+      <CopyButton
+        label="Copy"
+        copiedLabel="Copied"
+        value={processedSourceCode as string}
+        isCopied={copy.code}
+        onCopy={() => handleCopy("code", processedSourceCode as string)}
+      />
+
+      <CopyButton
+        label="Registry"
+        copiedLabel="Copied"
+        value={`npx ${siteConfig.cliCommand} add -b ${blockDemo}`}
+        isCopied={copy.command}
+        onCopy={() => handleCopy("command", `npx ${siteConfig.cliCommand} add -b ${blockDemo}`)}
+      />
+
+      <Link
+        className="hidden p-2 pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
+        href={openInV0Url(blockDemo)}
+        target="_blank"
+      >
+        Open in V0
+      </Link>
     </div>
   )
 }

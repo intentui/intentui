@@ -28,6 +28,7 @@ export default function ListBoxRearrangeDemo() {
 
   return (
     <ListBox
+      className="max-w-2xs"
       items={list.items}
       aria-label="Bands"
       selectionMode="multiple"
