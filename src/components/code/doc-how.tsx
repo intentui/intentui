@@ -105,23 +105,26 @@ export const DocHow = ({
       </Toolbar>
       <div className="max-h-140 w-full">
         {currentTab === "tab_preview" ? (
-          <Suspense
-            fallback={
-              <div className="flex max-h-[inherit] items-center justify-center overflow-y-auto py-6 text-muted-fg text-sm">
-                <Loader variant="spin" />
-                <span className="sr-only">Loading...</span>
-              </div>
-            }
+          <div
+            className={twMerge(
+              !withNoPadding && "relative gap-4 rounded-lg border bg-overlay p-6",
+              isCenter &&
+                "preview flex min-h-56 items-center justify-center overflow-x-auto py-6 sm:py-24 lg:min-h-96",
+            )}
           >
-            <div
-              className={twMerge(
-                "max-h-[inherit] w-full overflow-y-auto rounded-lg border bg-white p-6 dark:bg-zinc-900/50",
-                isCenter && "flex items-center justify-center *:min-w-60",
-              )}
+            <Suspense
+              fallback={
+                <div className="flex items-center justify-center py-6 text-muted-fg text-sm">
+                  <Loader variant="spin" />
+                  <span className="sr-only">Loading...</span>
+                </div>
+              }
             >
-              <Component />
-            </div>
-          </Suspense>
+              <div className={twMerge(minW72 && "min-w-72", "not-prose", className)}>
+                <Component />
+              </div>
+            </Suspense>
+          </div>
         ) : (
           <div>
             {processedSourceCode ? (

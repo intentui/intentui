@@ -1,7 +1,7 @@
 "use client"
 
 import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { CopyButton } from "@/components/code/copy-button"
+import { CopyButton } from "@/components/code/pull-registry"
 import { Tabs } from "@/components/ui/tabs"
 import { copyToClipboard } from "@/lib/copy"
 import {
@@ -54,17 +54,16 @@ export function CodeBlock({ source }: Props) {
     <>
       {contents && Object.keys(contents).length > 0 ? (
         <Tabs className="relative gap-0">
-          <div className="flex items-center justify-between overflow-hidden rounded-t-lg border-x border-y">
+          <div className="flex items-center justify-between gap-x-2">
             <Tabs.List className="gap-0 border-0">
               {Object.keys(contents).map((key) => (
                 <Tab
                   className={(values) =>
                     twMerge(
-                      "flex cursor-default items-center gap-x-1.5 whitespace-nowrap px-3 py-2.5 font-mono text-muted-fg text-xs tracking-tight outline-hidden",
-                      "**:data-[slot=icon]:-ml-0.5 border-transparent border-x first:border-l-0 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
-                      (values.isSelected || values.isFocused || values.isFocusVisible) &&
-                        "border-input bg-secondary text-secondary-fg dark:bg-muted",
-                      values.isHovered && "bg-secondary text-secondary-fg dark:bg-muted",
+                      "flex cursor-default items-center gap-x-1 p-2 font-medium text-sm/6",
+                      values.isSelected || values.isFocused || values.isFocusVisible
+                        ? "text-fg"
+                        : "text-muted-fg hover:text-fg",
                     )
                   }
                   key={key}
@@ -73,7 +72,7 @@ export function CodeBlock({ source }: Props) {
                   {key.includes("css") ? (
                     <IconBrandCss className="text-blue-500" />
                   ) : key.includes(".tsx") ? (
-                    <IconBrandReactjs className="text-cyan-500" />
+                    <IconBrandReactjs className="text-sky-500" />
                   ) : key.includes(".ts") ? (
                     <IconBrandTypescript className="text-sky-500" />
                   ) : key.includes(".json") ? (
@@ -90,13 +89,15 @@ export function CodeBlock({ source }: Props) {
             <Tabs.Panel
               key={key}
               id={key}
-              className="overflow-hidden rounded-b-lg border-x border-b bg-shiki-bg"
+              className="overflow-hidden rounded-lg border bg-shiki-bg"
             >
               <CopyButton
-                className="absolute top-0.5 right-1"
-                alwaysVisible
+                className="absolute top-1.5 right-0"
+                label="Copy"
+                copiedLabel="Copied"
+                value={value as string}
                 isCopied={copiedStates[key] || false}
-                onPress={() => handleCopy(key, value)}
+                onCopy={() => handleCopy(key, value)}
               />
               <CodeHighlighter
                 plain

@@ -96,7 +96,7 @@ export function CodeSandbox({ isIframe = true, classNames, source, src }: Props)
                     {key.includes("css") ? (
                       <IconBrandCss className="text-blue-500" />
                     ) : key.includes(".tsx") ? (
-                      <IconBrandReactjs className="text-cyan-500" />
+                      <IconBrandReactjs className="text-sky-500" />
                     ) : (
                       <IconFile />
                     )}

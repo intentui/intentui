@@ -4,7 +4,7 @@ import React, { useState } from "react"
 
 import generated from "@/../__registry__/generated"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { CopyMotionButton } from "@/components/code/copy-button"
+import { CopyButton } from "@/components/code/copy-button"
 import { createFetchRegistryFile } from "@/lib/fetch-registry"
 import { IconBrandReactjs } from "@intentui/icons"
 
@@ -65,18 +65,12 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
             : "You can copy the code below and paste it into your component folder."}
         </p>
         {props.title && <figcaption data-rehype-pretty-code-title="">{props.title}</figcaption>}
-        <div className="mb-1 flex items-center justify-between">
-          <div className="flex items-center font-mono text-[13px]/6 text-muted-fg tracking-tight">
-            <IconBrandReactjs
-              data-slot="brand-icon"
-              className="mr-1.5 size-3.5 text-cyan-600 dark:text-cyan-500"
-            />{" "}
+        <div className="flex items-center justify-between">
+          <div className="flex cursor-default items-center gap-x-1 p-2 font-medium text-sm/6">
+            <IconBrandReactjs className="text-sky-500" />
             {toShow}.tsx
           </div>
-          <CopyMotionButton
-            className="absolute top-20 right-2 hidden rounded-sm group-hover:opacity-100 sm:inline"
-            text={processedSourceCode}
-          />
+          <CopyButton text={processedSourceCode} />
         </div>
         <div className="overflow-hidden rounded-lg border border-shiki-border bg-shiki-bg">
           <CodeHighlighter

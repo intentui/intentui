@@ -45,7 +45,7 @@ const ComboBox = <T extends object>({
   return (
     <ComboboxPrimitive
       {...props}
-      className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1.5")}
+      className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1")}
     >
       {label && <Label>{label}</Label>}
       {children}

@@ -6,7 +6,7 @@ import { copyToClipboard } from "@/lib/copy"
 import { openInV0Url } from "@/lib/utils"
 import { useState } from "react"
 import { Button } from "react-aria-components"
-import { twJoin } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 
 interface PullRegistryProps {
   processedSourceCode: string | null
@@ -20,12 +20,23 @@ interface CopyButtonProps {
   value: string
   isCopied: boolean
   onCopy: () => void
+  className?: string
 }
 
-function CopyButton({ label, copiedLabel, value, isCopied, onCopy }: CopyButtonProps) {
+export function CopyButton({
+  label,
+  copiedLabel,
+  value,
+  className,
+  isCopied,
+  onCopy,
+}: CopyButtonProps) {
   return (
     <Button
-      className="relative h-8 w-14 overflow-hidden p-2 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
+      className={twMerge(
+        "relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-xs/6 hover:text-fg",
+        className,
+      )}
       onPress={onCopy}
     >
       <span
@@ -77,7 +88,7 @@ export function PullRegistry({ className, processedSourceCode, blockDemo }: Pull
       />
 
       <Link
-        className="hidden p-2 pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
+        className="hidden p-2 pressed:text-fg text-muted-fg text-xs/6 hover:text-fg"
         href={openInV0Url(blockDemo)}
         target="_blank"
       >

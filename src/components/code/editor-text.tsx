@@ -100,7 +100,7 @@ export function EditorText({ source }: Props) {
                   {key.includes("css") ? (
                     <IconBrandCss className="text-blue-500" />
                   ) : key.includes(".tsx") ? (
-                    <IconBrandReactjs className="text-cyan-500" />
+                    <IconBrandReactjs className="text-sky-500" />
                   ) : key.includes(".ts") ? (
                     <IconBrandTypescript className="text-sky-500" />
                   ) : key.includes(".json") ? (

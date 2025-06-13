@@ -1,0 +1,53 @@
+@theme inline {
+  --color-success-bg: var(--success-bg);
+  --color-success-border: var(--success-border);
+  --color-success-text: var(--success-text);
+
+  --color-info-bg: var(--info-bg);
+  --color-info-border: var(--info-border);
+  --color-info-text: var(--info-text);
+
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-border: var(--warning-border);
+  --color-warning-text: var(--warning-text);
+
+  --color-error-bg: var(--error-bg);
+  --color-error-border: var(--error-border);
+  --color-error-text: var(--error-text);
+}
+
+:root {
+  --success-bg: var(--color-emerald-50);
+  --success-border: var(--color-emerald-100);
+  --success-text: var(--color-emerald-600);
+
+  --info-bg: theme(--color-blue-600/15%);
+  --info-border: theme(--color-blue-600/15%);
+  --info-text: var(--color-blue-600);
+
+  --warning-bg: theme(--color-amber-500/15%);
+  --warning-border: theme(--color-amber-400/40%);
+  --warning-text: var(--color-amber-600);
+
+  --error-bg: theme(--color-red-500/20%);
+  --error-border: theme(--color-red-200);
+  --error-text: var(--color-red-600);
+}
+
+.dark {
+  --success-bg: var(--color-emerald-950);
+  --success-border: var(--color-emerald-900);
+  --success-text: var(--color-emerald-200);
+
+  --info-bg: theme(--color-blue-600/15%);
+  --info-border: theme(--color-blue-600/15%);
+  --info-text: var(--color-blue-200);
+
+  --warning-bg: theme(--color-amber-400/10%);
+  --warning-border: theme(--color-amber-500/15%);
+  --warning-text: var(--color-amber-200);
+
+  --error-bg: theme(--color-red-600/10%);
+  --error-border: theme(--color-red-600/15%);
+  --error-text: var(--color-red-200);
+}

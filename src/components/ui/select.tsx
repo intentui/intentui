@@ -60,7 +60,7 @@ const Select = <T extends object>({
   return (
     <SelectPrimitive
       {...props}
-      className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1.5")}
+      className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1")}
     >
       {(values) => (
         <>

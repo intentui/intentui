@@ -13,8 +13,8 @@ import type { InputProps, TextFieldProps as TextFieldPrimitiveProps } from "reac
 type InputType = Exclude<InputProps["type"], "password">
 
 interface BaseTextFieldProps extends TextFieldPrimitiveProps, FieldProps {
-  prefix?: React.ReactNode
-  suffix?: React.ReactNode
+  prefix?: React.ReactNode | string
+  suffix?: React.ReactNode | string
   isPending?: boolean
   className?: string
 }
