@@ -26,7 +26,6 @@ import {
 } from "@/components/ui/sidebar"
 import { Tabs } from "@/components/ui/tabs"
 import { Toggle, ToggleGroup } from "@/components/ui/toggle"
-import { siteConfig } from "@/config/site"
 import quotes from "@/json/quotes.json"
 import type { RegistryItem } from "@/types"
 import { IconFolderFill, IconFolderOpenFill, IconX } from "@intentui/icons"
@@ -252,7 +251,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                 <SidebarHeader className="flex h-12 flex-row items-center justify-between border-b bg-linear-to-b py-0">
                   <Link
                     className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
-                    href={`/docs/${siteConfig.currentVersion}/components/layouts/sidebar`}
+                    href="/docs/components/layouts/sidebar"
                   >
                     <IconFolderFill className="size-4.5" />
                     <SidebarLabel className="font-medium text-sm">intentui.com</SidebarLabel>

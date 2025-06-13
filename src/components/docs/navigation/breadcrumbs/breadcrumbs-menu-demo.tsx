@@ -3,7 +3,6 @@
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
-import { siteConfig } from "@/config/site"
 import {
   IconDotsHorizontal,
   IconLayoutAlignLeft,
@@ -22,22 +21,22 @@ export default function BreadcrumbsMenuDemo() {
             <IconDotsHorizontal />
           </Button>
           <Menu.Content placement="bottom">
-            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/layouts/sidebar`}>
+            <Menu.Item href="/docs/components/layouts/sidebar">
               <IconLayoutAlignLeft /> <Menu.Label>Sidebar</Menu.Label>
             </Menu.Item>
-            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/layouts/navbar`}>
+            <Menu.Item href="/docs/components/layouts/navbar">
               <IconLayoutAlignTop /> <Menu.Label>Navbar</Menu.Label>
             </Menu.Item>
-            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/overlays/modal`}>
+            <Menu.Item href="/docs/components/overlays/modal">
               <IconWindowVisit /> <Menu.Label>Modal</Menu.Label>
             </Menu.Item>
-            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/collections/menu`}>
+            <Menu.Item href="/docs/components/collections/menu">
               <Menu.Label>Menu</Menu.Label>
             </Menu.Item>
-            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/charts/setting-up`}>
+            <Menu.Item href="/docs/components/charts/setting-up">
               <Menu.Label>Chart</Menu.Label>
             </Menu.Item>
-            <Menu.Item href={`/docs/${siteConfig.currentVersion}/components/collections/table`}>
+            <Menu.Item href="/docs/components/collections/table">
               <Menu.Label>Table</Menu.Label>
             </Menu.Item>
           </Menu.Content>

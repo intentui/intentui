@@ -60,7 +60,7 @@ export function Installation({ className, ...props }: InstallationProps) {
           <Link
             className="not-prose xd2432 text-blue-600 hover:underline dark:text-blue-400"
             intent="primary"
-            href={`/docs/${siteConfig.currentVersion}/getting-started/cli`}
+            href={"/docs/getting-started/cli"}
             target="_blank"
             rel="noreferrer"
           >
