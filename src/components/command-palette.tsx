@@ -32,7 +32,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
               <IconHome />
               <CommandMenu.Label>Home</CommandMenu.Label>
             </CommandMenu.Item>
-            <CommandMenu.Item textValue="Docs" href="/docs/2.x/getting-started/installation">
+            <CommandMenu.Item textValue="Docs" href="/docs/getting-started/installation">
               <IconNotes />
               <CommandMenu.Label>Docs</CommandMenu.Label>
             </CommandMenu.Item>

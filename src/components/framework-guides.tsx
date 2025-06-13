@@ -65,37 +65,37 @@ const frameworks = [
     name: "Laravel",
     description: "Laravel is a PHP framework for building web applications.",
     logo: IconBrandLaravel,
-    href: "/docs/2.x/getting-started/laravel",
+    href: "/docs/getting-started/laravel",
   },
   {
     name: "Next.js",
     description: "Next.js is a React framework for building server-side rendered applications.",
     logo: IconBrandNextjs,
-    href: "/docs/2.x/getting-started/nextjs",
+    href: "/docs/getting-started/nextjs",
   },
   {
     name: "Remix",
     description: "Remix is a React framework for building server-side rendered applications.",
     logo: IconBrandRemix,
-    href: "/docs/2.x/getting-started/remix",
+    href: "/docs/getting-started/remix",
   },
   {
     name: "Vite",
     description: "Vite is a tool for building frontend applications in a fraction of the time.",
     logo: IconBrandVite,
-    href: "/docs/2.x/getting-started/vite",
+    href: "/docs/getting-started/vite",
   },
   {
     name: "TanStack Router",
     description: "TanStack Router is a framework for building server-side rendered applications.",
     logo: IconBrandTanstack,
-    href: "/docs/2.x/getting-started/tanstack-router",
+    href: "/docs/getting-started/tanstack-router",
   },
   {
     name: "Astro",
     description: "Astro is a new kind of static site builder.",
     logo: IconBrandAstro,
-    href: "/docs/2.x/getting-started/astro",
+    href: "/docs/getting-started/astro",
   },
 ]
 

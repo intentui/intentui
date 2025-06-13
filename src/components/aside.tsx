@@ -1,48 +1,107 @@
 "use client"
 
-import { Heading } from "@/components/ui/heading"
-import { Link, type LinkProps } from "@/components/ui/link"
-import { Separator } from "@/components/ui/separator"
-import { source } from "@/lib/source"
-import type { PageTree } from "fumadocs-core/server"
+import menus from "@/components-search.json"
 import { usePathname } from "next/navigation"
-import React from "react"
+import { useEffect, useRef } from "react"
+import {
+  Header,
+  ListBox,
+  ListBoxItem,
+  type ListBoxItemProps,
+  ListBoxSection,
+} from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 
-export interface SidebarItem {
-  title: string
-  slug?: string
-  status?: string
-  children?: SidebarItem[]
+type SidebarItem = {
+  section: string
+  children?: { title: string; slug: string }[]
 }
 
+export interface ComponentProps {
+  section: string
+  children: {
+    subsection: string
+    children: {
+      title: string
+      slug: string
+    }[]
+  }[]
+}
+
+const prologue = menus[0] as SidebarItem
+const gs = menus[1] as SidebarItem
+const dm = menus[2] as SidebarItem
+const components = menus[3] as ComponentProps
+
+const orderGs = ["Introduction", "Installation", "Client Side Routing", "Colors", "CLI"]
+const sortedGsChildren =
+  gs?.children
+    ?.filter((item) => orderGs.includes(item.title))
+    .sort((a, b) => orderGs.indexOf(a.title) - orderGs.indexOf(b.title)) ?? []
+
 export function Aside() {
-  const pageTree = source.pageTree
   return (
-    <div className="px-4">
-      {pageTree.children.map((item, index) => {
-        return <SidebarComposed key={index} node={item} />
-      })}
-    </div>
+    <ListBox
+      className="flex flex-col gap-y-(--gap) px-4 [--gap:--spacing(6)]"
+      aria-label="Documentation sidebar"
+    >
+      <ListBoxSection>
+        <AsideHeader>{prologue?.section}</AsideHeader>
+        {prologue?.children?.map((item) => (
+          <AsideLink key={item.slug} href={item.slug}>
+            {item.title}
+          </AsideLink>
+        ))}
+      </ListBoxSection>
+      <ListBoxSection>
+        <AsideHeader>{gs?.section}</AsideHeader>
+        {sortedGsChildren.map((item) => (
+          <AsideLink key={item.slug} href={item.slug}>
+            {item.title}
+          </AsideLink>
+        ))}
+      </ListBoxSection>
+      <ListBoxSection>
+        <AsideHeader>{dm?.section}</AsideHeader>
+        {dm?.children?.map((item) => (
+          <AsideLink key={item.slug} href={item.slug}>
+            {item.title}
+          </AsideLink>
+        ))}
+      </ListBoxSection>
+      <ListBoxSection className="flex flex-col gap-y-(--gap)">
+        <AsideHeader className="-mb-6">{components?.section}</AsideHeader>
+        {components?.children?.map((item) => (
+          <ListBoxSection key={item.subsection}>
+            <AsideHeader>{item?.subsection}</AsideHeader>
+            {item?.children?.map((item) => (
+              <AsideLink key={item.slug} href={item.slug}>
+                {item.title}
+              </AsideLink>
+            ))}
+          </ListBoxSection>
+        ))}
+      </ListBoxSection>
+    </ListBox>
   )
 }
 
-interface AsideLinkProps extends LinkProps {
+interface AsideLinkProps extends ListBoxItemProps {
   isActive?: boolean
 }
 
 function AsideLink({ href, ...props }: AsideLinkProps) {
   const path = usePathname()
   const isActive = path === href
-  const ref = React.useRef<HTMLAnchorElement>(null)
+  const ref = useRef<HTMLAnchorElement>(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isActive && ref.current) {
       ref.current.scrollIntoView({ behavior: "instant", block: "center" })
     }
   }, [isActive])
   return (
-    <Link
+    <ListBoxItem
       {...props}
       href={href}
       ref={ref as any}
@@ -50,6 +109,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
         "-ml-3 mb-0.5 flex items-center justify-between rounded-lg px-3 py-1.5 text-base text-muted-fg sm:text-sm",
         "focus:outline-hidden",
         "hover:bg-muted hover:text-secondary-fg",
+        "focus:bg-muted focus:text-secondary-fg",
         isActive && [
           "font-medium",
           "bg-blue-100 text-blue-600 hover:bg-blue-100 hover:text-blue-600",
@@ -60,42 +120,6 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
   )
 }
 
-const SidebarComposed = ({
-  node,
-}: {
-  node: PageTree.Node
-}) => {
-  if (node.type === "folder") {
-    return (
-      <div className="mb-6">
-        {!Number(node.name) && node.name !== "2.x" && (
-          <Heading
-            className="mb-2 flex items-center gap-x-2 font-medium text-base sm:text-sm"
-            level={3}
-          >
-            {node.name}
-          </Heading>
-        )}
-
-        {node.children
-          .filter((i) => i.name !== "2.x")
-          .map((child, index) => (
-            <SidebarComposed key={index} node={child} />
-          ))}
-      </div>
-    )
-  }
-
-  if (node.type === "separator") {
-    return <Separator />
-  }
-
-  if (node.type === "page") {
-    return (
-      <AsideLink href={node.url}>
-        {node.icon}
-        {node.name}
-      </AsideLink>
-    )
-  }
+function AsideHeader({ className, ...props }: React.ComponentProps<typeof Header>) {
+  return <Header className={twMerge("block font-medium text-xs/6", className)} {...props} />
 }

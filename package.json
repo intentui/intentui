@@ -18,7 +18,7 @@
     "build": "next build",
     "format": "biome lint --fix && biome check --write",
     "format:unsafe": "biome check --unsafe --write",
-    "build:everything": "rm -rf public/registry && bun run build:registry",
+    "build:everything": "rm -rf public/registry && bun run build:registry && bun run build:search",
     "bb": "bun run format && bun run build:everything",
     "start": "next start",
     "preview": "bun run build && next start",

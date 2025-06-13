@@ -1,6 +1,5 @@
 import { promises as fs } from "node:fs"
 import path from "node:path"
-import { siteConfig } from "@/config/site"
 
 export type Component = {
   slug: string
@@ -52,7 +51,7 @@ function titleize(name: string): string {
 }
 
 async function generate() {
-  const basePath = path.join(process.cwd(), `src/content/docs/${siteConfig.currentVersion}`)
+  const basePath = path.join(process.cwd(), "src/content/docs")
   const files = await walk(basePath, basePath)
 
   const normalGroups: Record<string, Component[]> = {}
@@ -62,7 +61,7 @@ async function generate() {
     const parts = file.split(path.sep)
     const section = String(parts[0]).toLowerCase()
     const name = path.basename(file, ".mdx")
-    const slug = `/docs/${siteConfig.currentVersion}/${file.replace(/\.mdx$/, "").replace(/\\/g, "/")}`
+    const slug = `/docs/${file.replace(/\.mdx$/, "").replace(/\\/g, "/")}`
     const title = titleize(name)
 
     if (section === "components") {

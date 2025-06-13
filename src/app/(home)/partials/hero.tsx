@@ -31,7 +31,7 @@ export function Hero() {
                 size: "large",
                 className: "inset-ring-white/10 shadow-none",
               })}
-              href="/docs/2.x/getting-started/installation"
+              href="/docs/getting-started/installation"
             >
               Get started
             </Link>
@@ -41,7 +41,7 @@ export function Hero() {
                 intent: "outline",
                 className: "shadow-none",
               })}
-              href="/docs/2.x/components/buttons/button"
+              href="/docs/components/buttons/button"
             >
               Components
             </Link>
