@@ -103,7 +103,7 @@ export const DocHow = ({
           <PullRegistry processedSourceCode={processedSourceCode} blockDemo={blockDemo} />
         </Group>
       </Toolbar>
-      <div className="max-h-96 w-full">
+      <div className="max-h-140 w-full">
         {currentTab === "tab_preview" ? (
           <Suspense
             fallback={
@@ -127,8 +127,7 @@ export const DocHow = ({
             {processedSourceCode ? (
               <Group className="group relative">
                 <CodeHighlighter
-                  max96
-                  className="h-full"
+                  className="h-full max-h-140"
                   removeLastLine
                   code={processedSourceCode}
                 />

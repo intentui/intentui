@@ -9,7 +9,7 @@ const noteStyles = tv({
   variants: {
     intent: {
       default: [
-        "border-border bg-secondary/50 text-secondary-fg **:data-[slot=icon]:text-secondary-fg [&_a]:text-secondary-fg",
+        "border-border bg-secondary/20 text-secondary-fg **:data-[slot=icon]:text-secondary-fg [&_a]:text-secondary-fg",
         "dark:**:data-[slot=icon]:text-secondary-fg dark:[&_a]:text-secondary-fg",
       ],
       info: [

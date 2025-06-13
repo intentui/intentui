@@ -5,17 +5,18 @@ import { Modal } from "@/components/ui/modal"
 export default function AlertDialogDemo() {
   return (
     <Modal>
-      <Button intent="danger">Delete</Button>
+      <Button intent="danger">Revoke Access</Button>
       <Modal.Content role="alertdialog">
         <Modal.Header>
-          <Modal.Title>Delete file</Modal.Title>
+          <Modal.Title>Revoke User Access?</Modal.Title>
           <Modal.Description>
-            This will permanently delete the selected file. Continue?
+            This will immediately remove all access for the selected user. This action is permanent
+            and cannot be undone.
           </Modal.Description>
         </Modal.Header>
         <Modal.Footer>
           <Modal.Close>Cancel</Modal.Close>
-          <Button intent="danger">Continue</Button>
+          <Button intent="danger">Revoke Access</Button>
         </Modal.Footer>
       </Modal.Content>
     </Modal>

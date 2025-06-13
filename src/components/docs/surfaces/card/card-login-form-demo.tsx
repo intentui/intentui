@@ -24,7 +24,7 @@ export default function CardLoginFormDemo() {
         />
         <div className="flex items-center justify-between">
           <Checkbox>Remember me</Checkbox>
-          <Link intent="primary" className="text-sm" href="#">
+          <Link intent="secondary" className="text-sm" href="#">
             Forgot password?
           </Link>
         </div>
