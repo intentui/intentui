@@ -53,3 +53,5 @@ next-env.d.ts
 .velite
 
 public/static
+
+src/components-search.json

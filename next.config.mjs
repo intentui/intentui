@@ -10,34 +10,23 @@ const config = {
   async redirects() {
     return [
       {
-        source: "/docs/:slug((?![12]\\.x/).*)",
-        missing: [
-          {
-            type: "header",
-            key: "x-no-redirect",
-          },
-        ],
-        destination: "/docs/2.x/:slug*",
-        permanent: false,
-      },
-      {
-        source: "/docs/2.x/components/layouts/aside",
-        destination: "/docs/2.x/components/layouts/sidebar",
+        source: "/docs/components/layouts/aside",
+        destination: "/docs/components/layouts/sidebar",
         permanent: true,
       },
       {
-        source: "/docs/2.x/components/charts/setup",
-        destination: "/docs/2.x/components/charts/area-chart",
+        source: "/docs/components/charts/setup",
+        destination: "/docs/components/charts/area-chart",
         permanent: true,
       },
       {
-        source: "/docs/2.x/components/surfaces/chart",
-        destination: "/docs/2.x/components/charts/area-chart",
+        source: "/docs/components/surfaces/chart",
+        destination: "/docs/components/charts/area-chart",
         permanent: true,
       },
       {
-        source: "/docs/2.x/components/collections/accordion",
-        destination: "/docs/2.x/components/navigation/disclosure-group",
+        source: "/docs/components/collections/accordion",
+        destination: "/docs/components/navigation/disclosure-group",
         permanent: true,
       },
     ]

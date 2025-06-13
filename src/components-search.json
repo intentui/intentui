@@ -4,15 +4,15 @@
     "section": "Prologue",
     "children": [
       {
-        "slug": "/docs/2.x/prologue/upgrade-guide",
+        "slug": "/docs/prologue/upgrade-guide",
         "title": "Upgrade Guide"
       },
       {
-        "slug": "/docs/2.x/prologue/contribution-guide",
+        "slug": "/docs/prologue/contribution-guide",
         "title": "Contribution Guide"
       },
       {
-        "slug": "/docs/2.x/prologue/release-notes",
+        "slug": "/docs/prologue/release-notes",
         "title": "Release Notes"
       }
     ]
@@ -22,51 +22,51 @@
     "section": "Getting Started",
     "children": [
       {
-        "slug": "/docs/2.x/getting-started/cli",
+        "slug": "/docs/getting-started/cli",
         "title": "Cli"
       },
       {
-        "slug": "/docs/2.x/getting-started/colors",
+        "slug": "/docs/getting-started/colors",
         "title": "Colors"
       },
       {
-        "slug": "/docs/2.x/getting-started/vite",
+        "slug": "/docs/getting-started/vite",
         "title": "Vite"
       },
       {
-        "slug": "/docs/2.x/getting-started/nextjs",
+        "slug": "/docs/getting-started/nextjs",
         "title": "Nextjs"
       },
       {
-        "slug": "/docs/2.x/getting-started/client-side-routing",
+        "slug": "/docs/getting-started/client-side-routing",
         "title": "Client Side Routing"
       },
       {
-        "slug": "/docs/2.x/getting-started/introduction",
+        "slug": "/docs/getting-started/introduction",
         "title": "Introduction"
       },
       {
-        "slug": "/docs/2.x/getting-started/tanstack-router",
+        "slug": "/docs/getting-started/tanstack-router",
         "title": "Tanstack Router"
       },
       {
-        "slug": "/docs/2.x/getting-started/laravel",
+        "slug": "/docs/getting-started/laravel",
         "title": "Laravel"
       },
       {
-        "slug": "/docs/2.x/getting-started/remix",
+        "slug": "/docs/getting-started/remix",
         "title": "Remix"
       },
       {
-        "slug": "/docs/2.x/getting-started/astro",
+        "slug": "/docs/getting-started/astro",
         "title": "Astro"
       },
       {
-        "slug": "/docs/2.x/getting-started/react-19",
+        "slug": "/docs/getting-started/react-19",
         "title": "React 19"
       },
       {
-        "slug": "/docs/2.x/getting-started/installation",
+        "slug": "/docs/getting-started/installation",
         "title": "Installation"
       }
     ]
@@ -76,23 +76,23 @@
     "section": "Dark Mode",
     "children": [
       {
-        "slug": "/docs/2.x/dark-mode/next-js",
+        "slug": "/docs/dark-mode/next-js",
         "title": "Next Js"
       },
       {
-        "slug": "/docs/2.x/dark-mode/vite",
+        "slug": "/docs/dark-mode/vite",
         "title": "Vite"
       },
       {
-        "slug": "/docs/2.x/dark-mode/inertia-js",
+        "slug": "/docs/dark-mode/inertia-js",
         "title": "Inertia Js"
       },
       {
-        "slug": "/docs/2.x/dark-mode/remix",
+        "slug": "/docs/dark-mode/remix",
         "title": "Remix"
       },
       {
-        "slug": "/docs/2.x/dark-mode/astro",
+        "slug": "/docs/dark-mode/astro",
         "title": "Astro"
       }
     ]
@@ -106,19 +106,19 @@
         "subsection": "Buttons",
         "children": [
           {
-            "slug": "/docs/2.x/components/buttons/file-trigger",
+            "slug": "/docs/components/buttons/file-trigger",
             "title": "File Trigger"
           },
           {
-            "slug": "/docs/2.x/components/buttons/button",
+            "slug": "/docs/components/buttons/button",
             "title": "Button"
           },
           {
-            "slug": "/docs/2.x/components/buttons/toggle",
+            "slug": "/docs/components/buttons/toggle",
             "title": "Toggle"
           },
           {
-            "slug": "/docs/2.x/components/buttons/toggle-group",
+            "slug": "/docs/components/buttons/toggle-group",
             "title": "Toggle Group"
           }
         ]
@@ -128,35 +128,35 @@
         "subsection": "Charts",
         "children": [
           {
-            "slug": "/docs/2.x/components/charts/scatter-chart",
+            "slug": "/docs/components/charts/scatter-chart",
             "title": "Scatter Chart"
           },
           {
-            "slug": "/docs/2.x/components/charts/tooltip-chart",
+            "slug": "/docs/components/charts/tooltip-chart",
             "title": "Tooltip Chart"
           },
           {
-            "slug": "/docs/2.x/components/charts/bar-chart",
+            "slug": "/docs/components/charts/bar-chart",
             "title": "Bar Chart"
           },
           {
-            "slug": "/docs/2.x/components/charts/area-chart",
+            "slug": "/docs/components/charts/area-chart",
             "title": "Area Chart"
           },
           {
-            "slug": "/docs/2.x/components/charts/radar-chart",
+            "slug": "/docs/components/charts/radar-chart",
             "title": "Radar Chart"
           },
           {
-            "slug": "/docs/2.x/components/charts/pie-chart",
+            "slug": "/docs/components/charts/pie-chart",
             "title": "Pie Chart"
           },
           {
-            "slug": "/docs/2.x/components/charts/radial-bar-chart",
+            "slug": "/docs/components/charts/radial-bar-chart",
             "title": "Radial Bar Chart"
           },
           {
-            "slug": "/docs/2.x/components/charts/line-chart",
+            "slug": "/docs/components/charts/line-chart",
             "title": "Line Chart"
           }
         ]
@@ -166,35 +166,35 @@
         "subsection": "Collections",
         "children": [
           {
-            "slug": "/docs/2.x/components/collections/tag-group",
+            "slug": "/docs/components/collections/tag-group",
             "title": "Tag Group"
           },
           {
-            "slug": "/docs/2.x/components/collections/list-box",
+            "slug": "/docs/components/collections/list-box",
             "title": "List Box"
           },
           {
-            "slug": "/docs/2.x/components/collections/table",
+            "slug": "/docs/components/collections/table",
             "title": "Table"
           },
           {
-            "slug": "/docs/2.x/components/collections/dropdown",
+            "slug": "/docs/components/collections/dropdown",
             "title": "Dropdown"
           },
           {
-            "slug": "/docs/2.x/components/collections/grid-list",
+            "slug": "/docs/components/collections/grid-list",
             "title": "Grid List"
           },
           {
-            "slug": "/docs/2.x/components/collections/tree",
+            "slug": "/docs/components/collections/tree",
             "title": "Tree"
           },
           {
-            "slug": "/docs/2.x/components/collections/choicebox",
+            "slug": "/docs/components/collections/choicebox",
             "title": "Choicebox"
           },
           {
-            "slug": "/docs/2.x/components/collections/menu",
+            "slug": "/docs/components/collections/menu",
             "title": "Menu"
           }
         ]
@@ -204,35 +204,35 @@
         "subsection": "Colors",
         "children": [
           {
-            "slug": "/docs/2.x/components/colors/color-swatch-picker",
+            "slug": "/docs/components/colors/color-swatch-picker",
             "title": "Color Swatch Picker"
           },
           {
-            "slug": "/docs/2.x/components/colors/color-slider",
+            "slug": "/docs/components/colors/color-slider",
             "title": "Color Slider"
           },
           {
-            "slug": "/docs/2.x/components/colors/color-thumb",
+            "slug": "/docs/components/colors/color-thumb",
             "title": "Color Thumb"
           },
           {
-            "slug": "/docs/2.x/components/colors/color-wheel",
+            "slug": "/docs/components/colors/color-wheel",
             "title": "Color Wheel"
           },
           {
-            "slug": "/docs/2.x/components/colors/color-picker",
+            "slug": "/docs/components/colors/color-picker",
             "title": "Color Picker"
           },
           {
-            "slug": "/docs/2.x/components/colors/color-area",
+            "slug": "/docs/components/colors/color-area",
             "title": "Color Area"
           },
           {
-            "slug": "/docs/2.x/components/colors/color-field",
+            "slug": "/docs/components/colors/color-field",
             "title": "Color Field"
           },
           {
-            "slug": "/docs/2.x/components/colors/color-swatch",
+            "slug": "/docs/components/colors/color-swatch",
             "title": "Color Swatch"
           }
         ]
@@ -242,27 +242,27 @@
         "subsection": "Controls",
         "children": [
           {
-            "slug": "/docs/2.x/components/controls/toolbar",
+            "slug": "/docs/components/controls/toolbar",
             "title": "Toolbar"
           },
           {
-            "slug": "/docs/2.x/components/controls/keyboard",
+            "slug": "/docs/components/controls/keyboard",
             "title": "Keyboard"
           },
           {
-            "slug": "/docs/2.x/components/controls/slider",
+            "slug": "/docs/components/controls/slider",
             "title": "Slider"
           },
           {
-            "slug": "/docs/2.x/components/controls/command-menu",
+            "slug": "/docs/components/controls/command-menu",
             "title": "Command Menu"
           },
           {
-            "slug": "/docs/2.x/components/controls/context-menu",
+            "slug": "/docs/components/controls/context-menu",
             "title": "Context Menu"
           },
           {
-            "slug": "/docs/2.x/components/controls/switch",
+            "slug": "/docs/components/controls/switch",
             "title": "Switch"
           }
         ]
@@ -272,27 +272,27 @@
         "subsection": "Date And Time",
         "children": [
           {
-            "slug": "/docs/2.x/components/date-and-time/time-field",
+            "slug": "/docs/components/date-and-time/time-field",
             "title": "Time Field"
           },
           {
-            "slug": "/docs/2.x/components/date-and-time/date-range-picker",
+            "slug": "/docs/components/date-and-time/date-range-picker",
             "title": "Date Range Picker"
           },
           {
-            "slug": "/docs/2.x/components/date-and-time/date-picker",
+            "slug": "/docs/components/date-and-time/date-picker",
             "title": "Date Picker"
           },
           {
-            "slug": "/docs/2.x/components/date-and-time/date-field",
+            "slug": "/docs/components/date-and-time/date-field",
             "title": "Date Field"
           },
           {
-            "slug": "/docs/2.x/components/date-and-time/calendar",
+            "slug": "/docs/components/date-and-time/calendar",
             "title": "Calendar"
           },
           {
-            "slug": "/docs/2.x/components/date-and-time/range-calendar",
+            "slug": "/docs/components/date-and-time/range-calendar",
             "title": "Range Calendar"
           }
         ]
@@ -302,7 +302,7 @@
         "subsection": "Drag And Drop",
         "children": [
           {
-            "slug": "/docs/2.x/components/drag-and-drop/drop-zone",
+            "slug": "/docs/components/drag-and-drop/drop-zone",
             "title": "Drop Zone"
           }
         ]
@@ -312,47 +312,47 @@
         "subsection": "Forms",
         "children": [
           {
-            "slug": "/docs/2.x/components/forms/field",
+            "slug": "/docs/components/forms/field",
             "title": "Field"
           },
           {
-            "slug": "/docs/2.x/components/forms/tag-field",
+            "slug": "/docs/components/forms/tag-field",
             "title": "Tag Field"
           },
           {
-            "slug": "/docs/2.x/components/forms/input-otp",
+            "slug": "/docs/components/forms/input-otp",
             "title": "Input Otp"
           },
           {
-            "slug": "/docs/2.x/components/forms/text-field",
+            "slug": "/docs/components/forms/text-field",
             "title": "Text Field"
           },
           {
-            "slug": "/docs/2.x/components/forms/number-field",
+            "slug": "/docs/components/forms/number-field",
             "title": "Number Field"
           },
           {
-            "slug": "/docs/2.x/components/forms/form",
+            "slug": "/docs/components/forms/form",
             "title": "Form"
           },
           {
-            "slug": "/docs/2.x/components/forms/checkbox",
+            "slug": "/docs/components/forms/checkbox",
             "title": "Checkbox"
           },
           {
-            "slug": "/docs/2.x/components/forms/textarea",
+            "slug": "/docs/components/forms/textarea",
             "title": "Textarea"
           },
           {
-            "slug": "/docs/2.x/components/forms/radio-group",
+            "slug": "/docs/components/forms/radio-group",
             "title": "Radio Group"
           },
           {
-            "slug": "/docs/2.x/components/forms/search-field",
+            "slug": "/docs/components/forms/search-field",
             "title": "Search Field"
           },
           {
-            "slug": "/docs/2.x/components/forms/checkbox-group",
+            "slug": "/docs/components/forms/checkbox-group",
             "title": "Checkbox Group"
           }
         ]
@@ -362,15 +362,15 @@
         "subsection": "Layouts",
         "children": [
           {
-            "slug": "/docs/2.x/components/layouts/navbar",
+            "slug": "/docs/components/layouts/navbar",
             "title": "Navbar"
           },
           {
-            "slug": "/docs/2.x/components/layouts/container",
+            "slug": "/docs/components/layouts/container",
             "title": "Container"
           },
           {
-            "slug": "/docs/2.x/components/layouts/sidebar",
+            "slug": "/docs/components/layouts/sidebar",
             "title": "Sidebar"
           }
         ]
@@ -380,11 +380,11 @@
         "subsection": "Media",
         "children": [
           {
-            "slug": "/docs/2.x/components/media/carousel",
+            "slug": "/docs/components/media/carousel",
             "title": "Carousel"
           },
           {
-            "slug": "/docs/2.x/components/media/avatar",
+            "slug": "/docs/components/media/avatar",
             "title": "Avatar"
           }
         ]
@@ -394,27 +394,27 @@
         "subsection": "Navigation",
         "children": [
           {
-            "slug": "/docs/2.x/components/navigation/breadcrumbs",
+            "slug": "/docs/components/navigation/breadcrumbs",
             "title": "Breadcrumbs"
           },
           {
-            "slug": "/docs/2.x/components/navigation/pagination",
+            "slug": "/docs/components/navigation/pagination",
             "title": "Pagination"
           },
           {
-            "slug": "/docs/2.x/components/navigation/link",
+            "slug": "/docs/components/navigation/link",
             "title": "Link"
           },
           {
-            "slug": "/docs/2.x/components/navigation/disclosure",
+            "slug": "/docs/components/navigation/disclosure",
             "title": "Disclosure"
           },
           {
-            "slug": "/docs/2.x/components/navigation/disclosure-group",
+            "slug": "/docs/components/navigation/disclosure-group",
             "title": "Disclosure Group"
           },
           {
-            "slug": "/docs/2.x/components/navigation/tabs",
+            "slug": "/docs/components/navigation/tabs",
             "title": "Tabs"
           }
         ]
@@ -424,27 +424,27 @@
         "subsection": "Overlays",
         "children": [
           {
-            "slug": "/docs/2.x/components/overlays/sheet",
+            "slug": "/docs/components/overlays/sheet",
             "title": "Sheet"
           },
           {
-            "slug": "/docs/2.x/components/overlays/tooltip",
+            "slug": "/docs/components/overlays/tooltip",
             "title": "Tooltip"
           },
           {
-            "slug": "/docs/2.x/components/overlays/drawer",
+            "slug": "/docs/components/overlays/drawer",
             "title": "Drawer"
           },
           {
-            "slug": "/docs/2.x/components/overlays/popover",
+            "slug": "/docs/components/overlays/popover",
             "title": "Popover"
           },
           {
-            "slug": "/docs/2.x/components/overlays/modal",
+            "slug": "/docs/components/overlays/modal",
             "title": "Modal"
           },
           {
-            "slug": "/docs/2.x/components/overlays/dialog",
+            "slug": "/docs/components/overlays/dialog",
             "title": "Dialog"
           }
         ]
@@ -454,15 +454,15 @@
         "subsection": "Pickers",
         "children": [
           {
-            "slug": "/docs/2.x/components/pickers/select",
+            "slug": "/docs/components/pickers/select",
             "title": "Select"
           },
           {
-            "slug": "/docs/2.x/components/pickers/multiple-select",
+            "slug": "/docs/components/pickers/multiple-select",
             "title": "Multiple Select"
           },
           {
-            "slug": "/docs/2.x/components/pickers/combo-box",
+            "slug": "/docs/components/pickers/combo-box",
             "title": "Combo Box"
           }
         ]
@@ -472,35 +472,35 @@
         "subsection": "Statuses",
         "children": [
           {
-            "slug": "/docs/2.x/components/statuses/meter",
+            "slug": "/docs/components/statuses/meter",
             "title": "Meter"
           },
           {
-            "slug": "/docs/2.x/components/statuses/note",
+            "slug": "/docs/components/statuses/note",
             "title": "Note"
           },
           {
-            "slug": "/docs/2.x/components/statuses/loader",
+            "slug": "/docs/components/statuses/loader",
             "title": "Loader"
           },
           {
-            "slug": "/docs/2.x/components/statuses/progress-circle",
+            "slug": "/docs/components/statuses/progress-circle",
             "title": "Progress Circle"
           },
           {
-            "slug": "/docs/2.x/components/statuses/toast",
+            "slug": "/docs/components/statuses/toast",
             "title": "Toast"
           },
           {
-            "slug": "/docs/2.x/components/statuses/badge",
+            "slug": "/docs/components/statuses/badge",
             "title": "Badge"
           },
           {
-            "slug": "/docs/2.x/components/statuses/progress-bar",
+            "slug": "/docs/components/statuses/progress-bar",
             "title": "Progress Bar"
           },
           {
-            "slug": "/docs/2.x/components/statuses/skeleton",
+            "slug": "/docs/components/statuses/skeleton",
             "title": "Skeleton"
           }
         ]
@@ -510,23 +510,23 @@
         "subsection": "Surfaces",
         "children": [
           {
-            "slug": "/docs/2.x/components/surfaces/heading",
+            "slug": "/docs/components/surfaces/heading",
             "title": "Heading"
           },
           {
-            "slug": "/docs/2.x/components/surfaces/show-more",
+            "slug": "/docs/components/surfaces/show-more",
             "title": "Show More"
           },
           {
-            "slug": "/docs/2.x/components/surfaces/card",
+            "slug": "/docs/components/surfaces/card",
             "title": "Card"
           },
           {
-            "slug": "/docs/2.x/components/surfaces/separator",
+            "slug": "/docs/components/surfaces/separator",
             "title": "Separator"
           },
           {
-            "slug": "/docs/2.x/components/surfaces/description-list",
+            "slug": "/docs/components/surfaces/description-list",
             "title": "Description List"
           }
         ]
@@ -536,7 +536,7 @@
         "subsection": "Utilities",
         "children": [
           {
-            "slug": "/docs/2.x/components/utilities/visually-hidden",
+            "slug": "/docs/components/utilities/visually-hidden",
             "title": "Visually Hidden"
           }
         ]

@@ -40,7 +40,7 @@ export function DocRefs({ references }: { references: string[] }) {
         title = "Motion"
         icon = IconBrandFramer
         break
-      case url.includes("docs/2.x/components"):
+      case url.includes("docs/components"):
         title = "Internal"
         icon = Logo
         break
