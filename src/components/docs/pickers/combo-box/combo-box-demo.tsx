@@ -4,7 +4,7 @@ import { ComboBox } from "@/components/ui/combo-box"
 
 export default function ComboBoxDemo() {
   return (
-    <ComboBox placeholder="Select a user" label="Users">
+    <ComboBox placeholder="Select a user" aria-label="Users">
       <ComboBox.Input />
       <ComboBox.List items={users}>
         {(item) => (

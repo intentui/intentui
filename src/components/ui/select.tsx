@@ -28,8 +28,8 @@ import { tv } from "tailwind-variants"
 const selectTriggerStyles = tv({
   extend: focusStyles,
   base: [
-    "relative isolate inline-flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input text-start shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition group-disabled:opacity-50 **:data-[slot=icon]:size-4 dark:shadow-none",
-    "px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:pr-[calc(--spacing(2)-1px)] sm:pl-[calc(--spacing(3)-1px)] sm:text-sm/6 sm:*:text-sm/6",
+    "relative isolate inline-flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input text-start shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition hover:border-[color-mix(in_oklab,var(--color-secondary-fg)_10%,var(--color-border))] group-disabled:opacity-50 **:data-[slot=icon]:size-4 dark:shadow-none",
+    "px-3.5 py-2.5 sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6",
     "group-data-open:border-ring/70 group-data-open:ring-3 group-data-open:ring-ring/20",
     "text-fg group-invalid:border-danger group-invalid:ring-danger/20 forced-colors:group-invalid:border-[Mark]",
     "*:data-[slot=icon]:-mx-0.5 *:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:*:-mx-0.5 *:data-[slot=avatar]:*:mr-2 *:data-[slot=avatar]:mr-2 *:data-[slot=icon]:mr-2",
@@ -51,6 +51,7 @@ interface SelectProps<T extends object> extends SelectPrimitiveProps<T> {
 
 const Select = <T extends object>({
   label,
+  children,
   description,
   errorMessage,
   className,
@@ -64,7 +65,7 @@ const Select = <T extends object>({
       {(values) => (
         <>
           {label && <Label>{label}</Label>}
-          {typeof props.children === "function" ? props.children(values) : props.children}
+          {typeof children === "function" ? children(values) : children}
           {description && <Description>{description}</Description>}
           <FieldError>{errorMessage}</FieldError>
         </>
@@ -128,7 +129,7 @@ const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
       {props.prefix && <span className="-mr-1">{props.prefix}</span>}
       <SelectValue
         data-slot="select-value"
-        className="grid flex-1 grid-cols-[auto_1fr] items-center text-base data-placeholder:text-muted-fg [&_[slot=description]]:hidden"
+        className="grid flex-1 grid-cols-[auto_1fr] items-center data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden"
       />
       <IconChevronsY
         data-slot="chevron"

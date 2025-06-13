@@ -174,11 +174,11 @@ export function NavbarDropdown() {
           aria-label={siteConfig.name}
           intent="plain"
           size="sm"
-          className="-ml-1 group pressed:bg-transparent hover:bg-transparent"
+          className="-ml-1 group flex items-center gap-x-2 pressed:bg-transparent p-2 font-medium hover:bg-transparent"
         >
-          <span className="flex items-center">
-            <IconBrandIntentui className="mr-1.5 size-5" data-slot="logo" />
-            <span className="font-semibold text-sm">{siteConfig.name}</span>
+          <IconBrandIntentui className="size-7 text-white" />
+          <span className="hidden sm:inline">
+            <span>Intent</span> <span className="text-muted-fg">UI</span>
           </span>
         </Button>
         <Menu.Content placement="bottom" className="sm:min-w-64">

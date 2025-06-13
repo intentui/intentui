@@ -15,8 +15,8 @@ interface TimeFieldProps<T extends TimeValue> extends TimeFieldPrimitiveProps<T>
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
-  prefix?: React.ReactNode
-  suffix?: React.ReactNode
+  prefix?: React.ReactNode | string
+  suffix?: React.ReactNode | string
 }
 
 const TimeField = <T extends TimeValue>({

@@ -78,7 +78,7 @@ const fieldGroupStyles = tv({
   base: [
     "[--gutter-inset:--spacing(6)] [--gutter-x:--spacing(2.5)]",
     "*:text-base/6 *:sm:text-sm/6",
-    "group flex items-center overflow-hidden rounded-lg border border-input shadow-xs transition duration-200 ease-out not-data-focus-within:hover:border-[color-mix(in_oklab,var(--color-fg)_10%,var(--color-border))]",
+    "group flex items-center overflow-hidden rounded-lg border border-input shadow-xs transition duration-200 ease-out not-data-focus-within:hover:border-[color-mix(in_oklab,var(--color-secondary-fg)_10%,var(--color-border))]",
     "relative focus-within:ring-3 group-invalid:focus-within:border-danger group-invalid:focus-within:ring-danger/20",
     "[&>[role=progressbar]:first-child]:ml-(--gutter-x) [&>[role=progressbar]:last-child]:mr-(--gutter-x)",
     "*:data-[slot=icon]:z-10 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:[button]:shrink-0",
@@ -129,7 +129,7 @@ const Input = ({ className, ref, ...props }: InputProps) => {
       {...props}
       className={composeTailwindRenderProps(
         className,
-        "relative block w-full px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] placeholder-muted-fg outline-hidden sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/6",
+        "relative block w-full px-3.5 py-2.5 placeholder-muted-fg outline-hidden sm:px-3 sm:py-1.5 sm:text-sm/6",
       )}
     />
   )
