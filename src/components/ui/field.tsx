@@ -18,7 +18,8 @@ import {
 } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
-import { composeTailwindRenderProps, focusStyles } from "@/lib/primitive"
+import { composeTailwindRenderProps } from "@/lib/primitive"
+import { twMerge } from "tailwind-merge"
 
 interface FieldProps {
   label?: string
@@ -72,32 +73,6 @@ const FieldError = ({ className, ref, ...props }: FieldErrorProps) => {
   )
 }
 
-const fieldGroupStyles = tv({
-  base: [
-    "[--gutter-inset:--spacing(6)] [--gutter-x:--spacing(2.5)]",
-    "*:text-base/6 *:sm:text-sm/6",
-    "group flex items-center overflow-hidden rounded-lg border border-input shadow-xs transition duration-200 ease-out not-data-focus-within:hover:border-[color-mix(in_oklab,var(--color-secondary-fg)_10%,var(--color-border))]",
-    "relative focus-within:ring-3 group-invalid:focus-within:border-danger group-invalid:focus-within:ring-danger/20",
-    "[&>[role=progressbar]:first-child]:ml-(--gutter-x) [&>[role=progressbar]:last-child]:mr-(--gutter-x)",
-    "*:data-[slot=icon]:z-10 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:[button]:shrink-0",
-    "[&>button:has([data-slot=icon]):first-child]:left-0 [&>button:has([data-slot=icon]):last-child]:right-0 [&>button:has([data-slot=icon])]:absolute",
-    "*:data-[slot=icon]:-translate-y-1/2 *:data-[slot=icon]:pointer-events-none *:data-[slot=icon]:absolute *:data-[slot=icon]:top-1/2 *:data-[slot=icon]:text-muted-fg",
-    "[&>[data-slot=icon]:first-child]:left-(--gutter-x) [&>[data-slot=icon]:last-child]:right-(--gutter-x)",
-    "[&:has([data-slot=icon]+input)]:pl-(--gutter-inset) [&:has(input+[data-slot=icon])]:pr-(--gutter-inset)",
-    "[&:has([data-slot=icon]+[role=group])]:pl-(--gutter-inset) [&:has([role=group]+[data-slot=icon])]:pr-(--gutter-inset)",
-    "has-[[data-slot=icon]:last-child]:[&_input]:pr-[calc(var(--gutter-inset)+1)]",
-    "*:[button]:rounded-[calc(var(--radius-lg)-4px)] *:[button]:px-(--gutter-x) *:[button]:py-[calc(--spacing(1)-1px)]",
-    "*:[button]:first:ml-0.5 *:[button]:last:mr-0.5",
-  ],
-  variants: {
-    isFocusWithin: focusStyles.variants.isFocused,
-    isInvalid: focusStyles.variants.isInvalid,
-    isDisabled: {
-      true: "opacity-50 forced-colors:border-[GrayText]",
-    },
-  },
-})
-
 interface FieldGroupProps extends GroupProps {
   ref?: React.RefObject<HTMLDivElement>
 }
@@ -106,11 +81,26 @@ const FieldGroup = ({ className, ref, ...props }: FieldGroupProps) => {
     <Group
       {...props}
       ref={ref}
-      className={composeRenderProps(className, (className, renderProps) =>
-        fieldGroupStyles({
-          ...renderProps,
+      className={composeRenderProps(className, (className, { isFocusWithin, isInvalid }) =>
+        twMerge([
+          "[--gutter-inset:--spacing(6)] [--gutter-x:--spacing(2.5)]",
+          "*:text-base/6 *:sm:text-sm/6",
+          "group relative flex items-center overflow-hidden rounded-lg border border-input shadow-xs transition duration-200 ease-out",
+          "[&>[role=progressbar]:first-child]:ml-(--gutter-x) [&>[role=progressbar]:last-child]:mr-(--gutter-x)",
+          "*:data-[slot=icon]:z-10 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:[button]:shrink-0",
+          "[&>button:has([data-slot=icon]):first-child]:left-0 [&>button:has([data-slot=icon]):last-child]:right-0 [&>button:has([data-slot=icon])]:absolute",
+          "*:data-[slot=icon]:-translate-y-1/2 *:data-[slot=icon]:pointer-events-none *:data-[slot=icon]:absolute *:data-[slot=icon]:top-1/2 *:data-[slot=icon]:text-muted-fg",
+          "[&>[data-slot=icon]:first-child]:left-(--gutter-x) [&>[data-slot=icon]:last-child]:right-(--gutter-x)",
+          "[&:has([data-slot=icon]+input)]:pl-(--gutter-inset) [&:has(input+[data-slot=icon])]:pr-(--gutter-inset)",
+          "[&:has([data-slot=icon]+[role=group])]:pl-(--gutter-inset) [&:has([role=group]+[data-slot=icon])]:pr-(--gutter-inset)",
+          "has-[[data-slot=icon]:last-child]:[&_input]:pr-[calc(var(--gutter-inset)+1)]",
+          "*:[button]:rounded-[calc(var(--radius-lg)-4px)] *:[button]:px-(--gutter-x) *:[button]:py-[calc(--spacing(1)-1px)]",
+          "*:[button]:first:ml-0.5 *:[button]:last:mr-0.5",
+          "hover:border-current/20 focus-within:hover:border-ring/70 has-invalid:hover:border-danger/70",
+          "invalid:border-danger/70 focus-within:invalid:border-danger/70 focus-within:invalid:ring-danger/20 group-invalid:border-danger/70 group-invalid:focus-within:border-danger/70 group-invalid:focus-within:ring-danger/20",
+          "focus-within:border-ring/70 focus-within:ring-3 focus-within:ring-ring/20",
           className,
-        }),
+        ]),
       )}
     />
   )

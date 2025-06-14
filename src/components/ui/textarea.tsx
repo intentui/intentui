@@ -1,30 +1,11 @@
 "use client"
 
-import {
-  TextArea as TextAreaPrimitive,
-  TextField as TextFieldPrimitive,
-  type TextFieldProps as TextFieldPrimitiveProps,
-  type ValidationResult,
-  composeRenderProps,
-} from "react-aria-components"
-import { tv } from "tailwind-variants"
+import { Description, FieldError, type FieldProps, Label } from "@/components/ui/field"
+import { composeTailwindRenderProps } from "@/lib/primitive"
+import { TextArea, TextField, type TextFieldProps } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
 
-import { Description, FieldError, Label } from "@/components/ui/field"
-import { composeTailwindRenderProps, focusStyles } from "@/lib/primitive"
-
-const textareaStyles = tv({
-  extend: focusStyles,
-  base: "field-sizing-content max-h-96 min-h-16 w-full min-w-0 rounded-lg border border-input px-2.5 py-2 text-base placeholder-muted-fg shadow-xs outline-hidden transition duration-200 focus-within:hover:border-[color-mix(in_oklab,var(--color-secondary-fg)_10%,var(--color-border))] disabled:opacity-50 sm:text-sm/6",
-})
-
-interface TextareaProps extends TextFieldPrimitiveProps {
-  autoSize?: boolean
-  label?: string
-  placeholder?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
-  className?: string
-}
+interface TextareaProps extends TextFieldProps, FieldProps {}
 
 const Textarea = ({
   className,
@@ -35,23 +16,25 @@ const Textarea = ({
   ...props
 }: TextareaProps) => {
   return (
-    <TextFieldPrimitive
+    <TextField
       {...props}
       className={composeTailwindRenderProps(className, "group flex flex-col gap-y-1")}
     >
       {label && <Label>{label}</Label>}
-      <TextAreaPrimitive
+      <TextArea
         placeholder={placeholder}
-        className={composeRenderProps(className, (className, renderProps) =>
-          textareaStyles({
-            ...renderProps,
-            className,
-          }),
-        )}
+        className={twJoin([
+          "field-sizing-content max-h-96 min-h-16 w-full min-w-0 rounded-lg border border-input px-2.5 py-2 text-base placeholder-muted-fg shadow-xs outline-hidden transition duration-200 sm:text-sm/6",
+          "focus:border-ring/70 focus:ring-3 focus:ring-ring/20",
+          "focus:invalid:border-danger/70 focus:invalid:ring-3 focus:invalid:ring-danger/20",
+          "invalid:border-danger/70",
+          "disabled:opacity-50 disabled:forced-colors:border-[GrayText]",
+          "hover:border-current/20 invalid:hover:border-danger/70",
+        ])}
       />
       {description && <Description>{description}</Description>}
       <FieldError>{errorMessage}</FieldError>
-    </TextFieldPrimitive>
+    </TextField>
   )
 }
 

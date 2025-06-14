@@ -7,15 +7,15 @@ import {
   DropdownSeparator,
 } from "@/components/ui/dropdown"
 import { Description, FieldError, Label } from "@/components/ui/field"
+import type { FieldProps } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
 import { PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
-import { composeTailwindRenderProps, focusStyles } from "@/lib/primitive"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
 import type {
   ListBoxProps,
   PopoverProps,
   SelectProps as SelectPrimitiveProps,
-  ValidationResult,
 } from "react-aria-components"
 import {
   Button,
@@ -23,30 +23,10 @@ import {
   SelectValue,
   composeRenderProps,
 } from "react-aria-components"
-import { tv } from "tailwind-variants"
+import { twMerge } from "tailwind-merge"
 
-const selectTriggerStyles = tv({
-  extend: focusStyles,
-  base: [
-    "relative isolate inline-flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input text-start shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition hover:border-[color-mix(in_oklab,var(--color-secondary-fg)_10%,var(--color-border))] group-disabled:opacity-50 **:data-[slot=icon]:size-4 dark:shadow-none",
-    "px-3.5 py-2.5 sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6",
-    "group-data-open:border-ring/70 group-data-open:ring-3 group-data-open:ring-ring/20",
-    "text-fg group-invalid:border-danger group-invalid:ring-danger/20 forced-colors:group-invalid:border-[Mark]",
-    "**:data-[slot=icon]:-mx-0.5 **:data-[slot=avatar]:-mx-0.5 **:data-[slot=avatar]:**:-mx-0.5 **:data-[slot=avatar]:**:mr-2 **:data-[slot=avatar]:mr-2 **:data-[slot=icon]:mr-2",
-  ],
-  variants: {
-    isDisabled: {
-      true: "opacity-50 forced-colors:border-[GrayText] forced-colors:text-[GrayText]",
-    },
-  },
-})
-
-interface SelectProps<T extends object> extends SelectPrimitiveProps<T> {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
+interface SelectProps<T extends object> extends SelectPrimitiveProps<T>, FieldProps {
   items?: Iterable<T>
-  className?: string
 }
 
 const Select = <T extends object>({
@@ -119,11 +99,17 @@ interface SelectTriggerProps extends React.ComponentProps<typeof Button> {
 const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
   return (
     <Button
-      className={composeRenderProps(className, (className, renderProps) =>
-        selectTriggerStyles({
-          ...renderProps,
+      className={composeRenderProps(className, (className, { isDisabled, isFocused }) =>
+        twMerge([
+          "relative isolate inline-flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input px-3.5 py-2.5 text-start text-fg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] outline-hidden transition sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6 dark:shadow-none",
+          " **:data-[slot=icon]:-mx-0.5 **:data-[slot=avatar]:-mx-0.5 **:data-[slot=avatar]:**:-mx-0.5 **:data-[slot=avatar]:**:mr-2 **:data-[slot=avatar]:mr-2 **:data-[slot=icon]:mr-2 **:data-[slot=icon]:size-4",
+          "group-open:border-ring/70 group-open:ring-3 group-open:ring-ring/20",
+          "group-disabled:opacity-50 forced-colors:group-disabled:border-[GrayText] forced-colors:group-disabled:text-[GrayText]",
+          "focus:border-ring/70 focus:ring-3 focus:ring-ring/20",
+          "group-open:invalid:border-danger/70 group-open:invalid:ring-3 group-open:invalid:ring-danger/20 group-invalid:border-danger/70 group-invalid:ring-danger/20 group-focus:group-invalid:border-danger/70 group-focus:group-invalid:ring-danger/20",
+          "forced-colors:group-focus:border-[Highlight] forced-colors:group-invalid:border-[Mark] forced-colors:group-focus:group-invalid:border-[Mark]",
           className,
-        }),
+        ]),
       )}
     >
       {props.prefix && <span className="-mr-1">{props.prefix}</span>}
@@ -133,7 +119,7 @@ const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
       />
       <IconChevronsY
         data-slot="chevron"
-        className="shrink-0 text-muted-fg group-disabled:opacity-50 group-data-open:text-fg forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
+        className="shrink-0 text-muted-fg group-open:text-fg group-disabled:opacity-50 forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
       />
     </Button>
   )
