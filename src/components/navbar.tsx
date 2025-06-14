@@ -251,7 +251,7 @@ export function NavbarDropdown() {
           <IconChevronDown />
         </Button>
         <Menu.Content>
-          <Menu.Item href="https://github.com/irsyadadl/intentui/tree/next" target="_blank">
+          <Menu.Item href="https://3x.intentui.com" target="_blank">
             3.x (beta)
           </Menu.Item>
           <Menu.Item href="https://intentui.com/docs/getting-started/introduction">

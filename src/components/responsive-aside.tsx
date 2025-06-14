@@ -5,7 +5,6 @@ import { Sheet } from "@/components/ui/sheet"
 import {
   IconArrowUpRight,
   IconBrandDiscord,
-  IconBrandGithub,
   IconBrandIntentui,
   IconBrandX,
   IconHamburger,
@@ -13,16 +12,18 @@ import {
   IconSearch,
   IconSidebarFill,
 } from "@intentui/icons"
-import { LayoutGroup } from "motion/react"
+import { LayoutGroup, useMotionValueEvent, useScroll } from "motion/react"
 import { usePathname } from "next/navigation"
 import React, { useEffect, useState } from "react"
 
 import { menus } from "@/app/(home)/partials/navbar"
-import { buttonStyles } from "@/components/ui/button"
+import { GithubLink } from "@/components/github-link"
+import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
 import { Button as ButtonPrimitive } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
 import { Aside } from "./aside"
 import { CommandPalette } from "./command-palette"
 import { NavbarDropdown } from "./navbar"
@@ -37,11 +38,21 @@ export function ResponsiveAside({
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => setOpenAside(false), [pathname])
+  const { scrollY } = useScroll()
+  const [isScrolled, setIsScrolled] = useState(false)
 
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 0)
+  })
   return (
     <>
       <CommandPalette setOpen={setOpenCmd} openCmd={openCmd} />
-      <nav className="sticky top-0 z-30 flex items-center justify-between border-b bg-bg px-4 py-2 shadow-xs lg:hidden">
+      <nav
+        className={twJoin(
+          "sticky top-0 z-30 flex animate-in items-center justify-between bg-bg px-4 py-2 transition-all duration-100 lg:hidden",
+          isScrolled && "border-b shadow-xs",
+        )}
+      >
         <div className="flex items-center gap-x-2">
           <ButtonPrimitive
             onPress={() => setOpenAside(true)}
@@ -55,44 +66,24 @@ export function ResponsiveAside({
             <IconBrandIntentui className="size-5" />
           </Link>
         </div>
-        <div className="flex items-center gap-x-0.5 **:data-[slot=icon]:size-5">
-          <ButtonPrimitive
+        <div className="flex items-center gap-x-2 **:data-[slot=icon]:size-5">
+          <Button
+            size="sq-sm"
+            intent="plain"
             onPress={() => setOpenCmd(true)}
             aria-label="Search docs"
-            className="p-2 pressed:text-fg text-muted-fg outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             <IconSearch />
-          </ButtonPrimitive>
+          </Button>
 
-          <ThemeSwitcher intent="plain" shape="circle" />
-
-          <LinkIcon
-            aria-label="Open Intent X / Twitter"
-            href={siteConfig.links.twitter}
-            target="_blank"
-          >
-            <IconBrandX />
-          </LinkIcon>
-          <LinkIcon
-            aria-label="Open Intent Discord"
-            href={siteConfig.links.discord}
-            target="_blank"
-          >
-            <IconBrandDiscord />
-          </LinkIcon>
-
-          <LinkIcon aria-label="Open Intent Github" href={siteConfig.repo} target="_blank">
-            <IconBrandGithub />
-          </LinkIcon>
-          <Separator orientation="vertical" className="mx-1 h-5" />
-          <Menu respectScreen={false}>
-            <ButtonPrimitive
-              aria-label="Open menu"
-              className="p-2 pressed:text-fg text-muted-fg outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
-            >
-              <IconHamburger className="size-4" />
-            </ButtonPrimitive>
-            <Menu.Content placement="bottom" className="min-w-64">
+          <ThemeSwitcher intent="plain" />
+          <GithubLink />
+          <Separator orientation="vertical" className="mx-2 h-5" />
+          <Menu>
+            <Button aria-label="Search docs" intent="plain" size="sq-sm">
+              <IconHamburger className="size-5" />
+            </Button>
+            <Menu.Content respectScreen={false} placement="bottom" className="sm:min-w-56">
               <Menu.Item href="/">
                 <IconHome />
                 <Menu.Label>Home</Menu.Label>
@@ -103,10 +94,31 @@ export function ResponsiveAside({
                   href={menu.href}
                   target={menu.external ? "_blank" : undefined}
                 >
+                  {menu.icon && <menu.icon />}
                   <Menu.Label>{menu.label}</Menu.Label>
                   {menu.external && <IconArrowUpRight />}
                 </Menu.Item>
               ))}
+              <Menu.Separator />
+
+              <Menu.Item
+                aria-label="Open Intent X / Twitter"
+                href={siteConfig.links.twitter}
+                target="_blank"
+              >
+                <IconBrandX />
+                <Menu.Label>X</Menu.Label>
+                <IconArrowUpRight />
+              </Menu.Item>
+              <Menu.Item
+                aria-label="Open Intent Discord"
+                href={siteConfig.links.discord}
+                target="_blank"
+              >
+                <IconBrandDiscord />
+                <Menu.Label>Discord</Menu.Label>
+                <IconArrowUpRight />
+              </Menu.Item>
             </Menu.Content>
           </Menu>
         </div>
@@ -129,18 +141,5 @@ export function ResponsiveAside({
         </Sheet.Body>
       </Sheet.Content>
     </>
-  )
-}
-
-function LinkIcon({ className, ...props }: React.ComponentProps<typeof Link>) {
-  return (
-    <Link
-      {...props}
-      className={buttonStyles({
-        intent: "plain",
-        size: "square-petite",
-        shape: "circle",
-      })}
-    />
   )
 }
