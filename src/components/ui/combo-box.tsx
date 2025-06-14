@@ -9,7 +9,14 @@ import {
   DropdownLabel,
   DropdownSection,
 } from "@/components/ui/dropdown"
-import { Description, FieldError, FieldGroup, Input, Label } from "@/components/ui/field"
+import {
+  Description,
+  FieldError,
+  FieldGroup,
+  type FieldProps,
+  Input,
+  Label,
+} from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
 import { PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
 import { composeTailwindRenderProps } from "@/lib/primitive"
@@ -18,7 +25,6 @@ import type {
   ComboBoxProps as ComboboxPrimitiveProps,
   InputProps,
   ListBoxProps,
-  ValidationResult,
 } from "react-aria-components"
 import {
   ComboBoxContext,
@@ -26,11 +32,9 @@ import {
   useSlottedContext,
 } from "react-aria-components"
 
-interface ComboBoxProps<T extends object> extends Omit<ComboboxPrimitiveProps<T>, "children"> {
-  label?: string
-  placeholder?: string
-  description?: string | null
-  errorMessage?: string | ((validation: ValidationResult) => string)
+interface ComboBoxProps<T extends object>
+  extends Omit<ComboboxPrimitiveProps<T>, "children">,
+    FieldProps {
   children: React.ReactNode
 }
 

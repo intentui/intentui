@@ -4,24 +4,18 @@ import { IconCheck, IconMinus } from "@intentui/icons"
 import type {
   CheckboxGroupProps as CheckboxGroupPrimitiveProps,
   CheckboxProps as CheckboxPrimitiveProps,
-  ValidationResult,
 } from "react-aria-components"
 import {
   CheckboxGroup as CheckboxGroupPrimitive,
   Checkbox as CheckboxPrimitive,
   composeRenderProps,
 } from "react-aria-components"
-import { tv } from "tailwind-variants"
 
-import { Description, FieldError, Label } from "@/components/ui/field"
+import { Description, FieldError, type FieldProps, Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { twMerge } from "tailwind-merge"
 
-interface CheckboxGroupProps extends CheckboxGroupPrimitiveProps {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
-}
+interface CheckboxGroupProps extends CheckboxGroupPrimitiveProps, Omit<FieldProps, "placeholder"> {}
 
 const CheckboxGroup = ({ className, children, ...props }: CheckboxGroupProps) => {
   return (
@@ -44,15 +38,6 @@ const CheckboxGroup = ({ className, children, ...props }: CheckboxGroupProps) =>
   )
 }
 
-const checkboxStyles = tv({
-  base: "group flex items-center gap-2 text-sm transition",
-  variants: {
-    isDisabled: {
-      true: "opacity-50",
-    },
-  },
-})
-
 interface CheckboxProps extends CheckboxPrimitiveProps {
   description?: string
   label?: string
@@ -62,8 +47,9 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
   return (
     <CheckboxPrimitive
       {...props}
-      className={composeRenderProps(className, (className, renderProps) =>
-        checkboxStyles({ ...renderProps, className }),
+      className={composeTailwindRenderProps(
+        className,
+        "group flex items-center gap-2 text-sm transition disabled:opacity-50",
       )}
     >
       {composeRenderProps(
@@ -72,7 +58,11 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
           const isStringChild = typeof children === "string"
           const hasCustomChildren = typeof children !== "undefined"
 
-          const indicator = isIndeterminate ? <IconMinus /> : isSelected ? <IconCheck /> : null
+          const indicator = isIndeterminate ? (
+            <IconMinus data-slot="check-indicator" />
+          ) : isSelected ? (
+            <IconCheck data-slot="check-indicator" />
+          ) : null
 
           const content = hasCustomChildren ? (
             isStringChild ? (
@@ -93,7 +83,7 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
                 "grid grid-cols-[1.125rem_1fr] gap-x-3 gap-y-1 sm:grid-cols-[1rem_1fr]",
                 "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1 *:data-[slot=indicator]:mt-0.75 sm:*:data-[slot=indicator]:mt-1",
                 "*:data-[slot=label]:col-start-2 *:data-[slot=label]:row-start-1",
-                "*:data-[[slot=description]]:row-start-2 *:[[slot=description]]:col-start-2",
+                "*:[[slot=description]]:col-start-2 *:[[slot=description]]:row-start-2",
                 "has-[[slot=description]]:**:data-[slot=label]:font-medium",
               )}
             >
@@ -101,8 +91,8 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
                 data-slot="indicator"
                 className={twMerge([
                   "relative inset-ring inset-ring-fg/10 isolate flex shrink-0 items-center justify-center rounded bg-muted text-bg transition",
-                  "sm:size-4 sm:*:data-[slot=icon]:size-3.5",
-                  "size-4.5 *:data-[slot=icon]:size-4",
+                  "sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
+                  "size-4.5 *:data-[slot=check-indicator]:size-4",
                   (isSelected || isIndeterminate) && [
                     "inset-ring-primary bg-primary text-primary-fg",
                     "group-invalid:inset-ring-danger/70 group-invalid:bg-danger group-invalid:text-danger-fg",

@@ -43,7 +43,7 @@ interface TagFieldProps extends Pick<TagGroupProps, "isCircle">, FieldProps {
   onItemInserted?: (tag: TagItemProps) => void
   onItemCleared?: (tag: TagItemProps | undefined) => void
   appearance?: "outline" | "plain"
-  'aria-label'?: string
+  "aria-label"?: string
 }
 
 const TagField = ({

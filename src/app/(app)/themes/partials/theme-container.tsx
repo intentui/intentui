@@ -39,7 +39,7 @@ export function ThemeContainer() {
   const handleClose = () => setOpen(false)
   return (
     <>
-      <PageContainer>
+      <PageContainer className="pb-16">
         <div className="flex flex-col divide-y rounded-lg border lg:flex-row lg:divide-x lg:divide-y-0">
           <div className="w-full p-4 lg:w-1/2 lg:p-6">
             <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-6">

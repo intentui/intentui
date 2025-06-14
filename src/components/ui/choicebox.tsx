@@ -138,9 +138,10 @@ const ChoiceboxItem = ({ className, children, ...props }: ChoiceboxItemProps) =>
           {props.description && <ChoiceboxDescription>{props.description}</ChoiceboxDescription>}
           {typeof children === "function" ? children(values) : children}
           {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <div className="absolute top-0 right-0 px-2 pt-4">
-              <Checkbox slot="selection" />
-            </div>
+            <Checkbox
+              className="group -translate-y-1/2 absolute top-1/2 right-2 grid"
+              slot="selection"
+            />
           )}
         </div>
       )}

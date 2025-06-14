@@ -96,24 +96,34 @@ export function Blocks() {
         </Card>
         <Card className="flex items-center justify-center p-6">
           <RadioGroup defaultValue="highSecurity" aria-label="Security settings">
-            <Radio value="highSecurity" description="Set security settings to high.">
-              High Security
-            </Radio>
+            <Radio
+              value="highSecurity"
+              label="High security"
+              description="Set all protections to maximum."
+            />
             <CheckboxGroup
-              aria-label="Encryption and Firewall"
-              defaultValue={["encryption"]}
+              aria-label="Advanced Security Features"
+              defaultValue={["encryption", "firewall"]}
               className="ml-6"
             >
-              <Checkbox value="encryption" description="Enable encryption.">
-                Encryption
-              </Checkbox>
-              <Checkbox value="firewall" description="Enable firewall protection.">
-                Firewall
-              </Checkbox>
+              <Checkbox
+                value="encryption"
+                label="Encryption"
+                description="Encrypt all data at rest and in transit."
+              />
+              <Checkbox value="firewall" label="Firewall" description="Enable network firewall." />
             </CheckboxGroup>
-            <Radio value="lowSecurity" description="Set security settings to low.">
-              Low Security
-            </Radio>
+
+            <Radio
+              value="balancedSecurity"
+              label="Balanced security"
+              description="Balance between protection and performance."
+            />
+            <Radio
+              value="lowSecurity"
+              label="Low security"
+              description="Minimal protection enabled."
+            />
           </RadioGroup>
         </Card>
         <Card className="flex items-center justify-center p-6">
