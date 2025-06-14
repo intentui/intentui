@@ -6,8 +6,8 @@ import { Form } from "@/components/ui/form"
 
 export default function CheckboxValidationDemo() {
   return (
-    <Form onSubmit={(e) => e.preventDefault()}>
-      <CheckboxGroup className="mb-4" label="Settings" isRequired>
+    <Form onSubmit={() => {}} className="space-y-6">
+      <CheckboxGroup label="Settings" isRequired>
         <Checkbox value="notifications">Enable notifications</Checkbox>
         <Checkbox value="auto_update">Auto-update applications</Checkbox>
         <Checkbox value="dark_mode">Enable dark mode</Checkbox>

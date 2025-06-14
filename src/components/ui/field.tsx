@@ -32,16 +32,17 @@ interface FieldProps {
 
 const fieldStyles = tv({
   slots: {
-    description: "text-pretty text-muted-fg text-sm/6",
-    label: "w-fit cursor-default font-medium text-secondary-fg text-sm/6",
-    fieldError: "text-danger text-sm/6 forced-colors:text-[Mark]",
+    description: "text-base/6 text-muted-fg group-disabled:opacity-50 sm:text-sm/6 ",
+    label: "select-none text-base/6 text-fg group-disabled:opacity-50 sm:text-sm/6",
+    fieldError:
+      "text-base/6 text-danger group-disabled:opacity-50 sm:text-sm/6 forced-colors:text-[Mark]",
   },
 })
 
 const { description, label, fieldError } = fieldStyles()
 
 const Label = ({ className, ...props }: LabelProps) => {
-  return <LabelPrimitive {...props} className={label({ className })} />
+  return <LabelPrimitive data-slot="label" {...props} className={label({ className })} />
 }
 
 interface DescriptionProps extends TextProps {

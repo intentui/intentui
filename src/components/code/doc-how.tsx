@@ -109,7 +109,7 @@ export const DocHow = ({
             className={twMerge(
               !withNoPadding && "relative gap-4 rounded-lg border bg-overlay p-6",
               isCenter &&
-                "preview flex min-h-56 items-center justify-center overflow-x-auto py-6 sm:py-24 lg:max-h-96 lg:min-h-96",
+                "preview flex min-h-56 items-center justify-center overflow-x-auto py-6 sm:py-24 lg:max-h-120 lg:min-h-120",
             )}
           >
             <Suspense
