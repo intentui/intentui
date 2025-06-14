@@ -68,7 +68,7 @@ export function ResponsiveAside({
         </div>
         <div className="flex items-center gap-x-2 **:data-[slot=icon]:size-5">
           <Button
-            size="sq-sm"
+            size="square-petite"
             intent="plain"
             onPress={() => setOpenCmd(true)}
             aria-label="Search docs"
@@ -80,7 +80,7 @@ export function ResponsiveAside({
           <GithubLink />
           <Separator orientation="vertical" className="mx-2 h-5" />
           <Menu>
-            <Button aria-label="Search docs" intent="plain" size="sq-sm">
+            <Button aria-label="Search docs" intent="plain" size="square-petite">
               <IconHamburger className="size-5" />
             </Button>
             <Menu.Content respectScreen={false} placement="bottom" className="sm:min-w-56">
