@@ -4,14 +4,14 @@ import React, { useState } from "react"
 
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
-import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
 import { siteConfig } from "@/config/site"
 import { copyToClipboard } from "@/lib/copy"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconCheck, IconDuplicate } from "@intentui/icons"
+import { Button } from "react-aria-components"
 import { Group } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
 
 export interface InstallationProps {
   items: string[]
@@ -60,7 +60,7 @@ export function Installation({ className, ...props }: InstallationProps) {
           <Link
             className="not-prose xd2432 text-blue-600 hover:underline dark:text-blue-400"
             intent="primary"
-            href={`/docs/${siteConfig.currentVersion}/getting-started/cli`}
+            href={"/docs/getting-started/cli"}
             target="_blank"
             rel="noreferrer"
           >
@@ -201,10 +201,25 @@ function ChoosePkgManager({
 
   return (
     <Menu>
-      <Button size="sq-sm" intent="plain" className="pressed:bg-transparent hover:bg-transparent">
-        {isCopied ? <IconCheck /> : <IconDuplicate />}
+      <Button className="relative h-8 w-14 overflow-hidden p-1 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg">
+        <span
+          className={twJoin(
+            "absolute inset-0 flex items-center justify-center transition duration-300",
+            isCopied ? "-translate-y-1.5 text-fg opacity-0" : "translate-y-0 opacity-100",
+          )}
+        >
+          Copy
+        </span>
+        <span
+          className={twJoin(
+            "absolute inset-0 flex items-center justify-center transition duration-300",
+            isCopied ? "translate-y-0 text-fg opacity-100" : "translate-y-1.5 opacity-0",
+          )}
+        >
+          Copied
+        </span>
       </Button>
-      <Menu.Content showArrow placement="bottom end">
+      <Menu.Content offset={2} placement="bottom end">
         {[
           { name: "NPM", vendor: "npm" },
           { name: "Yarn", vendor: "yarn" },

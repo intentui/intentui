@@ -11,15 +11,32 @@ const Toast = ({ ...props }: ToasterProps) => {
       className="toaster group"
       richColors
       toastOptions={{
-        classNames: {
-          toast: "toast border-0! inset-ring! inset-ring-fg/10!",
-          title: "title",
-          description: "description",
-          actionButton: "bg-primary! hover:bg-primary/90! text-primary-fg!",
-          cancelButton: "bg-transparent! hover:bg-secondary! hover:text-secondary-fg!",
-          closeButton: "close-button",
-        },
+        className:
+          "*:data-icon:self-start font-sans has-data-description:*:data-icon:mt-1 *:data-icon:mt-0.5 backdrop-blur-2xl",
       }}
+      style={
+        {
+          "--normal-bg": "var(--color-overlay)",
+          "--normal-text": "var(--color-overlay-fg)",
+          "--normal-border": "var(--color-border)",
+
+          "--success-bg": "var(--color-success-bg)",
+          "--success-border": "var(--color-success-border)",
+          "--success-text": "var(--color-success-text)",
+
+          "--error-bg": "var(--color-error-bg)",
+          "--error-border": "var(--color-error-border)",
+          "--error-text": "var(--color-error-text)",
+
+          "--warning-bg": "var(--color-warning-bg)",
+          "--warning-border": "var(--color-warning-border)",
+          "--warning-text": "var(--color-warning-text)",
+
+          "--info-bg": "var(--color-info-bg)",
+          "--info-border": "var(--color-info-border)",
+          "--info-text": "var(--color-info-text)",
+        } as React.CSSProperties
+      }
       {...props}
     />
   )

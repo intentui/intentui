@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react"
+import type React from "react"
+import { useEffect, useState } from "react"
 
 import { copyToClipboard } from "@/lib/copy"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconCheck, IconDuplicate } from "@intentui/icons"
+import { IconDuplicate } from "@intentui/icons"
 import { Button } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 
 interface CopyButtonProps extends React.ComponentProps<typeof Button> {
   isCopied?: boolean
@@ -29,7 +30,7 @@ export function CopyButton({
     ? setIsCopiedProp || (() => {}) // Provide a no-op function as fallback
     : setIsCopiedState
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isCopied) {
       const timeout = setTimeout(() => setIsCopied(false), 2000)
       return () => clearTimeout(timeout)
@@ -49,15 +50,29 @@ export function CopyButton({
       onPress={props.onPress || onPressHandler}
       className={composeTailwindRenderProps(
         className,
-        twMerge(
-          "ml-auto grid size-8 place-content-center text-muted-fg outline-hidden hover:text-fg group-hover:opacity-100",
-          !alwaysVisible ? "opacity-0" : "opacity-100",
-          isCopied && "opacity-100",
+        twJoin(
+          "relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-xs/6 hover:text-fg",
+          isCopied && "text-fg",
         ),
       )}
       {...props}
     >
-      {isCopied ? <IconCheck /> : <IconDuplicate />}
+      <span
+        className={twJoin(
+          "absolute inset-0 flex items-center justify-center transition duration-300",
+          isCopied ? "-translate-y-1.5 opacity-0" : "translate-y-0 opacity-100",
+        )}
+      >
+        Copy
+      </span>
+      <span
+        className={twJoin(
+          "absolute inset-0 flex items-center justify-center transition duration-300",
+          isCopied ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
+        )}
+      >
+        Copied
+      </span>
     </Button>
   )
 }

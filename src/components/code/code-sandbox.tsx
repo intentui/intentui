@@ -7,12 +7,11 @@ import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton, CopyMotionButton } from "@/components/code/copy-button"
 import { PullRegistry } from "@/components/code/pull-registry"
 import { Loader } from "@/components/ui/loader"
-import { Tabs } from "@/components/ui/tabs"
 import { copyToClipboard } from "@/lib/copy"
 import type { RegistryItem } from "@/types"
-import { IconBrandCss, IconBrandReactjs, IconFile, IconWindowVisitFill } from "@intentui/icons"
-import { Tab } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
+import { IconBrandCss, IconBrandReactjs, IconFile } from "@intentui/icons"
+import { TabList as PrimitiveTabsList, Tab, TabPanel, Tabs } from "react-aria-components"
+import { twJoin, twMerge } from "tailwind-merge"
 
 interface Props {
   source: Record<string, string>
@@ -52,7 +51,7 @@ export function CodeSandbox({ isIframe = true, classNames, source, src }: Props)
   return (
     <Tabs className="not-prose" aria-label="Code Sandbox">
       <TabsList src={src} />
-      <Tabs.Panel
+      <TabPanel
         id="preview"
         className={twMerge("max-h-110 grow overflow-y-auto", classNames?.preview)}
       >
@@ -74,18 +73,17 @@ export function CodeSandbox({ isIframe = true, classNames, source, src }: Props)
             <Component />
           )}
         </React.Suspense>
-      </Tabs.Panel>
-      <Tabs.Panel id="code" className={classNames?.code}>
+      </TabPanel>
+      <TabPanel id="code" className={classNames?.code}>
         {rawSourceCode && Object.keys(rawSourceCode).length > 0 ? (
           <Tabs className="relative gap-0">
-            {/*bg-[#0e0e10]*/}
             <div className="flex items-center justify-between overflow-hidden rounded-t-lg border-x border-y bg-shiki-bg">
-              <Tabs.List className="scrollbar-hidden relative gap-0 overflow-x-auto border-0">
+              <PrimitiveTabsList className="scrollbar-hidden relative flex gap-0 overflow-x-auto border-0">
                 {Object.keys(rawSourceCode).map((key) => (
                   <Tab
                     className={(values) =>
                       twMerge(
-                        "flex cursor-default items-center gap-x-1.5 whitespace-nowrap p-3 font-mono text-muted-fg text-xs tracking-tight",
+                        "flex cursor-default items-center gap-x-1.5 whitespace-nowrap p-2 font-mono text-muted-fg text-xs tracking-tight",
                         "**:data-[slot=icon]:-ml-0.5 border-transparent border-x outline-hidden first:border-l-0 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
                         (values.isSelected || values.isFocused || values.isFocusVisible) &&
                           "border-input bg-secondary text-secondary-fg dark:bg-muted",
@@ -98,17 +96,17 @@ export function CodeSandbox({ isIframe = true, classNames, source, src }: Props)
                     {key.includes("css") ? (
                       <IconBrandCss className="text-blue-500" />
                     ) : key.includes(".tsx") ? (
-                      <IconBrandReactjs className="text-cyan-500" />
+                      <IconBrandReactjs className="text-sky-500" />
                     ) : (
                       <IconFile />
                     )}
                     <span>{key}</span>
                   </Tab>
                 ))}
-              </Tabs.List>
+              </PrimitiveTabsList>
             </div>
             {Object.entries(rawSourceCode).map(([key, value]) => (
-              <Tabs.Panel
+              <TabPanel
                 key={key}
                 id={key}
                 className="overflow-hidden rounded-b-lg border-x border-b bg-shiki-bg"
@@ -126,13 +124,13 @@ export function CodeSandbox({ isIframe = true, classNames, source, src }: Props)
                   removeLastLine
                   code={value || "No source code available"}
                 />
-              </Tabs.Panel>
+              </TabPanel>
             ))}
           </Tabs>
         ) : (
           <div className="p-4 text-center">Loading source code...</div>
         )}
-      </Tabs.Panel>
+      </TabPanel>
     </Tabs>
   )
 }
@@ -147,17 +145,40 @@ interface TabListProps {
 
 export const TabsList = ({ hasRegistry, src, code, blockDemo, copyButton }: TabListProps) => {
   return (
-    <div className="group relative">
-      <Tabs.List>
-        <Tabs.Tab id="preview">Preview</Tabs.Tab>
-        <Tabs.Tab id="code">Code</Tabs.Tab>
+    <div className="group not-prose relative">
+      <PrimitiveTabsList className="flex items-center font-medium *:text-sm/6">
+        <Tab
+          className={({ isSelected }) =>
+            twJoin(
+              isSelected ? "text-fg" : "pressed:text-fg text-muted-fg hover:text-fg",
+              "cursor-default p-2",
+            )
+          }
+          id="preview"
+        >
+          Preview
+        </Tab>
+        <Tab
+          className={({ isSelected }) =>
+            twJoin(
+              isSelected ? "text-fg" : "pressed:text-fg text-muted-fg hover:text-fg",
+              "cursor-default p-2",
+            )
+          }
+          id="code"
+        >
+          Code
+        </Tab>
         {src && (
-          <Tabs.Tab className="ml-auto flex items-center" target="_blank" href={src}>
-            <IconWindowVisitFill />
+          <Tab
+            className="ml-auto pressed:text-fg text-muted-fg hover:text-fg"
+            target="_blank"
+            href={src}
+          >
             Fullscreen
-          </Tabs.Tab>
+          </Tab>
         )}
-      </Tabs.List>
+      </PrimitiveTabsList>
       {hasRegistry && (
         <PullRegistry
           className="-top-0.5 absolute right-0"

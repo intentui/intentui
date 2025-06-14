@@ -13,5 +13,5 @@ export default function TagFieldDemo() {
     ],
   })
 
-  return <TagField className="min-w-xs max-w-min" label="Add tag" list={selectedItems} />
+  return <TagField className="min-w-xs max-w-min" aria-label="Add tag" list={selectedItems} />
 }

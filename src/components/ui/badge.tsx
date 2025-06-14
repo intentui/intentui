@@ -27,7 +27,7 @@ const badgeStyles = tv({
     intent: { ...badgeIntents },
     isCircle: {
       true: "rounded-full px-2",
-      false: "rounded-md px-1.5",
+      false: "rounded-sm px-1.5",
     },
   },
   defaultVariants: {

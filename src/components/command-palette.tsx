@@ -1,7 +1,6 @@
 "use client"
 import results from "@/components-search.json"
 import { CommandMenu } from "@/components/ui/command-menu"
-import { siteConfig } from "@/config/site"
 import type { Component, Grouped } from "@/scripts/generate-search"
 import {
   IconColorPalette,
@@ -33,10 +32,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
               <IconHome />
               <CommandMenu.Label>Home</CommandMenu.Label>
             </CommandMenu.Item>
-            <CommandMenu.Item
-              textValue="Docs"
-              href={`/docs/${siteConfig.currentVersion}/getting-started/installation`}
-            >
+            <CommandMenu.Item textValue="Docs" href={"/docs/getting-started/installation"}>
               <IconNotes />
               <CommandMenu.Label>Docs</CommandMenu.Label>
             </CommandMenu.Item>

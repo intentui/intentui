@@ -2,8 +2,8 @@
 
 import { ColorGenerator } from "@/app/(app)/colors/(colors)/color-generator"
 import { ColorItem } from "@/app/(app)/colors/(colors)/color-item"
-import colors from "@/colors/colors.json"
 import { Container } from "@/components/ui/container"
+import colors from "@/json/colors.json"
 
 export function ColorPalette() {
   return (

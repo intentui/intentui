@@ -1,36 +1,27 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Form } from "@/components/ui/form"
 import { Modal } from "@/components/ui/modal"
-import { TextField } from "@/components/ui/text-field"
+import { Note } from "@/components/ui/note"
 
 export default function ModalDemo() {
   return (
     <Modal>
-      <Button intent="outline">Turn on 2FA</Button>
+      <Button intent="outline">Session Expiry</Button>
       <Modal.Content>
         <Modal.Header>
-          <Modal.Title>Nice! Let's beef up your account.</Modal.Title>
-          <Modal.Description>
-            2FA beefs up your account's defense. Pop in your password to keep going.
-          </Modal.Description>
+          <Modal.Title>Session Expiring</Modal.Title>
+          <Modal.Description>Your session is about to expire due to inactivity.</Modal.Description>
         </Modal.Header>
-        <Form onSubmit={() => {}}>
-          <Modal.Body>
-            <TextField
-              isRequired
-              autoFocus
-              label="Password"
-              type="password"
-              placeholder="Enter your password"
-            />
-          </Modal.Body>
-          <Modal.Footer>
-            <Modal.Close>Cancel</Modal.Close>
-            <Button type="submit">Turn on 2FA</Button>
-          </Modal.Footer>
-        </Form>
+        <Modal.Body>
+          <Note>
+            For your security, you will be logged out soon. Do you want to stay signed in?
+          </Note>
+        </Modal.Body>
+        <Modal.Footer>
+          <Modal.Close>Log Out</Modal.Close>
+          <Button>Stay Signed In</Button>
+        </Modal.Footer>
       </Modal.Content>
     </Modal>
   )

@@ -69,7 +69,7 @@ const MultipleSelectContent = <T extends object>({
       <Button
         className={composeTailwindRenderProps(
           classNames?.trigger,
-          "relative flex min-h-10 w-full flex-wrap items-center gap-1 rounded-lg border py-1.5 pr-4 pl-2 text-left text-muted-fg text-sm outline-hidden focus:border-ring focus:ring-4 focus:ring-ring/20",
+          "relative flex min-h-10 w-full flex-wrap items-center gap-1 rounded-lg border py-1.5 pr-4 pl-2 text-left text-muted-fg text-sm outline-hidden focus:border-ring focus:ring-3 focus:ring-ring/20",
         )}
       >
         {Array.from(list.selectedKeys)

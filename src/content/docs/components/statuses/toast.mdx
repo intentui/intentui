@@ -35,11 +35,16 @@ And next, just use the `toast()` function to show a toast.
 </Button>
 ```
 
-## Composed Components
-<Composed components={['button', 'loader']}/>
+## CSS Variables
+If you want your toast to look good, you’ll need to add some CSS variables to your theme.
+<CodeBlock
+  source={{
+    'toast.css': 'installation/toast.css',
+    'main.css': 'installation/main.css',
+  }} />
 
 ## Manual Installation
-<Installation options={{ isManual: true }} items={['react-aria-components', 'sonner', '@intentui/icons']}/>
+<Installation options={{ isManual: true }} items={['sonner']}/>
 <SourceCode toShow='toast'/>
 
 

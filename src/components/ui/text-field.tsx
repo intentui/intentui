@@ -13,8 +13,8 @@ import type { InputProps, TextFieldProps as TextFieldPrimitiveProps } from "reac
 type InputType = Exclude<InputProps["type"], "password">
 
 interface BaseTextFieldProps extends TextFieldPrimitiveProps, FieldProps {
-  prefix?: React.ReactNode
-  suffix?: React.ReactNode
+  prefix?: React.ReactNode | string
+  suffix?: React.ReactNode | string
   isPending?: boolean
   className?: string
 }
@@ -64,7 +64,7 @@ const TextField = ({
             data-loading={isPending ? "true" : undefined}
           >
             {prefix && typeof prefix === "string" ? (
-              <span className="ml-2 text-muted-fg">{prefix}</span>
+              <span className="pl-2 text-muted-fg">{prefix}</span>
             ) : (
               prefix
             )}
@@ -74,7 +74,7 @@ const TextField = ({
                 type="button"
                 aria-label="Toggle password visibility"
                 onPress={handleTogglePasswordVisibility}
-                className="relative mr-1 grid shrink-0 place-content-center rounded-sm border-transparent outline-hidden *:data-[slot=icon]:text-muted-fg focus-visible:*:data-[slot=icon]:text-primary"
+                className="relative mr-0.5 grid shrink-0 place-content-center rounded-sm border-transparent outline-hidden *:data-[slot=icon]:text-muted-fg focus-visible:*:data-[slot=icon]:text-primary"
               >
                 {isPasswordVisible ? <IconEyeClosed /> : <IconEye />}
               </ButtonPrimitive>

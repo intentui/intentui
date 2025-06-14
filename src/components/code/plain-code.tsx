@@ -1,8 +1,7 @@
 "use client"
-import { buttonStyles } from "@/components/ui/button"
+import { CopyButton } from "@/components/code/copy-button"
 import { ScrollArea, ScrollBar, ScrollViewport } from "@/components/ui/scroll-area"
 import { useCopyButton } from "@/lib/copy"
-import { IconCheck, IconDuplicate } from "@intentui/icons"
 import type { ScrollAreaViewportProps } from "@radix-ui/react-scroll-area"
 import {
   type ButtonHTMLAttributes,
@@ -87,7 +86,7 @@ export const PlainCode = ({
       )}
     >
       {title ? (
-        <div className="flex w-full flex-row items-center gap-2 border-b bg-fd-muted px-4 py-1.5">
+        <div className="jb flex w-full flex-row items-center gap-2 border-b bg-fd-muted px-4 py-1.5">
           {icon ? (
             <div
               className="text-fd-muted-foreground [&_svg]:size-3.5"
@@ -104,12 +103,12 @@ export const PlainCode = ({
             </div>
           ) : null}
           <figcaption className="flex-1 truncate text-fd-muted-foreground">{title}</figcaption>
-          {allowCopy ? <CopyButton className="-me-2" onCopy={onCopy} /> : null}
+          {allowCopy ? (
+            <InternalCopyButton className="absolute top-1 right-1 z-[2]" onCopy={onCopy} />
+          ) : null}
         </div>
       ) : (
-        allowCopy && (
-          <CopyButton className="absolute top-0 right-0 z-[2] backdrop-blur-md" onCopy={onCopy} />
-        )
+        allowCopy && <InternalCopyButton className="absolute top-1 right-1 z-[2]" onCopy={onCopy} />
       )}
       <ScrollArea ref={areaRef} className="w-full" dir="ltr">
         <ScrollViewport
@@ -124,34 +123,13 @@ export const PlainCode = ({
   )
 }
 
-function CopyButton({
+function InternalCopyButton({
   className,
   onCopy,
-  ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
   onCopy: () => void
 }): ReactElement {
   const [checked, onClick] = useCopyButton(onCopy)
 
-  return (
-    <button
-      type="button"
-      className={twMerge(
-        buttonStyles({
-          size: "sq-sm",
-          intent: "plain",
-          className: twMerge(
-            "transition-opacity hover:bg-transparent group-hover:opacity-100",
-            !checked && "opacity-0",
-            className,
-          ),
-        }),
-      )}
-      aria-label="Copy Text"
-      onClick={onClick}
-      {...props}
-    >
-      {checked ? <IconCheck /> : <IconDuplicate />}
-    </button>
-  )
+  return <CopyButton className={className} onClick={onClick} isCopied={checked} />
 }

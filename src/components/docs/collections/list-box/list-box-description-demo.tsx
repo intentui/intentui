@@ -9,11 +9,11 @@ export default function ListBoxDescriptionDemo() {
   const [selected, setSelected] = useState<Selection>(new Set([1]))
   return (
     <ListBox
+      className="max-w-2xs"
       selectedKeys={selected}
       onSelectionChange={setSelected}
       items={roles}
       aria-label="Bands"
-      className="max-w-60"
     >
       {(item) => (
         <ListBox.Item id={item.id} textValue={item.name}>

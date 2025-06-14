@@ -4,15 +4,9 @@ import { DropdownItem, DropdownLabel, DropdownSection } from "@/components/ui/dr
 import { Description, FieldGroup, type FieldProps, Input, Label } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
 import { PopoverContent } from "@/components/ui/popover"
-import {
-  type RestrictedIntent,
-  Tag,
-  TagGroup,
-  type TagGroupProps,
-  TagList,
-} from "@/components/ui/tag-group"
+import { Tag, TagGroup, type TagGroupProps, TagList } from "@/components/ui/tag-group"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconChevronLgDown } from "@intentui/icons"
+import { IconChevronsY } from "@intentui/icons"
 import {
   Children,
   type KeyboardEvent,
@@ -22,9 +16,9 @@ import {
   useRef,
   useState,
 } from "react"
+
 import type { ComboBoxProps, GroupProps, Key, ListBoxProps, Selection } from "react-aria-components"
 import { Button, ComboBox, Group } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
 
 interface MultipleSelectProps<T>
   extends Omit<ListBoxProps<T>, "renderEmptyState">,
@@ -37,7 +31,6 @@ interface MultipleSelectProps<T>
     Pick<GroupProps, "isDisabled" | "isInvalid"> {
   className?: string
   errorMessage?: string
-  intent?: RestrictedIntent
   maxItems?: number
   renderEmptyState?: (inputValue: string) => React.ReactNode
 }
@@ -57,6 +50,7 @@ const MultipleSelect = <T extends object>({
   className,
   maxItems = Number.POSITIVE_INFINITY,
   renderEmptyState,
+  isCircle = false,
   children,
   ...props
 }: MultipleSelectProps<T>) => {
@@ -123,7 +117,10 @@ const MultipleSelect = <T extends object>({
     <Group
       isDisabled={props.isDisabled}
       isInvalid={props.isInvalid}
-      className={composeTailwindRenderProps(className, "group flex h-fit flex-col gap-y-1")}
+      className={composeTailwindRenderProps(
+        className,
+        "group flex h-fit min-w-[16rem] flex-col gap-y-1",
+      )}
     >
       {({ isInvalid, isDisabled }) => (
         <>
@@ -132,21 +129,16 @@ const MultipleSelect = <T extends object>({
             ref={triggerRef as RefObject<HTMLDivElement>}
             isDisabled={isDisabled}
             isInvalid={isInvalid}
-            className="flex h-fit min-h-10 flex-wrap items-center"
           >
             <TagGroup
               onRemove={removeItem}
               aria-hidden
-              isCircle={props.isCircle}
-              intent={props.intent}
+              isCircle={isCircle}
+              intent="primary"
               aria-label="Selected items"
             >
               <TagList
-                className={twMerge(
-                  [...selectedKeys].length !== 0 && "flex flex-1 flex-wrap py-1.5 pl-2",
-                  "[&_.jdt3lr2x]:last:-mr-1 gap-1.5 outline-hidden",
-                  !props.isCircle && "[&_.jdt3lr2x]:rounded-[calc(var(--radius-lg)-4px)]",
-                )}
+                className="[[role='row']]:last:-mr-1 gap-1 p-1 outline-hidden"
                 items={[...selectedKeys].map((key) => ({
                   id: key,
                   textValue: parsedItems.find((item) => item.id === key)?.textValue as string,
@@ -171,11 +163,11 @@ const MultipleSelect = <T extends object>({
               inputValue={inputValue}
               onInputChange={isMax ? () => {} : setInputValue}
             >
-              <div className="flex w-full flex-row items-center justify-between px-2">
+              <div className="flex w-full flex-row items-center justify-between pr-[calc(--spacing(2)-1px)]">
                 <Input
+                  className="ml-1.5 px-0 sm:px-0"
                   onFocus={() => triggerButtonRef.current?.click()}
                   ref={inputRef as RefObject<HTMLInputElement>}
-                  className="flex-1 px-0.5 py-1.5 shadow-none ring-0"
                   onBlur={() => {
                     setInputValue("")
                   }}
@@ -184,11 +176,12 @@ const MultipleSelect = <T extends object>({
                 />
                 <Button
                   ref={triggerButtonRef}
-                  aria-label="Chevron"
+                  aria-label="Open"
                   className="ml-auto inline-flex items-center justify-center rounded-lg text-muted-fg outline-hidden"
                 >
-                  <IconChevronLgDown
-                    className={twMerge("group-has-open:-rotate-180 size-4 transition")}
+                  <IconChevronsY
+                    data-slot="chevron"
+                    className="size-4 text-muted-fg group-open:text-fg"
                   />
                 </Button>
               </div>

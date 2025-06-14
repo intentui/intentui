@@ -20,8 +20,8 @@ const Link = ({ className, ref, intent = "unstyled", ...props }: LinkProps) => {
           "outline-0 outline-offset-2 transition-[color,_opacity] focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
           "disabled:cursor-default disabled:opacity-60 forced-colors:disabled:text-[GrayText]",
           intent === "unstyled" && "text-current",
-          intent === "primary" && "text-primary hover:underline",
-          intent === "secondary" && "text-secondary-fg hover:underline",
+          intent === "primary" && "text-primary hover:text-primary/80",
+          intent === "secondary" && "text-muted-fg hover:text-fg",
         ]),
       )}
     >

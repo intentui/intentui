@@ -6,66 +6,55 @@ import { ToggleButton, ToggleButtonGroup, composeRenderProps } from "react-aria-
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"
 
+type ToggleSize = "xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"
+type ToggleIntent = "plain" | "secondary" | "primary"
+type ToggleOrientation = "horizontal" | "vertical"
+
 type ToggleGroupContextProps = {
   isDisabled?: boolean
-  gap?: 0 | 1 | 2 | 3 | 4
-  intent?: "plain" | "outline" | "solid"
-  orientation?: "horizontal" | "vertical"
-  size?: "xs" | "sm" | "md" | "lg" | "sq-sm"
+  intent?: ToggleIntent
+  orientation?: ToggleOrientation
+  size?: ToggleSize
 }
 
 const ToggleGroupContext = createContext<ToggleGroupContextProps>({
-  gap: 1,
-  intent: "outline",
+  intent: "primary",
   orientation: "horizontal",
   size: "md",
 })
 
-type BaseToggleGroupProps = Omit<ToggleGroupContextProps, "gap" | "intent">
-interface ToggleGroupPropsNonZeroGap extends BaseToggleGroupProps {
-  gap?: Exclude<ToggleGroupContextProps["gap"], 0>
-  intent?: ToggleGroupContextProps["intent"]
+type ToggleGroupProps = ToggleButtonGroupProps & {
+  ref?: React.RefObject<HTMLDivElement>
+  intent?: ToggleIntent
+  isDisabled?: boolean
+  orientation?: ToggleOrientation
+  size?: ToggleSize
 }
-
-interface ToggleGroupPropsGapZero extends BaseToggleGroupProps {
-  gap?: 0
-  intent?: Exclude<ToggleGroupContextProps["intent"], "plain">
-}
-
-type ToggleGroupProps = ToggleButtonGroupProps &
-  (ToggleGroupPropsGapZero | ToggleGroupPropsNonZeroGap) & {
-    ref?: React.RefObject<HTMLDivElement>
-  }
 
 const toggleGroupStyles = tv({
-  base: "flex",
+  base: "flex rounded-lg",
   variants: {
     orientation: {
       horizontal:
         "flex-row [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
       vertical: "flex-col items-start",
     },
-    gap: {
-      0: "gap-0 rounded-lg *:[button]:inset-ring-1 *:[button]:rounded-none",
-      1: "gap-1",
-      2: "gap-2",
-      3: "gap-3",
-      4: "gap-4",
+    intent: {
+      plain: " *:[button]:inset-ring-transparent *:[button]:rounded-none",
+      primary: "*:[button]:inset-ring-1 *:[button]:rounded-none",
+      secondary: "*:[button]:inset-ring-1 *:[button]:rounded-none",
     },
   },
   defaultVariants: {
     orientation: "horizontal",
-    gap: 0,
   },
   compoundVariants: [
     {
-      gap: 0,
       orientation: "vertical",
       className:
         "*:[button]:-mt-px *:[button]:first:rounded-t-[calc(var(--radius-lg)-1px)] *:[button]:last:rounded-b-[calc(var(--radius-lg)-1px)]",
     },
     {
-      gap: 0,
       orientation: "horizontal",
       className:
         "*:[button]:-mr-px *:[button]:first:rounded-s-[calc(var(--radius-lg)-1px)] *:[button]:last:rounded-e-[calc(var(--radius-lg)-1px)]",
@@ -76,15 +65,14 @@ const toggleGroupStyles = tv({
 const ToggleGroup = ({
   className,
   ref,
-  intent = "outline",
-  gap = 0,
+  intent = "primary",
   size = "md",
   orientation = "horizontal",
   ...props
 }: ToggleGroupProps) => {
   return (
     <ToggleGroupContext.Provider
-      value={{ intent, gap, orientation, size, isDisabled: props.isDisabled }}
+      value={{ intent, orientation, size, isDisabled: props.isDisabled }}
     >
       <ToggleButtonGroup
         ref={ref}
@@ -92,7 +80,6 @@ const ToggleGroup = ({
         className={composeRenderProps(className, (className, renderProps) =>
           toggleGroupStyles({
             ...renderProps,
-            gap,
             orientation,
             className,
           }),
@@ -117,23 +104,37 @@ const toggleStyles = tv({
       true: "inset-ring-ring/70 z-20 ring-4 ring-ring/20",
     },
     intent: {
-      plain: "inset-ring-0 selected:bg-secondary selected:text-secondary-fg",
-      solid: ["inset-ring selected:inset-ring-fg selected:bg-fg selected:text-bg"],
-      outline: [
+      plain: "inset-ring-0 selected:font-medium selected:text-fg text-muted-fg hover:text-fg",
+      primary: "inset-ring selected:inset-ring-ring selected:bg-primary selected:text-primary-fg",
+      secondary: [
         "pressed:border-secondary-fg/10 selected:border-secondary-fg/10 selected:bg-secondary selected:text-secondary-fg hover:border-secondary-fg/10 hover:bg-muted hover:text-secondary-fg",
       ],
     },
-    noGap: { true: "" },
     orientation: {
       horizontal: "inline-flex justify-center",
-      vertical: "flex",
+      vertical: "flex w-full",
     },
     size: {
-      xs: "h-8 px-3 text-xs/4 *:data-[slot=icon]:size-3.5",
-      sm: "h-9 px-3.5",
-      md: "h-10 px-4",
-      lg: "h-11 px-5 *:data-[slot=icon]:size-4.5 sm:text-base",
-      "sq-sm": "size-9 shrink-0",
+      xs: [
+        "gap-x-1 px-2.5 py-1.5 text-sm sm:px-2 sm:py-1 sm:text-xs/4",
+        "*:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
+      ],
+      sm: [
+        "gap-x-1.5 px-3 py-2 sm:px-2.5 sm:py-1.5 sm:text-sm/5",
+        "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
+      ],
+      md: [
+        "gap-x-2 px-3.5 py-2.5 sm:px-3 sm:py-1.5 sm:text-sm/6",
+        "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4",
+      ],
+      lg: [
+        "gap-x-2 px-[calc(--spacing(4)-1px)] py-3 sm:px-3.5 sm:py-2 sm:text-sm/6",
+        "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
+      ],
+      "sq-xs": "size-6",
+      "sq-sm": "size-8",
+      "sq-md": "size-9",
+      "sq-lg": "size-10",
     },
     isCircle: {
       true: "rounded-full",
@@ -141,13 +142,12 @@ const toggleStyles = tv({
     },
   },
   defaultVariants: {
-    intent: "outline",
+    intent: "secondary",
     size: "sm",
     isCircle: false,
   },
   compoundVariants: [
     {
-      noGap: true,
       orientation: "vertical",
       className: "w-full",
     },
@@ -162,7 +162,6 @@ const Toggle = ({ className, intent, ref, ...props }: ToggleProps) => {
   const {
     intent: groupIntent,
     orientation,
-    gap,
     size,
     isDisabled: isGroupDisabled,
   } = use(ToggleGroupContext)
@@ -177,7 +176,6 @@ const Toggle = ({ className, intent, ref, ...props }: ToggleProps) => {
           size: props.size ?? size,
           orientation,
           isCircle: props.isCircle,
-          noGap: gap === 0,
           className,
         }),
       )}

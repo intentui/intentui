@@ -10,8 +10,9 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "Geist Mono", 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace';
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "Geist Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+    '"Liberation Mono"', '"Courier New"', "monospace";
 
   --color-border: var(--border);
   --color-input: var(--input);
@@ -129,7 +130,7 @@
     --muted: var(--color-gray-900);
     --muted-fg: var(--color-gray-400);
 
-    --overlay: oklch(0.170 0.034 264.665);
+    --overlay: oklch(0.17 0.034 264.665);
     --overlay-fg: var(--color-gray-50);
 
     --success: var(--color-emerald-600);
@@ -145,10 +146,10 @@
     --input: oklch(0.293 0.034 259.733);
     --ring: var(--color-blue-600);
 
-    --navbar: oklch(0.170 0.034 264.665);
+    --navbar: oklch(0.17 0.034 264.665);
     --navbar-fg: var(--color-gray-50);
 
-    --sidebar: oklch(0.160 0.034 264.665);
+    --sidebar: oklch(0.16 0.034 264.665);
     --sidebar-fg: var(--color-gray-50);
 
     --chart-1: var(--color-blue-700);

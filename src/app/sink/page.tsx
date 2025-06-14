@@ -1,15 +1,11 @@
-import { Button } from "@/components/ui/button"
+"use client"
+import AlertDialogDemo from "@/components/docs/overlays/modal/alert-dialog-demo"
 
 export default function Page() {
   return (
-    <div className="p-32">
-      <div className="flex gap-4">
-        <Button intent="primary">Label</Button>
-        <Button intent="secondary">Label</Button>
-        <Button intent="warning">Label</Button>
-        <Button intent="danger">Label</Button>
-        <Button intent="outline">Label</Button>
-        <Button intent="plain">Label</Button>
+    <div className="flex items-center justify-center p-20">
+      <div className="mx-auto max-w-2xl">
+        <AlertDialogDemo />
       </div>
     </div>
   )

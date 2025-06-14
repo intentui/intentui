@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import type React from "react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -13,7 +13,7 @@ import { Description, FieldError, FieldGroup, Input, Label } from "@/components/
 import { ListBox } from "@/components/ui/list-box"
 import { PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconChevronLgDown, IconX } from "@intentui/icons"
+import { IconChevronsY } from "@intentui/icons"
 import type {
   ComboBoxProps as ComboboxPrimitiveProps,
   InputProps,
@@ -21,9 +21,7 @@ import type {
   ValidationResult,
 } from "react-aria-components"
 import {
-  Button as ButtonPrimitive,
   ComboBoxContext,
-  ComboBoxStateContext,
   ComboBox as ComboboxPrimitive,
   useSlottedContext,
 } from "react-aria-components"
@@ -47,7 +45,7 @@ const ComboBox = <T extends object>({
   return (
     <ComboboxPrimitive
       {...props}
-      className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1.5")}
+      className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1")}
     >
       {label && <Label>{label}</Label>}
       {children}
@@ -97,7 +95,7 @@ const ComboBoxList = <T extends object>({
 const ComboBoxInput = (props: InputProps) => {
   const context = useSlottedContext(ComboBoxContext)!
   return (
-    <FieldGroup className="relative pl-0">
+    <FieldGroup>
       <Input {...props} placeholder={props?.placeholder} />
       <Button
         size="sq-sm"
@@ -105,29 +103,13 @@ const ComboBoxInput = (props: InputProps) => {
         className="h-7 w-8 rounded pressed:bg-transparent outline-offset-0 hover:bg-transparent active:bg-transparent **:data-[slot=icon]:pressed:text-fg **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:hover:text-fg"
       >
         {!context?.inputValue && (
-          <IconChevronLgDown className="size-4 shrink-0 transition duration-200 group-open:rotate-180 group-open:text-fg" />
+          <IconChevronsY
+            data-slot="chevron"
+            className="-mr-1.5 size-4 shrink-0 text-muted-fg group-open:text-fg"
+          />
         )}
       </Button>
-      {context?.inputValue && <ComboBoxClearButton />}
     </FieldGroup>
-  )
-}
-
-const ComboBoxClearButton = () => {
-  const state = React.use(ComboBoxStateContext)
-
-  return (
-    <ButtonPrimitive
-      className="absolute inset-y-0 right-0 flex items-center pr-2 text-muted-fg hover:text-fg focus:outline-hidden"
-      slot={null}
-      aria-label="Clear"
-      onPress={() => {
-        state?.setSelectedKey(null)
-        state?.open()
-      }}
-    >
-      <IconX className="size-4 animate-in" />
-    </ButtonPrimitive>
   )
 }
 

@@ -14,7 +14,7 @@ import {
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twMerge } from "tailwind-merge"
 
 const Dialog = ({
   role = "dialog",
@@ -93,16 +93,7 @@ const DialogTitle = ({ level = 2, className, ref, ...props }: DialogTitleProps) 
     slot="title"
     level={level}
     ref={ref}
-    className={twMerge(
-      twJoin(
-        "flex flex-1 items-center text-fg",
-        level === 1 && "font-semibold text-lg sm:text-xl",
-        level === 2 && "font-semibold text-lg sm:text-xl",
-        level === 3 && "font-semibold text-base sm:text-lg",
-        level === 4 && "font-semibold text-base",
-      ),
-      className,
-    )}
+    className={twMerge("text-balance font-semibold text-fg text-lg/6 sm:text-base/6", className)}
     {...props}
   />
 )
@@ -111,7 +102,7 @@ type DialogDescriptionProps = React.ComponentProps<"div">
 const DialogDescription = ({ className, ref, ...props }: DialogDescriptionProps) => (
   <Text
     slot="description"
-    className={twMerge("text-muted-fg text-sm", className)}
+    className={twMerge("text-pretty text-muted-fg text-sm", className)}
     ref={ref}
     {...props}
   />
@@ -123,7 +114,7 @@ const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
     data-slot="dialog-body"
     ref={ref}
     className={twMerge(
-      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-4 py-1 sm:px-6",
+      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-4 py-0.5 sm:px-6",
       className,
     )}
     {...props}

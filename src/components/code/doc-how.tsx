@@ -1,16 +1,15 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { Suspense, useState } from "react"
 
 import generated from "@/../__registry__/generated"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { TabsList } from "@/components/code/code-sandbox"
+import { PullRegistry } from "@/components/code/pull-registry"
 import { Loader } from "@/components/ui/loader"
-import { Tabs } from "@/components/ui/tabs"
 import { createFetchRegistryFile } from "@/lib/fetch-registry"
 import type { RegistryItem } from "@/types"
-import { Group } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
+import { Group, ToggleButton, Toolbar } from "react-aria-components"
+import { twJoin, twMerge } from "tailwind-merge"
 
 const registry = generated as Record<string, RegistryItem>
 
@@ -37,6 +36,7 @@ export const DocHow = ({
   src,
   ...props
 }: HowProps) => {
+  const [currentTab, setCurrentTab] = useState<"tab_preview" | "tab_code">("tab_preview")
   const [rawSourceCode, setRawSourceCode] = useState<string | null>(null)
   /*
    * Prepend the `demo/` prefix to the provided `toUse` prop
@@ -77,27 +77,42 @@ export const DocHow = ({
   }
   const divProps = { ...props } as React.HTMLProps<HTMLDivElement>
   return (
-    <div
-      className={twMerge("not-prose group/how forced-color-adjust-non relative my-4", className)}
-      {...divProps}
-    >
-      <Tabs aria-label="Packages">
-        <TabsList
-          copyButton={false}
-          hasRegistry
-          blockDemo={blockDemo}
-          code={processedSourceCode as string}
-          src={src}
-        />
-        <Tabs.Panel className="w-full" id="preview">
+    <div className="not-prose">
+      <Toolbar className="flex items-center justify-between">
+        <Group>
+          <ToggleButton
+            className={twJoin(
+              "p-2 font-medium text-sm/6",
+              currentTab === "tab_preview" ? "text-fg" : "text-muted-fg hover:text-fg",
+            )}
+            onPress={() => setCurrentTab("tab_preview")}
+          >
+            Preview
+          </ToggleButton>
+          <ToggleButton
+            className={twJoin(
+              "p-2 font-medium text-sm/6",
+              currentTab === "tab_code" ? "text-fg" : "text-muted-fg hover:text-fg",
+            )}
+            onPress={() => setCurrentTab("tab_code")}
+          >
+            Code
+          </ToggleButton>
+        </Group>
+        <Group>
+          <PullRegistry processedSourceCode={processedSourceCode} blockDemo={blockDemo} />
+        </Group>
+      </Toolbar>
+      <div className="w-full">
+        {currentTab === "tab_preview" ? (
           <div
             className={twMerge(
-              !withNoPadding && "relative gap-4 rounded-lg border bg-bg p-6 dark:bg-secondary/40",
+              !withNoPadding && "relative gap-4 rounded-lg border bg-overlay p-6",
               isCenter &&
-                "preview flex min-h-56 items-center justify-center overflow-x-auto py-6 sm:py-24 lg:min-h-96",
+                "preview flex min-h-56 items-center justify-center overflow-x-auto py-6 sm:py-24 lg:max-h-96 lg:min-h-96",
             )}
           >
-            <React.Suspense
+            <Suspense
               fallback={
                 <div className="flex items-center justify-center py-6 text-muted-fg text-sm">
                   <Loader variant="spin" />
@@ -108,23 +123,27 @@ export const DocHow = ({
               <div className={twMerge(minW72 && "min-w-72", "not-prose", className)}>
                 <Component />
               </div>
-            </React.Suspense>
+            </Suspense>
           </div>
-        </Tabs.Panel>
-
-        <Tabs.Panel id="code">
-          {processedSourceCode ? (
-            <Group className="group relative">
-              <CodeHighlighter removeLastLine code={processedSourceCode} />
-            </Group>
-          ) : (
-            /*
-             * Display a loading message while the source code is being fetched.
-             */
-            <p>Loading source code...</p>
-          )}
-        </Tabs.Panel>
-      </Tabs>
+        ) : (
+          <div>
+            {processedSourceCode ? (
+              <Group className="group relative">
+                <CodeHighlighter
+                  className="h-full max-h-140"
+                  removeLastLine
+                  code={processedSourceCode}
+                />
+              </Group>
+            ) : (
+              /*
+               * Display a loading message while the source code is being fetched.
+               */
+              <p>Loading source code...</p>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   )
 }

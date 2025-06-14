@@ -10,7 +10,7 @@ import { Description, FieldError, Label } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
 import { PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
 import { composeTailwindRenderProps, focusStyles } from "@/lib/primitive"
-import { IconChevronLgDown } from "@intentui/icons"
+import { IconChevronsY } from "@intentui/icons"
 import type {
   ListBoxProps,
   PopoverProps,
@@ -28,9 +28,11 @@ import { tv } from "tailwind-variants"
 const selectTriggerStyles = tv({
   extend: focusStyles,
   base: [
-    "btr flex h-10 w-full cursor-default items-center gap-4 gap-x-2 rounded-lg border border-input py-2 pr-2 pl-3 text-start shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition group-disabled:opacity-50 **:data-[slot=icon]:size-4 dark:shadow-none",
-    "group-data-open:border-ring/70 group-data-open:ring-4 group-data-open:ring-ring/20",
+    "relative isolate inline-flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input text-start shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition hover:border-[color-mix(in_oklab,var(--color-secondary-fg)_10%,var(--color-border))] group-disabled:opacity-50 **:data-[slot=icon]:size-4 dark:shadow-none",
+    "px-3.5 py-2.5 sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6",
+    "group-data-open:border-ring/70 group-data-open:ring-3 group-data-open:ring-ring/20",
     "text-fg group-invalid:border-danger group-invalid:ring-danger/20 forced-colors:group-invalid:border-[Mark]",
+    "*:data-[slot=icon]:-mx-0.5 *:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:*:-mx-0.5 *:data-[slot=avatar]:*:mr-2 *:data-[slot=avatar]:mr-2 *:data-[slot=icon]:mr-2",
   ],
   variants: {
     isDisabled: {
@@ -49,6 +51,7 @@ interface SelectProps<T extends object> extends SelectPrimitiveProps<T> {
 
 const Select = <T extends object>({
   label,
+  children,
   description,
   errorMessage,
   className,
@@ -57,12 +60,12 @@ const Select = <T extends object>({
   return (
     <SelectPrimitive
       {...props}
-      className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1.5")}
+      className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1")}
     >
       {(values) => (
         <>
           {label && <Label>{label}</Label>}
-          {typeof props.children === "function" ? props.children(values) : props.children}
+          {typeof children === "function" ? children(values) : children}
           {description && <Description>{description}</Description>}
           <FieldError>{errorMessage}</FieldError>
         </>
@@ -126,11 +129,11 @@ const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
       {props.prefix && <span className="-mr-1">{props.prefix}</span>}
       <SelectValue
         data-slot="select-value"
-        className="*:data-[slot=icon]:-mx-0.5 *:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:*:-mx-0.5 grid flex-1 grid-cols-[auto_1fr] items-center text-base data-placeholder:text-muted-fg *:data-[slot=avatar]:*:mr-2 *:data-[slot=avatar]:mr-2 *:data-[slot=icon]:mr-2 sm:text-sm [&_[slot=description]]:hidden"
+        className="grid flex-1 grid-cols-[auto_1fr] items-center data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden"
       />
-      <IconChevronLgDown
-        aria-hidden
-        className="size-4 shrink-0 text-muted-fg duration-300 group-disabled:opacity-50 group-data-open:rotate-180 group-data-open:text-fg forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
+      <IconChevronsY
+        data-slot="chevron"
+        className="shrink-0 text-muted-fg group-disabled:opacity-50 group-data-open:text-fg forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
       />
     </Button>
   )

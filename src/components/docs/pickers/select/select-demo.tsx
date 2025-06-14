@@ -11,7 +11,7 @@ export const software = [
 ]
 export default function SelectDemo() {
   return (
-    <Select label="Design software" placeholder="Select a software">
+    <Select aria-label="Design software" placeholder="Select a software">
       <Select.Trigger />
       <Select.List items={software}>
         {(item) => (

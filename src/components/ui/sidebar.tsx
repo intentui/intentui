@@ -127,6 +127,7 @@ const SidebarProvider = ({
       <div
         className={twMerge(
           "@container **:data-[slot=icon]:shrink-0",
+          "[--default-px:--spacing(2.5)]",
           "[--sidebar-width-dock:3.25rem] [--sidebar-width:17rem]",
           "[--sidebar-border:color-mix(in_oklch,var(--color-sidebar)_25%,black_6%)]",
           "dark:[--sidebar-border:color-mix(in_oklch,var(--color-sidebar)_55%,white_10%)]",
@@ -154,7 +155,6 @@ const gap = tv({
   variants: {
     intent: {
       default: "group-data-[sidebar-collapsible=dock]/sidebar-container:w-(--sidebar-width-dock)",
-      fleet: "group-data-[sidebar-collapsible=dock]/sidebar-container:w-(--sidebar-width-dock)",
       float:
         "group-data-[sidebar-collapsible=dock]/sidebar-container:w-[calc(var(--sidebar-width-dock)+--spacing(4))]",
       inset:
@@ -181,11 +181,6 @@ const sidebar = tv({
       inset: [
         "bg-sidebar p-2 group-data-[sidebar-collapsible=dock]/sidebar-container:w-[calc(var(--sidebar-width-dock)+--spacing(2)+2px)] dark:bg-bg",
       ],
-      fleet: [
-        "group-data-[sidebar-collapsible=dock]/sidebar-container:w-(--sidebar-width-dock)",
-        "**:data-sidebar-disclosure:gap-y-0 **:data-sidebar-section:gap-y-0 **:data-sidebar-disclosure:px-0 **:data-sidebar-section:px-0",
-        "group-data-[sidebar-side=left]/sidebar-container:border-r group-data-[sidebar-side=right]/sidebar-container:border-l",
-      ],
       default: [
         "group-data-[sidebar-collapsible=dock]/sidebar-container:w-(--sidebar-width-dock) group-data-[sidebar-side=left]/sidebar-container:border-(--sidebar-border)",
         "group-data-[sidebar-side=left]/sidebar-container:border-r group-data-[sidebar-side=right]/sidebar-container:border-l",
@@ -195,7 +190,7 @@ const sidebar = tv({
 })
 
 interface SidebarProps extends React.ComponentProps<"div"> {
-  intent?: "default" | "float" | "inset" | "fleet"
+  intent?: "default" | "float" | "inset"
   collapsible?: "hidden" | "dock" | "none"
   side?: "left" | "right"
   closeButton?: boolean
@@ -302,8 +297,6 @@ const SidebarHeader = ({ className, ref, ...props }: React.ComponentProps<"div">
 const footer = tv({
   base: [
     "mt-auto flex flex-col p-2",
-    "in-data-[sidebar-intent=fleet]:mt-0 in-data-[sidebar-intent=fleet]:p-0",
-    "in-data-[sidebar-intent=fleet]:**:data-[slot=menu-trigger]:rounded-none",
     "**:data-[slot=menu-trigger]:relative **:data-[slot=menu-trigger]:overflow-hidden",
     " **:data-[slot=menu-trigger]:rounded-lg",
     "**:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:cursor-default **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:p-2 **:data-[slot=menu-trigger]:outline-hidden sm:**:data-[slot=menu-trigger]:text-sm",
@@ -316,7 +309,7 @@ const footer = tv({
     },
     collapsed: {
       false: [
-        "**:data-[slot=avatar]:*:size-8 **:data-[slot=menu-trigger]:**:data-[slot=avatar]:mr-2 **:data-[slot=avatar]:size-8",
+        "**:data-[slot=avatar]:*:size-8 **:data-[slot=menu-trigger]:**:data-[slot=avatar]:mr-1.5 **:data-[slot=avatar]:size-8",
         "**:data-[slot=menu-trigger]:**:data-[slot=chevron]:ml-auto **:data-[slot=menu-trigger]:pressed:**:data-[slot=chevron]:rotate-180 **:data-[slot=menu-trigger]:**:data-[slot=chevron]:transition-transform **:data-[slot=menu-trigger]:w-full",
       ],
       true: [
@@ -406,12 +399,11 @@ const sidebarItemStyles = tv({
     "group/sidebar-item relative col-span-full cursor-pointer overflow-hidden rounded-lg px-[calc(var(--spacing)*2.3)] py-[calc(var(--spacing)*1.3)] text-sidebar-fg/70 focus-visible:outline-hidden sm:text-sm/6",
     "**:data-[slot=menu-trigger]:-mr-1 **:data-[slot=menu-trigger]:absolute **:data-[slot=menu-trigger]:right-0 **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:h-full **:data-[slot=menu-trigger]:w-[calc(var(--sidebar-width)-90%)] **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:justify-end **:data-[slot=menu-trigger]:pr-2.5 **:data-[slot=menu-trigger]:opacity-0 **:data-[slot=menu-trigger]:pressed:opacity-100 pressed:**:data-[slot=menu-trigger]:opacity-100 **:data-[slot=menu-trigger]:has-data-focus:opacity-100 **:data-[slot=menu-trigger]:focus-visible:opacity-100 hover:**:data-[slot=menu-trigger]:opacity-100",
     "**:data-[slot=avatar]:*:size-4 **:data-[slot=avatar]:size-4 **:data-[slot=icon]:size-4 **:data-[slot=avatar]:shrink-0 **:data-[slot=icon]:shrink-0",
-    "in-data-[sidebar-intent=fleet]:rounded-none",
   ],
   variants: {
     collapsed: {
       false:
-        "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] items-center **:data-[slot=avatar]:*:mr-2 **:data-[slot=avatar]:mr-2 **:data-[slot=icon]:mr-2 supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
+        "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] items-center **:data-[slot=avatar]:*:mr-1.5 **:data-[slot=avatar]:mr-1.5 **:data-[slot=icon]:mr-1.5 supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
       true: "flex not-has-data-[slot=icon]:hidden size-9 items-center justify-center gap-x-0 p-0 **:data-[slot=menu-trigger]:hidden",
     },
     isCurrent: {
@@ -590,11 +582,10 @@ const SidebarDisclosure = ({ className, ref, ...props }: SidebarDisclosureProps)
 const sidebarDisclosureTrigger = tv({
   base: [
     "group relative flex w-full cursor-default items-center overflow-hidden rounded-lg px-[calc(var(--spacing)*2.3)] py-[calc(var(--spacing)*1.3)] text-sidebar-fg/70 outline-hidden sm:text-sm/6",
-    "in-data-[sidebar-intent=fleet]:rounded-none in-data-[sidebar-intent=fleet]:py-2 in-data-[sidebar-intent=fleet]:**:data-[slot=chevron]:hidden",
   ],
   variants: {
     collapsed: {
-      false: "col-span-full **:data-[slot=icon]:mr-2",
+      false: "col-span-full **:data-[slot=icon]:mr-1.5",
       true: "size-9 justify-center p-0",
     },
     isActive: {
@@ -748,7 +739,7 @@ const SidebarLabel = ({ className, ref, ...props }: SidebarLabelProps) => {
 const nav = tv({
   base: [
     "isolate flex h-[3.2rem] items-center justify-between gap-x-2 px-4 text-navbar-fg sm:justify-start md:w-full",
-    "group-has-data-[sidebar-intent=default]/sidebar-root:border-b group-has-data-[sidebar-intent=fleet]/sidebar-root:border-b group-has-data-[sidebar-intent=default]/sidebar-root:bg-bg",
+    "group-has-data-[sidebar-intent=default]/sidebar-root:border-b group-has-data-[sidebar-intent=default]/sidebar-root:bg-bg",
   ],
   variants: {
     isSticky: {

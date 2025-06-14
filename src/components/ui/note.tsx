@@ -9,7 +9,7 @@ const noteStyles = tv({
   variants: {
     intent: {
       default: [
-        "border-border bg-secondary/50 text-secondary-fg **:data-[slot=icon]:text-secondary-fg [&_a]:text-secondary-fg",
+        "border-border bg-secondary/20 text-secondary-fg **:data-[slot=icon]:text-secondary-fg [&_a]:text-secondary-fg",
         "dark:**:data-[slot=icon]:text-secondary-fg dark:[&_a]:text-secondary-fg",
       ],
       info: [
@@ -52,7 +52,7 @@ const Note = ({ indicator = true, intent = "default", className, ...props }: Not
       <div className="flex grow items-start">
         {IconComponent && indicator && (
           <div className="shrink-0">
-            <IconComponent className="mr-3 size-5 rounded-full leading-loose ring-4 ring-current/30" />
+            <IconComponent className="mr-3 size-5 rounded-full leading-loose ring-3 ring-current/30" />
           </div>
         )}
         <div className="text-pretty">{props.children}</div>

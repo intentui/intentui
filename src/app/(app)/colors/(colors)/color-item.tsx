@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 
-import colors from "@/colors/colors.json"
 import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
+import colors from "@/json/colors.json"
 import { getTextColor } from "@/lib/colors"
 import { IconCheck, IconChevronLgDown, IconDuplicate } from "@intentui/icons"
 import { formatHex, formatHsl, formatRgb, oklch, parse } from "culori"

@@ -10,12 +10,12 @@ references: ["https://react-spectrum.adobe.com/react-aria/Link.html#props", "htt
 The sidebar is a versatile component designed to organize your site's content and navigation. It offers a structured overview of your site's layout, making it easier for users to explore and locate information.
 
 <CodeSandbox
-  src='/blocks/sidebar/sidebar-01'
+  src='/pre-blocks/sidebar/sidebar-01'
   source={{
-    preview: 'blocks/sidebar/sidebar-01/page',
-    'app-sidebar.tsx': 'blocks/sidebar/sidebar-01/app-sidebar',
-    'app-sidebar-nav.tsx': 'blocks/sidebar/app-sidebar-nav',
-    'page.tsx': 'blocks/sidebar/sidebar-01/page',
+    preview: 'pre-blocks/sidebar/sidebar-01/page',
+    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-01/app-sidebar',
+    'app-sidebar-nav.tsx': 'pre-blocks/sidebar/app-sidebar-nav',
+    'page.tsx': 'pre-blocks/sidebar/sidebar-01/page',
   }} />
 
 ## Installation
@@ -58,45 +58,34 @@ Not sure if it's your style, but it's a great starting point. If you’d like to
 The sidebar comes in three variations: `"sidebar"`, `"float"`, and `"inset"`. By default, the variation is set to `"sidebar"`.
 
 ### Sidebar
-The default variation is a traditional sidebar often used for navigation. <NewTab href='/blocks/sidebar/sidebar-02'/>.
+The default variation is a traditional sidebar often used for navigation. <NewTab href='/pre-blocks/sidebar/sidebar-02'/>.
 ```
-<Sidebar intent="default" />
+<Sidebar intent="sidebar" />
 ```
 
 ### Inset
-The inset variation adds padding to the main content for a visually distinct layout. Explore the demo to see it in action, or switch to full-screen mode for a better view. <NewTab href='/blocks/sidebar/sidebar-03'/>.
+The inset variation adds padding to the main content for a visually distinct layout. Explore the demo to see it in action, or switch to full-screen mode for a better view. <NewTab href='/pre-blocks/sidebar/sidebar-03'/>.
 ```
 <Sidebar intent="inset" />
 ```
 
 ### Float
-The `float` variation introduces an inner border within the sidebar, while the wrapper includes padding around the content. <NewTab href='/blocks/sidebar/sidebar-04'/>
+The `float` variation introduces an inner border within the sidebar, while the wrapper includes padding around the content. <NewTab href='/pre-blocks/sidebar/sidebar-04'/>
 ```
 <Sidebar intent="float" />
 ```
-
-### Fleet
-The `fleet` variation removes horizontal padding from the items. Check out how it works in action: <NewTab href='/blocks/sidebar/sidebar-18'/>
-<EditorText
-  source={{
-    'folders.ts': 'blocks/sidebar/sidebar-18/folders.ts',
-    'sidebar-header.tsx': 'blocks/sidebar/sidebar-18/sidebar-header',
-    'app-sidebar.tsx': 'blocks/sidebar/sidebar-18/app-sidebar',
-    'layout.tsx': 'blocks/sidebar/sidebar-18/layout',
-    'page.tsx': 'blocks/sidebar/sidebar-18/page',
-  }} />
 
 ## Collapsible
 The sidebar can be made collapsible by using the `collapsible` prop in the `SidebarProvider`. The default collapsible behavior is `"hidden"`.
 
 ### Hidden
-When toggled, the sidebar hides completely from view. <NewTab href='/blocks/sidebar/sidebar-05'/>
+When toggled, the sidebar hides completely from view. <NewTab href='/pre-blocks/sidebar/sidebar-05'/>
 ```
 <Sidebar collapsible="hidden" />
 ```
 
 ### Dock
-When toggled, the sidebar docks to a minimal state, showing only icons. Hovering over an icon reveals a tooltip with additional information. <NewTab href='/blocks/sidebar/sidebar-06'/>
+When toggled, the sidebar docks to a minimal state, showing only icons. Hovering over an icon reveals a tooltip with additional information. <NewTab href='/pre-blocks/sidebar/sidebar-06'/>
 ```
 <Sidebar intent="dock" />
 ```
@@ -124,7 +113,7 @@ The sidebar section is a container for sidebar items. It accepts a `label` prop,
 ```
 
 ## Sidebar Disclosure Group
-If you need to collapse multiple items, you can use the `SidebarDisclosureGroup` component. <NewTab href='/blocks/sidebar/sidebar-10'/>
+If you need to collapse multiple items, you can use the `SidebarDisclosureGroup` component. <NewTab href='/pre-blocks/sidebar/sidebar-10'/>
 ```
 {sections.map((section, sectionIndex) => (
   <SidebarDisclosureGroup defaultExpandedKeys={[1, 2]} key={sectionIndex}>
@@ -178,18 +167,18 @@ const sections = [
 ## Menu
 The sidebar supports menus, which can be used to display additional actions or options.
 <CodeSandbox
-  src='/blocks/sidebar/sidebar-08'
+  src='/pre-blocks/sidebar/sidebar-08'
   source={{
-    preview: 'blocks/sidebar/sidebar-08/page',
-    'app-sidebar-nav.tsx': 'blocks/sidebar/app-sidebar-nav',
-    'app-sidebar.tsx': 'blocks/sidebar/sidebar-08/app-sidebar',
-    'layout.tsx': 'blocks/sidebar/sidebar-08/layout',
-    'page.tsx': 'blocks/sidebar/sidebar-08/page',
+    preview: 'pre-blocks/sidebar/sidebar-08/page',
+    'app-sidebar-nav.tsx': 'pre-blocks/sidebar/app-sidebar-nav',
+    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-08/app-sidebar',
+    'layout.tsx': 'pre-blocks/sidebar/sidebar-08/layout',
+    'page.tsx': 'pre-blocks/sidebar/sidebar-08/page',
   }} />
 
 
 ## Badge
-The sidebar supports badges, which can be used to indicate the number of unread messages, tasks, or other items. <NewTab href='/blocks/sidebar/sidebar-09'/>
+The sidebar supports badges, which can be used to indicate the number of unread messages, tasks, or other items. <NewTab href='/pre-blocks/sidebar/sidebar-09'/>
 ```
 <SidebarSection>
   {navigation.map((item, index) => (
@@ -211,7 +200,7 @@ const navigation = [
 ```
 
 ## Separator
-The sidebar supports separators, which can be used to separate sections or groups of items. <NewTab href='/blocks/sidebar/sidebar-19'/>
+The sidebar supports separators, which can be used to separate sections or groups of items. <NewTab href='/pre-blocks/sidebar/sidebar-19'/>
 ```tsx {3,6, 9}
 <SidebarContent>
   <SidebarSection/>
@@ -228,22 +217,22 @@ The sidebar supports separators, which can be used to separate sections or group
 The example previews will appear similar to the ones in the YouTube sidebar.
 <EditorText
   source={{
-    'app-sidebar.tsx': 'blocks/sidebar/sidebar-19/app-sidebar',
-    'app-sidebar-nav.tsx': 'blocks/sidebar/sidebar-19/app-sidebar-nav',
-    'layout.tsx': 'blocks/sidebar/sidebar-19/layout',
-    'page.tsx': 'blocks/sidebar/sidebar-19/page',
+    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-19/app-sidebar',
+    'app-sidebar-nav.tsx': 'pre-blocks/sidebar/sidebar-19/app-sidebar-nav',
+    'layout.tsx': 'pre-blocks/sidebar/sidebar-19/layout',
+    'page.tsx': 'pre-blocks/sidebar/sidebar-19/page',
   }} />
 
 ## Tooltip
 The sidebar supports tooltips, which can be used to display additional information when you're on docked mode.
 <CodeSandbox
-  src='/blocks/sidebar/sidebar-12'
+  src='/pre-blocks/sidebar/sidebar-12'
   source={{
-    preview: 'blocks/sidebar/sidebar-12/page',
-    'app-sidebar-nav.tsx': 'blocks/sidebar/app-sidebar-nav',
-    'app-sidebar.tsx': 'blocks/sidebar/sidebar-12/app-sidebar',
-    'layout.tsx': 'blocks/sidebar/sidebar-12/layout',
-    'page.tsx': 'blocks/sidebar/sidebar-12/page',
+    preview: 'pre-blocks/sidebar/sidebar-12/page',
+    'app-sidebar-nav.tsx': 'pre-blocks/sidebar/app-sidebar-nav',
+    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-12/app-sidebar',
+    'layout.tsx': 'pre-blocks/sidebar/sidebar-12/layout',
+    'page.tsx': 'pre-blocks/sidebar/sidebar-12/page',
   }} />
 
 ## Header
@@ -286,24 +275,24 @@ The sidebar supports footers, which can be used to display additional actions or
 </Sidebar>
 ```
 ## Side
-The sidebar has two sides, left and right. You can set the side of the sidebar by using the `side` prop. <NewTab href='/blocks/sidebar/sidebar-16'/>
+The sidebar has two sides, left and right. You can set the side of the sidebar by using the `side` prop. <NewTab href='/pre-blocks/sidebar/sidebar-16'/>
 ```
 <Sidebar side='left | right'/>
 ```
 <EditorText
   source={{
-    'app-sidebar.tsx': 'blocks/sidebar/app-sidebar',
-    'app-sidebar-nav.tsx': 'blocks/sidebar/app-sidebar-nav',
-    'layout.tsx': 'blocks/sidebar/sidebar-16/layout',
-    'page.tsx': 'blocks/sidebar/sidebar-16/page',
+    'app-sidebar.tsx': 'pre-blocks/sidebar/app-sidebar',
+    'app-sidebar-nav.tsx': 'pre-blocks/sidebar/app-sidebar-nav',
+    'layout.tsx': 'pre-blocks/sidebar/sidebar-16/layout',
+    'page.tsx': 'pre-blocks/sidebar/sidebar-16/page',
   }} />
 
 ## Put Anything
-You can put anything you want in it. You can use the `SidebarContent` component to wrap your content. Let's try to add a range-calendar and search-field to the sidebar. <NewTab href='/blocks/sidebar/sidebar-17'/>
+You can put anything you want in it. You can use the `SidebarContent` component to wrap your content. Let's try to add a range-calendar and search-field to the sidebar. <NewTab href='/pre-blocks/sidebar/sidebar-17'/>
 <EditorText
   source={{
-    'app-sidebar.tsx': 'blocks/sidebar/sidebar-17/app-sidebar',
-    'layout.tsx': 'blocks/sidebar/sidebar-17/layout',
+    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-17/app-sidebar',
+    'layout.tsx': 'pre-blocks/sidebar/sidebar-17/layout',
   }} />
 
 ## Shortcut
@@ -311,17 +300,17 @@ By default, you can collapse the sidebar by clicking or pressing the `⌘b` shor
 ```
 <Sidebar shortcut="1" />
 ```
-The preview can be seen in the <NewTab href='/blocks/sidebar/sidebar-10'>Sidebar Shortcut</NewTab> page.
+The preview can be seen in the <NewTab href='/pre-blocks/sidebar/sidebar-10'>Sidebar Shortcut</NewTab> page.
 
 ## Props
 The sidebar supports the following props:
 ### Sidebar
-| **Property**  | **Type**                                           | **Default** |
-|---------------|----------------------------------------------------|-------------|
-| `intent`      | `"default" \| "float" \| \| "fleet" \| "inset"` | `"default"` |
-| `collapsible` | `"hidden" \| "dock" \| "none"`                     | `"hidden"`  |
-| `side`        | `"left" \| "right"`                                | `"left"`    |
-| `closeButton` | `boolean`                                          | `"true"`    |
+| **Property**  | **Type**                          | **Default** |
+|---------------|-----------------------------------|-------------|
+| `intent`      | `"default" \| "float" \| "inset"` | `"default"` |
+| `collapsible` | `"hidden" \| "dock" \| "none"`    | `"hidden"`  |
+| `side`        | `"left" \| "right"`               | `"left"`    |
+| `closeButton` | `boolean`                         | `"true"`    |
 
 ### SidebarContextProps
 

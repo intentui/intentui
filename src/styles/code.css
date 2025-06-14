@@ -12,23 +12,6 @@ html.dark .shiki span {
   background-color: var(--color-shiki-bg) !important;
 }
 
-
-/*[data-theme="light"] {*/
-/*  display: block;*/
-/*}*/
-/**/
-/*[data-theme="dark"] {*/
-/*  display: none;*/
-/*}*/
-
-/*.dark [data-theme="light"] {*/
-/*  display: none;*/
-/*}*/
-/**/
-/*.dark [data-theme="dark"] {*/
-/*  display: block;*/
-/*}*/
-
 [data-rehype-pretty-code-figure] {
   @apply outline-hidden;
 }
@@ -159,12 +142,11 @@ span[data-rehype-pretty-code-figure] > code > span {
   color: var(--color-red-600);
 }
 
-.has-diff .diff.add {
-  @apply bg-green-500/10;
-}
 
 .has-diff .diff.add:before {
   content: "+";
+  position: absolute;
+  left: 0;
   color: var(--color-emerald-600);
 }
 

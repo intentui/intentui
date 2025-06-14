@@ -9,7 +9,7 @@ import type { Selection } from "react-aria-components"
 export default function ListBoxControlledDemo() {
   const [selected, setSelected] = useState<Selection>(new Set([1]))
   return (
-    <>
+    <div className="min-w-2xs">
       <ListBox
         selectedKeys={selected}
         onSelectionChange={setSelected}
@@ -29,7 +29,7 @@ export default function ListBoxControlledDemo() {
           Selected: <strong>{selected}</strong>
         </Description>
       )}
-    </>
+    </div>
   )
 }
 
