@@ -80,7 +80,7 @@ export const PlainCode = ({
       ref={ref}
       {...props}
       className={twMerge(
-        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm",
+        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6",
         keepBackground && "bg-white dark:bg-zinc-950!",
         className,
       )}
@@ -89,7 +89,7 @@ export const PlainCode = ({
         <div className="jb flex w-full flex-row items-center gap-2 border-b bg-fd-muted px-4 py-1.5">
           {icon ? (
             <div
-              className="text-fd-muted-foreground [&_svg]:size-3.5"
+              className="text-muted-fg [&_svg]:size-3.5"
               // biome-ignore lint/security/noDangerouslySetInnerHtmlWithChildren: <explanation>
               dangerouslySetInnerHTML={
                 typeof icon === "string"
@@ -102,7 +102,7 @@ export const PlainCode = ({
               {typeof icon !== "string" ? icon : null}
             </div>
           ) : null}
-          <figcaption className="flex-1 truncate text-fd-muted-foreground">{title}</figcaption>
+          <figcaption className="flex-1 truncate text-muted-fg">{title}</figcaption>
           {allowCopy ? (
             <InternalCopyButton className="absolute top-1 right-1 z-[2]" onCopy={onCopy} />
           ) : null}

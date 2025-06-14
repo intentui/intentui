@@ -51,7 +51,7 @@ export function CopyButton({
       className={composeTailwindRenderProps(
         className,
         twJoin(
-          "relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-xs/6 hover:text-fg",
+          "relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg",
           isCopied && "text-fg",
         ),
       )}

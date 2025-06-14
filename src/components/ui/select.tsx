@@ -32,7 +32,7 @@ const selectTriggerStyles = tv({
     "px-3.5 py-2.5 sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6",
     "group-data-open:border-ring/70 group-data-open:ring-3 group-data-open:ring-ring/20",
     "text-fg group-invalid:border-danger group-invalid:ring-danger/20 forced-colors:group-invalid:border-[Mark]",
-    "*:data-[slot=icon]:-mx-0.5 *:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:*:-mx-0.5 *:data-[slot=avatar]:*:mr-2 *:data-[slot=avatar]:mr-2 *:data-[slot=icon]:mr-2",
+    "**:data-[slot=icon]:-mx-0.5 **:data-[slot=avatar]:-mx-0.5 **:data-[slot=avatar]:**:-mx-0.5 **:data-[slot=avatar]:**:mr-2 **:data-[slot=avatar]:mr-2 **:data-[slot=icon]:mr-2",
   ],
   variants: {
     isDisabled: {

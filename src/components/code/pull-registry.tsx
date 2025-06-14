@@ -34,7 +34,7 @@ export function CopyButton({
   return (
     <Button
       className={twMerge(
-        "relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-xs/6 hover:text-fg",
+        "relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg",
         className,
       )}
       onPress={onCopy}
@@ -88,7 +88,7 @@ export function PullRegistry({ className, processedSourceCode, blockDemo }: Pull
       />
 
       <Link
-        className="hidden p-2 pressed:text-fg text-muted-fg text-xs/6 hover:text-fg"
+        className="hidden p-2 pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
         href={openInV0Url(blockDemo)}
         target="_blank"
       >
