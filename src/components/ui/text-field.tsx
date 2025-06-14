@@ -16,20 +16,11 @@ interface BaseTextFieldProps extends TextFieldPrimitiveProps, FieldProps {
   prefix?: React.ReactNode | string
   suffix?: React.ReactNode | string
   isPending?: boolean
-  className?: string
 }
 
-interface RevealableTextFieldProps extends BaseTextFieldProps {
-  isRevealable: true
-  type: "password"
-}
-
-interface NonRevealableTextFieldProps extends BaseTextFieldProps {
-  isRevealable?: never
-  type?: InputType
-}
-
-type TextFieldProps = RevealableTextFieldProps | NonRevealableTextFieldProps
+type TextFieldProps =
+  | (BaseTextFieldProps & { isRevealable: true; type: "password" })
+  | (BaseTextFieldProps & { isRevealable?: never; type?: InputType })
 
 const TextField = ({
   placeholder,

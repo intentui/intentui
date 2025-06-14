@@ -5,7 +5,6 @@ import type {
   GroupProps,
   InputProps as InputPrimitiveProps,
   LabelProps,
-  TextFieldProps as TextFieldPrimitiveProps,
   TextProps,
   ValidationResult,
 } from "react-aria-components"
@@ -26,8 +25,6 @@ interface FieldProps {
   placeholder?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
-  "aria-label"?: TextFieldPrimitiveProps["aria-label"]
-  "aria-labelledby"?: TextFieldPrimitiveProps["aria-labelledby"]
 }
 
 const fieldStyles = tv({
@@ -130,7 +127,7 @@ const Input = ({ className, ref, ...props }: InputProps) => {
       {...props}
       className={composeTailwindRenderProps(
         className,
-        "relative block w-full px-3.5 py-2.5 placeholder-muted-fg outline-hidden sm:px-3 sm:py-1.5 sm:text-sm/6",
+        "relative block w-full px-3.5 py-2.5 placeholder-muted-fg outline-hidden sm:px-3 sm:py-1.5 sm:text-sm/6 [&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden",
       )}
     />
   )

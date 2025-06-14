@@ -3,21 +3,21 @@
 import { IconSearch, IconX } from "@intentui/icons"
 import { SearchField as SearchFieldPrimitive } from "react-aria-components"
 
-import type {
-  SearchFieldProps as SearchFieldPrimitiveProps,
-  ValidationResult,
-} from "react-aria-components"
+import type { SearchFieldProps as SearchFieldPrimitiveProps } from "react-aria-components"
 
 import { Button } from "@/components/ui/button"
-import { Description, FieldError, FieldGroup, Input, Label } from "@/components/ui/field"
+import {
+  Description,
+  FieldError,
+  FieldGroup,
+  type FieldProps,
+  Input,
+  Label,
+} from "@/components/ui/field"
 import { Loader } from "@/components/ui/loader"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 
-interface SearchFieldProps extends SearchFieldPrimitiveProps {
-  label?: string
-  placeholder?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
+interface SearchFieldProps extends SearchFieldPrimitiveProps, FieldProps {
   isPending?: boolean
 }
 
@@ -45,7 +45,7 @@ const SearchField = ({
 
             <Button
               intent="plain"
-              className="size-8 pressed:bg-transparent pressed:text-fg text-muted-fg hover:bg-transparent hover:text-fg group-data-empty/search-field:invisible"
+              className="size-8 pressed:bg-transparent pressed:text-fg text-muted-fg hover:bg-transparent hover:text-fg group-empty/search-field:invisible"
             >
               <IconX />
             </Button>
