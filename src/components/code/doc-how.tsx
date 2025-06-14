@@ -103,13 +103,13 @@ export const DocHow = ({
           <PullRegistry processedSourceCode={processedSourceCode} blockDemo={blockDemo} />
         </Group>
       </Toolbar>
-      <div className="max-h-140 w-full">
+      <div className="w-full">
         {currentTab === "tab_preview" ? (
           <div
             className={twMerge(
               !withNoPadding && "relative gap-4 rounded-lg border bg-overlay p-6",
               isCenter &&
-                "preview flex min-h-56 items-center justify-center overflow-x-auto py-6 sm:py-24 lg:min-h-96",
+                "preview flex min-h-56 items-center justify-center overflow-x-auto py-6 sm:py-24 lg:max-h-96 lg:min-h-96",
             )}
           >
             <Suspense

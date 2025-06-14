@@ -17,11 +17,11 @@ const buttonStyles = tv({
     intent: {
       primary: [
         "bg-primary text-primary-fg outline-primary ring-primary/50 hover:bg-primary/85",
-        "[--btn-icon:color-mix(in_oklab,var(--primary-fg)_70%,var(--primary))] pressed:[--btn-icon:var(--primary-fg)] hover:[--btn-icon:var(--primary-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--primary-fg)_50%,var(--primary))] pressed:[--btn-icon:var(--primary-fg)] hover:[--btn-icon:var(--primary-fg)]",
       ],
       secondary: [
         "bg-secondary text-secondary-fg outline-secondary-fg ring-secondary-fg/20 hover:bg-secondary/85",
-        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
       ],
       warning: [
         "bg-warning text-warning-fg outline-warning ring-warning/20 hover:bg-warning/85",
@@ -29,15 +29,15 @@ const buttonStyles = tv({
       ],
       danger: [
         "bg-danger text-danger-fg outline-danger ring-danger/25 hover:bg-danger/85",
-        "[--btn-icon:color-mix(in_oklab,var(--danger-fg)_70%,var(--danger))] pressed:[--btn-icon:var(--danger-fg)] hover:[--btn-icon:var(--danger-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--danger-fg)_50%,var(--danger))] pressed:[--btn-icon:var(--danger-fg)] hover:[--btn-icon:var(--danger-fg)]",
       ],
       outline: [
         "bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
-        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
       ],
       plain: [
         "inset-ring-transparent bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
-        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
       ],
     },
     size: {
