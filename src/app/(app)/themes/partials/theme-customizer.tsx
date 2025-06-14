@@ -14,6 +14,7 @@ interface ColorSelectProps extends React.ComponentProps<typeof Select> {
   selectedKey: string
   onSelectionChange: (key: Key | null) => void
   label: string
+  className?: string
   placeholder: string
   filterKeys?: string[]
 }
