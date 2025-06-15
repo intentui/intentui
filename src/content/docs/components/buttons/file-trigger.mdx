@@ -44,7 +44,17 @@ A FileTrigger that lets users capture images using their device's camera.
 A FileTrigger that allows users to select an avatar from their file system. It integrates components like `avatar` and `drop-zone`, enabling users to either drag and drop or manually select a file.
 
 <Composed components={['avatar', 'drop-zone']}/>
+
+This how you can use the FileTrigger combined with an Avatar component.
 <How toUse="buttons/file-trigger/file-trigger-avatar-demo" />
+
+## Pending
+A FileTrigger can indicate a pending state using the `isPending` prop. This provides feedback for actions that take time, communicates the status to assistive technologies, and disables interactions except for focus.
+<How toUse="buttons/file-trigger/file-trigger-pending-demo" />
+
+## Circle
+A FileTrigger that is styled as a circle, providing a unique visual appearance.
+<How toUse="buttons/file-trigger/file-trigger-circle-demo" />
 
 ## Controlled
 You can use the `onSelect` prop to snag the selected files.

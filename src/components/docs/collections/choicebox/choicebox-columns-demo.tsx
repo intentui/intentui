@@ -8,7 +8,7 @@ export default function ChoiceboxColumnsDemo() {
       <Choicebox
         aria-label="Select prices"
         gap={2}
-        columns={3}
+        columns={2}
         selectionMode="multiple"
         items={prices}
       >

@@ -7,10 +7,10 @@ import {
 } from "react-aria-components"
 
 import { Button, type buttonStyles } from "@/components/ui/button"
+import { Loader } from "@/components/ui/loader"
 import type { VariantProps } from "tailwind-variants"
 
 interface FileTriggerProps extends FileTriggerPrimitiveProps, VariantProps<typeof buttonStyles> {
-  withIcon?: boolean
   isDisabled?: boolean
   ref?: React.RefObject<HTMLInputElement>
   className?: string
@@ -20,7 +20,6 @@ const FileTrigger = ({
   intent = "outline",
   size = "md",
   isCircle = false,
-  withIcon = true,
   ref,
   className,
   ...props
@@ -34,14 +33,17 @@ const FileTrigger = ({
         size={size}
         isCircle={isCircle}
       >
-        {withIcon &&
-          (props.defaultCamera ? (
+        {!props.isPending ? (
+          props.defaultCamera ? (
             <IconCamera />
           ) : props.acceptDirectory ? (
             <IconFolder />
           ) : (
             <IconPaperclip45 />
-          ))}
+          )
+        ) : (
+          <Loader />
+        )}
         {props.children ? (
           props.children
         ) : (

@@ -72,7 +72,7 @@ export default function ToolbarOrientationDemo() {
       <Toolbar.Separator />
       <Toolbar.Group>
         <Menu>
-          <Button aria-label="Other options" intent='outline' size="sq-sm">
+          <Button aria-label="Other options" intent="outline" size="sq-sm">
             <IconDotsVertical />
           </Button>
           <Menu.Content placement="right bottom">

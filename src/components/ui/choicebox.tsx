@@ -6,7 +6,6 @@ import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"
 
 import { Checkbox } from "@/components/ui/checkbox"
-import { focusStyles } from "@/lib/primitive"
 import { createContext, use } from "react"
 import { twJoin, twMerge } from "tailwind-merge"
 
@@ -29,8 +28,8 @@ const choiceboxStyles = tv({
     },
   },
   defaultVariants: {
-    columns: 2,
-    gap: 4,
+    columns: 1,
+    gap: 0,
   },
   compoundVariants: [
     {
@@ -53,8 +52,8 @@ interface ChoiceboxProps<T extends object>
 }
 
 const Choicebox = <T extends object>({
-  columns,
-  gap,
+  columns = 1,
+  gap = 0,
   className,
   selectionMode = "multiple",
   ...props
@@ -76,7 +75,6 @@ const Choicebox = <T extends object>({
 }
 
 const choiceboxItemStyles = tv({
-  extend: focusStyles,
   base: [
     "group/choicebox-item relative bg-bg text-sm [--choicebox-fg:var(--color-primary)] [--choicebox:color-mix(in_oklab,var(--color-primary)_4%,white_96%)]",
     "[--choicebox-selected-hovered:color-mix(in_oklab,var(--color-primary)_15%,white_85%)]",
@@ -88,6 +86,10 @@ const choiceboxItemStyles = tv({
     "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
   ],
   variants: {
+    isFocused: { true: "outline-hidden ring-3 ring-ring/20 invalid:ring-danger/20" },
+    isFocusVisible: { true: "outline-hidden ring-3 ring-ring/20" },
+    isInvalid: { true: "ring-3 ring-danger/20" },
+
     isOneColumn: {
       true: "col-span-full",
     },

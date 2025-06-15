@@ -31,7 +31,7 @@ export function DocComposed({
       ) : (
         <p className="mb-4">{text}</p>
       )}
-      <Choicebox gap={2} selectionMode="single" aria-label="Composed Components">
+      <Choicebox gap={2} columns={2} selectionMode="single" aria-label="Composed Components">
         {filteredComponents.map((item) => (
           <Choicebox.Item
             className="**:[[slot=description]]:line-clamp-2"

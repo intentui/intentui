@@ -1,0 +1,100 @@
+---
+title: Release 3.0.0
+description: The forth release of Intent UI. It includes all the components and utilities that you need to build your next project.
+published: 2025-05-30
+author: irsyadadl
+---
+
+## Introduction
+Almost every component has been rewritten. This release improves the developer experience and introduces a more consistent API across components.
+You may also notice that v3 is slightly more compact than v2, with improved usability on mobile devices.
+
+
+## What's New
+* Upgraded to the latest versions of React Aria Components and Tailwind CSS.
+* New component: [Toggle Group](/docs/components/buttons/toggle-group)
+* Replaced `cn()` with `twMerge()` from the `tailwind-merge` package.
+* Removed legacy size values (`square-petite`, `extra-small`, `small`, `medium`, `large`) from the `size` prop in `Button` and `Toggle`. Now using `xs`, `sm`, `md`, `lg`, and `sq-[xs, sm, md, lg]`.
+* Removed the `shape` prop from `Button`, `Badge`, `Tag`, and `Toggle`. Use the `isCircle` prop instead.
+* Removed `focusRing` and `focusStyles` from `primitive.ts`—they are no longer used.
+* We make default `gap=0` and `columns=1` for `Choicebox` component.
+* Add `Loader` to `FileTrigger` when the pending state is true.
+
+## Toggle Group
+The `ToggleGroup` component has been introduced to provide a more intuitive way for users to switch between multiple options, supporting both single and multi-selection modes.
+<How toUse="buttons/toggle-group/toggle-group-demo" />
+
+## Button
+The `Button` component has undergone significant changes, including the removal of the `shape` prop and the introduction of the `isCircle` prop. The size values have also been updated to be more concise.
+```
+// Before
+<Button size="small" shape="circle">Press me</Button>
+
+// After
+<Button size="sm" isCircle>Press me</Button>
+
+// ---
+
+// Before
+<Button size="square-petite">Press me</Button>
+
+// After
+<Button size="sq-sm">Press me</Button>
+```
+<How toUse="buttons/button/button-intent-demo" />
+
+## Toggle
+The `Toggle` component has been updated to use the new size values and the `isCircle` prop. The `shape` prop has been removed.
+```
+// Before
+<Toggle size="small" shape="circle">Toggle me</Toggle>
+
+// After
+<Toggle size="sm" isCircle>Toggle me</Toggle>
+
+// ---
+
+// Before
+<Toggle size="square-petite" shape="circle">Toggle me</Toggle>
+
+// After
+<Toggle size="sq-sm" isCircle>Toggle me</Toggle>
+```
+
+## CheckBox and Radio
+We’ve improved the user experience on `Checkbox`, `CheckboxGroup`, and `RadioGroup` by allowing direct use of `Label` and `Description` components inside them. This gives you more flexibility to customize content. If you prefer using the `label` and `description` props, they’re still fully supported.
+
+```
+<CheckboxGroup>
+  <Label>User Permissions</Label>
+  <Description>Select the permissions you want to grant to the user.</Description>
+  <Checkbox value="read">
+    <Label>Read</Label>
+    <Description>Can view content but cannot make changes.</Description>
+  </Checkbox>
+  <Checkbox value="write">
+    <Label>Write</Label>
+    <Description>Can create and modify existing content.</Description>
+  </Checkbox>
+</CheckboxGroup>
+```
+
+```
+<RadioGroup name="billing">
+  <Label>Billing Cycle</Label>
+  <Description>Select how often you'd like to be billed</Description>
+
+  <Radio value="monthly">
+    <Label>Monthly</Label>
+    <Description>Billed every month</Description>
+  </Radio>
+  <Radio value="quarterly">
+    <Label>Quarterly</Label>
+    <Description>Billed every 3 months</Description>
+  </Radio>
+  <Radio value="yearly">
+    <Label>Yearly</Label>
+    <Description>Billed once per year with a discount</Description>
+  </Radio>
+</RadioGroup>
+```
