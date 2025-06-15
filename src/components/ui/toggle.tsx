@@ -65,10 +65,13 @@ const toggleStyles = tv({
   ],
 })
 
-interface ToggleProps extends ToggleButtonProps, VariantProps<typeof toggleStyles> {}
-const Toggle = ({ className, size, intent, ...props }: ToggleProps) => {
+interface ToggleProps extends ToggleButtonProps, VariantProps<typeof toggleStyles> {
+  ref?: React.Ref<HTMLButtonElement>
+}
+const Toggle = ({ className, size, intent, ref, ...props }: ToggleProps) => {
   return (
     <ToggleButton
+      ref={ref}
       className={composeRenderProps(className, (className, renderProps) =>
         twMerge(
           toggleStyles({

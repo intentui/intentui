@@ -32,38 +32,38 @@ export default function ToolbarOrientationDemo() {
   return (
     <Toolbar aria-label="Toolbox" orientation="vertical">
       <Toolbar.Group aria-label="Toolbox">
-        <Toolbar.Item aria-label="Cursor" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Cursor" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconCursorFill /> : <IconCursor />}</>}
         </Toolbar.Item>
-        <Toolbar.Item aria-label="Pencil Box" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Pencil Box" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconPencilBoxFill /> : <IconPencilBox />}</>}
         </Toolbar.Item>
-        <Toolbar.Item aria-label="Pencil Box" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Pencil Box" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconToolboxFill /> : <IconToolbox />}</>}
         </Toolbar.Item>
       </Toolbar.Group>
       <Toolbar.Separator />
       <Toolbar.Group aria-label="Gallery">
-        <Toolbar.Item aria-label="Camera" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Camera" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconCameraFill /> : <IconCamera />}</>}
         </Toolbar.Item>
-        <Toolbar.Item aria-label="Gallery" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Gallery" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconGalleryFill /> : <IconGallery />}</>}
         </Toolbar.Item>
       </Toolbar.Group>
       <Toolbar.Separator />
       <Toolbar.Group aria-label="Alignment">
-        <Toggle aria-label="Align Left" size="sq-sm" intent="secondary">
+        <Toggle aria-label="Align Left" size="sq-sm">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentLeftFill /> : <IconAlignmentLeft />}</>
           )}
         </Toggle>
-        <Toolbar.Item aria-label="Align Center" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Align Center" size="sq-sm">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentCenterFill /> : <IconAlignmentCenter />}</>
           )}
         </Toolbar.Item>
-        <Toolbar.Item aria-label="Align Justify" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Align Justify" size="sq-sm">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentJustifyFill /> : <IconAlignmentJustify />}</>
           )}
@@ -72,7 +72,7 @@ export default function ToolbarOrientationDemo() {
       <Toolbar.Separator />
       <Toolbar.Group>
         <Menu>
-          <Button aria-label="Other options" intent="secondary" size="sq-sm">
+          <Button aria-label="Other options" intent='outline' size="sq-sm">
             <IconDotsVertical />
           </Button>
           <Menu.Content placement="right bottom">

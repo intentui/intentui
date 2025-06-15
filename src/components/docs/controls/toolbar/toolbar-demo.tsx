@@ -76,7 +76,7 @@ export default function ToolbarDemo() {
       <Checkbox>Spell Check</Checkbox>
       <Toolbar.Group className="ml-auto">
         <Menu>
-          <Button aria-label="Other options" size="sm" intent="secondary">
+          <Button aria-label="Other options" size="sm" intent="outline">
             Options...
             <IconChevronDown />
           </Button>

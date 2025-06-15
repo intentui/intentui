@@ -56,7 +56,7 @@ type ToggleItemProps = ToggleProps
 const ToolbarItem = ({
   isDisabled,
   size = "sm",
-  intent = "secondary",
+  intent = "outline",
   ref,
   ...props
 }: ToggleItemProps) => {

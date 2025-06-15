@@ -23,33 +23,33 @@ export default function ToolbarDisabledDemo() {
   return (
     <Toolbar aria-label="Toolbox">
       <Toolbar.Group aria-label="Toolbox">
-        <Toggle isDisabled aria-label="Cursor" size="sq-sm" intent="secondary">
+        <Toolbar.Item isDisabled aria-label="Cursor" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconCursorFill /> : <IconCursor />}</>}
-        </Toggle>
-        <Toggle aria-label="Pencil Box" size="sq-sm" intent="secondary">
+        </Toolbar.Item>
+        <Toolbar.Item aria-label="Pencil Box" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconPencilBoxFill /> : <IconPencilBox />}</>}
-        </Toggle>
-        <Toggle aria-label="Pencil Box" size="sq-sm" intent="secondary">
+        </Toolbar.Item>
+        <Toolbar.Item aria-label="Pencil Box" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconToolboxFill /> : <IconToolbox />}</>}
-        </Toggle>
+        </Toolbar.Item>
       </Toolbar.Group>
       <Toolbar.Separator />
       <Toolbar.Group isDisabled aria-label="Gallery">
-        <Toolbar.Item aria-label="Camera" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Camera" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconCameraFill /> : <IconCamera />}</>}
         </Toolbar.Item>
-        <Toolbar.Item aria-label="Gallery" size="sq-sm" intent="secondary">
+        <Toolbar.Item aria-label="Gallery" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconGalleryFill /> : <IconGallery />}</>}
         </Toolbar.Item>
       </Toolbar.Group>
       <Toolbar.Separator />
       <Toolbar.Group aria-label="Alignment">
-        <Toggle aria-label="Align Right" intent="secondary">
+        <Toggle aria-label="Align Right">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentRightFill /> : <IconAlignmentRight />}</>
           )}
         </Toggle>
-        <Toggle aria-label="Align Justify" intent="secondary">
+        <Toggle aria-label="Align Justify">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentJustifyFill /> : <IconAlignmentJustify />}</>
           )}
