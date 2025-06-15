@@ -98,7 +98,7 @@ const DatePicker = <T extends DateValue>({
     >
       {label && <Label>{label}</Label>}
       <FieldGroup className="min-w-40">
-        <DateInput className="w-full px-2 text-base sm:text-sm" />
+        <DateInput className="w-full px-2" />
         <DatePickerIcon />
       </FieldGroup>
       {description && <Description>{description}</Description>}
