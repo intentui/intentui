@@ -4,7 +4,7 @@ import { ComboBox } from "@/components/ui/combo-box"
 
 export default function ComboBoxDetailDescriptionDemo() {
   return (
-    <ComboBox label="Roles" placeholder="ComboBox a role">
+    <ComboBox aria-label="Roles" placeholder="Select role">
       <ComboBox.Input />
       <ComboBox.List className="max-w-(--trigger-width)" items={roles}>
         {(item) => (

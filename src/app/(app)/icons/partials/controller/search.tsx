@@ -21,6 +21,7 @@ export function Search() {
 
   return (
     <SearchField
+      className="rounded-lg bg-secondary"
       onChange={handleSearch}
       defaultValue={searchParams.get("query")?.toString()}
       aria-label="Search icons"

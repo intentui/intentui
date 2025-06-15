@@ -81,7 +81,7 @@ export function Navbar() {
                   <NavLink href="/blocks">Blocks</NavLink>
                   <NavLink href="https://blocks.intentui.com">Premium Blocks</NavLink>
                 </div>
-                <div className="flex items-center gap-x-1">
+                <div className="flex items-center gap-x-2">
                   <>
                     <Button
                       onPress={() => setOpen((open: boolean) => !open)}
@@ -91,7 +91,6 @@ export function Navbar() {
                     >
                       <IconSearch />
                     </Button>
-                    <ThemeSwitcher intent="plain" isCircle />
 
                     <Link
                       aria-label="Join Discord"
@@ -134,6 +133,7 @@ export function Navbar() {
                       <IconBrandIntentui />
                     </Link>
 
+                    <ThemeSwitcher intent="plain" isCircle />
                     <GithubLink />
                   </>
                 </div>

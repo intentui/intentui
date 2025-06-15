@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
 import { useQueryString } from "@/hooks/use-query-string"
 import { title } from "@/lib/utils"
-import { IconChevronLgDown } from "@intentui/icons"
+import { IconChevronsY } from "@intentui/icons"
 import { usePathname, useRouter } from "next/navigation"
 import type { Selection } from "react-aria-components"
 
@@ -29,17 +29,14 @@ export function SelectSize() {
 
   return (
     <Menu aria-label="Select Icon Size">
-      <Button
-        className="**:data-[slot=icon]:transition-transform [&[pressed]_[data-slot=icon]]:rotate-180"
-        intent="outline"
-      >
-        <span className="inline sm:hidden">
+      <Button intent="secondary" size="sm">
+        <span className="inline sm:hidden sm:text-sm/6">
           {title([...selectedSize].join(", ").replace("size-", " ")) || "5"}
         </span>
-        <span className="hidden sm:inline">
+        <span className="hidden sm:inline sm:text-sm/6">
           {title([...selectedSize].join(", ").replace("-", " ")) || "Size 5"}
         </span>
-        <IconChevronLgDown />
+        <IconChevronsY />
       </Button>
       <Menu.Content
         selectionMode="single"

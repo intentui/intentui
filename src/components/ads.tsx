@@ -86,7 +86,7 @@ function AdCard({ href, title, description, domain, icon }: AdCardProps) {
 const ads = [
   <AdCard
     key="irsyad"
-    href="https://irsyad.co"
+    href="https://dub.sh/irsyadco"
     title="Ready-to-use templates"
     description="Launch faster with complete, professional templates for modern web apps."
     domain="irsyad.co"
@@ -94,7 +94,7 @@ const ads = [
   />,
   <AdCard
     key="blocks"
-    href="https://blocks.intentui.com"
+    href="https://dub.sh/bintentui"
     title="Flexible blocks and templates"
     description="Use ready-made blocks to craft unique pages without starting from scratch."
     domain="blocks.intentui.com"

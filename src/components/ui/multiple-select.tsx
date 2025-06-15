@@ -138,7 +138,7 @@ const MultipleSelect = <T extends object>({
               aria-label="Selected items"
             >
               <TagList
-                className="[[role='row']]:last:-mr-1 gap-1 p-1 outline-hidden"
+                className="[[role='row']]:last:-mr-1 gap-1 px-1.5 py-1 outline-hidden"
                 items={[...selectedKeys].map((key) => ({
                   id: key,
                   textValue: parsedItems.find((item) => item.id === key)?.textValue as string,
@@ -163,9 +163,9 @@ const MultipleSelect = <T extends object>({
               inputValue={inputValue}
               onInputChange={isMax ? () => {} : setInputValue}
             >
-              <div className="flex w-full flex-row items-center justify-between pr-[calc(--spacing(2)-1px)]">
+              <div className="flex w-full flex-row items-center justify-between pr-2">
                 <Input
-                  className="ml-1.5 px-0 sm:px-0"
+                  className="px-0 sm:px-0"
                   onFocus={() => triggerButtonRef.current?.click()}
                   ref={inputRef as RefObject<HTMLInputElement>}
                   onBlur={() => {
