@@ -58,12 +58,12 @@ export default function ToolbarOrientationDemo() {
             <>{isSelected ? <IconAlignmentLeftFill /> : <IconAlignmentLeft />}</>
           )}
         </Toggle>
-        <Toolbar.Item aria-label="Align Center" intent="secondary">
+        <Toolbar.Item aria-label="Align Center" size="sq-sm" intent="secondary">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentCenterFill /> : <IconAlignmentCenter />}</>
           )}
         </Toolbar.Item>
-        <Toolbar.Item aria-label="Align Justify" intent="secondary">
+        <Toolbar.Item aria-label="Align Justify" size="sq-sm" intent="secondary">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentJustifyFill /> : <IconAlignmentJustify />}</>
           )}
@@ -75,7 +75,7 @@ export default function ToolbarOrientationDemo() {
           <Button aria-label="Other options" intent="secondary" size="sq-sm">
             <IconDotsVertical />
           </Button>
-          <Menu.Content showArrow placement="right">
+          <Menu.Content placement="right bottom">
             <Menu.Item>
               <IconUndo />
               Undo

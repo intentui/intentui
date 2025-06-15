@@ -24,7 +24,7 @@ const Toolbar = ({ orientation = "horizontal", className, ...props }: ToolbarPro
           twMerge(
             "group flex flex-row gap-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
             orientation === "horizontal"
-              ? "flex-row [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              ? "flex-row items-center [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               : "flex-col items-start",
           ),
         )}
@@ -42,7 +42,7 @@ const ToolbarGroup = ({ isDisabled, className, ...props }: ToolbarGroupProps) =>
       <Group
         className={composeTailwindRenderProps(
           className,
-          "flex gap-2 group-data-[orientation=vertical]:flex-col group-data-[orientation=vertical]:items-start",
+          "flex gap-2 group-orientation-vertical:flex-col group-orientation-vertical:items-start group-orientation-horizontal:items-center",
         )}
         {...props}
       >
@@ -53,11 +53,19 @@ const ToolbarGroup = ({ isDisabled, className, ...props }: ToolbarGroupProps) =>
 }
 
 type ToggleItemProps = ToggleProps
-const ToolbarItem = ({ isDisabled, ref, ...props }: ToggleItemProps) => {
+const ToolbarItem = ({
+  isDisabled,
+  size = "sm",
+  intent = "secondary",
+  ref,
+  ...props
+}: ToggleItemProps) => {
   const context = useContext(ToolbarGroupContext)
   const effectiveIsDisabled = isDisabled || context.isDisabled
 
-  return <Toggle ref={ref} isDisabled={effectiveIsDisabled} {...props} />
+  return (
+    <Toggle intent={intent} size={size} ref={ref} isDisabled={effectiveIsDisabled} {...props} />
+  )
 }
 type ToolbarSeparatorProps = SeparatorProps
 const ToolbarSeparator = ({ className, ...props }: ToolbarSeparatorProps) => {
@@ -66,7 +74,7 @@ const ToolbarSeparator = ({ className, ...props }: ToolbarSeparatorProps) => {
   return (
     <Separator
       orientation={effectiveOrientation}
-      className={twMerge(effectiveOrientation === "vertical" ? "mx-1.5" : "my-1.5 w-9", className)}
+      className={twMerge(effectiveOrientation === "vertical" ? "mx-1.5" : "my-1.5 w-8", className)}
       {...props}
     />
   )
