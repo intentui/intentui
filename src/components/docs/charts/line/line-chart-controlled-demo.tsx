@@ -4,7 +4,7 @@ import { useState } from "react"
 
 import { Card } from "@/components/ui/card"
 import { Chart, type ChartConfig, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-import { Toggle, ToggleGroup } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
 
 const generateChartData = (startDate: string, endDate: string) => {
@@ -53,13 +53,13 @@ export default function LineChartControlledDemo() {
           {["revenue", "expenses"].map((key) => {
             const chart = key as keyof typeof chartConfig
             return (
-              <Toggle
+              <ToggleGroupItem
                 key={chart}
                 isSelected={activeChart === chart}
                 onPress={() => setActiveChart(chart)}
               >
                 {chartConfig[chart].label}
-              </Toggle>
+              </ToggleGroupItem>
             )
           })}
         </ToggleGroup>

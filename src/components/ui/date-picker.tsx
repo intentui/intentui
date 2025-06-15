@@ -94,11 +94,14 @@ const DatePicker = <T extends DateValue>({
   return (
     <DatePickerPrimitive
       {...props}
-      className={composeTailwindRenderProps(className, "group/date-picker flex flex-col gap-y-1")}
+      className={composeTailwindRenderProps(
+        className,
+        "group/date-picker flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
+      )}
     >
       {label && <Label>{label}</Label>}
       <FieldGroup className="min-w-40">
-        <DateInput className="w-full px-2" />
+        <DateInput className="w-full" />
         <DatePickerIcon />
       </FieldGroup>
       {description && <Description>{description}</Description>}

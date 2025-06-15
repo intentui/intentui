@@ -25,7 +25,7 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar"
 import { Tabs } from "@/components/ui/tabs"
-import { Toggle, ToggleGroup } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import quotes from "@/json/quotes.json"
 import type { RegistryItem } from "@/types"
 import { IconFolderFill, IconFolderOpenFill, IconX } from "@intentui/icons"
@@ -169,8 +169,6 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
             <Separator orientation="vertical" className="mx-1 hidden h-4 rotate-12 sm:block" />
             <ToggleGroup
               selectionMode="single"
-              intent="plain"
-              size="sm"
               className="hidden sm:flex"
               selectedKeys={width}
               onSelectionChange={(v) => {
@@ -180,27 +178,27 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                 }
               }}
             >
-              <Toggle
+              <ToggleGroupItem
                 className="font-normal selected:font-semibold"
                 aria-label="Switch to phone display"
                 id={30}
               >
                 Smartphone
-              </Toggle>
-              <Toggle
+              </ToggleGroupItem>
+              <ToggleGroupItem
                 className="font-normal selected:font-semibold"
                 aria-label="Switch to ipad/tablet display"
                 id={60}
               >
                 Tablet
-              </Toggle>
-              <Toggle
+              </ToggleGroupItem>
+              <ToggleGroupItem
                 className="font-normal selected:font-semibold"
                 aria-label="Switch to desktop / large screen display"
                 id={100}
               >
                 Desktop
-              </Toggle>
+              </ToggleGroupItem>
             </ToggleGroup>
             <Separator orientation="vertical" className="mx-1 hidden h-4 rotate-12 sm:block" />
             {fullscreen && (

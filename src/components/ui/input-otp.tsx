@@ -22,7 +22,7 @@ const InputOTP = ({
       "flex items-center gap-2 has-disabled:opacity-50",
       containerClassName,
     )}
-    className={twMerge("mt-auto h-[2.5rem] bg-red-500 disabled:cursor-not-allowed", className)}
+    className={twMerge("mt-auto h-[2.5rem] bg-danger disabled:cursor-not-allowed", className)}
     {...props}
   />
 )

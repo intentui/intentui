@@ -42,11 +42,11 @@ const buttonStyles = tv({
     },
     size: {
       xs: [
-        "gap-x-1 px-2.5 py-1.5 text-sm sm:px-2 sm:py-1 sm:text-xs/4",
+        "gap-x-1 px-2.5 py-1.5 text-sm sm:px-2.5 sm:text-xs/4",
         "*:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
       ],
       sm: [
-        "gap-x-1.5 px-3 py-2 sm:px-2.5 sm:py-1.5 sm:text-sm/5",
+        "gap-x-1.5 px-3 py-1.5 sm:px-2.5 sm:text-sm/5",
         "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
       ],
       md: [
@@ -57,7 +57,7 @@ const buttonStyles = tv({
         "gap-x-2 px-4 py-2.5 sm:px-3.5 sm:py-2 sm:text-sm/6",
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
       ],
-      "sq-xs": "size-6",
+      "sq-xs": "size-7",
       "sq-sm": "size-8",
       "sq-md": "size-9",
       "sq-lg": "size-10",

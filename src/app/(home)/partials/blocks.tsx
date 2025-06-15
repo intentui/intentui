@@ -85,11 +85,13 @@ export function Blocks() {
                 onChange={setSelectedRadio}
               >
                 <h2 id="security-settings" className="sr-only">
-                  Security Settings
+                  Security settings
                 </h2>
-                <Radio value="highSecurity" description="Set security settings to high.">
-                  High Security
-                </Radio>
+                <Radio
+                  value="highSecurity"
+                  label="High security"
+                  description="Set security settings to high."
+                />
                 <CheckboxGroup
                   aria-labelledby="notifications-preferences"
                   defaultValue={["email"]}
@@ -99,17 +101,28 @@ export function Blocks() {
                   <h2 id="notifications-preferences" className="sr-only">
                     Notification Preferences
                   </h2>
-                  <Checkbox value="email" description="Receive updates via email." isReadOnly>
-                    Email Notifications
-                  </Checkbox>
-                  <Checkbox value="sms" description="Receive updates via SMS.">
-                    SMS Notifications
-                  </Checkbox>
+                  <Checkbox
+                    value="email"
+                    label="Email notifications"
+                    description="Receive updates via email."
+                    isReadOnly
+                  />
+                  <Checkbox
+                    value="sms"
+                    label="SMS Notifications"
+                    description="Receive updates via SMS."
+                  />
                 </CheckboxGroup>
-                <Radio value="allNotifications" description="Receive all notifications.">
-                  All Notifications
-                </Radio>
-                <Radio value="noNotifications" description="Do not receive any notifications." />
+                <Radio
+                  value="allNotifications"
+                  label="All Notifications"
+                  description="Receive all notifications."
+                />
+                <Radio
+                  value="noNotifications"
+                  label="No notification"
+                  description="Do not receive any notifications."
+                />
               </RadioGroup>
             </Card.Content>
           </Card>

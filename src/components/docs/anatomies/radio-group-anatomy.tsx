@@ -1,10 +1,17 @@
+import { Description, Label } from "@/components/ui/field"
 import { Radio, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupAnatomy() {
   return (
-    <RadioGroup label="Features">
-      <Radio value="fs">Font size: Small, Medium, Large</Radio>
-      <Radio value="ks">Keyboard shortcuts: Enabled, Disabled</Radio>
+    <RadioGroup aria-label="Radio">
+      <Radio value="x">
+        <Label />
+        <Description />
+      </Radio>
+      <Radio value="y">
+        <Label />
+        <Description />
+      </Radio>
     </RadioGroup>
   )
 }

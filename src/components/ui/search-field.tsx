@@ -34,7 +34,10 @@ const SearchField = ({
     <SearchFieldPrimitive
       aria-label={placeholder ?? props["aria-label"] ?? "Search..."}
       {...props}
-      className={composeTailwindRenderProps(className, "group/search-field flex flex-col gap-y-1")}
+      className={composeTailwindRenderProps(
+        className,
+        "group/search-field flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
+      )}
     >
       {!props.children ? (
         <>

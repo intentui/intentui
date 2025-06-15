@@ -79,7 +79,7 @@ const DateInput = ({ className, ...props }: Omit<DateInputProps, "children">) =>
     <DateInputPrimitive
       className={composeTailwindRenderProps(
         className,
-        "bg-transparent px-3.5 py-2.5 text-base text-fg placeholder-muted-fg outline-hidden sm:px-3 sm:py-1.5 sm:text-sm/6",
+        "bg-transparent px-3 py-2.5 text-base text-fg placeholder-muted-fg outline-hidden sm:px-2.5 sm:py-1.5 sm:text-sm/6",
       )}
       {...props}
     >

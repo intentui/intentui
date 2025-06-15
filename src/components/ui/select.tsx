@@ -119,7 +119,7 @@ const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
       />
       <IconChevronsY
         data-slot="chevron"
-        className="shrink-0 text-muted-fg group-open:text-fg group-disabled:opacity-50 forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
+        className="-mr-1 shrink-0 text-muted-fg group-open:text-fg group-disabled:opacity-50"
       />
     </Button>
   )

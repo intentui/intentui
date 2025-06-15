@@ -1,26 +1,13 @@
-import { Separator } from "@/components/ui/separator"
-import { Toggle, ToggleGroup } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
-export default function ToggleGroupSelectionModeDemo() {
+export default function ToggleGroupDisabledDemo() {
   return (
-    <div className="flex flex-col gap-y-6">
-      <ToggleGroup isDisabled>
-        <Toggle id="left">Left</Toggle>
-        <Toggle id="justify">Justify</Toggle>
-        <Toggle id="center">Center</Toggle>
-        <Toggle id="right">Right</Toggle>
-      </ToggleGroup>
-      <Separator />
-      <ToggleGroup>
-        <Toggle id="left">Left</Toggle>
-        <Toggle id="justify" isDisabled>
-          Justify
-        </Toggle>
-        <Toggle id="center" isDisabled>
-          Center
-        </Toggle>
-        <Toggle id="right">Right</Toggle>
-      </ToggleGroup>
-    </div>
+    <ToggleGroup isDisabled>
+      <ToggleGroupItem id="1d">1d</ToggleGroupItem>
+      <ToggleGroupItem id="3d">3d</ToggleGroupItem>
+      <ToggleGroupItem id="7d">7d</ToggleGroupItem>
+      <ToggleGroupItem id="2w">2w</ToggleGroupItem>
+      <ToggleGroupItem id="1m">1m</ToggleGroupItem>
+    </ToggleGroup>
   )
 }

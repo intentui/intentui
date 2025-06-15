@@ -11,7 +11,6 @@ import { LayoutGroup, motion } from "motion/react"
 import type { LinkProps } from "react-aria-components"
 import { Link } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
-import { tv } from "tailwind-variants"
 
 type NavbarOptions = {
   side?: "left" | "right"
@@ -104,27 +103,6 @@ const Navbar = ({
   )
 }
 
-const navStyles = tv({
-  base: [
-    "group peer hidden h-(--navbar-height) w-full items-center px-4 [--navbar-height:3.5rem] md:flex",
-    "[&>div]:mx-auto [&>div]:w-full [&>div]:max-w-[1680px] [&>div]:items-center md:[&>div]:flex",
-  ],
-  variants: {
-    isSticky: {
-      true: "sticky top-0 z-40",
-    },
-    intent: {
-      float:
-        "mx-auto w-full max-w-7xl rounded-xl border bg-navbar text-navbar-fg md:px-4 2xl:max-w-(--breakpoint-2xl)",
-      navbar: "border-b bg-navbar text-navbar-fg md:px-6",
-      inset: [
-        "mx-auto md:px-6",
-        "[&>div]:mx-auto [&>div]:w-full [&>div]:items-center md:[&>div]:flex 2xl:[&>div]:max-w-(--breakpoint-2xl)",
-      ],
-    },
-  },
-})
-
 interface NavbarNavProps extends React.ComponentProps<"div"> {
   intent?: "navbar" | "float" | "inset"
   isSticky?: boolean
@@ -157,7 +135,16 @@ const NavbarNav = ({ useDefaultResponsive = true, className, ref, ...props }: Na
     <div
       data-navbar-nav="true"
       ref={ref}
-      className={navStyles({ isSticky, intent, className })}
+      className={twMerge([
+        "group peer hidden h-(--navbar-height) w-full items-center px-4 [--navbar-height:3.5rem] md:flex",
+        "[&>div]:mx-auto [&>div]:w-full [&>div]:max-w-[1680px] [&>div]:items-center md:[&>div]:flex",
+        isSticky && "sticky top-0 z-40",
+        intent === "float" &&
+          "mx-auto w-full max-w-7xl rounded-xl border bg-navbar text-navbar-fg md:px-4 2xl:max-w-(--breakpoint-2xl)",
+        intent === "navbar" && "border-b bg-navbar text-navbar-fg md:px-6",
+        intent === "inset" &&
+          "mx-auto md:px-6 [&>div]:mx-auto [&>div]:w-full [&>div]:items-center md:[&>div]:flex 2xl:[&>div]:max-w-(--breakpoint-2xl)",
+      ])}
       {...props}
     >
       <div>{props.children}</div>
@@ -288,18 +275,6 @@ const NavbarCompact = ({ className, ref, ...props }: NavbarCompactProps) => {
   )
 }
 
-const insetStyles = tv({
-  base: "grow",
-  variants: {
-    intent: {
-      float: "",
-      inset:
-        "bg-bg md:rounded-lg md:shadow-xs md:ring-1 md:ring-fg/15 dark:bg-navbar md:dark:ring-border",
-      navbar: "",
-    },
-  },
-})
-
 const NavbarInset = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
   const { intent } = useNavbar()
   return (
@@ -312,7 +287,15 @@ const NavbarInset = ({ className, ref, ...props }: React.ComponentProps<"div">) 
         className,
       )}
     >
-      <div className={insetStyles({ intent, className })}>{props.children}</div>
+      <div
+        className={twJoin(
+          "grow",
+          intent === "inset" &&
+            "bg-bg md:rounded-lg md:shadow-xs md:ring-1 md:ring-fg/15 dark:bg-navbar md:dark:ring-border",
+        )}
+      >
+        {props.children}
+      </div>
     </main>
   )
 }

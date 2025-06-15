@@ -206,7 +206,7 @@ const CommandMenuItem = ({ className, ...props }: React.ComponentProps<typeof Me
     <Menu.Item
       {...props}
       textValue={textValue}
-      className={composeTailwindRenderProps(className, "gap-y-0.5 px-2 py-1.5")}
+      className={composeTailwindRenderProps(className, "gap-y-0.5 px-2 py-2 sm:py-1.5")}
     />
   )
 }

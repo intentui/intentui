@@ -19,19 +19,6 @@ import { Tooltip } from "@/components/ui/tooltip"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { twJoin, twMerge } from "tailwind-merge"
 
-const sliderStyles = tv({
-  base: "group relative flex touch-none select-none flex-col",
-  variants: {
-    orientation: {
-      horizontal: "w-full min-w-56 gap-y-2",
-      vertical: "h-full min-h-56 w-1.5 items-center gap-y-2",
-    },
-    isDisabled: {
-      true: "disabled:opacity-50",
-    },
-  },
-})
-
 interface SliderProps extends SliderPrimitiveProps {
   output?: "inline" | "tooltip" | "none"
   label?: string
@@ -104,8 +91,13 @@ const Slider = ({
   return (
     <SliderPrimitive
       orientation={orientation}
-      className={composeRenderProps(className, (className, renderProps) =>
-        sliderStyles({ ...renderProps, className }),
+      className={composeRenderProps(className, (className, { orientation }) =>
+        twMerge([
+          "group relative flex touch-none select-none flex-col disabled:opacity-50",
+          orientation === "horizontal" && "w-full min-w-56 gap-y-2",
+          orientation === "vertical" && "h-full min-h-56 w-1.5 items-center gap-y-2",
+          className,
+        ]),
       )}
       {...props}
     >

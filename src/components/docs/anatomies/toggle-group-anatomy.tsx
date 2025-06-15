@@ -1,9 +1,11 @@
-import { Toggle, ToggleGroup } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export default function ToggleGroupAnatomy() {
   return (
     <ToggleGroup>
-      <Toggle />
+      <ToggleGroupItem id="x" />
+      <ToggleGroupItem id="y" />
+      <ToggleGroupItem id="z" />
     </ToggleGroup>
   )
 }

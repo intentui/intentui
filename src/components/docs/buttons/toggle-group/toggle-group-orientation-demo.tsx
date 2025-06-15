@@ -1,4 +1,4 @@
-import { Toggle, ToggleGroup } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import {
   IconBell,
   IconBellFill,
@@ -12,30 +12,30 @@ export default function ToggleGroupOrientationDemo() {
   return (
     <div>
       <ToggleGroup orientation="vertical">
-        <Toggle>
+        <ToggleGroupItem id="dm">
           {({ isSelected }) => (
             <>
               {isSelected ? <IconMoonFill /> : <IconSun />}
               {isSelected ? "Dark" : "Light"} Mode
             </>
           )}
-        </Toggle>
-        <Toggle>
+        </ToggleGroupItem>
+        <ToggleGroupItem id="n">
           {({ isSelected }) => (
             <>
               {isSelected ? <IconBellFill /> : <IconBell />}
               Notifications {isSelected ? "On" : "Off"}
             </>
           )}
-        </Toggle>
-        <Toggle>
+        </ToggleGroupItem>
+        <ToggleGroupItem id="t">
           {({ isSelected }) => (
             <>
               {isSelected ? <IconTranslateFill /> : <IconTranslate />}
               Always Translate
             </>
           )}
-        </Toggle>
+        </ToggleGroupItem>
       </ToggleGroup>
     </div>
   )

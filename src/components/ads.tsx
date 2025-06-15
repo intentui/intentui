@@ -1,3 +1,5 @@
+"use client"
+
 import { Link } from "@/components/ui/link"
 import { IconBrandIntentui } from "@intentui/icons"
 

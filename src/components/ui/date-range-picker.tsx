@@ -37,12 +37,12 @@ const DateRangePicker = <T extends DateValue>({
       {...props}
       className={composeTailwindRenderProps(
         className,
-        "group/date-range-picker flex flex-col gap-y-1",
+        "group/date-range-picker flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
       )}
     >
       {label && <Label>{label}</Label>}
       <FieldGroup className="w-auto min-w-40">
-        <DateInput slot="start" />
+        <DateInput slot="start" className="pl-2" />
         <span
           aria-hidden="true"
           className="-mx-2 text-fg group-disabled:text-muted-fg forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"

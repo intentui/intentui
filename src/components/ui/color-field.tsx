@@ -1,22 +1,22 @@
 "use client"
 
-import type {
-  ColorFieldProps as ColorFieldPrimitiveProps,
-  ValidationResult,
-} from "react-aria-components"
+import type { ColorFieldProps as ColorFieldPrimitiveProps } from "react-aria-components"
 import { ColorField as ColorFieldPrimitive } from "react-aria-components"
 
 import { ColorPicker } from "@/components/ui/color-picker"
 import { ColorSwatch } from "@/components/ui/color-swatch"
-import { Description, FieldError, FieldGroup, Input, Label } from "@/components/ui/field"
+import {
+  Description,
+  FieldError,
+  FieldGroup,
+  type FieldProps,
+  Input,
+  Label,
+} from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { twJoin } from "tailwind-merge"
 
-interface ColorFieldProps extends ColorFieldPrimitiveProps {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
-  placeholder?: string
+interface ColorFieldProps extends ColorFieldPrimitiveProps, FieldProps {
   prefix?: React.ReactNode
   suffix?: React.ReactNode
   isLoading?: boolean
@@ -42,7 +42,7 @@ const ColorField = ({
       aria-label={props["aria-label"] ?? "Color field"}
       className={composeTailwindRenderProps(
         className,
-        "**:data-[slot=color-swatch]:-ml-0.5 group flex w-full flex-col gap-y-1",
+        "**:data-[slot=color-swatch]:-ml-0.5 group flex w-full flex-col gap-y-1 *:data-[slot=label]:font-medium",
       )}
     >
       {label && <Label>{label}</Label>}

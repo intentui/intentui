@@ -14,17 +14,13 @@ A toggle button group allows users to switch between multiple options, enabling 
 
 ## Installation
 
-<Installation options={{isComponent: true}} items={['toggle']}/>
-
-## Composed Components
-
-<Composed components={['toggle']}/>
+<Installation options={{isComponent: true}} items={['toggle-group']}/>
 
 ## Manual Installation
 
 <Installation options={{isManual: true}} items={['react-aria-components']}/>
 
-<SourceCode toShow='toggle'/>
+<SourceCode toShow='toggle-group'/>
 
 ## Anatomy
 
@@ -37,21 +33,17 @@ By default, the toggle button group is arranged horizontally. Use the `orientati
 <How toUse="buttons/toggle-group/toggle-group-orientation-demo" />
 
 ## Selection Mode
+By default, the toggle button group allows only a single selection. You can change this by setting the `selectionMode` prop to `"multiple"`. When in multiple selection mode, individual buttons will no longer have rounded corners.
 
-Modify the selection behavior using the `selectionMode` prop.
-
-<How toUse="buttons/toggle-group/toggle-group-selection-mode-demo" />
-
-## Intent
-
-Customize the look of the toggle button group with the `intent` prop.
-
-<How toUse="buttons/toggle-group/toggle-group-appearance-demo" />
-
+<How toUse="buttons/toggle-group/toggle-group-selection-demo" />
 
 ## Size
 By default, the toggle button group has a medium size. You can change the size by using the `size` prop.
-<How toUse="buttons/toggle-group/toggle-group-sizing-demo" />
+<How toUse="buttons/toggle-group/toggle-group-size-demo" />
+
+## Square size
+The size option also includes a square variant, which is useful when you only want to display an icon on the toggle button.
+<How toUse="buttons/toggle-group/toggle-group-square-size-demo" />
 
 ## Controlled
 You can control the state of the toggle button group by using the `selectedKeys` prop.

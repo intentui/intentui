@@ -44,7 +44,10 @@ const TextField = ({
     <TextFieldPrimitive
       type={inputType}
       {...props}
-      className={composeTailwindRenderProps(className, "group flex flex-col gap-y-1")}
+      className={composeTailwindRenderProps(
+        className,
+        "group flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
+      )}
     >
       {!props.children ? (
         <>
