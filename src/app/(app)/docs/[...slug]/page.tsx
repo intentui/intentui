@@ -3,11 +3,9 @@ import { Mdx } from "@/components/mdx"
 import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
 import { Badge } from "@/components/ui/badge"
-import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
 import { source } from "@/lib/source"
 import { title } from "@/lib/utils"
-import { IconBrandIntentui } from "@intentui/icons"
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { twJoin } from "tailwind-merge"
@@ -139,20 +137,6 @@ export default async function Page(props: DocPageProps) {
 
           <Toc className="mt-4 block sm:mt-8 xl:hidden" items={page.data.toc} />
           <Mdx code={page.data.body} />
-          <Link
-            className="not-prose my-6 flex rounded-lg border border-fg/10 bg-overlay p-2 transition duration-200 hover:border-fg/20"
-            href="https://blocks.intentui.com"
-            target="_blank"
-          >
-            <IconBrandIntentui className="mr-3 size-10 shrink-0" />
-            <div className="flex flex-col">
-              <strong className="font-medium text-fg">Get premium blocks</strong>
-              <span className="text-muted-fg text-sm">
-                Create stunning, professional-grade layouts that not only save time but also elevate
-                the quality of your projects.
-              </span>
-            </div>
-          </Link>
 
           <Pager className="pt-3" tree={source.pageTree} url={page.url} />
         </main>
