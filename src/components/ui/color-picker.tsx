@@ -43,7 +43,7 @@ const ColorPicker = ({
   ...props
 }: ColorPickerProps) => {
   return (
-    <div className={twMerge("flex flex-col items-start gap-y-1.5", className)}>
+    <div className={twMerge("flex flex-col items-start gap-y-1", className)}>
       <ColorPickerPrimitive {...props}>
         <Popover>
           <Button
@@ -51,11 +51,11 @@ const ColorPicker = ({
             size={label ? "md" : "sq-sm"}
             intent="plain"
             className={twJoin(
-              "*:data-[slot=color-swatch]:-mx-0.5 w-auto px-2.5",
+              "*:data-[slot=color-swatch]:-mx-0.5 w-auto px-2.5 *:data-[slot=color-swatch]:size-5",
               !label && "size-10",
             )}
           >
-            <ColorSwatch className="size-6" />
+            <ColorSwatch />
             {label && label}
           </Button>
           <PopoverContent
