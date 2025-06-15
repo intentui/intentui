@@ -41,7 +41,7 @@ export function Hero() {
                 intent: "outline",
                 className: "shadow-none",
               })}
-              href="/docs/components/buttons/button"
+              href="/components"
             >
               Components
             </Link>

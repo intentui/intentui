@@ -49,7 +49,7 @@ export function ResponsiveAside({
       <CommandPalette setOpen={setOpenCmd} openCmd={openCmd} />
       <nav
         className={twJoin(
-          "sticky top-0 z-30 flex animate-in items-center justify-between bg-bg px-4 py-2 transition-all duration-100 lg:hidden",
+          "sticky top-0 z-30 flex animate-in items-center justify-between bg-zinc-50/70 px-4 py-2 transition-all duration-100 lg:hidden dark:bg-zinc-950",
           isScrolled && "border-b shadow-xs",
         )}
       >
