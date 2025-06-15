@@ -22,10 +22,10 @@ import { tv } from "tailwind-variants"
 const dropdownItemStyles = tv({
   base: [
     "col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] not-has-[[slot=description]]:items-center has-data-[[slot=description]]:**:data-[slot=checked-icon]:mt-[1.5px] supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
-    "group relative cursor-default select-none rounded-lg px-[calc(var(--spacing)*2.3)] py-[calc(var(--spacing)*1.3)] forced-color:text-[Highlight] text-base text-fg outline-0 forced-color-adjust-none sm:text-sm/6 forced-colors:text-[LinkText]",
-    "**:data-[slot=avatar]:*:mr-2 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:mr-2 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
+    "group relative cursor-default select-none rounded-[calc(var(--radius-lg)-1px)] px-2 py-1.5 forced-color:text-[Highlight] text-base text-fg outline-0 forced-color-adjust-none sm:py-1 sm:text-sm/6 forced-colors:text-[LinkText]",
+    "**:data-[slot=avatar]:*:mr-1.5 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:mr-1.5 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
     "data-danger:**:data-[slot=icon]:text-danger/60 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg focus:data-danger:**:data-[slot=icon]:text-danger",
-    "*:data-[slot=icon]:mr-2",
+    "*:data-[slot=icon]:mr-1.5",
     "forced-colors:**:data-[slot=icon]:text-[CanvasText] forced-colors:group-focus:**:data-[slot=icon]:text-[Canvas] ",
     "[&>[slot=label]+[data-slot=icon]]:absolute [&>[slot=label]+[data-slot=icon]]:right-0",
   ],
@@ -51,7 +51,7 @@ const dropdownItemStyles = tv({
 const dropdownSectionStyles = tv({
   slots: {
     section: "col-span-full grid grid-cols-[auto_1fr]",
-    header: "col-span-full px-2.5 py-1 font-medium text-muted-fg text-sm sm:text-xs",
+    header: "col-span-full px-2 py-1 font-medium text-muted-fg text-sm sm:text-xs",
   },
 })
 
@@ -84,7 +84,7 @@ const DropdownItem = ({ className, ...props }: DropdownItemProps) => {
     >
       {composeRenderProps(props.children, (children, { isSelected }) => (
         <>
-          {isSelected && <IconCheck className="-mx-0.5 mr-2" data-slot="checked-icon" />}
+          {isSelected && <IconCheck className="-mx-1 mr-1.5" data-slot="checked-icon" />}
           {typeof children === "string" ? <DropdownLabel>{children}</DropdownLabel> : children}
         </>
       ))}
@@ -116,7 +116,7 @@ const DropdownDescription = ({ className, ref, ...props }: DropdownDescriptionPr
 const DropdownSeparator = ({ className, ...props }: SeparatorProps) => (
   <Separator
     orientation="horizontal"
-    className={twMerge("-mx-1 col-span-full my-1 h-px bg-border", className)}
+    className={twMerge("-mx-1 col-span-full my-1 h-px bg-fg/10", className)}
     {...props}
   />
 )
