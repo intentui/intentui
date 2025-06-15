@@ -18,7 +18,6 @@ import {
   IconBrandTailwindcss,
   IconBrandX,
   IconChevronDown,
-  IconChevronLgDown,
   IconColorPalette,
   IconColors,
   IconCube,
@@ -80,25 +79,7 @@ export function Navbar() {
                   <NavLink href="/colors">Colors</NavLink>
 
                   <NavLink href="/blocks">Blocks</NavLink>
-                  <Menu>
-                    <Menu.Trigger className="group flex cursor-default items-center gap-x-2 py-3 text-muted-fg text-sm tracking-tight outline-hidden focus-visible:text-fg">
-                      Premium
-                      <IconChevronLgDown className="size-3 duration-200 group-pressed:rotate-180" />
-                    </Menu.Trigger>
-                    <Menu.Content
-                      offset={4}
-                      className="sm:min-w-xs sm:max-w-min"
-                      placement="bottom"
-                      items={premium}
-                    >
-                      {(item) => (
-                        <Menu.Item href={item.href}>
-                          <Menu.Label>{item.label}</Menu.Label>
-                          <Menu.Description>{item.description}</Menu.Description>
-                        </Menu.Item>
-                      )}
-                    </Menu.Content>
-                  </Menu>
+                  <NavLink href="https://blocks.intentui.com">Premium Blocks</NavLink>
                 </div>
                 <div className="flex items-center gap-x-1">
                   <>

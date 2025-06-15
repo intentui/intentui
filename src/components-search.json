@@ -77,7 +77,7 @@
     "children": [
       {
         "slug": "/docs/dark-mode/next-js",
-        "title": "Next Js"
+        "title": "Next.js"
       },
       {
         "slug": "/docs/dark-mode/vite",
@@ -85,7 +85,7 @@
       },
       {
         "slug": "/docs/dark-mode/inertia-js",
-        "title": "Inertia Js"
+        "title": "Inertia.js"
       },
       {
         "slug": "/docs/dark-mode/remix",

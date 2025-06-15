@@ -1,5 +1,6 @@
 "use client"
 
+import { Link } from "@/components/ui/link"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { useScrollPosition } from "@/hooks/use-scroll-position"
 import { IconAlignmentLeft } from "@intentui/icons"
@@ -62,7 +63,7 @@ export function Toc({ className, items }: Props) {
               level={2}
               className="mb-6 flex items-center gap-x-2 font-medium text-base text-fg leading-7 lg:text-sm"
             >
-              <IconAlignmentLeft /> On this page
+              <IconAlignmentLeft className="text-muted-fg" /> On this page
             </Heading>
             {items.length > 0 && (
               <ul className="flex flex-col gap-y-2.5">
@@ -76,6 +77,17 @@ export function Toc({ className, items }: Props) {
           </>
         </Suspense>
       </nav>
+
+      <Link
+        target="_blank"
+        href="https://irsyad.co"
+        className="relative z-40 mt-6 flex w-56 flex-col gap-y-1 rounded-xl border border-dashed p-4 text-muted-fg"
+      >
+        <span className="font-semibold text-fg text-sm/6">Start fast, skip setup</span>
+        <div className="block text-pretty text-xs/5">
+          Templates powered by Intent UI, ready to deploy.
+        </div>
+      </Link>
     </aside>
   )
 }

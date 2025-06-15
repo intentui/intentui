@@ -170,12 +170,11 @@ const ChoiceboxLabel = ({ className, ref, ...props }: ChoiceboxLabelProps) => {
 type ChoiceboxDescriptionProps = ChoiceboxLabelProps
 
 const ChoiceboxDescription = ({ className, ref, ...props }: ChoiceboxDescriptionProps) => {
-  const { columns } = useChoiceboxContext()
   return (
     <Text
       slot="description"
       ref={ref}
-      className={twMerge("col-start-2 text-muted-fg", className)}
+      className={twMerge("col-start-2 text-pretty pr-8 text-muted-fg", className)}
       {...props}
     />
   )

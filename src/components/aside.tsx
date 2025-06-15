@@ -1,6 +1,7 @@
 "use client"
 
 import menus from "@/components-search.json"
+import { IconBookOpen, IconCircleHalf, IconHighlight, IconPackage } from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
 import {
@@ -42,11 +43,14 @@ const sortedGsChildren =
 export function Aside() {
   return (
     <ListBox
-      className="flex flex-col gap-y-(--gap) px-4 [--gap:--spacing(6)]"
+      className="flex flex-col gap-y-(--gap) pr-4 pl-6 [--gap:--spacing(6)]"
       aria-label="Documentation sidebar"
     >
       <ListBoxSection>
-        <AsideHeader>{prologue?.section}</AsideHeader>
+        <AsideHeader>
+          {" "}
+          <IconHighlight /> {prologue?.section}
+        </AsideHeader>
         {prologue?.children?.map((item) => (
           <AsideLink key={item.slug} href={item.slug}>
             {item.title}
@@ -54,7 +58,9 @@ export function Aside() {
         ))}
       </ListBoxSection>
       <ListBoxSection>
-        <AsideHeader>{gs?.section}</AsideHeader>
+        <AsideHeader>
+          <IconBookOpen /> {gs?.section}
+        </AsideHeader>
         {sortedGsChildren.map((item) => (
           <AsideLink key={item.slug} href={item.slug}>
             {item.title}
@@ -62,7 +68,9 @@ export function Aside() {
         ))}
       </ListBoxSection>
       <ListBoxSection>
-        <AsideHeader>{dm?.section}</AsideHeader>
+        <AsideHeader>
+          <IconCircleHalf /> {dm?.section}
+        </AsideHeader>
         {dm?.children?.map((item) => (
           <AsideLink key={item.slug} href={item.slug}>
             {item.title}
@@ -70,7 +78,9 @@ export function Aside() {
         ))}
       </ListBoxSection>
       <ListBoxSection className="flex flex-col gap-y-(--gap)">
-        <AsideHeader className="-mb-6">{components?.section}</AsideHeader>
+        <AsideHeader className="-mb-4">
+          <IconPackage /> {components?.section}
+        </AsideHeader>
         {components?.children?.map((item) => (
           <ListBoxSection key={item.subsection}>
             <AsideHeader>{item?.subsection}</AsideHeader>
@@ -121,5 +131,17 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
 }
 
 function AsideHeader({ className, ...props }: React.ComponentProps<typeof Header>) {
-  return <Header className={twMerge("block font-medium text-xs/6", className)} {...props} />
+  return (
+    <Header
+      className={twMerge(
+        [
+          "relative block font-medium text-xs/6",
+          "*:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-fg",
+          "*:data-[slot=icon]:-left-6 *:data-[slot=icon]:-translate-y-1/2 *:data-[slot=icon]:absolute *:data-[slot=icon]:top-1/2",
+        ],
+        className,
+      )}
+      {...props}
+    />
+  )
 }

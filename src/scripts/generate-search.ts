@@ -43,7 +43,14 @@ async function walk(dir: string, basePath: string): Promise<string[]> {
   return files
 }
 
+const specialCases: Record<string, string> = {
+  cli: "CLI",
+  "next-js": "Next.js",
+  "inertia-js": "Inertia.js",
+}
+
 function titleize(name: string): string {
+  if (specialCases[name]) return specialCases[name]
   return name
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
@@ -62,7 +69,7 @@ async function generate() {
     const section = String(parts[0]).toLowerCase()
     const name = path.basename(file, ".mdx")
     const slug = `/docs/${file.replace(/\.mdx$/, "").replace(/\\/g, "/")}`
-    const title = name === "cli" ? "CLI" : titleize(name)
+    const title = titleize(name)
 
     if (section === "components") {
       const subsection = parts[1]

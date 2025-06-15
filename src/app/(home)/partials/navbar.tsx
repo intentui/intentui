@@ -21,7 +21,6 @@ import {
   IconPackage,
   IconSearch,
   IconWindow,
-  IconWindowVisit,
 } from "@intentui/icons"
 import { useState } from "react"
 import { Button } from "react-aria-components"
@@ -133,12 +132,6 @@ export const menus = [
     href: "https://blocks.intentui.com",
     label: "Premium blocks",
     icon: IconBrandIntentui,
-    external: true,
-  },
-  {
-    href: "https://blocks.intentui.com/templates",
-    label: "Templates",
-    icon: IconWindowVisit,
     external: true,
   },
 ]
