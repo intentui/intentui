@@ -61,19 +61,23 @@ interface DropdownSectionProps<T> extends SectionProps<T> {
   title?: string
 }
 
-const DropdownSection = <T extends object>({ className, ...props }: DropdownSectionProps<T>) => {
+const DropdownSection = <T extends object>({
+  className,
+  children,
+  ...props
+}: DropdownSectionProps<T>) => {
   return (
     <ListBoxSection className={section({ className })}>
       {"title" in props && <Header className={header()}>{props.title}</Header>}
-      <Collection items={props.items}>{props.children}</Collection>
+      <Collection items={props.items}>{children}</Collection>
     </ListBoxSection>
   )
 }
 
 type DropdownItemProps = ListBoxItemProps
 
-const DropdownItem = ({ className, ...props }: DropdownItemProps) => {
-  const textValue = typeof props.children === "string" ? props.children : undefined
+const DropdownItem = ({ className, children, ...props }: DropdownItemProps) => {
+  const textValue = typeof children === "string" ? children : undefined
   return (
     <ListBoxItemPrimitive
       textValue={textValue}
@@ -82,7 +86,7 @@ const DropdownItem = ({ className, ...props }: DropdownItemProps) => {
       )}
       {...props}
     >
-      {composeRenderProps(props.children, (children, { isSelected }) => (
+      {composeRenderProps(children, (children, { isSelected }) => (
         <>
           {isSelected && <IconCheck className="-mx-1 mr-1.5" data-slot="checked-icon" />}
           {typeof children === "string" ? <DropdownLabel>{children}</DropdownLabel> : children}

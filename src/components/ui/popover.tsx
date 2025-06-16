@@ -18,12 +18,7 @@ import {
 } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
-import type {
-  DialogBodyProps,
-  DialogFooterProps,
-  DialogHeaderProps,
-  DialogTitleProps,
-} from "@/components/ui/dialog"
+import type { DialogBodyProps, DialogFooterProps, DialogHeaderProps } from "@/components/ui/dialog"
 import {
   Dialog,
   DialogBody,
@@ -42,12 +37,7 @@ const Popover = (props: PopoverProps) => {
   return <DialogTriggerPrimitive {...props} />
 }
 
-const PopoverTitle = ({ level = 2, className, ...props }: DialogTitleProps) => (
-  <DialogTitle
-    className={twMerge("sm:leading-none", level === 2 && "sm:text-lg", className)}
-    {...props}
-  />
-)
+const PopoverTitle = DialogTitle
 
 const PopoverHeader = ({ className, ...props }: DialogHeaderProps) => (
   <DialogHeader className={twMerge("sm:p-4", className)} {...props} />
@@ -125,7 +115,7 @@ interface PopoverContentProps
 const PopoverContent = ({
   respectScreen = true,
   children,
-  showArrow = true,
+  showArrow = false,
   className,
   ...props
 }: PopoverContentProps) => {

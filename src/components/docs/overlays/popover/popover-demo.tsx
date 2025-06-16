@@ -6,11 +6,13 @@ import { Popover } from "@/components/ui/popover"
 export default function PopoverDemo() {
   return (
     <Popover>
-      <Button intent="outline">Forgot Password</Button>
+      <Button intent="outline">What’s this?</Button>
       <Popover.Content className="sm:max-w-72">
         <Popover.Header>
-          <Popover.Title>Email</Popover.Title>
-          <Popover.Description>We'll send you an email to log in.</Popover.Description>
+          <Popover.Title>Invite link</Popover.Title>
+          <Popover.Description>
+            Anyone with this link can join your team without approval.
+          </Popover.Description>
         </Popover.Header>
       </Popover.Content>
     </Popover>

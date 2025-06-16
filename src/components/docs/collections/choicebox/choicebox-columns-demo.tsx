@@ -12,7 +12,7 @@ export default function ChoiceboxColumnsDemo() {
         selectionMode="multiple"
         items={prices}
       >
-        {(item) => <Choicebox.Item {...item} />}
+        {(item) => <Choicebox.Item textValue={item.label} {...item} />}
       </Choicebox>
     </div>
   )

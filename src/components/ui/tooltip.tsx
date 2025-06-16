@@ -85,9 +85,7 @@ const TooltipContent = ({
   )
 }
 
-const TooltipTrigger = Button
-
-Tooltip.Trigger = TooltipTrigger
+Tooltip.Trigger = Button
 Tooltip.Content = TooltipContent
 
 export type { TooltipProps, TooltipContentProps }

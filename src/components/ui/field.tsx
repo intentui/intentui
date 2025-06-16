@@ -44,20 +44,11 @@ const Label = ({ className, ...props }: LabelProps) => {
 }
 
 interface DescriptionProps extends TextProps {
-  isWarning?: boolean
   ref?: React.RefObject<HTMLElement>
 }
 
 const Description = ({ ref, className, ...props }: DescriptionProps) => {
-  const isWarning = props.isWarning ?? false
-  return (
-    <Text
-      ref={ref}
-      {...props}
-      slot="description"
-      className={description({ className: isWarning ? "text-warning" : className })}
-    />
-  )
+  return <Text ref={ref} {...props} slot="description" className={description({ className })} />
 }
 
 interface FieldErrorProps extends FieldErrorPrimitiveProps {

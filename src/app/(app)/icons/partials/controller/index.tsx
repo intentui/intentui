@@ -32,7 +32,7 @@ export function Controller({ searchParams }: SearchParamsProps) {
       <div className="relative">
         <div className="relative z-20 mb-6 flex flex-col items-center justify-between gap-2 sm:mb-12 sm:flex-row">
           <InstallIcon />
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <Search />
             <Button
               aria-label={`Change filter to ${isSelected === "solid" ? "regular" : "solid"}`}

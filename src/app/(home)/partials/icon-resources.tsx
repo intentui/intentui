@@ -2,6 +2,7 @@
 import { InstallIcon } from "@/app/(app)/icons/partials/controller/install-icon"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
+import { Heading } from "@/components/ui/heading"
 import { Link } from "@/components/ui/link"
 import {
   IconArrowRight,
@@ -17,7 +18,6 @@ import {
   IconCubeFill,
   IconDeviceDesktop2,
   IconDeviceDesktop2Fill,
-  IconDuplicateFill,
   IconFileText,
   IconFileTextFill,
   IconFolderCloud,
@@ -80,21 +80,16 @@ export function IconResources() {
     return () => clearTimeout(timer)
   }, [isCopied])
   return (
-    <div className="border-y py-8 sm:py-16">
+    <div className="border-t py-8 sm:py-16">
       <PageContainer>
-        <div className="grid items-end gap-6 md:grid-cols-2 md:gap-10">
+        <div className="grid items-start gap-6 md:grid-cols-2 md:gap-10">
           <div className="">
-            <div className="grid size-10 place-content-center rounded-xl bg-secondary/50 ring-1 ring-fg/20 group-hover:bg-secondary">
-              <IconDuplicateFill className="size-5" />
-            </div>
-            <h2 className="mt-4 max-w-md font-semibold text-3xl tracking-tight md:text-2xl">
-              Empower your design with Intent Icons
-            </h2>
-            <p className="mt-3 mb-6 text-pretty text-muted-fg leading-relaxed lg:text-lg">
+            <Heading level={3}>Intent UI Icons</Heading>
+            <p className="mt-3 mb-6 text-pretty text-muted-fg lg:text-sm/6">
               Intent Icons is a powerful open-source SVG icon library with over{" "}
               <strong className="text-fg">1,191 symbols</strong>, and more added with every release.
               Designed to seamlessly integrate into any project, they work perfectly whether or not
-              you use <strong className="text-fg">Intent UI</strong> components.
+              you use Intent UI components.
             </p>
             <InstallIcon />
           </div>
@@ -166,7 +161,7 @@ export function IconResources() {
               </div>
             </div>
             <div className="mt-4 flex justify-end">
-              <Link className={buttonStyles({ intent: "outline" })} href="/icons">
+              <Link className={buttonStyles({ intent: "outline", isCircle: true })} href="/icons">
                 View all icons <IconArrowRight />
               </Link>
             </div>

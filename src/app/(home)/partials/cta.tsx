@@ -1,34 +1,38 @@
 "use client"
 
-import { siteConfig } from "@/config/site"
-import { IconBrandGithub } from "@intentui/icons"
-
 import { PageContainer } from "@/components/page-container"
-import { buttonStyles } from "@/components/ui/button"
-import { Heading } from "@/components/ui/heading"
-import { Link } from "@/components/ui/link"
+import { CardHeader } from "@/components/ui/card"
+import { Choicebox } from "@/components/ui/choicebox"
+
 export function Cta() {
   return (
-    <div className="border-t bg-muted/40 py-8 lg:py-16">
+    <div className="py-6 sm:py-12">
       <PageContainer>
-        <div className="mx-auto max-w-md text-center">
-          <Heading className="text-2xl sm:text-3xl" level={3}>
-            Intent is Open Source
-          </Heading>
-          <p className="mt-2 mb-4 text-base text-muted-fg lg:text-lg">
-            Our code's chillin' on GitHub - dive in, peep it, or drop some hot commits if you're
-            feelin' it!
-          </p>
-
-          <Link
-            target="_blank"
-            href={siteConfig.repo}
-            className={buttonStyles({ size: "lg", intent: "outline" })}
-          >
-            <IconBrandGithub />
-            GitHub
-          </Link>
-        </div>
+        <CardHeader
+          className="mb-6 max-w-lg"
+          title="Ready to get started?"
+          description="Explore the core essentials to help you install, build, and start customizing your project with Intent UI in just a few steps."
+        />
+        <Choicebox aria-label="Get started" selectionMode="single" gap={6} columns={3}>
+          <Choicebox.Item href="/docs/getting-started/installation" textValue="install">
+            <Choicebox.Label>Setup</Choicebox.Label>
+            <Choicebox.Description>
+              Follow a simple step-by-step guide to install and start building with Intent UI.
+            </Choicebox.Description>
+          </Choicebox.Item>
+          <Choicebox.Item href="/components" textValue="components">
+            <Choicebox.Label>View components</Choicebox.Label>
+            <Choicebox.Description>
+              Browse all available UI components with detailed examples and usage guidance.
+            </Choicebox.Description>
+          </Choicebox.Item>
+          <Choicebox.Item href="/themes" textValue="themes">
+            <Choicebox.Label>Themes</Choicebox.Label>
+            <Choicebox.Description>
+              Customize the entire look and feel using built-in themes and styling options.
+            </Choicebox.Description>
+          </Choicebox.Item>
+        </Choicebox>
       </PageContainer>
     </div>
   )

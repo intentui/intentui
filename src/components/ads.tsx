@@ -73,7 +73,7 @@ function AdCard({ href, title, description, domain, icon }: AdCardProps) {
     <Link
       target="_blank"
       href={href}
-      className="relative z-40 mt-6 flex w-56 flex-col gap-y-1 rounded-xl border border-dashed p-4 text-muted-fg **:[svg]:size-3.5 **:[svg]:shrink-0"
+      className="relative z-40 mt-6 flex w-56 flex-col gap-y-1 rounded-xl border border-fg/10 border-dashed bg-secondary/30 p-4 text-muted-fg hover:border-fg/15 hover:bg-secondary/20 **:[svg]:size-3.5 **:[svg]:shrink-0"
     >
       <span className="font-semibold text-fg text-sm/5">{title}</span>
       <div className="block text-pretty text-xs/5">{description}</div>

@@ -47,10 +47,7 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
   return (
     <CheckboxPrimitive
       {...props}
-      className={composeTailwindRenderProps(
-        className,
-        "group flex items-center gap-2 text-sm transition disabled:opacity-50",
-      )}
+      className={composeTailwindRenderProps(className, "group block disabled:opacity-50")}
     >
       {composeRenderProps(
         children,

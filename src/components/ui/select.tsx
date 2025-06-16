@@ -101,7 +101,7 @@ const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
     <Button
       className={composeRenderProps(className, (className, { isDisabled, isFocused }) =>
         twMerge([
-          "relative isolate inline-flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input px-3.5 py-2.5 text-start text-fg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] outline-hidden transition sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6 dark:shadow-none",
+          "relative isolate flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input px-3.5 py-2.5 text-start text-fg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] outline-hidden transition sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6 dark:shadow-none",
           " **:data-[slot=icon]:-mx-0.5 **:data-[slot=avatar]:-mx-0.5 **:data-[slot=avatar]:**:-mx-0.5 **:data-[slot=avatar]:**:mr-2 **:data-[slot=avatar]:mr-2 **:data-[slot=icon]:mr-2 **:data-[slot=icon]:size-4",
           "group-open:border-ring/70 group-open:ring-3 group-open:ring-ring/20",
           "group-disabled:opacity-50 forced-colors:group-disabled:border-[GrayText] forced-colors:group-disabled:text-[GrayText]",
@@ -119,7 +119,7 @@ const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
       />
       <IconChevronsY
         data-slot="chevron"
-        className="-mr-1 shrink-0 text-muted-fg group-open:text-fg group-disabled:opacity-50"
+        className="shrink-0 text-muted-fg group-open:text-fg group-disabled:opacity-50"
       />
     </Button>
   )

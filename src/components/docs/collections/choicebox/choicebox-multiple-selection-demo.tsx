@@ -2,10 +2,10 @@
 
 import { Choicebox } from "@/components/ui/choicebox"
 
-export default function ChoiceboxSingleSelectionDemo() {
+export default function ChoiceboxMultipleSelectionDemo() {
   return (
     <Choicebox aria-label="Select packages" selectionMode="single" items={packages}>
-      {(item) => <Choicebox.Item {...item} />}
+      {(item) => <Choicebox.Item textValue={item.label} {...item} />}
     </Choicebox>
   )
 }

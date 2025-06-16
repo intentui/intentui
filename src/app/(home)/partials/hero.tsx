@@ -4,12 +4,13 @@ import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
+import { IconBookOpen, IconPackage } from "@intentui/icons"
 import { Header } from "react-aria-components"
 
 export function Hero() {
   return (
     <>
-      <div className="-mt-20 bg-gradient-to-b from-blue-50 to-bg pt-20 pb-8 lg:pt-40 lg:pb-16 dark:from-muted">
+      <div className="-mt-20 bg-gradient-to-b from-blue-50 to-bg pt-20 pb-8 lg:pt-40 lg:pb-16 dark:from-muted dark:to-zinc-950">
         <PageContainer>
           <Header className="text-left">
             <h1 className="mt-4 mb-4 max-w-6xl pb-1 font-semibold text-3xl text-fg tracking-tight lg:mb-6 lg:text-6xl">
@@ -33,6 +34,7 @@ export function Hero() {
               })}
               href="/docs/getting-started/installation"
             >
+              <IconBookOpen />
               Get started
             </Link>
             <Link
@@ -43,6 +45,7 @@ export function Hero() {
               })}
               href="/components"
             >
+              <IconPackage />
               Components
             </Link>
           </div>

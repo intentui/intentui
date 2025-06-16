@@ -7,7 +7,7 @@ import { tv } from "tailwind-variants"
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { createContext, use } from "react"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twMerge } from "tailwind-merge"
 
 const choiceboxStyles = tv({
   base: "grid",
@@ -55,7 +55,7 @@ const Choicebox = <T extends object>({
   columns = 1,
   gap = 0,
   className,
-  selectionMode = "multiple",
+  selectionMode = "single",
   ...props
 }: ChoiceboxProps<T>) => {
   return (
@@ -76,24 +76,23 @@ const Choicebox = <T extends object>({
 
 const choiceboxItemStyles = tv({
   base: [
-    "group/choicebox-item relative bg-bg text-sm [--choicebox-fg:var(--color-primary)] [--choicebox:color-mix(in_oklab,var(--color-primary)_4%,white_96%)]",
+    "group outline-hidden [--choicebox-fg:var(--color-primary)] [--choicebox:color-mix(in_oklab,var(--color-primary)_4%,white_96%)]",
     "[--choicebox-selected-hovered:color-mix(in_oklab,var(--color-primary)_15%,white_85%)]",
     "dark:[--choicebox-selected-hovered:color-mix(in_oklab,var(--color-primary)_25%,black_75%)]",
     "dark:[--choicebox-fg:color-mix(in_oklab,var(--color-primary)_45%,white_55%)] dark:[--choicebox:color-mix(in_oklab,var(--color-primary)_20%,black_70%)]",
     "inset-ring inset-ring-border cursor-default rounded-lg p-4 **:data-[slot=label]:font-medium",
-    "**:data-[slot=avatar]:*:mr-2 **:data-[slot=avatar]:*:size-5 **:data-[slot=avatar]:size-5 **:data-[slot=avatar]:shrink-0",
-    "**:data-[slot=icon]:mr-2 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
-    "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
+    " **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-5 **:data-[slot=avatar]:shrink-0",
+    "**:data-[slot=icon]:mt-[--spacing(0.7)] **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0",
+    "grid grid-cols-[1fr_auto] content-start items-start gap-x-4 gap-y-1 has-data-[slot=icon]:grid-cols-[auto_1fr_auto]",
+    "has-[[slot=description]]:**:data-[slot=label]:font-medium",
   ],
   variants: {
-    isFocused: { true: "outline-hidden ring-3 ring-ring/20 invalid:ring-danger/20" },
-    isFocusVisible: { true: "outline-hidden ring-3 ring-ring/20" },
+    isFocused: { true: "inset-ring-ring/70 ring-3 ring-ring/20 invalid:ring-danger/20" },
     isInvalid: { true: "ring-3 ring-danger/20" },
-
     isOneColumn: {
       true: "col-span-full",
     },
-    init: {
+    isHocuset: {
       true: [
         "bg-(--choicebox) text-(--choicebox-fg)",
         "inset-ring-ring/70 z-20 hover:bg-(--choicebox-selected-hovered)",
@@ -112,41 +111,59 @@ interface ChoiceboxItemProps extends GridListItemProps, VariantProps<typeof choi
   description?: string
 }
 
-const ChoiceboxItem = ({ className, children, ...props }: ChoiceboxItemProps) => {
-  const textValue = props.textValue || (typeof children === "string" ? children : undefined)
+const ChoiceboxItem = ({
+  className,
+  label,
+  description,
+  children,
+  ...props
+}: ChoiceboxItemProps) => {
+  const textValue = typeof children === "string" ? children : undefined
   const { columns } = useChoiceboxContext()
   return (
     <GridListItem
       textValue={textValue}
       data-slot="choicebox-item"
       {...props}
-      className={composeRenderProps(className, (className, renderProps) =>
-        choiceboxItemStyles({
-          ...renderProps,
-          isOneColumn: columns === 1,
-          init: renderProps.isSelected || renderProps.isHovered || renderProps.isFocusVisible,
-          className,
-        }),
+      className={composeRenderProps(
+        className,
+        (className, { isHovered, isFocusVisible, isSelected, ...renderProps }) =>
+          choiceboxItemStyles({
+            ...renderProps,
+            isOneColumn: columns === 1,
+            isHocuset: isSelected || isHovered || isFocusVisible,
+            className,
+          }),
       )}
     >
-      {(values) => (
-        <div
-          className={twJoin(
-            "col-span-full grid",
-            columns === 1 ? "grid-cols-subgrid" : "grid-cols-[auto_1fr]",
-          )}
-        >
-          {props.label && <ChoiceboxLabel>{props.label}</ChoiceboxLabel>}
-          {props.description && <ChoiceboxDescription>{props.description}</ChoiceboxDescription>}
-          {typeof children === "function" ? children(values) : children}
-          {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <Checkbox
-              className="group -translate-y-1/2 absolute top-1/2 right-2 grid"
-              slot="selection"
-            />
-          )}
-        </div>
-      )}
+      {composeRenderProps(children, (children, { selectionMode }) => {
+        const isStringChild = typeof children === "string"
+        const hasCustomChildren = typeof children !== "undefined"
+
+        const content = hasCustomChildren ? (
+          isStringChild ? (
+            <ChoiceboxLabel>{children}</ChoiceboxLabel>
+          ) : (
+            children
+          )
+        ) : (
+          <>
+            {label && <ChoiceboxLabel>{label}</ChoiceboxLabel>}
+            {description && <ChoiceboxDescription>{description}</ChoiceboxDescription>}
+          </>
+        )
+        return (
+          <>
+            {content}
+            {selectionMode === "multiple" && (
+              <Checkbox
+                className="col-start-2 self-start group-has-data-[slot=icon]:col-start-3 group-hover:not-group-selected:**:data-[slot=indicator]:bg-primary/15 sm:mt-0.5"
+                slot="selection"
+              />
+            )}
+          </>
+        )
+      })}
     </GridListItem>
   )
 }
@@ -161,7 +178,9 @@ const ChoiceboxLabel = ({ className, ref, ...props }: ChoiceboxLabelProps) => {
       data-slot="label"
       ref={ref}
       className={twMerge(
-        "col-start-2 group-has-data-[slot=icon]/choicebox-item:text-sm/3",
+        "select-none text-base/6 text-fg group-disabled:opacity-50 sm:text-sm/6",
+        "col-start-1 row-start-1",
+        "group-has-data-[slot=icon]:col-start-2",
         className,
       )}
       {...props}
@@ -176,7 +195,13 @@ const ChoiceboxDescription = ({ className, ref, ...props }: ChoiceboxDescription
     <Text
       slot="description"
       ref={ref}
-      className={twMerge("col-start-2 text-pretty pr-8 text-muted-fg", className)}
+      className={twMerge(
+        "col-start-1 row-start-2",
+        "group-has-data-[slot=icon]:col-start-2",
+        "text-base/6 text-muted-fg sm:text-sm/6",
+        "group-disabled:opacity-50",
+        className,
+      )}
       {...props}
     />
   )

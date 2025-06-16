@@ -17,7 +17,7 @@ export default function ChoiceboxControlledDemo() {
         onSelectionChange={setSelectedKeys}
         items={packages}
       >
-        {(item) => <Choicebox.Item {...item} />}
+        {(item) => <Choicebox.Item textValue={item.label} {...item} />}
       </Choicebox>
 
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">
