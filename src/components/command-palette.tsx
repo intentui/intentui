@@ -2,6 +2,7 @@
 import results from "@/components-search.json"
 import { ColorSwatch } from "@/components/ui/color-swatch"
 import { CommandMenu } from "@/components/ui/command-menu"
+import { useCopy } from "@/hooks/use-copy"
 import colors from "@/json/colors.json"
 import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
 import {
@@ -15,6 +16,8 @@ import {
 import { formatHex, parse } from "culori"
 import { useRouter } from "next/navigation"
 import { useMemo, useState } from "react"
+import { twJoin } from "tailwind-merge"
+import { useDebounce } from "use-debounce"
 
 const docs = [results[0], results[1], results[2]] as Grouped[]
 const components = results[3] as any
@@ -34,7 +37,9 @@ function isComponentArray(
 export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
   const router = useRouter()
   const [input, setInput] = useState("")
-  const inputLower = input.trim().toLowerCase()
+  const [debouncedInput] = useDebounce(input, 300)
+  const inputLower = debouncedInput.trim().toLowerCase()
+  const isLoading = input.length >= 2 && input !== debouncedInput
 
   const filteredDocs = useMemo(() => {
     if (!inputLower) return []
@@ -102,6 +107,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
         onOpenChange={setOpen}
         inputValue={input}
         onInputChange={setInput}
+        isPending={isLoading}
       >
         <CommandMenu.Search placeholder="Search components..." />
         <CommandMenu.List>
@@ -180,27 +186,66 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
               {items.map(([shade, value]) => {
                 const label = `${colorName}-${shade}`
                 return (
-                  <CommandMenu.Item key={label} textValue={label}>
-                    <ColorSwatch
-                      className="mt-1"
-                      color={formatHex(parse(value))}
-                      colorName={colorName}
-                      data-slot="icon"
-                    />
-                    <CommandMenu.Label>{label}</CommandMenu.Label>
-                    <CommandMenu.Description className="font-mono text-xs tracking-tight">
-                      {value}
-                    </CommandMenu.Description>
-                  </CommandMenu.Item>
+                  <ColorItem
+                    key={label}
+                    label={label}
+                    value={value}
+                    textValue={`${colorName} ${shade} ${value}`}
+                  />
                 )
               })}
             </CommandMenu.Section>
           ))}
         </CommandMenu.List>
         <CommandMenu.Footer className="text-xs">
-          Use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate, <kbd>↵</kbd> to select.
+          Use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate, <kbd>↵</kbd> to{" "}
+          {filteredColors.length > 0 && filteredDocs.length === 0 && filteredComponents.length === 0
+            ? "copy"
+            : "select"}
+          .
         </CommandMenu.Footer>
       </CommandMenu>
     </>
+  )
+}
+
+interface ColorItemProps {
+  label: string
+  value: string
+  colorName?: string
+  textValue?: string
+}
+
+function ColorItem({ label, value, colorName = label, textValue }: ColorItemProps) {
+  const { copied, copy } = useCopy()
+  return (
+    <CommandMenu.Item onAction={() => copy(value)} textValue={textValue}>
+      <ColorSwatch
+        className="mt-1"
+        color={formatHex(parse(value))}
+        colorName={colorName}
+        data-slot="icon"
+      />
+      <CommandMenu.Label>{label}</CommandMenu.Label>
+      <CommandMenu.Description className="text-xs tracking-tight">
+        {/*{copied ? "Copied" : value}*/}
+        <span
+          className={twJoin(
+            "absolute inset-y-0 right-2 left-0 self-center justify-self-end font-mono focus:transition focus:duration-300",
+            copied ? "-translate-y-1.5 opacity-0" : "translate-y-0 opacity-100",
+          )}
+        >
+          {value}
+        </span>
+        <span
+          className={twJoin(
+            "absolute inset-y-0 right-2 left-0 gap-x-1 self-center justify-self-end transition duration-300",
+            copied ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
+          )}
+        >
+          Copied
+        </span>
+      </CommandMenu.Description>
+    </CommandMenu.Item>
   )
 }
