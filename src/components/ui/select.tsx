@@ -112,7 +112,7 @@ const SelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
         ]),
       )}
     >
-      {props.prefix && <span className="-mr-1">{props.prefix}</span>}
+      {props.prefix && <span className="text-muted-fg">{props.prefix}</span>}
       <SelectValue
         data-slot="select-value"
         className="grid flex-1 grid-cols-[auto_1fr] items-center data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden"
