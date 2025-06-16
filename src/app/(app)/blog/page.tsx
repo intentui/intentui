@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
+import { PageContainer } from "@/components/page-container"
 import { Avatar } from "@/components/ui/avatar"
 import { Card } from "@/components/ui/card"
-import { Container } from "@/components/ui/container"
 import dayjs from "dayjs"
 import Link from "next/link"
 import { blog } from "#site/content"
@@ -13,7 +13,7 @@ export default function Page() {
         Bl
         <span className="text-muted-fg">og</span>
       </Header>
-      <Container className="py-4 sm:py-16">
+      <PageContainer className="py-6 sm:pb-12">
         <div className="grid gap-4 lg:grid-cols-3">
           {blog
             .sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime())
@@ -42,7 +42,7 @@ export default function Page() {
               </Card>
             ))}
         </div>
-      </Container>
+      </PageContainer>
     </div>
   )
 }

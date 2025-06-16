@@ -9,9 +9,9 @@ import { Heading } from "@/components/ui/heading"
 import { Link } from "@/components/ui/link"
 export function OpenSource() {
   return (
-    <div className="border-transparent border-t bg-secondary/20 sm:mb-0 sm:border-border">
+    <div className="border-transparent border-y bg-secondary/20 sm:mb-0 sm:border-border">
       <PageContainer className="px-0">
-        <div className="-mb-2 relative z-20 mx-auto max-w-lg rounded-3xl bg-fg p-6 text-center text-bg sm:mb-0 sm:rounded-[2rem] lg:p-12">
+        <div className="relative z-20 mx-auto max-w-lg rounded-3xl bg-fg p-6 text-center text-bg sm:rounded-[2rem] lg:p-12">
           <Heading level={3} className="text-zinc-50 dark:text-zinc-900">
             Open source
           </Heading>

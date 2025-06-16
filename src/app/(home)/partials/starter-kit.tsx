@@ -65,7 +65,7 @@ export function StarterKit() {
         aria-label="Starter Kit"
       >
         {(item) => (
-          <Choicebox.Item href={item.url} textValue={item.name} id={item.name}>
+          <Choicebox.Item target="_blank" href={item.url} textValue={item.name} id={item.name}>
             <item.icon />
             <Choicebox.Label>{item.name}</Choicebox.Label>
             <Choicebox.Description>{item.description}</Choicebox.Description>

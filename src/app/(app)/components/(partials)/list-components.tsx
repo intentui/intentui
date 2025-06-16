@@ -9,7 +9,7 @@ export function ListComponents() {
   return (
     <ListBox
       aria-label="List components"
-      className="columns-1 columns-2 gap-6 pb-6 sm:pb-12 md:columns-3 lg:columns-4"
+      className="columns-2 gap-6 pb-6 sm:pb-12 md:columns-3 lg:columns-4"
     >
       {components?.children?.map((item) => (
         <ListBoxSection

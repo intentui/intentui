@@ -21,7 +21,7 @@ export function Examples() {
           description="Explore foundational components commonly used across web applications."
         />
       </PageContainer>
-      <PageContainer className="mt-6 flex flex-nowrap content-start gap-4 overflow-x-auto pb-6 *:shrink-0 sm:pb-12">
+      <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto pb-6 *:shrink-0 *:snap-center sm:pb-12">
         <BlocksCard className="w-full lg:w-1/3">
           <div className="flex flex-col gap-y-6">
             <CardHeader title="Sign in" description="Enter your email and password to sign in." />
@@ -56,7 +56,7 @@ export function Examples() {
             <ChoiceboxDemo />
           </div>
         </BlocksCard>
-        <BlocksCard className="w-full lg:w-1/2">
+        <BlocksCard className="w-full lg:w-2/5">
           <div className="flex w-full flex-col gap-y-6">
             <CardHeader
               title="Settings"
