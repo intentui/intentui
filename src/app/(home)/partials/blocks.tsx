@@ -1,53 +1,21 @@
 "use client"
 import SwitchDescriptionDemo from "@/components/docs/controls/switch/switch-description-demo"
-import DatePickerDemo from "@/components/docs/date-and-time/date-picker/date-picker-demo"
 import CheckboxGroupDescriptionDemo from "@/components/docs/forms/checkbox/checkbox-group-description-demo"
 import RadioGroupDescriptionDemo from "@/components/docs/forms/radio-group/radio-group-description-demo"
-import SearchFieldDemo from "@/components/docs/forms/search-field/search-field-demo"
-import TextFieldDemo from "@/components/docs/forms/text-field/text-field-demo"
 import ModalDemo from "@/components/docs/overlays/modal/modal-demo"
 import PopoverDemo from "@/components/docs/overlays/popover/popover-demo"
 import TooltipDemo from "@/components/docs/overlays/tooltip/tooltip-demo"
-import ComboBoxDemo from "@/components/docs/pickers/combo-box/combo-box-demo"
-import MultipleSelectDemo from "@/components/docs/pickers/multiple-select/multiple-select-demo"
-import SelectDemo from "@/components/docs/pickers/select/select-demo"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
 import { Link } from "@/components/ui/link"
 import { IconArrowUpRight } from "@intentui/icons"
+import { twMerge } from "tailwind-merge"
 
 export function Blocks() {
   return (
     <PageContainer>
-      <div className="mask-b-from-100% md:mask-b-from-60% lg:mask-b-from-85% space-y-16">
-        <div>
-          <CardHeader
-            className="max-w-lg"
-            title="Form"
-            description="Displays common form elements and how they can be used together."
-          />
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <BlocksCard>
-              <TextFieldDemo />
-            </BlocksCard>
-            <BlocksCard>
-              <ComboBoxDemo />
-            </BlocksCard>
-            <BlocksCard>
-              <SelectDemo />
-            </BlocksCard>
-            <BlocksCard>
-              <MultipleSelectDemo />
-            </BlocksCard>
-            <BlocksCard>
-              <DatePickerDemo />
-            </BlocksCard>
-            <BlocksCard>
-              <SearchFieldDemo />
-            </BlocksCard>
-          </div>
-        </div>
+      <div className="mask-b-from-90% md:mask-b-from-60% lg:mask-b-from-85% space-y-16">
         <div>
           <CardHeader
             className="max-w-lg"
@@ -56,13 +24,19 @@ export function Blocks() {
           />
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             <BlocksCard>
-              <ModalDemo />
+              <Center>
+                <ModalDemo />
+              </Center>
             </BlocksCard>
             <BlocksCard>
-              <PopoverDemo />
+              <Center>
+                <PopoverDemo />
+              </Center>
             </BlocksCard>
             <BlocksCard>
-              <TooltipDemo />
+              <Center>
+                <TooltipDemo />
+              </Center>
             </BlocksCard>
           </div>
         </div>
@@ -72,7 +46,7 @@ export function Blocks() {
             title="Control"
             description="Explore how users can select one, many, or toggle options using checkboxes, radios, and switches."
           />
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-4 lg:grid-cols-3">
             <CheckboxGroupDescriptionDemo />
             <RadioGroupDescriptionDemo />
             <SwitchDescriptionDemo />
@@ -83,7 +57,7 @@ export function Blocks() {
       <div className="md:-mt-10 relative z-30 mt-10 flex items-center justify-center">
         <Link
           className={buttonStyles({ intent: "outline", className: "backdrop-blur-2xl" })}
-          href="/components"
+          href="/docs/components/buttons/button"
         >
           Show More
           <IconArrowUpRight />
@@ -93,11 +67,20 @@ export function Blocks() {
   )
 }
 
-export function BlocksCard(props: React.ComponentProps<"div">) {
+export function BlocksCard({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       {...props}
-      className="inset-ring inset-ring-fg/10 grid h-56 place-content-center rounded-lg bg-white *:min-w-56 dark:bg-zinc-900/50"
-    />
+      className={twMerge(
+        "inset-ring inset-ring-fg/10 flex min-h-32 items-center justify-center rounded-2xl bg-zinc-50/50 p-6 *:min-w-56 sm:min-h-48 sm:p-10 dark:inset-ring-fg/5 dark:inset-shadow-2xs dark:inset-shadow-fg/5 dark:bg-zinc-900/50",
+        className,
+      )}
+    >
+      {props.children}
+    </div>
   )
+}
+
+function Center({ className, ...props }: React.ComponentProps<"div">) {
+  return <div className="flex size-full items-center justify-center" {...props} />
 }

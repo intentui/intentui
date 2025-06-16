@@ -24,7 +24,7 @@ import {
   SidebarNav,
   SidebarProvider,
 } from "@/components/ui/sidebar"
-import { Tabs } from "@/components/ui/tabs"
+import { TabPanel, Tabs } from "@/components/ui/tabs"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import quotes from "@/json/quotes.json"
 import type { RegistryItem } from "@/types"
@@ -218,7 +218,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
             )}
           </div>
         </div>
-        <Tabs.Panel id="preview">
+        <TabPanel id="preview">
           <ResizablePanelGroup autoSaveId="persistence" direction="horizontal">
             <ResizablePanel
               ref={resizablePanelRef}
@@ -241,8 +241,8 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
             <ResizableHandle className="relative z-50 hidden w-0 bg-transparent p-0 after:absolute after:right-0 after:h-full after:w-0 md:block" />
             <ResizablePanel defaultSize={0} minSize={0} />
           </ResizablePanelGroup>
-        </Tabs.Panel>
-        <Tabs.Panel id="code">
+        </TabPanel>
+        <TabPanel id="code">
           <div className="flex max-h-(--height) min-h-(--height) overflow-hidden rounded-lg ring-1 ring-border [--height:85vh]">
             <SidebarProvider className="min-h-full">
               <Sidebar className="h-full" collapsible="none">
@@ -292,7 +292,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
               </SidebarInset>
             </SidebarProvider>
           </div>
-        </Tabs.Panel>
+        </TabPanel>
       </Tabs>
     </div>
   )

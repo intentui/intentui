@@ -82,19 +82,26 @@ export function IconResources() {
   return (
     <div className="border-t py-8 sm:py-16">
       <PageContainer>
-        <div className="grid items-start gap-6 md:grid-cols-2 md:gap-10">
-          <div className="">
-            <Heading level={3}>Intent UI Icons</Heading>
-            <p className="mt-3 mb-6 text-pretty text-muted-fg lg:text-sm/6">
-              Intent Icons is a powerful open-source SVG icon library with over{" "}
-              <strong className="text-fg">1,191 symbols</strong>, and more added with every release.
-              Designed to seamlessly integrate into any project, they work perfectly whether or not
-              you use Intent UI components.
-            </p>
-            <InstallIcon />
+        <div className="grid gap-6 md:grid-cols-2 md:gap-10">
+          <div className="flex h-full flex-col">
+            <div className="flex-1">
+              <Heading level={3}>Intent UI Icons</Heading>
+              <p className="mt-3 mb-6 text-pretty text-muted-fg lg:text-sm/6">
+                Intent Icons is a powerful open-source SVG icon library with over{" "}
+                <strong className="text-fg">1,191 symbols</strong>, and more added with every
+                release. Designed to seamlessly integrate into any project, they work perfectly
+                whether or not you use Intent UI components.
+              </p>
+              <InstallIcon />
+            </div>
+            <div className="mt-4">
+              <Link className={buttonStyles({ intent: "secondary" })} href="/icons">
+                View all icons <IconArrowRight />
+              </Link>
+            </div>
           </div>
           <div>
-            <div className="grid flex-1 items-start gap-2 **:data-[slot=icon]:size-5 **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:hover:text-fg md:grid-cols-2">
+            <div className="grid flex-1 items-start gap-2 **:data-[slot=icon]:size-5 **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:hover:text-fg sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
               <div className="flex flex-wrap gap-6 rounded-lg border p-6">
                 <IconCheck />
                 <IconShoppingBag />
@@ -159,11 +166,6 @@ export function IconResources() {
                 <IconRunShortcutFill />
                 <IconScreenSharingFill />
               </div>
-            </div>
-            <div className="mt-4 flex justify-end">
-              <Link className={buttonStyles({ intent: "outline", isCircle: true })} href="/icons">
-                View all icons <IconArrowRight />
-              </Link>
             </div>
           </div>
         </div>

@@ -2,7 +2,6 @@
 
 import { useId } from "react"
 
-import { LayoutGroup, motion } from "motion/react"
 import type {
   TabListProps as TabListPrimitiveProps,
   TabPanelProps as TabPanelPrimitiveProps,
@@ -42,20 +41,18 @@ interface TabListProps<T extends object> extends TabListPrimitiveProps<T> {
 const TabList = <T extends object>({ className, ref, ...props }: TabListProps<T>) => {
   const id = useId()
   return (
-    <LayoutGroup id={id}>
-      <TabListPrimitive
-        ref={ref}
-        {...props}
-        className={composeRenderProps(className, (className, { orientation }) =>
-          twMerge([
-            "flex forced-color-adjust-none",
-            orientation === "horizontal" && "flex-row gap-x-5 border-border border-b",
-            orientation === "vertical" && "flex-col items-start gap-y-4 border-l",
-            className,
-          ]),
-        )}
-      />
-    </LayoutGroup>
+    <TabListPrimitive
+      ref={ref}
+      {...props}
+      className={composeRenderProps(className, (className, { orientation }) =>
+        twMerge([
+          "flex forced-color-adjust-none",
+          orientation === "horizontal" && "flex-row gap-x-5 border-border border-b",
+          orientation === "vertical" && "flex-col items-start gap-y-4 border-l",
+          className,
+        ]),
+      )}
+    />
   )
 }
 
@@ -71,8 +68,8 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
         twMerge([
           "relative flex cursor-default items-center whitespace-nowrap rounded-full font-medium text-fg text-sm outline-hidden transition hover:text-fg *:data-[slot=icon]:mr-2 *:data-[slot=icon]:size-4",
           "group-orientation-vertical/tabs:w-full group-orientation-vertical/tabs:py-0 group-orientation-vertical/tabs:pr-2 group-orientation-vertical/tabs:pl-4",
-          "group-orientation-horizontal:/tabs:pb-3",
-          "selected:text-muted-fg focus:ring-0",
+          "group-orientation-horizontal/tabs:pb-3",
+          "selected:text-fg text-muted-fg focus:ring-0",
           "disabled:opacity-50",
           "href" in props && "cursor-pointer",
           className,
@@ -83,15 +80,13 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
         <>
           {children}
           {isSelected && (
-            <motion.span
+            <span
               data-slot="selected-indicator"
               className={twMerge(
                 "absolute rounded bg-fg",
                 "group-orientation-horizontal/tabs:-bottom-px group-orientation-horizontal/tabs:inset-x-0 group-orientation-horizontal/tabs:h-0.5 group-orientation-horizontal/tabs:w-full",
                 "group-orientation-vertical/tabs:left-0 group-orientation-vertical/tabs:h-[calc(100%-10%)] group-orientation-vertical/tabs:w-0.5 group-orientation-vertical/tabs:transform",
               )}
-              layoutId="current-selected"
-              transition={{ type: "spring", stiffness: 500, damping: 40 }}
             />
           )}
         </>
@@ -116,9 +111,5 @@ const TabPanel = ({ className, ref, ...props }: TabPanelProps) => {
   )
 }
 
-Tabs.List = TabList
-Tabs.Tab = Tab
-Tabs.Panel = TabPanel
-
 export type { TabsProps, TabListProps, TabProps, TabPanelProps }
-export { Tabs }
+export { Tabs, TabList, Tab, TabPanel }

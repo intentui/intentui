@@ -19,6 +19,8 @@ You may also notice that v3 is slightly more compact than v2, with improved usab
 * Removed `focusRing` and `focusStyles` from `primitive.ts`—they are no longer used.
 * We make default `gap=0` and `columns=1` for `Choicebox` component.
 * Add `Loader` to `FileTrigger` when the pending state is true.
+* We no longer use Compound Pattern in `Tabs` component. Instead, we use a more straightforward approach with `Tabs`, `TabList`, `Tab`, and `TabPanel` components.
+* We also remove `motion` from `Tabs` component, so you can use any animation library you prefer or leave it unanimated.
 
 ## Toggle Group
 The `ToggleGroup` component has been introduced to provide a more intuitive way for users to switch between multiple options, supporting both single and multi-selection modes.

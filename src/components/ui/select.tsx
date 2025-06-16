@@ -39,6 +39,7 @@ const Select = <T extends object>({
 }: SelectProps<T>) => {
   return (
     <SelectPrimitive
+      data-slot="select"
       {...props}
       className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1")}
     >
