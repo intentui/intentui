@@ -77,7 +77,7 @@ export function Toc({ className, items }: Props) {
         </Suspense>
       </nav>
 
-      <Ads />
+      <Ads className="hidden md:flex" />
     </aside>
   )
 }

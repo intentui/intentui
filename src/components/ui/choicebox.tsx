@@ -80,13 +80,17 @@ const choiceboxItemStyles = tv({
     "[--choicebox-selected-hovered:color-mix(in_oklab,var(--color-primary)_15%,white_85%)]",
     "dark:[--choicebox-selected-hovered:color-mix(in_oklab,var(--color-primary)_25%,black_75%)]",
     "dark:[--choicebox-fg:color-mix(in_oklab,var(--color-primary)_45%,white_55%)] dark:[--choicebox:color-mix(in_oklab,var(--color-primary)_20%,black_70%)]",
-    "inset-ring inset-ring-border cursor-default rounded-lg p-4 **:data-[slot=label]:font-medium",
+    "inset-ring inset-ring-border rounded-lg p-4 **:data-[slot=label]:font-medium",
     " **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-5 **:data-[slot=avatar]:shrink-0",
     "**:data-[slot=icon]:mt-[--spacing(0.7)] **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0",
     "grid grid-cols-[1fr_auto] content-start items-start gap-x-4 gap-y-1 has-data-[slot=icon]:grid-cols-[auto_1fr_auto]",
     "has-[[slot=description]]:**:data-[slot=label]:font-medium",
   ],
   variants: {
+    isLink: {
+      true: "cursor-pointer",
+      false: "cursor-default",
+    },
     isFocused: { true: "inset-ring-ring/70 ring-3 ring-ring/20 invalid:ring-danger/20" },
     isInvalid: { true: "ring-3 ring-danger/20" },
     isOneColumn: {
@@ -131,6 +135,7 @@ const ChoiceboxItem = ({
           choiceboxItemStyles({
             ...renderProps,
             isOneColumn: columns === 1,
+            isLink: "href" in props,
             isHocuset: isSelected || isHovered || isFocusVisible,
             className,
           }),

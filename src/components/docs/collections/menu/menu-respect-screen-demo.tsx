@@ -8,7 +8,7 @@ export default function MenuRespectScreenDemo() {
   return (
     <Menu respectScreen={false}>
       <Button intent="outline">Open</Button>
-      <Menu.Content placement="bottom" className="min-w-48">
+      <Menu.Content placement="bottom" className="min-w-48 max-w-min">
         <Menu.Item>
           <IconDashboard />
           <Menu.Label>Dashboard</Menu.Label>

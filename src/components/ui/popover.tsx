@@ -58,7 +58,6 @@ const content = tv({
   variants: {
     isPicker: {
       true: "min-w-(--trigger-width)",
-      false: "min-w-80",
     },
     isMenu: {
       true: "",

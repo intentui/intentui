@@ -1,6 +1,7 @@
 "use client"
 
 import menus from "@/components-search.json"
+import type { Component } from "@/types/search"
 import { IconBookOpen, IconCircleHalf, IconHighlight, IconPackage } from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
@@ -18,21 +19,10 @@ type SidebarItem = {
   children?: { title: string; slug: string }[]
 }
 
-export interface ComponentProps {
-  section: string
-  children: {
-    subsection: string
-    children: {
-      title: string
-      slug: string
-    }[]
-  }[]
-}
-
 const prologue = menus[0] as SidebarItem
 const gs = menus[1] as SidebarItem
 const dm = menus[2] as SidebarItem
-const components = menus[3] as ComponentProps
+const components = menus[3] as Component
 
 const orderGs = ["Introduction", "Installation", "Client Side Routing", "Colors", "CLI"]
 const sortedGsChildren =

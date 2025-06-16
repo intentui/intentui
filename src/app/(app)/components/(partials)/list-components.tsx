@@ -1,9 +1,10 @@
 "use client"
 
 import menus from "@/components-search.json"
-import type { ComponentProps } from "@/components/aside"
+import type { Component } from "@/types/search"
 import { Header, ListBox, ListBoxItem, ListBoxSection } from "react-aria-components"
-const components = menus[3] as ComponentProps
+
+const components = menus[3] as Component
 export function ListComponents() {
   return (
     <ListBox
