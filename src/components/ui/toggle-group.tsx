@@ -43,7 +43,7 @@ const ToggleGroup = ({
         selectionMode={selectionMode}
         className={composeRenderProps(className, (className, renderProps) =>
           twMerge(
-            "inset-ring inset-ring-border inline-flex overflow-hidden rounded-lg",
+            "inset-ring inset-ring-border inline-flex gap-0.5 overflow-hidden rounded-lg p-0.5",
             orientation === "horizontal" ? "flex-row" : "flex-col",
             className,
           ),
@@ -59,9 +59,8 @@ interface ToggleGroupItemProps extends ToggleButtonProps {}
 const toggleGroupItemStyles = tv({
   base: [
     "[--toggle-group-item-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))]",
-    "relative isolate inline-flex flex-row items-center font-medium",
+    "relative isolate inline-flex flex-row items-center font-medium outline-hidden",
     "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-0.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-(--toggle-group-item-icon) sm:*:data-[slot=icon]:my-1",
-    "inset-ring-transparent bg-transparent outline-primary-fg ring-primary-fg/25",
   ],
   variants: {
     orientation: {
@@ -69,7 +68,7 @@ const toggleGroupItemStyles = tv({
       vertical: "justify-start",
     },
     selectionMode: {
-      single: "rounded-lg",
+      single: "rounded-[calc(var(--radius-lg)-2px)]",
       multiple: "rounded-none",
     },
     size: {
@@ -101,10 +100,7 @@ const toggleGroupItemStyles = tv({
       true: "bg-primary text-primary-fg [--toggle-group-item-icon:var(--primary-fg)]",
     },
     isHovered: {
-      true: "enabled:bg-primary/90 enabled:text-primary-fg enabled:[--toggle-group-item-icon:var(--primary-fg)]",
-    },
-    isFocusVisible: {
-      true: "outline outline-offset-2 ring-2 ring-offset-3 ring-offset-bg",
+      true: "enabled:bg-secondary enabled:text-secondary-fg enabled:[--toggle-group-item-icon:var(--secondary-fg)]",
     },
     isDisabled: {
       true: "inset-ring-0 opacity-50 forced-colors:text-[GrayText]",
