@@ -1,18 +1,12 @@
 "use client"
+import { starterKits } from "@/app/(home)/partials/starter-kit"
 import { PageContainer } from "@/components/page-container"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
 import { IconBrandIntentui } from "@intentui/icons"
 
 const navigation = {
-  starterKits: [
-    { name: "Laravel", href: "https://github.com/intentuilabs/laravel" },
-    { name: "Next.js", href: "https://github.com/intentuilabs/next" },
-    { name: "Remix", href: "https://github.com/intentuilabs/remix" },
-    { name: "Astro", href: "https://github.com/intentuilabs/astro" },
-  ],
   resources: [
-    { name: "Icons", href: "/icons" },
     { name: "Colors", href: "/colors" },
     { name: "Themes", href: "/themes" },
     { name: "Blocks", href: "https://dub.sh/d8ldbi9" },
@@ -22,13 +16,13 @@ const navigation = {
   labs: [
     { name: "Github", href: "https://github.com/intentuilabs" },
     { name: "X / Formerly Twitter", href: "https://x.com/intent/follow?screen_name=irsyadadl" },
-    { name: "CLI", href: "https://github.com/intentuilabs/cli" },
-    { name: "Premium Blocks", href: "https://blocks.intentui.com" },
-    { name: "Templates", href: "https://blocks.intentui.com/templates" },
+    { name: "Discord", href: "https://discord.gg/DYmVJ66JUD" },
   ],
   extra: [
-    { name: "Discord", href: "https://discord.gg/DYmVJ66JUD" },
-    { name: "MIT", href: "https://github.com/irsyadadl/intentui/blob/main/LICENSE" },
+    { name: "Premium Blocks", href: "https://blocks.intentui.com" },
+    { name: "Templates", href: "https://irsyad.co" },
+    { name: "CLI", href: "https://github.com/intentuilabs/cli" },
+    { name: "Icons", href: "/icons" },
   ],
 }
 
@@ -60,11 +54,11 @@ export function Footer() {
               <div className="mt-10 md:mt-0">
                 <h3 className="font-semibold text-fg text-sm">Starter Kits</h3>
                 <ul className="mt-3 space-y-2">
-                  {navigation.starterKits.map((item) => (
+                  {starterKits.map((item) => (
                     <li key={item.name}>
                       <Link
                         target="_blank"
-                        href={item.href}
+                        href={item.url}
                         className="text-muted-fg text-sm hover:text-fg"
                       >
                         {item.name}
@@ -92,7 +86,7 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="font-semibold text-fg text-sm">Legal</h3>
+                <h3 className="font-semibold text-fg text-sm">Ecosystem</h3>
                 <ul className="mt-3 space-y-2">
                   {navigation.extra.map((item) => (
                     <li key={item.name}>
@@ -112,35 +106,18 @@ export function Footer() {
         </div>
       </PageContainer>
 
-      <PageContainer className="relative z-20 space-y-1.5 border-t bg-bg py-6 text-center text-muted-fg text-sm **:[a]:font-semibold **:[a]:text-fg **:[strong]:font-semibold **:[strong]:text-fg">
+      <PageContainer className="relative z-20 space-y-1.5 border-t bg-bg py-6 text-center text-muted-fg text-sm **:[a]:text-fg **:[strong]:font-semibold">
         <p>
           <strong>
-            {siteConfig.name} &trade; {currentYear}
+            {currentYear} &middot; {siteConfig.name} &trade;
           </strong>{" "}
-          - This project’s crafted with{" "}
-          <span className="font-[ui-sans-serif,-apple-system,system-ui] text-pink-500">♥</span> by{" "}
-          <Link href="https://twitter.com/irsyadadl">Irsyad</Link>. Peep the Source Code on{" "}
-          <Link href={siteConfig.repo}>GitHub</Link>.
-        </p>
-
-        <p>
-          Cooked up with{" "}
-          <Link href="https://nextjs.org" target="_blank">
-            Next.js
-          </Link>
-          ,
-          <Link href="https://tailwindcss.com" target="_blank">
-            Tailwind CSS
-          </Link>
-          , and{" "}
-          <Link href="https://react-spectrum.adobe.com/react-aria/components.html" target="_blank">
-            RAC
-          </Link>
-          .
+          <br />
+          This project’s crafted by <Link href="https://x.com/irsyadadl">Irsyad</Link>. Peep the
+          Source Code on <Link href={siteConfig.repo}>GitHub</Link>.
         </p>
         <p>
           Hosted on{" "}
-          <Link href="https://vercel.com" target="_blank">
+          <Link href="https://vercel.com?ref=intentui.com" target="_blank">
             Vercel
           </Link>
           . The source code's got the{" "}

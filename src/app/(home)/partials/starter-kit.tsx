@@ -7,7 +7,7 @@ import { Choicebox } from "@/components/ui/choicebox"
 import { IconBrandAstro, IconBrandLaravel, IconBrandNextjs, IconBrandRemix } from "@intentui/icons"
 import { twMerge } from "tailwind-merge"
 
-const resources = [
+export const starterKits = [
   {
     icon: IconBrandNextjs,
     name: "Next.js",
@@ -61,7 +61,7 @@ export function StarterKit() {
         columns={3}
         selectionMode="single"
         className="*:data-[slot=choicebox-item]:bg-bg"
-        items={resources}
+        items={starterKits}
         aria-label="Starter Kit"
       >
         {(item) => (

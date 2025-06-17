@@ -17,11 +17,11 @@ const buttonStyles = tv({
     intent: {
       primary: [
         "bg-primary text-primary-fg outline-primary ring-primary/50 hover:bg-primary/85",
-        "[--btn-icon:color-mix(in_oklab,var(--primary-fg)_50%,var(--primary))] pressed:[--btn-icon:var(--primary-fg)] hover:[--btn-icon:var(--primary-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--primary-fg)_70%,var(--primary))] pressed:[--btn-icon:var(--primary-fg)] hover:[--btn-icon:var(--primary-fg)]",
       ],
       secondary: [
-        "bg-secondary text-secondary-fg outline-secondary-fg ring-secondary-fg/20 hover:bg-secondary/85",
-        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
+        "bg-secondary text-secondary-fg outline-secondary-fg ring-secondary-fg/20 hover:bg-secondary/80",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
       ],
       warning: [
         "bg-warning text-warning-fg outline-warning ring-warning/20 hover:bg-warning/85",
@@ -29,24 +29,24 @@ const buttonStyles = tv({
       ],
       danger: [
         "bg-danger text-danger-fg outline-danger ring-danger/25 hover:bg-danger/85",
-        "[--btn-icon:color-mix(in_oklab,var(--danger-fg)_50%,var(--danger))] pressed:[--btn-icon:var(--danger-fg)] hover:[--btn-icon:var(--danger-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--danger-fg)_70%,var(--danger))] pressed:[--btn-icon:var(--danger-fg)] hover:[--btn-icon:var(--danger-fg)]",
       ],
       outline: [
         "bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
-        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
       ],
       plain: [
         "inset-ring-transparent bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
-        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
+        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
       ],
     },
     size: {
       xs: [
-        "gap-x-1 px-2.5 py-1.5 text-sm sm:px-2.5 sm:text-xs/4",
+        "gap-x-1 px-2.5 py-1.5 text-sm sm:px-2 sm:py-1 sm:text-xs/4",
         "*:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
       ],
       sm: [
-        "gap-x-1.5 px-3 py-1.5 sm:px-2.5 sm:text-sm/5",
+        "gap-x-1.5 px-3 py-2 sm:px-2.5 sm:py-1.5 sm:text-sm/5",
         "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
       ],
       md: [
@@ -57,7 +57,7 @@ const buttonStyles = tv({
         "gap-x-2 px-4 py-2.5 sm:px-3.5 sm:py-2 sm:text-sm/6",
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
       ],
-      "sq-xs": "size-7",
+      "sq-xs": "size-6",
       "sq-sm": "size-8",
       "sq-md": "size-9",
       "sq-lg": "size-10",
@@ -82,7 +82,7 @@ const buttonStyles = tv({
   compoundVariants: [
     {
       size: ["xs", "sq-xs"],
-      className: "rounded-sm *:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
+      className: "rounded-sm *:data-[slot=icon]:size-3",
     },
   ],
 })
