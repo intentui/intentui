@@ -25,7 +25,7 @@ const Dialog = ({
     <DialogPrimitive
       role={role}
       className={twMerge(
-        "peer/dialog group/dialog relative flex max-h-[inherit] flex-col overflow-hidden outline-hidden [scrollbar-width:thin] [&::-webkit-scrollbar]:size-0.5",
+        "peer/dialog group/dialog relative flex max-h-[inherit] flex-col overflow-hidden outline-hidden [--gutter:--spacing(6)] [scrollbar-width:thin] [&::-webkit-scrollbar]:size-0.5",
         className,
       )}
       {...props}
@@ -68,10 +68,7 @@ const DialogHeader = ({ className, ...props }: DialogHeaderProps) => {
     <div
       data-slot="dialog-header"
       ref={headerRef}
-      className={twMerge(
-        "relative flex flex-col gap-0.5 p-4 sm:gap-1 sm:p-6 [&[data-slot=dialog-header]:has(+[data-slot=dialog-footer])]:pb-0",
-        className,
-      )}
+      className={twMerge("relative space-y-1 p-(--gutter)", className)}
     >
       {props.title && <DialogTitle>{props.title}</DialogTitle>}
       {props.description && <DialogDescription>{props.description}</DialogDescription>}
@@ -102,7 +99,10 @@ type DialogDescriptionProps = React.ComponentProps<"div">
 const DialogDescription = ({ className, ref, ...props }: DialogDescriptionProps) => (
   <Text
     slot="description"
-    className={twMerge("text-pretty text-muted-fg text-sm", className)}
+    className={twMerge(
+      "text-pretty text-base/6 text-muted-fg group-disabled:opacity-50 sm:text-sm/6",
+      className,
+    )}
     ref={ref}
     {...props}
   />
@@ -114,7 +114,7 @@ const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
     data-slot="dialog-body"
     ref={ref}
     className={twMerge(
-      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-4 py-0.5 sm:px-6",
+      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-(--gutter)",
       className,
     )}
     {...props}
@@ -151,7 +151,7 @@ const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
       ref={footerRef}
       data-slot="dialog-footer"
       className={twMerge(
-        "isolate mt-auto flex flex-col-reverse justify-between gap-3 p-4 pt-3 sm:flex-row sm:p-6 sm:pt-5",
+        "isolate mt-auto flex flex-col-reverse justify-between gap-3 p-(--gutter) group-not-has-data-[slot=dialog-body]/dialog:pt-0 sm:flex-row",
         className,
       )}
       {...props}

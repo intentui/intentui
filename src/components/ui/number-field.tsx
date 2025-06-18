@@ -13,7 +13,7 @@ import { tv } from "tailwind-variants"
 import { Description, FieldError, FieldGroup, Input, Label } from "@/components/ui/field"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twMerge } from "tailwind-merge"
+import { twJoin } from "tailwind-merge"
 
 const fieldBorderStyles = tv({
   base: "group-focus:border-primary/70 forced-colors:border-[Highlight]",
@@ -50,8 +50,7 @@ const NumberField = ({
     >
       {label && <Label>{label}</Label>}
       <FieldGroup
-        className={twMerge(
-          "overflow-hidden",
+        className={twJoin(
           isMobile && [
             "**:[button]:inset-ring **:[button]:inset-ring-fg/5 **:[button]:grid **:[button]:size-8 **:[button]:place-content-center",
             "*:[button]:first:ml-1 *:[button]:last:mr-1",

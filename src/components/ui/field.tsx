@@ -30,7 +30,7 @@ interface FieldProps {
 
 const fieldStyles = tv({
   slots: {
-    description: "text-base/6 text-muted-fg group-disabled:opacity-50 sm:text-sm/6 ",
+    description: "text-base/6 text-muted-fg group-disabled:opacity-50 sm:text-sm/6",
     label: "select-none text-base/6 text-fg group-disabled:opacity-50 sm:text-sm/6",
     fieldError:
       "text-base/6 text-danger group-disabled:opacity-50 sm:text-sm/6 forced-colors:text-[Mark]",

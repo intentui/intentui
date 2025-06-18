@@ -83,14 +83,11 @@ interface ModalContentProps
     VariantProps<typeof modalContentStyles> {
   closeButton?: boolean
   isBlurred?: boolean
-  classNames?: {
-    overlay?: ModalOverlayProps["className"]
-    content?: ModalOverlayProps["className"]
-  }
+  className?: ModalOverlayProps["className"]
 }
 
 const ModalContent = ({
-  classNames,
+  className,
   isDismissable: isDismissableInternal,
   isBlurred = false,
   children,
@@ -104,18 +101,17 @@ const ModalContent = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={composeRenderProps(classNames?.overlay, (className, renderProps) =>
+      className={composeRenderProps(className, (className, renderProps) =>
         modalOverlayStyles({
           ...renderProps,
           isBlurred,
-          className,
         }),
       )}
       {...props}
     >
       <ModalPrimitive
         isDismissable={isDismissable}
-        className={composeRenderProps(classNames?.content, (className, renderProps) =>
+        className={composeRenderProps(className, (className, renderProps) =>
           modalContentStyles({
             ...renderProps,
             size,
