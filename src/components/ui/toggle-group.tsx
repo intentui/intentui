@@ -99,6 +99,9 @@ const toggleGroupItemStyles = tv({
     isSelected: {
       true: "bg-primary text-primary-fg [--toggle-group-item-icon:var(--primary-fg)] hover:bg-primary/90",
     },
+    isFocused: {
+      true: "not-selected:bg-secondary not-selected:text-secondary-fg not-selected:[--toggle-group-item-icon:var(--secondary-fg)]",
+    },
     isHovered: {
       true: "enabled:not-selected:bg-secondary enabled:not-selected:text-secondary-fg enabled:not-selected:[--toggle-group-item-icon:var(--secondary-fg)]",
     },
