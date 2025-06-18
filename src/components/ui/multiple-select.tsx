@@ -4,7 +4,7 @@ import { DropdownItem, DropdownLabel, DropdownSection } from "@/components/ui/dr
 import { Description, FieldGroup, type FieldProps, Input, Label } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
 import { PopoverContent } from "@/components/ui/popover"
-import { Tag, TagGroup, type TagGroupProps, TagList } from "@/components/ui/tag-group"
+import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
 import {
@@ -27,7 +27,6 @@ interface MultipleSelectProps<T>
       "isRequired" | "validate" | "validationBehavior"
     >,
     FieldProps,
-    Pick<TagGroupProps, "isCircle">,
     Pick<GroupProps, "isDisabled" | "isInvalid"> {
   className?: string
   errorMessage?: string
@@ -50,7 +49,6 @@ const MultipleSelect = <T extends object>({
   className,
   maxItems = Number.POSITIVE_INFINITY,
   renderEmptyState,
-  isCircle = false,
   children,
   ...props
 }: MultipleSelectProps<T>) => {
@@ -130,13 +128,7 @@ const MultipleSelect = <T extends object>({
             isDisabled={isDisabled}
             isInvalid={isInvalid}
           >
-            <TagGroup
-              onRemove={removeItem}
-              aria-hidden
-              isCircle={isCircle}
-              intent="primary"
-              aria-label="Selected items"
-            >
+            <TagGroup onRemove={removeItem} aria-hidden aria-label="Selected items">
               <TagList
                 className="[[role='row']]:last:-mr-1 gap-1 px-1.5 py-1 outline-hidden"
                 items={[...selectedKeys].map((key) => ({

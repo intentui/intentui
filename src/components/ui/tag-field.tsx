@@ -10,7 +10,6 @@ import { tv } from "tailwind-variants"
 
 import type { FieldProps } from "@/components/ui/field"
 import { Description, Input, Label } from "@/components/ui/field"
-import type { TagGroupProps } from "@/components/ui/tag-group"
 import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 
 const tagFieldsStyles = tv({
@@ -32,7 +31,7 @@ interface TagItemProps {
   name: string
 }
 
-interface TagFieldProps extends Pick<TagGroupProps, "isCircle">, FieldProps {
+interface TagFieldProps extends FieldProps {
   isDisabled?: boolean
   max?: number
   className?: string
@@ -144,16 +143,9 @@ const TagField = ({
     <div className={twMerge("flex w-full flex-col gap-y-1.5", className)}>
       {props.label && <Label>{props.label}</Label>}
       <Group className={twJoin("flex flex-col", props.isDisabled && "opacity-50")}>
-        <TagGroup
-          intent="primary"
-          isCircle={isCircle}
-          aria-label="List item inserted"
-          onRemove={onRemove}
-        >
+        <TagGroup aria-label="List item inserted" onRemove={onRemove}>
           <div className={tagFieldsStyles({ appearance })}>
-            <TagList items={list.items}>
-              {(item) => <Tag isCircle={isCircle}>{item.name}</Tag>}
-            </TagList>
+            <TagList items={list.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>
             <TextField
               isDisabled={props.isDisabled}
               aria-label={props?.label ?? (props["aria-label"] || props.placeholder)}
