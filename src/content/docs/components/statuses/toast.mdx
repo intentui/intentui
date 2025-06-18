@@ -15,7 +15,7 @@ The toast components are built on top of the [Sonner](https://sonner.emilkowal.s
 ## Installation
 <Installation options={{ isComponent: true }} items={['toast']}/>
 
-## Getting Started
+## Getting gtarted
 Put the `Toast` somewhere in your app layout to make it visible to all your components or pages.
 ```
 import { Toast } from 'ui';
@@ -35,7 +35,7 @@ And next, just use the `toast()` function to show a toast.
 </Button>
 ```
 
-## CSS Variables
+## CSS variables
 If you want your toast to look good, you’ll need to add some CSS variables to your theme.
 <CodeBlock
   source={{
@@ -43,7 +43,7 @@ If you want your toast to look good, you’ll need to add some CSS variables to 
     'main.css': 'installation/main.css',
   }} />
 
-## Manual Installation
+## Manual installation
 <Installation options={{ isManual: true }} items={['sonner']}/>
 <SourceCode toShow='toast'/>
 
@@ -89,7 +89,7 @@ Toast can be expanded to show more content.
 <Toast expand />
 ```
 
-## Hide Icon
+## Hide icon
 When this toast has status like `success`, `warning` etc, the icon is shown by default. But if you want to disable the icon for a specific toast, you can do it like this.
 ```tsx {2-5}
 toast.success(`Copied ${text} to clipboard`, {
@@ -121,7 +121,3 @@ toast('Someone requested to delete this product', {
     },
 })
 ```
-
-## Important Setup for Remix
-
-If you're using this toast with Remix, you'll need to set up a few things. You can find more details on the issue [here](https://github.com/remix-run/remix/discussions/9318).

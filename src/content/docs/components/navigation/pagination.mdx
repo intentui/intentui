@@ -15,10 +15,10 @@ Pagination is a navigation component that allows users to move through multiple 
 ## Installation
 <Installation options={{ isComponent: true }} items={['pagination']}/>
 
-## Composed Components
+## Composed components
 <Composed components={['button']}/>
 
-## Manual Installation
+## Manual installation
 <Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
 
 <SourceCode toShow='pagination'/>
@@ -30,11 +30,11 @@ Pagination is a navigation component that allows users to move through multiple 
 The simple pagination setup doesn’t display page numbers, using only basic arrow navigation.
 <How isCenter={false} toUse="navigation/pagination/simple-pagination-demo" />
 
-## Using Collections
+## Using collections
 Since the pagination list is part of the `GridList` primitive, handling collections is easy. Just pass the collections into the `PaginationList` using the `items` prop.
 <How isCenter={false} toUse="navigation/pagination/pagination-dynamic-demo" />
 
-## Preserving Scroll
+## Preserving scroll
 Sometimes, you need to prevent the page from scrolling to the top when users interact with pagination. You can do this by passing scroll-related props from your routerOptions into the `PaginationLink` component.
 
 ### Inertia.js
@@ -77,7 +77,7 @@ When using [Remix](https://remix.run/docs/en/main/components/scroll-restoration#
     >
 ```
 
-### React Router
+### React router
 If you're using React Router, check out this [tutorial](https://youtu.be/4_H8j3rkpjI?t=61) for guidance. After that, give it a go on your own. Apologies, I'm not fully up to speed with the latest updates in React Router.
 
 ### Considering
@@ -114,5 +114,5 @@ So here's how I roll with it:
 ```
 I figured it'd be chill, but nah, it ain't cuttin' it. That’s why I’m throwin' this idea your way: toss that option in when you're rockin' the pagination component. Ain’t sayin' it's top shelf, but it’s one way to roll.
 
-## Client Side Routing
+## Client side routing
 Make sure you have read [Client Side Routing](/docs/getting-started/client-side-routing) before using this component.
