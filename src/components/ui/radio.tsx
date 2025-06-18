@@ -44,10 +44,7 @@ const RadioGroup = ({
   )
 }
 
-interface RadioProps extends RadioPrimitiveProps {
-  description?: string
-  label?: string
-}
+interface RadioProps extends RadioPrimitiveProps, Pick<FieldProps, "label" | "description"> {}
 
 const Radio = ({ className, children, description, label, ...props }: RadioProps) => {
   return (

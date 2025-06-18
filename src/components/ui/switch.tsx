@@ -5,14 +5,14 @@ import {
   type SwitchProps as SwitchPrimitiveProps,
 } from "react-aria-components"
 
-import { Label } from "@/components/ui/field"
+import { Description, type FieldProps, Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { twMerge } from "tailwind-merge"
 
-interface SwitchProps extends SwitchPrimitiveProps {
+interface SwitchProps extends SwitchPrimitiveProps, Pick<FieldProps, "description" | "label"> {
   ref?: React.RefObject<HTMLLabelElement>
 }
-const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
+const Switch = ({ children, label, description, className, ref, ...props }: SwitchProps) => {
   return (
     <SwitchPrimitive
       ref={ref}
@@ -36,6 +36,8 @@ const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
           >
             <span className="block size-4 origin-right rounded-full bg-primary-fg shadow-sm transition-all duration-200 group-selected:group-pressed:ml-2 group-selected:ml-3 group-pressed:w-5 forced-colors:disabled:outline-[GrayText]" />
           </span>
+          {label && <Label>{label}</Label>}
+          {description && <Description>{description}</Description>}
           {typeof children === "function" ? (
             children(values)
           ) : typeof children === "string" ? (
