@@ -10,6 +10,11 @@ const config = {
   async redirects() {
     return [
       {
+        source: '/docs/2.x/:path*',
+        destination: '/docs/:path*',
+        permanent: true,
+      },
+      {
         source: "/docs/components/layouts/aside",
         destination: "/docs/components/layouts/sidebar",
         permanent: true,
