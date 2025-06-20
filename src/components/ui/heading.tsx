@@ -14,6 +14,7 @@ const Heading = ({ className, level = 1, ...props }: HeadingProps) => {
         level === 2 && "font-semibold text-lg sm:text-xl",
         level === 3 && "font-semibold text-base sm:text-lg",
         level === 4 && "font-semibold text-base",
+        className,
       )}
       {...props}
     />
