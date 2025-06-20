@@ -52,7 +52,7 @@ const Radio = ({ className, children, description, label, ...props }: RadioProps
       {...props}
       className={composeTailwindRenderProps(className, "group block disabled:opacity-50")}
     >
-      {composeRenderProps(children, (children, { isSelected, isFocused, isInvalid }) => {
+      {composeRenderProps(children, (children, { isSelected, isFocusVisible, isInvalid }) => {
         const isStringChild = typeof children === "string"
         const hasCustomChildren = typeof children !== "undefined"
 
@@ -82,12 +82,12 @@ const Radio = ({ className, children, description, label, ...props }: RadioProps
             <span
               data-slot="indicator"
               className={twMerge([
-                "relative inset-ring inset-ring-fg/10 isolate flex size-4.5 shrink-0 items-center justify-center rounded-full bg-muted text-bg transition before:absolute before:inset-auto before:size-2 before:shrink-0 before:rounded-full before:content-[''] hover:before:bg-fg/10 sm:size-4 sm:before:size-1.7",
+                "relative inset-ring inset-ring-fg/10 isolate flex size-4.5 shrink-0 items-center justify-center rounded-full bg-secondary text-bg transition before:absolute before:inset-auto before:size-2 before:shrink-0 before:rounded-full before:content-[''] hover:before:bg-fg/10 sm:size-4 sm:before:size-1.7",
                 isSelected && [
-                  "inset-ring-primary bg-primary text-primary-fg before:bg-bg hover:before:bg-muted/90",
+                  "bg-primary text-primary-fg before:bg-bg hover:before:bg-muted/90 dark:inset-ring-primary",
                   "group-invalid:inset-ring-danger/70 group-invalid:bg-danger group-invalid:text-danger-fg",
                 ],
-                isFocused && [
+                isFocusVisible && [
                   "inset-ring-primary ring-3 ring-ring/20",
                   "group-invalid:inset-ring-danger/70 group-invalid:text-danger-fg group-invalid:ring-danger/20",
                 ],

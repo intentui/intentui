@@ -45,7 +45,11 @@ const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
           >
             <span
               aria-hidden="true"
-              className="pointer-events-none relative inline-block size-4.5 translate-x-0 rounded-full border border-transparent bg-white shadow-sm ring ring-fg/5 transition duration-200 ease-in-out group-selected:translate-x-4 group-selected:bg-(--switch) group-selected:shadow-(--switch-shadow) group-selected:ring-(--switch-ring) group-selected:group-disabled:shadow-sm group-selected:group-disabled:ring-secondary-fg/5 sm:size-3.5 sm:group-selected:translate-x-3"
+              className={twJoin(
+                "pointer-events-none relative inline-block size-4.5 translate-x-0 rounded-full border border-transparent bg-white shadow-sm ring ring-fg/5 transition duration-200 ease-in-out sm:size-3.5",
+                values.isSelected &&
+                  "translate-x-4 bg-(--switch) shadow-(--switch-shadow) ring-(--switch-ring) group-disabled:shadow-sm group-disabled:ring-secondary-fg/5 sm:translate-x-3",
+              )}
             />
           </span>
           {typeof children === "function" ? (

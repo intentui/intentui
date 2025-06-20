@@ -88,7 +88,7 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
                   "sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
                   "size-4.5 *:data-[slot=check-indicator]:size-4",
                   (isSelected || isIndeterminate) && [
-                    "inset-ring-primary bg-primary text-primary-fg",
+                    "bg-primary text-primary-fg dark:inset-ring-ring",
                     "group-invalid:inset-ring-danger/70 group-invalid:bg-danger group-invalid:text-danger-fg",
                   ],
                   isFocusVisible && [
