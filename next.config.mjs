@@ -10,8 +10,8 @@ const config = {
   async redirects() {
     return [
       {
-        source: '/docs/2.x/:path*',
-        destination: '/docs/:path*',
+        source: "/docs/2.x/:path*",
+        destination: "/docs/:path*",
         permanent: true,
       },
       {

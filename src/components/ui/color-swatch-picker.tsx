@@ -32,7 +32,7 @@ const ColorSwatchPickerItem = ({ className, children, ...props }: ColorSwatchPic
     <ColorSwatchPickerItemPrimitive
       className={composeTailwindRenderProps(
         className,
-        "relative overflow-hidden rounded-md outline-hidden disabled:opacity-50",
+        "relative overflow-hidden rounded-sm outline-hidden disabled:opacity-50",
       )}
       {...props}
     >
