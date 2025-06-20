@@ -188,6 +188,7 @@ const Loader = ({ isIndeterminate = true, ref, ...props }: LoaderProps) => {
 
   return (
     <ProgressBar
+      data-slot="loader"
       aria-label={props["aria-label"] ?? "Loading..."}
       formatOptions={props.formatOptions}
       isIndeterminate={isIndeterminate}
