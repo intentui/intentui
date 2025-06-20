@@ -1,117 +1,178 @@
 "use client"
 
 import {
-  Button as ButtonPrimitive,
-  type ButtonProps as ButtonPrimitiveProps,
-  composeRenderProps,
-} from "react-aria-components"
-import { type VariantProps, tv } from "tailwind-variants"
+  IconChevronLgLeft,
+  IconChevronLgRight,
+  IconChevronWallLeft,
+  IconChevronWallRight,
+  IconDotsHorizontal,
+} from "@intentui/icons"
+import type { ListBoxItemProps, ListBoxProps, ListBoxSectionProps } from "react-aria-components"
+import { ListBox, ListBoxItem, ListBoxSection, Separator } from "react-aria-components"
 
-const buttonStyles = tv({
-  base: [
-    "relative inset-ring inset-ring-fg/15 isolate inline-flex items-center justify-center font-medium",
-    "focus-visible:outline focus-visible:outline-offset-2 focus-visible:ring-2 focus-visible:ring-offset-3 focus-visible:ring-offset-bg",
-    "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-0.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-(--btn-icon) sm:*:data-[slot=icon]:my-1 forced-colors:[--btn-icon:ButtonText] forced-colors:hover:[--btn-icon:ButtonText]",
-  ],
-  variants: {
-    intent: {
-      primary: [
-        "bg-primary text-primary-fg outline-primary ring-primary/50 hover:bg-primary/85",
-        "[--btn-icon:color-mix(in_oklab,var(--primary-fg)_70%,var(--primary))] pressed:[--btn-icon:var(--primary-fg)] hover:[--btn-icon:var(--primary-fg)]",
-      ],
-      secondary: [
-        "bg-secondary text-secondary-fg outline-secondary-fg ring-secondary-fg/20 hover:bg-secondary/80",
-        "[--btn-icon:color-mix(in_oklab,var(--secondary-fg)_70%,var(--secondary))] pressed:[--btn-icon:var(--secondary-fg)] hover:[--btn-icon:var(--secondary-fg)]",
-      ],
-      warning: [
-        "bg-warning text-warning-fg outline-warning ring-warning/20 hover:bg-warning/85",
-        "[--btn-icon:color-mix(in_oklab,var(--warning-fg)_50%,var(--warning))] pressed:[--btn-icon:var(--warning-fg)] hover:[--btn-icon:var(--warning-fg)]",
-      ],
-      danger: [
-        "bg-danger text-danger-fg outline-danger ring-danger/25 hover:bg-danger/85",
-        "[--btn-icon:color-mix(in_oklab,var(--danger-fg)_70%,var(--danger))] pressed:[--btn-icon:var(--danger-fg)] hover:[--btn-icon:var(--danger-fg)]",
-      ],
-      outline: [
-        "bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary-fg/10",
-        "[--btn-icon:var(--color-secondary-fg)]/50 pressed:[--btn-icon:var(--color-secondary-fg)] hover:[--btn-icon:var(--color-secondary-fg)]",
-      ],
-      plain: [
-        "inset-ring-transparent bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary-fg/10",
-        "[--btn-icon:var(--color-secondary-fg)]/50 pressed:[--btn-icon:var(--color-secondary-fg)] hover:[--btn-icon:var(--color-secondary-fg)]",
-      ],
-    },
-    size: {
-      xs: [
-        "gap-x-1 px-2.5 py-1.5 text-sm sm:px-2 sm:py-1 sm:text-xs/4",
-        "*:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
-      ],
-      sm: [
-        "gap-x-1.5 px-3 py-2 sm:px-2.5 sm:py-1.5 sm:text-sm/5",
-        "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
-      ],
-      md: [
-        "gap-x-2 px-3.5 py-2 sm:px-3 sm:py-1.5 sm:text-sm/6",
-        "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4",
-      ],
-      lg: [
-        "gap-x-2 px-4 py-2.5 sm:px-3.5 sm:py-2 sm:text-sm/6",
-        "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
-      ],
-      "sq-xs": "size-7",
-      "sq-sm": "size-8",
-      "sq-md": "size-9",
-      "sq-lg": "size-10",
-    },
+import { type ButtonProps, buttonStyles } from "@/components/ui/button"
+import { composeTailwindRenderProps } from "@/lib/primitive"
+import { twMerge } from "tailwind-merge"
 
-    isCircle: {
-      true: "rounded-full",
-      false: "rounded-lg",
-    },
-    isDisabled: {
-      true: "inset-ring-0 opacity-50 forced-colors:text-[GrayText]",
-    },
-    isPending: {
-      true: "opacity-50",
-    },
-  },
-  defaultVariants: {
-    intent: "primary",
-    size: "md",
-    isCircle: false,
-  },
-  compoundVariants: [
-    {
-      size: ["xs", "sq-xs"],
-      className: "rounded-sm *:data-[slot=icon]:size-3",
-    },
-  ],
-})
+type PaginationProps = React.ComponentProps<"nav">
+const Pagination = ({ className, ref, ...props }: PaginationProps) => (
+  <nav
+    aria-label="pagination"
+    ref={ref}
+    className={twMerge("mx-auto flex w-full justify-center gap-[5px]", className)}
+    {...props}
+  />
+)
 
-interface ButtonProps extends ButtonPrimitiveProps, VariantProps<typeof buttonStyles> {
-  ref?: React.Ref<HTMLButtonElement>
+interface PaginationSectionProps<T> extends ListBoxSectionProps<T> {
+  ref?: React.RefObject<HTMLElement>
 }
+const PaginationSection = <T extends object>({
+  className,
+  ref,
+  ...props
+}: PaginationSectionProps<T>) => (
+  <ListBoxSection ref={ref} {...props} className={twMerge("flex h-9 gap-[5px]", className)} />
+)
 
-const Button = ({ className, intent, size, isCircle, ref, ...props }: ButtonProps) => {
+interface PaginationListProps<T> extends ListBoxProps<T> {
+  ref?: React.RefObject<HTMLDivElement>
+}
+const PaginationList = <T extends object>({ className, ref, ...props }: PaginationListProps<T>) => {
   return (
-    <ButtonPrimitive
+    <ListBox
       ref={ref}
+      orientation="horizontal"
+      aria-label={props["aria-label"] || "Pagination"}
+      layout="grid"
+      className={composeTailwindRenderProps(className, "flex flex-row items-center gap-[5px]")}
       {...props}
-      className={composeRenderProps(className, (className, renderProps) =>
-        buttonStyles({
-          ...renderProps,
-          intent,
-          size,
-          isCircle,
-          className,
-        }),
-      )}
-    >
-      {(values) => (
-        <>{typeof props.children === "function" ? props.children(values) : props.children}</>
-      )}
-    </ButtonPrimitive>
+    />
   )
 }
 
-export type { ButtonProps }
-export { Button, buttonStyles }
+const renderListItem = (
+  props: ListBoxItemProps & {
+    textValue?: string
+    "aria-current"?: string | undefined
+    isDisabled?: boolean
+    className?: string
+  },
+  children: React.ReactNode,
+) => <ListBoxItem {...props}>{children}</ListBoxItem>
+
+interface PaginationItemProps
+  extends ListBoxItemProps,
+    Pick<ButtonProps, "isCircle" | "size" | "intent"> {
+  children?: React.ReactNode
+  className?: string
+  isCurrent?: boolean
+  segment?: "label" | "separator" | "ellipsis" | "default" | "last" | "first" | "previous" | "next"
+}
+
+const PaginationItem = ({
+  segment = "default",
+  size = "sm",
+  intent = "plain",
+  className,
+  isCurrent,
+  children,
+  ...props
+}: PaginationItemProps) => {
+  const textValue =
+    typeof children === "string"
+      ? children
+      : typeof children === "number"
+        ? children.toString()
+        : undefined
+
+  const renderPaginationIndicator = (indicator: React.ReactNode) =>
+    renderListItem(
+      {
+        textValue: segment,
+        "aria-current": isCurrent ? "page" : undefined,
+        isDisabled: isCurrent,
+        className: buttonStyles({
+          intent: "outline",
+          size: "sm",
+          className: twMerge(
+            "cursor-default font-normal text-fg min-w-10 focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
+            className,
+          ),
+        }),
+        ...props,
+      },
+      indicator,
+    )
+
+  switch (segment) {
+    case "label":
+      return renderListItem(
+        {
+          textValue: textValue,
+          className: twMerge("grid h-9 place-content-center px-3.5 tabular-nums", className),
+          ...props,
+        },
+        children,
+      )
+    case "separator":
+      return renderListItem(
+        {
+          textValue: "Separator",
+          className: twMerge("grid h-9 place-content-center", className),
+          ...props,
+        },
+        <Separator
+          orientation="vertical"
+          className="h-5 w-[1.5px] shrink-0 rotate-[14deg] bg-secondary-fg/40"
+        />,
+      )
+    case "ellipsis":
+      return renderListItem(
+        {
+          textValue: "More pages",
+          className: twMerge(
+            "flex size-9 items-center justify-center rounded-lg border border-transparent focus:outline-hidden focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
+            className,
+          ),
+          ...props,
+        },
+        <span aria-hidden className={twMerge("flex size-9 items-center justify-center", className)}>
+          <IconDotsHorizontal />
+        </span>,
+      )
+    case "previous":
+      return renderPaginationIndicator(<IconChevronLgLeft />)
+    case "next":
+      return renderPaginationIndicator(<IconChevronLgRight />)
+    case "first":
+      return renderPaginationIndicator(<IconChevronWallLeft />)
+    case "last":
+      return renderPaginationIndicator(<IconChevronWallRight />)
+    default:
+      return renderListItem(
+        {
+          textValue: textValue,
+          "aria-current": isCurrent ? "page" : undefined,
+          isDisabled: isCurrent,
+          className: buttonStyles({
+            intent: isCurrent ? "primary" : intent,
+            size,
+            className: twMerge(
+              "cursor-default font-normal min-w-10 tabular-nums disabled:cursor-default disabled:opacity-100 focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
+              className,
+            ),
+          }),
+          ...props,
+        },
+        children,
+      )
+  }
+}
+
+Pagination.Item = PaginationItem
+Pagination.List = PaginationList
+Pagination.Section = PaginationSection
+
+export type { PaginationProps, PaginationListProps, PaginationSectionProps, PaginationItemProps }
+export { Pagination }
