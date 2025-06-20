@@ -172,8 +172,7 @@ const SelectYear = ({ state }: { state: CalendarState }) => {
       aria-label="Select year"
       selectedKey={20}
       onSelectionChange={(value) => {
-        // @ts-expect-error
-        state.setFocusedDate(years[Number(value)]?.value)
+        state.setFocusedDate(years[Number(value)]?.value as CalendarDate)
       }}
     >
       <Select.Trigger className="h-8 text-xs focus:ring-3 group-data-open:ring-3" />
