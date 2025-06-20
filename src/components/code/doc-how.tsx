@@ -82,7 +82,7 @@ export const DocHow = ({
         <Group>
           <ToggleButton
             className={twJoin(
-              "p-2 font-medium text-sm/6",
+              "p-2 font-medium text-sm/6 outline-hidden focus:text-fg",
               currentTab === "tab_preview" ? "text-fg" : "text-muted-fg hover:text-fg",
             )}
             onPress={() => setCurrentTab("tab_preview")}
@@ -91,7 +91,7 @@ export const DocHow = ({
           </ToggleButton>
           <ToggleButton
             className={twJoin(
-              "p-2 font-medium text-sm/6",
+              "p-2 font-medium text-sm/6 outline-hidden focus:text-fg",
               currentTab === "tab_code" ? "text-fg" : "text-muted-fg hover:text-fg",
             )}
             onPress={() => setCurrentTab("tab_code")}
