@@ -1,43 +1,53 @@
-"use client"
-
 import {
   Switch as SwitchPrimitive,
   type SwitchProps as SwitchPrimitiveProps,
 } from "react-aria-components"
 
-import { Description, type FieldProps, Label } from "@/components/ui/field"
+import { Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twMerge } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 
-interface SwitchProps extends SwitchPrimitiveProps, Pick<FieldProps, "description" | "label"> {
+interface SwitchProps extends SwitchPrimitiveProps {
   ref?: React.RefObject<HTMLLabelElement>
 }
-const Switch = ({ children, label, description, className, ref, ...props }: SwitchProps) => {
+const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
   return (
     <SwitchPrimitive
       ref={ref}
       {...props}
-      className={composeTailwindRenderProps(className, "group disabled:opacity-50")}
+      className={composeTailwindRenderProps(
+        className,
+        twJoin(
+          "[--switch-bg-ring:var(--color-primary)]/90 [--switch-bg:var(--color-primary)] dark:[--switch-bg-ring:transparent]",
+          "[--switch-ring:var(--color-primary)]/90 [--switch-shadow:color-mix(in_oklab,var(--color-primary)_30%,var(--color-secondary-fg)_70%))]/20 [--switch:white]",
+          "group relative grid cursor-default grid-cols-[1fr_auto] gap-x-6 gap-y-1 disabled:opacity-50 *:data-[slot=indicator]:col-start-2 *:data-[slot=label]:col-start-1 *:data-[slot=label]:row-start-1 *:data-[slot=indicator]:self-start has-[[slot=description]]:**:data-[slot=label]:font-medium sm:*:data-[slot=indicator]:mt-0.5 *:[[slot=description]]:col-start-1 *:[[slot=description]]:row-start-2",
+        ),
+      )}
       style={{ WebkitTapHighlightColor: "transparent" }}
     >
       {(values) => (
-        <div
-          className={twMerge(
-            "relative grid grid-cols-[2rem_1fr] gap-x-3 gap-y-1 sm:grid-cols-[2rem_1fr]",
-            // "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1 *:data-[slot=indicator]:mt-0.75 sm:*:data-[slot=indicator]:mt-1",
-            "*:data-[slot=label]:col-start-2 *:data-[slot=label]:row-start-1",
-            "*:[[slot=description]]:col-start-2 *:[[slot=description]]:row-start-2",
-            "has-[[slot=description]]:**:data-[slot=label]:font-medium",
-          )}
-        >
+        <>
           <span
             data-slot="indicator"
-            className="absolute mt-0.5 h-5 w-8 cursor-default rounded-full border-2 border-transparent bg-(--switch) transition duration-200 [--switch:color-mix(in_oklab,var(--color-muted)_90%,black_10%)] group-invalid:ring-danger/20 group-focus:ring-3 group-focus:ring-ring/20 group-disabled:cursor-default group-disabled:opacity-50 group-selected:bg-primary dark:[--switch:color-mix(in_oklab,var(--color-muted)_85%,white_15%)]"
+            className={twMerge(
+              "relative isolate inline-flex h-6 w-10 cursor-default rounded-full p-[3px] sm:h-5 sm:w-8",
+              "transition duration-0 ease-in-out data-changing:duration-200",
+              "inset-ring inset-ring-fg/5 bg-secondary dark:inset-ring-fg/15",
+              "forced-colors:outline forced-colors:[--switch-bg:Highlight]",
+              values.isHovered && "inset-ring-fg/15 dark:inset-ring-fg/25",
+              values.isFocusVisible &&
+                "inset-ring-ring/70 selected:inset-ring-ring/30 bg-ring/20 ring-2 ring-ring/20 dark:inset-ring-ring/70",
+              values.isSelected &&
+                "inset-ring-(--switch-shadow) bg-(--switch-bg) dark:inset-ring-(--switch-bg-ring)",
+              values.isDisabled &&
+                "dark:group-disabled:bg-fg/15 dark:group-disabled:group-selected:inset-ring-fg/15 dark:group-disabled:group-selected:bg-(--switch-bg)",
+            )}
           >
-            <span className="block size-4 origin-right rounded-full bg-primary-fg shadow-sm transition-all duration-200 group-selected:group-pressed:ml-2 group-selected:ml-3 group-pressed:w-5 forced-colors:disabled:outline-[GrayText]" />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none relative inline-block size-4.5 translate-x-0 rounded-full border border-transparent bg-white shadow-sm ring ring-fg/5 transition duration-200 ease-in-out group-selected:translate-x-4 group-selected:bg-(--switch) group-selected:shadow-(--switch-shadow) group-selected:ring-(--switch-ring) group-selected:group-disabled:shadow-sm group-selected:group-disabled:ring-secondary-fg/5 sm:size-3.5 sm:group-selected:translate-x-3"
+            />
           </span>
-          {label && <Label>{label}</Label>}
-          {description && <Description>{description}</Description>}
           {typeof children === "function" ? (
             children(values)
           ) : typeof children === "string" ? (
@@ -45,7 +55,7 @@ const Switch = ({ children, label, description, className, ref, ...props }: Swit
           ) : (
             children
           )}
-        </div>
+        </>
       )}
     </SwitchPrimitive>
   )

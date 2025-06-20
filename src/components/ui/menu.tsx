@@ -149,11 +149,11 @@ const MenuItem = ({ className, isDanger = false, children, ...props }: MenuItemP
         dropdownItemStyles({
           ...renderProps,
           className: renderProps.hasSubmenu
-            ? twMerge([
-                "data-open:data-danger:bg-danger/10 data-open:data-danger:text-danger",
-                "data-open:bg-accent data-open:text-accent-fg data-open:*:data-[slot=icon]:text-accent-fg data-open:*:[.text-muted-fg]:text-accent-fg",
+            ? twMerge(
+                "open:data-danger:bg-danger/10 open:data-danger:text-danger",
+                "open:bg-accent open:text-accent-fg open:*:data-[slot=icon]:text-accent-fg open:*:[.text-muted-fg]:text-accent-fg",
                 className,
-              ])
+              )
             : className,
         }),
       )}

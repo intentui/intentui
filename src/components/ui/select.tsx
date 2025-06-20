@@ -98,8 +98,8 @@ const SelectTrigger = ({ children, className, ...props }: SelectTriggerProps) =>
       className={composeTailwindRenderProps(
         className,
         twJoin([
-          "relative isolate flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input px-3.5 py-2 text-start text-fg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] outline-hidden transition sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6 dark:shadow-none",
-          " **:data-[slot=icon]:-mx-0.5 **:data-[slot=avatar]:-mx-0.5 **:data-[slot=avatar]:**:-mx-0.5 **:data-[slot=avatar]:**:mr-2 **:data-[slot=avatar]:mr-2 **:data-[slot=icon]:mr-2 **:data-[slot=icon]:size-5 sm:**:data-[slot=icon]:size-4",
+          "flex w-full cursor-default items-center gap-x-2 rounded-lg border border-input px-3.5 py-2 text-start text-fg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] outline-hidden transition sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6 dark:shadow-none",
+          "gap-x-2 **:data-[slot=icon]:size-5 sm:**:data-[slot=icon]:size-4",
           "group-open:border-ring/70 group-open:ring-3 group-open:ring-ring/20",
           "group-disabled:opacity-50 forced-colors:group-disabled:border-[GrayText] forced-colors:group-disabled:text-[GrayText]",
           "focus:border-ring/70 focus:ring-3 focus:ring-ring/20",
@@ -118,7 +118,7 @@ const SelectTrigger = ({ children, className, ...props }: SelectTriggerProps) =>
             <>
               <SelectValue
                 data-slot="select-value"
-                className="grid flex-1 grid-cols-[auto_1fr] items-center truncate data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden"
+                className="grid flex-1 grid-cols-[auto_1fr] items-center gap-x-1.5 truncate data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden"
               />
               <IconChevronsY
                 data-slot="chevron"

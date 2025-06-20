@@ -9,7 +9,7 @@ export default function SwitchDescriptionDemo() {
         <CardTitle className="font-medium sm:text-sm/6">Privacy settings</CardTitle>
         <CardDescription>Choose what others can see and how your account is shown.</CardDescription>
       </CardHeader>
-      <Switch isSelected value="profileVisible">
+      <Switch isDisabled value="profileVisible">
         <Label>Public profile</Label>
         <Description>Allow others to see your profile.</Description>
       </Switch>
@@ -17,7 +17,7 @@ export default function SwitchDescriptionDemo() {
         <Label>Search engine indexing</Label>
         <Description>Allow search engines to index your profile.</Description>
       </Switch>
-      <Switch isSelected value="twoFactor">
+      <Switch value="twoFactor">
         <Label>Two-factor authentication</Label>
         <Description>Add an extra layer of security to your account.</Description>
       </Switch>

@@ -48,7 +48,7 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
     >
       {composeRenderProps(
         children,
-        (children, { isSelected, isIndeterminate, isFocused, isInvalid }) => {
+        (children, { isSelected, isIndeterminate, isFocusVisible, isInvalid }) => {
           const isStringChild = typeof children === "string"
           const hasCustomChildren = typeof children !== "undefined"
 
@@ -91,7 +91,7 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
                     "inset-ring-primary bg-primary text-primary-fg",
                     "group-invalid:inset-ring-danger/70 group-invalid:bg-danger group-invalid:text-danger-fg",
                   ],
-                  isFocused && [
+                  isFocusVisible && [
                     "inset-ring-primary ring-3 ring-ring/20",
                     "group-invalid:inset-ring-danger/70 group-invalid:text-danger-fg group-invalid:ring-danger/20",
                   ],

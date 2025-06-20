@@ -14,6 +14,7 @@ import { Card } from "@/components/ui/card"
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
 import { Choicebox } from "@/components/ui/choicebox"
 import { ComboBox } from "@/components/ui/combo-box"
+import { Description, Label } from "@/components/ui/field"
 import { Link } from "@/components/ui/link"
 import { Radio, RadioGroup } from "@/components/ui/radio"
 import { Select } from "@/components/ui/select"
@@ -127,8 +128,17 @@ export function Blocks() {
           </RadioGroup>
         </Card>
         <Card className="flex items-center justify-center p-6">
-          <Switch>
-            {({ isSelected }) => <>{isSelected ? "Enabled" : "Disabled"} Auto Updates</>}
+          <Switch aria-label="Automatic updates">
+            {({ isSelected }) => (
+              <>
+                <Label>Automatic updates</Label>
+                <Description>
+                  {isSelected
+                    ? "Updates will be installed automatically"
+                    : "You need to install updates manually"}
+                </Description>
+              </>
+            )}
           </Switch>
         </Card>
         <Card className="flex items-center justify-center p-6">
