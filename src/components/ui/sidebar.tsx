@@ -184,9 +184,7 @@ const Sidebar = ({
           closeButton={closeButton}
           aria-label="Sidebar"
           data-sidebar-intent="default"
-          classNames={{
-            content: "min-w-[22rem] max-w-min [&>button]:hidden",
-          }}
+          className="min-w-[22rem] max-w-min [&>button]:hidden"
           isFloat={intent === "float"}
           side={side}
         >

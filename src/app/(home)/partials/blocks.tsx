@@ -4,6 +4,7 @@ import CheckboxGroupDescriptionDemo from "@/components/docs/forms/checkbox/check
 import RadioGroupDescriptionDemo from "@/components/docs/forms/radio-group/radio-group-description-demo"
 import ModalDemo from "@/components/docs/overlays/modal/modal-demo"
 import PopoverDemo from "@/components/docs/overlays/popover/popover-demo"
+import SheetDemo from "@/components/docs/overlays/sheet/sheet-demo"
 import TooltipDemo from "@/components/docs/overlays/tooltip/tooltip-demo"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
@@ -22,7 +23,7 @@ export function Blocks() {
             title="Overlays"
             description="Used to display actions, details, or prompts without navigating away from the current page."
           />
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <BlocksCard>
               <Center>
                 <ModalDemo />
@@ -31,6 +32,11 @@ export function Blocks() {
             <BlocksCard>
               <Center>
                 <PopoverDemo />
+              </Center>
+            </BlocksCard>
+            <BlocksCard>
+              <Center>
+                <SheetDemo />
               </Center>
             </BlocksCard>
             <BlocksCard>

@@ -13,8 +13,8 @@ You may also notice that v3 is slightly more compact than v2, with improved usab
 ## What's New
 * Upgraded to the latest versions of React Aria Components and Tailwind CSS.
 * New component: [Toggle Group](/docs/components/buttons/toggle-group)
-* Replaced `cn()` with `twMerge()` from the `tailwind-merge` package.
 * Removed legacy size values (`square-petite`, `extra-small`, `small`, `medium`, `large`) from the `size` prop in `Button` and `Toggle`. Now using `xs`, `sm`, `md`, `lg`, and `sq-[xs, sm, md, lg]`.
+* Removed legacy size values (`small`, `medium`, `large`, `extra-large` from the `size` prop in `Avatar`. Now using `xs`, `sm`, `md`, `lg`, `xl`.
 * Removed the `shape` prop from `Button`, `Badge`, `Tag`, and `Toggle`. Use the `isCircle` prop instead.
 * Removed `focusRing` and `focusStyles` from `primitive.ts`—they are no longer used.
 * We make default `gap=0` and `columns=1` for `Choicebox` component.
@@ -24,7 +24,9 @@ You may also notice that v3 is slightly more compact than v2, with improved usab
 
 ## Toggle Group
 The `ToggleGroup` component has been introduced to provide a more intuitive way for users to switch between multiple options, supporting both single and multi-selection modes.
-<How toUse="buttons/toggle-group/toggle-group-demo" />
+<How
+  readMore='/toggle-group'
+  toUse="buttons/toggle-group/toggle-group-demo" />
 
 ## Button
 The `Button` component has undergone significant changes, including the removal of the `shape` prop and the introduction of the `isCircle` prop. The size values have also been updated to be more concise.
@@ -43,7 +45,9 @@ The `Button` component has undergone significant changes, including the removal 
 // After
 <Button size="sq-sm">Press me</Button>
 ```
-<How toUse="buttons/button/button-intent-demo" />
+<How
+  readMore='/button'
+  toUse="buttons/button/button-intent-demo" />
 
 ## Toggle
 The `Toggle` component has been updated to use the new size values and the `isCircle` prop. The `shape` prop has been removed.
@@ -100,3 +104,27 @@ We’ve improved the user experience on `Checkbox`, `CheckboxGroup`, and `RadioG
   </Radio>
 </RadioGroup>
 ```
+
+<How
+  readMore='/checkbox-group'
+  toUse="controls/checkbox-group/switch-description-demo" />
+
+
+## Switch
+The `Switch` component now supports descriptions. You can use the `label` and `description` props, or use the `Label` and `Description` components directly—both approaches work.
+
+```tsx
+<Switch
+  label="Enable Notifications"
+  description="Receive updates and alerts via email"
+/>
+
+<Switch>
+  <Label>Enable Notifications</Label>
+  <Description>Receive updates and alerts via email</Description>
+</Switch>
+```
+
+<How
+  readMore='/switch'
+  toUse="controls/switch/switch-description-demo" />

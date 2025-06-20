@@ -99,7 +99,7 @@ export function ThemeContainer() {
       <Sheet.Content
         onOpenChange={setOpen}
         isOpen={open}
-        classNames={{ content: "bg-shiki-bg sm:max-w-md" }}
+        className="bg-shiki-bg sm:max-w-md"
         side="right"
       >
         <Sheet.Header

@@ -85,26 +85,19 @@ const Sheet = (props: SheetProps) => {
 }
 
 interface SheetContentProps
-  extends Omit<React.ComponentProps<typeof Modal>, "children" | "className">,
-    Omit<ModalOverlayProps, "className">,
+  extends Omit<ModalOverlayProps, "children">,
+    Pick<DialogProps, "aria-label" | "role" | "aria-labelledby" | "children">,
     VariantProps<typeof overlayStyles> {
-  "aria-label"?: DialogProps["aria-label"]
-  "aria-labelledby"?: DialogProps["aria-labelledby"]
-  role?: DialogProps["role"]
   closeButton?: boolean
   isBlurred?: boolean
   isFloat?: boolean
   side?: Sides
-  classNames?: {
-    overlay?: ModalOverlayProps["className"]
-    content?: ModalOverlayProps["className"]
-  }
 }
 
 const SheetContent = ({
-  classNames,
+  className,
   isBlurred = false,
-  isDismissable = true,
+  isDismissable: isDismissableInternal,
   side = "right",
   role = "dialog",
   closeButton = true,
@@ -112,21 +105,20 @@ const SheetContent = ({
   children,
   ...props
 }: SheetContentProps) => {
-  const _isDismissable = role === "alertdialog" ? false : isDismissable
+  const isDismissable = isDismissableInternal ?? role !== "alertdialog"
   return (
     <ModalOverlay
-      isDismissable={_isDismissable}
-      className={composeRenderProps(classNames?.overlay, (className, renderProps) => {
+      isDismissable={isDismissable}
+      className={composeRenderProps(className, (className, renderProps) => {
         return overlayStyles({
           ...renderProps,
           isBlurred,
-          className,
         })
       })}
       {...props}
     >
       <Modal
-        className={composeRenderProps(classNames?.content, (className, renderProps) =>
+        className={composeRenderProps(className, (className, renderProps) =>
           contentStyles({
             ...renderProps,
             side,
@@ -136,16 +128,16 @@ const SheetContent = ({
         )}
         {...props}
       >
-        {(values) => (
-          <Dialog role={role} aria-label={props["aria-label"] ?? undefined} className="h-full">
+        <Dialog role={role}>
+          {(values) => (
             <>
               {typeof children === "function" ? children(values) : children}
               {closeButton && (
-                <DialogCloseIcon className="top-2.5 right-2.5" isDismissable={_isDismissable} />
+                <DialogCloseIcon className="top-2.5 right-2.5" isDismissable={isDismissable} />
               )}
             </>
-          </Dialog>
-        )}
+          )}
+        </Dialog>
       </Modal>
     </ModalOverlay>
   )

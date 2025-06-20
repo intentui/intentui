@@ -120,9 +120,7 @@ const NavbarNav = ({ useDefaultResponsive = true, className, ref, ...props }: Na
           side={side}
           aria-label="Compact Navbar"
           data-navbar="compact"
-          classNames={{
-            content: "text-fg [&>button]:hidden",
-          }}
+          className="text-fg [&>button]:hidden"
           isFloat={intent === "float"}
         >
           <Sheet.Body className="px-2 md:px-4">{props.children}</Sheet.Body>
