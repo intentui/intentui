@@ -32,12 +32,12 @@ const buttonStyles = tv({
         "[--btn-icon:color-mix(in_oklab,var(--danger-fg)_70%,var(--danger))] pressed:[--btn-icon:var(--danger-fg)] hover:[--btn-icon:var(--danger-fg)]",
       ],
       outline: [
-        "bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-fg/10",
-        "[--btn-icon:var(--color-fg)]/50 pressed:[--btn-icon:var(--color-fg)] hover:[--btn-icon:var(--color-fg)]",
+        "bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary-fg/10",
+        "[--btn-icon:var(--color-secondary-fg)]/50 pressed:[--btn-icon:var(--color-secondary-fg)] hover:[--btn-icon:var(--color-secondary-fg)]",
       ],
       plain: [
-        "inset-ring-transparent bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-fg/10",
-        "[--btn-icon:var(--color-fg)]/50 pressed:[--btn-icon:var(--color-fg)] hover:[--btn-icon:var(--color-fg)]",
+        "inset-ring-transparent bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary-fg/10",
+        "[--btn-icon:var(--color-secondary-fg)]/50 pressed:[--btn-icon:var(--color-secondary-fg)] hover:[--btn-icon:var(--color-secondary-fg)]",
       ],
     },
     size: {
