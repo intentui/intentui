@@ -17,6 +17,7 @@ You may also notice that v3 is slightly more compact than v2, with improved usab
 * Removed legacy size values (`small`, `medium`, `large`, `extra-large` from the `size` prop in `Avatar`. Now using `xs`, `sm`, `md`, `lg`, `xl`.
 * Removed the `shape` prop from `Button`, `Badge`, `Tag`, and `Toggle`. Use the `isCircle` prop instead.
 * Removed `focusRing` and `focusStyles` from `primitive.ts`—they are no longer used.
+* `classNames` remove for both `Sheet` and `Modal` components. Now, you can use the `className` prop to customize the styles on the `Modal.Content` and `Sheet.Content` components.
 * We make default `gap=0` and `columns=1` for `Choicebox` component.
 * Add `Loader` to `FileTrigger` when the pending state is true.
 * We no longer use Compound Pattern in `Tabs` component. Instead, we use a more straightforward approach with `Tabs`, `TabList`, `Tab`, and `TabPanel` components.
