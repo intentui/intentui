@@ -39,6 +39,7 @@ interface ShowMoreProps extends React.ComponentProps<typeof ToggleButton> {
 
 const ShowMore = ({
   as = "button",
+  children,
   orientation = "horizontal",
   className,
   ...props
@@ -50,7 +51,7 @@ const ShowMore = ({
           {...props}
           className={buttonStyles({ isCircle: true, intent: "outline", size: "sm" })}
         >
-          {composeRenderProps(props.children, (children) => children)}
+          {composeRenderProps(children, (children) => children)}
         </ToggleButton>
       ) : (
         <Text slot="description">{props.text}</Text>

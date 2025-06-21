@@ -5,7 +5,6 @@ import { SearchField as SearchFieldPrimitive } from "react-aria-components"
 
 import type { SearchFieldProps as SearchFieldPrimitiveProps } from "react-aria-components"
 
-import { Button } from "@/components/ui/button"
 import {
   Description,
   FieldError,
@@ -16,12 +15,14 @@ import {
 } from "@/components/ui/field"
 import { Loader } from "@/components/ui/loader"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Button } from "react-aria-components"
 
 interface SearchFieldProps extends SearchFieldPrimitiveProps, FieldProps {
   isPending?: boolean
 }
 
 const SearchField = ({
+  children,
   className,
   placeholder,
   label,
@@ -36,28 +37,29 @@ const SearchField = ({
       {...props}
       className={composeTailwindRenderProps(
         className,
-        "group/search-field flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
+        "group/search-field relative flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
       )}
     >
-      {!props.children ? (
+      {(values) => (
         <>
-          {label && <Label>{label}</Label>}
-          <FieldGroup>
-            {isPending ? <Loader variant="spin" /> : <IconSearch />}
-            <Input placeholder={placeholder ?? "Search..."} />
+          {typeof children === "function" ? (
+            children(values)
+          ) : children ? (
+            children
+          ) : (
+            <FieldGroup>
+              {label && <Label>{label}</Label>}
+              {isPending ? <Loader variant="spin" /> : <IconSearch />}
+              <Input placeholder={placeholder ?? "Search..."} />
 
-            <Button
-              intent="plain"
-              className="size-8 pressed:bg-transparent pressed:text-fg text-muted-fg hover:bg-transparent hover:text-fg group-empty/search-field:invisible"
-            >
-              <IconX />
-            </Button>
-          </FieldGroup>
-          {description && <Description>{description}</Description>}
-          <FieldError>{errorMessage}</FieldError>
+              <Button className="grid place-content-center pressed:text-fg text-muted-fg hover:text-fg group-empty/search-field:invisible">
+                <IconX />
+              </Button>
+              {description && <Description>{description}</Description>}
+              <FieldError>{errorMessage}</FieldError>
+            </FieldGroup>
+          )}
         </>
-      ) : (
-        props.children
       )}
     </SearchFieldPrimitive>
   )
