@@ -7,7 +7,7 @@ import { Description, FieldError, FieldGroup, Input, Label } from "@/components/
 import { Loader } from "@/components/ui/loader"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconEye, IconEyeClosed } from "@intentui/icons"
-import { Button as ButtonPrimitive, TextField as TextFieldPrimitive } from "react-aria-components"
+import { TextField as TextFieldPrimitive } from "react-aria-components"
 import type { InputProps, TextFieldProps as TextFieldPrimitiveProps } from "react-aria-components"
 
 type InputType = Exclude<InputProps["type"], "password">
@@ -64,14 +64,15 @@ const TextField = ({
             )}
             <Input placeholder={placeholder} />
             {isRevealable ? (
-              <ButtonPrimitive
+              <button
                 type="button"
+                tabIndex={-1}
                 aria-label="Toggle password visibility"
-                onPress={handleTogglePasswordVisibility}
+                onClick={handleTogglePasswordVisibility}
                 className="relative mr-0.5 grid shrink-0 place-content-center rounded-sm border-transparent outline-hidden *:data-[slot=icon]:text-muted-fg focus-visible:*:data-[slot=icon]:text-primary"
               >
                 {isPasswordVisible ? <IconEyeClosed /> : <IconEye />}
-              </ButtonPrimitive>
+              </button>
             ) : isPending ? (
               <Loader variant="spin" />
             ) : suffix ? (
