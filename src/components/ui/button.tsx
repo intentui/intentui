@@ -33,12 +33,12 @@ const buttonStyles = tv({
         "[--btn-icon:color-mix(in_oklab,var(--danger-fg)_70%,var(--danger))] pressed:[--btn-icon:var(--danger-fg)] hover:[--btn-icon:var(--danger-fg)]",
       ],
       outline: [
-        "bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary-fg/10",
-        "[--btn-icon:var(--color-secondary-fg)]/50 pressed:[--btn-icon:var(--color-secondary-fg)] hover:[--btn-icon:var(--color-secondary-fg)]",
+        "inset-ring-border bg-transparent outline-ring ring-ring/20 hover:bg-muted",
+        "[--btn-icon:var(--color-muted-fg)] pressed:[--btn-icon:var(--color-secondary-fg)] hover:[--btn-icon:var(--color-secondary-fg)]",
       ],
       plain: [
-        "inset-ring-transparent bg-transparent outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary-fg/10",
-        "[--btn-icon:var(--color-secondary-fg)]/50 pressed:[--btn-icon:var(--color-secondary-fg)] hover:[--btn-icon:var(--color-secondary-fg)]",
+        "inset-ring-transparent bg-transparent outline-ring ring-ring/20 hover:bg-muted",
+        "[--btn-icon:var(--color-muted-fg)] pressed:[--btn-icon:var(--color-secondary-fg)] hover:[--btn-icon:var(--color-secondary-fg)]",
       ],
     },
     size: {
@@ -62,10 +62,10 @@ const buttonStyles = tv({
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
         "*:data-[slot=loader]:size-5 sm:*:data-[slot=loader]:size-4.5",
       ],
-      "sq-xs": "size-7",
-      "sq-sm": "size-8",
-      "sq-md": "size-9",
-      "sq-lg": "size-10",
+      "sq-xs": "size-8 sm:size-7",
+      "sq-sm": "size-9 sm:size-8",
+      "sq-md": "size-10 sm:size-9",
+      "sq-lg": "size-11 sm:size-10",
     },
 
     isCircle: {
