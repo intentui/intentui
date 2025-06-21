@@ -9,7 +9,6 @@ import {
 import { Description, FieldError, Label } from "@/components/ui/field"
 import type { FieldProps } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
-import { PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
 import type {
@@ -17,7 +16,7 @@ import type {
   PopoverProps,
   SelectProps as SelectPrimitiveProps,
 } from "react-aria-components"
-import { Button, Select as SelectPrimitive, SelectValue } from "react-aria-components"
+import { Button, Popover, Select as SelectPrimitive, SelectValue } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
 
 interface SelectProps<T extends object> extends SelectPrimitiveProps<T>, FieldProps {
@@ -54,7 +53,7 @@ interface SelectListProps<T extends object>
   extends Omit<ListBoxProps<T>, "layout" | "orientation">,
     Pick<PopoverProps, "placement"> {
   items?: Iterable<T>
-  popoverClassName?: PopoverContentProps["className"]
+  popoverClassName?: PopoverProps["className"]
 }
 
 const SelectList = <T extends object>({
@@ -65,10 +64,17 @@ const SelectList = <T extends object>({
   ...props
 }: SelectListProps<T>) => {
   return (
-    <PopoverContent
-      showArrow={false}
-      respectScreen={false}
-      className={popoverClassName}
+    <Popover
+      className={composeTailwindRenderProps(
+        popoverClassName,
+        twJoin([
+          "min-w-(--trigger-width) max-w-xs rounded-xl border bg-overlay bg-clip-padding text-overlay-fg shadow-xs transition-transform sm:max-w-3xl sm:text-sm dark:backdrop-saturate-200",
+          "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
+          "placement-left:entering:slide-in-from-right-1 placement-right:entering:slide-in-from-left-1 placement-top:entering:slide-in-from-bottom-1 placement-bottom:entering:slide-in-from-top-1",
+          "placement-left:exiting:slide-out-to-right-1 placement-right:exiting:slide-out-to-left-1 placement-top:exiting:slide-out-to-bottom-1 placement-bottom:exiting:slide-out-to-top-1",
+          "forced-colors:bg-[Canvas]",
+        ]),
+      )}
       placement={props.placement}
     >
       <ListBox
@@ -83,7 +89,7 @@ const SelectList = <T extends object>({
       >
         {children}
       </ListBox>
-    </PopoverContent>
+    </Popover>
   )
 }
 
