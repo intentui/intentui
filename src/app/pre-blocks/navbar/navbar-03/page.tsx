@@ -3,7 +3,7 @@ import { Heading } from "@/components/ui/heading"
 
 export default function Page() {
   return (
-    <Container className="@xl:py-12 py-6">
+    <Container className="py-6 sm:py-12">
       <Heading>Navbar Inset</Heading>
     </Container>
   )

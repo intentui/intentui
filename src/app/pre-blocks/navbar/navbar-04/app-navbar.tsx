@@ -8,6 +8,7 @@ import {
   NavbarProvider,
   NavbarSection,
   NavbarSpacer,
+  NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
 import { IconBrandApple } from "@intentui/icons"
@@ -16,9 +17,11 @@ export default function AppNavbar() {
   return (
     <NavbarProvider>
       <Navbar>
-        <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
-          <IconBrandApple className="size-6 sm:size-5" />
-        </Link>
+        <NavbarStart>
+          <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
+            <IconBrandApple className="size-6 sm:size-5" />
+          </Link>
+        </NavbarStart>
         <NavbarGap />
         <NavbarSection>
           <NavbarItem href="#">Enabled</NavbarItem>

@@ -12,6 +12,7 @@ import {
   NavbarMobile,
   NavbarSection,
   NavbarSpacer,
+  NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
@@ -31,9 +32,11 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
   return (
     <>
       <Navbar {...props}>
-        <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
-          <IconBrandApple className="size-6 sm:size-5" />
-        </Link>
+        <NavbarStart>
+          <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
+            <IconBrandApple className="size-6 sm:size-5" />
+          </Link>
+        </NavbarStart>
         <NavbarGap />
         <NavbarSection>
           <NavbarItem isCurrent href="#">

@@ -12,7 +12,7 @@ import type { LinkProps } from "react-aria-components"
 import { Link } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 
-type NavbarContextProps = {
+interface NavbarContextProps {
   open: boolean
   setOpen: (open: boolean) => void
   isMobile: boolean
@@ -21,10 +21,10 @@ type NavbarContextProps = {
 
 const NavbarContext = createContext<NavbarContextProps | null>(null)
 
-function useNavbar() {
+const useNavbar = () => {
   const context = use(NavbarContext)
   if (!context) {
-    throw new Error("useNavbar must be used within a Navbar.")
+    throw new Error("useNavbar must be used within a NavbarProvider.")
   }
 
   return context
@@ -37,7 +37,6 @@ interface NavbarProviderProps extends React.ComponentProps<"nav"> {
 }
 
 const NavbarProvider = ({
-  children,
   isOpen: openProp,
   onOpenChange: setOpenProp,
   defaultOpen = false,
@@ -81,73 +80,65 @@ const NavbarProvider = ({
           className,
         )}
         {...props}
-      >
-        {children}
-      </nav>
+      />
     </NavbarContext>
   )
 }
 
 interface NavbarProps extends React.ComponentProps<"div"> {
-  intent?: "navbar" | "float" | "inset"
+  intent?: "default" | "float" | "inset"
   isSticky?: boolean
   side?: "left" | "right"
-  useDefaultResponsive?: boolean
 }
 
 const Navbar = ({
-  useDefaultResponsive = true,
-  intent = "navbar",
+  children,
+  isSticky,
+  intent,
   side = "left",
   className,
   ref,
   ...props
 }: NavbarProps) => {
   const { isMobile, open, setOpen } = useNavbar()
+  if (isMobile) {
+    return (
+      <Sheet isOpen={open} onOpenChange={setOpen} {...props}>
+        <Sheet.Content
+          side={side}
+          aria-label="Mobile Navbar"
+          data-navbar="sheet"
+          className="text-fg [&>button]:hidden"
+          isFloat={intent === "float"}
+        >
+          <Sheet.Body className="p-[calc(var(--gutter)---spacing(2))]">{children}</Sheet.Body>
+        </Sheet.Content>
+      </Sheet>
+    )
+  }
+
   return (
     <div
       data-navbar={intent}
       ref={ref}
       className={twMerge([
         "group/navbar-intent relative isolate",
-        // "group peer flex h-(--navbar-height) w-full items-center px-4 [--navbar-height:3.5rem]",
-        // "[&>div]:mx-auto [&>div]:w-full [&>div]:max-w-[1680px] [&>div]:items-center md:[&>div]:flex",
-        // isSticky && "sticky top-0 z-40",
+        isSticky && "sticky top-0 z-40",
         intent === "float" && "md:px-22 md:pt-10",
-        // intent === "inset" && "pt-10 sm:px-22",
-        // intent === "navbar" && "border-b bg-navbar text-navbar-fg md:px-6",
-        // intent === "inset" &&
-        //   "mx-auto md:px-6 [&>div]:mx-auto [&>div]:w-full [&>div]:items-center md:[&>div]:flex 2xl:[&>div]:max-w-(--breakpoint-2xl)",
         className,
       ])}
       {...props}
     >
-      {isMobile ? (
-        <Sheet isOpen={open} onOpenChange={setOpen} {...props}>
-          <Sheet.Content
-            side={side}
-            aria-label="Mobile Navbar"
-            data-navbar="sheet"
-            className="text-fg [&>button]:hidden"
-            isFloat={intent === "float"}
-          >
-            <Sheet.Body className="p-[calc(var(--gutter)---spacing(2))]">
-              {props.children}
-            </Sheet.Body>
-          </Sheet.Content>
-        </Sheet>
-      ) : (
-        <div
-          className={twMerge(
-            "relative isolate mx-auto hidden w-full items-center md:flex md:h-14",
-            intent === "float" && "max-w-7xl rounded-xl border bg-navbar px-4 shadow-xs",
-            intent === "inset" && "max-w-(--breakpoint-2xl) px-6",
-            intent === "navbar" && "max-w-(--breakpoint-2xl) border-b px-6",
-          )}
-        >
-          {props.children}
-        </div>
-      )}
+      <div
+        className={twMerge(
+          "relative isolate mx-auto hidden w-full items-center md:flex md:h-14",
+          intent === "float" && "max-w-7xl rounded-xl border bg-navbar px-4 shadow-xs",
+          intent === "inset" && "max-w-(--breakpoint-2xl) px-6",
+          intent === "default" && "max-w-(--breakpoint-2xl) border-b px-6",
+        )}
+      >
+        {children}
+      </div>
     </div>
   )
 }

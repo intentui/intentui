@@ -35,8 +35,8 @@ A navbar provides a variety of actions or options for users to select.
 ## Intent
 There are three types of intents: `navbar`, `floating`, and `inset`, each with distinct behaviors.
 
-### Navbar
-The default intent of the navbar is `navbar`. You can change it to `floating` or `inset` by setting the `intent` prop.
+### Default
+The default intent of the navbar is `dfeault`. You can change it to `float` or `inset` by setting the `intent` props.
 
 <CodeSandbox isIframe={false}
   src='/pre-blocks/navbar/navbar-01'
@@ -89,8 +89,8 @@ When using **Inertia.js** with **Laravel**, the **layout**, **components**, and 
 
 <EditorText
   source={{
-    'layouts/app-layout.tsx': 'docs/navbar/app-layout',
-    'layouts/app-navbar.tsx': 'docs/navbar/app-navbar',
+    'layouts/app-layout.tsx': 'components/navbar/app-layout',
+    'layouts/app-navbar.tsx': 'components/navbar/app-navbar',
     'pages/home.tsx': 'docs/navbar/home',
   }} />
 
@@ -106,11 +106,13 @@ app/
 ## Logo
 The logo is typically the first item in the navbar, usually representing the brand or company.
 ```
-<Navbar>
+<NavbarProvider>
   <Navbar>
-    <Link href="#">
-      <IconBrandApple className="size-5" />
-    </Link>
+    <NavbarStart>
+      <Link href="#">
+        <IconBrandApple className="size-5" />
+      </Link>
+    </NavbarStart>
     <NavbarSection>
       <NavbarItem href="#">Store</NavbarItem>
 ```
@@ -166,7 +168,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
   React.useEffect(() => setIsOpen(false), [page.url]);
 
   return (
-    <Navbar isOpen={isOpen} onOpenChange={setIsOpen} {...props}/>
+    <NavbarProvider isOpen={isOpen} onOpenChange={setIsOpen} {...props}/>
   )
 }
 ```
@@ -183,5 +185,5 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
   React.useEffect(() => setIsOpen(false), [pathname]);
 
   return (
-    <Navbar isOpen={isOpen} onOpenChange={setIsOpen} {...props}>
+    <NavbarProvider isOpen={isOpen} onOpenChange={setIsOpen} {...props}>
 ```

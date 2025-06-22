@@ -3,7 +3,7 @@ import { Heading } from "@/components/ui/heading"
 
 export default function Page() {
   return (
-    <Container>
+    <Container className="py-6 sm:py-12">
       <Heading>Navbar Default</Heading>
     </Container>
   )

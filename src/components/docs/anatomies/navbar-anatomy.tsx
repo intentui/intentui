@@ -38,6 +38,7 @@ export default function NavbarAnatomy() {
         </Button>
       </NavbarMobile>
 
+      {/* Required when setting the navbar intent to 'inset' */}
       <NavbarInset />
     </NavbarProvider>
   )
