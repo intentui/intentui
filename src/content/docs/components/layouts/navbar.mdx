@@ -10,12 +10,12 @@ references: ["https://react-spectrum.adobe.com/react-aria/Link.html#props"]
 A navbar provides a variety of actions or options for users to select.
 
 <CodeSandbox
-  src='/blocks/navbar/navbar-00'
+  src='/pre-blocks/navbar/navbar-00'
   source={{
-    preview: 'blocks/navbar/navbar-00/app-navbar',
-    'page.tsx': 'blocks/navbar/navbar-00/page',
-    'layout.tsx': 'blocks/navbar/navbar-00/layout',
-    'app-navbar.tsx': 'blocks/navbar/navbar-00/app-navbar',
+    preview: 'pre-blocks/navbar/navbar-00/app-navbar',
+    'page.tsx': 'pre-blocks/navbar/navbar-00/page',
+    'layout.tsx': 'pre-blocks/navbar/navbar-00/layout',
+    'app-navbar.tsx': 'pre-blocks/navbar/navbar-00/app-navbar',
   }} />
 
 ## Installation
@@ -39,35 +39,35 @@ There are three types of intents: `navbar`, `floating`, and `inset`, each with d
 The default intent of the navbar is `navbar`. You can change it to `floating` or `inset` by setting the `intent` prop.
 
 <CodeSandbox isIframe={false}
-  src='/blocks/navbar/navbar-01'
+  src='/pre-blocks/navbar/navbar-01'
   source={{
-    preview: 'blocks/navbar/navbar-01/app-navbar',
-    'page.tsx': 'blocks/navbar/navbar-01/page',
-    'layout.tsx': 'blocks/navbar/navbar-01/layout',
-    'app-navbar.tsx': 'blocks/navbar/navbar-01/app-navbar',
+    preview: 'pre-blocks/navbar/navbar-01/app-navbar',
+    'page.tsx': 'pre-blocks/navbar/navbar-01/page',
+    'layout.tsx': 'pre-blocks/navbar/navbar-01/layout',
+    'app-navbar.tsx': 'pre-blocks/navbar/navbar-01/app-navbar',
   }} />
 
 ### Floating
 The floating intent will have a border inside the navbar itself, the wrapper will have a padding to the content.
 <CodeSandbox isIframe={false}
-  src='/blocks/navbar/navbar-02'
+  src='/pre-blocks/navbar/navbar-02'
   source={{
-    preview: 'blocks/navbar/navbar-02/app-navbar',
-    'page.tsx': 'blocks/navbar/navbar-02/page',
-    'layout.tsx': 'blocks/navbar/navbar-02/layout',
-    'app-navbar.tsx': 'blocks/navbar/navbar-02/app-navbar',
+    preview: 'pre-blocks/navbar/navbar-02/app-navbar',
+    'page.tsx': 'pre-blocks/navbar/navbar-02/page',
+    'layout.tsx': 'pre-blocks/navbar/navbar-02/layout',
+    'app-navbar.tsx': 'pre-blocks/navbar/navbar-02/app-navbar',
   }} />
 
 
 ### Inset
-The inset one will have the padding to inset main content. You can of course see what's going on the demo, but you can also see the [live example here](/blocks/navbar/navbar-03).
+The inset one will have the padding to inset main content. You can of course see what's going on the demo, but you can also see the [live example here](/pre-blocks/navbar/navbar-03).
 <CodeSandbox isIframe={false}
-  src='/blocks/navbar/navbar-03'
+  src='/pre-blocks/navbar/navbar-03'
   source={{
-    preview: 'blocks/navbar/navbar-03/app-navbar',
-    'page.tsx': 'blocks/navbar/navbar-03/page',
-    'layout.tsx': 'blocks/navbar/navbar-03/layout',
-    'app-navbar.tsx': 'blocks/navbar/navbar-03/app-navbar',
+    preview: 'pre-blocks/navbar/navbar-03/app-navbar',
+    'page.tsx': 'pre-blocks/navbar/navbar-03/page',
+    'layout.tsx': 'pre-blocks/navbar/navbar-03/layout',
+    'app-navbar.tsx': 'pre-blocks/navbar/navbar-03/app-navbar',
   }} />
 
 ## Using the Layout
@@ -132,23 +132,23 @@ You also make the navbar sticky by setting the `isSticky` prop to `true`.
 If you'd like to use icons on the navbar items, that's no problem at all. The navbar is already designed and optimized to accommodate icons seamlessly. First of all, you need to install the `@intentui/icons` package.
 <Installation className='mb-6' options={{ isManual: false }} items={['@intentui/icons']} />
 <CodeSandbox isIframe={false}
-  src='/blocks/navbar/navbar-05'
+  src='/pre-blocks/navbar/navbar-05'
   source={{
-    preview: 'blocks/navbar/navbar-05/app-navbar',
-    'page.tsx': 'blocks/navbar/navbar-05/page',
-    'layout.tsx': 'blocks/navbar/navbar-05/layout',
-    'app-navbar.tsx': 'blocks/navbar/navbar-05/app-navbar',
+    preview: 'pre-blocks/navbar/navbar-05/app-navbar',
+    'page.tsx': 'pre-blocks/navbar/navbar-05/page',
+    'layout.tsx': 'pre-blocks/navbar/navbar-05/layout',
+    'app-navbar.tsx': 'pre-blocks/navbar/navbar-05/app-navbar',
   }} />
 
 ## Disabled
 Disable individual navbar items when needed.
 <CodeSandbox isIframe={false}
-  src='/blocks/navbar/navbar-04'
+  src='/pre-blocks/navbar/navbar-04'
   source={{
-    preview: 'blocks/navbar/navbar-04/app-navbar',
-    'page.tsx': 'blocks/navbar/navbar-04/page',
-    'layout.tsx': 'blocks/navbar/navbar-04/layout',
-    'app-navbar.tsx': 'blocks/navbar/navbar-04/app-navbar',
+    preview: 'pre-blocks/navbar/navbar-04/app-navbar',
+    'page.tsx': 'pre-blocks/navbar/navbar-04/page',
+    'layout.tsx': 'pre-blocks/navbar/navbar-04/layout',
+    'app-navbar.tsx': 'pre-blocks/navbar/navbar-04/app-navbar',
   }} />
 
 ## Controlled
@@ -172,7 +172,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
 ```
 
 ### Next.js
-On next.js, you can listen the path by using `usePathname` hooks. If you're not sure, you can always see the real example here at [starter kit next.js](https://github.com/intentuilabs/next.js). or see live example [here](/blocks/navbar/navbar-01).
+On next.js, you can listen the path by using `usePathname` hooks. If you're not sure, you can always see the real example here at [starter kit next.js](https://github.com/intentuilabs/next.js). or see live example [here](/pre-blocks/navbar/navbar-01).
 ```
 import { usePathname } from "next/navigation"
 
