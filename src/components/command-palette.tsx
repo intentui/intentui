@@ -6,12 +6,16 @@ import { useCopy } from "@/hooks/use-copy"
 import colors from "@/json/colors.json"
 import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
 import {
-  IconColorPalette,
-  IconColors,
+  IconBrandIntentui,
+  IconColorPaletteFill,
+  IconColorsFill,
+  IconDuplicateFill,
   IconHashtag,
-  IconHome,
-  IconNotes,
-  IconPackage,
+  IconHomeFill,
+  IconNotepadFill,
+  IconNotesFill,
+  IconPackageFill,
+  IconWindowVisitFill,
 } from "@intentui/icons"
 import { formatHex, parse } from "culori"
 import { useRouter } from "next/navigation"
@@ -109,28 +113,45 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
         onInputChange={setInput}
         isPending={isLoading}
       >
-        <CommandMenu.Search placeholder="Search components..." />
+        <CommandMenu.Search placeholder="Search components, color..." />
         <CommandMenu.List>
           <CommandMenu.Section className="hidden sm:grid" aria-label="Pages">
             <CommandMenu.Item textValue="Home" href="/">
-              <IconHome />
+              <IconHomeFill />
               <CommandMenu.Label>Home</CommandMenu.Label>
             </CommandMenu.Item>
             <CommandMenu.Item textValue="Docs" href={"/docs/getting-started/installation"}>
-              <IconNotes />
+              <IconNotesFill />
               <CommandMenu.Label>Docs</CommandMenu.Label>
             </CommandMenu.Item>
             <CommandMenu.Item textValue="components" href="/components">
-              <IconPackage />
+              <IconPackageFill />
               <CommandMenu.Label>Components</CommandMenu.Label>
             </CommandMenu.Item>
             <CommandMenu.Item textValue="themes" href="/themes">
-              <IconColorPalette />
+              <IconColorPaletteFill />
               <CommandMenu.Label>Themes</CommandMenu.Label>
             </CommandMenu.Item>
+            <CommandMenu.Item textValue="icons" href="/icons">
+              <IconDuplicateFill />
+              <CommandMenu.Label>Icons</CommandMenu.Label>
+            </CommandMenu.Item>
             <CommandMenu.Item textValue="colors" href="/colors">
-              <IconColors />
+              <IconColorsFill />
               <CommandMenu.Label>Colors</CommandMenu.Label>
+            </CommandMenu.Item>
+            <CommandMenu.Item textValue="blocks" href="/blocks">
+              <IconWindowVisitFill />
+              <CommandMenu.Label>Blocks</CommandMenu.Label>
+            </CommandMenu.Item>
+            <CommandMenu.Separator />
+            <CommandMenu.Item textValue="blog" href="/blog">
+              <IconNotepadFill />
+              <CommandMenu.Label>Blog</CommandMenu.Label>
+            </CommandMenu.Item>
+            <CommandMenu.Item textValue="premium block" href="https://blocks.intentui.com">
+              <IconBrandIntentui />
+              <CommandMenu.Label>Premium blocks</CommandMenu.Label>
             </CommandMenu.Item>
           </CommandMenu.Section>
 

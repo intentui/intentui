@@ -133,7 +133,7 @@ const SidebarProvider = ({
           "[--sidebar-accent:color-mix(in_oklab,var(--color-sidebar)_95%,black_5%)]",
           "dark:[--sidebar-accent:color-mix(in_oklab,var(--color-sidebar)_90%,white_10%)]",
           "flex min-h-svh w-full text-sidebar-fg",
-          "group/sidebar-root has-data-[sidebar-intent=inset]:bg-sidebar dark:has-data-[sidebar-intent=inset]:bg-bg",
+          "group/sidebar-root peer/sidebar-root has-data-[sidebar-intent=inset]:bg-sidebar dark:has-data-[sidebar-intent=inset]:bg-bg",
 
           className,
         )}
@@ -670,7 +670,7 @@ const SidebarNav = ({ isSticky = false, className, ...props }: SidebarNavProps) 
       data-slot="sidebar-nav"
       className={twMerge(
         "isolate flex h-[3.2rem] items-center justify-between gap-x-2 px-4 text-navbar-fg sm:justify-start md:w-full",
-        "group-has-data-[sidebar-intent=default]/sidebar-root:border-b group-has-data-[sidebar-intent=default]/sidebar-root:bg-bg",
+        "group-has-data-[sidebar-intent=default]/sidebar-root:border-b group-has-data-[sidebar-intent=default]/sidebar-root:bg-sidebar",
         isSticky && "static top-0 z-40 group-has-data-[sidebar-intent=default]/sidebar-root:sticky",
         className,
       )}

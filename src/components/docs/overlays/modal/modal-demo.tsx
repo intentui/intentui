@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Modal } from "@/components/ui/modal"
+import { TextField } from "@/components/ui/text-field"
 
 export default function ModalDemo() {
   return (
@@ -16,6 +17,9 @@ export default function ModalDemo() {
                 Change how this project will appear across the dashboard.
               </Modal.Description>
             </Modal.Header>
+            <Modal.Body>
+              <TextField placeholder="Enter a name" />
+            </Modal.Body>
             <Modal.Footer>
               <Modal.Close>Cancel</Modal.Close>
               <Button onPress={close} intent="primary">

@@ -15,8 +15,10 @@ export default function DrawerWithoutNotchDemo() {
             Lennon, Paul McCartney, George Harrison and Ringo Starr.
           </Drawer.Description>
         </Drawer.Header>
-        <Drawer.Footer>
-          <Drawer.Close isCircle>Close</Drawer.Close>
+        <Drawer.Footer className="justify-center">
+          <Drawer.Close isCircle className="w-full">
+            Close
+          </Drawer.Close>
         </Drawer.Footer>
       </Drawer.Content>
     </Drawer>

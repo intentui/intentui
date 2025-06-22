@@ -38,7 +38,7 @@ export default function SingleMenuDemo() {
     <Menu>
       <Button intent="outline">Placement</Button>
       <Menu.Content
-        placement={Array.from(selected)[0] as Placement}
+        popover={{ placement: Array.from(selected)[0] as Placement }}
         selectionMode="single"
         selectedKeys={selected}
         onSelectionChange={setSelected}

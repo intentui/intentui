@@ -3,8 +3,18 @@
 import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
-import { Navbar } from "@/components/ui/navbar"
+import {
+  Navbar,
+  NavbarGap,
+  NavbarItem,
+  NavbarMobile,
+  NavbarProvider,
+  NavbarSection,
+  NavbarSpacer,
+  NavbarTrigger,
+} from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
 import {
   IconBrandApple,
@@ -21,25 +31,23 @@ import {
 
 export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
   return (
-    <Navbar {...props}>
-      <Navbar.Nav>
-        <Navbar.Logo
-          aria-label="Goto documenation of Navbar"
-          href="/docs/3.x/components/layouts/navbar"
-        >
+    <NavbarProvider {...props}>
+      <Navbar>
+        <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
           <IconBrandApple className="size-6 sm:size-5" />
-        </Navbar.Logo>
-        <Navbar.Section>
-          <Navbar.Item href="#" isCurrent>
+        </Link>
+        <NavbarGap />
+        <NavbarSection>
+          <NavbarItem href="#" isCurrent>
             Home
-          </Navbar.Item>
-          <Navbar.Item href="#">Shop</Navbar.Item>
-          <Navbar.Item href="#">Offers</Navbar.Item>
-          <Navbar.Item href="#">Orders</Navbar.Item>
+          </NavbarItem>
+          <NavbarItem href="#">Shop</NavbarItem>
+          <NavbarItem href="#">Offers</NavbarItem>
+          <NavbarItem href="#">Orders</NavbarItem>
           <Menu>
-            <Navbar.Item>
+            <NavbarItem>
               Categories <IconChevronLgDown data-slot="chevron" />
-            </Navbar.Item>
+            </NavbarItem>
             <Menu.Content items={categories}>
               {(item) => (
                 <Menu.Item id={item.id} textValue={item.label} href={item.url}>
@@ -48,49 +56,35 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
               )}
             </Menu.Content>
           </Menu>
-        </Navbar.Section>
-
-        <Navbar.Section className="ml-auto hidden md:flex">
-          <Navbar.Flex className="sm:gap-x-1">
-            <Button intent="plain" size="sq-sm" aria-label="Search for products">
-              <IconSearch />
-            </Button>
-            <Button intent="plain" size="sq-sm" aria-label="Your Bag">
-              <IconShoppingBag />
-            </Button>
-            <ThemeSwitcher intent="plain" />
-          </Navbar.Flex>
+        </NavbarSection>
+        <NavbarSpacer />
+        <NavbarSection className="max-md:hidden">
+          <Button intent="plain" size="sq-sm" aria-label="Search for products">
+            <IconSearch />
+          </Button>
+          <Button intent="plain" size="sq-sm" aria-label="Your Bag">
+            <IconShoppingBag />
+          </Button>
+          <ThemeSwitcher intent="plain" />
           <Separator orientation="vertical" className="mr-3 ml-1 h-6" />
           <UserMenu />
-        </Navbar.Section>
-      </Navbar.Nav>
+        </NavbarSection>
+      </Navbar>
 
-      <Navbar.Compact>
-        <Navbar.Flex>
-          <Navbar.Trigger className="-ml-2" />
-          <Separator orientation="vertical" className="h-6 sm:mx-1" />
-          <Navbar.Logo
-            aria-label="Goto documenation of Navbar"
-            href="/docs/3.x/components/layouts/navbar"
-          >
-            <IconBrandApple className="size-5" />
-          </Navbar.Logo>
-        </Navbar.Flex>
-        <Navbar.Flex>
-          <Navbar.Flex>
-            <Button intent="plain" size="sq-sm" aria-label="Search for products">
-              <IconSearch />
-            </Button>
-            <Button intent="plain" size="sq-sm" aria-label="Your Bag">
-              <IconShoppingBag />
-            </Button>
-            <ThemeSwitcher intent="plain" />
-          </Navbar.Flex>
-          <Separator orientation="vertical" className="mr-3 ml-1 h-6" />
-          <UserMenu />
-        </Navbar.Flex>
-      </Navbar.Compact>
-    </Navbar>
+      <NavbarMobile>
+        <NavbarTrigger />
+        <NavbarSpacer />
+        <Button intent="plain" size="sq-sm" aria-label="Search for products">
+          <IconSearch />
+        </Button>
+        <Button intent="plain" size="sq-sm" aria-label="Your Bag">
+          <IconShoppingBag />
+        </Button>
+        <ThemeSwitcher intent="plain" />
+        <Separator orientation="vertical" className="mr-3 ml-1 h-5" />
+        <UserMenu />
+      </NavbarMobile>
+    </NavbarProvider>
   )
 }
 
@@ -151,7 +145,12 @@ function UserMenu() {
   return (
     <Menu>
       <Menu.Trigger aria-label="Open Menu">
-        <Avatar alt="cobain" size="sm" isCircle={false} src="/images/avatar/cobain.jpg" />
+        <Avatar
+          alt="cobain"
+          size="sm"
+          isSquare
+          src="https://intentui.com/images/avatar/cobain.jpg"
+        />
       </Menu.Trigger>
       <Menu.Content placement="bottom right" className="sm:min-w-56">
         <Menu.Section>

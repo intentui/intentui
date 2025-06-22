@@ -1,5 +1,4 @@
 "use client"
-import { Ads } from "@/components/ads"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { useScrollPosition } from "@/hooks/use-scroll-position"
 import { IconAlignmentLeft } from "@intentui/icons"
@@ -77,7 +76,7 @@ export function Toc({ className, items }: Props) {
         </Suspense>
       </nav>
 
-      <Ads className="hidden md:flex" />
+      {/*<Ads className="hidden md:flex" />*/}
     </aside>
   )
 }

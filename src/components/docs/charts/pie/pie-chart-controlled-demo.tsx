@@ -77,7 +77,11 @@ export default function PieChartControlledDemo() {
         <Card.Action>
           <Select selectedKey={activeMonth} onSelectionChange={setActiveMonth}>
             <Select.Trigger />
-            <Select.List aria-label="Options" className="sm:min-w-40" placement="bottom end">
+            <Select.List
+              aria-label="Options"
+              className="sm:min-w-40"
+              popover={{ placement: "bottom end" }}
+            >
               {months.map((key) => {
                 const _config = config[key as keyof typeof config]
 

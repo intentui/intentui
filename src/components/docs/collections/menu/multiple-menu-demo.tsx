@@ -12,7 +12,7 @@ export default function MultipleMenuDemo() {
     <Menu>
       <Button intent="outline">Open</Button>
       <Menu.Content
-        placement="bottom"
+        popover={{ placement: "bottom" }}
         selectionMode="multiple"
         selectedKeys={selected}
         onSelectionChange={setSelected}

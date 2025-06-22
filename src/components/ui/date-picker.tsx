@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { DateInput } from "@/components/ui/date-field"
-import { Description, FieldError, FieldGroup, Label } from "@/components/ui/field"
-import { Popover } from "@/components/ui/popover"
+import { Description, FieldError, FieldGroup, type FieldProps, Label } from "@/components/ui/field"
+import { Modal } from "@/components/ui/modal"
+import { PopoverContent } from "@/components/ui/popover"
 import { RangeCalendar } from "@/components/ui/range-calendar"
+import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconCalendarDays } from "@intentui/icons"
 import type { DateDuration } from "@internationalized/date"
@@ -13,18 +15,12 @@ import {
   DatePicker as DatePickerPrimitive,
   type DatePickerProps as DatePickerPrimitiveProps,
   type DateValue,
-  type DialogProps,
   type PopoverProps,
   type ValidationResult,
 } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
 
-interface DatePickerOverlayProps
-  extends Omit<DialogProps, "children" | "className" | "style">,
-    Omit<PopoverProps, "children" | "className" | "style"> {
-  className?: string | ((values: { defaultClassName?: string }) => string)
-  children?: React.ReactNode
-  closeButton?: boolean
+interface DatePickerOverlayProps extends Omit<PopoverProps, "children"> {
   range?: boolean
   visibleDuration?: DateDuration
   pageBehavior?: "visible" | "single"
@@ -32,16 +28,23 @@ interface DatePickerOverlayProps
 
 const DatePickerOverlay = ({
   visibleDuration = { months: 1 },
-  closeButton = true,
   pageBehavior = "visible",
-  placement = "bottom",
   range,
   ...props
 }: DatePickerOverlayProps) => {
-  return (
-    <Popover.Content
-      placement={placement}
-      isDismissable={false}
+  const isMobile = useMediaQuery("(max-width: 767px)")
+  return isMobile ? (
+    <Modal.Content aria-label="Date picker" closeButton={false}>
+      <div className="flex justify-center p-6">
+        {range ? (
+          <RangeCalendar pageBehavior={pageBehavior} visibleDuration={visibleDuration} />
+        ) : (
+          <Calendar />
+        )}
+      </div>
+    </Modal.Content>
+  ) : (
+    <PopoverContent
       showArrow={false}
       className={twJoin(
         "flex min-w-auto max-w-none snap-x justify-center p-4 sm:min-w-[16.5rem] sm:p-2 sm:pt-3",
@@ -54,14 +57,7 @@ const DatePickerOverlay = ({
       ) : (
         <Calendar />
       )}
-      {closeButton && (
-        <div className="mx-auto flex w-full max-w-[inherit] justify-center py-2.5 sm:hidden">
-          <Popover.Close isCircle className="w-full">
-            Close
-          </Popover.Close>
-        </div>
-      )}
-    </Popover.Content>
+    </PopoverContent>
   )
 }
 
@@ -77,11 +73,8 @@ const DatePickerIcon = () => (
 
 interface DatePickerProps<T extends DateValue>
   extends DatePickerPrimitiveProps<T>,
-    Pick<DatePickerOverlayProps, "placement"> {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
-}
+    Pick<DatePickerOverlayProps, "placement">,
+    Omit<FieldProps, "placeholder"> {}
 
 const DatePicker = <T extends DateValue>({
   label,

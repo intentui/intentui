@@ -46,18 +46,16 @@ import {
   IconShoppingBag,
   IconTicket,
 } from "@intentui/icons"
-import { useTheme } from "next-themes"
 import { twMerge } from "tailwind-merge"
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
-  const { theme, setTheme } = useTheme()
   const { state } = useSidebar()
   return (
     <Sidebar {...props}>
       <SidebarHeader>
         <Link
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
-          href="/docs/3.x/components/layouts/sidebar"
+          href="/docs/components/layouts/sidebar"
         >
           <IconBrandApple className="size-5" />
           <SidebarLabel className="font-medium">Apple</SidebarLabel>
@@ -83,7 +81,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                       <Menu.Trigger data-slot="menu-trigger" aria-label="Manage">
                         <IconDotsHorizontal />
                       </Menu.Trigger>
-                      <Menu.Content offset={0} placement="right top">
+                      <Menu.Content popover={{ offset: 0, placement: "right top" }}>
                         <Menu.Item href="#new-order">
                           <IconPlus />
                           Create New Order
@@ -121,7 +119,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                       <Menu.Trigger aria-label="Manage">
                         <IconDotsHorizontal />
                       </Menu.Trigger>
-                      <Menu.Content offset={0} placement="right top">
+                      <Menu.Content popover={{ offset: 0, placement: "right top" }}>
                         <Menu.Item href="#new-product">
                           <IconPlus />
                           Add New Product
@@ -204,7 +202,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
       <SidebarFooter>
         <Menu>
           <Menu.Trigger className="group" aria-label="Profile">
-            <Avatar isCircle={false} src="/images/avatar/cobain.jpg" />
+            <Avatar isSquare src="https://intentui.com/images/avatar/cobain.jpg" />
             <div className="in-data-[sidebar-collapsible=dock]:hidden text-sm">
               <SidebarLabel>Kurt Cobain</SidebarLabel>
               <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>

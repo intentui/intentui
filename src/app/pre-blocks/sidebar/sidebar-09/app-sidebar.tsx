@@ -35,7 +35,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
       <SidebarHeader>
         <Link
           className="inline-flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
-          href="/docs/3.x/components/layouts/sidebar"
+          href="/docs/components/layouts/sidebar"
         >
           <IconBrandApple className="size-5" />
           <SidebarLabel className="font-medium">Apple</SidebarLabel>
@@ -58,7 +58,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
       <SidebarFooter>
         <Menu>
           <Menu.Trigger aria-label="Profile" data-slot="menu-trigger">
-            <Avatar isCircle={false} src="/images/avatar/cobain.jpg" />
+            <Avatar isSquare src="https://intentui.com/images/avatar/cobain.jpg" />
             <div className="text-sm group-data-[collapsible=dock]:hidden">
               Kurt Cobain
               <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>

@@ -5,13 +5,13 @@ interface AvatarProps {
   initials?: string
   alt?: string
   className?: string
-  isCircle?: boolean
+  isSquare?: boolean
   size?: "xs" | "sm" | "md" | "lg" | "xl"
 }
 
 const Avatar = ({
   src = null,
-  isCircle = true,
+  isSquare = false,
   size = "md",
   initials,
   alt = "",
@@ -29,9 +29,9 @@ const Avatar = ({
         size === "md" && "size-8 *:size-8",
         size === "lg" && "size-10 *:size-10",
         size === "xl" && "size-12 *:size-12",
-        isCircle
-          ? "rounded-full *:rounded-full"
-          : "rounded-(--avatar-radius) *:rounded-(--avatar-radius)",
+        isSquare
+          ? "rounded-(--avatar-radius) *:rounded-(--avatar-radius)"
+          : "rounded-full *:rounded-full",
         className,
       )}
     >

@@ -79,7 +79,7 @@ export function Navbar() {
           <GithubLink />
 
           <div className="flex items-center lg:hidden">
-            <Separator orientation="vertical" className="mx-2.5 h-6 bg-white/20" />
+            <Separator orientation="vertical" className="mx-2.5 h-5 bg-white/20" />
             <Menu>
               <Button
                 aria-label="Search docs"
@@ -87,7 +87,7 @@ export function Navbar() {
               >
                 <IconHamburger className="size-5" />
               </Button>
-              <Menu.Content respectScreen={false} placement="bottom" className="min-w-56">
+              <Menu.Content placement="bottom" className="min-w-56">
                 <Menu.Item href="/">
                   <IconHome />
                   <Menu.Label>Home</Menu.Label>

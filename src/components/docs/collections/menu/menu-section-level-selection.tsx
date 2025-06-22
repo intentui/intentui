@@ -22,7 +22,7 @@ export default function MenuSectionLevelSelection() {
   return (
     <Menu>
       <Menu.Trigger>Open</Menu.Trigger>
-      <Menu.Content placement="bottom" className="sm:min-w-52">
+      <Menu.Content popover={{ placement: "bottom" }} className="sm:min-w-52">
         <Menu.Section title="Actions">
           <Menu.Item textValue="Cut">
             <IconCut />

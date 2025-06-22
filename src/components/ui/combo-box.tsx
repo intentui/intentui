@@ -17,12 +17,12 @@ import {
   Input,
   Label,
 } from "@/components/ui/field"
-import { ListBox } from "@/components/ui/list-box"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
 import {
   ComboBoxContext,
   ComboBox as ComboboxPrimitive,
+  ListBox,
   Popover,
   useSlottedContext,
 } from "react-aria-components"

@@ -107,18 +107,18 @@ app/
 The logo is typically the first item in the navbar, usually representing the brand or company.
 ```
 <Navbar>
-  <Navbar.Nav>
-    <Navbar.Logo href="#">
+  <Navbar>
+    <Link href="#">
       <IconBrandApple className="size-5" />
-    </Navbar.Logo>
-    <Navbar.Section>
-      <Navbar.Item href="#">Store</Navbar.Item>
+    </Link>
+    <NavbarSection>
+      <NavbarItem href="#">Store</NavbarItem>
 ```
 
 ## Current
 Highlight the current page in the navbar for better navigation clarity by setting the `isCurrent` prop to `true`.
 ```
-<Navbar.Item isCurrent href="#"/>
+<NavbarItem isCurrent href="#"/>
 ```
 
 
@@ -152,7 +152,7 @@ Disable individual navbar items when needed.
   }} />
 
 ## Controlled
-On mobile devices, the navbar is hidden by default. You can open it using `Navbar.Trigger`, but there are times when you might want to manage its state by clicking one of the links within the navbar. You can achieve this because it shares the sheet properties, specifically `isOpen` and `onOpenChange`. There are multiple ways to control the state, but the simplest method is to listen for path changes and set `isOpen` to `true` or `false` accordingly.
+On mobile devices, the navbar is hidden by default. You can open it using `NavbarTrigger`, but there are times when you might want to manage its state by clicking one of the links within the navbar. You can achieve this because it shares the sheet properties, specifically `isOpen` and `onOpenChange`. There are multiple ways to control the state, but the simplest method is to listen for path changes and set `isOpen` to `true` or `false` accordingly.
 
 ### Inertia.js
 When you are using inertia.js, you can listen the path by using `usePage` hooks. If you're not sure, you can always see the real example here at [starter kit inertia.js](https://github.com/intentuilabs/inertia.ts).

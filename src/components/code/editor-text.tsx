@@ -35,7 +35,7 @@ export function EditorText({ source }: Props) {
       setCopiedStates((prev) => ({ ...prev, [key]: true }))
       setTimeout(() => {
         setCopiedStates((prev) => ({ ...prev, [key]: false }))
-      }, 2000) // Reset after 2 seconds
+      }, 2000)
     }
   }
 

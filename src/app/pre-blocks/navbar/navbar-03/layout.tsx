@@ -1,5 +1,11 @@
-import AppNavbar from "./app-navbar"
+import AppNavbar from "@/app/pre-blocks/navbar/navbar-03/app-navbar"
+import { NavbarInset, NavbarProvider } from "@/components/ui/navbar"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <AppNavbar>{children}</AppNavbar>
+  return (
+    <NavbarProvider>
+      <AppNavbar intent="inset" />
+      <NavbarInset>{children}</NavbarInset>
+    </NavbarProvider>
+  )
 }

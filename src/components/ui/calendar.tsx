@@ -35,7 +35,7 @@ const Calendar = <T extends DateValue>({ errorMessage, className, ...props }: Ca
   return (
     <CalendarPrimitive {...props}>
       <CalendarHeader />
-      <CalendarGrid className="[&_td]:border-collapse [&_td]:px-0 [&_td]:py-0.5">
+      <CalendarGrid>
         <CalendarGridHeader />
         <CalendarGridBody>
           {(date) => (
@@ -43,7 +43,7 @@ const Calendar = <T extends DateValue>({ errorMessage, className, ...props }: Ca
               date={date}
               className={composeRenderProps(className, (className, { isSelected, isDisabled }) =>
                 twMerge(
-                  "relative flex size-10 cursor-default items-center justify-center rounded-lg text-fg tabular-nums outline-hidden hover:bg-secondary-fg/15 sm:size-9 sm:text-sm/6 forced-colors:text-[ButtonText] forced-colors:outline-0",
+                  "relative flex size-12 cursor-default items-center justify-center rounded-lg text-fg tabular-nums outline-hidden hover:bg-secondary-fg/15 sm:size-9 sm:text-sm/6 forced-colors:text-[ButtonText] forced-colors:outline-0",
                   isSelected &&
                     "bg-primary pressed:bg-primary text-primary-fg hover:bg-primary/90 data-invalid:bg-danger data-invalid:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[Highlight] forced-colors:data-invalid:bg-[Mark]",
                   isDisabled && "text-muted-fg forced-colors:text-[GrayText]",
@@ -77,16 +77,16 @@ const CalendarHeader = ({
     <header
       data-slot="calendar-header"
       className={twMerge(
-        "flex w-full justify-center gap-1.5 pt-1 pr-1 pb-5 pl-1.5 sm:pb-4",
+        "flex w-full justify-between gap-1.5 pt-1 pr-1 pb-5 pl-1.5 sm:pb-4",
         className,
       )}
       {...props}
     >
       {!isRange && (
-        <>
+        <div className="flex items-center gap-1.5">
           <SelectMonth state={state} />
           <SelectYear state={state} />
-        </>
+        </div>
       )}
       <Heading
         className={twMerge(
@@ -141,8 +141,8 @@ const SelectMonth = ({ state }: { state: CalendarState }) => {
         state.setFocusedDate(state.focusedDate.set({ month: Number(value) }))
       }}
     >
-      <Select.Trigger className="h-8 w-22 text-xs focus:ring-3 **:data-[slot=select-value]:inline-block **:data-[slot=select-value]:truncate group-data-open:ring-3" />
-      <Select.List className="w-34 min-w-34 max-w-34" popoverClassName="w-34 max-w-34 min-w-34">
+      <Select.Trigger className="w-22 text-sm/5 **:data-[slot=select-value]:inline-block **:data-[slot=select-value]:truncate sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
+      <Select.List className="min-w-0">
         {months.map((month, index) => (
           <Select.Option key={index} id={(index + 1).toString()} textValue={month}>
             <Select.Label>{month}</Select.Label>
@@ -175,8 +175,8 @@ const SelectYear = ({ state }: { state: CalendarState }) => {
         state.setFocusedDate(years[Number(value)]?.value as CalendarDate)
       }}
     >
-      <Select.Trigger className="h-8 text-xs focus:ring-3 group-data-open:ring-3" />
-      <Select.List className="w-34 min-w-34 max-w-34" popoverClassName="w-34 max-w-34 min-w-34">
+      <Select.Trigger className="text-sm/5 sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
+      <Select.List>
         {years.map((year, i) => (
           <Select.Option key={i} id={i} textValue={year.formatted}>
             <Select.Label>{year.formatted}</Select.Label>
@@ -191,7 +191,7 @@ const CalendarGridHeader = () => {
   return (
     <CalendarGridHeaderPrimitive>
       {(day) => (
-        <CalendarHeaderCell className="pb-2 font-semibold text-muted-fg text-sm sm:px-0 sm:py-0.5 lg:text-xs">
+        <CalendarHeaderCell className="pb-2 text-center font-semibold text-muted-fg text-sm/6 sm:px-0 sm:py-0.5 lg:text-xs">
           {day}
         </CalendarHeaderCell>
       )}

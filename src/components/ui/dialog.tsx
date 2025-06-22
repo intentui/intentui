@@ -25,7 +25,7 @@ const Dialog = ({
     <DialogPrimitive
       role={role}
       className={twMerge(
-        "peer/dialog group/dialog relative flex max-h-[inherit] flex-col overflow-hidden outline-hidden [--gutter:--spacing(6)] [scrollbar-width:thin] [&::-webkit-scrollbar]:size-0.5",
+        "peer/dialog group/dialog relative flex max-h-[inherit] flex-col overflow-hidden outline-hidden [--gutter:--spacing(6)] [scrollbar-width:thin] sm:[--gutter:--spacing(8)] [&::-webkit-scrollbar]:size-0.5",
         className,
       )}
       {...props}
@@ -68,7 +68,10 @@ const DialogHeader = ({ className, ...props }: DialogHeaderProps) => {
     <div
       data-slot="dialog-header"
       ref={headerRef}
-      className={twMerge("relative space-y-1 p-(--gutter)", className)}
+      className={twMerge(
+        "relative space-y-1 p-(--gutter) pb-[calc(var(--gutter)---spacing(3))]",
+        className,
+      )}
     >
       {props.title && <DialogTitle>{props.title}</DialogTitle>}
       {props.description && <DialogDescription>{props.description}</DialogDescription>}
@@ -114,7 +117,7 @@ const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
     data-slot="dialog-body"
     ref={ref}
     className={twMerge(
-      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-(--gutter)",
+      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-(--gutter) py-1",
       className,
     )}
     {...props}
@@ -151,7 +154,7 @@ const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
       ref={footerRef}
       data-slot="dialog-footer"
       className={twMerge(
-        "isolate mt-auto flex flex-col-reverse justify-between gap-3 p-(--gutter) group-not-has-data-[slot=dialog-body]/dialog:pt-0 sm:flex-row",
+        "isolate mt-auto flex flex-col-reverse justify-between gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(3))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 sm:flex-row",
         className,
       )}
       {...props}
@@ -170,16 +173,8 @@ interface CloseButtonIndicatorProps extends Omit<ButtonProps, "children"> {
 
 const DialogCloseIcon = ({ className, ...props }: CloseButtonIndicatorProps) => {
   const isMobile = useMediaQuery("(max-width: 600px)")
-  const buttonRef = useRef<HTMLButtonElement>(null)
-
-  useEffect(() => {
-    if (isMobile && buttonRef.current) {
-      buttonRef.current.focus()
-    }
-  }, [isMobile])
   return props.isDismissable ? (
     <ButtonPrimitive
-      ref={buttonRef}
       {...(isMobile ? { autoFocus: true } : {})}
       aria-label="Close"
       slot="close"

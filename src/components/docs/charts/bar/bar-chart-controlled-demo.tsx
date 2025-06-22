@@ -47,7 +47,7 @@ export default function BarChartControlledDemo() {
         <Card.Action>
           <Select selectedKey={activeChart} onSelectionChange={setActiveChart}>
             <Select.Trigger />
-            <Select.List placement="bottom end" className="sm:min-w-40">
+            <Select.List popover={{ placement: "bottom end" }} className="sm:min-w-40">
               {["sales", "revenue"].map((key) => {
                 const chart = key as keyof typeof chartConfig
                 return (
