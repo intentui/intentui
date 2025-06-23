@@ -225,8 +225,6 @@ const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<"div">)
       className={twMerge(
         "group/navbar-mobile flex items-center gap-x-3 px-4 py-2.5 md:hidden",
         "group-has-data-navbar-sticky/navbar:sticky group-has-data-navbar-sticky/navbar:top-0 group-has-data-navbar-sticky/navbar:bg-navbar",
-        // "group-has-data-[navbar=default]/navbar:border-b group-has-data-[navbar=default]/navbar:bg-navbar",
-        // "peer-data-[navbar=inset]:bg-bg",
         className,
       )}
       {...props}
