@@ -16,7 +16,6 @@ import {
   NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
-import { Separator } from "@/components/ui/separator"
 import {
   IconBrandIntentui,
   IconCommandRegular,
@@ -67,7 +66,6 @@ export default function AppNavbar(props: NavbarProps) {
           <IconShoppingBag />
         </Button>
         <ThemeSwitcher intent="plain" />
-        <Separator orientation="vertical" className="mr-3 ml-1 h-6" />
         <UserMenu />
       </NavbarMobile>
     </>
@@ -77,14 +75,14 @@ export default function AppNavbar(props: NavbarProps) {
 function UserMenu() {
   return (
     <Menu>
-      <Menu.Trigger aria-label="Open Menu">
+      <Button intent="plain" size="sq-md" aria-label="Open Menu">
         <Avatar
           alt="cobain"
           size="sm"
           isSquare
           src="https://intentui.com/images/avatar/cobain.jpg"
         />
-      </Menu.Trigger>
+      </Button>
       <Menu.Content placement="bottom right" className="sm:min-w-56">
         <Menu.Section>
           <Menu.Header separator>

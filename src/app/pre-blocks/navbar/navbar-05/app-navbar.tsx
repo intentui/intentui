@@ -7,6 +7,7 @@ import {
   Navbar,
   NavbarGap,
   NavbarItem,
+  NavbarLabel,
   NavbarMobile,
   NavbarProvider,
   NavbarSection,
@@ -19,7 +20,6 @@ import {
   IconBrandIntentui,
   IconChevronsY,
   IconCube,
-  IconHashtag,
   IconHome,
   IconShoppingBag,
 } from "@intentui/icons"
@@ -27,7 +27,7 @@ import {
 const menus = [
   { label: "Home", href: "#", icon: IconHome },
   { label: "Shop", href: "#", icon: IconShoppingBag },
-  { label: "Categories", href: "#", icon: IconHashtag },
+  { label: "Categories", href: "#" },
   { label: "Collections", href: "#", icon: IconCube },
   { label: "New Arrivals", href: "#", icon: IconAsterisk },
 ]
@@ -46,12 +46,12 @@ export default function AppNavbar() {
           {menus.map((item) => (
             <NavbarItem key={item.label} href={item.href} isCurrent={item.label === "Shop"}>
               {item.icon && <item.icon />}
-              {item.label}
+              <NavbarLabel>{item.label}</NavbarLabel>
             </NavbarItem>
           ))}
         </NavbarSection>
         <NavbarSpacer />
-        <NavbarSection className="hidden max-md:flex">
+        <NavbarSection className="max-md:hidden">
           <UserMenu />
         </NavbarSection>
       </Navbar>

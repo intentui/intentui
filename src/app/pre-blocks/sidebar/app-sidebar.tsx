@@ -20,8 +20,8 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandIntentui className="size-5" />
-          <SidebarLabel className="font-medium">Apple</SidebarLabel>
+          <IconBrandIntentui className="size-6 md:size-5" />
+          <SidebarLabel className="font-medium">Intent UI</SidebarLabel>
         </Link>
       </SidebarHeader>
       <SidebarContent>

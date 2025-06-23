@@ -117,7 +117,7 @@ export default function AppNavbar(props: NavbarProps) {
 function UserMenu() {
   return (
     <Menu>
-      <Button intent="plain" className="[--btn-overlay:transparent]" aria-label="Open Menu">
+      <Button intent="plain" size="sq-md" aria-label="Open Menu">
         <Avatar alt="cobain" size="sm" src="https://intentui.com/images/avatar/cobain.jpg" />
       </Button>
       <Menu.Content placement="bottom right" className="min-w-60">

@@ -47,7 +47,8 @@ export default function AppNavbar(props: NavbarProps) {
           <NavbarItem href="#">Orders</NavbarItem>
           <Menu>
             <NavbarItem>
-              Categories <IconChevronLgDown data-slot="chevron" />
+              Categories
+              <IconChevronLgDown className="col-start-2" />
             </NavbarItem>
             <Menu.Content items={categories}>
               {(item) => (

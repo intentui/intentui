@@ -67,7 +67,6 @@ export default function AppNavbar(props: NavbarProps) {
         <Button intent="plain" size="sq-sm" aria-label="Your Bag">
           <IconShoppingBag />
         </Button>
-        <Separator orientation="vertical" className="mr-3 ml-1 h-5" />
         <UserMenu />
       </NavbarMobile>
     </>
@@ -77,14 +76,14 @@ export default function AppNavbar(props: NavbarProps) {
 function UserMenu() {
   return (
     <Menu>
-      <Menu.Trigger aria-label="Open Menu">
+      <Button intent="plain" size="sq-md" aria-label="Open Menu">
         <Avatar
           alt="cobain"
           size="sm"
           isSquare
           src="https://intentui.com/images/avatar/cobain.jpg"
         />
-      </Menu.Trigger>
+      </Button>
       <Menu.Content placement="bottom right" className="sm:min-w-56">
         <Menu.Section>
           <Menu.Header separator>

@@ -27,7 +27,7 @@ import {
   IconBrandIntentui,
   IconBuilding,
   IconCheck,
-  IconChevronLgDown,
+  IconChevronsY,
   IconCircleQuestionmark,
   IconClock,
   IconCreditCard,
@@ -58,7 +58,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           href="/docs/components/layouts/sidebar"
         >
           <IconBrandIntentui className="size-5" />
-          <SidebarLabel className="font-medium">Apple</SidebarLabel>
+          <SidebarLabel className="font-medium">Intent UI</SidebarLabel>
         </Link>
       </SidebarHeader>
       <SidebarContent>
@@ -207,10 +207,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               <SidebarLabel>Kurt Cobain</SidebarLabel>
               <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>
             </div>
-            <IconChevronLgDown
-              data-slot="chevron"
-              className="absolute right-3 size-4 transition-transform group-pressed:rotate-180"
-            />
+            <IconChevronsY data-slot="chevron" className="right-3" />
           </Menu.Trigger>
           <Menu.Content
             placement="bottom right"

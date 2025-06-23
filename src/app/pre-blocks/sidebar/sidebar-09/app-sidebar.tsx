@@ -38,7 +38,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           href="/docs/components/layouts/sidebar"
         >
           <IconBrandApple className="size-5" />
-          <SidebarLabel className="font-medium">Apple</SidebarLabel>
+          <SidebarLabel className="font-medium">Intent UI</SidebarLabel>
         </Link>
       </SidebarHeader>
 

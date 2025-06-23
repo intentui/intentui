@@ -1,13 +1,12 @@
 "use client"
 
-import { createContext, use, useCallback, useId, useMemo, useState } from "react"
+import { createContext, use, useCallback, useMemo, useState } from "react"
 
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { Sheet } from "@/components/ui/sheet"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconHamburger } from "@intentui/icons"
-import { LayoutGroup, motion } from "motion/react"
 import type { LinkProps } from "react-aria-components"
 import { Link } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
@@ -147,24 +146,17 @@ const Navbar = ({
 }
 
 const NavbarSection = ({ className, ...props }: React.ComponentProps<"div">) => {
-  const { isMobile } = useNavbar()
-  const id = useId()
   return (
-    <LayoutGroup id={id}>
-      <div
-        data-slot="navbar-section"
-        className={twMerge(
-          "flex gap-3",
-          isMobile
-            ? "flex-col group-data-[slot=navbar-mobile]/navbar-mobile:flex-row group-data-[slot=navbar-mobile]/navbar-mobile:items-center"
-            : "flex-row items-center",
-          className,
-        )}
-        {...props}
-      >
-        {props.children}
-      </div>
-    </LayoutGroup>
+    <div
+      data-slot="navbar-section"
+      className={twMerge(
+        "col-span-full grid grid-cols-[auto_1fr] flex-col gap-3 gap-y-0.5 md:flex md:flex-none md:grid-cols-none md:flex-row md:items-center md:gap-2.5",
+        className,
+      )}
+      {...props}
+    >
+      {props.children}
+    </div>
   )
 }
 
@@ -178,19 +170,20 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
     <Link
       data-slot="navbar-item"
       aria-current={isCurrent ? "page" : undefined}
-      className={composeTailwindRenderProps(
-        className,
-        twJoin(
-          "[--navbar-item-overlay-fg:var(--secondary-fg)] [--navbar-item-overlay:var(--secondary)]/50 dark:[--navbar-item-overlay:var(--secondary)]",
-          "pressed:bg-(--navbar-item-overlay) hover:bg-(--navbar-item-overlay) focus-visible:bg-(--navbar-item-overlay)",
-          "pressed:text-(--navbar-item-fg) hover:text-(--navbar-item-fg) focus-visible:text-(--navbar-item-fg) ",
-          "relative inline-flex min-w-0 items-center gap-x-2 rounded-lg px-3 py-2 text-muted-fg outline-hidden sm:px-2.5 sm:text-sm/6 md:py-1",
-          "disabled:opacity-50",
-          "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0",
-          "disabled:cursor-default forced-colors:disabled:text-[GrayText]",
-          isCurrent && "text-navbar-fg",
-        ),
-      )}
+      className={composeTailwindRenderProps(className, [
+        "href" in props ? "cursor-pointer" : "cursor-default",
+        "group/sidebar-item hover:bg-secondary",
+        "aria-[current=page]:text-fg aria-[current=page]*:data-[slot=icon]:text-fg",
+        "col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid md:supports-[grid-template-columns:subgrid]:grid-cols-none",
+        "relative min-w-0 items-center gap-3 rounded-lg px-2.5 py-2 text-left font-medium text-base/6 sm:text-sm/5",
+        "*:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-fg sm:*:data-[slot=icon]:size-4",
+        "*:data-[slot=loader]:size-5 *:data-[slot=loader]:shrink-0 sm:*:data-[slot=loader]:size-4",
+        "*:not-nth-2:last:data-[slot=icon]:ml-auto *:not-nth-2:last:data-[slot=icon]:size-5 sm:*:not-nth-2:last:data-[slot=icon]:size-4",
+        "*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-6 sm:*:data-[slot=avatar]:size-5",
+        "*:data-[slot=icon]:text-muted-fg pressed:*:data-[slot=icon]:text-fg hover:*:data-[slot=icon]:text-fg",
+        "outline-hidden focus-visible:inset-ring focus-visible:inset-ring-ring focus-visible:ring-2 focus-visible:ring-ring/20",
+        "text-left disabled:cursor-default disabled:opacity-50",
+      ])}
       {...props}
     >
       {(values) => (
@@ -198,8 +191,7 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
           {typeof props.children === "function" ? props.children(values) : props.children}
 
           {(isCurrent || values.isCurrent) && !isMobile && (
-            <motion.span
-              layoutId="current-indicator"
+            <span
               data-slot="current-indicator"
               className={twJoin(
                 "-bottom-3 absolute inset-x-2 h-0.5 rounded-full bg-fg",
@@ -218,7 +210,7 @@ const NavbarSpacer = ({ className, ref, ...props }: React.ComponentProps<"div">)
 }
 
 const NavbarStart = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
-  return <div ref={ref} className={twMerge("p-4 md:p-2", className)} {...props} />
+  return <div ref={ref} className={twMerge("p-2.5 py-4 md:p-2", className)} {...props} />
 }
 
 const NavbarGap = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
@@ -232,9 +224,9 @@ const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<"div">)
       data-slot="navbar-mobile"
       className={twMerge(
         "group/navbar-mobile flex items-center gap-x-3 px-4 py-2.5 md:hidden",
-        "group-has-data-[navbar=default]/navbar:border-b group-has-data-[navbar=default]/navbar:bg-navbar",
-        "group-has-data-navbar-sticky/navbar:sticky group-has-data-navbar-sticky/navbar:top-0",
-        "peer-data-[navbar=inset]:bg-bg",
+        "group-has-data-navbar-sticky/navbar:sticky group-has-data-navbar-sticky/navbar:top-0 group-has-data-navbar-sticky/navbar:bg-navbar",
+        // "group-has-data-[navbar=default]/navbar:border-b group-has-data-[navbar=default]/navbar:bg-navbar",
+        // "peer-data-[navbar=inset]:bg-bg",
         className,
       )}
       {...props}
@@ -283,6 +275,20 @@ const NavbarTrigger = ({ className, onPress, ref, ...props }: NavbarTriggerProps
   )
 }
 
+interface NavbarLabelProps extends React.ComponentProps<"span"> {
+  className?: string
+}
+
+const NavbarLabel = ({ className, ...props }: NavbarLabelProps) => {
+  return (
+    <span
+      data-slot="navbar-label"
+      className={twJoin("col-start-2 truncate", className)}
+      {...props}
+    />
+  )
+}
+
 export type { NavbarProviderProps, NavbarProps, NavbarTriggerProps, NavbarItemProps }
 export {
   NavbarProvider,
@@ -293,6 +299,7 @@ export {
   NavbarItem,
   NavbarSection,
   NavbarSpacer,
+  NavbarLabel,
   NavbarStart,
   NavbarGap,
 }
