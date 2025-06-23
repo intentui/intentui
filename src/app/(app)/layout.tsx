@@ -1,12 +1,10 @@
-import type React from "react"
-
 import { Footer } from "@/components/footer"
-import { Navbar } from "@/components/navbar"
+import { Navigation } from "@/components/navigation"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative flex min-h-svh flex-col bg-bg">
-      <Navbar />
+      <Navigation />
       <main className="flex-1">{children}</main>
 
       <Footer />

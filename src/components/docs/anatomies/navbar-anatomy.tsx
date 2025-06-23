@@ -7,6 +7,7 @@ import {
   NavbarMobile,
   NavbarProvider,
   NavbarSection,
+  NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
@@ -17,7 +18,7 @@ export default function NavbarAnatomy() {
     <NavbarProvider>
       {/* Desktop */}
       <Navbar>
-        <Link />
+        <NavbarStart />
         <NavbarSection>
           <NavbarItem href="#" />
         </NavbarSection>

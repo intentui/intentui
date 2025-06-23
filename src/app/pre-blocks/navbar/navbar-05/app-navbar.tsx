@@ -37,7 +37,7 @@ export default function AppNavbar() {
     <NavbarProvider>
       <Navbar>
         <NavbarStart>
-          <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
+          <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
             <IconBrandApple className="-ml-2 size-6 sm:size-5" />
           </Link>
         </NavbarStart>

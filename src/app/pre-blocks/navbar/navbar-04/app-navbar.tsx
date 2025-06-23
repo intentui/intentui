@@ -18,7 +18,7 @@ export default function AppNavbar() {
     <NavbarProvider>
       <Navbar>
         <NavbarStart>
-          <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
+          <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
             <IconBrandApple className="size-6 sm:size-5" />
           </Link>
         </NavbarStart>
@@ -34,7 +34,7 @@ export default function AppNavbar() {
       <NavbarMobile>
         <NavbarTrigger />
         <NavbarSpacer />
-        <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
+        <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
           <IconBrandApple className="size-5" />
         </Link>
       </NavbarMobile>

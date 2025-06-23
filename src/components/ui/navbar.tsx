@@ -1,13 +1,12 @@
 "use client"
 
-import { createContext, use, useCallback, useId, useMemo, useState } from "react"
+import { createContext, use, useCallback, useMemo, useState } from "react"
 
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { Sheet } from "@/components/ui/sheet"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconHamburger } from "@intentui/icons"
-import { LayoutGroup, motion } from "motion/react"
 import type { LinkProps } from "react-aria-components"
 import { Link } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
@@ -24,9 +23,8 @@ const NavbarContext = createContext<NavbarContextProps | null>(null)
 const useNavbar = () => {
   const context = use(NavbarContext)
   if (!context) {
-    throw new Error("useNavbar must be used within a NavbarProvider.")
+    throw new Error("useNavbar must be used within a NavbarProvider")
   }
-
   return context
 }
 
@@ -37,16 +35,16 @@ interface NavbarProviderProps extends React.ComponentProps<"nav"> {
 }
 
 const NavbarProvider = ({
+  children,
   isOpen: openProp,
   onOpenChange: setOpenProp,
-  defaultOpen = false,
+  defaultOpen = true,
   className,
   ...props
 }: NavbarProviderProps) => {
   const isMobile = useMediaQuery("(max-width: 767px)")
   const [openInternal, setOpenInternal] = useState(defaultOpen)
   const open = openProp ?? openInternal
-
   const setOpen = useCallback(
     (value: boolean | ((value: boolean) => boolean)) => {
       if (setOpenProp) {
@@ -80,7 +78,9 @@ const NavbarProvider = ({
           className,
         )}
         {...props}
-      />
+      >
+        {children}
+      </nav>
     </NavbarContext>
   )
 }
@@ -94,7 +94,7 @@ interface NavbarProps extends React.ComponentProps<"div"> {
 const Navbar = ({
   children,
   isSticky,
-  intent,
+  intent = "default",
   side = "left",
   className,
   ref,
@@ -145,23 +145,20 @@ const Navbar = ({
 
 const NavbarSection = ({ className, ...props }: React.ComponentProps<"div">) => {
   const { isMobile } = useNavbar()
-  const id = useId()
   return (
-    <LayoutGroup id={id}>
-      <div
-        data-slot="navbar-section"
-        className={twMerge(
-          "flex gap-3",
-          isMobile
-            ? "flex-col group-data-[slot=navbar-mobile]/navbar-mobile:flex-row group-data-[slot=navbar-mobile]/navbar-mobile:items-center"
-            : "flex-row items-center",
-          className,
-        )}
-        {...props}
-      >
-        {props.children}
-      </div>
-    </LayoutGroup>
+    <div
+      data-slot="navbar-section"
+      className={twMerge(
+        "flex gap-3",
+        isMobile
+          ? "flex-col group-data-[slot=navbar-mobile]/navbar-mobile:flex-row group-data-[slot=navbar-mobile]/navbar-mobile:items-center"
+          : "flex-row items-center",
+        className,
+      )}
+      {...props}
+    >
+      {props.children}
+    </div>
   )
 }
 
@@ -195,8 +192,7 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
           {typeof props.children === "function" ? props.children(values) : props.children}
 
           {(isCurrent || values.isCurrent) && !isMobile && (
-            <motion.span
-              layoutId="current-indicator"
+            <span
               data-slot="current-indicator"
               className={twJoin(
                 "-bottom-3 absolute inset-x-2 h-0.5 rounded-full bg-fg",

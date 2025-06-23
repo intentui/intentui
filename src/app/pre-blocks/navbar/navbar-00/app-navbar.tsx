@@ -1,6 +1,4 @@
 "use client"
-
-import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
@@ -35,7 +33,7 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
     <NavbarProvider {...props}>
       <Navbar>
         <NavbarStart>
-          <Link aria-label="Goto documenation of Navbar" href="/docs/components/layouts/navbar">
+          <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
             <IconBrandApple className="size-6 sm:size-5" />
           </Link>
         </NavbarStart>
@@ -68,8 +66,7 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
           <Button intent="plain" size="sq-sm" aria-label="Your Bag">
             <IconShoppingBag />
           </Button>
-          <ThemeSwitcher intent="plain" />
-          <Separator orientation="vertical" className="mr-3 ml-1 h-6" />
+          <Separator orientation="vertical" className="mr-3 ml-1 h-5" />
           <UserMenu />
         </NavbarSection>
       </Navbar>
@@ -83,7 +80,6 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
         <Button intent="plain" size="sq-sm" aria-label="Your Bag">
           <IconShoppingBag />
         </Button>
-        <ThemeSwitcher intent="plain" />
         <Separator orientation="vertical" className="mr-3 ml-1 h-5" />
         <UserMenu />
       </NavbarMobile>

@@ -1,11 +1,10 @@
 import { Container } from "@/components/ui/container"
 import { Heading} from "@/components/ui/heading"
-
-import { AppLayout } from "./app-layout.tsx.sutbs"
+import { AppLayout } from "./app-layout.tsx"
 
 export default function Home() {
   return (
-    <Container>
+    <Container className="py-6 sm:py-12">
       <Heading>Home</Heading>
     </Container>
   )

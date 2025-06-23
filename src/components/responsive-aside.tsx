@@ -26,7 +26,7 @@ import { Button as ButtonPrimitive } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
 import { Aside } from "./aside"
 import { CommandPalette } from "./command-palette"
-import { NavbarDropdown } from "./navbar"
+import { NavbarDropdown } from "./navigation"
 import { ThemeSwitcher } from "./theme-switcher"
 export function ResponsiveAside({
   openCmd,

@@ -33,7 +33,7 @@ import { CommandPalette } from "./command-palette"
 import { NavLink } from "./nav-item"
 import { ThemeSwitcher } from "./theme-switcher"
 
-export function Navbar() {
+export function Navigation() {
   const id = useId()
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
