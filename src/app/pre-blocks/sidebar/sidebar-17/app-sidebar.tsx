@@ -13,7 +13,7 @@ import {
   SidebarSectionGroup,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { IconBrandApple } from "@intentui/icons"
+import { IconBrandIntentui } from "@intentui/icons"
 import { parseDate } from "@internationalized/date"
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
@@ -25,7 +25,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandApple className="size-5" />
+          <IconBrandIntentui className="size-5" />
           <SidebarLabel className="font-medium">Apple</SidebarLabel>
         </Link>
       </SidebarHeader>

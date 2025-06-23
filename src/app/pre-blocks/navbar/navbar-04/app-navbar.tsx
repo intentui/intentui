@@ -5,21 +5,21 @@ import {
   NavbarGap,
   NavbarItem,
   NavbarMobile,
-  NavbarProvider,
+  type NavbarProps,
   NavbarSection,
   NavbarSpacer,
   NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
-import { IconBrandApple } from "@intentui/icons"
+import { IconBrandApple, IconBrandIntentui } from "@intentui/icons"
 
-export default function AppNavbar() {
+export default function AppNavbar(props: NavbarProps) {
   return (
-    <NavbarProvider>
-      <Navbar>
+    <>
+      <Navbar {...props}>
         <NavbarStart>
           <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
-            <IconBrandApple className="size-6 sm:size-5" />
+            <IconBrandIntentui className="size-6 sm:size-5" />
           </Link>
         </NavbarStart>
         <NavbarGap />
@@ -38,6 +38,6 @@ export default function AppNavbar() {
           <IconBrandApple className="size-5" />
         </Link>
       </NavbarMobile>
-    </NavbarProvider>
+    </>
   )
 }

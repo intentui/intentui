@@ -1,5 +1,5 @@
 "use client"
-import { useId, useState } from "react"
+import { useState } from "react"
 
 import { GithubLink } from "@/components/github-link"
 import { PageContainer } from "@/components/page-container"
@@ -27,121 +27,115 @@ import {
   IconWindowVisit,
   IconWindowVisitFill,
 } from "@intentui/icons"
-import { LayoutGroup } from "motion/react"
 import { usePathname } from "next/navigation"
 import { CommandPalette } from "./command-palette"
 import { NavLink } from "./nav-item"
 import { ThemeSwitcher } from "./theme-switcher"
 
 export function Navigation() {
-  const id = useId()
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const isDesktop = useMediaQuery("(min-width: 1024px)")
   return (
     <>
       <CommandPalette setOpen={setOpen} openCmd={open} />
-      <LayoutGroup id={`navigation-${id}`}>
-        <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
-          <nav className="border-fg/10 border-b bg-overlay py-1.5 dark:supports-backdrop-filter:bg-overlay/60 dark:supports-backdrop-filter:backdrop-blur-3xl">
-            <PageContainer className="lg:px-8">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-x-6">
-                  <NavbarDropdown />
-                  <NavLink isNextLink isActive={pathname === "/"} href="/">
-                    Home
-                  </NavLink>
-                  <NavLink
-                    isNextLink
-                    isActive={
-                      pathname?.startsWith("/docs") && !pathname?.includes("/docs/components")
-                    }
-                    href="/docs/getting-started/introduction"
-                  >
-                    Docs
-                  </NavLink>
-                  <NavLink
-                    isNextLink
-                    isActive={
-                      pathname?.startsWith("/docs/components") || pathname === "/components"
-                    }
-                    href="/components"
-                  >
-                    Components
-                  </NavLink>
+      <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
+        <nav className="border-fg/10 border-b bg-overlay py-1.5 dark:supports-backdrop-filter:bg-overlay/60 dark:supports-backdrop-filter:backdrop-blur-3xl">
+          <PageContainer className="lg:px-8">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-x-6">
+                <NavbarDropdown />
+                <NavLink isNextLink isActive={pathname === "/"} href="/">
+                  Home
+                </NavLink>
+                <NavLink
+                  isNextLink
+                  isActive={
+                    pathname?.startsWith("/docs") && !pathname?.includes("/docs/components")
+                  }
+                  href="/docs/getting-started/introduction"
+                >
+                  Docs
+                </NavLink>
+                <NavLink
+                  isNextLink
+                  isActive={pathname?.startsWith("/docs/components") || pathname === "/components"}
+                  href="/components"
+                >
+                  Components
+                </NavLink>
 
-                  <NavLink isNextLink href="/themes">
-                    Themes
-                  </NavLink>
+                <NavLink isNextLink href="/themes">
+                  Themes
+                </NavLink>
 
-                  <NavLink href="/icons">Icons</NavLink>
+                <NavLink href="/icons">Icons</NavLink>
 
-                  <NavLink href="/colors">Colors</NavLink>
+                <NavLink href="/colors">Colors</NavLink>
 
-                  <NavLink href="/blocks">Blocks</NavLink>
-                  <NavLink href="https://blocks.intentui.com">Premium Blocks</NavLink>
-                </div>
-                <div className="flex items-center gap-x-2">
-                  <>
-                    <Button
-                      onPress={() => setOpen((open: boolean) => !open)}
-                      size="sq-sm"
-                      isCircle
-                      intent="plain"
-                    >
-                      <IconSearch />
-                    </Button>
-
-                    <Link
-                      aria-label="Join Discord"
-                      className={buttonStyles({
-                        intent: "plain",
-                        isCircle: true,
-                        size: "sq-sm",
-                        className:
-                          "**:data-[slot=icon]:text-indigo-500 hover:**:data-[slot=icon]:text-indigo-600",
-                      })}
-                      target="_blank"
-                      href={siteConfig.discord}
-                    >
-                      <IconBrandDiscord />
-                    </Link>
-                    <Link
-                      aria-label="Follow Update on X"
-                      className={buttonStyles({
-                        intent: "plain",
-                        isCircle: true,
-                        size: "sq-sm",
-                        className: "**:data-[slot=icon]:text-fg",
-                      })}
-                      target="_blank"
-                      href="https://x.com/intent/follow?screen_name=irsyadadl"
-                    >
-                      <IconBrandX />
-                    </Link>
-                    <Link
-                      aria-label="Follow Update on X"
-                      className={buttonStyles({
-                        intent: "plain",
-                        size: "sq-sm",
-                        isCircle: true,
-                        className: "hover:border-blue-500/20**:data-[slot=icon]:text-fg",
-                      })}
-                      target="_blank"
-                      href="https://dub.sh/NfSXJrL"
-                    >
-                      <IconBrandIntentui />
-                    </Link>
-
-                    <ThemeSwitcher intent="plain" isCircle />
-                    <GithubLink />
-                  </>
-                </div>
+                <NavLink href="/blocks">Blocks</NavLink>
+                <NavLink href="https://blocks.intentui.com">Premium Blocks</NavLink>
               </div>
-            </PageContainer>
-          </nav>
-        </div>
-      </LayoutGroup>
+              <div className="flex items-center gap-x-2">
+                <>
+                  <Button
+                    onPress={() => setOpen((open: boolean) => !open)}
+                    size="sq-sm"
+                    isCircle
+                    intent="plain"
+                  >
+                    <IconSearch />
+                  </Button>
+
+                  <Link
+                    aria-label="Join Discord"
+                    className={buttonStyles({
+                      intent: "plain",
+                      isCircle: true,
+                      size: "sq-sm",
+                      className:
+                        "**:data-[slot=icon]:text-indigo-500 hover:**:data-[slot=icon]:text-indigo-600",
+                    })}
+                    target="_blank"
+                    href={siteConfig.discord}
+                  >
+                    <IconBrandDiscord />
+                  </Link>
+                  <Link
+                    aria-label="Follow Update on X"
+                    className={buttonStyles({
+                      intent: "plain",
+                      isCircle: true,
+                      size: "sq-sm",
+                      className: "**:data-[slot=icon]:text-fg",
+                    })}
+                    target="_blank"
+                    href="https://x.com/intent/follow?screen_name=irsyadadl"
+                  >
+                    <IconBrandX />
+                  </Link>
+                  <Link
+                    aria-label="Follow Update on X"
+                    className={buttonStyles({
+                      intent: "plain",
+                      size: "sq-sm",
+                      isCircle: true,
+                      className: "hover:border-blue-500/20**:data-[slot=icon]:text-fg",
+                    })}
+                    target="_blank"
+                    href="https://dub.sh/NfSXJrL"
+                  >
+                    <IconBrandIntentui />
+                  </Link>
+
+                  <ThemeSwitcher intent="plain" isCircle />
+                  <GithubLink />
+                </>
+              </div>
+            </div>
+          </PageContainer>
+        </nav>
+      </div>
       {!isDesktop && <ResponsiveAside openCmd={open} setOpenCmd={setOpen} />}
     </>
   )

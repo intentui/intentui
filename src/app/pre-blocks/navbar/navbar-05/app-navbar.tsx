@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/navbar"
 import {
   IconAsterisk,
-  IconBrandApple,
+  IconBrandIntentui,
   IconChevronsY,
   IconCube,
   IconHashtag,
@@ -38,7 +38,7 @@ export default function AppNavbar() {
       <Navbar>
         <NavbarStart>
           <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
-            <IconBrandApple className="-ml-2 size-6 sm:size-5" />
+            <IconBrandIntentui className="-ml-2 size-6 sm:size-5" />
           </Link>
         </NavbarStart>
         <NavbarGap />

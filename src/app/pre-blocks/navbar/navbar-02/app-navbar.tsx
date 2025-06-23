@@ -10,7 +10,7 @@ import {
   NavbarGap,
   NavbarItem,
   NavbarMobile,
-  NavbarProvider,
+  type NavbarProps,
   NavbarSection,
   NavbarSpacer,
   NavbarStart,
@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
 import {
-  IconBrandApple,
+  IconBrandIntentui,
   IconCommandRegular,
   IconDashboard,
   IconHeadphones,
@@ -29,13 +29,13 @@ import {
   IconShoppingBag,
 } from "@intentui/icons"
 
-export default function AppNavbar() {
+export default function AppNavbar(props: NavbarProps) {
   return (
-    <NavbarProvider>
-      <Navbar intent="float">
+    <>
+      <Navbar {...props}>
         <NavbarStart>
           <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
-            <IconBrandApple className="size-6 sm:size-5" />
+            <IconBrandIntentui className="size-6 sm:size-5" />
           </Link>
         </NavbarStart>
         <NavbarGap />
@@ -70,7 +70,7 @@ export default function AppNavbar() {
         <Separator orientation="vertical" className="mr-3 ml-1 h-6" />
         <UserMenu />
       </NavbarMobile>
-    </NavbarProvider>
+    </>
   )
 }
 

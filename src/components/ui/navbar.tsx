@@ -1,12 +1,13 @@
 "use client"
 
-import { createContext, use, useCallback, useMemo, useState } from "react"
+import { createContext, use, useCallback, useId, useMemo, useState } from "react"
 
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { Sheet } from "@/components/ui/sheet"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconHamburger } from "@intentui/icons"
+import { LayoutGroup, motion } from "motion/react"
 import type { LinkProps } from "react-aria-components"
 import { Link } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
@@ -23,8 +24,9 @@ const NavbarContext = createContext<NavbarContextProps | null>(null)
 const useNavbar = () => {
   const context = use(NavbarContext)
   if (!context) {
-    throw new Error("useNavbar must be used within a NavbarProvider")
+    throw new Error("useNavbar must be used within a NavbarProvider.")
   }
+
   return context
 }
 
@@ -35,16 +37,16 @@ interface NavbarProviderProps extends React.ComponentProps<"nav"> {
 }
 
 const NavbarProvider = ({
-  children,
   isOpen: openProp,
   onOpenChange: setOpenProp,
-  defaultOpen = true,
+  defaultOpen = false,
   className,
   ...props
 }: NavbarProviderProps) => {
   const isMobile = useMediaQuery("(max-width: 767px)")
   const [openInternal, setOpenInternal] = useState(defaultOpen)
   const open = openProp ?? openInternal
+
   const setOpen = useCallback(
     (value: boolean | ((value: boolean) => boolean)) => {
       if (setOpenProp) {
@@ -78,9 +80,7 @@ const NavbarProvider = ({
           className,
         )}
         {...props}
-      >
-        {children}
-      </nav>
+      />
     </NavbarContext>
   )
 }
@@ -103,17 +103,19 @@ const Navbar = ({
   const { isMobile, open, setOpen } = useNavbar()
   if (isMobile) {
     return (
-      <Sheet isOpen={open} onOpenChange={setOpen} {...props}>
-        <Sheet.Content
-          side={side}
-          aria-label="Mobile Navbar"
-          data-navbar="sheet"
-          className="text-fg [&>button]:hidden"
-          isFloat={intent === "float"}
-        >
-          <Sheet.Body className="p-[calc(var(--gutter)---spacing(2))]">{children}</Sheet.Body>
-        </Sheet.Content>
-      </Sheet>
+      <>
+        <span className="sr-only" aria-hidden data-navbar={intent} data-navbar-sticky={isSticky} />
+        <Sheet isOpen={open} onOpenChange={setOpen} {...props}>
+          <Sheet.Content
+            side={side}
+            aria-label="Mobile Navbar"
+            className="text-fg [&>button]:hidden"
+            isFloat={intent === "float"}
+          >
+            <Sheet.Body className="p-[calc(var(--gutter)---spacing(2))]">{children}</Sheet.Body>
+          </Sheet.Content>
+        </Sheet>
+      </>
     )
   }
 
@@ -121,6 +123,7 @@ const Navbar = ({
     <div
       data-navbar={intent}
       ref={ref}
+      data-navbar-sticky={isSticky}
       className={twMerge([
         "group/navbar-intent relative isolate",
         isSticky && "sticky top-0 z-40",
@@ -134,7 +137,7 @@ const Navbar = ({
           "relative isolate mx-auto hidden w-full items-center md:flex md:h-14",
           intent === "float" && "max-w-7xl rounded-xl border bg-navbar px-4 shadow-xs",
           intent === "inset" && "max-w-(--breakpoint-2xl) px-6",
-          intent === "default" && "max-w-(--breakpoint-2xl) border-b px-6",
+          intent === "default" && "max-w-(--breakpoint-2xl) border-b bg-navbar px-6",
         )}
       >
         {children}
@@ -145,20 +148,23 @@ const Navbar = ({
 
 const NavbarSection = ({ className, ...props }: React.ComponentProps<"div">) => {
   const { isMobile } = useNavbar()
+  const id = useId()
   return (
-    <div
-      data-slot="navbar-section"
-      className={twMerge(
-        "flex gap-3",
-        isMobile
-          ? "flex-col group-data-[slot=navbar-mobile]/navbar-mobile:flex-row group-data-[slot=navbar-mobile]/navbar-mobile:items-center"
-          : "flex-row items-center",
-        className,
-      )}
-      {...props}
-    >
-      {props.children}
-    </div>
+    <LayoutGroup id={id}>
+      <div
+        data-slot="navbar-section"
+        className={twMerge(
+          "flex gap-3",
+          isMobile
+            ? "flex-col group-data-[slot=navbar-mobile]/navbar-mobile:flex-row group-data-[slot=navbar-mobile]/navbar-mobile:items-center"
+            : "flex-row items-center",
+          className,
+        )}
+        {...props}
+      >
+        {props.children}
+      </div>
+    </LayoutGroup>
   )
 }
 
@@ -192,7 +198,8 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
           {typeof props.children === "function" ? props.children(values) : props.children}
 
           {(isCurrent || values.isCurrent) && !isMobile && (
-            <span
+            <motion.span
+              layoutId="current-indicator"
               data-slot="current-indicator"
               className={twJoin(
                 "-bottom-3 absolute inset-x-2 h-0.5 rounded-full bg-fg",
@@ -215,23 +222,24 @@ const NavbarStart = ({ className, ref, ...props }: React.ComponentProps<"div">) 
 }
 
 const NavbarGap = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
-  return <div ref={ref} className={twMerge("ml-4", className)} {...props} />
+  return <div ref={ref} className={twMerge("mx-2", className)} {...props} />
 }
 
 const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
-  const { isMobile } = useNavbar()
-  return isMobile ? (
+  return (
     <div
       ref={ref}
       data-slot="navbar-mobile"
       className={twMerge(
         "group/navbar-mobile flex items-center gap-x-3 px-4 py-2.5 md:hidden",
-        "peer-has-data-[navbar=inset]:bg-bg",
+        "group-has-data-[navbar=default]/navbar:border-b group-has-data-[navbar=default]/navbar:bg-navbar",
+        "group-has-data-navbar-sticky/navbar:sticky group-has-data-navbar-sticky/navbar:top-0",
+        "peer-data-[navbar=inset]:bg-bg",
         className,
       )}
       {...props}
     />
-  ) : null
+  )
 }
 
 const NavbarInset = ({ className, ref, ...props }: React.ComponentProps<"div">) => {

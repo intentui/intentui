@@ -10,7 +10,7 @@ import {
   SidebarRail,
   SidebarSection,
 } from "@/components/ui/sidebar"
-import { IconBrandApple, IconCart, IconDashboard, IconGear, IconPackage } from "@intentui/icons"
+import { IconBrandIntentui, IconCart, IconDashboard, IconGear, IconPackage } from "@intentui/icons"
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -20,7 +20,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandApple className="size-5" />
+          <IconBrandIntentui className="size-5" />
           <SidebarLabel className="font-medium">Apple</SidebarLabel>
         </Link>
       </SidebarHeader>

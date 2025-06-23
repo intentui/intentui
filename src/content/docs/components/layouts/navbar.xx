@@ -49,16 +49,26 @@ The default intent of the navbar is `dfeault`. You can change it to `float` or `
 
 ### Floating
 The floating intent will have a border inside the navbar itself, the wrapper will have a padding to the content.
-```
-<Navbar intent="float"/>
-```
+<CodeSandbox isIframe={false}
+  src='/pre-blocks/navbar/navbar-02'
+  source={{
+    preview: 'pre-blocks/navbar/navbar-02/app-navbar',
+    'page.tsx': 'pre-blocks/navbar/navbar-02/page',
+    'layout.tsx': 'pre-blocks/navbar/navbar-02/layout',
+    'app-navbar.tsx': 'pre-blocks/navbar/navbar-02/app-navbar',
+  }} />
+
 
 ### Inset
 The inset one will have the padding to inset main content. You can of course see what's going on the demo, but you can also see the [live example here](/pre-blocks/navbar/navbar-03).
-```
-<Navbar intent="inset"/>
-```
-
+<CodeSandbox isIframe={false}
+  src='/pre-blocks/navbar/navbar-03'
+  source={{
+    preview: 'pre-blocks/navbar/navbar-03/app-navbar',
+    'page.tsx': 'pre-blocks/navbar/navbar-03/page',
+    'layout.tsx': 'pre-blocks/navbar/navbar-03/layout',
+    'app-navbar.tsx': 'pre-blocks/navbar/navbar-03/app-navbar',
+  }} />
 
 ## Using the Layout
 There are several ways to use the layout, depending on your framework. Or, if you're not using any framework, you can simply apply the layout component.
@@ -77,11 +87,11 @@ Home.layout = (page: React.ReactNode) => <AppLayout children={page} />
 ```
 When using **Inertia.js** with **Laravel**, the **layout**, **components**, and **pages** files are typically located in the resources/js folder. All the examples below assume they are within this directory.
 
-<CodeBlock
+<EditorText
   source={{
-    'app-layout.tsx': 'components/navbar/app-layout.tsx',
-    'app-navbar.tsx': 'components/navbar/app-navbar.tsx',
-    'home.tsx': 'components/navbar/home.tsx',
+    'layouts/app-layout.tsx': 'components/navbar/app-layout',
+    'layouts/app-navbar.tsx': 'components/navbar/app-navbar',
+    'pages/home.tsx': 'docs/navbar/home',
   }} />
 
 ### Next.js

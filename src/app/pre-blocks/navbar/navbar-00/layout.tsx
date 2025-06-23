@@ -1,10 +1,11 @@
+import { NavbarProvider } from "@/components/ui/navbar"
 import AppNavbar from "./app-navbar"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <AppNavbar />
+    <NavbarProvider>
+      <AppNavbar isSticky />
       {children}
-    </>
+    </NavbarProvider>
   )
 }

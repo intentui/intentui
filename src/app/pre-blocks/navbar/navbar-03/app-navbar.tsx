@@ -9,6 +9,7 @@ import {
   NavbarGap,
   NavbarItem,
   NavbarMobile,
+  type NavbarProps,
   NavbarSection,
   NavbarSpacer,
   NavbarStart,
@@ -16,7 +17,7 @@ import {
 } from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
 import {
-  IconBrandApple,
+  IconBrandIntentui,
   IconCommandRegular,
   IconDashboard,
   IconHeadphones,
@@ -27,13 +28,13 @@ import {
   IconShoppingBag,
 } from "@intentui/icons"
 
-export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
+export default function AppNavbar(props: NavbarProps) {
   return (
     <>
       <Navbar {...props}>
         <NavbarStart>
           <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
-            <IconBrandApple className="size-6 sm:size-5" />
+            <IconBrandIntentui className="size-6 sm:size-5" />
           </Link>
         </NavbarStart>
         <NavbarGap />
@@ -52,7 +53,7 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
           <Button intent="plain" size="sq-sm" aria-label="Your Bag">
             <IconShoppingBag />
           </Button>
-          <Separator orientation="vertical" className="mr-3 ml-1 h-5" />
+          <Separator orientation="vertical" className="mr-2.5 h-5" />
           <Menu>
             <Menu.Trigger aria-label="Open Menu">
               <Avatar
@@ -106,7 +107,7 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
         <Button intent="plain" size="sq-sm" aria-label="Your Bag">
           <IconShoppingBag />
         </Button>
-        <Separator orientation="vertical" className="mr-3 ml-1 h-5" />
+        <Separator orientation="vertical" className="h-5" />
         <UserMenu />
       </NavbarMobile>
     </>
