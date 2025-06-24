@@ -75,7 +75,7 @@ const NavbarProvider = ({
     <NavbarContext value={contextValue}>
       <div
         className={twMerge(
-          "peer/navbar group/navbar relative isolate flex w-full flex-col",
+          "peer/navbar group/navbar relative isolate z-10 flex w-full flex-col",
           "has-data-navbar-inset:min-h-svh has-data-navbar-inset:bg-navbar dark:has-data-navbar-inset:bg-bg",
           className,
         )}
