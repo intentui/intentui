@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown"
 import { Description, FieldError, Label } from "@/components/ui/field"
 import type { FieldProps } from "@/components/ui/field"
+import { PopoverContent } from "@/components/ui/popover"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
 import type {
@@ -15,13 +16,7 @@ import type {
   PopoverProps,
   SelectProps as SelectPrimitiveProps,
 } from "react-aria-components"
-import {
-  Button,
-  ListBox,
-  Popover,
-  Select as SelectPrimitive,
-  SelectValue,
-} from "react-aria-components"
+import { Button, ListBox, Select as SelectPrimitive, SelectValue } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
 
 interface SelectProps<T extends object> extends SelectPrimitiveProps<T>, FieldProps {
@@ -67,17 +62,8 @@ const SelectList = <T extends object>({
   ...props
 }: SelectListProps<T>) => {
   return (
-    <Popover
-      className={composeTailwindRenderProps(
-        popover?.className,
-        twJoin([
-          "min-w-(--trigger-width) max-w-xs bg-overlay bg-clip-padding text-overlay-fg shadow-xs transition-transform sm:max-w-3xl sm:text-sm dark:backdrop-saturate-200",
-          "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
-          "placement-left:entering:slide-in-from-right-1 placement-right:entering:slide-in-from-left-1 placement-top:entering:slide-in-from-bottom-1 placement-bottom:entering:slide-in-from-top-1",
-          "placement-left:exiting:slide-out-to-right-1 placement-right:exiting:slide-out-to-left-1 placement-top:exiting:slide-out-to-bottom-1 placement-bottom:exiting:slide-out-to-top-1",
-          "forced-colors:bg-[Canvas]",
-        ]),
-      )}
+    <PopoverContent
+      className={composeTailwindRenderProps(popover?.className, "min-w-(--trigger-width)")}
       {...popover}
     >
       <ListBox
@@ -85,12 +71,12 @@ const SelectList = <T extends object>({
         orientation="vertical"
         className={composeTailwindRenderProps(
           className,
-          "inset-ring inset-ring-border isolate grid max-h-96 select-none scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-auto rounded-xl p-1 empty:invisible *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
+          "grid max-h-96 w-full scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-scroll overscroll-contain p-1 outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
         )}
         items={items}
         {...props}
       />
-    </Popover>
+    </PopoverContent>
   )
 }
 
