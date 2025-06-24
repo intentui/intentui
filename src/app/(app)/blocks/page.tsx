@@ -23,7 +23,7 @@ export default function Page() {
             fullscreen: "/pre-blocks/sidebar/sidebar-01",
             preview: "/pre-blocks/sidebar/sidebar-01",
             expandKeys: ["components", "app"],
-            initialRegistry: "pre-blocks/sidebar/sidebar-01/app-sidebar",
+            initialRegistry: "pre-blocks/sidebar/app-sidebar",
             folders: {
               components: {
                 ui: {
@@ -39,7 +39,7 @@ export default function Page() {
                   "sidebar.tsx": "ui-sidebar",
                 },
                 "app-sidebar-nav.tsx": "pre-blocks/sidebar/app-sidebar-nav",
-                "app-sidebar.tsx": "pre-blocks/sidebar/sidebar-01/app-sidebar",
+                "app-sidebar.tsx": "pre-blocks/sidebar/app-sidebar",
               },
               app: {
                 "page.tsx": "pre-blocks/sidebar/sidebar-01/page",
@@ -123,10 +123,10 @@ export default function Page() {
           {...{
             title: "Default Navbar",
             defaultSelected: "app-navbar.tsx",
-            fullscreen: "/pre-blocks/navbar/navbar-00",
-            preview: "pre-blocks/navbar/navbar-00/app-navbar",
+            fullscreen: "/pre-blocks/navbar/navbar-01",
+            preview: "pre-blocks/navbar/app-navbar",
             expandKeys: ["components", "ui", "app"],
-            initialRegistry: "pre-blocks/navbar/navbar-00/app-navbar",
+            initialRegistry: "pre-blocks/navbar/app-navbar",
             folders: {
               components: {
                 ui: {
@@ -138,13 +138,13 @@ export default function Page() {
                   "separator.tsx": "ui-separator",
                   "navbar.tsx": "ui-navbar",
                 },
-                "app-navbar.tsx": "pre-blocks/navbar/navbar-00/app-navbar",
+                "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
                 "theme-switcher.tsx": "pre-blocks/theme-switcher",
               },
               app: {
                 "global.css": "pre-blocks/main.css",
-                "page.tsx": "pre-blocks/navbar/navbar-00/page",
-                "layout.tsx": "pre-blocks/navbar/navbar-00/layout",
+                "page.tsx": "pre-blocks/navbar/navbar-01/page",
+                "layout.tsx": "pre-blocks/navbar/navbar-01/layout",
               },
             },
           }}
@@ -158,7 +158,7 @@ export default function Page() {
             fullscreen: "/pre-blocks/navbar/navbar-03",
             preview: "pre-blocks/navbar/navbar-03",
             expandKeys: ["components", "ui", "app"],
-            initialRegistry: "pre-blocks/navbar/navbar-03/app-navbar",
+            initialRegistry: "pre-blocks/navbar/app-navbar",
             folders: {
               components: {
                 ui: {
@@ -171,7 +171,7 @@ export default function Page() {
                   "navbar.tsx": "ui-navbar",
                 },
                 "theme-switcher.tsx": "pre-blocks/theme-switcher",
-                "app-navbar.tsx": "pre-blocks/navbar/navbar-03/app-navbar",
+                "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
               },
               app: {
                 "global.css": "pre-blocks/main.css",
@@ -187,9 +187,9 @@ export default function Page() {
             title: "Floating Navbar",
             defaultSelected: "app-navbar.tsx",
             fullscreen: "/pre-blocks/navbar/navbar-02",
-            preview: "pre-blocks/navbar/navbar-02/app-navbar",
+            preview: "pre-blocks/navbar/app-navbar",
             expandKeys: ["components", "ui", "app"],
-            initialRegistry: "pre-blocks/navbar/navbar-02/app-navbar",
+            initialRegistry: "pre-blocks/navbar/app-navbar",
             folders: {
               components: {
                 ui: {
@@ -202,7 +202,7 @@ export default function Page() {
                   "navbar.tsx": "ui-navbar",
                 },
                 "theme-switcher.tsx": "pre-blocks/theme-switcher",
-                "app-navbar.tsx": "pre-blocks/navbar/navbar-02/app-navbar",
+                "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
               },
               app: {
                 "global.css": "pre-blocks/main.css",

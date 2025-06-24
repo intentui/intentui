@@ -1,17 +1,19 @@
 import { Button } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
+import { Menu } from "@/components/ui/menu"
 import {
   Navbar,
+  NavbarGap,
   NavbarInset,
   NavbarItem,
   NavbarMobile,
   NavbarProvider,
   NavbarSection,
+  NavbarSeparator,
+  NavbarSpacer,
   NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
-import { Separator } from "@/components/ui/separator"
-import { IconBrandApple, IconSearch, IconShoppingBag } from "@intentui/icons"
+import { IconChevronsY } from "@intentui/icons"
 
 export default function NavbarAnatomy() {
   return (
@@ -21,22 +23,35 @@ export default function NavbarAnatomy() {
         <NavbarStart />
         <NavbarSection>
           <NavbarItem href="#" />
+          <NavbarSpacer />
+          <NavbarGap />
+          <NavbarSeparator />
+          <Menu>
+            <NavbarItem>
+              Account
+              <IconChevronsY className="col-start-3" />
+            </NavbarItem>
+            <Menu.Content>
+              <Menu.Item />
+            </Menu.Content>
+          </Menu>
         </NavbarSection>
       </Navbar>
 
       {/* Mobile */}
       <NavbarMobile>
         <NavbarTrigger />
-        <Separator orientation="vertical" className="mx-2 h-6" />
-        <Link href={"/docs/components/navigation/navbar"}>
-          <IconBrandApple className="size-5" />
-        </Link>
-        <Button intent="plain" size="sq-sm" aria-label="Search for products">
-          <IconSearch />
-        </Button>
-        <Button intent="plain" size="sq-sm" aria-label="Your Bag">
-          <IconShoppingBag />
-        </Button>
+        <NavbarSpacer />
+        <Button />
+        <Menu>
+          <NavbarItem>
+            Account
+            <IconChevronsY className="col-start-3" />
+          </NavbarItem>
+          <Menu.Content>
+            <Menu.Item />
+          </Menu.Content>
+        </Menu>
       </NavbarMobile>
 
       {/* Required when setting the navbar intent to 'inset' */}

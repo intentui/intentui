@@ -3,6 +3,7 @@
 import { createContext, use, useCallback, useMemo, useState } from "react"
 
 import { Button, type ButtonProps } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import { Sheet } from "@/components/ui/sheet"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
@@ -29,7 +30,7 @@ const useNavbar = () => {
   return context
 }
 
-interface NavbarProviderProps extends React.ComponentProps<"nav"> {
+interface NavbarProviderProps extends React.ComponentProps<"div"> {
   defaultOpen?: boolean
   isOpen?: boolean
   onOpenChange?: (open: boolean) => void
@@ -72,10 +73,10 @@ const NavbarProvider = ({
   )
   return (
     <NavbarContext value={contextValue}>
-      <nav
+      <div
         className={twMerge(
           "peer/navbar group/navbar relative isolate flex w-full flex-col",
-          "*:data-navbar-inset:min-h-svh *:data-navbar-inset:bg-navbar dark:*:data-navbar-inset:bg-bg",
+          "has-data-navbar-inset:min-h-svh has-data-navbar-inset:bg-navbar dark:has-data-navbar-inset:bg-bg",
           className,
         )}
         {...props}
@@ -133,13 +134,19 @@ const Navbar = ({
     >
       <div
         className={twMerge(
-          "relative isolate mx-auto hidden w-full items-center md:flex md:h-14",
-          intent === "float" && "max-w-7xl rounded-xl border bg-navbar px-4 shadow-xs",
-          intent === "inset" && "max-w-(--breakpoint-2xl) px-6",
-          intent === "default" && "max-w-(--breakpoint-2xl) border-b bg-navbar px-6",
+          "relative isolate hidden md:block",
+          intent === "float" &&
+            "*:data-[navbar=content]:max-w-7xl *:data-[navbar=content]:rounded-xl *:data-[navbar=content]:border *:data-[navbar=content]:bg-navbar *:data-[navbar=content]:px-4 *:data-[navbar=content]:shadow-xs",
+          ["default", "inset"].includes(intent) && "px-6",
+          intent === "default" && "border-b bg-navbar",
         )}
       >
-        {children}
+        <div
+          data-navbar="content"
+          className="mx-auto w-full max-w-(--breakpoint-2xl) items-center py-2.5 md:flex"
+        >
+          {children}
+        </div>
       </div>
     </div>
   )
@@ -175,7 +182,7 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
         "group/sidebar-item hover:bg-secondary",
         "aria-[current=page]:text-fg aria-[current=page]*:data-[slot=icon]:text-fg",
         "col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid md:supports-[grid-template-columns:subgrid]:grid-cols-none",
-        "relative min-w-0 items-center gap-3 rounded-lg px-2.5 py-2 text-left font-medium text-base/6 sm:text-sm/5",
+        "relative min-w-0 items-center gap-x-3 rounded-lg px-2.5 py-2 text-left font-medium text-base/6 sm:text-sm/5 md:gap-x-2.5",
         "*:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-fg sm:*:data-[slot=icon]:size-4",
         "*:data-[slot=loader]:size-5 *:data-[slot=loader]:shrink-0 sm:*:data-[slot=loader]:size-4",
         "*:not-nth-2:last:data-[slot=icon]:ml-auto *:not-nth-2:last:data-[slot=icon]:size-5 sm:*:not-nth-2:last:data-[slot=icon]:size-4",
@@ -194,8 +201,8 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
             <span
               data-slot="current-indicator"
               className={twJoin(
-                "-bottom-3 absolute inset-x-2 h-0.5 rounded-full bg-fg",
-                "group-data-[navbar=inset]/navbar-intent:-bottom-[--spacing(3.3)] group-data-[navbar=float]/navbar-intent:hidden",
+                "-bottom-[--spacing(2.9)] absolute inset-x-2 h-0.5 rounded-full bg-fg",
+                "group-data-[navbar=inset]/navbar-intent:-bottom-2.5",
               )}
             />
           )}
@@ -210,11 +217,15 @@ const NavbarSpacer = ({ className, ref, ...props }: React.ComponentProps<"div">)
 }
 
 const NavbarStart = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
-  return <div ref={ref} className={twMerge("p-2.5 py-4 md:p-2", className)} {...props} />
+  return <div ref={ref} className={twMerge("p-2 py-4 md:p-2", className)} {...props} />
 }
 
 const NavbarGap = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
   return <div ref={ref} className={twMerge("mx-2", className)} {...props} />
+}
+
+const NavbarSeparator = ({ className, ...props }: React.ComponentProps<typeof Separator>) => {
+  return <Separator orientation="vertical" className={twMerge("h-5", className)} {...props} />
 }
 
 const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
@@ -224,7 +235,7 @@ const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<"div">)
       data-slot="navbar-mobile"
       className={twMerge(
         "group/navbar-mobile flex items-center gap-x-3 px-4 py-2.5 md:hidden",
-        "group-has-data-navbar-sticky/navbar:sticky group-has-data-navbar-sticky/navbar:top-0 group-has-data-navbar-sticky/navbar:bg-navbar",
+        "group-has-data-navbar-sticky/navbar:sticky group-has-data-navbar-sticky/navbar:top-0 group-has-data-navbar-sticky/navbar:border-b group-has-data-navbar-sticky/navbar:bg-navbar",
         className,
       )}
       {...props}
@@ -232,18 +243,18 @@ const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<"div">)
   )
 }
 
-const NavbarInset = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
+const NavbarInset = ({ className, ref, children, ...props }: React.ComponentProps<"div">) => {
   return (
-    <main
+    <div
       ref={ref}
       data-navbar-inset={true}
       className={twMerge("flex flex-1 flex-col bg-navbar pb-2 md:px-2 dark:bg-bg", className)}
       {...props}
     >
-      <div className="grow bg-bg md:rounded-lg md:shadow-xs md:ring-1 md:ring-fg/15 md:dark:bg-navbar md:dark:ring-border">
-        {props.children}
+      <div className="grow bg-bg p-6 md:rounded-lg md:p-12 md:shadow-xs md:ring-1 md:ring-fg/15 md:dark:bg-navbar md:dark:ring-border">
+        <div className="mx-auto max-w-7xl">{children}</div>
       </div>
-    </main>
+    </div>
   )
 }
 
@@ -298,6 +309,7 @@ export {
   NavbarSection,
   NavbarSpacer,
   NavbarLabel,
+  NavbarSeparator,
   NavbarStart,
   NavbarGap,
 }

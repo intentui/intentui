@@ -7,7 +7,7 @@ import { BrandIcon } from "@/components/brand-icon"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/resizable"
-import { Button, buttonStyles } from "@/components/ui/button"
+import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Separator } from "@/components/ui/separator"
 import {
@@ -25,10 +25,9 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar"
 import { TabPanel, Tabs } from "@/components/ui/tabs"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import quotes from "@/json/quotes.json"
 import type { RegistryItem } from "@/types"
-import { IconFolderFill, IconFolderOpenFill, IconX } from "@intentui/icons"
+import { IconFolderFill, IconFolderOpenFill } from "@intentui/icons"
+import { ToggleButton, ToggleButtonGroup } from "react-aria-components"
 import { type Key, Tab, TabList } from "react-aria-components"
 import type { ImperativePanelHandle } from "react-resizable-panels"
 import { twMerge } from "tailwind-merge"
@@ -146,8 +145,8 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
               <Tab
                 className={({ isSelected }) =>
                   twMerge(
-                    "hidden cursor-default px-2 py-1.5 outline-hidden hover:text-fg sm:block",
-                    isSelected ? "font-semibold text-fg" : "text-muted-fg",
+                    "hidden cursor-default px-2 py-1.5 font-medium outline-hidden hover:text-fg sm:block",
+                    isSelected ? "text-fg" : "text-muted-fg",
                   )
                 }
                 id="preview"
@@ -157,8 +156,8 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
               <Tab
                 className={({ isSelected }) =>
                   twMerge(
-                    "hidden cursor-default px-2 py-1.5 outline-hidden hover:text-fg sm:block",
-                    isSelected ? "font-semibold text-fg" : "text-muted-fg",
+                    "hidden cursor-default px-2 py-1.5 font-medium outline-hidden hover:text-fg sm:block",
+                    isSelected ? "text-fg" : "text-muted-fg",
                   )
                 }
                 id="code"
@@ -167,7 +166,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
               </Tab>
             </TabList>
             <Separator orientation="vertical" className="mx-1 hidden h-4 rotate-12 sm:block" />
-            <ToggleGroup
+            <ToggleButtonGroup
               selectionMode="single"
               className="hidden sm:flex"
               selectedKeys={width}
@@ -178,28 +177,28 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                 }
               }}
             >
-              <ToggleGroupItem
-                className="font-normal selected:font-semibold"
+              <ToggleButton
+                className="p-2 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
                 aria-label="Switch to phone display"
                 id={30}
               >
                 Smartphone
-              </ToggleGroupItem>
-              <ToggleGroupItem
-                className="font-normal selected:font-semibold"
+              </ToggleButton>
+              <ToggleButton
+                className="p-2 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
                 aria-label="Switch to ipad/tablet display"
                 id={60}
               >
                 Tablet
-              </ToggleGroupItem>
-              <ToggleGroupItem
-                className="font-normal selected:font-semibold"
+              </ToggleButton>
+              <ToggleButton
+                className="p-2 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
                 aria-label="Switch to desktop / large screen display"
                 id={100}
               >
                 Desktop
-              </ToggleGroupItem>
-            </ToggleGroup>
+              </ToggleButton>
+            </ToggleButtonGroup>
             <Separator orientation="vertical" className="mx-1 hidden h-4 rotate-12 sm:block" />
             {fullscreen && (
               <Link
@@ -209,7 +208,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                   intent: "plain",
                   size: "sm",
                   className:
-                    "font-normal pressed:text-fg pressed:text-transparent text-muted-fg hover:bg-transparent hover:text-fg",
+                    "pressed:bg-transparent font-medium pressed:text-fg text-muted-fg hover:bg-transparent hover:text-fg",
                 })}
                 aria-label="Open in fullscreen"
               >
@@ -258,25 +257,12 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                 <SidebarContent className="pb-10">{renderTree(folders)}</SidebarContent>
               </Sidebar>
               <SidebarInset className="overflow-hidden">
-                <SidebarNav className="flex h-12 shrink-0 justify-between bg-sidebar">
+                <SidebarNav className="flex h-12 shrink-0 justify-between border-b bg-sidebar">
                   <div className="flex flex-1 items-center">
                     <BrandIcon label={selectedKey} />
                     <strong className="ml-2 font-medium text-xs">{selectedKey}</strong>
                   </div>
-                  <Button
-                    onPress={() => {
-                      setCode(`/**
-* "${randomQuote.quote}"
-* - ${randomQuote.name}
-*/
-                      `)
-                    }}
-                    className="-mr-2 hover:bg-transparent **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:duration-200 hover:**:data-[slot=icon]:rotate-90"
-                    size="sq-sm"
-                    intent="plain"
-                  >
-                    <IconX />
-                  </Button>
+
                   <CopyButton
                     alwaysVisible
                     className="text-zinc-600 hover:text-zinc-70 dark:text-zinc-400 dark:hover:text-zinc-50"
@@ -390,7 +376,5 @@ const IframeComponent = ({ style, src, ...props }: React.ComponentPropsWithoutRe
     />
   )
 }
-
-const randomQuote = quotes[Math.floor(Math.random() * quotes.length)]!
 
 export const BlockSandbox = memo(Component)

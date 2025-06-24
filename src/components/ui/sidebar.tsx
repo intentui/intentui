@@ -173,7 +173,9 @@ const Sidebar = ({
           className,
         )}
         {...props}
-      />
+      >
+        {children}
+      </div>
     )
   }
 
@@ -391,6 +393,7 @@ const SidebarItem = ({
         className,
         (className, { isPressed, isFocusVisible, isHovered, isDisabled }) =>
           twMerge([
+            "href" in props ? "cursor-pointer" : "cursor-default",
             "w-full items-center rounded-lg text-left font-medium text-base/6 text-sidebar-fg",
             "group/sidebar-item relative col-span-full overflow-hidden focus-visible:outline-hidden",
             "**:data-[slot=menu-trigger]:absolute **:data-[slot=menu-trigger]:right-0 **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:h-full **:data-[slot=menu-trigger]:w-[calc(var(--sidebar-width)-90%)] **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:justify-end **:data-[slot=menu-trigger]:pr-2.5 **:data-[slot=menu-trigger]:opacity-0 **:data-[slot=menu-trigger]:pressed:opacity-100 **:data-[slot=menu-trigger]:has-data-focus:opacity-100 **:data-[slot=menu-trigger]:focus-visible:opacity-100 hover:**:data-[slot=menu-trigger]:opacity-100",
@@ -405,7 +408,7 @@ const SidebarItem = ({
             isFocusVisible && "inset-ring inset-ring-ring outline-hidden ring-2 ring-ring/20",
             (isPressed || isHovered) &&
               "bg-secondary text-sidebar-fg **:data-[slot=icon]:text-sidebar-fg",
-            isDisabled && "cursor-default opacity-50",
+            isDisabled && "opacity-50",
             className,
           ]),
       )}
