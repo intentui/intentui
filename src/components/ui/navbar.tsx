@@ -128,7 +128,6 @@ const Navbar = ({
         "group/navbar-intent relative isolate",
         isSticky && "sticky top-0 z-40",
         intent === "float" && "md:px-22 md:pt-10",
-        className,
       ])}
       {...props}
     >
@@ -139,6 +138,7 @@ const Navbar = ({
             "*:data-[navbar=content]:max-w-7xl *:data-[navbar=content]:rounded-xl *:data-[navbar=content]:border *:data-[navbar=content]:bg-navbar *:data-[navbar=content]:px-4 *:data-[navbar=content]:shadow-xs",
           ["default", "inset"].includes(intent) && "px-6",
           intent === "default" && "border-b bg-navbar",
+          className,
         )}
       >
         <div
@@ -199,7 +199,7 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
 
           {(isCurrent || values.isCurrent) && !isMobile && (
             <span
-              data-slot="current-indicator"
+              data-navbar="current-indicator"
               className={twJoin(
                 "-bottom-[--spacing(2.9)] absolute inset-x-2 h-0.5 rounded-full bg-fg",
                 "group-data-[navbar=inset]/navbar-intent:-bottom-2.5",
