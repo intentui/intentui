@@ -1,5 +1,7 @@
-import { BlockSandbox } from "@/components/code/block-sandbox"
 import { Header } from "@/components/header"
+
+import { BlockSandbox } from "@/components/code/block-sandbox"
+import { NavbarProvider } from "@/components/ui/navbar"
 
 export const metadata = {
   title: "Blocks",
@@ -118,100 +120,100 @@ export default function Page() {
             },
           }}
         />
-
-        <BlockSandbox
-          {...{
-            title: "Default Navbar",
-            defaultSelected: "app-navbar.tsx",
-            fullscreen: "/pre-blocks/navbar/navbar-01",
-            preview: "pre-blocks/navbar/app-navbar",
-            expandKeys: ["components", "ui", "app"],
-            initialRegistry: "pre-blocks/navbar/app-navbar",
-            folders: {
-              components: {
-                ui: {
-                  "primitive.tsx": "ui-primitive",
-                  "avatar.tsx": "ui-avatar",
-                  "menu.tsx": "ui-menu",
-                  "button.tsx": "ui-button",
-                  "sheet.tsx": "ui-sheet",
-                  "separator.tsx": "ui-separator",
-                  "navbar.tsx": "ui-navbar",
+        <NavbarProvider>
+          <BlockSandbox
+            {...{
+              title: "Default Navbar",
+              defaultSelected: "app-navbar.tsx",
+              fullscreen: "/pre-blocks/navbar/navbar-01",
+              preview: "pre-blocks/navbar/app-navbar",
+              expandKeys: ["components", "ui", "app"],
+              initialRegistry: "pre-blocks/navbar/app-navbar",
+              folders: {
+                components: {
+                  ui: {
+                    "primitive.tsx": "ui-primitive",
+                    "avatar.tsx": "ui-avatar",
+                    "menu.tsx": "ui-menu",
+                    "button.tsx": "ui-button",
+                    "sheet.tsx": "ui-sheet",
+                    "separator.tsx": "ui-separator",
+                    "navbar.tsx": "ui-navbar",
+                  },
+                  "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
+                  "theme-switcher.tsx": "pre-blocks/theme-switcher",
                 },
-                "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
-                "theme-switcher.tsx": "pre-blocks/theme-switcher",
-              },
-              app: {
-                "global.css": "pre-blocks/main.css",
-                "page.tsx": "pre-blocks/navbar/navbar-01/page",
-                "layout.tsx": "pre-blocks/navbar/navbar-01/layout",
-              },
-            },
-          }}
-        />
-
-        <BlockSandbox
-          {...{
-            isIframe: true,
-            title: "Inset Navbar",
-            defaultSelected: "app-navbar.tsx",
-            fullscreen: "/pre-blocks/navbar/navbar-03",
-            preview: "pre-blocks/navbar/navbar-03",
-            expandKeys: ["components", "ui", "app"],
-            initialRegistry: "pre-blocks/navbar/app-navbar",
-            folders: {
-              components: {
-                ui: {
-                  "primitive.tsx": "ui-primitive",
-                  "avatar.tsx": "ui-avatar",
-                  "menu.tsx": "ui-menu",
-                  "button.tsx": "ui-button",
-                  "sheet.tsx": "ui-sheet",
-                  "separator.tsx": "ui-separator",
-                  "navbar.tsx": "ui-navbar",
+                app: {
+                  "global.css": "pre-blocks/main.css",
+                  "page.tsx": "pre-blocks/navbar/navbar-01/page",
+                  "layout.tsx": "pre-blocks/navbar/navbar-01/layout",
                 },
-                "theme-switcher.tsx": "pre-blocks/theme-switcher",
-                "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
               },
-              app: {
-                "global.css": "pre-blocks/main.css",
-                "page.tsx": "pre-blocks/navbar/navbar-03/page",
-                "layout.tsx": "pre-blocks/navbar/navbar-03/layout",
-              },
-            },
-          }}
-        />
-
-        <BlockSandbox
-          {...{
-            title: "Floating Navbar",
-            defaultSelected: "app-navbar.tsx",
-            fullscreen: "/pre-blocks/navbar/navbar-02",
-            preview: "pre-blocks/navbar/app-navbar",
-            expandKeys: ["components", "ui", "app"],
-            initialRegistry: "pre-blocks/navbar/app-navbar",
-            folders: {
-              components: {
-                ui: {
-                  "primitive.tsx": "ui-primitive",
-                  "avatar.tsx": "ui-avatar",
-                  "menu.tsx": "ui-menu",
-                  "button.tsx": "ui-button",
-                  "sheet.tsx": "ui-sheet",
-                  "separator.tsx": "ui-separator",
-                  "navbar.tsx": "ui-navbar",
+            }}
+          />
+          <BlockSandbox
+            {...{
+              isIframe: true,
+              title: "Inset Navbar",
+              defaultSelected: "app-navbar.tsx",
+              fullscreen: "/pre-blocks/navbar/navbar-03",
+              preview: "pre-blocks/navbar/navbar-03",
+              expandKeys: ["components", "ui", "app"],
+              initialRegistry: "pre-blocks/navbar/app-navbar",
+              folders: {
+                components: {
+                  ui: {
+                    "primitive.tsx": "ui-primitive",
+                    "avatar.tsx": "ui-avatar",
+                    "menu.tsx": "ui-menu",
+                    "button.tsx": "ui-button",
+                    "sheet.tsx": "ui-sheet",
+                    "separator.tsx": "ui-separator",
+                    "navbar.tsx": "ui-navbar",
+                  },
+                  "theme-switcher.tsx": "pre-blocks/theme-switcher",
+                  "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
                 },
-                "theme-switcher.tsx": "pre-blocks/theme-switcher",
-                "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
+                app: {
+                  "global.css": "pre-blocks/main.css",
+                  "page.tsx": "pre-blocks/navbar/navbar-03/page",
+                  "layout.tsx": "pre-blocks/navbar/navbar-03/layout",
+                },
               },
-              app: {
-                "global.css": "pre-blocks/main.css",
-                "page.tsx": "pre-blocks/navbar/navbar-02/page",
-                "layout.tsx": "pre-blocks/navbar/navbar-02/layout",
+            }}
+          />
+
+          <BlockSandbox
+            {...{
+              title: "Floating Navbar",
+              defaultSelected: "app-navbar.tsx",
+              fullscreen: "/pre-blocks/navbar/navbar-02",
+              preview: "pre-blocks/navbar/app-navbar",
+              expandKeys: ["components", "ui", "app"],
+              initialRegistry: "pre-blocks/navbar/app-navbar",
+              folders: {
+                components: {
+                  ui: {
+                    "primitive.tsx": "ui-primitive",
+                    "avatar.tsx": "ui-avatar",
+                    "menu.tsx": "ui-menu",
+                    "button.tsx": "ui-button",
+                    "sheet.tsx": "ui-sheet",
+                    "separator.tsx": "ui-separator",
+                    "navbar.tsx": "ui-navbar",
+                  },
+                  "theme-switcher.tsx": "pre-blocks/theme-switcher",
+                  "app-navbar.tsx": "pre-blocks/navbar/app-navbar",
+                },
+                app: {
+                  "global.css": "pre-blocks/main.css",
+                  "page.tsx": "pre-blocks/navbar/navbar-02/page",
+                  "layout.tsx": "pre-blocks/navbar/navbar-02/layout",
+                },
               },
-            },
-          }}
-        />
+            }}
+          />
+        </NavbarProvider>
       </div>
     </div>
   )
