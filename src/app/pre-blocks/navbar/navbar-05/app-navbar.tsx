@@ -9,6 +9,7 @@ import {
   NavbarMobile,
   type NavbarProps,
   NavbarSection,
+  NavbarSeparator,
   NavbarSpacer,
   NavbarStart,
   NavbarTrigger,
@@ -30,8 +31,15 @@ export default function AppNavbar(props: NavbarProps) {
     <>
       <Navbar {...props}>
         <NavbarStart>
-          <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
+          <Link
+            className="flex items-center gap-x-2 font-medium"
+            aria-label="Goto documentation of Navbar"
+            href="/docs/components/layouts/navbar"
+          >
             <IconBrandIntentui className="size-6 sm:size-5" />
+            <span>
+              Intent <span className="text-muted-fg">UI</span>
+            </span>
           </Link>
         </NavbarStart>
         <NavbarGap />
@@ -75,7 +83,7 @@ export default function AppNavbar(props: NavbarProps) {
         <Button intent="plain" size="sq-sm" aria-label="Your Bag">
           <IconShoppingBag />
         </Button>
-        <Separator orientation="vertical" className="mr-3 ml-1 h-5" />
+        <NavbarSeparator className="mr-2.5" />
         <UserMenu />
       </NavbarMobile>
     </>

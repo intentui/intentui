@@ -2,7 +2,18 @@
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
-import { Navbar, NavbarItem, type NavbarProps, NavbarSection } from "@/components/ui/navbar"
+import {
+  Navbar,
+  NavbarGap,
+  NavbarItem,
+  NavbarMobile,
+  type NavbarProps,
+  NavbarSection,
+  NavbarSeparator,
+  NavbarSpacer,
+  NavbarStart,
+  NavbarTrigger,
+} from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
 import { IconBrandIntentui, IconChevronLgDown, IconSearch, IconShoppingBag } from "@intentui/icons"
 import { UserMenu } from "./user-menu"
@@ -64,9 +75,19 @@ export default function AppNavbar(props: NavbarProps) {
   return (
     <>
       <Navbar {...props}>
-        <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
-          <IconBrandIntentui className="size-6 sm:size-5" />
-        </Link>
+        <NavbarStart>
+          <Link
+            className="flex items-center gap-x-2 font-medium"
+            aria-label="Goto documentation of Navbar"
+            href="/docs/components/layouts/navbar"
+          >
+            <IconBrandIntentui className="size-6 sm:size-5" />
+            <span>
+              Intent <span className="text-muted-fg">UI</span>
+            </span>
+          </Link>
+        </NavbarStart>
+        <NavbarGap />
         <NavbarSection>
           <NavbarItem href="#" isCurrent>
             Home
@@ -79,7 +100,7 @@ export default function AppNavbar(props: NavbarProps) {
               Categories
               <IconChevronLgDown className="col-start-2" />
             </NavbarItem>
-            <Menu.Content items={categories}>
+            <Menu.Content className="min-w-(--trigger-width) sm:min-w-56" items={categories}>
               {(item) => (
                 <Menu.Item id={item.id} textValue={item.label} href={item.url}>
                   {item.label}
@@ -88,6 +109,7 @@ export default function AppNavbar(props: NavbarProps) {
             </Menu.Content>
           </Menu>
         </NavbarSection>
+        <NavbarSpacer />
         <NavbarSection className="max-md:hidden">
           <Button intent="plain" size="sq-sm" aria-label="Search for products">
             <IconSearch />
@@ -99,6 +121,18 @@ export default function AppNavbar(props: NavbarProps) {
           <UserMenu />
         </NavbarSection>
       </Navbar>
+      <NavbarMobile>
+        <NavbarTrigger />
+        <NavbarSpacer />
+        <Button intent="plain" size="sq-sm" aria-label="Search for products">
+          <IconSearch />
+        </Button>
+        <Button intent="plain" size="sq-sm" aria-label="Your Bag">
+          <IconShoppingBag />
+        </Button>
+        <NavbarSeparator className="mr-2.5" />
+        <UserMenu />
+      </NavbarMobile>
     </>
   )
 }

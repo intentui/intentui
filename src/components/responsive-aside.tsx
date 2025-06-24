@@ -83,7 +83,7 @@ export function ResponsiveAside({
             <Button aria-label="Search docs" intent="plain" size="sq-sm">
               <IconHamburger className="size-5" />
             </Button>
-            <Menu.Content placement="bottom" className="sm:min-w-56">
+            <Menu.Content placement="bottom" className="min-w-64 sm:min-w-56">
               <Menu.Item href="/">
                 <IconHome />
                 <Menu.Label>Home</Menu.Label>
