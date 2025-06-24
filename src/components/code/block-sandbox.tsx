@@ -114,9 +114,9 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                   style={{ "--nested-level": nestedLevel } as React.CSSProperties}
                 >
                   {isExpanded ? (
-                    <IconFolderOpenFill className="size-4 text-sky-600 dark:text-[#62cfff]" />
+                    <IconFolderOpenFill className="size-4 text-muted-fg" />
                   ) : (
-                    <IconFolderFill className="size-4 text-sky-600 dark:text-[#62cfff]" />
+                    <IconFolderFill className="size-4 text-muted-fg" />
                   )}
                   <SidebarLabel>{key}</SidebarLabel>
                 </SidebarDisclosureTrigger>
