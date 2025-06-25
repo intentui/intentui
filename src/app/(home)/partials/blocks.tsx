@@ -46,6 +46,7 @@ export function Blocks() {
             </BlocksCard>
           </div>
         </div>
+
         <div>
           <CardHeader
             className="max-w-lg"

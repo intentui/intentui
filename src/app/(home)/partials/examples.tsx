@@ -3,6 +3,10 @@
 import { BlocksCard } from "@/app/(home)/partials/blocks"
 import ChoiceboxDemo from "@/components/docs/collections/choicebox/choicebox-demo"
 import TableDemo from "@/components/docs/collections/table/table-demo"
+import AreaChartDemo from "@/components/docs/visualizations/area-chart/area-chart-demo"
+import BarChartDemo from "@/components/docs/visualizations/bar-chart/bar-chart-demo"
+import BarListDemo from "@/components/docs/visualizations/bar-list/bar-list-demo"
+import LineChartDemo from "@/components/docs/visualizations/line-chart/line-chart-demo"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
@@ -68,6 +72,20 @@ export function Examples() {
             <Button className="self-end">Save changes</Button>
           </div>
         </BlocksCard>
+      </PageContainer>
+      <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto pb-6 *:shrink-0 *:snap-center **:data-[slot=card]:border-transparent **:data-[slot=card]:bg-transparent **:data-[slot=card]:shadow-none sm:pb-12">
+        <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/2">
+          <AreaChartDemo />
+        </div>
+        <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/2">
+          <LineChartDemo />
+        </div>
+        <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/2">
+          <BarChartDemo />
+        </div>
+        <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/3">
+          <BarListDemo />
+        </div>
       </PageContainer>
     </div>
   )
