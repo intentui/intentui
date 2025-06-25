@@ -17,7 +17,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export function Examples() {
   return (
-    <div className="-mt-4 border-b pt-6 sm:pt-12">
+    <div className="-mt-4 pt-6 sm:pt-12">
       <PageContainer>
         <CardHeader
           className="max-w-lg"
@@ -73,7 +73,7 @@ export function Examples() {
           </div>
         </BlocksCard>
       </PageContainer>
-      <PageContainer>
+      <PageContainer className="mt-6">
         <CardHeader
           className="max-w-lg"
           title="Visualizations"

@@ -15,8 +15,8 @@ import { twMerge } from "tailwind-merge"
 
 export function Blocks() {
   return (
-    <PageContainer>
-      <div className="mask-b-from-90% md:mask-b-from-60% lg:mask-b-from-85% space-y-16">
+    <PageContainer className="mt-6">
+      <div className="mask-b-from-90% md:mask-b-from-60% lg:mask-b-from-85% space-y-10 sm:space-y-16">
         <div>
           <CardHeader
             className="max-w-lg"
