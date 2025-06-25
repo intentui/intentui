@@ -4,15 +4,12 @@ import ModalDemo from "@/components/docs/overlays/modal/modal-demo"
 import PopoverDemo from "@/components/docs/overlays/popover/popover-demo"
 import { users } from "@/components/docs/pickers/combo-box/combo-box-avatar-demo"
 import { roles } from "@/components/docs/pickers/select/select-details-description-demo"
-import AreaChartGradientDemo from "@/components/docs/visualizations/area/area-chart-gradient-demo"
-import BarChartMultipleDemo from "@/components/docs/visualizations/bar/bar-chart-multiple-demo"
-import PieChartDonutWithTextDemo from "@/components/docs/visualizations/pie/pie-chart-donut-with-text-demo"
-import RadialBarChartGridDemo from "@/components/docs/visualizations/radial-bar/radial-bar-chart-grid-demo"
+import AreaChartDemo from "@/components/docs/visualizations/area-chart/area-chart-demo"
+import BarChartDemo from "@/components/docs/visualizations/bar-chart/bar-chart-demo"
 import { Avatar } from "@/components/ui/avatar"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
-import { Choicebox } from "@/components/ui/choicebox"
 import { ComboBox } from "@/components/ui/combo-box"
 import { Description, Label } from "@/components/ui/field"
 import { Link } from "@/components/ui/link"
@@ -62,7 +59,6 @@ export function Blocks() {
         </Card>
         <Card className="flex items-center justify-center gap-2 p-6">
           <div className="space-y-2">
-            {/*<BadgeIntentDemo/>*/}
             <div className="flex flex-col gap-2 md:flex-row">
               <ModalDemo />
               <PopoverDemo />
@@ -127,47 +123,46 @@ export function Blocks() {
             />
           </RadioGroup>
         </Card>
-        <Card className="flex items-center justify-center p-6">
-          <Switch aria-label="Automatic updates">
+        <Card className="grid place-content-center">
+          <Switch aria-label="Dark mode">
             {({ isSelected }) => (
               <>
-                <Label>Automatic updates</Label>
+                <Label>Dark mode</Label>
+                <Description>
+                  {isSelected ? "Dark theme is enabled" : "Light theme is currently active"}
+                </Description>
+              </>
+            )}
+          </Switch>
+
+          <Switch aria-label="Location services">
+            {({ isSelected }) => (
+              <>
+                <Label>Location services</Label>
+                <Description>
+                  {isSelected ? "Apps can access your location" : "Location access is disabled"}
+                </Description>
+              </>
+            )}
+          </Switch>
+
+          <Switch isDisabled isSelected aria-label="Email notifications">
+            {({ isSelected }) => (
+              <>
+                <Label>Email notifications</Label>
                 <Description>
                   {isSelected
-                    ? "Updates will be installed automatically"
-                    : "You need to install updates manually"}
+                    ? "You will receive email notifications"
+                    : "Email notifications are turned off"}
                 </Description>
               </>
             )}
           </Switch>
         </Card>
-        <Card className="flex items-center justify-center p-6">
-          <Choicebox
-            defaultSelectedKeys={["standard", "pro"]}
-            columns={1}
-            gap={2}
-            aria-label="Select items"
-            selectionMode="multiple"
-          >
-            <Choicebox.Item
-              id="standard"
-              label="Standard"
-              description="Perfect for growing your team."
-            />
-            <Choicebox.Item id="pro" label="Pro" description="Includes all advanced tools." />
-            <Choicebox.Item
-              id="enterprise"
-              label="Enterprise"
-              description="Custom solutions for large organizations."
-            />
-          </Choicebox>
-        </Card>
-        <PieChartDonutWithTextDemo />
-        <RadialBarChartGridDemo />
       </div>
       <div className="grid gap-1 sm:grid-cols-2">
-        <AreaChartGradientDemo />
-        <BarChartMultipleDemo />
+        <AreaChartDemo />
+        <BarChartDemo />
       </div>
     </div>
   )

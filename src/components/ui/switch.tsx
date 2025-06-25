@@ -13,6 +13,7 @@ interface SwitchProps extends SwitchPrimitiveProps {
 const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
   return (
     <SwitchPrimitive
+      data-slot="switch"
       ref={ref}
       {...props}
       className={composeTailwindRenderProps(
