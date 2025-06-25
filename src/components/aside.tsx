@@ -33,7 +33,7 @@ const sortedGsChildren =
 export function Aside() {
   return (
     <ListBox
-      className="flex flex-col gap-y-(--gap) pr-4 pl-6 [--gap:--spacing(6)]"
+      className="flex flex-col gap-y-(--gap) pr-4 pb-10 pl-(--gap) [--gap:--spacing(6)]"
       aria-label="Documentation sidebar"
     >
       <ListBoxSection>

@@ -80,7 +80,7 @@ export function Examples() {
           description="Explore various data visualizations to represent information effectively."
         />
       </PageContainer>
-      <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto pb-6 *:shrink-0 *:snap-center **:data-[slot=card]:border-transparent **:data-[slot=card]:bg-transparent **:data-[slot=card]:shadow-none sm:pb-12">
+      <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto pb-6 *:shrink-0 *:snap-center **:data-[slot=card]:border-transparent **:data-[slot=card]:bg-transparent **:data-[slot=card]:shadow-none sm:pb-12 **:data-[slot=card]:[--card-spacing:--spacing(4)] sm:**:data-[slot=card]:[--card-spacing:--spacing(6)]">
         <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/2">
           <AreaChartDemo />
         </div>

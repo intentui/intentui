@@ -1,8 +1,6 @@
 "use client"
-
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconBrandIntentui } from "@intentui/icons"
-import { Link } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
 
 const IconBrandIrsyadCo = (props: React.SVGProps<SVGSVGElement>) => {
   return (
@@ -72,12 +70,13 @@ interface AdCardProps {
 
 function AdCard({ href, title, description, domain, icon, className }: AdCardProps) {
   return (
-    <Link
+    <a
       target="_blank"
+      rel="noreferrer"
       href={href}
-      className={composeTailwindRenderProps(
-        className,
+      className={twMerge(
         "not-prose relative z-20 mt-6 flex w-full flex-col gap-y-1 rounded-xl border border-fg/10 border-dashed bg-secondary/30 p-4 text-muted-fg hover:border-fg/15 hover:bg-secondary/20 sm:w-56 **:[svg]:size-3.5 **:[svg]:shrink-0",
+        className,
       )}
     >
       <span className="font-semibold text-fg text-sm/5">{title}</span>
@@ -86,7 +85,7 @@ function AdCard({ href, title, description, domain, icon, className }: AdCardPro
         {icon}
         {domain}
       </span>
-    </Link>
+    </a>
   )
 }
 

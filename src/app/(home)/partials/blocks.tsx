@@ -23,7 +23,7 @@ export function Blocks() {
             title="Overlays"
             description="Used to display actions, details, or prompts without navigating away from the current page."
           />
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-4">
             <BlocksCard>
               <Center>
                 <ModalDemo />

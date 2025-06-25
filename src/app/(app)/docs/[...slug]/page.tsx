@@ -1,3 +1,4 @@
+import { Ads } from "@/components/ads"
 import { DocRefs } from "@/components/doc-refs"
 import { Mdx } from "@/components/mdx"
 import { Pager } from "@/components/pager"
@@ -138,7 +139,7 @@ export default async function Page(props: DocPageProps) {
           <Toc className="mt-4 block sm:mt-8 xl:hidden" items={page.data.toc} />
           <Mdx code={page.data.body} />
 
-          {/*<Ads className="flex md:hidden" />*/}
+          <Ads className="flex md:hidden" />
 
           <Pager tree={source.pageTree} url={page.url} />
         </main>
