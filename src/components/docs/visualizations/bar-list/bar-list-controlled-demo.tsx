@@ -4,14 +4,6 @@ import { BarList } from "@/components/ui/bar-list"
 import { Card } from "@/components/ui/card"
 import { useState } from "react"
 
-const data = [
-  { name: "Marketing", value: 45000 },
-  { name: "Research & Development", value: 38000 },
-  { name: "Operations", value: 29000 },
-  { name: "Customer Support", value: 17500 },
-  { name: "IT & Infrastructure", value: 13200 },
-]
-
 export default function BarListControlledDemo() {
   const [selectedItem, setSelectedItem] = useState("")
   return (
@@ -22,7 +14,13 @@ export default function BarListControlledDemo() {
       </Card.Header>
       <Card.Content>
         <BarList
-          data={data}
+          data={[
+            { name: "Marketing", value: 45000 },
+            { name: "Research & Development", value: 38000 },
+            { name: "Operations", value: 29000 },
+            { name: "Customer Support", value: 17500 },
+            { name: "IT & Infrastructure", value: 13200 },
+          ]}
           onValueChange={(item) => setSelectedItem(JSON.stringify(item, null, 2))}
           valueFormatter={(value) => `$${value.toLocaleString()}`}
         />
