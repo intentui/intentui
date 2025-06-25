@@ -1,10 +1,8 @@
 "use client"
 
-import {
-  type DialogTriggerProps,
-  PopoverContext,
-  type PopoverProps as PopoverPrimitiveProps,
-  useSlottedContext,
+import type {
+  DialogTriggerProps,
+  PopoverProps as PopoverPrimitiveProps,
 } from "react-aria-components"
 import {
   DialogTrigger as DialogTriggerPrimitive,
@@ -56,11 +54,7 @@ const PopoverContent = ({
   ref,
   ...props
 }: PopoverContentProps) => {
-  const popoverContext = useSlottedContext(PopoverContext)!
-  const isSubmenu = popoverContext?.trigger === "SubmenuTrigger"
-
-  let offset = 8
-  offset = props.offset !== undefined ? props.offset : isSubmenu ? offset - 14 : offset
+  const offset = props.offset ?? (showArrow ? 12 : 8)
   return (
     <PopoverPrimitive
       ref={ref}
