@@ -1,7 +1,5 @@
-import { Header } from "@/components/header"
+import { PageContainer } from "@/components/page-container"
 import { Avatar } from "@/components/ui/avatar"
-import { Card } from "@/components/ui/card"
-import { Container } from "@/components/ui/container"
 import dayjs from "dayjs"
 import Link from "next/link"
 import { blog } from "#site/content"
@@ -9,40 +7,48 @@ import { blog } from "#site/content"
 export default function Page() {
   return (
     <div>
-      <Header>
-        Bl
-        <span className="text-muted-fg">og</span>
-      </Header>
-      <Container className="py-4 sm:py-16">
-        <div className="grid gap-4 lg:grid-cols-3">
+      <PageContainer className="py-6 sm:pb-12">
+        <div className="mx-auto flex max-w-2xl flex-col">
+          <h1 className="px-6 py-8 font-semibold sm:text-5xl">
+            Bl
+            <span className="text-muted-fg">og</span>
+          </h1>
           {blog
             .sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime())
             .map((item) => (
-              <Card className="relative flex flex-col" key={item.title}>
+              <div
+                className="relative flex flex-col rounded-2xl p-8 hover:bg-secondary"
+                key={item.title}
+              >
                 <Link
                   href={`/blog/${item._file?.path.replace(".mdx", "")}`}
                   className="absolute inset-0 size-full"
                 />
-                <Card.Header className="flex-1" title={item.title}>
-                  <Card.Description className="line-clamp-2">{item.description}</Card.Description>
-                </Card.Header>
-                <Card.Footer>
+                <div>
+                  <h3 className="mb-2 font-semibold text-2xl">{item.title}</h3>
+                  <p className="text-pretty text-muted-fg text-sm/6">
+                    {item.description || "No description available for this blog post."}
+                  </p>
+                </div>
+                <div className="mt-6">
                   <div className="flex w-full items-center justify-between gap-x-2">
-                    <Avatar
-                      alt={item.author}
-                      src={`https://github.com/${item.author}.png`}
-                      isCircle={false}
-                      size="sm"
-                    />
+                    <div className="flex items-center gap-x-2">
+                      <Avatar
+                        alt={item.author}
+                        src={`https://github.com/${item.author}.png`}
+                        size="sm"
+                      />
+                      <strong className="font-semibold text-sm">{item.author}</strong>
+                    </div>
                     <span className="font-mono text-muted-fg text-sm">
                       {dayjs(item.published).format("MMMM D, YYYY")}
                     </span>
                   </div>
-                </Card.Footer>
-              </Card>
+                </div>
+              </div>
             ))}
         </div>
-      </Container>
+      </PageContainer>
     </div>
   )
 }

@@ -57,7 +57,7 @@ export default function ModalTriggeredByMenuDemo() {
           Actions...
           <IconChevronLgDown className="decoration-200 transition-transform group-pressed:rotate-180" />
         </Button>
-        <Menu.Content placement="bottom">
+        <Menu.Content popover={{ placement: "bottom" }}>
           <Menu.Item onAction={() => setState("delete")}>
             <IconTrash /> <Menu.Label>Delete</Menu.Label>
           </Menu.Item>

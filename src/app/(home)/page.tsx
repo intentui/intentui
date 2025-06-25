@@ -1,24 +1,33 @@
+import { Blocks } from "@/app/(home)/partials/blocks"
+import { Components } from "@/app/(home)/partials/components"
+import { Cta } from "@/app/(home)/partials/cta"
+import { Examples } from "@/app/(home)/partials/examples"
+import { StarterKit } from "@/app/(home)/partials/starter-kit"
 import { Footer } from "@/components/footer"
-import { Blocks } from "./partials/blocks"
-import { Cta } from "./partials/cta"
 import { Hero } from "./partials/hero"
 import { IconResources } from "./partials/icon-resources"
 import { Navbar } from "./partials/navbar"
-import { Resources } from "./partials/resources"
+import { OpenSource } from "./partials/open-source"
 
 export default function Page() {
   return (
-    <div className="relative flex min-h-svh flex-col">
-      <div className="relative isolate overflow-hidden">
+    <div className="relative flex min-h-svh flex-col overflow-hidden">
+      <div className="relative isolate mb-6 overflow-hidden border-b">
         <Navbar />
         <Hero />
       </div>
-      <div className="space-y-8 pb-6 sm:space-y-16 lg:pt-0">
+      <Examples />
+      <div className="border-b pb-6 sm:pb-12 ">
         <Blocks />
-        <IconResources />
-        <Resources />
       </div>
+
+      <div className="bg-linear-to-b from-secondary/10 to-secondary/20 **:data-[slot=choicebox-item]:shadow-xs **:data-[slot=choicebox-item]:hover:shadow-none">
+        <StarterKit />
+      </div>
+      <IconResources />
+      <Components />
       <Cta />
+      <OpenSource />
       <Footer />
     </div>
   )

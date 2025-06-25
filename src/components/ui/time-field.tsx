@@ -43,7 +43,7 @@ const TimeField = <T extends TimeValue>({
         ) : (
           prefix
         )}
-        <DateInput className="flex w-fit min-w-28 justify-around whitespace-nowrap p-2 sm:text-sm" />
+        <DateInput className="flex w-fit min-w-28 justify-around whitespace-nowrap" />
         {suffix ? (
           typeof suffix === "string" ? (
             <span className="mr-2 text-muted-fg">{suffix}</span>

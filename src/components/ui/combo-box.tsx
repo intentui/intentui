@@ -17,19 +17,20 @@ import {
   Input,
   Label,
 } from "@/components/ui/field"
-import { ListBox } from "@/components/ui/list-box"
-import { PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
+import { PopoverContent } from "@/components/ui/popover"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
+import {
+  ComboBoxContext,
+  ComboBox as ComboboxPrimitive,
+  ListBox,
+  useSlottedContext,
+} from "react-aria-components"
 import type {
   ComboBoxProps as ComboboxPrimitiveProps,
   InputProps,
   ListBoxProps,
-} from "react-aria-components"
-import {
-  ComboBoxContext,
-  ComboBox as ComboboxPrimitive,
-  useSlottedContext,
+  PopoverProps,
 } from "react-aria-components"
 
 interface ComboBoxProps<T extends object>
@@ -48,6 +49,7 @@ const ComboBox = <T extends object>({
 }: ComboBoxProps<T>) => {
   return (
     <ComboboxPrimitive
+      data-slot="combo-box"
       {...props}
       className={composeTailwindRenderProps(className, "group flex w-full flex-col gap-y-1")}
     >
@@ -61,32 +63,29 @@ const ComboBox = <T extends object>({
 
 interface ComboBoxListProps<T extends object>
   extends Omit<ListBoxProps<T>, "layout" | "orientation">,
-    Pick<PopoverContentProps, "placement"> {
-  popoverClassName?: PopoverContentProps["className"]
+    Pick<PopoverProps, "placement"> {
+  popover?: Omit<PopoverProps, "children">
 }
 
 const ComboBoxList = <T extends object>({
   children,
   items,
   className,
-  popoverClassName,
+  popover,
   ...props
 }: ComboBoxListProps<T>) => {
   return (
     <PopoverContent
-      showArrow={false}
-      respectScreen={false}
-      isNonModal
-      className={popoverClassName}
-      placement={props.placement}
+      className={composeTailwindRenderProps(popover?.className, "min-w-(--trigger-width)")}
+      {...popover}
     >
       <ListBox
-        className={composeTailwindRenderProps(
-          className,
-          "max-h-[inherit] min-w-[inherit] border-0 shadow-none",
-        )}
         layout="stack"
         orientation="vertical"
+        className={composeTailwindRenderProps(
+          className,
+          "grid max-h-96 w-full scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-scroll overscroll-contain p-1 outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
+        )}
         items={items}
         {...props}
       >
@@ -102,9 +101,9 @@ const ComboBoxInput = (props: InputProps) => {
     <FieldGroup>
       <Input {...props} placeholder={props?.placeholder} />
       <Button
-        size="sq-sm"
+        size="sq-xs"
         intent="plain"
-        className="-mr-1 h-7 w-8 rounded pressed:bg-transparent outline-offset-0 hover:bg-transparent active:bg-transparent **:data-[slot=icon]:pressed:text-fg **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:hover:text-fg forced-colors:group-disabled:border-[GrayText] forced-colors:group-disabled:text-[GrayText]"
+        className="rounded pressed:bg-transparent outline-offset-0 hover:bg-transparent active:bg-transparent **:data-[slot=icon]:pressed:text-fg **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:hover:text-fg forced-colors:group-disabled:border-[GrayText] forced-colors:group-disabled:text-[GrayText]"
       >
         {!context?.inputValue && (
           <IconChevronsY

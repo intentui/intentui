@@ -5,7 +5,7 @@ import { Description, Label } from "@/components/ui/field"
 
 export default function CheckboxGroupDescriptionDemo() {
   return (
-    <CheckboxGroup>
+    <CheckboxGroup defaultValue={["delete"]}>
       <Label>User Permissions</Label>
       <Description>Select the permissions you want to grant to the user.</Description>
       <Checkbox value="read">

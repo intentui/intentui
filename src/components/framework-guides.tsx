@@ -3,7 +3,7 @@
 import { Choicebox } from "@/components/ui/choicebox"
 import { IconBrandAstro, IconBrandLaravel, IconBrandNextjs, IconBrandRemix } from "@intentui/icons"
 
-const IconBrandTanstack = (props: React.ComponentProps<"svg">) => (
+export const IconBrandTanstack = (props: React.ComponentProps<"svg">) => (
   <svg
     data-slot="icon"
     {...props}

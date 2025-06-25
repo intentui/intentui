@@ -27,7 +27,7 @@ export default function AppSidebarNav() {
       <div>
         <Menu>
           <Menu.Trigger aria-label="Open Menu">
-            <Avatar alt="cobain" src="/images/avatar/cobain.jpg" />
+            <Avatar alt="cobain" src="https://intentui.com/images/avatar/cobain.jpg" />
           </Menu.Trigger>
           <Menu.Content placement="bottom" className="sm:min-w-56">
             <Menu.Section>

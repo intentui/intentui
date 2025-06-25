@@ -21,20 +21,21 @@ import { tv } from "tailwind-variants"
 
 const dropdownItemStyles = tv({
   base: [
-    "col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] not-has-[[slot=description]]:items-center has-data-[[slot=description]]:**:data-[slot=checked-icon]:mt-[1.5px] supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
-    "group relative cursor-default select-none rounded-[calc(var(--radius-lg)-1px)] px-2 py-1.5 forced-color:text-[Highlight] text-base text-fg outline-0 forced-color-adjust-none sm:py-1 sm:text-sm/6 forced-colors:text-[LinkText]",
-    "**:data-[slot=avatar]:*:mr-1.5 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:mr-1.5 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
-    "data-danger:**:data-[slot=icon]:text-danger/60 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg focus:data-danger:**:data-[slot=icon]:text-danger",
-    "*:data-[slot=icon]:mr-1.5",
-    "forced-colors:**:data-[slot=icon]:text-[CanvasText] forced-colors:group-focus:**:data-[slot=icon]:text-[Canvas] ",
-    "[&>[slot=label]+[data-slot=icon]]:absolute [&>[slot=label]+[data-slot=icon]]:right-0",
+    "[--mr-icon:--spacing(2)] sm:[--mr-icon:--spacing(1.5)]",
+    "col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] px-3 py-2 supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:px-2.5 sm:py-1.5",
+    "not-has-[[slot=description]]:items-center has-data-[[slot=description]]:**:data-[slot=checked-icon]:mt-[1.5px]",
+    "group relative cursor-default select-none rounded-[calc(var(--radius-lg)-1px)] text-base/6 text-fg outline-0 sm:text-sm/6",
+    "**:data-[slot=avatar]:*:mr-1.5 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:mr-(--mr-icon) **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
+    "data-danger:**:data-[slot=icon]:text-danger/60 *:data-[slot=icon]:mr-(--mr-icon) **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg focus:data-danger:**:data-[slot=icon]:text-danger sm:**:data-[slot=icon]:size-4",
+    "[&>[slot=label]+[data-slot=icon]]:absolute [&>[slot=label]+[data-slot=icon]]:right-1",
+    "forced-color-adjust-none forced-colors:text-[CanvasText] forced-colors:**:data-[slot=icon]:text-[CanvasText] forced-colors:group-focus:**:data-[slot=icon]:text-[CanvasText]",
   ],
   variants: {
     isDisabled: {
       true: "text-muted-fg forced-colors:text-[GrayText]",
     },
     isSelected: {
-      true: "**:data-[slot=avatar]:*:hidden **:data-[slot=avatar]:hidden **:data-[slot=icon]:hidden",
+      true: "**:data-[slot=avatar]:*:hidden **:data-[slot=avatar]:hidden **:data-[slot=icon]:hidden **:data-[slot=icon]:text-accent-fg",
     },
     isFocused: {
       false: "data-danger:text-danger",
@@ -51,7 +52,8 @@ const dropdownItemStyles = tv({
 const dropdownSectionStyles = tv({
   slots: {
     section: "col-span-full grid grid-cols-[auto_1fr]",
-    header: "col-span-full px-2 py-1 font-medium text-muted-fg text-sm sm:text-xs",
+    header:
+      "col-span-full px-3.5 py-2 font-medium text-muted-fg text-sm/6 sm:px-3 sm:py-1.5 sm:text-xs/6",
   },
 })
 
@@ -61,19 +63,23 @@ interface DropdownSectionProps<T> extends SectionProps<T> {
   title?: string
 }
 
-const DropdownSection = <T extends object>({ className, ...props }: DropdownSectionProps<T>) => {
+const DropdownSection = <T extends object>({
+  className,
+  children,
+  ...props
+}: DropdownSectionProps<T>) => {
   return (
     <ListBoxSection className={section({ className })}>
       {"title" in props && <Header className={header()}>{props.title}</Header>}
-      <Collection items={props.items}>{props.children}</Collection>
+      <Collection items={props.items}>{children}</Collection>
     </ListBoxSection>
   )
 }
 
 type DropdownItemProps = ListBoxItemProps
 
-const DropdownItem = ({ className, ...props }: DropdownItemProps) => {
-  const textValue = typeof props.children === "string" ? props.children : undefined
+const DropdownItem = ({ className, children, ...props }: DropdownItemProps) => {
+  const textValue = typeof children === "string" ? children : undefined
   return (
     <ListBoxItemPrimitive
       textValue={textValue}
@@ -82,7 +88,7 @@ const DropdownItem = ({ className, ...props }: DropdownItemProps) => {
       )}
       {...props}
     >
-      {composeRenderProps(props.children, (children, { isSelected }) => (
+      {composeRenderProps(children, (children, { isSelected }) => (
         <>
           {isSelected && <IconCheck className="-mx-1 mr-1.5" data-slot="checked-icon" />}
           {typeof children === "string" ? <DropdownLabel>{children}</DropdownLabel> : children}

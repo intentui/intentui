@@ -17,7 +17,7 @@ export default function TableDemo() {
       </Table.Header>
       <Table.Body items={products}>
         {(item) => (
-          <Table.Row href="d" id={item.id}>
+          <Table.Row id={item.id}>
             <Table.Cell>{item.id}</Table.Cell>
             <Table.Cell>{item.name}</Table.Cell>
             <Table.Cell>{item.category}</Table.Cell>

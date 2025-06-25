@@ -3,12 +3,12 @@
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
 import { copyToClipboard } from "@/lib/copy"
-import { openInV0Url } from "@/lib/utils"
 import { useState } from "react"
 import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 
 interface PullRegistryProps {
+  readMore?: string
   processedSourceCode: string | null
   blockDemo: string
   className?: string
@@ -59,7 +59,12 @@ export function CopyButton({
   )
 }
 
-export function PullRegistry({ className, processedSourceCode, blockDemo }: PullRegistryProps) {
+export function PullRegistry({
+  className,
+  readMore,
+  processedSourceCode,
+  blockDemo,
+}: PullRegistryProps) {
   const [copy, setCopy] = useState({ code: false, command: false })
 
   const handleCopy = (key: "code" | "command", value: string) => {
@@ -70,7 +75,7 @@ export function PullRegistry({ className, processedSourceCode, blockDemo }: Pull
   }
 
   return (
-    <div className="relative flex items-center gap-x-0.5">
+    <div className="relative flex items-center gap-x-0.5 sm:gap-x-3">
       <CopyButton
         label="Copy"
         copiedLabel="Copied"
@@ -81,19 +86,29 @@ export function PullRegistry({ className, processedSourceCode, blockDemo }: Pull
 
       <CopyButton
         label="Registry"
+        className="hidden sm:inline"
         copiedLabel="Copied"
         value={`npx ${siteConfig.cliCommand} add -b ${blockDemo}`}
         isCopied={copy.command}
         onCopy={() => handleCopy("command", `npx ${siteConfig.cliCommand} add -b ${blockDemo}`)}
       />
 
-      <Link
-        className="hidden p-2 pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
-        href={openInV0Url(blockDemo)}
-        target="_blank"
-      >
-        Open in V0
-      </Link>
+      {readMore && (
+        <Link
+          className="p-2 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"
+          href={readMore}
+          target="_blank"
+        >
+          Read more
+        </Link>
+      )}
+      {/*<Link*/}
+      {/*  className="hidden p-2 pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"*/}
+      {/*  href={openInV0Url(blockDemo)}*/}
+      {/*  target="_blank"*/}
+      {/*>*/}
+      {/*  Open in V0*/}
+      {/*</Link>*/}
     </div>
   )
 }

@@ -6,7 +6,13 @@ export default function ChoiceboxDisabledDemo() {
   return (
     <div className="p-1">
       <Choicebox aria-label="Select packages" selectionMode="multiple" items={packages}>
-        {(item) => <Choicebox.Item isDisabled={["sm", "lg"].includes(item.id)} {...item} />}
+        {(item) => (
+          <Choicebox.Item
+            textValue={item.id}
+            isDisabled={["sm", "lg"].includes(item.id)}
+            {...item}
+          />
+        )}
       </Choicebox>
     </div>
   )

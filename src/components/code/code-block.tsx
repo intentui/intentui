@@ -2,7 +2,7 @@
 
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/pull-registry"
-import { Tabs } from "@/components/ui/tabs"
+import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 import { copyToClipboard } from "@/lib/copy"
 import {
   IconBrackets2,
@@ -55,7 +55,7 @@ export function CodeBlock({ source }: Props) {
       {contents && Object.keys(contents).length > 0 ? (
         <Tabs className="relative gap-0">
           <div className="flex items-center justify-between gap-x-2">
-            <Tabs.List className="gap-0 border-0">
+            <TabList className="gap-0 border-0">
               {Object.keys(contents).map((key) => (
                 <Tab
                   className={(values) =>
@@ -83,14 +83,10 @@ export function CodeBlock({ source }: Props) {
                   <span>{key}</span>
                 </Tab>
               ))}
-            </Tabs.List>
+            </TabList>
           </div>
           {Object.entries(contents).map(([key, value]) => (
-            <Tabs.Panel
-              key={key}
-              id={key}
-              className="overflow-hidden rounded-lg border bg-shiki-bg"
-            >
+            <TabPanel key={key} id={key} className="overflow-hidden rounded-lg border bg-shiki-bg">
               <CopyButton
                 className="absolute top-1.5 right-0"
                 label="Copy"
@@ -105,7 +101,7 @@ export function CodeBlock({ source }: Props) {
                 className="overflow-auto p-4"
                 code={value || "No source code available"}
               />
-            </Tabs.Panel>
+            </TabPanel>
           ))}
         </Tabs>
       ) : (

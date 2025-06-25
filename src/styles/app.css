@@ -110,7 +110,7 @@
     --input: oklch(0.871 0.006 286.286);
     --ring: oklch(0.546 0.245 262.881);
 
-    --navbar: oklch(0.985 0 0);
+    --navbar: oklch(0.995 0 0);
     --navbar-fg: oklch(0.141 0.005 285.823);
 
     --sidebar: oklch(0.985 0 0);
@@ -151,7 +151,7 @@
     --muted: oklch(0.21 0.006 285.885);
     --muted-fg: oklch(0.705 0.015 286.067);
 
-    --overlay: oklch(0.17 0.006 285.885);
+    --overlay: oklch(0.180 0.006 285.885);
     --overlay-fg: oklch(0.985 0 0);
 
     --success: oklch(0.596 0.145 163.225);
@@ -166,7 +166,7 @@
     --border: oklch(0.27 0.013 285.805);
     --input: oklch(0.29 0.013 285.805);
 
-    --navbar: oklch(0.17 0.006 285.885);
+    --navbar: oklch(0.190 0.006 285.885);
     --navbar-fg: oklch(0.985 0 0);
 
     --sidebar: oklch(0.16 0.006 285.885);

@@ -7,7 +7,11 @@ export default function MenuItemDescriptionDemo() {
   return (
     <Menu>
       <Button intent="outline">Open</Button>
-      <Menu.Content className="sm:min-w-60 sm:max-w-min" placement="bottom" items={roles}>
+      <Menu.Content
+        className="sm:min-w-60 sm:max-w-min"
+        popover={{ placement: "bottom" }}
+        items={roles}
+      >
         {(item) => (
           <Menu.Item id={item.id} textValue={item.name}>
             <Menu.Label>{item.name}</Menu.Label>

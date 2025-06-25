@@ -20,7 +20,7 @@ export default function BreadcrumbsMenuDemo() {
           <Button intent="plain" size="sq-sm" className="-mx-1 h-6">
             <IconDotsHorizontal />
           </Button>
-          <Menu.Content placement="bottom">
+          <Menu.Content popover={{ placement: "bottom" }}>
             <Menu.Item href="/docs/components/layouts/sidebar">
               <IconLayoutAlignLeft /> <Menu.Label>Sidebar</Menu.Label>
             </Menu.Item>

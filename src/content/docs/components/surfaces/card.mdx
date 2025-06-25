@@ -11,13 +11,13 @@ Top spots to hit in 2024, no cap!
 ## Installation
 <Installation options={{ isComponent: true }} items={['card']}/>
 
-## Manual Installation
+## Manual installation
 <SourceCode toShow='card'/>
 
 ## Anatomy
 <Anatomy show='card-anatomy'/>
 
-## With Form
+## With form
 Sometimes, you may need a card with a form inside.
 <How isCenter={false} toUse="surfaces/card/card-login-form-demo"/>
 
@@ -25,13 +25,13 @@ Sometimes, you may need a card with a form inside.
 You can add actions to your card, which will be aligned to the right. This example demonstrates using the menu component, but you can use any component you prefer.
 <How isCenter={false} toUse="surfaces/card/card-action-demo"/>
 
-## With Table
+## With table
 When you place a table inside a card, The table gutter inherits the padding from its parent card to ensure visual consistency.
 <How isCenter={false} withNoPadding toUse="surfaces/card/card-table-demo"/>
 
 For table docs, check out the [Table](/docs/components/collections/table) docs.
 
-## Section Title
+## Section title
 Sometimes, you may only need a card header without wrapping container itself. Of course, you need don't want the default padding, right? So I have prop called `withoutPadding` to help you out.
 ```
 <CardHeader
@@ -40,7 +40,7 @@ Sometimes, you may only need a card header without wrapping container itself. Of
 />
 ```
 
-## Adjust Padding
+## Adjust padding
 
 The padding for all sections of the card—header, content, and footer—is controlled by a CSS variable defined on the card’s parent container. To update the padding for the entire card, simply set the variable via a class on the parent like this:
 

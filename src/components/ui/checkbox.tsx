@@ -38,23 +38,17 @@ const CheckboxGroup = ({ className, children, ...props }: CheckboxGroupProps) =>
   )
 }
 
-interface CheckboxProps extends CheckboxPrimitiveProps {
-  description?: string
-  label?: string
-}
+interface CheckboxProps extends CheckboxPrimitiveProps, Pick<FieldProps, "label" | "description"> {}
 
 const Checkbox = ({ className, children, description, label, ...props }: CheckboxProps) => {
   return (
     <CheckboxPrimitive
       {...props}
-      className={composeTailwindRenderProps(
-        className,
-        "group flex items-center gap-2 text-sm transition disabled:opacity-50",
-      )}
+      className={composeTailwindRenderProps(className, "group block disabled:opacity-50")}
     >
       {composeRenderProps(
         children,
-        (children, { isSelected, isIndeterminate, isFocused, isInvalid }) => {
+        (children, { isSelected, isIndeterminate, isFocusVisible, isInvalid }) => {
           const isStringChild = typeof children === "string"
           const hasCustomChildren = typeof children !== "undefined"
 
@@ -94,10 +88,10 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
                   "sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
                   "size-4.5 *:data-[slot=check-indicator]:size-4",
                   (isSelected || isIndeterminate) && [
-                    "inset-ring-primary bg-primary text-primary-fg",
+                    "bg-primary text-primary-fg dark:inset-ring-primary",
                     "group-invalid:inset-ring-danger/70 group-invalid:bg-danger group-invalid:text-danger-fg",
                   ],
-                  isFocused && [
+                  isFocusVisible && [
                     "inset-ring-primary ring-3 ring-ring/20",
                     "group-invalid:inset-ring-danger/70 group-invalid:text-danger-fg group-invalid:ring-danger/20",
                   ],

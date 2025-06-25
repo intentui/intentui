@@ -5,7 +5,7 @@ export default function ChoiceboxIconDemo() {
   return (
     <Choicebox
       className="mx-auto max-w-lg"
-      selectionMode="single"
+      selectionMode="multiple"
       defaultSelectedKeys={["Standard"]}
       aria-label="Select prices"
       gap={0}
@@ -13,7 +13,7 @@ export default function ChoiceboxIconDemo() {
       items={frameworks}
     >
       {(item) => (
-        <Choicebox.Item textValue={item.id}>
+        <Choicebox.Item textValue={item.label}>
           <item.icon />
           <Choicebox.Label>{item.label}</Choicebox.Label>
           <Choicebox.Description>{item.description}</Choicebox.Description>

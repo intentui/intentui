@@ -1,7 +1,6 @@
 "use client"
-
-import { Link } from "@/components/ui/link"
 import { IconBrandIntentui } from "@intentui/icons"
+import { twMerge } from "tailwind-merge"
 
 const IconBrandIrsyadCo = (props: React.SVGProps<SVGSVGElement>) => {
   return (
@@ -66,14 +65,19 @@ interface AdCardProps {
   description: string
   domain: string
   icon: React.ReactNode
+  className?: string
 }
 
-function AdCard({ href, title, description, domain, icon }: AdCardProps) {
+function AdCard({ href, title, description, domain, icon, className }: AdCardProps) {
   return (
-    <Link
+    <a
       target="_blank"
+      rel="noreferrer"
       href={href}
-      className="relative z-40 mt-6 flex w-56 flex-col gap-y-1 rounded-xl border border-dashed p-4 text-muted-fg **:[svg]:size-3.5 **:[svg]:shrink-0"
+      className={twMerge(
+        "not-prose relative z-20 mt-6 flex w-full flex-col gap-y-1 rounded-xl border border-fg/10 border-dashed bg-secondary/30 p-4 text-muted-fg hover:border-fg/15 hover:bg-secondary/20 sm:w-56 **:[svg]:size-3.5 **:[svg]:shrink-0",
+        className,
+      )}
     >
       <span className="font-semibold text-fg text-sm/5">{title}</span>
       <div className="block text-pretty text-xs/5">{description}</div>
@@ -81,30 +85,29 @@ function AdCard({ href, title, description, domain, icon }: AdCardProps) {
         {icon}
         {domain}
       </span>
-    </Link>
+    </a>
   )
 }
 
-const ads = [
-  <AdCard
-    key="irsyad"
-    href="https://dub.sh/irsyadco"
-    title="Ready-to-use templates"
-    description="Launch faster with complete, professional templates for modern web apps."
-    domain="irsyad.co"
-    icon={<IconBrandIrsyadCo />}
-  />,
-  <AdCard
-    key="blocks"
-    href="https://dub.sh/bintentui"
-    title="Flexible blocks and templates"
-    description="Use ready-made blocks to craft unique pages without starting from scratch."
-    domain="blocks.intentui.com"
-    icon={<IconBrandIntentui />}
-  />,
-]
+export function Ads({ className }: { className?: string }) {
+  const ads = [
+    {
+      href: "https://dub.sh/irsyadco",
+      title: "Ready-to-use templates",
+      description: "Launch faster with complete, professional templates for modern web apps.",
+      domain: "irsyad.co",
+      icon: <IconBrandIrsyadCo />,
+    },
+    {
+      href: "https://dub.sh/bintentui",
+      title: "Flexible blocks and templates",
+      description: "Use ready-made blocks to craft unique pages without starting from scratch.",
+      domain: "blocks.intentui.com",
+      icon: <IconBrandIntentui />,
+    },
+  ] as const satisfies readonly Omit<AdCardProps, "className">[]
 
-export function Ads() {
-  const randomAd = ads[Math.floor(Math.random() * ads.length)]
-  return <>{randomAd}</>
+  const randomAd = ads[Math.floor(Math.random() * ads.length)] as Omit<AdCardProps, "className">
+
+  return <AdCard {...randomAd} className={className} />
 }

@@ -51,7 +51,6 @@ export default function FileTriggerAvatarDemo() {
       </DropZone>
       <FileTrigger
         size="sm"
-        withIcon={false}
         acceptedFileTypes={["image/png", "image/jpeg"]}
         onSelect={onSelectHandler}
       >

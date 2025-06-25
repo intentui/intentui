@@ -38,7 +38,7 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
         <Button
           size="sq-sm"
           intent="secondary"
-          className="size-7 rounded-sm"
+          className="size-7 rounded-sm bg-bg hover:bg-bg/80"
           aria-label="Copy npm command"
         >
           {isCopied ? <IconCheck /> : <IconDuplicate />}

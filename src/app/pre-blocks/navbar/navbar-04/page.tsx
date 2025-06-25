@@ -3,8 +3,8 @@ import { Heading } from "@/components/ui/heading"
 
 export default function Page() {
   return (
-    <Container>
-      <Heading>Navbar Disabled</Heading>
+    <Container className="py-6 sm:py-12">
+      <Heading>Disabled</Heading>
     </Container>
   )
 }

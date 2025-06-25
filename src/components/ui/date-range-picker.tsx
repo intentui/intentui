@@ -37,7 +37,7 @@ const DateRangePicker = <T extends DateValue>({
       {...props}
       className={composeTailwindRenderProps(
         className,
-        "group/date-range-picker flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
+        "group flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
       )}
     >
       {label && <Label>{label}</Label>}

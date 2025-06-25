@@ -21,7 +21,7 @@ export function Search() {
 
   return (
     <SearchField
-      className="rounded-lg bg-secondary"
+      className="**:[[role=group]]:bg-secondary **:[[role=group]]:focus-within:border-fg/70 **:[[role=group]]:focus-within:bg-fg/5 **:[[role=group]]:focus-within:ring-fg/20"
       onChange={handleSearch}
       defaultValue={searchParams.get("query")?.toString()}
       aria-label="Search icons"

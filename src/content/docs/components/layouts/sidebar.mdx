@@ -21,10 +21,10 @@ The sidebar is a versatile component designed to organize your site's content an
 ## Installation
 <Installation options={{isComponent: true}} items={['sidebar']}/>
 
-## Composed Components
+## Composed components
 <Composed components={['badge', 'tooltip', 'sheet', 'button']} />
 
-## Manual Installation
+## Manual installation
 <Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
 <SourceCode toShow={'sidebar'}/>
 
@@ -245,7 +245,7 @@ The sidebar supports headers, which can be used to display additional actions or
       href="/docs/components/layouts/sidebar"
     >
       <IconBrandApple className="size-5" />
-      <SidebarLabel className="font-medium">Apple</SidebarLabel>
+      <SidebarLabel className="font-medium">Intent UI</SidebarLabel>
     </Link>
   </SidebarHeader>
   ...
@@ -260,7 +260,7 @@ The sidebar supports footers, which can be used to display additional actions or
   <SidebarFooter>
     <Menu>
       <Menu.Trigger aria-label="Profile" data-slot="menu-trigger">
-        <Avatar isCircle={false} src="/images/avatar/cobain.jpg" />
+        <Avatar isSquare src="https://intentui.com/images/avatar/cobain.jpg" />
         <div className="group-data-[collapsible=dock]:hidden text-sm">
           Kurt Cobain
           <span className="block -mt-0.5 text-muted-fg">kurt@cobain.com</span>

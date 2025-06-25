@@ -1,0 +1,65 @@
+"use client"
+
+import { Card } from "@/components/ui/card"
+import { PieChart } from "@/components/ui/pie-chart"
+import { useMemo } from "react"
+
+export default function PieChartDonutCustomLabelDemo() {
+  const data = useMemo(
+    () => [
+      { name: "Rent", amount: 1200 },
+      { name: "Groceries", amount: 450 },
+      { name: "Utilities", amount: 200 },
+      { name: "Entertainment", amount: 150 },
+    ],
+    [],
+  )
+
+  const total = useMemo(() => data.reduce((sum, item) => sum + item.amount, 0), [data])
+
+  return (
+    <Card>
+      <Card.Header>
+        <Card.Title>Monthly spend breakdown</Card.Title>
+        <Card.Description>Shows where the money goes each month.</Card.Description>
+      </Card.Header>
+      <Card.Content>
+        <PieChart
+          className="mx-auto h-56"
+          data={data}
+          dataKey="amount"
+          nameKey="name"
+          variant="donut"
+          showLabel
+          label=""
+          valueFormatter={() => ""}
+          config={{
+            Rent: { label: "Rent" },
+            Groceries: { label: "Groceries" },
+            Utilities: { label: "Utilities" },
+            Entertainment: { label: "Entertainment" },
+          }}
+        >
+          <text
+            x="50%"
+            y="50%"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            className="fill-fg font-bold text-xl"
+          >
+            ${total.toLocaleString()}
+          </text>
+          <text
+            x="50%"
+            y="60%"
+            textAnchor="middle"
+            dominantBaseline="hanging"
+            className="fill-muted-fg text-xs"
+          >
+            Total spent
+          </text>
+        </PieChart>
+      </Card.Content>
+    </Card>
+  )
+}

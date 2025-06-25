@@ -1,6 +1,6 @@
 "use client"
 
-import { Tabs } from "@/components/ui/tabs"
+import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 import { Collection } from "react-aria-components"
 
 const tabs = [
@@ -13,12 +13,12 @@ const tabs = [
 export default function TabsCollectionsDemo() {
   return (
     <Tabs aria-label="Project Management">
-      <Tabs.List aria-label="Dynamic tabs" items={tabs}>
-        {(item) => <Tabs.Tab>{item.title}</Tabs.Tab>}
-      </Tabs.List>
+      <TabList aria-label="Dynamic tabs" items={tabs}>
+        {(item) => <Tab>{item.title}</Tab>}
+      </TabList>
 
       <Collection items={tabs}>
-        {(item) => <Tabs.Panel key={item.id}>{item.content}</Tabs.Panel>}
+        {(item) => <TabPanel key={item.id}>{item.content}</TabPanel>}
       </Collection>
     </Tabs>
   )

@@ -34,7 +34,7 @@ export function ListSites({ sites }: Props) {
               >
                 <Avatar
                   size="md"
-                  isCircle={false}
+                  isSquare
                   src={`https://favicon.im/${item.url}`}
                   alt="irsyad.co favicon (large)"
                 />

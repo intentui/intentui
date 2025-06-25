@@ -1,3 +1,5 @@
+"use client"
+
 import { Disclosure, DisclosurePanel, DisclosureTrigger } from "@/components/ui/disclosure"
 
 export default function DisclosureDisabledDemo() {

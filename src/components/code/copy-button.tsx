@@ -1,3 +1,5 @@
+"use client"
+
 import type React from "react"
 import { useEffect, useState } from "react"
 
@@ -26,9 +28,7 @@ export function CopyButton({
 
   const isControlled = isCopiedProp !== undefined
   const isCopied = isControlled ? isCopiedProp : isCopiedState
-  const setIsCopied = isControlled
-    ? setIsCopiedProp || (() => {}) // Provide a no-op function as fallback
-    : setIsCopiedState
+  const setIsCopied = isControlled ? setIsCopiedProp || (() => {}) : setIsCopiedState
 
   useEffect(() => {
     if (isCopied) {

@@ -1,6 +1,6 @@
 "use client"
 
-import { Tabs } from "@/components/ui/tabs"
+import { Tab, TabList, Tabs } from "@/components/ui/tabs"
 
 const navs = [
   { url: "/", label: "Home" },
@@ -13,13 +13,13 @@ const navs = [
 export default function TabsLinkDemo() {
   return (
     <Tabs aria-label="Navbar">
-      <Tabs.List items={navs}>
+      <TabList items={navs}>
         {(item) => (
-          <Tabs.Tab id={item.label} href={item.url}>
+          <Tab id={item.label} href={item.url}>
             {item.label}
-          </Tabs.Tab>
+          </Tab>
         )}
-      </Tabs.List>
+      </TabList>
     </Tabs>
   )
 }

@@ -1,28 +1,6 @@
 import { promises as fs } from "node:fs"
 import path from "node:path"
-
-export type Component = {
-  slug: string
-  title: string
-}
-
-export type SubSection = {
-  id: number
-  subsection: string
-  children: Component[]
-}
-
-export type Grouped =
-  | {
-      id: number
-      section: string
-      children: Component[]
-    }
-  | {
-      id: number
-      section: string
-      children: SubSection[]
-    }
+import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
 
 const sectionOrder = ["prologue", "getting-started", "dark-mode", "components"]
 
@@ -61,8 +39,8 @@ async function generate() {
   const basePath = path.join(process.cwd(), "src/content/docs")
   const files = await walk(basePath, basePath)
 
-  const normalGroups: Record<string, Component[]> = {}
-  const componentSubGroups: Record<string, Component[]> = {}
+  const normalGroups: Record<string, CollectionComponent[]> = {}
+  const componentSubGroups: Record<string, CollectionComponent[]> = {}
 
   for (const file of files) {
     const parts = file.split(path.sep)

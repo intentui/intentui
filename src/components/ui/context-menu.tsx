@@ -81,13 +81,15 @@ const ContextMenuContent = <T extends object>(props: ContextMenuContentProps<T>)
   const { contextMenuOffset, setContextMenuOffset, buttonRef } = useContextMenuTrigger()
   return contextMenuOffset ? (
     <Menu.Content
-      isOpen={!!contextMenuOffset}
-      onOpenChange={() => setContextMenuOffset(null)}
-      triggerRef={buttonRef}
-      shouldFlip={false}
-      placement="bottom left"
-      offset={contextMenuOffset?.offset}
-      crossOffset={contextMenuOffset?.crossOffset}
+      popover={{
+        isOpen: !!contextMenuOffset,
+        shouldFlip: false,
+        triggerRef: buttonRef,
+        onOpenChange: () => setContextMenuOffset(null),
+        placement: "bottom left",
+        offset: contextMenuOffset.offset,
+        crossOffset: contextMenuOffset.crossOffset,
+      }}
       onClose={() => setContextMenuOffset(null)}
       {...props}
     />

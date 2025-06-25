@@ -13,10 +13,10 @@ A menu presents a variety of actions or options from which you can choose.
 ## Installation
 <Installation options={{ isComponent: true }} items={['menu']}/>
 
-## Composed Components
+## Composed components
 <Composed components={['dropdown', 'popover']}/>
 
-## Manual Installation
+## Manual installation
 <Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']} />
 
 <SourceCode toShow='menu' />
@@ -24,45 +24,41 @@ A menu presents a variety of actions or options from which you can choose.
 ## Anatomy
 <Anatomy show='menu-anatomy'/>
 
-## Sub Menu
+## Sub menu
 Menu can be nested to display submenus.
 <How toUse="collections/menu/menu-sub-demo" />
-
-## Respect Screen
-By default, the menu will respect the screen size, when it lower than 600px, it will be displayed as a modal slide from the bottom. You can disable this behavior by setting `respectScreen` to `false`.
-<How toUse="collections/menu/menu-respect-screen-demo" />
 
 ## Danger
 Designate a menu item as dangerous.
 <How toUse="collections/menu/menu-danger-demo" />
 
-## With Icon
+## With icon
 Enhance menu items by adding icons.
 <How toUse="collections/menu/menu-with-icon-demo" />
 
-## Dynamic Menu
+## Dynamic
 Generate menu items dynamically.
 <How toUse="collections/menu/menu-dynamic-demo" />
 
-## Multiple Menu
+## Multiple
 Display a selection of actions or options.
 <How toUse="collections/menu/multiple-menu-demo" />
 
 
-## Single Menu
+## Single menu
 Present a single list of options.
 <How toUse="collections/menu/single-menu-demo" />
 
-## Section Menu
+## Section menu
 Organize menu items into grouped sections.
 <How toUse="collections/menu/menu-section-demo" />
 
-## Section-Level Selection
+## Section-level selection
 Organize menu items into grouped sections with level selection.
 <How toUse="collections/menu/menu-section-level-selection" />
 
 ## Arrow
-Incorporate an arrow into the menu using the `showArrow` prop on `Menu.Content`.
+Incorporate an arrow into the menu using the `showArrow` from `popover` in the `Menu.Content` component.
 <How toUse="collections/menu/menu-with-arrow-demo" />
 
 ## Disabled
@@ -74,7 +70,7 @@ Also, you can disable items directly in `Menu.Content` by using the `disabledKey
 <Menu.Content disabledKeys={['gsu']} />
 ```
 
-## Menu Label
+## Menu label
 In the examples above, you might notice that the `Menu.Label` component is used inconsistently. This is because it is not mandatory, but it is considered a best practice. Using `Menu.Label` ensures proper alignment between icons and text, especially when dealing with items that vary. For instance, one item might have an icon while another does not. Adding `Menu.Label` helps create a polished and consistent appearance.
 
 
@@ -83,5 +79,5 @@ You can add details to menu items by using the `Menu.Description` component.
 <How toUse="collections/menu/menu-item-description-demo" />
 
 
-## Open Modal
+## Open modal
 Trigger a modal from a menu item. Refer to the [modal demo](/docs/components/overlays/modal#triggered-by-menu) for further information.

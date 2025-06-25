@@ -149,7 +149,7 @@ export const generateTheme = (
     --input: ${getColorValue(gray, "300")};
     --ring: ${getColorValue(primary, lightRingShade)};
     
-    --navbar: ${getColorValue(gray, "100")};
+    --navbar: ${adjustLightness(getColorValue(gray, "50"), +1)};
     --navbar-fg: ${getColorValue(gray, "950")};
     
     --sidebar: ${getColorValue(gray, "100")};
@@ -177,7 +177,7 @@ export const generateTheme = (
     --muted: ${getColorValue(gray, "900")};
     --muted-fg: ${getColorValue(gray, "400")};
     
-    --overlay: ${adjustLightness(getColorValue(gray, "900"), -4)};
+    --overlay: ${adjustLightness(getColorValue(gray, "900"), -3)};
     --overlay-fg: ${getColorValue(gray, "50")};
     
     --success: ${getColorValue("emerald", "600")};
@@ -193,7 +193,7 @@ export const generateTheme = (
     --input: ${adjustLightness(getColorValue(gray, "700"), -5)};
     --ring: ${getColorValue(primary, darkRingShade)};
     
-    --navbar: ${adjustLightness(getColorValue(gray, "900"), -4)};
+    --navbar: ${adjustLightness(getColorValue(gray, "900"), -2)};
     --navbar-fg: ${getColorValue(gray, "50")};
     
     --sidebar: ${adjustLightness(getColorValue(gray, "900"), -5)};

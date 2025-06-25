@@ -84,7 +84,7 @@ export function CodeSandbox({ isIframe = true, classNames, source, src }: Props)
                     className={(values) =>
                       twMerge(
                         "flex cursor-default items-center gap-x-1.5 whitespace-nowrap p-2 font-mono text-muted-fg text-xs tracking-tight",
-                        "**:data-[slot=icon]:-ml-0.5 border-transparent border-x outline-hidden first:border-l-0 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
+                        "**:data-[slot=icon]:-ml-0.5 border-transparent border-x first:border-l-0 focus:outline-transparent **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
                         (values.isSelected || values.isFocused || values.isFocusVisible) &&
                           "border-input bg-secondary text-secondary-fg dark:bg-muted",
                         values.isHovered && "bg-secondary text-secondary-fg dark:bg-muted",
@@ -150,7 +150,9 @@ export const TabsList = ({ hasRegistry, src, code, blockDemo, copyButton }: TabL
         <Tab
           className={({ isSelected }) =>
             twJoin(
-              isSelected ? "text-fg" : "pressed:text-fg text-muted-fg hover:text-fg",
+              isSelected
+                ? "text-fg"
+                : "pressed:text-fg text-muted-fg hover:text-fg focus:outline-transparent focus-visible:text-fg",
               "cursor-default p-2",
             )
           }
@@ -161,7 +163,9 @@ export const TabsList = ({ hasRegistry, src, code, blockDemo, copyButton }: TabL
         <Tab
           className={({ isSelected }) =>
             twJoin(
-              isSelected ? "text-fg" : "pressed:text-fg text-muted-fg hover:text-fg",
+              isSelected
+                ? "text-fg"
+                : "pressed:text-fg text-muted-fg hover:text-fg focus:outline-transparent focus-visible:text-fg",
               "cursor-default p-2",
             )
           }
@@ -171,7 +175,7 @@ export const TabsList = ({ hasRegistry, src, code, blockDemo, copyButton }: TabL
         </Tab>
         {src && (
           <Tab
-            className="ml-auto pressed:text-fg text-muted-fg hover:text-fg"
+            className="ml-auto pressed:text-fg text-muted-fg hover:text-fg focus:outline-transparent focus-visible:text-fg"
             target="_blank"
             href={src}
           >
@@ -186,7 +190,7 @@ export const TabsList = ({ hasRegistry, src, code, blockDemo, copyButton }: TabL
           blockDemo={blockDemo as string}
         />
       )}
-      {copyButton && <CopyMotionButton text={code!} />}
+      {copyButton && <CopyMotionButton className="-top-2 absolute" text={code!} />}
     </div>
   )
 }

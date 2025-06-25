@@ -1,196 +1,70 @@
 "use client"
-import ComboBoxAvatarDemo from "@/components/docs/pickers/combo-box/combo-box-avatar-demo"
-
-import { products } from "@/components/docs/collections/table/table-demo"
-import TagGroupDemo from "@/components/docs/collections/tag-group/tag-group-demo"
-import DatePickerDemo from "@/components/docs/date-and-time/date-picker/date-picker-demo"
-import DateRangePickerDemo from "@/components/docs/date-and-time/date-range-picker/date-range-picker-demo"
-import TextFieldDemo from "@/components/docs/forms/text-field/text-field-demo"
-import TextareaDemo from "@/components/docs/forms/textarea/textarea-demo"
-import PaginationDemo from "@/components/docs/navigation/pagination/pagination-demo"
+import SwitchDescriptionDemo from "@/components/docs/controls/switch/switch-description-demo"
+import CheckboxGroupDescriptionDemo from "@/components/docs/forms/checkbox/checkbox-group-description-demo"
+import RadioGroupDescriptionDemo from "@/components/docs/forms/radio-group/radio-group-description-demo"
 import ModalDemo from "@/components/docs/overlays/modal/modal-demo"
 import PopoverDemo from "@/components/docs/overlays/popover/popover-demo"
 import SheetDemo from "@/components/docs/overlays/sheet/sheet-demo"
-import SelectDemo from "@/components/docs/pickers/select/select-demo"
-import SelectSearchableDemo from "@/components/docs/pickers/select/select-searchable-demo"
+import TooltipDemo from "@/components/docs/overlays/tooltip/tooltip-demo"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
+import { CardHeader } from "@/components/ui/card"
 import { Link } from "@/components/ui/link"
-import { Menu } from "@/components/ui/menu"
-import { Radio, RadioGroup } from "@/components/ui/radio"
-import { Table } from "@/components/ui/table"
-import { TimeField } from "@/components/ui/time-field"
-import { IconArrowUpRight, IconDotsVertical } from "@intentui/icons"
-import { Time } from "@internationalized/date"
-import { NumberFormatter } from "@internationalized/number"
-import { useState } from "react"
+import { IconArrowUpRight } from "@intentui/icons"
+import { twMerge } from "tailwind-merge"
 
 export function Blocks() {
-  const [selectedRadio, setSelectedRadio] = useState("highSecurity")
   return (
-    <PageContainer>
-      <div className="mask-b-from-100% md:mask-b-from-60% lg:mask-b-from-70% grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="[--card-spacing:--spacing(4)]">
-          <Card.Header title="Input" />
-          <Card.Content>
-            <div className="flex flex-col gap-y-4">
-              <TextFieldDemo />
-              <TextareaDemo />
-              <TagGroupDemo />
-            </div>
-          </Card.Content>
-        </Card>
-        <Card className="[--card-spacing:--spacing(4)]">
-          <Card.Header title="Pickers" />
-          <Card.Content>
-            <div className="flex flex-col gap-y-4">
-              <SelectDemo />
-              <SelectSearchableDemo />
-              <ComboBoxAvatarDemo />
-            </div>
-          </Card.Content>
-        </Card>
-        <Card className="[--card-spacing:--spacing(4)]">
-          <Card.Header title="Date and Time" />
-          <Card.Content>
-            <div className="flex flex-col gap-y-4">
-              <DatePickerDemo />
-              <DateRangePickerDemo />
-              <div className="grid grid-cols-2 gap-4">
-                <TimeField defaultValue={new Time()} label="Start time" />
-                <TimeField defaultValue={new Time()} label="End time" />
-              </div>
-            </div>
-          </Card.Content>
-        </Card>
-        <div className="flex flex-col gap-y-4">
-          <Card className="[--card-spacing:--spacing(4)]">
-            <Card.Header title="Dialog" />
-            <Card.Content>
-              <div className="flex flex-col gap-y-4">
+    <PageContainer className="mt-6">
+      <div className="mask-b-from-90% md:mask-b-from-60% lg:mask-b-from-85% space-y-10 sm:space-y-16">
+        <div>
+          <CardHeader
+            className="max-w-lg"
+            title="Overlays"
+            description="Used to display actions, details, or prompts without navigating away from the current page."
+          />
+          <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <BlocksCard>
+              <Center>
                 <ModalDemo />
-                <SheetDemo />
+              </Center>
+            </BlocksCard>
+            <BlocksCard>
+              <Center>
                 <PopoverDemo />
-              </div>
-            </Card.Content>
-          </Card>
-          <Card className="[--card-spacing:--spacing(4)]">
-            {/*<Card.Header title="Control" />*/}
-            <Card.Content>
-              <RadioGroup
-                aria-labelledby="security-settings"
-                value={selectedRadio}
-                onChange={setSelectedRadio}
-              >
-                <h2 id="security-settings" className="sr-only">
-                  Security settings
-                </h2>
-                <Radio
-                  value="highSecurity"
-                  label="High security"
-                  description="Set security settings to high."
-                />
-                <CheckboxGroup
-                  aria-labelledby="notifications-preferences"
-                  defaultValue={["email"]}
-                  className="ml-4"
-                  isDisabled={selectedRadio !== "highSecurity"}
-                >
-                  <h2 id="notifications-preferences" className="sr-only">
-                    Notification Preferences
-                  </h2>
-                  <Checkbox
-                    value="email"
-                    label="Email notifications"
-                    description="Receive updates via email."
-                    isReadOnly
-                  />
-                  <Checkbox
-                    value="sms"
-                    label="SMS Notifications"
-                    description="Receive updates via SMS."
-                  />
-                </CheckboxGroup>
-                <Radio
-                  value="allNotifications"
-                  label="All Notifications"
-                  description="Receive all notifications."
-                />
-                <Radio
-                  value="noNotifications"
-                  label="No notification"
-                  description="Do not receive any notifications."
-                />
-              </RadioGroup>
-            </Card.Content>
-          </Card>
+              </Center>
+            </BlocksCard>
+            <BlocksCard>
+              <Center>
+                <SheetDemo />
+              </Center>
+            </BlocksCard>
+            <BlocksCard>
+              <Center>
+                <TooltipDemo />
+              </Center>
+            </BlocksCard>
+          </div>
         </div>
-        <div className="md:col-span-2">
-          <Card>
-            <Card.Header
-              title="Inventory"
-              description="A detailed list of products with their categories, pricing, and current stock levels."
-            />
-            <Card.Content>
-              <Table
-                bleed
-                className="[--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]"
-                aria-label="Products"
-              >
-                <Table.Header>
-                  <Table.Column className="w-0">#</Table.Column>
-                  <Table.Column isRowHeader>Name</Table.Column>
-                  <Table.Column>Category</Table.Column>
-                  <Table.Column>Price</Table.Column>
-                  <Table.Column>Stock</Table.Column>
-                  <Table.Column />
-                </Table.Header>
-                <Table.Body items={products}>
-                  {(item) => (
-                    <Table.Row id={item.id}>
-                      <Table.Cell>{item.id}</Table.Cell>
-                      <Table.Cell>{item.name}</Table.Cell>
-                      <Table.Cell>{item.category}</Table.Cell>
-                      <Table.Cell>
-                        {new NumberFormatter("en-US", {
-                          style: "currency",
-                          currency: "USD",
-                        }).format(item.price)}
-                      </Table.Cell>
-                      <Table.Cell>{item.stock}</Table.Cell>
-                      <Table.Cell>
-                        <div className="flex justify-end">
-                          <Menu>
-                            <Menu.Trigger>
-                              <IconDotsVertical />
-                            </Menu.Trigger>
-                            <Menu.Content aria-label="Actions" placement="left top">
-                              <Menu.Item>View</Menu.Item>
-                              <Menu.Item>Edit</Menu.Item>
-                              <Menu.Separator />
-                              <Menu.Item isDanger>Delete</Menu.Item>
-                            </Menu.Content>
-                          </Menu>
-                        </div>
-                      </Table.Cell>
-                    </Table.Row>
-                  )}
-                </Table.Body>
-              </Table>
-            </Card.Content>
-            <Card.Footer>
-              <PaginationDemo />
-            </Card.Footer>
-          </Card>
+
+        <div>
+          <CardHeader
+            className="max-w-lg"
+            title="Control"
+            description="Explore how users can select one, many, or toggle options using checkboxes, radios, and switches."
+          />
+          <div className="mt-6 grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-4 lg:grid-cols-3">
+            <CheckboxGroupDescriptionDemo />
+            <RadioGroupDescriptionDemo />
+            <SwitchDescriptionDemo />
+          </div>
         </div>
       </div>
 
       <div className="md:-mt-10 relative z-30 mt-10 flex items-center justify-center">
         <Link
           className={buttonStyles({ intent: "outline", className: "backdrop-blur-2xl" })}
-          href="/components"
+          href="/docs/components/buttons/button"
         >
           Show More
           <IconArrowUpRight />
@@ -198,4 +72,22 @@ export function Blocks() {
       </div>
     </PageContainer>
   )
+}
+
+export function BlocksCard({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      {...props}
+      className={twMerge(
+        "inset-ring inset-ring-fg/10 flex min-h-32 items-center justify-center rounded-2xl bg-zinc-50/30 p-6 *:min-w-56 sm:min-h-48 sm:p-10 dark:inset-ring-fg/5 dark:inset-shadow-2xs dark:inset-shadow-fg/5 dark:bg-zinc-900/50",
+        className,
+      )}
+    >
+      {props.children}
+    </div>
+  )
+}
+
+function Center({ className, ...props }: React.ComponentProps<"div">) {
+  return <div className="flex size-full items-center justify-center" {...props} />
 }

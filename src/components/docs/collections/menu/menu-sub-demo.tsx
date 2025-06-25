@@ -7,7 +7,7 @@ export default function MenuSubDemo() {
   return (
     <Menu>
       <Button intent="outline">Open</Button>
-      <Menu.Content placement="bottom">
+      <Menu.Content popover={{ placement: "bottom" }}>
         <Menu.Item>
           <Menu.Label>Dashboard</Menu.Label>
         </Menu.Item>

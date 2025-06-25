@@ -6,7 +6,7 @@ import { tv } from "tailwind-variants"
 import { buttonStyles } from "@/components/ui/button"
 
 const showMoreStyles = tv({
-  base: "text-sm leading-6 before:border-muted after:border-muted",
+  base: "text-sm leading-6 before:border-border after:border-border",
   variants: {
     orientation: {
       vertical: "mx-1 h-auto self-stretch",
@@ -39,6 +39,7 @@ interface ShowMoreProps extends React.ComponentProps<typeof ToggleButton> {
 
 const ShowMore = ({
   as = "button",
+  children,
   orientation = "horizontal",
   className,
   ...props
@@ -50,9 +51,7 @@ const ShowMore = ({
           {...props}
           className={buttonStyles({ isCircle: true, intent: "outline", size: "sm" })}
         >
-          {composeRenderProps(props.children, (children) => (
-            <>{children}</>
-          ))}
+          {composeRenderProps(children, (children) => children)}
         </ToggleButton>
       ) : (
         <Text slot="description">{props.text}</Text>

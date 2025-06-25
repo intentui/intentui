@@ -6,7 +6,7 @@ export default function MenuDisabledDemo() {
   return (
     <Menu>
       <Menu.Trigger>Open</Menu.Trigger>
-      <Menu.Content placement="bottom">
+      <Menu.Content popover={{ placement: "bottom" }}>
         <Menu.Item id="view">
           <Menu.Label>View</Menu.Label>
         </Menu.Item>

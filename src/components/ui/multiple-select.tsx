@@ -3,8 +3,7 @@
 import { DropdownItem, DropdownLabel, DropdownSection } from "@/components/ui/dropdown"
 import { Description, FieldGroup, type FieldProps, Input, Label } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
-import { PopoverContent } from "@/components/ui/popover"
-import { Tag, TagGroup, type TagGroupProps, TagList } from "@/components/ui/tag-group"
+import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
 import {
@@ -18,7 +17,8 @@ import {
 } from "react"
 
 import type { ComboBoxProps, GroupProps, Key, ListBoxProps, Selection } from "react-aria-components"
-import { Button, ComboBox, Group } from "react-aria-components"
+import { Button, ComboBox, Group, Popover } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
 
 interface MultipleSelectProps<T>
   extends Omit<ListBoxProps<T>, "renderEmptyState">,
@@ -27,7 +27,6 @@ interface MultipleSelectProps<T>
       "isRequired" | "validate" | "validationBehavior"
     >,
     FieldProps,
-    Pick<TagGroupProps, "isCircle">,
     Pick<GroupProps, "isDisabled" | "isInvalid"> {
   className?: string
   errorMessage?: string
@@ -50,7 +49,6 @@ const MultipleSelect = <T extends object>({
   className,
   maxItems = Number.POSITIVE_INFINITY,
   renderEmptyState,
-  isCircle = false,
   children,
   ...props
 }: MultipleSelectProps<T>) => {
@@ -130,13 +128,7 @@ const MultipleSelect = <T extends object>({
             isDisabled={isDisabled}
             isInvalid={isInvalid}
           >
-            <TagGroup
-              onRemove={removeItem}
-              aria-hidden
-              isCircle={isCircle}
-              intent="primary"
-              aria-label="Selected items"
-            >
+            <TagGroup onRemove={removeItem} aria-hidden aria-label="Selected items">
               <TagList
                 className="[[role='row']]:last:-mr-1 gap-1 px-1.5 py-1 outline-hidden"
                 items={[...selectedKeys].map((key) => ({
@@ -185,11 +177,15 @@ const MultipleSelect = <T extends object>({
                   />
                 </Button>
               </div>
-              <PopoverContent
-                showArrow={false}
-                respectScreen={false}
+              <Popover
                 triggerRef={triggerRef}
-                className="min-w-(--trigger-width) overflow-hidden"
+                className={twJoin(
+                  "min-w-(--trigger-width) max-w-xs rounded-xl border bg-overlay bg-clip-padding text-overlay-fg shadow-xs transition-transform sm:max-w-3xl sm:text-sm dark:backdrop-saturate-200",
+                  "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
+                  "placement-left:entering:slide-in-from-right-1 placement-right:entering:slide-in-from-left-1 placement-top:entering:slide-in-from-bottom-1 placement-bottom:entering:slide-in-from-top-1",
+                  "placement-left:exiting:slide-out-to-right-1 placement-right:exiting:slide-out-to-left-1 placement-top:exiting:slide-out-to-bottom-1 placement-bottom:exiting:slide-out-to-top-1",
+                  "forced-colors:bg-[Canvas]",
+                )}
                 style={{
                   minWidth: triggerRef.current?.offsetWidth,
                   width: triggerRef.current?.offsetWidth,
@@ -226,7 +222,7 @@ const MultipleSelect = <T extends object>({
                     </MultipleSelect.Item>
                   )) ?? children}
                 </ListBox>
-              </PopoverContent>
+              </Popover>
             </ComboBox>
           </FieldGroup>
           {props.description && <Description>{props.description}</Description>}

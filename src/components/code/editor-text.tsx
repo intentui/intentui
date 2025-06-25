@@ -5,7 +5,7 @@ import React, { useState } from "react"
 import generated from "@/../__registry__/generated"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
-import { Tabs } from "@/components/ui/tabs"
+import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 import { copyToClipboard } from "@/lib/copy"
 import type { RegistryItem } from "@/types"
 import {
@@ -35,7 +35,7 @@ export function EditorText({ source }: Props) {
       setCopiedStates((prev) => ({ ...prev, [key]: true }))
       setTimeout(() => {
         setCopiedStates((prev) => ({ ...prev, [key]: false }))
-      }, 2000) // Reset after 2 seconds
+      }, 2000)
     }
   }
 
@@ -82,7 +82,7 @@ export function EditorText({ source }: Props) {
       {rawSourceCode && Object.keys(rawSourceCode).length > 0 ? (
         <Tabs className="relative gap-0">
           <div className="flex items-center justify-between overflow-hidden rounded-t-lg border-x border-y ">
-            <Tabs.List className="gap-0 border-0">
+            <TabList className="gap-0 border-0">
               {Object.keys(rawSourceCode).map((key) => (
                 <Tab
                   className={(values) =>
@@ -111,10 +111,10 @@ export function EditorText({ source }: Props) {
                   <span>{key}</span>
                 </Tab>
               ))}
-            </Tabs.List>
+            </TabList>
           </div>
           {Object.entries(rawSourceCode).map(([key, value]) => (
-            <Tabs.Panel
+            <TabPanel
               key={key}
               id={key}
               className="overflow-hidden rounded-b-lg border-x border-b bg-shiki-bg"
@@ -131,7 +131,7 @@ export function EditorText({ source }: Props) {
                 className="overflow-auto p-4"
                 code={value || "No source code available"}
               />
-            </Tabs.Panel>
+            </TabPanel>
           ))}
         </Tabs>
       ) : (

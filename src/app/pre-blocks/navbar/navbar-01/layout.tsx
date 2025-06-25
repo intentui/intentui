@@ -1,10 +1,10 @@
-import AppNavbar from "./app-navbar"
-
+import { NavbarProvider } from "@/components/ui/navbar"
+import AppNavbar from "../app-navbar"
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <NavbarProvider>
       <AppNavbar />
-      <div className="@xl:py-12 py-6">{children}</div>
-    </>
+      {children}
+    </NavbarProvider>
   )
 }

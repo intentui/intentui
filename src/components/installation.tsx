@@ -219,7 +219,7 @@ function ChoosePkgManager({
           Copied
         </span>
       </Button>
-      <Menu.Content offset={2} placement="bottom end">
+      <Menu.Content popover={{ offset: 2 }} placement="bottom end">
         {[
           { name: "NPM", vendor: "npm" },
           { name: "Yarn", vendor: "yarn" },

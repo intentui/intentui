@@ -1,42 +1,21 @@
-import { tv } from "tailwind-variants"
+import { twMerge } from "tailwind-merge"
 
-const headingStyles = tv({
-  base: "font-sans text-fg tracking-tight",
-  variants: {
-    level: {
-      1: "font-semibold text-xl sm:text-2xl",
-      2: "font-semibold text-lg sm:text-xl",
-      3: "font-semibold text-base sm:text-lg",
-      4: "font-semibold text-base",
-    },
-    tracking: {
-      tighter: "tracking-tighter",
-      tight: "tracking-tight",
-      normal: "tracking-normal",
-      wide: "tracking-wide",
-      wider: "tracking-wider",
-      widest: "tracking-widest",
-    },
-  },
-})
-type HeadingType = { level?: 1 | 2 | 3 | 4 } & React.ComponentPropsWithoutRef<
-  "h1" | "h2" | "h3" | "h4"
->
-
-interface HeadingProps extends HeadingType {
-  tracking?: "tighter" | "tight" | "normal" | "wide" | "wider" | "widest"
-  className?: string | undefined
+interface HeadingProps extends React.ComponentProps<"h1" | "h2" | "h3" | "h4" | "h5" | "h6"> {
+  level?: 1 | 2 | 3 | 4 | 5 | 6
 }
 
-const Heading = ({ className, tracking = "normal", level = 1, ...props }: HeadingProps) => {
+const Heading = ({ className, level = 1, ...props }: HeadingProps) => {
   const Element: `h${typeof level}` = `h${level}`
   return (
     <Element
-      className={headingStyles({
-        level,
-        tracking,
+      className={twMerge(
+        "font-sans text-fg",
+        level === 1 && "font-semibold text-xl sm:text-2xl",
+        level === 2 && "font-semibold text-lg sm:text-xl",
+        level === 3 && "font-semibold text-base sm:text-lg",
+        level === 4 && "font-semibold text-base",
         className,
-      })}
+      )}
       {...props}
     />
   )

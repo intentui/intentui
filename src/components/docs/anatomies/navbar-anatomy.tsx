@@ -1,39 +1,61 @@
 import { Button } from "@/components/ui/button"
-import { Navbar } from "@/components/ui/navbar"
-import { Separator } from "@/components/ui/separator"
-import { IconBrandApple, IconSearch, IconShoppingBag } from "@intentui/icons"
+import { Menu } from "@/components/ui/menu"
+import {
+  Navbar,
+  NavbarGap,
+  NavbarInset,
+  NavbarItem,
+  NavbarMobile,
+  NavbarProvider,
+  NavbarSection,
+  NavbarSeparator,
+  NavbarSpacer,
+  NavbarStart,
+  NavbarTrigger,
+} from "@/components/ui/navbar"
+import { IconChevronsY } from "@intentui/icons"
 
 export default function NavbarAnatomy() {
   return (
-    <Navbar>
+    <NavbarProvider>
       {/* Desktop */}
-      <Navbar.Nav>
-        <Navbar.Logo />
-        <Navbar.Section>
-          <Navbar.Item href="#" />
-        </Navbar.Section>
-      </Navbar.Nav>
+      <Navbar>
+        <NavbarStart />
+        <NavbarSection>
+          <NavbarItem href="#" />
+          <NavbarSpacer />
+          <NavbarGap />
+          <NavbarSeparator />
+          <Menu>
+            <NavbarItem>
+              Account
+              <IconChevronsY className="col-start-3" />
+            </NavbarItem>
+            <Menu.Content>
+              <Menu.Item />
+            </Menu.Content>
+          </Menu>
+        </NavbarSection>
+      </Navbar>
 
       {/* Mobile */}
-      <Navbar.Compact>
-        <Navbar.Flex>
-          <Navbar.Trigger className="-ml-2" />
-          <Separator orientation="vertical" className="mx-2 h-6" />
-          <Navbar.Logo href={"/docs/components/navigation/navbar"}>
-            <IconBrandApple className="size-5" />
-          </Navbar.Logo>
-        </Navbar.Flex>
-        <Navbar.Flex>
-          <Button intent="plain" size="sq-sm" aria-label="Search for products">
-            <IconSearch />
-          </Button>
-          <Button intent="plain" size="sq-sm" aria-label="Your Bag">
-            <IconShoppingBag />
-          </Button>
-        </Navbar.Flex>
-      </Navbar.Compact>
+      <NavbarMobile>
+        <NavbarTrigger />
+        <NavbarSpacer />
+        <Button />
+        <Menu>
+          <NavbarItem>
+            Account
+            <IconChevronsY className="col-start-3" />
+          </NavbarItem>
+          <Menu.Content>
+            <Menu.Item />
+          </Menu.Content>
+        </Menu>
+      </NavbarMobile>
 
-      <Navbar.Inset />
-    </Navbar>
+      {/* Required when setting the navbar intent to 'inset' */}
+      <NavbarInset />
+    </NavbarProvider>
   )
 }

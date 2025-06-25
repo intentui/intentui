@@ -7,7 +7,7 @@ export default function MenuDynamicDemo() {
   return (
     <Menu>
       <Button intent="outline">Open</Button>
-      <Menu.Content placement="bottom" items={categories}>
+      <Menu.Content popover={{ placement: "bottom" }} items={categories}>
         {(item) => (
           <Menu.Item id={item.slug}>
             <Menu.Label>{item.name}</Menu.Label>

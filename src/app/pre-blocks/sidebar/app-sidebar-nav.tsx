@@ -3,26 +3,14 @@
 import { Avatar } from "@/components/ui/avatar"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { Menu } from "@/components/ui/menu"
-import { Separator } from "@/components/ui/separator"
 import { SidebarNav, SidebarTrigger } from "@/components/ui/sidebar"
-
-import { Switch } from "@/components/ui/switch"
-import {
-  IconCommandRegular,
-  IconDashboard,
-  IconLogout,
-  IconMoon,
-  IconSettings,
-  IconSun,
-} from "@intentui/icons"
-import { useTheme } from "next-themes"
+import { IconCommandRegular, IconDashboard, IconLogout, IconSettings } from "@intentui/icons"
 
 export default function AppSidebarNav() {
   return (
-    <SidebarNav className="border-b">
+    <SidebarNav>
       <span className="flex items-center gap-x-4">
-        <SidebarTrigger className="-mx-2" />
-        <Separator className="h-6" orientation="vertical" />
+        <SidebarTrigger className="-ml-2" />
         <Breadcrumbs className="hidden md:flex">
           <Breadcrumbs.Item href="/blocks/sidebar/sidebar-01">Dashboard</Breadcrumbs.Item>
           <Breadcrumbs.Item>Newsletter</Breadcrumbs.Item>
@@ -34,13 +22,12 @@ export default function AppSidebarNav() {
 }
 
 function UserMenu() {
-  const { theme, setTheme } = useTheme()
   return (
     <Menu>
       <Menu.Trigger className="ml-auto md:hidden" aria-label="Open Menu">
-        <Avatar alt="kurt cobain" src="/images/avatar/cobain.jpg" />
+        <Avatar isSquare alt="kurt cobain" src="https://intentui.com/images/avatar/cobain.jpg" />
       </Menu.Trigger>
-      <Menu.Content placement="bottom" showArrow className="sm:min-w-64">
+      <Menu.Content popover={{ placement: "bottom end" }} className="min-w-64">
         <Menu.Section>
           <Menu.Header separator>
             <span className="block">Kurt Cobain</span>
@@ -59,18 +46,6 @@ function UserMenu() {
         <Menu.Item>
           <IconCommandRegular />
           <Menu.Label>Command Menu</Menu.Label>
-        </Menu.Item>
-        <Menu.Item className="[&>[slot=label]+[data-slot=icon]]:right-4 [&>[slot=label]+[data-slot=icon]]:bottom-3">
-          {theme === "dark" ? <IconMoon /> : <IconSun />}
-          <Menu.Label>Theme</Menu.Label>
-          <span data-slot="icon">
-            <Switch
-              className="ml-auto"
-              isSelected={theme === "dark"}
-              onChange={(e) => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="Toggle theme"
-            />
-          </span>
         </Menu.Item>
         <Menu.Separator />
         <Menu.Item href="#contact-s">

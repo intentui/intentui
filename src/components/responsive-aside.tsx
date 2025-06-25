@@ -26,7 +26,7 @@ import { Button as ButtonPrimitive } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
 import { Aside } from "./aside"
 import { CommandPalette } from "./command-palette"
-import { NavbarDropdown } from "./navbar"
+import { NavbarDropdown } from "./navigation"
 import { ThemeSwitcher } from "./theme-switcher"
 export function ResponsiveAside({
   openCmd,
@@ -83,7 +83,7 @@ export function ResponsiveAside({
             <Button aria-label="Search docs" intent="plain" size="sq-sm">
               <IconHamburger className="size-5" />
             </Button>
-            <Menu.Content respectScreen={false} placement="bottom" className="sm:min-w-56">
+            <Menu.Content placement="bottom" className="min-w-64 sm:min-w-56">
               <Menu.Item href="/">
                 <IconHome />
                 <Menu.Label>Home</Menu.Label>
@@ -127,14 +127,14 @@ export function ResponsiveAside({
         aria-label="Docs Menu"
         isOpen={openAside}
         onOpenChange={setOpenAside}
-        classNames={{ content: "w-[19rem]" }}
+        className="w-[19rem]"
         side="left"
         closeButton={true}
       >
         <Sheet.Header className="mb-4 flex flex-row justify-between py-2">
           <NavbarDropdown />
         </Sheet.Header>
-        <Sheet.Body className="px-2">
+        <Sheet.Body className="pr-0 pl-2">
           <LayoutGroup id={id}>
             <Aside />
           </LayoutGroup>

@@ -22,6 +22,7 @@ type HowProps = {
   className?: string
   withNoPadding?: boolean
   src?: string
+  readMore?: string
 }
 
 const fetchRegistryFile = createFetchRegistryFile("/r")
@@ -82,8 +83,10 @@ export const DocHow = ({
         <Group>
           <ToggleButton
             className={twJoin(
-              "p-2 font-medium text-sm/6",
-              currentTab === "tab_preview" ? "text-fg" : "text-muted-fg hover:text-fg",
+              "p-2 font-medium text-sm/6 outline-hidden focus-visible:text-blue-500 dark:focus-visible:text-blue-300",
+              currentTab === "tab_preview"
+                ? "text-fg focus:text-fg"
+                : "text-muted-fg hover:text-fg",
             )}
             onPress={() => setCurrentTab("tab_preview")}
           >
@@ -91,8 +94,8 @@ export const DocHow = ({
           </ToggleButton>
           <ToggleButton
             className={twJoin(
-              "p-2 font-medium text-sm/6",
-              currentTab === "tab_code" ? "text-fg" : "text-muted-fg hover:text-fg",
+              "p-2 font-medium text-sm/6 outline-hidden focus:text-fg",
+              currentTab === "tab_code" ? "text-fg focus:text-fg" : "text-muted-fg hover:text-fg",
             )}
             onPress={() => setCurrentTab("tab_code")}
           >
@@ -100,7 +103,11 @@ export const DocHow = ({
           </ToggleButton>
         </Group>
         <Group>
-          <PullRegistry processedSourceCode={processedSourceCode} blockDemo={blockDemo} />
+          <PullRegistry
+            readMore={props.readMore}
+            processedSourceCode={processedSourceCode}
+            blockDemo={blockDemo}
+          />
         </Group>
       </Toolbar>
       <div className="w-full">

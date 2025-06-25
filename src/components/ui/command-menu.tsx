@@ -99,7 +99,7 @@ const CommandMenu = ({
         >
           <Modal
             className={twMerge([
-              "fixed top-auto bottom-0 left-[50%] z-50 grid h-[calc(100vh-30%)] w-full max-w-full translate-x-[-50%] gap-4 overflow-hidden rounded-t-2xl bg-overlay text-overlay-fg shadow-lg ring-1 ring-fg/10 sm:top-[6rem] sm:bottom-auto sm:h-auto sm:w-full sm:max-w-2xl sm:rounded-xl dark:ring-border forced-colors:border",
+              "fixed top-auto bottom-0 left-[50%] z-50 grid h-[calc(100vh-30%)] w-full max-w-full translate-x-[-50%] gap-4 overflow-hidden rounded-t-2xl bg-overlay text-overlay-fg shadow-lg ring-1 ring-fg/10 sm:top-[6rem] sm:bottom-auto sm:h-auto sm:w-full sm:max-w-xl sm:rounded-xl dark:ring-border forced-colors:border",
               "data-entering:fade-in-0 data-entering:slide-in-from-bottom sm:data-entering:slide-in-from-bottom-0 sm:data-entering:zoom-in-95 data-entering:animate-in data-entering:duration-300 sm:data-entering:duration-300",
               "data-exiting:fade-out sm:data-exiting:zoom-out-95 data-exiting:slide-out-to-bottom-56 sm:data-exiting:slide-out-to-bottom-0 data-exiting:animate-out data-exiting:duration-200",
               classNames?.content ?? "",
@@ -108,7 +108,7 @@ const CommandMenu = ({
           >
             <Dialog
               aria-label={props["aria-label"] ?? "Command Menu"}
-              className="overflow-hidden outline-hidden"
+              className="flex max-h-[inherit] flex-col overflow-hidden outline-hidden"
             >
               <Autocomplete filter={filter} {...props} />
             </Dialog>
@@ -147,7 +147,7 @@ const CommandMenuSearch = ({ className, placeholder, ...props }: CommandMenuSear
       )}
       <Input
         placeholder={placeholder ?? "Search..."}
-        className="w-full min-w-0 bg-transparent px-2 py-1.5 text-base text-fg placeholder-muted-fg outline-hidden focus:outline-hidden sm:text-sm [&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden"
+        className="w-full min-w-0 bg-transparent px-2.5 py-2 text-base text-fg placeholder-muted-fg outline-hidden focus:outline-hidden sm:px-2 sm:py-1.5 sm:text-sm [&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden"
       />
       {escapeButton && (
         <Button
@@ -167,7 +167,7 @@ const CommandMenuList = <T extends object>({ className, ...props }: MenuProps<T>
       <MenuPrimitive
         className={composeTailwindRenderProps(
           className,
-          "grid max-h-full grid-cols-[auto_1fr] overflow-y-auto p-2 sm:max-h-110 *:[[role=group]]:mb-6 *:[[role=group]]:last:mb-0",
+          "grid max-h-full flex-1 grid-cols-[auto_1fr] content-start overflow-y-auto p-2 sm:max-h-110 *:[[role=group]]:mb-6 *:[[role=group]]:last:mb-0",
         )}
         {...props}
       />
@@ -184,7 +184,7 @@ const CommandMenuSection = <T extends object>({
     <MenuSection
       ref={ref}
       className={twMerge(
-        "col-span-full grid grid-cols-[auto_1fr] gap-y-[calc(var(--spacing)*0.25)]",
+        "col-span-full grid grid-cols-[auto_1fr] content-start gap-y-[calc(var(--spacing)*0.25)]",
         className,
       )}
       {...props}
@@ -206,33 +206,21 @@ const CommandMenuItem = ({ className, ...props }: React.ComponentProps<typeof Me
     <Menu.Item
       {...props}
       textValue={textValue}
-      className={composeTailwindRenderProps(className, "gap-y-0.5 px-2 py-2 sm:py-1.5")}
+      className={composeTailwindRenderProps(className, "items-center gap-y-0.5")}
     />
   )
 }
 
-interface CommandMenuDescriptionProps extends React.ComponentProps<"span"> {
-  intent?: "danger" | "warning" | "primary" | "secondary" | "success"
-}
+interface CommandMenuDescriptionProps extends React.ComponentProps<typeof Menu.Description> {}
 
-const CommandMenuDescription = ({ intent, className, ...props }: CommandMenuDescriptionProps) => {
+const CommandMenuDescription = ({ className, ...props }: CommandMenuDescriptionProps) => {
   return (
-    <span
-      {...props}
-      slot="command-menu-description"
+    <Menu.Description
       className={twMerge(
-        "ml-auto hidden text-sm sm:inline",
-        intent === "danger"
-          ? "text-danger/90 group-selected:text-fg/70"
-          : intent === "warning"
-            ? "text-warning/90 group-selected:text-fg/70"
-            : intent === "success"
-              ? "text-success/90 group-selected:text-fg/70"
-              : intent === "primary"
-                ? "text-fg/90 group-selected:text-white/70"
-                : "text-muted-fg group-selected:text-fg/70",
+        "col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 sm:ml-auto",
         className,
       )}
+      {...props}
     />
   )
 }
@@ -263,7 +251,7 @@ const CommandMenuFooter = ({ className, ...props }: React.ComponentProps<"div">)
   return (
     <div
       className={twMerge(
-        "col-span-full border-t px-2 py-1.5 text-muted-fg text-sm",
+        "col-span-full flex-none border-t px-2 py-1.5 text-muted-fg text-sm",
         "*:[kbd]:inset-ring *:[kbd]:inset-ring-fg/10 *:[kbd]:mx-1 *:[kbd]:inline-grid *:[kbd]:h-4 *:[kbd]:min-w-4 *:[kbd]:place-content-center *:[kbd]:rounded-xs *:[kbd]:bg-secondary ",
         className,
       )}
@@ -274,6 +262,7 @@ const CommandMenuFooter = ({ className, ...props }: React.ComponentProps<"div">)
 
 const CommandMenuLabel = Menu.Label
 const CommandMenuKeyboard = DropdownKeyboard
+
 CommandMenu.Search = CommandMenuSearch
 CommandMenu.List = CommandMenuList
 CommandMenu.Item = CommandMenuItem

@@ -9,20 +9,34 @@ author: irsyadadl
 Almost every component has been rewritten. This release improves the developer experience and introduces a more consistent API across components.
 You may also notice that v3 is slightly more compact than v2, with improved usability on mobile devices.
 
+## New component
+* [Toggle Group](/docs/components/buttons/toggle-group)
+* [Area chart](/docs/components/visualizations/area-chart)
+* [Bar chart](/docs/components/visualizations/bar-chart)
+* [Line chart](/docs/components/visualizations/line-chart)
+* [Pie chart](/docs/components/visualizations/pie-chart)
+* [Tracker](/docs/components/visualizations/tracker)
+* [Bar list](/docs/components/visualizations/bar-list)
 
-## What's New
+
+## What's change
 * Upgraded to the latest versions of React Aria Components and Tailwind CSS.
-* New component: [Toggle Group](/docs/components/buttons/toggle-group)
-* Replaced `cn()` with `twMerge()` from the `tailwind-merge` package.
 * Removed legacy size values (`square-petite`, `extra-small`, `small`, `medium`, `large`) from the `size` prop in `Button` and `Toggle`. Now using `xs`, `sm`, `md`, `lg`, and `sq-[xs, sm, md, lg]`.
+* Removed legacy size values (`small`, `medium`, `large`, `extra-large` from the `size` prop in `Avatar`. Now using `xs`, `sm`, `md`, `lg`, `xl`.
 * Removed the `shape` prop from `Button`, `Badge`, `Tag`, and `Toggle`. Use the `isCircle` prop instead.
 * Removed `focusRing` and `focusStyles` from `primitive.ts`—they are no longer used.
+* `classNames` remove for both `Sheet` and `Modal` components. Now, you can use the `className` prop to customize the styles on the `Modal.Content` and `Sheet.Content` components.
 * We make default `gap=0` and `columns=1` for `Choicebox` component.
 * Add `Loader` to `FileTrigger` when the pending state is true.
+* We no longer use Compound Pattern in `Tabs` component. Instead, we use a more straightforward approach with `Tabs`, `TabList`, `Tab`, and `TabPanel` components.
+* We also remove `motion` from `Tabs` component, so you can use any animation library you prefer or leave it unanimated.
+* The `Chart` component has been completely rewritten to use the latest version of Recharts (v3).
 
 ## Toggle Group
 The `ToggleGroup` component has been introduced to provide a more intuitive way for users to switch between multiple options, supporting both single and multi-selection modes.
-<How toUse="buttons/toggle-group/toggle-group-demo" />
+<How
+  readMore='/toggle-group'
+  toUse="buttons/toggle-group/toggle-group-demo" />
 
 ## Button
 The `Button` component has undergone significant changes, including the removal of the `shape` prop and the introduction of the `isCircle` prop. The size values have also been updated to be more concise.
@@ -41,7 +55,9 @@ The `Button` component has undergone significant changes, including the removal 
 // After
 <Button size="sq-sm">Press me</Button>
 ```
-<How toUse="buttons/button/button-intent-demo" />
+<How
+  readMore='/button'
+  toUse="buttons/button/button-intent-demo" />
 
 ## Toggle
 The `Toggle` component has been updated to use the new size values and the `isCircle` prop. The `shape` prop has been removed.
@@ -98,3 +114,44 @@ We’ve improved the user experience on `Checkbox`, `CheckboxGroup`, and `RadioG
   </Radio>
 </RadioGroup>
 ```
+
+<How
+  readMore='/checkbox-group'
+  toUse="controls/checkbox-group/switch-description-demo" />
+
+
+## Switch
+The `Switch` component now supports descriptions. You can use the `label` and `description` props, or use the `Label` and `Description` components directly—both approaches work.
+
+```tsx
+<Switch
+  label="Enable Notifications"
+  description="Receive updates and alerts via email"
+/>
+
+<Switch>
+  <Label>Enable Notifications</Label>
+  <Description>Receive updates and alerts via email</Description>
+</Switch>
+```
+
+<How
+  readMore='/switch'
+  toUse="controls/switch/switch-description-demo" />
+
+
+
+## Charts
+We've completely rewritten the charts to use `recharts` v3. We're also introducing dedicated components for common chart types: `AreaChart`, `BarChart`, `LineChart`, and `PieChart`.
+
+### Area Chart
+<How isCenter={false} withNoPadding toUse="visualizations/area-chart/area-chart-demo" />
+
+### Bar Chart
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-demo" />
+
+### Line Chart
+<How isCenter={false} withNoPadding toUse="visualizations/line-chart/line-chart-demo" />
+
+### Pie Chart
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-demo" />
