@@ -185,7 +185,7 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
         "relative min-w-0 items-center gap-x-3 rounded-lg px-2.5 py-2 text-left font-medium text-base/6 sm:text-sm/5 md:gap-x-2.5",
         "*:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-fg sm:*:data-[slot=icon]:size-4",
         "*:data-[slot=loader]:size-5 *:data-[slot=loader]:shrink-0 sm:*:data-[slot=loader]:size-4",
-        "*:not-nth-2:last:data-[slot=icon]:ml-auto *:not-nth-2:last:data-[slot=icon]:size-5 sm:*:not-nth-2:last:data-[slot=icon]:size-4",
+        "*:not-nth-2:last:data-[slot=icon]:row-start-1 *:not-nth-2:last:data-[slot=icon]:ml-auto *:not-nth-2:last:data-[slot=icon]:size-5 sm:*:not-nth-2:last:data-[slot=icon]:size-4",
         "*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-6 sm:*:data-[slot=avatar]:size-5",
         "*:data-[slot=icon]:text-muted-fg pressed:*:data-[slot=icon]:text-fg hover:*:data-[slot=icon]:text-fg",
         "outline-hidden focus-visible:inset-ring focus-visible:inset-ring-ring focus-visible:ring-2 focus-visible:ring-ring/20",
@@ -284,15 +284,11 @@ const NavbarTrigger = ({ className, onPress, ref, ...props }: NavbarTriggerProps
   )
 }
 
-interface NavbarLabelProps extends React.ComponentProps<"span"> {
-  className?: string
-}
-
-const NavbarLabel = ({ className, ...props }: NavbarLabelProps) => {
+const NavbarLabel = ({ className, ...props }: React.ComponentProps<"span">) => {
   return (
     <span
       data-slot="navbar-label"
-      className={twJoin("col-start-2 truncate", className)}
+      className={twJoin("col-start-2 row-start-1 truncate", className)}
       {...props}
     />
   )

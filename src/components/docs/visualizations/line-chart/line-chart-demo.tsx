@@ -1,3 +1,5 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
 import { useMemo } from "react"

@@ -115,7 +115,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
       >
         <CommandMenu.Search placeholder="Search components, color..." />
         <CommandMenu.List>
-          <CommandMenu.Section className="hidden sm:grid" aria-label="Pages">
+          <CommandMenu.Section aria-label="Pages">
             <CommandMenu.Item textValue="Home" href="/">
               <IconHomeFill />
               <CommandMenu.Label>Home</CommandMenu.Label>

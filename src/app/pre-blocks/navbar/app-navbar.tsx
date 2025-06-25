@@ -8,6 +8,7 @@ import {
   NavbarItem,
   NavbarMobile,
   type NavbarProps,
+  NavbarProvider,
   NavbarSection,
   NavbarSeparator,
   NavbarSpacer,
@@ -73,7 +74,7 @@ const categories = [
 
 export default function AppNavbar(props: NavbarProps) {
   return (
-    <>
+    <NavbarProvider>
       <Navbar {...props}>
         <NavbarStart>
           <Link
@@ -98,7 +99,7 @@ export default function AppNavbar(props: NavbarProps) {
           <Menu>
             <NavbarItem>
               Categories
-              <IconChevronLgDown className="col-start-2" />
+              <IconChevronLgDown className="col-start-3" />
             </NavbarItem>
             <Menu.Content className="min-w-(--trigger-width) sm:min-w-56" items={categories}>
               {(item) => (
@@ -133,6 +134,6 @@ export default function AppNavbar(props: NavbarProps) {
         <NavbarSeparator className="mr-2.5" />
         <UserMenu />
       </NavbarMobile>
-    </>
+    </NavbarProvider>
   )
 }

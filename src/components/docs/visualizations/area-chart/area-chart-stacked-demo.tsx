@@ -1,3 +1,5 @@
+"use client"
+
 import { AreaChart } from "@/components/ui/area-chart"
 import { Card } from "@/components/ui/card"
 import { useMemo } from "react"

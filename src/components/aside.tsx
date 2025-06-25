@@ -32,57 +32,59 @@ const sortedGsChildren =
 
 export function Aside() {
   return (
-    <ListBox
-      className="flex flex-col gap-y-(--gap) pr-4 pb-10 pl-(--gap) [--gap:--spacing(6)]"
-      aria-label="Documentation sidebar"
-    >
-      <ListBoxSection>
-        <AsideHeader>
-          {" "}
-          <IconHighlight /> {prologue?.section}
-        </AsideHeader>
-        {prologue?.children?.map((item) => (
-          <AsideLink key={item.slug} href={item.slug}>
-            {item.title}
-          </AsideLink>
-        ))}
-      </ListBoxSection>
-      <ListBoxSection>
-        <AsideHeader>
-          <IconBookOpen /> {gs?.section}
-        </AsideHeader>
-        {sortedGsChildren.map((item) => (
-          <AsideLink key={item.slug} href={item.slug}>
-            {item.title}
-          </AsideLink>
-        ))}
-      </ListBoxSection>
-      <ListBoxSection>
-        <AsideHeader>
-          <IconCircleHalf /> {dm?.section}
-        </AsideHeader>
-        {dm?.children?.map((item) => (
-          <AsideLink key={item.slug} href={item.slug}>
-            {item.title}
-          </AsideLink>
-        ))}
-      </ListBoxSection>
-      <ListBoxSection className="flex flex-col gap-y-(--gap)">
-        <AsideHeader className="-mb-4">
-          <IconPackage /> {components?.section}
-        </AsideHeader>
-        {components?.children?.map((item) => (
-          <ListBoxSection key={item.subsection}>
-            <AsideHeader>{item?.subsection}</AsideHeader>
-            {item?.children?.map((item) => (
-              <AsideLink key={item.slug} href={item.slug}>
-                {item.title}
-              </AsideLink>
-            ))}
-          </ListBoxSection>
-        ))}
-      </ListBoxSection>
-    </ListBox>
+    <div className="-ml-0.5 sticky top-14 h-screen w-64 overflow-y-auto overflow-x-hidden py-16 pr-0 pl-0.5 xl:w-60 ">
+      <ListBox
+        className="flex flex-col gap-y-(--gap) pr-4 pb-10 pl-(--gap) [--gap:--spacing(6)]"
+        aria-label="Documentation sidebar"
+      >
+        <ListBoxSection>
+          <AsideHeader>
+            {" "}
+            <IconHighlight /> {prologue?.section}
+          </AsideHeader>
+          {prologue?.children?.map((item) => (
+            <AsideLink key={item.slug} href={item.slug}>
+              {item.title}
+            </AsideLink>
+          ))}
+        </ListBoxSection>
+        <ListBoxSection>
+          <AsideHeader>
+            <IconBookOpen /> {gs?.section}
+          </AsideHeader>
+          {sortedGsChildren.map((item) => (
+            <AsideLink key={item.slug} href={item.slug}>
+              {item.title}
+            </AsideLink>
+          ))}
+        </ListBoxSection>
+        <ListBoxSection>
+          <AsideHeader>
+            <IconCircleHalf /> {dm?.section}
+          </AsideHeader>
+          {dm?.children?.map((item) => (
+            <AsideLink key={item.slug} href={item.slug}>
+              {item.title}
+            </AsideLink>
+          ))}
+        </ListBoxSection>
+        <ListBoxSection className="flex flex-col gap-y-(--gap)">
+          <AsideHeader className="-mb-4">
+            <IconPackage /> {components?.section}
+          </AsideHeader>
+          {components?.children?.map((item) => (
+            <ListBoxSection key={item.subsection}>
+              <AsideHeader>{item?.subsection}</AsideHeader>
+              {item?.children?.map((item) => (
+                <AsideLink key={item.slug} href={item.slug}>
+                  {item.title}
+                </AsideLink>
+              ))}
+            </ListBoxSection>
+          ))}
+        </ListBoxSection>
+      </ListBox>
+    </div>
   )
 }
 

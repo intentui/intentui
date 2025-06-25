@@ -9,10 +9,18 @@ author: irsyadadl
 Almost every component has been rewritten. This release improves the developer experience and introduces a more consistent API across components.
 You may also notice that v3 is slightly more compact than v2, with improved usability on mobile devices.
 
+## New component
+* [Toggle Group](/docs/components/buttons/toggle-group)
+* [Area chart](/docs/components/visualizations/area-chart)
+* [Bar chart](/docs/components/visualizations/bar-chart)
+* [Line chart](/docs/components/visualizations/line-chart)
+* [Pie chart](/docs/components/visualizations/pie-chart)
+* [Tracker](/docs/components/visualizations/tracker)
+* [Bar list](/docs/components/visualizations/bar-list)
 
-## What's New
+
+## What's change
 * Upgraded to the latest versions of React Aria Components and Tailwind CSS.
-* New component: [Toggle Group](/docs/components/buttons/toggle-group)
 * Removed legacy size values (`square-petite`, `extra-small`, `small`, `medium`, `large`) from the `size` prop in `Button` and `Toggle`. Now using `xs`, `sm`, `md`, `lg`, and `sq-[xs, sm, md, lg]`.
 * Removed legacy size values (`small`, `medium`, `large`, `extra-large` from the `size` prop in `Avatar`. Now using `xs`, `sm`, `md`, `lg`, `xl`.
 * Removed the `shape` prop from `Button`, `Badge`, `Tag`, and `Toggle`. Use the `isCircle` prop instead.
@@ -22,6 +30,7 @@ You may also notice that v3 is slightly more compact than v2, with improved usab
 * Add `Loader` to `FileTrigger` when the pending state is true.
 * We no longer use Compound Pattern in `Tabs` component. Instead, we use a more straightforward approach with `Tabs`, `TabList`, `Tab`, and `TabPanel` components.
 * We also remove `motion` from `Tabs` component, so you can use any animation library you prefer or leave it unanimated.
+* The `Chart` component has been completely rewritten to use the latest version of Recharts (v3).
 
 ## Toggle Group
 The `ToggleGroup` component has been introduced to provide a more intuitive way for users to switch between multiple options, supporting both single and multi-selection modes.
@@ -129,3 +138,20 @@ The `Switch` component now supports descriptions. You can use the `label` and `d
 <How
   readMore='/switch'
   toUse="controls/switch/switch-description-demo" />
+
+
+
+## Charts
+We've completely rewritten the charts to use `recharts` v3. We're also introducing dedicated components for common chart types: `AreaChart`, `BarChart`, `LineChart`, and `PieChart`.
+
+### Area Chart
+<How isCenter={false} withNoPadding toUse="visualizations/area-chart/area-chart-demo" />
+
+### Bar Chart
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-demo" />
+
+### Line Chart
+<How isCenter={false} withNoPadding toUse="visualizations/line-chart/line-chart-demo" />
+
+### Pie Chart
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-demo" />
