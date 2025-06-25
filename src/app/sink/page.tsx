@@ -1,5 +1,3 @@
-"use client"
-
-export default function Page() {
+export default function Sink() {
   return <div />
 }

@@ -224,10 +224,10 @@ export function NavbarDropdown() {
         </Button>
         <Menu.Content>
           <Menu.Item href="https://intentui.com/docs/getting-started/introduction">
-            3.x (beta)
+            3.x (latest)
           </Menu.Item>
           <Menu.Item href="https://2x.intentui.com/docs/getting-started/introduction">
-            2.x (latest)
+            2.x
           </Menu.Item>
           <Menu.Item href="https://1x.intentui.com/docs/getting-started/introduction">
             1.x (deprecated)

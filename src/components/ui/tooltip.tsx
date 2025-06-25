@@ -13,13 +13,14 @@ import { tv } from "tailwind-variants"
 
 const tooltipStyles = tv({
   base: [
-    "group rounded-lg border px-2.5 py-1.5 text-sm will-change-transform dark:shadow-none [&_strong]:font-medium",
+    "group rounded-lg border px-2.5 py-1.5 text-sm text-sm/6 will-change-transform dark:shadow-none *:[strong]:font-medium",
   ],
   variants: {
     intent: {
-      default: "bg-overlay text-overlay-fg [&_.arx]:fill-overlay [&_.arx]:stroke-border",
+      default:
+        "bg-overlay text-overlay-fg *:data-[slot=overlay-arrow]:fill-overlay *:data-[slot=overlay-arrow]:stroke-border",
       inverse:
-        "border-transparent bg-fg text-bg [&_.arx]:fill-fg [&_.arx]:stroke-transparent dark:[&_.arx]:fill-white [&_.text-muted-fg]:text-bg/70 dark:[&_.text-muted-fg]:text-fg/70",
+        "border-transparent bg-fg text-bg *:data-[slot=overlay-arrow]:fill-fg *:data-[slot=overlay-arrow]:stroke-transparent dark:*:data-[slot=overlay-arrow]:fill-white [&_.text-muted-fg]:text-bg/70 dark:[&_.text-muted-fg]:text-fg/70",
     },
     isEntering: {
       true: [
@@ -71,10 +72,11 @@ const TooltipContent = ({
       {showArrow && (
         <OverlayArrow>
           <svg
+            data-slot="overlay-arrow"
             width={12}
             height={12}
             viewBox="0 0 12 12"
-            className="arx group-placement-left:-rotate-90 group-placement-bottom:rotate-180 group-placement-right:rotate-90 forced-colors:fill-[Canvas] forced-colors:stroke-[ButtonBorder]"
+            className="group-placement-left:-rotate-90 group-placement-bottom:rotate-180 group-placement-right:rotate-90 forced-colors:fill-[Canvas] forced-colors:stroke-[ButtonBorder]"
           >
             <path d="M0 0 L6 6 L12 0" />
           </svg>

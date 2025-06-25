@@ -13,7 +13,7 @@ export const siteConfig = {
   repo: "https://github.com/irsyadadl/intentui",
   currentVersion: "3.x",
   cli: {
-    version: "beta",
+    version: "latest",
     command: "@intentui/cli",
   },
   get cliCommand() {
