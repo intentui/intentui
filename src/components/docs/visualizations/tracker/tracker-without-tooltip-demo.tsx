@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card"
 import { Tracker } from "@/components/ui/tracker"
 
 const deployments = [
@@ -57,16 +56,6 @@ const data = deployments.map((d) => ({
   tooltip: `${d.status} @ ${new Date(d.time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`,
 }))
 
-export default function TrackerDemo() {
-  return (
-    <Card>
-      <Card.Header>
-        <Card.Title>Recent deployments</Card.Title>
-        <Card.Description>Visual timeline of deployment outcomes by hour</Card.Description>
-      </Card.Header>
-      <Card.Content>
-        <Tracker data={data} />
-      </Card.Content>
-    </Card>
-  )
+export default function TrackerWithoutTooltipDemo() {
+  return <Tracker disabledTooltip data={data} />
 }

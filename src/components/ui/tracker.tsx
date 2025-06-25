@@ -10,12 +10,28 @@ interface TrackerBlockProps {
   color?: string
   tooltip?: string
   defaultBackgroundColor?: string
+  disabledTooltip?: boolean
 }
 
-const Block = ({ color, tooltip, defaultBackgroundColor }: TrackerBlockProps) => {
+const Block = ({
+  color,
+  tooltip,
+  disabledTooltip,
+  defaultBackgroundColor = "bg-secondary",
+}: TrackerBlockProps) => {
   const [open, setOpen] = useState(false)
 
-  return (
+  return disabledTooltip ? (
+    <div className="size-full overflow-hidden px-[0.5px] transition first:rounded-l-[4px] first:pl-0 last:rounded-r-[4px] last:pr-0 sm:px-px">
+      <div
+        className={twJoin(
+          "size-full rounded-[1px]",
+          color || defaultBackgroundColor,
+          "hover:opacity-50",
+        )}
+      />
+    </div>
+  ) : (
     <Tooltip isOpen={open} onOpenChange={setOpen} delay={0} closeDelay={0}>
       <Pressable onPress={() => setOpen(true)}>
         <div className="size-full overflow-hidden px-[0.5px] transition first:rounded-l-[4px] first:pl-0 last:rounded-r-[4px] last:pr-0 sm:px-px">
@@ -41,16 +57,24 @@ const Block = ({ color, tooltip, defaultBackgroundColor }: TrackerBlockProps) =>
   )
 }
 
-interface TrackerProps extends React.ComponentProps<"div"> {
+interface TrackerProps
+  extends React.ComponentProps<"div">,
+    Pick<TrackerBlockProps, "disabledTooltip"> {
   data: TrackerBlockProps[]
   defaultBackgroundColor?: string
 }
 
-const Tracker = ({ data = [], className, ref, ...props }: TrackerProps) => {
+const Tracker = ({
+  data = [],
+  disabledTooltip = false,
+  className,
+  ref,
+  ...props
+}: TrackerProps) => {
   return (
     <div ref={ref} className={twMerge("group flex h-8 w-full items-center", className)} {...props}>
       {data.map((props, index) => (
-        <Block key={props.key ?? index} {...props} />
+        <Block disabledTooltip key={props.key ?? index} {...props} />
       ))}
     </div>
   )
