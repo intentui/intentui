@@ -1,9 +1,9 @@
 import { NavbarProvider } from "@/components/ui/navbar"
-w
+import AppNavbar from "../app-navbar"
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <NavbarProvider>
-      <AppNavbear />
+      <AppNavbar />
       {children}
     </NavbarProvider>
   )
