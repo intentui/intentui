@@ -155,3 +155,21 @@ We've completely rewritten the charts to use `recharts` v3. We're also introduci
 
 ### Pie Chart
 <How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-demo" />
+
+## Primitive
+We also now changes the `composeTailwindRenderProps` to accept `string[]`, so you might want to update it manually if you already have one.
+```
+"use client"
+
+import { composeRenderProps } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
+
+function composeTailwindRenderProps<T>(
+  className: string | ((v: T) => string) | undefined,
+  tailwind: string | string[],
+): string | ((v: T) => string) {
+  return composeRenderProps(className, (className) => twMerge(tailwind, className))
+}
+
+export { composeTailwindRenderProps }
+```
