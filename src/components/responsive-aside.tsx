@@ -134,7 +134,7 @@ export function ResponsiveAside({
         <Sheet.Header className="mb-4 flex flex-row justify-between py-2">
           <NavbarDropdown />
         </Sheet.Header>
-        <Sheet.Body className="px-2">
+        <Sheet.Body className="pr-0 pl-2">
           <LayoutGroup id={id}>
             <Aside />
           </LayoutGroup>
