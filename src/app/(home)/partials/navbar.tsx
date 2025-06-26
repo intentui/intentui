@@ -8,19 +8,19 @@ import { Menu } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
 import {
-  IconArrowUp, IconArrowUpFill,
+  IconArrowUpFill,
   IconArrowUpRight,
   IconBrandDiscord,
   IconBrandIntentui,
   IconBrandX,
-  IconColorPalette, IconColorPaletteFill,
-  IconColors, IconColorsFill,
+  IconColorPaletteFill,
+  IconColorsFill,
   IconHamburger,
   IconHome,
-  IconNotes, IconNotesFill,
-  IconPackage, IconPackageFill,
+  IconNotesFill,
+  IconPackageFill,
   IconSearch,
-  IconWindow, IconWindowFill,
+  IconWindowFill,
 } from "@intentui/icons"
 import { useState } from "react"
 import { Button } from "react-aria-components"

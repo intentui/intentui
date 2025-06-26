@@ -81,16 +81,16 @@ export function Examples() {
         />
       </PageContainer>
       <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto pb-6 *:shrink-0 *:snap-center **:data-[slot=card]:border-transparent **:data-[slot=card]:bg-transparent **:data-[slot=card]:shadow-none sm:pb-12 **:data-[slot=card]:[--card-spacing:--spacing(4)] sm:**:data-[slot=card]:[--card-spacing:--spacing(6)]">
-        <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/2">
+        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-secondary/50">
           <AreaChartDemo />
         </div>
-        <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/2">
+        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-secondary/50">
           <LineChartDemo />
         </div>
-        <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/2">
+        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-secondary/50">
           <BarChartDemo />
         </div>
-        <div className="w-full rounded-lg border bg-secondary/50 lg:w-1/3">
+        <div className="w-full rounded-lg border lg:w-1/3 dark:bg-secondary/50">
           <BarListDemo />
         </div>
       </PageContainer>

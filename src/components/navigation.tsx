@@ -12,7 +12,6 @@ import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   IconBrandAdobe,
   IconBrandDiscord,
-  IconBrandFigma,
   IconBrandGithub,
   IconBrandIntentui,
   IconBrandTailwindcss,
@@ -25,7 +24,6 @@ import {
   IconNotepad,
   IconSearch,
   IconWindowVisit,
-  IconWindowVisitFill,
 } from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { CommandPalette } from "./command-palette"
@@ -149,10 +147,10 @@ export function NavbarDropdown() {
           aria-label={siteConfig.name}
           intent="plain"
           size="sm"
-          className="-ml-1 group flex items-center *:data-[slot=icon]:size-6 sm:*:data-[slot=icon]:size-6 gap-x-2 pressed:bg-transparent p-2 font-medium hover:bg-transparent"
+          className="-ml-1 group flex items-center gap-x-2 pressed:bg-transparent p-2 font-medium hover:bg-transparent *:data-[slot=icon]:size-6 sm:*:data-[slot=icon]:size-6"
         >
           <IconBrandIntentui />
-            <span>Intent</span> <span className="text-muted-fg">UI</span>
+          <span>Intent</span> <span className="text-muted-fg">UI</span>
         </Button>
         <Menu.Content placement="bottom" className="sm:min-w-64">
           <Menu.Section title="Pages">

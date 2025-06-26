@@ -8,7 +8,8 @@ import {
   IconBrandIntentui,
   IconBrandX,
   IconHamburger,
-  IconHome, IconHomeFill, IconNotepad, IconNotepadFill,
+  IconHomeFill,
+  IconNotepadFill,
   IconSearch,
   IconSidebarFill,
 } from "@intentui/icons"
@@ -18,7 +19,7 @@ import React, { useEffect, useState } from "react"
 
 import { menus } from "@/app/(home)/partials/navbar"
 import { GithubLink } from "@/components/github-link"
-import { Button, buttonStyles } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
@@ -101,9 +102,7 @@ export function ResponsiveNavigation({
               ))}
               <Menu.Separator />
 
-              <Menu.Item
-                href='/blog'
-              >
+              <Menu.Item href="/blog">
                 <IconNotepadFill />
                 <Menu.Label>Blog</Menu.Label>
               </Menu.Item>
@@ -117,10 +116,7 @@ export function ResponsiveNavigation({
                 <Menu.Label>X</Menu.Label>
                 <IconArrowUpRight />
               </Menu.Item>
-              <Menu.Item
-                href={siteConfig.links.discord}
-                target="_blank"
-              >
+              <Menu.Item href={siteConfig.links.discord} target="_blank">
                 <IconBrandDiscord />
                 <Menu.Label>Discord</Menu.Label>
                 <IconArrowUpRight />
