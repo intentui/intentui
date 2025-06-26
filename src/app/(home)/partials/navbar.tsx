@@ -8,19 +8,19 @@ import { Menu } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
 import {
-  IconArrowUp,
+  IconArrowUp, IconArrowUpFill,
   IconArrowUpRight,
   IconBrandDiscord,
   IconBrandIntentui,
   IconBrandX,
-  IconColorPalette,
-  IconColors,
+  IconColorPalette, IconColorPaletteFill,
+  IconColors, IconColorsFill,
   IconHamburger,
   IconHome,
-  IconNotes,
-  IconPackage,
+  IconNotes, IconNotesFill,
+  IconPackage, IconPackageFill,
   IconSearch,
-  IconWindow,
+  IconWindow, IconWindowFill,
 } from "@intentui/icons"
 import { useState } from "react"
 import { Button } from "react-aria-components"
@@ -37,7 +37,7 @@ export function Navbar() {
             className="-ml-3 mr-2 flex items-center gap-x-2 p-2 font-medium"
             aria-label="Goto homepage"
           >
-            <IconBrandIntentui className="size-7 text-white" />
+            <IconBrandIntentui className="size-6 text-white" />
             <span className="hidden sm:inline">
               <span>Intent</span> <span className="text-muted-fg">UI</span>
             </span>
@@ -122,12 +122,12 @@ function NavLink({ ...props }: React.ComponentProps<typeof Link>) {
 }
 
 export const menus = [
-  { href: "/docs/getting-started/introduction", label: "Docs", icon: IconNotes },
-  { href: "/components", label: "Components", icon: IconPackage },
-  { href: "/themes", label: "Themes", icon: IconColors },
-  { href: "/icons", label: "Icons", icon: IconArrowUp },
-  { href: "/colors", label: "Colors", icon: IconColorPalette },
-  { href: "/blocks", label: "Blocks", icon: IconWindow },
+  { href: "/docs/getting-started/introduction", label: "Docs", icon: IconNotesFill },
+  { href: "/components", label: "Components", icon: IconPackageFill },
+  { href: "/themes", label: "Themes", icon: IconColorsFill },
+  { href: "/icons", label: "Icons", icon: IconArrowUpFill },
+  { href: "/colors", label: "Colors", icon: IconColorPaletteFill },
+  { href: "/blocks", label: "Blocks", icon: IconWindowFill },
   {
     href: "https://blocks.intentui.com",
     label: "Premium blocks",

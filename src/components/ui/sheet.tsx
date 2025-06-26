@@ -45,12 +45,12 @@ const generateCompoundVariants = (sides: Array<Sides>) => {
     isFloat: true,
     className:
       side === "top"
-        ? "top-2 inset-x-2 rounded-xl ring-1 border-b-0"
+        ? "top-2 inset-x-2 rounded-lg ring-1 border-b-0"
         : side === "bottom"
-          ? "bottom-2 inset-x-2 rounded-xl ring-1 border-t-0"
+          ? "bottom-2 inset-x-2 rounded-lg ring-1 border-t-0"
           : side === "left"
-            ? "left-2 inset-y-2 rounded-xl ring-1 border-r-0"
-            : "right-2 inset-y-2 rounded-xl ring-1 border-l-0",
+            ? "left-2 inset-y-2 rounded-lg ring-1 border-r-0"
+            : "right-2 inset-y-2 rounded-lg ring-1 border-l-0",
   }))
 }
 

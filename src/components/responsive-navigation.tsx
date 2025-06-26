@@ -8,7 +8,7 @@ import {
   IconBrandIntentui,
   IconBrandX,
   IconHamburger,
-  IconHome,
+  IconHome, IconHomeFill, IconNotepad, IconNotepadFill,
   IconSearch,
   IconSidebarFill,
 } from "@intentui/icons"
@@ -28,7 +28,7 @@ import { Aside } from "./aside"
 import { CommandPalette } from "./command-palette"
 import { NavbarDropdown } from "./navigation"
 import { ThemeSwitcher } from "./theme-switcher"
-export function ResponsiveAside({
+export function ResponsiveNavigation({
   openCmd,
   setOpenCmd,
 }: { openCmd: boolean; setOpenCmd: (open: boolean) => void }) {
@@ -83,9 +83,9 @@ export function ResponsiveAside({
             <Button aria-label="Search docs" intent="plain" size="sq-sm">
               <IconHamburger className="size-5" />
             </Button>
-            <Menu.Content placement="bottom" className="min-w-64 sm:min-w-56">
+            <Menu.Content placement="bottom" className="min-w-68 sm:min-w-56">
               <Menu.Item href="/">
-                <IconHome />
+                <IconHomeFill />
                 <Menu.Label>Home</Menu.Label>
               </Menu.Item>
               {menus.map((menu) => (
@@ -102,6 +102,13 @@ export function ResponsiveAside({
               <Menu.Separator />
 
               <Menu.Item
+                href='/blog'
+              >
+                <IconNotepadFill />
+                <Menu.Label>Blog</Menu.Label>
+              </Menu.Item>
+
+              <Menu.Item
                 aria-label="Open Intent X / Twitter"
                 href={siteConfig.links.twitter}
                 target="_blank"
@@ -111,7 +118,6 @@ export function ResponsiveAside({
                 <IconArrowUpRight />
               </Menu.Item>
               <Menu.Item
-                aria-label="Open Intent Discord"
                 href={siteConfig.links.discord}
                 target="_blank"
               >
@@ -141,18 +147,5 @@ export function ResponsiveAside({
         </Sheet.Body>
       </Sheet.Content>
     </>
-  )
-}
-
-function LinkIcon({ className, ...props }: React.ComponentProps<typeof Link>) {
-  return (
-    <Link
-      {...props}
-      className={buttonStyles({
-        intent: "plain",
-        size: "sq-sm",
-        isCircle: true,
-      })}
-    />
   )
 }

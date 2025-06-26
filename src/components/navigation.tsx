@@ -3,7 +3,7 @@ import { useState } from "react"
 
 import { GithubLink } from "@/components/github-link"
 import { PageContainer } from "@/components/page-container"
-import { ResponsiveAside } from "@/components/responsive-aside"
+import { ResponsiveNavigation } from "@/components/responsive-navigation"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
@@ -136,7 +136,7 @@ export function Navigation() {
           </PageContainer>
         </nav>
       </div>
-      {!isDesktop && <ResponsiveAside openCmd={open} setOpenCmd={setOpen} />}
+      {!isDesktop && <ResponsiveNavigation openCmd={open} setOpenCmd={setOpen} />}
     </>
   )
 }
@@ -149,12 +149,10 @@ export function NavbarDropdown() {
           aria-label={siteConfig.name}
           intent="plain"
           size="sm"
-          className="-ml-1 group flex items-center gap-x-2 pressed:bg-transparent p-2 font-medium hover:bg-transparent"
+          className="-ml-1 group flex items-center *:data-[slot=icon]:size-6 sm:*:data-[slot=icon]:size-6 gap-x-2 pressed:bg-transparent p-2 font-medium hover:bg-transparent"
         >
-          <IconBrandIntentui className="size-7 text-white" />
-          <span className="hidden sm:inline">
+          <IconBrandIntentui />
             <span>Intent</span> <span className="text-muted-fg">UI</span>
-          </span>
         </Button>
         <Menu.Content placement="bottom" className="sm:min-w-64">
           <Menu.Section title="Pages">
@@ -237,37 +235,3 @@ export function NavbarDropdown() {
     </div>
   )
 }
-
-const premium = [
-  {
-    id: 1,
-    label: "Premium Blocks",
-    href: "https://blocks.intentui.com",
-    icon: IconBrandIntentui,
-    description: "Pre-designed, ready-to-use React components for seamless integration.",
-  },
-  {
-    id: 4,
-    label: "Templates",
-    href: "https://blocks.intentui.com/templates",
-    icon: IconBrandIntentui,
-    description: "Pre-designed, ready-to-use React components for seamless integration.",
-  },
-  {
-    id: 2,
-    label: "Premium Starter Kit / Coming soon",
-    href: "#",
-    icon: IconWindowVisitFill,
-    description:
-      "Get started quickly with a complete React project setup, including authentication.",
-    badge: "Coming soon",
-  },
-  {
-    id: 3,
-    label: "Figma / Coming soon",
-    href: "#",
-    icon: IconBrandFigma,
-    description: "Enhance your Figma designs with Intent components.",
-    badge: "Coming soon",
-  },
-]
