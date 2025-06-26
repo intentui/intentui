@@ -7,7 +7,7 @@ export default function PopoverDemo() {
   return (
     <Popover>
       <Button intent="outline">What’s this?</Button>
-      <Popover.Content className="sm:max-w-72">
+      <Popover.Content>
         <Popover.Header>
           <Popover.Title>Invite link</Popover.Title>
           <Popover.Description>
