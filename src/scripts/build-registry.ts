@@ -170,7 +170,12 @@ const extractExternalDependencies = (content: string): string[] => {
         "embla-carousel-react",
       ].includes(importPath)
     ) {
-      dependencies.add(importPath === "motion/react" ? "motion" : importPath)
+      let dep = importPath === "motion/react" ? "motion" : importPath
+      if (dep.startsWith("recharts/")) {
+        dep = "recharts"
+      }
+
+      dependencies.add(dep)
     }
   }
   return Array.from(dependencies).sort()
