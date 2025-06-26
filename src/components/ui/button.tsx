@@ -33,7 +33,7 @@ const buttonStyles = tv({
     },
     size: {
       xs: [
-        "gap-x-1 px-2.5 py-1.5 text-sm sm:px-2 sm:py-1 sm:text-xs/4",
+        "gap-x-1 px-2.5 py-1.5 text-sm sm:px-2 sm:py-[--spacing(1.4)] sm:text-xs/4",
         "*:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
         "*:data-[slot=loader]:size-3.5 sm:*:data-[slot=loader]:size-3",
       ],
@@ -81,7 +81,7 @@ const buttonStyles = tv({
   compoundVariants: [
     {
       size: ["xs", "sq-xs"],
-      className: "rounded-sm *:data-[slot=icon]:size-3",
+      className: "rounded-md *:data-[slot=icon]:size-3",
     },
   ],
 })
