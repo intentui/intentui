@@ -118,7 +118,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
   )
 }
 
-function AsideHeader({ className, ...props }: React.ComponentProps<typeof Header>) {
+function AsideHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       className={twMerge(
