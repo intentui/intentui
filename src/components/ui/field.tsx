@@ -87,7 +87,7 @@ const FieldGroup = ({ className, ref, ...props }: FieldGroupProps) => {
           "has-[[data-slot=icon]:last-child]:[&_input]:pr-[calc(var(--gutter-inset)+1)]",
           "*:[button]:rounded-[calc(var(--radius-lg)-4px)] *:[button]:px-(--gutter-x) *:[button]:py-[calc(--spacing(1)-1px)]",
           "*:[button]:first:ml-0.5 *:[button]:last:mr-0.5",
-          "hover:inset-ring-current/20 focus-within:hover:inset-ring-ring/70 has-invalid:hover:inset-ring-danger/70",
+          "hover:inset-ring-[color-mix(in_oklab,var(--color-input)_50%,var(--color-muted-fg)_25%)] focus-within:hover:inset-ring-ring/70 has-invalid:hover:inset-ring-danger/70",
           "invalid:inset-ring-danger/70 focus-within:invalid:inset-ring-danger/70 focus-within:invalid:ring-danger/20 group-invalid:inset-ring-danger/70 group-invalid:focus-within:inset-ring-danger/70 group-invalid:focus-within:ring-danger/20",
           "focus-within:inset-ring-ring/70 focus-within:ring-3 focus-within:ring-ring/20",
           className,

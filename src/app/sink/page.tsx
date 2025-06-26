@@ -1,32 +1,20 @@
 "use client"
-
-import { UserMenu } from "@/app/pre-blocks/navbar/user-menu"
-import { Button } from "@/components/ui/button"
-import {
-  Navbar,
-  NavbarMobile,
-  NavbarProvider,
-  NavbarSeparator,
-  NavbarSpacer,
-  NavbarTrigger,
-} from "@/components/ui/navbar"
-import { IconSearch } from "@intentui/icons"
+import ColorFieldDemo from "@/components/docs/colors/color-field/color-field-demo"
+import DateFieldDemo from "@/components/docs/date-and-time/date-field/date-field-demo"
+import TextFieldDemo from "@/components/docs/forms/text-field/text-field-demo"
+import ComboBoxDemo from "@/components/docs/pickers/combo-box/combo-box-demo"
+import MultipleSelectDemo from "@/components/docs/pickers/multiple-select/multiple-select-demo"
+import SelectDemo from "@/components/docs/pickers/select/select-demo"
 
 export default function Sink() {
   return (
-    <div>
-      <NavbarProvider>
-        <Navbar>{/* your desktop items */}</Navbar>
-        <NavbarMobile>
-          <NavbarTrigger />
-          <NavbarSpacer />
-          <Button intent="plain" size="sq-sm" aria-label="Search for products">
-            <IconSearch />
-          </Button>
-          <NavbarSeparator className="mr-2.5" />
-          <UserMenu />
-        </NavbarMobile>
-      </NavbarProvider>
+    <div className="flex items-end gap-x-2 p-10">
+      <SelectDemo />
+      <ColorFieldDemo />
+      <DateFieldDemo />
+      <MultipleSelectDemo />
+      <TextFieldDemo />
+      <ComboBoxDemo />
     </div>
   )
 }

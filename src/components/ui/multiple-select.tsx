@@ -137,7 +137,11 @@ const MultipleSelect = <T extends object>({
                 }))}
               >
                 {(item: { id: Key; textValue: Key }) => (
-                  <Tag isDisabled={isDisabled} textValue={item.textValue as string}>
+                  <Tag
+                    className="rounded-[calc(var(--radius-sm)-1px)] bg-secondary/50 text-secondary-fg"
+                    isDisabled={isDisabled}
+                    textValue={item.textValue as string}
+                  >
                     {item.textValue as string}
                   </Tag>
                 )}
