@@ -23,7 +23,7 @@ export default function PieChartAudienceSegmentDemo() {
 
   return (
     <Card>
-      <Card.Header>
+      <Card.Header className="text-center">
         <Card.Title>Audience insights</Card.Title>
         <Card.Description>Engagement metrics by type</Card.Description>
         <Card.Action>

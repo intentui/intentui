@@ -19,7 +19,7 @@ export default function PieChartDonutCustomLabelDemo() {
 
   return (
     <Card>
-      <Card.Header>
+      <Card.Header className="text-center">
         <Card.Title>Monthly spend breakdown</Card.Title>
         <Card.Description>Shows where the money goes each month.</Card.Description>
       </Card.Header>

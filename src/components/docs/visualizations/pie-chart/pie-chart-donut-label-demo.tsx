@@ -17,7 +17,7 @@ export default function PieChartDonutLabelDeviceDemo() {
 
   return (
     <Card>
-      <Card.Header>
+      <Card.Header className="text-center">
         <Card.Title>Device usage</Card.Title>
         <Card.Description>Breakdown of users by device type.</Card.Description>
       </Card.Header>
