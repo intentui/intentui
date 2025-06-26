@@ -5,13 +5,8 @@ import type { Component } from "@/types/search"
 import { IconBookOpen, IconCircleHalf, IconHighlight, IconPackage } from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
-import {
-  Header,
-  ListBox,
-  ListBoxItem,
-  type ListBoxItemProps,
-  ListBoxSection,
-} from "react-aria-components"
+import { Link } from "react-aria-components"
+import type { LinkProps } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 
 type SidebarItem = {
@@ -33,11 +28,11 @@ const sortedGsChildren =
 export function Aside() {
   return (
     <div className="-ml-0.5 sticky h-screen w-full overflow-y-auto overflow-x-hidden pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-16 xl:w-60 ">
-      <ListBox
+      <div
         className="flex flex-col gap-y-(--gap) pr-4 pb-10 pl-(--gap) [--gap:--spacing(6)]"
         aria-label="Documentation sidebar"
       >
-        <ListBoxSection>
+        <div>
           <AsideHeader>
             {" "}
             <IconHighlight /> {prologue?.section}
@@ -47,8 +42,8 @@ export function Aside() {
               {item.title}
             </AsideLink>
           ))}
-        </ListBoxSection>
-        <ListBoxSection>
+        </div>
+        <div>
           <AsideHeader>
             <IconBookOpen /> {gs?.section}
           </AsideHeader>
@@ -57,8 +52,8 @@ export function Aside() {
               {item.title}
             </AsideLink>
           ))}
-        </ListBoxSection>
-        <ListBoxSection>
+        </div>
+        <div>
           <AsideHeader>
             <IconCircleHalf /> {dm?.section}
           </AsideHeader>
@@ -67,46 +62,47 @@ export function Aside() {
               {item.title}
             </AsideLink>
           ))}
-        </ListBoxSection>
-        <ListBoxSection className="flex flex-col gap-y-(--gap)">
+        </div>
+        <div className="flex flex-col gap-y-(--gap)">
           <AsideHeader className="-mb-4">
             <IconPackage /> {components?.section}
           </AsideHeader>
           {components?.children?.map((item) => (
-            <ListBoxSection key={item.subsection}>
+            <div key={item.subsection}>
               <AsideHeader>{item?.subsection}</AsideHeader>
               {item?.children?.map((item) => (
                 <AsideLink key={item.slug} href={item.slug}>
                   {item.title}
                 </AsideLink>
               ))}
-            </ListBoxSection>
+            </div>
           ))}
-        </ListBoxSection>
-      </ListBox>
+        </div>
+      </div>
     </div>
   )
 }
 
-interface AsideLinkProps extends ListBoxItemProps {
+interface AsideLinkProps extends LinkProps {
   isActive?: boolean
+  href: string
 }
 
 function AsideLink({ href, ...props }: AsideLinkProps) {
-  const path = usePathname()
-  const isActive = path === href
+  const pathname = usePathname()
+  const isActive = pathname === href
   const ref = useRef<HTMLAnchorElement>(null)
-
   useEffect(() => {
     if (isActive && ref.current) {
       ref.current.scrollIntoView({ behavior: "instant", block: "center" })
     }
   }, [isActive])
+
   return (
-    <ListBoxItem
+    <Link
       {...props}
       href={href}
-      ref={ref as any}
+      ref={ref}
       className={twMerge(
         "-ml-3 mb-0.5 flex items-center justify-between rounded-lg px-3 py-1.5 text-base text-muted-fg sm:text-sm",
         "focus:outline-hidden",
@@ -124,7 +120,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
 
 function AsideHeader({ className, ...props }: React.ComponentProps<typeof Header>) {
   return (
-    <Header
+    <div
       className={twMerge(
         [
           "relative block font-medium text-xs/6",

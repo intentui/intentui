@@ -1,7 +1,13 @@
 "use client"
 
 import { Checkbox } from "@/components/ui/checkbox"
+import { Description, Label } from "@/components/ui/field"
 
 export default function CheckboxDescriptionDemo() {
-  return <Checkbox label="Postal Mail" description="Receive notifications via postal mail" />
+  return (
+    <Checkbox>
+      <Label>Postal mail</Label>
+      <Description>Receive notifications via postal mail</Description>
+    </Checkbox>
+  )
 }
