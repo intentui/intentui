@@ -140,7 +140,7 @@ const MenuItem = ({ className, isDanger = false, children, ...props }: MenuItemP
                 </span>
               )}
               {values.selectionMode === "multiple" && (
-                <IconCheck className="-mx-0.5 mr-2 size-4" data-slot="checked-icon" />
+                <IconCheck className="-mx-0.5 mr-2 size-4" data-slot="check-indicator" />
               )}
             </>
           )}
