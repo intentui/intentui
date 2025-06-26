@@ -211,7 +211,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
                     key={label}
                     label={label}
                     value={value}
-                    textValue={`${colorName} ${shade} ${value}`}
+                    textValue={`${colorName} ${shade} ${value}` || `${colorName}-${shade}`}
                   />
                 )
               })}
