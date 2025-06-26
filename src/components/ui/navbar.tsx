@@ -106,12 +106,7 @@ const Navbar = ({
       <>
         <span className="sr-only" aria-hidden data-navbar={intent} data-navbar-sticky={isSticky} />
         <Sheet isOpen={open} onOpenChange={setOpen} {...props}>
-          <Sheet.Content
-            side={side}
-            aria-label="Mobile Navbar"
-            className="text-fg [&>button]:hidden"
-            isFloat={intent === "float"}
-          >
+          <Sheet.Content side={side} aria-label="Mobile Navbar" className="[&>button]:hidden">
             <Sheet.Body className="p-[calc(var(--gutter)---spacing(2))]">{children}</Sheet.Body>
           </Sheet.Content>
         </Sheet>
@@ -182,7 +177,7 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
         "group/sidebar-item hover:bg-secondary",
         "aria-[current=page]:text-fg aria-[current=page]*:data-[slot=icon]:text-fg",
         "col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid md:supports-[grid-template-columns:subgrid]:grid-cols-none",
-        "relative min-w-0 items-center gap-x-3 rounded-lg px-2.5 py-2 text-left font-medium text-base/6 sm:text-sm/5 md:gap-x-2.5",
+        "relative min-w-0 items-center gap-x-3 rounded-lg p-2 text-left font-medium text-base/6 sm:text-sm/5 md:gap-x-2.5",
         "*:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-fg sm:*:data-[slot=icon]:size-4",
         "*:data-[slot=loader]:size-5 *:data-[slot=loader]:shrink-0 sm:*:data-[slot=loader]:size-4",
         "*:not-nth-2:last:data-[slot=icon]:row-start-1 *:not-nth-2:last:data-[slot=icon]:ml-auto *:not-nth-2:last:data-[slot=icon]:size-5 sm:*:not-nth-2:last:data-[slot=icon]:size-4",
@@ -197,12 +192,13 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
         <>
           {typeof props.children === "function" ? props.children(values) : props.children}
 
-          {(isCurrent || values.isCurrent) && !isMobile && (
+          {(isCurrent || values.isCurrent) && (
             <span
               data-navbar="current-indicator"
               className={twJoin(
-                "-bottom-[--spacing(2.9)] absolute inset-x-2 h-0.5 rounded-full bg-fg",
-                "group-data-[navbar=inset]/navbar-intent:-bottom-2.5",
+                "absolute rounded-full bg-fg [--gutter:--spacing(0.5)]",
+                "-left-4 inset-y-2 w-(--gutter)",
+                "sm:-bottom-[--spacing(3.4)] sm:group-data-[navbar=inset]/navbar-intent:-bottom-[--spacing(3.1)] sm:inset-x-2 sm:h-(--gutter)",
               )}
             />
           )}

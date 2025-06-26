@@ -188,11 +188,10 @@ const Sidebar = ({
             closeButton={closeButton}
             aria-label="Sidebar"
             data-sidebar-intent="default"
-            className="min-w-[22rem] max-w-min [&>button]:hidden"
-            isFloat={intent === "float"}
+            className="[&>button]:hidden"
             side={side}
           >
-            <Sheet.Body className="px-0 sm:px-0">{children}</Sheet.Body>
+            <Sheet.Body className="p-[calc(var(--gutter)---spacing(4))]">{children}</Sheet.Body>
           </Sheet.Content>
         </Sheet>
       </>
@@ -402,7 +401,7 @@ const SidebarItem = ({
             "**:data-[slot=avatar]:-m-0.5 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-6 sm:**:data-[slot=avatar]:size-6",
             isCollapsed
               ? "flex not-has-data-[slot=icon]:hidden size-9 justify-center **:data-[slot=menu-trigger]:hidden **:data-[slot=icon]:size-4"
-              : "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] gap-3 px-2 py-2.5 **:last:data-[slot=icon]:ml-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:gap-2.5 sm:py-2 sm:text-sm/5",
+              : "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] gap-3 p-2 **:last:data-[slot=icon]:ml-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:gap-2.5 sm:py-2 sm:text-sm/5",
             isCurrent &&
               "bg-secondary text-fg hover:bg-secondary/90 hover:text-fg **:data-[slot=menu-trigger]:from-secondary **:data-[slot=icon]:text-fg [&_.text-muted-fg]:text-fg/80",
             isFocusVisible && "inset-ring inset-ring-ring outline-hidden ring-2 ring-ring/20",
@@ -549,7 +548,7 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
               "**:data-[slot=avatar]:-m-0.5 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:size-5",
               collapsed
                 ? "size-9 justify-center"
-                : "col-span-full gap-3 px-2 py-2.5 **:data-[slot=chevron]:text-muted-fg **:last:data-[slot=icon]:ml-auto sm:gap-2.5 sm:py-2 sm:text-sm/5",
+                : "col-span-full gap-3 p-2 **:data-[slot=chevron]:text-muted-fg **:last:data-[slot=icon]:ml-auto sm:gap-2.5 sm:py-2 sm:text-sm/5",
               isFocusVisible && "inset-ring inset-ring-ring/70",
               (isPressed || isHovered) &&
                 "bg-secondary text-sidebar-fg **:data-[slot=chevron]:text-fg",
@@ -684,7 +683,7 @@ const SidebarNav = ({ isSticky = false, className, ...props }: SidebarNavProps) 
     <nav
       data-slot="sidebar-nav"
       className={twMerge(
-        "isolate flex h-[3.2rem] items-center justify-between gap-x-2 px-4 text-navbar-fg sm:justify-start md:w-full",
+        "isolate flex items-center justify-between gap-x-2 px-4 py-2.5 text-navbar-fg sm:justify-start md:w-full",
         isSticky && "static top-0 z-40 group-has-data-[sidebar-intent=default]/sidebar-root:sticky",
         className,
       )}

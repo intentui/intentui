@@ -17,7 +17,7 @@ export function UserMenu() {
       <Menu.Trigger aria-label="Open Menu">
         <Avatar
           alt="cobain"
-          size="sm"
+          size="md"
           isSquare
           src="https://intentui.com/images/avatar/cobain.jpg"
         />
