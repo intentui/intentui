@@ -32,7 +32,7 @@ const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
             data-slot="indicator"
             className={twMerge(
               "relative isolate inline-flex h-6 w-10 cursor-default rounded-full p-[3px] sm:h-5 sm:w-8",
-              "transition duration-0 ease-in-out data-changing:duration-200",
+              "transition duration-200 ease-in-out",
               "inset-ring inset-ring-fg/5 bg-secondary dark:inset-ring-fg/15",
               "forced-colors:outline forced-colors:[--switch-bg:Highlight]",
               values.isHovered && "inset-ring-fg/15 dark:inset-ring-fg/25",
