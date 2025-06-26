@@ -17,7 +17,7 @@ export default function PieChartTrafficSourceDemo() {
 
   return (
     <Card>
-      <Card.Header>
+      <Card.Header className="text-center">
         <Card.Title>Traffic source breakdown</Card.Title>
         <Card.Description>Where your website traffic is coming from.</Card.Description>
       </Card.Header>
