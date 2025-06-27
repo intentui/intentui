@@ -11,7 +11,7 @@ export default function MenuWithArrowDemo() {
         <Menu.Trigger aria-label="Open Menu">
           <Avatar src="https://intentui.com/images/avatar/cobain.jpg" />
         </Menu.Trigger>
-        <Menu.Content popover={{ showArrow: true, placement: "top" }} className="sm:min-w-54">
+        <Menu.Content popover={{ showArrow: true, placement: "top" }} className="min-w-54">
           <Menu.Section>
             <Menu.Header separator>
               <span className="block">Irsyad A. Panjaitan</span>

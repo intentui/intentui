@@ -2,7 +2,6 @@
 
 import { DropdownItem, DropdownLabel, DropdownSection } from "@/components/ui/dropdown"
 import { Description, FieldGroup, type FieldProps, Input, Label } from "@/components/ui/field"
-import { ListBox } from "@/components/ui/list-box"
 import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
@@ -16,9 +15,9 @@ import {
   useState,
 } from "react"
 
+import { PopoverContent } from "@/components/ui/popover"
 import type { ComboBoxProps, GroupProps, Key, ListBoxProps, Selection } from "react-aria-components"
-import { Button, ComboBox, Group, Popover } from "react-aria-components"
-import { twJoin } from "tailwind-merge"
+import { Button, ComboBox, Group, ListBox } from "react-aria-components"
 
 interface MultipleSelectProps<T>
   extends Omit<ListBoxProps<T>, "renderEmptyState">,
@@ -181,22 +180,15 @@ const MultipleSelect = <T extends object>({
                   />
                 </Button>
               </div>
-              <Popover
+              <PopoverContent
+                className="min-w-(--trigger-width) scroll-py-1 overflow-y-scroll overscroll-contain"
                 triggerRef={triggerRef}
-                className={twJoin(
-                  "min-w-(--trigger-width) max-w-xs rounded-xl border bg-overlay bg-clip-padding text-overlay-fg shadow-xs transition-transform sm:max-w-3xl sm:text-sm dark:backdrop-saturate-200",
-                  "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
-                  "placement-left:entering:slide-in-from-right-1 placement-right:entering:slide-in-from-left-1 placement-top:entering:slide-in-from-bottom-1 placement-bottom:entering:slide-in-from-top-1",
-                  "placement-left:exiting:slide-out-to-right-1 placement-right:exiting:slide-out-to-left-1 placement-top:exiting:slide-out-to-bottom-1 placement-bottom:exiting:slide-out-to-top-1",
-                  "forced-colors:bg-[Canvas]",
-                )}
-                style={{
-                  minWidth: triggerRef.current?.offsetWidth,
-                  width: triggerRef.current?.offsetWidth,
-                }}
               >
                 <ListBox
-                  className="max-h-[inherit] min-w-[inherit] border-0 shadow-0"
+                  className={composeTailwindRenderProps(
+                    className,
+                    "grid max-h-96 w-full grid-cols-[auto_1fr] flex-col gap-y-1 p-1 outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
+                  )}
                   renderEmptyState={() =>
                     renderEmptyState ? (
                       renderEmptyState(inputValue)
@@ -226,7 +218,7 @@ const MultipleSelect = <T extends object>({
                     </MultipleSelect.Item>
                   )) ?? children}
                 </ListBox>
-              </Popover>
+              </PopoverContent>
             </ComboBox>
           </FieldGroup>
           {props.description && <Description>{props.description}</Description>}

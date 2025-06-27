@@ -43,7 +43,7 @@ export default function SingleMenuDemo() {
         selectedKeys={selected}
         onSelectionChange={setSelected}
         items={placements}
-        className="max-h-72 min-w-52"
+        className="min-w-52"
       >
         {(item) => (
           <Menu.Item id={item.name}>

@@ -8,7 +8,7 @@ export default function ContextMenuSeparatorDemo() {
       <ContextMenu.Trigger className="grid h-28 place-content-center rounded-lg border-2 border-dashed sm:min-w-60">
         Right click me
       </ContextMenu.Trigger>
-      <ContextMenu.Content className="sm:min-w-60">
+      <ContextMenu.Content className="min-w-60">
         <ContextMenu.Item>Go to Definition</ContextMenu.Item>
         <ContextMenu.Item>Go to Type Definition</ContextMenu.Item>
         <ContextMenu.Item>Go to Source Definition</ContextMenu.Item>

@@ -8,7 +8,7 @@ export default function ContextMenuDemo() {
       <ContextMenu.Trigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
         Right click me
       </ContextMenu.Trigger>
-      <ContextMenu.Content className="sm:min-w-56">
+      <ContextMenu.Content className="min-w-56">
         <ContextMenu.Item>Back</ContextMenu.Item>
         <ContextMenu.Item isDisabled>Forward</ContextMenu.Item>
         <ContextMenu.Item>Reload</ContextMenu.Item>
