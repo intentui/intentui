@@ -5,7 +5,7 @@ import AppSidebar from "./app-sidebar"
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       <AppSidebar collapsible="dock" />
       <SidebarInset>
         <AppSidebarNav />

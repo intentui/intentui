@@ -13,7 +13,7 @@ The sidebar is a versatile component designed to organize your site's content an
   src='/pre-blocks/sidebar/sidebar-01'
   source={{
     preview: 'pre-blocks/sidebar/sidebar-01/page',
-    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-01/app-sidebar',
+    'app-sidebar.tsx': 'pre-blocks/sidebar/app-sidebar',
     'app-sidebar-nav.tsx': 'pre-blocks/sidebar/app-sidebar-nav',
     'page.tsx': 'pre-blocks/sidebar/sidebar-01/page',
   }} />
@@ -295,12 +295,22 @@ You can put anything you want in it. You can use the `SidebarContent` component 
     'layout.tsx': 'pre-blocks/sidebar/sidebar-17/layout',
   }} />
 
-## Shortcut
-By default, you can collapse the sidebar by clicking or pressing the `⌘b` shortcut. To customize the shortcut, pass the desired key combination via the `shortcut` prop.
+## Remember state
+To persist the sidebar’s state across sessions, wrap your layout with the SidebarProvider component. It stores the sidebar’s state in a cookie and restores it when the user revisits the page.
 ```
-<Sidebar shortcut="1" />
+import { cookies } from "next/headers"
+
+export default async function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const cookieStore = await cookies()
+  const sidebarState = cookieStore.get("sidebar_state")
+
+  let defaultOpen = true
+  if (sidebarState) {
+    defaultOpen = sidebarState.value === "true"
+  }
+  return (
+    <SidebarProvider defaultOpen={defaultOpen}>
 ```
-The preview can be seen in the <NewTab href='/pre-blocks/sidebar/sidebar-10'>Sidebar Shortcut</NewTab> page.
 
 ## Props
 The sidebar supports the following props:

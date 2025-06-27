@@ -68,7 +68,7 @@ const ModalContent = ({
           "flex items-end justify-end bg-fg/15 text-center sm:block dark:bg-bg/40",
           "[--visual-viewport-vertical-padding:16px] sm:[--visual-viewport-vertical-padding:32px]",
           isBlurred &&
-            "bg-bg supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
+            "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
           isEntering && "fade-in animate-in duration-200 ease-out",
           isExiting && "fade-out animate-out ease-in",
           className,

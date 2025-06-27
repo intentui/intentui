@@ -1,5 +1,6 @@
 "use client"
 
+import { Dialog } from "@/components/ui/dialog"
 import { ListBox } from "@/components/ui/list-box"
 import { SearchField } from "@/components/ui/search-field"
 import { Select } from "@/components/ui/select"
@@ -22,18 +23,20 @@ export default function SelectSearchableDemo() {
   return (
     <Select label="Select a language">
       <Select.Trigger />
-      <Popover className="entering:fade-in exiting:fade-out flex max-h-80 w-(--trigger-width) entering:animate-in exiting:animate-out flex-col rounded-lg border bg-overlay">
-        <Autocomplete filter={contains}>
-          <div className="border-b bg-muted p-2">
-            <SearchField className="rounded-lg bg-bg" autoFocus />
-          </div>
-          <ListBox
-            className="max-h-[inherit] min-w-[inherit] border-0 shadow-none"
-            items={languages}
-          >
-            {(item) => <Select.Option>{item.name}</Select.Option>}
-          </ListBox>
-        </Autocomplete>
+      <Popover className="entering:fade-in exiting:fade-out flex max-h-80 w-(--trigger-width) entering:animate-in exiting:animate-out flex-col overflow-hidden rounded-lg border bg-overlay">
+        <Dialog aria-label="Language">
+          <Autocomplete filter={contains}>
+            <div className="border-b bg-muted p-2">
+              <SearchField className="rounded-lg bg-bg" autoFocus />
+            </div>
+            <ListBox
+              className="max-h-[inherit] min-w-[inherit] border-0 shadow-none"
+              items={languages}
+            >
+              {(item) => <Select.Option>{item.name}</Select.Option>}
+            </ListBox>
+          </Autocomplete>
+        </Dialog>
       </Popover>
     </Select>
   )

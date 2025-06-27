@@ -12,13 +12,13 @@ import {
   SidebarLabel,
   SidebarSection,
   SidebarSectionGroup,
+  useSidebar,
 } from "@/components/ui/sidebar"
 import {
   IconBrandApple,
   IconCart,
   IconChartBar,
-  IconChevronLgDown,
-  IconCommandRegular,
+  IconChevronsY,
   IconCube,
   IconDashboard,
   IconGear,
@@ -28,8 +28,10 @@ import {
   IconSettings,
   IconShield,
 } from "@intentui/icons"
+import { twMerge } from "tailwind-merge"
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
+  const { state } = useSidebar()
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -63,15 +65,18 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 
       <SidebarFooter>
         <Menu>
-          <Menu.Trigger aria-label="Profile" data-slot="menu-trigger">
+          <Menu.Trigger className="group" aria-label="Profile">
             <Avatar isSquare src="https://intentui.com/images/avatar/cobain.jpg" />
-            <div className="text-sm group-data-[collapsible=dock]:hidden">
-              Kurt Cobain
+            <div className="in-data-[sidebar-collapsible=dock]:hidden text-sm">
+              <SidebarLabel>Kurt Cobain</SidebarLabel>
               <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>
             </div>
-            <IconChevronLgDown className="absolute right-3 size-4 transition-transform group-pressed:rotate-180" />
+            <IconChevronsY data-slot="chevron" className="right-3" />
           </Menu.Trigger>
-          <Menu.Content placement="bottom right" className="sm:min-w-(--trigger-width)">
+          <Menu.Content
+            placement="bottom right"
+            className={twMerge(state === "expanded" ? "sm:min-w-(--trigger-width)" : "sm:min-w-60")}
+          >
             <Menu.Section>
               <Menu.Header separator>
                 <span className="block">Kurt Cobain</span>
@@ -92,10 +97,6 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               Security
             </Menu.Item>
             <Menu.Separator />
-            <Menu.Item>
-              <IconCommandRegular />
-              Command Menu
-            </Menu.Item>
 
             <Menu.Item href="#contact">
               <IconHeadphones />

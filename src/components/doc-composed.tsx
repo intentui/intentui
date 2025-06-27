@@ -34,6 +34,7 @@ export function DocComposed({
       <Choicebox gap={2} columns={2} selectionMode="single" aria-label="Composed Components">
         {filteredComponents.map((item) => (
           <Choicebox.Item
+            textValue={item.title}
             className="**:[[slot=description]]:line-clamp-2"
             key={item._file?.path}
             href={`/docs/${item._file?.path.replace(".mdx", "")}`}
