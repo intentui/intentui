@@ -18,7 +18,7 @@ const GridList = <T extends object>({ children, className, ...props }: GridListP
   <GridListPrimitive
     className={composeTailwindRenderProps(
       className,
-      "relative max-h-96 scroll-py-1 overflow-y-scroll overscroll-contain rounded-lg border *:data-drop-target:border *:data-drop-target:border-accent",
+      "relative max-h-96 scroll-py-1 overflow-y-auto overscroll-contain rounded-lg border *:data-drop-target:border *:data-drop-target:border-accent",
     )}
     {...props}
   >
