@@ -17,7 +17,7 @@ export default function ContextMenuWithIconDemo() {
       <ContextMenu.Trigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
         Right click me
       </ContextMenu.Trigger>
-      <ContextMenu.Content className="sm:min-w-52">
+      <ContextMenu.Content className="min-w-52">
         <ContextMenu.Item>
           <IconFolder />
           <ContextMenu.Label>Open Folder</ContextMenu.Label>
