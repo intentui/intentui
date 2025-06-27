@@ -18,7 +18,7 @@ export default function PopoverCustomClose() {
             <Popover.Title>Login</Popover.Title>
             <Popover.Description>Enter your credentials to sign in.</Popover.Description>
           </Popover.Header>
-          <Form onSubmit={() => {}}>
+          <Form onSubmit={() => {}} className="overflow-auto">
             <Popover.Body>
               <div className="space-y-4">
                 <TextField

@@ -10,7 +10,7 @@ export default function PopoverArrowDemo() {
       <Button intent="outline" size="sq-sm">
         <IconBell />
       </Button>
-      <Popover.Content showArrow={false} className="p-4 sm:min-w-72">
+      <Popover.Content showArrow className="p-4 sm:min-w-72">
         You have 3 new notifications.
       </Popover.Content>
     </Popover>

@@ -63,7 +63,10 @@ const SelectList = <T extends object>({
 }: SelectListProps<T>) => {
   return (
     <PopoverContent
-      className={composeTailwindRenderProps(popover?.className, "min-w-(--trigger-width)")}
+      className={composeTailwindRenderProps(
+        popover?.className,
+        "max-h-96 min-w-(--trigger-width) scroll-py-1 overflow-y-scroll overscroll-contain",
+      )}
       {...popover}
     >
       <ListBox
@@ -71,7 +74,7 @@ const SelectList = <T extends object>({
         orientation="vertical"
         className={composeTailwindRenderProps(
           className,
-          "grid max-h-96 w-full scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-scroll overscroll-contain p-1 outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
+          "grid w-full grid-cols-[auto_1fr] flex-col gap-y-1 p-1 outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
         )}
         items={items}
         {...props}

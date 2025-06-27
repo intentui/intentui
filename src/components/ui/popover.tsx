@@ -1,16 +1,5 @@
 "use client"
 
-import type {
-  DialogTriggerProps,
-  PopoverProps as PopoverPrimitiveProps,
-} from "react-aria-components"
-import {
-  DialogTrigger as DialogTriggerPrimitive,
-  OverlayArrow,
-  Popover as PopoverPrimitive,
-} from "react-aria-components"
-
-import type { DialogBodyProps, DialogFooterProps, DialogHeaderProps } from "@/components/ui/dialog"
 import {
   DialogBody,
   DialogClose,
@@ -21,7 +10,15 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twJoin, twMerge } from "tailwind-merge"
+import type {
+  DialogTriggerProps,
+  PopoverProps as PopoverPrimitiveProps,
+} from "react-aria-components"
+import {
+  DialogTrigger as DialogTriggerPrimitive,
+  OverlayArrow,
+  Popover as PopoverPrimitive,
+} from "react-aria-components"
 
 type PopoverProps = DialogTriggerProps
 const Popover = (props: PopoverProps) => {
@@ -29,18 +26,9 @@ const Popover = (props: PopoverProps) => {
 }
 
 const PopoverTitle = DialogTitle
-
-const PopoverHeader = ({ className, ...props }: DialogHeaderProps) => (
-  <DialogHeader className={twMerge("sm:p-4", className)} {...props} />
-)
-
-const PopoverFooter = ({ className, ...props }: DialogFooterProps) => (
-  <DialogFooter className={twMerge("sm:p-4", className)} {...props} />
-)
-
-const PopoverBody = ({ className, ref, ...props }: DialogBodyProps) => (
-  <DialogBody ref={ref} className={twMerge("sm:px-4 sm:pt-0", className)} {...props} />
-)
+const PopoverHeader = DialogHeader
+const PopoverBody = DialogBody
+const PopoverFooter = DialogFooter
 
 interface PopoverContentProps extends PopoverPrimitiveProps {
   showArrow?: boolean
@@ -59,16 +47,13 @@ const PopoverContent = ({
     <PopoverPrimitive
       ref={ref}
       offset={offset}
-      className={composeTailwindRenderProps(
-        className,
-        twJoin([
-          "group/popover max-h-[90dvh] min-w-(--trigger-width) max-w-xs overflow-y-auto rounded-xl border bg-overlay bg-clip-padding text-overlay-fg shadow-xs outline-hidden transition-transform [--gutter:--spacing(6)] sm:text-sm dark:backdrop-saturate-200",
-          "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
-          "placement-left:entering:slide-in-from-right-1 placement-right:entering:slide-in-from-left-1 placement-top:entering:slide-in-from-bottom-1 placement-bottom:entering:slide-in-from-top-1",
-          "placement-left:exiting:slide-out-to-right-1 placement-right:exiting:slide-out-to-left-1 placement-top:exiting:slide-out-to-bottom-1 placement-bottom:exiting:slide-out-to-top-1",
-          "forced-colors:bg-[Canvas]",
-        ]),
-      )}
+      className={composeTailwindRenderProps(className, [
+        "group/popover min-w-(--trigger-width) max-w-xs rounded-xl border bg-overlay bg-clip-padding text-overlay-fg shadow-xs outline-hidden transition-transform [--gutter:--spacing(6)] sm:text-sm dark:backdrop-saturate-200 **:[[role=dialog]]:[--gutter:--spacing(4)]",
+        "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
+        "placement-left:entering:slide-in-from-right-1 placement-right:entering:slide-in-from-left-1 placement-top:entering:slide-in-from-bottom-1 placement-bottom:entering:slide-in-from-top-1",
+        "placement-left:exiting:slide-out-to-right-1 placement-right:exiting:slide-out-to-left-1 placement-top:exiting:slide-out-to-bottom-1 placement-bottom:exiting:slide-out-to-top-1",
+        "forced-colors:bg-[Canvas]",
+      ])}
       {...props}
     >
       {(values) => (
