@@ -181,7 +181,7 @@ const MultipleSelect = <T extends object>({
                 </Button>
               </div>
               <PopoverContent
-                className="min-w-(--trigger-width) scroll-py-1 overflow-y-scroll overscroll-contain"
+                className="min-w-(--trigger-width) scroll-py-1 overflow-y-auto overscroll-contain"
                 triggerRef={triggerRef}
               >
                 <ListBox

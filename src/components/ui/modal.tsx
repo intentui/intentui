@@ -74,10 +74,9 @@ const ModalContent = ({
           className,
         ]),
       )}
-      {...overlay}
+      {...props}
     >
       <ModalPrimitive
-        isDismissable={isDismissable}
         className={composeRenderProps(className, (className, { isEntering, isExiting }) =>
           twMerge([
             "max-h-full w-full rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring-1 ring-fg/5",
@@ -91,7 +90,6 @@ const ModalContent = ({
             className,
           ]),
         )}
-        {...props}
       >
         <Dialog role={role}>
           {(values) => (

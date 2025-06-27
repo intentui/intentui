@@ -65,7 +65,7 @@ const SelectList = <T extends object>({
     <PopoverContent
       className={composeTailwindRenderProps(
         popover?.className,
-        "min-w-(--trigger-width) scroll-py-1 overflow-y-scroll overscroll-contain",
+        "min-w-(--trigger-width) scroll-py-1 overflow-y-auto overscroll-contain",
       )}
       {...popover}
     >
