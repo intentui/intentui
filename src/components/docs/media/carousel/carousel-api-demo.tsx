@@ -37,7 +37,7 @@ export default function CarouselDApiDemo() {
         {Array.from({ length: 10 }, (_, id) => ({ id: id + 1 })).map(({ id }) => (
           <Carousel.Item key={id}>
             <Card>
-              <Card.Content className="flex aspect-square items-center justify-center p-6">
+              <Card.Content className="flex aspect-square h-40 items-center justify-center p-6">
                 <span className="font-semibold text-4xl">{id}</span>
               </Card.Content>
             </Card>
