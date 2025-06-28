@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-
+import type { Selection } from "react-aria-components"
 import { Description } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
-import type { Selection } from "react-aria-components"
 
 export default function ListBoxMultipleDemo() {
   const [selected, setSelected] = useState<Selection>(new Set([3]))

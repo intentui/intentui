@@ -1,6 +1,5 @@
 "use client"
 
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import {
   IconArchive,
   IconBell,
@@ -19,6 +18,7 @@ import {
   IconTriangleExclamation,
   IconVideoCam,
 } from "@intentui/icons"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export default function ToggleGroupSquareSizeDemo() {
   return (

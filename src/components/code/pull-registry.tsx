@@ -1,36 +1,27 @@
 "use client"
 
-import { Link } from "@/components/ui/link"
-import { siteConfig } from "@/config/site"
-import { copyToClipboard } from "@/lib/copy"
 import { useState } from "react"
 import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
+import { Link } from "@/components/ui/link"
+import { siteConfig } from "@/config/site"
+import { copyToClipboard } from "@/lib/copy"
 
 interface PullRegistryProps {
   readMore?: string
   processedSourceCode: string | null
   blockDemo: string
-  className?: string
 }
 
 interface CopyButtonProps {
   label: string
   copiedLabel: string
-  value: string
   isCopied: boolean
   onCopy: () => void
   className?: string
 }
 
-export function CopyButton({
-  label,
-  copiedLabel,
-  value,
-  className,
-  isCopied,
-  onCopy,
-}: CopyButtonProps) {
+export function CopyButton({ label, copiedLabel, className, isCopied, onCopy }: CopyButtonProps) {
   return (
     <Button
       className={twMerge(
@@ -59,12 +50,7 @@ export function CopyButton({
   )
 }
 
-export function PullRegistry({
-  className,
-  readMore,
-  processedSourceCode,
-  blockDemo,
-}: PullRegistryProps) {
+export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullRegistryProps) {
   const [copy, setCopy] = useState({ code: false, command: false })
 
   const handleCopy = (key: "code" | "command", value: string) => {
@@ -79,7 +65,6 @@ export function PullRegistry({
       <CopyButton
         label="Copy"
         copiedLabel="Copied"
-        value={processedSourceCode as string}
         isCopied={copy.code}
         onCopy={() => handleCopy("code", processedSourceCode as string)}
       />
@@ -88,7 +73,6 @@ export function PullRegistry({
         label="Registry"
         className="hidden sm:inline"
         copiedLabel="Copied"
-        value={`npx ${siteConfig.cliCommand} add -b ${blockDemo}`}
         isCopied={copy.command}
         onCopy={() => handleCopy("command", `npx ${siteConfig.cliCommand} add -b ${blockDemo}`)}
       />

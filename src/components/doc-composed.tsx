@@ -1,13 +1,16 @@
 "use client"
 
-import { Choicebox } from "@/components/ui/choicebox"
 import { usePathname } from "next/navigation"
 import { docs } from "#site/content"
+import { Choicebox } from "@/components/ui/choicebox"
 
 export function DocComposed({
   components,
   text,
-}: { components: string[]; text?: string | React.ReactNode }) {
+}: {
+  components: string[]
+  text?: string | React.ReactNode
+}) {
   const pathname = usePathname()
   const name = getLatestOfString(pathname)
 

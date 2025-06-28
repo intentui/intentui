@@ -1,6 +1,6 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { siteConfig } from "@/config/site"
-import type { Metadata } from "next"
 
 import { ThemeContainer } from "./partials/theme-container"
 

@@ -1,10 +1,10 @@
 "use client"
 
+import { useMemo, useState } from "react"
+import type { Key } from "react-aria-components"
 import { Card } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { useMemo, useState } from "react"
-import type { Key } from "react-aria-components"
 
 export default function LineChartControlledSmart() {
   const [selected, setSelected] = useState<Set<Key>>(new Set(["7d"]))

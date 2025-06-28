@@ -1,4 +1,6 @@
 "use client"
+import { IconArrowUpRight } from "@intentui/icons"
+import { twMerge } from "tailwind-merge"
 import SwitchDescriptionDemo from "@/components/docs/controls/switch/switch-description-demo"
 import CheckboxGroupDescriptionDemo from "@/components/docs/forms/checkbox/checkbox-group-description-demo"
 import RadioGroupDescriptionDemo from "@/components/docs/forms/radio-group/radio-group-description-demo"
@@ -10,8 +12,6 @@ import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
 import { Link } from "@/components/ui/link"
-import { IconArrowUpRight } from "@intentui/icons"
-import { twMerge } from "tailwind-merge"
 
 export function Blocks() {
   return (

@@ -1,7 +1,5 @@
 "use client"
 
-import { Avatar } from "@/components/ui/avatar"
-import { getSiteName } from "@/lib/utils"
 import {
   Collection,
   ListBoxItem,
@@ -9,6 +7,8 @@ import {
   ListBox as Primitive,
   Text,
 } from "react-aria-components"
+import { Avatar } from "@/components/ui/avatar"
+import { getSiteName } from "@/lib/utils"
 
 interface Props {
   sites: {

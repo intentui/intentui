@@ -1,9 +1,8 @@
 "use client"
 
-import { useState } from "react"
-
-import { ShowMore } from "@/components/ui/show-more"
 import { IconChevronLgDown } from "@intentui/icons"
+import { useState } from "react"
+import { ShowMore } from "@/components/ui/show-more"
 
 export default function ShowMoreControlledDemo() {
   const [isExpanded, setIsExpanded] = useState(false)

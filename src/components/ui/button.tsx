@@ -5,7 +5,7 @@ import {
   type ButtonProps as ButtonPrimitiveProps,
   composeRenderProps,
 } from "react-aria-components"
-import { type VariantProps, tv } from "tailwind-variants"
+import { tv, type VariantProps } from "tailwind-variants"
 
 const buttonStyles = tv({
   base: [

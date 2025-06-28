@@ -1,9 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
-import { Toggle } from "@/components/ui/toggle"
-import { Toolbar } from "@/components/ui/toolbar"
 import {
   IconAlignmentCenter,
   IconAlignmentCenterFill,
@@ -27,6 +23,10 @@ import {
   IconToolboxFill,
   IconUndo,
 } from "@intentui/icons"
+import { Button } from "@/components/ui/button"
+import { Menu } from "@/components/ui/menu"
+import { Toggle } from "@/components/ui/toggle"
+import { Toolbar } from "@/components/ui/toolbar"
 
 export default function ToolbarOrientationDemo() {
   return (

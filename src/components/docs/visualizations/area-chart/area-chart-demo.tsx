@@ -1,8 +1,8 @@
 "use client"
 
+import { useMemo } from "react"
 import { AreaChart } from "@/components/ui/area-chart"
 import { Card } from "@/components/ui/card"
-import { useMemo } from "react"
 
 type EngagementPoint = {
   day: string

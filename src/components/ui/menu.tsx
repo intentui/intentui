@@ -1,15 +1,5 @@
 "use client"
 
-import {
-  DropdownDescription,
-  DropdownKeyboard,
-  DropdownLabel,
-  DropdownSeparator,
-  dropdownItemStyles,
-  dropdownSectionStyles,
-} from "@/components/ui/dropdown"
-import { PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconBulletFill, IconCheck, IconChevronLgRight } from "@intentui/icons"
 import type {
   ButtonProps,
@@ -21,16 +11,26 @@ import type {
 import {
   Button,
   Collection,
+  composeRenderProps,
   Header,
   MenuItem as MenuItemPrimitive,
   Menu as MenuPrimitive,
   MenuSection as MenuSectionPrimitive,
   MenuTrigger as MenuTriggerPrimitive,
   SubmenuTrigger as SubmenuTriggerPrimitive,
-  composeRenderProps,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
+import {
+  DropdownDescription,
+  DropdownKeyboard,
+  DropdownLabel,
+  DropdownSeparator,
+  dropdownItemStyles,
+  dropdownSectionStyles,
+} from "@/components/ui/dropdown"
+import { PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 const Menu = (props: MenuTriggerPrimitiveProps) => <MenuTriggerPrimitive {...props} />
 

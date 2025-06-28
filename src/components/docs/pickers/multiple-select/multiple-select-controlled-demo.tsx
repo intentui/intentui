@@ -1,9 +1,9 @@
 "use client"
 
-import { Description } from "@/components/ui/field"
-import { MultipleSelect } from "@/components/ui/multiple-select"
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
+import { Description } from "@/components/ui/field"
+import { MultipleSelect } from "@/components/ui/multiple-select"
 
 const tags = [
   { id: 1, name: "Travel" },

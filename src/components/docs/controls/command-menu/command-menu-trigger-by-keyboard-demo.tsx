@@ -1,7 +1,5 @@
 "use client"
 
-import { useState } from "react"
-
 import {
   IconCreditCard,
   IconCube,
@@ -10,6 +8,7 @@ import {
   IconNotes,
   IconShield,
 } from "@intentui/icons"
+import { useState } from "react"
 
 import { CommandMenu } from "@/components/ui/command-menu"
 

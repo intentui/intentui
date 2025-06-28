@@ -1,7 +1,7 @@
 "use client"
 
-import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 import { IconApple, IconClock, IconCut } from "@intentui/icons"
+import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 
 export default function TabsIconsDemo() {
   return (

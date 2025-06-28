@@ -1,13 +1,12 @@
 "use client"
 
+import { IconDuplicate } from "@intentui/icons"
 import type React from "react"
 import { useEffect, useState } from "react"
-
-import { copyToClipboard } from "@/lib/copy"
-import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconDuplicate } from "@intentui/icons"
 import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
+import { copyToClipboard } from "@/lib/copy"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 interface CopyButtonProps extends React.ComponentProps<typeof Button> {
   isCopied?: boolean

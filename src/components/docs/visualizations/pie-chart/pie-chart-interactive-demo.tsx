@@ -1,10 +1,10 @@
 "use client"
 
+import { useMemo, useState } from "react"
+import type { Key } from "react-aria-components"
 import { Card } from "@/components/ui/card"
 import { PieChart } from "@/components/ui/pie-chart"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { useMemo, useState } from "react"
-import type { Key } from "react-aria-components"
 
 export default function PieChartAudienceSegmentDemo() {
   const data = useMemo(

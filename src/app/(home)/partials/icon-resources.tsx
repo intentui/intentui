@@ -1,9 +1,4 @@
 "use client"
-import { InstallIcon } from "@/app/(app)/icons/partials/controller/install-icon"
-import { PageContainer } from "@/components/page-container"
-import { buttonStyles } from "@/components/ui/button"
-import { Heading } from "@/components/ui/heading"
-import { Link } from "@/components/ui/link"
 import {
   IconArrowRight,
   IconCheck,
@@ -68,6 +63,11 @@ import {
   IconTriangleExclamationFill,
 } from "@intentui/icons"
 import { useEffect, useState } from "react"
+import { InstallIcon } from "@/app/(app)/icons/partials/controller/install-icon"
+import { PageContainer } from "@/components/page-container"
+import { buttonStyles } from "@/components/ui/button"
+import { Heading } from "@/components/ui/heading"
+import { Link } from "@/components/ui/link"
 
 export function IconResources() {
   const [isCopied, setIsCopied] = useState(false)

@@ -1,8 +1,8 @@
 "use client"
 
+import { IconCircleInfo } from "@intentui/icons"
 import { buttonStyles } from "@/components/ui/button"
 import { Tooltip } from "@/components/ui/tooltip"
-import { IconCircleInfo } from "@intentui/icons"
 
 export default function TooltipIntentDemo() {
   return (

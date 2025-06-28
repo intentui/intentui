@@ -1,13 +1,11 @@
 "use client"
 
-import { createContext, use, useCallback, useEffect, useState } from "react"
-
 import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react"
-
+import { createContext, use, useCallback, useEffect, useState } from "react"
+import { twMerge } from "tailwind-merge"
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twMerge } from "tailwind-merge"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -168,7 +166,6 @@ const CarouselItem = ({ className, ...props }: React.ComponentProps<"div">) => {
 
   return (
     <div
-      aria-roledescription="slide"
       className={twMerge(
         "xd24r group relative min-w-0 shrink-0 grow-0 basis-full focus:outline-hidden focus-visible:outline-hidden",
         orientation === "horizontal" ? "pl-4" : "pt-4",

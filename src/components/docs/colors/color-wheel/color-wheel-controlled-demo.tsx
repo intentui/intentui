@@ -1,10 +1,9 @@
 "use client"
 
+import { parseColor } from "@react-stately/color"
 import { useState } from "react"
-
 import { ControlledValues } from "@/components/docs/colors/controlled-values"
 import { ColorWheel } from "@/components/ui/color-wheel"
-import { parseColor } from "@react-stately/color"
 
 export default function ColorWheelControlledDemo() {
   const [color, setColor] = useState(parseColor("hsl(0, 100%, 50%)"))

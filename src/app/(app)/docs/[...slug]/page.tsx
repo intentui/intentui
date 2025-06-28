@@ -1,3 +1,6 @@
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { twJoin } from "tailwind-merge"
 import { Ads } from "@/components/ads"
 import { DocRefs } from "@/components/doc-refs"
 import { Mdx } from "@/components/mdx"
@@ -8,9 +11,6 @@ import { Badge } from "@/components/ui/badge"
 import { siteConfig } from "@/config/site"
 import { source } from "@/lib/source"
 import { title } from "@/lib/utils"
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { twJoin } from "tailwind-merge"
 export interface DocPageProps {
   params: Promise<{
     slug: string[]

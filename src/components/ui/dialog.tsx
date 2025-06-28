@@ -1,8 +1,7 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-
 import { IconX } from "@intentui/icons"
+import { useEffect, useRef } from "react"
 import type { HeadingProps } from "react-aria-components"
 import {
   Button as ButtonPrimitive,
@@ -10,11 +9,10 @@ import {
   Heading,
   Text,
 } from "react-aria-components"
-
+import { twMerge } from "tailwind-merge"
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twMerge } from "tailwind-merge"
 
 const Dialog = ({
   role = "dialog",

@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-
+import type { Selection } from "react-aria-components"
 import { Description } from "@/components/ui/field"
 import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
-import type { Selection } from "react-aria-components"
 
 const fruitList = [
   { id: "1", name: "Apple", available: false },

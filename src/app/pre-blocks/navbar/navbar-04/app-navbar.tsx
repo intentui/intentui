@@ -1,4 +1,5 @@
 "use client"
+import { IconBrandApple, IconBrandIntentui } from "@intentui/icons"
 import { Link } from "@/components/ui/link"
 import {
   Navbar,
@@ -11,7 +12,6 @@ import {
   NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
-import { IconBrandApple, IconBrandIntentui } from "@intentui/icons"
 
 export default function AppNavbar(props: NavbarProps) {
   return (

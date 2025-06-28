@@ -1,11 +1,12 @@
 "use client"
-import menus from "@/components-search.json"
+import { Header, ListBox, ListBoxItem, ListBoxSection } from "react-aria-components"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
 import { Link } from "@/components/ui/link"
+import menus from "@/components-search.json"
 import type { Component } from "@/types/search"
-import { Header, ListBox, ListBoxItem, ListBoxSection } from "react-aria-components"
+
 const components = menus[3] as Component
 export function Components() {
   return (

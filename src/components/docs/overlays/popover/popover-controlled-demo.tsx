@@ -1,12 +1,11 @@
 "use client"
 
+import { IconCircleCheckFill, IconTrash } from "@intentui/icons"
 import React, { useState } from "react"
-
 import { Button } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
 import { Popover } from "@/components/ui/popover"
 import { wait } from "@/lib/utils"
-import { IconCircleCheckFill, IconTrash } from "@intentui/icons"
 
 export default function PopoverControlledDemo() {
   const [isOpen, setIsOpen] = useState(false)

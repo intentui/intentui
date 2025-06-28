@@ -1,9 +1,8 @@
+import { IconCheck, IconChevronRight, IconDuplicate } from "@intentui/icons"
 import { useState } from "react"
-
+import { copyToClipboard } from "usemods"
 import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
-import { IconCheck, IconChevronRight, IconDuplicate } from "@intentui/icons"
-import { copyToClipboard } from "usemods"
 
 type Tool = "Bun" | "Yarn" | "PNPM" | "NPM"
 

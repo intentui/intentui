@@ -1,9 +1,9 @@
 "use client"
 
-import { PageContainer } from "@/components/page-container"
-import { Heading } from "@/components/ui/heading"
 import type React from "react"
 import { twMerge } from "tailwind-merge"
+import { PageContainer } from "@/components/page-container"
+import { Heading } from "@/components/ui/heading"
 
 export function Header({ children, className }: React.ComponentProps<"div">) {
   return (

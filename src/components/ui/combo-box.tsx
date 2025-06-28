@@ -1,7 +1,19 @@
 "use client"
 
+import { IconChevronsY } from "@intentui/icons"
 import type React from "react"
-
+import type {
+  ComboBoxProps as ComboboxPrimitiveProps,
+  InputProps,
+  ListBoxProps,
+  PopoverProps,
+} from "react-aria-components"
+import {
+  ComboBoxContext,
+  ComboBox as ComboboxPrimitive,
+  ListBox,
+  useSlottedContext,
+} from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import {
   DropdownDescription,
@@ -19,19 +31,6 @@ import {
 } from "@/components/ui/field"
 import { PopoverContent } from "@/components/ui/popover"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconChevronsY } from "@intentui/icons"
-import {
-  ComboBoxContext,
-  ComboBox as ComboboxPrimitive,
-  ListBox,
-  useSlottedContext,
-} from "react-aria-components"
-import type {
-  ComboBoxProps as ComboboxPrimitiveProps,
-  InputProps,
-  ListBoxProps,
-  PopoverProps,
-} from "react-aria-components"
 
 interface ComboBoxProps<T extends object>
   extends Omit<ComboboxPrimitiveProps<T>, "children">,

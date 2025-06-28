@@ -1,9 +1,9 @@
 "use client"
 
-import { Description } from "@/components/ui/field"
-import { Table } from "@/components/ui/table"
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
+import { Description } from "@/components/ui/field"
+import { Table } from "@/components/ui/table"
 
 export default function TableBulkDemo() {
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set())

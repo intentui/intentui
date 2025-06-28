@@ -1,8 +1,8 @@
 "use client"
 
+import { IconBrandTwitter } from "@intentui/icons"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { IconBrandTwitter } from "@intentui/icons"
 
 export default function ButtonSizeDemo() {
   return (

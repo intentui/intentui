@@ -8,12 +8,11 @@ import {
   type NumberFieldProps as NumberFieldPrimitiveProps,
   type ValidationResult,
 } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-
 import { Description, FieldError, FieldGroup, Input, Label } from "@/components/ui/field"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twJoin } from "tailwind-merge"
 
 const fieldBorderStyles = tv({
   base: "group-focus:border-primary/70 forced-colors:border-[Highlight]",

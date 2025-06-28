@@ -1,5 +1,5 @@
-import { Choicebox } from "@/components/ui/choicebox"
 import { IconBrandLaravel, IconBrandReactjs, IconBrandTypescript } from "@intentui/icons"
+import { Choicebox } from "@/components/ui/choicebox"
 
 export default function ChoiceboxIconDemo() {
   return (

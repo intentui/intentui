@@ -1,11 +1,10 @@
 "use client"
 
 import { type FormEvent, useState } from "react"
-
+import type { Selection } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import { MultipleSelect } from "@/components/ui/multiple-select"
-import type { Selection } from "react-aria-components"
 
 export default function MultipleSelectInvalidDemo() {
   const [invalid, setInvalid] = useState<boolean>(false)

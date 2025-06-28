@@ -1,10 +1,8 @@
 "use client"
 
-import { Line, LineChart as LineChartPrimitive, type LineProps } from "recharts"
-
-import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
-
 import type { ComponentProps } from "react"
+import { Line, LineChart as LineChartPrimitive, type LineProps } from "recharts"
+import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import { twMerge } from "tailwind-merge"
 import {
   type BaseChartProps,
@@ -14,12 +12,12 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-  DEFAULT_COLORS,
-  XAxis,
-  YAxis,
   constructCategoryColors,
+  DEFAULT_COLORS,
   getColorValue,
   valueToPercent,
+  XAxis,
+  YAxis,
 } from "./chart"
 
 interface LineChartProps<TValue extends ValueType, TName extends NameType>

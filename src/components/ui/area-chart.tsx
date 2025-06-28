@@ -1,9 +1,8 @@
 "use client"
-import { Area, AreaChart as AreaChartPrimitive } from "recharts"
-
-import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 
 import { type ComponentProps, Fragment, useId } from "react"
+import { Area, AreaChart as AreaChartPrimitive } from "recharts"
+import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import type { CurveType } from "recharts/types/shape/Curve"
 import { twMerge } from "tailwind-merge"
 import {
@@ -14,12 +13,12 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-  DEFAULT_COLORS,
-  XAxis,
-  YAxis,
   constructCategoryColors,
+  DEFAULT_COLORS,
   getColorValue,
   valueToPercent,
+  XAxis,
+  YAxis,
 } from "./chart"
 
 interface AreaChartProps<TValue extends ValueType, TName extends NameType>

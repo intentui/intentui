@@ -1,7 +1,7 @@
 "use client"
 
-import { TextField } from "@/components/ui/text-field"
 import { IconAt, IconBrandTwitter } from "@intentui/icons"
+import { TextField } from "@/components/ui/text-field"
 
 export default function TextFieldPrefixSuffixDemo() {
   return (

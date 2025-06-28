@@ -1,10 +1,10 @@
 "use client"
 
-import { Card, CardFooter } from "@/components/ui/card"
-import { LineChart } from "@/components/ui/line-chart"
 import { IconHeartFill, IconMessagesFill, IconUpload } from "@intentui/icons"
 import { useMemo } from "react"
 import type { LegendPayload } from "recharts"
+import { Card, CardFooter } from "@/components/ui/card"
+import { LineChart } from "@/components/ui/line-chart"
 
 function CustomLegend({ payload }: { payload?: ReadonlyArray<LegendPayload> }) {
   const icons: Record<string, React.ReactNode> = {

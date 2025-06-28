@@ -1,9 +1,5 @@
 "use client"
 
-import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { CopyButton } from "@/components/code/pull-registry"
-import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
-import { copyToClipboard } from "@/lib/copy"
 import {
   IconBrackets2,
   IconBrandCss,
@@ -14,6 +10,10 @@ import {
 import { useEffect, useState } from "react"
 import { Tab } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
+import { CodeHighlighter } from "@/components/code/code-highlighter"
+import { CopyButton } from "@/components/code/pull-registry"
+import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
+import { copyToClipboard } from "@/lib/copy"
 
 interface Props {
   source: Record<string, string>
@@ -92,7 +92,6 @@ export function CodeBlock({ source }: Props) {
                 className="absolute top-1.5 right-0"
                 label="Copy"
                 copiedLabel="Copied"
-                value={value as string}
                 isCopied={copiedStates[key] || false}
                 onCopy={() => handleCopy(key, value)}
               />

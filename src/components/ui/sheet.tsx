@@ -2,12 +2,12 @@
 
 import type { DialogProps, DialogTriggerProps, ModalOverlayProps } from "react-aria-components"
 import {
+  composeRenderProps,
   DialogTrigger as DialogTriggerPrimitive,
   Modal,
   ModalOverlay,
-  composeRenderProps,
 } from "react-aria-components"
-import { type VariantProps, tv } from "tailwind-variants"
+import { tv, type VariantProps } from "tailwind-variants"
 
 import {
   Dialog,
@@ -92,6 +92,7 @@ interface SheetContentProps
   isBlurred?: boolean
   isFloat?: boolean
   side?: Sides
+  overlay?: Omit<ModalOverlayProps, "children">
 }
 
 const SheetContent = ({
@@ -102,6 +103,7 @@ const SheetContent = ({
   role = "dialog",
   closeButton = true,
   isFloat = true,
+  overlay,
   children,
   ...props
 }: SheetContentProps) => {
@@ -109,10 +111,11 @@ const SheetContent = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={composeRenderProps(className, (className, renderProps) => {
+      className={composeRenderProps(overlay?.className, (className, renderProps) => {
         return overlayStyles({
           ...renderProps,
           isBlurred,
+          className,
         })
       })}
       {...props}

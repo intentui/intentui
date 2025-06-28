@@ -1,34 +1,31 @@
 "use client"
 
 import { IconChevronLgDown, IconHamburger } from "@intentui/icons"
-import {
-  type CellProps,
-  type ColumnProps,
-  type ColumnResizerProps,
-  type TableHeaderProps as HeaderProps,
-  type RowProps,
-  type TableBodyProps,
-  type TableProps as TablePrimitiveProps,
-  composeRenderProps,
-} from "react-aria-components"
+import { createContext, use } from "react"
 import {
   Button,
   Cell,
+  type CellProps,
   Collection,
   Column,
+  type ColumnProps,
   ColumnResizer as ColumnResizerPrimitive,
+  type ColumnResizerProps,
+  composeRenderProps,
+  type TableHeaderProps as HeaderProps,
   ResizableTableContainer,
   Row,
+  type RowProps,
   TableBody as TableBodyPrimitive,
+  type TableBodyProps,
   TableHeader as TableHeaderPrimitive,
   Table as TablePrimitive,
+  type TableProps as TablePrimitiveProps,
   useTableOptions,
 } from "react-aria-components"
-
+import { twJoin, twMerge } from "tailwind-merge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { createContext, use } from "react"
-import { twJoin, twMerge } from "tailwind-merge"
 
 interface TableProps extends Omit<TablePrimitiveProps, "className"> {
   allowResize?: boolean
@@ -119,23 +116,21 @@ const TableColumn = ({ isResizable = false, className, ...props }: TableColumnPr
     >
       {(values) => (
         <div className="flex items-center gap-2 **:data-[slot=icon]:shrink-0">
-          <>
-            {typeof props.children === "function" ? props.children(values) : props.children}
-            {values.allowsSorting && (
-              <span
-                className={twMerge(
-                  "grid size-[1.15rem] flex-none shrink-0 place-content-center rounded bg-secondary text-fg *:data-[slot=icon]:size-3.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:transition-transform *:data-[slot=icon]:duration-200",
-                  values.isHovered ? "bg-secondary-fg/10" : "",
-                  className,
-                )}
-              >
-                <IconChevronLgDown
-                  className={values.sortDirection === "ascending" ? "rotate-180" : ""}
-                />
-              </span>
-            )}
-            {isResizable && <ColumnResizer />}
-          </>
+          {typeof props.children === "function" ? props.children(values) : props.children}
+          {values.allowsSorting && (
+            <span
+              className={twMerge(
+                "grid size-[1.15rem] flex-none shrink-0 place-content-center rounded bg-secondary text-fg *:data-[slot=icon]:size-3.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:transition-transform *:data-[slot=icon]:duration-200",
+                values.isHovered ? "bg-secondary-fg/10" : "",
+                className,
+              )}
+            >
+              <IconChevronLgDown
+                className={values.sortDirection === "ascending" ? "rotate-180" : ""}
+              />
+            </span>
+          )}
+          {isResizable && <ColumnResizer />}
         </div>
       )}
     </Column>

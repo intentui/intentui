@@ -1,8 +1,8 @@
 "use client"
 
-import { GridList } from "@/components/ui/grid-list"
 import { useDragAndDrop } from "react-aria-components"
 import { useListData } from "react-stately"
+import { GridList } from "@/components/ui/grid-list"
 
 export default function GridListDragDemo() {
   const list = useListData({
@@ -20,16 +20,14 @@ export default function GridListDragDemo() {
   })
 
   return (
-    <>
-      <GridList
-        items={list.items}
-        aria-label="Droppable list"
-        selectionMode="multiple"
-        dragAndDropHooks={dragAndDropHooks}
-      >
-        {(item) => <GridList.Item id={item.id}>{item.name}</GridList.Item>}
-      </GridList>
-    </>
+    <GridList
+      items={list.items}
+      aria-label="Droppable list"
+      selectionMode="multiple"
+      dragAndDropHooks={dragAndDropHooks}
+    >
+      {(item) => <GridList.Item id={item.id}>{item.name}</GridList.Item>}
+    </GridList>
   )
 }
 

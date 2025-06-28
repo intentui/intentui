@@ -1,10 +1,10 @@
 "use client"
 
+import { IconDotsVertical, IconEye, IconHighlight, IconTrash } from "@intentui/icons"
 import { Card } from "@/components/ui/card"
 import { Menu } from "@/components/ui/menu"
 import { Pagination } from "@/components/ui/pagination"
 import { Table } from "@/components/ui/table"
-import { IconDotsVertical, IconEye, IconHighlight, IconTrash } from "@intentui/icons"
 
 export default function CardTableDemo() {
   return (

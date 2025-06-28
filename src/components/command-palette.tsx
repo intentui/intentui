@@ -1,10 +1,4 @@
 "use client"
-import results from "@/components-search.json"
-import { ColorSwatch } from "@/components/ui/color-swatch"
-import { CommandMenu } from "@/components/ui/command-menu"
-import { useCopy } from "@/hooks/use-copy"
-import colors from "@/json/colors.json"
-import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
 import {
   IconBrandIntentui,
   IconColorPaletteFill,
@@ -22,6 +16,12 @@ import { useRouter } from "next/navigation"
 import { useMemo, useState } from "react"
 import { twJoin } from "tailwind-merge"
 import { useDebounce } from "use-debounce"
+import { ColorSwatch } from "@/components/ui/color-swatch"
+import { CommandMenu } from "@/components/ui/command-menu"
+import results from "@/components-search.json"
+import { useCopy } from "@/hooks/use-copy"
+import colors from "@/json/colors.json"
+import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
 
 const docs = [results[0], results[1], results[2]] as Grouped[]
 const components = results[3] as any
@@ -104,129 +104,127 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
   }, [inputLower])
 
   return (
-    <>
-      <CommandMenu
-        shortcut="k"
-        isOpen={openCmd}
-        onOpenChange={setOpen}
-        inputValue={input}
-        onInputChange={setInput}
-        isPending={isLoading}
-      >
-        <CommandMenu.Search placeholder="Search components, color..." />
-        <CommandMenu.List>
-          <CommandMenu.Section aria-label="Pages">
-            <CommandMenu.Item textValue="Home" href="/">
-              <IconHomeFill />
-              <CommandMenu.Label>Home</CommandMenu.Label>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="Docs" href={"/docs/getting-started/installation"}>
-              <IconNotesFill />
-              <CommandMenu.Label>Docs</CommandMenu.Label>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="components" href="/components">
-              <IconPackageFill />
-              <CommandMenu.Label>Components</CommandMenu.Label>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="themes" href="/themes">
-              <IconColorPaletteFill />
-              <CommandMenu.Label>Themes</CommandMenu.Label>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="icons" href="/icons">
-              <IconDuplicateFill />
-              <CommandMenu.Label>Icons</CommandMenu.Label>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="colors" href="/colors">
-              <IconColorsFill />
-              <CommandMenu.Label>Colors</CommandMenu.Label>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="blocks" href="/blocks">
-              <IconWindowVisitFill />
-              <CommandMenu.Label>Blocks</CommandMenu.Label>
-            </CommandMenu.Item>
-            <CommandMenu.Separator />
-            <CommandMenu.Item textValue="blog" href="/blog">
-              <IconNotepadFill />
-              <CommandMenu.Label>Blog</CommandMenu.Label>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="premium block" href="https://blocks.intentui.com">
-              <IconBrandIntentui />
-              <CommandMenu.Label>Premium blocks</CommandMenu.Label>
-            </CommandMenu.Item>
+    <CommandMenu
+      shortcut="k"
+      isOpen={openCmd}
+      onOpenChange={setOpen}
+      inputValue={input}
+      onInputChange={setInput}
+      isPending={isLoading}
+    >
+      <CommandMenu.Search placeholder="Search components, color..." />
+      <CommandMenu.List>
+        <CommandMenu.Section aria-label="Pages">
+          <CommandMenu.Item textValue="Home" href="/">
+            <IconHomeFill />
+            <CommandMenu.Label>Home</CommandMenu.Label>
+          </CommandMenu.Item>
+          <CommandMenu.Item textValue="Docs" href={"/docs/getting-started/installation"}>
+            <IconNotesFill />
+            <CommandMenu.Label>Docs</CommandMenu.Label>
+          </CommandMenu.Item>
+          <CommandMenu.Item textValue="components" href="/components">
+            <IconPackageFill />
+            <CommandMenu.Label>Components</CommandMenu.Label>
+          </CommandMenu.Item>
+          <CommandMenu.Item textValue="themes" href="/themes">
+            <IconColorPaletteFill />
+            <CommandMenu.Label>Themes</CommandMenu.Label>
+          </CommandMenu.Item>
+          <CommandMenu.Item textValue="icons" href="/icons">
+            <IconDuplicateFill />
+            <CommandMenu.Label>Icons</CommandMenu.Label>
+          </CommandMenu.Item>
+          <CommandMenu.Item textValue="colors" href="/colors">
+            <IconColorsFill />
+            <CommandMenu.Label>Colors</CommandMenu.Label>
+          </CommandMenu.Item>
+          <CommandMenu.Item textValue="blocks" href="/blocks">
+            <IconWindowVisitFill />
+            <CommandMenu.Label>Blocks</CommandMenu.Label>
+          </CommandMenu.Item>
+          <CommandMenu.Separator />
+          <CommandMenu.Item textValue="blog" href="/blog">
+            <IconNotepadFill />
+            <CommandMenu.Label>Blog</CommandMenu.Label>
+          </CommandMenu.Item>
+          <CommandMenu.Item textValue="premium block" href="https://blocks.intentui.com">
+            <IconBrandIntentui />
+            <CommandMenu.Label>Premium blocks</CommandMenu.Label>
+          </CommandMenu.Item>
+        </CommandMenu.Section>
+
+        {filteredDocs.map((result) => (
+          <CommandMenu.Section
+            key={result.id}
+            title={result.section}
+            items={result.children as CollectionComponent[]}
+          >
+            {(item: CollectionComponent) => (
+              <CommandMenu.Item
+                key={item.slug}
+                id={item.slug.split("/").pop()}
+                textValue={`${result.section} ${item.title}`}
+                onAction={() => {
+                  router.push(item.slug, { scroll: false })
+                  setOpen?.(false)
+                }}
+              >
+                <IconHashtag />
+                <CommandMenu.Label>{item.title}</CommandMenu.Label>
+              </CommandMenu.Item>
+            )}
           </CommandMenu.Section>
+        ))}
 
-          {filteredDocs.map((result) => (
-            <CommandMenu.Section
-              key={result.id}
-              title={result.section}
-              items={result.children as CollectionComponent[]}
-            >
-              {(item: CollectionComponent) => (
-                <CommandMenu.Item
-                  key={item.slug}
-                  id={item.slug.split("/").pop()}
-                  textValue={`${result.section} ${item.title}`}
-                  onAction={() => {
-                    router.push(item.slug, { scroll: false })
-                    setOpen?.(false)
-                  }}
-                >
-                  <IconHashtag />
-                  <CommandMenu.Label>{item.title}</CommandMenu.Label>
-                </CommandMenu.Item>
-              )}
-            </CommandMenu.Section>
-          ))}
+        {filteredComponents.map((component: any) => (
+          <CommandMenu.Section
+            key={component.id}
+            id={component.id}
+            title={component.subsection}
+            items={component.children as CollectionComponent[]}
+          >
+            {(item: CollectionComponent) => (
+              <CommandMenu.Item
+                key={item.slug}
+                id={item.slug.split("/").pop()}
+                textValue={`${component.subsection} ${item.title} ${item.slug.split("/").pop()}`}
+                onAction={() => {
+                  router.push(item.slug, { scroll: false })
+                  setOpen?.(false)
+                }}
+              >
+                <IconHashtag />
+                <CommandMenu.Label>{item.title}</CommandMenu.Label>
+              </CommandMenu.Item>
+            )}
+          </CommandMenu.Section>
+        ))}
 
-          {filteredComponents.map((component: any) => (
-            <CommandMenu.Section
-              key={component.id}
-              id={component.id}
-              title={component.subsection}
-              items={component.children as CollectionComponent[]}
-            >
-              {(item: CollectionComponent) => (
-                <CommandMenu.Item
-                  key={item.slug}
-                  id={item.slug.split("/").pop()}
-                  textValue={`${component.subsection} ${item.title} ${item.slug.split("/").pop()}`}
-                  onAction={() => {
-                    router.push(item.slug, { scroll: false })
-                    setOpen?.(false)
-                  }}
-                >
-                  <IconHashtag />
-                  <CommandMenu.Label>{item.title}</CommandMenu.Label>
-                </CommandMenu.Item>
-              )}
-            </CommandMenu.Section>
-          ))}
-
-          {filteredColors.map(({ colorName, items }) => (
-            <CommandMenu.Section key={colorName} title={colorName}>
-              {items.map(([shade, value]) => {
-                const label = `${colorName}-${shade}`
-                return (
-                  <ColorItem
-                    key={label}
-                    label={label}
-                    value={value}
-                    textValue={`${colorName} ${shade} ${value}` || `${colorName}-${shade}`}
-                  />
-                )
-              })}
-            </CommandMenu.Section>
-          ))}
-        </CommandMenu.List>
-        <CommandMenu.Footer className="text-xs">
-          Use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate, <kbd>↵</kbd> to{" "}
-          {filteredColors.length > 0 && filteredDocs.length === 0 && filteredComponents.length === 0
-            ? "copy"
-            : "select"}
-          .
-        </CommandMenu.Footer>
-      </CommandMenu>
-    </>
+        {filteredColors.map(({ colorName, items }) => (
+          <CommandMenu.Section key={colorName} title={colorName}>
+            {items.map(([shade, value]) => {
+              const label = `${colorName}-${shade}`
+              return (
+                <ColorItem
+                  key={label}
+                  label={label}
+                  value={value}
+                  textValue={`${colorName} ${shade} ${value}` || `${colorName}-${shade}`}
+                />
+              )
+            })}
+          </CommandMenu.Section>
+        ))}
+      </CommandMenu.List>
+      <CommandMenu.Footer className="text-xs">
+        Use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate, <kbd>↵</kbd> to{" "}
+        {filteredColors.length > 0 && filteredDocs.length === 0 && filteredComponents.length === 0
+          ? "copy"
+          : "select"}
+        .
+      </CommandMenu.Footer>
+    </CommandMenu>
   )
 }
 

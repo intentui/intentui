@@ -1,7 +1,9 @@
 "use client"
 
+import { IconBrandCss, IconBrandReactjs, IconFile } from "@intentui/icons"
 import React, { useState } from "react"
-
+import { TabList as PrimitiveTabsList, Tab, TabPanel, Tabs } from "react-aria-components"
+import { twJoin, twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton, CopyMotionButton } from "@/components/code/copy-button"
@@ -9,9 +11,6 @@ import { PullRegistry } from "@/components/code/pull-registry"
 import { Loader } from "@/components/ui/loader"
 import { copyToClipboard } from "@/lib/copy"
 import type { RegistryItem } from "@/types"
-import { IconBrandCss, IconBrandReactjs, IconFile } from "@intentui/icons"
-import { TabList as PrimitiveTabsList, Tab, TabPanel, Tabs } from "react-aria-components"
-import { twJoin, twMerge } from "tailwind-merge"
 
 interface Props {
   source: Record<string, string>
@@ -184,11 +183,7 @@ export const TabsList = ({ hasRegistry, src, code, blockDemo, copyButton }: TabL
         )}
       </PrimitiveTabsList>
       {hasRegistry && (
-        <PullRegistry
-          className="-top-0.5 absolute right-0"
-          processedSourceCode={code as string}
-          blockDemo={blockDemo as string}
-        />
+        <PullRegistry processedSourceCode={code as string} blockDemo={blockDemo as string} />
       )}
       {copyButton && <CopyMotionButton className="-top-2 absolute" text={code!} />}
     </div>

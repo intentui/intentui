@@ -1,9 +1,9 @@
 "use client"
 
+import { IconChevronLgDown } from "@intentui/icons"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Menu } from "@/components/ui/menu"
-import { IconChevronLgDown } from "@intentui/icons"
 
 export default function CardActionDemo() {
   return (

@@ -1,15 +1,4 @@
 "use client"
-import {
-  DropdownDescription,
-  DropdownItem,
-  DropdownLabel,
-  DropdownSection,
-  DropdownSeparator,
-} from "@/components/ui/dropdown"
-import { Description, FieldError, Label } from "@/components/ui/field"
-import type { FieldProps } from "@/components/ui/field"
-import { PopoverContent } from "@/components/ui/popover"
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
 import type {
   ListBoxProps,
@@ -18,6 +7,17 @@ import type {
 } from "react-aria-components"
 import { Button, ListBox, Select as SelectPrimitive, SelectValue } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
+import {
+  DropdownDescription,
+  DropdownItem,
+  DropdownLabel,
+  DropdownSection,
+  DropdownSeparator,
+} from "@/components/ui/dropdown"
+import type { FieldProps } from "@/components/ui/field"
+import { Description, FieldError, Label } from "@/components/ui/field"
+import { PopoverContent } from "@/components/ui/popover"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 interface SelectProps<T extends object> extends SelectPrimitiveProps<T>, FieldProps {
   items?: Iterable<T>

@@ -1,8 +1,5 @@
 "use client"
 
-import { useState } from "react"
-
-import { Menu } from "@/components/ui/menu"
 import {
   IconAlignmentCenter,
   IconAlignmentLeft,
@@ -14,7 +11,9 @@ import {
   IconItalic,
   IconUnderline,
 } from "@intentui/icons"
+import { useState } from "react"
 import type { Selection } from "react-aria-components"
+import { Menu } from "@/components/ui/menu"
 
 export default function MenuSectionLevelSelection() {
   const [style, setStyle] = useState<Selection>(new Set(["bold"]))

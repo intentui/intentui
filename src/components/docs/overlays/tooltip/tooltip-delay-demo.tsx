@@ -1,8 +1,8 @@
 "use client"
 
+import { IconBrandX } from "@intentui/icons"
 import { buttonStyles } from "@/components/ui/button"
 import { Tooltip } from "@/components/ui/tooltip"
-import { IconBrandX } from "@intentui/icons"
 
 export default function TooltipDelayDemo() {
   return (

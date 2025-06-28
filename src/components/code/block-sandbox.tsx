@@ -1,7 +1,10 @@
 "use client"
 
+import { IconFolderFill, IconFolderOpenFill } from "@intentui/icons"
 import { cache, memo, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react"
-
+import { type Key, Tab, TabList, ToggleButton, ToggleButtonGroup } from "react-aria-components"
+import type { ImperativePanelHandle } from "react-resizable-panels"
+import { twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
 import { BrandIcon } from "@/components/brand-icon"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
@@ -26,11 +29,6 @@ import {
 } from "@/components/ui/sidebar"
 import { TabPanel, Tabs } from "@/components/ui/tabs"
 import type { RegistryItem } from "@/types"
-import { IconFolderFill, IconFolderOpenFill } from "@intentui/icons"
-import { ToggleButton, ToggleButtonGroup } from "react-aria-components"
-import { type Key, Tab, TabList } from "react-aria-components"
-import type { ImperativePanelHandle } from "react-resizable-panels"
-import { twMerge } from "tailwind-merge"
 
 const registry = generated as Record<string, RegistryItem>
 interface FolderStructure {

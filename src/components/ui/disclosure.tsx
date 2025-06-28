@@ -1,6 +1,5 @@
 "use client"
 
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronLeft } from "@intentui/icons"
 import type {
   DisclosureGroupProps as AccordionProps,
@@ -15,6 +14,7 @@ import {
   DisclosurePanel as CollapsiblePanel,
   Heading,
 } from "react-aria-components"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 interface DisclosureGroupProps extends AccordionProps {
   ref?: React.RefObject<HTMLDivElement>

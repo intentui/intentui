@@ -1,18 +1,16 @@
-import type React from "react"
-
 import { IconHamburger } from "@intentui/icons"
+import type React from "react"
 import type { GridListItemProps, GridListProps } from "react-aria-components"
 import {
   Button,
+  composeRenderProps,
   GridListItem as GridListItemPrimitive,
   GridList as GridListPrimitive,
-  composeRenderProps,
 } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-
 import { Checkbox } from "@/components/ui/checkbox"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twMerge } from "tailwind-merge"
 
 const GridList = <T extends object>({ children, className, ...props }: GridListProps<T>) => (
   <GridListPrimitive

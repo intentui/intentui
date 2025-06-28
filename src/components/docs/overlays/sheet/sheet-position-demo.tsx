@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-
+import { titleCase } from "usemods"
 import { Button } from "@/components/ui/button"
 import { Sheet } from "@/components/ui/sheet"
-import { titleCase } from "usemods"
 
 type Side = "left" | "right" | "top" | "bottom"
 export default function SheetPositionDemo() {

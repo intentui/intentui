@@ -1,7 +1,5 @@
 "use client"
 
-import { useId } from "react"
-
 import type {
   TabListProps as TabListPrimitiveProps,
   TabPanelProps as TabPanelPrimitiveProps,
@@ -9,11 +7,11 @@ import type {
   TabsProps as TabsPrimitiveProps,
 } from "react-aria-components"
 import {
+  composeRenderProps,
   TabList as TabListPrimitive,
   TabPanel as TabPanelPrimitive,
   Tab as TabPrimitive,
   Tabs as TabsPrimitive,
-  composeRenderProps,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 
@@ -39,7 +37,6 @@ interface TabListProps<T extends object> extends TabListPrimitiveProps<T> {
   ref?: React.RefObject<HTMLDivElement>
 }
 const TabList = <T extends object>({ className, ref, ...props }: TabListProps<T>) => {
-  const id = useId()
   return (
     <TabListPrimitive
       ref={ref}
@@ -64,17 +61,14 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
     <TabPrimitive
       ref={ref}
       {...props}
-      className={composeRenderProps(className, (className, renderProps) =>
-        twMerge([
-          "relative flex cursor-default items-center whitespace-nowrap rounded-full font-medium text-fg text-sm outline-hidden transition hover:text-fg *:data-[slot=icon]:mr-2 *:data-[slot=icon]:size-4",
-          "group-orientation-vertical/tabs:w-full group-orientation-vertical/tabs:py-0 group-orientation-vertical/tabs:pr-2 group-orientation-vertical/tabs:pl-4",
-          "group-orientation-horizontal/tabs:pb-3",
-          "selected:text-fg text-muted-fg focus:ring-0",
-          "disabled:opacity-50",
-          "href" in props && "cursor-pointer",
-          className,
-        ]),
-      )}
+      className={composeTailwindRenderProps(className, [
+        "relative flex cursor-default items-center whitespace-nowrap rounded-full font-medium text-fg text-sm outline-hidden transition hover:text-fg *:data-[slot=icon]:mr-2 *:data-[slot=icon]:size-4",
+        "group-orientation-vertical/tabs:w-full group-orientation-vertical/tabs:py-0 group-orientation-vertical/tabs:pr-2 group-orientation-vertical/tabs:pl-4",
+        "group-orientation-horizontal/tabs:pb-3",
+        "selected:text-fg text-muted-fg focus:ring-0",
+        "disabled:opacity-50",
+        "href" in props && "cursor-pointer",
+      ])}
     >
       {({ isSelected }) => (
         <>

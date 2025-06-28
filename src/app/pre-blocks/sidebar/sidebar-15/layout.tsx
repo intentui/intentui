@@ -1,6 +1,5 @@
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
-
 import { twJoin } from "tailwind-merge"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import AppSidebar from "../app-sidebar"
 import AppSidebarNav from "../app-sidebar-nav"
 

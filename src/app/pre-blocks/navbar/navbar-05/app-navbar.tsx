@@ -1,5 +1,14 @@
 "use client"
 
+import {
+  IconBrandIntentui,
+  IconHomeFill,
+  IconPercentBadgeFill,
+  IconSearch,
+  IconShippingBagFill,
+  IconShoppingBag,
+  IconShoppingBagFill,
+} from "@intentui/icons"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import {
@@ -16,15 +25,6 @@ import {
   NavbarTrigger,
 } from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
-import {
-  IconBrandIntentui,
-  IconHomeFill,
-  IconPercentBadgeFill,
-  IconSearch,
-  IconShippingBagFill,
-  IconShoppingBag,
-  IconShoppingBagFill,
-} from "@intentui/icons"
 import { UserMenu } from "../user-menu"
 
 export default function AppNavbar(props: NavbarProps) {

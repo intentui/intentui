@@ -1,6 +1,6 @@
+import { IconBrandGithub } from "@intentui/icons"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
-import { IconBrandGithub } from "@intentui/icons"
 
 export function GithubLink() {
   return (

@@ -1,44 +1,55 @@
 {
-  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
     "useIgnoreFile": false
   },
   "files": {
-    "ignoreUnknown": false,
-    "ignore": [".next", ".idea", ".vscode", "node_modules"]
+    "includes": ["src/**/*.tsx"],
+    "ignoreUnknown": false
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
+      "performance": {
+        "noImgElement": "off"
+      },
       "style": {
         "noNonNullAssertion": "off",
         "noParameterAssign": "warn",
-        "useImportType": "error"
+        "useImportType": "warn"
       },
       "complexity": {
-        "useArrowFunction": "error"
+        "useArrowFunction": "error",
+        "noForEach": "off"
       },
       "a11y": {
+        "noRedundantRoles": "off",
         "noSvgWithoutTitle": "off",
         "useValidAnchor": "off",
         "useSemanticElements": "off"
       },
       "correctness": {
-        "noUnknownFunction": "off",
+        "noUnusedImports": { "level": "error", "fix": "safe" },
+        "useExhaustiveDependencies": "off",
         "useHookAtTopLevel": "error",
-        "noUnusedImports": "error",
         "noChildrenProp": "off"
       },
       "suspicious": {
+        "noDocumentCookie": "off",
         "noExplicitAny": "off",
-        "noArrayIndexKey": "off",
-        "noConsoleLog": "warn"
+        "noArrayIndexKey": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
       },
       "nursery": {
         "useSortedClasses": {
@@ -46,19 +57,11 @@
           "fix": "safe",
           "options": {
             "attributes": ["classList"],
-            "functions": ["cn", "twJoin", "tv", "composeRenderProps", "composeTailwindRenderProps"]
+            "functions": ["twMerge", "twJoin", "tv", "composeRenderProps", "composeTailwindRenderProps"]
           }
         }
       }
-    },
-    "ignore": []
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 100,
-    "ignore": []
+    }
   },
   "javascript": {
     "formatter": {
@@ -72,9 +75,12 @@
       "trailingCommas": "all"
     }
   },
-  "json": {
-    "formatter": {
-      "trailingCommas": "none"
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
     }
   }
 }

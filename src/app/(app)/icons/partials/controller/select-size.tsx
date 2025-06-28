@@ -1,12 +1,11 @@
+import { IconChevronsY } from "@intentui/icons"
+import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
-
+import type { Selection } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
 import { useQueryString } from "@/hooks/use-query-string"
 import { title } from "@/lib/utils"
-import { IconChevronsY } from "@intentui/icons"
-import { usePathname, useRouter } from "next/navigation"
-import type { Selection } from "react-aria-components"
 
 const sizes = [
   { id: "size-4", name: "Size 4" },

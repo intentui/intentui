@@ -1,15 +1,5 @@
 "use client"
 
-import { useState } from "react"
-
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Menu } from "@/components/ui/menu"
-import { Modal } from "@/components/ui/modal"
-import { Select } from "@/components/ui/select"
-import { Sheet } from "@/components/ui/sheet"
-import { TextField } from "@/components/ui/text-field"
 import {
   IconBook,
   IconBrandCopilot,
@@ -21,7 +11,16 @@ import {
   IconPerson,
   IconStar,
 } from "@intentui/icons"
+import { useState } from "react"
 import { Menu as MenuPrimitive } from "react-aria-components"
+import { Avatar } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Menu } from "@/components/ui/menu"
+import { Modal } from "@/components/ui/modal"
+import { Select } from "@/components/ui/select"
+import { Sheet } from "@/components/ui/sheet"
+import { TextField } from "@/components/ui/text-field"
 
 export default function SheetMenuDemo() {
   const [isOpen, setIsOpen] = useState(false)

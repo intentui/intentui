@@ -1,8 +1,8 @@
 "use client"
 
+import { useState } from "react"
 import { BarList } from "@/components/ui/bar-list"
 import { Card } from "@/components/ui/card"
-import { useState } from "react"
 
 export default function BarListControlledDemo() {
   const [selectedItem, setSelectedItem] = useState("")

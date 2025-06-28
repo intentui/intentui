@@ -1,11 +1,9 @@
+import type { Metadata } from "next"
 import { Suspense } from "react"
-
 import { Header } from "@/components/header"
+import { PageContainer } from "@/components/page-container"
 import { Loader } from "@/components/ui/loader"
 import { siteConfig } from "@/config/site"
-import type { Metadata } from "next"
-
-import { PageContainer } from "@/components/page-container"
 import { IconsList } from "./partials/icons-list"
 
 export const metadata: Metadata = {

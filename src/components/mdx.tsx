@@ -1,22 +1,20 @@
+import { IconArrowUpRight } from "@intentui/icons"
+import type { MDXContent } from "mdx/types"
+import Image from "next/image"
 import type React from "react"
-
 import { GeneratedTheme } from "@/app/(app)/themes/partials/generated-theme"
 import { Anatomy } from "@/components/code/anatomy"
+import { BlockSandbox } from "@/components/code/block-sandbox"
 import { CodeBlock } from "@/components/code/code-block"
 import { CodeSandbox } from "@/components/code/code-sandbox"
 import { EditorText } from "@/components/code/editor-text"
+import { PlainCode, Pre } from "@/components/code/plain-code"
 import { SourceCode } from "@/components/code/source-code"
 import { DocComposed } from "@/components/doc-composed"
 import { DocNote } from "@/components/doc-note"
+import { FrameworkGuides } from "@/components/framework-guides"
 import { Installation } from "@/components/installation"
 import { Link } from "@/components/ui/link"
-import { IconArrowUpRight } from "@intentui/icons"
-import Image from "next/image"
-
-import { BlockSandbox } from "@/components/code/block-sandbox"
-import { PlainCode, Pre } from "@/components/code/plain-code"
-import { FrameworkGuides } from "@/components/framework-guides"
-import type { MDXContent } from "mdx/types"
 import { DocHow } from "./code/doc-how"
 
 export function Mdx({ code }: { code: MDXContent }) {

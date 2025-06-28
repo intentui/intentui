@@ -1,7 +1,7 @@
 "use client"
 
-import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 import { Collection } from "react-aria-components"
+import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 
 const tabs = [
   { id: 1, title: "Overview", content: "This is the overview tab content." },

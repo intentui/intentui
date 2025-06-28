@@ -1,12 +1,11 @@
 "use client"
 
-import { siteConfig } from "@/config/site"
 import { IconBrandGithub } from "@intentui/icons"
-
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
 import { Link } from "@/components/ui/link"
+import { siteConfig } from "@/config/site"
 export function OpenSource() {
   return (
     <div className="border-transparent border-y bg-secondary/20 sm:mb-0 sm:border-border">

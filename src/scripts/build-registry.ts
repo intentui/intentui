@@ -79,6 +79,7 @@ const registryBaseStyle = {
     "@intentui/icons",
     "tailwindcss-react-aria-components",
     "react-aria-components",
+    "tailwind-merge",
   ],
   registryDependencies: [`${registryUrl}/r/lib-primitive.json`],
   files: [],

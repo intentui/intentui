@@ -1,14 +1,4 @@
 "use client"
-import { useState } from "react"
-
-import { GithubLink } from "@/components/github-link"
-import { PageContainer } from "@/components/page-container"
-import { ResponsiveNavigation } from "@/components/responsive-navigation"
-import { Button, buttonStyles } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
-import { Menu } from "@/components/ui/menu"
-import { siteConfig } from "@/config/site"
-import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   IconBrandDiscord,
   IconBrandIntentui,
@@ -17,6 +7,15 @@ import {
   IconSearch,
 } from "@intentui/icons"
 import { usePathname } from "next/navigation"
+import { useState } from "react"
+import { GithubLink } from "@/components/github-link"
+import { PageContainer } from "@/components/page-container"
+import { ResponsiveNavigation } from "@/components/responsive-navigation"
+import { Button, buttonStyles } from "@/components/ui/button"
+import { Link } from "@/components/ui/link"
+import { Menu } from "@/components/ui/menu"
+import { siteConfig } from "@/config/site"
+import { useMediaQuery } from "@/hooks/use-media-query"
 import { CommandPalette } from "./command-palette"
 import { NavLink } from "./nav-item"
 import { ThemeSwitcher } from "./theme-switcher"
@@ -97,60 +96,58 @@ export function Navigation() {
                 <NavLink href="https://blocks.intentui.com">Premium Blocks</NavLink>
               </div>
               <div className="flex items-center gap-x-2">
-                <>
-                  <Button
-                    onPress={() => setOpen((open: boolean) => !open)}
-                    size="sq-sm"
-                    isCircle
-                    intent="plain"
-                  >
-                    <IconSearch />
-                  </Button>
+                <Button
+                  onPress={() => setOpen((open: boolean) => !open)}
+                  size="sq-sm"
+                  isCircle
+                  intent="plain"
+                >
+                  <IconSearch />
+                </Button>
 
-                  <Link
-                    aria-label="Join Discord"
-                    className={buttonStyles({
-                      intent: "plain",
-                      isCircle: true,
-                      size: "sq-sm",
-                      className:
-                        "**:data-[slot=icon]:text-indigo-500 hover:**:data-[slot=icon]:text-indigo-600",
-                    })}
-                    target="_blank"
-                    href={siteConfig.discord}
-                  >
-                    <IconBrandDiscord />
-                  </Link>
-                  <Link
-                    aria-label="Follow Update on X"
-                    className={buttonStyles({
-                      intent: "plain",
-                      isCircle: true,
-                      size: "sq-sm",
-                      className: "**:data-[slot=icon]:text-fg",
-                    })}
-                    target="_blank"
-                    href="https://x.com/intent/follow?screen_name=irsyadadl"
-                  >
-                    <IconBrandX />
-                  </Link>
-                  <Link
-                    aria-label="Follow Update on X"
-                    className={buttonStyles({
-                      intent: "plain",
-                      size: "sq-sm",
-                      isCircle: true,
-                      className: "hover:border-blue-500/20**:data-[slot=icon]:text-fg",
-                    })}
-                    target="_blank"
-                    href="https://dub.sh/NfSXJrL"
-                  >
-                    <IconBrandIntentui />
-                  </Link>
+                <Link
+                  aria-label="Join Discord"
+                  className={buttonStyles({
+                    intent: "plain",
+                    isCircle: true,
+                    size: "sq-sm",
+                    className:
+                      "**:data-[slot=icon]:text-indigo-500 hover:**:data-[slot=icon]:text-indigo-600",
+                  })}
+                  target="_blank"
+                  href={siteConfig.discord}
+                >
+                  <IconBrandDiscord />
+                </Link>
+                <Link
+                  aria-label="Follow Update on X"
+                  className={buttonStyles({
+                    intent: "plain",
+                    isCircle: true,
+                    size: "sq-sm",
+                    className: "**:data-[slot=icon]:text-fg",
+                  })}
+                  target="_blank"
+                  href="https://x.com/intent/follow?screen_name=irsyadadl"
+                >
+                  <IconBrandX />
+                </Link>
+                <Link
+                  aria-label="Follow Update on X"
+                  className={buttonStyles({
+                    intent: "plain",
+                    size: "sq-sm",
+                    isCircle: true,
+                    className: "hover:border-blue-500/20**:data-[slot=icon]:text-fg",
+                  })}
+                  target="_blank"
+                  href="https://dub.sh/NfSXJrL"
+                >
+                  <IconBrandIntentui />
+                </Link>
 
-                  <ThemeSwitcher intent="plain" isCircle />
-                  <GithubLink />
-                </>
+                <ThemeSwitcher intent="plain" isCircle />
+                <GithubLink />
               </div>
             </div>
           </PageContainer>

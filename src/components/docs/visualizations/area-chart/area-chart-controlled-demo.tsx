@@ -1,10 +1,10 @@
 "use client"
 
+import { useMemo, useState } from "react"
+import type { Key } from "react-aria-components"
 import { AreaChart } from "@/components/ui/area-chart"
 import { Card } from "@/components/ui/card"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { useMemo, useState } from "react"
-import type { Key } from "react-aria-components"
 
 export default function AreaChartControlledSmart() {
   const [selected, setSelected] = useState<Set<Key>>(new Set(["7d"]))
