@@ -30,6 +30,17 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
   return (
     <>
+      <div className="border-fg/10 border-b bg-secondary p-4 text-center">
+        You're viewing the <span className="font-semibold">Intent UI v2</span> documentation. Go to{" "}
+        <Link
+          className="font-medium text-blue-600 underline dark:text-blue-400"
+          href="https://intentui.com"
+          target="_blank"
+        >
+          v3 documentation
+        </Link>
+        <span> to see the latest updates.</span>
+      </div>
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <PageContainer className="flex items-center justify-between py-4">
         <div className="flex items-center">

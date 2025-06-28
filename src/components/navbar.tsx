@@ -42,6 +42,17 @@ export function Navbar() {
   const isDesktop = useMediaQuery("(min-width: 1024px)")
   return (
     <>
+      <div className="border-fg/10 border-b bg-secondary p-4 text-center">
+        You're viewing the <span className="font-semibold">Intent UI v2</span> documentation. Go to{" "}
+        <Link
+          className="font-medium text-blue-600 underline dark:text-blue-400"
+          href="https://intentui.com"
+          target="_blank"
+        >
+          v3 documentation
+        </Link>
+        <span> to see the latest updates.</span>
+      </div>
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <LayoutGroup id={`navigation-${id}`}>
         <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
@@ -252,11 +263,9 @@ export function NavbarDropdown() {
         </Button>
         <Menu.Content>
           <Menu.Item href="https://3x.intentui.com" target="_blank">
-            3.x (beta)
+            3.x (latest)
           </Menu.Item>
-          <Menu.Item href="https://intentui.com/docs/getting-started/introduction">
-            2.x (latest)
-          </Menu.Item>
+          <Menu.Item href="https://intentui.com/docs/getting-started/introduction">2.x</Menu.Item>
           <Menu.Item href="https://1x.intentui.com/docs/getting-started/introduction">
             1.x (deprecated)
           </Menu.Item>

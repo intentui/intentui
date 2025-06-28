@@ -4,6 +4,7 @@ import { Providers } from "@/components/providers"
 import { siteConfig } from "@/config/site"
 import "@/styles/app.css"
 import { Toast } from "@/components/ui/toast"
+import { WarningV } from "@/components/warning-v"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
 import { twJoin } from "tailwind-merge"
@@ -78,6 +79,7 @@ export default function RootLayout({
       <body className="min-h-screen font-sans antialiased">
         <Providers>
           <Toast />
+          <WarningV />
           <main>{children}</main>
         </Providers>
       </body>
