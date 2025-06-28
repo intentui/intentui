@@ -11,7 +11,7 @@ export const siteConfig = {
   },
   discord: "https://discord.gg/DYmVJ66JUD",
   repo: "https://github.com/irsyadadl/intentui",
-  repoStars: "1.5",
+  repoStars: "1.6",
   currentVersion: "3.x",
   cli: {
     version: "latest",

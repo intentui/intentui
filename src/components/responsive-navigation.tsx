@@ -27,7 +27,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
   return (
     <nav
       className={twMerge(
-        "sticky top-0 z-20 flex items-center bg-bg px-2 py-2 lg:hidden",
+        "sticky top-0 z-40 flex items-center bg-bg px-2 py-2 lg:hidden",
         className,
       )}
     >
