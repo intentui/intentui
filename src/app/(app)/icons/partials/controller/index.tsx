@@ -36,7 +36,7 @@ export function Controller({ searchParams }: SearchParamsProps) {
             <Search />
             <Button
               aria-label={`Change filter to ${isSelected === "solid" ? "regular" : "solid"}`}
-              intent="secondary"
+              intent="outline"
               size="sq-md"
               onPress={() => onFilter(isSelected === "solid" ? "regular" : "solid")}
             >

@@ -1,6 +1,7 @@
 import { Ads } from "@/components/ads"
 import { DocRefs } from "@/components/doc-refs"
 import { Mdx } from "@/components/mdx"
+import { MobilePager } from "@/components/mobile-pager"
 import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
 import { Badge } from "@/components/ui/badge"
@@ -107,9 +108,12 @@ export default async function Page(props: DocPageProps) {
             <div className="font-mono text-blue-600 text-xs uppercase dark:text-blue-400">
               {extractSegment(page.url)}
             </div>
-            <h1 className="mt-2 font-semibold text-2xl tracking-tight sm:text-3xl">
-              {page.data.title}
-            </h1>
+            <div className="flex items-center justify-between gap-x-2">
+              <h1 className="mt-2 font-semibold text-xl tracking-tight sm:text-3xl">
+                {page.data.title}
+              </h1>
+              <MobilePager tree={source.pageTree} url={page.url} />
+            </div>
             {page.data.description ? (
               <p className="mt-2.5 text-pretty text-base text-fg/60 leading-relaxed">
                 {page.data.description}

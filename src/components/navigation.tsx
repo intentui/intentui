@@ -10,20 +10,11 @@ import { Menu } from "@/components/ui/menu"
 import { siteConfig } from "@/config/site"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import {
-  IconBrandAdobe,
   IconBrandDiscord,
-  IconBrandGithub,
   IconBrandIntentui,
-  IconBrandTailwindcss,
   IconBrandX,
   IconChevronDown,
-  IconColorPalette,
-  IconColors,
-  IconCube,
-  IconHome,
-  IconNotepad,
   IconSearch,
-  IconWindowVisit,
 } from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { CommandPalette } from "./command-palette"
@@ -42,7 +33,38 @@ export function Navigation() {
           <PageContainer className="lg:px-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-x-6">
-                <NavbarDropdown />
+                <div className="flex items-center">
+                  <Link
+                    href="/"
+                    className={buttonStyles({
+                      intent: "plain",
+                      size: "sm",
+                      className:
+                        "-ml-1 group flex items-center gap-x-2 pressed:bg-transparent p-2 font-medium hover:bg-transparent *:data-[slot=icon]:size-6 sm:*:data-[slot=icon]:size-6",
+                    })}
+                  >
+                    <IconBrandIntentui />
+                    <span>Intent</span> <span className="text-muted-fg">UI</span>
+                  </Link>
+                  <span className="mx-2 text-muted-fg">/</span>
+                  <Menu>
+                    <Button intent="plain" size="xs">
+                      3.x
+                      <IconChevronDown />
+                    </Button>
+                    <Menu.Content>
+                      <Menu.Item href="https://intentui.com/docs/getting-started/introduction">
+                        3.x (latest)
+                      </Menu.Item>
+                      <Menu.Item href="https://2x.intentui.com/docs/getting-started/introduction">
+                        2.x
+                      </Menu.Item>
+                      <Menu.Item href="https://1x.intentui.com/docs/getting-started/introduction">
+                        1.x (deprecated)
+                      </Menu.Item>
+                    </Menu.Content>
+                  </Menu>
+                </div>
                 <NavLink isNextLink isActive={pathname === "/"} href="/">
                   Home
                 </NavLink>
@@ -136,100 +158,5 @@ export function Navigation() {
       </div>
       {!isDesktop && <ResponsiveNavigation />}
     </>
-  )
-}
-
-export function NavbarDropdown() {
-  return (
-    <div className="flex items-center">
-      <Menu>
-        <Button
-          aria-label={siteConfig.name}
-          intent="plain"
-          size="sm"
-          className="-ml-1 group flex items-center gap-x-2 pressed:bg-transparent p-2 font-medium hover:bg-transparent *:data-[slot=icon]:size-6 sm:*:data-[slot=icon]:size-6"
-        >
-          <IconBrandIntentui />
-          <span>Intent</span> <span className="text-muted-fg">UI</span>
-        </Button>
-        <Menu.Content placement="bottom" className="sm:min-w-64">
-          <Menu.Section title="Pages">
-            <Menu.Item href="/">
-              <IconHome />
-              <Menu.Label>Home</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/components">
-              <IconCube />
-              <Menu.Label>Components</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/colors">
-              <IconColors />
-              <Menu.Label>Colors</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/themes">
-              <IconColorPalette />
-              <Menu.Label>Themes</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/blocks">
-              <IconWindowVisit />
-              <Menu.Label>Blocks</Menu.Label>
-            </Menu.Item>
-            <Menu.Item target="_blank" href="https://blocks.intentui.com">
-              <IconBrandIntentui />
-              <Menu.Label>Premium Blocks</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/icons">
-              <IconBrandIntentui />
-              <Menu.Label>Icons</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/blog">
-              <IconNotepad />
-              <Menu.Label>Blog</Menu.Label>
-            </Menu.Item>
-          </Menu.Section>
-          <Menu.Section title="Refs">
-            <Menu.Item href={siteConfig.discord} target="_blank">
-              <IconBrandDiscord /> <Menu.Label>Discord</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="https://x.com/intent/follow?screen_name=irsyadadl" target="_blank">
-              <IconBrandX /> <Menu.Label>X / Twitter</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href={siteConfig.links.github} target="_blank">
-              <IconBrandGithub />
-              <Menu.Label>Github</Menu.Label>
-            </Menu.Item>
-            <Menu.Item
-              href="https://react-spectrum.adobe.com/react-aria/components.html"
-              target="_blank"
-            >
-              <IconBrandAdobe />
-              <Menu.Label>RAC</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="https://tailwindcss.com" target="_blank">
-              <IconBrandTailwindcss />
-              <Menu.Label>Tailwind CSS</Menu.Label>
-            </Menu.Item>
-          </Menu.Section>
-        </Menu.Content>
-      </Menu>
-      <span className="mx-2 text-muted-fg">/</span>
-      <Menu>
-        <Button intent="plain" size="xs">
-          3.x
-          <IconChevronDown />
-        </Button>
-        <Menu.Content>
-          <Menu.Item href="https://intentui.com/docs/getting-started/introduction">
-            3.x (latest)
-          </Menu.Item>
-          <Menu.Item href="https://2x.intentui.com/docs/getting-started/introduction">
-            2.x
-          </Menu.Item>
-          <Menu.Item href="https://1x.intentui.com/docs/getting-started/introduction">
-            1.x (deprecated)
-          </Menu.Item>
-        </Menu.Content>
-      </Menu>
-    </div>
   )
 }

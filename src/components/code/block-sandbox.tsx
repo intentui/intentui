@@ -140,7 +140,7 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
           <h2 className="inline-flex items-center gap-x-1.5 font-medium text-sm **:data-[slot=icon]:text-muted-fg">
             {title}
           </h2>
-          <div className="flex items-center px-2 py-1 shadow-sm">
+          <div className="flex items-center px-2 py-1">
             <TabList className="flex items-center text-sm/6">
               <Tab
                 className={({ isSelected }) =>

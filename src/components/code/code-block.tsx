@@ -60,7 +60,7 @@ export function CodeBlock({ source }: Props) {
                 <Tab
                   className={(values) =>
                     twMerge(
-                      "flex cursor-default items-center gap-x-1 p-2 font-medium text-sm/6",
+                      "flex min-w-0 cursor-default items-center gap-x-1 truncate px-1 py-2 font-medium text-sm/6 *:data-[slot=icon]:hidden sm:p-2 sm:*:data-[slot=icon]:block",
                       values.isSelected || values.isFocused || values.isFocusVisible
                         ? "text-fg"
                         : "text-muted-fg hover:text-fg",
@@ -80,7 +80,8 @@ export function CodeBlock({ source }: Props) {
                   ) : (
                     <IconFile />
                   )}
-                  <span>{key}</span>
+                  <span className="inline sm:hidden">{key.split("/").pop()}</span>
+                  <span className="hidden sm:inline">{key}</span>
                 </Tab>
               ))}
             </TabList>

@@ -2,7 +2,6 @@
 
 import menus from "@/components-search.json"
 import type { Component } from "@/types/search"
-import { IconBookOpen, IconCircleHalf, IconHighlight, IconPackage } from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
 import { Link } from "react-aria-components"
@@ -29,13 +28,11 @@ export function Aside() {
   return (
     <div className="-ml-0.5 sticky h-screen w-full overflow-y-auto overflow-x-hidden pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-16 xl:w-60 ">
       <div
-        className="flex flex-col gap-y-(--gap) pr-4 pb-10 pl-(--gap) [--gap:--spacing(6)]"
+        className="flex flex-col gap-y-(--gap) px-4 pb-10 [--gap:--spacing(6)]"
         aria-label="Documentation sidebar"
       >
         <div>
-          <AsideHeader>
-            <IconHighlight /> {prologue?.section}
-          </AsideHeader>
+          <AsideHeader>{prologue?.section}</AsideHeader>
           {prologue?.children?.map((item) => (
             <AsideLink key={item.slug} href={item.slug}>
               {item.title}
@@ -43,9 +40,7 @@ export function Aside() {
           ))}
         </div>
         <div>
-          <AsideHeader>
-            <IconBookOpen /> {gs?.section}
-          </AsideHeader>
+          <AsideHeader>{gs?.section}</AsideHeader>
           {sortedGsChildren.map((item) => (
             <AsideLink key={item.slug} href={item.slug}>
               {item.title}
@@ -53,9 +48,7 @@ export function Aside() {
           ))}
         </div>
         <div>
-          <AsideHeader>
-            <IconCircleHalf /> {dm?.section}
-          </AsideHeader>
+          <AsideHeader>{dm?.section}</AsideHeader>
           {dm?.children?.map((item) => (
             <AsideLink key={item.slug} href={item.slug}>
               {item.title}
@@ -63,9 +56,6 @@ export function Aside() {
           ))}
         </div>
         <div className="flex flex-col gap-y-(--gap)">
-          <AsideHeader className="-mb-4">
-            <IconPackage /> {components?.section}
-          </AsideHeader>
           {components?.children?.map((item) => (
             <div key={item.subsection}>
               <AsideHeader>{item?.subsection}</AsideHeader>
@@ -103,7 +93,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
       href={href}
       ref={ref}
       className={twMerge(
-        "-ml-3 mb-0.5 flex items-center justify-between rounded-lg px-3 py-1.5 text-base text-muted-fg sm:text-sm",
+        "-ml-3 mb-0.5 flex items-center justify-between rounded-lg px-3 py-1.5 text-base text-fg sm:text-sm/6",
         "focus:outline-hidden",
         "hover:bg-muted hover:text-secondary-fg",
         "focus:bg-muted focus:text-secondary-fg",
@@ -120,14 +110,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
 function AsideHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={twMerge(
-        [
-          "relative block font-medium text-xs/6",
-          "*:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-fg",
-          "*:data-[slot=icon]:-left-6 *:data-[slot=icon]:-translate-y-1/2 *:data-[slot=icon]:absolute *:data-[slot=icon]:top-1/2 *:data-[slot=icon]:hidden sm:*:data-[slot=icon]:inline",
-        ],
-        className,
-      )}
+      className={twMerge("relative mb-2 block font-medium text-muted-fg text-xs/6", className)}
       {...props}
     />
   )

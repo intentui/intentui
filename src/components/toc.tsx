@@ -91,7 +91,7 @@ function TocLink({
     <li key={item.url}>
       <a
         className={twMerge(
-          "block tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden lg:text-[0.885rem]",
+          "block font-medium tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden lg:text-[0.885rem]",
           item.url.split("#")[1] === activeId
             ? "text-fg forced-colors:text-[Highlight]"
             : "text-muted-fg/90 forced-colors:text-[GrayText]",
