@@ -10,7 +10,7 @@ export function GithubLink() {
       className="inset-ring inset-ring-white/10 ml-1 inline-flex items-center gap-x-1 rounded-full bg-linear-to-r from-blue-600 via-blue-700 to-sky-500 px-2 py-1 font-medium text-white text-xs/5 tabular-nums shadow-black/50"
     >
       <IconBrandGithub className="-ml-0.5" />
-      1.5K Github
+      {siteConfig.repoStars}K Github
     </Link>
   )
 }

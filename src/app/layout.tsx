@@ -1,7 +1,7 @@
 import type React from "react"
 
 import { Providers } from "@/components/providers"
-import { siteConfig } from "@/config/site"
+import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import "@/styles/app.css"
 import { Toast } from "@/components/ui/toast"
 import type { Metadata, Viewport } from "next"
@@ -124,55 +124,19 @@ export default function RootLayout({ children }: Readonly<Props>) {
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: js`
+            __html: `
               try {
-                _updateTheme(localStorage.currentTheme)
-              } catch (_) {}
-
-              try {
-                if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
-                  document.documentElement.classList.add('os-macos')
+                if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
+                }
+                if (localStorage.layout) {
+                  document.documentElement.classList.add('layout-' + localStorage.layout)
                 }
               } catch (_) {}
-
-              function _updateTheme(theme) {
-                let classList = document.documentElement.classList;
-
-                classList.remove("light", "dark", "system");
-                document.querySelectorAll('meta[name="theme-color"]').forEach(el => el.remove())
-                if (theme === 'dark') {
-                  classList.add('dark')
-
-                  let meta = document.createElement('meta')
-                  meta.name = 'theme-color'
-                  meta.content = 'oklch(.13 .028 261.692)'
-                  document.head.appendChild(meta)
-                } else if (theme === 'light') {
-                  classList.add('light')
-
-                  let meta = document.createElement('meta')
-                  meta.name = 'theme-color'
-                  meta.content = 'white'
-                  document.head.appendChild(meta)
-                } else {
-                  classList.add('system')
-
-                  let meta1 = document.createElement('meta')
-                  meta1.name = 'theme-color'
-                  meta1.content = 'oklch(.13 .028 261.692)'
-                  meta1.media = '(prefers-color-scheme: dark)'
-                  document.head.appendChild(meta1)
-
-                  let meta2 = document.createElement('meta')
-                  meta2.name = 'theme-color'
-                  meta2.content = 'white'
-                  meta2.media = '(prefers-color-scheme: light)'
-                  document.head.appendChild(meta2)
-                }
-              }
             `,
           }}
         />
+        <meta name="theme-color" content={META_THEME_COLORS.light} />
       </head>
       <body className="min-h-screen font-sans antialiased">
         <Providers>

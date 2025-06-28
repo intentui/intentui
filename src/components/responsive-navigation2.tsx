@@ -48,7 +48,12 @@ export function ResponsiveNavigation({
   return (
     <>
       <CommandPalette setOpen={setOpenCmd} openCmd={openCmd} />
-      <nav className={twJoin("sticky top-0 z-30 flex animate-in items-center justify-between bg-bg px-4 py-2 transition-all duration-100 lg:hidden", isScrolled && "border-b shadow-xs",)}>
+      <nav
+        className={twJoin(
+          "sticky top-0 z-30 flex animate-in items-center justify-between bg-bg px-4 py-2 transition-all duration-100 lg:hidden",
+          isScrolled && "border-b shadow-xs",
+        )}
+      >
         <div className="flex items-center gap-x-2">
           <ButtonPrimitive
             onPress={() => setOpenAside(true)}

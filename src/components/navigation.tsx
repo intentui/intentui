@@ -134,7 +134,7 @@ export function Navigation() {
           </PageContainer>
         </nav>
       </div>
-      {!isDesktop && <ResponsiveNavigation openCmd={open} setOpenCmd={setOpen} />}
+      {!isDesktop && <ResponsiveNavigation />}
     </>
   )
 }

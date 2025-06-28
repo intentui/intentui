@@ -11,6 +11,7 @@ export const siteConfig = {
   },
   discord: "https://discord.gg/DYmVJ66JUD",
   repo: "https://github.com/irsyadadl/intentui",
+  repoStars: "1.5",
   currentVersion: "3.x",
   cli: {
     version: "latest",
@@ -22,3 +23,8 @@ export const siteConfig = {
 }
 
 export type SiteConfig = typeof siteConfig
+
+export const META_THEME_COLORS = {
+  light: "#ffffff",
+  dark: "oklch(0.17 0.006 285.885)",
+}

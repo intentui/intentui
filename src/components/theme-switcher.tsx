@@ -1,12 +1,13 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { IconDeviceDesktop2, IconMoon, IconSun } from "@intentui/icons"
+import { IconCircleHalf, IconCircleHalfFill } from "@intentui/icons"
 import { useTheme } from "next-themes"
 
 export function ThemeSwitcher({
   isCircle = false,
   intent = "outline",
+  className,
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { theme, setTheme } = useTheme()
@@ -20,12 +21,19 @@ export function ThemeSwitcher({
     <Button
       isCircle={isCircle}
       intent={intent}
+      className={className}
       size="sq-sm"
       aria-label="Switch theme"
       onPress={toggleTheme}
       {...props}
     >
-      {theme === "light" ? <IconSun /> : theme === "dark" ? <IconMoon /> : <IconDeviceDesktop2 />}
+      {theme === "light" ? (
+        <IconCircleHalf />
+      ) : theme === "dark" ? (
+        <IconCircleHalfFill />
+      ) : (
+        <IconCircleHalf />
+      )}
     </Button>
   )
 }

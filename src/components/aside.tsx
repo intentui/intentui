@@ -9,18 +9,18 @@ import { Link } from "react-aria-components"
 import type { LinkProps } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 
-type SidebarItem = {
+export type SidebarItem = {
   section: string
   children?: { title: string; slug: string }[]
 }
 
-const prologue = menus[0] as SidebarItem
-const gs = menus[1] as SidebarItem
-const dm = menus[2] as SidebarItem
-const components = menus[3] as Component
+export const prologue = menus[0] as SidebarItem
+export const gs = menus[1] as SidebarItem
+export const dm = menus[2] as SidebarItem
+export const components = menus[3] as Component
 
-const orderGs = ["Introduction", "Installation", "Client Side Routing", "Colors", "CLI"]
-const sortedGsChildren =
+export const orderGs = ["Introduction", "Installation", "Client Side Routing", "Colors", "CLI"]
+export const sortedGsChildren =
   gs?.children
     ?.filter((item) => orderGs.includes(item.title))
     .sort((a, b) => orderGs.indexOf(a.title) - orderGs.indexOf(b.title)) ?? []
@@ -34,7 +34,6 @@ export function Aside() {
       >
         <div>
           <AsideHeader>
-            {" "}
             <IconHighlight /> {prologue?.section}
           </AsideHeader>
           {prologue?.children?.map((item) => (

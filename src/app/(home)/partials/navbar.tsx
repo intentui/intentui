@@ -3,10 +3,12 @@
 import { CommandPalette } from "@/components/command-palette"
 import { GithubLink } from "@/components/github-link"
 import { PageContainer } from "@/components/page-container"
+import { ResponsiveNavigation } from "@/components/responsive-navigation"
 import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
+import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   IconArrowUpFill,
   IconArrowUpRight,
@@ -27,10 +29,11 @@ import { Button } from "react-aria-components"
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const isMobile = useMediaQuery("(max-width: 1023px)")
   return (
     <>
       <CommandPalette setOpen={setOpen} openCmd={open} />
-      <PageContainer className="flex items-center justify-between py-4">
+      <PageContainer className="hidden items-center justify-between py-4 lg:flex">
         <div className="flex items-center">
           <Link
             href="/"
@@ -42,7 +45,7 @@ export function Navbar() {
               <span>Intent</span> <span className="text-muted-fg">UI</span>
             </span>
           </Link>
-          <div className="hidden items-center gap-x-1 lg:flex">
+          <div className="flex items-center gap-x-1">
             {menus.map((menu) => (
               <NavLink
                 key={menu.href}
@@ -108,6 +111,14 @@ export function Navbar() {
           </div>
         </div>
       </PageContainer>
+      {isMobile && (
+        <ResponsiveNavigation
+          className="bg-transparent"
+          popover={{
+            className: "from-blue-50 dark:from-[#161619]",
+          }}
+        />
+      )}
     </>
   )
 }
