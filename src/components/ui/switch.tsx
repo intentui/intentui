@@ -2,10 +2,9 @@ import {
   Switch as SwitchPrimitive,
   type SwitchProps as SwitchPrimitiveProps,
 } from "react-aria-components"
-
+import { twJoin, twMerge } from "tailwind-merge"
 import { Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twJoin, twMerge } from "tailwind-merge"
 
 interface SwitchProps extends SwitchPrimitiveProps {
   ref?: React.RefObject<HTMLLabelElement>

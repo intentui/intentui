@@ -1,10 +1,9 @@
 "use client"
 
+import { type Color, parseColor } from "@react-stately/color"
 import { useState } from "react"
-
 import { ControlledValues } from "@/components/docs/colors/controlled-values"
 import { ColorField } from "@/components/ui/color-field"
-import { type Color, parseColor } from "@react-stately/color"
 
 export default function ColorFieldControlledDemo() {
   const [color, setColor] = useState(parseColor("#FAFAFA"))

@@ -1,7 +1,4 @@
 "use client"
-import { CopyButton } from "@/components/code/copy-button"
-import { ScrollArea, ScrollBar, ScrollViewport } from "@/components/ui/scroll-area"
-import { useCopyButton } from "@/lib/copy"
 import type { ScrollAreaViewportProps } from "@radix-ui/react-scroll-area"
 import {
   type ButtonHTMLAttributes,
@@ -12,6 +9,9 @@ import {
   useRef,
 } from "react"
 import { twMerge } from "tailwind-merge"
+import { CopyButton } from "@/components/code/copy-button"
+import { ScrollArea, ScrollBar, ScrollViewport } from "@/components/ui/scroll-area"
+import { useCopyButton } from "@/lib/copy"
 
 export type PreProps = HTMLAttributes<HTMLElement> & {
   ref?: React.Ref<HTMLElement>
@@ -90,7 +90,6 @@ export const PlainCode = ({
           {icon ? (
             <div
               className="text-muted-fg [&_svg]:size-3.5"
-              // biome-ignore lint/security/noDangerouslySetInnerHtmlWithChildren: <explanation>
               dangerouslySetInnerHTML={
                 typeof icon === "string"
                   ? {

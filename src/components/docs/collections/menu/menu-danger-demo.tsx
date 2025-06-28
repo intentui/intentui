@@ -1,7 +1,7 @@
 "use client"
 
-import { Menu } from "@/components/ui/menu"
 import { IconHighlight, IconTrash } from "@intentui/icons"
+import { Menu } from "@/components/ui/menu"
 
 export default function MenuDangerDemo() {
   return (

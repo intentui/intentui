@@ -1,8 +1,8 @@
 "use client"
 
+import { useMemo } from "react"
 import { Card } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
-import { useMemo } from "react"
 
 export default function LineChartDemo() {
   const engagementData = useMemo(

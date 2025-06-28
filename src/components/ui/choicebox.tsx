@@ -1,13 +1,12 @@
 "use client"
 
+import { createContext, use } from "react"
 import type { GridListItemProps, GridListProps, TextProps } from "react-aria-components"
-import { GridList, GridListItem, Text, composeRenderProps } from "react-aria-components"
+import { composeRenderProps, GridList, GridListItem, Text } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"
-
 import { Checkbox } from "@/components/ui/checkbox"
-import { createContext, use } from "react"
-import { twMerge } from "tailwind-merge"
 
 const choiceboxStyles = tv({
   base: "grid",

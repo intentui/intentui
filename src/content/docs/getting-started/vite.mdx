@@ -5,11 +5,12 @@ description: "Set up Intent in your Vite project with React and Tailwind CSS usi
 
 ## Installation
 Start a new project with the following command:
-<Installation command='npm create vite@latest app -- --template react-ts' />
+<Installation command='npm create vite@latest' />
 
 Next, install Tailwind CSS along with the Tailwind CSS Vite plugin:
 <Installation command='npm install tailwindcss @tailwindcss/vite' />
 
+## Vite.config.ts
 Now, open your `vite.config.ts` file and add the following to the `plugins` array:
 ```ts
 import { defineConfig } from 'vite'
@@ -25,27 +26,35 @@ export default defineConfig({
 })
 ```
 
-## Using Intent CLI
-Run Intent CLI to initialize your project:
-<Installation command='npx @intentui/cli@latest init' />
+## Tsconfig.json
+To ensure proper path resolution, update your `tsconfig.json` file with the following paths:
+```json
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
 
-You'll be guided through a few setup questions. Just follow the prompts, and you're good to go!
-```
-✔ Initializing.
-✔ Components folder: src/components
-✔ Utils folder: src/utils
-✔ Where would you like to place the CSS file? src/index.css
-✔ Paths added to tsconfig.app.json.
-✔ Pick your desired base gray: zinc
-✔ Installing dependencies.
-✔ Configuring.
-✔ UI folder created at `src/components/ui`
-✔ Primitive file saved to `src/components/ui/primitive.tsx`
-✔ Theme Provider file saved to `"src/components/theme-provider.ts"`
-✔ Providers file saved to `"src/components/providers.tsx"`
-✔ Configuration saved to `intentui.json`
-✔ Installation complete.
-```
+## Install Intent UI
+After you setup all the necessary configurations, you can install Intent UI by running the following command:
+<Installation command='npx @intentui/cli@latest init'/>
+
+## Adding Components
+Add Intent components to your project with the following command:
+<Installation command='npx @intentui/cli@latest add text-field button menu' />
 
 ## Other Framework
 You might be interested in using Intent with other frameworks.

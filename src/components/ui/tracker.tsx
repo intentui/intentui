@@ -1,9 +1,9 @@
 "use client"
 
-import { Tooltip } from "@/components/ui/tooltip"
 import { useState } from "react"
 import { Pressable } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
+import { Tooltip } from "@/components/ui/tooltip"
 
 interface TrackerBlockProps {
   key?: string | number

@@ -3,12 +3,11 @@
 import { createContext, useContext } from "react"
 
 import type { GroupProps, SeparatorProps, ToolbarProps } from "react-aria-components"
-import { Group, Toolbar as ToolbarPrimitive, composeRenderProps } from "react-aria-components"
-
+import { composeRenderProps, Group, Toolbar as ToolbarPrimitive } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
 import { Separator } from "@/components/ui/separator"
 import { Toggle, type ToggleProps } from "@/components/ui/toggle"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twMerge } from "tailwind-merge"
 
 const ToolbarContext = createContext<{ orientation?: ToolbarProps["orientation"] }>({
   orientation: "horizontal",
@@ -26,6 +25,7 @@ const Toolbar = ({ orientation = "horizontal", className, ...props }: ToolbarPro
             orientation === "horizontal"
               ? "flex-row items-center [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               : "flex-col items-start",
+            className,
           ),
         )}
       />

@@ -1,13 +1,13 @@
 "use client"
 
+import { IconBlock, IconChevronLgDown, IconTrash } from "@intentui/icons"
 import { useState } from "react"
-
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
 import { Menu } from "@/components/ui/menu"
 import { Modal } from "@/components/ui/modal"
 import { wait } from "@/lib/utils"
-import { IconBlock, IconChevronLgDown, IconTrash } from "@intentui/icons"
 
 export default function ModalTriggeredByMenuDemo() {
   const [state, setState] = useState<string | null>(null)
@@ -15,6 +15,7 @@ export default function ModalTriggeredByMenuDemo() {
   const closeModal = () => setState(null)
   const executeAction = (action: string) => {
     setLoading(true)
+    toast(`${action.charAt(0).toUpperCase() + action.slice(1)} action executed!`)
     wait(2000).then(() => {
       setLoading(false)
       closeModal()

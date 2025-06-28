@@ -1,8 +1,8 @@
+import type { Metadata } from "next"
 import { ListComponents } from "@/app/(app)/components/(partials)/list-components"
 import { Header } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
 import { siteConfig } from "@/config/site"
-import type { Metadata } from "next"
 
 export default function Page() {
   return (

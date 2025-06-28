@@ -1,7 +1,7 @@
 "use client"
 
-import { FileTrigger } from "@/components/ui/file-trigger"
 import { useState } from "react"
+import { FileTrigger } from "@/components/ui/file-trigger"
 
 export default function FileTriggerPendingDemo() {
   const [isLoading, setLoading] = useState(false)

@@ -2,14 +2,15 @@
 
 import { createContext, use } from "react"
 import {
+  composeRenderProps,
   ToggleButton,
   ToggleButtonGroup,
   type ToggleButtonGroupProps,
   type ToggleButtonProps,
-  composeRenderProps,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 type ToggleSize = "xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"
 
@@ -41,14 +42,11 @@ const ToggleGroup = ({
     <ToggleGroupContext.Provider value={{ size, selectionMode, orientation }}>
       <ToggleButtonGroup
         selectionMode={selectionMode}
-        className={composeRenderProps(className, (className, renderProps) =>
-          twMerge(
-            "inset-ring inset-ring-border inline-flex overflow-hidden rounded-lg p-0.5",
-            orientation === "horizontal" ? "flex-row" : "flex-col",
-            selectionMode === "single" ? "gap-0.5" : "gap-0",
-            className,
-          ),
-        )}
+        className={composeTailwindRenderProps(className, [
+          "inset-ring inset-ring-border inline-flex overflow-hidden rounded-lg p-0.5",
+          orientation === "horizontal" ? "flex-row" : "flex-col",
+          selectionMode === "single" ? "gap-0.5" : "gap-0",
+        ])}
         {...props}
       />
     </ToggleGroupContext.Provider>

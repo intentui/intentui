@@ -1,10 +1,10 @@
 "use client"
 
+import { IconCommandRegular, IconDashboard, IconLogout, IconSettings } from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { Menu } from "@/components/ui/menu"
 import { SidebarNav, SidebarTrigger } from "@/components/ui/sidebar"
-import { IconCommandRegular, IconDashboard, IconLogout, IconSettings } from "@intentui/icons"
 
 export default function AppSidebarNav() {
   return (

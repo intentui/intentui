@@ -1,18 +1,5 @@
 "use client"
 
-import { Avatar } from "@/components/ui/avatar"
-import { Link } from "@/components/ui/link"
-import { Menu } from "@/components/ui/menu"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarItem,
-  SidebarLabel,
-  SidebarSection,
-  SidebarSectionGroup,
-} from "@/components/ui/sidebar"
 import {
   IconBrandApple,
   IconCart,
@@ -28,6 +15,19 @@ import {
   IconSettings,
   IconShield,
 } from "@intentui/icons"
+import { Avatar } from "@/components/ui/avatar"
+import { Link } from "@/components/ui/link"
+import { Menu } from "@/components/ui/menu"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarItem,
+  SidebarLabel,
+  SidebarSection,
+  SidebarSectionGroup,
+} from "@/components/ui/sidebar"
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   return (

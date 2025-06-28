@@ -1,7 +1,5 @@
 "use client"
 
-import { Avatar } from "@/components/ui/avatar"
-import { Menu } from "@/components/ui/menu"
 import {
   IconCommandRegular,
   IconDashboard,
@@ -12,6 +10,8 @@ import {
   IconSun,
 } from "@intentui/icons"
 import { useTheme } from "next-themes"
+import { Avatar } from "@/components/ui/avatar"
+import { Menu } from "@/components/ui/menu"
 
 export default function MenuWithIconDemo() {
   const { resolvedTheme, setTheme } = useTheme()

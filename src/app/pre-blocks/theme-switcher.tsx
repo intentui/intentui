@@ -1,9 +1,9 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconDeviceDesktop2, IconMoon, IconSun } from "@intentui/icons"
 import { useTheme } from "next-themes"
+import { Button } from "@/components/ui/button"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 export function ThemeSwitcher({
   isCircle = false,

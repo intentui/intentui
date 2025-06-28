@@ -1,11 +1,10 @@
 "use client"
 
 import React, { useState } from "react"
-
+import { Group } from "react-aria-components"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
 import { extractImports, extractJSX } from "@/lib/utils"
-import { Group } from "react-aria-components"
 
 interface AnatomyProps extends React.HTMLAttributes<HTMLDivElement> {
   show: string

@@ -1,3 +1,4 @@
+import { IconDashboard } from "@intentui/icons"
 import MenuSubDemo from "@/components/docs/collections/menu/menu-sub-demo"
 import RangeCalendarControlledDemo from "@/components/docs/date-and-time/calendar/range-calendar-controlled-demo"
 import ModalDemo from "@/components/docs/overlays/modal/modal-demo"
@@ -17,7 +18,6 @@ import { Radio, RadioGroup } from "@/components/ui/radio"
 import { Select } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 import { TextField } from "@/components/ui/text-field"
-import { IconDashboard } from "@intentui/icons"
 
 export function Blocks() {
   return (

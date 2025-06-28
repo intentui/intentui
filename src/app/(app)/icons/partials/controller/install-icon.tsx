@@ -1,9 +1,8 @@
+import { IconCheck, IconChevronRight, IconDuplicate } from "@intentui/icons"
 import { useState } from "react"
-
+import { copyToClipboard } from "usemods"
 import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
-import { IconCheck, IconChevronRight, IconDuplicate } from "@intentui/icons"
-import { copyToClipboard } from "usemods"
 
 type Tool = "Bun" | "Yarn" | "PNPM" | "NPM"
 
@@ -29,7 +28,7 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
   }
 
   return (
-    <div className="[&_.xd]:-mt-px xd flex h-10 w-full items-center justify-between rounded-lg border bg-secondary p-1 pl-3 font-mono text-sm backdrop-blur-xs duration-200 hover:border-current/10 sm:min-w-72 sm:max-w-72 [&_.xd]:mr-[-0.30rem]">
+    <div className="[&_.xd]:-mt-px xd flex h-10 w-full items-center justify-between rounded-lg border p-1 pl-3 font-mono text-sm backdrop-blur-xs duration-200 hover:border-current/10 sm:min-w-72 sm:max-w-72 dark:bg-secondary [&_.xd]:mr-[-0.30rem]">
       <div className="flex items-center">
         <IconChevronRight className="-ml-1.5 size-5.5 text-muted-fg" />
         {command || "npm i @intentui/icons"}

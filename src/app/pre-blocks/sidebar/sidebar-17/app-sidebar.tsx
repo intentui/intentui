@@ -1,5 +1,7 @@
 "use client"
 
+import { IconBrandIntentui } from "@intentui/icons"
+import { parseDate } from "@internationalized/date"
 import { Link } from "@/components/ui/link"
 import { RangeCalendar } from "@/components/ui/range-calendar"
 import { SearchField } from "@/components/ui/search-field"
@@ -13,8 +15,6 @@ import {
   SidebarSectionGroup,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { IconBrandIntentui } from "@intentui/icons"
-import { parseDate } from "@internationalized/date"
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   const { state } = useSidebar()

@@ -1,8 +1,8 @@
 "use client"
 
+import type { TooltipProps } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Tooltip } from "@/components/ui/tooltip"
-import type { TooltipProps } from "react-aria-components"
 
 type Placement = Pick<TooltipProps, "placement">["placement"]
 const placements: Placement[] = ["bottom", "top", "left", "start", "right", "end"]

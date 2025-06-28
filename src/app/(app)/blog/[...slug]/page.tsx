@@ -1,11 +1,11 @@
-import type { DocPageProps } from "@/app/(app)/docs/[...slug]/page"
-import { Mdx } from "@/components/mdx"
-import { Toc } from "@/components/toc"
-import { siteConfig } from "@/config/site"
 import dayjs from "dayjs"
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { blog } from "#site/content"
+import type { DocPageProps } from "@/app/(app)/docs/[...slug]/page"
+import { Mdx } from "@/components/mdx"
+import { Toc } from "@/components/toc"
+import { siteConfig } from "@/config/site"
 
 export default async function Page(props: DocPageProps) {
   const { slug } = await props.params

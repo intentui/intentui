@@ -1,4 +1,5 @@
 "use client"
+import { IconBrandIntentui, IconChevronLgDown, IconSearch, IconShoppingBag } from "@intentui/icons"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
@@ -16,7 +17,6 @@ import {
   NavbarTrigger,
 } from "@/components/ui/navbar"
 import { Separator } from "@/components/ui/separator"
-import { IconBrandIntentui, IconChevronLgDown, IconSearch, IconShoppingBag } from "@intentui/icons"
 import { UserMenu } from "./user-menu"
 
 const categories = [

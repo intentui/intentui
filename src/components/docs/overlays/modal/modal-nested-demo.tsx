@@ -1,12 +1,11 @@
 "use client"
 
 import { useState } from "react"
-
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import { Modal } from "@/components/ui/modal"
 import { Textarea } from "@/components/ui/textarea"
-import { toast } from "sonner"
 
 export default function ModalNestedDemo() {
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false)

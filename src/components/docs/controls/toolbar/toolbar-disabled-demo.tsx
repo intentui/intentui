@@ -1,7 +1,5 @@
 "use client"
 
-import { Toggle } from "@/components/ui/toggle"
-import { Toolbar } from "@/components/ui/toolbar"
 import {
   IconAlignmentJustify,
   IconAlignmentJustifyFill,
@@ -18,6 +16,8 @@ import {
   IconToolbox,
   IconToolboxFill,
 } from "@intentui/icons"
+import { Toggle } from "@/components/ui/toggle"
+import { Toolbar } from "@/components/ui/toolbar"
 
 export default function ToolbarDisabledDemo() {
   return (

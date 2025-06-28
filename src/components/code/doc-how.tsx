@@ -1,15 +1,14 @@
 "use client"
 
 import React, { Suspense, useState } from "react"
-
+import { Group, ToggleButton, Toolbar } from "react-aria-components"
+import { twJoin, twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { PullRegistry } from "@/components/code/pull-registry"
 import { Loader } from "@/components/ui/loader"
 import { createFetchRegistryFile } from "@/lib/fetch-registry"
 import type { RegistryItem } from "@/types"
-import { Group, ToggleButton, Toolbar } from "react-aria-components"
-import { twJoin, twMerge } from "tailwind-merge"
 
 const registry = generated as Record<string, RegistryItem>
 
@@ -76,7 +75,6 @@ export const DocHow = ({
      */
     return <p>Component "{toUse}" not found in the registry.</p>
   }
-  const divProps = { ...props } as React.HTMLProps<HTMLDivElement>
   return (
     <div className="not-prose">
       <Toolbar className="flex items-center justify-between">

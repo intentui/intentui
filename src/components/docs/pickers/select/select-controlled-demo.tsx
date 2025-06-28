@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-
+import type { Key } from "react-aria-components"
 import { Description } from "@/components/ui/field"
 import { Select } from "@/components/ui/select"
-import type { Key } from "react-aria-components"
 
 export const movies = [
   { id: 1, title: "Inception" },

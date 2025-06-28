@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-
+import type { Key } from "react-aria-components"
 import { ComboBox } from "@/components/ui/combo-box"
 import { Description } from "@/components/ui/field"
-import type { Key } from "react-aria-components"
 
 export default function ComboBoxControlledSelectionDemo() {
   const [country, setCountry] = useState<Key | null>(null)

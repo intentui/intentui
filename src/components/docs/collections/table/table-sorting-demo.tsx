@@ -1,7 +1,7 @@
 "use client"
-import { Table } from "@/components/ui/table"
 import { IconLoader } from "@intentui/icons"
 import { useAsyncList } from "@react-stately/data"
+import { Table } from "@/components/ui/table"
 
 interface Character {
   title: string

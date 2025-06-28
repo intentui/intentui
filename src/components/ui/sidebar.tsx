@@ -1,10 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Sheet } from "@/components/ui/sheet"
-import { Tooltip } from "@/components/ui/tooltip"
-import { useMediaQuery } from "@/hooks/use-media-query"
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronLgDown, IconHamburger, IconSidebarFill } from "@intentui/icons"
 import { createContext, use, useCallback, useEffect, useMemo, useState } from "react"
 import type {
@@ -16,6 +11,7 @@ import type {
   SeparatorProps as SidebarSeparatorProps,
 } from "react-aria-components"
 import {
+  composeRenderProps,
   Disclosure,
   DisclosureGroup,
   DisclosurePanel,
@@ -25,9 +21,13 @@ import {
   Separator,
   Text,
   Button as Trigger,
-  composeRenderProps,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
+import { Button } from "@/components/ui/button"
+import { Sheet } from "@/components/ui/sheet"
+import { Tooltip } from "@/components/ui/tooltip"
+import { useMediaQuery } from "@/hooks/use-media-query"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7

@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-
+import type { Selection } from "react-aria-components"
 import { Description } from "@/components/ui/field"
 import { GridList } from "@/components/ui/grid-list"
-import type { Selection } from "react-aria-components"
 
 export default function GridListControlledDemo() {
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set([]))

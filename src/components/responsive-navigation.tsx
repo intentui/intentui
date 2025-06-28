@@ -1,3 +1,9 @@
+import { IconArrowUpRight, IconBrandDiscord, IconBrandGithub, IconBrandX } from "@intentui/icons"
+import { usePathname } from "next/navigation"
+import { useEffect, useRef, useState } from "react"
+import type { LinkProps, PopoverProps } from "react-aria-components"
+import { DialogTrigger, Link, Popover } from "react-aria-components"
+import { twJoin, twMerge } from "tailwind-merge"
 import { menus } from "@/app/(home)/partials/navbar"
 import { components, dm, gs, prologue, sortedGsChildren } from "@/components/aside"
 import { ThemeSwitcher } from "@/components/theme-switcher"
@@ -5,12 +11,6 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconArrowUpRight, IconBrandDiscord, IconBrandGithub, IconBrandX } from "@intentui/icons"
-import { usePathname } from "next/navigation"
-import { useEffect, useRef, useState } from "react"
-import { DialogTrigger, Link, Popover } from "react-aria-components"
-import type { LinkProps, PopoverProps } from "react-aria-components"
-import { twJoin, twMerge } from "tailwind-merge"
 
 interface ResponsiveNavigationProps {
   className?: string
@@ -20,7 +20,6 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     setOpen(false)
   }, [pathname])

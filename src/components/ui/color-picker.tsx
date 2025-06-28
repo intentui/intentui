@@ -1,13 +1,14 @@
 "use client"
 
+import { IconEyeDropper } from "@intentui/icons"
+import { parseColor } from "@react-stately/color"
 import { use } from "react"
-
 import {
   ColorPicker as ColorPickerPrimitive,
   type ColorPickerProps as ColorPickerPrimitiveProps,
   ColorPickerStateContext,
 } from "react-aria-components"
-
+import { twJoin, twMerge } from "tailwind-merge"
 import { Button } from "@/components/ui/button"
 import { ColorArea } from "@/components/ui/color-area"
 import { ColorField } from "@/components/ui/color-field"
@@ -15,9 +16,6 @@ import { ColorSlider } from "@/components/ui/color-slider"
 import { ColorSwatch } from "@/components/ui/color-swatch"
 import { Description } from "@/components/ui/field"
 import { Popover, PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
-import { IconEyeDropper } from "@intentui/icons"
-import { parseColor } from "@react-stately/color"
-import { twJoin, twMerge } from "tailwind-merge"
 
 interface ColorPickerProps
   extends ColorPickerPrimitiveProps,

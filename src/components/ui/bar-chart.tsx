@@ -1,8 +1,7 @@
 "use client"
 
-import { Bar, BarChart as BarChartPrimitive } from "recharts"
-
 import { type ComponentProps, startTransition } from "react"
+import { Bar, BarChart as BarChartPrimitive } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import { twMerge } from "tailwind-merge"
 import {
@@ -13,12 +12,12 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-  DEFAULT_COLORS,
-  XAxis,
-  YAxis,
   constructCategoryColors,
+  DEFAULT_COLORS,
   getColorValue,
   valueToPercent,
+  XAxis,
+  YAxis,
 } from "./chart"
 
 interface BarChartProps<TValue extends ValueType, TName extends NameType>
@@ -144,7 +143,7 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
                 stroke={getColorValue(values.color || categoryColors.get(category))}
                 strokeWidth={1}
                 stackId={stacked ? "stack" : undefined}
-                onClick={(item, number, event) => {
+                onClick={(_item, _number, event) => {
                   event.stopPropagation()
 
                   startTransition(() => {

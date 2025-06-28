@@ -1,8 +1,7 @@
-import { useState } from "react"
-
-import { Button } from "@/components/ui/button"
 import { IconBullet, IconBulletFill } from "@intentui/icons"
 import { usePathname, useRouter } from "next/navigation"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
 
 import { useQueryString } from "@/hooks/use-query-string"
 import type { SearchParamsProps } from "../icons-list"
@@ -36,7 +35,7 @@ export function Controller({ searchParams }: SearchParamsProps) {
             <Search />
             <Button
               aria-label={`Change filter to ${isSelected === "solid" ? "regular" : "solid"}`}
-              intent="secondary"
+              intent="outline"
               size="sq-md"
               onPress={() => onFilter(isSelected === "solid" ? "regular" : "solid")}
             >

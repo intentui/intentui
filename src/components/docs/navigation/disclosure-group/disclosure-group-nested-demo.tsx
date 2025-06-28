@@ -1,12 +1,12 @@
 "use client"
 
+import { IconChevronRight } from "@intentui/icons"
 import {
   Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,
 } from "@/components/ui/disclosure"
-import { IconChevronRight } from "@intentui/icons"
 
 export default function DisclosureGroupNestedDemo() {
   return (

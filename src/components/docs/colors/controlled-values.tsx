@@ -1,8 +1,8 @@
 "use client"
 
+import type { ColorFormat } from "@react-types/color"
 import { Card } from "@/components/ui/card"
 import { ColorSwatch } from "@/components/ui/color-swatch"
-import type { ColorFormat } from "@react-types/color"
 
 const formats: string[] = ["hex", "hexa", "rgb", "rgba", "hsl", "hsla", "hsb", "hsba"]
 export function ControlledValues({ color }: { color: any }) {

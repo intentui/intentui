@@ -1,8 +1,8 @@
 "use client"
 
+import { useMemo } from "react"
 import { Card } from "@/components/ui/card"
 import { PieChart } from "@/components/ui/pie-chart"
-import { useMemo } from "react"
 
 export default function PieChartTrafficSourceDemo() {
   const data = useMemo(

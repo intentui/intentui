@@ -1,7 +1,5 @@
 "use client"
 
-import { Avatar } from "@/components/ui/avatar"
-import { Menu } from "@/components/ui/menu"
 import {
   IconCommandRegular,
   IconDashboard,
@@ -10,6 +8,8 @@ import {
   IconSettings,
   IconShield,
 } from "@intentui/icons"
+import { Avatar } from "@/components/ui/avatar"
+import { Menu } from "@/components/ui/menu"
 
 export function UserMenu() {
   return (

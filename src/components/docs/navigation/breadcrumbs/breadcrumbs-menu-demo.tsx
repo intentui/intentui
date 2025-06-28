@@ -1,14 +1,14 @@
 "use client"
 
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
 import {
   IconDotsHorizontal,
   IconLayoutAlignLeft,
   IconLayoutAlignTop,
   IconWindowVisit,
 } from "@intentui/icons"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { Button } from "@/components/ui/button"
+import { Menu } from "@/components/ui/menu"
 
 export default function BreadcrumbsMenuDemo() {
   return (

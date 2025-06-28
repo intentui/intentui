@@ -5,10 +5,9 @@ import {
   FileTrigger as FileTriggerPrimitive,
   type FileTriggerProps as FileTriggerPrimitiveProps,
 } from "react-aria-components"
-
+import type { VariantProps } from "tailwind-variants"
 import { Button, type buttonStyles } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
-import type { VariantProps } from "tailwind-variants"
 
 interface FileTriggerProps extends FileTriggerPrimitiveProps, VariantProps<typeof buttonStyles> {
   isDisabled?: boolean

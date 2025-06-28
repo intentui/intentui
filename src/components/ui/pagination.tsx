@@ -9,10 +9,9 @@ import {
 } from "@intentui/icons"
 import type { ListBoxItemProps, ListBoxProps, ListBoxSectionProps } from "react-aria-components"
 import { ListBox, ListBoxItem, ListBoxSection, Separator } from "react-aria-components"
-
+import { twMerge } from "tailwind-merge"
 import { type ButtonProps, buttonStyles } from "@/components/ui/button"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twMerge } from "tailwind-merge"
 
 type PaginationProps = React.ComponentProps<"nav">
 const Pagination = ({ className, ref, ...props }: PaginationProps) => (
@@ -96,7 +95,7 @@ const PaginationItem = ({
           intent: "outline",
           size: "sm",
           className: twMerge(
-            "cursor-default font-normal text-fg min-w-10 focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
+            "min-w-10 cursor-default font-normal text-fg focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
             className,
           ),
         }),
@@ -159,7 +158,7 @@ const PaginationItem = ({
             intent: isCurrent ? "primary" : intent,
             size,
             className: twMerge(
-              "cursor-default font-normal min-w-10 tabular-nums disabled:cursor-default disabled:opacity-100 focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
+              "min-w-10 cursor-default font-normal tabular-nums focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20 disabled:cursor-default disabled:opacity-100",
               className,
             ),
           }),

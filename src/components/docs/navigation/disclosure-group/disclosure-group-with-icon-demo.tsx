@@ -1,12 +1,6 @@
 "use client"
 
 import {
-  Disclosure,
-  DisclosureGroup,
-  DisclosurePanel,
-  DisclosureTrigger,
-} from "@/components/ui/disclosure"
-import {
   IconArchive,
   IconChartTrending,
   IconCheck,
@@ -21,6 +15,12 @@ import {
   IconShieldCheck,
   IconWhiteboard,
 } from "@intentui/icons"
+import {
+  Disclosure,
+  DisclosureGroup,
+  DisclosurePanel,
+  DisclosureTrigger,
+} from "@/components/ui/disclosure"
 
 export default function DisclosureGroupWithIconDemo() {
   return (

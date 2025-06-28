@@ -4,20 +4,19 @@ import React, { useState } from "react"
 
 import type { SliderProps as SliderPrimitiveProps, SliderThumbProps } from "react-aria-components"
 import {
+  composeRenderProps,
   SliderOutput,
   Slider as SliderPrimitive,
   SliderStateContext,
   SliderThumb as SliderThumbPrimitive,
   SliderTrack as SliderTrackPrimitive,
   type SliderTrackProps,
-  composeRenderProps,
 } from "react-aria-components"
+import { twJoin, twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-
 import { Description, Label } from "@/components/ui/field"
 import { Tooltip } from "@/components/ui/tooltip"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twJoin, twMerge } from "tailwind-merge"
 
 interface SliderProps extends SliderPrimitiveProps {
   output?: "inline" | "tooltip" | "none"

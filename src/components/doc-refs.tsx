@@ -1,8 +1,5 @@
 "use client"
 
-import type { FC, SVGProps } from "react"
-
-import { Logo } from "@/components/logo"
 import {
   IconBell,
   IconBrandAdobe,
@@ -11,7 +8,9 @@ import {
   IconBrandIntentui,
   IconChartBar,
 } from "@intentui/icons"
+import type { FC, SVGProps } from "react"
 import { ListBox, ListBoxItem } from "react-aria-components"
+import { Logo } from "@/components/logo"
 
 function getComponentName(url: string): string {
   const lastSegment = url.split("/").pop()

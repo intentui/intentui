@@ -1,13 +1,12 @@
 "use client"
 
+import { IconGallery } from "@intentui/icons"
+import type { DropEvent } from "@react-types/shared"
 import { useState } from "react"
-
+import { isFileDropItem } from "react-aria-components"
 import { DropZone } from "@/components/ui/drop-zone"
 import { Description } from "@/components/ui/field"
 import { FileTrigger } from "@/components/ui/file-trigger"
-import { IconGallery } from "@intentui/icons"
-import type { DropEvent } from "@react-types/shared"
-import { isFileDropItem } from "react-aria-components"
 
 export default function DropZoneAndFileTriggerDemo() {
   const [droppedImage, setDroppedImage] = useState<string | undefined>(undefined)

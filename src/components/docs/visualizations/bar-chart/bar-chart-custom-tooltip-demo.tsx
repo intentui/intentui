@@ -1,11 +1,11 @@
 "use client"
 
-import { BarChart } from "@/components/ui/bar-chart"
-import { Card } from "@/components/ui/card"
 import { IconHeartFill, IconMessagesFill, IconUpload } from "@intentui/icons"
 import { useMemo } from "react"
 import type { TooltipProps as RechartsTooltipProps } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
+import { BarChart } from "@/components/ui/bar-chart"
+import { Card } from "@/components/ui/card"
 
 interface CustomTooltipProps extends Partial<RechartsTooltipProps<ValueType, NameType>> {
   active?: boolean

@@ -4,16 +4,15 @@ import { IconChevronRight } from "@intentui/icons"
 import type { TreeItemProps, TreeProps } from "react-aria-components"
 import {
   Button,
+  composeRenderProps,
   TreeItemContent as TreeContentPrimitive,
   TreeItem as TreeItemPrimitive,
   Tree as TreePrimitive,
-  composeRenderProps,
 } from "react-aria-components"
+import { twJoin, twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-
 import { Checkbox } from "@/components/ui/checkbox"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { twJoin, twMerge } from "tailwind-merge"
 
 const Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {
   return (

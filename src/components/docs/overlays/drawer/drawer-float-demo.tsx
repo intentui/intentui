@@ -1,10 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Drawer, type DrawerContentProps } from "@/components/ui/drawer"
 import { Radio, RadioGroup } from "@/components/ui/radio"
 import { Separator } from "@/components/ui/separator"
-import { useState } from "react"
 
 export default function DrawerFloatDemo() {
   const [side, setSide] = useState("bottom")

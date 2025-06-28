@@ -1,7 +1,7 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { IconGear } from "@intentui/icons"
+import { Button } from "@/components/ui/button"
 
 export default function ButtonIntentDemo() {
   return (

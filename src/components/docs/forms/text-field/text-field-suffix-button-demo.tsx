@@ -1,11 +1,10 @@
 "use client"
 
+import { IconPlus } from "@intentui/icons"
 import { useState } from "react"
-
 import { Button } from "@/components/ui/button"
 import { Modal } from "@/components/ui/modal"
 import { TextField } from "@/components/ui/text-field"
-import { IconPlus } from "@intentui/icons"
 
 export default function TextFieldSuffixButtonDemo() {
   const [open, setOpen] = useState(false)

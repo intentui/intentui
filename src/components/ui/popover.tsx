@@ -1,5 +1,14 @@
 "use client"
 
+import type {
+  DialogTriggerProps,
+  PopoverProps as PopoverPrimitiveProps,
+} from "react-aria-components"
+import {
+  DialogTrigger as DialogTriggerPrimitive,
+  OverlayArrow,
+  Popover as PopoverPrimitive,
+} from "react-aria-components"
 import {
   DialogBody,
   DialogClose,
@@ -10,15 +19,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import type {
-  DialogTriggerProps,
-  PopoverProps as PopoverPrimitiveProps,
-} from "react-aria-components"
-import {
-  DialogTrigger as DialogTriggerPrimitive,
-  OverlayArrow,
-  Popover as PopoverPrimitive,
-} from "react-aria-components"
 
 type PopoverProps = DialogTriggerProps
 const Popover = (props: PopoverProps) => {

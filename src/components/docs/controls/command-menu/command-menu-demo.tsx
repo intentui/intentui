@@ -1,11 +1,10 @@
 "use client"
 
+import { IconBill, IconCube, IconGear, IconHome, IconNotes, IconShield } from "@intentui/icons"
 import { useState } from "react"
-
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { CommandMenu } from "@/components/ui/command-menu"
-import { IconBill, IconCube, IconGear, IconHome, IconNotes, IconShield } from "@intentui/icons"
 
 export default function CommandMenuDemo() {
   const [isOpen, setIsOpen] = useState(false)

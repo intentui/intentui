@@ -1,23 +1,23 @@
 "use client"
 
-import { DropdownItem, DropdownLabel, DropdownSection } from "@/components/ui/dropdown"
-import { Description, FieldGroup, type FieldProps, Input, Label } from "@/components/ui/field"
-import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronsY } from "@intentui/icons"
 import {
   Children,
+  isValidElement,
   type KeyboardEvent,
   type RefObject,
-  isValidElement,
   useEffect,
   useRef,
   useState,
 } from "react"
-
-import { PopoverContent } from "@/components/ui/popover"
 import type { ComboBoxProps, GroupProps, Key, ListBoxProps, Selection } from "react-aria-components"
 import { Button, ComboBox, Group, ListBox } from "react-aria-components"
+import { DropdownItem, DropdownLabel, DropdownSection } from "@/components/ui/dropdown"
+import { Description, FieldGroup, type FieldProps, Input, Label } from "@/components/ui/field"
+
+import { PopoverContent } from "@/components/ui/popover"
+import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 interface MultipleSelectProps<T>
   extends Omit<ListBoxProps<T>, "renderEmptyState">,
@@ -59,7 +59,6 @@ const MultipleSelect = <T extends object>({
 
   const isMax = [...selectedKeys].length >= maxItems
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     setInputValue("")
     return () => {

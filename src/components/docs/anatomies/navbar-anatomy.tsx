@@ -1,3 +1,4 @@
+import { IconChevronsY } from "@intentui/icons"
 import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
 import {
@@ -13,7 +14,6 @@ import {
   NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
-import { IconChevronsY } from "@intentui/icons"
 
 export default function NavbarAnatomy() {
   return (

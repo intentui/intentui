@@ -1,5 +1,5 @@
-import { Carousel } from "@/components/ui/carousel"
 import Image from "next/image"
+import { Carousel } from "@/components/ui/carousel"
 
 export default function CarouselDemo() {
   return (

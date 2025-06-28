@@ -1,10 +1,8 @@
 "use client"
 
-import { Cell, Pie, PieChart as PieChartPrimitive } from "recharts"
-
-import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
-
 import type { ComponentProps } from "react"
+import { Cell, Pie, PieChart as PieChartPrimitive } from "recharts"
+import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import { twMerge } from "tailwind-merge"
 import {
   type BaseChartProps,
@@ -83,7 +81,7 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
       dataKey={dataKey}
       {...props}
     >
-      {({ onLegendSelect, selectedLegend }) => (
+      {({ onLegendSelect }) => (
         <PieChartPrimitive
           data={data}
           onClick={() => {

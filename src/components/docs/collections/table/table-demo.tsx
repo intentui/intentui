@@ -1,8 +1,8 @@
 "use client"
-import { Menu } from "@/components/ui/menu"
-import { Table } from "@/components/ui/table"
 import { IconDotsVertical } from "@intentui/icons"
 import { NumberFormatter } from "@internationalized/number"
+import { Menu } from "@/components/ui/menu"
+import { Table } from "@/components/ui/table"
 
 export default function TableDemo() {
   return (

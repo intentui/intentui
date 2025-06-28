@@ -1,18 +1,17 @@
 "use client"
 
+import type { DateDuration } from "@internationalized/date"
+import type { Placement } from "@react-types/overlays"
 import {
   DateRangePicker as DateRangePickerPrimitive,
   type DateRangePickerProps as DateRangePickerPrimitiveProps,
   type DateValue,
   type ValidationResult,
 } from "react-aria-components"
-
 import { DateInput } from "@/components/ui/date-field"
 import { DatePickerIcon, DatePickerOverlay } from "@/components/ui/date-picker"
 import { Description, FieldError, FieldGroup, Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import type { DateDuration } from "@internationalized/date"
-import type { Placement } from "@react-types/overlays"
 
 interface DateRangePickerProps<T extends DateValue> extends DateRangePickerPrimitiveProps<T> {
   label?: string

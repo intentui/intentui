@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-
+import type { Selection } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
-import type { Selection } from "react-aria-components"
 
 export default function MultipleMenuDemo() {
   const [selected, setSelected] = useState<Selection>(new Set(["autoPlay"]))

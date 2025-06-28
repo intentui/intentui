@@ -1,16 +1,15 @@
-import React, { useState } from "react"
-
-import { SelectFormat, isOklch, toOklchString } from "@/app/(app)/colors/(colors)/color-item"
-import { ColorField } from "@/components/ui/color-field"
-import { Heading } from "@/components/ui/heading"
-import { getColorName, getTextColor } from "@/lib/colors"
 import { IconCheck, IconDuplicate } from "@intentui/icons"
-import { type Color as RacColor, parseColor } from "@react-stately/color"
+import { parseColor, type Color as RacColor } from "@react-stately/color"
 import type { Color } from "culori"
 import { formatHex, formatHsl, formatRgb, interpolate, parse } from "culori"
+import React, { useState } from "react"
 import { ListBox, ListBoxItem, type Selection } from "react-aria-components"
 import { toast } from "sonner"
 import { twJoin } from "tailwind-merge"
+import { isOklch, SelectFormat, toOklchString } from "@/app/(app)/colors/(colors)/color-item"
+import { ColorField } from "@/components/ui/color-field"
+import { Heading } from "@/components/ui/heading"
+import { getColorName, getTextColor } from "@/lib/colors"
 
 export function ColorGenerator() {
   const [value, setValue] = useState(parseColor("#0D6DFD"))

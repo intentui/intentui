@@ -1,13 +1,13 @@
 "use client"
-import { Ads } from "@/components/ads"
-import { useMediaQuery } from "@/hooks/use-media-query"
-import { useScrollPosition } from "@/hooks/use-scroll-position"
 import { IconAlignmentLeft } from "@intentui/icons"
-import type { TOCItemType, TableOfContents } from "fumadocs-core/server"
+import type { TableOfContents, TOCItemType } from "fumadocs-core/server"
 import React, { Suspense, useEffect, useState } from "react"
 import { Heading } from "react-aria-components"
 import scrollIntoView from "scroll-into-view-if-needed"
 import { twMerge } from "tailwind-merge"
+import { Ads } from "@/components/ads"
+import { useMediaQuery } from "@/hooks/use-media-query"
+import { useScrollPosition } from "@/hooks/use-scroll-position"
 
 interface Props {
   className?: string
@@ -57,23 +57,21 @@ export function Toc({ className, items }: Props) {
     >
       <nav aria-labelledby="on-this-page-title" className="w-56">
         <Suspense>
-          <>
-            <Heading
-              level={2}
-              className="mb-6 flex items-center gap-x-2 font-medium text-base text-fg leading-7 lg:text-sm"
-            >
-              <IconAlignmentLeft className="text-muted-fg" /> On this page
-            </Heading>
-            {items.length > 0 && (
-              <ul className="flex flex-col gap-y-2.5">
-                {items.map((item) => (
-                  <React.Fragment key={item.url}>
-                    <TocLink item={item} activeId={activeId} minDepth={minDepth} />
-                  </React.Fragment>
-                ))}
-              </ul>
-            )}
-          </>
+          <Heading
+            level={2}
+            className="mb-6 flex items-center gap-x-2 font-medium text-base text-fg leading-7 lg:text-sm"
+          >
+            <IconAlignmentLeft className="text-muted-fg" /> On this page
+          </Heading>
+          {items.length > 0 && (
+            <ul className="flex flex-col gap-y-2.5">
+              {items.map((item) => (
+                <React.Fragment key={item.url}>
+                  <TocLink item={item} activeId={activeId} minDepth={minDepth} />
+                </React.Fragment>
+              ))}
+            </ul>
+          )}
         </Suspense>
       </nav>
 
@@ -86,12 +84,16 @@ function TocLink({
   item,
   activeId,
   minDepth,
-}: { item: TOCItemType; activeId: string | null; minDepth: number }) {
+}: {
+  item: TOCItemType
+  activeId: string | null
+  minDepth: number
+}) {
   return (
     <li key={item.url}>
       <a
         className={twMerge(
-          "block tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden lg:text-[0.885rem]",
+          "block font-medium tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden lg:text-[0.885rem]",
           item.url.split("#")[1] === activeId
             ? "text-fg forced-colors:text-[Highlight]"
             : "text-muted-fg/90 forced-colors:text-[GrayText]",

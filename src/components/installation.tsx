@@ -1,7 +1,8 @@
 "use client"
 
 import React, { useState } from "react"
-
+import { Button, Group } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
 import { Link } from "@/components/ui/link"
@@ -9,9 +10,6 @@ import { Menu } from "@/components/ui/menu"
 import { siteConfig } from "@/config/site"
 import { copyToClipboard } from "@/lib/copy"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { Button } from "react-aria-components"
-import { Group } from "react-aria-components"
-import { twJoin } from "tailwind-merge"
 
 export interface InstallationProps {
   items: string[]
@@ -103,7 +101,18 @@ export function Installation({ className, ...props }: InstallationProps) {
           }
         />
         {props.command ? (
-          <CopyButton isCopied={isCopied} setIsCopied={setIsCopied} />
+          <CopyButton
+            text={
+              props.command ||
+              (options.isInit
+                ? `npx ${whatCommand} init`
+                : options.isComponent
+                  ? `npx ${whatCommand} add ${items[0]}`
+                  : `${pkgManager.name} ${pkgManager.action} ${items.join(" ")}`)
+            }
+            isCopied={isCopied}
+            setIsCopied={setIsCopied}
+          />
         ) : options.isComponent ? (
           <CopyButton
             isCopied={isCopied}

@@ -1,3 +1,4 @@
+import { Collection } from "react-aria-components"
 import {
   Tree,
   TreeCheckbox,
@@ -6,7 +7,6 @@ import {
   TreeItem,
   TreeLabel,
 } from "@/components/ui/tree"
-import { Collection } from "react-aria-components"
 
 export default function TreeDemo() {
   const renderItem = (item: FileNode): React.ReactNode => {

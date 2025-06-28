@@ -1,14 +1,13 @@
 "use client"
 
+import { IconEye, IconEyeClosed } from "@intentui/icons"
 import { useState } from "react"
-
+import type { InputProps, TextFieldProps as TextFieldPrimitiveProps } from "react-aria-components"
+import { TextField as TextFieldPrimitive } from "react-aria-components"
 import type { FieldProps } from "@/components/ui/field"
 import { Description, FieldError, FieldGroup, Input, Label } from "@/components/ui/field"
 import { Loader } from "@/components/ui/loader"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { IconEye, IconEyeClosed } from "@intentui/icons"
-import { TextField as TextFieldPrimitive } from "react-aria-components"
-import type { InputProps, TextFieldProps as TextFieldPrimitiveProps } from "react-aria-components"
 
 type InputType = Exclude<InputProps["type"], "password">
 

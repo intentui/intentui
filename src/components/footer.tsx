@@ -1,9 +1,9 @@
 "use client"
+import { IconBrandIntentui } from "@intentui/icons"
 import { starterKits } from "@/app/(home)/partials/starter-kit"
 import { PageContainer } from "@/components/page-container"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
-import { IconBrandIntentui } from "@intentui/icons"
 
 const navigation = {
   resources: [
@@ -30,7 +30,7 @@ const currentYear = new Date().getFullYear()
 
 export function Footer() {
   return (
-    <footer aria-labelledby="footer-heading" className="border-t text-bg-fg">
+    <footer className="border-t text-bg-fg">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>

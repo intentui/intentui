@@ -3,10 +3,10 @@ import type React from "react"
 import { Providers } from "@/components/providers"
 import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import "@/styles/app.css"
-import { Toast } from "@/components/ui/toast"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
 import { twJoin } from "tailwind-merge"
+import { Toast } from "@/components/ui/toast"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://intentui.com"),
@@ -106,7 +106,6 @@ export default function RootLayout({ children }: Readonly<Props>) {
     logo: "https://intentui.com/icon.svg",
   }
 
-  const js = String.raw
   return (
     <html
       dir="ltr"

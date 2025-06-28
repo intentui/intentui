@@ -1,18 +1,16 @@
 "use client"
 
-import type React from "react"
-import { useRef, useState } from "react"
-
-import { Menu } from "@/components/ui/menu"
 import * as icons from "@intentui/icons"
 import { IconDownload } from "@intentui/icons"
 import { useSearchParams } from "next/navigation"
+import type React from "react"
+import { useRef, useState } from "react"
 import { ListBox, ListBoxItem } from "react-aria-components"
 import * as ReactDOMServer from "react-dom/server"
 import { toast } from "sonner"
 import { copyToClipboard } from "usemods"
-
 import { aliasLookup } from "@/app/(app)/icons/partials/aliases"
+import { Menu } from "@/components/ui/menu"
 import { Controller } from "./controller"
 import { box, item } from "./styles"
 

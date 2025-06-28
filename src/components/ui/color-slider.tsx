@@ -3,14 +3,13 @@
 import {
   ColorSlider as ColorSliderPrimitive,
   type ColorSliderProps as ColorSliderPrimitiveProps,
+  composeRenderProps,
   SliderOutput,
   SliderTrack,
-  composeRenderProps,
 } from "react-aria-components"
-
+import { twJoin, twMerge } from "tailwind-merge"
 import { ColorThumb } from "@/components/ui/color-thumb"
 import { Label } from "@/components/ui/field"
-import { twJoin, twMerge } from "tailwind-merge"
 
 interface ColorSliderProps extends ColorSliderPrimitiveProps {
   label?: string

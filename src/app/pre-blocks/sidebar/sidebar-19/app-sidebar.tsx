@@ -1,5 +1,16 @@
 "use client"
 
+import {
+  IconBrandYoutube,
+  IconClock,
+  IconHome,
+  IconPeople,
+  IconPlay,
+  IconRotate2Left,
+  IconVideoPlaylist,
+  IconVideoRoll,
+  IconYes,
+} from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
 import {
@@ -15,17 +26,6 @@ import {
   SidebarSection,
   SidebarSeparator,
 } from "@/components/ui/sidebar"
-import {
-  IconBrandYoutube,
-  IconClock,
-  IconHome,
-  IconPeople,
-  IconPlay,
-  IconRotate2Left,
-  IconVideoPlaylist,
-  IconVideoRoll,
-  IconYes,
-} from "@intentui/icons"
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   return (

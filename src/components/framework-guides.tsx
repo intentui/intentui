@@ -1,7 +1,7 @@
 "use client"
 
+import { IconBrandLaravel, IconBrandNextjs } from "@intentui/icons"
 import { Choicebox } from "@/components/ui/choicebox"
-import { IconBrandAstro, IconBrandLaravel, IconBrandNextjs, IconBrandRemix } from "@intentui/icons"
 
 export const IconBrandTanstack = (props: React.ComponentProps<"svg">) => (
   <svg
@@ -74,12 +74,6 @@ const frameworks = [
     href: "/docs/getting-started/nextjs",
   },
   {
-    name: "Remix",
-    description: "Remix is a React framework for building server-side rendered applications.",
-    logo: IconBrandRemix,
-    href: "/docs/getting-started/remix",
-  },
-  {
     name: "Vite",
     description: "Vite is a tool for building frontend applications in a fraction of the time.",
     logo: IconBrandVite,
@@ -90,12 +84,6 @@ const frameworks = [
     description: "TanStack Router is a framework for building server-side rendered applications.",
     logo: IconBrandTanstack,
     href: "/docs/getting-started/tanstack-router",
-  },
-  {
-    name: "Astro",
-    description: "Astro is a new kind of static site builder.",
-    logo: IconBrandAstro,
-    href: "/docs/getting-started/astro",
   },
 ]
 

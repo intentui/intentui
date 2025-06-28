@@ -1,6 +1,5 @@
-import { Header } from "@/components/header"
-
 import { BlockSandbox } from "@/components/code/block-sandbox"
+import { Header } from "@/components/header"
 import { NavbarProvider } from "@/components/ui/navbar"
 
 export const metadata = {

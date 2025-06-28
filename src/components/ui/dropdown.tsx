@@ -1,5 +1,4 @@
 "use client"
-import { Keyboard } from "@/components/ui/keyboard"
 import { IconCheck } from "@intentui/icons"
 import type {
   ListBoxItemProps,
@@ -9,15 +8,16 @@ import type {
 } from "react-aria-components"
 import {
   Collection,
+  composeRenderProps,
   Header,
   ListBoxItem as ListBoxItemPrimitive,
   ListBoxSection,
   Separator,
   Text,
-  composeRenderProps,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
+import { Keyboard } from "@/components/ui/keyboard"
 
 const dropdownItemStyles = tv({
   base: [
@@ -132,7 +132,7 @@ const DropdownKeyboard = ({ className, ...props }: React.ComponentProps<typeof K
     <Keyboard
       classNames={{
         base: twMerge(
-          "absolute right-2 group-hover:text-primary-fg group-focus:text-primary-fg pl-2",
+          "absolute right-2 pl-2 group-hover:text-primary-fg group-focus:text-primary-fg",
           className,
         ),
       }}

@@ -1,11 +1,11 @@
 "use client"
-import { Link } from "@/components/ui/link"
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconChevronLgRight } from "@intentui/icons"
 import { createContext, use } from "react"
 import type { BreadcrumbProps, BreadcrumbsProps, LinkProps } from "react-aria-components"
 import { Breadcrumb, Breadcrumbs as BreadcrumbsPrimitive } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
+import { Link } from "@/components/ui/link"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 type BreadcrumbsContextProps = { separator?: "chevron" | "slash" | boolean }
 const BreadcrumbsProvider = createContext<BreadcrumbsContextProps>({
@@ -54,7 +54,9 @@ const BreadcrumbsItem = ({
 
 const Separator = ({
   separator = "chevron",
-}: { separator?: BreadcrumbsItemProps["separator"] }) => {
+}: {
+  separator?: BreadcrumbsItemProps["separator"]
+}) => {
   return (
     <span className="*:shrink-0 *:text-muted-fg *:data-[slot=icon]:size-3.5">
       {separator === "chevron" && <IconChevronLgRight />}

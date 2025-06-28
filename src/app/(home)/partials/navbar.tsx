@@ -1,14 +1,5 @@
 "use client"
 
-import { CommandPalette } from "@/components/command-palette"
-import { GithubLink } from "@/components/github-link"
-import { PageContainer } from "@/components/page-container"
-import { ResponsiveNavigation } from "@/components/responsive-navigation"
-import { Link } from "@/components/ui/link"
-import { Menu } from "@/components/ui/menu"
-import { Separator } from "@/components/ui/separator"
-import { siteConfig } from "@/config/site"
-import { useMediaQuery } from "@/hooks/use-media-query"
 import {
   IconArrowUpFill,
   IconArrowUpRight,
@@ -26,6 +17,15 @@ import {
 } from "@intentui/icons"
 import { useState } from "react"
 import { Button } from "react-aria-components"
+import { CommandPalette } from "@/components/command-palette"
+import { GithubLink } from "@/components/github-link"
+import { PageContainer } from "@/components/page-container"
+import { ResponsiveNavigation } from "@/components/responsive-navigation"
+import { Link } from "@/components/ui/link"
+import { Menu } from "@/components/ui/menu"
+import { Separator } from "@/components/ui/separator"
+import { siteConfig } from "@/config/site"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 export function Navbar() {
   const [open, setOpen] = useState(false)

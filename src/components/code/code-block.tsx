@@ -1,9 +1,5 @@
 "use client"
 
-import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { CopyButton } from "@/components/code/pull-registry"
-import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
-import { copyToClipboard } from "@/lib/copy"
 import {
   IconBrackets2,
   IconBrandCss,
@@ -14,6 +10,10 @@ import {
 import { useEffect, useState } from "react"
 import { Tab } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
+import { CodeHighlighter } from "@/components/code/code-highlighter"
+import { CopyButton } from "@/components/code/pull-registry"
+import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
+import { copyToClipboard } from "@/lib/copy"
 
 interface Props {
   source: Record<string, string>
@@ -60,7 +60,7 @@ export function CodeBlock({ source }: Props) {
                 <Tab
                   className={(values) =>
                     twMerge(
-                      "flex cursor-default items-center gap-x-1 p-2 font-medium text-sm/6",
+                      "flex min-w-0 cursor-default items-center gap-x-1 truncate px-1 py-2 font-medium text-sm/6 *:data-[slot=icon]:hidden sm:p-2 sm:*:data-[slot=icon]:block",
                       values.isSelected || values.isFocused || values.isFocusVisible
                         ? "text-fg"
                         : "text-muted-fg hover:text-fg",
@@ -80,7 +80,8 @@ export function CodeBlock({ source }: Props) {
                   ) : (
                     <IconFile />
                   )}
-                  <span>{key}</span>
+                  <span className="inline sm:hidden">{key.split("/").pop()}</span>
+                  <span className="hidden sm:inline">{key}</span>
                 </Tab>
               ))}
             </TabList>
@@ -91,7 +92,6 @@ export function CodeBlock({ source }: Props) {
                 className="absolute top-1.5 right-0"
                 label="Copy"
                 copiedLabel="Copied"
-                value={value as string}
                 isCopied={copiedStates[key] || false}
                 onCopy={() => handleCopy(key, value)}
               />

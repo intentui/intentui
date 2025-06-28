@@ -1,12 +1,11 @@
+import { IconChevronsY } from "@intentui/icons"
+import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
-
+import type { Selection } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Menu } from "@/components/ui/menu"
 import { useQueryString } from "@/hooks/use-query-string"
 import { title } from "@/lib/utils"
-import { IconChevronsY } from "@intentui/icons"
-import { usePathname, useRouter } from "next/navigation"
-import type { Selection } from "react-aria-components"
 
 const sizes = [
   { id: "size-4", name: "Size 4" },
@@ -29,7 +28,7 @@ export function SelectSize() {
 
   return (
     <Menu aria-label="Select Icon Size">
-      <Button intent="secondary" size="sm">
+      <Button intent="outline" size="sm">
         <span className="inline sm:hidden sm:text-sm/6">
           {title([...selectedSize].join(", ").replace("size-", " ")) || "5"}
         </span>

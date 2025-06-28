@@ -1,6 +1,4 @@
 "use client"
-import { Description, Label } from "@/components/ui/field"
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import { IconX } from "@intentui/icons"
 import type {
   TagGroupProps as TagGroupPrimitiveProps,
@@ -9,12 +7,14 @@ import type {
 } from "react-aria-components"
 import {
   Button,
+  composeRenderProps,
   TagGroup as TagGroupPrimitive,
   TagList as TagListPrimitive,
   Tag as TagPrimitive,
-  composeRenderProps,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
+import { Description, Label } from "@/components/ui/field"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 
 interface TagGroupProps extends TagGroupPrimitiveProps {
   errorMessage?: string

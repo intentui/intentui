@@ -1,5 +1,5 @@
-import { Select } from "@/components/ui/select"
 import { IconBrandDiscord, IconBrandGithub } from "@intentui/icons"
+import { Select } from "@/components/ui/select"
 
 export default function SelectAnatomy() {
   return (

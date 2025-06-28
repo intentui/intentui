@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { IconCircleHalf, IconCircleHalfFill } from "@intentui/icons"
 import { useTheme } from "next-themes"
+import { Button } from "@/components/ui/button"
 
 export function ThemeSwitcher({
   isCircle = false,

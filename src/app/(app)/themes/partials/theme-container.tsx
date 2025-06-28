@@ -1,24 +1,22 @@
 "use client"
 
-import { Suspense, useState } from "react"
-
-import { Blocks } from "@/app/(app)/themes/partials/blocks"
-import { GeneratedTheme } from "@/app/(app)/themes/partials/generated-theme"
-import { ThemeCustomizer } from "@/app/(app)/themes/partials/theme-customizer"
-import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
-import { Sheet } from "@/components/ui/sheet"
 import {
   IconBrandCss,
   IconChevronLgDown,
   IconDuplicate,
   IconLayoutColumnRightsideFill,
 } from "@intentui/icons"
+import { Suspense, useState } from "react"
 import { toast } from "sonner"
-
+import { Blocks } from "@/app/(app)/themes/partials/blocks"
+import { GeneratedTheme } from "@/app/(app)/themes/partials/generated-theme"
+import { ThemeCustomizer } from "@/app/(app)/themes/partials/theme-customizer"
+import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { PageContainer } from "@/components/page-container"
+import { Button } from "@/components/ui/button"
 import { CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Menu } from "@/components/ui/menu"
+import { Sheet } from "@/components/ui/sheet"
 import { generateTheme } from "./themes"
 
 export function ThemeContainer() {

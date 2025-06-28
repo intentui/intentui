@@ -48,12 +48,7 @@ function BarList<T>({
   const rowHeight = "h-8"
 
   return (
-    <div
-      ref={ref}
-      className={twMerge("flex justify-between space-x-6", className)}
-      aria-sort={sortOrder}
-      {...props}
-    >
+    <div ref={ref} className={twMerge("flex justify-between space-x-6", className)} {...props}>
       <div className="relative w-full space-y-1.5">
         {sortedData.map((item, index) => (
           <Component

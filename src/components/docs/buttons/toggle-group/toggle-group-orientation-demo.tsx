@@ -1,6 +1,5 @@
 "use client"
 
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import {
   IconBell,
   IconBellFill,
@@ -9,6 +8,7 @@ import {
   IconTranslate,
   IconTranslateFill,
 } from "@intentui/icons"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export default function ToggleGroupOrientationDemo() {
   return (
