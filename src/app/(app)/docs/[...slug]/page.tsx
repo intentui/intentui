@@ -60,7 +60,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
           )}&description=${encodeURIComponent(doc.description)}`,
         },
       ],
-      creator: "@shadcn",
+      creator: "@irsyadadl",
     },
   }
 }
