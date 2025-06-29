@@ -8,7 +8,6 @@ import { MobilePager } from "@/components/mobile-pager"
 import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
 import { Badge } from "@/components/ui/badge"
-import { siteConfig } from "@/config/site"
 import { source } from "@/lib/source"
 import { title } from "@/lib/utils"
 export interface DocPageProps {
@@ -29,54 +28,40 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
   if (!page) {
     return {}
   }
+  const doc = page.data
 
   const ogSearchParams = new URLSearchParams()
   ogSearchParams.set("title", page.data.title)
 
   return {
-    title: page.data.title,
-    description: page.data.description,
-    applicationName: siteConfig.name,
-    category: "Docs",
-    keywords: [
-      page.data.title,
-      `${page.data.title} components`,
-      `${page.data.title} component`,
-      `${page.data.title} on React`,
-      "React",
-      "Next.js",
-      "Inertia.js",
-      "Tailwind CSS",
-      "UI Components",
-      "UI Kit",
-      "UI Library",
-      "UI Framework",
-      "Intent",
-      "Intent UI",
-      "React Aria",
-      "React Aria Components",
-      "Server Components",
-      "React Components",
-      "Next UI Components",
-      "UI Design System",
-      "UI for Laravel Inertia",
-      "Intent Components",
-      "Intent Components",
-      "Intent UI Components",
-      "Intent UI Components",
-      "Intent UI Kit",
-      "Intent UI Kit",
-      "Intent UI Library",
-      "Intent UI Library",
-      "Intent UI Framework",
-      "Intent UI Framework",
-      "Intent Laravel Inertia",
-      "Intent Laravel Inertia",
-      "Intent Laravel",
-      "Intent Laravel",
-      "Intent Inertia",
-      "Intent Inertia",
-    ],
+    title: doc.title,
+    description: doc.description,
+    openGraph: {
+      title: doc.title,
+      description: doc.description,
+      type: "article",
+      url: `https://localhost:3000${page.url}`,
+      images: [
+        {
+          url: `/og?title=${encodeURIComponent(
+            doc.title,
+          )}&description=${encodeURIComponent(doc.description)}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: doc.title,
+      description: doc.description,
+      images: [
+        {
+          url: `/og?title=${encodeURIComponent(
+            doc.title,
+          )}&description=${encodeURIComponent(doc.description)}`,
+        },
+      ],
+      creator: "@shadcn",
+    },
   }
 }
 
