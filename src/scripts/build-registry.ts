@@ -71,7 +71,7 @@ type RegistryJsonItem = {
 
 const registryBaseStyle = {
   extends: "none",
-  name: "default",
+  name: "style-default",
   type: "registry:style",
   title: "Base style",
   dependencies: [
@@ -94,7 +94,7 @@ const registryBaseStyle = {
 
 const registryBlueStyle = {
   ...registryBaseStyle,
-  name: "blue",
+  name: "style-blue",
   cssVars: {
     theme: baseTheme,
     light: blueLight,
@@ -105,7 +105,7 @@ const registryBlueStyle = {
 
 const registrySkyStyle = {
   ...registryBaseStyle,
-  name: "sky",
+  name: "style-sky",
   title: "Sky style",
   cssVars: {
     theme: baseTheme,
@@ -116,7 +116,7 @@ const registrySkyStyle = {
 
 const registryIndigoStyle = {
   ...registryBaseStyle,
-  name: "indigo",
+  name: "style-indigo",
   title: "Indigo style",
   cssVars: {
     theme: baseTheme,
@@ -127,7 +127,7 @@ const registryIndigoStyle = {
 
 const registryEmeraldStyle = {
   ...registryBaseStyle,
-  name: "emerald",
+  name: "style-emerald",
   title: "Emerald style",
   cssVars: {
     theme: baseTheme,

@@ -10,20 +10,55 @@ The CLI is designed to help you set up your project with Intent quickly and effi
 
 ## Existing Project
 If you already have a project set up—whether it’s built with Laravel, Next.js, Remix, Tanstack, or any other framework—simply run the following command to install Intent:
-<Installation options={{ isInit: true }} items={['initial setup']} />
+<Installation options={{ isInit: true }} items={['initial setup']}/>
 This command will prompt you to confirm your project’s setup. However, the CLI is smart enough to detect your project type and provide default values.
 
 ## Start a New Project
 The CLI is highly flexible and can automatically detect whether you already have a project set up. If you don’t, you can start fresh by running the `init` command like this:
-<Installation options={{ isInit: true }} items={['initial setup']} />
+<Installation options={{ isInit: true }} items={['initial setup']}/>
 
 ## Add
-Once you’ve set up Intent, you can start adding components easily by running the `add` command:
-<Installation options={{ isComponent: true, noText: true }} items={['combo-box']} />
 
-[//]: # (## Diff)
-[//]: # (If you think your Intent setup might be outdated, don’t worry. You can check for changes by running the `diff` command:)
-[//]: # (<Installation options={{isExecutor: true}} command='npx @intentui/cli@latest diff' items={['']} />)
+The `add` command lets you install various types of components from the registry like UI components, hooks, libraries, styles, and more.
+By default, it installs UI components (`--type ui`), so you don’t need to specify the type unless you're adding something else.
+
+### Components
+
+Once you’ve set up Intent, you can start adding components easily using the `add` command:
+
+<Installation options={{ isComponent: true, noText: true }} items={['combo-box']}/>
+
+### Lib
+
+To add a library like `primitive`, use the `--type lib` option:
+
+<Installation options={{ isComponent: true, noText: true }} items={['--type', 'lib', 'primitive']}/>
+
+### Hooks
+
+To add a hook like `use-media-query`, use the `--type hook` option:
+
+<Installation command='npx @intentui/cli@latest add --type hook use-media-query'/>
+
+You can also use `-t` as a shortcut for `--type`:
+
+### Overwrite
+
+To overwrite an existing component, use the `--overwrite` flag:
+
+<Installation command='npx @intentui/cli@latest add --overwrite combo-box'/>
+
+Or use the `-o` shorthand:
+
+<Installation command="npx @intentui/cli@latest add sidebar -o"/>
+
+### Style
+
+It currently offers 5 starter styles, including `blue`, `indigo`, `emerald`, and `sky`.
+You can swap out `default` with any style you prefer:
+
+<Installation command='npx @intentui/cli@latest add --type style blue'/>
+
 
 This will display the components that differ from your installed versions and provide a list so you can quickly choose which components to update.
 
@@ -40,13 +75,16 @@ intentui [command]
 ## Shadcn CLI
 You might notice that we provide our own CLI, but if you prefer using the ShadCN CLI, that's totally fine. To get started, initialize your application with the following command:
 
-<Installation options={{ isComponent: false, noText: true }} command='npx shadcn@latest init https://intentui.com/r/style/default' />
+<Installation options={{ isComponent: false, noText: true }}
+              command='npx shadcn@latest init https://intentui.com/r/style/default'/>
 
 It currently offers 5 starter styles, including `blue`, `indigo`, `emerald`, and `sky`, so you can replace `default` with any style you prefer.
 
 Once initialized, you can add components by running:
-<Installation options={{ isComponent: false, noText: true }} command='npx shadcn@latest add https://intentui.com/r/ui/<component>' />
+<Installation options={{ isComponent: false, noText: true }}
+              command='npx shadcn@latest add https://intentui.com/r/ui/<component>'/>
 
 Let’s say you want to add a card component. Just replace `<component>` with `card`, like this:
 
-<Installation options={{ isComponent: false, noText: true }} command='npx shadcn@latest add https://intentui.com/r/ui/card' />
+<Installation options={{ isComponent: false, noText: true }}
+              command='npx shadcn@latest add https://intentui.com/r/ui/card'/>
