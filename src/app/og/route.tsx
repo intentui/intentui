@@ -82,7 +82,7 @@ export async function GET(request: Request) {
             </filter>
           </defs>
         </svg>
-        <div tw="flex gap-x-2 text-2xl font-semibold ml-4 items-center">
+        <div tw="flex gap-x-2 text-3xl font-semibold ml-4 items-center">
           <span>Intent</span>
           <span tw="ml-2 text-zinc-400">UI</span>
         </div>
