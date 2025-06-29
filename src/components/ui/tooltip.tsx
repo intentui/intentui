@@ -13,7 +13,7 @@ import { tv } from "tailwind-variants"
 
 const tooltipStyles = tv({
   base: [
-    "group rounded-lg border px-2.5 py-1.5 text-sm text-sm/6 will-change-transform dark:shadow-none *:[strong]:font-medium",
+    "group rounded-lg border px-2.5 py-1.5 text-sm/6 will-change-transform dark:shadow-none *:[strong]:font-medium",
   ],
   variants: {
     intent: {

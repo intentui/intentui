@@ -6,7 +6,7 @@
     "useIgnoreFile": false
   },
   "files": {
-    "includes": ["src/**/*.tsx"],
+    "includes": ["src/**/*.tsx", "src/**/*.ts"],
     "ignoreUnknown": false
   },
   "formatter": {
