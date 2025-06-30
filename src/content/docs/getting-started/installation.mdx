@@ -12,40 +12,15 @@ You can choose from a list of frameworks to get started with Intent.
 ## Installation via CLI
 Before executing the command, ensure that **tailwind** is installed. If not, follow the instructions [here](https://tailwindcss.com/docs/installation) for installation.
 
-<Note intent='info'>
-      Running this command will overwrite your **main css** file. It is recommended to use this in a
-      **new project** rather than an existing one to avoid manual file additions.
-</Note>
-
 ### Initial Setup
 Begin by executing this command:
 
 <Installation options={{ isInit: true }} items={['initial setup']} />
 
-When you're run this command, it will ask a couple of questions. Like where's your components folder, utils, your main css file, and lastly is the theme you want like so:
-```
-✔ Initializing.
-? Components folder: src/components
-? Utils folder: src/utils
-? Where would you like to place the CSS file? src/app/globals.css
-? Select a base gray: (Use arrow keys)
-❯ zinc
-  gray
-  slate
-  neutral
-  stone
-```
-If it's all good, you will see the following:
-```
-Not sure what to do next?
-Visit our documentation at: https://intentui.com
-
-Now try to add some components to your project
-by running: npx @intentui/cli@latest add
-```
+Hover over to the [CLI documentation](/docs/getting-started/cli) to learn more about the other commands.
 
 ### Component config
-After running the `init` command, a `intentui.json` file will appear in your project. This file holds your project's configuration, including settings for gray tones, paths, and more.
+After running the `init` command, a `components.json` file will appear in your project. This file holds your project's configuration, including settings for gray tones, paths, and more.
 ```
 {
   "$schema": "https://ui.shadcn.com/schema.json",
@@ -66,9 +41,8 @@ After running the `init` command, a `intentui.json` file will appear in your pro
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "iconLibrary": "@intentui/icons",
+  "iconLibrary": "@intentui/icons"
 }
-
 ```
 
 ### Add components
@@ -78,7 +52,7 @@ Next, use `add [component-name]` to include a specific component in your project
 Sometimes, you may want to add components individually, such as `select` and `text-field`. You can easily do this by using the following command:
 <Installation options={{ isComponent: true, noText: true }} items={['select', 'text-field']} />
 
-### Override
+### Overwrite
 You can override the existing components by using the `-o` flag. This will overwrite the existing files with the new ones.
 <Installation options={{ isComponent: true, noText: true }} items={['button modal -o']} />
 
