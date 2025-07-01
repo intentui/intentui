@@ -17,7 +17,7 @@ export default function BarListDemo() {
             { name: "Colors", value: 430, href: "/colors" },
             { name: "Icons", value: 150, href: "/icons" },
             { name: "Templates", value: 150, href: "https://irsyad.co" },
-            { name: "Premium blocks", value: 150, href: "https://blocks.intentui.com" },
+            { name: "Plus", value: 150, href: "https://blocks.intentui.com" },
           ]}
           valueFormatter={(value) => `${value} visits`}
         />

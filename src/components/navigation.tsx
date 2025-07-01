@@ -93,7 +93,7 @@ export function Navigation() {
                 <NavLink href="/colors">Colors</NavLink>
 
                 <NavLink href="/blocks">Blocks</NavLink>
-                <NavLink href="https://blocks.intentui.com">Premium Blocks</NavLink>
+                <NavLink href="https://blocks.intentui.com">Plus</NavLink>
               </div>
               <div className="flex items-center gap-x-2">
                 <Button

@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandAstro, IconBrandLaravel, IconBrandNextjs } from "@intentui/icons"
+import { IconBrandLaravel, IconBrandNextjs } from "@intentui/icons"
 import { twMerge } from "tailwind-merge"
 import { IconBrandTanstack, IconBrandVite } from "@/components/framework-guides"
 import { PageContainer } from "@/components/page-container"
@@ -19,12 +19,6 @@ export const starterKits = [
     name: "Laravel",
     url: "https://github.com/intentuilabs/inertia.ts",
     description: "Server-driven starter with routing, auth, and front-end integration ready to go.",
-  },
-  {
-    icon: IconBrandAstro,
-    name: "Astro",
-    url: "https://github.com/intentuilabs/astro",
-    description: "A clean starter for building fast content-focused sites with minimal setup.",
   },
   {
     icon: IconBrandTanstack,

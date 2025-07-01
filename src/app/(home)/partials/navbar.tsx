@@ -141,7 +141,7 @@ export const menus = [
   { href: "/blocks", label: "Blocks", icon: IconWindowFill },
   {
     href: "https://blocks.intentui.com",
-    label: "Premium blocks",
+    label: "Plus",
     icon: IconBrandIntentui,
     external: true,
   },

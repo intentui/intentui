@@ -51,7 +51,7 @@ export function Examples() {
             <TableDemo />
           </div>
         </BlocksCard>
-        <BlocksCard className="w-full lg:w-1/2">
+        <BlocksCard className="hidden lg:block lg:w-1/2">
           <div className="flex w-full flex-col gap-y-6">
             <CardHeader
               title="Packages"
