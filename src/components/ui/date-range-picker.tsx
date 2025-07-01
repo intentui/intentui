@@ -40,7 +40,7 @@ const DateRangePicker = <T extends DateValue>({
       )}
     >
       {label && <Label>{label}</Label>}
-      <FieldGroup className="w-auto min-w-40">
+      <FieldGroup className="min-w-40 *:[button]:last:mr-1.5 sm:*:[button]:last:mr-0.5">
         <DateInput slot="start" className="pl-2" />
         <span
           aria-hidden="true"

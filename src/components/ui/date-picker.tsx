@@ -65,9 +65,9 @@ const DatePickerIcon = () => (
   <Button
     size="sq-sm"
     intent="plain"
-    className="mr-1 h-7 w-8 rounded pressed:bg-transparent outline-hidden outline-offset-0 hover:bg-transparent focus-visible:text-fg focus-visible:ring-0 **:data-[slot=icon]:text-muted-fg group-open:*:data-[slot=icon]:text-fg"
+    className="size-7 shrink-0 rounded pressed:bg-transparent outline-hidden outline-offset-0 hover:bg-transparent focus-visible:text-fg focus-visible:ring-0 group-open:text-fg **:data-[slot=icon]:text-muted-fg group-open:*:data-[slot=icon]:text-fg"
   >
-    <IconCalendarDays aria-hidden className="ml-2 group-open:text-fg" />
+    <IconCalendarDays />
   </Button>
 )
 
@@ -93,7 +93,7 @@ const DatePicker = <T extends DateValue>({
       )}
     >
       {label && <Label>{label}</Label>}
-      <FieldGroup className="min-w-40">
+      <FieldGroup className="min-w-40 *:[button]:last:mr-1.5 sm:*:[button]:last:mr-0.5">
         <DateInput className="w-full" />
         <DatePickerIcon />
       </FieldGroup>
