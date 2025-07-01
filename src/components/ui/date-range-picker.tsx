@@ -8,10 +8,10 @@ import {
   type DateValue,
   type ValidationResult,
 } from "react-aria-components"
-import { DateInput } from "@/components/ui/date-field"
-import { DatePickerIcon, DatePickerOverlay } from "@/components/ui/date-picker"
-import { Description, FieldError, FieldGroup, Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { DateInput } from "./date-field"
+import { DatePickerIcon, DatePickerOverlay } from "./date-picker"
+import { Description, FieldError, FieldGroup, Label } from "./field"
 
 interface DateRangePickerProps<T extends DateValue> extends DateRangePickerPrimitiveProps<T> {
   label?: string

@@ -6,10 +6,9 @@ import {
   type TimeValue,
   type ValidationResult,
 } from "react-aria-components"
-
-import { DateInput } from "@/components/ui/date-field"
-import { Description, FieldError, FieldGroup, Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { DateInput } from "./date-field"
+import { Description, FieldError, FieldGroup, Label } from "./field"
 
 interface TimeFieldProps<T extends TimeValue> extends TimeFieldPrimitiveProps<T> {
   label?: string

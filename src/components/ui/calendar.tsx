@@ -20,8 +20,8 @@ import {
   useLocale,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import { Button } from "@/components/ui/button"
-import { Select } from "@/components/ui/select"
+import { Button } from "./button"
+import { Select } from "./select"
 
 interface CalendarProps<T extends DateValue>
   extends Omit<CalendarPrimitiveProps<T>, "visibleDuration"> {

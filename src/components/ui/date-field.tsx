@@ -10,8 +10,8 @@ import {
   type ValidationResult,
 } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
-import { Description, FieldError, FieldGroup, Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Description, FieldError, FieldGroup, Label } from "./field"
 
 interface DateFieldProps<T extends DateValue> extends DateFieldPrimitiveProps<T> {
   label?: string

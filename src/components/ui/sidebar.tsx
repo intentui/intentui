@@ -23,11 +23,11 @@ import {
   Button as Trigger,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
-import { Button } from "@/components/ui/button"
-import { Sheet } from "@/components/ui/sheet"
-import { Tooltip } from "@/components/ui/tooltip"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Button } from "./button"
+import { Sheet } from "./sheet"
+import { Tooltip } from "./tooltip"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7

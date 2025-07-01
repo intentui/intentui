@@ -251,14 +251,6 @@ const generateComponentRegistry = () => {
     { type: "hook", path: "src/hooks" },
   ]
 
-  // const sources = [
-  //   { type: "block", path: "components/docs/buttons/button" },
-  //   { type: "block", path: "components/docs/buttons/button" },
-  //   { type: "ui", path: "components/ui" },
-  //   { type: "lib", path: "lib" },
-  //   { type: "hook", path: "hooks" },
-  // ]
-
   const getAllFiles = (dirPath: string, arrayOfFiles: string[] = []): string[] => {
     if (!fs.existsSync(dirPath)) {
       return []

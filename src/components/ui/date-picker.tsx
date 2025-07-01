@@ -10,15 +10,15 @@ import {
   type ValidationResult,
 } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
-import { DateInput } from "@/components/ui/date-field"
-import { Description, FieldError, FieldGroup, type FieldProps, Label } from "@/components/ui/field"
-import { Modal } from "@/components/ui/modal"
-import { PopoverContent } from "@/components/ui/popover"
-import { RangeCalendar } from "@/components/ui/range-calendar"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Button } from "./button"
+import { Calendar } from "./calendar"
+import { DateInput } from "./date-field"
+import { Description, FieldError, FieldGroup, type FieldProps, Label } from "./field"
+import { Modal } from "./modal"
+import { PopoverContent } from "./popover"
+import { RangeCalendar } from "./range-calendar"
 
 interface DatePickerOverlayProps extends Omit<PopoverProps, "children"> {
   range?: boolean

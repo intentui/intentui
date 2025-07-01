@@ -17,7 +17,7 @@ import {
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-import { Keyboard } from "@/components/ui/keyboard"
+import { Keyboard } from "./keyboard"
 
 const dropdownItemStyles = tv({
   base: [

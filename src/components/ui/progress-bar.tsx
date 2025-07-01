@@ -5,9 +5,8 @@ import {
   ProgressBar as ProgressBarPrimitive,
   type ProgressBarProps as ProgressBarPrimitiveProps,
 } from "react-aria-components"
-
-import { Label } from "@/components/ui/field"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Label } from "./field"
 
 interface ProgressBarProps extends ProgressBarPrimitiveProps {
   label?: string

@@ -8,8 +8,8 @@ import {
   SliderTrack,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
-import { ColorThumb } from "@/components/ui/color-thumb"
-import { Label } from "@/components/ui/field"
+import { ColorThumb } from "./color-thumb"
+import { Label } from "./field"
 
 interface ColorSliderProps extends ColorSliderPrimitiveProps {
   label?: string

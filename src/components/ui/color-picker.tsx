@@ -9,13 +9,13 @@ import {
   ColorPickerStateContext,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
-import { Button } from "@/components/ui/button"
-import { ColorArea } from "@/components/ui/color-area"
-import { ColorField } from "@/components/ui/color-field"
-import { ColorSlider } from "@/components/ui/color-slider"
-import { ColorSwatch } from "@/components/ui/color-swatch"
-import { Description } from "@/components/ui/field"
-import { Popover, PopoverContent, type PopoverContentProps } from "@/components/ui/popover"
+import { Button } from "./button"
+import { ColorArea } from "./color-area"
+import { ColorField } from "./color-field"
+import { ColorSlider } from "./color-slider"
+import { ColorSwatch } from "./color-swatch"
+import { Description } from "./field"
+import { Popover, PopoverContent, type PopoverContentProps } from "./popover"
 
 interface ColorPickerProps
   extends ColorPickerPrimitiveProps,

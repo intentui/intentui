@@ -13,7 +13,7 @@ import {
   Text,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import { CalendarGridHeader, CalendarHeader } from "@/components/ui/calendar"
+import { CalendarGridHeader, CalendarHeader } from "./calendar"
 
 interface RangeCalendarProps<T extends DateValue> extends RangeCalendarPrimitiveProps<T> {
   errorMessage?: string

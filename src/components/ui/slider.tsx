@@ -14,9 +14,9 @@ import {
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-import { Description, Label } from "@/components/ui/field"
-import { Tooltip } from "@/components/ui/tooltip"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Description, Label } from "./field"
+import { Tooltip } from "./tooltip"
 
 interface SliderProps extends SliderPrimitiveProps {
   output?: "inline" | "tooltip" | "none"

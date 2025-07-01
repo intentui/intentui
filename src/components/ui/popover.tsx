@@ -9,6 +9,7 @@ import {
   OverlayArrow,
   Popover as PopoverPrimitive,
 } from "react-aria-components"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 import {
   DialogBody,
   DialogClose,
@@ -17,8 +18,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+} from "./dialog"
 
 type PopoverProps = DialogTriggerProps
 const Popover = (props: PopoverProps) => {

@@ -4,8 +4,8 @@ import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react"
 import { createContext, use, useCallback, useEffect, useState } from "react"
 import { twMerge } from "tailwind-merge"
-import { Button, type ButtonProps } from "@/components/ui/button"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Button, type ButtonProps } from "./button"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>

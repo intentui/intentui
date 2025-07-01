@@ -4,8 +4,8 @@ import { createContext, use } from "react"
 import type { BreadcrumbProps, BreadcrumbsProps, LinkProps } from "react-aria-components"
 import { Breadcrumb, Breadcrumbs as BreadcrumbsPrimitive } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import { Link } from "@/components/ui/link"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Link } from "./link"
 
 type BreadcrumbsContextProps = { separator?: "chevron" | "slash" | boolean }
 const BreadcrumbsProvider = createContext<BreadcrumbsContextProps>({

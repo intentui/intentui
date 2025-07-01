@@ -12,12 +12,11 @@ import {
 } from "react"
 import type { ComboBoxProps, GroupProps, Key, ListBoxProps, Selection } from "react-aria-components"
 import { Button, ComboBox, Group, ListBox } from "react-aria-components"
-import { DropdownItem, DropdownLabel, DropdownSection } from "@/components/ui/dropdown"
-import { Description, FieldGroup, type FieldProps, Input, Label } from "@/components/ui/field"
-
-import { PopoverContent } from "@/components/ui/popover"
-import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { DropdownItem, DropdownLabel, DropdownSection } from "./dropdown"
+import { Description, FieldGroup, type FieldProps, Input, Label } from "./field"
+import { PopoverContent } from "./popover"
+import { Tag, TagGroup, TagList } from "./tag-group"
 
 interface MultipleSelectProps<T>
   extends Omit<ListBoxProps<T>, "renderEmptyState">,

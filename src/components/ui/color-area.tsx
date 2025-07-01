@@ -1,9 +1,8 @@
 "use client"
 import type { ColorAreaProps } from "react-aria-components"
 import { ColorArea as ColorAreaPrimitive } from "react-aria-components"
-
-import { ColorThumb } from "@/components/ui/color-thumb"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { ColorThumb } from "./color-thumb"
 
 const ColorArea = ({ className, ...props }: ColorAreaProps) => {
   return (

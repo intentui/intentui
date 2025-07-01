@@ -14,23 +14,11 @@ import {
   ListBox,
   useSlottedContext,
 } from "react-aria-components"
-import { Button } from "@/components/ui/button"
-import {
-  DropdownDescription,
-  DropdownItem,
-  DropdownLabel,
-  DropdownSection,
-} from "@/components/ui/dropdown"
-import {
-  Description,
-  FieldError,
-  FieldGroup,
-  type FieldProps,
-  Input,
-  Label,
-} from "@/components/ui/field"
-import { PopoverContent } from "@/components/ui/popover"
 import { composeTailwindRenderProps } from "@/lib/primitive"
+import { Button } from "./button"
+import { DropdownDescription, DropdownItem, DropdownLabel, DropdownSection } from "./dropdown"
+import { Description, FieldError, FieldGroup, type FieldProps, Input, Label } from "./field"
+import { PopoverContent } from "./popover"
 
 interface ComboBoxProps<T extends object>
   extends Omit<ComboboxPrimitiveProps<T>, "children">,

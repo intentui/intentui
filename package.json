@@ -53,7 +53,7 @@
     "recharts": "^3.0.2",
     "rehype-stringify": "^10.0.1",
     "scroll-into-view-if-needed": "^3.1.0",
-    "shadcn": "^2.7.0",
+    "shadcn": "^2.7.0-canary.0",
     "sharp": "^0.34.2",
     "shiki": "^3.7.0",
     "sonner": "^2.0.5",

@@ -6,7 +6,7 @@ import { composeRenderProps, GridList, GridListItem, Text } from "react-aria-com
 import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox } from "./checkbox"
 
 const choiceboxStyles = tv({
   base: "grid",

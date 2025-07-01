@@ -7,17 +7,17 @@ import type {
 } from "react-aria-components"
 import { Button, ListBox, Select as SelectPrimitive, SelectValue } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 import {
   DropdownDescription,
   DropdownItem,
   DropdownLabel,
   DropdownSection,
   DropdownSeparator,
-} from "@/components/ui/dropdown"
-import type { FieldProps } from "@/components/ui/field"
-import { Description, FieldError, Label } from "@/components/ui/field"
-import { PopoverContent } from "@/components/ui/popover"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+} from "./dropdown"
+import type { FieldProps } from "./field"
+import { Description, FieldError, Label } from "./field"
+import { PopoverContent } from "./popover"
 
 interface SelectProps<T extends object> extends SelectPrimitiveProps<T>, FieldProps {
   items?: Iterable<T>
