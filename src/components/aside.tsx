@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react"
 import type { LinkProps } from "react-aria-components"
 import { Link } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
+import { Badge } from "@/components/ui/badge"
 import menus from "@/components-search.json"
 import type { Component } from "@/types/search"
 
@@ -59,6 +60,21 @@ export function Aside() {
               {item?.children?.map((item) => (
                 <AsideLink key={item.slug} href={item.slug}>
                   {item.title}
+                  {item.status && (
+                    <Badge
+                      className="-mr-1.5"
+                      isCircle={false}
+                      intent={
+                        item.status === "new"
+                          ? "success"
+                          : item.status === "beta" || item.status === "alpha"
+                            ? "warning"
+                            : "primary"
+                      }
+                    >
+                      {item.status}
+                    </Badge>
+                  )}
                 </AsideLink>
               ))}
             </div>
@@ -90,7 +106,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
       href={href}
       ref={ref}
       className={twMerge(
-        "-ml-3 mb-0.5 flex items-center justify-between rounded-lg px-3 py-1.5 text-base text-fg sm:text-sm/6",
+        "-ml-3 group mb-0.5 flex items-center justify-between rounded-lg px-3 py-1.5 text-base text-fg sm:text-sm/6",
         "focus:outline-hidden",
         "hover:bg-muted hover:text-secondary-fg",
         "focus:bg-muted focus:text-secondary-fg",

@@ -4,6 +4,19 @@ import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
 
 const sectionOrder = ["prologue", "getting-started", "dark-mode", "components"]
 
+const rawStatusMap: Record<"new" | "updated" | "beta" | "alpha", string[]> = {
+  new: ["bar-list", "tracker", "area-chart", "pie-chart", "bar-chart", "line-chart", "toggle-group"],
+  updated: ["field", "checkbox-group", "checkbox", "radio", "switch", "toggle", "dialog", "choicebox", "menu", "dropdown", "chart", "popover"],
+  beta: [],
+  alpha: ["tree"],
+}
+
+const statusMap = Object.fromEntries(
+  Object.entries(rawStatusMap).flatMap(([status, components]) =>
+    components.map((name) => [name, status])
+  )
+) as Record<string, "new" | "updated" | "beta" | "alpha">
+
 async function walk(dir: string, basePath: string): Promise<string[]> {
   const entries = await fs.readdir(dir, { withFileTypes: true })
   const files: string[] = []
@@ -53,7 +66,11 @@ async function generate() {
       const subsection = parts[1]
       const key = String(subsection).toLowerCase()
       if (!componentSubGroups[key]) componentSubGroups[key] = []
-      componentSubGroups[key].push({ slug, title })
+      const status = statusMap[name]
+
+      componentSubGroups[key].push(
+        status ? { slug, title, status } : { slug, title }
+      )
     } else {
       if (!normalGroups[section]) normalGroups[section] = []
       normalGroups[section].push({ slug, title })

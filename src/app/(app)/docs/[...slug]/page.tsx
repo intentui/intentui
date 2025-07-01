@@ -72,7 +72,7 @@ export default async function Page(props: DocPageProps) {
   if (!page) {
     notFound()
   }
-
+  const doc = page.data
   return (
     <>
       <div className="min-w-0 max-w-3xl flex-auto px-4 pt-8 pb-32 sm:pt-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-10">
@@ -94,39 +94,34 @@ export default async function Page(props: DocPageProps) {
               {extractSegment(page.url)}
             </div>
             <div className="flex items-center justify-between gap-x-2">
-              <h1 className="mt-2 font-semibold text-xl tracking-tight sm:text-3xl">
-                {page.data.title}
-              </h1>
+              <h1 className="mt-2 font-semibold text-xl tracking-tight sm:text-3xl">{doc.title}</h1>
               <MobilePager tree={source.pageTree} url={page.url} />
             </div>
-            {page.data.description ? (
+            {doc.description ? (
               <p className="mt-2.5 text-pretty text-base text-fg/60 leading-relaxed">
-                {page.data.description}
+                {doc.description}
               </p>
             ) : null}
 
             <div
               className={twJoin(
                 "flex items-center",
-                ((page.data.references && page.data.references?.length > 0) || page.data.status) &&
-                  "mt-6",
+                ((doc.references && doc.references?.length > 0) || doc.status) && "mt-6",
               )}
             >
-              {page.data.references && page.data.references?.length > 0 && (
-                <DocRefs references={page.data.references} />
+              {doc.references && doc.references?.length > 0 && (
+                <DocRefs references={doc.references} />
               )}
-              {page.data.status && (
-                <div className={page.data?.references?.length! > 0 ? "ml-auto" : "ml-0"}>
-                  <Badge intent={page.data.status === "beta" ? "warning" : "primary"}>
-                    {page.data.status}
-                  </Badge>
+              {doc.status && (
+                <div className={doc?.references?.length! > 0 ? "ml-auto" : "ml-0"}>
+                  <Badge intent={doc.status === "beta" ? "warning" : "primary"}>{doc.status}</Badge>
                 </div>
               )}
             </div>
           </div>
 
-          <Toc className="mt-4 block sm:mt-8 xl:hidden" items={page.data.toc} />
-          <Mdx code={page.data.body} />
+          <Toc className="mt-4 block sm:mt-8 xl:hidden" items={doc.toc} />
+          <Mdx code={doc.body} />
 
           <Ads className="flex md:hidden" />
 
