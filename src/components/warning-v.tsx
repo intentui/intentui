@@ -26,7 +26,7 @@ export function WarningV() {
               href="https://intentui.com"
               target="_blank"
             >
-              v3 documentation
+              v3 documentation{" "}
             </Link>
             to see the latest updates.
           </Popover.Description>

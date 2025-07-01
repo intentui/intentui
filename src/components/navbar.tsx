@@ -42,7 +42,7 @@ export function Navbar() {
   const isDesktop = useMediaQuery("(min-width: 1024px)")
   return (
     <>
-      <div className="border-fg/10 border-b bg-secondary p-4 text-center">
+      <div className="border-fg/10 border-b bg-secondary p-3 text-center text-sm">
         You're viewing the <span className="font-semibold">Intent UI v2</span> documentation. Go to{" "}
         <Link
           className="font-medium text-blue-600 underline dark:text-blue-400"
