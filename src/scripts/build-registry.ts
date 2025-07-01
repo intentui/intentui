@@ -202,8 +202,10 @@ const extractInternalDependencyPaths = (
 
   const resolvedPaths = new Set<string>()
   for (const rawImport of internalImportsRaw) {
-    const basePath = rawImport.startsWith("@/")
-      ? path.resolve(projectRoot, rawImport.replace(/^@\//, ""))
+    // const basePath = rawImport.startsWith("@/")
+    //   ? path.resolve(projectRoot, rawImport.replace(/^@\//, ""))
+     const basePath = rawImport.startsWith("@/")
+       ? path.resolve(projectRoot, "src", rawImport.slice(2))
       : path.resolve(path.dirname(currentFilePath), rawImport)
 
     const potentialPaths = [
@@ -280,12 +282,13 @@ const generateComponentRegistry = () => {
       const fileContent = fs.readFileSync(absoluteFilePath, "utf-8")
 
       const relativePathFromRoot = path.relative(projectRoot, absoluteFilePath).replace(/\\/g, "/")
-      const relativeKey = path.relative(absoluteSourcePath, absoluteFilePath).replace(/\\/g, "/")
-
-      const nameKey = `${type}-${relativeKey
+      const relativeKey = path
+        .relative(absoluteSourcePath, absoluteFilePath)
+        .replace(/\\/g, "/")
         .replace(/\.(tsx|ts)$/, "")
-        .replace(/\/index$/, "")
-        .replace(/^$/, componentBaseName)}`
+
+      const nameKey = `${type}-${relativeKey}`
+
 
       if (!nameKey) {
         console.warn(`Could not generate key for ${absoluteFilePath}`)
@@ -346,8 +349,10 @@ const generateComponentRegistry = () => {
     if (item.internalImportPaths) {
       for (const importPath of item.internalImportPaths) {
         const dependencyKey = filePathToKeyMap.get(importPath)
-        if (dependencyKey && dependencyKey !== item.name) {
+        if (dependencyKey) {
           resolvedRegistryDeps.add(`${registryUrl}/r/${dependencyKey}.json`)
+        } else if (!dependencyKey) {
+          console.warn(`Missing registry key for ${importPath} (used in ${item.name})`)
         }
       }
     }
