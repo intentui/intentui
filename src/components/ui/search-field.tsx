@@ -32,23 +32,24 @@ const SearchField = ({
     >
       {(values) => (
         <>
+          {label && <Label>{label}</Label>}
           {typeof children === "function" ? (
             children(values)
           ) : children ? (
             children
           ) : (
             <FieldGroup>
-              {label && <Label>{label}</Label>}
               {isPending ? <Loader variant="spin" /> : <IconSearch />}
               <Input placeholder={placeholder ?? "Search..."} />
 
               <Button className="grid place-content-center pressed:text-fg text-muted-fg hover:text-fg group-empty/search-field:invisible">
                 <IconX />
               </Button>
-              {description && <Description>{description}</Description>}
-              <FieldError>{errorMessage}</FieldError>
             </FieldGroup>
           )}
+
+          {description && <Description>{description}</Description>}
+          <FieldError>{errorMessage}</FieldError>
         </>
       )}
     </SearchFieldPrimitive>

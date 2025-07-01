@@ -6,8 +6,8 @@ import { SearchField } from "@/components/ui/search-field"
 
 export default function SearchFieldValidationDemo() {
   return (
-    <Form>
-      <SearchField isRequired label="Name" className="mb-2" />
+    <Form className="space-y-4">
+      <SearchField isRequired label="Name" />
       <Button type="submit">Submit</Button>
     </Form>
   )
