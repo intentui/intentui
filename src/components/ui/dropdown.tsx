@@ -26,8 +26,9 @@ const dropdownItemStyles = tv({
     "not-has-[[slot=description]]:items-center has-[[slot=description]]:**:data-[slot=check-indicator]:mt-[1.5px]",
     "group relative cursor-default select-none rounded-[calc(var(--radius-lg)-1px)] text-base/6 text-fg outline-0 sm:text-sm/6",
     "**:data-[slot=avatar]:*:mr-1.5 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:mr-(--mr-icon) **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
-    "data-danger:**:data-[slot=icon]:text-danger/60 *:data-[slot=icon]:mr-(--mr-icon) **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg focus:data-danger:**:data-[slot=icon]:text-danger sm:**:data-[slot=icon]:size-4",
+    "*:data-[slot=icon]:mr-(--mr-icon) **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg sm:**:data-[slot=icon]:size-4",
     "[&>[slot=label]+[data-slot=icon]]:absolute [&>[slot=label]+[data-slot=icon]]:right-1",
+    "data-danger:text-danger data-danger:**:data-[slot=icon]:text-danger/60",
     "forced-color-adjust-none forced-colors:text-[CanvasText] forced-colors:**:data-[slot=icon]:text-[CanvasText] forced-colors:group-focus:**:data-[slot=icon]:text-[CanvasText]",
   ],
   variants: {
@@ -37,12 +38,17 @@ const dropdownItemStyles = tv({
     isSelected: {
       true: "**:data-[slot=avatar]:*:hidden **:data-[slot=avatar]:hidden **:data-[slot=icon]:hidden **:data-[slot=icon]:text-accent-fg",
     },
+    isDanger: {
+      true: [
+        "text-danger focus:text-danger **:data-[slot=icon]:text-danger/70 focus:**:data-[slot=icon]:text-danger",
+        "focus:*:[[slot=description]]:text-danger/80 focus:*:[[slot=label]]:text-danger",
+        "focus:bg-danger/10 focus:text-danger focus:**:data-[slot=icon]:text-danger forced-colors:focus:text-[Mark]",
+      ],
+    },
     isFocused: {
-      false: "data-danger:text-danger",
       true: [
         "**:data-[slot=icon]:text-accent-fg **:[kbd]:text-accent-fg",
         "bg-accent text-accent-fg forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]",
-        "data-danger:bg-danger/10 data-danger:text-danger",
         "[&_.text-muted-fg]:text-accent-fg/80 *:[[slot=description]]:text-accent-fg *:[[slot=label]]:text-accent-fg",
       ],
     },
