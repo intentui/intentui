@@ -268,7 +268,7 @@ const SidebarHeader = ({ className, ref, ...props }: React.ComponentProps<"div">
         "mb-2 flex flex-col **:data-[slot=sidebar-label-mask]:hidden",
         state === "collapsed"
           ? "mt-2 p-5 group-data-[sidebar-intent=float]/sidebar-container:mt-2 md:mx-auto md:size-9 md:items-center md:justify-center md:rounded-lg md:p-0 md:hover:bg-secondary"
-          : "p-6",
+          : "p-4",
         className,
       ])}
       {...props}
@@ -284,7 +284,7 @@ const SidebarFooter = ({ className, ...props }: React.ComponentProps<"div">) => 
       data-sidebar-footer="true"
       className={twMerge([
         "mt-auto flex flex-col p-4",
-        "**:data-[slot=menu-trigger]:relative **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:cursor-default **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:overflow-hidden **:data-[slot=menu-trigger]:rounded-lg **:data-[slot=menu-trigger]:pressed:bg-secondary **:data-[slot=menu-trigger]:p-2 **:data-[slot=menu-trigger]:outline-hidden **:data-[slot=menu-trigger]:hover:bg-secondary **:data-[slot=menu-trigger]:hover:text-fg sm:**:data-[slot=menu-trigger]:text-sm",
+        "**:data-[slot=menu-trigger]:relative **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:cursor-default **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:overflow-hidden **:data-[slot=menu-trigger]:rounded-lg **:data-[slot=menu-trigger]:pressed:bg-secondary **:data-[slot=menu-trigger]:px-2 **:data-[slot=menu-trigger]:py-1 **:data-[slot=menu-trigger]:outline-hidden **:data-[slot=menu-trigger]:hover:bg-secondary **:data-[slot=menu-trigger]:hover:text-fg sm:**:data-[slot=menu-trigger]:text-sm/6",
         collapsed
           ? [
               "**:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-6",
@@ -308,7 +308,7 @@ const SidebarContent = ({ className, ...props }: React.ComponentProps<"div">) =>
     <div
       data-sidebar-content="true"
       className={twMerge(
-        "flex min-h-0 flex-1 scroll-mb-96 flex-col overflow-auto *:data-sidebar-section:border-l-0",
+        "flex min-h-0 flex-1 scroll-mb-96 flex-col overflow-auto p-4 *:data-sidebar-section:border-l-0",
         state === "collapsed" && "items-center",
         className,
       )}
@@ -343,7 +343,6 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
       data-sidebar-section="true"
       className={twMerge(
         "col-span-full flex flex-col gap-y-0.5 **:data-sidebar-section:**:gap-y-0 **:data-sidebar-section:pr-0",
-        state === "expanded" && "px-4",
         className,
       )}
       {...props}
@@ -508,15 +507,11 @@ interface SidebarDisclosureProps extends DisclosureProps {
   ref?: React.Ref<HTMLDivElement>
 }
 const SidebarDisclosure = ({ className, ref, ...props }: SidebarDisclosureProps) => {
-  const { state } = useSidebar()
   return (
     <Disclosure
       ref={ref}
       data-sidebar-disclosure="true"
-      className={composeTailwindRenderProps(
-        className,
-        state === "expanded" ? "px-4" : "col-span-full",
-      )}
+      className={composeTailwindRenderProps(className, "col-span-full")}
       {...props}
     />
   )
