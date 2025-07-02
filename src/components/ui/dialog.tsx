@@ -1,7 +1,6 @@
 "use client"
 
 import { IconX } from "@intentui/icons"
-import { useEffect, useRef } from "react"
 import type { HeadingProps, TextProps } from "react-aria-components"
 import {
   Button as ButtonPrimitive,
@@ -34,39 +33,18 @@ const DialogTrigger = (props: React.ComponentProps<typeof ButtonPrimitive>) => (
   <ButtonPrimitive {...props} />
 )
 
-type DialogHeaderProps = React.HTMLAttributes<HTMLDivElement> & {
+interface DialogHeaderProps extends Omit<React.ComponentProps<"div">, "title"> {
   title?: string
   description?: string
 }
 
-const DialogHeader = ({ className, ...props }: DialogHeaderProps) => {
-  const headerRef = useRef<HTMLHeadingElement>(null)
-
-  useEffect(() => {
-    const header = headerRef.current
-    if (!header) {
-      return
-    }
-
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        header.parentElement?.style.setProperty(
-          "--dialog-header-height",
-          `${entry.target.clientHeight}px`,
-        )
-      }
-    })
-
-    observer.observe(header)
-    return () => observer.unobserve(header)
-  }, [])
-
+const DialogHeader = ({ className, ref, ...props }: DialogHeaderProps) => {
   return (
     <div
+      ref={ref}
       data-slot="dialog-header"
-      ref={headerRef}
       className={twMerge(
-        "relative space-y-1 p-(--gutter) pb-[calc(var(--gutter)---spacing(3))]",
+        "relative shrink-0 space-y-1 p-(--gutter) pb-[calc(var(--gutter)---spacing(3))]",
         className,
       )}
     >
@@ -115,7 +93,7 @@ const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
     data-slot="dialog-body"
     ref={ref}
     className={twMerge(
-      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-(--gutter) py-1",
+      "relative isolate flex flex-1 flex-col overflow-auto px-(--gutter) py-1",
       className,
     )}
     {...props}
@@ -123,36 +101,13 @@ const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
 )
 
 interface DialogFooterProps extends React.ComponentProps<"div"> {}
-const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
-  const footerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const footer = footerRef.current
-
-    if (!footer) {
-      return
-    }
-
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        footer.parentElement?.style.setProperty(
-          "--dialog-footer-height",
-          `${entry.target.clientHeight}px`,
-        )
-      }
-    })
-
-    observer.observe(footer)
-    return () => {
-      observer.unobserve(footer)
-    }
-  }, [])
+const DialogFooter = ({ className, ref, ...props }: DialogFooterProps) => {
   return (
     <div
-      ref={footerRef}
+      ref={ref}
       data-slot="dialog-footer"
       className={twMerge(
-        "isolate mt-auto flex flex-col-reverse justify-between gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(3))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row",
+        "isolate mt-auto flex shrink-0 flex-col-reverse justify-between gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(3))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row",
         className,
       )}
       {...props}

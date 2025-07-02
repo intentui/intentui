@@ -64,9 +64,8 @@ const ModalContent = ({
       isDismissable={isDismissable}
       className={composeRenderProps(overlay?.className, (className, { isEntering, isExiting }) =>
         twMerge([
-          "fixed inset-0 isolate z-50 h-(--visual-viewport-height) w-screen",
-          "flex items-end justify-end bg-fg/15 text-center sm:flex sm:justify-center dark:bg-bg/40",
-          "[--visual-viewport-vertical-padding:16px] sm:[--visual-viewport-vertical-padding:32px]",
+          "fixed inset-0 z-50 flex h-(--visual-viewport-height) w-screen items-end overflow-y-auto sm:items-center sm:justify-center",
+          "bg-fg/15 pt-6 dark:bg-bg/40",
           isBlurred &&
             "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
           isEntering && "fade-in animate-in duration-200 ease-out",
@@ -79,7 +78,7 @@ const ModalContent = ({
       <ModalPrimitive
         className={composeRenderProps(className, (className, { isEntering, isExiting }) =>
           twMerge([
-            "max-h-full w-full rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring-1 ring-fg/5",
+            "max-h-[calc(var(--visual-viewport-height)-2rem)] w-screen min-w-0 rounded-t-2xl bg-overlay text-overlay-fg shadow-lg ring-1 ring-fg/5",
             "overflow-hidden sm:rounded-2xl dark:ring-border",
             "sm:-translate-x-1/2 sm:-translate-y-1/2 sm:fixed sm:top-1/2 sm:left-[50vw]",
             isEntering &&
