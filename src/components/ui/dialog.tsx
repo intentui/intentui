@@ -10,7 +10,6 @@ import {
   Text,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Button, type ButtonProps } from "./button"
 
@@ -152,7 +151,7 @@ const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
       ref={footerRef}
       data-slot="dialog-footer"
       className={twMerge(
-        "isolate mt-auto flex flex-col-reverse justify-between gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(2))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row",
+        "isolate mt-auto flex flex-col-reverse justify-between gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(3))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row",
         className,
       )}
       {...props}
@@ -170,10 +169,8 @@ interface CloseButtonIndicatorProps extends Omit<ButtonProps, "children"> {
 }
 
 const DialogCloseIcon = ({ className, ...props }: CloseButtonIndicatorProps) => {
-  const isMobile = useMediaQuery("(max-width: 600px)")
   return props.isDismissable ? (
     <ButtonPrimitive
-      {...(isMobile ? { autoFocus: true } : {})}
       aria-label="Close"
       slot="close"
       className={composeTailwindRenderProps(

@@ -18,7 +18,7 @@ export default function ModalDemo() {
               </Modal.Description>
             </Modal.Header>
             <Modal.Body>
-              <TextField placeholder="Enter a name" />
+              <TextField autoFocus placeholder="Enter a name" />
             </Modal.Body>
             <Modal.Footer>
               <Modal.Close>Cancel</Modal.Close>
