@@ -73,7 +73,6 @@
   }
 }
 
-@layer base {
   :root {
     --bg: oklch(1 0 0);
 
@@ -151,7 +150,7 @@
     --muted: oklch(0.21 0.006 285.885);
     --muted-fg: oklch(0.705 0.015 286.067);
 
-    --overlay: oklch(0.180 0.006 285.885);
+    --overlay: oklch(0.191 0.005 285.823);
     --overlay-fg: oklch(0.985 0 0);
 
     --success: oklch(0.596 0.145 163.225);
@@ -178,7 +177,6 @@
     --chart-4: oklch(0.809 0.105 251.813);
     --chart-5: oklch(0.882 0.059 254.128);
   }
-}
 
 @layer base {
   *,

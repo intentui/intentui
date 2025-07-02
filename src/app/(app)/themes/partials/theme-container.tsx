@@ -71,7 +71,7 @@ export function ThemeContainer() {
                     Get theme
                     <IconChevronLgDown />
                   </Button>
-                  <Menu.Content placement="bottom right" className="sm:min-w-(--trigger-width)">
+                  <Menu.Content placement="bottom right" className="min-w-(--trigger-width)">
                     <Menu.Item onAction={copy}>
                       <IconDuplicate />
                       Copy

@@ -2,7 +2,7 @@
 
 import {
   IconArchive2,
-  IconBrandApple,
+  IconBrandIntentui,
   IconChevronLgDown,
   IconCommandRegular,
   IconCube,
@@ -39,8 +39,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandApple className="size-5" />
-          <SidebarLabel className="font-medium">Intent UI</SidebarLabel>
+          <IconBrandIntentui className="size-6" />
+          <SidebarLabel className="font-medium">
+            Intent <span className="text-muted-fg">UI</span>
+          </SidebarLabel>
         </Link>
       </SidebarHeader>
 
@@ -107,7 +109,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </div>
             <IconChevronLgDown className="absolute right-3 size-4 transition-transform group-pressed:rotate-180" />
           </Menu.Trigger>
-          <Menu.Content placement="bottom right" className="sm:min-w-(--trigger-width)">
+          <Menu.Content placement="bottom right" className="min-w-(--trigger-width)">
             <Menu.Section>
               <Menu.Header separator>
                 <span className="block">Kurt Cobain</span>

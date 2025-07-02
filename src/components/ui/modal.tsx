@@ -64,7 +64,7 @@ const ModalContent = ({
       isDismissable={isDismissable}
       className={composeRenderProps(overlay?.className, (className, { isEntering, isExiting }) =>
         twMerge([
-          "fixed inset-0 isolate z-50 h-(--visual-viewport-height) w-screen",
+          "fixed inset-0 z-50 h-(--visual-viewport-height) w-screen",
           "flex items-end justify-end bg-fg/15 sm:justify-center dark:bg-bg/40",
           "[--visual-viewport-vertical-padding:16px] sm:[--visual-viewport-vertical-padding:32px]",
           isBlurred &&
@@ -81,7 +81,7 @@ const ModalContent = ({
           twMerge([
             "max-h-full w-full rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring-1 ring-fg/5",
             "overflow-hidden sm:rounded-2xl dark:ring-border",
-            "sm:-translate-x-1/2 sm:-translate-y-1/2 sm:fixed sm:top-1/2 sm:left-[50vw]",
+            "sm:-translate-y-1/2 sm:-translate-x-1/2 fixed sm:top-1/2 sm:left-1/2",
             isEntering &&
               "fade-in slide-in-from-bottom sm:zoom-in-95 sm:slide-in-from-bottom-0 animate-in duration-200 ease-out",
             isExiting &&

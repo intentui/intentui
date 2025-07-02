@@ -2,14 +2,14 @@
 
 import {
   IconBrandYoutube,
-  IconClock,
-  IconHome,
-  IconPeople,
-  IconPlay,
-  IconRotate2Left,
-  IconVideoPlaylist,
-  IconVideoRoll,
-  IconYes,
+  IconClockFill,
+  IconHomeFill,
+  IconPeopleFill,
+  IconPlayFill,
+  IconRotate2LeftFill,
+  IconVideoPlaylistFill,
+  IconVideoRollFill,
+  IconYesFill,
 } from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
@@ -42,40 +42,40 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
       <SidebarContent className="**:data-[slot=avatar]:*:size-5 **:data-[slot=avatar]:size-5 **:data-[slot=icon]:size-5">
         <SidebarSection>
           <SidebarItem>
-            <IconHome />
+            <IconHomeFill />
             <SidebarLabel>Home</SidebarLabel>
           </SidebarItem>
           <SidebarItem>
-            <IconPlay />
+            <IconPlayFill />
             <SidebarLabel>Shorts</SidebarLabel>
           </SidebarItem>
           <SidebarItem>
-            <IconVideoPlaylist />
+            <IconVideoPlaylistFill />
             <SidebarLabel>Subscriptions</SidebarLabel>
           </SidebarItem>
         </SidebarSection>
         <SidebarSeparator />
         <SidebarSection label="You">
           <SidebarItem>
-            <IconRotate2Left /> <SidebarLabel>History</SidebarLabel>
+            <IconRotate2LeftFill /> <SidebarLabel>History</SidebarLabel>
           </SidebarItem>
           <SidebarItem>
-            <IconVideoPlaylist /> <SidebarLabel>Playlists</SidebarLabel>
+            <IconVideoPlaylistFill /> <SidebarLabel>Playlists</SidebarLabel>
           </SidebarItem>
           <SidebarItem>
-            <IconVideoRoll /> <SidebarLabel>Your videos</SidebarLabel>
+            <IconVideoRollFill /> <SidebarLabel>Your videos</SidebarLabel>
           </SidebarItem>
           <SidebarItem>
-            <IconClock /> <SidebarLabel>Watch later</SidebarLabel>
+            <IconClockFill /> <SidebarLabel>Watch later</SidebarLabel>
           </SidebarItem>
           <SidebarItem>
-            <IconYes /> <SidebarLabel>Liked videos</SidebarLabel>
+            <IconYesFill /> <SidebarLabel>Liked videos</SidebarLabel>
           </SidebarItem>
         </SidebarSection>
         <SidebarSeparator />
         <SidebarDisclosure defaultExpanded>
           <SidebarDisclosureTrigger>
-            <IconPeople />
+            <IconPeopleFill />
             <SidebarLabel>Your Subscriptions</SidebarLabel>
           </SidebarDisclosureTrigger>
           <SidebarDisclosurePanel>

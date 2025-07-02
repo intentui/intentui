@@ -191,7 +191,7 @@ const Sidebar = ({
             className="[&>button]:hidden"
             side={side}
           >
-            <Sheet.Body className="p-[calc(var(--gutter)---spacing(4))]">{children}</Sheet.Body>
+            <Sheet.Body className="px-0 sm:px-0">{children}</Sheet.Body>
           </Sheet.Content>
         </Sheet>
       </>
@@ -226,7 +226,6 @@ const Sidebar = ({
           "fixed inset-y-0 z-10 hidden h-svh min-h-svh w-(--sidebar-width) bg-sidebar",
           "not-has-data-sidebar-footer:pb-2",
           "transition-[left,right,width] duration-200 ease-linear",
-          "**:data-[slot=disclosure]:border-0 **:data-[slot=disclosure]:px-2.5",
           "md:flex",
           side === "left" &&
             "left-0 group-data-[sidebar-collapsible=hidden]/sidebar-container:left-[calc(var(--sidebar-width)*-1)]",
@@ -269,7 +268,7 @@ const SidebarHeader = ({ className, ref, ...props }: React.ComponentProps<"div">
         "mb-2 flex flex-col **:data-[slot=sidebar-label-mask]:hidden",
         state === "collapsed"
           ? "mt-2 p-5 group-data-[sidebar-intent=float]/sidebar-container:mt-2 md:mx-auto md:size-9 md:items-center md:justify-center md:rounded-lg md:p-0 md:hover:bg-secondary"
-          : "px-4 py-[calc(var(--spacing)*4)]",
+          : "p-6",
         className,
       ])}
       {...props}
@@ -280,14 +279,12 @@ const SidebarHeader = ({ className, ref, ...props }: React.ComponentProps<"div">
 const SidebarFooter = ({ className, ...props }: React.ComponentProps<"div">) => {
   const { state, isMobile } = useSidebar()
   const collapsed = state === "collapsed" && !isMobile
-  const expanded = state === "expanded"
   return (
     <div
       data-sidebar-footer="true"
       className={twMerge([
-        "mt-auto flex flex-col p-2",
+        "mt-auto flex flex-col p-4",
         "**:data-[slot=menu-trigger]:relative **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:cursor-default **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:overflow-hidden **:data-[slot=menu-trigger]:rounded-lg **:data-[slot=menu-trigger]:pressed:bg-secondary **:data-[slot=menu-trigger]:p-2 **:data-[slot=menu-trigger]:outline-hidden **:data-[slot=menu-trigger]:hover:bg-secondary **:data-[slot=menu-trigger]:hover:text-fg sm:**:data-[slot=menu-trigger]:text-sm",
-        expanded && "**:data-[slot=menu-content]:min-w-60",
         collapsed
           ? [
               "**:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-6",
@@ -346,7 +343,7 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
       data-sidebar-section="true"
       className={twMerge(
         "col-span-full flex flex-col gap-y-0.5 **:data-sidebar-section:**:gap-y-0 **:data-sidebar-section:pr-0",
-        state === "expanded" && "px-2.5",
+        state === "expanded" && "px-4",
         className,
       )}
       {...props}
@@ -518,7 +515,7 @@ const SidebarDisclosure = ({ className, ref, ...props }: SidebarDisclosureProps)
       data-sidebar-disclosure="true"
       className={composeTailwindRenderProps(
         className,
-        state === "expanded" ? "px-2.5" : "col-span-full",
+        state === "expanded" ? "px-4" : "col-span-full",
       )}
       {...props}
     />

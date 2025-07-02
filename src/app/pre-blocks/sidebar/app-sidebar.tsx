@@ -1,32 +1,31 @@
 "use client"
 
 import {
-  IconArchive,
-  IconArrowDown,
-  IconArrowUp,
+  IconArchiveFill,
+  IconArrowDownFill,
+  IconArrowUpFill,
   IconBrandIntentui,
-  IconBuilding,
-  IconCheck,
+  IconBuildingFill,
   IconChevronsY,
-  IconCircleQuestionmark,
-  IconClock,
-  IconCreditCard,
-  IconDashboard,
+  IconCircleCheckFill,
+  IconCircleQuestionmarkFill,
+  IconClockFill,
+  IconCreditCardFill,
+  IconDashboardFill,
   IconDotsHorizontal,
-  IconHashtag,
-  IconHeadphones,
-  IconListBullets,
+  IconHashtagFill,
+  IconHeadphonesFill,
+  IconListBulletsFill,
   IconLogout,
-  IconMessage,
-  IconNotes,
-  IconPackage,
+  IconMessageFill,
+  IconNotesFill,
+  IconPackageFill,
   IconPlus,
-  IconSettings,
-  IconShield,
-  IconShoppingBag,
-  IconTicket,
+  IconSettingsFill,
+  IconShieldFill,
+  IconShoppingBagFill,
+  IconTicketFill,
 } from "@intentui/icons"
-import { twMerge } from "tailwind-merge"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
@@ -45,11 +44,9 @@ import {
   SidebarRail,
   SidebarSection,
   SidebarSectionGroup,
-  useSidebar,
 } from "@/components/ui/sidebar"
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
-  const { state } = useSidebar()
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -57,15 +54,17 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandIntentui className="size-5" />
-          <SidebarLabel className="font-medium">Intent UI</SidebarLabel>
+          <IconBrandIntentui className="size-6" />
+          <SidebarLabel className="font-medium">
+            Intent <span className="text-muted-fg">UI</span>
+          </SidebarLabel>
         </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarSectionGroup>
           <SidebarSection label="Overview">
             <SidebarItem tooltip="Overview" isCurrent href="#">
-              <IconDashboard />
+              <IconDashboardFill />
               <SidebarLabel>Overview</SidebarLabel>
             </SidebarItem>
 
@@ -73,7 +72,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               {({ isCollapsed, isFocused }) => (
                 <>
                   <SidebarLink href="#">
-                    <IconShoppingBag />
+                    <IconShoppingBagFill />
                     <SidebarLabel>Orders</SidebarLabel>
                   </SidebarLink>
                   {(!isCollapsed || isFocused) && (
@@ -87,19 +86,19 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                           Create New Order
                         </Menu.Item>
                         <Menu.Item href="#view-all">
-                          <IconListBullets />
+                          <IconListBulletsFill />
                           View All Orders
                         </Menu.Item>
                         <Menu.Item href="#pending-orders">
-                          <IconClock />
+                          <IconClockFill />
                           Pending Orders
                         </Menu.Item>
                         <Menu.Item href="#completed-orders">
-                          <IconCheck />
+                          <IconCircleCheckFill />
                           Completed Orders
                         </Menu.Item>
                         <Menu.Item href="#export-orders">
-                          <IconArrowUp />
+                          <IconArrowUpFill />
                           Export Orders
                         </Menu.Item>
                       </Menu.Content>
@@ -125,19 +124,19 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                           Add New Product
                         </Menu.Item>
                         <Menu.Item href="#archive">
-                          <IconArchive />
+                          <IconArchiveFill />
                           Archive Product
                         </Menu.Item>
                         <Menu.Item href="#manage-categories">
-                          <IconHashtag />
+                          <IconHashtagFill />
                           Manage Categories
                         </Menu.Item>
                         <Menu.Item href="#import">
-                          <IconArrowDown />
+                          <IconArrowDownFill />
                           Import Products
                         </Menu.Item>
                         <Menu.Item href="#export">
-                          <IconArrowUp />
+                          <IconArrowUpFill />
                           Export Products
                         </Menu.Item>
                       </Menu.Content>
@@ -147,7 +146,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               )}
             </SidebarItem>
             <SidebarItem href="#" badge="4 Pending" tooltip="Payments">
-              <IconCreditCard />
+              <IconCreditCardFill />
               <SidebarLabel>Payments</SidebarLabel>
             </SidebarItem>
           </SidebarSection>
@@ -160,31 +159,31 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               </SidebarDisclosureTrigger>
               <SidebarDisclosurePanel>
                 <SidebarItem href="#" tooltip="Tickets">
-                  <IconTicket />
+                  <IconTicketFill />
                   <SidebarLabel>Tickets</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="Chat Support">
-                  <IconMessage />
+                  <IconMessageFill />
                   <SidebarLabel>Chat Support</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="FAQ">
-                  <IconCircleQuestionmark />
+                  <IconCircleQuestionmarkFill />
                   <SidebarLabel>FAQ</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="Documentation">
-                  <IconNotes />
+                  <IconNotesFill />
                   <SidebarLabel>Documentation</SidebarLabel>
                 </SidebarItem>
               </SidebarDisclosurePanel>
             </SidebarDisclosure>
             <SidebarDisclosure id={2}>
               <SidebarDisclosureTrigger>
-                <IconPackage />
+                <IconPackageFill />
                 <SidebarLabel>Inventory</SidebarLabel>
               </SidebarDisclosureTrigger>
               <SidebarDisclosurePanel>
                 <SidebarItem href="#" tooltip="Warehouse">
-                  <IconBuilding />
+                  <IconBuildingFill />
                   <SidebarLabel>Warehouse</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="Stock Levels">
@@ -209,10 +208,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </div>
             <IconChevronsY data-slot="chevron" className="right-3" />
           </Menu.Trigger>
-          <Menu.Content
-            placement="bottom right"
-            className={twMerge(state === "expanded" ? "sm:min-w-(--trigger-width)" : "sm:min-w-60")}
-          >
+          <Menu.Content className="min-w-(--trigger-width)" placement="bottom right">
             <Menu.Section>
               <Menu.Header separator>
                 <span className="block">Kurt Cobain</span>
@@ -221,21 +217,21 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </Menu.Section>
 
             <Menu.Item href="#dashboard">
-              <IconDashboard />
+              <IconDashboardFill />
               Dashboard
             </Menu.Item>
             <Menu.Item href="#settings">
-              <IconSettings />
+              <IconSettingsFill />
               Settings
             </Menu.Item>
             <Menu.Item href="#security">
-              <IconShield />
+              <IconShieldFill />
               Security
             </Menu.Item>
             <Menu.Separator />
 
             <Menu.Item href="#contact">
-              <IconHeadphones />
+              <IconHeadphonesFill />
               Customer Support
             </Menu.Item>
             <Menu.Separator />

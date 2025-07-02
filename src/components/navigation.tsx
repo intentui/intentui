@@ -35,15 +35,13 @@ export function Navigation() {
                 <div className="flex items-center">
                   <Link
                     href="/"
-                    className={buttonStyles({
-                      intent: "plain",
-                      size: "sm",
-                      className:
-                        "-ml-1 group flex items-center gap-x-2 pressed:bg-transparent p-2 font-medium hover:bg-transparent *:data-[slot=icon]:size-6 sm:*:data-[slot=icon]:size-6",
-                    })}
+                    className="-ml-3 mr-2 flex items-center gap-x-2 p-2 font-medium"
+                    aria-label="Goto homepage"
                   >
-                    <IconBrandIntentui />
-                    <span>Intent</span> <span className="text-muted-fg">UI</span>
+                    <IconBrandIntentui className="size-6 text-white" />
+                    <span className="hidden sm:inline">
+                      <span>Intent</span> <span className="text-muted-fg">UI</span>
+                    </span>
                   </Link>
                   <span className="mx-2 text-muted-fg">/</span>
                   <Menu>
@@ -52,14 +50,26 @@ export function Navigation() {
                       <IconChevronDown />
                     </Button>
                     <Menu.Content>
-                      <Menu.Item href="https://intentui.com/docs/getting-started/introduction">
-                        3.x (latest)
+                      <Menu.Item
+                        href="https://intentui.com/docs/getting-started/introduction"
+                        className="group"
+                      >
+                        3.x{" "}
+                        <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
+                          latest
+                        </span>
                       </Menu.Item>
                       <Menu.Item href="https://2x.intentui.com/docs/getting-started/introduction">
                         2.x
                       </Menu.Item>
-                      <Menu.Item href="https://1x.intentui.com/docs/getting-started/introduction">
-                        1.x (deprecated)
+                      <Menu.Item
+                        href="https://1x.intentui.com/docs/getting-started/introduction"
+                        className="group"
+                      >
+                        1.x{" "}
+                        <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
+                          deprecated
+                        </span>
                       </Menu.Item>
                     </Menu.Content>
                   </Menu>

@@ -1,7 +1,7 @@
 "use client"
 
 import {
-  IconBrandApple,
+  IconBrandIntentui,
   IconCart,
   IconChartBar,
   IconChevronsY,
@@ -39,8 +39,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandApple className="size-5" />
-          <SidebarLabel className="font-medium">Intent UI</SidebarLabel>
+          <IconBrandIntentui className="size-6" />
+          <SidebarLabel className="font-medium">
+            Intent <span className="text-muted-fg">UI</span>
+          </SidebarLabel>
         </Link>
       </SidebarHeader>
 
@@ -75,7 +77,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           </Menu.Trigger>
           <Menu.Content
             placement="bottom right"
-            className={twMerge(state === "expanded" ? "sm:min-w-(--trigger-width)" : "sm:min-w-60")}
+            className={twMerge(state === "expanded" ? "min-w-(--trigger-width)" : "sm:min-w-60")}
           >
             <Menu.Section>
               <Menu.Header separator>
