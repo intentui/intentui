@@ -3,11 +3,12 @@
 import {
   IconArchive2,
   IconBrandIntentui,
-  IconChevronLgDown,
+  IconChevronsY,
   IconCommandRegular,
   IconCube,
   IconDashboard,
   IconDotsHorizontal,
+  IconHashtag,
   IconHeadphones,
   IconHighlight,
   IconLogout,
@@ -63,7 +64,8 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               <SidebarItem key={item.href}>
                 {({ isCollapsed }) => (
                   <>
-                    <SidebarLink href="#discount">
+                    <SidebarLink href="#">
+                      <IconHashtag />
                       <SidebarLabel>{item.label}</SidebarLabel>
                     </SidebarLink>
                     {!isCollapsed && (
@@ -107,7 +109,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               Kurt Cobain
               <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>
             </div>
-            <IconChevronLgDown className="absolute right-3 size-4 transition-transform group-pressed:rotate-180" />
+            <IconChevronsY data-slot="chevron" />
           </Menu.Trigger>
           <Menu.Content placement="bottom right" className="min-w-(--trigger-width)">
             <Menu.Section>

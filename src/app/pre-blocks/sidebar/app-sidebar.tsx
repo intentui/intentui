@@ -206,7 +206,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               <SidebarLabel>Kurt Cobain</SidebarLabel>
               <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>
             </div>
-            <IconChevronsY data-slot="chevron" className="right-3" />
+            <IconChevronsY data-slot="chevron" />
           </Menu.Trigger>
           <Menu.Content className="min-w-(--trigger-width)" placement="bottom right">
             <Menu.Section>

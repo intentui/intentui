@@ -292,8 +292,8 @@ const SidebarFooter = ({ className, ...props }: React.ComponentProps<"div">) => 
               "**:data-[slot=menu-trigger]:grid **:data-[slot=menu-trigger]:size-8 **:data-[slot=menu-trigger]:place-content-center",
             ]
           : [
-              "**:data-[slot=avatar]:*:size-8 **:data-[slot=menu-trigger]:**:data-[slot=avatar]:mr-1.5 **:data-[slot=avatar]:size-8",
-              "**:data-[slot=menu-trigger]:**:data-[slot=chevron]:ml-auto **:data-[slot=menu-trigger]:**:data-[slot=chevron]:text-muted-fg **:data-[slot=menu-trigger]:pressed:**:data-[slot=chevron]:text-fg **:data-[slot=menu-trigger]:**:data-[slot=chevron]:transition-transform **:data-[slot=menu-trigger]:w-full **:data-[slot=menu-trigger]:hover:**:data-[slot=chevron]:text-fg",
+              "**:data-[slot=avatar]:*:size-8 **:data-[slot=menu-trigger]:**:data-[slot=avatar]:mr-2 **:data-[slot=avatar]:size-8",
+              "**:data-[slot=menu-trigger]:**:data-[slot=chevron]:absolute **:data-[slot=menu-trigger]:**:data-[slot=chevron]:right-2 **:data-[slot=menu-trigger]:**:data-[slot=chevron]:text-muted-fg **:data-[slot=menu-trigger]:hover:**:data-[slot=chevron]:text-fg",
             ],
         className,
       ])}
@@ -342,13 +342,13 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
     <div
       data-sidebar-section="true"
       className={twMerge(
-        "col-span-full flex flex-col gap-y-0.5 **:data-sidebar-section:**:gap-y-0 **:data-sidebar-section:pr-0",
+        "col-span-full flex flex-col gap-y-0.5 **:data-sidebar-section:**:gap-y-0",
         className,
       )}
       {...props}
     >
       {state !== "collapsed" && "label" in props && (
-        <Header className="group-data-[sidebar-collapsible=dock]/sidebar-container:-mt-8 mb-1 flex shrink-0 items-center rounded-md px-2.5 font-medium text-sidebar-fg/70 text-xs outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear focus-visible:ring-2 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[sidebar-collapsible=dock]/sidebar-container:opacity-0">
+        <Header className="group-data-[sidebar-collapsible=dock]/sidebar-container:-mt-8 mb-1 flex shrink-0 items-center rounded-md px-2.5 font-medium text-sidebar-fg/70 text-xs outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[sidebar-collapsible=dock]/sidebar-container:opacity-0">
           {props.label}
         </Header>
       )}
