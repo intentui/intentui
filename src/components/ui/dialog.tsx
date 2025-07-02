@@ -2,7 +2,7 @@
 
 import { IconX } from "@intentui/icons"
 import { useEffect, useRef } from "react"
-import type { HeadingProps } from "react-aria-components"
+import type { HeadingProps, TextProps } from "react-aria-components"
 import {
   Button as ButtonPrimitive,
   Dialog as DialogPrimitive,
@@ -81,21 +81,22 @@ const DialogHeader = ({ className, ...props }: DialogHeaderProps) => {
   )
 }
 
-interface DialogTitleProps extends Omit<HeadingProps, "level"> {
-  level?: 1 | 2 | 3 | 4
+interface DialogTitleProps extends HeadingProps {
   ref?: React.Ref<HTMLHeadingElement>
 }
-const DialogTitle = ({ level = 2, className, ref, ...props }: DialogTitleProps) => (
+
+const DialogTitle = ({ className, ref, ...props }: DialogTitleProps) => (
   <Heading
     slot="title"
-    level={level}
     ref={ref}
     className={twMerge("text-balance font-semibold text-fg text-lg/6 sm:text-base/6", className)}
     {...props}
   />
 )
 
-type DialogDescriptionProps = React.ComponentProps<"div">
+interface DialogDescriptionProps extends TextProps {
+  ref?: React.Ref<HTMLElement>
+}
 const DialogDescription = ({ className, ref, ...props }: DialogDescriptionProps) => (
   <Text
     slot="description"
@@ -108,7 +109,7 @@ const DialogDescription = ({ className, ref, ...props }: DialogDescriptionProps)
   />
 )
 
-type DialogBodyProps = React.ComponentProps<"div">
+interface DialogBodyProps extends React.ComponentProps<"div"> {}
 const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
   <div
     data-slot="dialog-body"
@@ -121,7 +122,7 @@ const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
   />
 )
 
-type DialogFooterProps = React.ComponentProps<"div">
+interface DialogFooterProps extends React.ComponentProps<"div"> {}
 const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
   const footerRef = useRef<HTMLDivElement>(null)
 
@@ -191,6 +192,7 @@ export type {
   DialogDescriptionProps,
   CloseButtonIndicatorProps,
 }
+
 export {
   Dialog,
   DialogClose,
