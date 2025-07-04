@@ -82,7 +82,6 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                     target={menu.external ? "_blank" : undefined}
                   >
                     {menu.label}
-                    {menu.external && <IconArrowUpRight />}
                   </NavLink>
                 ))}
                 <NavLink href="/blog">Blog</NavLink>
