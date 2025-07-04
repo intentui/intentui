@@ -139,10 +139,4 @@ export const menus = [
   { href: "/icons", label: "Icons", icon: IconArrowUpFill },
   { href: "/colors", label: "Colors", icon: IconColorPaletteFill },
   { href: "/blocks", label: "Blocks", icon: IconWindowFill },
-  {
-    href: "https://blocks.intentui.com",
-    label: "Plus",
-    icon: IconBrandIntentui,
-    external: true,
-  },
 ]
