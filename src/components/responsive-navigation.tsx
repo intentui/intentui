@@ -79,7 +79,6 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                   <NavLink
                     key={menu.href}
                     href={menu.href}
-                    target={menu.external ? "_blank" : undefined}
                   >
                     {menu.label}
                   </NavLink>
