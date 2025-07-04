@@ -50,7 +50,6 @@ export function Navbar() {
               <NavLink
                 key={menu.href}
                 href={menu.href}
-                target={menu.external ? "_blank" : undefined}
               >
                 {menu.label}
               </NavLink>
