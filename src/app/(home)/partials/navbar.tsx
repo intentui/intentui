@@ -98,11 +98,9 @@ export function Navbar() {
                   <Menu.Item
                     key={menu.href}
                     href={menu.href}
-                    target={menu.external ? "_blank" : undefined}
                   >
                     {menu.icon && <menu.icon />}
                     <Menu.Label>{menu.label}</Menu.Label>
-                    {menu.external && <IconArrowUpRight />}
                   </Menu.Item>
                 ))}
               </Menu.Content>
