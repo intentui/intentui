@@ -2,7 +2,6 @@
 
 import {
   IconArrowUpFill,
-  IconArrowUpRight,
   IconBrandDiscord,
   IconBrandIntentui,
   IconBrandX,
@@ -47,10 +46,7 @@ export function Navbar() {
           </Link>
           <div className="flex items-center gap-x-1">
             {menus.map((menu) => (
-              <NavLink
-                key={menu.href}
-                href={menu.href}
-              >
+              <NavLink key={menu.href} href={menu.href}>
                 {menu.label}
               </NavLink>
             ))}
@@ -95,10 +91,7 @@ export function Navbar() {
                   <Menu.Label>Home</Menu.Label>
                 </Menu.Item>
                 {menus.map((menu) => (
-                  <Menu.Item
-                    key={menu.href}
-                    href={menu.href}
-                  >
+                  <Menu.Item key={menu.href} href={menu.href}>
                     {menu.icon && <menu.icon />}
                     <Menu.Label>{menu.label}</Menu.Label>
                   </Menu.Item>

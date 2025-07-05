@@ -1,4 +1,4 @@
-import { IconArrowUpRight, IconBrandDiscord, IconBrandGithub, IconBrandX } from "@intentui/icons"
+import { IconBrandDiscord, IconBrandGithub, IconBrandX } from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import type { LinkProps, PopoverProps } from "react-aria-components"
@@ -76,10 +76,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
               <div>
                 <NavLink href="/">Home</NavLink>
                 {menus.map((menu) => (
-                  <NavLink
-                    key={menu.href}
-                    href={menu.href}
-                  >
+                  <NavLink key={menu.href} href={menu.href}>
                     {menu.label}
                   </NavLink>
                 ))}

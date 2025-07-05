@@ -31,7 +31,7 @@ const PaginationSection = <T extends object>({
   ref,
   ...props
 }: PaginationSectionProps<T>) => (
-  <ListBoxSection ref={ref} {...props} className={twMerge("flex h-9 gap-[5px]", className)} />
+  <ListBoxSection ref={ref} {...props} className={twMerge("flex gap-[5px]", className)} />
 )
 
 interface PaginationListProps<T> extends ListBoxProps<T> {
@@ -44,7 +44,7 @@ const PaginationList = <T extends object>({ className, ref, ...props }: Paginati
       orientation="horizontal"
       aria-label={props["aria-label"] || "Pagination"}
       layout="grid"
-      className={composeTailwindRenderProps(className, "flex flex-row items-center gap-[5px]")}
+      className={composeTailwindRenderProps(className, "flex flex-row gap-1.5")}
       {...props}
     />
   )
@@ -94,10 +94,7 @@ const PaginationItem = ({
         className: buttonStyles({
           intent: "outline",
           size: "sm",
-          className: twMerge(
-            "min-w-10 cursor-default font-normal text-fg focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
-            className,
-          ),
+          className: twMerge("min-w-10 cursor-default font-normal text-fg", className),
         }),
         ...props,
       },
@@ -118,22 +115,16 @@ const PaginationItem = ({
       return renderListItem(
         {
           textValue: "Separator",
-          className: twMerge("grid h-9 place-content-center", className),
+          className: twMerge("grid place-content-center", className),
           ...props,
         },
-        <Separator
-          orientation="vertical"
-          className="h-5 w-[1.5px] shrink-0 rotate-[14deg] bg-secondary-fg/40"
-        />,
+        <Separator orientation="vertical" className="h-4 w-px shrink-0 rotate-[14deg] bg-border" />,
       )
     case "ellipsis":
       return renderListItem(
         {
           textValue: "More pages",
-          className: twMerge(
-            "flex size-9 items-center justify-center rounded-lg border border-transparent focus:outline-hidden focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20",
-            className,
-          ),
+          className: twMerge("outline-hidden", className),
           ...props,
         },
         <span aria-hidden className={twMerge("flex size-9 items-center justify-center", className)}>
@@ -155,10 +146,10 @@ const PaginationItem = ({
           "aria-current": isCurrent ? "page" : undefined,
           isDisabled: isCurrent,
           className: buttonStyles({
-            intent: isCurrent ? "primary" : intent,
+            intent: isCurrent ? "outline" : intent,
             size,
             className: twMerge(
-              "min-w-10 cursor-default font-normal tabular-nums focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:ring-3 focus-visible:ring-ring/20 disabled:cursor-default disabled:opacity-100",
+              "min-w-10 cursor-default font-normal tabular-nums disabled:opacity-100",
               className,
             ),
           }),

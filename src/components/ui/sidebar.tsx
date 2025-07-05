@@ -23,14 +23,15 @@ import {
   Button as Trigger,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
+import { SheetContent } from "@/components/ui/sheet"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Button } from "./button"
-import { Sheet } from "./sheet"
 import { Tooltip } from "./tooltip"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
+
 type SidebarContextProps = {
   state: "expanded" | "collapsed"
   open: boolean
@@ -64,6 +65,7 @@ const SidebarProvider = ({
   isOpen: openProp,
   onOpenChange: setOpenProp,
   className,
+  style,
   children,
   shortcut = "b",
   ref,
@@ -125,7 +127,6 @@ const SidebarProvider = ({
       <div
         className={twMerge(
           "@container **:data-[slot=icon]:shrink-0",
-          "[--default-px:--spacing(2.5)]",
           "[--sidebar-width-dock:3.25rem] [--sidebar-width:17rem]",
           "[--sidebar-border:color-mix(in_oklch,var(--color-sidebar)_25%,black_6%)]",
           "dark:[--sidebar-border:color-mix(in_oklch,var(--color-sidebar)_55%,white_10%)]",
@@ -133,7 +134,6 @@ const SidebarProvider = ({
           "dark:[--sidebar-accent:color-mix(in_oklab,var(--color-sidebar)_90%,white_10%)]",
           "flex min-h-svh w-full text-sidebar-fg",
           "group/sidebar-root peer/sidebar-root has-data-[sidebar-intent=inset]:bg-sidebar dark:has-data-[sidebar-intent=inset]:bg-bg",
-
           className,
         )}
         ref={ref}
@@ -183,17 +183,17 @@ const Sidebar = ({
     return (
       <>
         <span className="sr-only" aria-hidden data-sidebar-intent={intent} />
-        <Sheet isOpen={isOpenOnMobile} onOpenChange={setIsOpenOnMobile} {...props}>
-          <Sheet.Content
-            closeButton={closeButton}
-            aria-label="Sidebar"
-            data-sidebar-intent="default"
-            className="[&>button]:hidden"
-            side={side}
-          >
-            <Sheet.Body className="px-0 sm:px-0">{children}</Sheet.Body>
-          </Sheet.Content>
-        </Sheet>
+        <SheetContent
+          isOpen={isOpenOnMobile}
+          onOpenChange={setIsOpenOnMobile}
+          closeButton={closeButton}
+          aria-label="Sidebar"
+          data-sidebar-intent="default"
+          className="w-(--sidebar-width) [--sidebar-width:18rem] has-data-[slot=calendar]:[--sidebar-width:23rem]"
+          side={side}
+        >
+          {children}
+        </SheetContent>
       </>
     )
   }

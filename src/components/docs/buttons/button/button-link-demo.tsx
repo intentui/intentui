@@ -6,7 +6,7 @@ import { Link } from "@/components/ui/link"
 export default function ButtonLinkDemo() {
   return (
     <Link
-      className={(renderProps) => buttonStyles({ ...renderProps, intent: "primary" })}
+      className={buttonStyles({ intent: "primary" })}
       href={"/docs/components/collections/choicebox"}
     >
       Choicebox
