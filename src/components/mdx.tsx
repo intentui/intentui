@@ -41,6 +41,11 @@ export function Mdx({ code }: { code: MDXContent }) {
         Composed: DocComposed,
         FrameworkGuides,
         Image,
+        table: (props: React.ComponentProps<"table">) => (
+          <div className="overflow-x-auto">
+            <table className="w-full" {...props} />
+          </div>
+        ),
         NewTab: (props: React.ComponentProps<typeof Link>) => (
           <Link
             className="not-prose xd2432 text-blue-600 outline-hidden hover:underline focus-visible:ring-1 dark:text-blue-400"
