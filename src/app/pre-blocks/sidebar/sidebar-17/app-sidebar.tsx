@@ -16,10 +16,10 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 
-export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
+export default function AppSidebar() {
   const { state } = useSidebar()
   return (
-    <Sidebar {...props}>
+    <Sidebar>
       <SidebarHeader>
         <Link
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"

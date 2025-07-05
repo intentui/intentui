@@ -33,7 +33,7 @@ const Calendar = <T extends DateValue>({ errorMessage, className, ...props }: Ca
   const now = today(getLocalTimeZone())
 
   return (
-    <CalendarPrimitive {...props}>
+    <CalendarPrimitive data-slot="calendar" {...props}>
       <CalendarHeader />
       <CalendarGrid>
         <CalendarGridHeader />
