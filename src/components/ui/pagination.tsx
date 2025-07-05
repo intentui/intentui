@@ -18,7 +18,7 @@ const Pagination = ({ className, ref, ...props }: PaginationProps) => (
   <nav
     aria-label="pagination"
     ref={ref}
-    className={twMerge("mx-auto flex w-full justify-center gap-[5px]", className)}
+    className={twMerge("mx-auto flex w-full justify-center gap-1.5", className)}
     {...props}
   />
 )
@@ -31,7 +31,7 @@ const PaginationSection = <T extends object>({
   ref,
   ...props
 }: PaginationSectionProps<T>) => (
-  <ListBoxSection ref={ref} {...props} className={twMerge("flex gap-[5px]", className)} />
+  <ListBoxSection ref={ref} {...props} className={twMerge("flex gap-1.5", className)} />
 )
 
 interface PaginationListProps<T> extends ListBoxProps<T> {
@@ -93,8 +93,7 @@ const PaginationItem = ({
         isDisabled: isCurrent,
         className: buttonStyles({
           intent: "outline",
-          size: "sm",
-          className: twMerge("min-w-10 cursor-default font-normal text-fg", className),
+          className: twMerge("size-9 cursor-default font-normal text-fg", className),
         }),
         ...props,
       },
@@ -106,7 +105,7 @@ const PaginationItem = ({
       return renderListItem(
         {
           textValue: textValue,
-          className: twMerge("grid h-9 place-content-center px-3.5 tabular-nums", className),
+          className: twMerge("grid place-content-center px-3.5 tabular-nums", className),
           ...props,
         },
         children,
@@ -127,7 +126,7 @@ const PaginationItem = ({
           className: twMerge("outline-hidden", className),
           ...props,
         },
-        <span aria-hidden className={twMerge("flex size-9 items-center justify-center", className)}>
+        <span aria-hidden className={twMerge("grid size-9 place-content-center px-2", className)}>
           <IconDotsHorizontal />
         </span>,
       )
@@ -149,7 +148,7 @@ const PaginationItem = ({
             intent: isCurrent ? "outline" : intent,
             size,
             className: twMerge(
-              "min-w-10 cursor-default font-normal tabular-nums disabled:opacity-100",
+              "h-9 min-w-10 cursor-default font-normal tabular-nums disabled:opacity-100",
               className,
             ),
           }),

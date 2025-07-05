@@ -8,7 +8,10 @@ export default function SimplePaginationDemo() {
       <Pagination.List>
         <Pagination.Item segment="first" href="#" />
         <Pagination.Item segment="previous" href="#" />
-        <Pagination.Section aria-label="Pagination Segment" className="rounded-lg border">
+        <Pagination.Section
+          aria-label="Pagination Segment"
+          className="inset-ring inset-ring-border rounded-[calc(var(--radius-lg)+0.5px)]"
+        >
           <Pagination.Item segment="label">1</Pagination.Item>
           <Pagination.Item segment="separator" />
           <Pagination.Item className="text-muted-fg" segment="label">
