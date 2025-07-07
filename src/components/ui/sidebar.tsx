@@ -477,7 +477,7 @@ const SidebarInset = ({ className, ref, ...props }: React.ComponentProps<"main">
     <main
       ref={ref}
       className={twMerge(
-        "relative flex min-h-svh w-full flex-1 flex-col peer-data-[sidebar-intent=inset]:border peer-data-[sidebar-intent=inset]:border-(--sidebar-border) lg:min-w-0",
+        "relative flex max-h-svh w-full flex-1 flex-col peer-data-[sidebar-intent=inset]:border peer-data-[sidebar-intent=inset]:border-(--sidebar-border) lg:min-w-0",
         "bg-bg peer-data-[sidebar-intent=inset]:overflow-hidden dark:peer-data-[sidebar-intent=inset]:bg-sidebar",
         "peer-data-[sidebar-intent=inset]:min-h-[calc(100svh---spacing(4))] md:peer-data-[sidebar-state=collapsed]:peer-data-[sidebar-intent=inset]:ml-2 md:peer-data-[sidebar-intent=inset]:m-2 md:peer-data-[sidebar-intent=inset]:ml-0 md:peer-data-[sidebar-intent=inset]:rounded-xl md:peer-data-[sidebar-intent=inset]:shadow-xs",
         className,
