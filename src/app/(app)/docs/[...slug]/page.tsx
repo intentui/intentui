@@ -40,7 +40,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       title: `${doc.title} / Intent UI`,
       description: doc.description,
       type: "article",
-      url: `https://localhost:3000${page.url}`,
+      url: `https://intentui.com${page.url}`,
       images: [
         {
           url: `/og?title=${encodeURIComponent(
