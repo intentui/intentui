@@ -122,7 +122,7 @@ const StepperButton = ({
     <Button
       className={composeTailwindRenderProps(
         className,
-        "h-10 cursor-default pressed:text-primary-fg text-muted-fg group-disabled:bg-secondary/70 sm:pressed:bg-primary forced-colors:group-disabled:text-[GrayText]",
+        "relative z-10 h-10 cursor-default pressed:text-primary-fg text-muted-fg group-disabled:bg-secondary/70 sm:pressed:bg-primary forced-colors:group-disabled:text-[GrayText]",
       )}
       slot={slot}
       {...props}
