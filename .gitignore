@@ -13,6 +13,7 @@ delete-me.txt
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+.direnv
 
 
 /public/r
