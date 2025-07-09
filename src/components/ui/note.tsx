@@ -20,7 +20,7 @@ const Note = ({ indicator = true, intent = "default", className, ...props }: Not
   return (
     <div
       className={twMerge([
-        "inset-ring-1 inset-ring-current/10 grid w-full grid-cols-[1fr_auto] gap-3 overflow-hidden rounded-lg p-4 sm:text-sm/6",
+        "inset-ring-1 inset-ring-current/10 grid w-full grid-cols-[auto_1fr] gap-3 overflow-hidden rounded-lg p-4 sm:text-sm/6",
         "[&_a]:underline hover:[&_a]:underline **:[strong]:font-semibold",
         intent === "default" &&
           "border-border bg-secondary/20 text-secondary-fg **:data-[slot=icon]:text-secondary-fg dark:**:data-[slot=icon]:text-secondary-fg [&_a]:text-secondary-fg dark:[&_a]:text-secondary-fg",
