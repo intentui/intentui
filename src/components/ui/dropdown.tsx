@@ -52,6 +52,13 @@ const dropdownItemStyles = tv({
         "[&_.text-muted-fg]:text-accent-fg/80 *:[[slot=description]]:text-accent-fg *:[[slot=label]]:text-accent-fg",
       ],
     },
+    isHovered: {
+      true: [
+        "**:data-[slot=icon]:text-accent-fg **:[kbd]:text-accent-fg",
+        "bg-accent text-accent-fg forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]",
+        "[&_.text-muted-fg]:text-accent-fg/80 *:[[slot=description]]:text-accent-fg *:[[slot=label]]:text-accent-fg",
+      ],
+    },
   },
 })
 

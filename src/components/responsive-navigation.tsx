@@ -108,7 +108,6 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
               ))}
             </div>
             <div className="flex flex-col gap-y-8">
-              {/*<div className="text-muted-fg text-sm">{components?.section}</div>*/}
               {components?.children?.map((item) => (
                 <div key={item.subsection}>
                   <NavHeading>{item?.subsection}</NavHeading>
