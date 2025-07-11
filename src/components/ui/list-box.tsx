@@ -1,7 +1,11 @@
 "use client"
 
 import { IconCheck, IconHamburger } from "@intentui/icons"
-import type { ListBoxItemProps, ListBoxProps, ListBoxSectionProps } from "react-aria-components"
+import type {
+  ListBoxItemProps,
+  ListBoxProps,
+  ListBoxSectionProps as ListBoxSectionPrimitiveProps,
+} from "react-aria-components"
 import {
   composeRenderProps,
   ListBoxItem as ListBoxItemPrimitive,
@@ -66,6 +70,9 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
   )
 }
 
+interface ListBoxSectionProps<T> extends ListBoxSectionPrimitiveProps<T> {
+  title?: string
+}
 const ListBoxSection = <T extends object>({ className, ...props }: ListBoxSectionProps<T>) => {
   return (
     <DropdownSection

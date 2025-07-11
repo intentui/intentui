@@ -66,7 +66,7 @@ const dropdownSectionStyles = tv({
   slots: {
     section: "col-span-full grid grid-cols-[auto_1fr]",
     header:
-      "col-span-full px-3.5 py-2 font-medium text-muted-fg text-sm/6 sm:px-3 sm:py-1.5 sm:text-xs/6",
+      "col-span-full px-3.5 py-2 font-medium text-muted-fg text-sm/6 sm:px-3 sm:py-1.5 sm:text-xs/5",
   },
 })
 

@@ -7,6 +7,14 @@ const config = {
   experimental: {
     reactCompiler: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/docs/:slug*.md",
+        destination: "/api/raw-docs/:slug*.md",
+      },
+    ]
+  },
   async redirects() {
     return [
       {
