@@ -283,16 +283,19 @@ const SidebarFooter = ({ className, ...props }: React.ComponentProps<"div">) => 
     <div
       data-sidebar-footer="true"
       className={twMerge([
-        "mt-auto flex flex-col p-4",
-        "**:data-[slot=menu-trigger]:relative **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:cursor-default **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:overflow-hidden **:data-[slot=menu-trigger]:rounded-lg **:data-[slot=menu-trigger]:pressed:bg-secondary **:data-[slot=menu-trigger]:px-2 **:data-[slot=menu-trigger]:py-1 **:data-[slot=menu-trigger]:outline-hidden **:data-[slot=menu-trigger]:hover:bg-secondary **:data-[slot=menu-trigger]:hover:text-fg sm:**:data-[slot=menu-trigger]:text-sm/6",
+        "mt-auto flex shrink-0 flex-col",
         collapsed
           ? [
-              "**:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-6",
+              "p-2.5",
+              "**:data-[slot=avatar]:*:size-7 **:data-[slot=avatar]:size-7",
               "**:data-[slot=chevron]:hidden **:data-[slot=menu-label]:hidden",
               "**:data-[slot=menu-trigger]:grid **:data-[slot=menu-trigger]:size-8 **:data-[slot=menu-trigger]:place-content-center",
             ]
           : [
-              "**:data-[slot=avatar]:*:size-8 **:data-[slot=menu-trigger]:**:data-[slot=avatar]:mr-2 **:data-[slot=avatar]:size-8",
+              "p-4 pt-2",
+              "**:data-[slot=menu-trigger]:relative **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:cursor-default **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:overflow-hidden **:data-[slot=menu-trigger]:rounded-lg **:data-[slot=menu-trigger]:pressed:bg-secondary **:data-[slot=menu-trigger]:px-2 **:data-[slot=menu-trigger]:py-1 **:data-[slot=menu-trigger]:outline-hidden **:data-[slot=menu-trigger]:hover:bg-secondary **:data-[slot=menu-trigger]:hover:text-fg sm:**:data-[slot=menu-trigger]:text-sm/6",
+              "**:data-[slot=menu-trigger]:**:data-[slot=avatar]:mr-2",
+              "**:data-[slot=avatar]:*:size-8 **:data-[slot=avatar]:size-8",
               "**:data-[slot=menu-trigger]:**:data-[slot=chevron]:absolute **:data-[slot=menu-trigger]:**:data-[slot=chevron]:right-2 **:data-[slot=menu-trigger]:**:data-[slot=chevron]:text-muted-fg **:data-[slot=menu-trigger]:hover:**:data-[slot=chevron]:text-fg",
             ],
         className,
@@ -348,7 +351,7 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
       {...props}
     >
       {state !== "collapsed" && "label" in props && (
-        <Header className="group-data-[sidebar-collapsible=dock]/sidebar-container:-mt-8 mb-1 flex shrink-0 items-center rounded-md px-2.5 font-medium text-sidebar-fg/70 text-xs outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[sidebar-collapsible=dock]/sidebar-container:opacity-0">
+        <Header className="group-data-[sidebar-collapsible=dock]/sidebar-container:-mt-8 mb-1 flex shrink-0 items-center rounded-md px-3 font-medium text-sidebar-fg/70 text-sm/6 outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[sidebar-collapsible=dock]/sidebar-container:opacity-0">
           {props.label}
         </Header>
       )}

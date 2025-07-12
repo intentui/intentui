@@ -208,7 +208,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </div>
             <IconChevronsY data-slot="chevron" />
           </Menu.Trigger>
-          <Menu.Content className="min-w-(--trigger-width)" placement="bottom right">
+          <Menu.Content
+            className="in-data-[sidebar-collapsible=collapsed]:min-w-56 min-w-(--trigger-width)"
+            placement="bottom right"
+          >
             <Menu.Section>
               <Menu.Header separator>
                 <span className="block">Kurt Cobain</span>
