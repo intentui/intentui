@@ -41,12 +41,7 @@ const config = {
         source: "/docs/components/collections/accordion",
         destination: "/docs/components/navigation/disclosure-group",
         permanent: true,
-      },
-       {
-        source: '/blocks/:path*',
-        destination: '/pre-blocks/:path*',
-        permanent: true,
-      },
+      }
     ]
   },
 }
