@@ -106,7 +106,9 @@ const Navbar = ({
         <span className="sr-only" aria-hidden data-navbar={intent} data-navbar-sticky={isSticky} />
         <Sheet isOpen={open} onOpenChange={setOpen} {...props}>
           <Sheet.Content side={side} aria-label="Mobile Navbar" className="[&>button]:hidden">
-            <Sheet.Body className="p-[calc(var(--gutter)---spacing(2))]">{children}</Sheet.Body>
+            <Sheet.Body className="p-[calc(var(--gutter)---spacing(2))] sm:p-[calc(var(--gutter)---spacing(4))]">
+              {children}
+            </Sheet.Body>
           </Sheet.Content>
         </Sheet>
       </>
@@ -195,8 +197,8 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
               data-navbar="current-indicator"
               className={twJoin(
                 "absolute rounded-full bg-fg [--gutter:--spacing(0.5)]",
-                "-left-4 inset-y-2 w-(--gutter)",
-                "sm:-bottom-[--spacing(3.4)] sm:group-data-[navbar=inset]/navbar-intent:-bottom-[--spacing(3.1)] sm:inset-x-2 sm:h-(--gutter)",
+                "-left-4 inset-y-2 w-(--gutter) md:inset-y-auto md:w-auto",
+                "md:-bottom-[--spacing(3.4)] md:group-data-[navbar=inset]/navbar-intent:-bottom-[--spacing(3.1)] md:inset-x-2 md:h-(--gutter)",
               )}
             />
           )}

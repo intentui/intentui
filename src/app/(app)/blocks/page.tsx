@@ -1,5 +1,5 @@
+import { Hero } from "@/app/(app)/blocks/hero"
 import { BlockSandbox } from "@/components/code/block-sandbox"
-import { Header } from "@/components/header"
 import { NavbarProvider } from "@/components/ui/navbar"
 
 export const metadata = {
@@ -11,10 +11,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <Header>
-        Blo
-        <span className="text-muted-fg">cks</span>
-      </Header>
+      <Hero />
       <div className="mx-auto max-w-(--breakpoint-2xl) space-y-16 px-4 py-6 sm:px-6">
         <BlockSandbox
           {...{

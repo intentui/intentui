@@ -1,7 +1,7 @@
 {
   "name": "intentui",
   "author": "irsyadadl",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "first-time": "bun i && bun run build && next dev",
