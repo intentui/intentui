@@ -74,7 +74,7 @@ const Tracker = ({
   return (
     <div ref={ref} className={twMerge("group flex h-8 w-full items-center", className)} {...props}>
       {data.map((props, index) => (
-        <Block disabledTooltip key={props.key ?? index} {...props} />
+        <Block disabledTooltip={disabledTooltip} key={props.key ?? index} {...props} />
       ))}
     </div>
   )
