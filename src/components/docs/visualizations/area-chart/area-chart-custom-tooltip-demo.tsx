@@ -61,7 +61,7 @@ export default function AreaChartCustomTooltipDemo() {
       </Card.Header>
       <Card.Content>
         <AreaChart
-          className="aspect-video h-56 sm:h-72"
+          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
           dataKey="day"
           xAxisProps={{ interval: 0 }}

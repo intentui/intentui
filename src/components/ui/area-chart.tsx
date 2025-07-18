@@ -100,7 +100,7 @@ export const AreaChart = <TValue extends ValueType, TName extends NameType>({
 
   return (
     <Chart
-      className={twMerge("w-full", className)}
+      className={twMerge("h-56 w-full", className)}
       config={config}
       data={data}
       dataKey={dataKey}

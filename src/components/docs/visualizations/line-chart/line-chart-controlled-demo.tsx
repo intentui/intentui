@@ -58,7 +58,7 @@ export default function LineChartControlledSmart() {
       </Card.Header>
       <Card.Content>
         <LineChart
-          className="aspect-video h-56 sm:h-72"
+          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={engagementData}
           dataKey="label"
           xAxisProps={{ interval: showAllTicks ? 0 : undefined }}

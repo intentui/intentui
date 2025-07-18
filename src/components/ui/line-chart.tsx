@@ -66,7 +66,7 @@ export const LineChart = <TValue extends ValueType, TName extends NameType>({
 
   return (
     <Chart
-      className={twMerge("h-80 w-full", className)}
+      className={twMerge("w-full", className)}
       config={config}
       data={data}
       dataKey={dataKey}

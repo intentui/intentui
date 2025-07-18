@@ -106,7 +106,6 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
           <XAxis
             hide={hideXAxis}
             className="**:[text]:fill-muted-fg"
-            // Chart Data
             displayEdgeLabelsOnly={displayEdgeLabelsOnly}
             intervalType={intervalType}
             {...xAxisProps}
