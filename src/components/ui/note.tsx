@@ -32,6 +32,7 @@ const Note = ({ indicator = true, intent = "default", className, ...props }: Not
           "bg-red-500/15 text-red-700 group-hover:bg-red-500/25 dark:bg-red-500/10 dark:text-red-400 dark:group-hover:bg-red-500/20",
         intent === "success" &&
           "border-success/20 bg-success/10 text-emerald-800 leading-4 **:data-[slot=icon]:text-success dark:bg-success/10 dark:text-emerald-200 dark:**:data-[slot=icon]:text-emerald-400 [&_a]:text-emerald-600 dark:[&_a]:text-emerald-50",
+        className,
       ])}
       {...props}
     >
