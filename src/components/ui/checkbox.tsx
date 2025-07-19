@@ -37,7 +37,7 @@ const CheckboxGroup = ({ className, children, ...props }: CheckboxGroupProps) =>
   )
 }
 
-interface CheckboxProps extends CheckboxPrimitiveProps, Pick<FieldProps, "label" | "description"> {}
+interface CheckboxProps extends CheckboxPrimitiveProps, Pick<FieldProps, "label" | "description" | "errorMessage"> {}
 
 const Checkbox = ({ className, children, description, label, ...props }: CheckboxProps) => {
   return (
