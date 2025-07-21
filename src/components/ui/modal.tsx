@@ -61,12 +61,14 @@ const ModalContent = ({
 
   return (
     <ModalOverlay
+      data-slot="modal-overlay"
       isDismissable={isDismissable}
       className={composeRenderProps(overlay?.className, (className, { isEntering, isExiting }) =>
         twMerge([
-          "fixed inset-0 z-50 h-(--visual-viewport-height) w-screen",
-          "flex items-end justify-end bg-fg/15 sm:justify-center dark:bg-bg/40",
           "[--visual-viewport-vertical-padding:16px] sm:[--visual-viewport-vertical-padding:32px]",
+          "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-full",
+          "grid grid-rows-[1fr_auto] justify-items-center pt-4 text-center [--visual-viewport-vertical-padding:32px] sm:grid-rows-[1fr_auto_3fr] sm:p-4",
+          "bg-fg/15 dark:bg-bg/40",
           isBlurred &&
             "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
           isEntering && "fade-in animate-in duration-200 ease-out",
@@ -77,11 +79,12 @@ const ModalContent = ({
       {...props}
     >
       <ModalPrimitive
+        data-slot="modal-content"
         className={composeRenderProps(className, (className, { isEntering, isExiting }) =>
           twMerge([
-            "max-h-full w-full rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring-1 ring-fg/5",
+            "relative max-h-full w-full rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring-1 ring-fg/5",
             "overflow-hidden sm:rounded-2xl dark:ring-border",
-            "sm:-translate-y-1/2 sm:-translate-x-1/2 fixed sm:top-1/2 sm:left-1/2",
+            "row-start-2",
             isEntering &&
               "fade-in slide-in-from-bottom sm:zoom-in-95 sm:slide-in-from-bottom-0 animate-in duration-200 ease-out",
             isExiting &&
