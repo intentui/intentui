@@ -1,4 +1,4 @@
-import { IconHamburger } from "@intentui/icons"
+import { IconDotGrid2X3 } from "@intentui/icons"
 import type React from "react"
 import type { GridListItemProps, GridListProps } from "react-aria-components"
 import {
@@ -60,7 +60,7 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
               slot="drag"
               className="cursor-grab data-dragging:cursor-grabbing *:data-[slot=icon]:text-muted-fg"
             >
-              <IconHamburger />
+              <IconDotGrid2X3 />
             </Button>
           )}
 

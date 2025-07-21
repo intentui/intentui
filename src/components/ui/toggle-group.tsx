@@ -43,7 +43,7 @@ const ToggleGroup = ({
       <ToggleButtonGroup
         selectionMode={selectionMode}
         className={composeTailwindRenderProps(className, [
-          "inset-ring inset-ring-border inline-flex overflow-hidden rounded-lg p-0.5",
+          "group/toggle-group inset-ring inset-ring-border inline-flex overflow-hidden rounded-lg p-0.5",
           orientation === "horizontal" ? "flex-row" : "flex-col",
           selectionMode === "single" ? "gap-0.5" : "gap-0",
         ])}
@@ -68,8 +68,7 @@ const toggleGroupItemStyles = tv({
     },
     selectionMode: {
       single: "rounded-[calc(var(--radius-lg)-2px)]",
-      multiple:
-        "rounded-none first:rounded-l-[calc(var(--radius-lg)-2px)] last:rounded-r-[calc(var(--radius-lg)-2px)]",
+      multiple: "rounded-none",
     },
     size: {
       xs: [
@@ -124,7 +123,19 @@ const toggleGroupItemStyles = tv({
   compoundVariants: [
     {
       size: ["xs", "sq-xs"],
-      className: "rounded-md *:data-[slot=icon]:size-3",
+      className: "rounded-[calc(var(--radius-md)-1px)]",
+    },
+    {
+      selectionMode: "multiple",
+      orientation: "horizontal",
+      className:
+        "not-first:-ml-px first:rounded-l-[calc(var(--radius-lg)-2px)] last:rounded-r-[calc(var(--radius-lg)-2px)]",
+    },
+    {
+      selectionMode: "multiple",
+      orientation: "vertical",
+      className:
+        "not-first:-mt-px first:rounded-t-[calc(var(--radius-lg)-2px)] last:rounded-b-[calc(var(--radius-lg)-2px)]",
     },
   ],
 })

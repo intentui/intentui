@@ -8,7 +8,7 @@ import { Table } from "@/components/ui/table"
 export default function TableBulkDemo() {
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set())
   return (
-    <>
+    <div className="rounded-lg border p-4">
       <Table
         aria-label="Books"
         selectionMode="multiple"
@@ -43,7 +43,7 @@ export default function TableBulkDemo() {
           "You have not selected anything."
         )}
       </Description>
-    </>
+    </div>
   )
 }
 
