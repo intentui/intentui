@@ -239,3 +239,8 @@ html.dark .shiki span {
   color: var(--shiki-dark) !important;
   background-color: var(--shiki-bg) !important;
 }
+
+.react-aria-DropIndicator[data-drop-target] {
+  outline: 1px solid var(--primary);
+  transform: translateZ(0);
+}

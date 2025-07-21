@@ -73,6 +73,7 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
 interface ListBoxSectionProps<T> extends ListBoxSectionPrimitiveProps<T> {
   title?: string
 }
+
 const ListBoxSection = <T extends object>({ className, ...props }: ListBoxSectionProps<T>) => {
   return (
     <DropdownSection

@@ -23,35 +23,37 @@ export default function TableDragDemo() {
     },
   })
   return (
-    <Table
-      allowResize
-      aria-label="Movies"
-      selectionMode="multiple"
-      dragAndDropHooks={dragAndDropHooks}
-    >
-      <Table.Header>
-        <Table.Column>#</Table.Column>
-        <Table.Column isRowHeader>Name</Table.Column>
-        <Table.Column>Genre</Table.Column>
-        <Table.Column>Release</Table.Column>
-        <Table.Column>Rating</Table.Column>
-      </Table.Header>
-      <Table.Body items={list.items}>
-        {(item) => (
-          <Table.Row>
-            <Table.Cell>{item.id}</Table.Cell>
-            <Table.Cell>{item.name}</Table.Cell>
-            <Table.Cell>{item.genre}</Table.Cell>
-            <Table.Cell>{item.releaseYear}</Table.Cell>
-            <Table.Cell>
-              <div className="flex items-center gap-x-2">
-                <IconStarFill className="size-3.5 text-warning" /> <span>{item.rating}</span>
-              </div>
-            </Table.Cell>
-          </Table.Row>
-        )}
-      </Table.Body>
-    </Table>
+    <div className="rounded-lg border p-4">
+      <Table
+        allowResize
+        aria-label="Movies"
+        selectionMode="multiple"
+        dragAndDropHooks={dragAndDropHooks}
+      >
+        <Table.Header>
+          <Table.Column>#</Table.Column>
+          <Table.Column isRowHeader>Name</Table.Column>
+          <Table.Column>Genre</Table.Column>
+          <Table.Column>Release</Table.Column>
+          <Table.Column>Rating</Table.Column>
+        </Table.Header>
+        <Table.Body items={list.items}>
+          {(item) => (
+            <Table.Row>
+              <Table.Cell>{item.id}</Table.Cell>
+              <Table.Cell>{item.name}</Table.Cell>
+              <Table.Cell>{item.genre}</Table.Cell>
+              <Table.Cell>{item.releaseYear}</Table.Cell>
+              <Table.Cell>
+                <div className="flex items-center gap-x-2">
+                  <IconStarFill className="size-3.5 text-warning" /> <span>{item.rating}</span>
+                </div>
+              </Table.Cell>
+            </Table.Row>
+          )}
+        </Table.Body>
+      </Table>
+    </div>
   )
 }
 

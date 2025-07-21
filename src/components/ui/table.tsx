@@ -1,26 +1,28 @@
 "use client"
 
-import { IconChevronLgDown, IconHamburger } from "@intentui/icons"
+import { IconChevronLgDown, IconDotGrid2X3 } from "@intentui/icons"
 import { createContext, use } from "react"
+import type {
+  CellProps,
+  ColumnProps,
+  ColumnResizerProps,
+  TableHeaderProps as HeaderProps,
+  RowProps,
+  TableBodyProps,
+  TableProps as TablePrimitiveProps,
+} from "react-aria-components"
 import {
   Button,
   Cell,
-  type CellProps,
   Collection,
   Column,
-  type ColumnProps,
   ColumnResizer as ColumnResizerPrimitive,
-  type ColumnResizerProps,
   composeRenderProps,
-  type TableHeaderProps as HeaderProps,
   ResizableTableContainer,
   Row,
-  type RowProps,
   TableBody as TableBodyPrimitive,
-  type TableBodyProps,
   TableHeader as TableHeaderPrimitive,
   Table as TablePrimitive,
-  type TableProps as TablePrimitiveProps,
   useTableOptions,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
@@ -171,7 +173,7 @@ const TableHeader = <T extends object>({
           data-slot="table-column"
           className={twMerge(
             "w-0 max-w-8 px-4 first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2))",
-            !bleed && "sm:last:pr-1 sm:first:pl-1",
+            !bleed && "sm:last:pr-2 sm:first:pl-2",
           )}
         >
           {selectionMode === "multiple" && <Checkbox slot="selection" />}
@@ -195,6 +197,7 @@ const TableRow = <T extends object>({
   ...props
 }: TableRowProps<T>) => {
   const { selectionBehavior, allowsDragging } = useTableOptions()
+  const { bleed } = useTableContext()
   return (
     <Row
       ref={ref}
@@ -219,17 +222,17 @@ const TableRow = <T extends object>({
       )}
     >
       {allowsDragging && (
-        <TableCell className="cursor-grab dragging:cursor-grabbing ring-primary">
+        <TableCell className="max-w-4 sm:last:pr-2 sm:first:pl-2">
           <Button
             slot="drag"
             className="grid place-content-center rounded-xs px-[calc(var(--gutter)/2)] outline-hidden focus-visible:ring focus-visible:ring-ring"
           >
-            <IconHamburger />
+            <IconDotGrid2X3 />
           </Button>
         </TableCell>
       )}
       {selectionBehavior === "toggle" && (
-        <TableCell>
+        <TableCell className={twJoin(!bleed && "max-w-4 sm:last:pr-2 sm:first:pl-2")}>
           <Checkbox slot="selection" />
         </TableCell>
       )}
