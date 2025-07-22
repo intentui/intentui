@@ -2,12 +2,11 @@
 
 import type { DialogProps, DialogTriggerProps, ModalOverlayProps } from "react-aria-components"
 import {
-  composeRenderProps,
   DialogTrigger as DialogTriggerPrimitive,
   ModalOverlay,
   Modal as ModalPrimitive,
 } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 import {
   Dialog,
   DialogBody,
@@ -63,35 +62,27 @@ const ModalContent = ({
     <ModalOverlay
       data-slot="modal-overlay"
       isDismissable={isDismissable}
-      className={composeRenderProps(overlay?.className, (className, { isEntering, isExiting }) =>
-        twMerge([
-          "[--visual-viewport-vertical-padding:16px] sm:[--visual-viewport-vertical-padding:32px]",
-          "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-full",
-          "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
-          "pt-4 sm:p-4",
-          "bg-fg/15 dark:bg-bg/40",
-          isBlurred &&
-            "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
-          isEntering && "fade-in animate-in duration-200 ease-out",
-          isExiting && "fade-out animate-out ease-in",
-          className,
-        ]),
-      )}
+      className={composeTailwindRenderProps(overlay?.className, [
+        "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-screen overflow-hidden pt-4 sm:p-16",
+        "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
+        "bg-fg/15 dark:bg-bg/40",
+        "entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
+        "exiting:fade-out in-exiting:duration-200 exiting:ease-in",
+        isBlurred &&
+          "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
+      ])}
       {...props}
     >
       <ModalPrimitive
         data-slot="modal-content"
-        className={composeRenderProps(className, (className, { isEntering, isExiting }) =>
-          twMerge([
-            "relative row-start-2 max-h-full w-full overflow-hidden rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring-1 ring-fg/5 sm:rounded-2xl dark:ring-border",
-            isEntering &&
-              "fade-in slide-in-from-bottom sm:zoom-in-95 sm:slide-in-from-bottom-0 animate-in duration-200 ease-out",
-            isExiting &&
-              "slide-out-to-bottom sm:slide-out-to-bottom-0 sm:zoom-out-95 animate-out duration-150 ease-in",
-            sizes[size],
-            className,
-          ]),
-        )}
+        className={composeTailwindRenderProps(className, [
+          "relative row-start-2 max-h-full w-full overflow-hidden rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring ring-fg/5 sm:rounded-2xl dark:ring-border",
+          "exiting:slide-out-to-bottom sm:exiting:slide-out-to-bottom-0",
+          "entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0",
+          "sm:entering:zoom-in-95 entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
+          "sm:exiting:zoom-out-95 exiting:fade-out exiting:animate-out exiting:duration-200 exiting:ease-in",
+          sizes[size],
+        ])}
       >
         <Dialog role={role}>
           {(values) => (

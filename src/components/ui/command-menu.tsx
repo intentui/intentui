@@ -27,7 +27,7 @@ import {
   SearchField,
   useFilter,
 } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { DropdownKeyboard } from "./dropdown"
 import { Loader } from "./loader"
@@ -58,11 +58,22 @@ interface CommandMenuProps extends AutocompleteProps, MenuTriggerProps, CommandM
   className?: string
 }
 
+const sizes = {
+  xs: "sm:max-w-xs",
+  sm: "sm:max-w-sm",
+  md: "sm:max-w-md",
+  lg: "sm:max-w-lg",
+  xl: "sm:max-w-xl",
+  "2xl": "sm:max-w-2xl",
+  "3xl": "sm:max-w-3xl",
+}
+
 const CommandMenu = ({
   onOpenChange,
   className,
   isDismissable = true,
   escapeButton = true,
+  size = "xl",
   isPending,
   isBlurred,
   shortcut,
@@ -87,24 +98,26 @@ const CommandMenu = ({
       <ModalContext value={{ isOpen: props.isOpen, onOpenChange: onOpenChange }}>
         <ModalOverlay
           isDismissable={isDismissable}
-          className={({ isEntering, isExiting }) =>
-            twMerge([
-              "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-full",
-              "grid grid-rows-[1fr_auto] justify-items-center pt-4 text-center sm:grid-rows-[1fr_auto_3fr] sm:p-4",
-              "bg-fg/15 dark:bg-bg/40",
-              isBlurred &&
-                props.isOpen &&
-                "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
-              isEntering && "fade-in animate-in duration-200 ease-out",
-              isExiting && "fade-out ease-in",
-            ])
-          }
+          className={twJoin(
+            "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-screen overflow-hidden pt-4 sm:p-16",
+            "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
+            "bg-fg/15 dark:bg-bg/40",
+            isBlurred &&
+              props.isOpen &&
+              "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
+            "entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
+            "exiting:fade-out in-exiting:duration-200 exiting:ease-in",
+          )}
         >
           <Modal
             className={twMerge([
-              "-translate-x-1/2 fixed top-auto bottom-0 left-1/2 z-50 h-full max-h-[calc(100vh-30%)] w-full max-w-full gap-4 overflow-hidden rounded-t-2xl bg-overlay text-left text-overlay-fg shadow-lg ring-1 ring-fg/10 sm:top-[6rem] sm:bottom-auto sm:h-auto sm:w-full sm:max-w-xl sm:rounded-xl dark:ring-border forced-colors:border",
-              "entering:fade-in-0 entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0 sm:entering:zoom-in-95 entering:animate-in entering:duration-300 sm:entering:duration-300",
-              "exiting:fade-out sm:exiting:zoom-out-95 exiting:slide-out-to-bottom-56 sm:exiting:slide-out-to-bottom-0 exiting:animate-out exiting:duration-200",
+              "mx-auto max-h-[calc(var(--visual-viewport-height)*0.8)] w-full transform self-end rounded-xl bg-overlay text-left text-overlay-fg transition-all",
+              "shadow-lg ring ring-fg/5 will-change-transform sm:rounded-2xl dark:ring-border",
+              "exiting:slide-out-to-bottom sm:exiting:slide-out-to-bottom-0",
+              "entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0",
+              "sm:entering:zoom-in-95 entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
+              "sm:exiting:zoom-out-95 exiting:fade-out exiting:animate-out exiting:duration-200 exiting:ease-in",
+              sizes[size],
               className,
             ])}
             {...props}
