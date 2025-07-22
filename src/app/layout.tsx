@@ -5,7 +5,6 @@ import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import "@/styles/app.css"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
-import { twJoin } from "tailwind-merge"
 import { Toast } from "@/components/ui/toast"
 
 export const metadata: Metadata = {
@@ -110,7 +109,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
     <html
       dir="ltr"
       lang="en"
-      className={twJoin("scroll-smooth", fontSans.variable, fontMono.variable)}
+      className={`${fontSans.variable} ${fontMono.variable}`}
       suppressHydrationWarning
     >
       <head>
