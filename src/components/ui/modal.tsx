@@ -63,10 +63,10 @@ const ModalContent = ({
       data-slot="modal-overlay"
       isDismissable={isDismissable}
       className={composeTailwindRenderProps(overlay?.className, [
-        "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-screen overflow-hidden pt-4 sm:p-16",
-        "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
-        "bg-fg/15 dark:bg-bg/40",
-        "exiting:opacity-0 transition duration-100 entering:ease-out exiting:ease-in",
+        "fixed inset-0 z-50 h-(--visual-viewport-height) w-screen overscroll-contain bg-fg/15 pt-4 outline-hidden sm:p-16 dark:bg-bg/40",
+        "grid grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_3fr]",
+        "entering:fade-in-0 entering:animate-in duration-200",
+        "exiting:fade-out-0 exiting:animate-out",
         isBlurred &&
           "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
       ])}
@@ -78,8 +78,8 @@ const ModalContent = ({
           "relative row-start-2 max-h-full w-full overflow-hidden rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring ring-fg/5 sm:rounded-2xl dark:ring-border",
           "exiting:slide-out-to-bottom sm:exiting:slide-out-to-bottom-0",
           "entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0",
-          "sm:entering:zoom-in-95 entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
-          "sm:exiting:zoom-out-95 exiting:animate-out exiting:duration-200 exiting:ease-in",
+          "sm:entering:zoom-in-95 entering:fade-in-0 entering:animate-in",
+          "sm:exiting:zoom-out-95 exiting:fade-out-0 exiting:animate-out",
           sizes[size],
         ])}
       >

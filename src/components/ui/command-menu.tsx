@@ -103,20 +103,21 @@ const CommandMenu = ({
             "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-screen overflow-hidden pt-4 sm:p-16",
             "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
             "bg-fg/15 dark:bg-bg/40",
-            "exiting:opacity-0 transition duration-100 entering:ease-out exiting:ease-in",
             isBlurred &&
               props.isOpen &&
               "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
+            "entering:fade-in-0 entering:animate-in",
+            "exiting:fade-out-0 exiting:animate-out",
           )}
         >
           <Modal
             className={twMerge([
-              "mx-auto max-h-[calc(var(--visual-viewport-height)*0.8)] w-full transform self-end rounded-t-2xl bg-overlay text-left text-overlay-fg transition-all",
+              "mx-auto max-h-[calc(var(--visual-viewport-height)*0.8)] w-full transform self-end rounded-xl bg-overlay text-left text-overlay-fg transition-all",
               "shadow-lg ring ring-fg/5 will-change-transform sm:rounded-2xl dark:ring-border",
               "exiting:slide-out-to-bottom sm:exiting:slide-out-to-bottom-0",
               "entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0",
-              "sm:entering:zoom-in-95 entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
-              "sm:exiting:zoom-out-95 exiting:fade-out exiting:animate-out exiting:duration-200 exiting:ease-in",
+              "sm:entering:zoom-in-95 entering:fade-in-0 entering:animate-in",
+              "sm:exiting:zoom-out-95 exiting:fade-out-0 exiting:animate-out",
               sizes[size],
               className,
             ])}

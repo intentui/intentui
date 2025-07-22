@@ -41,10 +41,10 @@ const contentStyles = tv({
   base: "fixed z-50 grid gap-4 border-fg/5 bg-overlay text-overlay-fg shadow-lg transition ease-in-out dark:border-border",
   variants: {
     isEntering: {
-      true: "fade-in animate-in duration-300",
+      true: "fade-in-0 animate-in",
     },
     isExiting: {
-      true: "animate-out duration-200",
+      true: "fade-out-0 animate-out",
     },
     side: {
       top: "entering:slide-in-from-top exiting:slide-out-to-top inset-x-0 top-0 rounded-b-2xl border-b",
@@ -94,8 +94,9 @@ const SheetContent = ({
     <ModalOverlay
       isDismissable={isDismissable}
       className={composeTailwindRenderProps(overlay?.className, [
-        "fixed top-0 left-0 isolate z-50 flex h-(--visual-viewport-height) w-full items-center justify-center bg-fg/15 p-4 dark:bg-bg/40",
-        "exiting:opacity-0 transition duration-100 entering:ease-out exiting:ease-in",
+        "fixed inset-0 z-50 flex h-(--visual-viewport-height) w-full items-center justify-center bg-fg/15 p-4 dark:bg-bg/40",
+        "entering:fade-in-0 entering:animate-in duration-200",
+        "exiting:fade-out-0 exiting:animate-out",
         isBlurred &&
           "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
       ])}
