@@ -1,4 +1,3 @@
-"use client"
 import { IconBrandIntentui } from "@intentui/icons"
 import { twMerge } from "tailwind-merge"
 

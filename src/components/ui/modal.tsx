@@ -6,7 +6,7 @@ import {
   ModalOverlay,
   Modal as ModalPrimitive,
 } from "react-aria-components"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { twJoin, twMerge } from "tailwind-merge"
 import {
   Dialog,
   DialogBody,
@@ -62,26 +62,36 @@ const ModalContent = ({
     <ModalOverlay
       data-slot="modal-overlay"
       isDismissable={isDismissable}
-      className={composeTailwindRenderProps(overlay?.className, [
-        "fixed inset-0 z-50 h-(--visual-viewport-height) w-screen overscroll-contain bg-fg/15 pt-4 outline-hidden sm:p-16 dark:bg-bg/40",
-        "grid grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_3fr]",
-        "entering:fade-in-0 entering:animate-in duration-200",
-        "exiting:fade-out-0 exiting:animate-out",
-        isBlurred &&
-          "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
-      ])}
+      className={({ isExiting, isEntering }) =>
+        twJoin(
+          "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) bg-black/15 md:p-4",
+          "grid grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_3fr]",
+          isEntering && "fade-in animate-in duration-300",
+          isExiting && "fade-out animate-out duration-200",
+          isBlurred && "backdrop-blur-sm backdrop-filter",
+        )
+      }
       {...props}
     >
       <ModalPrimitive
         data-slot="modal-content"
-        className={composeTailwindRenderProps(className, [
-          "relative row-start-2 max-h-full w-full overflow-hidden rounded-t-2xl bg-overlay text-left align-middle text-overlay-fg shadow-lg ring ring-fg/5 sm:rounded-2xl dark:ring-border",
-          "exiting:slide-out-to-bottom sm:exiting:slide-out-to-bottom-0",
-          "entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0",
-          "sm:entering:zoom-in-95 entering:fade-in-0 entering:animate-in",
-          "sm:exiting:zoom-out-95 exiting:fade-out-0 exiting:animate-out",
-          sizes[size],
-        ])}
+        className={({ isExiting, isEntering }) =>
+          twMerge(
+            "row-start-2 w-full text-left align-middle",
+            "relative overflow-hidden bg-overlay text-overlay-fg",
+            "shadow-lg ring ring-fg/5 dark:ring-border",
+            "rounded-t-2xl md:rounded-xl",
+            sizes[size],
+            isEntering && [
+              "slide-in-from-bottom animate-in duration-300 ease-out",
+              "md:fade-in md:zoom-in-95 md:slide-in-from-bottom-0",
+            ],
+            isExiting && [
+              "slide-out-to-bottom animate-out",
+              "md:fade-out md:zoom-out-95 md:slide-out-to-bottom-0",
+            ],
+          )
+        }
       >
         <Dialog role={role}>
           {(values) => (

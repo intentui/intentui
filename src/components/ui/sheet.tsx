@@ -7,8 +7,8 @@ import {
   Modal,
   ModalOverlay,
 } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-import { composeTailwindRenderProps } from "@/lib/primitive"
 import {
   Dialog,
   DialogBody,
@@ -38,13 +38,13 @@ const generateCompoundVariants = (sides: Array<Sides>) => {
 }
 
 const contentStyles = tv({
-  base: "fixed z-50 grid gap-4 border-fg/5 bg-overlay text-overlay-fg shadow-lg transition ease-in-out dark:border-border",
+  base: "fixed z-50 grid gap-4 border-muted-fg/20 bg-overlay text-overlay-fg shadow-lg transition ease-in-out dark:border-border",
   variants: {
     isEntering: {
-      true: "fade-in-0 animate-in",
+      true: "fade-in animate-in duration-300",
     },
     isExiting: {
-      true: "fade-out-0 animate-out",
+      true: "fade-out animate-out",
     },
     side: {
       top: "entering:slide-in-from-top exiting:slide-out-to-top inset-x-0 top-0 rounded-b-2xl border-b",
@@ -93,13 +93,14 @@ const SheetContent = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={composeTailwindRenderProps(overlay?.className, [
-        "fixed inset-0 z-50 flex h-(--visual-viewport-height) w-full items-center justify-center bg-fg/15 p-4 dark:bg-bg/40",
-        "entering:fade-in-0 entering:animate-in duration-200",
-        "exiting:fade-out-0 exiting:animate-out",
-        isBlurred &&
-          "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
-      ])}
+      className={({ isExiting, isEntering }) =>
+        twJoin(
+          "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
+          isEntering && "fade-in animate-in duration-300",
+          isExiting && "fade-out animate-out duration-200",
+          isBlurred && "backdrop-blur-sm backdrop-filter",
+        )
+      }
       {...props}
     >
       <Modal

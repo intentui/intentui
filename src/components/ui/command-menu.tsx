@@ -99,29 +99,36 @@ const CommandMenu = ({
       <ModalContext value={{ isOpen: props.isOpen, onOpenChange: onOpenChange }}>
         <ModalOverlay
           isDismissable={isDismissable}
-          className={twJoin(
-            "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-screen overflow-hidden pt-4 sm:p-16",
-            "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
-            "bg-fg/15 dark:bg-bg/40",
-            isBlurred &&
-              props.isOpen &&
-              "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
-            "entering:fade-in-0 entering:animate-in",
-            "exiting:fade-out-0 exiting:animate-out",
-          )}
+          className={({ isExiting, isEntering }) =>
+            twJoin(
+              "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
+              "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
+              isEntering && "fade-in animate-in duration-300",
+              isExiting && "fade-out animate-out duration-200",
+              isBlurred &&
+                "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
+            )
+          }
+          {...props}
         >
           <Modal
-            className={twMerge([
-              "mx-auto max-h-[calc(var(--visual-viewport-height)*0.8)] w-full transform self-end rounded-xl bg-overlay text-left text-overlay-fg transition-all",
-              "shadow-lg ring ring-fg/5 will-change-transform sm:rounded-2xl dark:ring-border",
-              "exiting:slide-out-to-bottom sm:exiting:slide-out-to-bottom-0",
-              "entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0",
-              "sm:entering:zoom-in-95 entering:fade-in-0 entering:animate-in",
-              "sm:exiting:zoom-out-95 exiting:fade-out-0 exiting:animate-out",
-              sizes[size],
-              className,
-            ])}
-            {...props}
+            className={({ isExiting, isEntering }) =>
+              twMerge(
+                "bg-overlay text-left text-overlay-fg shadow-lg outline-none ring ring-muted-fg/15 dark:ring-border",
+                "fixed top-[16%] max-h-[calc(var(--visual-viewport-height)*0.8)] w-full",
+                "rounded-t-2xl md:rounded-xl",
+                isEntering && [
+                  "slide-in-from-bottom animate-in duration-300 ease-out",
+                  "md:fade-in md:zoom-in-95 md:slide-in-from-bottom-0",
+                ],
+                isExiting && [
+                  "slide-out-to-bottom animate-out",
+                  "md:fade-out md:zoom-out-95 md:slide-out-to-bottom-0",
+                ],
+                sizes[size],
+                className,
+              )
+            }
           >
             <Dialog
               aria-label={props["aria-label"] ?? "Command Menu"}
