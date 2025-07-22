@@ -111,7 +111,7 @@ const CommandMenu = ({
         >
           <Modal
             className={twMerge([
-              "mx-auto max-h-[calc(var(--visual-viewport-height)*0.8)] w-full transform self-end rounded-xl bg-overlay text-left text-overlay-fg transition-all",
+              "mx-auto max-h-[calc(var(--visual-viewport-height)*0.8)] w-full transform self-end rounded-t-2xl bg-overlay text-left text-overlay-fg transition-all",
               "shadow-lg ring ring-fg/5 will-change-transform sm:rounded-2xl dark:ring-border",
               "exiting:slide-out-to-bottom sm:exiting:slide-out-to-bottom-0",
               "entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0",
