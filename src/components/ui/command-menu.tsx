@@ -56,6 +56,7 @@ interface CommandMenuProps extends AutocompleteProps, MenuTriggerProps, CommandM
   shortcut?: string
   isBlurred?: boolean
   className?: string
+  size?: keyof typeof sizes
 }
 
 const sizes = {
@@ -137,7 +138,6 @@ const CommandMenu = ({
 
 interface CommandMenuSearchProps extends SearchFieldProps {
   placeholder?: string
-  className?: string
 }
 
 const CommandMenuSearch = ({ className, placeholder, ...props }: CommandMenuSearchProps) => {
