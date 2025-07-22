@@ -94,7 +94,7 @@ const SheetContent = ({
     <ModalOverlay
       isDismissable={isDismissable}
       className={composeTailwindRenderProps(overlay?.className, [
-        "fixed top-0 left-0 isolate z-50 flex h-(--visual-viewport-height) w-full items-center justify-center bg-fg/15 bg-fg/15 p-4 dark:bg-bg/40",
+        "fixed top-0 left-0 isolate z-50 flex h-(--visual-viewport-height) w-full items-center justify-center bg-fg/15 p-4 dark:bg-bg/40",
         "exiting:opacity-0 transition duration-100 entering:ease-out exiting:ease-in",
         isBlurred &&
           "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
