@@ -106,8 +106,7 @@ const CommandMenu = ({
             isBlurred &&
               props.isOpen &&
               "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
-            "entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
-            "exiting:fade-out in-exiting:duration-200 exiting:ease-in",
+            "exiting:opacity-0 transition duration-100 entering:ease-out exiting:ease-in",
           )}
         >
           <Modal
