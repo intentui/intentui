@@ -7,8 +7,8 @@ import {
   Modal,
   ModalOverlay,
 } from "react-aria-components"
-import { tv, type VariantProps } from "tailwind-variants"
-
+import { tv } from "tailwind-variants"
+import { composeTailwindRenderProps } from "@/lib/primitive"
 import {
   Dialog,
   DialogBody,
@@ -20,23 +20,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./dialog"
-
-const overlayStyles = tv({
-  base: [
-    "fixed top-0 left-0 isolate z-50 flex h-(--visual-viewport-height) w-full items-center justify-center bg-fg/15 p-4 dark:bg-bg/40",
-  ],
-  variants: {
-    isBlurred: {
-      true: "bg-bg/15 backdrop-blur dark:bg-bg/40",
-    },
-    isEntering: {
-      true: "fade-in animate-in duration-300 ease-out",
-    },
-    isExiting: {
-      true: "fade-out animate-out duration-200 ease-in",
-    },
-  },
-})
 
 type Sides = "top" | "bottom" | "left" | "right"
 const generateCompoundVariants = (sides: Array<Sides>) => {
@@ -86,8 +69,7 @@ const Sheet = (props: SheetProps) => {
 
 interface SheetContentProps
   extends Omit<ModalOverlayProps, "children">,
-    Pick<DialogProps, "aria-label" | "role" | "aria-labelledby" | "children">,
-    VariantProps<typeof overlayStyles> {
+    Pick<DialogProps, "aria-label" | "role" | "aria-labelledby" | "children"> {
   closeButton?: boolean
   isBlurred?: boolean
   isFloat?: boolean
@@ -111,13 +93,12 @@ const SheetContent = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={composeRenderProps(overlay?.className, (className, renderProps) => {
-        return overlayStyles({
-          ...renderProps,
-          isBlurred,
-          className,
-        })
-      })}
+      className={composeTailwindRenderProps(overlay?.className, [
+        "fixed top-0 left-0 isolate z-50 flex h-(--visual-viewport-height) w-full items-center justify-center bg-fg/15 bg-fg/15 p-4 dark:bg-bg/40",
+        "exiting:opacity-0 transition duration-100 entering:ease-out exiting:ease-in",
+        isBlurred &&
+          "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
+      ])}
       {...props}
     >
       <Modal
