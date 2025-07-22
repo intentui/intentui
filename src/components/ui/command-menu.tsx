@@ -102,7 +102,7 @@ const CommandMenu = ({
         >
           <Modal
             className={twMerge([
-              "gri -translate-x-1/2 fixed top-auto bottom-0 left-1/2 z-50 h-full max-h-[calc(100vh-30%)] w-full max-w-full gap-4 overflow-hidden rounded-t-2xl bg-overlay text-left text-overlay-fg shadow-lg ring-1 ring-fg/10 sm:top-[6rem] sm:bottom-auto sm:h-auto sm:w-full sm:max-w-xl sm:rounded-xl dark:ring-border forced-colors:border",
+              "-translate-x-1/2 fixed top-auto bottom-0 left-1/2 z-50 h-full max-h-[calc(100vh-30%)] w-full max-w-full gap-4 overflow-hidden rounded-t-2xl bg-overlay text-left text-overlay-fg shadow-lg ring-1 ring-fg/10 sm:top-[6rem] sm:bottom-auto sm:h-auto sm:w-full sm:max-w-xl sm:rounded-xl dark:ring-border forced-colors:border",
               "entering:fade-in-0 entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0 sm:entering:zoom-in-95 entering:animate-in entering:duration-300 sm:entering:duration-300",
               "exiting:fade-out sm:exiting:zoom-out-95 exiting:slide-out-to-bottom-56 sm:exiting:slide-out-to-bottom-0 exiting:animate-out exiting:duration-200",
               className,
