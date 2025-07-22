@@ -87,15 +87,22 @@ const CommandMenu = ({
       <ModalContext value={{ isOpen: props.isOpen, onOpenChange: onOpenChange }}>
         <ModalOverlay
           isDismissable={isDismissable}
-          className={twMerge([
-            "fixed inset-0 z-50 max-h-(--visual-viewport-height) bg-black/15 dark:bg-black/40",
-            "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-in",
-            isBlurred && props.isOpen ? "backdrop-blur" : "",
-          ])}
+          className={({ isEntering, isExiting }) =>
+            twMerge([
+              "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-full",
+              "grid grid-rows-[1fr_auto] justify-items-center pt-4 text-center sm:grid-rows-[1fr_auto_3fr] sm:p-4",
+              "bg-fg/15 dark:bg-bg/40",
+              isBlurred &&
+                props.isOpen &&
+                "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
+              isEntering && "fade-in animate-in duration-200 ease-out",
+              isExiting && "fade-out ease-in",
+            ])
+          }
         >
           <Modal
             className={twMerge([
-              "fixed top-auto bottom-0 left-[50%] z-50 grid h-[calc(100vh-30%)] w-full max-w-full translate-x-[-50%] gap-4 overflow-hidden rounded-t-2xl bg-overlay text-overlay-fg shadow-lg ring-1 ring-fg/10 sm:top-[6rem] sm:bottom-auto sm:h-auto sm:w-full sm:max-w-xl sm:rounded-xl dark:ring-border forced-colors:border",
+              "gri -translate-x-1/2 fixed top-auto bottom-0 left-1/2 z-50 h-fulld max-h-[calc(100vh-30%)] w-full max-w-full gap-4 overflow-hidden rounded-t-2xl bg-overlay text-left text-overlay-fg shadow-lg ring-1 ring-fg/10 sm:top-[6rem] sm:bottom-auto sm:h-auto sm:w-full sm:max-w-xl sm:rounded-xl dark:ring-border forced-colors:border",
               "entering:fade-in-0 entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0 sm:entering:zoom-in-95 entering:animate-in entering:duration-300 sm:entering:duration-300",
               "exiting:fade-out sm:exiting:zoom-out-95 exiting:slide-out-to-bottom-56 sm:exiting:slide-out-to-bottom-0 exiting:animate-out exiting:duration-200",
               className,
@@ -212,10 +219,7 @@ interface CommandMenuDescriptionProps extends React.ComponentProps<typeof Menu.D
 const CommandMenuDescription = ({ className, ...props }: CommandMenuDescriptionProps) => {
   return (
     <Menu.Description
-      className={twMerge(
-        "col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 sm:ml-auto",
-        className,
-      )}
+      className={twMerge("col-start-3 row-start-1 ml-auto", className)}
       {...props}
     />
   )
@@ -267,4 +271,15 @@ CommandMenu.Separator = CommandMenuSeparator
 CommandMenu.Footer = CommandMenuFooter
 
 export type { CommandMenuProps, CommandMenuSearchProps, CommandMenuDescriptionProps }
-export { CommandMenu }
+export {
+  CommandMenu,
+  CommandMenuSearch,
+  CommandMenuList,
+  CommandMenuItem,
+  CommandMenuLabel,
+  CommandMenuSection,
+  CommandMenuDescription,
+  CommandMenuKeyboard,
+  CommandMenuSeparator,
+  CommandMenuFooter,
+}

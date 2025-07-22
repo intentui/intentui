@@ -150,7 +150,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
           </CommandMenu.Item>
           <CommandMenu.Item textValue="premium block" href="https://blocks.intentui.com">
             <IconBrandIntentui />
-            <CommandMenu.Label>Plus</CommandMenu.Label>
+            <CommandMenu.Label>Premium blocks</CommandMenu.Label>
           </CommandMenu.Item>
         </CommandMenu.Section>
 
