@@ -41,7 +41,7 @@ const contentStyles = tv({
   base: "fixed z-50 grid gap-4 border-fg/5 bg-overlay text-overlay-fg shadow-lg transition ease-in-out dark:border-border",
   variants: {
     isEntering: {
-      true: "animate-in duration-300 ",
+      true: "fade-in animate-in duration-300",
     },
     isExiting: {
       true: "animate-out duration-200",

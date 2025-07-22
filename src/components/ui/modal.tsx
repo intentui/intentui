@@ -79,7 +79,7 @@ const ModalContent = ({
           "exiting:slide-out-to-bottom sm:exiting:slide-out-to-bottom-0",
           "entering:slide-in-from-bottom sm:entering:slide-in-from-bottom-0",
           "sm:entering:zoom-in-95 entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
-          "sm:exiting:zoom-out-95 exiting:fade-out exiting:animate-out exiting:duration-200 exiting:ease-in",
+          "sm:exiting:zoom-out-95 exiting:animate-out exiting:duration-200 exiting:ease-in",
           sizes[size],
         ])}
       >

@@ -103,10 +103,10 @@ const CommandMenu = ({
             "fixed top-0 left-0 isolate z-50 h-(--visual-viewport-height) w-screen overflow-hidden pt-4 sm:p-16",
             "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
             "bg-fg/15 dark:bg-bg/40",
+            "exiting:opacity-0 transition duration-100 entering:ease-out exiting:ease-in",
             isBlurred &&
               props.isOpen &&
               "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
-            "exiting:opacity-0 transition duration-100 entering:ease-out exiting:ease-in",
           )}
         >
           <Modal
