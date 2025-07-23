@@ -86,4 +86,4 @@ GridList.Item = GridListItem
 GridList.EmptyState = GridEmptyState
 
 export type { GridListProps, GridListItemProps }
-export { GridList }
+export { GridList, GridListItem }

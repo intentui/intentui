@@ -73,11 +73,13 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
           return (
             <div
               className={twMerge(
-                "grid grid-cols-[1.125rem_1fr] gap-x-3 gap-y-1 sm:grid-cols-[1rem_1fr]",
-                "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1 *:data-[slot=indicator]:mt-0.75 sm:*:data-[slot=indicator]:mt-1",
+                "grid grid-cols-[1.125rem_1fr] sm:grid-cols-[1rem_1fr]",
+                "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1",
                 "*:data-[slot=label]:col-start-2 *:data-[slot=label]:row-start-1",
                 "*:[[slot=description]]:col-start-2 *:[[slot=description]]:row-start-2",
                 "has-[[slot=description]]:**:data-[slot=label]:font-medium",
+                props.slot !== "selection" &&
+                  "gap-x-3 gap-y-1 *:data-[slot=indicator]:mt-0.75 sm:*:data-[slot=indicator]:mt-1",
               )}
             >
               <span

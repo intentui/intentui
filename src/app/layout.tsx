@@ -136,7 +136,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
         />
         <meta name="theme-color" content={META_THEME_COLORS.light} />
       </head>
-      <body className="min-h-screen font-sans antialiased">
+      <body className="min-h-svh font-sans antialiased">
         <Providers>
           <Toast />
           <main>{children}</main>
