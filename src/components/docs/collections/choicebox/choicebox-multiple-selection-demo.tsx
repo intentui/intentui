@@ -4,7 +4,7 @@ import { Choicebox } from "@/components/ui/choicebox"
 
 export default function ChoiceboxMultipleSelectionDemo() {
   return (
-    <Choicebox aria-label="Select packages" selectionMode="single" items={packages}>
+    <Choicebox aria-label="Select packages" selectionMode="multiple" items={packages}>
       {(item) => <Choicebox.Item textValue={item.label} {...item} />}
     </Choicebox>
   )
