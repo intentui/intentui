@@ -54,7 +54,7 @@ const TabList = <T extends object>({ className, ref, ...props }: TabListProps<T>
 }
 
 interface TabProps extends TabPrimitiveProps {
-  ref?: React.RefObject<HTMLButtonElement>
+  ref?: React.RefObject<HTMLDivElement>
 }
 const Tab = ({ children, className, ref, ...props }: TabProps) => {
   return (
