@@ -16,7 +16,7 @@
     "build:old-registry": "rm -rf public/registry && bun run src/scripts/build-old-registry.ts",
     "build:registry": "bun run src/scripts/build-registry.ts && npx shadcn build && bun run src/scripts/extract-components-from-registry.ts",
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "format": "biome lint --fix && biome check --write",
     "format:unsafe": "biome check --unsafe --write",
     "build:everything": "rm -rf public/registry && bun run build:registry && bun run build:search && bun run build:stubs",

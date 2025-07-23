@@ -107,8 +107,8 @@ const fileStructure = [
             id: "contracts",
             name: "contracts",
             children: [
-              { id: "2024", name: "2024.pdf" },
-              { id: "2025", name: "2025.pdf" },
+              { id: "c-2024", name: "2024.pdf" },
+              { id: "c-2025", name: "2025.pdf" },
             ],
           },
         ],
@@ -146,8 +146,8 @@ const fileStructure = [
         id: "terms",
         name: "terms",
         children: [
-          { id: "2024", name: "2024.pdf" },
-          { id: "2025", name: "2025.pdf" },
+          { id: "t-2024", name: "2024.pdf" },
+          { id: "t-2025", name: "2025.pdf" },
         ],
       },
     ],
@@ -184,10 +184,10 @@ interface TreeItemProps extends Partial<TreeItemPrimitiveProps> {
 function TreeItem({ title, children, ...props }: TreeItemProps) {
   return (
     <PrimitiveItem textValue={title} {...props}>
-      <TreeContent>
-        {({ isExpanded }) => (
+      <TreeContent className="**:data-[slot=icon]:text-muted-fg">
+        {({ isExpanded, hasChildItems }) => (
           <>
-            {children ? (
+            {hasChildItems ? (
               isExpanded ? (
                 <IconFolderOpen className="mr-2" />
               ) : (

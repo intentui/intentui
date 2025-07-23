@@ -1,6 +1,6 @@
 "use client"
 
-import { IconChevronRight, IconDotGrid2X3 } from "@intentui/icons"
+import { IconChevronRight } from "@intentui/icons"
 import type {
   TreeItemContentProps,
   TreeItemContentRenderProps,
@@ -8,13 +8,13 @@ import type {
   TreeProps,
 } from "react-aria-components"
 import {
+  Button,
   TreeItemContent,
   TreeItem as TreeItemPrimitive,
   Tree as TreePrimitive,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { Button } from "./button"
 import { Checkbox } from "./checkbox"
 
 const Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {
@@ -53,11 +53,6 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
     <TreeItemContent {...props}>
       {(values) => (
         <div className={twMerge("flex items-center text-sm/6", className)}>
-          {values.allowsDragging && (
-            <Button intent="plain" size="sq-sm" slot="drag">
-              <IconDotGrid2X3 />
-            </Button>
-          )}
           {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
             <Checkbox slot="selection" />
           )}
@@ -87,16 +82,17 @@ const TreeIndicator = ({
   return (
     <Button
       slot="chevron"
-      size="sq-sm"
-      intent="plain"
       isDisabled={values.isDisabled}
-      className="shrink-0 **:data-[slot=icon]:size-5 sm:**:data-[slot=icon]:size-5"
+      className={twJoin(
+        "size-6 shrink-0 content-center text-muted-fg hover:text-fg",
+        values.isExpanded && "text-fg",
+      )}
     >
       <IconChevronRight
         aria-hidden
         className={twJoin(
-          "size-5 text-muted-fg transition-transform duration-200 ease-in-out",
-          values.isExpanded && "rotate-90 text-fg",
+          "size-5 transition-transform duration-200 ease-in-out",
+          values.isExpanded && "rotate-90",
         )}
       />
     </Button>
