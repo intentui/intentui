@@ -173,7 +173,7 @@ const TableHeader = <T extends object>({
           data-slot="table-column"
           className={twMerge(
             "w-0 max-w-8 px-4 first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2))",
-            !bleed && "sm:last:pr-2 sm:first:pl-2",
+            !bleed && "sm:last:pr-1 sm:first:pl-1",
           )}
         >
           {selectionMode === "multiple" && <Checkbox slot="selection" />}
@@ -222,7 +222,7 @@ const TableRow = <T extends object>({
       )}
     >
       {allowsDragging && (
-        <TableCell className="max-w-4 sm:last:pr-2 sm:first:pl-2">
+        <TableCell className="max-w-4 sm:last:pr-1 sm:first:pl-1">
           <Button
             slot="drag"
             className="grid place-content-center rounded-xs px-[calc(var(--gutter)/2)] outline-hidden focus-visible:ring focus-visible:ring-ring"
@@ -232,7 +232,7 @@ const TableRow = <T extends object>({
         </TableCell>
       )}
       {selectionBehavior === "toggle" && (
-        <TableCell className={twJoin(!bleed && "max-w-4 sm:last:pr-2 sm:first:pl-2")}>
+        <TableCell className={twJoin(!bleed && "max-w-4 sm:last:pr-1 sm:first:pl-1")}>
           <Checkbox slot="selection" />
         </TableCell>
       )}

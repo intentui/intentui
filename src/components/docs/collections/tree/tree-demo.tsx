@@ -1,175 +1,153 @@
-import { Collection } from "react-aria-components"
-import {
-  Tree,
-  TreeCheckbox,
-  TreeContent,
-  TreeIndicator,
-  TreeItem,
-  TreeLabel,
-} from "@/components/ui/tree"
+import { Tree, TreeContent, TreeItem } from "@/components/ui/tree"
 
 export default function TreeDemo() {
-  const renderItem = (item: FileNode): React.ReactNode => {
-    return (
-      <TreeItem key={item.id} textValue={item.title}>
-        <TreeContent>
-          {item.children.length > 0 && <TreeIndicator />}
-          <TreeCheckbox />
-          <TreeLabel>{item.title}</TreeLabel>
-        </TreeContent>
-        {item.children.length > 0 && <Collection items={item.children}>{renderItem}</Collection>}
-      </TreeItem>
-    )
-  }
   return (
-    <Tree className="w-full max-w-xl" aria-label="Files" selectionMode="multiple" items={files}>
-      {files.map(renderItem)}
+    <Tree aria-label="Company workspace">
+      <TreeItem id="departments" textValue="Departments">
+        <TreeContent>Departments</TreeContent>
+        <TreeItem id="sales" textValue="Sales">
+          <TreeContent>Sales</TreeContent>
+          <TreeItem id="reports" textValue="Reports">
+            <TreeContent>Reports</TreeContent>
+            <TreeItem id="q1" textValue="Q1.pdf">
+              <TreeContent>Q1.pdf</TreeContent>
+            </TreeItem>
+            <TreeItem id="q2" textValue="Q2.pdf">
+              <TreeContent>Q2.pdf</TreeContent>
+            </TreeItem>
+            <TreeItem id="q3" textValue="Q3.pdf">
+              <TreeContent>Q3.pdf</TreeContent>
+            </TreeItem>
+          </TreeItem>
+          <TreeItem id="contacts" textValue="Client Contacts">
+            <TreeContent>Client Contacts</TreeContent>
+            <TreeItem id="europe" textValue="Europe.xlsx">
+              <TreeContent>Europe.xlsx</TreeContent>
+            </TreeItem>
+            <TreeItem id="asia" textValue="Asia.xlsx">
+              <TreeContent>Asia.xlsx</TreeContent>
+            </TreeItem>
+          </TreeItem>
+        </TreeItem>
+        <TreeItem id="hr" textValue="HR">
+          <TreeContent>HR</TreeContent>
+          <TreeItem id="hr-docs" textValue="Documents">
+            <TreeContent>Documents</TreeContent>
+            <TreeItem id="leave" textValue="Leave Policy.pdf">
+              <TreeContent>Leave policy.pdf</TreeContent>
+            </TreeItem>
+            <TreeItem id="benefits" textValue="Benefits.pdf">
+              <TreeContent>Benefits.pdf</TreeContent>
+            </TreeItem>
+            <TreeItem id="handbook" textValue="Employee Handbook.pdf">
+              <TreeContent>Employee handbook.pdf</TreeContent>
+            </TreeItem>
+            <TreeItem id="review" textValue="Performance Review.xlsx">
+              <TreeContent>Performance review.xlsx</TreeContent>
+            </TreeItem>
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+
+      <TreeItem id="projects" textValue="Projects">
+        <TreeContent>Projects</TreeContent>
+        <TreeItem id="revamp" textValue="Website revamp">
+          <TreeContent>Website revamp</TreeContent>
+          <TreeItem id="wireframes" textValue="Wireframes">
+            <TreeContent>Wireframes</TreeContent>
+            <TreeItem id="home" textValue="Home.fig">
+              <TreeContent>Home.fig</TreeContent>
+            </TreeItem>
+            <TreeItem id="pricing" textValue="Pricing.fig">
+              <TreeContent>Pricing.fig</TreeContent>
+            </TreeItem>
+          </TreeItem>
+        </TreeItem>
+        <TreeItem id="mobileapp" textValue="Mobile app">
+          <TreeContent>Mobile app</TreeContent>
+        </TreeItem>
+      </TreeItem>
+
+      <TreeItem id="clients" textValue="Clients">
+        <TreeContent>Clients</TreeContent>
+        <TreeItem id="acme" textValue="Acme Corp">
+          <TreeContent>Acme corp</TreeContent>
+          <TreeItem id="contracts" textValue="Contracts">
+            <TreeContent>Contracts</TreeContent>
+            <TreeItem id="2024" textValue="2024.pdf">
+              <TreeContent>2024.pdf</TreeContent>
+            </TreeItem>
+            <TreeItem id="2025" textValue="2025.pdf">
+              <TreeContent>2025.pdf</TreeContent>
+            </TreeItem>
+          </TreeItem>
+        </TreeItem>
+        <TreeItem id="globex" textValue="Globex Ltd">
+          <TreeContent>Globex Ltd</TreeContent>
+          <TreeItem id="mou" textValue="MOU">
+            <TreeContent>MOU</TreeContent>
+            <TreeItem id="signed" textValue="Signed.pdf">
+              <TreeContent>Signed.pdf</TreeContent>
+            </TreeItem>
+          </TreeItem>
+        </TreeItem>
+        <TreeItem id="initech" textValue="Initech">
+          <TreeContent>Initech</TreeContent>
+          <TreeItem id="invoices" textValue="Invoices">
+            <TreeContent>Invoices</TreeContent>
+            <TreeItem id="inv1" textValue="INV-001.pdf">
+              <TreeContent>INV-001.pdf</TreeContent>
+            </TreeItem>
+            <TreeItem id="inv2" textValue="INV-002.pdf">
+              <TreeContent>INV-002.pdf</TreeContent>
+            </TreeItem>
+            <TreeItem id="inv3" textValue="INV-003.pdf">
+              <TreeContent>INV-003.pdf</TreeContent>
+            </TreeItem>
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+
+      <TreeItem id="legal" textValue="Legal">
+        <TreeContent>Legal</TreeContent>
+        <TreeItem id="nda" textValue="NDAs">
+          <TreeContent>NDAs</TreeContent>
+        </TreeItem>
+        <TreeItem id="terms" textValue="Terms">
+          <TreeContent>Terms</TreeContent>
+          <TreeItem id="current" textValue="2025.pdf">
+            <TreeContent>2025.pdf</TreeContent>
+          </TreeItem>
+          <TreeItem id="previous" textValue="2024.pdf">
+            <TreeContent>2024.pdf</TreeContent>
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+
+      <TreeItem id="resources" textValue="Resources">
+        <TreeContent>Resources</TreeContent>
+        <TreeItem id="docs" textValue="Documentation">
+          <TreeContent>Documentation</TreeContent>
+          <TreeItem id="api" textValue="API.md">
+            <TreeContent>API.md</TreeContent>
+          </TreeItem>
+          <TreeItem id="sdk" textValue="SDK.md">
+            <TreeContent>SDK.md</TreeContent>
+          </TreeItem>
+          <TreeItem id="auth" textValue="Auth.md">
+            <TreeContent>Auth.md</TreeContent>
+          </TreeItem>
+        </TreeItem>
+        <TreeItem id="videos" textValue="Video Tutorials">
+          <TreeContent>Video tutorials</TreeContent>
+          <TreeItem id="intro" textValue="Intro.mp4">
+            <TreeContent>Intro.mp4</TreeContent>
+          </TreeItem>
+          <TreeItem id="setup" textValue="Setup.mp4">
+            <TreeContent>Setup.mp4</TreeContent>
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
     </Tree>
   )
 }
-
-type FileNode = {
-  id: number
-  title: string
-  children: FileNode[]
-}
-
-const files: FileNode[] = [
-  {
-    id: 1,
-    title: "Work",
-    children: [
-      {
-        id: 2,
-        title: "Reports",
-        children: [
-          {
-            id: 3,
-            title: "2023",
-            children: [
-              {
-                id: 4,
-                title: "Q1 Report",
-                children: [
-                  { id: 5, title: "Summary", children: [] },
-                  { id: 6, title: "Details", children: [] },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 7,
-        title: "Presentations",
-        children: [
-          {
-            id: 8,
-            title: "2023 Projects",
-            children: [
-              {
-                id: 9,
-                title: "Project A",
-                children: [
-                  { id: 10, title: "Draft", children: [] },
-                  { id: 11, title: "Final", children: [] },
-                ],
-              },
-              {
-                id: 12,
-                title: "Project B",
-                children: [{ id: 13, title: "Research", children: [] }],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 14,
-    title: "Personal",
-    children: [
-      {
-        id: 15,
-        title: "Hobbies",
-        children: [
-          {
-            id: 16,
-            title: "Photography",
-            children: [
-              { id: 17, title: "Travel", children: [] },
-              { id: 18, title: "Portraits", children: [] },
-            ],
-          },
-          {
-            id: 19,
-            title: "Cooking",
-            children: [{ id: 20, title: "Recipes", children: [] }],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 21,
-    title: "Projects",
-    children: [
-      {
-        id: 22,
-        title: "Web Development",
-        children: [
-          {
-            id: 23,
-            title: "Portfolio",
-            children: [
-              { id: 24, title: "Images", children: [] },
-              { id: 25, title: "CSS", children: [] },
-            ],
-          },
-          { id: 26, title: "Landing Page", children: [] },
-        ],
-      },
-      {
-        id: 27,
-        title: "Mobile Apps",
-        children: [{ id: 28, title: "Weather App", children: [] }],
-      },
-    ],
-  },
-  {
-    id: 29,
-    title: "Finance",
-    children: [
-      {
-        id: 30,
-        title: "Budget",
-        children: [
-          {
-            id: 31,
-            title: "2023",
-            children: [
-              { id: 32, title: "January", children: [] },
-              { id: 33, title: "February", children: [] },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 34,
-    title: "Health",
-    children: [
-      {
-        id: 35,
-        title: "Fitness",
-        children: [
-          { id: 36, title: "Workouts", children: [] },
-          { id: 37, title: "Nutrition", children: [] },
-        ],
-      },
-      { id: 38, title: "Wellness", children: [] },
-    ],
-  },
-]
