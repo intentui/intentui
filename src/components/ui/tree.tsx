@@ -65,7 +65,7 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
               }}
             />
           ) : (
-            <span className="block size-5 shrink-0" />
+            <span className="block size-6 shrink-0" />
           )}
           {typeof children === "function" ? children(values) : children}
         </div>
