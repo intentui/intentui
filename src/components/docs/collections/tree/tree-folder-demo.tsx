@@ -183,9 +183,9 @@ function renderTree(nodes: FileNode[], path: string[] = []) {
     return (
       <TreeItem key={currentPath} id={currentPath} textValue={node.name}>
         <TreeContent className="**:data-[slot=icon]:text-muted-fg">
-          {({ isExpanded }) => (
+          {({ isExpanded, hasChildItems }) => (
             <>
-              {node.children?.length ? (
+              {hasChildItems ? (
                 isExpanded ? (
                   <IconFolderOpen className="mr-2" />
                 ) : (
