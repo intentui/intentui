@@ -215,13 +215,11 @@ export const generateTheme = (
     --radius-3xl: calc(var(--radius-lg) * 2);
     --radius-4xl: calc(var(--radius-lg) * 3);`
 
-  return `@layer base {
-  :root {
+  return `:root {
     ${lightColors}${radiusValues}
   }
   
   .dark {
     ${darkColors}
-  }
-}`
+  }`
 }
