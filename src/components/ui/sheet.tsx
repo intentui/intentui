@@ -112,7 +112,6 @@ const SheetContent = ({
             className,
           }),
         )}
-        {...props}
       >
         <Dialog aria-label={props["aria-label"]} role={role}>
           {(values) => (

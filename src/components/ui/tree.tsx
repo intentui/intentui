@@ -54,7 +54,7 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
       {(values) => (
         <div className={twMerge("flex items-center text-sm/6", className)}>
           {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <Checkbox className='mr-2' slot="selection" />
+            <Checkbox className="mr-2" slot="selection" />
           )}
           <div className="w-[calc(calc(var(--tree-item-level)-1)*calc(var(--spacing)*3))] shrink-0" />
           {values.hasChildItems ? (
