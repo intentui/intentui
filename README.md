@@ -8,7 +8,7 @@ Intent is a chill set of React components, built on top of [React Aria Component
 Swing by [intentui.com](https://intentui.com/docs/2.x/getting-started/introduction) to peep the docs and get the lowdown on getting started!
 
 ## Blocks
-Design pages faster than ever with [Intent Blocks](https://blocks.intentui.com).
+Design pages faster than ever with [Intent Blocks](https://blocks.intentui.com), or build your own with ready-to-use components and templates from [irsyad.co](https://irsyad.co).
 
 ## Contributing
 
