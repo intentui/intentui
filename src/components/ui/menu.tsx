@@ -201,4 +201,16 @@ Menu.Trigger = MenuTrigger
 Menu.Submenu = MenuSubMenu
 
 export type { MenuContentProps, MenuTriggerProps, MenuItemProps, MenuSectionProps }
-export { Menu }
+export {
+  Menu,
+  MenuKeyboard,
+  MenuContent,
+  MenuHeader,
+  MenuItem,
+  MenuSection,
+  MenuSeparator,
+  MenuLabel,
+  MenuDescription,
+  MenuTrigger,
+  MenuSubMenu,
+}

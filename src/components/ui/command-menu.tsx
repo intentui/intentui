@@ -31,7 +31,7 @@ import { twJoin, twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { DropdownKeyboard } from "./dropdown"
 import { Loader } from "./loader"
-import { Menu, type MenuSectionProps } from "./menu"
+import { MenuDescription, MenuItem, MenuLabel, type MenuSectionProps, MenuSeparator } from "./menu"
 
 interface CommandMenuProviderProps {
   isPending?: boolean
@@ -50,15 +50,6 @@ const useCommandMenu = () => {
   return context
 }
 
-interface CommandMenuProps extends AutocompleteProps, MenuTriggerProps, CommandMenuProviderProps {
-  isDismissable?: boolean
-  "aria-label"?: string
-  shortcut?: string
-  isBlurred?: boolean
-  className?: string
-  size?: keyof typeof sizes
-}
-
 const sizes = {
   xs: "sm:max-w-xs",
   sm: "sm:max-w-sm",
@@ -69,13 +60,22 @@ const sizes = {
   "3xl": "sm:max-w-3xl",
 }
 
+interface CommandMenuProps extends AutocompleteProps, MenuTriggerProps, CommandMenuProviderProps {
+  isDismissable?: boolean
+  "aria-label"?: string
+  shortcut?: string
+  isBlurred?: boolean
+  className?: string
+  size?: keyof typeof sizes
+}
+
 const CommandMenu = ({
   onOpenChange,
   className,
   isDismissable = true,
   escapeButton = true,
-  size = "xl",
   isPending,
+  size = "xl",
   isBlurred,
   shortcut,
   ...props
@@ -105,8 +105,7 @@ const CommandMenu = ({
               "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
               isEntering && "fade-in animate-in duration-300",
               isExiting && "fade-out animate-out duration-200",
-              isBlurred &&
-                "bg-bg bg-clip-padding supports-backdrop-filter:bg-bg/15 supports-backdrop-filter:backdrop-blur dark:supports-backdrop-filter:bg-bg/40",
+              isBlurred && "backdrop-blur-sm",
             )
           }
           {...props}
@@ -114,8 +113,8 @@ const CommandMenu = ({
           <Modal
             className={({ isExiting, isEntering }) =>
               twMerge(
-                "bg-overlay text-left text-overlay-fg shadow-lg outline-none ring ring-muted-fg/15 dark:ring-border",
-                "fixed bottom-0 max-h-[calc(var(--visual-viewport-height)*0.8)] w-full sm:top-[10%]",
+                "row-start-2 bg-overlay text-left text-overlay-fg shadow-lg outline-none ring ring-muted-fg/15 md:row-start-1 dark:ring-border",
+                "max-h-[calc(var(--visual-viewport-height)*0.8)] w-full sm:fixed sm:top-[10%]",
                 "rounded-t-2xl md:rounded-xl",
                 isEntering && [
                   "slide-in-from-bottom animate-in duration-300 ease-out",
@@ -145,6 +144,7 @@ const CommandMenu = ({
 
 interface CommandMenuSearchProps extends SearchFieldProps {
   placeholder?: string
+  className?: string
 }
 
 const CommandMenuSearch = ({ className, placeholder, ...props }: CommandMenuSearchProps) => {
@@ -222,11 +222,11 @@ const CommandMenuSection = <T extends object>({
   )
 }
 
-const CommandMenuItem = ({ className, ...props }: React.ComponentProps<typeof Menu.Item>) => {
+const CommandMenuItem = ({ className, ...props }: React.ComponentProps<typeof MenuItem>) => {
   const textValue =
     props.textValue || (typeof props.children === "string" ? props.children : undefined)
   return (
-    <Menu.Item
+    <MenuItem
       {...props}
       textValue={textValue}
       className={composeTailwindRenderProps(className, "items-center gap-y-0.5")}
@@ -234,14 +234,11 @@ const CommandMenuItem = ({ className, ...props }: React.ComponentProps<typeof Me
   )
 }
 
-interface CommandMenuDescriptionProps extends React.ComponentProps<typeof Menu.Description> {}
+interface CommandMenuDescriptionProps extends React.ComponentProps<typeof MenuDescription> {}
 
 const CommandMenuDescription = ({ className, ...props }: CommandMenuDescriptionProps) => {
   return (
-    <Menu.Description
-      className={twMerge("col-start-3 row-start-1 ml-auto", className)}
-      {...props}
-    />
+    <MenuDescription className={twMerge("col-start-3 row-start-1 ml-auto", className)} {...props} />
   )
 }
 
@@ -260,8 +257,8 @@ const renderer: CollectionRenderer = {
 const CommandMenuSeparator = ({
   className,
   ...props
-}: React.ComponentProps<typeof Menu.Separator>) => (
-  <Menu.Separator className={twMerge("-mx-2", className)} {...props} />
+}: React.ComponentProps<typeof MenuSeparator>) => (
+  <MenuSeparator className={twMerge("-mx-2", className)} {...props} />
 )
 
 const CommandMenuFooter = ({ className, ...props }: React.ComponentProps<"div">) => {
@@ -277,9 +274,8 @@ const CommandMenuFooter = ({ className, ...props }: React.ComponentProps<"div">)
   )
 }
 
-const CommandMenuLabel = Menu.Label
+const CommandMenuLabel = MenuLabel
 const CommandMenuKeyboard = DropdownKeyboard
-
 CommandMenu.Search = CommandMenuSearch
 CommandMenu.List = CommandMenuList
 CommandMenu.Item = CommandMenuItem
