@@ -1,6 +1,5 @@
 "use client"
 
-import { ChevronRightIcon } from "@heroicons/react/16/solid"
 import type {
   TreeItemContentProps,
   TreeItemContentRenderProps,
@@ -16,6 +15,7 @@ import {
 import { twJoin, twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Checkbox } from "./checkbox"
+import { IconChevronLgRight } from "@intentui/icons";
 
 const Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {
   return (
@@ -89,8 +89,8 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
 }
 
 const TreeIndicator = ({
-                         values,
-                       }: {
+  values,
+}: {
   values: Pick<TreeItemContentRenderProps, "isDisabled" | "isExpanded">
 }) => {
   return (
@@ -102,9 +102,9 @@ const TreeIndicator = ({
         values.isExpanded && "text-fg",
       )}
     >
-      <ChevronRightIcon
+      <IconChevronLgRight
         className={twJoin(
-          "size-5 transition-transform duration-200 ease-in-out",
+          "size-4 transition-transform duration-200 ease-in-out",
           values.isExpanded && "rotate-90",
         )}
       />
