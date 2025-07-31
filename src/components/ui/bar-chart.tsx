@@ -26,6 +26,7 @@ interface BarChartProps<TValue extends ValueType, TName extends NameType>
   barRadius?: number
   barGap?: number
   barSize?: number
+  barProps?: Partial<React.ComponentProps<typeof Bar>>
 
   chartProps?: Omit<ComponentProps<typeof BarChartPrimitive>, "data" | "stackOffset">
 }
@@ -54,6 +55,7 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
   barGap,
   barSize,
   barRadius,
+  barProps,
 
   valueFormatter = (value: number) => value.toString(),
 
@@ -73,7 +75,6 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
   const categoryColors = constructCategoryColors(Object.keys(config), colors)
 
   const stacked = type === "stacked" || type === "percent"
-
   return (
     <Chart
       className={twMerge("w-full", className)}
@@ -102,7 +103,7 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
           stackOffset={type === "percent" ? "expand" : stacked ? "sign" : undefined}
           {...chartProps}
         >
-          {!hideGridLines && <CartesianGrid strokeDasharray="3 3" />}
+          {!hideGridLines && <CartesianGrid strokeDasharray="4 4" />}
           <XAxis
             hide={hideXAxis}
             className="**:[text]:fill-muted-fg"
@@ -133,30 +134,32 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
             />
           )}
 
-          {Object.entries(config).map(([category, values]) => {
-            return (
-              <Bar
-                key={category}
-                name={category}
-                dataKey={category}
-                stroke={getColorValue(values.color || categoryColors.get(category))}
-                strokeWidth={1}
-                stackId={stacked ? "stack" : undefined}
-                onClick={(_item, _number, event) => {
-                  event.stopPropagation()
+          {!children
+            ? Object.entries(config).map(([category, values]) => {
+                return (
+                  <Bar
+                    key={category}
+                    name={category}
+                    dataKey={category}
+                    stroke={getColorValue(values.color || categoryColors.get(category))}
+                    strokeWidth={1}
+                    stackId={stacked ? "stack" : undefined}
+                    onClick={(_item, _number, event) => {
+                      event.stopPropagation()
 
-                  startTransition(() => {
-                    onLegendSelect(category)
-                  })
-                }}
-                radius={barRadius ?? (stacked ? undefined : 4)}
-                strokeOpacity={selectedLegend && selectedLegend !== category ? 0.2 : 0}
-                fillOpacity={selectedLegend && selectedLegend !== category ? 0.1 : 1}
-                fill={getColorValue(values.color || categoryColors.get(category))}
-              />
-            )
-          })}
-          {children}
+                      startTransition(() => {
+                        onLegendSelect(category)
+                      })
+                    }}
+                    radius={barRadius ?? (stacked ? undefined : 4)}
+                    strokeOpacity={selectedLegend && selectedLegend !== category ? 0.2 : 0}
+                    fillOpacity={selectedLegend && selectedLegend !== category ? 0.1 : 1}
+                    fill={getColorValue(values.color || categoryColors.get(category))}
+                    {...barProps}
+                  />
+                )
+              })
+            : children}
         </BarChartPrimitive>
       )}
     </Chart>
