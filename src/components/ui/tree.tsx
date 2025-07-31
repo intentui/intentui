@@ -1,5 +1,6 @@
 "use client"
 
+import { IconChevronRight } from "@intentui/icons"
 import type {
   TreeItemContentProps,
   TreeItemContentRenderProps,
@@ -15,7 +16,6 @@ import {
 import { twJoin, twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Checkbox } from "./checkbox"
-import { IconChevronLgRight } from "@intentui/icons";
 
 const Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {
   return (
@@ -102,7 +102,7 @@ const TreeIndicator = ({
         values.isExpanded && "text-fg",
       )}
     >
-      <IconChevronLgRight
+      <IconChevronRight
         className={twJoin(
           "size-4 transition-transform duration-200 ease-in-out",
           values.isExpanded && "rotate-90",

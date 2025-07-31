@@ -1,6 +1,5 @@
 "use client"
 
-import type { ComponentProps } from "react"
 import { Line, LineChart as LineChartPrimitive, type LineProps } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import { twMerge } from "tailwind-merge"
@@ -24,7 +23,7 @@ interface LineChartProps<TValue extends ValueType, TName extends NameType>
   extends BaseChartProps<TValue, TName> {
   connectNulls?: boolean
   lineProps?: LineProps
-  chartProps?: Omit<ComponentProps<typeof LineChartPrimitive>, "data" | "stackOffset">
+  chartProps?: Omit<React.ComponentProps<typeof LineChartPrimitive>, "data" | "stackOffset">
 }
 
 export const LineChart = <TValue extends ValueType, TName extends NameType>({
@@ -87,17 +86,15 @@ export const LineChart = <TValue extends ValueType, TName extends NameType>({
           stackOffset={type === "percent" ? "expand" : undefined}
           {...chartProps}
         >
-          {!hideGridLines && <CartesianGrid strokeDasharray="3 3" />}
+          {!hideGridLines && <CartesianGrid strokeDasharray="4 4" />}
           <XAxis
             hide={hideXAxis}
-            className="**:[text]:fill-muted-fg"
             displayEdgeLabelsOnly={displayEdgeLabelsOnly}
             intervalType={intervalType}
             {...xAxisProps}
           />
           <YAxis
             hide={hideYAxis}
-            className="**:[text]:fill-muted-fg"
             tickFormatter={type === "percent" ? valueToPercent : valueFormatter}
             {...yAxisProps}
           />
@@ -118,29 +115,33 @@ export const LineChart = <TValue extends ValueType, TName extends NameType>({
             />
           )}
 
-          {Object.entries(config).map(([category, values]) => {
-            const strokeOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 1
+          {!children
+            ? Object.entries(config).map(([category, values]) => {
+                const strokeOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 1
 
-            return (
-              <Line
-                key={category}
-                dot={false}
-                name={category}
-                type="linear"
-                dataKey={category}
-                stroke={getColorValue(values.color || categoryColors.get(category))}
-                style={{
-                  strokeOpacity,
-                  strokeWidth: 2,
-                }}
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                connectNulls={connectNulls}
-                {...lineProps}
-              />
-            )
-          })}
-          {children}
+                return (
+                  <Line
+                    key={category}
+                    dot={false}
+                    name={category}
+                    type="linear"
+                    dataKey={category}
+                    stroke={getColorValue(values.color || categoryColors.get(category))}
+                    style={
+                      {
+                        strokeOpacity,
+                        strokeWidth: 2,
+                        "--line-color": getColorValue(values.color || categoryColors.get(category)),
+                      } as React.CSSProperties
+                    }
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                    connectNulls={connectNulls}
+                    {...lineProps}
+                  />
+                )
+              })
+            : children}
         </LineChartPrimitive>
       )}
     </Chart>
