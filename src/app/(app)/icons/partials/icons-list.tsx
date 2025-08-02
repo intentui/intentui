@@ -89,9 +89,8 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
       <Icon className={selectedSize} key={name} />
       <Menu isOpen={isSelected} onOpenChange={setSelected}>
         <Menu.Content
-          popover={{ triggerRef: triggerRef }}
+          popover={{ triggerRef: triggerRef, showArrow: true }}
           className="sm:min-w-48"
-          showArrow
           aria-label="Options"
         >
           <Menu.Header className="font-mono font-normal text-xs sm:text-xs" separator>
