@@ -73,7 +73,6 @@ interface MenuContentProps<T>
     | "onOpenChange"
     | "shouldFlip"
   >
-  showArrow?: boolean
 }
 
 const MenuContent = <T extends object>({
