@@ -122,4 +122,12 @@ ComboBox.Description = ComboBoxDescription
 ComboBox.Section = ComboBoxSection
 
 export type { ComboBoxProps, ComboBoxListProps }
-export { ComboBox }
+export {
+  ComboBox,
+  ComboBoxInput,
+  ComboBoxList,
+  ComboBoxOption,
+  ComboBoxLabel,
+  ComboBoxDescription,
+  ComboBoxSection,
+}

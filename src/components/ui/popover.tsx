@@ -92,4 +92,14 @@ Popover.Header = PopoverHeader
 Popover.Title = PopoverTitle
 
 export type { PopoverProps, PopoverContentProps }
-export { Popover, PopoverContent }
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverClose,
+  PopoverDescription,
+  PopoverContent,
+  PopoverBody,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTitle,
+}

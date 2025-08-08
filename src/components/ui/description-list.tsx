@@ -37,4 +37,4 @@ const DescriptionDetails = ({ className, ...props }: React.ComponentProps<"dd">)
 
 DescriptionList.Term = DescriptionTerm
 DescriptionList.Details = DescriptionDetails
-export { DescriptionList }
+export { DescriptionList, DescriptionTerm, DescriptionDetails }

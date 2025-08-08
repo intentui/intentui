@@ -123,4 +123,14 @@ Modal.Body = ModalBody
 Modal.Close = ModalClose
 Modal.Content = ModalContent
 
-export { Modal }
+export {
+  Modal,
+  ModalTrigger,
+  ModalHeader,
+  ModalTitle,
+  ModalDescription,
+  ModalFooter,
+  ModalBody,
+  ModalClose,
+  ModalContent,
+}

@@ -114,4 +114,15 @@ ContextMenu.Header = ContextMenuHeader
 ContextMenu.Keyboard = ContextMenuKeyboard
 
 export type { ContextMenuProps }
-export { ContextMenu }
+export {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuDescription,
+  ContextMenuSection,
+  ContextMenuHeader,
+  ContextMenuKeyboard,
+}

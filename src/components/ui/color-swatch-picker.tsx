@@ -62,4 +62,4 @@ const ColorSwatchPickerItem = ({ className, children, ...props }: ColorSwatchPic
 
 ColorSwatchPicker.Item = ColorSwatchPickerItem
 
-export { ColorSwatchPicker }
+export { ColorSwatchPicker, ColorSwatchPickerItem }
