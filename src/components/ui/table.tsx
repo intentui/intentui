@@ -266,4 +266,4 @@ Table.Header = TableHeader
 Table.Row = TableRow
 
 export type { TableProps, TableColumnProps, TableRowProps }
-export { Table }
+export { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow }

@@ -216,4 +216,4 @@ Choicebox.Label = ChoiceboxLabel
 Choicebox.Description = ChoiceboxDescription
 
 export type { ChoiceboxProps, ChoiceboxItemProps }
-export { Choicebox }
+export { Choicebox, ChoiceboxItem, ChoiceboxLabel, ChoiceboxDescription }

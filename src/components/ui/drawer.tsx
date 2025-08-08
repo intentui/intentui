@@ -199,5 +199,15 @@ Drawer.Body = DrawerBody
 Drawer.Content = DrawerContent
 Drawer.Close = DrawerClose
 
-export { Drawer }
+export {
+  Drawer,
+  ButtonPrimitive,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerBody,
+  DrawerContent,
+  DrawerClose,
+}
 export type { DrawerContentProps }

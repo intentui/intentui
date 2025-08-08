@@ -164,4 +164,4 @@ Pagination.List = PaginationList
 Pagination.Section = PaginationSection
 
 export type { PaginationProps, PaginationListProps, PaginationSectionProps, PaginationItemProps }
-export { Pagination }
+export { Pagination, PaginationItem, PaginationList, PaginationSection }

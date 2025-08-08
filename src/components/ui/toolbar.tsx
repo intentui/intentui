@@ -85,4 +85,4 @@ Toolbar.Separator = ToolbarSeparator
 Toolbar.Item = ToolbarItem
 
 export type { ToolbarGroupProps, ToolbarProps, ToggleItemProps, ToolbarSeparatorProps }
-export { Toolbar }
+export { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarItem }
