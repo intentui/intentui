@@ -42,7 +42,7 @@ Add a label to the color picker for better accessibility and user guidance.
 ## Dynamic label
 Dynamically update the label based on the selected color.
 ```
-import { ColorPicker, defaultColor } from "ui"
+import { ColorPicker, defaultColor } from "@/components/ui/ui"
 
 const [color, setColor] = useState(defaultColor)
 return <ColorPicker label={color.toString('hex')} value={color} onChange={setColor} />
