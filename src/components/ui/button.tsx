@@ -11,7 +11,7 @@ const buttonStyles = tv({
   base: [
     "[--btn-icon-active:var(--btn-fg)] [--btn-outline:var(--btn-bg)] [--btn-ring:var(--btn-bg)]/20",
     "bg-(--btn-bg) pressed:bg-(--btn-overlay) text-(--btn-fg) outline-(--btn-outline) ring-(--btn-ring) hover:bg-(--btn-overlay)",
-    "relative inset-ring inset-ring-fg/15 isolate inline-flex items-center justify-center font-medium",
+    "relative inset-ring inset-ring-fg/15 isolate inline-flex cursor-pointer items-center justify-center font-medium",
     "focus:outline-0 focus-visible:outline focus-visible:outline-offset-2 focus-visible:ring-2 focus-visible:ring-offset-3 focus-visible:ring-offset-bg",
     "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-0.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-(--btn-icon) pressed:*:data-[slot=icon]:text-(--btn-icon-active) focus-visible:*:data-[slot=icon]:text-(--btn-icon-active)/80 hover:*:data-[slot=icon]:text-(--btn-icon-active)/90 sm:*:data-[slot=icon]:my-1 forced-colors:[--btn-icon:ButtonText] forced-colors:hover:[--btn-icon:ButtonText]",
     "*:data-[slot=loader]:-mx-0.5 *:data-[slot=loader]:my-0.5 *:data-[slot=loader]:shrink-0 *:data-[slot=loader]:self-center *:data-[slot=loader]:text-(--btn-icon) sm:*:data-[slot=loader]:my-1",
@@ -67,10 +67,10 @@ const buttonStyles = tv({
       false: "rounded-lg",
     },
     isDisabled: {
-      true: "inset-ring-0 opacity-50 forced-colors:text-[GrayText]",
+      true: "inset-ring-0 cursor-not-allowed opacity-50 forced-colors:text-[GrayText]",
     },
     isPending: {
-      true: "opacity-50",
+      true: "cursor-wait opacity-50",
     },
   },
   defaultVariants: {
