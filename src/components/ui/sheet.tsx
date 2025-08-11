@@ -37,7 +37,7 @@ const generateCompoundVariants = (sides: Array<Sides>) => {
   }))
 }
 
-const contentStyles = tv({
+const sheetContentStyles = tv({
   base: "fixed z-50 grid gap-4 border-muted-fg/20 bg-overlay text-overlay-fg shadow-lg transition ease-in-out dark:border-border",
   variants: {
     isEntering: {
@@ -105,7 +105,7 @@ const SheetContent = ({
     >
       <Modal
         className={composeRenderProps(className, (className, renderProps) =>
-          contentStyles({
+          sheetContentStyles({
             ...renderProps,
             side,
             isFloat,
