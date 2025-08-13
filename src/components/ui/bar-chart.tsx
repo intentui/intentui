@@ -34,7 +34,6 @@ interface BarChartProps<TValue extends ValueType, TName extends NameType>
 const BarChart = <TValue extends ValueType, TName extends NameType>({
   data = [],
   dataKey,
-  lineType = "linear",
   colors = DEFAULT_COLORS,
   type = "default",
   className,

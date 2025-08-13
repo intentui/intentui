@@ -26,7 +26,9 @@ export default function BarChartMonotoneDemo() {
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
           dataKey="day"
-          lineType="monotone"
+          barProps={{
+            type: "monotone",
+          }}
           xAxisProps={{ interval: 0 }}
           config={{
             visits: { label: "Visits" },

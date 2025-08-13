@@ -1,5 +1,3 @@
-"use client"
-
 import { createContext, type ReactElement, use, useCallback, useId, useMemo, useState } from "react"
 import { ToggleButton, ToggleButtonGroup, type ToggleButtonGroupProps } from "react-aria-components"
 import type {
@@ -25,17 +23,15 @@ import type {
   ValueType,
 } from "recharts/types/component/DefaultTooltipContent"
 import type { ContentType as TooltipContentType } from "recharts/types/component/Tooltip"
-import type { CurveType } from "recharts/types/shape/Curve"
 import { twJoin, twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { Separator } from "./separator"
 
 // #region Chart Types
 type ChartType = "default" | "stacked" | "percent"
 type ChartLayout = "horizontal" | "vertical" | "radial"
 type IntervalType = "preserveStartEnd" | "equidistantPreserveStart"
 
-export type ChartConfig = {
+type ChartConfig = {
   [k in string]: {
     label?: React.ReactNode
     icon?: React.ComponentType
@@ -63,9 +59,9 @@ const DEFAULT_COLORS = ["chart-1", "chart-2", "chart-3", "chart-4", "chart-5"] a
 
 type ChartContextProps = {
   config: ChartConfig
-  data: Record<string, any>[]
+  data?: Record<string, any>[]
   layout: ChartLayout
-  dataKey: string
+  dataKey?: string
   selectedLegend: string | null
   onLegendSelect: (legendItem: string | null) => void
 }
@@ -150,13 +146,19 @@ interface BaseChartProps<TValue extends ValueType, TName extends NameType>
   dataKey: string
   colors?: readonly (ChartColorKeys | (string & {}))[]
   type?: ChartType
-  lineType?: CurveType
   intervalType?: IntervalType
   layout?: ChartLayout
   valueFormatter?: (value: number) => string
 
   tooltip?: TooltipContentType<TValue, TName> | boolean
-  tooltipProps?: Omit<ChartTooltipProps<TValue, TName>, "content">
+  tooltipProps?: Omit<ChartTooltipProps<TValue, TName>, "content"> & {
+    hideLabel?: boolean
+    labelSeparator?: boolean
+    hideIndicator?: boolean
+    indicator?: "line" | "dot" | "dashed"
+    nameKey?: string
+    labelKey?: string
+  }
 
   cartesianGridProps?: CartesianGridProps
 
@@ -184,13 +186,12 @@ const Chart = ({
   ref,
   layout = "horizontal",
   ...props
-}: Omit<React.ComponentProps<"div">, "children"> & {
-  config: ChartConfig
-  data: Record<string, any>[]
-  layout?: ChartLayout
-  dataKey: string
-  children: ReactElement | ((props: ChartContextProps) => ReactElement)
-}) => {
+}: Omit<React.ComponentProps<"div">, "children"> &
+  Pick<ChartContextProps, "data" | "dataKey"> & {
+    config: ChartConfig
+    layout?: ChartLayout
+    children: ReactElement | ((props: ChartContextProps) => ReactElement)
+  }) => {
   const uniqueId = useId()
   const chartId = useMemo(() => `chart-${id || uniqueId.replace(/:/g, "")}`, [id, uniqueId])
 
@@ -200,23 +201,30 @@ const Chart = ({
     setSelectedLegend(legendItem)
   }, [])
 
+  const _data = data ?? []
+  const _dataKey = dataKey ?? "value"
+
   const value = {
     config,
     selectedLegend,
     onLegendSelect,
-    data,
-    dataKey,
+    data: _data,
+    dataKey: _dataKey,
     layout,
   }
 
   return (
-    <ChartContext.Provider value={value}>
+    <ChartContext value={value}>
       <div
         data-chart={chartId}
         ref={ref}
         className={twMerge(
-          "z-20 flex aspect-video w-full justify-center text-xs",
-          "[&_.recharts-cartesian-axis-tick_text]:fill-muted-fg [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/80 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-hidden [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-hidden [&_.recharts-surface]:outline-hidden",
+          "z-20 flex w-full justify-center text-xs",
+          "[&_.recharts-cartesian-axis-tick_text]:fill-muted-fg [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/80 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-layer]:outline-hidden [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-hidden [&_.recharts-surface]:outline-hidden",
+          // dot
+          "[&_.recharts-dot[fill='#fff']]:fill-(--line-color)",
+          // when hover over the line chart, the active dot should not have a fill or stroke
+          "[&_.recharts-active-dot>.recharts-dot]:stroke-fg/10",
           className,
         )}
         {...props}
@@ -226,7 +234,7 @@ const Chart = ({
           {typeof children === "function" ? children(value) : children}
         </ResponsiveContainer>
       </div>
-    </ChartContext.Provider>
+    </ChartContext>
   )
 }
 
@@ -273,12 +281,8 @@ const ChartTooltip = <TValue extends ValueType, TName extends NameType>(
     <TooltipPrimitive
       wrapperStyle={{ outline: "none" }}
       isAnimationActive={true}
-      animationDuration={100}
-      offset={20}
-      position={{
-        y: layout === "horizontal" ? 0 : undefined,
-        x: layout === "vertical" ? 60 + 20 : undefined,
-      }}
+      animationDuration={500}
+      offset={10}
       cursor={{
         stroke: "var(--muted)",
         strokeWidth: layout === "radial" ? 0.1 : 1,
@@ -311,18 +315,20 @@ const XAxis = ({
 }: XAxisProps) => {
   const { dataKey, data, layout } = useChart()
 
+  const ticks =
+    displayEdgeLabelsOnly && data?.length && dataKey
+      ? [data[0]?.[dataKey], data[data.length - 1]?.[dataKey]]
+      : undefined
+
+  const tick = {
+    transform: layout === "horizontal" ? "translate(32, 6)" : undefined,
+  }
   return (
     <XAxisPrimitive
-      className={twMerge("text-muted-fg text-xs", className)}
+      className={twMerge("text-muted-fg text-xs **:[text]:fill-muted-fg", className)}
       interval={displayEdgeLabelsOnly ? "preserveStartEnd" : intervalType}
-      tick={{
-        transform: layout === "horizontal" ? "translate(32, 6)" : undefined,
-      }}
-      ticks={
-        displayEdgeLabelsOnly && data.length >= 2
-          ? [data[0]?.[dataKey], data[data.length - 1]?.[dataKey]]
-          : undefined
-      }
+      tick={tick}
+      ticks={ticks}
       tickLine={false}
       axisLine={false}
       minTickGap={minTickGap}
@@ -343,8 +349,8 @@ const YAxis = ({
 
   return (
     <YAxisPrimitive
-      className={twMerge("text-muted-fg text-xs", className)}
-      width={(width ?? layout === "horizontal") ? 35 : 80}
+      className={twMerge("text-muted-fg text-xs **:[text]:fill-muted-fg", className)}
+      width={(width ?? layout === "horizontal") ? 40 : 80}
       domain={domain}
       tick={{
         transform: layout === "horizontal" ? "translate(-3, 0)" : "translate(0, 0)",
@@ -436,13 +442,17 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
     <div
       ref={ref}
       className={twMerge(
-        "inset-ring inset-ring-border grid min-w-[12rem] items-start rounded-lg bg-overlay p-3 text-overlay-fg text-xs dark:inset-ring-fg/10 dark:supports-[backdrop-blur]:bg-overlay/70 dark:supports-[backdrop-blur]:backdrop-blur-xl",
+        "grid min-w-[12rem] items-start rounded-lg bg-overlay/70 p-3 py-2 text-overlay-fg text-xs ring ring-current/10 backdrop-blur-lg",
         className,
       )}
     >
-      {!nestLabel ? <span>{tooltipLabel}</span> : null}
-      {labelSeparator && <Separator className="mt-2 mb-2.5 bg-fg/10" />}
-      <div className="grid gap-1.5">
+      {!hideLabel && (
+        <>
+          {!nestLabel ? <span className="font-medium">{tooltipLabel}</span> : null}
+          {labelSeparator && <span aria-hidden className="mt-2 mb-3 block h-px w-full bg-bg/10" />}
+        </>
+      )}
+      <div className="grid gap-3">
         {payload.map((item, index) => {
           const key = `${nameKey || item.name || item.dataKey || "value"}`
           const itemConfig = getPayloadConfigFromPayload(config, item, key)
@@ -452,8 +462,9 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
             <div
               key={key}
               className={twMerge(
-                "flex w-full flex-wrap items-stretch gap-2 *:data-[slot=icon]:size-2.5 *:data-[slot=icon]:text-muted-fg",
-                indicator === "dot" && "items-center",
+                "flex w-full flex-wrap items-stretch gap-2 *:data-[slot=icon]:text-muted-fg",
+                indicator === "dot" && "items-center *:data-[slot=icon]:size-2.5",
+                indicator === "line" && "*:data-[slot=icon]:h-full *:data-[slot=icon]:w-2.5",
               )}
             >
               {formatter && item?.value !== undefined && item.name ? (
@@ -585,6 +596,7 @@ const ChartLegendContent = ({
 }
 
 export type {
+  ChartConfig,
   ChartColorKeys,
   ChartType,
   ChartLayout,

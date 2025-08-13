@@ -30,7 +30,9 @@ export default function BarChartStackedDemo() {
           data={data}
           dataKey="day"
           type="stacked"
-          lineType="basis"
+          barProps={{
+            type: "basis",
+          }}
           xAxisProps={{ interval: 0 }}
           config={{
             likes: { label: "Likes" },

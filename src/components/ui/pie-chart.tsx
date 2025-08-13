@@ -97,8 +97,9 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
         >
           {showLabel && variant === "donut" && (
             <text
-              className="fill-fg font-medium"
+              className="fill-fg font-semibold"
               x="50%"
+              data-slot="label"
               y="50%"
               textAnchor="middle"
               dominantBaseline="middle"
@@ -106,35 +107,40 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
               {parsedLabelInput}
             </text>
           )}
-          <Pie
-            name={nameKey}
-            dataKey={dataKey}
-            data={data}
-            cx={pieProps?.cx ?? "50%"}
-            cy={pieProps?.cy ?? "50%"}
-            startAngle={pieProps?.startAngle ?? 90}
-            endAngle={pieProps?.endAngle ?? -270}
-            strokeLinejoin="round"
-            innerRadius={variant === "donut" ? "50%" : "0%"}
-            isAnimationActive
-            {...pieProps}
-          >
-            {data.map((_, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={getColorValue(
-                  config?.[data[index]?.code || data[index]?.name]?.color ??
-                    colors[index % colors.length],
-                )}
-              />
-            ))}
-          </Pie>
+
+          {!children ? (
+            <Pie
+              name={nameKey}
+              dataKey={dataKey}
+              data={data}
+              cx={pieProps?.cx ?? "50%"}
+              cy={pieProps?.cy ?? "50%"}
+              startAngle={pieProps?.startAngle ?? 90}
+              endAngle={pieProps?.endAngle ?? -270}
+              strokeLinejoin="round"
+              innerRadius={variant === "donut" ? "50%" : "0%"}
+              isAnimationActive
+              {...pieProps}
+            >
+              {data.map((_, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={getColorValue(
+                    config?.[data[index]?.code || data[index]?.name]?.color ??
+                      colors[index % colors.length],
+                  )}
+                />
+              ))}
+            </Pie>
+          ) : (
+            children
+          )}
 
           {tooltip && (
             <ChartTooltip
               content={
                 typeof tooltip === "boolean" ? (
-                  <ChartTooltipContent labelSeparator={false} accessibilityLayer />
+                  <ChartTooltipContent hideLabel labelSeparator={false} accessibilityLayer />
                 ) : (
                   tooltip
                 )
@@ -142,8 +148,6 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
               {...tooltipProps}
             />
           )}
-
-          {children}
         </PieChartPrimitive>
       )}
     </Chart>

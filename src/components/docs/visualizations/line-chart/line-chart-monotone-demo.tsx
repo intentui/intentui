@@ -26,7 +26,9 @@ export default function LineChartMonotoneDemo() {
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
           dataKey="day"
-          lineType="monotone"
+          lineProps={{
+            type: "natural",
+          }}
           xAxisProps={{ interval: 0 }}
           config={{
             visits: { label: "Visits" },

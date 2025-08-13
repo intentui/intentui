@@ -30,7 +30,9 @@ export default function AreaChartStackedDemo() {
           data={data}
           dataKey="day"
           type="stacked"
-          lineType="basis"
+          areaProps={{
+            type: "natural",
+          }}
           xAxisProps={{ interval: 0 }}
           config={{
             likes: { label: "Likes" },

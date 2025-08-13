@@ -28,7 +28,9 @@ export default function LineChartStackedDemo() {
           data={data}
           dataKey="day"
           type="stacked"
-          lineType="basis"
+          lineProps={{
+            type: "basis",
+          }}
           xAxisProps={{ interval: 0 }}
           config={{
             likes: { label: "Likes" },

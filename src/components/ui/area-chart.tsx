@@ -3,7 +3,6 @@
 import { type ComponentProps, Fragment, useId } from "react"
 import { Area, AreaChart as AreaChartPrimitive } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
-import type { CurveType } from "recharts/types/shape/Curve"
 import { twMerge } from "tailwind-merge"
 import {
   type BaseChartProps,
@@ -27,7 +26,6 @@ interface AreaChartProps<TValue extends ValueType, TName extends NameType>
   areaProps?: Partial<ComponentProps<typeof Area>>
   connectNulls?: boolean
   fillType?: "gradient" | "solid" | "none"
-  lineType?: CurveType
 }
 
 export const AreaChart = <TValue extends ValueType, TName extends NameType>({
@@ -67,7 +65,6 @@ export const AreaChart = <TValue extends ValueType, TName extends NameType>({
   yAxisProps,
 
   hideGridLines = false,
-  lineType = "linear",
   chartProps,
   ...props
 }: AreaChartProps<TValue, TName>) => {
@@ -148,7 +145,22 @@ export const AreaChart = <TValue extends ValueType, TName extends NameType>({
           {tooltip && (
             <ChartTooltip
               content={
-                typeof tooltip === "boolean" ? <ChartTooltipContent accessibilityLayer /> : tooltip
+                typeof tooltip === "boolean" ? (
+                  <ChartTooltipContent
+                    {...{
+                      hideIndicator: tooltipProps?.hideIndicator,
+                      hideLabel: tooltipProps?.hideLabel,
+                      cursor: tooltipProps?.cursor,
+                      indicator: tooltipProps?.indicator,
+                      labelSeparator: tooltipProps?.labelSeparator,
+                      formatter: tooltipProps?.formatter,
+                      labelFormatter: tooltipProps?.labelFormatter,
+                    }}
+                    accessibilityLayer
+                  />
+                ) : (
+                  tooltip
+                )
               }
               {...tooltipProps}
             />
@@ -183,7 +195,6 @@ export const AreaChart = <TValue extends ValueType, TName extends NameType>({
                     <Area
                       dot={false}
                       name={category}
-                      type={lineType}
                       dataKey={category}
                       stroke={getColorValue(values.color || categoryColors.get(category))}
                       style={{
