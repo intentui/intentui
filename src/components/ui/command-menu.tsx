@@ -114,7 +114,7 @@ const CommandMenu = ({
             className={({ isExiting, isEntering }) =>
               twMerge(
                 "row-start-2 bg-overlay text-left text-overlay-fg shadow-lg outline-none ring ring-muted-fg/15 md:row-start-1 dark:ring-border",
-                "max-h-[calc(var(--visual-viewport-height)*0.8)] w-full sm:fixed sm:top-[10%]",
+                "sm:-translate-x-1/2 max-h-[calc(var(--visual-viewport-height)*0.8)] w-full sm:fixed sm:top-[10%] sm:left-1/2",
                 "rounded-t-2xl md:rounded-xl",
                 isEntering && [
                   "slide-in-from-bottom animate-in duration-300 ease-out",
