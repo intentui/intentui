@@ -2,15 +2,17 @@
 
 import { IconChevronLeft } from "@intentui/icons"
 import { use, useRef } from "react"
+import type {
+  DisclosureGroupProps as AccordionProps,
+  ButtonProps,
+  DisclosureProps as CollapsibleProps,
+  DisclosurePanelProps as DisclosurePanelPrimitiveProps,
+} from "react-aria-components"
 import {
   DisclosureGroup as Accordion,
-  type DisclosureGroupProps as AccordionProps,
   Button,
-  type ButtonProps,
   Disclosure as Collapsible,
   DisclosurePanel as CollapsiblePanel,
-  type DisclosureProps as CollapsibleProps,
-  type DisclosurePanelProps as DisclosurePanelPrimitiveProps,
   DisclosureStateContext,
   Heading,
 } from "react-aria-components"
