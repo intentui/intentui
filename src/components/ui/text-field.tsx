@@ -54,6 +54,7 @@ const TextField = ({
           <FieldGroup
             isDisabled={props.isDisabled}
             isInvalid={!!errorMessage}
+            className={isRevealable && "pr-9"}
             data-loading={isPending ? "true" : undefined}
           >
             {prefix && typeof prefix === "string" ? (
