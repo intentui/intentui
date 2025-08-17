@@ -1,7 +1,7 @@
 "use client"
 
 import { IconChevronLeft } from "@intentui/icons"
-import { use, useMemo, useRef } from "react"
+import { use, useRef } from "react"
 import type {
   DisclosureGroupProps as AccordionProps,
   ButtonProps,
@@ -95,14 +95,18 @@ interface DisclosurePanelProps extends DisclosurePanelPrimitiveProps {
 const DisclosurePanel = ({ className, ref, style, ...props }: DisclosurePanelProps) => {
   const { isExpanded } = use(DisclosureStateContext)!
   const panelRef = useRef<HTMLDivElement>(null)
-  const isSafari = useMemo(() => /^((?!chrome|android).)*safari/i.test(navigator.userAgent), [])
+  function isSafari() {
+    return (
+      typeof navigator !== "undefined" && /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+    )
+  }
 
   return (
     <CollapsiblePanel
       ref={ref}
       data-slot="disclosure-panel"
       style={{
-        height: !isSafari ? (isExpanded ? panelRef?.current?.scrollHeight : 0) : undefined,
+        height: !isSafari() ? (isExpanded ? panelRef?.current?.scrollHeight : 0) : undefined,
         ...style,
       }}
       className={composeTailwindRenderProps(className, [
