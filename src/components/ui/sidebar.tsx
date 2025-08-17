@@ -1,24 +1,23 @@
 "use client"
 
 import { IconChevronLgDown, IconHamburger, IconSidebarFill } from "@intentui/icons"
-import { createContext, use, useCallback, useEffect, useMemo, useState } from "react"
-import type {
-  ButtonProps,
-  DisclosureGroupProps,
-  DisclosureProps,
-  LinkProps,
-  LinkRenderProps,
-  SeparatorProps as SidebarSeparatorProps,
-} from "react-aria-components"
+import { createContext, use, useCallback, useEffect, useMemo, useRef, useState } from "react"
 import {
+  type ButtonProps,
   composeRenderProps,
   Disclosure,
   DisclosureGroup,
+  type DisclosureGroupProps,
   DisclosurePanel,
+  type DisclosureProps,
+  DisclosureStateContext,
   Header,
   Heading,
   Link,
+  type LinkProps,
+  type LinkRenderProps,
   Separator,
+  type SeparatorProps as SidebarSeparatorProps,
   Text,
   Button as Trigger,
 } from "react-aria-components"
@@ -571,17 +570,28 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
 
 const SidebarDisclosurePanel = ({
   className,
+  style,
   ...props
 }: React.ComponentProps<typeof DisclosurePanel>) => {
+  const { isExpanded } = use(DisclosureStateContext)!
+  const panelRef = useRef<HTMLDivElement>(null)
   return (
     <DisclosurePanel
       data-sidebar-disclosure-panel="true"
+      style={{
+        height: isExpanded ? panelRef?.current?.scrollHeight : 0,
+        ...style,
+      }}
       className={composeTailwindRenderProps(
         className,
-        "col-span-full grid grid-cols-[auto_1fr] gap-y-0.5",
+        "overflow-hidden transition-[height] duration-200 ease-in-out",
       )}
       {...props}
-    />
+    >
+      <div ref={panelRef} className="col-span-full grid grid-cols-[auto_1fr] gap-y-0.5">
+        {props.children}
+      </div>
+    </DisclosurePanel>
   )
 }
 

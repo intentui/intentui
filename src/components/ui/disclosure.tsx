@@ -1,17 +1,17 @@
 "use client"
 
 import { IconChevronLeft } from "@intentui/icons"
-import type {
-  DisclosureGroupProps as AccordionProps,
-  ButtonProps,
-  DisclosureProps as CollapsibleProps,
-  DisclosurePanelProps as DisclosurePanelPrimitiveProps,
-} from "react-aria-components"
+import { use, useRef } from "react"
 import {
   DisclosureGroup as Accordion,
+  type DisclosureGroupProps as AccordionProps,
   Button,
+  type ButtonProps,
   Disclosure as Collapsible,
   DisclosurePanel as CollapsiblePanel,
+  type DisclosureProps as CollapsibleProps,
+  type DisclosurePanelProps as DisclosurePanelPrimitiveProps,
+  DisclosureStateContext,
   Heading,
 } from "react-aria-components"
 import { composeTailwindRenderProps } from "@/lib/primitive"
@@ -90,20 +90,27 @@ const DisclosureTrigger = ({ className, ref, ...props }: DisclosureTriggerProps)
 interface DisclosurePanelProps extends DisclosurePanelPrimitiveProps {
   ref?: React.Ref<HTMLDivElement>
 }
-const DisclosurePanel = ({ className, ref, ...props }: DisclosurePanelProps) => {
+const DisclosurePanel = ({ className, ref, style, ...props }: DisclosurePanelProps) => {
+  const { isExpanded } = use(DisclosureStateContext)!
+  const panelRef = useRef<HTMLDivElement>(null)
   return (
     <CollapsiblePanel
       ref={ref}
       data-slot="disclosure-panel"
+      style={{
+        height: isExpanded ? panelRef?.current?.scrollHeight : 0,
+        ...style,
+      }}
       className={composeTailwindRenderProps(
         className,
-        "overflow-hidden text-muted-fg text-sm transition-all **:data-[slot=disclosure-group]:border-t **:data-[slot=disclosure-group]:**:[.internal-chevron]:hidden has-data-[slot=disclosure-group]:**:[button]:px-4",
+        "overflow-hidden text-muted-fg text-sm transition-[height] duration-200 ease-in-out **:data-[slot=disclosure-group]:border-t **:data-[slot=disclosure-group]:**:[.internal-chevron]:hidden has-data-[slot=disclosure-group]:**:[button]:px-4",
       )}
       {...props}
     >
       <div
+        ref={panelRef}
         data-slot="disclosure-panel-content"
-        className="pt-0 not-has-data-[slot=disclosure-group]:group-data-expanded/disclosure:pb-3 [&:has([data-slot=disclosure-group])_&]:px-11"
+        className="pt-0 pb-3 not-has-data-[slot=disclosure-group]:group-data-expanded/disclosure:pb-3 [&:has([data-slot=disclosure-group])_&]:px-11"
       >
         {props.children}
       </div>
