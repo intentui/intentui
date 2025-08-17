@@ -575,11 +575,11 @@ const SidebarDisclosurePanel = ({
 }: React.ComponentProps<typeof DisclosurePanel>) => {
   const { isExpanded } = use(DisclosureStateContext)!
   const panelRef = useRef<HTMLDivElement>(null)
-  function isSafari() {
-    return (
-      typeof navigator !== "undefined" && /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
-    )
-  }
+  const isSafari = useMemo(() => {
+    if (typeof navigator === "undefined") return false
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+  }, [])
+
   return (
     <DisclosurePanel
       data-sidebar-disclosure-panel="true"
