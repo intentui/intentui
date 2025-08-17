@@ -575,16 +575,17 @@ const SidebarDisclosurePanel = ({
 }: React.ComponentProps<typeof DisclosurePanel>) => {
   const { isExpanded } = use(DisclosureStateContext)!
   const panelRef = useRef<HTMLDivElement>(null)
+  const isSafari = useMemo(() => /^((?!chrome|android).)*safari/i.test(navigator.userAgent), [])
   return (
     <DisclosurePanel
       data-sidebar-disclosure-panel="true"
       style={{
-        height: isExpanded ? panelRef?.current?.scrollHeight : 0,
+        height: !isSafari ? (isExpanded ? panelRef?.current?.scrollHeight : 0) : undefined,
         ...style,
       }}
       className={composeTailwindRenderProps(
         className,
-        "overflow-hidden transition-[height] duration-200 ease-in-out",
+        !isSafari && "overflow-hidden transition-[height] duration-200 ease-in-out",
       )}
       {...props}
     >
