@@ -453,7 +453,7 @@ const SidebarItem = ({
 }
 
 interface SidebarLinkProps extends LinkProps {
-  ref?: React.Ref<HTMLAnchorElement>
+  ref?: React.RefObject<HTMLAnchorElement>
 }
 const SidebarLink = ({ className, ref, ...props }: SidebarLinkProps) => {
   const { state, isMobile } = useSidebar()
