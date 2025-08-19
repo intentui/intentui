@@ -2,12 +2,11 @@
 
 import { IconHamburger } from "@intentui/icons"
 import { createContext, use, useCallback, useMemo, useState } from "react"
-import type { LinkProps } from "react-aria-components"
-import { Link } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Button, type ButtonProps } from "./button"
+import { Link, type LinkProps } from "./link"
 import { Separator } from "./separator"
 import { Sheet } from "./sheet"
 

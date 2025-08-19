@@ -2,22 +2,22 @@
 
 import { IconChevronLgDown, IconHamburger, IconSidebarFill } from "@intentui/icons"
 import { createContext, use, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import type {
+  ButtonProps,
+  DisclosureGroupProps,
+  DisclosureProps,
+  LinkRenderProps,
+  SeparatorProps as SidebarSeparatorProps,
+} from "react-aria-components"
 import {
-  type ButtonProps,
   composeRenderProps,
   Disclosure,
   DisclosureGroup,
-  type DisclosureGroupProps,
   DisclosurePanel,
-  type DisclosureProps,
   DisclosureStateContext,
   Header,
   Heading,
-  Link,
-  type LinkProps,
-  type LinkRenderProps,
   Separator,
-  type SeparatorProps as SidebarSeparatorProps,
   Text,
   Button as Trigger,
 } from "react-aria-components"
@@ -26,6 +26,7 @@ import { SheetContent } from "@/components/ui/sheet"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Button } from "./button"
+import { Link, type LinkProps } from "./link"
 import { Tooltip } from "./tooltip"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
