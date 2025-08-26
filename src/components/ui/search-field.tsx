@@ -9,9 +9,11 @@ import { Loader } from "./loader"
 
 interface SearchFieldProps extends SearchFieldPrimitiveProps, FieldProps {
   isPending?: boolean
+  ref?: React.RefObject<HTMLInputElement>
 }
 
 const SearchField = ({
+  ref,
   children,
   className,
   placeholder,
@@ -23,7 +25,6 @@ const SearchField = ({
 }: SearchFieldProps) => {
   return (
     <SearchFieldPrimitive
-      aria-label={placeholder ?? props["aria-label"] ?? "Search..."}
       {...props}
       className={composeTailwindRenderProps(
         className,
@@ -40,7 +41,7 @@ const SearchField = ({
           ) : (
             <FieldGroup>
               {isPending ? <Loader variant="spin" /> : <IconSearch />}
-              <Input placeholder={placeholder ?? "Search..."} />
+              <Input ref={ref} placeholder={placeholder ?? "Search..."} />
 
               <Button className="grid place-content-center pressed:text-fg text-muted-fg hover:text-fg group-empty/search-field:invisible">
                 <IconX />

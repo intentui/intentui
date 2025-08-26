@@ -80,7 +80,7 @@ const choiceboxItemStyles = tv({
     "dark:[--choicebox-selected-hovered:color-mix(in_oklab,var(--color-primary)_25%,black_75%)]",
     "dark:[--choicebox-fg:color-mix(in_oklab,var(--color-primary)_45%,white_55%)] dark:[--choicebox:color-mix(in_oklab,var(--color-primary)_20%,black_70%)]",
     "inset-ring inset-ring-border rounded-lg p-4 **:data-[slot=label]:font-medium",
-    " **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-5 **:data-[slot=avatar]:shrink-0",
+    "**:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-5 **:data-[slot=avatar]:shrink-0",
     "**:data-[slot=icon]:mt-[--spacing(0.7)] **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0",
     "grid grid-cols-[1fr_auto] content-start items-start gap-x-4 gap-y-1 has-data-[slot=icon]:grid-cols-[auto_1fr_auto]",
     "has-[[slot=description]]:**:data-[slot=label]:font-medium",

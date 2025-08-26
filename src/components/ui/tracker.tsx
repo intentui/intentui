@@ -48,7 +48,7 @@ const Block = ({
         showArrow={false}
         offset={10}
         placement="top"
-        intent="inverse"
+        inverse
         className="px-2 py-1.5 text-xs"
       >
         {tooltip}

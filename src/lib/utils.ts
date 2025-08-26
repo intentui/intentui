@@ -64,7 +64,7 @@ export function extractJSX(code: string) {
 
     return lines
       .map((line) => {
-        // @ts-ignore
+        // @ts-expect-error
         const indent = line.match(/^\s*/)[0]
         return indent.slice(4) + line.trim()
       })

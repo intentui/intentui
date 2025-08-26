@@ -11,6 +11,7 @@ import {
   IconCircleQuestionmarkFill,
   IconClockFill,
   IconCreditCardFill,
+  IconCube,
   IconDashboardFill,
   IconDotsHorizontal,
   IconHashtagFill,
@@ -50,11 +51,8 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <Link
-          className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
-          href="/docs/components/layouts/sidebar"
-        >
-          <IconBrandIntentui className="size-7" />
+        <Link href="/docs/components/layouts/sidebar" className="flex items-center gap-x-2">
+          <IconBrandIntentui className="size-8" />
           <SidebarLabel className="font-medium">
             Intent <span className="text-muted-fg">UI</span>
           </SidebarLabel>
@@ -77,7 +75,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                   </SidebarLink>
                   {(!isCollapsed || isFocused) && (
                     <Menu>
-                      <Menu.Trigger data-slot="menu-trigger" aria-label="Manage">
+                      <Menu.Trigger data-slot="menu-action-trigger" aria-label="Manage">
                         <IconDotsHorizontal />
                       </Menu.Trigger>
                       <Menu.Content popover={{ offset: 0, placement: "right top" }}>
@@ -111,11 +109,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               {({ isCollapsed, isFocused }) => (
                 <>
                   <SidebarLink href="#">
+                    <IconCube />
                     <SidebarLabel>Products</SidebarLabel>
                   </SidebarLink>
                   {(!isCollapsed || isFocused) && (
                     <Menu>
-                      <Menu.Trigger aria-label="Manage">
+                      <Menu.Trigger data-slot="menu-action-trigger" aria-label="Manage">
                         <IconDotsHorizontal />
                       </Menu.Trigger>
                       <Menu.Content popover={{ offset: 0, placement: "right top" }}>
@@ -198,13 +197,20 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
         </SidebarSectionGroup>
       </SidebarContent>
 
-      <SidebarFooter>
+      <SidebarFooter className="flex flex-row justify-between gap-4 group-data-[state=collapsed]:flex-col">
         <Menu>
-          <Menu.Trigger className="group" aria-label="Profile">
-            <Avatar isSquare src="https://intentui.com/images/avatar/cobain.jpg" />
-            <div className="in-data-[sidebar-collapsible=dock]:hidden text-sm">
-              <SidebarLabel>Kurt Cobain</SidebarLabel>
-              <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>
+          <Menu.Trigger className="flex w-full items-center justify-between" aria-label="Profile">
+            <div className="flex items-center gap-x-2">
+              <Avatar
+                className="size-8 *:size-8 group-data-[state=collapsed]:size-6 group-data-[state=collapsed]:*:size-6"
+                isSquare
+                src="https://intentui.com/images/avatar/cobain.jpg"
+              />
+
+              <div className="in-data-[collapsible=dock]:hidden text-sm">
+                <SidebarLabel>Kurt Cobain</SidebarLabel>
+                <span className="-mt-0.5 block text-muted-fg">kurt@domain.com</span>
+              </div>
             </div>
             <IconChevronsY data-slot="chevron" />
           </Menu.Trigger>

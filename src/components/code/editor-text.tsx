@@ -80,7 +80,7 @@ export function EditorText({ source }: Props) {
     <>
       {rawSourceCode && Object.keys(rawSourceCode).length > 0 ? (
         <Tabs className="relative gap-0">
-          <div className="flex items-center justify-between overflow-hidden rounded-t-lg border-x border-y ">
+          <div className="flex items-center justify-between overflow-hidden rounded-t-lg border-x border-y">
             <TabList className="gap-0 border-0">
               {Object.keys(rawSourceCode).map((key) => (
                 <Tab

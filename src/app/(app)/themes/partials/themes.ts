@@ -152,8 +152,14 @@ export const generateTheme = (
     --navbar: ${adjustLightness(getColorValue(gray, "50"), +1)};
     --navbar-fg: ${getColorValue(gray, "950")};
     
-    --sidebar: ${getColorValue(gray, "100")};
+    --sidebar: ${getColorValue(gray, "50")};
     --sidebar-fg: ${getColorValue(gray, "950")};
+    --sidebar-primary: ${getColorValue(primary, lightPrimary)};
+    --sidebar-primary-fg: ${lightPrimaryFgValue};
+    --sidebar-accent: ${getColorValue(accent, lightAccent)};
+    --sidebar-accent-fg: ${lightAccentFgValue};
+    --sidebar-border: ${adjustLightness(getColorValue(gray, "300"), +3)};
+    --sidebar-ring: ${getColorValue(primary, lightRingShade)};
     
     --chart-1: ${getColorValue(primary, chartShadesLight[0])};
     --chart-2: ${getColorValue(primary, chartShadesLight[1])};
@@ -196,8 +202,14 @@ export const generateTheme = (
     --navbar: ${adjustLightness(getColorValue(gray, "900"), -2)};
     --navbar-fg: ${getColorValue(gray, "50")};
     
-    --sidebar: ${adjustLightness(getColorValue(gray, "900"), -5)};
+    --sidebar: ${adjustLightness(getColorValue(gray, "900"), -3)};
     --sidebar-fg: ${getColorValue(gray, "50")};
+    --sidebar-primary: ${getColorValue(primary, darkPrimary)};
+    --sidebar-primary-fg: ${darkPrimaryFgValue};
+    --sidebar-accent: ${getColorValue(accent, darkAccent)};
+    --sidebar-accent-fg: ${darkAccentFgValue};
+    --sidebar-border: ${getColorValue(gray, "800")};
+    --sidebar-ring: ${getColorValue(primary, darkRingShade)};
    
     --chart-1: ${getColorValue(primary, chartShadesDark[0])};
     --chart-2: ${getColorValue(primary, chartShadesDark[1])};

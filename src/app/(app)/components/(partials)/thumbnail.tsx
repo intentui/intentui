@@ -41,7 +41,7 @@ export function Thumbnail({ name }: { name: string }) {
     "grid-list": <ThumbGridList />,
   }
 
-  // @ts-ignore
+  // @ts-expect-error
   const svg = svgMap[name] || null
 
   return (
