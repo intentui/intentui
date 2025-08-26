@@ -34,21 +34,37 @@ The sidebar is a versatile component designed to organize your site's content an
 ## CSS Variables
 The sidebar just need one base color to work, the accent will generate from the base and the primary color just taking from the primary color you have. Make sure you have set evertyhing up, or hover into [theme page](/themes) to see the bunch of colors you can get. Too lazy? just copy the default color below to your stylesheet.
 ```
-@theme {
+@theme inline {
   --color-sidebar: var(--sidebar);
   --color-sidebar-fg: var(--sidebar-fg);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-fg: var(--sidebar-primary-fg);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-fg: var(--sidebar-accent-fg);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@layer base {
-  :root {
-    --sidebar: oklch(0.967 0.001 286.375);
-    --sidebar-fg: oklch(0.141 0.005 285.823);
-  }
+:root {
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-fg: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.546 0.245 262.881);
+  --sidebar-primary-fg: oklch(1 0 0);
+  --sidebar-accent: oklch(0.92 0.004 286.32);
+  --sidebar-accent-fg: oklch(0.141 0.005 285.823);
+  --sidebar-border: oklch(0.901 0.006 286.286);
+  --sidebar-ring: oklch(0.546 0.245 262.881);
+}
 
-  .dark {
-    --sidebar: oklch(0.16 0.006 285.885);
-    --sidebar-fg: oklch(0.985 0 0);
-  }
+.dark {
+  --sidebar: oklch(0.180 0.006 285.885);
+  --sidebar-fg: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.546 0.245 262.881);
+  --sidebar-primary-fg: oklch(1 0 0);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-fg: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.274 0.006 286.033);
+  --sidebar-ring: oklch(0.546 0.245 262.881);
 }
 ```
 

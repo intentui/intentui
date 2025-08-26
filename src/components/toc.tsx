@@ -126,7 +126,6 @@ function useActiveItem(itemIds: string[]) {
         }
 
         if (bestCandidate) {
-          // @ts-ignore
           setActiveId(bestCandidate.target.id)
         }
       },

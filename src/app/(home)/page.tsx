@@ -17,7 +17,7 @@ export default function Page() {
         <Hero />
       </div>
       <Examples />
-      <div className="border-b pb-6 sm:pb-12 ">
+      <div className="border-b pb-6 sm:pb-12">
         <Blocks />
       </div>
 

@@ -266,7 +266,7 @@ const CommandMenuFooter = ({ className, ...props }: React.ComponentProps<"div">)
     <div
       className={twMerge(
         "col-span-full flex-none border-t px-2 py-1.5 text-muted-fg text-sm",
-        "*:[kbd]:inset-ring *:[kbd]:inset-ring-fg/10 *:[kbd]:mx-1 *:[kbd]:inline-grid *:[kbd]:h-4 *:[kbd]:min-w-4 *:[kbd]:place-content-center *:[kbd]:rounded-xs *:[kbd]:bg-secondary ",
+        "*:[kbd]:inset-ring *:[kbd]:inset-ring-fg/10 *:[kbd]:mx-1 *:[kbd]:inline-grid *:[kbd]:h-4 *:[kbd]:min-w-4 *:[kbd]:place-content-center *:[kbd]:rounded-xs *:[kbd]:bg-secondary",
         className,
       )}
       {...props}

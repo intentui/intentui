@@ -3,7 +3,7 @@ export function ThumbSidebar() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="145"
-      className="fill-zinc-200 dark:fill-zinc-900 "
+      className="fill-zinc-200 dark:fill-zinc-900"
       fill="none"
       viewBox="0 0 278 145"
     >

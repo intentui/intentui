@@ -8,19 +8,17 @@ import {
   Tooltip as TooltipPrimitive,
   TooltipTrigger as TooltipTriggerPrimitive,
 } from "react-aria-components"
-import type { VariantProps } from "tailwind-variants"
+import { twJoin } from "tailwind-merge"
 import { tv } from "tailwind-variants"
 
 const tooltipStyles = tv({
   base: [
-    "group rounded-lg border px-2.5 py-1.5 text-sm/6 will-change-transform dark:shadow-none *:[strong]:font-medium",
+    "group origin-(--trigger-anchor-point) rounded-lg border px-2.5 py-1.5 text-sm/6 will-change-transform dark:shadow-none *:[strong]:font-medium",
   ],
   variants: {
-    intent: {
-      default:
-        "bg-overlay text-overlay-fg *:data-[slot=overlay-arrow]:fill-overlay *:data-[slot=overlay-arrow]:stroke-border",
-      inverse:
-        "border-transparent bg-fg text-bg *:data-[slot=overlay-arrow]:fill-fg *:data-[slot=overlay-arrow]:stroke-transparent dark:*:data-[slot=overlay-arrow]:fill-white [&_.text-muted-fg]:text-bg/70 dark:[&_.text-muted-fg]:text-fg/70",
+    inverse: {
+      true: "border-transparent bg-fg text-bg [&_.text-muted-fg]:text-bg/70 dark:[&_.text-muted-fg]:text-fg/70",
+      false: "bg-overlay text-overlay-fg",
     },
     isEntering: {
       true: [
@@ -36,24 +34,23 @@ const tooltipStyles = tv({
     },
   },
   defaultVariants: {
-    intent: "default",
+    inverse: false,
   },
 })
 
 type TooltipProps = React.ComponentProps<typeof TooltipTriggerPrimitive>
 const Tooltip = (props: TooltipProps) => <TooltipTriggerPrimitive {...props} />
 
-interface TooltipContentProps
-  extends Omit<TooltipPrimitiveProps, "children">,
-    VariantProps<typeof tooltipStyles> {
+interface TooltipContentProps extends Omit<TooltipPrimitiveProps, "children"> {
   showArrow?: boolean
-  children: React.ReactNode
+  children?: React.ReactNode
+  inverse?: boolean
 }
 
 const TooltipContent = ({
   offset = 10,
   showArrow = true,
-  intent = "default",
+  inverse,
   children,
   ...props
 }: TooltipContentProps) => {
@@ -64,7 +61,7 @@ const TooltipContent = ({
       className={composeRenderProps(props.className, (className, renderProps) =>
         tooltipStyles({
           ...renderProps,
-          intent,
+          inverse,
           className,
         }),
       )}
@@ -75,7 +72,11 @@ const TooltipContent = ({
             width={12}
             height={12}
             viewBox="0 0 12 12"
-            className="group-placement-left:-rotate-90 block fill-overlay stroke-border group-placement-bottom:rotate-180 group-placement-right:rotate-90 forced-colors:fill-[Canvas] forced-colors:stroke-[ButtonBorder]"
+            // inverse
+            className={twJoin(
+              "group-placement-left:-rotate-90 block group-placement-bottom:rotate-180 group-placement-right:rotate-90 forced-colors:fill-[Canvas] forced-colors:stroke-[ButtonBorder]",
+              inverse ? "fill-fg stroke-transparent" : "fill-overlay stroke-border",
+            )}
           >
             <path d="M0 0 L6 6 L12 0" />
           </svg>
@@ -88,7 +89,6 @@ const TooltipContent = ({
 
 Tooltip.Trigger = Button
 Tooltip.Content = TooltipContent
-
 const TooltipTrigger = Tooltip.Trigger
 
 export type { TooltipProps, TooltipContentProps }

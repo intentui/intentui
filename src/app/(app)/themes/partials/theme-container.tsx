@@ -23,7 +23,7 @@ export function ThemeContainer() {
   const [selectedColors, setSelectedColors] = useState({
     primary: "blue",
     gray: "zinc",
-    accent: "blue",
+    accent: "zinc",
     radius: "0.5rem",
   })
 

@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteConfig.url}/blocks`,
       lastModified: new Date(),
     },
-    //   @ts-ignore
+    //   @ts-expect-error
     ...extractUrls(docs.children[0].children).map((i) => ({ ...i, lastModified: new Date() })),
   ]
 }

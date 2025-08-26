@@ -24,9 +24,9 @@ export default function TableSortingDemo() {
     async sort({ items, sortDescriptor }) {
       return {
         items: items.sort((a, b) => {
-          // @ts-ignore
+          // @ts-expect-error
           const first = a[sortDescriptor.column]
-          // @ts-ignore
+          // @ts-expect-error
           const second = b[sortDescriptor.column]
           let cmp = (Number.parseInt(first) || first) < (Number.parseInt(second) || second) ? -1 : 1
           if (sortDescriptor.direction === "descending") {

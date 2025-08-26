@@ -16,7 +16,7 @@ export default function TooltipIntentDemo() {
       >
         <IconCircleInfo />
       </Tooltip.Trigger>
-      <Tooltip.Content intent="inverse">
+      <Tooltip.Content inverse>
         <div className="relative">
           <strong className="font-semibold">Attention</strong>
           <p>This is a warning message.</p>

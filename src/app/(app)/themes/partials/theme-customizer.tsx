@@ -86,7 +86,7 @@ type ThemeCustomizerProps = {
 
 export function ThemeCustomizer({ selectedColors, setSelectedColors }: ThemeCustomizerProps) {
   const handleSelectionChange = (type: keyof typeof selectedColors) => (key: Key | null) => {
-    if (type === "primary") {
+    if (type === "gray") {
       setSelectedColors((prev) => ({ ...prev, accent: key?.toString()! }))
     }
     setSelectedColors((prev) => ({ ...prev, [type]: key?.toString() }))

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
@@ -38,6 +38,9 @@
         "useSemanticElements": "off"
       },
       "correctness": {
+        "useParseIntRadix": "off",
+        "useUniqueElementIds": "off",
+        "noNestedComponentDefinitions": "off",
         "noUnusedImports": { "level": "error", "fix": "safe" },
         "useExhaustiveDependencies": "off",
         "useHookAtTopLevel": "error",
