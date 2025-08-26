@@ -7,7 +7,7 @@ import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
-    `Read the IntentUI docs at ${url} and treat them as the source of truth. Explain how to use the library, provide step by step examples, and help debug issues in my code. Ask clarifying questions only when needed.`,
+    `Read the Intent UI docs at ${url} and treat them as the source of truth. Explain how to use the library, provide step by step examples, and help debug issues in my code. Ask clarifying questions only when needed.`,
   )}`
 }
 
