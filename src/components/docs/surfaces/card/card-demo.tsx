@@ -11,7 +11,8 @@ export default function CardDemo() {
         <Card.Description>Financial summary for June</Card.Description>
       </Card.Header>
       <Card.Content>
-        The monthly financial report shows a 15% increase in revenue compared to last month.
+        The monthly financial report shows a 15% increase in revenue compared to last
+        month.
       </Card.Content>
       <Card.Footer>
         <Button>View Details</Button>

@@ -7,7 +7,9 @@ import { twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Link } from "./link"
 
-type BreadcrumbsContextProps = { separator?: "chevron" | "slash" | boolean }
+type BreadcrumbsContextProps = {
+  separator?: "chevron" | "slash" | boolean
+}
 const BreadcrumbsProvider = createContext<BreadcrumbsContextProps>({
   separator: "chevron",
 })
@@ -18,7 +20,10 @@ const Breadcrumbs = <T extends object>({
 }: BreadcrumbsProps<T> & BreadcrumbsContextProps) => {
   return (
     <BreadcrumbsProvider value={{ separator: props.separator }}>
-      <BreadcrumbsPrimitive {...props} className={twMerge("flex items-center gap-2", className)} />
+      <BreadcrumbsPrimitive
+        {...props}
+        className={twMerge("flex items-center gap-2", className)}
+      />
     </BreadcrumbsProvider>
   )
 }

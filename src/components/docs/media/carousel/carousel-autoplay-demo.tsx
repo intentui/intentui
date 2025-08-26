@@ -25,8 +25,12 @@ export default function CarouselAutoplayDemo() {
             <div className="p-1">
               <Card>
                 <Card.Header>
-                  <Card.Title className="line-clamp-1 sm:text-lg">{item.title}</Card.Title>
-                  <Card.Description className="line-clamp-2">{item.description}</Card.Description>
+                  <Card.Title className="line-clamp-1 sm:text-lg">
+                    {item.title}
+                  </Card.Title>
+                  <Card.Description className="line-clamp-2">
+                    {item.description}
+                  </Card.Description>
                 </Card.Header>
               </Card>
             </div>
@@ -62,7 +66,8 @@ const items = [
   {
     id: 4,
     title: "Stainless Steel Water Bottle",
-    description: "Keep your drinks cold or hot with this durable, insulated water bottle.",
+    description:
+      "Keep your drinks cold or hot with this durable, insulated water bottle.",
   },
   {
     id: 5,

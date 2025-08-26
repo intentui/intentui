@@ -4,10 +4,26 @@ import { Collection } from "react-aria-components"
 import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 
 const tabs = [
-  { id: 1, title: "Overview", content: "This is the overview tab content." },
-  { id: 2, title: "Features", content: "Details about the features are listed here." },
-  { id: 3, title: "Pricing", content: "Find the pricing information on this tab." },
-  { id: 4, title: "Reviews", content: "Read user reviews and ratings here." },
+  {
+    id: 1,
+    title: "Overview",
+    content: "This is the overview tab content.",
+  },
+  {
+    id: 2,
+    title: "Features",
+    content: "Details about the features are listed here.",
+  },
+  {
+    id: 3,
+    title: "Pricing",
+    content: "Find the pricing information on this tab.",
+  },
+  {
+    id: 4,
+    title: "Reviews",
+    content: "Read user reviews and ratings here.",
+  },
 ]
 
 export default function TabsCollectionsDemo() {

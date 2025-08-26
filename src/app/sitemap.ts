@@ -30,7 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     //   @ts-expect-error
-    ...extractUrls(docs.children[0].children).map((i) => ({ ...i, lastModified: new Date() })),
+    ...extractUrls(docs.children[0].children).map((i) => ({
+      ...i,
+      lastModified: new Date(),
+    })),
   ]
 }
 

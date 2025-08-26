@@ -24,7 +24,9 @@ export default function DateRangePickerControlledDemo() {
             ? `${formatter.format(value.start.toDate(getLocalTimeZone()))} to ${formatter.format(value.end.toDate(getLocalTimeZone()))}`
             : "-- to --"}
         </p>
-        <p>{value ? `${value.start.toString()} to ${value.end.toString()}` : "-- to --"}</p>
+        <p>
+          {value ? `${value.start.toString()} to ${value.end.toString()}` : "-- to --"}
+        </p>
       </div>
       <DateRangePicker
         value={value}

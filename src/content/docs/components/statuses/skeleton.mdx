@@ -18,7 +18,22 @@ Skeleton is a placeholder component that displays a loading state while your con
 <SourceCode toShow='skeleton'/>
 
 ## Anatomy
-<Anatomy show='skeleton-anatomy'/>
+```
+import { Card } from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton"
+
+<Card className="p-4">
+  <div className="flex gap-2">
+    <Skeleton className="size-8" />
+    <div className="space-y-1">
+      <Skeleton className="h-4 w-56" />
+      <Skeleton className="h-4 w-16" />
+      <Skeleton className="h-4 w-24" />
+      <Skeleton className="h-4 w-32" />
+    </div>
+  </div>
+</Card>
+```
 
 ## Soft
 The `soft` prop makes the skeleton slightly darker. By default, it is set to `false`.

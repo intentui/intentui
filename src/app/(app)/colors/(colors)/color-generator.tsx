@@ -6,7 +6,11 @@ import React, { useState } from "react"
 import { ListBox, ListBoxItem, type Selection } from "react-aria-components"
 import { toast } from "sonner"
 import { twJoin } from "tailwind-merge"
-import { isOklch, SelectFormat, toOklchString } from "@/app/(app)/colors/(colors)/color-item"
+import {
+  isOklch,
+  SelectFormat,
+  toOklchString,
+} from "@/app/(app)/colors/(colors)/color-item"
 import { ColorField } from "@/components/ui/color-field"
 import { Heading } from "@/components/ui/heading"
 import { getColorName, getTextColor } from "@/lib/colors"
@@ -18,7 +22,9 @@ export function ColorGenerator() {
   const generateShades = (baseColor: string) => {
     const parsedBase = parse(baseColor.toString())
     if (!parsedBase) {
-      throw new Error("Invalid color format. Please use a valid color (e.g., HEX, RGB, or HSL).")
+      throw new Error(
+        "Invalid color format. Please use a valid color (e.g., HEX, RGB, or HSL).",
+      )
     }
 
     const lightToDarkScale = interpolate([
@@ -92,8 +98,8 @@ export function ColorGenerator() {
             <div className="mb-7">
               <Heading level={2}>Generate</Heading>
               <p className="text-muted-fg text-sm">
-                Generate your desired color by picking a shade from the color picker or by entering
-                a hex code.
+                Generate your desired color by picking a shade from the color picker or by
+                entering a hex code.
               </p>
             </div>
             <ColorField

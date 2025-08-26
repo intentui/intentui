@@ -21,7 +21,24 @@ Tabs divide content into sections, allowing users to easily switch between them.
 <SourceCode toShow='tabs' />
 
 ## Anatomy
-<Anatomy show='tabs-anatomy'/>
+```
+import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
+```
+
+```
+<Tabs aria-label="Recipe App">
+  <TabList>
+    <Tab id="i">Ingredients</Tab>
+    <Tab id="m">Meal Plans</Tab>
+  </TabList>
+  <TabPanel id="i">
+    Check the list of ingredients needed for your chosen recipes.
+  </TabPanel>
+  <TabPanel id="m">
+    Discover curated meal plans to simplify your weekly cooking.
+  </TabPanel>
+</Tabs>
+```
 
 ## With icons
 If you want to include icons in your tabs, it's simple to do. This tab setup handles icons smoothly, maintaining a clean design.

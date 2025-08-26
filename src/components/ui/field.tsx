@@ -46,7 +46,14 @@ interface DescriptionProps extends TextProps {
 }
 
 const Description = ({ ref, className, ...props }: DescriptionProps) => {
-  return <Text ref={ref} {...props} slot="description" className={description({ className })} />
+  return (
+    <Text
+      ref={ref}
+      {...props}
+      slot="description"
+      className={description({ className })}
+    />
+  )
 }
 
 interface FieldErrorProps extends FieldErrorPrimitiveProps {

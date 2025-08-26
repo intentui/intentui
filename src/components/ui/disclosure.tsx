@@ -21,7 +21,12 @@ import { composeTailwindRenderProps } from "@/lib/primitive"
 interface DisclosureGroupProps extends AccordionProps {
   ref?: React.RefObject<HTMLDivElement>
 }
-const DisclosureGroup = ({ children, ref, className, ...props }: DisclosureGroupProps) => {
+const DisclosureGroup = ({
+  children,
+  ref,
+  className,
+  ...props
+}: DisclosureGroupProps) => {
   return (
     <Accordion
       ref={ref}
@@ -77,7 +82,9 @@ const DisclosureTrigger = ({ className, ref, ...props }: DisclosureTriggerProps)
       >
         {(values) => (
           <>
-            {typeof props.children === "function" ? props.children(values) : props.children}
+            {typeof props.children === "function"
+              ? props.children(values)
+              : props.children}
             <IconChevronLeft
               data-slot="disclosure-chevron"
               className="internal-chevron ml-auto size-4 shrink-0 transition duration-300"
@@ -106,7 +113,11 @@ const DisclosurePanel = ({ className, ref, style, ...props }: DisclosurePanelPro
       ref={ref}
       data-slot="disclosure-panel"
       style={{
-        height: !isSafari ? (isExpanded ? panelRef?.current?.scrollHeight : 0) : undefined,
+        height: !isSafari
+          ? isExpanded
+            ? panelRef?.current?.scrollHeight
+            : 0
+          : undefined,
         ...style,
       }}
       className={composeTailwindRenderProps(className, [
@@ -126,5 +137,10 @@ const DisclosurePanel = ({ className, ref, style, ...props }: DisclosurePanelPro
   )
 }
 
-export type { DisclosureGroupProps, DisclosureProps, DisclosurePanelProps, DisclosureTriggerProps }
+export type {
+  DisclosureGroupProps,
+  DisclosureProps,
+  DisclosurePanelProps,
+  DisclosureTriggerProps,
+}
 export { DisclosureGroup, Disclosure, DisclosurePanel, DisclosureTrigger }

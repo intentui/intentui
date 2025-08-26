@@ -6,5 +6,7 @@ import { DateField } from "@/components/ui/date-field"
 
 export default function DateFieldReadonlyDemo() {
   const now = today(getLocalTimeZone())
-  return <DateField isReadOnly defaultValue={parseDate(now.toString())} label="Event date" />
+  return (
+    <DateField isReadOnly defaultValue={parseDate(now.toString())} label="Event date" />
+  )
 }

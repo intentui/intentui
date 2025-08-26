@@ -10,7 +10,12 @@ export default function DrawerFloatDemo() {
   const [side, setSide] = useState("bottom")
   return (
     <>
-      <RadioGroup orientation="horizontal" aria-label="Side" value={side} onChange={setSide}>
+      <RadioGroup
+        orientation="horizontal"
+        aria-label="Side"
+        value={side}
+        onChange={setSide}
+      >
         {["top", "bottom", "left", "right"].map((side) => (
           <Radio key={side} className="capitalize" value={side}>
             {side}

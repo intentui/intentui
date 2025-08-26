@@ -19,7 +19,13 @@ export const gs = menus[1] as SidebarItem
 export const dm = menus[2] as SidebarItem
 export const components = menus[3] as Component
 
-export const orderGs = ["Introduction", "Installation", "Client Side Routing", "Colors", "CLI"]
+export const orderGs = [
+  "Introduction",
+  "Installation",
+  "Client Side Routing",
+  "Colors",
+  "CLI",
+]
 export const sortedGsChildren =
   gs?.children
     ?.filter((item) => orderGs.includes(item.title))
@@ -96,7 +102,10 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
   const ref = useRef<HTMLAnchorElement>(null)
   useEffect(() => {
     if (isActive && ref.current) {
-      ref.current.scrollIntoView({ behavior: "instant", block: "center" })
+      ref.current.scrollIntoView({
+        behavior: "instant",
+        block: "center",
+      })
     }
   }, [isActive])
 
@@ -123,7 +132,10 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
 function AsideHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={twMerge("relative mb-2 block font-medium text-muted-fg text-xs/6", className)}
+      className={twMerge(
+        "relative mb-2 block font-medium text-muted-fg text-xs/6",
+        className,
+      )}
       {...props}
     />
   )

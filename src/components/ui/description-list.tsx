@@ -30,7 +30,10 @@ const DescriptionDetails = ({ className, ...props }: React.ComponentProps<"dd">)
   return (
     <dd
       {...props}
-      className={twMerge("pt-1 pb-3 text-fg sm:border-t sm:nth-2:border-none sm:py-3", className)}
+      className={twMerge(
+        "pt-1 pb-3 text-fg sm:border-t sm:nth-2:border-none sm:py-3",
+        className,
+      )}
     />
   )
 }

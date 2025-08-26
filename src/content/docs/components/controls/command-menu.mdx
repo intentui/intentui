@@ -21,7 +21,77 @@ This command menu is straightforward and always under your control, allowing you
 <SourceCode toShow='command-menu' />
 
 ## Anatomy
-<Anatomy show='command-menu-anatomy'/>
+```
+"use client"
+
+import {
+  IconBill,
+  IconCube,
+  IconGear,
+  IconHome,
+  IconNotes,
+  IconShield,
+} from "@intentui/icons"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import {
+  CommandMenu,
+  CommandMenuItem,
+  CommandMenuKeyboard,
+  CommandMenuLabel,
+  CommandMenuList,
+  CommandMenuSearch,
+  CommandMenuSection,
+} from "@/components/ui/command-menu"
+```
+
+```
+export function CommandPalette() {
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <>
+      <Button intent="outline" onPress={() => setIsOpen(true)}>
+        Open
+      </Button>
+      <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>
+        <CommandMenuSearch placeholder="Quick search..." />
+        <CommandMenuList>
+          <CommandMenuSection title="Pages">
+            <CommandMenuItem textValue="Home" href="#">
+              <IconHome />
+              <CommandMenuLabel>Home</CommandMenuLabel>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="Docs" href="#">
+              <IconNotes />
+              <CommandMenuLabel>Docs</CommandMenuLabel>
+              <CommandMenuKeyboard keys="⌘k" />
+            </CommandMenuItem>
+            <CommandMenuItem textValue="Components" href="#">
+              <IconCube />
+              <CommandMenuLabel>Components</CommandMenuLabel>
+            </CommandMenuItem>
+          </CommandMenuSection>
+          <CommandMenuSection title="Dashboard">
+            <CommandMenuItem textValue="billing" href="#">
+              <IconBill />
+              <CommandMenuLabel>Billing</CommandMenuLabel>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="settings" href="#">
+              <IconGear />
+              <CommandMenuLabel>Settings</CommandMenuLabel>
+              <CommandMenuKeyboard keys="⌘s" />
+            </CommandMenuItem>
+            <CommandMenuItem textValue="security" href="#">
+              <IconShield />
+              <CommandMenuLabel>Security</CommandMenuLabel>
+            </CommandMenuItem>
+          </CommandMenuSection>
+        </CommandMenuList>
+      </CommandMenu>
+    </>
+  )
+}
+```
 
 ## Separator
 Creating a separator is super simple—just use `CommandMenu.Separator`. However, make sure to place it within a `CommandMenu.Section` for proper structure.

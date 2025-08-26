@@ -1,6 +1,10 @@
 "use client"
 
-import type { DialogProps, DialogTriggerProps, ModalOverlayProps } from "react-aria-components"
+import type {
+  DialogProps,
+  DialogTriggerProps,
+  ModalOverlayProps,
+} from "react-aria-components"
 import {
   composeRenderProps,
   DialogTrigger as DialogTriggerPrimitive,
@@ -118,7 +122,10 @@ const SheetContent = ({
             <>
               {typeof children === "function" ? children(values) : children}
               {closeButton && (
-                <DialogCloseIcon className="top-2.5 right-2.5" isDismissable={isDismissable} />
+                <DialogCloseIcon
+                  className="top-2.5 right-2.5"
+                  isDismissable={isDismissable}
+                />
               )}
             </>
           )}

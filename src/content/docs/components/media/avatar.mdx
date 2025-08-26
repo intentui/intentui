@@ -16,7 +16,15 @@ It ain't just a pic with curved corners, for real. It's the whole vibe, whisperi
 <SourceCode toShow='avatar'/>
 
 ## Anatomy
-<Anatomy show='avatar-anatomy'/>
+```
+import { Avatar } from "@/components/ui/avatar"
+
+<Avatar
+  src="https://intentui.com/images/avatar/slash.jpg"
+  alt="Slash"
+  initials="Sl"
+/>
+```
 
 ## Fallback
 If the image fails to load, the avatar will fallback to the initials.

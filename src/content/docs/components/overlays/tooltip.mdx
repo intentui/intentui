@@ -19,7 +19,23 @@ Tooltips are small overlays that display information about an element when the u
 <SourceCode toShow='tooltip'/>
 
 ## Anatomy
-<Anatomy show='tooltip-anatomy'/>
+```
+import { IconBrandX } from "@intentui/icons"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+```
+
+```
+<Tooltip>
+  <TooltipTrigger aria-label="Follow My Twitter">
+    <IconBrandX />
+  </TooltipTrigger>
+  <TooltipContent>Follow me on X @irsyadadl</TooltipContent>
+</Tooltip>
+```
 
 
 ## Placement

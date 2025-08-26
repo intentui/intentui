@@ -12,7 +12,11 @@ import { tv } from "tailwind-variants"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Checkbox } from "./checkbox"
 
-const GridList = <T extends object>({ children, className, ...props }: GridListProps<T>) => (
+const GridList = <T extends object>({
+  children,
+  className,
+  ...props
+}: GridListProps<T>) => (
   <GridListPrimitive
     className={composeTailwindRenderProps(
       className,
@@ -44,7 +48,8 @@ const itemStyles = tv({
 })
 
 const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
-  const textValue = props.textValue || (typeof children === "string" ? children : undefined)
+  const textValue =
+    props.textValue || (typeof children === "string" ? children : undefined)
   return (
     <GridListItemPrimitive
       textValue={textValue}
@@ -68,9 +73,10 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
             aria-hidden
             className="absolute inset-y-0 left-0 hidden h-full w-0.5 bg-primary group-selected:block"
           />
-          {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <Checkbox className="-mr-2" slot="selection" />
-          )}
+          {values.selectionMode === "multiple" &&
+            values.selectionBehavior === "toggle" && (
+              <Checkbox className="-mr-2" slot="selection" />
+            )}
           {typeof children === "function" ? children(values) : children}
         </>
       )}

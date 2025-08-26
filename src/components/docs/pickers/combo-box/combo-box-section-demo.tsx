@@ -9,7 +9,9 @@ export default function ComboBoxSectionDemo() {
       <ComboBox.List defaultSelectedKeys={[1]} items={movies}>
         {(movie) => (
           <ComboBox.Section title={movie.title} items={movie.genres}>
-            {(genre) => <ComboBox.Option textValue={genre.name}>{genre.name}</ComboBox.Option>}
+            {(genre) => (
+              <ComboBox.Option textValue={genre.name}>{genre.name}</ComboBox.Option>
+            )}
           </ComboBox.Section>
         )}
       </ComboBox.List>

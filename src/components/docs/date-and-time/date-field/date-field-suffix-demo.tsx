@@ -6,7 +6,12 @@ export default function DateFieldSuffixDemo() {
   return (
     <>
       <DateField prefix={<IconCalendar2 />} isRequired label="Event date" />
-      <DateField suffix={<IconCalendar2 />} isRequired label="Event date" className="mt-4" />
+      <DateField
+        suffix={<IconCalendar2 />}
+        isRequired
+        label="Event date"
+        className="mt-4"
+      />
     </>
   )
 }

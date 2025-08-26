@@ -14,7 +14,17 @@ A description list is typically used to display pairs of terms and details, like
 <SourceCode toShow='description-list' />
 
 ## Anatomy
-<Anatomy show='description-list-anatomy'/>
+```
+import { DescriptionDetails, DescriptionList, DescriptionTerm } from "@/components/ui/description-list"
+```
+```
+<DescriptionList>
+  <DescriptionTerm>Invoice Number</DescriptionTerm>
+  <DescriptionDetails>INV-12345</DescriptionDetails>
+  <DescriptionTerm>Invoice Date</DescriptionTerm>
+  <DescriptionDetails>September 21, 2024</DescriptionDetails>
+</DescriptionList>
+```
 
 ## Manual installation
 <SourceCode toShow='description-list'/>

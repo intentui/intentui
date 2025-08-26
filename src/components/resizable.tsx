@@ -4,7 +4,10 @@ import { IconDotGrid2X3 } from "@intentui/icons"
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels"
 import { twMerge } from "tailwind-merge"
 
-const ResizablePanelGroup = ({ className, ...props }: React.ComponentProps<typeof PanelGroup>) => (
+const ResizablePanelGroup = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof PanelGroup>) => (
   <PanelGroup
     className={twMerge(
       "flex h-full w-full data-[panel-group-direction=vertical]:flex-col",

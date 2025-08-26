@@ -1,30 +1,37 @@
 "use client"
 
-import { Choicebox } from "@/components/ui/choicebox"
+import {
+  Choicebox,
+  ChoiceboxDescription,
+  ChoiceboxItem,
+  ChoiceboxLabel,
+} from "@/components/ui/choicebox"
 
 export default function ChoiceboxDemo() {
   return (
     <Choicebox aria-label="Select items" selectionMode="multiple">
-      <Choicebox.Item
-        textValue="premium"
-        label="Premium"
-        description="Advanced options for growing needs."
-      />
-      <Choicebox.Item
-        textValue="deluxe"
-        label="Deluxe"
-        description="Top-tier features for maximum performance."
-      />
-      <Choicebox.Item
-        textValue="ultimate"
-        label="Ultimate"
-        description="All-inclusive plan with every feature available."
-      />
-      <Choicebox.Item
-        textValue="enterprise"
-        label="Enterprise"
-        description="Custom solutions for large-scale operations."
-      />
+      <ChoiceboxItem textValue="premium">
+        <ChoiceboxLabel>Premium</ChoiceboxLabel>
+        <ChoiceboxDescription>Advanced options for growing needs.</ChoiceboxDescription>
+      </ChoiceboxItem>
+      <ChoiceboxItem textValue="deluxe">
+        <ChoiceboxLabel>Deluxe</ChoiceboxLabel>
+        <ChoiceboxDescription>
+          Top-tier features for maximum performance.
+        </ChoiceboxDescription>
+      </ChoiceboxItem>
+      <ChoiceboxItem textValue="ultimate">
+        <ChoiceboxLabel>Ultimate</ChoiceboxLabel>
+        <ChoiceboxDescription>
+          All-inclusive plan with every feature available.
+        </ChoiceboxDescription>
+      </ChoiceboxItem>
+      <ChoiceboxItem textValue="enterprise">
+        <ChoiceboxLabel>Enterprise</ChoiceboxLabel>
+        <ChoiceboxDescription>
+          Customized solutions for large organizations.
+        </ChoiceboxDescription>
+      </ChoiceboxItem>
     </Choicebox>
   )
 }

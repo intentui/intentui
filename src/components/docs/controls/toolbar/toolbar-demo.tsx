@@ -28,53 +28,60 @@ import {
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Menu } from "@/components/ui/menu"
-import { Toolbar } from "@/components/ui/toolbar"
+import {
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem,
+  ToolbarSeparator,
+} from "@/components/ui/toolbar"
 
 export default function ToolbarDemo() {
   return (
     <Toolbar aria-label="Toolbars">
-      <Toolbar.Group aria-label="Text Formatting Options">
-        <Toolbar.Item defaultSelected aria-label="Bold" size="sq-sm">
+      <ToolbarGroup aria-label="Text Formatting Options">
+        <ToolbarItem defaultSelected aria-label="Bold" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconBoldFill /> : <IconBold />}</>}
-        </Toolbar.Item>
-        <Toolbar.Item aria-label="Italic" size="sq-sm">
+        </ToolbarItem>
+        <ToolbarItem aria-label="Italic" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconItalicFill /> : <IconItalic />}</>}
-        </Toolbar.Item>
-        <Toolbar.Item aria-label="Underline" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconUnderlineFill /> : <IconUnderline />}</>}
-        </Toolbar.Item>
-        <Toolbar.Item aria-label="Strikethrough" size="sq-sm">
+        </ToolbarItem>
+        <ToolbarItem aria-label="Underline" size="sq-sm">
+          {({ isSelected }) => (
+            <>{isSelected ? <IconUnderlineFill /> : <IconUnderline />}</>
+          )}
+        </ToolbarItem>
+        <ToolbarItem aria-label="Strikethrough" size="sq-sm">
           {({ isSelected }) => (
             <>{isSelected ? <IconStrikeThroughFill /> : <IconStrikeThrough />}</>
           )}
-        </Toolbar.Item>
-      </Toolbar.Group>
-      <Toolbar.Separator />
-      <Toolbar.Group aria-label="Alignment">
-        <Toolbar.Item aria-label="Align Left" size="sq-sm">
+        </ToolbarItem>
+      </ToolbarGroup>
+      <ToolbarSeparator />
+      <ToolbarGroup aria-label="Alignment">
+        <ToolbarItem aria-label="Align Left" size="sq-sm">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentLeftFill /> : <IconAlignmentLeft />}</>
           )}
-        </Toolbar.Item>
-        <Toolbar.Item size="sq-sm" aria-label="Align Center">
+        </ToolbarItem>
+        <ToolbarItem size="sq-sm" aria-label="Align Center">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentCenterFill /> : <IconAlignmentCenter />}</>
           )}
-        </Toolbar.Item>
-        <Toolbar.Item size="sq-sm" aria-label="Align Right">
+        </ToolbarItem>
+        <ToolbarItem size="sq-sm" aria-label="Align Right">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentRightFill /> : <IconAlignmentRight />}</>
           )}
-        </Toolbar.Item>
-        <Toolbar.Item size="sq-sm" aria-label="Align Justify">
+        </ToolbarItem>
+        <ToolbarItem size="sq-sm" aria-label="Align Justify">
           {({ isSelected }) => (
             <>{isSelected ? <IconAlignmentJustifyFill /> : <IconAlignmentJustify />}</>
           )}
-        </Toolbar.Item>
-      </Toolbar.Group>
-      <Toolbar.Separator />
+        </ToolbarItem>
+      </ToolbarGroup>
+      <ToolbarSeparator />
       <Checkbox>Spell Check</Checkbox>
-      <Toolbar.Group className="ml-auto">
+      <ToolbarGroup className="ml-auto">
         <Menu>
           <Button aria-label="Other options" size="sm" intent="outline">
             Options...
@@ -103,7 +110,7 @@ export default function ToolbarDemo() {
             </Menu.Item>
           </Menu.Content>
         </Menu>
-      </Toolbar.Group>
+      </ToolbarGroup>
     </Toolbar>
   )
 }

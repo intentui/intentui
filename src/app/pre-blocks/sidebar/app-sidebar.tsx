@@ -51,7 +51,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <Link href="/docs/components/layouts/sidebar" className="flex items-center gap-x-2">
+        <Link
+          href="/docs/components/layouts/sidebar"
+          className="flex items-center gap-x-2"
+        >
           <IconBrandIntentui className="size-8" />
           <SidebarLabel className="font-medium">
             Intent <span className="text-muted-fg">UI</span>
@@ -78,7 +81,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                       <Menu.Trigger data-slot="menu-action-trigger" aria-label="Manage">
                         <IconDotsHorizontal />
                       </Menu.Trigger>
-                      <Menu.Content popover={{ offset: 0, placement: "right top" }}>
+                      <Menu.Content
+                        popover={{
+                          offset: 0,
+                          placement: "right top",
+                        }}
+                      >
                         <Menu.Item href="#new-order">
                           <IconPlus />
                           Create New Order
@@ -117,7 +125,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                       <Menu.Trigger data-slot="menu-action-trigger" aria-label="Manage">
                         <IconDotsHorizontal />
                       </Menu.Trigger>
-                      <Menu.Content popover={{ offset: 0, placement: "right top" }}>
+                      <Menu.Content
+                        popover={{
+                          offset: 0,
+                          placement: "right top",
+                        }}
+                      >
                         <Menu.Item href="#new-product">
                           <IconPlus />
                           Add New Product
@@ -199,7 +212,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 
       <SidebarFooter className="flex flex-row justify-between gap-4 group-data-[state=collapsed]:flex-col">
         <Menu>
-          <Menu.Trigger className="flex w-full items-center justify-between" aria-label="Profile">
+          <Menu.Trigger
+            className="flex w-full items-center justify-between"
+            aria-label="Profile"
+          >
             <div className="flex items-center gap-x-2">
               <Avatar
                 className="size-8 *:size-8 group-data-[state=collapsed]:size-6 group-data-[state=collapsed]:*:size-6"

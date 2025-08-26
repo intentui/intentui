@@ -22,7 +22,35 @@ A switch is a toggle that flips between on and off, similar to a light switch.
 <SourceCode toShow='switch'/>
 
 ## Anatomy
-<Anatomy show='switch-anatomy'/>
+```
+import { Description, Label } from "@/components/ui/field"
+import { Switch } from "@/components/ui/switch"
+```
+
+```
+<>
+  <Switch value="profileVisible">
+    <Label>Public profile</Label>
+    <Description>Allow others to see your profile.</Description>
+  </Switch>
+  <Switch value="searchEngineIndexing">
+    <Label>Search engine indexing</Label>
+    <Description>
+      Allow search engines to index your profile.
+    </Description>
+  </Switch>
+  <Switch defaultSelected value="twoFactor">
+    <Label>Two-factor authentication</Label>
+    <Description>
+      Add an extra layer of security to your account.
+    </Description>
+  </Switch>
+  <Switch value="activityStatus">
+    <Label>Show activity status</Label>
+    <Description>Let others see when you're online.</Description>
+  </Switch>
+</>
+```
 
 
 ## Description

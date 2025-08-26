@@ -1,6 +1,11 @@
 "use client"
 
-import { IconCommandRegular, IconDashboard, IconLogout, IconSettings } from "@intentui/icons"
+import {
+  IconCommandRegular,
+  IconDashboard,
+  IconLogout,
+  IconSettings,
+} from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { Menu } from "@/components/ui/menu"
@@ -25,7 +30,11 @@ function UserMenu() {
   return (
     <Menu>
       <Menu.Trigger className="ml-auto md:hidden" aria-label="Open Menu">
-        <Avatar isSquare alt="kurt cobain" src="https://intentui.com/images/avatar/cobain.jpg" />
+        <Avatar
+          isSquare
+          alt="kurt cobain"
+          src="https://intentui.com/images/avatar/cobain.jpg"
+        />
       </Menu.Trigger>
       <Menu.Content popover={{ placement: "bottom end" }} className="min-w-64">
         <Menu.Section>

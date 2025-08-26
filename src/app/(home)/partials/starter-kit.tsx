@@ -12,19 +12,22 @@ export const starterKits = [
     icon: IconBrandNextjs,
     name: "Next.js",
     url: "https://github.com/intentuilabs/next.js",
-    description: "A full-featured starter with routing, layouts, and authentication built in.",
+    description:
+      "A full-featured starter with routing, layouts, and authentication built in.",
   },
   {
     icon: IconBrandLaravel,
     name: "Laravel",
     url: "https://github.com/intentuilabs/inertia.ts",
-    description: "Server-driven starter with routing, auth, and front-end integration ready to go.",
+    description:
+      "Server-driven starter with routing, auth, and front-end integration ready to go.",
   },
   {
     icon: IconBrandTanstack,
     name: "Tanstack Router",
     url: "https://github.com/intentuilabs/tanstack-router",
-    description: "Opinionated setup with routing, layouts, and auth, ready for modern apps.",
+    description:
+      "Opinionated setup with routing, layouts, and auth, ready for modern apps.",
   },
   {
     icon: IconBrandVite,
@@ -52,7 +55,12 @@ export function StarterKit() {
         aria-label="Starter Kit"
       >
         {(item) => (
-          <Choicebox.Item target="_blank" href={item.url} textValue={item.name} id={item.name}>
+          <Choicebox.Item
+            target="_blank"
+            href={item.url}
+            textValue={item.name}
+            id={item.name}
+          >
             <item.icon />
             <Choicebox.Label>{item.name}</Choicebox.Label>
             <Choicebox.Description>{item.description}</Choicebox.Description>

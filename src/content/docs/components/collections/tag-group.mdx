@@ -22,7 +22,19 @@ A tag group is a focusable collection of labels, categories, keywords, filters, 
 <SourceCode toShow='tag-group'/>
 
 ## Anatomy
-<Anatomy show='tag-group-anatomy'/>
+```
+import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
+```
+
+```
+<TagGroup label="Serverless" selectionMode="multiple">
+  <TagList>
+    <Tag>AWS Lambda</Tag>
+    <Tag>Google Cloud Functions</Tag>
+    <Tag>Azure Functions</Tag>
+  </TagList>
+</TagGroup>
+```
 
 ## With remove button
 Tags within the group can include a removal button.

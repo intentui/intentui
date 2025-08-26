@@ -19,7 +19,17 @@ This is the basic loader component, used to indicate that a process or action is
 <SourceCode toShow='loader'/>
 
 ## Anatomy
-<Anatomy show='loader-anatomy'/>
+```
+import { Loader } from "@/components/ui/loader"
+```
+
+```
+<>
+  <Loader variant="ring" />
+  <Loader variant="spin" />
+  <Loader variant="bars" />
+</>
+```
 
 ## Variants
 There are four different variants of the loader. The default variant is the `ring-3`.

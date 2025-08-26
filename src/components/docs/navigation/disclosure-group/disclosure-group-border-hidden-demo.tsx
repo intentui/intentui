@@ -56,7 +56,8 @@ const items = [
   {
     icon: <IconSupport />,
     title: "Support Center",
-    description: "Find help with common issues, or contact support for further assistance.",
+    description:
+      "Find help with common issues, or contact support for further assistance.",
   },
   {
     icon: <IconDownload />,

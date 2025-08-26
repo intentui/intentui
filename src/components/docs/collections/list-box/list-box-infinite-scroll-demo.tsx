@@ -29,7 +29,11 @@ export default function ListBoxInfiniteScrollDemo() {
         onLoadMore={list.loadMore}
         isLoading={list.loadingState === "loadingMore"}
       >
-        <ProgressCircle className="mx-auto mb-4" isIndeterminate aria-label="Loading more..." />
+        <ProgressCircle
+          className="mx-auto mb-4"
+          isIndeterminate
+          aria-label="Loading more..."
+        />
       </ListBoxLoadMoreItem>
     </ListBox>
   )

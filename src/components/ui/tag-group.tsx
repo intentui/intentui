@@ -61,7 +61,8 @@ const Tag = ({ className, children, ...props }: TagProps) => {
             "inset-ring inset-ring-border inline-flex cursor-default items-center gap-x-1.5 rounded-full px-2 py-0.5 font-medium text-sm/5 outline-hidden sm:text-xs/5 forced-colors:outline",
             isSelected &&
               "inset-ring-primary bg-primary text-primary-fg focus-visible:bg-primary/90",
-            isFocusVisible && "inset-ring inset-ring-current/10 bg-secondary text-secondary-fg",
+            isFocusVisible &&
+              "inset-ring inset-ring-current/10 bg-secondary text-secondary-fg",
             isDisabled && "opacity-50",
             allowsRemoving && "pr-2",
             className,

@@ -19,7 +19,11 @@ Progress bars show how much an operation is done, either exactly or roughly, ove
 <SourceCode toShow='progress-circle'/>
 
 ## Anatomy
-<Anatomy show='progress-circle-anatomy'/>
+```
+import { ProgressCircle } from "@/components/ui/progress-circle"
+
+<ProgressCircle aria-label="Loading…" value={25} />
+```
 
 ## Indeterminate
 You can also make the progress circle indeterminate by setting the `isIndeterminate` prop.

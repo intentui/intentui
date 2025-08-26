@@ -16,7 +16,10 @@ export default function ListBoxRearrangeDemo() {
   })
 
   const { dragAndDropHooks } = useDragAndDrop({
-    getItems: (keys) => [...keys].map((key) => ({ "text/plain": list.getItem(key)?.name ?? "" })),
+    getItems: (keys) =>
+      [...keys].map((key) => ({
+        "text/plain": list.getItem(key)?.name ?? "",
+      })),
     onReorder(e) {
       if (e.target.dropPosition === "before") {
         list.moveBefore(e.target.key, e.keys)

@@ -7,7 +7,9 @@ import { Card } from "@/components/ui/card"
 export default function BarChartCustomFormatDemo() {
   const data = useMemo(() => {
     return Array.from({ length: 12 }, (_, i) => {
-      const month = new Date(0, i).toLocaleString("en-US", { month: "short" })
+      const month = new Date(0, i).toLocaleString("en-US", {
+        month: "short",
+      })
       const revenue = Math.floor(4000 + Math.random() * 1500)
       const expenses = Math.floor(2000 + Math.random() * 1000)
       return { month, revenue, expenses, net: revenue - expenses }
@@ -18,7 +20,9 @@ export default function BarChartCustomFormatDemo() {
     <Card>
       <Card.Header>
         <Card.Title>Net revenue by month</Card.Title>
-        <Card.Description>Revenue minus expenses to show monthly profitability.</Card.Description>
+        <Card.Description>
+          Revenue minus expenses to show monthly profitability.
+        </Card.Description>
       </Card.Header>
       <Card.Content>
         <BarChart

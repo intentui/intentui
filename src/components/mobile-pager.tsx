@@ -17,10 +17,13 @@ export const MobilePager = ({
   const neighbours = findNeighbour(tree, url)
 
   return (
-    <div className={twMerge("not-prose flex items-center gap-x-2 sm:hidden", className)}>
+    <div className={twMerge("not-prose flex items-center gap-x-1.5", className)}>
       {neighbours.previous && (
         <Link
-          className={buttonStyles({ size: "sq-xs", intent: "secondary" })}
+          className={buttonStyles({
+            size: "sq-sm",
+            intent: "secondary",
+          })}
           href={neighbours.previous.url}
         >
           <span className="sr-only">{neighbours.previous.name}</span>
@@ -30,7 +33,10 @@ export const MobilePager = ({
 
       {neighbours.next && (
         <Link
-          className={buttonStyles({ size: "sq-xs", intent: "secondary" })}
+          className={buttonStyles({
+            size: "sq-sm",
+            intent: "secondary",
+          })}
           href={neighbours.next.url}
         >
           <span className="sr-only">{neighbours.next.name}</span>

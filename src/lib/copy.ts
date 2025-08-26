@@ -5,7 +5,9 @@ export function copyToClipboard(text: string): Promise<void> {
   return navigator.clipboard.writeText(text)
 }
 
-export function useCopyButton(onCopy: () => void): [checked: boolean, onClick: MouseEventHandler] {
+export function useCopyButton(
+  onCopy: () => void,
+): [checked: boolean, onClick: MouseEventHandler] {
   const [checked, setChecked] = useState(false)
   const timeoutRef = useRef<number | null>(null)
   const callbackRef = useRef(onCopy)

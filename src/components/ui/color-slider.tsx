@@ -16,7 +16,12 @@ interface ColorSliderProps extends ColorSliderPrimitiveProps {
   showOutput?: boolean
 }
 
-const ColorSlider = ({ showOutput = true, label, className, ...props }: ColorSliderProps) => {
+const ColorSlider = ({
+  showOutput = true,
+  label,
+  className,
+  ...props
+}: ColorSliderProps) => {
   return (
     <ColorSliderPrimitive
       {...props}

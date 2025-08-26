@@ -1,5 +1,17 @@
-import { createContext, type ReactElement, use, useCallback, useId, useMemo, useState } from "react"
-import { ToggleButton, ToggleButtonGroup, type ToggleButtonGroupProps } from "react-aria-components"
+import {
+  createContext,
+  type ReactElement,
+  use,
+  useCallback,
+  useId,
+  useMemo,
+  useState,
+} from "react"
+import {
+  ToggleButton,
+  ToggleButtonGroup,
+  type ToggleButtonGroupProps,
+} from "react-aria-components"
 import type {
   CartesianGridProps as CartesianGridPrimitiveProps,
   CartesianGridProps,
@@ -116,7 +128,9 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
   }
 
   const payloadPayload =
-    "payload" in payload && typeof payload.payload === "object" && payload.payload !== null
+    "payload" in payload &&
+    typeof payload.payload === "object" &&
+    payload.payload !== null
       ? payload.payload
       : undefined
 
@@ -132,7 +146,9 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
     configLabelKey = payloadPayload[key as keyof typeof payloadPayload] as string
   }
 
-  return configLabelKey in config ? config[configLabelKey] : config[key as keyof typeof config]
+  return configLabelKey in config
+    ? config[configLabelKey]
+    : config[key as keyof typeof config]
 }
 
 // #endregion
@@ -193,7 +209,10 @@ const Chart = ({
     children: ReactElement | ((props: ChartContextProps) => ReactElement)
   }) => {
   const uniqueId = useId()
-  const chartId = useMemo(() => `chart-${id || uniqueId.replace(/:/g, "")}`, [id, uniqueId])
+  const chartId = useMemo(
+    () => `chart-${id || uniqueId.replace(/:/g, "")}`,
+    [id, uniqueId],
+  )
 
   const [selectedLegend, setSelectedLegend] = useState<string | null>(null)
 
@@ -240,7 +259,9 @@ const Chart = ({
 
 const THEMES = { light: "", dark: ".dark" } as const
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
-  const colorConfig = Object.entries(config).filter(([_, config]) => config.theme || config.color)
+  const colorConfig = Object.entries(config).filter(
+    ([_, config]) => config.theme || config.color,
+  )
 
   if (!colorConfig.length) {
     return null
@@ -255,7 +276,8 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
 ${prefix} [data-chart=${id}] {
 ${colorConfig
   .map(([key, itemConfig]) => {
-    const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color
+    const color =
+      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color
     return color ? `  --color-${key}: ${color};` : null
   })
   .join("\n")}
@@ -268,9 +290,10 @@ ${colorConfig
   )
 }
 
-type ChartTooltipProps<TValue extends ValueType, TName extends NameType> = React.ComponentProps<
-  typeof TooltipPrimitive<TValue, TName>
->
+type ChartTooltipProps<
+  TValue extends ValueType,
+  TName extends NameType,
+> = React.ComponentProps<typeof TooltipPrimitive<TValue, TName>>
 
 const ChartTooltip = <TValue extends ValueType, TName extends NameType>(
   props: ChartTooltipProps<TValue, TName>,
@@ -449,7 +472,9 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
       {!hideLabel && (
         <>
           {!nestLabel ? <span className="font-medium">{tooltipLabel}</span> : null}
-          {labelSeparator && <span aria-hidden className="mt-2 mb-3 block h-px w-full bg-bg/10" />}
+          {labelSeparator && (
+            <span aria-hidden className="mt-2 mb-3 block h-px w-full bg-bg/10" />
+          )}
         </>
       )}
       <div className="grid gap-3">
@@ -464,7 +489,8 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
               className={twMerge(
                 "flex w-full flex-wrap items-stretch gap-2 *:data-[slot=icon]:text-muted-fg",
                 indicator === "dot" && "items-center *:data-[slot=icon]:size-2.5",
-                indicator === "line" && "*:data-[slot=icon]:h-full *:data-[slot=icon]:w-2.5",
+                indicator === "line" &&
+                  "*:data-[slot=icon]:h-full *:data-[slot=icon]:w-2.5",
               )}
             >
               {formatter && item?.value !== undefined && item.name ? (
@@ -501,7 +527,9 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
                   >
                     <div className="grid gap-1.5">
                       {nestLabel ? tooltipLabel : null}
-                      <span className="text-muted-fg">{itemConfig?.label || item.name}</span>
+                      <span className="text-muted-fg">
+                        {itemConfig?.label || item.name}
+                      </span>
                     </div>
 
                     {item.value && (
@@ -551,7 +579,11 @@ const ChartLegendContent = ({
         twJoin(
           "flex flex-wrap items-center gap-x-1",
           verticalAlign === "top" ? "pb-3" : "pt-3",
-          align === "right" ? "justify-end" : align === "left" ? "justify-start" : "justify-center",
+          align === "right"
+            ? "justify-end"
+            : align === "left"
+              ? "justify-start"
+              : "justify-center",
         ),
       )}
       selectedKeys={selectedLegend ? [selectedLegend] : undefined}

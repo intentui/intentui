@@ -23,7 +23,43 @@ The Choicebox is an enhanced version of a GridList, offering users a larger tap 
 <SourceCode toShow='choicebox' />
 
 ## Anatomy
-<Anatomy show='choicebox-anatomy'/>
+```
+import {
+  Choicebox,
+  ChoiceboxDescription,
+  ChoiceboxItem,
+  ChoiceboxLabel,
+} from "@/components/ui/choicebox"
+```
+
+```
+<Choicebox aria-label="Select items" selectionMode="multiple">
+  <ChoiceboxItem textValue="premium">
+    <ChoiceboxLabel>Premium</ChoiceboxLabel>
+    <ChoiceboxDescription>
+      Advanced options for growing needs.
+    </ChoiceboxDescription>
+  </ChoiceboxItem>
+  <ChoiceboxItem textValue="deluxe">
+    <ChoiceboxLabel>Deluxe</ChoiceboxLabel>
+    <ChoiceboxDescription>
+      Top-tier features for maximum performance.
+    </ChoiceboxDescription>
+  </ChoiceboxItem>
+  <ChoiceboxItem textValue="ultimate">
+    <ChoiceboxLabel>Ultimate</ChoiceboxLabel>
+    <ChoiceboxDescription>
+      All-inclusive plan with every feature available.
+    </ChoiceboxDescription>
+  </ChoiceboxItem>
+  <ChoiceboxItem textValue="enterprise">
+    <ChoiceboxLabel>Enterprise</ChoiceboxLabel>
+    <ChoiceboxDescription>
+      Customized solutions for large organizations.
+    </ChoiceboxDescription>
+  </ChoiceboxItem>
+</Choicebox>
+```
 
 ## Multiple selection
 By default, it uses single selection mode. To allow multiple selections, set the selectionMode prop to 'multiple'. This enables users to select more than one item at a time.

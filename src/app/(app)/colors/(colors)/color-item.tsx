@@ -10,7 +10,8 @@ import { Menu } from "@/components/ui/menu"
 import colors from "@/json/colors.json"
 import { getTextColor } from "@/lib/colors"
 
-export const isOklch = (color: string | undefined): boolean => color?.startsWith("oklch(") ?? false
+export const isOklch = (color: string | undefined): boolean =>
+  color?.startsWith("oklch(") ?? false
 
 export const toOklchString = (color: string): string => {
   const { l, c, h } = oklch(parse(color)) || {}

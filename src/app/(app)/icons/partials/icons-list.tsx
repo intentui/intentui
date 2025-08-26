@@ -35,7 +35,9 @@ export function IconsList({ searchParams }: SearchParamsProps) {
       const matchesSearch = nameLower.includes(queryLower) || matchingIcons.has(name)
       const isSolid = nameLower.endsWith("fill")
       const matchesFilter =
-        !filterType || (filterType === "solid" && isSolid) || (filterType === "regular" && !isSolid)
+        !filterType ||
+        (filterType === "solid" && isSolid) ||
+        (filterType === "regular" && !isSolid)
       return matchesSearch && matchesFilter
     })
   }
@@ -45,7 +47,12 @@ export function IconsList({ searchParams }: SearchParamsProps) {
     <>
       <Controller searchParams={searchParams} />
       <div className="sm:-mx-2">
-        <ListBox selectionMode="single" aria-label="List Icon" layout="grid" className={box()}>
+        <ListBox
+          selectionMode="single"
+          aria-label="List Icon"
+          layout="grid"
+          className={box()}
+        >
           {iconsList.map(([name, Icon]) => (
             <IconListItem key={name} name={name} Icon={Icon} />
           ))}
@@ -69,7 +76,8 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
     copyToClipboard(textToCopy).then(() => {
       toast(
         <>
-          <code className="mr-1 text-xs tracking-tight">{textToCopy}</code> copied to clipboard.
+          <code className="mr-1 text-xs tracking-tight">{textToCopy}</code> copied to
+          clipboard.
         </>,
         {
           closeButton: false,

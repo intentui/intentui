@@ -23,18 +23,24 @@ export function DocComposed({
       {!text ? (
         <>
           <p className="mb-6">
-            When you install this component via the CLI, it automatically loads all composed
-            components, so you don’t need to add them individually.
+            When you install this component via the CLI, it automatically loads all
+            composed components, so you don’t need to add them individually.
           </p>
           <p className="mb-6">
-            The <strong className="font-medium lowercase">{name}</strong> comes packed with several
-            components to enhance functionality and provide a seamless experience.
+            The <strong className="font-medium lowercase">{name}</strong> comes packed
+            with several components to enhance functionality and provide a seamless
+            experience.
           </p>
         </>
       ) : (
         <p className="mb-4">{text}</p>
       )}
-      <Choicebox gap={2} columns={2} selectionMode="single" aria-label="Composed Components">
+      <Choicebox
+        gap={2}
+        columns={2}
+        selectionMode="single"
+        aria-label="Composed Components"
+      >
         {filteredComponents.map((item) => (
           <Choicebox.Item
             textValue={item.title}

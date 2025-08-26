@@ -5,7 +5,11 @@ import { Select } from "@/components/ui/select"
 
 export default function SelectWithIconDemo() {
   return (
-    <Select aria-label="Devices" defaultSelectedKey="desktop" placeholder="Select a device">
+    <Select
+      aria-label="Devices"
+      defaultSelectedKey="desktop"
+      placeholder="Select a device"
+    >
       <Select.Trigger />
       <Select.List>
         <Select.Option id="discord" textValue="Discord">

@@ -73,7 +73,11 @@ export default function CardTableDemo() {
             </Pagination.Section>
             <Pagination.Section className="hidden lg:flex" items={pages}>
               {(item) => (
-                <Pagination.Item id={item.value.toString()} isCurrent={item.value === 4} href="#">
+                <Pagination.Item
+                  id={item.value.toString()}
+                  isCurrent={item.value === 4}
+                  href="#"
+                >
                   {item.value}
                 </Pagination.Item>
               )}
@@ -159,4 +163,6 @@ const users = [
     occupation: "Writer",
   },
 ]
-const pages = Array.from({ length: users.length / 2 }, (_, i) => ({ value: i + 1 }))
+const pages = Array.from({ length: users.length / 2 }, (_, i) => ({
+  value: i + 1,
+}))

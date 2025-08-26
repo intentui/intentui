@@ -20,7 +20,31 @@ A button allows users to perform actions through clicks, presses, taps, or keyst
 <SourceCode toShow='button'/>
 
 ## Anatomy
-<Anatomy show='button-anatomy'/>
+```
+import { Button } from "@/components/ui/button"
+import { IconSettings } from "@intentui/icons"
+```
+
+```
+<>
+  <Button intent="primary">Primary</Button>
+  <Button intent="secondary">Secondary</Button>
+  <Button intent="warning">Warning</Button>
+  <Button intent="danger">Danger</Button>
+  <Button intent="outline">Outline</Button>
+  <Button intent="plain">Plain</Button>
+
+  <Button size="xs">Extra small</Button>
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+
+  <Button size="sq-xs"><IconSettings/></Button>
+  <Button size="sq-sm"><IconSettings/></Button>
+  <Button size="sq-md"><IconSettings/></Button>
+  <Button size="sq-lg"><IconSettings/></Button>
+</>
+```
 
 
 ## Intent

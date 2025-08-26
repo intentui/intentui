@@ -11,6 +11,7 @@ import {
 import type { FC, SVGProps } from "react"
 import { ListBox, ListBoxItem } from "react-aria-components"
 import { Logo } from "@/components/logo"
+import { buttonStyles } from "@/components/ui/button"
 
 function getComponentName(url: string): string {
   const lastSegment = url.split("/").pop()
@@ -69,7 +70,7 @@ export function DocRefs({ references }: { references: string[] }) {
   return (
     <ListBox
       orientation="horizontal"
-      className="not-prose flex gap-x-2"
+      className="not-prose flex items-center gap-x-1.5"
       aria-label="Link References"
       items={urls}
     >
@@ -77,18 +78,22 @@ export function DocRefs({ references }: { references: string[] }) {
         <ListBoxItem
           textValue={item.title}
           target="_blank"
-          className="flex items-center rounded-full bg-fg/5 px-4 py-2 font-mono text-xs uppercase ring-1 ring-fg/10 duration-200 hover:bg-fg/10 hover:ring-fg/15"
+          className={buttonStyles({
+            intent: "secondary",
+            size: "sm",
+            className: "w-24 sm:w-auto",
+          })}
           id={item.url}
           href={item.url}
         >
-          {item.icon && <item.icon className="-ml-0.5 mr-2 size-4 shrink-0" />}
+          {item.icon && <item.icon data-slot="icon" />}
 
           {item.title === "Props Reference" ? (
             <span>
               Props <span className="hidden sm:inline">Reference</span>
             </span>
           ) : (
-            <span>{item.title}</span>
+            <span className="block truncate">{item.title}</span>
           )}
         </ListBoxItem>
       )}

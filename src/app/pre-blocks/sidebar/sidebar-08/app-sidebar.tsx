@@ -73,7 +73,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                         <Menu.Trigger aria-label="Manage">
                           <IconDotsHorizontal />
                         </Menu.Trigger>
-                        <Menu.Content popover={{ offset: 0, placement: "right top" }}>
+                        <Menu.Content
+                          popover={{
+                            offset: 0,
+                            placement: "right top",
+                          }}
+                        >
                           <Menu.Item href="#edit">
                             <IconHighlight />
                             Edit

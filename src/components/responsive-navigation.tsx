@@ -168,7 +168,10 @@ function NavLink({ href, ...props }: NavLinkProps) {
   const ref = useRef<HTMLAnchorElement>(null)
   useEffect(() => {
     if (isActive && ref.current) {
-      ref.current.scrollIntoView({ behavior: "instant", block: "center" })
+      ref.current.scrollIntoView({
+        behavior: "instant",
+        block: "center",
+      })
     }
   }, [isActive])
 

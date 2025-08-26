@@ -1,6 +1,10 @@
 "use client"
 
-import { ThemeProvider as NextThemesProvider, type ThemeProviderProps, useTheme } from "next-themes"
+import {
+  ThemeProvider as NextThemesProvider,
+  type ThemeProviderProps,
+  useTheme,
+} from "next-themes"
 
 const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   return (

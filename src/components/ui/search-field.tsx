@@ -4,7 +4,14 @@ import { IconSearch, IconX } from "@intentui/icons"
 import type { SearchFieldProps as SearchFieldPrimitiveProps } from "react-aria-components"
 import { Button, SearchField as SearchFieldPrimitive } from "react-aria-components"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import { Description, FieldError, FieldGroup, type FieldProps, Input, Label } from "./field"
+import {
+  Description,
+  FieldError,
+  FieldGroup,
+  type FieldProps,
+  Input,
+  Label,
+} from "./field"
 import { Loader } from "./loader"
 
 interface SearchFieldProps extends SearchFieldPrimitiveProps, FieldProps {

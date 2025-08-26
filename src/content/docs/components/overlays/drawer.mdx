@@ -26,7 +26,37 @@ Want to enhance it, like making the drawer height adapt to its content? Contribu
 <SourceCode toShow="drawer" />
 
 ## Anatomy
-<Anatomy show="drawer-anatomy" />
+```
+import { Button } from "@/components/ui/button"
+import {
+  Drawer,
+  DrawerBody,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+```
+
+```
+<Drawer>
+  <DrawerTrigger>Open Drawer</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Drawer Title</DrawerTitle>
+      <DrawerDescription>Drawer Description</DrawerDescription>
+    </DrawerHeader>
+    <DrawerBody>Drawer Body</DrawerBody>
+    <DrawerFooter>
+      <DrawerClose>Close</DrawerClose>
+      <Button>Confirm</Button>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
 
 ## Side
 Use the `side` prop to change where the drawer appears. The default is `left`, but you can also use `right`, `top`, or `bottom`.

@@ -1,7 +1,14 @@
 export function ThumbNavbar() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" height="23" fill="none" viewBox="0 0 239 23">
-      <rect width="237.3" height="21.3" x=".85" y=".85" fill="var(--secondary)" rx="4.15" />
+      <rect
+        width="237.3"
+        height="21.3"
+        x=".85"
+        y=".85"
+        fill="var(--secondary)"
+        rx="4.15"
+      />
       <rect
         width="237.3"
         height="21.3"
@@ -40,7 +47,14 @@ export function ThumbNavbar() {
         strokeWidth=".375"
       />
       <rect width="13.816" height="2.632" x="192" y="8" fill="var(--fg)" rx="1.316" />
-      <rect width="25" height="2.632" x="192" y="11.947" fill="var(--muted-fg)" rx="1.316" />
+      <rect
+        width="25"
+        height="2.632"
+        x="192"
+        y="11.947"
+        fill="var(--muted-fg)"
+        rx="1.316"
+      />
       <rect width="22" height=".5" x="57" y="22" fill="var(--fg)" rx=".25" />
     </svg>
   )

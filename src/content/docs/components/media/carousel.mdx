@@ -23,7 +23,30 @@ references: ["https://react-spectrum.adobe.com/react-aria/ListBox.html#props", "
 <SourceCode toShow='carousel'/>
 
 ## Anatomy
-<Anatomy show='carousel-anatomy'/>
+```
+import {
+  Carousel,
+  CarouselButton,
+  CarouselContent,
+  CarouselHandler,
+  CarouselItem,
+} from "@/components/ui/carousel"
+```
+
+```
+<Carousel>
+  <CarouselContent>
+    <CarouselItem className="basis-1/2">Slide 1</CarouselItem>
+    <CarouselItem className="basis-1/2">Slide 2</CarouselItem>
+    <CarouselItem className="basis-1/2">Slide 3</CarouselItem>
+  </CarouselContent>
+
+  <CarouselHandler>
+    <CarouselButton segment="previous" />
+    <CarouselButton segment="next" />
+  </CarouselHandler>
+</Carousel>
+```
 
 ## Orientation
 You can change the orientation of the carousel by using the `orientation` prop. The default is horizontal, but you can switch it to vertical.

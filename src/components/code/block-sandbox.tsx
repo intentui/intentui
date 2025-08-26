@@ -1,15 +1,33 @@
 "use client"
 
 import { IconFolderFill, IconFolderOpenFill } from "@intentui/icons"
-import { cache, memo, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react"
-import { type Key, Tab, TabList, ToggleButton, ToggleButtonGroup } from "react-aria-components"
+import {
+  cache,
+  memo,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react"
+import {
+  type Key,
+  Tab,
+  TabList,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "react-aria-components"
 import type { ImperativePanelHandle } from "react-resizable-panels"
 import { twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
 import { BrandIcon } from "@/components/brand-icon"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/resizable"
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/resizable"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Separator } from "@/components/ui/separator"
@@ -109,7 +127,11 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
               <>
                 <SidebarDisclosureTrigger
                   className="rounded-none pl-[calc(var(--nested-level)*16px)] *:data-[slot=chevron]:hidden"
-                  style={{ "--nested-level": nestedLevel } as React.CSSProperties}
+                  style={
+                    {
+                      "--nested-level": nestedLevel,
+                    } as React.CSSProperties
+                  }
                 >
                   {isExpanded ? (
                     <IconFolderOpenFill className="size-4 text-muted-fg" />
@@ -163,7 +185,10 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                 Code
               </Tab>
             </TabList>
-            <Separator orientation="vertical" className="mx-1 hidden h-4 rotate-12 sm:block" />
+            <Separator
+              orientation="vertical"
+              className="mx-1 hidden h-4 rotate-12 sm:block"
+            />
             <ToggleButtonGroup
               selectionMode="single"
               className="hidden sm:flex"
@@ -197,7 +222,10 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                 Desktop
               </ToggleButton>
             </ToggleButtonGroup>
-            <Separator orientation="vertical" className="mx-1 hidden h-4 rotate-12 sm:block" />
+            <Separator
+              orientation="vertical"
+              className="mx-1 hidden h-4 rotate-12 sm:block"
+            />
             {fullscreen && (
               <Link
                 href={fullscreen}
@@ -249,7 +277,9 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                     href="/docs/components/layouts/sidebar"
                   >
                     <IconFolderFill className="size-4.5" />
-                    <SidebarLabel className="font-medium text-sm">intentui.com</SidebarLabel>
+                    <SidebarLabel className="font-medium text-sm">
+                      intentui.com
+                    </SidebarLabel>
                   </Link>
                 </SidebarHeader>
                 <SidebarContent className="pb-10">{renderTree(folders)}</SidebarContent>
@@ -270,7 +300,9 @@ function Component({ folders, fullscreen, isIframe = false, title, ...props }: P
                 <CodeHighlighter
                   max96={false}
                   plain
-                  className={"h-full overflow-y-auto bg-shiki-bg px-6 pt-6 pb-32 text-white"}
+                  className={
+                    "h-full overflow-y-auto bg-shiki-bg px-6 pt-6 pb-32 text-white"
+                  }
                   code={code}
                 />
               </SidebarInset>
@@ -288,7 +320,10 @@ function DisclosureGroup(props: {
   element: ({ isExpanded }: { isExpanded: any }) => React.ReactNode
 }) {
   return (
-    <SidebarDisclosureGroup className="-mx-2.5" defaultExpandedKeys={props.defaultExpandedKeys}>
+    <SidebarDisclosureGroup
+      className="-mx-2.5"
+      defaultExpandedKeys={props.defaultExpandedKeys}
+    >
       <SidebarDisclosure id={props.id}>{props.element}</SidebarDisclosure>
     </SidebarDisclosureGroup>
   )
@@ -303,7 +338,11 @@ const fetchCode = cache(async (registryKey: string, folders: FolderStructure) =>
   return registryEntry?.files?.[0]?.content || ""
 })
 
-const IframeComponent = ({ style, src, ...props }: React.ComponentPropsWithoutRef<"iframe">) => {
+const IframeComponent = ({
+  style,
+  src,
+  ...props
+}: React.ComponentPropsWithoutRef<"iframe">) => {
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const [isInView, setIsInView] = useState(false)
   const [height, setHeight] = useState("0px")

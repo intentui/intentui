@@ -26,7 +26,11 @@ A meter displays a value within a specified range, showing how much of the total
 <SourceCode toShow='meter'/>
 
 ## Anatomy
-<Anatomy show='meter-anatomy'/>
+```
+import { Meter } from "@/components/ui/meter"
+
+<Meter label="Storage space" value={32} />
+```
 
 ## Decimal format
 By default, the meter will display the value as a percentage. You can change the format of the value by passing a `formatOptions` prop. This example is shown decimal format.

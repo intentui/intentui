@@ -22,7 +22,35 @@ A table displays data in rows and columns, allowing navigation via directional k
 <SourceCode toShow='table'/>
 
 ## Anatomy
-<Anatomy show='table-anatomy'/>
+```
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+```
+
+```
+<Table aria-label="Bands">
+  <TableHeader>
+    <TableColumn>#</TableColumn>
+    <TableColumn isRowHeader>Name</TableColumn>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>1</TableCell>
+      <TableCell>Nirvana</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>2</TableCell>
+      <TableCell>The Beatles</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
 
 ## Searchable
 In the latest React Aria release, tables can now be made searchable since Autocomplete supports all collection types, including Table. This allows users to filter table rows directly with their input.

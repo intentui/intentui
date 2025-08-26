@@ -29,7 +29,10 @@ const Drawer = (props: DialogTriggerProps) => <DialogTrigger {...props} />
 
 interface DrawerContentProps
   extends Omit<ModalOverlayProps, "className" | "children" | "isDismissable">,
-    Pick<DialogProps, "aria-label" | "aria-labelledby" | "role" | "children" | "className"> {
+    Pick<
+      DialogProps,
+      "aria-label" | "aria-labelledby" | "role" | "children" | "className"
+    > {
   isFloat?: boolean
   isBlurred?: boolean
   className?: string
@@ -65,7 +68,9 @@ const DrawerContent = ({
               className={twJoin(
                 "fixed max-h-full touch-none overflow-hidden bg-bg align-middle text-fg ring ring-input will-change-transform",
                 side === "top" &&
-                  (isFloat ? "inset-x-2 top-2 rounded-lg" : "inset-x-0 top-0 rounded-b-2xl"),
+                  (isFloat
+                    ? "inset-x-2 top-2 rounded-lg"
+                    : "inset-x-0 top-0 rounded-b-2xl"),
                 side === "right" &&
                   [
                     "w-full max-w-xs overflow-y-auto",
@@ -73,7 +78,9 @@ const DrawerContent = ({
                     isFloat ? "inset-y-2 right-2 rounded-lg" : "inset-y-0 right-0 h-auto",
                   ].join(" "),
                 side === "bottom" &&
-                  (isFloat ? "inset-x-2 bottom-2 rounded-lg" : "inset-x-0 bottom-0 rounded-t-2xl"),
+                  (isFloat
+                    ? "inset-x-2 bottom-2 rounded-lg"
+                    : "inset-x-0 bottom-0 rounded-t-2xl"),
                 side === "left" &&
                   [
                     "w-full max-w-xs overflow-y-auto",
@@ -93,14 +100,28 @@ const DrawerContent = ({
               }}
               drag={side === "left" || side === "right" ? "x" : "y"}
               whileDrag={{ cursor: "grabbing" }}
-              dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
-              dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+              dragConstraints={{
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0,
+              }}
+              dragTransition={{
+                bounceStiffness: 600,
+                bounceDamping: 20,
+              }}
               transition={{ duration: 0.15, ease: "easeInOut" }}
               onDragEnd={(_, { offset, velocity }) => {
-                if (side === "bottom" && (velocity.y > 150 || offset.y > screen.height * 0.25)) {
+                if (
+                  side === "bottom" &&
+                  (velocity.y > 150 || offset.y > screen.height * 0.25)
+                ) {
                   state.close()
                 }
-                if (side === "top" && (velocity.y < -150 || offset.y < screen.height * 0.25)) {
+                if (
+                  side === "top" &&
+                  (velocity.y < -150 || offset.y < screen.height * 0.25)
+                ) {
                   state.close()
                 }
                 if (side === "left" && velocity.x < -150) {
@@ -155,11 +176,19 @@ const DrawerHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
 }
 
 const DrawerTitle = ({ className, ...props }: HeadingProps) => (
-  <Heading slot="title" className={twMerge("font-semibold text-lg/8", className)} {...props} />
+  <Heading
+    slot="title"
+    className={twMerge("font-semibold text-lg/8", className)}
+    {...props}
+  />
 )
 
 const DrawerDescription = ({ className, ...props }: TextProps) => (
-  <Text slot="description" className={twMerge("text-muted-fg text-sm", className)} {...props} />
+  <Text
+    slot="description"
+    className={twMerge("text-muted-fg text-sm", className)}
+    {...props}
+  />
 )
 
 const DrawerBody = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
@@ -187,7 +216,9 @@ const DrawerFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
 }
 
 const DrawerClose = ({ className, intent = "outline", ref, ...props }: ButtonProps) => {
-  return <Button slot="close" className={className} ref={ref} intent={intent} {...props} />
+  return (
+    <Button slot="close" className={className} ref={ref} intent={intent} {...props} />
+  )
 }
 
 Drawer.Trigger = ButtonPrimitive
@@ -199,9 +230,11 @@ Drawer.Body = DrawerBody
 Drawer.Content = DrawerContent
 Drawer.Close = DrawerClose
 
+const DrawerTrigger = Drawer.Trigger
+
 export {
   Drawer,
-  ButtonPrimitive,
+  DrawerTrigger,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,

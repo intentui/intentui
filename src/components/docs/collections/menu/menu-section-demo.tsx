@@ -6,7 +6,11 @@ export default function MenuSectionDemo() {
   return (
     <Menu>
       <Menu.Trigger>Open</Menu.Trigger>
-      <Menu.Content className="sm:min-w-64" items={cities} popover={{ placement: "bottom" }}>
+      <Menu.Content
+        className="sm:min-w-64"
+        items={cities}
+        popover={{ placement: "bottom" }}
+      >
         {(city) => (
           <Menu.Section title={city.name} items={city.landmarks}>
             {(landmark) => (

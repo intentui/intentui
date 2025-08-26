@@ -3,7 +3,6 @@ import type { MDXContent } from "mdx/types"
 import Image from "next/image"
 import type React from "react"
 import { GeneratedTheme } from "@/app/(app)/themes/partials/generated-theme"
-import { Anatomy } from "@/components/code/anatomy"
 import { BlockSandbox } from "@/components/code/block-sandbox"
 import { CodeBlock } from "@/components/code/code-block"
 import { CodeSandbox } from "@/components/code/code-sandbox"
@@ -31,13 +30,14 @@ export function Mdx({ code }: { code: MDXContent }) {
         ),
         CodeBlock,
         BlockSandbox,
-        EditorText: (props: React.ComponentProps<typeof EditorText>) => <EditorText {...props} />,
+        EditorText: (props: React.ComponentProps<typeof EditorText>) => (
+          <EditorText {...props} />
+        ),
         CodeSandbox: (props: React.ComponentProps<typeof CodeSandbox>) => (
           <CodeSandbox {...props} />
         ),
         Installation,
         Note: DocNote,
-        Anatomy: Anatomy,
         Composed: DocComposed,
         FrameworkGuides,
         Image,

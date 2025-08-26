@@ -24,7 +24,41 @@ Pagination is a navigation component that allows users to move through multiple 
 <SourceCode toShow='pagination'/>
 
 ## Anatomy
-<Anatomy show='pagination-anatomy'/>
+```
+import {
+  Pagination,
+  PaginationItem,
+  PaginationList,
+  PaginationSection,
+} from "@/components/ui/pagination"
+```
+
+```
+<Pagination>
+  <PaginationList>
+    <PaginationItem segment="first" href="#" />
+    <PaginationItem segment="previous" href="#" />
+    <PaginationSection
+      aria-label="Pagination Segment"
+      className="rounded-lg border lg:hidden"
+    >
+      <PaginationItem segment="label">1</PaginationItem>
+      <PaginationItem segment="separator" />
+      <PaginationItem className="text-muted-fg" segment="label">
+        10
+      </PaginationItem>
+    </PaginationSection>
+    <PaginationSection
+      aria-label="Pagination Segment"
+      className="hidden lg:flex"
+    >
+      <PaginationItem href="#">1</PaginationItem>
+    </PaginationSection>
+    <PaginationItem segment="next" href="#" />
+    <PaginationItem segment="last" href="#" />
+  </PaginationList>
+</Pagination>
+```
 
 ## Simple
 The simple pagination setup doesn’t display page numbers, using only basic arrow navigation.

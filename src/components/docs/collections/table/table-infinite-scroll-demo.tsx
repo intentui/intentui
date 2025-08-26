@@ -73,7 +73,11 @@ export default function TableInfiniteScrollDemo() {
             onLoadMore={list.loadMore}
             isLoading={list.loadingState === "loadingMore"}
           >
-            <ProgressCircle className="mx-auto" isIndeterminate aria-label="Loading more..." />
+            <ProgressCircle
+              className="mx-auto"
+              isIndeterminate
+              aria-label="Loading more..."
+            />
           </TableLoadMoreItem>
         </Table.Body>
       </Table>

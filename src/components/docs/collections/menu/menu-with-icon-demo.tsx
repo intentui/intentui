@@ -18,7 +18,11 @@ export default function MenuWithIconDemo() {
   return (
     <Menu>
       <Menu.Trigger aria-label="Open Menu">
-        <Avatar alt="kurt cobain" size="lg" src="https://intentui.com/images/avatar/cobain.jpg" />
+        <Avatar
+          alt="kurt cobain"
+          size="lg"
+          src="https://intentui.com/images/avatar/cobain.jpg"
+        />
       </Menu.Trigger>
       <Menu.Content popover={{ placement: "bottom" }} className="min-w-64">
         <Menu.Header separator>

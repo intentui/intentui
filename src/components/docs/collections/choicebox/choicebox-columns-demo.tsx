@@ -22,7 +22,19 @@ const prices = [
   { id: 1, label: "Basic", description: "Essentials, get started" },
   { id: 2, label: "Standard", description: "More features, support" },
   { id: 3, label: "Premium", description: "Advanced, growing needs" },
-  { id: 4, label: "Deluxe", description: "Top-tier, maximum performance" },
-  { id: 5, label: "Ultimate", description: "All-inclusive, every feature" },
-  { id: 6, label: "Enterprise", description: "Custom, large-scale operations" },
+  {
+    id: 4,
+    label: "Deluxe",
+    description: "Top-tier, maximum performance",
+  },
+  {
+    id: 5,
+    label: "Ultimate",
+    description: "All-inclusive, every feature",
+  },
+  {
+    id: 6,
+    label: "Enterprise",
+    description: "Custom, large-scale operations",
+  },
 ]

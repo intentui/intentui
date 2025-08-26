@@ -77,7 +77,9 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           </Menu.Trigger>
           <Menu.Content
             placement="bottom right"
-            className={twMerge(state === "expanded" ? "min-w-(--trigger-width)" : "sm:min-w-60")}
+            className={twMerge(
+              state === "expanded" ? "min-w-(--trigger-width)" : "sm:min-w-60",
+            )}
           >
             <Menu.Section>
               <Menu.Header separator>
@@ -117,10 +119,40 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 }
 
 const navigation = [
-  { label: "Overview", icon: <IconDashboard />, isCurrent: true, badge: undefined },
-  { label: "Orders", icon: <IconCart />, isCurrent: false, badge: 24 },
-  { label: "Products", icon: <IconCube />, isCurrent: false, badge: "31.51K" },
-  { label: "Customers", icon: <IconPeople />, isCurrent: false, badge: "12K" },
-  { label: "Reports", icon: <IconChartBar />, isCurrent: false, badge: 3 },
-  { label: "Settings", icon: <IconGear />, isCurrent: false, badge: undefined },
+  {
+    label: "Overview",
+    icon: <IconDashboard />,
+    isCurrent: true,
+    badge: undefined,
+  },
+  {
+    label: "Orders",
+    icon: <IconCart />,
+    isCurrent: false,
+    badge: 24,
+  },
+  {
+    label: "Products",
+    icon: <IconCube />,
+    isCurrent: false,
+    badge: "31.51K",
+  },
+  {
+    label: "Customers",
+    icon: <IconPeople />,
+    isCurrent: false,
+    badge: "12K",
+  },
+  {
+    label: "Reports",
+    icon: <IconChartBar />,
+    isCurrent: false,
+    badge: 3,
+  },
+  {
+    label: "Settings",
+    icon: <IconGear />,
+    isCurrent: false,
+    badge: undefined,
+  },
 ]

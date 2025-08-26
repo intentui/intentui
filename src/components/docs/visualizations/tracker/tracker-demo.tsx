@@ -53,7 +53,12 @@ const deployments = [
 ]
 
 const data = deployments.map((d) => ({
-  color: d.status === "success" ? "bg-success" : d.status === "error" ? "bg-danger" : "bg-warning",
+  color:
+    d.status === "success"
+      ? "bg-success"
+      : d.status === "error"
+        ? "bg-danger"
+        : "bg-warning",
   tooltip: `${d.status} @ ${new Date(d.time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`,
 }))
 
@@ -62,7 +67,9 @@ export default function TrackerDemo() {
     <Card>
       <Card.Header>
         <Card.Title>Recent deployments</Card.Title>
-        <Card.Description>Visual timeline of deployment outcomes by hour</Card.Description>
+        <Card.Description>
+          Visual timeline of deployment outcomes by hour
+        </Card.Description>
       </Card.Header>
       <Card.Content>
         <Tracker data={data} />

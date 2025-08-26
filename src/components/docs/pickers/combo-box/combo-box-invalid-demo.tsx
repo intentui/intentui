@@ -4,7 +4,11 @@ import { Avatar } from "@/components/ui/avatar"
 import { ComboBox } from "@/components/ui/combo-box"
 
 const users = [
-  { id: 1, name: "Barbara Kirlin Sr.", image_url: "https://i.pravatar.cc/150?img=1" },
+  {
+    id: 1,
+    name: "Barbara Kirlin Sr.",
+    image_url: "https://i.pravatar.cc/150?img=1",
+  },
   //...
 ]
 export default function ComboBoxInvalidDemo() {

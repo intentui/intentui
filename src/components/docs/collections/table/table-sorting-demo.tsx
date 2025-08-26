@@ -28,7 +28,10 @@ export default function TableSortingDemo() {
           const first = a[sortDescriptor.column]
           // @ts-expect-error
           const second = b[sortDescriptor.column]
-          let cmp = (Number.parseInt(first) || first) < (Number.parseInt(second) || second) ? -1 : 1
+          let cmp =
+            (Number.parseInt(first) || first) < (Number.parseInt(second) || second)
+              ? -1
+              : 1
           if (sortDescriptor.direction === "descending") {
             cmp *= -1
           }
@@ -39,7 +42,11 @@ export default function TableSortingDemo() {
   })
   return (
     <div className="rounded-lg border p-4">
-      <Table aria-label="Movies" sortDescriptor={list.sortDescriptor} onSortChange={list.sort}>
+      <Table
+        aria-label="Movies"
+        sortDescriptor={list.sortDescriptor}
+        onSortChange={list.sort}
+      >
         <Table.Header>
           <Table.Column id="title" isRowHeader>
             Title

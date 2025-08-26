@@ -27,7 +27,9 @@ export default function ToolbarDisabledDemo() {
           {({ isSelected }) => <>{isSelected ? <IconCursorFill /> : <IconCursor />}</>}
         </Toolbar.Item>
         <Toolbar.Item aria-label="Pencil Box" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconPencilBoxFill /> : <IconPencilBox />}</>}
+          {({ isSelected }) => (
+            <>{isSelected ? <IconPencilBoxFill /> : <IconPencilBox />}</>
+          )}
         </Toolbar.Item>
         <Toolbar.Item aria-label="Pencil Box" size="sq-sm">
           {({ isSelected }) => <>{isSelected ? <IconToolboxFill /> : <IconToolbox />}</>}

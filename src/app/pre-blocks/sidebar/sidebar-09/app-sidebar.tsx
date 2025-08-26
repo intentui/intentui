@@ -48,7 +48,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
         <SidebarSectionGroup>
           <SidebarSection>
             {navigation.map((item, index) => (
-              <SidebarItem key={index} isCurrent={item.isCurrent} href="#" badge={item?.badge}>
+              <SidebarItem
+                key={index}
+                isCurrent={item.isCurrent}
+                href="#"
+                badge={item?.badge}
+              >
                 {item.icon}
                 <SidebarLabel>{item.label}</SidebarLabel>
               </SidebarItem>
@@ -110,10 +115,40 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 }
 
 const navigation = [
-  { label: "Overview", icon: <IconDashboard />, isCurrent: true, badge: undefined },
-  { label: "Orders", icon: <IconCart />, isCurrent: false, badge: 24 },
-  { label: "Products", icon: <IconCube />, isCurrent: false, badge: "31.51K" },
-  { label: "Customers", icon: <IconPeople />, isCurrent: false, badge: "12K" },
-  { label: "Reports", icon: <IconChartBar />, isCurrent: false, badge: 3 },
-  { label: "Settings", icon: <IconGear />, isCurrent: false, badge: undefined },
+  {
+    label: "Overview",
+    icon: <IconDashboard />,
+    isCurrent: true,
+    badge: undefined,
+  },
+  {
+    label: "Orders",
+    icon: <IconCart />,
+    isCurrent: false,
+    badge: 24,
+  },
+  {
+    label: "Products",
+    icon: <IconCube />,
+    isCurrent: false,
+    badge: "31.51K",
+  },
+  {
+    label: "Customers",
+    icon: <IconPeople />,
+    isCurrent: false,
+    badge: "12K",
+  },
+  {
+    label: "Reports",
+    icon: <IconChartBar />,
+    isCurrent: false,
+    badge: 3,
+  },
+  {
+    label: "Settings",
+    icon: <IconGear />,
+    isCurrent: false,
+    badge: undefined,
+  },
 ]

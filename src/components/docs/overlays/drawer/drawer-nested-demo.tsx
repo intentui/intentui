@@ -25,7 +25,9 @@ export default function DrawerNestedDemo() {
         <Drawer.Content>
           <Drawer.Header>
             <Drawer.Title>Confirm Registration</Drawer.Title>
-            <Drawer.Description>Please confirm your registration details.</Drawer.Description>
+            <Drawer.Description>
+              Please confirm your registration details.
+            </Drawer.Description>
           </Drawer.Header>
           <Drawer.Footer>
             <Drawer.Close>Cancel</Drawer.Close>
@@ -43,7 +45,10 @@ export default function DrawerNestedDemo() {
       <Drawer
         isOpen={isProfileSetupDrawerOpen}
         onOpenChange={(isOpen) => {
-          if (!isOpen && isTyping) toast("Profile setup incomplete", { position: "top-center" })
+          if (!isOpen && isTyping)
+            toast("Profile setup incomplete", {
+              position: "top-center",
+            })
           setIsProfileSetupDrawerOpen(isOpen)
         }}
       >
@@ -57,7 +62,9 @@ export default function DrawerNestedDemo() {
           <Form
             onSubmit={(e) => {
               e.preventDefault()
-              toast.success("Profile setup complete", { position: "top-center" })
+              toast.success("Profile setup complete", {
+                position: "top-center",
+              })
               setIsProfileSetupDrawerOpen(false)
               setIsRegistrationDrawerOpen(false)
             }}

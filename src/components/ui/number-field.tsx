@@ -72,14 +72,22 @@ const NumberField = ({
                 })}
               >
                 <div className="flex h-full flex-col">
-                  <StepperButton slot="increment" emblemType="chevron" className="h-4 px-1" />
+                  <StepperButton
+                    slot="increment"
+                    emblemType="chevron"
+                    className="h-4 px-1"
+                  />
                   <div
                     className={fieldBorderStyles({
                       ...renderProps,
                       className: "border-input border-b",
                     })}
                   />
-                  <StepperButton slot="decrement" emblemType="chevron" className="h-4 px-1" />
+                  <StepperButton
+                    slot="decrement"
+                    emblemType="chevron"
+                    className="h-4 px-1"
+                  />
                 </div>
               </div>
             ) : (

@@ -21,7 +21,20 @@ A color swatch picker allows users to choose a color from a predefined set.
 <SourceCode toShow='color-swatch-picker'/>
 
 ## Anatomy
-<Anatomy show='color-swatch-picker-anatomy'/>
+```
+import {
+  ColorSwatchPicker,
+  ColorSwatchPickerItem,
+} from "@/components/ui/color-swatch-picker"
+```
+
+```
+<ColorSwatchPicker aria-label="Pick color">
+  <ColorSwatchPickerItem color="#f59e0b" />
+  <ColorSwatchPickerItem color="#84cc16" />
+  <ColorSwatchPickerItem color="#0d6efd" />
+</ColorSwatchPicker>
+```
 
 ## Controlled
 The color swatch can be managed in a controlled manner.

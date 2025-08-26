@@ -9,13 +9,16 @@ interface ContextMenuTriggerContextType {
   buttonRef: React.RefObject<HTMLButtonElement | null>
   contextMenuOffset: { offset: number; crossOffset: number } | null
   setContextMenuOffset: React.Dispatch<
-    React.SetStateAction<{ offset: number; crossOffset: number } | null>
+    React.SetStateAction<{
+      offset: number
+      crossOffset: number
+    } | null>
   >
 }
 
-const ContextMenuTriggerContext = createContext<ContextMenuTriggerContextType | undefined>(
-  undefined,
-)
+const ContextMenuTriggerContext = createContext<
+  ContextMenuTriggerContextType | undefined
+>(undefined)
 
 const useContextMenuTrigger = () => {
   const context = use(ContextMenuTriggerContext)

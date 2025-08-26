@@ -84,9 +84,12 @@ export function CodeSandbox({ isIframe = true, classNames, source, src }: Props)
                       twMerge(
                         "flex cursor-default items-center gap-x-1.5 whitespace-nowrap p-2 font-mono text-muted-fg text-xs tracking-tight",
                         "**:data-[slot=icon]:-ml-0.5 border-transparent border-x first:border-l-0 focus:outline-transparent **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
-                        (values.isSelected || values.isFocused || values.isFocusVisible) &&
+                        (values.isSelected ||
+                          values.isFocused ||
+                          values.isFocusVisible) &&
                           "border-input bg-secondary text-secondary-fg dark:bg-muted",
-                        values.isHovered && "bg-secondary text-secondary-fg dark:bg-muted",
+                        values.isHovered &&
+                          "bg-secondary text-secondary-fg dark:bg-muted",
                       )
                     }
                     key={key}
@@ -142,7 +145,13 @@ interface TabListProps {
   copyButton?: boolean
 }
 
-export const TabsList = ({ hasRegistry, src, code, blockDemo, copyButton }: TabListProps) => {
+export const TabsList = ({
+  hasRegistry,
+  src,
+  code,
+  blockDemo,
+  copyButton,
+}: TabListProps) => {
   return (
     <div className="group not-prose relative">
       <PrimitiveTabsList className="flex items-center font-medium *:text-sm/6">
@@ -183,7 +192,10 @@ export const TabsList = ({ hasRegistry, src, code, blockDemo, copyButton }: TabL
         )}
       </PrimitiveTabsList>
       {hasRegistry && (
-        <PullRegistry processedSourceCode={code as string} blockDemo={blockDemo as string} />
+        <PullRegistry
+          processedSourceCode={code as string}
+          blockDemo={blockDemo as string}
+        />
       )}
       {copyButton && <CopyMotionButton className="-top-2 absolute" text={code!} />}
     </div>
@@ -205,7 +217,8 @@ export const fetchRegistryData = React.cache(async (source: Record<string, strin
             const response = await fetch(`/registry/${registryKey}.json`)
             if (response.ok) {
               const registryEntry = await response.json()
-              fetchedSourceCode[key] = registryEntry.files?.[0]?.content || "No content available"
+              fetchedSourceCode[key] =
+                registryEntry.files?.[0]?.content || "No content available"
             } else {
               console.error(`Failed to fetch source code for ${path}:`, response.status)
               fetchedSourceCode[key] = "Error loading source code."

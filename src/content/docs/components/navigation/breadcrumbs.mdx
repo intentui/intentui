@@ -23,7 +23,17 @@ Breadcrumbs display a trail of links that guide users to the current page or res
 <SourceCode toShow={'breadcrumbs'}/>
 
 ## Anatomy
-<Anatomy show='breadcrumbs-anatomy'/>
+```
+import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
+```
+
+```
+<Breadcrumbs>
+  <BreadcrumbsItem href="#">Home</BreadcrumbsItem>
+  <BreadcrumbsItem href="#">Design System</BreadcrumbsItem>
+  <BreadcrumbsItem>Collections</BreadcrumbsItem>
+</Breadcrumbs>
+```
 
 ## Separator
 The separator appears when the breadcrumb changes. By default, it uses a chevron. You can disable it with `separator="false"` or switch to a slash with `separator="slash"`.

@@ -40,7 +40,10 @@ const choiceboxStyles = tv({
   ],
 })
 
-const ChoiceboxContext = createContext<{ columns?: number; gap?: number }>({})
+const ChoiceboxContext = createContext<{
+  columns?: number
+  gap?: number
+}>({})
 
 const useChoiceboxContext = () => use(ChoiceboxContext)
 
@@ -90,7 +93,9 @@ const choiceboxItemStyles = tv({
       true: "cursor-pointer",
       false: "cursor-default",
     },
-    isFocused: { true: "inset-ring-ring/70 ring-3 ring-ring/20 invalid:ring-danger/20" },
+    isFocused: {
+      true: "inset-ring-ring/70 ring-3 ring-ring/20 invalid:ring-danger/20",
+    },
     isInvalid: { true: "ring-3 ring-danger/20" },
     isOneColumn: {
       true: "col-span-full",
@@ -109,7 +114,9 @@ const choiceboxItemStyles = tv({
   },
 })
 
-interface ChoiceboxItemProps extends GridListItemProps, VariantProps<typeof choiceboxItemStyles> {
+interface ChoiceboxItemProps
+  extends GridListItemProps,
+    VariantProps<typeof choiceboxItemStyles> {
   label?: string
   description?: string
 }
@@ -194,7 +201,11 @@ const ChoiceboxLabel = ({ className, ref, ...props }: ChoiceboxLabelProps) => {
 
 type ChoiceboxDescriptionProps = ChoiceboxLabelProps
 
-const ChoiceboxDescription = ({ className, ref, ...props }: ChoiceboxDescriptionProps) => {
+const ChoiceboxDescription = ({
+  className,
+  ref,
+  ...props
+}: ChoiceboxDescriptionProps) => {
   return (
     <Text
       slot="description"

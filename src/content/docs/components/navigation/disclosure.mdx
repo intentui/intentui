@@ -19,7 +19,21 @@ A disclosure, also known as a collapsible, is a vertical stack of headers that e
 <SourceCode toShow='disclosure'/>
 
 ## Anatomy
-<Anatomy show='disclosure-anatomy'/>
+```
+import { Disclosure, DisclosurePanel, DisclosureTrigger } from "@/components/ui/disclosure"
+```
+
+```
+<Disclosure>
+  <DisclosureTrigger>What are the benefits of regular exercise?</DisclosureTrigger>
+  <DisclosurePanel>
+    <p>
+      Regular exercise can improve your overall health, boost your mood, increase energy levels,
+      and help you maintain a healthy weight.
+    </p>
+  </DisclosurePanel>
+</Disclosure>
+```
 
 ## Disabled
 You can disable all disclosure by setting the `isDisabled` prop.

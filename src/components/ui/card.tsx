@@ -18,7 +18,13 @@ interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   description?: string
 }
 
-const CardHeader = ({ className, title, description, children, ...props }: HeaderProps) => (
+const CardHeader = ({
+  className,
+  title,
+  description,
+  children,
+  ...props
+}: HeaderProps) => (
   <div
     data-slot="card-header"
     className={twMerge(
@@ -29,7 +35,11 @@ const CardHeader = ({ className, title, description, children, ...props }: Heade
   >
     {title && <CardTitle>{title}</CardTitle>}
     {description && <CardDescription>{description}</CardDescription>}
-    {!title && typeof children === "string" ? <CardTitle>{children}</CardTitle> : children}
+    {!title && typeof children === "string" ? (
+      <CardTitle>{children}</CardTitle>
+    ) : (
+      children
+    )}
   </div>
 )
 
@@ -37,13 +47,19 @@ const CardTitle = ({ className, ...props }: React.ComponentProps<"div">) => {
   return (
     <div
       data-slot="card-title"
-      className={twMerge("text-balance font-semibold text-fg text-lg/6 sm:text-base/6", className)}
+      className={twMerge(
+        "text-balance font-semibold text-fg text-lg/6 sm:text-base/6",
+        className,
+      )}
       {...props}
     />
   )
 }
 
-const CardDescription = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+const CardDescription = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       {...props}
@@ -97,4 +113,12 @@ Card.Header = CardHeader
 Card.Title = CardTitle
 Card.Action = CardAction
 
-export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, CardAction }
+export {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  CardAction,
+}

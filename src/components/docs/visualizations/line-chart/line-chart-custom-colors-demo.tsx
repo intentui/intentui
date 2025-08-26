@@ -37,8 +37,14 @@ export default function LineChartCustomColorsDemo() {
           xAxisProps={{ interval: 0 }}
           config={{
             likes: { label: "Likes", color: "var(--color-pink-500)" },
-            comments: { label: "Comments", color: "var(--color-blue-500)" },
-            shares: { label: "Shares", color: "var(--color-emerald-500)" },
+            comments: {
+              label: "Comments",
+              color: "var(--color-blue-500)",
+            },
+            shares: {
+              label: "Shares",
+              color: "var(--color-emerald-500)",
+            },
           }}
         />
       </Card.Content>

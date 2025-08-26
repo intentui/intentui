@@ -18,7 +18,11 @@ export default function ButtonPendingDemo() {
     <Button onPress={handlePress} isPending={isLoading}>
       {({ isPending }) => (
         <>
-          {isPending ? <ProgressCircle isIndeterminate aria-label="Creating..." /> : <IconPlus />}
+          {isPending ? (
+            <ProgressCircle isIndeterminate aria-label="Creating..." />
+          ) : (
+            <IconPlus />
+          )}
           {isLoading ? "Creating..." : "Create"}
         </>
       )}

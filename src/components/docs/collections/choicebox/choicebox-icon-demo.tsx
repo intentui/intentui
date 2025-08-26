@@ -27,7 +27,8 @@ const frameworks = [
   {
     id: "laravel",
     label: "Laravel",
-    description: "Laravel is a web application framework with expressive, elegant syntax.",
+    description:
+      "Laravel is a web application framework with expressive, elegant syntax.",
     icon: IconBrandLaravel,
   },
   {
@@ -39,7 +40,8 @@ const frameworks = [
   {
     id: "ts",
     label: "Typescript",
-    description: "Typescript is a typed superset of JavaScript that compiles to plain JavaScript.",
+    description:
+      "Typescript is a typed superset of JavaScript that compiles to plain JavaScript.",
     icon: IconBrandTypescript,
   },
 ]

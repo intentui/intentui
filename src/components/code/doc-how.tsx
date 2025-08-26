@@ -93,7 +93,9 @@ export const DocHow = ({
           <ToggleButton
             className={twJoin(
               "p-2 font-medium text-sm/6 outline-hidden focus:text-fg",
-              currentTab === "tab_code" ? "text-fg focus:text-fg" : "text-muted-fg hover:text-fg",
+              currentTab === "tab_code"
+                ? "text-fg focus:text-fg"
+                : "text-muted-fg hover:text-fg",
             )}
             onPress={() => setCurrentTab("tab_code")}
           >

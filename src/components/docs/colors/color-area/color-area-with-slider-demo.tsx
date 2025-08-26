@@ -26,7 +26,11 @@ export default function ColorAreaWithSliderDemo() {
         onChange={setColor}
       />
 
-      <ColorField label="Current Color" enableColorPicker={false} value={color.toString("hex")} />
+      <ColorField
+        label="Current Color"
+        enableColorPicker={false}
+        value={color.toString("hex")}
+      />
     </div>
   )
 }

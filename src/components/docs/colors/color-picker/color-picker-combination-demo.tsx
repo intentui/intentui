@@ -14,7 +14,12 @@ export default function ColorPickerCombinationDemo() {
     <ColorPicker label="Color picker" defaultValue="#0d6efd">
       <ColorArea colorSpace={space} />
       {getColorChannels(space).map((channel) => (
-        <ColorSlider showOutput={false} key={channel} colorSpace={space} channel={channel} />
+        <ColorSlider
+          showOutput={false}
+          key={channel}
+          colorSpace={space}
+          channel={channel}
+        />
       ))}
       <Select
         aria-label="Color space"
@@ -32,7 +37,12 @@ export default function ColorPickerCombinationDemo() {
       </Select>
       <div className="flex gap-2 sm:max-w-56">
         {getColorChannels(space).map((channel) => (
-          <ColorField key={channel} colorSpace={space} channel={channel} className="w-full" />
+          <ColorField
+            key={channel}
+            colorSpace={space}
+            channel={channel}
+            className="w-full"
+          />
         ))}
       </div>
     </ColorPicker>

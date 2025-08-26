@@ -5,7 +5,10 @@ import { type CalendarDate, getLocalTimeZone, today } from "@internationalized/d
 import { useDateFormatter } from "@react-aria/i18n"
 import type { CalendarState } from "@react-stately/calendar"
 import { use } from "react"
-import type { CalendarProps as CalendarPrimitiveProps, DateValue } from "react-aria-components"
+import type {
+  CalendarProps as CalendarPrimitiveProps,
+  DateValue,
+} from "react-aria-components"
 import {
   CalendarCell,
   CalendarGrid,
@@ -29,7 +32,11 @@ interface CalendarProps<T extends DateValue>
   className?: string
 }
 
-const Calendar = <T extends DateValue>({ errorMessage, className, ...props }: CalendarProps<T>) => {
+const Calendar = <T extends DateValue>({
+  errorMessage,
+  className,
+  ...props
+}: CalendarProps<T>) => {
   const now = today(getLocalTimeZone())
 
   return (
@@ -41,16 +48,18 @@ const Calendar = <T extends DateValue>({ errorMessage, className, ...props }: Ca
           {(date) => (
             <CalendarCell
               date={date}
-              className={composeRenderProps(className, (className, { isSelected, isDisabled }) =>
-                twMerge(
-                  "relative flex size-12 cursor-default items-center justify-center rounded-lg text-fg tabular-nums outline-hidden hover:bg-secondary-fg/15 sm:size-9 sm:text-sm/6 forced-colors:text-[ButtonText] forced-colors:outline-0",
-                  isSelected &&
-                    "bg-primary pressed:bg-primary text-primary-fg hover:bg-primary/90 data-invalid:bg-danger data-invalid:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[Highlight] forced-colors:data-invalid:bg-[Mark]",
-                  isDisabled && "text-muted-fg forced-colors:text-[GrayText]",
-                  date.compare(now) === 0 &&
-                    "after:-translate-x-1/2 after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-[3px] after:rounded-full after:bg-primary selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
-                  className,
-                ),
+              className={composeRenderProps(
+                className,
+                (className, { isSelected, isDisabled }) =>
+                  twMerge(
+                    "relative flex size-12 cursor-default items-center justify-center rounded-lg text-fg tabular-nums outline-hidden hover:bg-secondary-fg/15 sm:size-9 sm:text-sm/6 forced-colors:text-[ButtonText] forced-colors:outline-0",
+                    isSelected &&
+                      "bg-primary pressed:bg-primary text-primary-fg hover:bg-primary/90 data-invalid:bg-danger data-invalid:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[Highlight] forced-colors:data-invalid:bg-[Mark]",
+                    isDisabled && "text-muted-fg forced-colors:text-[GrayText]",
+                    date.compare(now) === 0 &&
+                      "after:-translate-x-1/2 after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-[3px] after:rounded-full after:bg-primary selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
+                    className,
+                  ),
               )}
             />
           )}
@@ -136,7 +145,9 @@ const SelectMonth = ({ state }: { state: CalendarState }) => {
     <Select
       className="[popover-width:8rem]"
       aria-label="Select month"
-      selectedKey={state.focusedDate.month.toString() ?? (new Date().getMonth() + 1).toString()}
+      selectedKey={
+        state.focusedDate.month.toString() ?? (new Date().getMonth() + 1).toString()
+      }
       onSelectionChange={(value) => {
         state.setFocusedDate(state.focusedDate.set({ month: Number(value) }))
       }}

@@ -247,7 +247,6 @@ const generateComponentRegistry = () => {
 
   const sources = [
     ...blockSources,
-    { type: "block", path: "src/components/anatomies" },
     { type: "ui", path: "src/components/ui" },
     { type: "lib", path: "src/lib" },
     { type: "hook", path: "src/hooks" },

@@ -1,4 +1,8 @@
-import { IconCircleCheckFill, IconCircleExclamationFill, IconCircleInfoFill } from "@intentui/icons"
+import {
+  IconCircleCheckFill,
+  IconCircleExclamationFill,
+  IconCircleInfoFill,
+} from "@intentui/icons"
 import { twMerge } from "tailwind-merge"
 
 interface NoteProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
@@ -6,7 +10,12 @@ interface NoteProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   indicator?: boolean
 }
 
-const Note = ({ indicator = true, intent = "default", className, ...props }: NoteProps) => {
+const Note = ({
+  indicator = true,
+  intent = "default",
+  className,
+  ...props
+}: NoteProps) => {
   const iconMap: Record<string, React.ElementType | null> = {
     info: IconCircleInfoFill,
     warning: IconCircleExclamationFill,
@@ -36,7 +45,9 @@ const Note = ({ indicator = true, intent = "default", className, ...props }: Not
       ])}
       {...props}
     >
-      {IconComponent && indicator && <IconComponent className="col-start-1 size-5 shrink-0" />}
+      {IconComponent && indicator && (
+        <IconComponent className="col-start-1 size-5 shrink-0" />
+      )}
       <div className="text-pretty text-base/6 group-has-data-[slot=icon]:col-start-2 sm:text-sm/6">
         {props.children}
       </div>

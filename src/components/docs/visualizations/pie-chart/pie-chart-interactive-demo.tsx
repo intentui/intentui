@@ -18,7 +18,9 @@ export default function PieChartAudienceSegmentDemo() {
   )
 
   const defaultCode = data[0]?.code
-  const [selected, setSelected] = useState<Set<Key>>(new Set(defaultCode ? [defaultCode] : []))
+  const [selected, setSelected] = useState<Set<Key>>(
+    new Set(defaultCode ? [defaultCode] : []),
+  )
   const selectedCode = [...selected][0] as string
 
   return (

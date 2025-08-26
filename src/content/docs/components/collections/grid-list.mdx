@@ -22,7 +22,24 @@ A basic grid list is an excellent way for users to browse through items, perfect
 <SourceCode toShow='grid-list'/>
 
 ## Anatomy
-<Anatomy show='grid-list-anatomy'/>
+```
+import { GridList, GridListItem } from "@/components/ui/grid-list"
+```
+```
+const items = [
+  { id: "1", name: "The Beatles" },
+  ...
+]
+
+<GridList
+  selectionMode="single"
+  items={items}
+  aria-label="Select your favorite bands"
+  className="min-w-64"
+>
+  {(item) => <GridListItem id={item.id}>{item.name}</GridList.Item>}
+</GridList>
+```
 
 ## Multiple selection
 To enable multiple selections, set the `selectionMode` prop to `multiple`. Since this prop has no default value, you must define it explicitly.

@@ -63,7 +63,10 @@ export function Blocks() {
 
       <div className="md:-mt-10 relative z-30 mt-10 flex items-center justify-center">
         <Link
-          className={buttonStyles({ intent: "outline", className: "backdrop-blur-2xl" })}
+          className={buttonStyles({
+            intent: "outline",
+            className: "backdrop-blur-2xl",
+          })}
           href="/docs/components/buttons/button"
         >
           Show More

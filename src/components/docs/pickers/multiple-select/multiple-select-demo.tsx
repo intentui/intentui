@@ -2,21 +2,6 @@
 
 import { MultipleSelect } from "@/components/ui/multiple-select"
 
-export default function MultipleSelectDemo() {
-  return (
-    <MultipleSelect
-      className="min-w-2xs max-w-min"
-      placeholder="Select fruits"
-      aria-label="Fruits"
-      items={fruits}
-    >
-      {(item) => {
-        return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
-      }}
-    </MultipleSelect>
-  )
-}
-
 const fruits = [
   { id: 1, name: "Apple" },
   { id: 2, name: "Banana" },
@@ -39,3 +24,20 @@ const fruits = [
   { id: 19, name: "Ugli Fruit" },
   { id: 20, name: "Watermelon" },
 ]
+
+export default function MultipleSelectDemo() {
+  return (
+    <MultipleSelect
+      className="min-w-2xs max-w-min"
+      placeholder="Select fruits"
+      aria-label="Fruits"
+      items={fruits}
+    >
+      {(item) => {
+        return (
+          <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
+        )
+      }}
+    </MultipleSelect>
+  )
+}

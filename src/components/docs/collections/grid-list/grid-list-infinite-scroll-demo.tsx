@@ -15,7 +15,9 @@ export default function GridListInfiniteScrollDemo() {
         cursor = cursor.replace(/^http:\/\//i, "https://")
       }
 
-      const res = await fetch(cursor || `https://swapi.py4e.com/api/people/?search=`, { signal })
+      const res = await fetch(cursor || `https://swapi.py4e.com/api/people/?search=`, {
+        signal,
+      })
       const json = await res.json()
 
       return {
@@ -33,7 +35,11 @@ export default function GridListInfiniteScrollDemo() {
         onLoadMore={list.loadMore}
         isLoading={list.loadingState === "loadingMore"}
       >
-        <ProgressCircle className="mx-auto mb-4" isIndeterminate aria-label="Loading more..." />
+        <ProgressCircle
+          className="mx-auto mb-4"
+          isIndeterminate
+          aria-label="Loading more..."
+        />
       </GridListLoadMoreItem>
     </GridList>
   )

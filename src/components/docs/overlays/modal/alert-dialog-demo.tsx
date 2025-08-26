@@ -10,8 +10,8 @@ export default function AlertDialogDemo() {
         <Modal.Header>
           <Modal.Title>Revoke User Access?</Modal.Title>
           <Modal.Description>
-            This will immediately remove all access for the selected user. This action is permanent
-            and cannot be undone.
+            This will immediately remove all access for the selected user. This action is
+            permanent and cannot be undone.
           </Modal.Description>
         </Modal.Header>
         <Modal.Footer>

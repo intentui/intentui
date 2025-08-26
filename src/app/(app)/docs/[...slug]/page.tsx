@@ -4,10 +4,9 @@ import { twJoin } from "tailwind-merge"
 import { Ads } from "@/components/ads"
 import { DocRefs } from "@/components/doc-refs"
 import { Mdx } from "@/components/mdx"
-import { MobilePager } from "@/components/mobile-pager"
+import { OpenIn } from "@/components/open-in"
 import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
-import { Badge } from "@/components/ui/badge"
 import { source } from "@/lib/source"
 import { title } from "@/lib/utils"
 export interface DocPageProps {
@@ -94,8 +93,9 @@ export default async function Page(props: DocPageProps) {
               {extractSegment(page.url)}
             </div>
             <div className="flex items-center justify-between gap-x-2">
-              <h1 className="mt-2 font-semibold text-xl tracking-tight sm:text-3xl">{doc.title}</h1>
-              <MobilePager tree={source.pageTree} url={page.url} />
+              <h1 className="mt-2 font-semibold text-xl tracking-tight sm:text-3xl">
+                {doc.title}
+              </h1>
             </div>
             {doc.description ? (
               <p className="mt-2.5 text-pretty text-base text-fg/60 leading-relaxed">
@@ -112,11 +112,9 @@ export default async function Page(props: DocPageProps) {
               {doc.references && doc.references?.length > 0 && (
                 <DocRefs references={doc.references} />
               )}
-              {doc.status && (
-                <div className={doc?.references?.length! > 0 ? "ml-auto" : "ml-0"}>
-                  <Badge intent={doc.status === "beta" ? "warning" : "primary"}>{doc.status}</Badge>
-                </div>
-              )}
+              <div className={doc?.references?.length! > 0 ? "ml-auto" : "ml-0"}>
+                <OpenIn tree={source.pageTree} url={page.url} />
+              </div>
             </div>
           </div>
 

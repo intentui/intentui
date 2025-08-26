@@ -63,20 +63,25 @@ export function Ads({ className }: { className?: string }) {
     {
       href: "https://dub.sh/irsyadco",
       title: "Ready-to-use templates",
-      description: "Launch faster with 150+ blocks and professional templates for modern web apps.",
+      description:
+        "Launch faster with 150+ blocks and professional templates for modern web apps.",
       domain: "irsyad.co",
       icon: <IconBrandIrsyadCo />,
     },
     {
       href: "https://dub.sh/bintentui",
       title: "Flexible blocks and templates",
-      description: "Use ready-made blocks to craft unique pages without starting from scratch.",
+      description:
+        "Use ready-made blocks to craft unique pages without starting from scratch.",
       domain: "blocks.intentui.com",
       icon: <IconBrandIntentui />,
     },
   ] as const satisfies readonly Omit<AdCardProps, "className">[]
 
-  const randomAd = ads[Math.floor(Math.random() * ads.length)] as Omit<AdCardProps, "className">
+  const randomAd = ads[Math.floor(Math.random() * ads.length)] as Omit<
+    AdCardProps,
+    "className"
+  >
 
   return <AdCard {...randomAd} className={className} />
 }

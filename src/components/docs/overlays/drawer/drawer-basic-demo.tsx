@@ -7,7 +7,9 @@ import { TextField } from "@/components/ui/text-field"
 export default function DrawerBasicDemo() {
   return (
     <Drawer>
-      <Drawer.Trigger className={buttonStyles({ intent: "outline" })}>Login</Drawer.Trigger>
+      <Drawer.Trigger className={buttonStyles({ intent: "outline" })}>
+        Login
+      </Drawer.Trigger>
       <Drawer.Content>
         <Drawer.Header>
           <Drawer.Title>Login</Drawer.Title>
@@ -17,7 +19,12 @@ export default function DrawerBasicDemo() {
         </Drawer.Header>
         <Drawer.Body className="space-y-4">
           <TextField label="Email" type="email" placeholder="john.doe@example.com" />
-          <TextField label="Password" type="password" placeholder="••••••••••••" isRevealable />
+          <TextField
+            label="Password"
+            type="password"
+            placeholder="••••••••••••"
+            isRevealable
+          />
         </Drawer.Body>
         <Drawer.Footer>
           <Drawer.Close className="w-full">Login</Drawer.Close>

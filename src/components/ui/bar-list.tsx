@@ -48,7 +48,11 @@ function BarList<T>({
   const rowHeight = "h-8"
 
   return (
-    <div ref={ref} className={twMerge("flex justify-between space-x-6", className)} {...props}>
+    <div
+      ref={ref}
+      className={twMerge("flex justify-between space-x-6", className)}
+      {...props}
+    >
       <div className="relative w-full space-y-1.5">
         {sortedData.map((item, index) => (
           <Component
@@ -66,7 +70,9 @@ function BarList<T>({
               className={twJoin(
                 "flex items-center rounded-sm bg-primary/15 transition-all dark:bg-primary/20",
                 rowHeight,
-                onValueChange ? "group-hover:bg-primary/20 dark:group-hover:bg-primary/35" : "",
+                onValueChange
+                  ? "group-hover:bg-primary/20 dark:group-hover:bg-primary/35"
+                  : "",
                 index === sortedData.length - 1 && "mb-0",
                 showAnimation && "duration-700",
               )}
@@ -89,7 +95,9 @@ function BarList<T>({
                     {item.name}
                   </Link>
                 ) : (
-                  <p className="truncate whitespace-nowrap text-fg text-sm">{item.name}</p>
+                  <p className="truncate whitespace-nowrap text-fg text-sm">
+                    {item.name}
+                  </p>
                 )}
               </div>
             </div>

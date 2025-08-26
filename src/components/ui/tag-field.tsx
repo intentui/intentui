@@ -158,13 +158,20 @@ const TagField = ({
             >
               <Input
                 className="ml-1.5 inline px-0 sm:px-0"
-                placeholder={maxTagsToAdd <= 0 ? "Remove one to add more" : props.placeholder}
+                placeholder={
+                  maxTagsToAdd <= 0 ? "Remove one to add more" : props.placeholder
+                }
               />
             </TextField>
           </div>
         </TagGroup>
         {name && (
-          <input hidden name={name} value={list.items.map((i) => i.name).join(",")} readOnly />
+          <input
+            hidden
+            name={name}
+            value={list.items.map((i) => i.name).join(",")}
+            readOnly
+          />
         )}
       </Group>
       {props.description && <Description>{props.description}</Description>}

@@ -24,7 +24,26 @@ The basic multiple select component lets you select multiple options from a list
 <SourceCode toShow='multiple-select' />
 
 ## Anatomy
-<Anatomy show='multiple-select-anatomy'/>
+```
+import { MultipleSelect } from "@/components/ui/multiple-select"
+```
+
+```
+<MultipleSelect
+  className="min-w-2xs max-w-min"
+  placeholder="Select fruits"
+  aria-label="Fruits"
+  items={fruits}
+>
+  {(item) => {
+    return (
+      <MultipleSelect.Item textValue={item.name}>
+        {item.name}
+      </MultipleSelect.Item>
+    )
+  }}
+</MultipleSelect>
+```
 
 ## Controlled
 This component lets you select tags dynamically, updating the list with callbacks on add and remove. It displays selected tags with Tag components and logs each action.

@@ -135,7 +135,12 @@ const Bars = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
 )
 const Ring = (props: React.SVGProps<SVGSVGElement>) => <IconLoader {...props} />
 const Spin = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
-  <svg className={twMerge("size-4", className)} data-slot="icon" viewBox="0 0 2400 2400" {...props}>
+  <svg
+    className={twMerge("size-4", className)}
+    data-slot="icon"
+    viewBox="0 0 2400 2400"
+    {...props}
+  >
     <g strokeWidth="200" strokeLinecap="round" fill="none">
       <line x1="1200" y1="600" x2="1200" y2="100" />
       <line opacity="0.5" x1="1200" y1="2300" x2="1200" y2="1800" />

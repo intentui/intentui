@@ -28,10 +28,19 @@ export default function PieChartTrafficSourceDemo() {
           dataKey="amount"
           nameKey="name"
           config={{
-            Organic: { label: "Organic", color: "var(--color-emerald-500)" },
+            Organic: {
+              label: "Organic",
+              color: "var(--color-emerald-500)",
+            },
             Paid: { label: "Paid", color: "var(--color-rose-500)" },
-            Referral: { label: "Referral", color: "var(--color-sky-500)" },
-            Social: { label: "Social", color: "var(--color-indigo-500)" },
+            Referral: {
+              label: "Referral",
+              color: "var(--color-sky-500)",
+            },
+            Social: {
+              label: "Social",
+              color: "var(--color-indigo-500)",
+            },
           }}
         />
       </Card.Content>

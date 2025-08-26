@@ -1,5 +1,10 @@
 "use client"
-import { IconBrandIntentui, IconChevronLgDown, IconSearch, IconShoppingBag } from "@intentui/icons"
+import {
+  IconBrandIntentui,
+  IconChevronLgDown,
+  IconSearch,
+  IconShoppingBag,
+} from "@intentui/icons"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu } from "@/components/ui/menu"
@@ -101,7 +106,10 @@ export default function AppNavbar(props: NavbarProps) {
               Categories
               <IconChevronLgDown className="col-start-3" />
             </NavbarItem>
-            <Menu.Content className="min-w-(--trigger-width) sm:min-w-56" items={categories}>
+            <Menu.Content
+              className="min-w-(--trigger-width) sm:min-w-56"
+              items={categories}
+            >
               {(item) => (
                 <Menu.Item id={item.id} textValue={item.label} href={item.url}>
                   {item.label}

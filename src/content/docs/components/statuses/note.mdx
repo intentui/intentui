@@ -17,7 +17,19 @@ The Note component displays a note with a title and description, providing an ea
 <SourceCode toShow='note'/>
 
 ## Anatomy
-<Anatomy show='note-anatomy'/>
+```
+import { Note } from "@/components/ui/note"
+```
+
+```
+<>
+  <Note intent='info'>Note for info</Note>
+  <Note intent='warning'>Note for warning</Note>
+  <Note intent='danger'>Note for danger</Note>
+  <Note intent='success'>Note for success</Note>
+  <Note intent='default'>Note for default</Note>
+</>
+```
 
 ## Intent
 By default, the note is displayed with a primary intent. You can change the intent by passing the `intent` prop. This example demonstrates different intents.

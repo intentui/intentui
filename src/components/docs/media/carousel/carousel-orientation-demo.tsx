@@ -6,7 +6,10 @@ export default function CarouselOrientationDemo() {
     <Carousel orientation="vertical" className="relative w-full max-w-xs">
       <Carousel.Content className="h-64 snap-y py-4">
         {items.map((item) => (
-          <Carousel.Item key={item.id} className="basis-1/2 snap-center pt-1 md:basis-1/3">
+          <Carousel.Item
+            key={item.id}
+            className="basis-1/2 snap-center pt-1 md:basis-1/3"
+          >
             <Card>
               <Card.Header>
                 <Card.Title>{item.title}</Card.Title>
@@ -45,7 +48,8 @@ const items = [
   {
     id: 4,
     title: "Stainless Steel Water Bottle",
-    description: "Keep your drinks cold or hot with this durable, insulated water bottle.",
+    description:
+      "Keep your drinks cold or hot with this durable, insulated water bottle.",
   },
   {
     id: 5,

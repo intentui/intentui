@@ -26,7 +26,9 @@ export function Components() {
               className="mb-12 flex break-inside-avoid flex-col gap-y-4"
               key={item.subsection}
             >
-              <Header className="font-semibold text-fg text-sm">{item?.subsection}</Header>
+              <Header className="font-semibold text-fg text-sm">
+                {item?.subsection}
+              </Header>
               {item?.children?.map((item) => (
                 <ListBoxItem
                   className="text-muted-fg text-sm hover:text-fg focus:text-fg"

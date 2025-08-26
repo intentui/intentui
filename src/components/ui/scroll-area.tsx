@@ -6,7 +6,11 @@ const ScrollArea = React.forwardRef<
   React.ComponentRef<typeof ScrollAreaPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
-  <ScrollAreaPrimitive.Root ref={ref} className={twMerge("overflow-hidden", className)} {...props}>
+  <ScrollAreaPrimitive.Root
+    ref={ref}
+    className={twMerge("overflow-hidden", className)}
+    {...props}
+  >
     {children}
     <ScrollAreaPrimitive.Corner />
     <ScrollBar orientation="vertical" />

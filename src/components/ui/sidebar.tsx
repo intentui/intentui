@@ -1,7 +1,15 @@
 "use client"
 
 import { IconSidebarFill } from "@intentui/icons"
-import { createContext, use, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import {
+  createContext,
+  use,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react"
 import type {
   ButtonProps,
   DisclosureGroupProps,
@@ -223,7 +231,8 @@ const Sidebar = ({
           "w-(--sidebar-width) group-data-[collapsible=hidden]:w-0",
           "group-data-[side=right]:rotate-180",
           "relative h-svh bg-transparent transition-[width] duration-200 ease-linear",
-          intent === "default" && "group-data-[collapsible=dock]:w-(--sidebar-width-dock)",
+          intent === "default" &&
+            "group-data-[collapsible=dock]:w-(--sidebar-width-dock)",
           intent === "float" &&
             "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(4))]",
           intent === "inset" &&
@@ -241,7 +250,8 @@ const Sidebar = ({
             "left-0 group-data-[collapsible=hidden]:left-[calc(var(--sidebar-width)*-1)]",
           side === "right" &&
             "right-0 group-data-[collapsible=hidden]:right-[calc(var(--sidebar-width)*-1)]",
-          intent === "float" && "bg-bg group-data-[collapsible=dock]:w-[calc(--spacing(4)+2px)]",
+          intent === "float" &&
+            "bg-bg group-data-[collapsible=dock]:w-[calc(--spacing(4)+2px)]",
           intent === "inset" &&
             "bg-sidebar group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(2)+2px)] dark:bg-bg",
           intent === "default" && [
@@ -316,7 +326,10 @@ const SidebarContent = ({ className, ...props }: React.ComponentProps<"div">) =>
   )
 }
 
-const SidebarSectionGroup = ({ className, ...props }: React.ComponentProps<"section">) => {
+const SidebarSectionGroup = ({
+  className,
+  ...props
+}: React.ComponentProps<"section">) => {
   const { state, isMobile } = useSidebar()
   const collapsed = state === "collapsed" && !isMobile
   return (
@@ -352,7 +365,10 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
           {props.label}
         </Header>
       )}
-      <div data-slot="sidebar-section-inner" className="grid grid-cols-[auto_1fr] gap-y-0.5">
+      <div
+        data-slot="sidebar-section-inner"
+        className="grid grid-cols-[auto_1fr] gap-y-0.5"
+      >
         {props.children}
       </div>
     </div>
@@ -364,7 +380,10 @@ interface SidebarItemProps extends Omit<React.ComponentProps<typeof Link>, "chil
   children?:
     | React.ReactNode
     | ((
-        values: LinkRenderProps & { defaultChildren: React.ReactNode; isCollapsed: boolean },
+        values: LinkRenderProps & {
+          defaultChildren: React.ReactNode
+          isCollapsed: boolean
+        },
       ) => React.ReactNode)
   badge?: string | number | undefined
   tooltip?: string | React.ComponentProps<typeof TooltipContent>
@@ -413,7 +432,9 @@ const SidebarItem = ({
     >
       {(values) => (
         <>
-          {typeof children === "function" ? children({ ...values, isCollapsed }) : children}
+          {typeof children === "function"
+            ? children({ ...values, isCollapsed })
+            : children}
 
           {badge &&
             (state !== "collapsed" ? (
@@ -524,7 +545,11 @@ interface SidebarDisclosureTriggerProps extends ButtonProps {
   ref?: React.Ref<HTMLButtonElement>
 }
 
-const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosureTriggerProps) => {
+const SidebarDisclosureTrigger = ({
+  className,
+  ref,
+  ...props
+}: SidebarDisclosureTriggerProps) => {
   const { state } = useSidebar()
   return (
     <Heading level={3}>
@@ -554,7 +579,9 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
       >
         {(values) => (
           <>
-            {typeof props.children === "function" ? props.children(values) : props.children}
+            {typeof props.children === "function"
+              ? props.children(values)
+              : props.children}
             {state !== "collapsed" && (
               <svg
                 data-slot="chevron"
@@ -589,7 +616,11 @@ const SidebarDisclosurePanel = ({ className, style, ...props }: DisclosurePanelP
     <DisclosurePanel
       data-slot="sidebar-disclosure-panel"
       style={{
-        height: !isSafari ? (isExpanded ? contentRef?.current?.scrollHeight : 0) : undefined,
+        height: !isSafari
+          ? isExpanded
+            ? contentRef?.current?.scrollHeight
+            : 0
+          : undefined,
         ...style,
       }}
       className={composeTailwindRenderProps(
@@ -675,7 +706,11 @@ const SidebarRail = ({ className, ref, ...props }: React.ComponentProps<"button"
   )
 }
 
-const SidebarLabel = ({ className, ref, ...props }: React.ComponentProps<typeof Text>) => {
+const SidebarLabel = ({
+  className,
+  ref,
+  ...props
+}: React.ComponentProps<typeof Text>) => {
   const { state, isMobile } = useSidebar()
   const collapsed = state === "collapsed" && !isMobile
   if (!collapsed) {
@@ -708,7 +743,8 @@ const SidebarNav = ({ isSticky = false, className, ...props }: SidebarNavProps) 
       data-slot="sidebar-nav"
       className={twMerge(
         "isolate flex items-center justify-between gap-x-2 px-(--container-padding,--spacing(4)) py-2.5 text-navbar-fg sm:justify-start sm:px-(--gutter,--spacing(4)) md:w-full",
-        isSticky && "static top-0 z-40 group-has-data-[intent=default]/sidebar-root:sticky",
+        isSticky &&
+          "static top-0 z-40 group-has-data-[intent=default]/sidebar-root:sticky",
         className,
       )}
       {...props}

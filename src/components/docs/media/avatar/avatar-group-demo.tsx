@@ -15,9 +15,17 @@ export default function AvatarGroupDemo() {
 }
 
 export const users = [
-  { id: 1, name: "Robert Plant", image_url: "/images/avatar/robert.jpg" },
+  {
+    id: 1,
+    name: "Robert Plant",
+    image_url: "/images/avatar/robert.jpg",
+  },
   { id: 2, name: "Jimmy Page", image_url: "/images/avatar/page.jpg" },
   { id: 5, name: "Irsyad", image_url: "/images/avatar/irsyad.jpg" },
   { id: 3, name: "Slash", image_url: "/images/avatar/slash.jpg" },
-  { id: 4, name: "Kurt Cobain", image_url: "https://intentui.com/images/avatar/cobain.jpg" },
+  {
+    id: 4,
+    name: "Kurt Cobain",
+    image_url: "https://intentui.com/images/avatar/cobain.jpg",
+  },
 ]

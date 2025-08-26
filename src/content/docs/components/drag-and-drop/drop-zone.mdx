@@ -23,7 +23,16 @@ DropZone provides support for mouse, keyboard, and touch interactions. Simply co
 <SourceCode toShow='drop-zone'/>
 
 ## Anatomy
-<Anatomy show='drop-zone-anatomy'/>
+```
+import { DropZone } from "@/components/ui/drop-zone"
+import { Label } from "@/components/ui/field"
+```
+
+```
+<DropZone>
+  <Label>Toss your stuff here</Label>
+</DropZone>
+```
 
 ## Using FileTrigger
 The `FileTrigger` component can be used to select files from the file system, making it an excellent tool for managing files that have been dragged and dropped into the browser.

@@ -9,7 +9,12 @@ export default function TimeFieldSuffixDemo() {
   return (
     <>
       <TimeField suffix={<IconClock />} defaultValue={new Time()} label="Event time" />
-      <TimeField className="mt-4" prefix="UTC" defaultValue={new Time()} label="Event time" />
+      <TimeField
+        className="mt-4"
+        prefix="UTC"
+        defaultValue={new Time()}
+        label="Event time"
+      />
     </>
   )
 }

@@ -43,7 +43,13 @@ interface BadgeProps
   children: React.ReactNode
 }
 
-const Badge = ({ children, intent, isCircle = true, className, ...props }: BadgeProps) => {
+const Badge = ({
+  children,
+  intent,
+  isCircle = true,
+  className,
+  ...props
+}: BadgeProps) => {
   return (
     <span {...props} className={badgeStyles({ intent, isCircle, className })}>
       {children}

@@ -2,7 +2,10 @@
 
 import { IconEye, IconEyeClosed } from "@intentui/icons"
 import { useState } from "react"
-import type { InputProps, TextFieldProps as TextFieldPrimitiveProps } from "react-aria-components"
+import type {
+  InputProps,
+  TextFieldProps as TextFieldPrimitiveProps,
+} from "react-aria-components"
 import { TextField as TextFieldPrimitive } from "react-aria-components"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import type { FieldProps } from "./field"

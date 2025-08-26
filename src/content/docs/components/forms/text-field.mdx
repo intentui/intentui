@@ -24,7 +24,20 @@ A text field is a box where you can type in text, like your name or email.
 <SourceCode toShow='text-field'/>
 
 ## Anatomy
-<Anatomy show='text-field-anatomy'/>
+```
+import { TextField } from "@/components/ui/text-field"
+
+<TextField
+  name="name"
+  type="text"
+  label="Name"
+  description="Enter your name"
+  placeholder="John Doe"
+  errorMessage="This field is required"
+  prefix="..."
+  suffix="..."
+/>
+```
 
 ## Suffix and prefix
 Enhance your TextField by adding a prefix or suffix. Whether it’s text or icons, it’s flexible to fit your design.

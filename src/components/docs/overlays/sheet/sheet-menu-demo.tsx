@@ -75,9 +75,15 @@ export default function SheetMenuDemo() {
         </Sheet.Trigger>
         <Sheet.Content isFloat={false} closeButton={false}>
           <Sheet.Header className="flex flex-row gap-x-3.5 border-b sm:gap-x-3 sm:px-4 sm:pt-3 sm:pb-2">
-            <Avatar src="https://intentui.com/images/avatar/cobain.jpg" isSquare alt="cobain" />
+            <Avatar
+              src="https://intentui.com/images/avatar/cobain.jpg"
+              isSquare
+              alt="cobain"
+            />
             <div>
-              <Sheet.Title className="text-base/4 sm:text-base/4">Kurt Cobain</Sheet.Title>
+              <Sheet.Title className="text-base/4 sm:text-base/4">
+                Kurt Cobain
+              </Sheet.Title>
               <Sheet.Description>@cobain</Sheet.Description>
             </div>
           </Sheet.Header>

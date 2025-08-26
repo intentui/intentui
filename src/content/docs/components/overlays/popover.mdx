@@ -23,7 +23,36 @@ Popovers are small overlays that display additional information about an element
 <SourceCode toShow='popover'/>
 
 ## Anatomy
-<Anatomy show='popover-anatomy'/>
+```
+import {
+  Popover,
+  PopoverBody,
+  PopoverClose,
+  PopoverContent,
+  PopoverDescription,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+```
+
+```
+<Popover>
+  <PopoverTrigger>Open Popover</PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader>
+      <PopoverTitle>Popover Title</PopoverTitle>
+      <PopoverDescription>Popover Description</PopoverDescription>
+    </PopoverHeader>
+    <PopoverBody>Popover Body</PopoverBody>
+    <PopoverFooter>
+      <PopoverClose>Close</PopoverClose>
+      <PopoverClose>Confirm</PopoverClose>
+    </PopoverFooter>
+  </PopoverContent>
+</Popover>
+```
 
 ## Controlled
 You can control the popover programmatically.

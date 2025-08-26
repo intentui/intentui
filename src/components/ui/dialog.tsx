@@ -88,7 +88,10 @@ const DialogTitle = ({ className, ref, ...props }: DialogTitleProps) => (
   <Heading
     slot="title"
     ref={ref}
-    className={twMerge("text-balance font-semibold text-fg text-lg/6 sm:text-base/6", className)}
+    className={twMerge(
+      "text-balance font-semibold text-fg text-lg/6 sm:text-base/6",
+      className,
+    )}
     {...props}
   />
 )
@@ -160,7 +163,9 @@ const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
 }
 
 const DialogClose = ({ className, intent = "outline", ref, ...props }: ButtonProps) => {
-  return <Button slot="close" className={className} ref={ref} intent={intent} {...props} />
+  return (
+    <Button slot="close" className={className} ref={ref} intent={intent} {...props} />
+  )
 }
 
 interface CloseButtonIndicatorProps extends Omit<ButtonProps, "children"> {

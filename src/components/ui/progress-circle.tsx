@@ -20,7 +20,14 @@ const ProgressCircle = ({ className, ref, ...props }: ProgressCircleProps) => {
           fill="none"
           data-slot="icon"
         >
-          <circle cx={c} cy={c} r={r} strokeWidth={3} stroke="currentColor" strokeOpacity={0.25} />
+          <circle
+            cx={c}
+            cy={c}
+            r={r}
+            strokeWidth={3}
+            stroke="currentColor"
+            strokeOpacity={0.25}
+          />
           {!isIndeterminate ? (
             <circle
               cx={c}

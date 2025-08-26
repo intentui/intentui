@@ -14,7 +14,9 @@ export default function Page() {
             <span className="text-muted-fg">og</span>
           </h1>
           {blog
-            .sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime())
+            .sort(
+              (a, b) => new Date(b.published).getTime() - new Date(a.published).getTime(),
+            )
             .map((item) => (
               <div
                 className="relative mb-12 flex flex-col rounded-2xl sm:p-8 md:mb-0 md:hover:bg-secondary"

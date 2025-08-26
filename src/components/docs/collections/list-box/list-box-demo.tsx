@@ -4,7 +4,12 @@ import { ListBox } from "@/components/ui/list-box"
 
 export default function ListBoxDemo() {
   return (
-    <ListBox className="max-w-2xs" items={rockPopBands} selectionMode="single" aria-label="Bands">
+    <ListBox
+      className="max-w-2xs"
+      items={rockPopBands}
+      selectionMode="single"
+      aria-label="Bands"
+    >
       {(item) => <ListBox.Item id={item.id}>{item.name}</ListBox.Item>}
     </ListBox>
   )

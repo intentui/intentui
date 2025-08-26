@@ -2,7 +2,10 @@
 
 import React, { useState } from "react"
 
-import type { SliderProps as SliderPrimitiveProps, SliderThumbProps } from "react-aria-components"
+import type {
+  SliderProps as SliderPrimitiveProps,
+  SliderThumbProps,
+} from "react-aria-components"
 import {
   composeRenderProps,
   SliderOutput,
@@ -104,7 +107,9 @@ const Slider = ({
         {props.label && <Label>{props.label}</Label>}
         {output === "inline" && (
           <SliderOutput className="text-muted-fg text-sm tabular-nums data-[orientation=vertical]:mx-auto data-[orientation=horizontal]:ml-auto">
-            {({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(" – ")}
+            {({ state }) =>
+              state.values.map((_, i) => state.getThumbValueLabel(i)).join(" – ")
+            }
           </SliderOutput>
         )}
       </div>
@@ -148,12 +153,20 @@ const SliderFiller = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
     const percent1 = getThumbPercent ? getThumbPercent(1) * 100 : 0
 
     if (values?.length === 1) {
-      return orientation === "horizontal" ? { width: `${percent0}%` } : { height: `${percent0}%` }
+      return orientation === "horizontal"
+        ? { width: `${percent0}%` }
+        : { height: `${percent0}%` }
     }
 
     return orientation === "horizontal"
-      ? { left: `${percent0}%`, width: `${Math.abs(percent0 - percent1)}%` }
-      : { bottom: `${percent0}%`, height: `${Math.abs(percent0 - percent1)}%` }
+      ? {
+          left: `${percent0}%`,
+          width: `${Math.abs(percent0 - percent1)}%`,
+        }
+      : {
+          bottom: `${percent0}%`,
+          height: `${Math.abs(percent0 - percent1)}%`,
+        }
   }
 
   return (

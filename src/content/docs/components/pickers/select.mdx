@@ -24,7 +24,35 @@ A select component displays a dropdown list of options, allowing users to pick o
 <SourceCode toShow='select'/>
 
 ## Anatomy
-<Anatomy show='select-anatomy'/>
+```
+import {
+  Select,
+  SelectList,
+  SelectOption,
+  SelectTrigger,
+} from "@/components/ui/select"
+```
+
+```
+const software = [
+  { id: 1, name: "Adobe Photoshop" },
+  { id: 2, name: "Sketch" },
+  { id: 3, name: "Figma" },
+  { id: 4, name: "Adobe XD" },
+  { id: 5, name: "InVision" },
+]
+
+<Select aria-label="Design software" placeholder="Select a software">
+  <SelectTrigger />
+  <SelectList items={software}>
+    {(item) => (
+      <SelectOption id={item.id} textValue={item.name}>
+        {item.name}
+      </SelectOption>
+    )}
+  </SelectList>
+</Select>
+```
 
 ## Section
 A select component can display items grouped together in sections.

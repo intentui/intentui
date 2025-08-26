@@ -24,7 +24,37 @@ A sheet is a modal component that slides in from the side of the screen. It's us
 <SourceCode toShow='sheet' />
 
 ## Anatomy
-<Anatomy show='sheet-anatomy'/>
+```
+import { Button } from "@/components/ui/button"
+import {
+  Sheet,
+  SheetBody,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+```
+
+```
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Sheet Title</SheetTitle>
+      <SheetDescription>Sheet Description</SheetDescription>
+    </SheetHeader>
+    <SheetBody>Sheet Body</SheetBody>
+    <SheetFooter>
+      <SheetClose>Cancel</SheetClose>
+      <Button>Save</Button>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>
+```
 
 
 ## Like github

@@ -57,7 +57,10 @@ export function EditorText({ source }: Props) {
                   fetchedSourceCode[key] =
                     registryEntry.files?.[0]?.content || "No content available"
                 } else {
-                  console.error(`Failed to fetch source code for ${path}:`, response.status)
+                  console.error(
+                    `Failed to fetch source code for ${path}:`,
+                    response.status,
+                  )
                   fetchedSourceCode[key] = "Error loading source code."
                 }
               } catch (error) {
@@ -90,7 +93,8 @@ export function EditorText({ source }: Props) {
                       "**:data-[slot=icon]:-ml-0.5 border-transparent border-x outline-hidden first:border-l-0 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
                       (values.isSelected || values.isFocused || values.isFocusVisible) &&
                         "border-input bg-secondary/50 text-secondary-fg dark:bg-muted",
-                      values.isHovered && "bg-secondary/70 text-secondary-fg dark:bg-muted",
+                      values.isHovered &&
+                        "bg-secondary/70 text-secondary-fg dark:bg-muted",
                     )
                   }
                   key={key}

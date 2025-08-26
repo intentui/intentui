@@ -22,7 +22,41 @@ A group of checkboxes that lets you select multiple options at once.
 <SourceCode toShow='checkbox'/>
 
 ## Anatomy
-<Anatomy show='checkbox-group-anatomy'/>
+```
+import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
+import { Description, Label } from "@/components/ui/field"
+```
+
+```
+<CheckboxGroup defaultValue={["delete"]}>
+  <Label>User Permissions</Label>
+  <Description>
+    Select the permissions you want to grant to the user.
+  </Description>
+  <Checkbox value="read">
+    <Label>Read</Label>
+    <Description>
+      Can view content but cannot make changes.
+    </Description>
+  </Checkbox>
+  <Checkbox value="write">
+    <Label>Write</Label>
+    <Description>
+      Can create and modify existing content.
+    </Description>
+  </Checkbox>
+  <Checkbox value="delete">
+    <Label>Delete</Label>
+    <Description>Can permanently remove content.</Description>
+  </Checkbox>
+  <Checkbox value="admin">
+    <Label>Admin</Label>
+    <Description>
+      Full access to all actions and settings.
+    </Description>
+  </Checkbox>
+</CheckboxGroup>
+```
 
 ## Description
 Add a description to the checkbox group using the `description` prop.

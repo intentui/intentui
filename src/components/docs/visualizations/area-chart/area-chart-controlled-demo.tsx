@@ -46,7 +46,9 @@ export default function AreaChartControlledSmart() {
     <Card>
       <Card.Header>
         <Card.Title>Engagement</Card.Title>
-        <Card.Description>Likes, comments, and shares over a dynamic time range.</Card.Description>
+        <Card.Description>
+          Likes, comments, and shares over a dynamic time range.
+        </Card.Description>
         <Card.Action>
           <ToggleGroup size="sm" selectedKeys={selected} onSelectionChange={setSelected}>
             <ToggleGroupItem id="3d">3d</ToggleGroupItem>

@@ -123,7 +123,11 @@ function NavLink({ ...props }: React.ComponentProps<typeof Link>) {
 }
 
 export const menus = [
-  { href: "/docs/getting-started/introduction", label: "Docs", icon: IconNotesFill },
+  {
+    href: "/docs/getting-started/introduction",
+    label: "Docs",
+    icon: IconNotesFill,
+  },
   { href: "/components", label: "Components", icon: IconPackageFill },
   { href: "/themes", label: "Themes", icon: IconColorsFill },
   { href: "/icons", label: "Icons", icon: IconArrowUpFill },

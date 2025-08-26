@@ -21,7 +21,15 @@ The basic color picker allows users to select a color.
 <SourceCode toShow='color-picker'/>
 
 ## Anatomy
-<Anatomy show='color-picker-anatomy'/>
+```
+import { ColorPicker } from "@/components/ui/color-picker"
+
+<ColorPicker
+  label="Theme Color"
+  description="Snag a color for the app theme"
+  defaultValue="hsl(216, 98%, 52%)"
+/>
+```
 
 ## Enable format selection
 Enable users to select the format of the color value (e.g., RGB, HSL).

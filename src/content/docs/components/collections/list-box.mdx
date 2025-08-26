@@ -22,7 +22,19 @@ ListBoxes can be enhanced with features such as multi-selection, filtering, and 
 <SourceCode toShow='list-box'/>
 
 ## Anatomy
-<Anatomy show='list-box-anatomy'/>
+```
+import { ListBox, ListBoxItem } from "@/components/ui/list-box"
+```
+
+```
+<ListBox aria-label="Bands">
+  <ListBoxItem>Nirvana</ListBoxItem>
+  <ListBoxItem>Radiohead</ListBoxItem>
+  <ListBoxItem>Foo Fighters</ListBoxItem>
+  <ListBoxItem>Arctic Monkeys</ListBoxItem>
+  <ListBoxItem>The Strokes</ListBoxItem>
+</ListBox>
+```
 
 ## Multiple selection
 To enable multiple selections, set the `selectionMode` prop to `multiple`. This prop has no default value, so it must be explicitly defined.

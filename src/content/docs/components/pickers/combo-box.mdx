@@ -23,7 +23,26 @@ A combo box combines a text input with a listbox, allowing users to filter optio
 <SourceCode toShow='combo-box'/>
 
 ## Anatomy
-<Anatomy show='combo-box-anatomy'/>
+```
+import {
+  ComboBox,
+  ComboBoxInput,
+  ComboBoxList,
+  ComboBoxOption,
+} from "@/components/ui/combo-box"
+```
+
+```
+<ComboBox placeholder="Select a user" label="Users">
+  <ComboBoxInput />
+  <ComboBoxList>
+    <ComboBoxOption>John Lennon</ComboBoxOption>
+    <ComboBoxOption>Paul McCartney</ComboBoxOption>
+    <ComboBoxOption>George Harrison</ComboBoxOption>
+    <ComboBoxOption>Ringo Starr</ComboBoxOption>
+  </ComboBoxList>
+</ComboBox>
+```
 
 ## Using avatars
 The combo box can be configured to display avatars instead of just regular text.

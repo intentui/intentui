@@ -122,12 +122,18 @@ const components: any[] = [
       { name: "show-more" },
     ],
   },
-  { name: "media", children: [{ name: "avatar" }, { name: "carousel" }] },
+  {
+    name: "media",
+    children: [{ name: "avatar" }, { name: "carousel" }],
+  },
   {
     name: "colors",
     children: [{ name: "color-picker" }, { name: "color-swatch-picker" }],
   },
-  { name: "buttons", children: [{ name: "file-trigger" }, { name: "toggle" }] },
+  {
+    name: "buttons",
+    children: [{ name: "file-trigger" }, { name: "toggle" }],
+  },
   { name: "drag-and-drop", children: [{ name: "drop-zone" }] },
   {
     name: "controls",
@@ -162,12 +168,21 @@ const components: any[] = [
     name: "menu",
     children: [{ name: "dropdown" }, { name: "popover" }],
   },
-  { name: "list-box", children: [{ name: "dropdown" }, { name: "field" }] },
+  {
+    name: "list-box",
+    children: [{ name: "dropdown" }, { name: "field" }],
+  },
   { name: "tabs" },
-  { name: "tag-group", children: [{ name: "field" }, { name: "badge" }] },
+  {
+    name: "tag-group",
+    children: [{ name: "field" }, { name: "badge" }],
+  },
   { name: "table", children: [{ name: "checkbox" }] },
   { name: "grid-list", children: [{ name: "checkbox" }] },
-  { name: "choicebox", children: [{ name: "checkbox" }, { name: "field" }] },
+  {
+    name: "choicebox",
+    children: [{ name: "checkbox" }, { name: "field" }],
+  },
   { name: "tree", children: [{ name: "checkbox" }] },
 
   // ------------------------------------------------------------------------------------- //
@@ -188,21 +203,33 @@ const components: any[] = [
       { name: "range-calendar" },
     ],
   },
-  { name: "time-field", children: [{ name: "field" }, { name: "date-field" }] },
+  {
+    name: "time-field",
+    children: [{ name: "field" }, { name: "date-field" }],
+  },
 
   // ------------------------------------------------------------------------------------- //
   // ⌘ The children of Forms
   // ------------------------------------------------------------------------------------- //
 
   { name: "form" },
-  { name: "tag-field", children: [{ name: "tag-group" }, { name: "field" }] },
-  { name: "text-field", children: [{ name: "field" }, { name: "loader" }] },
+  {
+    name: "tag-field",
+    children: [{ name: "tag-group" }, { name: "field" }],
+  },
+  {
+    name: "text-field",
+    children: [{ name: "field" }, { name: "loader" }],
+  },
   { name: "input-otp" },
   { name: "radio", children: [{ name: "field" }] },
   { name: "checkbox", children: [{ name: "field" }] },
   { name: "textarea", children: [{ name: "field" }] },
   { name: "number-field", children: [{ name: "field" }] },
-  { name: "search-field", children: [{ name: "field" }, { name: "button" }, { name: "loader" }] },
+  {
+    name: "search-field",
+    children: [{ name: "field" }, { name: "button" }, { name: "loader" }],
+  },
 
   // ------------------------------------------------------------------------------------- //
   // ⌘ The children of Navigation
@@ -292,7 +319,10 @@ const components: any[] = [
   { name: "progress-circle" },
   { name: "meter", children: [{ name: "field" }] },
   { name: "note" },
-  { name: "toast", children: [{ name: "button" }, { name: "loader" }] },
+  {
+    name: "toast",
+    children: [{ name: "button" }, { name: "loader" }],
+  },
 
   // ------------------------------------------------------------------------------------- //
   // ⌘ The children of Colors
@@ -341,7 +371,10 @@ const components: any[] = [
   { name: "context-menu", children: [{ name: "menu" }] },
   { name: "slider", children: [{ name: "field" }] },
   { name: "switch" },
-  { name: "toolbar", children: [{ name: "toggle" }, { name: "separator" }] },
+  {
+    name: "toolbar",
+    children: [{ name: "toggle" }, { name: "separator" }],
+  },
 
   // ------------------------------------------------------------------------------------- //
   // ⌘ The children of Layouts

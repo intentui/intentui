@@ -23,7 +23,10 @@ interface LineChartProps<TValue extends ValueType, TName extends NameType>
   extends BaseChartProps<TValue, TName> {
   connectNulls?: boolean
   lineProps?: LineProps
-  chartProps?: Omit<React.ComponentProps<typeof LineChartPrimitive>, "data" | "stackOffset">
+  chartProps?: Omit<
+    React.ComponentProps<typeof LineChartPrimitive>,
+    "data" | "stackOffset"
+  >
 }
 
 export const LineChart = <TValue extends ValueType, TName extends NameType>({
@@ -109,7 +112,11 @@ export const LineChart = <TValue extends ValueType, TName extends NameType>({
           {tooltip && (
             <ChartTooltip
               content={
-                typeof tooltip === "boolean" ? <ChartTooltipContent accessibilityLayer /> : tooltip
+                typeof tooltip === "boolean" ? (
+                  <ChartTooltipContent accessibilityLayer />
+                ) : (
+                  tooltip
+                )
               }
               {...tooltipProps}
             />
@@ -117,7 +124,8 @@ export const LineChart = <TValue extends ValueType, TName extends NameType>({
 
           {!children
             ? Object.entries(config).map(([category, values]) => {
-                const strokeOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 1
+                const strokeOpacity =
+                  selectedLegend && selectedLegend !== category ? 0.1 : 1
 
                 return (
                   <Line
@@ -131,7 +139,9 @@ export const LineChart = <TValue extends ValueType, TName extends NameType>({
                       {
                         strokeOpacity,
                         strokeWidth: 2,
-                        "--line-color": getColorValue(values.color || categoryColors.get(category)),
+                        "--line-color": getColorValue(
+                          values.color || categoryColors.get(category),
+                        ),
                       } as React.CSSProperties
                     }
                     strokeLinejoin="round"

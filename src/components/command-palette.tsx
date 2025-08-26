@@ -100,7 +100,10 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
 
         return items.length ? { colorName, items } : null
       })
-      .filter(Boolean) as { colorName: string; items: [string, string][] }[]
+      .filter(Boolean) as {
+      colorName: string
+      items: [string, string][]
+    }[]
   }, [inputLower])
 
   return (
@@ -219,7 +222,9 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
       </CommandMenu.List>
       <CommandMenu.Footer className="text-xs">
         Use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate, <kbd>↵</kbd> to{" "}
-        {filteredColors.length > 0 && filteredDocs.length === 0 && filteredComponents.length === 0
+        {filteredColors.length > 0 &&
+        filteredDocs.length === 0 &&
+        filteredComponents.length === 0
           ? "copy"
           : "select"}
         .

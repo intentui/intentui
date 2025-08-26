@@ -43,7 +43,10 @@ export const Pre = ({ className, ref, ...props }: React.ComponentProps<"pre">) =
   return (
     <pre
       ref={ref}
-      className={twMerge("w-full p-4 leading-relaxed focus-visible:outline-hidden", className)}
+      className={twMerge(
+        "w-full p-4 leading-relaxed focus-visible:outline-hidden",
+        className,
+      )}
       {...props}
     >
       {props.children}
@@ -103,11 +106,16 @@ export const PlainCode = ({
           ) : null}
           <figcaption className="flex-1 truncate text-muted-fg">{title}</figcaption>
           {allowCopy ? (
-            <InternalCopyButton className="absolute top-1 right-1 z-[2]" onCopy={onCopy} />
+            <InternalCopyButton
+              className="absolute top-1 right-1 z-[2]"
+              onCopy={onCopy}
+            />
           ) : null}
         </div>
       ) : (
-        allowCopy && <InternalCopyButton className="absolute top-1 right-1 z-[2]" onCopy={onCopy} />
+        allowCopy && (
+          <InternalCopyButton className="absolute top-1 right-1 z-[2]" onCopy={onCopy} />
+        )
       )}
       <ScrollArea ref={areaRef} className="w-full" dir="ltr">
         <ScrollViewport

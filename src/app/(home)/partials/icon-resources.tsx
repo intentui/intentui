@@ -88,9 +88,9 @@ export function IconResources() {
               <Heading level={3}>Intent UI Icons</Heading>
               <p className="mt-3 mb-6 text-pretty text-muted-fg lg:text-sm/6">
                 Intent UI Icons is a powerful open-source SVG icon library with over{" "}
-                <strong className="text-fg">1,191 symbols</strong>, and more added with every
-                release. Designed to seamlessly integrate into any project, they work perfectly
-                whether or not you use Intent UI components.
+                <strong className="text-fg">1,191 symbols</strong>, and more added with
+                every release. Designed to seamlessly integrate into any project, they
+                work perfectly whether or not you use Intent UI components.
               </p>
               <InstallIcon />
             </div>
