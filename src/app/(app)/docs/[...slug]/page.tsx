@@ -112,7 +112,7 @@ export default async function Page(props: DocPageProps) {
               {doc.references && doc.references?.length > 0 && (
                 <DocRefs references={doc.references} />
               )}
-              <div className={doc?.references?.length! > 0 ? "ml-auto" : "ml-0"}>
+              <div className="ml-auto">
                 <OpenIn tree={source.pageTree} url={page.url} />
               </div>
             </div>

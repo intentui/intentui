@@ -44,7 +44,7 @@ function AdCard({ href, title, description, domain, icon, className }: AdCardPro
       rel="noreferrer"
       href={href}
       className={twMerge(
-        "not-prose relative z-20 mt-6 flex w-full flex-col gap-y-1 rounded-xl border border-fg/10 border-dashed bg-secondary/30 p-4 text-muted-fg hover:border-fg/15 hover:bg-secondary/20 sm:w-56 **:[svg]:size-3.5 **:[svg]:shrink-0",
+        "not-prose relative z-20 mt-6 flex w-full flex-col gap-y-1 rounded-xl border border-fg/10 border-dashed bg-secondary/30 p-4 text-muted-fg hover:border-fg/15 hover:bg-secondary/20 sm:w-56 **:[svg]:size-4.5 **:[svg]:shrink-0",
         className,
       )}
     >
@@ -64,7 +64,7 @@ export function Ads({ className }: { className?: string }) {
       href: "https://dub.sh/irsyadco",
       title: "Ready-to-use templates",
       description:
-        "Launch faster with 150+ blocks and professional templates for modern web apps.",
+        "Launch faster with 275+ blocks and professional templates for modern web apps.",
       domain: "irsyad.co",
       icon: <IconBrandIrsyadCo />,
     },
