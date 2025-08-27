@@ -83,7 +83,6 @@ const SidebarProvider = ({
   ref,
   ...props
 }: SidebarProviderProps) => {
-  const isMobile = useMediaQuery("(max-width: 767px)")
   const [openMobile, setOpenMobile] = useState(false)
 
   const [internalOpenState, setInternalOpenState] = useState(defaultOpen)
@@ -102,6 +101,8 @@ const SidebarProvider = ({
     },
     [setOpenProp, open],
   )
+
+  const isMobile = useMediaQuery("(max-width: 767px)")
 
   const toggleSidebar = useCallback(() => {
     return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open)
@@ -126,13 +127,17 @@ const SidebarProvider = ({
       state,
       open,
       setOpen,
-      isMobile,
+      isMobile: isMobile ?? false,
       isOpenOnMobile: openMobile,
       setIsOpenOnMobile: setOpenMobile,
       toggleSidebar,
     }),
     [state, open, setOpen, isMobile, openMobile, toggleSidebar],
   )
+
+  if (isMobile === undefined) {
+    return null
+  }
 
   return (
     <SidebarContext value={contextValue}>

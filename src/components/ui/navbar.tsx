@@ -64,11 +64,16 @@ const NavbarProvider = ({
     () => ({
       open,
       setOpen,
-      isMobile,
+      isMobile: isMobile ?? false,
       toggleNavbar,
     }),
     [open, setOpen, isMobile, toggleNavbar],
   )
+
+  if (isMobile === undefined) {
+    return null
+  }
+
   return (
     <NavbarContext value={contextValue}>
       <div
