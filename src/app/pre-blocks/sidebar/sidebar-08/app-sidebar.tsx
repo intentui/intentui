@@ -4,16 +4,16 @@ import {
   IconArchive2,
   IconBrandIntentui,
   IconChevronsY,
-  IconCommandRegular,
   IconCube,
   IconDashboard,
+  IconDashboardFill,
   IconDotsHorizontal,
   IconHashtag,
-  IconHeadphones,
+  IconHeadphonesFill,
   IconHighlight,
   IconLogout,
-  IconSettings,
-  IconShield,
+  IconSettingsFill,
+  IconShieldFill,
   IconTrash,
   IconUpload,
 } from "@intentui/icons"
@@ -70,15 +70,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                     </SidebarLink>
                     {!isCollapsed && (
                       <Menu>
-                        <Menu.Trigger aria-label="Manage">
+                        <Menu.Trigger data-slot="menu-action-trigger" aria-label="Manage">
                           <IconDotsHorizontal />
                         </Menu.Trigger>
-                        <Menu.Content
-                          popover={{
-                            offset: 0,
-                            placement: "right top",
-                          }}
-                        >
+                        <Menu.Content popover={{ offset: 0, placement: "right top" }}>
                           <Menu.Item href="#edit">
                             <IconHighlight />
                             Edit
@@ -106,17 +101,30 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
         </SidebarSectionGroup>
       </SidebarContent>
 
-      <SidebarFooter>
+      <SidebarFooter className="flex flex-row justify-between gap-4 group-data-[state=collapsed]:flex-col">
         <Menu>
-          <Menu.Trigger aria-label="Profile" data-slot="menu-trigger">
-            <Avatar isSquare src="https://intentui.com/images/avatar/cobain.jpg" />
-            <div className="text-sm group-data-[collapsible=dock]:hidden">
-              Kurt Cobain
-              <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>
+          <Menu.Trigger
+            className="flex w-full items-center justify-between"
+            aria-label="Profile"
+          >
+            <div className="flex items-center gap-x-2">
+              <Avatar
+                className="size-8 *:size-8 group-data-[state=collapsed]:size-6 group-data-[state=collapsed]:*:size-6"
+                isSquare
+                src="https://intentui.com/images/avatar/cobain.jpg"
+              />
+
+              <div className="in-data-[collapsible=dock]:hidden text-sm">
+                <SidebarLabel>Kurt Cobain</SidebarLabel>
+                <span className="-mt-0.5 block text-muted-fg">kurt@domain.com</span>
+              </div>
             </div>
             <IconChevronsY data-slot="chevron" />
           </Menu.Trigger>
-          <Menu.Content placement="bottom right" className="min-w-(--trigger-width)">
+          <Menu.Content
+            className="in-data-[sidebar-collapsible=collapsed]:min-w-56 min-w-(--trigger-width)"
+            placement="bottom right"
+          >
             <Menu.Section>
               <Menu.Header separator>
                 <span className="block">Kurt Cobain</span>
@@ -125,25 +133,21 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </Menu.Section>
 
             <Menu.Item href="#dashboard">
-              <IconDashboard />
+              <IconDashboardFill />
               Dashboard
             </Menu.Item>
             <Menu.Item href="#settings">
-              <IconSettings />
+              <IconSettingsFill />
               Settings
             </Menu.Item>
             <Menu.Item href="#security">
-              <IconShield />
+              <IconShieldFill />
               Security
             </Menu.Item>
             <Menu.Separator />
-            <Menu.Item>
-              <IconCommandRegular />
-              Command Menu
-            </Menu.Item>
 
             <Menu.Item href="#contact">
-              <IconHeadphones />
+              <IconHeadphonesFill />
               Customer Support
             </Menu.Item>
             <Menu.Separator />

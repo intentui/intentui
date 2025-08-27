@@ -22,7 +22,7 @@ import { TextField } from "@/components/ui/text-field"
 export function Blocks() {
   return (
     <div className="grid gap-1 **:data-[slot=card]:rounded-md">
-      <div className="mt-1 grid gap-1 sm:grid-cols-2 md:grid-cols-3">
+      <div className="mt-1 grid grid-cols-1 gap-1 sm:grid-cols-2 md:grid-cols-3">
         <Card className="flex flex-col items-center justify-center gap-y-6 p-6">
           <div className="grid grid-cols-2 gap-2">
             {Object.keys(buttonStyles.variants.intent).map((intent) => (
@@ -93,7 +93,7 @@ export function Blocks() {
             </ComboBox>
           </div>
         </Card>
-        <Card className="flex items-center justify-center p-6">
+        <Card className="hidden items-center justify-center p-6 sm:flex">
           <RangeCalendarControlledDemo />
         </Card>
         <Card className="flex items-center justify-center p-6">
@@ -173,7 +173,7 @@ export function Blocks() {
           </Switch>
         </Card>
       </div>
-      <div className="grid gap-1 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
         <AreaChartDemo />
         <BarChartDemo />
       </div>

@@ -336,8 +336,8 @@ const SidebarSectionGroup = ({
     <section
       data-slot="sidebar-section-group"
       className={twMerge(
-        "flex w-full min-w-0 flex-col",
-        collapsed ? "items-center justify-center gap-y-0.5 p-2" : "gap-y-6 p-4",
+        "flex w-full min-w-0 flex-col gap-y-0.5",
+        collapsed && "items-center justify-center",
         className,
       )}
       {...props}
@@ -356,6 +356,7 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
       data-slot="sidebar-section"
       className={twMerge(
         "col-span-full flex min-w-0 flex-col gap-y-0.5 **:data-[slot=sidebar-section]:**:gap-y-0",
+        state === "collapsed" ? "p-2" : "p-4",
         className,
       )}
       {...props}
@@ -531,11 +532,15 @@ interface SidebarDisclosureProps extends DisclosureProps {
 }
 
 const SidebarDisclosure = ({ className, ref, ...props }: SidebarDisclosureProps) => {
+  const { state } = useSidebar()
   return (
     <Disclosure
       ref={ref}
       data-slot="sidebar-disclosure"
-      className={composeTailwindRenderProps(className, "col-span-full min-w-0")}
+      className={composeTailwindRenderProps(className, [
+        state === "collapsed" ? "p-2" : "p-4",
+        "col-span-full min-w-0",
+      ])}
       {...props}
     />
   )

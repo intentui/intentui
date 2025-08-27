@@ -32,14 +32,14 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
     <Sidebar {...props}>
       <SidebarHeader>
         <Link
-          className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
+          className="flex items-center gap-x-2 px-1.5 pt-1"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandYoutube className="size-6 text-red-500" />
+          <IconBrandYoutube className="size-5 text-red-500" />
           <SidebarLabel className="font-medium">Youtube</SidebarLabel>
         </Link>
       </SidebarHeader>
-      <SidebarContent className="**:data-[slot=avatar]:*:size-5 **:data-[slot=avatar]:size-5 **:data-[slot=icon]:size-5">
+      <SidebarContent>
         <SidebarSection>
           <SidebarItem>
             <IconHomeFill />
@@ -94,11 +94,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 }
 
 export const users = [
-  {
-    id: 1,
-    name: "Robert Plant",
-    image_url: "/images/avatar/robert.jpg",
-  },
+  { id: 1, name: "Robert Plant", image_url: "/images/avatar/robert.jpg" },
   { id: 2, name: "Jimmy Page", image_url: "/images/avatar/page.jpg" },
   { id: 5, name: "Irsyad", image_url: "/images/avatar/irsyad.jpg" },
   { id: 3, name: "Slash", image_url: "/images/avatar/slash.jpg" },

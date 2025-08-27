@@ -15,7 +15,7 @@ export function OpenIn({ tree, url }: { tree: PageTree.Root; url: string }) {
   const fullUrl = `https://intentui.com${url}`
 
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
       <Menu>
         <Button intent="secondary" size="sm">
           Open in...

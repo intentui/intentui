@@ -62,3 +62,24 @@ You can control the state of the toggle button group by using the `selectedKeys`
 ## Disabled
 You can disable an entire toggle group by setting the `isDisabled` prop on the `ToggleGroup` component, which disables all toggles in the group. Alternatively, you can disable specific toggle buttons individually by setting the `isDisabled` prop on the `Toggle` component.
 <How toUse="buttons/toggle-group/toggle-group-disabled-demo" />
+
+## Touch hitbox
+Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-hitbox` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
+```
+@utility touch-hitbox {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    min-height: 44px;
+    min-width: 44px;
+    z-index: 9999;
+  }
+}
+```

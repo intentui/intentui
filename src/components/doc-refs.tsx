@@ -81,7 +81,7 @@ export function DocRefs({ references }: { references: string[] }) {
           className={buttonStyles({
             intent: "secondary",
             size: "sm",
-            className: "w-24 sm:w-auto",
+            className: "max-w-32 sm:w-auto",
           })}
           id={item.url}
           href={item.url}

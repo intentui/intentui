@@ -503,8 +503,50 @@ const sections = [
 ]
 ```
 
-## Menu
-The sidebar supports menus, which can be used to display additional actions or options.
+## Menu actions
+The sidebar supports menus for displaying additional actions or options. When using a menu, be sure to include `data-slot="menu-action-trigger"`.
+```
+<SidebarItem tooltip="Orders">
+  {({ isCollapsed, isFocused }) => (
+    <>
+      <SidebarLink href="#">
+        <IconShoppingBagFill />
+        <SidebarLabel>Orders</SidebarLabel>
+      </SidebarLink>
+      {(!isCollapsed || isFocused) && (
+        <Menu>
+          <Menu.Trigger data-slot="menu-action-trigger" aria-label="Manage">
+            <IconDotsHorizontal />
+          </Menu.Trigger>
+          <Menu.Content popover={{ offset: 0, placement: "right top" }}>
+            <Menu.Item href="#new-order">
+              <IconPlus />
+              Create New Order
+            </Menu.Item>
+            <Menu.Item href="#view-all">
+              <IconListBulletsFill />
+              View All Orders
+            </Menu.Item>
+            <Menu.Item href="#pending-orders">
+              <IconClockFill />
+              Pending Orders
+            </Menu.Item>
+            <Menu.Item href="#completed-orders">
+              <IconCircleCheckFill />
+              Completed Orders
+            </Menu.Item>
+            <Menu.Item href="#export-orders">
+              <IconArrowUpFill />
+              Export Orders
+            </Menu.Item>
+          </Menu.Content>
+        </Menu>
+      )}
+    </>
+  )}
+</SidebarItem>
+```
+
 <CodeSandbox
   src='/pre-blocks/sidebar/sidebar-08'
   source={{

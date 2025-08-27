@@ -43,7 +43,8 @@ const ToggleGroup = ({
       <ToggleButtonGroup
         selectionMode={selectionMode}
         className={composeTailwindRenderProps(className, [
-          "group/toggle-group inset-ring inset-ring-border inline-flex overflow-hidden rounded-lg p-0.5",
+          "[--toggle-group-radius:var(--radius-lg)] [--toggle-padding:--spacing(0.5)]",
+          "group/toggle-group inset-ring inset-ring-border inline-flex overflow-hidden rounded-(--toggle-group-radius) p-(--toggle-padding)",
           orientation === "horizontal" ? "flex-row" : "flex-col",
           selectionMode === "single" ? "gap-0.5" : "gap-0",
         ])}
@@ -72,33 +73,33 @@ const toggleGroupItemStyles = tv({
     },
     size: {
       xs: [
-        "min-h-7.5 gap-x-1 px-2.5 py-1.5 text-sm sm:min-h-7 sm:px-2 sm:py-[--spacing(1.4)] sm:text-xs/4",
-        "*:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
-        "*:data-[slot=loader]:size-3.5 sm:*:data-[slot=loader]:size-3",
+        "min-h-8 gap-x-1.5 px-2.5 py-1.5 text-sm sm:min-h-7 sm:px-2 sm:py-1.5 sm:text-xs/4",
+        "*:data-[slot=icon]:-mx-px *:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
+        "*:data-[slot=loader]:-mx-px *:data-[slot=loader]:size-3.5 sm:*:data-[slot=loader]:size-3",
       ],
       sm: [
-        "min-h-8.5 gap-x-1.5 px-3 py-1.5 text-sm/5 sm:min-h-8 sm:px-2.5 sm:py-1.5",
+        "min-h-9 gap-x-1.5 px-3 py-1.5 sm:min-h-8 sm:px-2.5 sm:py-1.5 sm:text-sm/5",
         "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
         "*:data-[slot=loader]:size-4.5 sm:*:data-[slot=loader]:size-4",
       ],
       md: [
-        "min-h-9.5 gap-x-2 px-3.5 py-2 sm:min-h-9 sm:px-3 sm:py-1.5 sm:text-sm/6",
+        "min-h-10 gap-x-2 px-3.5 py-2 sm:min-h-9 sm:px-3 sm:py-1.5 sm:text-sm/6",
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4",
         "*:data-[slot=loader]:size-5 sm:*:data-[slot=loader]:size-4",
       ],
       lg: [
-        "min-h-10.5 gap-x-2 px-4 py-2.5 sm:min-h-10 sm:px-3.5 sm:py-2 sm:text-sm/6",
+        "min-h-11 gap-x-2 px-4 py-2.5 sm:min-h-10 sm:px-3.5 sm:py-2 sm:text-sm/6",
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
         "*:data-[slot=loader]:size-5 sm:*:data-[slot=loader]:size-4.5",
       ],
       "sq-xs":
-        "size-7.5 *:data-[slot=icon]:size-3.5 *:data-[slot=loader]:size-3.5 sm:size-7 sm:*:data-[slot=icon]:size-3 sm:*:data-[slot=loader]:size-3",
+        "touch-hitbox size-8 *:data-[slot=icon]:size-3.5 *:data-[slot=loader]:size-3.5 sm:size-7 sm:*:data-[slot=icon]:size-3 sm:*:data-[slot=loader]:size-3",
       "sq-sm":
-        "size-8.5 *:data-[slot=icon]:size-4.5 *:data-[slot=loader]:size-4.5 sm:size-8 sm:*:data-[slot=icon]:size-4 sm:*:data-[slot=loader]:size-4",
+        "touch-hitbox size-9 *:data-[slot=icon]:size-4.5 *:data-[slot=loader]:size-4.5 sm:size-8 sm:*:data-[slot=icon]:size-4 sm:*:data-[slot=loader]:size-4",
       "sq-md":
-        "size-9.5 *:data-[slot=icon]:size-4.5 *:data-[slot=loader]:size-4.5 sm:size-9 sm:*:data-[slot=icon]:size-4 sm:*:data-[slot=loader]:size-4",
+        "touch-hitbox size-10 *:data-[slot=icon]:size-5 *:data-[slot=loader]:size-5 sm:size-9 sm:*:data-[slot=icon]:size-4.5 sm:*:data-[slot=loader]:size-4.5",
       "sq-lg":
-        "size-10.5 *:data-[slot=icon]:size-5 *:data-[slot=loader]:size-5 sm:size-10 sm:*:data-[slot=icon]:size-4.5 sm:*:data-[slot=loader]:size-4.5",
+        "touch-hitbox size-11 *:data-[slot=icon]:size-5 *:data-[slot=loader]:size-5 sm:size-10 sm:*:data-[slot=icon]:size-5 sm:*:data-[slot=loader]:size-5",
     },
     isPressed: {
       true: "bg-primary/90 text-primary-fg",
@@ -122,20 +123,16 @@ const toggleGroupItemStyles = tv({
   },
   compoundVariants: [
     {
-      size: ["xs", "sq-xs"],
-      className: "rounded-[calc(var(--radius-md)-1px)]",
-    },
-    {
       selectionMode: "multiple",
       orientation: "horizontal",
       className:
-        "not-first:-ml-px first:rounded-l-[calc(var(--radius-lg)-2px)] last:rounded-r-[calc(var(--radius-lg)-2px)]",
+        "not-first:-ml-px first:rounded-l-[calc(var(--toggle-group-radius)-var(--toggle-padding))] last:rounded-r-[calc(var(--toggle-group-radius)-var(--toggle-padding))]",
     },
     {
       selectionMode: "multiple",
       orientation: "vertical",
       className:
-        "not-first:-mt-px first:rounded-t-[calc(var(--radius-lg)-2px)] last:rounded-b-[calc(var(--radius-lg)-2px)]",
+        "not-first:-mt-px first:rounded-t-[calc(var(--toggle-group-radius)-var(--toggle-padding))] last:rounded-b-[calc(var(--toggle-group-radius)-var(--toggle-padding))]",
     },
   ],
 })
