@@ -4,16 +4,16 @@ import {
   IconBrandIntentui,
   IconCart,
   IconChartBar,
-  IconChevronLgDown,
-  IconCommandRegular,
+  IconChevronsY,
   IconCube,
   IconDashboard,
+  IconDashboardFill,
   IconGear,
-  IconHeadphones,
+  IconHeadphonesFill,
   IconLogout,
   IconPeople,
-  IconSettings,
-  IconShield,
+  IconSettingsFill,
+  IconShieldFill,
 } from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
@@ -62,17 +62,30 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
         </SidebarSectionGroup>
       </SidebarContent>
 
-      <SidebarFooter>
+      <SidebarFooter className="flex flex-row justify-between gap-4 group-data-[state=collapsed]:flex-col">
         <Menu>
-          <Menu.Trigger aria-label="Profile" data-slot="menu-trigger">
-            <Avatar isSquare src="https://intentui.com/images/avatar/cobain.jpg" />
-            <div className="text-sm group-data-[collapsible=dock]:hidden">
-              Kurt Cobain
-              <span className="-mt-0.5 block text-muted-fg">kurt@cobain.com</span>
+          <Menu.Trigger
+            className="flex w-full items-center justify-between"
+            aria-label="Profile"
+          >
+            <div className="flex items-center gap-x-2">
+              <Avatar
+                className="size-8 *:size-8 group-data-[state=collapsed]:size-6 group-data-[state=collapsed]:*:size-6"
+                isSquare
+                src="https://intentui.com/images/avatar/cobain.jpg"
+              />
+
+              <div className="in-data-[collapsible=dock]:hidden text-sm">
+                <SidebarLabel>Kurt Cobain</SidebarLabel>
+                <span className="-mt-0.5 block text-muted-fg">kurt@domain.com</span>
+              </div>
             </div>
-            <IconChevronLgDown className="absolute right-3 size-4 transition-transform group-pressed:rotate-180" />
+            <IconChevronsY data-slot="chevron" />
           </Menu.Trigger>
-          <Menu.Content className="min-w-(--trigger-width)" placement="bottom right">
+          <Menu.Content
+            className="in-data-[sidebar-collapsible=collapsed]:min-w-56 min-w-(--trigger-width)"
+            placement="bottom right"
+          >
             <Menu.Section>
               <Menu.Header separator>
                 <span className="block">Kurt Cobain</span>
@@ -81,25 +94,21 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </Menu.Section>
 
             <Menu.Item href="#dashboard">
-              <IconDashboard />
+              <IconDashboardFill />
               Dashboard
             </Menu.Item>
             <Menu.Item href="#settings">
-              <IconSettings />
+              <IconSettingsFill />
               Settings
             </Menu.Item>
             <Menu.Item href="#security">
-              <IconShield />
+              <IconShieldFill />
               Security
             </Menu.Item>
             <Menu.Separator />
-            <Menu.Item>
-              <IconCommandRegular />
-              Command Menu
-            </Menu.Item>
 
             <Menu.Item href="#contact">
-              <IconHeadphones />
+              <IconHeadphonesFill />
               Customer Support
             </Menu.Item>
             <Menu.Separator />
@@ -115,40 +124,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 }
 
 const navigation = [
-  {
-    label: "Overview",
-    icon: <IconDashboard />,
-    isCurrent: true,
-    badge: undefined,
-  },
-  {
-    label: "Orders",
-    icon: <IconCart />,
-    isCurrent: false,
-    badge: 24,
-  },
-  {
-    label: "Products",
-    icon: <IconCube />,
-    isCurrent: false,
-    badge: "31.51K",
-  },
-  {
-    label: "Customers",
-    icon: <IconPeople />,
-    isCurrent: false,
-    badge: "12K",
-  },
-  {
-    label: "Reports",
-    icon: <IconChartBar />,
-    isCurrent: false,
-    badge: 3,
-  },
-  {
-    label: "Settings",
-    icon: <IconGear />,
-    isCurrent: false,
-    badge: undefined,
-  },
+  { label: "Overview", icon: <IconDashboard />, isCurrent: true, badge: undefined },
+  { label: "Orders", icon: <IconCart />, isCurrent: false, badge: 24 },
+  { label: "Products", icon: <IconCube />, isCurrent: false, badge: "31.51K" },
+  { label: "Customers", icon: <IconPeople />, isCurrent: false, badge: "12K" },
+  { label: "Reports", icon: <IconChartBar />, isCurrent: false, badge: 3 },
+  { label: "Settings", icon: <IconGear />, isCurrent: false, badge: undefined },
 ]

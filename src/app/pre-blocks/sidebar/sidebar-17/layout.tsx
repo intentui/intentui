@@ -4,7 +4,13 @@ import AppSidebarNav from "./app-sidebar-nav"
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <SidebarProvider className="[--sidebar-width:17.7rem]">
+    <SidebarProvider
+      style={
+        {
+          "--sidebar-width": "18rem",
+        } as React.CSSProperties
+      }
+    >
       <AppSidebar />
       <SidebarInset>
         <AppSidebarNav />

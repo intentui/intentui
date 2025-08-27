@@ -74,7 +74,7 @@ export default async function Page(props: DocPageProps) {
   const doc = page.data
   return (
     <>
-      <div className="min-w-0 max-w-3xl flex-auto px-4 pt-8 pb-32 sm:pt-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-10">
+      <div className="min-w-0 max-w-3xl flex-auto px-4 py-8 lg:max-w-none lg:pr-0 lg:pl-8 sm:lg:py-16 xl:px-10">
         <main className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
           <div className="pb-6 sm:border-b">
             <div
@@ -112,9 +112,7 @@ export default async function Page(props: DocPageProps) {
               {doc.references && doc.references?.length > 0 && (
                 <DocRefs references={doc.references} />
               )}
-              <div className="ml-auto">
-                <OpenIn tree={source.pageTree} url={page.url} />
-              </div>
+              <OpenIn tree={source.pageTree} url={page.url} />
             </div>
           </div>
 
