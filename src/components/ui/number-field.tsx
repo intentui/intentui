@@ -41,7 +41,7 @@ const NumberField = ({
   errorMessage,
   ...props
 }: NumberFieldProps) => {
-  const isMobile = useMediaQuery("(max-width: 768px)")
+  const isMobile = useMediaQuery("(max-width: 768px)") ?? false
   return (
     <NumberFieldPrimitive
       {...props}

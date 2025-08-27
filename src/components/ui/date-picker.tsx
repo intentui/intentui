@@ -32,7 +32,7 @@ const DatePickerOverlay = ({
   range,
   ...props
 }: DatePickerOverlayProps) => {
-  const isMobile = useMediaQuery("(max-width: 767px)")
+  const isMobile = useMediaQuery("(max-width: 767px)") ?? false
   return isMobile ? (
     <Modal.Content aria-label="Date picker" closeButton={false}>
       <div className="flex justify-center p-6">
