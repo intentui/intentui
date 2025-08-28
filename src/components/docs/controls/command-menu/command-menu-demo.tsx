@@ -21,7 +21,7 @@ import {
   CommandMenuSection,
 } from "@/components/ui/command-menu"
 
-export function CommandPalette() {
+export default function CommandMenuDemo() {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>
