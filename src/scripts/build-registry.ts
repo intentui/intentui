@@ -8,7 +8,8 @@ import { emeraldDark, emeraldLight } from "./styles/emerald"
 import { indigoDark, indigoLight } from "./styles/indigo"
 import { skyDark, skyLight } from "./styles/sky"
 
-makeRegistry()
+// Make the registry to __registry__/generated.ts
+makeRegistry() // internal only
 
 const registryUrl = process.env.VERCEL_URL ? "https://intentui.com" : "http://localhost:3000"
 
@@ -80,7 +81,7 @@ const registryBaseStyle = {
     "react-aria-components",
     "tailwind-merge",
   ],
-  registryDependencies: ["@intentui/lib/primitive"],
+  registryDependencies: [`${registryUrl}/r/lib-primitive.json`],
   files: [],
   description: "",
   css: customCSS,
@@ -155,6 +156,7 @@ const extractExternalDependencies = (content: string): string[] => {
     if (typeof importPath !== "string") {
       continue
     }
+
     if (
       !importPath.startsWith(".") &&
       !importPath.startsWith("@/") &&
@@ -173,6 +175,7 @@ const extractExternalDependencies = (content: string): string[] => {
       if (dep.startsWith("recharts/")) {
         dep = "recharts"
       }
+
       dependencies.add(dep)
     }
   }
@@ -185,25 +188,33 @@ const extractInternalDependencyPaths = (
   projectRoot: string,
 ): string[] => {
   const importRegex = /import[\s\S]*?from\s+['"]([^'"]+)['"]/g
+
   const internalImportsRaw = new Set<string>()
   let match: RegExpExecArray | null
+
+  // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
   while ((match = importRegex.exec(content)) !== null) {
     const rawImport = match[1]
-    if (rawImport && (rawImport.startsWith("@/") || rawImport.startsWith("."))) {
+    if (rawImport?.startsWith("@/") || rawImport?.startsWith(".")) {
       internalImportsRaw.add(rawImport)
     }
   }
+
   const resolvedPaths = new Set<string>()
   for (const rawImport of internalImportsRaw) {
+    // const basePath = rawImport.startsWith("@/")
+    //   ? path.resolve(projectRoot, rawImport.replace(/^@\//, ""))
     const basePath = rawImport.startsWith("@/")
       ? path.resolve(projectRoot, "src", rawImport.slice(2))
       : path.resolve(path.dirname(currentFilePath), rawImport)
+
     const potentialPaths = [
       `${basePath}.ts`,
       `${basePath}.tsx`,
       path.join(basePath, "index.ts"),
       path.join(basePath, "index.tsx"),
     ]
+
     for (const p of potentialPaths) {
       if (fs.existsSync(p)) {
         if (path.resolve(p) !== path.resolve(currentFilePath)) {
@@ -213,22 +224,8 @@ const extractInternalDependencyPaths = (
       }
     }
   }
-  return Array.from(resolvedPaths)
-}
 
-const keyToSpecifier = (key: string): string => {
-  const idx = key.indexOf("-")
-  if (idx < 0) return key
-  const prefix = key.slice(0, idx)
-  const rest = key.slice(idx + 1)
-  if (prefix === "ui") return `@intentui/ui/${rest}`
-  if (prefix === "hook") return `@intentui/hooks/${rest}`
-  if (prefix === "lib") return `@intentui/lib/${rest}`
-  if (prefix === "block") return `@intentui/blocks/${rest}`
-  if (prefix === "page") return `@intentui/pages/${rest}`
-  if (prefix === "style") return `@intentui/styles/${rest}`
-  if (prefix === "theme") return `@intentui/themes/${rest}`
-  return `@intentui/${prefix}/${rest}`
+  return Array.from(resolvedPaths)
 }
 
 const generateComponentRegistry = () => {
@@ -271,25 +268,34 @@ const generateComponentRegistry = () => {
     return arrayOfFiles
   }
 
+  console.info("Scanning components and libraries (Pass 1)...")
   const intermediateData: Map<string, IntermediateRegistryItem> = new Map()
   const filePathToKeyMap: Map<string, string> = new Map()
 
   for (const { type, path: sourcePath } of sources) {
     const absoluteSourcePath = path.resolve(sourcePath)
     const componentFiles = getAllFiles(absoluteSourcePath)
+
     for (const absoluteFilePath of componentFiles) {
       const componentBaseName = path.basename(absoluteFilePath, path.extname(absoluteFilePath))
       const fileContent = fs.readFileSync(absoluteFilePath, "utf-8")
+
       const relativePathFromRoot = path.relative(projectRoot, absoluteFilePath).replace(/\\/g, "/")
       const relativeKey = path
         .relative(absoluteSourcePath, absoluteFilePath)
         .replace(/\\/g, "/")
         .replace(/\.(tsx|ts)$/, "")
+
       const nameKey = `${type}-${relativeKey}`
+
+
       if (!nameKey) {
+        console.warn(`Could not generate key for ${absoluteFilePath}`)
         continue
       }
+
       filePathToKeyMap.set(absoluteFilePath, nameKey)
+
       const externalDeps = extractExternalDependencies(fileContent)
       const internalDepPaths = extractInternalDependencyPaths(
         fileContent,
@@ -310,7 +316,11 @@ const generateComponentRegistry = () => {
         case nameKey.startsWith("hook-"):
           whatType = "registry:hook"
           break
+        // case nameKey.startsWith("page-"):
+        //   whatType = "registry:page";
+        //   break;
         default:
+          console.warn(`Unknown type prefix for key: ${nameKey}. Defaulting based on source type.`)
           if (type === "ui") whatType = "registry:component"
           else if (type === "block") whatType = "registry:block"
           else if (type === "lib") whatType = "registry:lib"
@@ -327,17 +337,21 @@ const generateComponentRegistry = () => {
         internalImportPaths: internalDepPaths,
         registryDependencies: [],
       }
+
       intermediateData.set(nameKey, item)
     }
   }
 
+  console.info("Resolving registry dependencies (Pass 2)...")
   for (const item of intermediateData.values()) {
     const resolvedRegistryDeps = new Set<string>()
     if (item.internalImportPaths) {
       for (const importPath of item.internalImportPaths) {
         const dependencyKey = filePathToKeyMap.get(importPath)
         if (dependencyKey) {
-          resolvedRegistryDeps.add(keyToSpecifier(dependencyKey))
+          resolvedRegistryDeps.add(`${registryUrl}/r/${dependencyKey}.json`)
+        } else if (!dependencyKey) {
+          console.warn(`Missing registry key for ${importPath} (used in ${item.name})`)
         }
       }
     }
@@ -354,6 +368,7 @@ const generateComponentRegistry = () => {
     registryEmeraldStyle,
   ]
 
+  console.info("Constructing final registry...")
   const finalRegistryItems: RegistryJsonItem[] = [
     ...themes,
     ...Array.from(intermediateData.values()).map((item) => {
@@ -379,7 +394,9 @@ const generateComponentRegistry = () => {
     items: finalRegistryItems,
   }
 
-  fs.writeFileSync("registry.json", JSON.stringify(registryJsonObject, null, 2))
+  console.info(`Generating ${registryJsonPath}...`)
+  fs.writeFileSync(registryJsonPath, JSON.stringify(registryJsonObject, null, 2))
+  console.info(`${registryJsonPath} generation complete.`)
 }
 
 generateComponentRegistry()

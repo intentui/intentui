@@ -10,8 +10,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/modal"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-modal.json"
       ],
       "files": [
         {
@@ -29,9 +29,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/area-chart",
-        "@intentui/ui/card",
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-area-chart.json",
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -47,8 +47,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/area-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-area-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -64,8 +64,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/area-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-area-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -84,8 +84,8 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/area-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-area-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -104,8 +104,8 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/area-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-area-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -121,8 +121,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/area-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-area-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -138,8 +138,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/area-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-area-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -155,8 +155,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/area-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-area-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -172,7 +172,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar"
+        "http://localhost:3000/r/ui-avatar.json"
       ],
       "files": [
         {
@@ -188,7 +188,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar"
+        "http://localhost:3000/r/ui-avatar.json"
       ],
       "files": [
         {
@@ -204,7 +204,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar"
+        "http://localhost:3000/r/ui-avatar.json"
       ],
       "files": [
         {
@@ -220,7 +220,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar"
+        "http://localhost:3000/r/ui-avatar.json"
       ],
       "files": [
         {
@@ -236,7 +236,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar"
+        "http://localhost:3000/r/ui-avatar.json"
       ],
       "files": [
         {
@@ -252,7 +252,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/badge"
+        "http://localhost:3000/r/ui-badge.json"
       ],
       "files": [
         {
@@ -268,7 +268,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/badge"
+        "http://localhost:3000/r/ui-badge.json"
       ],
       "files": [
         {
@@ -284,7 +284,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/badge"
+        "http://localhost:3000/r/ui-badge.json"
       ],
       "files": [
         {
@@ -302,9 +302,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/bar-chart",
-        "@intentui/ui/card",
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-bar-chart.json",
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -320,8 +320,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/bar-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -337,8 +337,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/bar-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -357,8 +357,8 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/bar-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -377,8 +377,8 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/bar-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -394,8 +394,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/bar-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -411,8 +411,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/bar-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -428,8 +428,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/bar-chart",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-chart.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -445,8 +445,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/bar-list",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-list.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -462,8 +462,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/bar-list",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-bar-list.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -481,7 +481,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/breadcrumbs"
+        "http://localhost:3000/r/ui-breadcrumbs.json"
       ],
       "files": [
         {
@@ -497,7 +497,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/breadcrumbs"
+        "http://localhost:3000/r/ui-breadcrumbs.json"
       ],
       "files": [
         {
@@ -513,7 +513,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/breadcrumbs"
+        "http://localhost:3000/r/ui-breadcrumbs.json"
       ],
       "files": [
         {
@@ -529,9 +529,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/breadcrumbs",
-        "@intentui/ui/button",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-breadcrumbs.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -547,7 +547,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/breadcrumbs"
+        "http://localhost:3000/r/ui-breadcrumbs.json"
       ],
       "files": [
         {
@@ -563,7 +563,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -579,7 +579,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -597,7 +597,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -615,7 +615,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -631,8 +631,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/link"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-link.json"
       ],
       "files": [
         {
@@ -650,8 +650,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/loader"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-loader.json"
       ],
       "files": [
         {
@@ -669,8 +669,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/progress-circle"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-progress-circle.json"
       ],
       "files": [
         {
@@ -686,7 +686,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -704,8 +704,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/separator"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-separator.json"
       ],
       "files": [
         {
@@ -721,7 +721,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/calendar"
+        "http://localhost:3000/r/ui-calendar.json"
       ],
       "files": [
         {
@@ -739,9 +739,9 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/card",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -757,8 +757,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/card"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-card.json"
       ],
       "files": [
         {
@@ -774,11 +774,11 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/card",
-        "@intentui/ui/checkbox",
-        "@intentui/ui/link",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-link.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -796,10 +796,10 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/menu",
-        "@intentui/ui/pagination",
-        "@intentui/ui/table"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-menu.json",
+        "http://localhost:3000/r/ui-pagination.json",
+        "http://localhost:3000/r/ui-table.json"
       ],
       "files": [
         {
@@ -817,8 +817,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/carousel"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-carousel.json"
       ],
       "files": [
         {
@@ -836,8 +836,8 @@
         "embla-carousel-autoplay"
       ],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/carousel"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-carousel.json"
       ],
       "files": [
         {
@@ -853,7 +853,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/carousel"
+        "http://localhost:3000/r/ui-carousel.json"
       ],
       "files": [
         {
@@ -869,8 +869,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/carousel"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-carousel.json"
       ],
       "files": [
         {
@@ -886,8 +886,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/carousel"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-carousel.json"
       ],
       "files": [
         {
@@ -903,8 +903,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -920,7 +920,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -936,8 +936,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -953,7 +953,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -969,8 +969,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -986,7 +986,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -1002,8 +1002,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -1019,7 +1019,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -1035,7 +1035,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -1051,7 +1051,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -1067,9 +1067,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/checkbox",
-        "@intentui/ui/form"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-form.json"
       ],
       "files": [
         {
@@ -1085,7 +1085,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -1101,7 +1101,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -1117,7 +1117,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -1133,7 +1133,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/choicebox"
+        "http://localhost:3000/r/ui-choicebox.json"
       ],
       "files": [
         {
@@ -1151,8 +1151,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/choicebox",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-choicebox.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -1168,7 +1168,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/choicebox"
+        "http://localhost:3000/r/ui-choicebox.json"
       ],
       "files": [
         {
@@ -1184,7 +1184,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/choicebox"
+        "http://localhost:3000/r/ui-choicebox.json"
       ],
       "files": [
         {
@@ -1202,7 +1202,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/choicebox"
+        "http://localhost:3000/r/ui-choicebox.json"
       ],
       "files": [
         {
@@ -1218,7 +1218,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/choicebox"
+        "http://localhost:3000/r/ui-choicebox.json"
       ],
       "files": [
         {
@@ -1234,7 +1234,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-area"
+        "http://localhost:3000/r/ui-color-area.json"
       ],
       "files": [
         {
@@ -1252,8 +1252,8 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-area",
-        "@intentui/ui/color-thumb"
+        "http://localhost:3000/r/ui-color-area.json",
+        "http://localhost:3000/r/ui-color-thumb.json"
       ],
       "files": [
         {
@@ -1269,7 +1269,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-area"
+        "http://localhost:3000/r/ui-color-area.json"
       ],
       "files": [
         {
@@ -1285,8 +1285,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-area",
-        "@intentui/ui/color-thumb"
+        "http://localhost:3000/r/ui-color-area.json",
+        "http://localhost:3000/r/ui-color-thumb.json"
       ],
       "files": [
         {
@@ -1302,8 +1302,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-area",
-        "@intentui/ui/color-thumb"
+        "http://localhost:3000/r/ui-color-area.json",
+        "http://localhost:3000/r/ui-color-thumb.json"
       ],
       "files": [
         {
@@ -1321,9 +1321,9 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-area",
-        "@intentui/ui/color-field",
-        "@intentui/ui/color-slider"
+        "http://localhost:3000/r/ui-color-area.json",
+        "http://localhost:3000/r/ui-color-field.json",
+        "http://localhost:3000/r/ui-color-slider.json"
       ],
       "files": [
         {
@@ -1341,7 +1341,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-field"
+        "http://localhost:3000/r/ui-color-field.json"
       ],
       "files": [
         {
@@ -1357,7 +1357,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-field"
+        "http://localhost:3000/r/ui-color-field.json"
       ],
       "files": [
         {
@@ -1373,7 +1373,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-field"
+        "http://localhost:3000/r/ui-color-field.json"
       ],
       "files": [
         {
@@ -1389,9 +1389,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/color-field",
-        "@intentui/ui/form"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-color-field.json",
+        "http://localhost:3000/r/ui-form.json"
       ],
       "files": [
         {
@@ -1409,7 +1409,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-field"
+        "http://localhost:3000/r/ui-color-field.json"
       ],
       "files": [
         {
@@ -1427,7 +1427,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-field"
+        "http://localhost:3000/r/ui-color-field.json"
       ],
       "files": [
         {
@@ -1445,11 +1445,11 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-area",
-        "@intentui/ui/color-field",
-        "@intentui/ui/color-picker",
-        "@intentui/ui/color-slider",
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-color-area.json",
+        "http://localhost:3000/r/ui-color-field.json",
+        "http://localhost:3000/r/ui-color-picker.json",
+        "http://localhost:3000/r/ui-color-slider.json",
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -1465,8 +1465,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-picker",
-        "@intentui/ui/color-swatch"
+        "http://localhost:3000/r/ui-color-picker.json",
+        "http://localhost:3000/r/ui-color-swatch.json"
       ],
       "files": [
         {
@@ -1484,7 +1484,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-picker"
+        "http://localhost:3000/r/ui-color-picker.json"
       ],
       "files": [
         {
@@ -1502,7 +1502,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-picker"
+        "http://localhost:3000/r/ui-color-picker.json"
       ],
       "files": [
         {
@@ -1520,11 +1520,11 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-area",
-        "@intentui/ui/color-field",
-        "@intentui/ui/color-picker",
-        "@intentui/ui/color-swatch",
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-color-area.json",
+        "http://localhost:3000/r/ui-color-field.json",
+        "http://localhost:3000/r/ui-color-picker.json",
+        "http://localhost:3000/r/ui-color-swatch.json",
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -1542,12 +1542,12 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-area",
-        "@intentui/ui/color-field",
-        "@intentui/ui/color-picker",
-        "@intentui/ui/color-slider",
-        "@intentui/ui/color-swatch",
-        "@intentui/ui/color-swatch-picker"
+        "http://localhost:3000/r/ui-color-area.json",
+        "http://localhost:3000/r/ui-color-field.json",
+        "http://localhost:3000/r/ui-color-picker.json",
+        "http://localhost:3000/r/ui-color-slider.json",
+        "http://localhost:3000/r/ui-color-swatch-picker.json",
+        "http://localhost:3000/r/ui-color-swatch.json"
       ],
       "files": [
         {
@@ -1565,7 +1565,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-picker"
+        "http://localhost:3000/r/ui-color-picker.json"
       ],
       "files": [
         {
@@ -1581,8 +1581,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-picker",
-        "@intentui/ui/color-swatch"
+        "http://localhost:3000/r/ui-color-picker.json",
+        "http://localhost:3000/r/ui-color-swatch.json"
       ],
       "files": [
         {
@@ -1598,8 +1598,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-picker",
-        "@intentui/ui/color-swatch"
+        "http://localhost:3000/r/ui-color-picker.json",
+        "http://localhost:3000/r/ui-color-swatch.json"
       ],
       "files": [
         {
@@ -1615,8 +1615,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-slider",
-        "@intentui/ui/color-swatch"
+        "http://localhost:3000/r/ui-color-slider.json",
+        "http://localhost:3000/r/ui-color-swatch.json"
       ],
       "files": [
         {
@@ -1632,7 +1632,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-slider"
+        "http://localhost:3000/r/ui-color-slider.json"
       ],
       "files": [
         {
@@ -1648,7 +1648,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-slider"
+        "http://localhost:3000/r/ui-color-slider.json"
       ],
       "files": [
         {
@@ -1664,7 +1664,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-slider"
+        "http://localhost:3000/r/ui-color-slider.json"
       ],
       "files": [
         {
@@ -1680,7 +1680,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-slider"
+        "http://localhost:3000/r/ui-color-slider.json"
       ],
       "files": [
         {
@@ -1698,7 +1698,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-swatch-picker"
+        "http://localhost:3000/r/ui-color-swatch-picker.json"
       ],
       "files": [
         {
@@ -1714,7 +1714,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-swatch"
+        "http://localhost:3000/r/ui-color-swatch.json"
       ],
       "files": [
         {
@@ -1732,7 +1732,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-swatch-picker"
+        "http://localhost:3000/r/ui-color-swatch-picker.json"
       ],
       "files": [
         {
@@ -1750,7 +1750,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-swatch-picker"
+        "http://localhost:3000/r/ui-color-swatch-picker.json"
       ],
       "files": [
         {
@@ -1768,7 +1768,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/color-wheel"
+        "http://localhost:3000/r/ui-color-wheel.json"
       ],
       "files": [
         {
@@ -1784,7 +1784,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-wheel"
+        "http://localhost:3000/r/ui-color-wheel.json"
       ],
       "files": [
         {
@@ -1800,7 +1800,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-wheel"
+        "http://localhost:3000/r/ui-color-wheel.json"
       ],
       "files": [
         {
@@ -1816,8 +1816,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/combo-box"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-combo-box.json"
       ],
       "files": [
         {
@@ -1833,8 +1833,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/combo-box",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-combo-box.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -1852,8 +1852,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/combo-box",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-combo-box.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -1869,7 +1869,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/combo-box"
+        "http://localhost:3000/r/ui-combo-box.json"
       ],
       "files": [
         {
@@ -1885,7 +1885,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/combo-box"
+        "http://localhost:3000/r/ui-combo-box.json"
       ],
       "files": [
         {
@@ -1901,8 +1901,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/combo-box"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-combo-box.json"
       ],
       "files": [
         {
@@ -1918,8 +1918,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/combo-box"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-combo-box.json"
       ],
       "files": [
         {
@@ -1935,8 +1935,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/combo-box"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-combo-box.json"
       ],
       "files": [
         {
@@ -1952,7 +1952,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/combo-box"
+        "http://localhost:3000/r/ui-combo-box.json"
       ],
       "files": [
         {
@@ -1968,10 +1968,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/button",
-        "@intentui/ui/combo-box",
-        "@intentui/ui/form"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-combo-box.json",
+        "http://localhost:3000/r/ui-form.json"
       ],
       "files": [
         {
@@ -1987,9 +1987,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2005,9 +2005,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2023,8 +2023,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2040,9 +2040,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2058,8 +2058,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2075,8 +2075,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2092,9 +2092,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2110,8 +2110,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2127,9 +2127,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2145,8 +2145,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2162,7 +2162,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/command-menu"
+        "http://localhost:3000/r/ui-command-menu.json"
       ],
       "files": [
         {
@@ -2178,7 +2178,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/context-menu"
+        "http://localhost:3000/r/ui-context-menu.json"
       ],
       "files": [
         {
@@ -2194,7 +2194,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/context-menu"
+        "http://localhost:3000/r/ui-context-menu.json"
       ],
       "files": [
         {
@@ -2210,7 +2210,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/context-menu"
+        "http://localhost:3000/r/ui-context-menu.json"
       ],
       "files": [
         {
@@ -2228,7 +2228,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/context-menu"
+        "http://localhost:3000/r/ui-context-menu.json"
       ],
       "files": [
         {
@@ -2244,7 +2244,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/context-menu"
+        "http://localhost:3000/r/ui-context-menu.json"
       ],
       "files": [
         {
@@ -2260,7 +2260,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/context-menu"
+        "http://localhost:3000/r/ui-context-menu.json"
       ],
       "files": [
         {
@@ -2279,7 +2279,7 @@
         "@react-aria/i18n"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-field"
+        "http://localhost:3000/r/ui-date-field.json"
       ],
       "files": [
         {
@@ -2295,7 +2295,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/date-field"
+        "http://localhost:3000/r/ui-date-field.json"
       ],
       "files": [
         {
@@ -2311,7 +2311,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/date-field"
+        "http://localhost:3000/r/ui-date-field.json"
       ],
       "files": [
         {
@@ -2329,7 +2329,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-field"
+        "http://localhost:3000/r/ui-date-field.json"
       ],
       "files": [
         {
@@ -2347,7 +2347,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-field"
+        "http://localhost:3000/r/ui-date-field.json"
       ],
       "files": [
         {
@@ -2365,7 +2365,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-field"
+        "http://localhost:3000/r/ui-date-field.json"
       ],
       "files": [
         {
@@ -2381,9 +2381,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/date-field",
-        "@intentui/ui/form"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-date-field.json",
+        "http://localhost:3000/r/ui-form.json"
       ],
       "files": [
         {
@@ -2402,7 +2402,7 @@
         "@react-aria/i18n"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-picker"
+        "http://localhost:3000/r/ui-date-picker.json"
       ],
       "files": [
         {
@@ -2420,9 +2420,9 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/date-picker",
-        "@intentui/ui/form"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-date-picker.json",
+        "http://localhost:3000/r/ui-form.json"
       ],
       "files": [
         {
@@ -2438,7 +2438,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/date-picker"
+        "http://localhost:3000/r/ui-date-picker.json"
       ],
       "files": [
         {
@@ -2454,7 +2454,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/date-picker"
+        "http://localhost:3000/r/ui-date-picker.json"
       ],
       "files": [
         {
@@ -2470,9 +2470,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/date-picker",
-        "@intentui/ui/form"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-date-picker.json",
+        "http://localhost:3000/r/ui-form.json"
       ],
       "files": [
         {
@@ -2491,7 +2491,7 @@
         "@react-aria/i18n"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-range-picker"
+        "http://localhost:3000/r/ui-date-range-picker.json"
       ],
       "files": [
         {
@@ -2509,9 +2509,9 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/date-range-picker",
-        "@intentui/ui/form"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-date-range-picker.json",
+        "http://localhost:3000/r/ui-form.json"
       ],
       "files": [
         {
@@ -2527,7 +2527,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/date-range-picker"
+        "http://localhost:3000/r/ui-date-range-picker.json"
       ],
       "files": [
         {
@@ -2543,7 +2543,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/date-range-picker"
+        "http://localhost:3000/r/ui-date-range-picker.json"
       ],
       "files": [
         {
@@ -2561,7 +2561,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-range-picker"
+        "http://localhost:3000/r/ui-date-range-picker.json"
       ],
       "files": [
         {
@@ -2577,9 +2577,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/date-range-picker",
-        "@intentui/ui/form"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-date-range-picker.json",
+        "http://localhost:3000/r/ui-form.json"
       ],
       "files": [
         {
@@ -2595,7 +2595,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/date-range-picker"
+        "http://localhost:3000/r/ui-date-range-picker.json"
       ],
       "files": [
         {
@@ -2613,7 +2613,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-picker"
+        "http://localhost:3000/r/ui-date-picker.json"
       ],
       "files": [
         {
@@ -2631,7 +2631,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/date-field"
+        "http://localhost:3000/r/ui-date-field.json"
       ],
       "files": [
         {
@@ -2647,10 +2647,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/card",
-        "@intentui/ui/description-list",
-        "@intentui/ui/link"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-description-list.json",
+        "http://localhost:3000/r/ui-link.json"
       ],
       "files": [
         {
@@ -2666,7 +2666,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/description-list"
+        "http://localhost:3000/r/ui-description-list.json"
       ],
       "files": [
         {
@@ -2682,8 +2682,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/description-list",
-        "@intentui/ui/heading"
+        "http://localhost:3000/r/ui-description-list.json",
+        "http://localhost:3000/r/ui-heading.json"
       ],
       "files": [
         {
@@ -2699,7 +2699,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2715,7 +2715,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2731,7 +2731,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2747,7 +2747,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2763,7 +2763,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2779,7 +2779,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2795,7 +2795,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2811,7 +2811,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2827,7 +2827,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2843,7 +2843,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2861,7 +2861,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2877,7 +2877,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/disclosure"
+        "http://localhost:3000/r/ui-disclosure.json"
       ],
       "files": [
         {
@@ -2893,9 +2893,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/drawer",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-drawer.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -2911,9 +2911,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/drawer",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-drawer.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -2929,10 +2929,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/drawer",
-        "@intentui/ui/radio",
-        "@intentui/ui/separator"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-drawer.json",
+        "http://localhost:3000/r/ui-radio.json",
+        "http://localhost:3000/r/ui-separator.json"
       ],
       "files": [
         {
@@ -2950,10 +2950,10 @@
         "sonner"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/drawer",
-        "@intentui/ui/form",
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-drawer.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -2969,10 +2969,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/drawer",
-        "@intentui/ui/radio",
-        "@intentui/ui/separator"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-drawer.json",
+        "http://localhost:3000/r/ui-radio.json",
+        "http://localhost:3000/r/ui-separator.json"
       ],
       "files": [
         {
@@ -2988,8 +2988,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/drawer"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-drawer.json"
       ],
       "files": [
         {
@@ -3005,8 +3005,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/drawer"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-drawer.json"
       ],
       "files": [
         {
@@ -3026,9 +3026,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/drop-zone",
-        "@intentui/ui/field",
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-drop-zone.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3044,8 +3044,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/drop-zone",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-drop-zone.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -3064,9 +3064,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/drop-zone",
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-drop-zone.json",
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3082,7 +3082,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3098,7 +3098,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3114,8 +3114,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3131,7 +3131,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3147,7 +3147,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3163,7 +3163,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3179,7 +3179,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3195,7 +3195,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/file-trigger"
+        "http://localhost:3000/r/ui-file-trigger.json"
       ],
       "files": [
         {
@@ -3211,10 +3211,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/heading",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-heading.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -3230,9 +3230,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -3250,8 +3250,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/grid-list"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-grid-list.json"
       ],
       "files": [
         {
@@ -3267,7 +3267,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/grid-list"
+        "http://localhost:3000/r/ui-grid-list.json"
       ],
       "files": [
         {
@@ -3283,7 +3283,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/grid-list"
+        "http://localhost:3000/r/ui-grid-list.json"
       ],
       "files": [
         {
@@ -3302,8 +3302,8 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/blocks/grid-list-drag-demo",
-        "@intentui/ui/grid-list"
+        "http://localhost:3000/r/block-grid-list-drag-demo.json",
+        "http://localhost:3000/r/ui-grid-list.json"
       ],
       "files": [
         {
@@ -3322,7 +3322,7 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/grid-list"
+        "http://localhost:3000/r/ui-grid-list.json"
       ],
       "files": [
         {
@@ -3341,8 +3341,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/grid-list",
-        "@intentui/ui/progress-circle"
+        "http://localhost:3000/r/ui-grid-list.json",
+        "http://localhost:3000/r/ui-progress-circle.json"
       ],
       "files": [
         {
@@ -3358,7 +3358,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/grid-list"
+        "http://localhost:3000/r/ui-grid-list.json"
       ],
       "files": [
         {
@@ -3374,7 +3374,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/grid-list"
+        "http://localhost:3000/r/ui-grid-list.json"
       ],
       "files": [
         {
@@ -3390,7 +3390,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/heading"
+        "http://localhost:3000/r/ui-heading.json"
       ],
       "files": [
         {
@@ -3406,7 +3406,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/heading"
+        "http://localhost:3000/r/ui-heading.json"
       ],
       "files": [
         {
@@ -3422,7 +3422,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/progress-bar"
+        "http://localhost:3000/r/ui-progress-bar.json"
       ],
       "files": [
         {
@@ -3438,7 +3438,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/input-otp"
+        "http://localhost:3000/r/ui-input-otp.json"
       ],
       "files": [
         {
@@ -3454,7 +3454,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/input-otp"
+        "http://localhost:3000/r/ui-input-otp.json"
       ],
       "files": [
         {
@@ -3470,7 +3470,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/input-otp"
+        "http://localhost:3000/r/ui-input-otp.json"
       ],
       "files": [
         {
@@ -3488,9 +3488,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/line-chart",
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-line-chart.json",
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -3506,8 +3506,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/line-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-line-chart.json"
       ],
       "files": [
         {
@@ -3523,8 +3523,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/line-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-line-chart.json"
       ],
       "files": [
         {
@@ -3543,8 +3543,8 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/line-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-line-chart.json"
       ],
       "files": [
         {
@@ -3563,8 +3563,8 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/line-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-line-chart.json"
       ],
       "files": [
         {
@@ -3580,8 +3580,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/line-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-line-chart.json"
       ],
       "files": [
         {
@@ -3597,8 +3597,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/line-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-line-chart.json"
       ],
       "files": [
         {
@@ -3614,8 +3614,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/line-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-line-chart.json"
       ],
       "files": [
         {
@@ -3631,8 +3631,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/link"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-link.json"
       ],
       "files": [
         {
@@ -3648,7 +3648,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/link"
+        "http://localhost:3000/r/ui-link.json"
       ],
       "files": [
         {
@@ -3664,7 +3664,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/link"
+        "http://localhost:3000/r/ui-link.json"
       ],
       "files": [
         {
@@ -3680,7 +3680,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/link"
+        "http://localhost:3000/r/ui-link.json"
       ],
       "files": [
         {
@@ -3698,8 +3698,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/list-box"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-list-box.json"
       ],
       "files": [
         {
@@ -3715,7 +3715,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/list-box"
+        "http://localhost:3000/r/ui-list-box.json"
       ],
       "files": [
         {
@@ -3733,7 +3733,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/list-box"
+        "http://localhost:3000/r/ui-list-box.json"
       ],
       "files": [
         {
@@ -3749,7 +3749,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/list-box"
+        "http://localhost:3000/r/ui-list-box.json"
       ],
       "files": [
         {
@@ -3768,8 +3768,8 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/list-box",
-        "@intentui/ui/progress-circle"
+        "http://localhost:3000/r/ui-list-box.json",
+        "http://localhost:3000/r/ui-progress-circle.json"
       ],
       "files": [
         {
@@ -3787,8 +3787,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/list-box"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-list-box.json"
       ],
       "files": [
         {
@@ -3807,7 +3807,7 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/list-box"
+        "http://localhost:3000/r/ui-list-box.json"
       ],
       "files": [
         {
@@ -3823,7 +3823,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/list-box"
+        "http://localhost:3000/r/ui-list-box.json"
       ],
       "files": [
         {
@@ -3839,7 +3839,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/loader"
+        "http://localhost:3000/r/ui-loader.json"
       ],
       "files": [
         {
@@ -3855,7 +3855,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/loader"
+        "http://localhost:3000/r/ui-loader.json"
       ],
       "files": [
         {
@@ -3871,7 +3871,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/loader"
+        "http://localhost:3000/r/ui-loader.json"
       ],
       "files": [
         {
@@ -3887,7 +3887,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/loader"
+        "http://localhost:3000/r/ui-loader.json"
       ],
       "files": [
         {
@@ -3903,7 +3903,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -3921,7 +3921,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -3937,7 +3937,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -3953,8 +3953,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -3970,8 +3970,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -3987,7 +3987,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -4005,7 +4005,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -4021,8 +4021,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -4038,8 +4038,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -4057,8 +4057,8 @@
         "next-themes"
       ],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -4074,7 +4074,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/meter"
+        "http://localhost:3000/r/ui-meter.json"
       ],
       "files": [
         {
@@ -4090,7 +4090,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/meter"
+        "http://localhost:3000/r/ui-meter.json"
       ],
       "files": [
         {
@@ -4106,7 +4106,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/meter"
+        "http://localhost:3000/r/ui-meter.json"
       ],
       "files": [
         {
@@ -4122,7 +4122,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/meter"
+        "http://localhost:3000/r/ui-meter.json"
       ],
       "files": [
         {
@@ -4138,10 +4138,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/modal",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-modal.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -4157,8 +4157,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/modal"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-modal.json"
       ],
       "files": [
         {
@@ -4174,9 +4174,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/modal",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-modal.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -4194,10 +4194,10 @@
         "sonner"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/modal",
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-modal.json",
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -4213,9 +4213,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/dialog",
-        "@intentui/ui/modal"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-dialog.json",
+        "http://localhost:3000/r/ui-modal.json"
       ],
       "files": [
         {
@@ -4231,8 +4231,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/modal"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-modal.json"
       ],
       "files": [
         {
@@ -4251,11 +4251,11 @@
         "sonner"
       ],
       "registryDependencies": [
-        "@intentui/lib/utils",
-        "@intentui/ui/button",
-        "@intentui/ui/loader",
-        "@intentui/ui/menu",
-        "@intentui/ui/modal"
+        "http://localhost:3000/r/lib-utils.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-loader.json",
+        "http://localhost:3000/r/ui-menu.json",
+        "http://localhost:3000/r/ui-modal.json"
       ],
       "files": [
         {
@@ -4273,8 +4273,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -4292,8 +4292,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/multiple-select"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-multiple-select.json"
       ],
       "files": [
         {
@@ -4309,7 +4309,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/multiple-select"
+        "http://localhost:3000/r/ui-multiple-select.json"
       ],
       "files": [
         {
@@ -4325,7 +4325,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/multiple-select"
+        "http://localhost:3000/r/ui-multiple-select.json"
       ],
       "files": [
         {
@@ -4343,9 +4343,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/multiple-select"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-multiple-select.json"
       ],
       "files": [
         {
@@ -4363,8 +4363,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/multiple-select"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-multiple-select.json"
       ],
       "files": [
         {
@@ -4380,7 +4380,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/note"
+        "http://localhost:3000/r/ui-note.json"
       ],
       "files": [
         {
@@ -4396,7 +4396,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/note"
+        "http://localhost:3000/r/ui-note.json"
       ],
       "files": [
         {
@@ -4412,7 +4412,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/note"
+        "http://localhost:3000/r/ui-note.json"
       ],
       "files": [
         {
@@ -4428,8 +4428,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/number-field"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-number-field.json"
       ],
       "files": [
         {
@@ -4445,7 +4445,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/number-field"
+        "http://localhost:3000/r/ui-number-field.json"
       ],
       "files": [
         {
@@ -4461,7 +4461,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/number-field"
+        "http://localhost:3000/r/ui-number-field.json"
       ],
       "files": [
         {
@@ -4477,9 +4477,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/number-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-number-field.json"
       ],
       "files": [
         {
@@ -4495,7 +4495,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/number-field"
+        "http://localhost:3000/r/ui-number-field.json"
       ],
       "files": [
         {
@@ -4511,7 +4511,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/pagination"
+        "http://localhost:3000/r/ui-pagination.json"
       ],
       "files": [
         {
@@ -4527,7 +4527,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/pagination"
+        "http://localhost:3000/r/ui-pagination.json"
       ],
       "files": [
         {
@@ -4543,8 +4543,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/pie-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-pie-chart.json"
       ],
       "files": [
         {
@@ -4560,8 +4560,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/pie-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-pie-chart.json"
       ],
       "files": [
         {
@@ -4577,8 +4577,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/pie-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-pie-chart.json"
       ],
       "files": [
         {
@@ -4594,8 +4594,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/pie-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-pie-chart.json"
       ],
       "files": [
         {
@@ -4611,8 +4611,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/pie-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-pie-chart.json"
       ],
       "files": [
         {
@@ -4628,8 +4628,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/pie-chart"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-pie-chart.json"
       ],
       "files": [
         {
@@ -4647,9 +4647,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/pie-chart",
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-pie-chart.json",
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -4667,8 +4667,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -4686,10 +4686,10 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/utils",
-        "@intentui/ui/button",
-        "@intentui/ui/loader",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/lib-utils.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-loader.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -4705,13 +4705,13 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/checkbox",
-        "@intentui/ui/dialog",
-        "@intentui/ui/form",
-        "@intentui/ui/link",
-        "@intentui/ui/popover",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-dialog.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-link.json",
+        "http://localhost:3000/r/ui-popover.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -4727,8 +4727,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -4746,8 +4746,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -4763,9 +4763,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/button",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -4781,7 +4781,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/progress-bar"
+        "http://localhost:3000/r/ui-progress-bar.json"
       ],
       "files": [
         {
@@ -4797,7 +4797,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/progress-circle"
+        "http://localhost:3000/r/ui-progress-circle.json"
       ],
       "files": [
         {
@@ -4813,8 +4813,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/progress-circle",
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-progress-circle.json",
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -4830,7 +4830,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/progress-circle"
+        "http://localhost:3000/r/ui-progress-circle.json"
       ],
       "files": [
         {
@@ -4846,7 +4846,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/progress-circle"
+        "http://localhost:3000/r/ui-progress-circle.json"
       ],
       "files": [
         {
@@ -4862,7 +4862,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/progress-circle"
+        "http://localhost:3000/r/ui-progress-circle.json"
       ],
       "files": [
         {
@@ -4878,8 +4878,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/radio"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-radio.json"
       ],
       "files": [
         {
@@ -4895,8 +4895,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/radio"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-radio.json"
       ],
       "files": [
         {
@@ -4912,8 +4912,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/radio"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-radio.json"
       ],
       "files": [
         {
@@ -4929,7 +4929,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/radio"
+        "http://localhost:3000/r/ui-radio.json"
       ],
       "files": [
         {
@@ -4945,7 +4945,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/radio"
+        "http://localhost:3000/r/ui-radio.json"
       ],
       "files": [
         {
@@ -4961,7 +4961,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/radio"
+        "http://localhost:3000/r/ui-radio.json"
       ],
       "files": [
         {
@@ -4977,10 +4977,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/field",
-        "@intentui/ui/form",
-        "@intentui/ui/radio"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-radio.json"
       ],
       "files": [
         {
@@ -4998,7 +4998,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/range-calendar"
+        "http://localhost:3000/r/ui-range-calendar.json"
       ],
       "files": [
         {
@@ -5014,7 +5014,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/range-calendar"
+        "http://localhost:3000/r/ui-range-calendar.json"
       ],
       "files": [
         {
@@ -5032,7 +5032,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/range-calendar"
+        "http://localhost:3000/r/ui-range-calendar.json"
       ],
       "files": [
         {
@@ -5048,8 +5048,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5065,7 +5065,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5081,7 +5081,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5097,7 +5097,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5113,7 +5113,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5129,7 +5129,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5145,7 +5145,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5161,9 +5161,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5179,7 +5179,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/search-field"
+        "http://localhost:3000/r/ui-search-field.json"
       ],
       "files": [
         {
@@ -5197,8 +5197,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5214,7 +5214,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5230,7 +5230,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5246,7 +5246,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5264,10 +5264,10 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/dialog",
-        "@intentui/ui/list-box",
-        "@intentui/ui/search-field",
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-dialog.json",
+        "http://localhost:3000/r/ui-list-box.json",
+        "http://localhost:3000/r/ui-search-field.json",
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5283,7 +5283,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5299,7 +5299,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5315,9 +5315,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5333,8 +5333,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5352,7 +5352,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -5368,7 +5368,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/separator"
+        "http://localhost:3000/r/ui-separator.json"
       ],
       "files": [
         {
@@ -5384,7 +5384,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/separator"
+        "http://localhost:3000/r/ui-separator.json"
       ],
       "files": [
         {
@@ -5400,9 +5400,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/sheet",
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-sheet.json",
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -5418,9 +5418,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/checkbox",
-        "@intentui/ui/sheet"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-sheet.json"
       ],
       "files": [
         {
@@ -5436,10 +5436,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/checkbox",
-        "@intentui/ui/sheet",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-sheet.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -5455,8 +5455,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/sheet"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-sheet.json"
       ],
       "files": [
         {
@@ -5474,14 +5474,14 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/avatar",
-        "@intentui/ui/button",
-        "@intentui/ui/checkbox",
-        "@intentui/ui/menu",
-        "@intentui/ui/modal",
-        "@intentui/ui/select",
-        "@intentui/ui/sheet",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-avatar.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-menu.json",
+        "http://localhost:3000/r/ui-modal.json",
+        "http://localhost:3000/r/ui-select.json",
+        "http://localhost:3000/r/ui-sheet.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -5499,8 +5499,8 @@
         "usemods"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/sheet"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-sheet.json"
       ],
       "files": [
         {
@@ -5516,8 +5516,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/sheet"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-sheet.json"
       ],
       "files": [
         {
@@ -5533,7 +5533,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/show-more"
+        "http://localhost:3000/r/ui-show-more.json"
       ],
       "files": [
         {
@@ -5551,7 +5551,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/show-more"
+        "http://localhost:3000/r/ui-show-more.json"
       ],
       "files": [
         {
@@ -5569,7 +5569,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/show-more"
+        "http://localhost:3000/r/ui-show-more.json"
       ],
       "files": [
         {
@@ -5585,7 +5585,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/show-more"
+        "http://localhost:3000/r/ui-show-more.json"
       ],
       "files": [
         {
@@ -5601,7 +5601,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/pagination"
+        "http://localhost:3000/r/ui-pagination.json"
       ],
       "files": [
         {
@@ -5620,8 +5620,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -5637,8 +5637,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/skeleton"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-skeleton.json"
       ],
       "files": [
         {
@@ -5654,8 +5654,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/skeleton"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-skeleton.json"
       ],
       "files": [
         {
@@ -5671,8 +5671,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/skeleton"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-skeleton.json"
       ],
       "files": [
         {
@@ -5688,7 +5688,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5704,7 +5704,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5720,7 +5720,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5736,7 +5736,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5752,7 +5752,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5768,9 +5768,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/field",
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5788,7 +5788,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5804,7 +5804,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5820,7 +5820,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5836,7 +5836,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/slider"
+        "http://localhost:3000/r/ui-slider.json"
       ],
       "files": [
         {
@@ -5852,8 +5852,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/switch"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-switch.json"
       ],
       "files": [
         {
@@ -5869,7 +5869,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/switch"
+        "http://localhost:3000/r/ui-switch.json"
       ],
       "files": [
         {
@@ -5885,9 +5885,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/field",
-        "@intentui/ui/switch"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-switch.json"
       ],
       "files": [
         {
@@ -5903,7 +5903,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/switch"
+        "http://localhost:3000/r/ui-switch.json"
       ],
       "files": [
         {
@@ -5919,8 +5919,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/switch"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-switch.json"
       ],
       "files": [
         {
@@ -5938,8 +5938,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/table"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-table.json"
       ],
       "files": [
         {
@@ -5958,8 +5958,8 @@
         "@internationalized/number"
       ],
       "registryDependencies": [
-        "@intentui/ui/menu",
-        "@intentui/ui/table"
+        "http://localhost:3000/r/ui-menu.json",
+        "http://localhost:3000/r/ui-table.json"
       ],
       "files": [
         {
@@ -5979,7 +5979,7 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/table"
+        "http://localhost:3000/r/ui-table.json"
       ],
       "files": [
         {
@@ -5998,8 +5998,8 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/progress-circle",
-        "@intentui/ui/table"
+        "http://localhost:3000/r/ui-progress-circle.json",
+        "http://localhost:3000/r/ui-table.json"
       ],
       "files": [
         {
@@ -6015,7 +6015,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/table"
+        "http://localhost:3000/r/ui-table.json"
       ],
       "files": [
         {
@@ -6034,7 +6034,7 @@
         "@react-stately/data"
       ],
       "registryDependencies": [
-        "@intentui/ui/table"
+        "http://localhost:3000/r/ui-table.json"
       ],
       "files": [
         {
@@ -6053,10 +6053,10 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/menu",
-        "@intentui/ui/search-field",
-        "@intentui/ui/table"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-menu.json",
+        "http://localhost:3000/r/ui-search-field.json",
+        "http://localhost:3000/r/ui-table.json"
       ],
       "files": [
         {
@@ -6074,7 +6074,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/tabs"
+        "http://localhost:3000/r/ui-tabs.json"
       ],
       "files": [
         {
@@ -6090,7 +6090,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tabs"
+        "http://localhost:3000/r/ui-tabs.json"
       ],
       "files": [
         {
@@ -6106,7 +6106,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tabs"
+        "http://localhost:3000/r/ui-tabs.json"
       ],
       "files": [
         {
@@ -6124,7 +6124,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/tabs"
+        "http://localhost:3000/r/ui-tabs.json"
       ],
       "files": [
         {
@@ -6140,7 +6140,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tabs"
+        "http://localhost:3000/r/ui-tabs.json"
       ],
       "files": [
         {
@@ -6156,7 +6156,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tabs"
+        "http://localhost:3000/r/ui-tabs.json"
       ],
       "files": [
         {
@@ -6174,7 +6174,7 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/tag-field"
+        "http://localhost:3000/r/ui-tag-field.json"
       ],
       "files": [
         {
@@ -6192,8 +6192,8 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/tag-field"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-tag-field.json"
       ],
       "files": [
         {
@@ -6211,7 +6211,7 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/tag-field"
+        "http://localhost:3000/r/ui-tag-field.json"
       ],
       "files": [
         {
@@ -6229,7 +6229,7 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/tag-field"
+        "http://localhost:3000/r/ui-tag-field.json"
       ],
       "files": [
         {
@@ -6247,7 +6247,7 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/tag-field"
+        "http://localhost:3000/r/ui-tag-field.json"
       ],
       "files": [
         {
@@ -6265,8 +6265,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/tag-group"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-tag-group.json"
       ],
       "files": [
         {
@@ -6282,7 +6282,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tag-group"
+        "http://localhost:3000/r/ui-tag-group.json"
       ],
       "files": [
         {
@@ -6298,8 +6298,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/blocks/tag-group-demo",
-        "@intentui/ui/tag-group"
+        "http://localhost:3000/r/block-tag-group-demo.json",
+        "http://localhost:3000/r/ui-tag-group.json"
       ],
       "files": [
         {
@@ -6315,7 +6315,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tag-group"
+        "http://localhost:3000/r/ui-tag-group.json"
       ],
       "files": [
         {
@@ -6333,7 +6333,7 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/tag-group"
+        "http://localhost:3000/r/ui-tag-group.json"
       ],
       "files": [
         {
@@ -6349,8 +6349,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6366,7 +6366,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6382,7 +6382,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6398,7 +6398,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6414,7 +6414,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6432,7 +6432,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6448,7 +6448,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6464,7 +6464,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6482,9 +6482,9 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/modal",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-modal.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6500,7 +6500,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6516,9 +6516,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/text-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-text-field.json"
       ],
       "files": [
         {
@@ -6534,8 +6534,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -6551,7 +6551,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -6567,7 +6567,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -6583,7 +6583,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -6599,7 +6599,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -6615,7 +6615,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -6631,9 +6631,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/textarea"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-textarea.json"
       ],
       "files": [
         {
@@ -6651,7 +6651,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/time-field"
+        "http://localhost:3000/r/ui-time-field.json"
       ],
       "files": [
         {
@@ -6669,7 +6669,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/time-field"
+        "http://localhost:3000/r/ui-time-field.json"
       ],
       "files": [
         {
@@ -6685,7 +6685,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/time-field"
+        "http://localhost:3000/r/ui-time-field.json"
       ],
       "files": [
         {
@@ -6703,8 +6703,8 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/switch",
-        "@intentui/ui/time-field"
+        "http://localhost:3000/r/ui-switch.json",
+        "http://localhost:3000/r/ui-time-field.json"
       ],
       "files": [
         {
@@ -6722,7 +6722,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/time-field"
+        "http://localhost:3000/r/ui-time-field.json"
       ],
       "files": [
         {
@@ -6741,7 +6741,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/time-field"
+        "http://localhost:3000/r/ui-time-field.json"
       ],
       "files": [
         {
@@ -6757,9 +6757,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/form",
-        "@intentui/ui/time-field"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-form.json",
+        "http://localhost:3000/r/ui-time-field.json"
       ],
       "files": [
         {
@@ -6777,7 +6777,7 @@
         "sonner"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -6795,7 +6795,7 @@
         "sonner"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -6813,7 +6813,7 @@
         "sonner"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -6831,7 +6831,7 @@
         "sonner"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -6849,7 +6849,7 @@
         "sonner"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -6867,7 +6867,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/toggle"
+        "http://localhost:3000/r/ui-toggle.json"
       ],
       "files": [
         {
@@ -6883,7 +6883,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle"
+        "http://localhost:3000/r/ui-toggle.json"
       ],
       "files": [
         {
@@ -6901,7 +6901,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/toggle"
+        "http://localhost:3000/r/ui-toggle.json"
       ],
       "files": [
         {
@@ -6919,7 +6919,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -6935,7 +6935,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -6951,7 +6951,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -6967,7 +6967,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -6983,7 +6983,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -6999,7 +6999,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -7015,7 +7015,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle-group"
+        "http://localhost:3000/r/ui-toggle-group.json"
       ],
       "files": [
         {
@@ -7031,7 +7031,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle"
+        "http://localhost:3000/r/ui-toggle.json"
       ],
       "files": [
         {
@@ -7047,7 +7047,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle"
+        "http://localhost:3000/r/ui-toggle.json"
       ],
       "files": [
         {
@@ -7065,8 +7065,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/separator",
-        "@intentui/ui/toggle"
+        "http://localhost:3000/r/ui-separator.json",
+        "http://localhost:3000/r/ui-toggle.json"
       ],
       "files": [
         {
@@ -7082,10 +7082,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/checkbox",
-        "@intentui/ui/menu",
-        "@intentui/ui/toolbar"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-checkbox.json",
+        "http://localhost:3000/r/ui-menu.json",
+        "http://localhost:3000/r/ui-toolbar.json"
       ],
       "files": [
         {
@@ -7101,8 +7101,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/toggle",
-        "@intentui/ui/toolbar"
+        "http://localhost:3000/r/ui-toggle.json",
+        "http://localhost:3000/r/ui-toolbar.json"
       ],
       "files": [
         {
@@ -7118,10 +7118,10 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/menu",
-        "@intentui/ui/toggle",
-        "@intentui/ui/toolbar"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-menu.json",
+        "http://localhost:3000/r/ui-toggle.json",
+        "http://localhost:3000/r/ui-toolbar.json"
       ],
       "files": [
         {
@@ -7139,8 +7139,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/tooltip"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-tooltip.json"
       ],
       "files": [
         {
@@ -7156,8 +7156,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/tooltip"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-tooltip.json"
       ],
       "files": [
         {
@@ -7175,8 +7175,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/tooltip"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-tooltip.json"
       ],
       "files": [
         {
@@ -7194,8 +7194,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/tooltip"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-tooltip.json"
       ],
       "files": [
         {
@@ -7211,9 +7211,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/badge",
-        "@intentui/ui/field",
-        "@intentui/ui/tooltip"
+        "http://localhost:3000/r/ui-badge.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-tooltip.json"
       ],
       "files": [
         {
@@ -7229,8 +7229,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/card",
-        "@intentui/ui/tracker"
+        "http://localhost:3000/r/ui-card.json",
+        "http://localhost:3000/r/ui-tracker.json"
       ],
       "files": [
         {
@@ -7246,7 +7246,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tracker"
+        "http://localhost:3000/r/ui-tracker.json"
       ],
       "files": [
         {
@@ -7262,7 +7262,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tree"
+        "http://localhost:3000/r/ui-tree.json"
       ],
       "files": [
         {
@@ -7280,7 +7280,7 @@
         "@react-stately/data"
       ],
       "registryDependencies": [
-        "@intentui/ui/tree"
+        "http://localhost:3000/r/ui-tree.json"
       ],
       "files": [
         {
@@ -7296,7 +7296,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tree"
+        "http://localhost:3000/r/ui-tree.json"
       ],
       "files": [
         {
@@ -7314,8 +7314,8 @@
         "react-stately"
       ],
       "registryDependencies": [
-        "@intentui/ui/progress-circle",
-        "@intentui/ui/tree"
+        "http://localhost:3000/r/ui-progress-circle.json",
+        "http://localhost:3000/r/ui-tree.json"
       ],
       "files": [
         {
@@ -7331,7 +7331,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/tree"
+        "http://localhost:3000/r/ui-tree.json"
       ],
       "files": [
         {
@@ -7569,7 +7569,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [],
       "description": "",
@@ -7729,7 +7729,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [],
       "description": "",
@@ -7889,7 +7889,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [],
       "description": "",
@@ -8049,7 +8049,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [],
       "description": "",
@@ -8209,7 +8209,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [],
       "description": "",
@@ -8365,7 +8365,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/chart"
+        "http://localhost:3000/r/ui-chart.json"
       ],
       "files": [
         {
@@ -8413,7 +8413,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/chart"
+        "http://localhost:3000/r/ui-chart.json"
       ],
       "files": [
         {
@@ -8448,8 +8448,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/link"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-link.json"
       ],
       "files": [
         {
@@ -8486,8 +8486,8 @@
         "@react-stately/calendar"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/select"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-select.json"
       ],
       "files": [
         {
@@ -8519,8 +8519,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/button"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -8538,7 +8538,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [
         {
@@ -8556,8 +8556,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -8576,7 +8576,7 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -8594,8 +8594,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/color-thumb"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-color-thumb.json"
       ],
       "files": [
         {
@@ -8613,10 +8613,10 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/color-picker",
-        "@intentui/ui/color-swatch",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-color-picker.json",
+        "http://localhost:3000/r/ui-color-swatch.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -8635,13 +8635,13 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/color-area",
-        "@intentui/ui/color-field",
-        "@intentui/ui/color-slider",
-        "@intentui/ui/color-swatch",
-        "@intentui/ui/field",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-color-area.json",
+        "http://localhost:3000/r/ui-color-field.json",
+        "http://localhost:3000/r/ui-color-slider.json",
+        "http://localhost:3000/r/ui-color-swatch.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -8657,8 +8657,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-thumb",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/ui-color-thumb.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -8677,7 +8677,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [
         {
@@ -8693,8 +8693,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/color-swatch"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-color-swatch.json"
       ],
       "files": [
         {
@@ -8724,7 +8724,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/color-thumb"
+        "http://localhost:3000/r/ui-color-thumb.json"
       ],
       "files": [
         {
@@ -8742,11 +8742,11 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/button",
-        "@intentui/ui/dropdown",
-        "@intentui/ui/field",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-dropdown.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -8764,10 +8764,10 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/dropdown",
-        "@intentui/ui/loader",
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-dropdown.json",
+        "http://localhost:3000/r/ui-loader.json",
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -8797,7 +8797,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/menu"
+        "http://localhost:3000/r/ui-menu.json"
       ],
       "files": [
         {
@@ -8813,8 +8813,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -8833,15 +8833,15 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/hooks/use-media-query",
-        "@intentui/lib/primitive",
-        "@intentui/ui/button",
-        "@intentui/ui/calendar",
-        "@intentui/ui/date-field",
-        "@intentui/ui/field",
-        "@intentui/ui/modal",
-        "@intentui/ui/popover",
-        "@intentui/ui/range-calendar"
+        "http://localhost:3000/r/hook-use-media-query.json",
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-calendar.json",
+        "http://localhost:3000/r/ui-date-field.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-modal.json",
+        "http://localhost:3000/r/ui-popover.json",
+        "http://localhost:3000/r/ui-range-calendar.json"
       ],
       "files": [
         {
@@ -8860,10 +8860,10 @@
         "@react-types/overlays"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/date-field",
-        "@intentui/ui/date-picker",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-date-field.json",
+        "http://localhost:3000/r/ui-date-picker.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -8896,8 +8896,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/button"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -8915,7 +8915,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [
         {
@@ -8933,7 +8933,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -8968,7 +8968,7 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/ui/keyboard"
+        "http://localhost:3000/r/ui-keyboard.json"
       ],
       "files": [
         {
@@ -8986,7 +8986,7 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [
         {
@@ -9005,8 +9005,8 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/ui/button",
-        "@intentui/ui/loader"
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-loader.json"
       ],
       "files": [
         {
@@ -9042,8 +9042,8 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -9108,7 +9108,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/chart"
+        "http://localhost:3000/r/ui-chart.json"
       ],
       "files": [
         {
@@ -9124,7 +9124,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [
         {
@@ -9142,8 +9142,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/dropdown"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-dropdown.json"
       ],
       "files": [
         {
@@ -9180,9 +9180,9 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/dropdown",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-dropdown.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -9201,8 +9201,8 @@
         "motion"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -9218,7 +9218,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/ui/dialog"
+        "http://localhost:3000/r/ui-dialog.json"
       ],
       "files": [
         {
@@ -9237,11 +9237,11 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/dropdown",
-        "@intentui/ui/field",
-        "@intentui/ui/popover",
-        "@intentui/ui/tag-group"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-dropdown.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-popover.json",
+        "http://localhost:3000/r/ui-tag-group.json"
       ],
       "files": [
         {
@@ -9259,12 +9259,12 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/hooks/use-media-query",
-        "@intentui/lib/primitive",
-        "@intentui/ui/button",
-        "@intentui/ui/link",
-        "@intentui/ui/separator",
-        "@intentui/ui/sheet"
+        "http://localhost:3000/r/hook-use-media-query.json",
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-link.json",
+        "http://localhost:3000/r/ui-separator.json",
+        "http://localhost:3000/r/ui-sheet.json"
       ],
       "files": [
         {
@@ -9297,9 +9297,9 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/hooks/use-media-query",
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/hook-use-media-query.json",
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -9317,8 +9317,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/button"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -9336,7 +9336,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "@intentui/ui/chart"
+        "http://localhost:3000/r/ui-chart.json"
       ],
       "files": [
         {
@@ -9352,8 +9352,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/dialog"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-dialog.json"
       ],
       "files": [
         {
@@ -9371,8 +9371,8 @@
         "motion"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -9404,8 +9404,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -9423,7 +9423,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "@intentui/ui/calendar"
+        "http://localhost:3000/r/ui-calendar.json"
       ],
       "files": [
         {
@@ -9458,9 +9458,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field",
-        "@intentui/ui/loader"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-loader.json"
       ],
       "files": [
         {
@@ -9478,10 +9478,10 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/dropdown",
-        "@intentui/ui/field",
-        "@intentui/ui/popover"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-dropdown.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-popover.json"
       ],
       "files": [
         {
@@ -9515,7 +9515,7 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/ui/dialog"
+        "http://localhost:3000/r/ui-dialog.json"
       ],
       "files": [
         {
@@ -9534,7 +9534,7 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/ui/button"
+        "http://localhost:3000/r/ui-button.json"
       ],
       "files": [
         {
@@ -9552,12 +9552,12 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/hooks/use-media-query",
-        "@intentui/lib/primitive",
-        "@intentui/ui/button",
-        "@intentui/ui/link",
-        "@intentui/ui/sheet",
-        "@intentui/ui/tooltip"
+        "http://localhost:3000/r/hook-use-media-query.json",
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-button.json",
+        "http://localhost:3000/r/ui-link.json",
+        "http://localhost:3000/r/ui-sheet.json",
+        "http://localhost:3000/r/ui-tooltip.json"
       ],
       "files": [
         {
@@ -9589,9 +9589,9 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field",
-        "@intentui/ui/tooltip"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-tooltip.json"
       ],
       "files": [
         {
@@ -9607,8 +9607,8 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -9626,8 +9626,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
@@ -9643,7 +9643,7 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [
         {
@@ -9663,8 +9663,8 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/ui/field",
-        "@intentui/ui/tag-group"
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-tag-group.json"
       ],
       "files": [
         {
@@ -9682,8 +9682,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -9702,9 +9702,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field",
-        "@intentui/ui/loader"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json",
+        "http://localhost:3000/r/ui-loader.json"
       ],
       "files": [
         {
@@ -9722,8 +9722,8 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -9739,9 +9739,9 @@
       "description": "",
       "dependencies": [],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/date-field",
-        "@intentui/ui/field"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-date-field.json",
+        "http://localhost:3000/r/ui-field.json"
       ],
       "files": [
         {
@@ -9792,7 +9792,7 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive"
+        "http://localhost:3000/r/lib-primitive.json"
       ],
       "files": [
         {
@@ -9810,9 +9810,9 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/separator",
-        "@intentui/ui/toggle"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-separator.json",
+        "http://localhost:3000/r/ui-toggle.json"
       ],
       "files": [
         {
@@ -9847,7 +9847,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "@intentui/ui/tooltip"
+        "http://localhost:3000/r/ui-tooltip.json"
       ],
       "files": [
         {
@@ -9865,8 +9865,8 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "@intentui/lib/primitive",
-        "@intentui/ui/checkbox"
+        "http://localhost:3000/r/lib-primitive.json",
+        "http://localhost:3000/r/ui-checkbox.json"
       ],
       "files": [
         {
