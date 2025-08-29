@@ -70,18 +70,29 @@ intentui [command]
 ```
 
 ## Shadcn CLI
-You might notice that we provide our own CLI, but if you prefer using the ShadCN CLI, that's totally fine. To get started, initialize your application with the following command:
+
+We ship our own CLI, but you can use the shadcn CLI if you prefer. To get started, initialize your app with the command below.
+
+Before you proceed, make sure your project uses the namespace. If you are not familiar with it, read the guide [here](https://ui.shadcn.com/docs/registry/namespace).
+
+```
+"registries": {
+  "@intentui": {
+      "url": "https://intentui.com/r/{name}"
+  }
+}
+```
 
 <Installation options={{ isComponent: false, noText: true }}
-              command='npx shadcn@latest init https://intentui.com/r/style/default'/>
+              command='npx shadcn@latest init @intentui/style/default'/>
 
 It currently offers 5 starter styles, including `blue`, `indigo`, `emerald`, and `sky`, so you can replace `default` with any style you prefer.
 
 Once initialized, you can add components by running:
 <Installation options={{ isComponent: false, noText: true }}
-              command='npx shadcn@latest add https://intentui.com/r/ui/<component>'/>
+              command='npx shadcn@latest add @intentui/ui/<component>'/>
 
 Let’s say you want to add a card component. Just replace `<component>` with `card`, like this:
 
 <Installation options={{ isComponent: false, noText: true }}
-              command='npx shadcn@latest add https://intentui.com/r/ui/card'/>
+              command='npx shadcn@latest add @intentui/ui/card'/>
