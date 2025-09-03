@@ -16,7 +16,7 @@ export function Hero() {
         <div className="mt-6">
           <a
             className={buttonStyles({ intent: "secondary" })}
-            href="https://blocks.intentui.com"
+            href="https://dub.sh/designiui"
             target="_blank"
             rel="noopener"
           >

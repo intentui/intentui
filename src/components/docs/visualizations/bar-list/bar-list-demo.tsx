@@ -30,7 +30,7 @@ export default function BarListDemo() {
             {
               name: "Plus",
               value: 150,
-              href: "https://blocks.intentui.com",
+              href: "https://dub.sh/designiui",
             },
           ]}
           valueFormatter={(value) => `${value} visits`}

@@ -151,7 +151,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
             <IconNotepadFill />
             <CommandMenu.Label>Blog</CommandMenu.Label>
           </CommandMenu.Item>
-          <CommandMenu.Item textValue="premium block" href="https://blocks.intentui.com">
+          <CommandMenu.Item textValue="premium block" href="https://dub.sh/designiui">
             <IconBrandIntentui />
             <CommandMenu.Label>Premium blocks</CommandMenu.Label>
           </CommandMenu.Item>

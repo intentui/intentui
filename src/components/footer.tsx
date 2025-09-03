@@ -22,7 +22,7 @@ const navigation = {
     { name: "Discord", href: "https://discord.gg/DYmVJ66JUD" },
   ],
   extra: [
-    { name: "Plus", href: "https://blocks.intentui.com" },
+    { name: "Plus", href: "https://dub.sh/designiui" },
     { name: "Templates", href: "https://irsyad.co" },
     { name: "CLI", href: "https://github.com/intentuilabs/cli" },
     { name: "Icons", href: "/icons" },
