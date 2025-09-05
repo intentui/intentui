@@ -65,10 +65,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 
       <SidebarFooter className="flex flex-row justify-between gap-4 group-data-[state=collapsed]:flex-col">
         <Menu>
-          <Menu.Trigger
-            className="flex w-full items-center justify-between"
-            aria-label="Profile"
-          >
+          <Menu.Trigger className="flex w-full items-center justify-between" aria-label="Profile">
             <div className="flex items-center gap-x-2">
               <Avatar
                 className="size-8 *:size-8 group-data-[state=collapsed]:size-6 group-data-[state=collapsed]:*:size-6"

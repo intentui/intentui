@@ -28,12 +28,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Menu } from "@/components/ui/menu"
-import {
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem,
-  ToolbarSeparator,
-} from "@/components/ui/toolbar"
+import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from "@/components/ui/toolbar"
 
 export default function ToolbarDemo() {
   return (
@@ -46,9 +41,7 @@ export default function ToolbarDemo() {
           {({ isSelected }) => <>{isSelected ? <IconItalicFill /> : <IconItalic />}</>}
         </ToolbarItem>
         <ToolbarItem aria-label="Underline" size="sq-sm">
-          {({ isSelected }) => (
-            <>{isSelected ? <IconUnderlineFill /> : <IconUnderline />}</>
-          )}
+          {({ isSelected }) => <>{isSelected ? <IconUnderlineFill /> : <IconUnderline />}</>}
         </ToolbarItem>
         <ToolbarItem aria-label="Strikethrough" size="sq-sm">
           {({ isSelected }) => (

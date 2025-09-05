@@ -31,11 +31,7 @@ export default function CommandMenuDynamicDemo() {
           <CommandMenu.Section title="Users" items={users}>
             {(user) => (
               <CommandMenu.Item>
-                <Avatar
-                  src={user.image_url}
-                  alt={user.name}
-                  initials={user.name.slice(0, 2)}
-                />
+                <Avatar src={user.image_url} alt={user.name} initials={user.name.slice(0, 2)} />
                 {user.name}
               </CommandMenu.Item>
             )}

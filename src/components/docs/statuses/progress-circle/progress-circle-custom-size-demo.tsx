@@ -15,12 +15,5 @@ export default function ProgressCircleCustomSizeDemo() {
     return () => clearInterval(interval)
   }, [])
 
-  return (
-    <ProgressCircle
-      className="size-10"
-      aria-label="Loading…"
-      isIndeterminate
-      value={value}
-    />
-  )
+  return <ProgressCircle className="size-10" aria-label="Loading…" isIndeterminate value={value} />
 }

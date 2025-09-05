@@ -1,10 +1,6 @@
 "use client"
 
-import type {
-  DialogProps,
-  DialogTriggerProps,
-  ModalOverlayProps,
-} from "react-aria-components"
+import type { DialogProps, DialogTriggerProps, ModalOverlayProps } from "react-aria-components"
 import {
   composeRenderProps,
   DialogTrigger as DialogTriggerPrimitive,
@@ -48,7 +44,7 @@ const sheetContentStyles = tv({
       true: "fade-in animate-in duration-300",
     },
     isExiting: {
-      true: "fade-out animate-out",
+      true: "fade-out animate-out duration-200",
     },
     side: {
       top: "entering:slide-in-from-top exiting:slide-out-to-top inset-x-0 top-0 rounded-b-2xl border-b",
@@ -100,8 +96,8 @@ const SheetContent = ({
       className={({ isExiting, isEntering }) =>
         twJoin(
           "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
-          isEntering && "fade-in animate-in duration-300",
-          isExiting && "fade-out animate-out duration-200",
+          isEntering && "fade-in animate-in duration-500",
+          isExiting && "fade-out animate-out duration-300",
           isBlurred && "backdrop-blur-sm backdrop-filter",
         )
       }
@@ -122,10 +118,7 @@ const SheetContent = ({
             <>
               {typeof children === "function" ? children(values) : children}
               {closeButton && (
-                <DialogCloseIcon
-                  className="top-2.5 right-2.5"
-                  isDismissable={isDismissable}
-                />
+                <DialogCloseIcon className="top-2.5 right-2.5" isDismissable={isDismissable} />
               )}
             </>
           )}

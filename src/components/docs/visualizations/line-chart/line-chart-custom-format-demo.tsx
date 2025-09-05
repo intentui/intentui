@@ -20,9 +20,7 @@ export default function LineChartCustomFormatDemo() {
     <Card>
       <Card.Header>
         <Card.Title>Net revenue by month</Card.Title>
-        <Card.Description>
-          Revenue minus expenses to show monthly profitability.
-        </Card.Description>
+        <Card.Description>Revenue minus expenses to show monthly profitability.</Card.Description>
       </Card.Header>
       <Card.Content>
         <LineChart

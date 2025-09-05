@@ -31,9 +31,7 @@ export default function MultipleSelectInvalidDemo() {
         errorMessage={invalid ? "Please select at least one fruit" : undefined}
       >
         {(item) => {
-          return (
-            <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
-          )
+          return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
         }}
       </MultipleSelect>
       <Button type="submit">Submit</Button>

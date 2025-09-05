@@ -20,10 +20,7 @@ const Breadcrumbs = <T extends object>({
 }: BreadcrumbsProps<T> & BreadcrumbsContextProps) => {
   return (
     <BreadcrumbsProvider value={{ separator: props.separator }}>
-      <BreadcrumbsPrimitive
-        {...props}
-        className={twMerge("flex items-center gap-2", className)}
-      />
+      <BreadcrumbsPrimitive {...props} className={twMerge("flex items-center gap-2", className)} />
     </BreadcrumbsProvider>
   )
 }

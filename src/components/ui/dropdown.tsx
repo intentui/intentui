@@ -103,14 +103,8 @@ const DropdownItem = ({ className, children, ...props }: DropdownItemProps) => {
     >
       {composeRenderProps(children, (children, { isSelected }) => (
         <>
-          {isSelected && (
-            <IconCheck className="-mx-1 mr-1.5" data-slot="check-indicator" />
-          )}
-          {typeof children === "string" ? (
-            <DropdownLabel>{children}</DropdownLabel>
-          ) : (
-            children
-          )}
+          {isSelected && <IconCheck className="-mx-1 mr-1.5" data-slot="check-indicator" />}
+          {typeof children === "string" ? <DropdownLabel>{children}</DropdownLabel> : children}
         </>
       ))}
     </ListBoxItemPrimitive>
@@ -146,10 +140,7 @@ const DropdownSeparator = ({ className, ...props }: SeparatorProps) => (
   />
 )
 
-const DropdownKeyboard = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof Keyboard>) => {
+const DropdownKeyboard = ({ className, ...props }: React.ComponentProps<typeof Keyboard>) => {
   return (
     <Keyboard
       classNames={{

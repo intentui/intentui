@@ -42,12 +42,4 @@ export const adjustLightness = (oklchColor: string, adjustBy: number): string =>
 export const neutralColors = ["slate", "gray", "zinc", "neutral", "stone"]
 export const accentColors300 = ["yellow", "lime"]
 export const accentColors400 = ["amber", "yellow", "lime", "cyan"]
-export const accentColors500 = [
-  "sky",
-  "orange",
-  "rose",
-  "fuchsia",
-  "purple",
-  "violet",
-  "indigo",
-]
+export const accentColors500 = ["sky", "orange", "rose", "fuchsia", "purple", "violet", "indigo"]

@@ -82,6 +82,28 @@
       opacity: 0.2;
     }
   }
+
+  --animate-disclosure-collapsed: disclosure-collapsed 0.2s ease-out;
+  --animate-disclosure-expanded: disclosure-expanded 0.2s ease-out;
+
+  @keyframes disclosure-collapsed {
+    from {
+      height: var(--disclosure-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes disclosure-expanded {
+    from {
+      height: 0
+    }
+    to {
+      height: var(--disclosure-height)
+    }
+
+  }
 }
 
 :root {

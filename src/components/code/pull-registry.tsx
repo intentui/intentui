@@ -21,13 +21,7 @@ interface CopyButtonProps {
   className?: string
 }
 
-export function CopyButton({
-  label,
-  copiedLabel,
-  className,
-  isCopied,
-  onCopy,
-}: CopyButtonProps) {
+export function CopyButton({ label, copiedLabel, className, isCopied, onCopy }: CopyButtonProps) {
   return (
     <Button
       className={twMerge(
@@ -56,11 +50,7 @@ export function CopyButton({
   )
 }
 
-export function PullRegistry({
-  readMore,
-  processedSourceCode,
-  blockDemo,
-}: PullRegistryProps) {
+export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullRegistryProps) {
   const [copy, setCopy] = useState({ code: false, command: false })
 
   const handleCopy = (key: "code" | "command", value: string) => {
@@ -84,9 +74,7 @@ export function PullRegistry({
         className="hidden sm:inline"
         copiedLabel="Copied"
         isCopied={copy.command}
-        onCopy={() =>
-          handleCopy("command", `npx ${siteConfig.cliCommand} add -b ${blockDemo}`)
-        }
+        onCopy={() => handleCopy("command", `npx ${siteConfig.cliCommand} add -b ${blockDemo}`)}
       />
 
       {readMore && (

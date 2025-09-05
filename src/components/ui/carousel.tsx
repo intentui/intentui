@@ -201,8 +201,7 @@ const CarouselButton = ({
   ref,
   ...props
 }: ButtonProps & { segment: "previous" | "next" }) => {
-  const { orientation, scrollPrev, canScrollPrev, scrollNext, canScrollNext } =
-    useCarousel()
+  const { orientation, scrollPrev, canScrollPrev, scrollNext, canScrollNext } = useCarousel()
   const isNext = segment === "next"
   const canScroll = isNext ? canScrollNext : canScrollPrev
   const scroll = isNext ? scrollNext : scrollPrev

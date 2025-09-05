@@ -12,10 +12,7 @@ export default function LinkButtonDemo() {
       <Link className={buttonStyles({ intent: "outline" })} href="#use-as-button">
         Link
       </Link>
-      <Link
-        className={buttonStyles({ intent: "plain", isCircle: true })}
-        href="#use-as-button"
-      >
+      <Link className={buttonStyles({ intent: "plain", isCircle: true })} href="#use-as-button">
         Link
       </Link>
     </div>

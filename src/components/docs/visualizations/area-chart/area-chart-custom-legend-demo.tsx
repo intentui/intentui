@@ -44,9 +44,7 @@ export default function AreaChartCustomLegendDemo() {
     <Card>
       <Card.Header>
         <Card.Title>Engagement last 7d</Card.Title>
-        <Card.Description>
-          Likes, comments, and shares for the recent week.
-        </Card.Description>
+        <Card.Description>Likes, comments, and shares for the recent week.</Card.Description>
       </Card.Header>
       <Card.Content>
         <AreaChart

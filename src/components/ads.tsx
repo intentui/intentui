@@ -3,13 +3,7 @@ import { Badge } from "@/components/ui/badge"
 
 const DesignIntentUI = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="24"
-      fill="none"
-      viewBox="0 0 24 24"
-      {...props}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="none" viewBox="0 0 24 24" {...props}>
       <rect width="20" height="20" x="2" y="2" fill="#009689" rx="3.75" />
       <g fill="#fff" filter="url(#a)" shapeRendering="crispEdges">
         <path d="M5.36 6.311c0-.525.426-.952.951-.952h1.904c.526 0 .952.427.952.952v1.904a.95.95 0 0 1-.952.952H6.311a.95.95 0 0 1-.952-.952z" />
@@ -88,8 +82,7 @@ export function Ads({ className }: { className?: string }) {
   const ad: Omit<AdCardProps, "className"> = {
     href: "https://dub.sh/designiui",
     title: "Get full access to Design Intent UI",
-    description:
-      "Launch faster with 300+ blocks and professional templates for modern web apps.",
+    description: "Launch faster with 300+ blocks and professional templates for modern web apps.",
     domain: "design.intentui.com",
     icon: <DesignIntentUI />,
   }

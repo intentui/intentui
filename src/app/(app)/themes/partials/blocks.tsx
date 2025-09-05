@@ -26,10 +26,7 @@ export function Blocks() {
         <Card className="flex flex-col items-center justify-center gap-y-6 p-6">
           <div className="grid grid-cols-2 gap-2">
             {Object.keys(buttonStyles.variants.intent).map((intent) => (
-              <Button
-                key={intent}
-                intent={intent as keyof typeof buttonStyles.variants.intent}
-              >
+              <Button key={intent} intent={intent as keyof typeof buttonStyles.variants.intent}>
                 <IconDashboard /> Label
               </Button>
             ))}
@@ -38,9 +35,7 @@ export function Blocks() {
         <Card>
           <Card.Header>
             <Card.Title>Login</Card.Title>
-            <Card.Description>
-              Don't loose the level, just keep on going.
-            </Card.Description>
+            <Card.Description>Don't loose the level, just keep on going.</Card.Description>
           </Card.Header>
           <Card.Content className="space-y-6">
             <TextField isRequired label="Email" placeholder="Enter your email" />
@@ -113,11 +108,7 @@ export function Blocks() {
                 label="Encryption"
                 description="Encrypt all data at rest and in transit."
               />
-              <Checkbox
-                value="firewall"
-                label="Firewall"
-                description="Enable network firewall."
-              />
+              <Checkbox value="firewall" label="Firewall" description="Enable network firewall." />
             </CheckboxGroup>
 
             <Radio
@@ -138,9 +129,7 @@ export function Blocks() {
               <>
                 <Label>Dark mode</Label>
                 <Description>
-                  {isSelected
-                    ? "Dark theme is enabled"
-                    : "Light theme is currently active"}
+                  {isSelected ? "Dark theme is enabled" : "Light theme is currently active"}
                 </Description>
               </>
             )}
@@ -151,9 +140,7 @@ export function Blocks() {
               <>
                 <Label>Location services</Label>
                 <Description>
-                  {isSelected
-                    ? "Apps can access your location"
-                    : "Location access is disabled"}
+                  {isSelected ? "Apps can access your location" : "Location access is disabled"}
                 </Description>
               </>
             )}

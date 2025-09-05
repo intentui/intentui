@@ -20,11 +20,7 @@ export default function SheetDemo() {
             </Sheet.Header>
             <Sheet.Body className="space-y-4">
               <TextField label="Username" type="text" placeholder="Enter your username" />
-              <TextField
-                label="Email"
-                type="email"
-                placeholder="Enter your email address"
-              />
+              <TextField label="Email" type="email" placeholder="Enter your email address" />
               <Checkbox
                 label="Enable notifications"
                 description="Receive updates and alerts via email."

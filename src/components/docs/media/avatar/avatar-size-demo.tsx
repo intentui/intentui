@@ -5,11 +5,7 @@ export default function AvatarSizeDemo() {
   return (
     <div className="flex items-end gap-4">
       {sizes.map((size) => (
-        <Avatar
-          key={size}
-          size={size}
-          src="https://intentui.com/images/avatar/cobain.jpg"
-        />
+        <Avatar key={size} size={size} src="https://intentui.com/images/avatar/cobain.jpg" />
       ))}
     </div>
   )

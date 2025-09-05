@@ -13,8 +13,7 @@ import { DateInput } from "./date-field"
 import { DatePickerIcon, DatePickerOverlay } from "./date-picker"
 import { Description, FieldError, FieldGroup, Label } from "./field"
 
-interface DateRangePickerProps<T extends DateValue>
-  extends DateRangePickerPrimitiveProps<T> {
+interface DateRangePickerProps<T extends DateValue> extends DateRangePickerPrimitiveProps<T> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
@@ -54,11 +53,7 @@ const DateRangePicker = <T extends DateValue>({
       </FieldGroup>
       {description && <Description>{description}</Description>}
       <FieldError>{errorMessage}</FieldError>
-      <DatePickerOverlay
-        placement={contentPlacement}
-        visibleDuration={visibleDuration}
-        range
-      />
+      <DatePickerOverlay placement={contentPlacement} visibleDuration={visibleDuration} range />
     </DateRangePickerPrimitive>
   )
 }

@@ -21,21 +21,14 @@ const InputOTP = ({
       "flex items-center gap-2 has-disabled:opacity-50",
       containerClassName,
     )}
-    className={twMerge(
-      "mt-auto h-[2.5rem] bg-danger disabled:cursor-not-allowed",
-      className,
-    )}
+    className={twMerge("mt-auto h-[2.5rem] bg-danger disabled:cursor-not-allowed", className)}
     {...props}
   />
 )
 
 type InputOTPGroupProps = React.ComponentProps<"div">
 const InputOTPGroup = ({ className, ref, ...props }: InputOTPGroupProps) => (
-  <div
-    ref={ref}
-    className={twMerge("flex items-center gap-x-1.5", className)}
-    {...props}
-  />
+  <div ref={ref} className={twMerge("flex items-center gap-x-1.5", className)} {...props} />
 )
 
 interface InputOTPSlotProps extends React.ComponentProps<"div"> {
@@ -83,10 +76,5 @@ InputOTP.Group = InputOTPGroup
 InputOTP.Slot = InputOTPSlot
 InputOTP.Separator = InputOTPSeparator
 
-export type {
-  InputOTPGroupProps,
-  InputOTOPProps,
-  InputOTPSlotProps,
-  InputOTPSeparatorProps,
-}
+export type { InputOTPGroupProps, InputOTOPProps, InputOTPSlotProps, InputOTPSeparatorProps }
 export { InputOTP }

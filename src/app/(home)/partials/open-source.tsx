@@ -15,8 +15,8 @@ export function OpenSource() {
             Open source
           </Heading>
           <p className="mt-2 mb-4 text-base text-zinc-300 dark:text-zinc-600">
-            Fully open source and built with care. Explore the code, contribute, or use it
-            freely in your own projects.
+            Fully open source and built with care. Explore the code, contribute, or use it freely in
+            your own projects.
           </p>
 
           <Link

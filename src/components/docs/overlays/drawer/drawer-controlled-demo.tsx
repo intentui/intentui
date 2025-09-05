@@ -22,12 +22,7 @@ export default function DrawerControlledDemo() {
             </Drawer.Description>
           </Drawer.Header>
           <Drawer.Body className="flex flex-col gap-4">
-            <TextField
-              label="Email"
-              isRequired
-              type="email"
-              placeholder="Enter your email"
-            />
+            <TextField label="Email" isRequired type="email" placeholder="Enter your email" />
             <TextField
               label="Password"
               isRequired

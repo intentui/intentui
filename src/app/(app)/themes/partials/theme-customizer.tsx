@@ -84,23 +84,19 @@ type ThemeCustomizerProps = {
   setSelectedColors: React.Dispatch<React.SetStateAction<SelectedColors>>
 }
 
-export function ThemeCustomizer({
-  selectedColors,
-  setSelectedColors,
-}: ThemeCustomizerProps) {
-  const handleSelectionChange =
-    (type: keyof typeof selectedColors) => (key: Key | null) => {
-      if (type === "gray") {
-        setSelectedColors((prev) => ({
-          ...prev,
-          accent: key?.toString()!,
-        }))
-      }
+export function ThemeCustomizer({ selectedColors, setSelectedColors }: ThemeCustomizerProps) {
+  const handleSelectionChange = (type: keyof typeof selectedColors) => (key: Key | null) => {
+    if (type === "gray") {
       setSelectedColors((prev) => ({
         ...prev,
-        [type]: key?.toString(),
+        accent: key?.toString()!,
       }))
     }
+    setSelectedColors((prev) => ({
+      ...prev,
+      [type]: key?.toString(),
+    }))
+  }
 
   const getFilteredColors = (excludedGray: string) => {
     return Object.keys(colors).filter(

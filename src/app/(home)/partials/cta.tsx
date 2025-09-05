@@ -17,22 +17,19 @@ export function Cta() {
           <Choicebox.Item href="/docs/getting-started/installation" textValue="install">
             <Choicebox.Label>Setup</Choicebox.Label>
             <Choicebox.Description>
-              Follow a simple step-by-step guide to install and start building with Intent
-              UI.
+              Follow a simple step-by-step guide to install and start building with Intent UI.
             </Choicebox.Description>
           </Choicebox.Item>
           <Choicebox.Item href="/components" textValue="components">
             <Choicebox.Label>View components</Choicebox.Label>
             <Choicebox.Description>
-              Browse all available UI components with detailed examples and usage
-              guidance.
+              Browse all available UI components with detailed examples and usage guidance.
             </Choicebox.Description>
           </Choicebox.Item>
           <Choicebox.Item href="/themes" textValue="themes">
             <Choicebox.Label>Themes</Choicebox.Label>
             <Choicebox.Description>
-              Customize the entire look and feel using built-in themes and styling
-              options.
+              Customize the entire look and feel using built-in themes and styling options.
             </Choicebox.Description>
           </Choicebox.Item>
         </Choicebox>

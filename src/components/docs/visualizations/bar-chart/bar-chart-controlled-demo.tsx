@@ -46,9 +46,7 @@ export default function BarChartControlledSmart() {
     <Card>
       <Card.Header>
         <Card.Title>Engagement</Card.Title>
-        <Card.Description>
-          Likes, comments, and shares over a dynamic time range.
-        </Card.Description>
+        <Card.Description>Likes, comments, and shares over a dynamic time range.</Card.Description>
         <Card.Action>
           <ToggleGroup
             size="sm"

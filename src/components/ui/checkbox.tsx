@@ -14,9 +14,7 @@ import { twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { Description, FieldError, type FieldProps, Label } from "./field"
 
-interface CheckboxGroupProps
-  extends CheckboxGroupPrimitiveProps,
-    Omit<FieldProps, "placeholder"> {}
+interface CheckboxGroupProps extends CheckboxGroupPrimitiveProps, Omit<FieldProps, "placeholder"> {}
 
 const CheckboxGroup = ({ className, children, ...props }: CheckboxGroupProps) => {
   return (
@@ -39,17 +37,9 @@ const CheckboxGroup = ({ className, children, ...props }: CheckboxGroupProps) =>
   )
 }
 
-interface CheckboxProps
-  extends CheckboxPrimitiveProps,
-    Pick<FieldProps, "label" | "description"> {}
+interface CheckboxProps extends CheckboxPrimitiveProps, Pick<FieldProps, "label" | "description"> {}
 
-const Checkbox = ({
-  className,
-  children,
-  description,
-  label,
-  ...props
-}: CheckboxProps) => {
+const Checkbox = ({ className, children, description, label, ...props }: CheckboxProps) => {
   return (
     <CheckboxPrimitive
       {...props}
@@ -106,8 +96,7 @@ const Checkbox = ({
                     "inset-ring-primary ring-3 ring-ring/20",
                     "group-invalid:inset-ring-danger/70 group-invalid:text-danger-fg group-invalid:ring-danger/20",
                   ],
-                  isInvalid &&
-                    "inset-ring-danger/70 bg-danger/20 text-danger-fg ring-danger/20",
+                  isInvalid && "inset-ring-danger/70 bg-danger/20 text-danger-fg ring-danger/20",
                 ])}
               >
                 {indicator}

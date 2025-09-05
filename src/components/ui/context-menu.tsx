@@ -16,9 +16,9 @@ interface ContextMenuTriggerContextType {
   >
 }
 
-const ContextMenuTriggerContext = createContext<
-  ContextMenuTriggerContextType | undefined
->(undefined)
+const ContextMenuTriggerContext = createContext<ContextMenuTriggerContextType | undefined>(
+  undefined,
+)
 
 const useContextMenuTrigger = () => {
   const context = use(ContextMenuTriggerContext)

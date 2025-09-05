@@ -28,13 +28,7 @@ export function ThemeSwitcher({
       onPress={toggleTheme}
       {...props}
     >
-      {theme === "light" ? (
-        <IconSun />
-      ) : theme === "dark" ? (
-        <IconMoon />
-      ) : (
-        <IconDeviceDesktop2 />
-      )}
+      {theme === "light" ? <IconSun /> : theme === "dark" ? <IconMoon /> : <IconDeviceDesktop2 />}
     </Button>
   )
 }

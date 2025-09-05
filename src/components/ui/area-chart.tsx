@@ -120,9 +120,7 @@ export const AreaChart = <TValue extends ValueType, TName extends NameType>({
           stackOffset={type === "percent" ? "expand" : undefined}
           {...chartProps}
         >
-          {!hideGridLines && (
-            <CartesianGrid {...cartesianGridProps} strokeDasharray="3 3" />
-          )}
+          {!hideGridLines && <CartesianGrid {...cartesianGridProps} strokeDasharray="3 3" />}
           <XAxis
             className="**:[text]:fill-muted-fg"
             hide={hideXAxis}
@@ -172,17 +170,14 @@ export const AreaChart = <TValue extends ValueType, TName extends NameType>({
             ? Object.entries(config).map(([category, values]) => {
                 const categoryId = `${areaId}-${category.replace(/[^a-zA-Z0-9]/g, "")}`
 
-                const strokeOpacity =
-                  selectedLegend && selectedLegend !== category ? 0.1 : 1
+                const strokeOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 1
 
                 return (
                   <Fragment key={categoryId}>
                     <defs>
                       <linearGradient
                         style={{
-                          color: getColorValue(
-                            values.color || categoryColors.get(category),
-                          ),
+                          color: getColorValue(values.color || categoryColors.get(category)),
                         }}
                         id={categoryId}
                         x1="0"

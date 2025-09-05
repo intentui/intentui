@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  IconHashtag,
-  IconHeadphones,
-  IconLogout,
-  IconPlus,
-  IconSettings,
-} from "@intentui/icons"
+import { IconHashtag, IconHeadphones, IconLogout, IconPlus, IconSettings } from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
 import { Menu } from "@/components/ui/menu"
 

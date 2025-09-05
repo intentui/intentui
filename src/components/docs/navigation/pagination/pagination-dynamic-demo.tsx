@@ -9,10 +9,7 @@ export default function PaginationDynamicDemo() {
       <Pagination.List>
         <Pagination.Item segment="first" href="#" />
         <Pagination.Item segment="previous" href="#" />
-        <Pagination.Section
-          aria-label="Pagination Segment"
-          className="rounded-lg border lg:hidden"
-        >
+        <Pagination.Section aria-label="Pagination Segment" className="rounded-lg border lg:hidden">
           <Pagination.Item segment="label">1</Pagination.Item>
           <Pagination.Item segment="separator" />
           <Pagination.Item className="text-muted-fg" segment="label">
@@ -25,11 +22,7 @@ export default function PaginationDynamicDemo() {
           items={pages}
         >
           {(item) => (
-            <Pagination.Item
-              id={item.value.toString()}
-              isCurrent={item.value === 4}
-              href="#"
-            >
+            <Pagination.Item id={item.value.toString()} isCurrent={item.value === 4} href="#">
               {item.value}
             </Pagination.Item>
           )}

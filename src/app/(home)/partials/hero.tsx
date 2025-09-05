@@ -16,12 +16,11 @@ export function Hero() {
             Accessible react component library – copy, customize & own your ui
           </h1>
           <p className="block max-w-2xl text-base text-muted-fg leading-relaxed md:leading-relaxed lg:text-xl [&_strong]:font-medium [&_strong]:text-fg">
-            <strong className="text-white">{siteConfig.name}</strong> is a chill set of
-            React components, built on top of{" "}
-            <strong className="text-fg">React Aria Components</strong>, all about keeping
-            the web accessible. Easy to customize and just copy & paste into your React
-            projects. Plus, it includes <strong className="text-fg">Tailwind CSS</strong>{" "}
-            for sleek styling right out of the box.
+            <strong className="text-white">{siteConfig.name}</strong> is a chill set of React
+            components, built on top of <strong className="text-fg">React Aria Components</strong>,
+            all about keeping the web accessible. Easy to customize and just copy & paste into your
+            React projects. Plus, it includes <strong className="text-fg">Tailwind CSS</strong> for
+            sleek styling right out of the box.
           </p>
         </Header>
 

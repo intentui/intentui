@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  IconBill,
-  IconCube,
-  IconGear,
-  IconHome,
-  IconNotes,
-  IconShield,
-} from "@intentui/icons"
+import { IconBill, IconCube, IconGear, IconHome, IconNotes, IconShield } from "@intentui/icons"
 import { useState } from "react"
 
 import { Avatar } from "@/components/ui/avatar"

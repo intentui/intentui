@@ -114,9 +114,7 @@ const choiceboxItemStyles = tv({
   },
 })
 
-interface ChoiceboxItemProps
-  extends GridListItemProps,
-    VariantProps<typeof choiceboxItemStyles> {
+interface ChoiceboxItemProps extends GridListItemProps, VariantProps<typeof choiceboxItemStyles> {
   label?: string
   description?: string
 }
@@ -201,11 +199,7 @@ const ChoiceboxLabel = ({ className, ref, ...props }: ChoiceboxLabelProps) => {
 
 type ChoiceboxDescriptionProps = ChoiceboxLabelProps
 
-const ChoiceboxDescription = ({
-  className,
-  ref,
-  ...props
-}: ChoiceboxDescriptionProps) => {
+const ChoiceboxDescription = ({ className, ref, ...props }: ChoiceboxDescriptionProps) => {
   return (
     <Text
       slot="description"

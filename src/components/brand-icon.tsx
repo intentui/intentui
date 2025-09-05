@@ -9,8 +9,7 @@ import {
 
 export const BrandIcon = ({ label }: { label: string }) => {
   const ext = label.toLowerCase()
-  if (ext.endsWith(".blade.php"))
-    return <IconBrandLaravel className="size-4 text-red-500" />
+  if (ext.endsWith(".blade.php")) return <IconBrandLaravel className="size-4 text-red-500" />
   switch (label.split(".").pop()?.toLowerCase()) {
     case "php":
       return <IconBrandPhp className="size-4 text-indigo-500" />

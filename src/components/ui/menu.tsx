@@ -99,31 +99,26 @@ const MenuContent = <T extends object>({
   )
 }
 
-interface MenuItemProps
-  extends MenuItemPrimitiveProps,
-    VariantProps<typeof dropdownItemStyles> {
+interface MenuItemProps extends MenuItemPrimitiveProps, VariantProps<typeof dropdownItemStyles> {
   isDanger?: boolean
 }
 
 const MenuItem = ({ className, isDanger = false, children, ...props }: MenuItemProps) => {
-  const textValue =
-    props.textValue || (typeof children === "string" ? children : undefined)
+  const textValue = props.textValue || (typeof children === "string" ? children : undefined)
   return (
     <MenuItemPrimitive
-      className={composeRenderProps(
-        className,
-        (className, { hasSubmenu, ...renderProps }) =>
-          dropdownItemStyles({
-            ...renderProps,
-            isDanger: isDanger,
-            className: hasSubmenu
-              ? twMerge(
-                  "open:data-danger:bg-danger/10 open:data-danger:text-danger",
-                  "open:bg-accent open:text-accent-fg open:*:data-[slot=icon]:text-accent-fg open:*:[.text-muted-fg]:text-accent-fg",
-                  className,
-                )
-              : className,
-          }),
+      className={composeRenderProps(className, (className, { hasSubmenu, ...renderProps }) =>
+        dropdownItemStyles({
+          ...renderProps,
+          isDanger: isDanger,
+          className: hasSubmenu
+            ? twMerge(
+                "open:data-danger:bg-danger/10 open:data-danger:text-danger",
+                "open:bg-accent open:text-accent-fg open:*:data-[slot=icon]:text-accent-fg open:*:[.text-muted-fg]:text-accent-fg",
+                className,
+              )
+            : className,
+        }),
       )}
       textValue={textValue}
       {...props}
@@ -149,10 +144,7 @@ const MenuItem = ({ className, isDanger = false, children, ...props }: MenuItemP
           {typeof children === "function" ? children(values) : children}
 
           {values.hasSubmenu && (
-            <IconChevronLgRight
-              data-slot="chevron"
-              className="absolute right-2 size-3.5"
-            />
+            <IconChevronLgRight data-slot="chevron" className="absolute right-2 size-3.5" />
           )}
         </>
       )}
@@ -182,11 +174,7 @@ interface MenuSectionProps<T> extends MenuSectionPrimitiveProps<T> {
   title?: string
 }
 
-const MenuSection = <T extends object>({
-  className,
-  ref,
-  ...props
-}: MenuSectionProps<T>) => {
+const MenuSection = <T extends object>({ className, ref, ...props }: MenuSectionProps<T>) => {
   return (
     <MenuSectionPrimitive ref={ref} className={section({ className })} {...props}>
       {"title" in props && <Header className={header()}>{props.title}</Header>}

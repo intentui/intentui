@@ -46,8 +46,7 @@ export default function TableDragDemo() {
               <Table.Cell>{item.releaseYear}</Table.Cell>
               <Table.Cell>
                 <div className="flex items-center gap-x-2">
-                  <IconStarFill className="size-3.5 text-warning" />{" "}
-                  <span>{item.rating}</span>
+                  <IconStarFill className="size-3.5 text-warning" /> <span>{item.rating}</span>
                 </div>
               </Table.Cell>
             </Table.Row>
