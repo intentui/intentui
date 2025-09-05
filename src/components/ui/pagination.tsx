@@ -7,11 +7,7 @@ import {
   IconChevronWallRight,
   IconDotsHorizontal,
 } from "@intentui/icons"
-import type {
-  ListBoxItemProps,
-  ListBoxProps,
-  ListBoxSectionProps,
-} from "react-aria-components"
+import type { ListBoxItemProps, ListBoxProps, ListBoxSectionProps } from "react-aria-components"
 import { ListBox, ListBoxItem, ListBoxSection, Separator } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
@@ -41,11 +37,7 @@ const PaginationSection = <T extends object>({
 interface PaginationListProps<T> extends ListBoxProps<T> {
   ref?: React.RefObject<HTMLDivElement>
 }
-const PaginationList = <T extends object>({
-  className,
-  ref,
-  ...props
-}: PaginationListProps<T>) => {
+const PaginationList = <T extends object>({ className, ref, ...props }: PaginationListProps<T>) => {
   return (
     <ListBox
       ref={ref}
@@ -74,15 +66,7 @@ interface PaginationItemProps
   children?: React.ReactNode
   className?: string
   isCurrent?: boolean
-  segment?:
-    | "label"
-    | "separator"
-    | "ellipsis"
-    | "default"
-    | "last"
-    | "first"
-    | "previous"
-    | "next"
+  segment?: "label" | "separator" | "ellipsis" | "default" | "last" | "first" | "previous" | "next"
 }
 
 const PaginationItem = ({
@@ -133,10 +117,7 @@ const PaginationItem = ({
           className: twMerge("grid place-content-center", className),
           ...props,
         },
-        <Separator
-          orientation="vertical"
-          className="h-4 w-px shrink-0 rotate-[14deg] bg-border"
-        />,
+        <Separator orientation="vertical" className="h-4 w-px shrink-0 rotate-[14deg] bg-border" />,
       )
     case "ellipsis":
       return renderListItem(
@@ -145,10 +126,7 @@ const PaginationItem = ({
           className: twMerge("outline-hidden", className),
           ...props,
         },
-        <span
-          aria-hidden
-          className={twMerge("grid size-9 place-content-center px-2", className)}
-        >
+        <span aria-hidden className={twMerge("grid size-9 place-content-center px-2", className)}>
           <IconDotsHorizontal />
         </span>,
       )
@@ -185,10 +163,5 @@ Pagination.Item = PaginationItem
 Pagination.List = PaginationList
 Pagination.Section = PaginationSection
 
-export type {
-  PaginationProps,
-  PaginationListProps,
-  PaginationSectionProps,
-  PaginationItemProps,
-}
+export type { PaginationProps, PaginationListProps, PaginationSectionProps, PaginationItemProps }
 export { Pagination, PaginationItem, PaginationList, PaginationSection }

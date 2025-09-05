@@ -32,8 +32,8 @@ export default function ModalSizeDemo() {
         <Modal.Header>
           <Modal.Title>Project Update</Modal.Title>
           <Modal.Description>
-            Dive deep into our project’s latest updates where we've streamlined workflow
-            and improved user interfaces.
+            Dive deep into our project’s latest updates where we've streamlined workflow and
+            improved user interfaces.
           </Modal.Description>
         </Modal.Header>
         <Modal.Footer>

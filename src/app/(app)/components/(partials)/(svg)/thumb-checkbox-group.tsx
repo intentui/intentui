@@ -19,14 +19,7 @@ export function ThumbCheckboxGroup() {
         strokeWidth=".667"
       />
       <rect width="56" height="4" x="19" y="22" fill="var(--muted-fg)" rx="2" />
-      <rect
-        width="10.5"
-        height="10.167"
-        x=".75"
-        y="34.75"
-        fill="var(--muted)"
-        rx="2.25"
-      />
+      <rect width="10.5" height="10.167" x=".75" y="34.75" fill="var(--muted)" rx="2.25" />
       <rect
         width="10.5"
         height="10.167"
@@ -37,14 +30,7 @@ export function ThumbCheckboxGroup() {
         strokeWidth=".5"
       />
       <rect width="56" height="4" x="19" y="38" fill="var(--muted-fg)" rx="2" />
-      <rect
-        width="10.5"
-        height="10.167"
-        x=".75"
-        y="52.75"
-        fill="var(--muted)"
-        rx="2.25"
-      />
+      <rect width="10.5" height="10.167" x=".75" y="52.75" fill="var(--muted)" rx="2.25" />
       <rect
         width="10.5"
         height="10.167"

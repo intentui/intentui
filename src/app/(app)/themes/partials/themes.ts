@@ -52,11 +52,7 @@ export const generateTheme = (
     return "600"
   }
 
-  const determineForeground = (
-    isNeutral: boolean,
-    is400: boolean,
-    isDarkMode = false,
-  ) => {
+  const determineForeground = (isNeutral: boolean, is400: boolean, isDarkMode = false) => {
     if (isNeutral) return isDarkMode ? "950" : "50"
     return is400 ? "950" : "white"
   }
@@ -67,10 +63,7 @@ export const generateTheme = (
     isShade300Primary,
     isShade400Primary,
   )
-  const lightPrimaryFg: ForegroundColor = determineForeground(
-    isNeutralPrimary,
-    isShade400Primary,
-  )
+  const lightPrimaryFg: ForegroundColor = determineForeground(isNeutralPrimary, isShade400Primary)
 
   const darkPrimary: Shade = determineShade(
     isNeutralPrimary,
@@ -87,25 +80,14 @@ export const generateTheme = (
 
   const lightAccent: Shade = isNeutralAccent
     ? "200"
-    : determineShade(
-        isNeutralAccent,
-        isShade500Accent,
-        isShade300Accent,
-        isShade400Accent,
-      )
+    : determineShade(isNeutralAccent, isShade500Accent, isShade300Accent, isShade400Accent)
   const lightAccentFg: ForegroundColor = isNeutralAccent
     ? "950"
     : determineForeground(isNeutralAccent, isShade400Accent)
 
   const darkAccent: Shade = isNeutralAccent
     ? "800"
-    : determineShade(
-        isNeutralAccent,
-        isShade500Accent,
-        isShade300Accent,
-        isShade400Accent,
-        true,
-      )
+    : determineShade(isNeutralAccent, isShade500Accent, isShade300Accent, isShade400Accent, true)
   const darkAccentFg: ForegroundColor = isNeutralAccent
     ? "50"
     : determineForeground(isNeutralAccent, isShade400Accent, true)

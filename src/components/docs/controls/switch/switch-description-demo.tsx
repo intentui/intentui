@@ -7,9 +7,7 @@ export default function SwitchDescriptionDemo() {
     <div className="flex flex-col gap-4">
       <CardHeader>
         <CardTitle className="font-medium sm:text-sm/6">Privacy settings</CardTitle>
-        <CardDescription>
-          Choose what others can see and how your account is shown.
-        </CardDescription>
+        <CardDescription>Choose what others can see and how your account is shown.</CardDescription>
       </CardHeader>
       <Switch value="profileVisible">
         <Label>Public profile</Label>

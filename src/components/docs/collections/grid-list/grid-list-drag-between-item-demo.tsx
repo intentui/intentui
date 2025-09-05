@@ -33,11 +33,7 @@ export default function GridListDragBetweenItemDemo() {
   return (
     <div className="grid gap-4 lg:grid-cols-3">
       <GridListDragDemo />
-      <GridList
-        aria-label="Droppable list"
-        items={list.items}
-        dragAndDropHooks={dragAndDropHooks}
-      >
+      <GridList aria-label="Droppable list" items={list.items} dragAndDropHooks={dragAndDropHooks}>
         {(item) => <GridList.Item>{item.name}</GridList.Item>}
       </GridList>
       <OtherEmptyList />
@@ -72,9 +68,7 @@ export function OtherEmptyList() {
       aria-label="Droppable list"
       items={list.items}
       dragAndDropHooks={dragAndDropHooks}
-      renderEmptyState={() => (
-        <GridList.EmptyState>No bands selected</GridList.EmptyState>
-      )}
+      renderEmptyState={() => <GridList.EmptyState>No bands selected</GridList.EmptyState>}
     >
       {(item) => <GridList.Item>{item.name}</GridList.Item>}
     </GridList>

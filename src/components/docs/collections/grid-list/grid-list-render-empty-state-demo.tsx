@@ -9,9 +9,7 @@ export default function GridListRenderEmptyStateDemo() {
       aria-label="Select items"
       selectionMode="multiple"
       className="min-w-64"
-      renderEmptyState={() => (
-        <GridList.EmptyState>No bands selected</GridList.EmptyState>
-      )}
+      renderEmptyState={() => <GridList.EmptyState>No bands selected</GridList.EmptyState>}
     />
   )
 }

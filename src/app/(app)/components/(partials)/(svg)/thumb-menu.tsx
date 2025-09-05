@@ -1,14 +1,7 @@
 export function ThumbMenu() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" height="100" fill="none" viewBox="0 0 51 73">
-      <rect
-        width="50.597"
-        height="59.597"
-        x=".201"
-        y="13.201"
-        fill="var(--overlay)"
-        rx="3.021"
-      />
+      <rect width="50.597" height="59.597" x=".201" y="13.201" fill="var(--overlay)" rx="3.021" />
       <rect
         width="50.597"
         height="59.597"

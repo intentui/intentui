@@ -85,12 +85,7 @@ export function Installation({ className, ...props }: InstallationProps) {
           viewBox="0 0 24 24"
           className="z-10 ml-[0.395rem] hidden size-6 text-zinc-400 md:block"
         >
-          <path
-            stroke="currentColor"
-            d="m10 16 4-4-4-4"
-            strokeLinecap="square"
-            strokeWidth="2"
-          />
+          <path stroke="currentColor" d="m10 16 4-4-4-4" strokeLinecap="square" strokeWidth="2" />
         </svg>
         <CodeHighlighter
           plain
@@ -208,11 +203,9 @@ function ChoosePkgManager({
     setPkgManager(selectedPkgManager)
 
     const executor = isExecutor ? selectedPkgManager.executor : selectedPkgManager.name
-    copyToClipboard(`${executor} ${selectedPkgManager.action} ${items.join(" ")}`).then(
-      () => {
-        setIsCopied(true)
-      },
-    )
+    copyToClipboard(`${executor} ${selectedPkgManager.action} ${items.join(" ")}`).then(() => {
+      setIsCopied(true)
+    })
   }
 
   return (

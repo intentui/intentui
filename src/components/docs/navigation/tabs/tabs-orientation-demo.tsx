@@ -20,9 +20,7 @@ export default function TabsOrientationDemo() {
       <TabPanel id="f">
         Participate in discussion forums with other students and instructors.
       </TabPanel>
-      <TabPanel id="p">
-        Update your profile and customize your learning preferences.
-      </TabPanel>
+      <TabPanel id="p">Update your profile and customize your learning preferences.</TabPanel>
     </Tabs>
   )
 }

@@ -62,10 +62,9 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
             className,
           )}
         >
-          {values.selectionMode === "multiple" &&
-            values.selectionBehavior === "toggle" && (
-              <Checkbox className="mr-2" slot="selection" />
-            )}
+          {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
+            <Checkbox className="mr-2" slot="selection" />
+          )}
           <div
             className={twJoin(
               "relative w-[calc(calc(var(--tree-item-level)-1)*calc(var(--spacing)*5.5))] shrink-0",

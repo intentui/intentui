@@ -6,9 +6,7 @@ export default function BarListDemo() {
     <Card>
       <Card.Header>
         <Card.Title>Page visits by section</Card.Title>
-        <Card.Description>
-          Unique visits for the most viewed docs pages this month
-        </Card.Description>
+        <Card.Description>Unique visits for the most viewed docs pages this month</Card.Description>
       </Card.Header>
       <Card.Content>
         <BarList

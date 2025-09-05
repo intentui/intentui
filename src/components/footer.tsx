@@ -47,10 +47,7 @@ export function Footer() {
                 <ul className="mt-3 space-y-2">
                   {navigation.resources.map((item) => (
                     <li key={item.name}>
-                      <Link
-                        href={item.href}
-                        className="text-muted-fg text-sm hover:text-fg"
-                      >
+                      <Link href={item.href} className="text-muted-fg text-sm hover:text-fg">
                         {item.name}
                       </Link>
                     </li>
@@ -118,8 +115,8 @@ export function Footer() {
             {currentYear} &middot; {siteConfig.name} &trade;
           </strong>{" "}
           <br />
-          This project’s crafted by <Link href="https://x.com/irsyadadl">Irsyad</Link>.
-          Peep the Source Code on <Link href={siteConfig.repo}>GitHub</Link>.
+          This project’s crafted by <Link href="https://x.com/irsyadadl">Irsyad</Link>. Peep the
+          Source Code on <Link href={siteConfig.repo}>GitHub</Link>.
         </p>
         <p>
           Hosted on{" "}
@@ -127,8 +124,7 @@ export function Footer() {
             Vercel
           </Link>
           . The source code's got the{" "}
-          <Link href="https://github.com/irsyadadl/intentui/blob/main/LICENSE">MIT</Link>{" "}
-          license.
+          <Link href="https://github.com/irsyadadl/intentui/blob/main/LICENSE">MIT</Link> license.
         </p>
       </PageContainer>
     </footer>

@@ -140,11 +140,7 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
             <ChartTooltip
               content={
                 typeof tooltip === "boolean" ? (
-                  <ChartTooltipContent
-                    hideLabel
-                    labelSeparator={false}
-                    accessibilityLayer
-                  />
+                  <ChartTooltipContent hideLabel labelSeparator={false} accessibilityLayer />
                 ) : (
                   tooltip
                 )

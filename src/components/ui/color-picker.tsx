@@ -64,11 +64,7 @@ const ColorPicker = ({
             <div className="flex flex-col gap-y-1.5">
               {children || (
                 <>
-                  <ColorArea
-                    colorSpace="hsb"
-                    xChannel="saturation"
-                    yChannel="brightness"
-                  />
+                  <ColorArea colorSpace="hsb" xChannel="saturation" yChannel="brightness" />
                   <ColorSlider showOutput={false} colorSpace="hsb" channel="hue" />
                   <div className="flex items-center gap-1.5">
                     {eyeDropper && <EyeDropper />}

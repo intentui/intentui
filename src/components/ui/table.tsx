@@ -62,10 +62,7 @@ const Table = ({ allowResize, className, bleed, ref, ...props }: TableProps) => 
           )}
         >
           <div
-            className={twJoin(
-              "inline-block min-w-full align-middle",
-              !bleed && "sm:px-(--gutter)",
-            )}
+            className={twJoin("inline-block min-w-full align-middle", !bleed && "sm:px-(--gutter)")}
           >
             {allowResize ? (
               <ResizableTableContainer data-slot="table-resizable-container">
@@ -209,15 +206,11 @@ const TableRow = <T extends object>({
       {...props}
       className={composeRenderProps(
         className,
-        (
-          className,
-          { isSelected, selectionMode, isFocusVisibleWithin, isDragging, isDisabled },
-        ) =>
+        (className, { isSelected, selectionMode, isFocusVisibleWithin, isDragging, isDisabled }) =>
           twMerge(
             "group relative cursor-default border-b text-muted-fg outline-transparent ring-primary last:border-b-0",
             isDragging && "outline outline-blue-500",
-            isSelected &&
-              "bg-(--table-selected-bg) text-fg hover:bg-(--table-selected-bg)/50",
+            isSelected && "bg-(--table-selected-bg) text-fg hover:bg-(--table-selected-bg)/50",
             (props.href || props.onAction || selectionMode === "multiple") &&
               "hover:bg-(--table-selected-bg) hover:text-fg",
             (props.href || props.onAction || selectionMode === "multiple") &&

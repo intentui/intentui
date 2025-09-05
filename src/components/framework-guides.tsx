@@ -69,22 +69,19 @@ const frameworks = [
   },
   {
     name: "Next.js",
-    description:
-      "Next.js is a React framework for building server-side rendered applications.",
+    description: "Next.js is a React framework for building server-side rendered applications.",
     logo: IconBrandNextjs,
     href: "/docs/getting-started/nextjs",
   },
   {
     name: "Vite",
-    description:
-      "Vite is a tool for building frontend applications in a fraction of the time.",
+    description: "Vite is a tool for building frontend applications in a fraction of the time.",
     logo: IconBrandVite,
     href: "/docs/getting-started/vite",
   },
   {
     name: "TanStack Router",
-    description:
-      "TanStack Router is a framework for building server-side rendered applications.",
+    description: "TanStack Router is a framework for building server-side rendered applications.",
     logo: IconBrandTanstack,
     href: "/docs/getting-started/tanstack-router",
   },

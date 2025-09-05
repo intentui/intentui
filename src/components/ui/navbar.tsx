@@ -107,18 +107,9 @@ const Navbar = ({
   if (isMobile) {
     return (
       <>
-        <span
-          className="sr-only"
-          aria-hidden
-          data-navbar={intent}
-          data-navbar-sticky={isSticky}
-        />
+        <span className="sr-only" aria-hidden data-navbar={intent} data-navbar-sticky={isSticky} />
         <Sheet isOpen={open} onOpenChange={setOpen} {...props}>
-          <Sheet.Content
-            side={side}
-            aria-label="Mobile Navbar"
-            className="[&>button]:hidden"
-          >
+          <Sheet.Content side={side} aria-label="Mobile Navbar" className="[&>button]:hidden">
             <Sheet.Body className="p-[calc(var(--gutter)---spacing(2))] sm:p-[calc(var(--gutter)---spacing(4))]">
               {children}
             </Sheet.Body>
@@ -233,13 +224,8 @@ const NavbarGap = ({ className, ref, ...props }: React.ComponentProps<"div">) =>
   return <div ref={ref} className={twMerge("mx-2", className)} {...props} />
 }
 
-const NavbarSeparator = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof Separator>) => {
-  return (
-    <Separator orientation="vertical" className={twMerge("h-5", className)} {...props} />
-  )
+const NavbarSeparator = ({ className, ...props }: React.ComponentProps<typeof Separator>) => {
+  return <Separator orientation="vertical" className={twMerge("h-5", className)} {...props} />
 }
 
 const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<"div">) => {
@@ -257,20 +243,12 @@ const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<"div">)
   )
 }
 
-const NavbarInset = ({
-  className,
-  ref,
-  children,
-  ...props
-}: React.ComponentProps<"div">) => {
+const NavbarInset = ({ className, ref, children, ...props }: React.ComponentProps<"div">) => {
   return (
     <div
       ref={ref}
       data-navbar-inset={true}
-      className={twMerge(
-        "flex flex-1 flex-col bg-navbar pb-2 md:px-2 dark:bg-bg",
-        className,
-      )}
+      className={twMerge("flex flex-1 flex-col bg-navbar pb-2 md:px-2 dark:bg-bg", className)}
       {...props}
     >
       <div className="grow bg-bg p-6 md:rounded-lg md:p-12 md:shadow-xs md:ring-1 md:ring-fg/15 md:dark:bg-navbar md:dark:ring-border">

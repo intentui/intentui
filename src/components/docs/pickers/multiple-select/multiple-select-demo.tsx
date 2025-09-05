@@ -34,9 +34,7 @@ export default function MultipleSelectDemo() {
       items={fruits}
     >
       {(item) => {
-        return (
-          <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
-        )
+        return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
       }}
     </MultipleSelect>
   )

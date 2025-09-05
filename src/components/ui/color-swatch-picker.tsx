@@ -1,9 +1,6 @@
 "use client"
 
-import type {
-  ColorSwatchPickerItemProps,
-  ColorSwatchPickerProps,
-} from "react-aria-components"
+import type { ColorSwatchPickerItemProps, ColorSwatchPickerProps } from "react-aria-components"
 import {
   ColorSwatchPickerItem as ColorSwatchPickerItemPrimitive,
   ColorSwatchPicker as ColorSwatchPickerPrimitive,
@@ -29,11 +26,7 @@ const ColorSwatchPicker = ({
   )
 }
 
-const ColorSwatchPickerItem = ({
-  className,
-  children,
-  ...props
-}: ColorSwatchPickerItemProps) => {
+const ColorSwatchPickerItem = ({ className, children, ...props }: ColorSwatchPickerItemProps) => {
   return (
     <ColorSwatchPickerItemPrimitive
       className={composeTailwindRenderProps(
@@ -48,16 +41,12 @@ const ColorSwatchPickerItem = ({
             <>
               <ColorSwatch
                 className={twMerge(
-                  (values.isSelected || values.isFocused || values.isPressed) &&
-                    "inset-ring-fg/30",
+                  (values.isSelected || values.isFocused || values.isPressed) && "inset-ring-fg/30",
                   values.isDisabled && "opacity-50",
                 )}
               />
               {(values.isSelected || values.isFocused || values.isPressed) && (
-                <span
-                  aria-hidden
-                  className="absolute right-1 bottom-1 size-1 rounded-full bg-fg"
-                />
+                <span aria-hidden className="absolute right-1 bottom-1 size-1 rounded-full bg-fg" />
               )}
             </>
           ) : typeof children === "function" ? (

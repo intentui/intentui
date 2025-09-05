@@ -11,9 +11,7 @@ export default function DateRangePickerCustomValidationDemo() {
       <DateRangePicker
         label="Room Booking Dates"
         validate={(range) =>
-          range?.end.compare(range.start) > 7
-            ? "Maximum booking duration is 1 week."
-            : null
+          range?.end.compare(range.start) > 7 ? "Maximum booking duration is 1 week." : null
         }
         defaultValue={{
           start: today(getLocalTimeZone()),

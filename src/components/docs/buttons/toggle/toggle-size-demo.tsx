@@ -9,24 +9,16 @@ export default function ToggleSizeDemo() {
     <div className="flex flex-col gap-y-4">
       <div className="flex flex-wrap items-end gap-2">
         <Toggle intent="outline" size="sq-xs">
-          {({ isSelected }) => (
-            <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>
-          )}
+          {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}
         </Toggle>
         <Toggle intent="outline" size="sq-sm">
-          {({ isSelected }) => (
-            <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>
-          )}
+          {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}
         </Toggle>
         <Toggle intent="outline" size="sq-md">
-          {({ isSelected }) => (
-            <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>
-          )}
+          {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}
         </Toggle>
         <Toggle intent="outline" size="sq-lg">
-          {({ isSelected }) => (
-            <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>
-          )}
+          {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}
         </Toggle>
       </div>
       <Separator />

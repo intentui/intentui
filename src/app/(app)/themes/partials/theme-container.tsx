@@ -44,8 +44,8 @@ export function ThemeContainer() {
               <CardHeader>
                 <CardTitle>Theme customizer</CardTitle>
                 <CardDescription>
-                  Customize your theme by selecting colors from the color picker or by
-                  entering a hex code.
+                  Customize your theme by selecting colors from the color picker or by entering a
+                  hex code.
                 </CardDescription>
               </CardHeader>
             </div>
@@ -71,10 +71,7 @@ export function ThemeContainer() {
                     Get theme
                     <IconChevronLgDown />
                   </Button>
-                  <Menu.Content
-                    placement="bottom right"
-                    className="min-w-(--trigger-width)"
-                  >
+                  <Menu.Content placement="bottom right" className="min-w-(--trigger-width)">
                     <Menu.Item onAction={copy}>
                       <IconDuplicate />
                       Copy

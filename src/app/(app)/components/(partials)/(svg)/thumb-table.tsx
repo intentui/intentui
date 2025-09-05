@@ -16,10 +16,7 @@ export function ThumbTable() {
         fill="var(--muted-fg)"
         d="M142 16a2 2 0 0 1 2-2h17a2 2 0 1 1 0 4h-17a2 2 0 0 1-2-2m0 12a2 2 0 0 1 2-2h10a2 2 0 1 1 0 4h-10a2 2 0 0 1-2-2m0 12a2 2 0 0 1 2-2h22a2 2 0 1 1 0 4h-22a2 2 0 0 1-2-2m0 12a2 2 0 0 1 2-2h22a2 2 0 1 1 0 4h-22a2 2 0 0 1-2-2"
       />
-      <path
-        fill="var(--fg)"
-        d="M142 4a2 2 0 0 1 2-2h22a2 2 0 1 1 0 4h-22a2 2 0 0 1-2-2"
-      />
+      <path fill="var(--fg)" d="M142 4a2 2 0 0 1 2-2h22a2 2 0 1 1 0 4h-22a2 2 0 0 1-2-2" />
       <path
         stroke="currentColor"
         className="stroke-zinc-400 dark:stroke-zinc-600"

@@ -80,8 +80,7 @@ export function Navigation() {
                 <NavLink
                   isNextLink
                   isActive={
-                    pathname?.startsWith("/docs") &&
-                    !pathname?.includes("/docs/components")
+                    pathname?.startsWith("/docs") && !pathname?.includes("/docs/components")
                   }
                   href="/docs/getting-started/introduction"
                 >
@@ -89,9 +88,7 @@ export function Navigation() {
                 </NavLink>
                 <NavLink
                   isNextLink
-                  isActive={
-                    pathname?.startsWith("/docs/components") || pathname === "/components"
-                  }
+                  isActive={pathname?.startsWith("/docs/components") || pathname === "/components"}
                   href="/components"
                 >
                   Components

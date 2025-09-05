@@ -9,10 +9,7 @@ export default function ToastStatusDemo() {
       <Button intent="outline" onPress={() => toast.error("The registration failed")}>
         Error
       </Button>
-      <Button
-        intent="outline"
-        onPress={() => toast.success("The registration was successful.")}
-      >
+      <Button intent="outline" onPress={() => toast.success("The registration was successful.")}>
         Success
       </Button>
       <Button

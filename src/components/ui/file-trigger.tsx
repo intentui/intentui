@@ -9,9 +9,7 @@ import type { VariantProps } from "tailwind-variants"
 import { Button, type buttonStyles } from "./button"
 import { Loader } from "./loader"
 
-interface FileTriggerProps
-  extends FileTriggerPrimitiveProps,
-    VariantProps<typeof buttonStyles> {
+interface FileTriggerProps extends FileTriggerPrimitiveProps, VariantProps<typeof buttonStyles> {
   isDisabled?: boolean
   ref?: React.RefObject<HTMLInputElement>
   className?: string

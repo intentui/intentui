@@ -63,9 +63,7 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
             ? props.message
             : "You can copy the code below and paste it into your component folder."}
         </p>
-        {props.title && (
-          <figcaption data-rehype-pretty-code-title="">{props.title}</figcaption>
-        )}
+        {props.title && <figcaption data-rehype-pretty-code-title="">{props.title}</figcaption>}
         <div className="flex items-center justify-between">
           <div className="flex cursor-default items-center gap-x-1 p-2 font-medium text-sm/6">
             <IconBrandReactjs className="text-sky-500" />

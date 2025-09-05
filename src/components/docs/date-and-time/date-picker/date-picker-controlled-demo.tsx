@@ -19,11 +19,7 @@ export default function DatePickerControlledDemo() {
         <p>{value ? formatter.format(value.toDate(getLocalTimeZone())) : "--"}</p>
         <p>{value ? value.toString() : "--"}</p>
       </div>
-      <DatePicker
-        value={value}
-        onChange={(newValue) => setValue(newValue!)}
-        label="Event date"
-      />
+      <DatePicker value={value} onChange={(newValue) => setValue(newValue!)} label="Event date" />
     </div>
   )
 }

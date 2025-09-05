@@ -28,17 +28,9 @@ export function Examples() {
       <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto pb-6 *:shrink-0 *:snap-center sm:pb-12">
         <BlocksCard className="w-full lg:w-1/3">
           <div className="flex flex-col gap-y-6">
-            <CardHeader
-              title="Sign in"
-              description="Enter your email and password to sign in."
-            />
+            <CardHeader title="Sign in" description="Enter your email and password to sign in." />
             <TextField label="Email" type="email" placeholder="you@domain.com" />
-            <TextField
-              label="Password"
-              type="password"
-              isRevealable
-              placeholder="Shhh..."
-            />
+            <TextField label="Password" type="password" isRevealable placeholder="Shhh..." />
             <Checkbox>
               <Label>Remember me</Label>
               <Description>

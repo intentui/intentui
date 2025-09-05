@@ -32,10 +32,7 @@ export async function GET(request: Request) {
   const [fonts] = await Promise.all([loadAssets()])
 
   return new ImageResponse(
-    <div
-      tw="flex h-full w-full bg-zinc-900 text-white"
-      style={{ fontFamily: "Geist Sans" }}
-    >
+    <div tw="flex h-full w-full bg-zinc-900 text-white" style={{ fontFamily: "Geist Sans" }}>
       <div tw="flex absolute flex-row top-24 left-32 text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,11 +45,7 @@ export async function GET(request: Request) {
           aria-hidden="true"
         >
           <rect width={20} height={20} x="2.5" y={2} fill="#0D6DFD" rx="3.75" />
-          <g
-            fill="#fff"
-            filter="url(#icon-brand-intentui_svg__a)"
-            shapeRendering="crispEdges"
-          >
+          <g fill="#fff" filter="url(#icon-brand-intentui_svg__a)" shapeRendering="crispEdges">
             <path d="M5.86 6.311c0-.525.426-.952.951-.952h1.904c.526 0 .952.427.952.952v1.904a.95.95 0 0 1-.952.952H6.811a.95.95 0 0 1-.952-.952V6.311Z" />
             <path
               fillOpacity="0.5"
@@ -85,11 +78,7 @@ export async function GET(request: Request) {
               <feComposite in2="hardAlpha" operator="out" />
               <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
               <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_11777_624" />
-              <feBlend
-                in="SourceGraphic"
-                in2="effect1_dropShadow_11777_624"
-                result="shape"
-              />
+              <feBlend in="SourceGraphic" in2="effect1_dropShadow_11777_624" result="shape" />
             </filter>
           </defs>
         </svg>

@@ -93,9 +93,7 @@ export default async function Page(props: DocPageProps) {
               {extractSegment(page.url)}
             </div>
             <div className="flex items-center justify-between gap-x-2">
-              <h1 className="mt-2 font-semibold text-xl tracking-tight sm:text-3xl">
-                {doc.title}
-              </h1>
+              <h1 className="mt-2 font-semibold text-xl tracking-tight sm:text-3xl">{doc.title}</h1>
             </div>
             {doc.description ? (
               <p className="mt-2.5 text-pretty text-base text-fg/60 leading-relaxed">

@@ -28,15 +28,9 @@ function CustomTooltip({ active, payload, label }: CustomTooltipProps) {
         {payload.map((entry) => (
           <div key={entry.dataKey} className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-muted-fg capitalize">
-              {entry.dataKey === "likes" && (
-                <IconHeartFill style={{ color: entry.color }} />
-              )}
-              {entry.dataKey === "comments" && (
-                <IconMessagesFill style={{ color: entry.color }} />
-              )}
-              {entry.dataKey === "shares" && (
-                <IconUpload style={{ color: entry.color }} />
-              )}
+              {entry.dataKey === "likes" && <IconHeartFill style={{ color: entry.color }} />}
+              {entry.dataKey === "comments" && <IconMessagesFill style={{ color: entry.color }} />}
+              {entry.dataKey === "shares" && <IconUpload style={{ color: entry.color }} />}
               <span>{entry.name}</span>
             </div>
             <span className="font-mono text-fg tabular-nums">{entry.value}</span>
@@ -63,9 +57,7 @@ export default function BarChartCustomTooltipDemo() {
     <Card>
       <Card.Header>
         <Card.Title>Engagement last 7d</Card.Title>
-        <Card.Description>
-          Likes, comments, and shares for the recent week.
-        </Card.Description>
+        <Card.Description>Likes, comments, and shares for the recent week.</Card.Description>
       </Card.Header>
       <Card.Content>
         <BarChart

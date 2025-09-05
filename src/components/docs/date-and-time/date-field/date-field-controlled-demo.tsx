@@ -19,11 +19,7 @@ export default function DateFieldControlledDemo() {
         <p>{value ? formatter.format(value.toDate(getLocalTimeZone())) : "--"}</p>
         <p>{value ? value.toString() : "--"}</p>
       </div>
-      <DateField
-        value={value}
-        onChange={(newValue) => setValue(newValue!)}
-        label="Event date"
-      />
+      <DateField value={value} onChange={(newValue) => setValue(newValue!)} label="Event date" />
     </div>
   )
 }

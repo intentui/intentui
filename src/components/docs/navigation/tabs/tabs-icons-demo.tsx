@@ -23,9 +23,7 @@ export default function TabsIconsDemo() {
       <TabPanel id="n">
         Get nutrition tips and meal plans to complement your fitness journey.
       </TabPanel>
-      <TabPanel id="t">
-        Track your progress with detailed statistics and analytics.
-      </TabPanel>
+      <TabPanel id="t">Track your progress with detailed statistics and analytics.</TabPanel>
     </Tabs>
   )
 }

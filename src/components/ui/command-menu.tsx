@@ -31,13 +31,7 @@ import { twJoin, twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
 import { DropdownKeyboard } from "./dropdown"
 import { Loader } from "./loader"
-import {
-  MenuDescription,
-  MenuItem,
-  MenuLabel,
-  type MenuSectionProps,
-  MenuSeparator,
-} from "./menu"
+import { MenuDescription, MenuItem, MenuLabel, type MenuSectionProps, MenuSeparator } from "./menu"
 
 interface CommandMenuProviderProps {
   isPending?: boolean
@@ -66,10 +60,7 @@ const sizes = {
   "3xl": "sm:max-w-3xl",
 }
 
-interface CommandMenuProps
-  extends AutocompleteProps,
-    MenuTriggerProps,
-    CommandMenuProviderProps {
+interface CommandMenuProps extends AutocompleteProps, MenuTriggerProps, CommandMenuProviderProps {
   isDismissable?: boolean
   "aria-label"?: string
   shortcut?: string
@@ -90,8 +81,7 @@ const CommandMenu = ({
   ...props
 }: CommandMenuProps) => {
   const { contains } = useFilter({ sensitivity: "base" })
-  const filter = (textValue: string, inputValue: string) =>
-    contains(textValue, inputValue)
+  const filter = (textValue: string, inputValue: string) => contains(textValue, inputValue)
   useEffect(() => {
     if (!shortcut) return
 
@@ -157,11 +147,7 @@ interface CommandMenuSearchProps extends SearchFieldProps {
   className?: string
 }
 
-const CommandMenuSearch = ({
-  className,
-  placeholder,
-  ...props
-}: CommandMenuSearchProps) => {
+const CommandMenuSearch = ({ className, placeholder, ...props }: CommandMenuSearchProps) => {
   const state = use(OverlayTriggerStateContext)!
   const { isPending, escapeButton } = useCommandMenu()
   return (
@@ -236,10 +222,7 @@ const CommandMenuSection = <T extends object>({
   )
 }
 
-const CommandMenuItem = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof MenuItem>) => {
+const CommandMenuItem = ({ className, ...props }: React.ComponentProps<typeof MenuItem>) => {
   const textValue =
     props.textValue || (typeof props.children === "string" ? props.children : undefined)
   return (
@@ -251,15 +234,11 @@ const CommandMenuItem = ({
   )
 }
 
-interface CommandMenuDescriptionProps
-  extends React.ComponentProps<typeof MenuDescription> {}
+interface CommandMenuDescriptionProps extends React.ComponentProps<typeof MenuDescription> {}
 
 const CommandMenuDescription = ({ className, ...props }: CommandMenuDescriptionProps) => {
   return (
-    <MenuDescription
-      className={twMerge("col-start-3 row-start-1 ml-auto", className)}
-      {...props}
-    />
+    <MenuDescription className={twMerge("col-start-3 row-start-1 ml-auto", className)} {...props} />
   )
 }
 
@@ -267,9 +246,7 @@ const renderer: CollectionRenderer = {
   CollectionRoot(props) {
     if (props.collection.size === 0) {
       return (
-        <div className="col-span-full p-4 text-center text-muted-fg text-sm">
-          No results found.
-        </div>
+        <div className="col-span-full p-4 text-center text-muted-fg text-sm">No results found.</div>
       )
     }
     return <DefaultCollectionRenderer.CollectionRoot {...props} />

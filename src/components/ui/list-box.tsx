@@ -13,12 +13,7 @@ import {
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { composeTailwindRenderProps } from "@/lib/primitive"
-import {
-  DropdownDescription,
-  DropdownLabel,
-  DropdownSection,
-  dropdownItemStyles,
-} from "./dropdown"
+import { DropdownDescription, DropdownLabel, DropdownSection, dropdownItemStyles } from "./dropdown"
 
 const ListBox = <T extends object>({ className, ...props }: ListBoxProps<T>) => (
   <ListBoxPrimitive
@@ -31,11 +26,7 @@ const ListBox = <T extends object>({ className, ...props }: ListBoxProps<T>) => 
   />
 )
 
-const ListBoxItem = <T extends object>({
-  children,
-  className,
-  ...props
-}: ListBoxItemProps<T>) => {
+const ListBoxItem = <T extends object>({ children, className, ...props }: ListBoxItemProps<T>) => {
   const textValue = typeof children === "string" ? children : undefined
   return (
     <ListBoxItemPrimitive
@@ -64,9 +55,7 @@ const ListBoxItem = <T extends object>({
                 )}
               />
             )}
-            {isSelected && (
-              <IconCheck className="-mx-0.5 mr-2" data-slot="checked-icon" />
-            )}
+            {isSelected && <IconCheck className="-mx-0.5 mr-2" data-slot="checked-icon" />}
             {typeof children === "function" ? (
               children(renderProps)
             ) : typeof children === "string" ? (
@@ -85,10 +74,7 @@ interface ListBoxSectionProps<T> extends ListBoxSectionPrimitiveProps<T> {
   title?: string
 }
 
-const ListBoxSection = <T extends object>({
-  className,
-  ...props
-}: ListBoxSectionProps<T>) => {
+const ListBoxSection = <T extends object>({ className, ...props }: ListBoxSectionProps<T>) => {
   return (
     <DropdownSection
       className={twMerge("*:data-[slot=list-box-item]:last:-mb-1.5 gap-y-1", className)}

@@ -30,9 +30,7 @@ export function Mdx({ code }: { code: MDXContent }) {
         ),
         CodeBlock,
         BlockSandbox,
-        EditorText: (props: React.ComponentProps<typeof EditorText>) => (
-          <EditorText {...props} />
-        ),
+        EditorText: (props: React.ComponentProps<typeof EditorText>) => <EditorText {...props} />,
         CodeSandbox: (props: React.ComponentProps<typeof CodeSandbox>) => (
           <CodeSandbox {...props} />
         ),

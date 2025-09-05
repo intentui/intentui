@@ -127,11 +127,7 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
           {tooltip && (
             <ChartTooltip
               content={
-                typeof tooltip === "boolean" ? (
-                  <ChartTooltipContent accessibilityLayer />
-                ) : (
-                  tooltip
-                )
+                typeof tooltip === "boolean" ? <ChartTooltipContent accessibilityLayer /> : tooltip
               }
               {...tooltipProps}
             />
@@ -155,9 +151,7 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
                       })
                     }}
                     radius={barRadius ?? (stacked ? undefined : 4)}
-                    strokeOpacity={
-                      selectedLegend && selectedLegend !== category ? 0.2 : 0
-                    }
+                    strokeOpacity={selectedLegend && selectedLegend !== category ? 0.2 : 0}
                     fillOpacity={selectedLegend && selectedLegend !== category ? 0.1 : 1}
                     fill={getColorValue(values.color || categoryColors.get(category))}
                     {...barProps}

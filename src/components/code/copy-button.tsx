@@ -76,13 +76,7 @@ export function CopyButton({
   )
 }
 
-export function CopyMotionButton({
-  className,
-  text,
-}: {
-  className?: string
-  text: string
-}) {
+export function CopyMotionButton({ className, text }: { className?: string; text: string }) {
   const [copyCount, setCopyCount] = useState(0)
   const copied = copyCount > 0
 

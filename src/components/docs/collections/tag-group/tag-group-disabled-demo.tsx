@@ -7,9 +7,7 @@ export default function TagGroupDisabledDemo() {
   return (
     <div className="space-y-6">
       <TagGroup
-        disabledKeys={androidBrands
-          .filter((brand) => !brand.available)
-          .map((brand) => brand.id)}
+        disabledKeys={androidBrands.filter((brand) => !brand.available).map((brand) => brand.id)}
         label="Disabled Key"
         selectionMode="multiple"
       >

@@ -46,10 +46,7 @@ const generateAliases = (iconKeys: string[]): Record<string, string[]> => {
       const isFill = name.endsWith("fill") // Only check if it ends with "fill"
       const typeKey = Object.keys(baseAliases).find((key) => name.includes(key)) || null
 
-      acc[icon] = [
-        ...(typeKey ? baseAliases[typeKey]! : []),
-        ...(isFill ? baseAliases.fill : [])!,
-      ]
+      acc[icon] = [...(typeKey ? baseAliases[typeKey]! : []), ...(isFill ? baseAliases.fill : [])!]
 
       return acc
     },

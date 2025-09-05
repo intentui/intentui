@@ -16,9 +16,7 @@ export default function ChoiceboxDemo() {
       </ChoiceboxItem>
       <ChoiceboxItem textValue="deluxe">
         <ChoiceboxLabel>Deluxe</ChoiceboxLabel>
-        <ChoiceboxDescription>
-          Top-tier features for maximum performance.
-        </ChoiceboxDescription>
+        <ChoiceboxDescription>Top-tier features for maximum performance.</ChoiceboxDescription>
       </ChoiceboxItem>
       <ChoiceboxItem textValue="ultimate">
         <ChoiceboxLabel>Ultimate</ChoiceboxLabel>
@@ -28,9 +26,7 @@ export default function ChoiceboxDemo() {
       </ChoiceboxItem>
       <ChoiceboxItem textValue="enterprise">
         <ChoiceboxLabel>Enterprise</ChoiceboxLabel>
-        <ChoiceboxDescription>
-          Customized solutions for large organizations.
-        </ChoiceboxDescription>
+        <ChoiceboxDescription>Customized solutions for large organizations.</ChoiceboxDescription>
       </ChoiceboxItem>
     </Choicebox>
   )

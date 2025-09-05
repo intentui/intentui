@@ -1,8 +1,4 @@
-import {
-  Collection,
-  TreeLoadMoreItem,
-  type TreeLoadMoreItemProps,
-} from "react-aria-components"
+import { Collection, TreeLoadMoreItem, type TreeLoadMoreItemProps } from "react-aria-components"
 import { useAsyncList } from "react-stately"
 import { ProgressCircle } from "@/components/ui/progress-circle"
 import { TreeItem as PrimitiveItem, Tree, TreeContent } from "@/components/ui/tree"
@@ -61,10 +57,7 @@ export default function TreeInfiniteScrollDemo() {
         <Collection items={starWarsList.items}>
           {(item: StarWarsCharacter) => <TreeItem id={item.name} title={item.name} />}
         </Collection>
-        <TreeLoader
-          isLoading={starWarsList.isLoading}
-          onLoadMore={starWarsList.loadMore}
-        />
+        <TreeLoader isLoading={starWarsList.isLoading} onLoadMore={starWarsList.loadMore} />
       </TreeItem>
     </Tree>
   )

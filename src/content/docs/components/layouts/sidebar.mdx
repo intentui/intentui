@@ -366,6 +366,27 @@ The sidebar just need one base color to work, the accent will generate from the 
   --color-sidebar-accent-fg: var(--sidebar-accent-fg);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --animate-disclosure-collapsed: disclosure-collapsed 0.2s ease-out;
+  --animate-disclosure-expanded: disclosure-expanded 0.2s ease-out;
+
+  @keyframes disclosure-collapsed {
+    from {
+      height: var(--disclosure-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes disclosure-expanded {
+    from {
+      height: 0
+    }
+    to {
+      height: var(--disclosure-height)
+    }
+  }
 }
 
 :root {

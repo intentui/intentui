@@ -25,9 +25,7 @@ export default function DrawerNestedDemo() {
         <Drawer.Content>
           <Drawer.Header>
             <Drawer.Title>Confirm Registration</Drawer.Title>
-            <Drawer.Description>
-              Please confirm your registration details.
-            </Drawer.Description>
+            <Drawer.Description>Please confirm your registration details.</Drawer.Description>
           </Drawer.Header>
           <Drawer.Footer>
             <Drawer.Close>Cancel</Drawer.Close>
