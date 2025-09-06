@@ -19,9 +19,9 @@ const tagFieldsStyles = tv({
       outline: [
         "rounded-lg border px-1.5 shadow-xs hover:border-[color-mix(in_oklab,var(--color-fg)_10%,var(--color-border))]",
         "has-[input[data-invalid=true][focus=true]]:border-danger has-[input[data-invalid=true]]:border-danger has-[input[data-invalid=true]]:ring-danger/20",
-        "has-[input[focus=true]]:border-ring/70 has-[input[focus=true]]:ring-3 has-[input[focus=true]]:ring-ring/20",
+        "focus-within:border-ring/70 focus-within:ring-3 focus-within:ring-ring/20 hover:focus-within:border-ring/70",
       ],
-      plain: "has-[input[focus=true]]:border-transparent",
+      plain: "focus:border-transparent",
     },
   },
 })
@@ -145,7 +145,11 @@ const TagField = ({
       <Group className={twJoin("flex flex-col", props.isDisabled && "opacity-50")}>
         <TagGroup aria-label="List item inserted" onRemove={onRemove}>
           <div className={tagFieldsStyles({ appearance })}>
-            <TagList items={list.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>
+            <TagList items={list.items}>
+              {(item) => (
+                <Tag className="rounded-[calc(var(--radius-lg)-(--spacing(1)))]">{item.name}</Tag>
+              )}
+            </TagList>
             <TextField
               isDisabled={props.isDisabled}
               aria-label={props?.label ?? (props["aria-label"] || props.placeholder)}

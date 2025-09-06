@@ -15,11 +15,12 @@ export const siteConfig = {
   currentVersion: "3.x",
   cli: {
     version: "latest",
-    command: "@intentui/cli",
+    command: "shadcn@latest",
   },
   get cliCommand() {
     return `${this.cli.command}@${this.cli.version}`
   },
+  shadcn: "npx shadcn@latest",
 }
 
 export type SiteConfig = typeof siteConfig

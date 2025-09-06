@@ -1,19 +1,10 @@
 "use client"
 
 import { IconBrandReactjs } from "@intentui/icons"
-import React, { useState } from "react"
-import generated from "@/../__registry__/generated"
+import { useEffect, useMemo, useState } from "react"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
 import { createFetchRegistryFile } from "@/lib/fetch-registry"
-
-type RegistryItem = {
-  component: React.LazyExoticComponent<any>
-  files: string[]
-  [key: string]: any
-}
-
-const registry = generated as Record<string, RegistryItem>
 
 type SourceCodeProps = {
   toShow: string
@@ -26,34 +17,14 @@ const fetchRegistryFile = createFetchRegistryFile("/r")
 
 export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
   const [rawSourceCode, setRawSourceCode] = useState<string | null>(null)
-
-  /*
-   * Prepend the `ui/` prefix to the provided `toShow` prop
-   * to construct the registry key dynamically.
-   */
-  const registryKey = `ui/${toShow}`
-
-  /*
-   * Retrieve the component from the registry using the dynamic key.
-   * This ensures that the correct component is loaded via React.lazy.
-   */
-  const Component = registry[registryKey]?.component
-  const processedSourceCode = React.useMemo(() => {
+  const processedSourceCode = useMemo(() => {
     if (!rawSourceCode) return null
 
     return rawSourceCode
   }, [rawSourceCode])
-
-  React.useEffect(() => {
-    fetchRegistryFile(`ui-${toShow}`).then(setRawSourceCode)
+  useEffect(() => {
+    fetchRegistryFile(`${toShow}`).then(setRawSourceCode)
   }, [toShow])
-
-  if (!Component) {
-    /*
-     * Display a fallback message if the component is not found in the registry.
-     */
-    return <p>Component "{toShow}" not found in the registry.</p>
-  }
 
   if (processedSourceCode) {
     return (

@@ -9,10 +9,12 @@
     "build:stubs": "rm -rf public/stubs && bun run src/scripts/build-stubs.ts",
     "build:llms": "bun run src/scripts/generate-llms.ts",
     "build:search": "bun run src/scripts/generate-search.ts",
-    "prebuild": "bun run build:search && bun run build:llms && bun run build:registry && bun run build:stubs",
+    "prebuild": "bun run build:search && bun run build:llms && bun run registry:generate && bun run src/scripts/extract-components-from-registry.ts && bun run build:stubs",
     "cuc": "bun run src/scripts/check-use-client.ts",
     "cdc": "bun run src/scripts/check-duplicated-classes.ts",
     "prepare": "husky",
+    "registry:generate": "bun run src/scripts/generate-registry.ts && bun run shadcn build && bun run src/scripts/cleanup-staged.ts",
+    "r": "bun run registry:generate",
     "build:old-registry": "rm -rf public/registry && bun run src/scripts/build-old-registry.ts",
     "build:registry": "bun run src/scripts/build-registry.ts && npx shadcn build && bun run src/scripts/extract-components-from-registry.ts",
     "dev": "next dev --turbopack",
@@ -35,12 +37,15 @@
     "@radix-ui/react-scroll-area": "^1.2.10",
     "@shikijs/rehype": "^3.12.2",
     "@shikijs/transformers": "^3.12.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "culori": "^4.0.2",
     "dayjs": "^1.11.18",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "fumadocs-mdx": "11.6.1",
     "input-otp": "^1.4.2",
+    "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
     "next": "^15.5.2",
     "next-themes": "^0.4.6",
@@ -53,7 +58,7 @@
     "recharts": "^3.1.2",
     "rehype-stringify": "^10.0.1",
     "scroll-into-view-if-needed": "^3.1.0",
-    "shadcn": "^2.10.0",
+    "shadcn": "^3.2.1",
     "sharp": "^0.34.3",
     "shiki": "^3.12.2",
     "sonner": "^2.0.7",
@@ -65,9 +70,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.3",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "19.8.0",
-    "@commitlint/cz-commitlint": "^19.8.1",
     "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/typography": "^0.5.16",
     "@types/bun": "^1.2.21",
@@ -87,11 +89,6 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
   },
   "repository": {
     "type": "git",

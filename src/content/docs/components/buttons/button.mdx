@@ -11,11 +11,15 @@ A button allows users to perform actions through clicks, presses, taps, or keyst
 <How toUse="buttons/button/button-basic-demo" />
 
 ## Installation
-<Installation options={{isComponent: true}} items={['button']}/>
+```bash
+npx shadcn@latest add @intentui/button
+```
 
 ## Manual installation
 
-<Installation options={{isManual: true}} items={['react-aria-components', 'tailwind-variants']}/>
+```bash
+npm i react-aria-components tailwind-variants
+```
 
 <SourceCode toShow='button'/>
 
@@ -87,9 +91,9 @@ Sometimes, you need to use styles from buttons for links. Just use the link and 
 <How toUse="buttons/button/button-link-demo" />
 
 ## Touch hitbox
-Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-hitbox` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
+Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-target` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
 ```
-@utility touch-hitbox {
+@utility touch-target {
   position: relative;
   &::before {
     content: "";

@@ -3,7 +3,7 @@ import { cache } from "react"
 export const createFetchRegistryFile = (basePath: string) =>
   cache(async (key: string): Promise<string | null> => {
     try {
-      const response = await fetch(`${basePath}/${key}.json`)
+      const response = await fetch(`${basePath}/${key}`)
       if (response.ok) {
         const registryEntry = await response.json()
         return registryEntry.files?.[0]?.content || null

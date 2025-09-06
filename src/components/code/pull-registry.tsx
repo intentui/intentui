@@ -63,20 +63,18 @@ export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullR
   return (
     <div className="relative flex items-center gap-x-0.5 sm:gap-x-3">
       <CopyButton
+        label="Registry"
+        className="hidden sm:inline"
+        copiedLabel="Copied"
+        isCopied={copy.command}
+        onCopy={() => handleCopy("command", `${siteConfig.shadcn} add @intentui/${blockDemo}`)}
+      />
+      <CopyButton
         label="Copy"
         copiedLabel="Copied"
         isCopied={copy.code}
         onCopy={() => handleCopy("code", processedSourceCode as string)}
       />
-
-      <CopyButton
-        label="Registry"
-        className="hidden sm:inline"
-        copiedLabel="Copied"
-        isCopied={copy.command}
-        onCopy={() => handleCopy("command", `npx ${siteConfig.cliCommand} add -b ${blockDemo}`)}
-      />
-
       {readMore && (
         <Link
           className="p-2 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"

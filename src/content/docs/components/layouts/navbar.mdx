@@ -9,23 +9,25 @@ references: ["https://react-spectrum.adobe.com/react-aria/Link.html#props"]
 ## Basic
 A navbar provides a variety of actions or options for users to select.
 
-<CodeSandbox
-  src='/pre-blocks/navbar/navbar-01'
-  source={{
-    preview: 'pre-blocks/navbar/app-navbar',
-    'page.tsx': 'pre-blocks/navbar/navbar-01/page',
-    'layout.tsx': 'pre-blocks/navbar/navbar-01/layout',
-    'app-navbar.tsx': 'pre-blocks/navbar/app-navbar',
-  }} />
+<Sandbox
+  registries={[
+    "navbar-01",
+  ]}
+/>
+
 
 ## Installation
-<Installation options={{ isComponent: true }} items={['navbar']} />
+```bash
+npx shadcn@latest add @intentui/navbar
+```
 
 ## Composed components
 <Composed components={['button', 'sheet']} />
 
 ## Manual installation
-<Installation options={{ isManual: true }} items={['react-aria-components', 'motion']} />
+```bash
+npm i react-aria-components motion
+```
 
 <SourceCode toShow={'navbar'} />
 

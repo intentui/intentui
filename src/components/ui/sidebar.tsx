@@ -228,7 +228,7 @@ const Sidebar = ({
           "relative h-svh bg-transparent transition-[width] duration-200 ease-linear",
           intent === "default" && "group-data-[collapsible=dock]:w-(--sidebar-width-dock)",
           intent === "float" &&
-            "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(4))]",
+            "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+(--spacing(4)))]",
           intent === "inset" &&
             "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(2))]",
         ])}
@@ -244,7 +244,8 @@ const Sidebar = ({
             "left-0 group-data-[collapsible=hidden]:left-[calc(var(--sidebar-width)*-1)]",
           side === "right" &&
             "right-0 group-data-[collapsible=hidden]:right-[calc(var(--sidebar-width)*-1)]",
-          intent === "float" && "bg-bg group-data-[collapsible=dock]:w-[calc(--spacing(4)+2px)]",
+          intent === "float" &&
+            "bg-bg p-2 group-data-[collapsible=dock]:w-[calc(--spacing(4)+2px)]",
           intent === "inset" &&
             "bg-sidebar group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(2)+2px)] dark:bg-bg",
           intent === "default" && [

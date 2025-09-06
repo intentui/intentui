@@ -15,9 +15,11 @@ Before executing the command, ensure that **tailwind** is installed. If not, fol
 ### Initial Setup
 Begin by executing this command:
 
-<Installation options={{ isInit: true }} items={['initial setup']} />
+```
+npx shadcn@latest init https://intentui.com/r/theme-default
+```
 
-Hover over to the [CLI documentation](/docs/getting-started/cli) to learn more about the other commands.
+We use [shadcn CLI](https://ui.shadcn.com/docs/cli) to manage the installation of Intent UI components.
 
 ### Component config
 After running the `init` command, a `components.json` file will appear in your project. This file holds your project's configuration, including settings for gray tones, paths, and more.
@@ -41,20 +43,36 @@ After running the `init` command, a `components.json` file will appear in your p
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "iconLibrary": "@intentui/icons"
+  "iconLibrary": "@intentui/icons",
+  "registry: {}
+}
+```
+Now please add @intentui into registry like so
+
+```
+"registries": {
+  "@intentui": "https://intentui.com/r/{name}"
 }
 ```
 
+And after that, you can start adding components to your project.
+
 ### Add components
 Next, use `add [component-name]` to include a specific component in your project. This allows for selective installation without the need for a full setup. If you need a file-trigger or even a button, this command facilitates that. Install only what you need, or refer to the documentation to manually include components. Here's how to add a `combo-box`:
-<Installation options={{ isComponent: true, noText: true }} items={['combo-box']} />
+```
+npx shadcn@latest add @intentui/combo-box
+```
 
 Sometimes, you may want to add components individually, such as `select` and `text-field`. You can easily do this by using the following command:
-<Installation options={{ isComponent: true, noText: true }} items={['select', 'text-field']} />
+```
+npx shadcn@latest add @intentui/select @intentui/text-field
+```
 
 ### Overwrite
 You can override the existing components by using the `-o` flag. This will overwrite the existing files with the new ones.
-<Installation options={{ isComponent: true, noText: true }} items={['button modal -o']} />
+```
+npx shadcn@latest add @intentui/select @intentui/text-field -o
+```
 
 ## Formatter
 Intent utilizes the <NewTab href='https://biomejs.dev/'>Biome</NewTab> formatter for code formatting. To use the Biome formatter with Intent components, we recommend the following configuration:
@@ -67,15 +85,21 @@ Intent utilizes the <NewTab href='https://biomejs.dev/'>Biome</NewTab> formatter
 ## Manual installation
 To begin setting up the design system, start by installing these packages:
 
-<Installation options={{isManual: true}} items={['react-aria-components', 'tailwindcss-react-aria-components']} />
+```bash
+npm i react-aria-components tailwindcss-react-aria-components
+```
 
 Next, add **Tailwind Variant**, **Tailwind Merge**, and for utility functions:
 
-<Installation options={{isManual: true}} items={['tailwind-variants', 'tailwind-merge']} />
+```bash
+npm i tailwind-variants tailwind-merge
+```
 
 Following that, include the **Tailwind Animate** for managing animations and **Intent Icons** for icons:
 
-<Installation options={{isManual: true}} items={['@intentui/icons', 'tw-animate-css']} />
+```bash
+npm i @intentui/icons tw-animate-css
+```
 
 ### Style and Primitive
 After installing the required packages, you can copy the CSS below into your global CSS file and move the primitives to your UI folder. Primitives serve as utilities for managing states, including `focusRing`, `focusStyles`, and `focusButtonStyles`.

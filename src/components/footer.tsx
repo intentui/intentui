@@ -24,7 +24,6 @@ const navigation = {
   extra: [
     { name: "Plus", href: "https://dub.sh/designiui" },
     { name: "Templates", href: "https://irsyad.co" },
-    { name: "CLI", href: "https://github.com/intentuilabs/cli" },
     { name: "Icons", href: "/icons" },
   ],
 }

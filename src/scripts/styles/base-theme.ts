@@ -3,6 +3,8 @@ export const baseTheme = {
     '"Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
   "font-mono":
     "\"Geist Mono\", 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '\"Liberation Mono\"', '\"Courier New\"', 'monospace'",
+  "--font-sans--font-feature-settings": '"cv02", "cv03", "cv04", "cv11"',
+  "--font-mono--font-feature-settings": '"ss02", "zero"',
   "color-border": "var(--border)",
   "color-input": "var(--input)",
   "color-ring": "var(--ring)",
@@ -39,8 +41,4 @@ export const baseTheme = {
   "color-chart-3": "var(--chart-3)",
   "color-chart-4": "var(--chart-4)",
   "color-chart-5": "var(--chart-5)",
-  "animate-disclosure-collapsed": "disclosure-collapsed 0.2s ease-out",
-  "animate-disclosure-expanded": "disclosure-expanded 0.2s ease-out",
-  "@keyframes disclosure-collapsed": `from { height: var(--disclosure-height); } to { height: 0; }`,
-  "@keyframes disclosure-expanded": `from { height: 0; } to { height: var(--disclosure-height); }`
 }

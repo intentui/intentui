@@ -11,13 +11,17 @@ A switch is a toggle that flips between on and off, similar to a light switch.
 <How toUse="controls/switch/switch-demo" />
 
 ## Installation
-<Installation options={{ isComponent: true }} items={['switch']}/>
+```bash
+npx shadcn@latest add @intentui/switch
+```
 
 ## Composed components
 <Composed components={['field']}/>
 
 ## Manual installation
-<Installation options={{ isManual: true }} items={['react-aria-components']}/>
+```bash
+npm i react-aria-components
+```
 
 <SourceCode toShow='switch'/>
 
@@ -69,3 +73,150 @@ You can also use the uncontrolled version of the switch.
 ## Disabled
 A disabled switch cannot be toggled and is non-interactive.
 <How toUse="controls/switch/switch-disabled-demo" />
+
+## Installation
+To use the Switch component, you need to install the `@intentui/switch` package. You can do this using npm or yarn:
+
+```bash
+npm i @intentui/switch
+```
+
+or
+
+```bash
+yarn add @intentui/switch
+```
+
+Additionally, the Switch component requires the `react-aria-components` package. If you haven't installed it yet, you can do so with the following command:
+
+```bash
+npm i react-aria-components
+```
+
+## Composed components
+The Switch component is composed of the following sub-components:
+
+- `Switch`: The main toggle switch component.
+- `Label`: A component to display the label of the switch.
+- `Description`: A component to display a description or helper text for the switch.
+
+## Manual installation
+If you prefer to install the components manually, you can do so by installing the `react-aria-components` package. This package includes all the necessary components and hooks to use the Switch component.
+
+To install the package, run the following command:
+
+```bash
+npm i react-aria-components
+```
+
+Once installed, you can import the components directly from the package:
+
+```jsx
+import { Switch, Label, Description } from 'react-aria-components';
+```
+
+## Anatomy
+The Switch component consists of the following parts:
+
+- A container element that wraps the entire switch.
+- A hidden checkbox input that represents the on/off state of the switch.
+- A visual indicator (the switch knob) that shows the current state of the switch.
+- A label element that describes the purpose of the switch.
+- An optional description element that provides additional information about the switch.
+
+The following diagram illustrates the anatomy of the Switch component:
+
+```
+<Switch>
+  <input type="checkbox" />
+  <span class="switch-knob" />
+  <Label>Switch Label</Label>
+  <Description>Switch Description</Description>
+</Switch>
+```
+
+## Description
+The Switch component supports an optional description that can be used to provide additional information about the switch's purpose or functionality.
+
+To add a description to the switch, you can use the `description` prop or include a `Description` component as a child of the `Switch` component.
+
+Here's an example of using the `description` prop:
+
+```jsx
+<Switch value="notifications" description="Enable or disable notifications.">
+  <Label>Notifications</Label>
+</Switch>
+```
+
+And here's an example of using the `Description` component:
+
+```jsx
+<Switch value="notifications">
+  <Label>Notifications</Label>
+  <Description>Enable or disable notifications.</Description>
+</Switch>
+```
+
+## Controlled
+The Switch component can be used in a controlled manner, where the on/off state of the switch is controlled by a parent component.
+
+To use the switch in a controlled manner, you need to manage the `isSelected` state in the parent component and pass it as a prop to the `Switch` component.
+
+Here's an example:
+
+```jsx
+import { useState } from 'react';
+import { Switch, Label } from '@intentui/switch';
+
+function ControlledSwitch() {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleToggle = () => {
+    setIsSelected((prev) => !prev);
+  };
+
+  return (
+    <Switch isSelected={isSelected} onChange={handleToggle}>
+      <Label>Toggle Me</Label>
+    </Switch>
+  );
+}
+```
+
+## Uncontrolled
+The Switch component can also be used in an uncontrolled manner, where the on/off state is managed internally by the component.
+
+To use the switch in an uncontrolled manner, simply render the `Switch` component without managing the `isSelected` state in the parent component.
+
+Here's an example:
+
+```jsx
+import { Switch, Label } from '@intentui/switch';
+
+function UncontrolledSwitch() {
+  return (
+    <Switch defaultSelected>
+      <Label>Toggle Me</Label>
+    </Switch>
+  );
+}
+```
+
+## Disabled
+The Switch component supports a disabled state, where the switch is visually indicated as disabled and cannot be toggled.
+
+To disable the switch, you can set the `isDisabled` prop to `true`.
+
+Here's an example:
+
+```jsx
+import { Switch, Label } from '@intentui/switch';
+
+function DisabledSwitch() {
+  return (
+    <Switch isDisabled>
+      <Label>Can't Touch This</Label>
+    </Switch>
+  );
+}
+```

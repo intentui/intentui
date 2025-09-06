@@ -200,7 +200,7 @@
 
 @variant dark (&:is(.dark *));
 
-@utility touch-hitbox {
+@utility touch-target {
   position: relative;
   &::before {
     content: "";

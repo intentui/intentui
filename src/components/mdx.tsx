@@ -2,17 +2,15 @@ import { IconArrowUpRight } from "@intentui/icons"
 import type { MDXContent } from "mdx/types"
 import Image from "next/image"
 import type React from "react"
+import { Sandbox } from "@/app/(app)/blocks/sandbox"
 import { GeneratedTheme } from "@/app/(app)/themes/partials/generated-theme"
-import { BlockSandbox } from "@/components/code/block-sandbox"
 import { CodeBlock } from "@/components/code/code-block"
-import { CodeSandbox } from "@/components/code/code-sandbox"
 import { EditorText } from "@/components/code/editor-text"
 import { PlainCode, Pre } from "@/components/code/plain-code"
 import { SourceCode } from "@/components/code/source-code"
 import { DocComposed } from "@/components/doc-composed"
 import { DocNote } from "@/components/doc-note"
 import { FrameworkGuides } from "@/components/framework-guides"
-import { Installation } from "@/components/installation"
 import { Link } from "@/components/ui/link"
 import { DocHow } from "./code/doc-how"
 
@@ -29,12 +27,8 @@ export function Mdx({ code }: { code: MDXContent }) {
           </PlainCode>
         ),
         CodeBlock,
-        BlockSandbox,
+        Sandbox,
         EditorText: (props: React.ComponentProps<typeof EditorText>) => <EditorText {...props} />,
-        CodeSandbox: (props: React.ComponentProps<typeof CodeSandbox>) => (
-          <CodeSandbox {...props} />
-        ),
-        Installation,
         Note: DocNote,
         Composed: DocComposed,
         FrameworkGuides,
