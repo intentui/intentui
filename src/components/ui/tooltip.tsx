@@ -9,6 +9,7 @@ import {
   TooltipTrigger as TooltipTriggerPrimitive,
 } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
+import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"
 
 const tooltipStyles = tv({
@@ -17,7 +18,11 @@ const tooltipStyles = tv({
   ],
   variants: {
     inverse: {
-      true: "border-transparent bg-fg text-bg [&_.text-muted-fg]:text-bg/70 dark:[&_.text-muted-fg]:text-fg/70",
+      true: [
+        "border-transparent bg-fg text-bg [.text-muted-fg]:text-bg/80",
+        "*:[.text-muted-fg]:text-secondary",
+        "has-[.text-muted-fg]:text-secondary",
+      ],
       false: "bg-overlay text-overlay-fg",
     },
     isEntering: {
@@ -41,10 +46,11 @@ const tooltipStyles = tv({
 type TooltipProps = React.ComponentProps<typeof TooltipTriggerPrimitive>
 const Tooltip = (props: TooltipProps) => <TooltipTriggerPrimitive {...props} />
 
-interface TooltipContentProps extends Omit<TooltipPrimitiveProps, "children"> {
+interface TooltipContentProps
+  extends Omit<TooltipPrimitiveProps, "children">,
+    VariantProps<typeof tooltipStyles> {
   showArrow?: boolean
   children?: React.ReactNode
-  inverse?: boolean
 }
 
 const TooltipContent = ({

@@ -11,14 +11,17 @@ references: ["https://react-spectrum.adobe.com/react-aria/ListBox.html#props", "
 <How minW72 toUse="media/carousel/carousel-demo" />
 
 ## Installation
-<Installation options={{ isComponent: true }} items={['carousel']}/>
+```bash
+npx shadcn@latest add @intentui/carousel
+```
 
 ## Composed components
 <Composed components={['button']}/>
 
 ## Manual installation
-
-<Installation options={{ isManual: true }} items={['react-aria-components', 'embla-carousel-react', '@intentui/icons']}/>
+```bash
+npm i react-aria-components embla-carousel-react @intentui/icons
+```
 
 <SourceCode toShow='carousel'/>
 
@@ -58,7 +61,9 @@ You want to loop, or align the carouse, don't worry, you can do it with the `opt
 
 ## Autoplay
 This a plugin by the embla-carousel it self, it's not included in the package, but you can install it to make sure the carousel autoplay.
-<Installation options={{ isManual: true }} items={['embla-carousel-autoplay']} />
+```bash
+npm i embla-carousel-autoplay
+```
 
 Once you install it, you can use it with the `plugins` prop.
 <How minW72 toUse="media/carousel/carousel-autoplay-demo" />

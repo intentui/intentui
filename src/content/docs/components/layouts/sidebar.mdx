@@ -8,24 +8,24 @@ references: ["https://react-spectrum.adobe.com/react-aria/Link.html#props", "htt
 
 ## Basic
 The sidebar is a versatile component designed to organize your site's content and navigation. It offers a structured overview of your site's layout, making it easier for users to explore and locate information.
-
-<CodeSandbox
-  src='/pre-blocks/sidebar/sidebar-01'
-  source={{
-    preview: 'pre-blocks/sidebar/sidebar-01/page',
-    'app-sidebar.tsx': 'pre-blocks/sidebar/app-sidebar',
-    'app-sidebar-nav.tsx': 'pre-blocks/sidebar/app-sidebar-nav',
-    'page.tsx': 'pre-blocks/sidebar/sidebar-01/page',
-  }} />
+<Sandbox
+  registries={[
+    "sidebar-01",
+  ]}
+/>
 
 ## Installation
-<Installation options={{isComponent: true}} items={['sidebar']}/>
+```bash
+npx shadcn@latest add @intentui/sidebar
+```
 
 ## Composed components
 <Composed components={['badge', 'tooltip', 'sheet', 'button']} />
 
 ## Manual installation
-<Installation options={{ isManual: true }} items={['react-aria-components', '@intentui/icons']}/>
+```bash
+npm i react-aria-components @intentui/icons
+```
 <SourceCode toShow={'sidebar'}/>
 
 ## Anatomy
@@ -568,15 +568,11 @@ The sidebar supports menus for displaying additional actions or options. When us
 </SidebarItem>
 ```
 
-<CodeSandbox
-  src='/pre-blocks/sidebar/sidebar-08'
-  source={{
-    preview: 'pre-blocks/sidebar/sidebar-08/page',
-    'app-sidebar-nav.tsx': 'pre-blocks/sidebar/app-sidebar-nav',
-    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-08/app-sidebar',
-    'layout.tsx': 'pre-blocks/sidebar/sidebar-08/layout',
-    'page.tsx': 'pre-blocks/sidebar/sidebar-08/page',
-  }} />
+<Sandbox
+  registries={[
+    "sidebar-08",
+  ]}
+/>
 
 
 ## Badge
@@ -627,15 +623,11 @@ The example previews will appear similar to the ones in the YouTube sidebar.
 
 ## Tooltip
 The sidebar supports tooltips, which can be used to display additional information when you're on docked mode.
-<CodeSandbox
-  src='/pre-blocks/sidebar/sidebar-12'
-  source={{
-    preview: 'pre-blocks/sidebar/sidebar-12/page',
-    'app-sidebar-nav.tsx': 'pre-blocks/sidebar/app-sidebar-nav',
-    'app-sidebar.tsx': 'pre-blocks/sidebar/sidebar-12/app-sidebar',
-    'layout.tsx': 'pre-blocks/sidebar/sidebar-12/layout',
-    'page.tsx': 'pre-blocks/sidebar/sidebar-12/page',
-  }} />
+<Sandbox
+  registries={[
+    "sidebar-12",
+  ]}
+/>
 
 ## Header
 The sidebar supports headers, which can be used to display additional actions or options.

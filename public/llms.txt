@@ -3,7 +3,6 @@
 - [Release Notes](/docs/prologue/release-notes.md)
 
 ## Getting Started
-- [CLI](/docs/getting-started/cli.md)
 - [Colors](/docs/getting-started/colors.md)
 - [Vite](/docs/getting-started/vite.md)
 - [Nextjs](/docs/getting-started/nextjs.md)
@@ -11,7 +10,6 @@
 - [Introduction](/docs/getting-started/introduction.md)
 - [Tanstack Router](/docs/getting-started/tanstack-router.md)
 - [Laravel](/docs/getting-started/laravel.md)
-- [React 19](/docs/getting-started/react-19.md)
 - [Installation](/docs/getting-started/installation.md)
 
 ## Dark Mode

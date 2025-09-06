@@ -173,7 +173,7 @@
   --chart-5: oklch(0.882 0.059 254.128);
 }
 
-@utility touch-hitbox {
+@utility touch-target {
   position: relative;
   &::before {
     content: "";

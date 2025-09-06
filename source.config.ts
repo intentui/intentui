@@ -34,7 +34,7 @@ export default defineConfig({
         light: "github-light",
         dark: "github-dark",
       },
-      langs: ["ts", "tsx", "js", "jsx", "json", "css", "html", "md", "mdx"],
+      langs: ["ts", "tsx", "json", "css", "bash"],
       defaultLanguage: "tsx",
     },
     remarkPlugins: [[remarkHeading, { generateToc: true }], remarkImage],

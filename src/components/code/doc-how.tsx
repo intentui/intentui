@@ -65,7 +65,7 @@ export const DocHow = ({
   }, [rawSourceCode])
 
   React.useEffect(() => {
-    const name = `block-${toUse?.split("/").pop()}`
+    const name = `${toUse?.split("/").pop()}`
     fetchRegistryFile(name).then(setRawSourceCode)
   }, [toUse])
 

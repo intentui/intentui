@@ -13,13 +13,14 @@ A toggle button allows users to switch between two states, such as enabling or d
 <How toUse="buttons/toggle/toggle-demo" />
 
 ## Installation
-
-<Installation options={{isComponent: true}} items={['toggle']}/>
+```bash
+npx shadcn@latest add @intentui/toggle
+```
 
 ## Manual installation
-
-<Installation options={{isManual: true}} items={['react-aria-components']}/>
-
+```bash
+npm i react-aria-components tailwind-variants
+```
 <SourceCode toShow='toggle'/>
 
 ## Intent
@@ -47,9 +48,9 @@ Disable a toggle button by setting the `disabled` prop.
 <How toUse="buttons/toggle/toggle-disabled-demo" />
 
 ## Touch hitbox
-Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-hitbox` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
+Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-target` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
 ```
-@utility touch-hitbox {
+@utility touch-target {
   position: relative;
   &::before {
     content: "";

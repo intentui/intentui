@@ -13,13 +13,14 @@ A toggle button group allows users to switch between multiple options, enabling 
 <How toUse="buttons/toggle-group/toggle-group-demo" />
 
 ## Installation
-
-<Installation options={{isComponent: true}} items={['toggle-group']}/>
+```bash
+npx shadcn@latest add @intentui/toggle-group
+```
 
 ## Manual installation
-
-<Installation options={{isManual: true}} items={['react-aria-components']}/>
-
+```bash
+npm i react-aria-components tailwind-variants
+```
 <SourceCode toShow='toggle-group'/>
 
 ## Anatomy
@@ -64,9 +65,9 @@ You can disable an entire toggle group by setting the `isDisabled` prop on the `
 <How toUse="buttons/toggle-group/toggle-group-disabled-demo" />
 
 ## Touch hitbox
-Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-hitbox` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
+Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-target` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
 ```
-@utility touch-hitbox {
+@utility touch-target {
   position: relative;
   &::before {
     content: "";

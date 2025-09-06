@@ -9,6 +9,9 @@ const config = {
   },
   async rewrites() {
     return [
+      { source: "/r/:slug", destination: "/r/:slug.json" },
+      { source: "/r/hooks/:slug", destination: "/r/:slug.json" },
+      { source: "/r/lib/:slug", destination: "/r/:slug.json" },
       {
         source: "/docs/:slug*.md",
         destination: "/api/raw-docs/:slug*.md",
