@@ -7,7 +7,7 @@ import { Heading } from "@/components/ui/heading"
 
 export function Hero() {
   return (
-    <div className="py-6 sm:py-12">
+    <div className="border-b py-6 sm:py-12">
       <PageContainer>
         <Heading level={1} className="text-2xl sm:text-3xl">
           Blo

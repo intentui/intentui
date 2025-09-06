@@ -1,3 +1,4 @@
+import { Hero } from "@/app/(app)/blocks/hero"
 import { PageContainer } from "@/components/page-container"
 import { Sandbox } from "./sandbox"
 
@@ -10,6 +11,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
+      <Hero />
       <PageContainer className="space-y-12 py-6 sm:py-12">
         <Sandbox
           registries={[
