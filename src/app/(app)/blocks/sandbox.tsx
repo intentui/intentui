@@ -33,9 +33,7 @@ type RegistryItem = {
   files: RegistryFile[]
 }
 
-const REGISTRY_ORIGIN =
-  process.env.NEXT_PUBLIC_REGISTRY_ORIGIN?.replace(/\/+$/, "") || "http://localhost:3000"
-const PREVIEW_ORIGIN = process.env.NEXT_PUBLIC_PREVIEW_ORIGIN?.replace(/\/+$/, "") || ""
+const REGISTRY_ORIGIN = process.env.NEXT_PUBLIC_APP_URL
 
 function filename(p: string) {
   const segs = p.split("/")
@@ -91,7 +89,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   const [tab, setTab] = useState<Key>("preview")
   const b = item.name.split("-")[0]
   const c = item.name
-  const src = `${PREVIEW_ORIGIN}/pre-blocks/${b}/${encodeURIComponent(c)}`
+  const src = `${REGISTRY_ORIGIN}/pre-blocks/${b}/${encodeURIComponent(c)}`
   const { copied, copy } = useCopy()
   return (
     <section className="space-y-4">
