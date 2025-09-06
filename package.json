@@ -9,7 +9,7 @@
     "build:stubs": "rm -rf public/stubs && bun run src/scripts/build-stubs.ts",
     "build:llms": "bun run src/scripts/generate-llms.ts",
     "build:search": "bun run src/scripts/generate-search.ts",
-    "prebuild": "bun run build:search && bun run build:llms && bun run registry:generate && bun run build:stubs",
+    "prebuild": "bun run build:search && bun run build:llms && bun run registry:generate && bun run src/scripts/extract-components-from-registry.ts && bun run build:stubs",
     "cuc": "bun run src/scripts/check-use-client.ts",
     "cdc": "bun run src/scripts/check-duplicated-classes.ts",
     "prepare": "husky",
@@ -70,9 +70,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.3",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "19.8.0",
-    "@commitlint/cz-commitlint": "^19.8.1",
     "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/typography": "^0.5.16",
     "@types/bun": "^1.2.21",
@@ -92,11 +89,6 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
   },
   "repository": {
     "type": "git",

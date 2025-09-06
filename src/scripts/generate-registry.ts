@@ -11,6 +11,9 @@ import { blueDark, blueLight } from "@/scripts/styles/blue";
 import { skyDark, skyLight } from "@/scripts/styles/sky";
 import { indigoDark, indigoLight } from "@/scripts/styles/indigo";
 import { emeraldDark, emeraldLight } from "@/scripts/styles/emerald";
+import { makeRegistry } from "@/scripts/make-registry";
+
+makeRegistry()
 
 const LIB_ALLOW = ["number", "date", "primitive"]
 const HOOKS_ALLOW = ["use-media-query", "use-theme"]
