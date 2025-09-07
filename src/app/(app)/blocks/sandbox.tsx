@@ -94,7 +94,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   return (
     <section className="space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
-        <div className="flex md:flex-row flex-col items-end justify-between">
+        <div className="flex gap-4 md:flex-row flex-col items-end justify-between">
           <header className="space-y-1">
             <Heading className="font-medium capitalize" level={2}>
               {item.title.replaceAll("-", " ")}
