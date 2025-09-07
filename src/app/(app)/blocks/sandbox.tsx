@@ -94,7 +94,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   return (
     <section className="space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
-        <div className="flex gap-4 md:flex-row flex-col items-end justify-between">
+        <div className="flex gap-4 md:flex-row flex-col md:items-end justify-between">
           <header className="space-y-1">
             <Heading className="font-medium capitalize" level={2}>
               {item.title.replaceAll("-", " ")}
@@ -115,7 +115,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
                 </TooltipContent>
               </Tooltip>
           </header>
-          <TabList className="flex gap-x-2">
+          <TabList className="flex w-full md:w-auto gap-x-2">
             <Tab
               className="group inline-flex cursor-default items-center gap-x-2 rounded-lg selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary"
               id="preview"
