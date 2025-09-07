@@ -94,28 +94,28 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   return (
     <section className="space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
-        <div className="flex gap-4 md:flex-row flex-col md:items-end justify-between">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <header className="space-y-1">
             <Heading className="font-medium capitalize" level={2}>
               {item.title.replaceAll("-", " ")}
             </Heading>
-            
-              <Tooltip delay={0}>
-                <Button
-                  onPress={() => {
-                    copy(`npx shadcn@latest add @intentui/block/${item.title}`)
-                  }}
-                  className="flex items-center gap-x-2 font-mono text-muted-fg text-sm tracking-tigth"
-                >
-                  {copied ? <IconCheck /> : <ShadcnuiLogo className="size-4" />}
-                  @intentui/block/{item.title}
-                </Button>
-                <TooltipContent className="rounded-full text-muted-fg text-sm/6" inverse>
-                  Click to copy
-                </TooltipContent>
-              </Tooltip>
+
+            <Tooltip delay={0}>
+              <Button
+                onPress={() => {
+                  copy(`npx shadcn@latest add @intentui/block/${item.title}`)
+                }}
+                className="flex items-center gap-x-2 font-mono text-muted-fg text-sm tracking-tigth"
+              >
+                {copied ? <IconCheck /> : <ShadcnuiLogo className="size-4" />}
+                @intentui/block/{item.title}
+              </Button>
+              <TooltipContent className="rounded-full text-muted-fg text-sm/6" inverse>
+                Click to copy
+              </TooltipContent>
+            </Tooltip>
           </header>
-          <TabList className="flex w-full md:w-auto gap-x-2">
+          <TabList className="flex w-full gap-x-2 md:w-auto">
             <Tab
               className="group inline-flex cursor-default items-center gap-x-2 rounded-lg selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary"
               id="preview"
