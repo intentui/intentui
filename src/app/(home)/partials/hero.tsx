@@ -3,6 +3,7 @@
 import { IconBookOpen, IconPackage } from "@intentui/icons"
 import { Header } from "react-aria-components"
 import { PageContainer } from "@/components/page-container"
+import { Badge } from "@/components/ui/badge"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
@@ -12,8 +13,11 @@ export function Hero() {
     <div className="-mt-20 bg-gradient-to-b from-blue-50 to-bg pt-20 pb-8 lg:pt-40 lg:pb-16 dark:from-muted dark:to-zinc-950">
       <PageContainer>
         <Header className="text-left">
+          <Link href="https://design.intentui.com/pricing">
+            <Badge className="inset-ring-current/25">Don't miss 40% off</Badge>
+          </Link>
           <h1 className="mt-4 mb-4 max-w-6xl pb-1 font-semibold text-3xl text-fg tracking-tight lg:mb-6 lg:text-6xl">
-            Accessible react component library – copy, customize & own your ui
+            Accessible React component library to copy, customize, and own your UI.
           </h1>
           <p className="block max-w-2xl text-base text-muted-fg leading-relaxed md:leading-relaxed lg:text-xl [&_strong]:font-medium [&_strong]:text-fg">
             <strong className="text-white">{siteConfig.name}</strong> is a chill set of React
