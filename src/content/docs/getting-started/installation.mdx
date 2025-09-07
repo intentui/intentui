@@ -68,19 +68,25 @@ Sometimes, you may want to add components individually, such as `select` and `te
 npx shadcn@latest add @intentui/select @intentui/text-field
 ```
 
+### Add all components
+If you want to add all components at once, you can use the `@intentui/all`. This will install every component available in the Intent UI.
+```
+npx shadcn@latest add @intentui/all
+```
+
 ### Overwrite
 You can override the existing components by using the `-o` flag. This will overwrite the existing files with the new ones.
 ```
-npx shadcn@latest add @intentui/select @intentui/text-field -o
+npx shadcn@latest add @intentui/text-field -o
 ```
 
 ## Formatter
 Intent utilizes the <NewTab href='https://biomejs.dev/'>Biome</NewTab> formatter for code formatting. To use the Biome formatter with Intent components, we recommend the following configuration:
 
 <CodeBlock
-    source={{
-        'biome.json': 'installation/biome.json',
-    }} />
+  source={{
+      'biome.json': 'installation/biome.json',
+  }} />
 
 ## Manual installation
 To begin setting up the design system, start by installing these packages:

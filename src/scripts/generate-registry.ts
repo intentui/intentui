@@ -19,9 +19,6 @@ const LIB_ALLOW = ["number", "date", "primitive"]
 const HOOKS_ALLOW = ["use-media-query", "use-theme"]
 const REGISTRY_NAME = process.env.REGISTRY_NAME || "intentui"
 const REGISTRY_HOMEPAGE = process.env.NEXT_PUBLIC_APP_URL
-// const REGISTRY_NAMESPACE = (process.env.REGISTRY_NAMESPACE || "@intentui").startsWith("@")
-//   ? process.env.REGISTRY_NAMESPACE || "@intentui"
-//   : `@${process.env.REGISTRY_NAMESPACE}`
 const REGISTRY_STYLE = process.env.REGISTRY_STYLE || "blocks"
 const REGISTRY_IMPORT_PREFIX = process.env.REGISTRY_IMPORT_PREFIX || "@/registry"
 const PAGE_TARGET_ROOT = process.env.PAGE_TARGET_ROOT || "app"
@@ -497,6 +494,23 @@ const buildBlockItem = async (pagePath: string) => {
   return registryItemSchema.parse(raw)
 }
 
+const buildAllItems = (items: any[]) => {
+  const base = (REGISTRY_HOMEPAGE || "http://localhost:3000").replace(/\/+$/, "")
+  const urls = items
+    .filter((it: any) => it.type === "registry:ui")
+    .map((it: any) => `${base}/r/ui/${it.name}`)
+    .sort()
+
+  return registryItemSchema.parse({
+    $schema: "https://ui.shadcn.com/schema/registry-item.json",
+    name: "all",
+    type: "registry:item",
+    title: "All UI components",
+    description: "Installs all UI components from this registry.",
+    registryDependencies: urls,
+  })
+}
+
 const buildAll = async () => {
   const items: any[] = [...themeItems]
   for (const f of await listFiles(UI_DIR)) items.push(await buildComponentItem(f))
@@ -507,6 +521,7 @@ const buildAll = async () => {
   for (const f of (await listFiles(HOOKS_DIR)).filter((f) => HOOKS_ALLOW.includes(path.basename(f, path.extname(f))))) {
     items.push(await buildHookItem(f))
   }
+
   const blockPages: string[] = []
   const stack = [BLOCKS_DIR]
   while (stack.length) {
@@ -520,6 +535,7 @@ const buildAll = async () => {
     }
   }
   for (const p of blockPages) items.push(await buildBlockItem(p))
+  items.push(buildAllItems(items))
   const rawRegistry = {
     name: REGISTRY_NAME,
     homepage: REGISTRY_HOMEPAGE,

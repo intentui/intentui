@@ -1,12 +1,12 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
     "useIgnoreFile": false
   },
   "files": {
-    "includes": ["src/**/*.tsx", "src/**/*.ts"],
+    "includes": ["src/**/*.tsx", "src/**/*.ts", "!src/scripts"],
     "ignoreUnknown": false
   },
   "formatter": {
@@ -49,7 +49,8 @@
         "noArrayIndexKey": "off"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "off"
+        "noDangerouslySetInnerHtml": "off",
+        "noDangerouslySetInnerHtmlWithChildren": "off"
       },
       "nursery": {
         "useSortedClasses": {
@@ -57,7 +58,13 @@
           "fix": "safe",
           "options": {
             "attributes": ["classList"],
-            "functions": ["twMerge", "twJoin", "tv", "composeRenderProps", "composeTailwindRenderProps"]
+            "functions": [
+              "twMerge",
+              "twJoin",
+              "tv",
+              "composeRenderProps",
+              "composeTailwindRenderProps"
+            ]
           }
         }
       }
