@@ -94,16 +94,15 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   return (
     <section className="space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
-        <div className="flex items-end justify-between">
+        <div className="flex md:flex-row flex-col items-end justify-between">
           <header className="space-y-1">
             <Heading className="font-medium capitalize" level={2}>
               {item.title.replaceAll("-", " ")}
             </Heading>
-            {item.description ? (
+            
               <Tooltip delay={0}>
                 <Button
                   onPress={() => {
-                    // copy
                     copy(`npx shadcn@latest add @intentui/block/${item.title}`)
                   }}
                   className="flex items-center gap-x-2 font-mono text-muted-fg text-sm tracking-tigth"
@@ -115,7 +114,6 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
                   Click to copy
                 </TooltipContent>
               </Tooltip>
-            ) : null}
           </header>
           <TabList className="flex gap-x-2">
             <Tab
