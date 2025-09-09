@@ -22,8 +22,7 @@
     "start": "next start",
     "preview": "bun run build && next start",
     "ic": "bun run src/scripts/identify-color.ts",
-    "typecheck": "tsc --noEmit",
-    "postinstall": "fumadocs-mdx"
+    "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
     "./**/*.{ts,tsx}": ["biome lint --fix && biome check --write"]
@@ -39,8 +38,6 @@
     "dayjs": "^1.11.18",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
-    "fumadocs-core": "15.3.1",
-    "fumadocs-docgen": "2.0.0",
     "fumadocs-mdx": "11.6.3",
     "input-otp": "^1.4.2",
     "motion": "^12.23.12",
