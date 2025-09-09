@@ -1,6 +1,6 @@
 "use client"
 
-import { IconCheck, IconDuplicate } from "@intentui/icons"
+import { IconBrandGithub, IconCheck, IconDuplicate } from "@intentui/icons"
 import type { PageTree } from "fumadocs-core/server"
 import { MobilePager } from "@/components/mobile-pager"
 import { Button } from "@/components/ui/button"
@@ -12,7 +12,6 @@ function getPromptUrl(baseURL: string, url: string) {
     `Read the Intent UI docs at ${url} and treat them as the source of truth. Explain how to use the library, provide step by step examples, and help debug issues in my code. Ask clarifying questions only when needed.`,
   )}`
 }
-
 export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; page: any }) {
   const fullUrl = `https://intentui.com${url}`
   const { copied, copy } = useCopy()
@@ -93,6 +92,14 @@ export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; 
               />
             </svg>
             <span className="sr-only">Open in</span> Markdown
+          </MenuItem>
+          <MenuItem
+            href={`https://github.com/irsyadadl/intentui/blob/3.x/src/content${url}.mdx`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconBrandGithub />
+            <span className="sr-only">Open in</span> Github
           </MenuItem>
         </MenuContent>
       </Menu>
