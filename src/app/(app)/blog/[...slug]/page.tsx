@@ -12,14 +12,11 @@ export default async function Page(props: DocPageProps) {
   const { slug } = await props.params
   const article = blog.find((i) => i._file?.path.replace(".mdx", "") === slug[0])
 
-  if (!article) {
+  const page = source.getPage(slug)
+  if (!page || !article) {
     notFound()
   }
-
-  const page = source.getPage(params.slug)
-
-  const doc = page.data
-  const MDX = doc.body
+  const MDX = page.data.body
   return (
     <>
       <div className="min-w-0 max-w-2xl flex-auto px-4 pt-16 pb-32 lg:max-w-none lg:pr-0">
