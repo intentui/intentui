@@ -3,6 +3,7 @@
 import { IconBrandGithub, IconCheck, IconDuplicate } from "@intentui/icons"
 import type { PageTree } from "fumadocs-core/server"
 import { MobilePager } from "@/components/mobile-pager"
+import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu"
 import { useCopy } from "@/hooks/use-copy"
@@ -67,6 +68,14 @@ export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; 
               />
             </svg>
             <span className="sr-only">Open in</span> ChatGPT
+          </MenuItem>
+          <MenuItem
+            href={getPromptUrl("https://t3.chat/new", fullUrl)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Avatar src="https://t3.chat/apple-icon.png?apple-icon.359781d4.png" />
+            <span className="sr-only">Open in</span> T3 chat
           </MenuItem>
           <MenuItem
             href={getPromptUrl("https://claude.ai/new", fullUrl)}
