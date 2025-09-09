@@ -76,7 +76,7 @@ export default async function Page(props: DocPageProps) {
   return (
     <>
       <div className="min-w-0 max-w-3xl flex-auto px-4 py-8 lg:max-w-none lg:pr-0 lg:pl-8 sm:lg:py-16 xl:px-10">
-        <main className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
+        <div className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
           <div className="pb-6 sm:border-b">
             <div
               aria-hidden="true"
@@ -116,14 +116,20 @@ export default async function Page(props: DocPageProps) {
           </div>
 
           <Toc className="mt-4 block sm:mt-8 xl:hidden" items={doc.toc} />
+
           <MDX components={mdxComponents} />
 
-          <Ads className="flex md:hidden" />
+          <Ads className="md:hidden" />
 
           <Pager tree={source.pageTree} url={page.url} />
-        </main>
+        </div>
       </div>
-      <Toc className="hidden xl:block" items={page.data.toc} />
+      <div className="hidden flex-col xl:flex">
+        <div className="flex-1">
+          <Toc items={page.data.toc} />
+        </div>
+        <Ads className="sticky right-0 bottom-6 mb-16 self-start" />
+      </div>
     </>
   )
 }

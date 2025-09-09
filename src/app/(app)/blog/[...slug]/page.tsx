@@ -6,17 +6,17 @@ import type { DocPageProps } from "@/app/(app)/docs/[...slug]/page"
 import { mdxComponents } from "@/components/mdx-components"
 import { Toc } from "@/components/toc"
 import { siteConfig } from "@/config/site"
-import { source } from "@/lib/source"
 
 export default async function Page(props: DocPageProps) {
   const { slug } = await props.params
   const article = blog.find((i) => i._file?.path.replace(".mdx", "") === slug[0])
 
-  const page = source.getPage(slug)
-  if (!page || !article) {
+  if (!article) {
     notFound()
   }
-  const MDX = page.data.body
+
+  const MDX = article.body
+
   return (
     <>
       <div className="min-w-0 max-w-2xl flex-auto px-4 pt-16 pb-32 lg:max-w-none lg:pr-0">
