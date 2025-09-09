@@ -15,6 +15,14 @@ export interface DocPageProps {
   }>
 }
 
+export const revalidate = false
+export const dynamic = "force-static"
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return source.generateParams()
+}
+
 const extractSegment = (str: string): string | null => {
   const segments = str.split("/")
   return segments.length === 5 ? title(segments[3]!) : title(segments[3]!)

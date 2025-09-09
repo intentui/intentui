@@ -3,6 +3,9 @@ const withMDX = createMDX()
 /** @type {import("next").NextConfig} */
 const config = {
   devIndicators: false,
+  outputFileTracingIncludes: {
+    "/**": ["./src/content/**", "./content/**"]
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
