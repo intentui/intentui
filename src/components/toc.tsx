@@ -1,11 +1,10 @@
 "use client"
 import { IconAlignmentLeft } from "@intentui/icons"
 import type { TableOfContents, TOCItemType } from "fumadocs-core/server"
-import React, { Suspense, useEffect, useState } from "react"
+import { Suspense, useEffect, useRef, useState } from "react"
 import { Heading } from "react-aria-components"
 import scrollIntoView from "scroll-into-view-if-needed"
 import { twMerge } from "tailwind-merge"
-import { Ads } from "@/components/ads"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { useScrollPosition } from "@/hooks/use-scroll-position"
 
@@ -15,7 +14,7 @@ interface Props {
 }
 
 export function Toc({ className, items }: Props) {
-  const tocRef = React.useRef<HTMLDivElement>(null)
+  const tocRef = useRef<HTMLDivElement>(null)
   const scrollPosition = useScrollPosition(tocRef)
   const ids = items.map((item) => item.url.split("#")[1])
   const activeId = useActiveItem(ids as string[])
@@ -23,7 +22,7 @@ export function Toc({ className, items }: Props) {
 
   const minDepth = items.reduce((acc, item) => Math.min(acc, item.depth), 1000)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!activeId || activeIndex < 2) return
     const anchor = tocRef.current?.querySelector(`li > a[href="#${activeId}"]`)
 
@@ -45,7 +44,7 @@ export function Toc({ className, items }: Props) {
       ref={tocRef}
       className={twMerge(
         "not-prose forced-color-adjust-none",
-        "scrollbar-hidden xl:-mr-6 xl:sticky xl:top-14 xl:h-[calc(100vh-4.75rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-12",
+        "scrollbar-hidden xl:-mr-6 xl:sticky xl:top-14 xl:h-[calc(100vh-16rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-12",
         "top-10",
         className,
       )}
@@ -66,16 +65,12 @@ export function Toc({ className, items }: Props) {
           {items.length > 0 && (
             <ul className="flex flex-col gap-y-2.5">
               {items.map((item) => (
-                <React.Fragment key={item.url}>
-                  <TocLink item={item} activeId={activeId} minDepth={minDepth} />
-                </React.Fragment>
+                <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
               ))}
             </ul>
           )}
         </Suspense>
       </nav>
-
-      <Ads className="hidden md:flex" />
     </aside>
   )
 }

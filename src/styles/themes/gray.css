@@ -182,7 +182,7 @@
   --navbar: oklch(0.190 0.034 264.665);
   --navbar-fg: oklch(0.985 0.002 247.839);
 
-  --sidebar: oklch(0.180 0.034 264.665);
+  --sidebar: var(--color-gray-900);
   --sidebar-fg: oklch(0.985 0.002 247.839);
   --sidebar-primary: oklch(0.546 0.245 262.881);
   --sidebar-primary-fg: oklch(1 0 0);

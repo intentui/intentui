@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { blog } from "#site/content"
 import type { DocPageProps } from "@/app/(app)/docs/[...slug]/page"
-import { Mdx } from "@/components/mdx"
+import { mdxComponents } from "@/components/mdx-components"
 import { Toc } from "@/components/toc"
 import { siteConfig } from "@/config/site"
 
@@ -14,6 +14,8 @@ export default async function Page(props: DocPageProps) {
   if (!article) {
     notFound()
   }
+
+  const MDX = article.body
 
   return (
     <>
@@ -48,7 +50,7 @@ export default async function Page(props: DocPageProps) {
           </div>
 
           <Toc className="mt-4 block sm:mt-8 xl:hidden" items={article.toc} />
-          <Mdx code={article.body} />
+          <MDX components={mdxComponents} />
         </main>
       </div>
       <Toc className="hidden xl:block" items={article.toc} />

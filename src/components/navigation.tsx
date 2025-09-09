@@ -9,6 +9,7 @@ import {
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { GithubLink } from "@/components/github-link"
+import { DesignUiIcon } from "@/components/icons/design-intent-ui-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
 import { Button, buttonStyles } from "@/components/ui/button"
@@ -150,9 +151,9 @@ export function Navigation() {
                     className: "hover:border-blue-500/20**:data-[slot=icon]:text-fg",
                   })}
                   target="_blank"
-                  href="https://dub.sh/NfSXJrL"
+                  href="https://design.intentui.com"
                 >
-                  <IconBrandIntentui />
+                  <DesignUiIcon />
                 </Link>
 
                 <ThemeSwitcher intent="plain" isCircle />
