@@ -202,7 +202,7 @@ export const generateTheme = (
     --navbar: ${adjustLightness(getColorValue(gray, "900"), -2)};
     --navbar-fg: ${getColorValue(gray, "50")};
     
-    --sidebar: ${adjustLightness(getColorValue(gray, "900"), -3)};
+    --sidebar: ${getColorValue(gray, "900")};
     --sidebar-fg: ${getColorValue(gray, "50")};
     --sidebar-primary: ${getColorValue(primary, darkPrimary)};
     --sidebar-primary-fg: ${darkPrimaryFgValue};

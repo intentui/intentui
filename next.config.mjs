@@ -31,6 +31,11 @@ const config = {
   async redirects() {
     return [
       {
+        source: "/docs",
+        destination: "/docs/getting-started/installation",
+        permanent: false,
+      },
+      {
         source: "/docs/2.x/:path*",
         destination: "/docs/:path*",
         permanent: true,
