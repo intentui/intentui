@@ -17,7 +17,7 @@ const navigation = {
   labs: [
     { name: "Github", href: "https://github.com/intentuilabs" },
     {
-      name: "X / Formerly Twitter",
+      name: "X",
       href: "https://x.com/intent/follow?screen_name=irsyadadl",
     },
     { name: "Discord", href: "https://discord.gg/DYmVJ66JUD" },
@@ -36,7 +36,7 @@ const currentYear = new Date().getFullYear()
 
 export function Footer() {
   return (
-    <footer className="border-t pb-16 text-bg-fg sm:pb-0">
+    <footer className="border-t pb-16 text-fg bg-muted sm:pb-0">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -117,7 +117,7 @@ export function Footer() {
         </div>
       </PageContainer>
 
-      <PageContainer className="relative z-20 space-y-1.5 border-t bg-bg py-6 text-center text-muted-fg text-sm **:[a]:font-medium **:[a]:text-fg **:[strong]:font-medium">
+      <PageContainer className="relative z-20 space-y-1.5 border-t py-6 text-center text-muted-fg text-sm **:[a]:font-medium **:[a]:text-fg **:[strong]:font-medium">
         <p>
           <strong className="text-fg">
             {currentYear} &middot; {siteConfig.name} &trade;
