@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import { twJoin } from "tailwind-merge"
 import { Ads } from "@/components/ads"
 import { DocRefs } from "@/components/doc-refs"
-import { Mdx } from "@/components/mdx"
+import { mdxComponents } from "@/components/mdx-components"
 import { OpenIn } from "@/components/open-in"
 import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
@@ -67,11 +67,12 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
 export default async function Page(props: DocPageProps) {
   const params = await props.params
   const page = source.getPage(params.slug)
-
   if (!page) {
     notFound()
   }
   const doc = page.data
+  const MDX = doc.body
+
   return (
     <>
       <div className="min-w-0 max-w-3xl flex-auto px-4 py-8 lg:max-w-none lg:pr-0 lg:pl-8 sm:lg:py-16 xl:px-10">
@@ -110,12 +111,12 @@ export default async function Page(props: DocPageProps) {
               {doc.references && doc.references?.length > 0 && (
                 <DocRefs references={doc.references} />
               )}
-              <OpenIn tree={source.pageTree} url={page.url} />
+              <OpenIn page={doc.content} tree={source.pageTree} url={page.url} />
             </div>
           </div>
 
           <Toc className="mt-4 block sm:mt-8 xl:hidden" items={doc.toc} />
-          <Mdx code={doc.body} />
+          <MDX components={mdxComponents} />
 
           <Ads className="flex md:hidden" />
 

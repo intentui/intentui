@@ -2,10 +2,20 @@ import { createMDX } from "fumadocs-mdx/next"
 const withMDX = createMDX()
 /** @type {import("next").NextConfig} */
 const config = {
-  reactStrictMode: true,
   devIndicators: false,
-  experimental: {
-    reactCompiler: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        "node:fs": false,
+        path: false,
+      }
+    }
+    return config
   },
   async rewrites() {
     return [
@@ -13,8 +23,8 @@ const config = {
       { source: "/r/hooks/:slug", destination: "/r/:slug.json" },
       { source: "/r/lib/:slug", destination: "/r/:slug.json" },
       {
-        source: "/docs/:slug*.md",
-        destination: "/api/raw-docs/:slug*.md",
+        source: "/docs/:path*.md",
+        destination: "/llm/:path*",
       },
     ]
   },

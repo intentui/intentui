@@ -3,9 +3,10 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { blog } from "#site/content"
 import type { DocPageProps } from "@/app/(app)/docs/[...slug]/page"
-import { Mdx } from "@/components/mdx"
+import { mdxComponents } from "@/components/mdx-components"
 import { Toc } from "@/components/toc"
 import { siteConfig } from "@/config/site"
+import { source } from "@/lib/source"
 
 export default async function Page(props: DocPageProps) {
   const { slug } = await props.params
@@ -15,6 +16,10 @@ export default async function Page(props: DocPageProps) {
     notFound()
   }
 
+  const page = source.getPage(params.slug)
+
+  const doc = page.data
+  const MDX = doc.body
   return (
     <>
       <div className="min-w-0 max-w-2xl flex-auto px-4 pt-16 pb-32 lg:max-w-none lg:pr-0">
@@ -48,7 +53,7 @@ export default async function Page(props: DocPageProps) {
           </div>
 
           <Toc className="mt-4 block sm:mt-8 xl:hidden" items={article.toc} />
-          <Mdx code={article.body} />
+          <MDX components={mdxComponents} />
         </main>
       </div>
       <Toc className="hidden xl:block" items={article.toc} />

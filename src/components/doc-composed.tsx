@@ -1,8 +1,5 @@
-"use client"
-
-import { usePathname } from "next/navigation"
-import { docs } from "#site/content"
-import { Choicebox } from "@/components/ui/choicebox"
+import { IconBrandReactjs } from "@intentui/icons"
+import Link from "next/link"
 
 export function DocComposed({
   components,
@@ -11,13 +8,6 @@ export function DocComposed({
   components: string[]
   text?: string | React.ReactNode
 }) {
-  const pathname = usePathname()
-  const name = getLatestOfString(pathname)
-
-  const filteredComponents = docs.filter((doc) => {
-    const filename = doc._file?.path?.split("/").at(-1)?.split(".")[0]
-    return components.includes(filename!)
-  })
   return (
     <div className="not-prose">
       {!text ? (
@@ -27,30 +17,25 @@ export function DocComposed({
             components, so you don’t need to add them individually.
           </p>
           <p className="mb-6">
-            The <strong className="font-medium lowercase">{name}</strong> comes packed with several
-            components to enhance functionality and provide a seamless experience.
+            This component comes packed with several components to enhance functionality and provide
+            a seamless experience.
           </p>
         </>
       ) : (
         <p className="mb-4">{text}</p>
       )}
-      <Choicebox gap={2} columns={2} selectionMode="single" aria-label="Composed Components">
-        {filteredComponents.map((item) => (
-          <Choicebox.Item
-            textValue={item.title}
-            className="**:[[slot=description]]:line-clamp-2"
-            key={item._file?.path}
-            href={`/docs/${item._file?.path.replace(".mdx", "")}`}
-            label={item.title}
-            description={item.description}
-          />
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        {components.map((item, i) => (
+          <Link
+            key={i}
+            href={`/docs/${item}`}
+            className="flex items-center gap-x-1.5 rounded-xl border bg-muted px-3 py-1.5 font-medium text-fg text-sm/6 capitalize hover:bg-secondary"
+          >
+            <IconBrandReactjs />
+            {item.replaceAll("-", " ")}
+          </Link>
         ))}
-      </Choicebox>
+      </div>
     </div>
   )
-}
-
-const getLatestOfString = (path: string): string => {
-  const lastSegment = path.split("/").pop() || ""
-  return lastSegment.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase())
 }

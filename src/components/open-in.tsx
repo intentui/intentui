@@ -1,9 +1,11 @@
 "use client"
 
+import { IconCheck, IconDuplicate } from "@intentui/icons"
 import type { PageTree } from "fumadocs-core/server"
 import { MobilePager } from "@/components/mobile-pager"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu"
+import { useCopy } from "@/hooks/use-copy"
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
@@ -11,11 +13,15 @@ function getPromptUrl(baseURL: string, url: string) {
   )}`
 }
 
-export function OpenIn({ tree, url }: { tree: PageTree.Root; url: string }) {
+export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; page: any }) {
   const fullUrl = `https://intentui.com${url}`
-
+  const { copied, copy } = useCopy()
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
+      <Button intent="secondary" size="sm" onPress={() => copy(page)}>
+        {copied ? <IconCheck /> : <IconDuplicate />}
+        Markdown
+      </Button>
       <Menu>
         <Button intent="secondary" size="sm">
           Open in...
