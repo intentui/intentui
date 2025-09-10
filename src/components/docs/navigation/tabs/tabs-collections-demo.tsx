@@ -19,11 +19,6 @@ const tabs = [
     title: "Pricing",
     content: "Find the pricing information on this tab.",
   },
-  {
-    id: 4,
-    title: "Reviews",
-    content: "Read user reviews and ratings here.",
-  },
 ]
 
 export default function TabsCollectionsDemo() {

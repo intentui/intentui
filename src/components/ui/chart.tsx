@@ -23,8 +23,8 @@ import type {
   ValueType,
 } from "recharts/types/component/DefaultTooltipContent"
 import type { ContentType as TooltipContentType } from "recharts/types/component/Tooltip"
-import { twJoin, twMerge } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { twMerge } from "tailwind-merge"
+import { cx } from "@/lib/primitive"
 
 // #region Chart Types
 type ChartType = "default" | "stacked" | "percent"
@@ -546,13 +546,11 @@ const ChartLegendContent = ({
   return (
     <ToggleButtonGroup
       ref={ref}
-      className={composeTailwindRenderProps(
+      className={cx(
+        "flex flex-wrap items-center gap-x-1",
+        verticalAlign === "top" ? "pb-3" : "pt-3",
+        align === "right" ? "justify-end" : align === "left" ? "justify-start" : "justify-center",
         className,
-        twJoin(
-          "flex flex-wrap items-center gap-x-1",
-          verticalAlign === "top" ? "pb-3" : "pt-3",
-          align === "right" ? "justify-end" : align === "left" ? "justify-start" : "justify-center",
-        ),
       )}
       selectedKeys={selectedLegend ? [selectedLegend] : undefined}
       onSelectionChange={(v) => {

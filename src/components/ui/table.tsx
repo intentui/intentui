@@ -26,7 +26,7 @@ import {
   useTableOptions,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Checkbox } from "./checkbox"
 
 interface TableProps extends Omit<TablePrimitiveProps, "className"> {
@@ -81,9 +81,9 @@ const Table = ({ allowResize, className, bleed, ref, ...props }: TableProps) => 
 const ColumnResizer = ({ className, ...props }: ColumnResizerProps) => (
   <ColumnResizerPrimitive
     {...props}
-    className={composeTailwindRenderProps(
-      className,
+    className={cx(
       "absolute top-0 right-0 bottom-0 grid w-px &[data-resizable-direction=left]:cursor-e-resize &[data-resizable-direction=right]:cursor-w-resize touch-none place-content-center px-1 data-[resizable-direction=both]:cursor-ew-resize [&[data-resizing]>div]:bg-primary",
+      className,
     )}
   >
     <div className="h-full w-px bg-border py-(--gutter-y)" />
@@ -105,8 +105,7 @@ const TableColumn = ({ isResizable = false, className, ...props }: TableColumnPr
     <Column
       data-slot="table-column"
       {...props}
-      className={composeTailwindRenderProps(
-        className,
+      className={cx(
         twJoin(
           "text-left font-medium text-muted-fg",
           "relative allows-sorting:cursor-default outline-hidden data-dragging:cursor-grabbing",
@@ -114,6 +113,7 @@ const TableColumn = ({ isResizable = false, className, ...props }: TableColumnPr
           !bleed && "sm:last:pr-1 sm:first:pl-1",
           isResizable && "overflow-hidden truncate",
         ),
+        className,
       )}
     >
       {(values) => (
@@ -155,7 +155,7 @@ const TableHeader = <T extends object>({
   return (
     <TableHeaderPrimitive
       data-slot="table-header"
-      className={composeTailwindRenderProps(className, "border-b")}
+      className={cx("border-b", className)}
       ref={ref}
       {...props}
     >
@@ -247,13 +247,13 @@ const TableCell = ({ className, ...props }: CellProps) => {
     <Cell
       data-slot="table-cell"
       {...props}
-      className={composeTailwindRenderProps(
-        className,
+      className={cx(
         twJoin(
           "group px-4 py-(--gutter-y) align-middle outline-hidden first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2)) group-has-data-focus-visible-within:text-fg",
           !bleed && "sm:last:pr-1 sm:first:pl-1",
           allowResize && "overflow-hidden truncate",
         ),
+        className,
       )}
     />
   )

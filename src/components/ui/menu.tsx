@@ -21,7 +21,7 @@ import {
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { composeTailwindRenderProps, cx } from "@/lib/primitive"
 import {
   DropdownDescription,
   DropdownKeyboard,
@@ -48,9 +48,9 @@ const MenuTrigger = ({ className, ref, ...props }: MenuTriggerProps) => (
   <Button
     ref={ref}
     data-slot="menu-trigger"
-    className={composeTailwindRenderProps(
-      className,
+    className={cx(
       "relative inline text-left outline-hidden focus-visible:ring-1 focus-visible:ring-primary",
+      className,
     )}
     {...props}
   />

@@ -6,8 +6,6 @@ const navs = [
   { url: "/", label: "Home" },
   { url: "/themes", label: "Themes" },
   { url: "/colors", label: "Colors" },
-  { url: "https://intentui.com/icons", label: "Icons" },
-  { url: "https://irsyad.co/templates", label: "Templates" },
 ]
 
 export default function TabsLinkDemo() {

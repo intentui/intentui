@@ -3,7 +3,7 @@
 import { IconDeviceDesktop2, IconMoon, IconSun } from "@intentui/icons"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 
 export function ThemeSwitcher({
   isCircle = false,
@@ -23,7 +23,7 @@ export function ThemeSwitcher({
       isCircle={isCircle}
       intent={intent}
       size="sq-sm"
-      className={composeTailwindRenderProps(className, "**:data-[slot=icon]:text-fg")}
+      className={cx("**:data-[slot=icon]:text-fg", className)}
       aria-label="Switch theme"
       onPress={toggleTheme}
       {...props}

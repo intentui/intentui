@@ -4,7 +4,7 @@ import { IconHamburger } from "@intentui/icons"
 import { createContext, use, useCallback, useMemo, useState } from "react"
 import { twJoin, twMerge } from "tailwind-merge"
 import { useMediaQuery } from "@/hooks/use-media-query"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Button, type ButtonProps } from "./button"
 import { Link, type LinkProps } from "./link"
 import { Separator } from "./separator"
@@ -176,20 +176,23 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
     <Link
       data-slot="navbar-item"
       aria-current={isCurrent ? "page" : undefined}
-      className={composeTailwindRenderProps(className, [
-        "href" in props ? "cursor-pointer" : "cursor-default",
-        "group/sidebar-item hover:bg-secondary",
-        "aria-[current=page]:text-fg aria-[current=page]*:data-[slot=icon]:text-fg",
-        "col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid md:supports-[grid-template-columns:subgrid]:grid-cols-none",
-        "relative min-w-0 items-center gap-x-3 rounded-lg p-2 text-left font-medium text-base/6 sm:text-sm/5 md:gap-x-2.5",
-        "*:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-fg sm:*:data-[slot=icon]:size-4",
-        "*:data-[slot=loader]:size-5 *:data-[slot=loader]:shrink-0 sm:*:data-[slot=loader]:size-4",
-        "*:not-nth-2:last:data-[slot=icon]:row-start-1 *:not-nth-2:last:data-[slot=icon]:ml-auto *:not-nth-2:last:data-[slot=icon]:size-5 sm:*:not-nth-2:last:data-[slot=icon]:size-4",
-        "*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-6 sm:*:data-[slot=avatar]:size-5",
-        "*:data-[slot=icon]:text-muted-fg pressed:*:data-[slot=icon]:text-fg hover:*:data-[slot=icon]:text-fg",
-        "outline-hidden focus-visible:inset-ring focus-visible:inset-ring-ring focus-visible:ring-2 focus-visible:ring-ring/20",
-        "text-left disabled:cursor-default disabled:opacity-50",
-      ])}
+      className={cx(
+        [
+          "href" in props ? "cursor-pointer" : "cursor-default",
+          "group/sidebar-item hover:bg-secondary",
+          "aria-[current=page]:text-fg aria-[current=page]*:data-[slot=icon]:text-fg",
+          "col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid md:supports-[grid-template-columns:subgrid]:grid-cols-none",
+          "relative min-w-0 items-center gap-x-3 rounded-lg p-2 text-left font-medium text-base/6 sm:text-sm/5 md:gap-x-2.5",
+          "*:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-fg sm:*:data-[slot=icon]:size-4",
+          "*:data-[slot=loader]:size-5 *:data-[slot=loader]:shrink-0 sm:*:data-[slot=loader]:size-4",
+          "*:not-nth-2:last:data-[slot=icon]:row-start-1 *:not-nth-2:last:data-[slot=icon]:ml-auto *:not-nth-2:last:data-[slot=icon]:size-5 sm:*:not-nth-2:last:data-[slot=icon]:size-4",
+          "*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-6 sm:*:data-[slot=avatar]:size-5",
+          "*:data-[slot=icon]:text-muted-fg pressed:*:data-[slot=icon]:text-fg hover:*:data-[slot=icon]:text-fg",
+          "outline-hidden focus-visible:inset-ring focus-visible:inset-ring-ring focus-visible:ring-2 focus-visible:ring-ring/20",
+          "text-left disabled:cursor-default disabled:opacity-50",
+        ],
+        className,
+      )}
       {...props}
     >
       {(values) => (
@@ -271,7 +274,7 @@ const NavbarTrigger = ({ className, onPress, ref, ...props }: NavbarTriggerProps
       intent="plain"
       aria-label={props["aria-label"] || "Toggle Navbar"}
       size="sq-sm"
-      className={composeTailwindRenderProps(className, "-ml-2 min-lg:hidden")}
+      className={cx("-ml-2 min-lg:hidden", className)}
       onPress={(event) => {
         onPress?.(event)
         toggleNavbar()

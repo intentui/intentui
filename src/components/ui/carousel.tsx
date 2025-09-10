@@ -4,7 +4,7 @@ import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react"
 import { createContext, use, useCallback, useEffect, useState } from "react"
 import { twMerge } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Button, type ButtonProps } from "./button"
 
 type CarouselApi = UseEmblaCarouselType[1]
@@ -215,10 +215,7 @@ const CarouselButton = ({
       ref={ref}
       size={size}
       isCircle={isCircle}
-      className={composeTailwindRenderProps(
-        className,
-        orientation === "vertical" ? "rotate-90" : "",
-      )}
+      className={cx(orientation === "vertical" ? "rotate-90" : "", className)}
       isDisabled={!canScroll}
       onPress={scroll}
       {...props}

@@ -3,7 +3,7 @@
 import type { ColorFieldProps as ColorFieldPrimitiveProps } from "react-aria-components"
 import { ColorField as ColorFieldPrimitive } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { ColorPicker } from "./color-picker"
 import { ColorSwatch } from "./color-swatch"
 import { Description, FieldError, FieldGroup, type FieldProps, Input, Label } from "./field"
@@ -32,9 +32,9 @@ const ColorField = ({
     <ColorFieldPrimitive
       {...props}
       aria-label={props["aria-label"] ?? "Color field"}
-      className={composeTailwindRenderProps(
-        className,
+      className={cx(
         "**:data-[slot=color-swatch]:-ml-0.5 group flex w-full flex-col gap-y-1 *:data-[slot=label]:font-medium",
+        className,
       )}
     >
       {label && <Label>{label}</Label>}

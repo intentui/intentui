@@ -128,7 +128,7 @@ export default async function Page(props: DocPageProps) {
 
           <MDX components={mdxComponents} />
 
-          <Ads className="md:hidden" />
+          <Ads className="mt-4 md:hidden" />
 
           <Pager tree={source.pageTree} url={page.url} />
         </div>
@@ -137,7 +137,7 @@ export default async function Page(props: DocPageProps) {
         <div className="flex-1">
           <Toc items={page.data.toc} />
         </div>
-        <Ads className="sticky right-0 bottom-6 mb-16 self-start" />
+        <Ads className="sticky right-0 bottom-8 mb-16 self-start" />
       </div>
     </>
   )

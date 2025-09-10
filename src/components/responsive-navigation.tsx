@@ -10,7 +10,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 
 interface ResponsiveNavigationProps {
   className?: string
@@ -61,14 +61,15 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
             offset={10}
             onOpenChange={setOpen}
             isOpen={open}
-            className={composeTailwindRenderProps(popover?.className, [
+            className={cx(
               "placement-bottom:entering:slide-in-from-top-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]",
               "entering:fade-in entering:animate-in",
               "exiting:fade-out exiting:animate-out",
               "placement-bottom:entering:slide-in-from-top-1",
               "placement-bottom:exiting:slide-out-to-top-1",
               "relative z-50 flex w-full flex-col gap-y-8 px-2 py-(--gap)",
-            ])}
+              popover?.className,
+            )}
             containerPadding={0}
           >
             <div>
