@@ -45,7 +45,7 @@ const NumberField = ({
   return (
     <NumberFieldPrimitive
       {...props}
-      className={composeTailwindRenderProps(className, "group flex flex-col gap-y-1.5")}
+      className={composeTailwindRenderProps(className, "group flex flex-col gap-y-1 *:data-[slot=label]:font-medium")}
     >
       {label && <Label>{label}</Label>}
       <FieldGroup
