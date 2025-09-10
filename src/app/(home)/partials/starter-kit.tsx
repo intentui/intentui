@@ -17,7 +17,7 @@ export const starterKits = [
   {
     icon: IconBrandLaravel,
     name: "Laravel",
-    url: "https://github.com/intentuilabs/inertia.ts",
+    url: "https://github.com/intentuilabs/laravel",
     description: "Server-driven starter with routing, auth, and front-end integration ready to go.",
   },
   {

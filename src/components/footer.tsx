@@ -13,6 +13,8 @@ const navigation = {
     { name: "All components", href: "/components" },
     { name: "Docs", href: "/docs" },
     { name: "Blocks", href: "/blocks" },
+    { name: "Showcase", href: "/showcase" },
+    { name: "Blog", href: "/blog" },
   ],
   labs: [
     { name: "Github", href: "https://github.com/intentuilabs" },
@@ -23,12 +25,24 @@ const navigation = {
     { name: "Discord", href: "https://discord.gg/DYmVJ66JUD" },
     { name: "Design", href: "https://design.intentui.com" },
     { name: "Templates", href: "https://design.intentui.com/products" },
+    { name: "Sponsor", href: "https://github.com/sponsors/irsyadadl" },
     { name: "Icons", href: "/icons" },
   ],
-  extras: [
-    { name: "Showcase", href: "/showcase" },
-    { name: "Blog", href: "/blog" },
-    { name: "Sponsor", href: "https://github.com/sponsors/irsyadadl" },
+  templates: [
+    { name: "Deploy", href: "https://design.intentui.com/products/ecommerce-design-template" },
+    { name: "Screencast", href: "https://design.intentui.com/products/course-platform-template" },
+    {
+      name: "Provision",
+      href: "https://design.intentui.com/products/provision-dashboard-template",
+    },
+    { name: "Clinic", href: "https://design.intentui.com/products/clinic-dashboard-template" },
+    { name: "Cartel", href: "https://design.intentui.com/products/commerce-dashboard-template" },
+    {
+      name: "Personal",
+      href: "https://design.intentui.com/products/modern-personal-website-template",
+    },
+    { name: "Axis", href: "https://design.intentui.com/products/retail-dashboard-template" },
+    { name: "Explore more", href: "https://design.intentui.com/products" },
   ],
 }
 
@@ -41,77 +55,71 @@ export function Footer() {
         Footer
       </h2>
       <PageContainer className="relative z-20 py-12">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="flex items-center gap-x-2 self-start text-base/6">
-            <IconBrandIntentui className="size-7" />
-            <span className="font-medium">
-              Intent <i className="text-muted-fg not-italic">UI</i>
-            </span>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-[20rem_auto] lg:grid-cols-[18rem_auto] lg:gap-10 xl:grid-cols-[20rem_auto] xl:gap-24">
+          <div>
+            <Link href="/" className="flex items-center font-semibold text-fg text-lg">
+              <IconBrandIntentui className="size-5 text-primary" />
+              <span className="ml-2">
+                Intent <span className="text-muted-fg">UI</span>
+              </span>
+            </Link>
+            <p className="mt-4 max-w-xs text-muted-fg text-sm">
+              Accessible React component library to copy, customize, and own your UI.
+            </p>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="font-semibold text-fg text-sm">Resources</h3>
-                <ul className="mt-3 space-y-2">
-                  {navigation.resources.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className="text-muted-fg text-sm hover:text-fg">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="font-semibold text-fg text-sm">Starter Kits</h3>
-                <ul className="mt-3 space-y-2">
-                  {starterKits.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        target="_blank"
-                        href={item.url}
-                        className="text-muted-fg text-sm hover:text-fg"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="grid grid-cols-2 gap-y-10 lg:grid-cols-4 lg:gap-10 xl:gap-6 xl:gap-y-6">
+            <div>
+              <h3 className="mb-2 font-medium text-muted-fg text-sm/6">Resources</h3>
+              <ul className="space-y-2 text-sm/6">
+                {navigation.resources.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="hover:underline">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="gap-8 md:grid md:grid-cols-2">
-              <div>
-                <h3 className="font-semibold text-fg text-sm">Labs</h3>
-                <ul className="mt-3 space-y-2">
-                  {navigation.labs.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        target="_blank"
-                        href={item.href}
-                        className="text-muted-fg text-sm hover:text-fg"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-fg text-sm">Extra</h3>
-                <ul className="mt-3 space-y-2">
-                  {navigation.extras.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        target="_blank"
-                        href={item.href}
-                        className="text-muted-fg text-sm hover:text-fg"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div>
+              <h3 className="mb-2 font-medium text-muted-fg text-sm/6">Labs</h3>
+              <ul className="space-y-2 text-sm/6">
+                {navigation.labs.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="hover:underline" target="_blank">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-2 font-medium text-muted-fg text-sm/6">Starter Kits</h3>
+              <ul className="space-y-2 text-sm/6">
+                {starterKits.map((kit) => (
+                  <li key={kit.name}>
+                    <Link
+                      href={kit.url}
+                      className="hover:underline"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {kit.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-2 font-medium text-muted-fg text-sm/6">Templates</h3>
+              <ul className="space-y-2 text-sm/6">
+                {navigation.templates.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="hover:underline" target="_blank">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
