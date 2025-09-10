@@ -407,6 +407,7 @@ const SidebarItem = ({
             "**:data-[slot=avatar]:*:size-5 **:data-[slot=avatar]:size-5",
             "has-[[data-slot=avatar]]:has-[[data-slot=sidebar-label]]:gap-2 has-[[data-slot=icon]]:has-[[data-slot=sidebar-label]]:gap-2",
             "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] p-2 **:last:data-[slot=icon]:ml-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:text-sm/5",
+            "has-[a]:p-0",
             "[--sidebar-current-bg:var(--color-sidebar-primary)] [--sidebar-current-fg:var(--color-sidebar-primary-fg)]",
             isCurrent &&
               "bg-(--sidebar-current-bg)/90 font-medium text-(--sidebar-current-fg) hover:bg-(--sidebar-current-bg) hover:text-(--sidebar-current-fg) **:data-[slot=icon]:text-(--sidebar-current-fg) hover:**:data-[slot=icon]:text-(--sidebar-current-fg) [&_.text-muted-fg]:text-sidebar-primary-fg/80",
@@ -471,7 +472,7 @@ const SidebarLink = ({ className, ref, ...props }: SidebarLinkProps) => {
     <Link
       ref={ref}
       className={composeTailwindRenderProps(className, [
-        "col-span-full min-w-0 shrink-0 items-center focus:outline-hidden",
+        "col-span-full min-w-0 shrink-0 items-center focus:outline-hidden p-2",
         "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
       ])}
       {...props}
