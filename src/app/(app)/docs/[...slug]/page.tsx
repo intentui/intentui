@@ -9,6 +9,7 @@ import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
 import { source } from "@/lib/source"
 import { title } from "@/lib/utils"
+
 export interface DocPageProps {
   params: Promise<{
     slug: string[]

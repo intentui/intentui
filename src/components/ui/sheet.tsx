@@ -38,13 +38,16 @@ const generateCompoundVariants = (sides: Array<Sides>) => {
 }
 
 const sheetContentStyles = tv({
-  base: "fixed z-50 grid gap-4 border-muted-fg/20 bg-overlay text-overlay-fg shadow-lg transition ease-in-out dark:border-border",
+  base: [
+    "fixed z-50 grid gap-4 border-muted-fg/20 bg-overlay text-overlay-fg shadow-lg dark:border-border",
+    "transform-gpu transition ease-in-out will-change-transform",
+  ],
   variants: {
     isEntering: {
-      true: "fade-in animate-in duration-300",
+      true: "animate-in duration-500",
     },
     isExiting: {
-      true: "fade-out animate-out duration-200",
+      true: "animate-out duration-300",
     },
     side: {
       top: "entering:slide-in-from-top exiting:slide-out-to-top inset-x-0 top-0 rounded-b-2xl border-b",
@@ -93,14 +96,12 @@ const SheetContent = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={({ isExiting, isEntering }) =>
-        twJoin(
-          "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
-          isEntering && "fade-in animate-in duration-500",
-          isExiting && "fade-out animate-out duration-300",
-          isBlurred && "backdrop-blur-sm backdrop-filter",
-        )
-      }
+      className={twJoin(
+        "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
+        "entering:fade-in-0 entering:animate-in entering:duration-500",
+        "exiting:fade-out-0 exiting:animate-out exiting:duration-300",
+        isBlurred && "backdrop-blur-sm backdrop-filter",
+      )}
       {...props}
     >
       <Modal
