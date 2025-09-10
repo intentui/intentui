@@ -10004,6 +10004,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/switch",
         "http://localhost:3000/r/time-field"
       ],
