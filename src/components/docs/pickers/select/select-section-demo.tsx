@@ -6,13 +6,13 @@ export default function SelectSectionDemo() {
   return (
     <Select defaultSelectedKey={1} aria-label="Countries" placeholder="Select a country">
       <Select.Trigger />
-      <Select.List items={countries}>
+      <Select.Content items={countries}>
         {(country) => (
           <Select.Section title={country.name} items={country.cities}>
-            {(city) => <Select.Option textValue={city.name}>{city.name}</Select.Option>}
+            {(city) => <Select.Item textValue={city.name}>{city.name}</Select.Item>}
           </Select.Section>
         )}
-      </Select.List>
+      </Select.Content>
     </Select>
   )
 }

@@ -5,6 +5,7 @@ import {
   accentColors500,
   adjustLightness,
   neutralColors,
+  subtleColors300,
 } from "@/lib/colors"
 
 type BlackWhite = "white" | "black"
@@ -32,6 +33,7 @@ export const generateTheme = (
   const isShade400Primary = accentColors400.includes(primary)
   const isShade500Primary = accentColors500.includes(primary)
   const isShade300Primary = accentColors300.includes(primary)
+  const isSubtle300Primary = subtleColors300.includes(primary)
 
   const isNeutralAccent = neutralColors.includes(accent)
   const isShade400Accent = accentColors400.includes(accent)
@@ -108,50 +110,71 @@ export const generateTheme = (
   const darkAccentFgValue = getFgValue(accent, darkAccentFg)
 
   const chartShadesLight: Array<Shade> = isNeutralPrimary
-    ? ["900", "700", "600", "500", "400"]
-    : ["600", "400", "300", "200", "100"]
+    ? ["800", "700", "600", "500", "400"]
+    : ["600", "500", "400", "300", "200"]
 
   const chartShadesDark: Array<Shade> = isNeutralPrimary
-    ? ["800", "700", "500", "400", "300"]
+    ? ["50", "200", "300", "400", "500"]
     : ["700", "500", "400", "300", "200"]
 
   const lightRingShade = isNeutralPrimary ? "950" : "600"
   const darkRingShade = isNeutralPrimary ? "50" : "600"
 
+  const subtleBaseShadePrimary = (
+    isNeutralPrimary ? "600" : isShade400Primary ? "400" : "500"
+  ) as Shade
+  const subtleAlphaLight = isNeutralPrimary ? 0.1 : subtleBaseShadePrimary === "400" ? 0.2 : 0.15
+  const subtleAlphaDark = 0.1
+
   const lightColors = `--bg: ${getColorValue("white")};
-    --fg: ${getColorValue(gray, "950")};
-    
+    --fg: ${getColorValue(gray, "900")};
+
     --primary: ${getColorValue(primary, lightPrimary)};
     --primary-fg: ${lightPrimaryFgValue};
-    
+
+    --primary-subtle: ${`${getColorValue(primary, subtleBaseShadePrimary).slice(0, -1)} / ${subtleAlphaLight})`};
+    --primary-subtle-fg: ${getColorValue(primary, "700")};
+
     --secondary: ${getColorValue(gray, "200")};
     --secondary-fg: ${getColorValue(gray, "950")};
-    
+
     --overlay: ${getColorValue("white")};
     --overlay-fg: ${getColorValue(gray, "950")};
-    
+
     --accent: ${getColorValue(accent, lightAccent)};
     --accent-fg: ${lightAccentFgValue};
-    
+
     --muted: ${getColorValue(gray, "100")};
     --muted-fg: ${getColorValue(gray, "500")};
-    
+
     --success: ${getColorValue("emerald", "600")};
     --success-fg: ${getColorValue("white")};
-    
+
+    --success-subtle: ${`${getColorValue("emerald", "500").slice(0, -1)} / 0.15)`};
+    --success-subtle-fg: ${getColorValue("emerald", "700")};
+
+    --info-subtle: ${`${getColorValue("sky", "500").slice(0, -1)} / 0.15)`};
+    --info-subtle-fg: ${getColorValue("sky", "700")};
+
     --warning: ${warningColor};
     --warning-fg: ${getColorValue("amber", "950")};
-    
+
+    --warning-subtle: ${`${getColorValue("amber", "400").slice(0, -1)} / 0.2)`};
+    --warning-subtle-fg: ${getColorValue("amber", "700")};
+
     --danger: ${dangerColor};
     --danger-fg: ${getColorValue("red", "50")};
-    
+
+    --danger-subtle: ${`${getColorValue("red", "500").slice(0, -1)} / 0.15)`};
+    --danger-subtle-fg: ${getColorValue("red", "700")};
+
     --border: ${adjustLightness(getColorValue(gray, "300"), +4)};
     --input: ${getColorValue(gray, "300")};
     --ring: ${getColorValue(primary, lightRingShade)};
-    
+
     --navbar: ${adjustLightness(getColorValue(gray, "50"), +1)};
     --navbar-fg: ${getColorValue(gray, "950")};
-    
+
     --sidebar: ${getColorValue(gray, "50")};
     --sidebar-fg: ${getColorValue(gray, "950")};
     --sidebar-primary: ${getColorValue(primary, lightPrimary)};
@@ -160,7 +183,7 @@ export const generateTheme = (
     --sidebar-accent-fg: ${lightAccentFgValue};
     --sidebar-border: ${adjustLightness(getColorValue(gray, "300"), +3)};
     --sidebar-ring: ${getColorValue(primary, lightRingShade)};
-    
+
     --chart-1: ${getColorValue(primary, chartShadesLight[0])};
     --chart-2: ${getColorValue(primary, chartShadesLight[1])};
     --chart-3: ${getColorValue(primary, chartShadesLight[2])};
@@ -168,40 +191,55 @@ export const generateTheme = (
     --chart-5: ${getColorValue(primary, chartShadesLight[4])};
     `
 
-  const darkColors = `--bg: ${adjustLightness(getColorValue(gray, "950"), -5)};
+  const darkColors = `--bg: ${adjustLightness(getColorValue(gray, "950"), +4)};
     --fg: ${getColorValue(gray, "50")};
-    
+
     --primary: ${getColorValue(primary, darkPrimary)};
     --primary-fg: ${darkPrimaryFgValue};
-    
+
+    --primary-subtle: ${`${getColorValue(primary, subtleBaseShadePrimary).slice(0, -1)} / ${subtleAlphaDark})`};
+    --primary-subtle-fg: ${getColorValue(primary, isSubtle300Primary ? "300" : "400")};
+
     --secondary: ${adjustLightness(getColorValue(gray, "800"), -3)};
     --secondary-fg: ${getColorValue(gray, "50")};
-    
+
+    --overlay: ${adjustLightness(getColorValue(gray, "900"), 0)};
+    --overlay-fg: ${getColorValue(gray, "50")};
+
     --accent: ${getColorValue(accent, darkAccent)};
     --accent-fg: ${darkAccentFgValue};
-    
+
     --muted: ${getColorValue(gray, "900")};
     --muted-fg: ${getColorValue(gray, "400")};
-    
-    --overlay: ${adjustLightness(getColorValue(gray, "900"), -3)};
-    --overlay-fg: ${getColorValue(gray, "50")};
-    
+
     --success: ${getColorValue("emerald", "600")};
     --success-fg: ${getColorValue("white")};
-    
+
+    --success-subtle: ${`${getColorValue("emerald", "500").slice(0, -1)} / 0.1)`};
+    --success-subtle-fg: ${getColorValue("emerald", "400")};
+
+    --info-subtle: ${`${getColorValue("sky", "500").slice(0, -1)} / 0.1)`};
+    --info-subtle-fg: ${getColorValue("sky", "300")};
+
     --warning: ${warningColor};
     --warning-fg: ${getColorValue("amber", "950")};
-    
+
+    --warning-subtle: ${`${getColorValue("amber", "400").slice(0, -1)} / 0.1)`};
+    --warning-subtle-fg: ${getColorValue("amber", "400")};
+
     --danger: ${dangerColor};
     --danger-fg: ${getColorValue("red", "50")};
-    
+
+    --danger-subtle: ${`${getColorValue("red", "500").slice(0, -1)} / 0.1)`};
+    --danger-subtle-fg: ${getColorValue("red", "400")};
+
     --border: ${adjustLightness(getColorValue(gray, "700"), -10)};
     --input: ${adjustLightness(getColorValue(gray, "700"), -5)};
     --ring: ${getColorValue(primary, darkRingShade)};
-    
+
     --navbar: ${adjustLightness(getColorValue(gray, "900"), -2)};
     --navbar-fg: ${getColorValue(gray, "50")};
-    
+
     --sidebar: ${getColorValue(gray, "900")};
     --sidebar-fg: ${getColorValue(gray, "50")};
     --sidebar-primary: ${getColorValue(primary, darkPrimary)};
@@ -210,7 +248,7 @@ export const generateTheme = (
     --sidebar-accent-fg: ${darkAccentFgValue};
     --sidebar-border: ${getColorValue(gray, "800")};
     --sidebar-ring: ${getColorValue(primary, darkRingShade)};
-   
+
     --chart-1: ${getColorValue(primary, chartShadesDark[0])};
     --chart-2: ${getColorValue(primary, chartShadesDark[1])};
     --chart-3: ${getColorValue(primary, chartShadesDark[2])};
@@ -230,7 +268,7 @@ export const generateTheme = (
   return `:root {
     ${lightColors}${radiusValues}
   }
-  
+
   .dark {
     ${darkColors}
   }`

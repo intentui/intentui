@@ -66,14 +66,14 @@ export function Blocks() {
             </div>
             <Select aria-label="Select a role" placeholder="Select a role">
               <Select.Trigger />
-              <Select.List items={roles}>
+              <Select.Content items={roles}>
                 {(item) => (
-                  <Select.Option id={item.id} textValue={item.name}>
+                  <Select.Item id={item.id} textValue={item.name}>
                     <Select.Label>{item.name}</Select.Label>
                     <Select.Description>{item.description}</Select.Description>
-                  </Select.Option>
+                  </Select.Item>
                 )}
-              </Select.List>
+              </Select.Content>
             </Select>
             <ComboBox placeholder="Select a user" aria-label="Select a user">
               <ComboBox.Input />

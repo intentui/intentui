@@ -34,7 +34,7 @@ export default function SelectSearchableDemo() {
               className="max-h-[inherit] min-w-[inherit] border-0 shadow-none"
               items={languages}
             >
-              {(item) => <Select.Option>{item.name}</Select.Option>}
+              {(item) => <Select.Item>{item.name}</Select.Item>}
             </ListBox>
           </Autocomplete>
         </Dialog>

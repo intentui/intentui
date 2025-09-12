@@ -14,13 +14,13 @@ export default function SelectValidationDemo() {
     <Form onSubmit={(e) => e.preventDefault()} className="space-y-2">
       <Select label="Design software" placeholder="Select a software" isRequired>
         <Select.Trigger />
-        <Select.List items={software}>
+        <Select.Content items={software}>
           {(item) => (
-            <Select.Option id={item.id} textValue={item.name}>
+            <Select.Item id={item.id} textValue={item.name}>
               {item.name}
-            </Select.Option>
+            </Select.Item>
           )}
-        </Select.List>
+        </Select.Content>
       </Select>
       <Button type="submit">Submit</Button>
     </Form>

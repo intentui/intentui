@@ -44,11 +44,11 @@ const RangeCalendar = <T extends DateValue>({
                   <CalendarCell
                     date={date}
                     className={twMerge([
-                      "shrink-0 [--cell-fg:var(--color-primary)] [--cell:color-mix(in_oklab,var(--color-primary)_15%,white_85%)]",
-                      "dark:[--cell-fg:color-mix(in_oklab,var(--color-primary)_80%,white_20%)] dark:[--cell:color-mix(in_oklab,var(--color-primary)_30%,black_45%)]",
+                      "shrink-0 [--cell-fg:var(--color-primary-subtle-fg)] [--cell:var(--color-primary-subtle)]",
                       "group/calendar-cell relative size-11 cursor-default outline-hidden [line-height:2.286rem] selection-start:rounded-s-lg data-selection-end:rounded-e-lg data-outside-month:text-muted-fg sm:size-9 sm:text-sm",
-                      "selected:bg-(--cell)/70 selected:text-(--cell-fg) dark:selected:bg-(--cell)",
-                      "selected:after:bg-primary-fg invalid:selected:bg-danger/10 focus-visible:after:bg-primary-fg dark:invalid:selected:bg-danger/13",
+                      "selected:bg-(--cell) selected:text-(--cell-fg)",
+                      "selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
+                      "invalid:selected:bg-danger-subtle",
                       "[td:first-child_&]:rounded-s-lg [td:last-child_&]:rounded-e-lg",
                       "forced-colors:selected:bg-[Highlight] forced-colors:selected:text-[HighlightText] forced-colors:invalid:selected:bg-[Mark]",
                       date.compare(now) === 0 &&
@@ -69,10 +69,14 @@ const RangeCalendar = <T extends DateValue>({
                             ? "bg-primary text-primary-fg group-invalid/calendar-cell:bg-danger group-invalid/calendar-cell:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] forced-colors:group-invalid/calendar-cell:bg-[Mark]"
                             : isSelected
                               ? [
-                                  "group-hover/calendar-cell:bg-primary/15 dark:group-hover/calendar-cell:bg-primary/20 forced-colors:group-hover/calendar-cell:bg-[Highlight]",
-                                  "group-pressed/calendar-cell:bg-(--cell) forced-colors:text-[HighlightText] forced-colors:group-pressed/calendar-cell:bg-[Highlight]",
-                                  "group-invalid/calendar-cell:group-hover/calendar-cell:bg-danger/20 group-invalid/calendar-cell:group-pressed/calendar-cell:bg-danger/30 forced-colors:group-invalid/calendar-cell:group-pressed/calendar-cell:bg-[Mark]",
-                                  "group-invalid/calendar-cell:text-danger forced-colors:group-invalid:group-hover/calendar-cell:bg-[Mark]",
+                                  // hover
+                                  "group-hover/calendar-cell:bg-primary/15",
+                                  // pressed
+                                  "group-pressed/calendar-cell:bg-(--cell)",
+                                  // invalid
+                                  "group-invalid/calendar-cell:text-danger-subtle-fg group-invalid/calendar-cell:group-hover/calendar-cell:bg-danger/15 group-invalid/calendar-cell:group-pressed/calendar-cell:bg-danger/30",
+                                  // forced-colors
+                                  "forced-colors:text-[HighlightText] forced-colors:group-pressed/calendar-cell:bg-[Highlight] forced-colors:group-hover/calendar-cell:bg-[Highlight] forced-colors:group-invalid/calendar-cell:group-pressed/calendar-cell:bg-[Mark] forced-colors:group-invalid:group-hover/calendar-cell:bg-[Mark]",
                                 ]
                               : "group-hover/calendar-cell:bg-secondary-fg/15 group-pressed/calendar-cell:bg-secondary-fg/20 forced-colors:group-pressed/calendar-cell:bg-[Highlight]",
                           isDisabled && "opacity-50 forced-colors:text-[GrayText]",

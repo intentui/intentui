@@ -40,9 +40,9 @@ const ColorSelect = ({
       placeholder={placeholder}
     >
       <Select.Trigger className="capitalize" />
-      <Select.List>
+      <Select.Content>
         {filteredKeys.map((key) => (
-          <Select.Option
+          <Select.Item
             className="capitalize hover:**:data-[slot=icon]:inset-ring-fg/30"
             textValue={key}
             key={key}
@@ -65,9 +65,9 @@ const ColorSelect = ({
               }
             />
             <Select.Label>{key}</Select.Label>
-          </Select.Option>
+          </Select.Item>
         ))}
-      </Select.List>
+      </Select.Content>
     </Select>
   )
 }
@@ -148,9 +148,9 @@ export function ThemeCustomizer({ selectedColors, setSelectedColors }: ThemeCust
           placeholder="Select radius"
         >
           <Select.Trigger className="capitalize" />
-          <Select.List>
+          <Select.Content>
             {filteredRadius.map((radius) => (
-              <Select.Option
+              <Select.Item
                 className="tabular-nums tracking-tight"
                 textValue={radius}
                 key={radius}
@@ -160,9 +160,9 @@ export function ThemeCustomizer({ selectedColors, setSelectedColors }: ThemeCust
                   {radius.replace("rem", "")}
                   {radius === "0.5rem" && <Badge className="ml-2">Default</Badge>}
                 </Select.Label>
-              </Select.Option>
+              </Select.Item>
             ))}
-          </Select.List>
+          </Select.Content>
         </Select>
       </div>
     </div>

@@ -8,6 +8,42 @@ published: true
 ## 2025
 This all changes are made on the 2025 release.
 
+## 12 Sep
+* Add new token for subtle
+```
+:root {
+  --primary-subtle: oklch(0.623 0.214 259.815 / 0.15);
+  --primary-subtle-fg: oklch(0.488 0.243 264.376);
+  --success-subtle: oklch(0.696 0.17 162.48 / 0.15);
+  --success-subtle-fg: oklch(0.508 0.118 165.612);
+  --info-subtle: oklch(0.685 0.169 237.323 / 0.15);
+  --info-subtle-fg: oklch(0.5 0.134 242.749);
+  --warning-subtle: oklch(0.828 0.189 84.429 / 0.2);
+  --warning-subtle-fg: oklch(0.555 0.163 48.998);
+  --danger-subtle: oklch(0.637 0.237 25.331 / 0.15);
+  --danger-subtle-fg: oklch(0.505 0.213 27.518);
+}
+
+.dark {
+  --primary-subtle: oklch(0.623 0.214 259.815 / 0.1);
+  --primary-subtle-fg: oklch(0.707 0.165 254.624);
+  --success-subtle: oklch(0.696 0.17 162.48 / 0.1);
+  --success-subtle-fg: oklch(0.765 0.177 163.223);
+  --info-subtle: oklch(0.685 0.169 237.323 / 0.1);
+  --info-subtle-fg: oklch(0.828 0.111 230.318);
+  --warning-subtle: oklch(0.828 0.189 84.429 / 0.1);
+  --warning-subtle-fg: oklch(0.828 0.189 84.429);
+  --danger-subtle: oklch(0.637 0.237 25.331 / 0.1);
+  --danger-subtle-fg: oklch(0.704 0.191 22.216);
+}
+```
+
+### Affected components
+* badge.tsx
+* range-calendar.tsx
+* note.tsx
+* toast.tsx
+
 ## 11 Sep
 * Update the tabs component
 * Add the `cx()` function and mark the `composeTailwindRenderProps()` function as deprecated.
