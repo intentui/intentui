@@ -17,21 +17,21 @@
 }
 
 :root {
-  --success-bg: var(--color-emerald-50);
+  --success-bg: var(--color-success-bg);
   --success-border: var(--color-emerald-100);
   --success-text: var(--color-emerald-600);
 
-  --info-bg: theme(--color-blue-600/15%);
+  --info-bg: var(--color-info-subtle);
   --info-border: theme(--color-blue-600/15%);
-  --info-text: var(--color-blue-600);
+  --info-text: var(--color-info-subtle-fg);
 
   --warning-bg: theme(--color-amber-500/15%);
   --warning-border: theme(--color-amber-400/40%);
   --warning-text: var(--color-amber-600);
 
-  --error-bg: theme(--color-red-500/20%);
+  --error-bg: var(--color-danger-subtle);
   --error-border: theme(--color-red-200);
-  --error-text: var(--color-red-600);
+  --error-text: var(--color-danger-subtle);
 }
 
 .dark {
@@ -39,15 +39,15 @@
   --success-border: var(--color-emerald-900);
   --success-text: var(--color-emerald-200);
 
-  --info-bg: theme(--color-blue-600/15%);
+  --info-bg: var(--color-info-subtle);
   --info-border: theme(--color-blue-600/15%);
-  --info-text: var(--color-blue-200);
+  --info-text: var(--color-info-subtle-fg);
 
   --warning-bg: theme(--color-amber-400/10%);
   --warning-border: theme(--color-amber-500/15%);
   --warning-text: var(--color-amber-200);
 
-  --error-bg: theme(--color-red-600/10%);
+  --error-bg: var(--color-danger-subtle);
   --error-border: theme(--color-red-600/15%);
-  --error-text: var(--color-red-200);
+  --error-text: var(--color-danger-subtle-fg);
 }

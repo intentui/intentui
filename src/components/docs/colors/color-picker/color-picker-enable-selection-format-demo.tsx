@@ -25,13 +25,13 @@ export default function ColorPickerEnableSelectionFormatDemo() {
         }}
       >
         <Select.Trigger />
-        <Select.List>
+        <Select.Content>
           {["rgb", "hex", "hsl", "hsb"].map((s) => (
-            <Select.Option key={s} id={s} textValue={s}>
+            <Select.Item key={s} id={s} textValue={s}>
               {s}
-            </Select.Option>
+            </Select.Item>
           ))}
-        </Select.List>
+        </Select.Content>
       </Select>
       {isHexFormat ? (
         <ColorField aria-label="Hex color" colorSpace={space} />

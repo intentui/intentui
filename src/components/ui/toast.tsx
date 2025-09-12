@@ -20,21 +20,21 @@ const Toast = ({ ...props }: ToasterProps) => {
           "--normal-text": "var(--color-overlay-fg)",
           "--normal-border": "var(--color-border)",
 
-          "--success-bg": "var(--color-success-bg)",
-          "--success-border": "var(--color-success-border)",
-          "--success-text": "var(--color-success-text)",
+          "--success-bg": "var(--color-success-subtle)",
+          "--success-border": "color-mix(in oklab, var(--success-subtle-fg) 20%, transparent)",
+          "--success-text": "var(--color-success-subtle-fg)",
 
-          "--error-bg": "var(--color-error-bg)",
-          "--error-border": "var(--color-error-border)",
-          "--error-text": "var(--color-error-text)",
+          "--error-bg": "var(--color-danger-subtle)",
+          "--error-border": "color-mix(in oklab, var(--danger-subtle-fg) 20%, transparent)",
+          "--error-text": "var(--color-danger-subtle-fg)",
 
-          "--warning-bg": "var(--color-warning-bg)",
-          "--warning-border": "var(--color-warning-border)",
-          "--warning-text": "var(--color-warning-text)",
+          "--warning-bg": "var(--color-warning-subtle)",
+          "--warning-border": "color-mix(in oklab, var(--warning-subtle-fg) 20%, transparent)",
+          "--warning-text": "var(--color-warning-subtle-fg)",
 
-          "--info-bg": "var(--color-info-bg)",
-          "--info-border": "var(--color-info-border)",
-          "--info-text": "var(--color-info-text)",
+          "--info-bg": "var(--color-info-subtle)",
+          "--info-border": "color-mix(in oklab, var(--info-subtle-fg) 20%, transparent)",
+          "--info-text": "var(--color-info-subtle-fg)",
         } as React.CSSProperties
       }
       {...props}

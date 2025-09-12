@@ -7,14 +7,14 @@ export default function SelectWithAvatarDemo() {
   return (
     <Select aria-label="Users" placeholder="Select a user">
       <Select.Trigger />
-      <Select.List items={users}>
+      <Select.Content items={users}>
         {(item) => (
-          <Select.Option textValue={item.name}>
+          <Select.Item textValue={item.name}>
             <Avatar src={item.image_url} />
             <Select.Label>{item.name}</Select.Label>
-          </Select.Option>
+          </Select.Item>
         )}
-      </Select.List>
+      </Select.Content>
     </Select>
   )
 }

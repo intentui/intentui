@@ -16,6 +16,8 @@ export function GeneratedTheme({ className, ...props }: React.ComponentProps<"di
           <ColorBox>
             <ColorBoxItem variable="primary" />
             <ColorBoxItem variable="primary-fg" />
+            <ColorBoxItem variable="primary-subtle" />
+            <ColorBoxItem variable="primary-subtle-fg" />
           </ColorBox>
           <ColorBox>
             <ColorBoxItem variable="secondary" />
@@ -36,14 +38,20 @@ export function GeneratedTheme({ className, ...props }: React.ComponentProps<"di
           <ColorBox>
             <ColorBoxItem variable="success" />
             <ColorBoxItem variable="success-fg" />
+            <ColorBoxItem variable="success-subtle" />
+            <ColorBoxItem variable="success-subtle-fg" />
           </ColorBox>
           <ColorBox>
             <ColorBoxItem variable="warning" />
             <ColorBoxItem variable="warning-fg" />
+            <ColorBoxItem variable="warning-subtle" />
+            <ColorBoxItem variable="warning-subtle-fg" />
           </ColorBox>
           <ColorBox>
             <ColorBoxItem variable="danger" />
             <ColorBoxItem variable="danger-fg" />
+            <ColorBoxItem variable="danger-subtle" />
+            <ColorBoxItem variable="danger-subtle-fg" />
           </ColorBox>
           <ColorBox>
             <ColorBoxItem variable="border" />

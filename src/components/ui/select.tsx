@@ -58,7 +58,7 @@ interface SelectListProps<T extends object>
   popover?: Omit<PopoverProps, "children">
 }
 
-const SelectList = <T extends object>({
+const SelectContent = <T extends object>({
   items,
   className,
   popover,
@@ -132,24 +132,24 @@ const SelectSection = DropdownSection
 const SelectSeparator = DropdownSeparator
 const SelectLabel = DropdownLabel
 const SelectDescription = DropdownDescription
-const SelectOption = DropdownItem
+const SelectItem = DropdownItem
 
 Select.Description = SelectDescription
-Select.Option = SelectOption
+Select.Item = SelectItem
 Select.Label = SelectLabel
 Select.Separator = SelectSeparator
 Select.Section = SelectSection
 Select.Trigger = SelectTrigger
-Select.List = SelectList
+Select.Content = SelectContent
 
 export {
   Select,
   SelectDescription,
-  SelectOption,
+  SelectItem,
   SelectLabel,
   SelectSeparator,
   SelectSection,
   SelectTrigger,
-  SelectList,
+  SelectContent,
 }
 export type { SelectProps, SelectTriggerProps }

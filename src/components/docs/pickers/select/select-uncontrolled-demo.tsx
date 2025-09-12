@@ -14,13 +14,13 @@ export default function SelectUncontrolledDemo() {
   return (
     <Select defaultSelectedKey={2} label="Movies" placeholder="Select a movie">
       <Select.Trigger />
-      <Select.List items={movies}>
+      <Select.Content items={movies}>
         {(item) => (
-          <Select.Option id={item.id} textValue={item.title}>
+          <Select.Item id={item.id} textValue={item.title}>
             {item.title}
-          </Select.Option>
+          </Select.Item>
         )}
-      </Select.List>
+      </Select.Content>
     </Select>
   )
 }

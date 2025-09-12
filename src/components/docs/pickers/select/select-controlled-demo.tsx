@@ -24,13 +24,13 @@ export default function SelectControlledDemo() {
         placeholder="Select a movie"
       >
         <Select.Trigger />
-        <Select.List items={movies}>
+        <Select.Content items={movies}>
           {(item) => (
-            <Select.Option id={item.id} textValue={item.title}>
+            <Select.Item id={item.id} textValue={item.title}>
               {item.title}
-            </Select.Option>
+            </Select.Item>
           )}
-        </Select.List>
+        </Select.Content>
       </Select>
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">
         You have selected: <strong>{movie}</strong>

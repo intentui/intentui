@@ -22,13 +22,13 @@ export default function ColorPickerCombinationDemo() {
         onSelectionChange={(s) => setSpace(s as ColorSpace)}
       >
         <Select.Trigger />
-        <Select.List>
+        <Select.Content>
           {["rgb", "hsb", "hsl"].map((s) => (
-            <Select.Option key={s} id={s} textValue={s}>
+            <Select.Item key={s} id={s} textValue={s}>
               {s}
-            </Select.Option>
+            </Select.Item>
           ))}
-        </Select.List>
+        </Select.Content>
       </Select>
       <div className="flex gap-2 sm:max-w-56">
         {getColorChannels(space).map((channel) => (

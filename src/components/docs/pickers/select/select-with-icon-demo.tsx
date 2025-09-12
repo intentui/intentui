@@ -7,20 +7,20 @@ export default function SelectWithIconDemo() {
   return (
     <Select aria-label="Devices" defaultSelectedKey="desktop" placeholder="Select a device">
       <Select.Trigger />
-      <Select.List>
-        <Select.Option id="discord" textValue="Discord">
+      <Select.Content>
+        <Select.Item id="discord" textValue="Discord">
           <IconBrandDiscord />
           <Select.Label>Discord</Select.Label>
-        </Select.Option>
+        </Select.Item>
         <Select.Separator />
-        <Select.Option id="github" textValue="GitHub">
+        <Select.Item id="github" textValue="GitHub">
           <IconBrandGithub />
           <Select.Label>GitHub</Select.Label>
-        </Select.Option>
-        <Select.Option id="gitlab" textValue="GitLab">
+        </Select.Item>
+        <Select.Item id="gitlab" textValue="GitLab">
           GitLab
-        </Select.Option>
-      </Select.List>
+        </Select.Item>
+      </Select.Content>
     </Select>
   )
 }

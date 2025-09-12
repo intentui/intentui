@@ -3,9 +3,12 @@
 import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
 import { type CalendarDate, getLocalTimeZone, today } from "@internationalized/date"
 import { useDateFormatter } from "@react-aria/i18n"
-import type { CalendarState } from "@react-stately/calendar"
 import { use } from "react"
-import type { CalendarProps as CalendarPrimitiveProps, DateValue } from "react-aria-components"
+import type {
+  CalendarProps as CalendarPrimitiveProps,
+  CalendarState,
+  DateValue,
+} from "react-aria-components"
 import {
   CalendarCell,
   CalendarGrid,
@@ -21,7 +24,7 @@ import {
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { Button } from "./button"
-import { Select } from "./select"
+import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger } from "./select"
 
 interface CalendarProps<T extends DateValue>
   extends Omit<CalendarPrimitiveProps<T>, "visibleDuration"> {
@@ -141,14 +144,14 @@ const SelectMonth = ({ state }: { state: CalendarState }) => {
         state.setFocusedDate(state.focusedDate.set({ month: Number(value) }))
       }}
     >
-      <Select.Trigger className="w-22 text-sm/5 **:data-[slot=select-value]:inline-block **:data-[slot=select-value]:truncate sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
-      <Select.List className="min-w-0">
+      <SelectTrigger className="w-22 text-sm/5 **:data-[slot=select-value]:inline-block **:data-[slot=select-value]:truncate sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
+      <SelectContent className="min-w-0">
         {months.map((month, index) => (
-          <Select.Option key={index} id={(index + 1).toString()} textValue={month}>
-            <Select.Label>{month}</Select.Label>
-          </Select.Option>
+          <SelectItem key={index} id={(index + 1).toString()} textValue={month}>
+            <SelectLabel>{month}</SelectLabel>
+          </SelectItem>
         ))}
-      </Select.List>
+      </SelectContent>
     </Select>
   )
 }
@@ -175,14 +178,14 @@ const SelectYear = ({ state }: { state: CalendarState }) => {
         state.setFocusedDate(years[Number(value)]?.value as CalendarDate)
       }}
     >
-      <Select.Trigger className="text-sm/5 sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
-      <Select.List>
+      <SelectTrigger className="text-sm/5 sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
+      <SelectContent>
         {years.map((year, i) => (
-          <Select.Option key={i} id={i} textValue={year.formatted}>
-            <Select.Label>{year.formatted}</Select.Label>
-          </Select.Option>
+          <SelectItem key={i} id={i} textValue={year.formatted}>
+            <SelectLabel>{year.formatted}</SelectLabel>
+          </SelectItem>
         ))}
-      </Select.List>
+      </SelectContent>
     </Select>
   )
 }

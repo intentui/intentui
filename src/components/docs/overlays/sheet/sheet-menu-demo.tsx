@@ -40,23 +40,23 @@ export default function SheetMenuDemo() {
             />
             <Select label="Clear Status">
               <Select.Trigger />
-              <Select.List>
-                <Select.Option>Never</Select.Option>
-                <Select.Option>in 30 Minutes</Select.Option>
-                <Select.Option>in 1 Hour</Select.Option>
-                <Select.Option>in 8 Hours</Select.Option>
-                <Select.Option>after Today</Select.Option>
-                <Select.Option>after a Week</Select.Option>
-                <Select.Option>after a Month</Select.Option>
-              </Select.List>
+              <Select.Content>
+                <Select.Item>Never</Select.Item>
+                <Select.Item>in 30 Minutes</Select.Item>
+                <Select.Item>in 1 Hour</Select.Item>
+                <Select.Item>in 8 Hours</Select.Item>
+                <Select.Item>after Today</Select.Item>
+                <Select.Item>after a Week</Select.Item>
+                <Select.Item>after a Month</Select.Item>
+              </Select.Content>
             </Select>
             <Select label="Visible to">
               <Select.Trigger />
-              <Select.List>
-                <Select.Option>Everyone</Select.Option>
-                <Select.Option>Organization</Select.Option>
-                <Select.Option>Public</Select.Option>
-              </Select.List>
+              <Select.Content>
+                <Select.Item>Everyone</Select.Item>
+                <Select.Item>Organization</Select.Item>
+                <Select.Item>Public</Select.Item>
+              </Select.Content>
             </Select>
             <Checkbox
               label="Busy"
