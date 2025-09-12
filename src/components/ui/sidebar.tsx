@@ -472,7 +472,7 @@ const SidebarLink = ({ className, ref, ...props }: SidebarLinkProps) => {
     <Link
       ref={ref}
       className={composeTailwindRenderProps(className, [
-        "col-span-full min-w-0 shrink-0 items-center focus:outline-hidden p-2",
+        "col-span-full min-w-0 shrink-0 items-center p-2 focus:outline-hidden",
         "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
       ])}
       {...props}

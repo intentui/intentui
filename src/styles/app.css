@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./code.css";
-@import "./toast.css";
 
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-react-aria-components';
