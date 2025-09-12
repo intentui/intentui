@@ -2,45 +2,55 @@
 
 import { IconHashtag, IconHeadphones, IconLogout, IconPlus, IconSettings } from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuHeader,
+  MenuItem,
+  MenuKeyboard,
+  MenuLabel,
+  MenuSection,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/components/ui/menu"
 
 export default function MenuWithArrowDemo() {
   return (
     <Menu>
-      <Menu.Trigger aria-label="Open Menu">
+      <MenuTrigger aria-label="Open Menu">
         <Avatar src="https://intentui.com/images/avatar/cobain.jpg" />
-      </Menu.Trigger>
-      <Menu.Content popover={{ showArrow: true, placement: "top" }} className="min-w-54">
-        <Menu.Section>
-          <Menu.Header separator>
+      </MenuTrigger>
+      <MenuContent popover={{ showArrow: true, placement: "top" }} className="min-w-54">
+        <MenuSection>
+          <MenuHeader separator>
             <span className="block">Irsyad A. Panjaitan</span>
             <span className="font-normal text-muted-fg">@irsyadadl</span>
-          </Menu.Header>
-        </Menu.Section>
-        <Menu.Item>
+          </MenuHeader>
+        </MenuSection>
+        <MenuItem>
           <IconSettings />
-          <Menu.Label>Settings</Menu.Label>
-        </Menu.Item>
-        <Menu.Item href="#">
+          <MenuLabel>Settings</MenuLabel>
+        </MenuItem>
+        <MenuItem href="#">
           <IconPlus />
-          <Menu.Label>Create Team</Menu.Label>
-        </Menu.Item>
-        <Menu.Item href="#">
+          <MenuLabel>Create Team</MenuLabel>
+        </MenuItem>
+        <MenuItem href="#">
           <IconHashtag />
-          <Menu.Label>Command Menu</Menu.Label>
-          <Menu.Keyboard keys="⌘K" />
-        </Menu.Item>
-        <Menu.Separator />
-        <Menu.Item href="#">
+          <MenuLabel>Command Menu</MenuLabel>
+          <MenuKeyboard keys="⌘K" />
+        </MenuItem>
+        <MenuSeparator />
+        <MenuItem href="#">
           <IconHeadphones />
-          <Menu.Label>Contact Support</Menu.Label>
-        </Menu.Item>
-        <Menu.Separator />
-        <Menu.Item>
+          <MenuLabel>Contact Support</MenuLabel>
+        </MenuItem>
+        <MenuSeparator />
+        <MenuItem>
           <IconLogout />
-          <Menu.Label>Log out</Menu.Label>
-        </Menu.Item>
-      </Menu.Content>
+          <MenuLabel>Log out</MenuLabel>
+        </MenuItem>
+      </MenuContent>
     </Menu>
   )
 }

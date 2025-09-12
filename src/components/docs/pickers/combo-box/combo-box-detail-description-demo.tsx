@@ -6,14 +6,14 @@ export default function ComboBoxDetailDescriptionDemo() {
   return (
     <ComboBox aria-label="Roles" placeholder="Select role">
       <ComboBox.Input />
-      <ComboBox.List className="max-w-(--trigger-width)" items={roles}>
+      <ComboBox.Content className="max-w-(--trigger-width)" items={roles}>
         {(item) => (
-          <ComboBox.Option id={item.id} textValue={item.name}>
+          <ComboBox.Item id={item.id} textValue={item.name}>
             <ComboBox.Label>{item.name}</ComboBox.Label>
             <ComboBox.Description>{item.description}</ComboBox.Description>
-          </ComboBox.Option>
+          </ComboBox.Item>
         )}
-      </ComboBox.List>
+      </ComboBox.Content>
     </ComboBox>
   )
 }

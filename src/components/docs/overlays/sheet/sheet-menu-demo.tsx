@@ -16,10 +16,26 @@ import { Menu as MenuPrimitive } from "react-aria-components"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Menu } from "@/components/ui/menu"
-import { Modal } from "@/components/ui/modal"
-import { Select } from "@/components/ui/select"
-import { Sheet } from "@/components/ui/sheet"
+import { MenuItem, MenuLabel, MenuSection } from "@/components/ui/menu"
+import {
+  ModalBody,
+  ModalClose,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+} from "@/components/ui/modal"
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
+import {
+  Sheet,
+  SheetBody,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 import { TextField } from "@/components/ui/text-field"
 
 export default function SheetMenuDemo() {
@@ -27,11 +43,11 @@ export default function SheetMenuDemo() {
   const closeModal = () => setIsOpen(false)
   return (
     <>
-      <Modal.Content isOpen={isOpen} onOpenChange={setIsOpen}>
-        <Modal.Header>
-          <Modal.Title>Edit status</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+      <ModalContent isOpen={isOpen} onOpenChange={setIsOpen}>
+        <ModalHeader>
+          <ModalTitle>Edit status</ModalTitle>
+        </ModalHeader>
+        <ModalBody>
           <div className="space-y-4">
             <TextField
               prefix={<IconBrandGithub />}
@@ -39,110 +55,110 @@ export default function SheetMenuDemo() {
               placeholder="What's your status?"
             />
             <Select label="Clear Status">
-              <Select.Trigger />
-              <Select.Content>
-                <Select.Item>Never</Select.Item>
-                <Select.Item>in 30 Minutes</Select.Item>
-                <Select.Item>in 1 Hour</Select.Item>
-                <Select.Item>in 8 Hours</Select.Item>
-                <Select.Item>after Today</Select.Item>
-                <Select.Item>after a Week</Select.Item>
-                <Select.Item>after a Month</Select.Item>
-              </Select.Content>
+              <SelectTrigger />
+              <SelectContent>
+                <SelectItem>Never</SelectItem>
+                <SelectItem>in 30 Minutes</SelectItem>
+                <SelectItem>in 1 Hour</SelectItem>
+                <SelectItem>in 8 Hours</SelectItem>
+                <SelectItem>after Today</SelectItem>
+                <SelectItem>after a Week</SelectItem>
+                <SelectItem>after a Month</SelectItem>
+              </SelectContent>
             </Select>
             <Select label="Visible to">
-              <Select.Trigger />
-              <Select.Content>
-                <Select.Item>Everyone</Select.Item>
-                <Select.Item>Organization</Select.Item>
-                <Select.Item>Public</Select.Item>
-              </Select.Content>
+              <SelectTrigger />
+              <SelectContent>
+                <SelectItem>Everyone</SelectItem>
+                <SelectItem>Organization</SelectItem>
+                <SelectItem>Public</SelectItem>
+              </SelectContent>
             </Select>
             <Checkbox
               label="Busy"
               description="When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability."
             />
           </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Modal.Close>Clear Status</Modal.Close>
+        </ModalBody>
+        <ModalFooter>
+          <ModalClose>Clear Status</ModalClose>
           <Button onPress={closeModal}>Set Status</Button>
-        </Modal.Footer>
-      </Modal.Content>
+        </ModalFooter>
+      </ModalContent>
       <Sheet>
-        <Sheet.Trigger aria-label="Open menu">
+        <SheetTrigger aria-label="Open menu">
           <Avatar src="https://intentui.com/images/avatar/cobain.jpg" alt="irsyadadl" />
-        </Sheet.Trigger>
-        <Sheet.Content isFloat={false} closeButton={false}>
-          <Sheet.Header className="flex flex-row gap-x-3.5 border-b sm:gap-x-3 sm:px-4 sm:pt-3 sm:pb-2">
+        </SheetTrigger>
+        <SheetContent isFloat={false} closeButton={false}>
+          <SheetHeader className="flex flex-row gap-x-3.5 border-b sm:gap-x-3 sm:px-4 sm:pt-3 sm:pb-2">
             <Avatar src="https://intentui.com/images/avatar/cobain.jpg" isSquare alt="cobain" />
             <div>
-              <Sheet.Title className="text-base/4 sm:text-base/4">Kurt Cobain</Sheet.Title>
-              <Sheet.Description>@cobain</Sheet.Description>
+              <SheetTitle className="text-base/4 sm:text-base/4">Kurt Cobain</SheetTitle>
+              <SheetDescription>@cobain</SheetDescription>
             </div>
-          </Sheet.Header>
-          <Sheet.Body className="px-0 sm:px-0">
+          </SheetHeader>
+          <SheetBody className="px-0 sm:px-0">
             <MenuPrimitive className="divide-y *:[[role=group]]:p-2">
-              <Menu.Section>
-                <Menu.Item>
+              <MenuSection>
+                <MenuItem>
                   <IconPerson />
-                  <Menu.Label>Your profile</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <IconBook /> <Menu.Label>Your repositories</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <IconBrandCopilot /> <Menu.Label>Copilot</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <Menu.Label>Your projects</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <IconStar /> <Menu.Label>Your stars</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <Menu.Label>Your gists</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <Menu.Label>Your organizations</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <Menu.Label>Your enterprises</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
+                  <MenuLabel>Your profile</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <IconBook /> <MenuLabel>Your repositories</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <IconBrandCopilot /> <MenuLabel>Copilot</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLabel>Your projects</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <IconStar /> <MenuLabel>Your stars</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLabel>Your gists</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLabel>Your organizations</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLabel>Your enterprises</MenuLabel>
+                </MenuItem>
+                <MenuItem>
                   <IconHeart />
-                  <Menu.Label>Your sponsors</Menu.Label>
-                </Menu.Item>
-              </Menu.Section>
-              <Menu.Section>
-                <Menu.Item>
-                  <Menu.Label>Feature preview</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
+                  <MenuLabel>Your sponsors</MenuLabel>
+                </MenuItem>
+              </MenuSection>
+              <MenuSection>
+                <MenuItem>
+                  <MenuLabel>Feature preview</MenuLabel>
+                </MenuItem>
+                <MenuItem>
                   <IconGear />
-                  <Menu.Label>Settings</Menu.Label>
-                </Menu.Item>
-              </Menu.Section>
-              <Menu.Section>
-                <Menu.Item>
-                  <Menu.Label>GitHub Docs</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <Menu.Label>GitHub Support</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <IconMessageDots /> <Menu.Label>GitHub Community</Menu.Label>
-                </Menu.Item>
-              </Menu.Section>
+                  <MenuLabel>Settings</MenuLabel>
+                </MenuItem>
+              </MenuSection>
+              <MenuSection>
+                <MenuItem>
+                  <MenuLabel>GitHub Docs</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLabel>GitHub Support</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <IconMessageDots /> <MenuLabel>GitHub Community</MenuLabel>
+                </MenuItem>
+              </MenuSection>
             </MenuPrimitive>
-          </Sheet.Body>
-          <Sheet.Footer className="border-t bg-muted/20 sm:p-4">
+          </SheetBody>
+          <SheetFooter className="border-t bg-muted/20 sm:p-4">
             <Button size="sm" className="w-full justify-between bg-bg" intent="outline">
               <span>Sign out</span>
               <IconLogout />
             </Button>
-          </Sheet.Footer>
-        </Sheet.Content>
+          </SheetFooter>
+        </SheetContent>
       </Sheet>
     </>
   )

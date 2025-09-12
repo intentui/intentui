@@ -2,18 +2,27 @@
 
 import { Button } from "@/components/ui/button"
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
-import { Sheet } from "@/components/ui/sheet"
+import {
+  Sheet,
+  SheetBody,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet"
 
 export default function SheetControlledDemo() {
   return (
     <Sheet>
       <Button intent="outline">Notifications</Button>
-      <Sheet.Content aria-label="Notifications">
-        <Sheet.Header>
-          <Sheet.Title>Manage Notifications</Sheet.Title>
-          <Sheet.Description>Adjust your notification settings below.</Sheet.Description>
-        </Sheet.Header>
-        <Sheet.Body>
+      <SheetContent aria-label="Notifications">
+        <SheetHeader>
+          <SheetTitle>Manage Notifications</SheetTitle>
+          <SheetDescription>Adjust your notification settings below.</SheetDescription>
+        </SheetHeader>
+        <SheetBody>
           <CheckboxGroup aria-label="Notification Settings">
             <Checkbox
               value="n1"
@@ -31,12 +40,12 @@ export default function SheetControlledDemo() {
               description="Receive real-time notifications on your device."
             />
           </CheckboxGroup>
-        </Sheet.Body>
-        <Sheet.Footer>
-          <Sheet.Close>Cancel</Sheet.Close>
+        </SheetBody>
+        <SheetFooter>
+          <SheetClose>Cancel</SheetClose>
           <Button intent="primary">Save Settings</Button>
-        </Sheet.Footer>
-      </Sheet.Content>
+        </SheetFooter>
+      </SheetContent>
     </Sheet>
   )
 }

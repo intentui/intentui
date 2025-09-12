@@ -15,8 +15,14 @@ import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
 import { CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Menu } from "@/components/ui/menu"
-import { Sheet } from "@/components/ui/sheet"
+import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
+import {
+  SheetBody,
+  SheetClose,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+} from "@/components/ui/sheet"
 import { generateTheme } from "./themes"
 
 export function ThemeContainer() {
@@ -71,16 +77,16 @@ export function ThemeContainer() {
                     Get theme
                     <IconChevronLgDown />
                   </Button>
-                  <Menu.Content placement="bottom right" className="min-w-(--trigger-width)">
-                    <Menu.Item onAction={copy}>
+                  <MenuContent placement="bottom right" className="min-w-(--trigger-width)">
+                    <MenuItem onAction={copy}>
                       <IconDuplicate />
                       Copy
-                    </Menu.Item>
-                    <Menu.Item onAction={handleOpen}>
+                    </MenuItem>
+                    <MenuItem onAction={handleOpen}>
                       <IconLayoutColumnRightsideFill />
                       Show theme
-                    </Menu.Item>
-                  </Menu.Content>
+                    </MenuItem>
+                  </MenuContent>
                 </Menu>
               </CardAction>
             </CardHeader>
@@ -94,28 +100,28 @@ export function ThemeContainer() {
         </Suspense>
       </PageContainer>
 
-      <Sheet.Content
+      <SheetContent
         onOpenChange={setOpen}
         isOpen={open}
         className="bg-shiki-bg sm:max-w-md"
         side="right"
       >
-        <Sheet.Header
+        <SheetHeader
           title="Theme"
           description="Copy the theme below and paste it into your CSS file."
         />
-        <Sheet.Body className="border-y pb-4">
+        <SheetBody className="border-y pb-4">
           <CodeHighlighter
             plain
             max96={false}
             className="pt-4"
             code={generateTheme(selectedColors)}
           />
-        </Sheet.Body>
-        <Sheet.Footer className="gap-x-1">
-          <Sheet.Close onPress={handleClose} className="hidden sm:flex">
+        </SheetBody>
+        <SheetFooter className="gap-x-1">
+          <SheetClose onPress={handleClose} className="hidden sm:flex">
             Close
-          </Sheet.Close>
+          </SheetClose>
           <Button
             onPress={() => {
               copy()
@@ -125,8 +131,8 @@ export function ThemeContainer() {
             <IconDuplicate />
             Copy
           </Button>
-        </Sheet.Footer>
-      </Sheet.Content>
+        </SheetFooter>
+      </SheetContent>
     </>
   )
 }

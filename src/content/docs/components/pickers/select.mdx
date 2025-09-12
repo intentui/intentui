@@ -30,8 +30,8 @@ npm i react-aria-components @intentui/icons
 ```
 import {
   Select,
-  SelectList,
-  SelectOption,
+  SelectContent,
+  SelectItem,
   SelectTrigger,
 } from "@/components/ui/select"
 ```
@@ -47,13 +47,13 @@ const software = [
 
 <Select aria-label="Design software" placeholder="Select a software">
   <SelectTrigger />
-  <SelectList items={software}>
+  <SelectContent items={software}>
     {(item) => (
-      <SelectOption id={item.id} textValue={item.name}>
+      <SelectItem id={item.id} textValue={item.name}>
         {item.name}
-      </SelectOption>
+      </SelectItem>
     )}
-  </SelectList>
+  </SelectContent>
 </Select>
 ```
 

@@ -1,20 +1,26 @@
 "use client"
 
 import { Avatar } from "@/components/ui/avatar"
-import { Select } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+} from "@/components/ui/select"
 
 export default function SelectWithAvatarDemo() {
   return (
     <Select aria-label="Users" placeholder="Select a user">
-      <Select.Trigger />
-      <Select.Content items={users}>
+      <SelectTrigger />
+      <SelectContent items={users}>
         {(item) => (
-          <Select.Item textValue={item.name}>
+          <SelectItem textValue={item.name}>
             <Avatar src={item.image_url} />
-            <Select.Label>{item.name}</Select.Label>
-          </Select.Item>
+            <SelectLabel>{item.name}</SelectLabel>
+          </SelectItem>
         )}
-      </Select.Content>
+      </SelectContent>
     </Select>
   )
 }

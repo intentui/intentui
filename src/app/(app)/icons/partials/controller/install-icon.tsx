@@ -2,7 +2,7 @@ import { IconCheck, IconChevronRight, IconDuplicate } from "@intentui/icons"
 import { useState } from "react"
 import { copyToClipboard } from "usemods"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 
 type Tool = "Bun" | "Yarn" | "PNPM" | "NPM"
 
@@ -42,12 +42,12 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
         >
           {isCopied ? <IconCheck /> : <IconDuplicate />}
         </Button>
-        <Menu.Content placement="bottom end">
-          <Menu.Item onAction={() => handleCopy("NPM")}>NPM</Menu.Item>
-          <Menu.Item onAction={() => handleCopy("Bun")}>Bun</Menu.Item>
-          <Menu.Item onAction={() => handleCopy("Yarn")}>Yarn</Menu.Item>
-          <Menu.Item onAction={() => handleCopy("PNPM")}>PNPM</Menu.Item>
-        </Menu.Content>
+        <MenuContent placement="bottom end">
+          <MenuItem onAction={() => handleCopy("NPM")}>NPM</MenuItem>
+          <MenuItem onAction={() => handleCopy("Bun")}>Bun</MenuItem>
+          <MenuItem onAction={() => handleCopy("Yarn")}>Yarn</MenuItem>
+          <MenuItem onAction={() => handleCopy("PNPM")}>PNPM</MenuItem>
+        </MenuContent>
       </Menu>
     </div>
   )

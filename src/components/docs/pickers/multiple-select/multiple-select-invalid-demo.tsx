@@ -4,7 +4,7 @@ import { type FormEvent, useState } from "react"
 import type { Selection } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
-import { MultipleSelect } from "@/components/ui/multiple-select"
+import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-select"
 
 export default function MultipleSelectInvalidDemo() {
   const [invalid, setInvalid] = useState<boolean>(false)
@@ -31,7 +31,7 @@ export default function MultipleSelectInvalidDemo() {
         errorMessage={invalid ? "Please select at least one fruit" : undefined}
       >
         {(item) => {
-          return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
+          return <MultipleSelectItem textValue={item.name}>{item.name}</MultipleSelectItem>
         }}
       </MultipleSelect>
       <Button type="submit">Submit</Button>

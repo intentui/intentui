@@ -1,19 +1,26 @@
 "use client"
 
-import { Select } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectDescription,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+} from "@/components/ui/select"
 
 export default function SelectDetailsDescriptionDemo() {
   return (
     <Select label="Roles" placeholder="Select a role">
-      <Select.Trigger />
-      <Select.Content className="max-w-(--trigger-width)" items={roles}>
+      <SelectTrigger />
+      <SelectContent className="max-w-(--trigger-width)" items={roles}>
         {(item) => (
-          <Select.Item id={item.id} textValue={item.name}>
-            <Select.Label>{item.name}</Select.Label>
-            <Select.Description>{item.description}</Select.Description>
-          </Select.Item>
+          <SelectItem id={item.id} textValue={item.name}>
+            <SelectLabel>{item.name}</SelectLabel>
+            <SelectDescription>{item.description}</SelectDescription>
+          </SelectItem>
         )}
-      </Select.Content>
+      </SelectContent>
     </Select>
   )
 }

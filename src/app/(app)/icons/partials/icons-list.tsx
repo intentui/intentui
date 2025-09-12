@@ -10,7 +10,14 @@ import * as ReactDOMServer from "react-dom/server"
 import { toast } from "sonner"
 import { copyToClipboard } from "usemods"
 import { aliasLookup } from "@/app/(app)/icons/partials/aliases"
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuHeader,
+  MenuItem,
+  MenuLabel,
+  MenuSeparator,
+} from "@/components/ui/menu"
 import { Controller } from "./controller"
 import { box, item } from "./styles"
 
@@ -88,29 +95,29 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
     >
       <Icon className={selectedSize} key={name} />
       <Menu isOpen={isSelected} onOpenChange={setSelected}>
-        <Menu.Content
+        <MenuContent
           popover={{ triggerRef: triggerRef, showArrow: true }}
           className="sm:min-w-48"
           aria-label="Options"
         >
-          <Menu.Header className="font-mono font-normal text-xs sm:text-xs" separator>
+          <MenuHeader className="font-mono font-normal text-xs sm:text-xs" separator>
             {name}
-          </Menu.Header>
-          <Menu.Item onAction={() => handleCopy("jsx")}>
-            <Menu.Label>Copy JSX</Menu.Label>
-          </Menu.Item>
-          <Menu.Item onAction={() => copySvgToClipboard(Icon)}>
-            <Menu.Label>Copy SVG</Menu.Label>
-          </Menu.Item>
-          <Menu.Item onAction={() => handleCopy("text")}>
-            <Menu.Label>Copy Name</Menu.Label>
-          </Menu.Item>
-          <Menu.Separator />
-          <Menu.Item onAction={() => downloadSvg(Icon, name)}>
-            <Menu.Label>Download SVG</Menu.Label>
+          </MenuHeader>
+          <MenuItem onAction={() => handleCopy("jsx")}>
+            <MenuLabel>Copy JSX</MenuLabel>
+          </MenuItem>
+          <MenuItem onAction={() => copySvgToClipboard(Icon)}>
+            <MenuLabel>Copy SVG</MenuLabel>
+          </MenuItem>
+          <MenuItem onAction={() => handleCopy("text")}>
+            <MenuLabel>Copy Name</MenuLabel>
+          </MenuItem>
+          <MenuSeparator />
+          <MenuItem onAction={() => downloadSvg(Icon, name)}>
+            <MenuLabel>Download SVG</MenuLabel>
             <IconDownload />
-          </Menu.Item>
-        </Menu.Content>
+          </MenuItem>
+        </MenuContent>
       </Menu>
     </ListBoxItem>
   )

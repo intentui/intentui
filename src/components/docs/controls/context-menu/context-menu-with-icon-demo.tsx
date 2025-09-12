@@ -9,49 +9,57 @@ import {
   IconTrashPaper,
 } from "@intentui/icons"
 
-import { ContextMenu } from "@/components/ui/context-menu"
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuKeyboard,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
 
 export default function ContextMenuWithIconDemo() {
   return (
     <ContextMenu>
-      <ContextMenu.Trigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
+      <ContextMenuTrigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
         Right click me
-      </ContextMenu.Trigger>
-      <ContextMenu.Content className="min-w-52">
-        <ContextMenu.Item>
+      </ContextMenuTrigger>
+      <ContextMenuContent className="min-w-52">
+        <ContextMenuItem>
           <IconFolder />
-          <ContextMenu.Label>Open Folder</ContextMenu.Label>
-        </ContextMenu.Item>
-        <ContextMenu.Item>
+          <ContextMenuLabel>Open Folder</ContextMenuLabel>
+        </ContextMenuItem>
+        <ContextMenuItem>
           <IconFile />
-          <ContextMenu.Label>Open File</ContextMenu.Label>
-        </ContextMenu.Item>
-        <ContextMenu.Item>
-          <ContextMenu.Label>Open with...</ContextMenu.Label>
-        </ContextMenu.Item>
-        <ContextMenu.Separator />
-        <ContextMenu.Item>
+          <ContextMenuLabel>Open File</ContextMenuLabel>
+        </ContextMenuItem>
+        <ContextMenuItem>
+          <ContextMenuLabel>Open with...</ContextMenuLabel>
+        </ContextMenuItem>
+        <ContextMenuSeparator />
+        <ContextMenuItem>
           <IconHighlight />
-          <ContextMenu.Label>Rename</ContextMenu.Label>
-        </ContextMenu.Item>
-        <ContextMenu.Item>
+          <ContextMenuLabel>Rename</ContextMenuLabel>
+        </ContextMenuItem>
+        <ContextMenuItem>
           <IconDuplicate />
-          <ContextMenu.Label>Duplicate</ContextMenu.Label>
-        </ContextMenu.Item>
-        <ContextMenu.Item>
-          <ContextMenu.Label>Share</ContextMenu.Label>
-        </ContextMenu.Item>
-        <ContextMenu.Separator />
-        <ContextMenu.Item>
+          <ContextMenuLabel>Duplicate</ContextMenuLabel>
+        </ContextMenuItem>
+        <ContextMenuItem>
+          <ContextMenuLabel>Share</ContextMenuLabel>
+        </ContextMenuItem>
+        <ContextMenuSeparator />
+        <ContextMenuItem>
           <IconTrash />
-          <ContextMenu.Label>Delete</ContextMenu.Label>
-          <ContextMenu.Keyboard keys="⌘←" />
-        </ContextMenu.Item>
-        <ContextMenu.Item>
+          <ContextMenuLabel>Delete</ContextMenuLabel>
+          <ContextMenuKeyboard keys="⌘←" />
+        </ContextMenuItem>
+        <ContextMenuItem>
           <IconTrashPaper />
-          <ContextMenu.Label>Bin</ContextMenu.Label>
-        </ContextMenu.Item>
-      </ContextMenu.Content>
+          <ContextMenuLabel>Bin</ContextMenuLabel>
+        </ContextMenuItem>
+      </ContextMenuContent>
     </ContextMenu>
   )
 }

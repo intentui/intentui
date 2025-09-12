@@ -5,7 +5,14 @@ import { useState } from "react"
 
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { CommandMenu } from "@/components/ui/command-menu"
+import {
+  CommandMenu,
+  CommandMenuItem,
+  CommandMenuKeyboard,
+  CommandMenuList,
+  CommandMenuSearch,
+  CommandMenuSection,
+} from "@/components/ui/command-menu"
 
 export default function CommandMenuBlurDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,41 +22,41 @@ export default function CommandMenuBlurDemo() {
         Open
       </Button>
       <CommandMenu isBlurred isOpen={isOpen} onOpenChange={setIsOpen}>
-        <CommandMenu.Search placeholder="Quick search..." />
-        <CommandMenu.List>
-          <CommandMenu.Section title="Pages">
-            <CommandMenu.Item href="#" textValue="home">
+        <CommandMenuSearch placeholder="Quick search..." />
+        <CommandMenuList>
+          <CommandMenuSection title="Pages">
+            <CommandMenuItem href="#" textValue="home">
               <IconHome /> Home
-            </CommandMenu.Item>
-            <CommandMenu.Item href="#" textValue="docs">
+            </CommandMenuItem>
+            <CommandMenuItem href="#" textValue="docs">
               <IconNotes /> Docs
-              <CommandMenu.Keyboard keys="⌘k" />
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="components" href="#">
+              <CommandMenuKeyboard keys="⌘k" />
+            </CommandMenuItem>
+            <CommandMenuItem textValue="components" href="#">
               <IconCube /> Components
-            </CommandMenu.Item>
-          </CommandMenu.Section>
-          <CommandMenu.Section title="Dashboard">
-            <CommandMenu.Item href="#" textValue="billing">
+            </CommandMenuItem>
+          </CommandMenuSection>
+          <CommandMenuSection title="Dashboard">
+            <CommandMenuItem href="#" textValue="billing">
               <IconBill /> Billing
-            </CommandMenu.Item>
-            <CommandMenu.Item href="#" textValue="settings">
+            </CommandMenuItem>
+            <CommandMenuItem href="#" textValue="settings">
               <IconGear /> Settings
-              <CommandMenu.Keyboard keys="⌘s" />
-            </CommandMenu.Item>
-            <CommandMenu.Item href="#" textValue="security">
+              <CommandMenuKeyboard keys="⌘s" />
+            </CommandMenuItem>
+            <CommandMenuItem href="#" textValue="security">
               <IconShield /> Security
-            </CommandMenu.Item>
-          </CommandMenu.Section>
-          <CommandMenu.Section title="Team">
+            </CommandMenuItem>
+          </CommandMenuSection>
+          <CommandMenuSection title="Team">
             {users.map((user) => (
-              <CommandMenu.Item textValue={user.name} key={user.id}>
+              <CommandMenuItem textValue={user.name} key={user.id}>
                 <Avatar src={user.image_url} />
                 {user.name}
-              </CommandMenu.Item>
+              </CommandMenuItem>
             ))}
-          </CommandMenu.Section>
-        </CommandMenu.List>
+          </CommandMenuSection>
+        </CommandMenuList>
       </CommandMenu>
     </>
   )

@@ -5,21 +5,30 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Dialog } from "@/components/ui/dialog"
 import { Form } from "@/components/ui/form"
 import { Link } from "@/components/ui/link"
-import { Popover } from "@/components/ui/popover"
+import {
+  Popover,
+  PopoverBody,
+  PopoverClose,
+  PopoverContent,
+  PopoverDescription,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTitle,
+} from "@/components/ui/popover"
 import { TextField } from "@/components/ui/text-field"
 
 export default function PopoverCustomClose() {
   return (
     <Popover>
       <Button>Login</Button>
-      <Popover.Content className="w-full min-w-96">
+      <PopoverContent className="w-full min-w-96">
         <Dialog>
-          <Popover.Header>
-            <Popover.Title>Login</Popover.Title>
-            <Popover.Description>Enter your credentials to sign in.</Popover.Description>
-          </Popover.Header>
+          <PopoverHeader>
+            <PopoverTitle>Login</PopoverTitle>
+            <PopoverDescription>Enter your credentials to sign in.</PopoverDescription>
+          </PopoverHeader>
           <Form onSubmit={() => {}} className="overflow-auto">
-            <Popover.Body>
+            <PopoverBody>
               <div className="space-y-4">
                 <TextField
                   autoFocus
@@ -41,14 +50,14 @@ export default function PopoverCustomClose() {
                   </Link>
                 </div>
               </div>
-            </Popover.Body>
-            <Popover.Footer>
-              <Popover.Close>Cancel</Popover.Close>
+            </PopoverBody>
+            <PopoverFooter>
+              <PopoverClose>Cancel</PopoverClose>
               <Button type="submit">Login</Button>
-            </Popover.Footer>
+            </PopoverFooter>
           </Form>
         </Dialog>
-      </Popover.Content>
+      </PopoverContent>
     </Popover>
   )
 }

@@ -18,14 +18,14 @@ export default function ComboBoxValidationDemo() {
     <Form onSubmit={(e) => e.preventDefault()} className="space-y-2">
       <ComboBox placeholder="Select a user" label="Users" isRequired>
         <ComboBox.Input />
-        <ComboBox.List items={users}>
+        <ComboBox.Content items={users}>
           {(item) => (
-            <ComboBox.Option key={item.id} id={item.id} textValue={item.name}>
+            <ComboBox.Item key={item.id} id={item.id} textValue={item.name}>
               <Avatar src={item.image_url} />
               <ComboBox.Label>{item.name}</ComboBox.Label>
-            </ComboBox.Option>
+            </ComboBox.Item>
           )}
-        </ComboBox.List>
+        </ComboBox.Content>
       </ComboBox>
       <Button type="submit">Submit</Button>
     </Form>

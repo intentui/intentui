@@ -8,7 +8,7 @@ import {
 } from "@intentui/icons"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 
 export default function BreadcrumbsMenuDemo() {
   return (
@@ -20,26 +20,26 @@ export default function BreadcrumbsMenuDemo() {
           <Button intent="plain" size="sq-sm" className="-mx-1 h-6">
             <IconDotsHorizontal />
           </Button>
-          <Menu.Content popover={{ placement: "bottom" }}>
-            <Menu.Item href="/docs/components/layouts/sidebar">
-              <IconLayoutAlignLeft /> <Menu.Label>Sidebar</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/docs/components/layouts/navbar">
-              <IconLayoutAlignTop /> <Menu.Label>Navbar</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/docs/components/overlays/modal">
-              <IconWindowVisit /> <Menu.Label>Modal</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/docs/components/collections/menu">
-              <Menu.Label>Menu</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/docs/components/charts/setting-up">
-              <Menu.Label>Chart</Menu.Label>
-            </Menu.Item>
-            <Menu.Item href="/docs/components/collections/table">
-              <Menu.Label>Table</Menu.Label>
-            </Menu.Item>
-          </Menu.Content>
+          <MenuContent popover={{ placement: "bottom" }}>
+            <MenuItem href="/docs/components/layouts/sidebar">
+              <IconLayoutAlignLeft /> <MenuLabel>Sidebar</MenuLabel>
+            </MenuItem>
+            <MenuItem href="/docs/components/layouts/navbar">
+              <IconLayoutAlignTop /> <MenuLabel>Navbar</MenuLabel>
+            </MenuItem>
+            <MenuItem href="/docs/components/overlays/modal">
+              <IconWindowVisit /> <MenuLabel>Modal</MenuLabel>
+            </MenuItem>
+            <MenuItem href="/docs/components/collections/menu">
+              <MenuLabel>Menu</MenuLabel>
+            </MenuItem>
+            <MenuItem href="/docs/components/charts/setting-up">
+              <MenuLabel>Chart</MenuLabel>
+            </MenuItem>
+            <MenuItem href="/docs/components/collections/table">
+              <MenuLabel>Table</MenuLabel>
+            </MenuItem>
+          </MenuContent>
         </Menu>
       </Breadcrumbs.Item>
 

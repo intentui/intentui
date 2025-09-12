@@ -3,7 +3,13 @@
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
-import { CommandMenu } from "@/components/ui/command-menu"
+import {
+  CommandMenu,
+  CommandMenuItem,
+  CommandMenuKeyboard,
+  CommandMenuList,
+  CommandMenuSearch,
+} from "@/components/ui/command-menu"
 
 export default function CommandMenuKeyboardDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,38 +19,38 @@ export default function CommandMenuKeyboardDemo() {
         Open
       </Button>
       <CommandMenu key="k" isOpen={isOpen} onOpenChange={setIsOpen}>
-        <CommandMenu.Search placeholder="Quick search..." />
-        <CommandMenu.List>
-          <CommandMenu.Item textValue="account settings">
+        <CommandMenuSearch placeholder="Quick search..." />
+        <CommandMenuList>
+          <CommandMenuItem textValue="account settings">
             Account Settings
-            <CommandMenu.Keyboard keys="⌘A" />
-          </CommandMenu.Item>
+            <CommandMenuKeyboard keys="⌘A" />
+          </CommandMenuItem>
 
-          <CommandMenu.Item textValue="profile">
+          <CommandMenuItem textValue="profile">
             Profile
-            <CommandMenu.Keyboard keys="⌘P" />
-          </CommandMenu.Item>
+            <CommandMenuKeyboard keys="⌘P" />
+          </CommandMenuItem>
 
-          <CommandMenu.Item textValue="notifications">
+          <CommandMenuItem textValue="notifications">
             Notifications
-            <CommandMenu.Keyboard keys="⌘N" />
-          </CommandMenu.Item>
+            <CommandMenuKeyboard keys="⌘N" />
+          </CommandMenuItem>
 
-          <CommandMenu.Item textValue="privacy settings">
+          <CommandMenuItem textValue="privacy settings">
             Privacy Settings
-            <CommandMenu.Keyboard keys="⌘S" />
-          </CommandMenu.Item>
+            <CommandMenuKeyboard keys="⌘S" />
+          </CommandMenuItem>
 
-          <CommandMenu.Item textValue="billing information">
+          <CommandMenuItem textValue="billing information">
             Billing Information
-            <CommandMenu.Keyboard keys="⌘B" />
-          </CommandMenu.Item>
+            <CommandMenuKeyboard keys="⌘B" />
+          </CommandMenuItem>
 
-          <CommandMenu.Item textValue="logout">
+          <CommandMenuItem textValue="logout">
             Logout
-            <CommandMenu.Keyboard keys="⌘L" />
-          </CommandMenu.Item>
-        </CommandMenu.List>
+            <CommandMenuKeyboard keys="⌘L" />
+          </CommandMenuItem>
+        </CommandMenuList>
       </CommandMenu>
     </>
   )

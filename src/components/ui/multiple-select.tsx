@@ -229,9 +229,13 @@ const MultipleSelect = <T extends object>({
   )
 }
 
-MultipleSelect.Item = DropdownItem
-MultipleSelect.Label = DropdownLabel
-MultipleSelect.Section = DropdownSection
+const MultipleSelectItem = DropdownItem
+const MultipleSelectLabel = DropdownLabel
+const MultipleSelectSection = DropdownSection
 
-export { MultipleSelect }
+MultipleSelect.Item = MultipleSelectItem
+MultipleSelect.Label = MultipleSelectLabel
+MultipleSelect.Section = MultipleSelectSection
+
+export { MultipleSelect, MultipleSelectItem, MultipleSelectLabel, MultipleSelectSection }
 export type { MultipleSelectProps }

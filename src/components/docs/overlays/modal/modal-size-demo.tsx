@@ -4,9 +4,15 @@ import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { DialogClose } from "@/components/ui/dialog"
-import { Modal } from "@/components/ui/modal"
+import {
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+} from "@/components/ui/modal"
 
-type Size = Pick<React.ComponentProps<typeof Modal.Content>, "size">["size"]
+type Size = Pick<React.ComponentProps<typeof ModalContent>, "size">["size"]
 const sizes: Size[] = ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl"]
 export default function ModalSizeDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -28,19 +34,19 @@ export default function ModalSizeDemo() {
         ))}
       </div>
 
-      <Modal.Content isOpen={isOpen} onOpenChange={setIsOpen} size={modalSize}>
-        <Modal.Header>
-          <Modal.Title>Project Update</Modal.Title>
-          <Modal.Description>
+      <ModalContent isOpen={isOpen} onOpenChange={setIsOpen} size={modalSize}>
+        <ModalHeader>
+          <ModalTitle>Project Update</ModalTitle>
+          <ModalDescription>
             Dive deep into our project’s latest updates where we've streamlined workflow and
             improved user interfaces.
-          </Modal.Description>
-        </Modal.Header>
-        <Modal.Footer>
+          </ModalDescription>
+        </ModalHeader>
+        <ModalFooter>
           <DialogClose>Close</DialogClose>
           <Button onPress={() => setIsOpen(false)}>Confirm</Button>
-        </Modal.Footer>
-      </Modal.Content>
+        </ModalFooter>
+      </ModalContent>
     </>
   )
 }

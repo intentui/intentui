@@ -2,7 +2,7 @@
 
 import { IconDotsVertical, IconEye, IconHighlight, IconTrash } from "@intentui/icons"
 import { Card } from "@/components/ui/card"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
 import { Pagination } from "@/components/ui/pagination"
 import { Table } from "@/components/ui/table"
 
@@ -37,21 +37,21 @@ export default function CardTableDemo() {
                 <Table.Cell>{item.occupation}</Table.Cell>
                 <Table.Cell className="text-end last:pr-2.5">
                   <Menu>
-                    <Menu.Trigger>
+                    <MenuTrigger>
                       <IconDotsVertical />
-                    </Menu.Trigger>
-                    <Menu.Content placement="left top">
-                      <Menu.Item>
+                    </MenuTrigger>
+                    <MenuContent placement="left top">
+                      <MenuItem>
                         <IconEye /> View
-                      </Menu.Item>
-                      <Menu.Item>
+                      </MenuItem>
+                      <MenuItem>
                         <IconHighlight /> Edit
-                      </Menu.Item>
-                      <Menu.Separator />
-                      <Menu.Item isDanger>
+                      </MenuItem>
+                      <MenuSeparator />
+                      <MenuItem isDanger>
                         <IconTrash /> Delete
-                      </Menu.Item>
-                    </Menu.Content>
+                      </MenuItem>
+                    </MenuContent>
                   </Menu>
                 </Table.Cell>
               </Table.Row>

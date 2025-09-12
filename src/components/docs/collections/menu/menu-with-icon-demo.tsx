@@ -11,38 +11,48 @@ import {
 } from "@intentui/icons"
 import { useTheme } from "next-themes"
 import { Avatar } from "@/components/ui/avatar"
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuHeader,
+  MenuItem,
+  MenuLabel,
+  MenuSection,
+  MenuSeparator,
+  MenuSubmenu,
+  MenuTrigger,
+} from "@/components/ui/menu"
 
 export default function MenuWithIconDemo() {
   const { resolvedTheme, setTheme } = useTheme()
   return (
     <Menu>
-      <Menu.Trigger aria-label="Open Menu">
+      <MenuTrigger aria-label="Open Menu">
         <Avatar alt="kurt cobain" size="lg" src="https://intentui.com/images/avatar/cobain.jpg" />
-      </Menu.Trigger>
-      <Menu.Content popover={{ placement: "bottom" }} className="min-w-64">
-        <Menu.Header separator>
+      </MenuTrigger>
+      <MenuContent popover={{ placement: "bottom" }} className="min-w-64">
+        <MenuHeader separator>
           <span className="block">Kurt Cobain</span>
           <span className="font-normal text-muted-fg">@cobain</span>
-        </Menu.Header>
+        </MenuHeader>
 
-        <Menu.Section>
-          <Menu.Item href="#dashboard">
+        <MenuSection>
+          <MenuItem href="#dashboard">
             <IconDashboard />
-            <Menu.Label>Dashboard</Menu.Label>
-          </Menu.Item>
-          <Menu.Item href="#settings">
+            <MenuLabel>Dashboard</MenuLabel>
+          </MenuItem>
+          <MenuItem href="#settings">
             <IconSettings />
-            <Menu.Label>Settings</Menu.Label>
-          </Menu.Item>
-        </Menu.Section>
-        <Menu.Separator />
-        <Menu.Item>
+            <MenuLabel>Settings</MenuLabel>
+          </MenuItem>
+        </MenuSection>
+        <MenuSeparator />
+        <MenuItem>
           <IconCommandRegular />
-          <Menu.Label>Command Menu</Menu.Label>
-        </Menu.Item>
-        <Menu.Submenu>
-          <Menu.Item>
+          <MenuLabel>Command Menu</MenuLabel>
+        </MenuItem>
+        <MenuSubmenu>
+          <MenuItem>
             {resolvedTheme === "light" ? (
               <IconSun />
             ) : resolvedTheme === "dark" ? (
@@ -50,30 +60,30 @@ export default function MenuWithIconDemo() {
             ) : (
               <IconDeviceDesktop />
             )}
-            <Menu.Label>Switch theme</Menu.Label>
-          </Menu.Item>
-          <Menu.Content>
-            <Menu.Item onAction={() => setTheme("system")}>
+            <MenuLabel>Switch theme</MenuLabel>
+          </MenuItem>
+          <MenuContent>
+            <MenuItem onAction={() => setTheme("system")}>
               <IconDeviceDesktop /> System
-            </Menu.Item>
-            <Menu.Item onAction={() => setTheme("dark")}>
+            </MenuItem>
+            <MenuItem onAction={() => setTheme("dark")}>
               <IconMoon /> Dark
-            </Menu.Item>
-            <Menu.Item onAction={() => setTheme("light")}>
+            </MenuItem>
+            <MenuItem onAction={() => setTheme("light")}>
               <IconSun /> Light
-            </Menu.Item>
-          </Menu.Content>
-        </Menu.Submenu>
-        <Menu.Separator />
-        <Menu.Item href="#contact-s">
-          <Menu.Label>Contact Support</Menu.Label>
-        </Menu.Item>
-        <Menu.Separator />
-        <Menu.Item href="#logout">
+            </MenuItem>
+          </MenuContent>
+        </MenuSubmenu>
+        <MenuSeparator />
+        <MenuItem href="#contact-s">
+          <MenuLabel>Contact Support</MenuLabel>
+        </MenuItem>
+        <MenuSeparator />
+        <MenuItem href="#logout">
           <IconLogout />
-          <Menu.Label>Log out</Menu.Label>
-        </Menu.Item>
-      </Menu.Content>
+          <MenuLabel>Log out</MenuLabel>
+        </MenuItem>
+      </MenuContent>
     </Menu>
   )
 }

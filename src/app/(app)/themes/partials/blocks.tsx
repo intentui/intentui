@@ -15,7 +15,14 @@ import { ComboBox } from "@/components/ui/combo-box"
 import { Description, Label } from "@/components/ui/field"
 import { Link } from "@/components/ui/link"
 import { Radio, RadioGroup } from "@/components/ui/radio"
-import { Select } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectDescription,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+} from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 import { TextField } from "@/components/ui/text-field"
 
@@ -65,26 +72,26 @@ export function Blocks() {
               <MenuSubDemo />
             </div>
             <Select aria-label="Select a role" placeholder="Select a role">
-              <Select.Trigger />
-              <Select.Content items={roles}>
+              <SelectTrigger />
+              <SelectContent items={roles}>
                 {(item) => (
-                  <Select.Item id={item.id} textValue={item.name}>
-                    <Select.Label>{item.name}</Select.Label>
-                    <Select.Description>{item.description}</Select.Description>
-                  </Select.Item>
+                  <SelectItem id={item.id} textValue={item.name}>
+                    <SelectLabel>{item.name}</SelectLabel>
+                    <SelectDescription>{item.description}</SelectDescription>
+                  </SelectItem>
                 )}
-              </Select.Content>
+              </SelectContent>
             </Select>
             <ComboBox placeholder="Select a user" aria-label="Select a user">
               <ComboBox.Input />
-              <ComboBox.List items={users}>
+              <ComboBox.Content items={users}>
                 {(item) => (
-                  <ComboBox.Option id={item.id} textValue={item.name}>
+                  <ComboBox.Item id={item.id} textValue={item.name}>
                     <Avatar src={item.image_url} />
                     {item.name}
-                  </ComboBox.Option>
+                  </ComboBox.Item>
                 )}
-              </ComboBox.List>
+              </ComboBox.Content>
             </ComboBox>
           </div>
         </Card>

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import type { Key } from "react-aria-components"
 import { Description } from "@/components/ui/field"
-import { Select } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 export const movies = [
   { id: 1, title: "Inception" },
@@ -23,14 +23,14 @@ export default function SelectControlledDemo() {
         label="Movies"
         placeholder="Select a movie"
       >
-        <Select.Trigger />
-        <Select.Content items={movies}>
+        <SelectTrigger />
+        <SelectContent items={movies}>
           {(item) => (
-            <Select.Item id={item.id} textValue={item.title}>
+            <SelectItem id={item.id} textValue={item.title}>
               {item.title}
-            </Select.Item>
+            </SelectItem>
           )}
-        </Select.Content>
+        </SelectContent>
       </Select>
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">
         You have selected: <strong>{movie}</strong>

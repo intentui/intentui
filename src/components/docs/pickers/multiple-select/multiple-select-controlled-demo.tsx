@@ -3,7 +3,7 @@
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
 import { Description } from "@/components/ui/field"
-import { MultipleSelect } from "@/components/ui/multiple-select"
+import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-select"
 
 const tags = [
   { id: 1, name: "Travel" },
@@ -27,9 +27,9 @@ export default function MultipleSelectControlledDemo() {
       >
         {(item) => {
           return (
-            <MultipleSelect.Item id={item.id} textValue={item.name}>
+            <MultipleSelectItem id={item.id} textValue={item.name}>
               {item.name}
-            </MultipleSelect.Item>
+            </MultipleSelectItem>
           )
         }}
       </MultipleSelect>

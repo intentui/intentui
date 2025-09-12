@@ -3,7 +3,7 @@ import { IconDotsVertical } from "@intentui/icons"
 import { use, useMemo } from "react"
 import { Autocomplete, AutocompleteStateContext, useFilter } from "react-aria-components"
 import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
 import { SearchField } from "@/components/ui/search-field"
 import { Table } from "@/components/ui/table"
 
@@ -51,15 +51,15 @@ export default function TableDemo() {
                 <Table.Cell>
                   <div className="flex justify-end">
                     <Menu>
-                      <Menu.Trigger className="size-6">
+                      <MenuTrigger className="size-6">
                         <IconDotsVertical />
-                      </Menu.Trigger>
-                      <Menu.Content aria-label="Actions" placement="left top">
-                        <Menu.Item>View</Menu.Item>
-                        <Menu.Item>Edit</Menu.Item>
-                        <Menu.Separator />
-                        <Menu.Item isDanger>Delete</Menu.Item>
-                      </Menu.Content>
+                      </MenuTrigger>
+                      <MenuContent aria-label="Actions" placement="left top">
+                        <MenuItem>View</MenuItem>
+                        <MenuItem>Edit</MenuItem>
+                        <MenuSeparator />
+                        <MenuItem isDanger>Delete</MenuItem>
+                      </MenuContent>
                     </Menu>
                   </div>
                 </Table.Cell>

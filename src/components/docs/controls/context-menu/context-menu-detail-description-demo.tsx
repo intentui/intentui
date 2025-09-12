@@ -1,21 +1,28 @@
 "use client"
 
-import { ContextMenu } from "@/components/ui/context-menu"
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuDescription,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
 
 export default function ContextMenuDetailDescriptionDemo() {
   return (
     <ContextMenu>
-      <ContextMenu.Trigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
+      <ContextMenuTrigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
         Right click me
-      </ContextMenu.Trigger>
-      <ContextMenu.Content items={roles}>
+      </ContextMenuTrigger>
+      <ContextMenuContent items={roles}>
         {(item) => (
-          <ContextMenu.Item id={item.id} textValue={item.name}>
-            <ContextMenu.Label>{item.name}</ContextMenu.Label>
-            <ContextMenu.Description>{item.description}</ContextMenu.Description>
-          </ContextMenu.Item>
+          <ContextMenuItem id={item.id} textValue={item.name}>
+            <ContextMenuLabel>{item.name}</ContextMenuLabel>
+            <ContextMenuDescription>{item.description}</ContextMenuDescription>
+          </ContextMenuItem>
         )}
-      </ContextMenu.Content>
+      </ContextMenuContent>
     </ContextMenu>
   )
 }

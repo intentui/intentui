@@ -6,7 +6,7 @@ import { ColorArea } from "@/components/ui/color-area"
 import { ColorField } from "@/components/ui/color-field"
 import { ColorPicker } from "@/components/ui/color-picker"
 import { ColorSlider } from "@/components/ui/color-slider"
-import { Select } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 export default function ColorPickerCombinationDemo() {
   const [space, setSpace] = useState<ColorSpace>("rgb")
@@ -21,14 +21,14 @@ export default function ColorPickerCombinationDemo() {
         selectedKey={space}
         onSelectionChange={(s) => setSpace(s as ColorSpace)}
       >
-        <Select.Trigger />
-        <Select.Content>
+        <SelectTrigger />
+        <SelectContent>
           {["rgb", "hsb", "hsl"].map((s) => (
-            <Select.Item key={s} id={s} textValue={s}>
+            <SelectItem key={s} id={s} textValue={s}>
               {s}
-            </Select.Item>
+            </SelectItem>
           ))}
-        </Select.Content>
+        </SelectContent>
       </Select>
       <div className="flex gap-2 sm:max-w-56">
         {getColorChannels(space).map((channel) => (

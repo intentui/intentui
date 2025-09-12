@@ -21,7 +21,7 @@ import { GithubLink } from "@/components/github-link"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
 import { Link } from "@/components/ui/link"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
 import { useMediaQuery } from "@/hooks/use-media-query"
@@ -85,18 +85,18 @@ export function Navbar() {
               >
                 <IconHamburger className="size-5" />
               </Button>
-              <Menu.Content placement="bottom" className="min-w-56">
-                <Menu.Item href="/">
+              <MenuContent placement="bottom" className="min-w-56">
+                <MenuItem href="/">
                   <IconHome />
-                  <Menu.Label>Home</Menu.Label>
-                </Menu.Item>
+                  <MenuLabel>Home</MenuLabel>
+                </MenuItem>
                 {menus.map((menu) => (
-                  <Menu.Item key={menu.href} href={menu.href}>
+                  <MenuItem key={menu.href} href={menu.href}>
                     {menu.icon && <menu.icon />}
-                    <Menu.Label>{menu.label}</Menu.Label>
-                  </Menu.Item>
+                    <MenuLabel>{menu.label}</MenuLabel>
+                  </MenuItem>
                 ))}
-              </Menu.Content>
+              </MenuContent>
             </Menu>
           </div>
         </div>

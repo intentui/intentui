@@ -31,20 +31,20 @@ npm i react-aria-components @intentui/icons
 import {
   ComboBox,
   ComboBoxInput,
-  ComboBoxList,
-  ComboBoxOption,
+  ComboBoxContent,
+  ComboBoxItem,
 } from "@/components/ui/combo-box"
 ```
 
 ```
 <ComboBox placeholder="Select a user" label="Users">
   <ComboBoxInput />
-  <ComboBoxList>
-    <ComboBoxOption>John Lennon</ComboBoxOption>
-    <ComboBoxOption>Paul McCartney</ComboBoxOption>
-    <ComboBoxOption>George Harrison</ComboBoxOption>
-    <ComboBoxOption>Ringo Starr</ComboBoxOption>
-  </ComboBoxList>
+  <ComboBoxContent>
+    <ComboBoxItem>John Lennon</ComboBoxItem>
+    <ComboBoxItem>Paul McCartney</ComboBoxItem>
+    <ComboBoxItem>George Harrison</ComboBoxItem>
+    <ComboBoxItem>Ringo Starr</ComboBoxItem>
+  </ComboBoxContent>
 </ComboBox>
 ```
 
@@ -61,13 +61,13 @@ When the combo box is in a readonly state, it cannot be edited.
 <How minW72 toUse="pickers/combo-box/combo-box-readonly-demo" />
 
 ## Label
-If the `children` of a `ComboBox.Option` is a string, the `ComboBox.Label` will automatically wrap it. However, if you're including additional elements like an icon or avatar, you'll need to manually wrap the label, as shown below:
+If the `children` of a `ComboBox.Item` is a string, the `ComboBox.Label` will automatically wrap it. However, if you're including additional elements like an icon or avatar, you'll need to manually wrap the label, as shown below:
 
 ```
-<ComboBox.Option id={item.id} textValue={item.name}>
+<ComboBox.Item id={item.id} textValue={item.name}>
   <Avatar src={item.image_url} />
   <ComboBox.Label>{item.name}</ComboBox.Label>
-</ComboBox.Option>
+</ComboBox.Item>
 ```
 
 ## Details description

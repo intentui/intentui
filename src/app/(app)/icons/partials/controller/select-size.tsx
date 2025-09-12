@@ -3,7 +3,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 import { useQueryString } from "@/hooks/use-query-string"
 import { title } from "@/lib/utils"
 
@@ -37,7 +37,7 @@ export function SelectSize() {
         </span>
         <IconChevronsY />
       </Button>
-      <Menu.Content
+      <MenuContent
         selectionMode="single"
         selectedKeys={selectedSize}
         onSelectionChange={onSelectionChange}
@@ -45,14 +45,14 @@ export function SelectSize() {
         items={sizes}
       >
         {(item) => (
-          <Menu.Item textValue={item.name}>
-            <Menu.Label>
+          <MenuItem textValue={item.name}>
+            <MenuLabel>
               {item.name} /{" "}
               {item.name === "Size 4" ? "20px" : item.name === "Size 5" ? "24px" : "28px"}
-            </Menu.Label>
-          </Menu.Item>
+            </MenuLabel>
+          </MenuItem>
         )}
-      </Menu.Content>
+      </MenuContent>
     </Menu>
   )
 }

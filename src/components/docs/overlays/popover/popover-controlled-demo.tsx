@@ -4,7 +4,13 @@ import { IconCircleCheckFill, IconTrash } from "@intentui/icons"
 import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
-import { Popover } from "@/components/ui/popover"
+import {
+  PopoverContent,
+  PopoverDescription,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTitle,
+} from "@/components/ui/popover"
 import { wait } from "@/lib/utils"
 
 export default function PopoverControlledDemo() {
@@ -26,19 +32,19 @@ export default function PopoverControlledDemo() {
       <Button ref={triggerRef} onPress={() => setIsOpen(true)} intent="danger">
         Delete Account
       </Button>
-      <Popover.Content
+      <PopoverContent
         triggerRef={triggerRef}
         isOpen={isOpen}
         onOpenChange={setIsOpen}
         className="sm:max-w-sm"
       >
-        <Popover.Header>
-          <Popover.Title>Confirm Deletion</Popover.Title>
-          <Popover.Description>
+        <PopoverHeader>
+          <PopoverTitle>Confirm Deletion</PopoverTitle>
+          <PopoverDescription>
             Are you sure you want to delete your account? This action cannot be undone.
-          </Popover.Description>
-        </Popover.Header>
-        <Popover.Footer>
+          </PopoverDescription>
+        </PopoverHeader>
+        <PopoverFooter>
           <Button intent="outline" onPress={() => setIsOpen(false)} className="mr-2">
             Cancel
           </Button>
@@ -64,8 +70,8 @@ export default function PopoverControlledDemo() {
               </>
             )}
           </Button>
-        </Popover.Footer>
-      </Popover.Content>
+        </PopoverFooter>
+      </PopoverContent>
     </>
   )
 }

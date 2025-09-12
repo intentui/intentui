@@ -13,68 +13,75 @@ import {
 } from "@intentui/icons"
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuLabel,
+  MenuSection,
+  MenuTrigger,
+} from "@/components/ui/menu"
 
 export default function MenuSectionLevelSelection() {
   const [style, setStyle] = useState<Selection>(new Set(["bold"]))
   const [align, setAlign] = useState<Selection>(new Set(["left"]))
   return (
     <Menu>
-      <Menu.Trigger>Open</Menu.Trigger>
-      <Menu.Content popover={{ placement: "bottom" }} className="min-w-52">
-        <Menu.Section title="Actions">
-          <Menu.Item textValue="Cut">
+      <MenuTrigger>Open</MenuTrigger>
+      <MenuContent popover={{ placement: "bottom" }} className="min-w-52">
+        <MenuSection title="Actions">
+          <MenuItem textValue="Cut">
             <IconCut />
-            <Menu.Label>Cut</Menu.Label>
-          </Menu.Item>
-          <Menu.Item textValue="Copy">
+            <MenuLabel>Cut</MenuLabel>
+          </MenuItem>
+          <MenuItem textValue="Copy">
             <IconDuplicate />
-            <Menu.Label>Copy</Menu.Label>
-          </Menu.Item>
-          <Menu.Item textValue="Paste">
+            <MenuLabel>Copy</MenuLabel>
+          </MenuItem>
+          <MenuItem textValue="Paste">
             <IconClipboard />
-            <Menu.Label>Paste</Menu.Label>
-          </Menu.Item>
-        </Menu.Section>
-        <Menu.Section
+            <MenuLabel>Paste</MenuLabel>
+          </MenuItem>
+        </MenuSection>
+        <MenuSection
           selectionMode="multiple"
           selectedKeys={style}
           onSelectionChange={setStyle}
           title="Text style"
         >
-          <Menu.Item id="bold" textValue="Bold">
+          <MenuItem id="bold" textValue="Bold">
             <IconBold />
-            <Menu.Label>Bold</Menu.Label>
-          </Menu.Item>
-          <Menu.Item id="italic" textValue="Italic">
+            <MenuLabel>Bold</MenuLabel>
+          </MenuItem>
+          <MenuItem id="italic" textValue="Italic">
             <IconItalic />
-            <Menu.Label>Italic</Menu.Label>
-          </Menu.Item>
-          <Menu.Item id="underline" textValue="Underline">
+            <MenuLabel>Italic</MenuLabel>
+          </MenuItem>
+          <MenuItem id="underline" textValue="Underline">
             <IconUnderline />
-            <Menu.Label>Underline</Menu.Label>
-          </Menu.Item>
-        </Menu.Section>
-        <Menu.Section
+            <MenuLabel>Underline</MenuLabel>
+          </MenuItem>
+        </MenuSection>
+        <MenuSection
           selectionMode="single"
           selectedKeys={align}
           onSelectionChange={setAlign}
           title="Text alignment"
         >
-          <Menu.Item id="left" textValue="Left">
+          <MenuItem id="left" textValue="Left">
             <IconAlignmentLeft />
-            <Menu.Label>Left</Menu.Label>
-          </Menu.Item>
-          <Menu.Item id="center" textValue="Cente">
+            <MenuLabel>Left</MenuLabel>
+          </MenuItem>
+          <MenuItem id="center" textValue="Cente">
             <IconAlignmentCenter />
-            <Menu.Label>Center</Menu.Label>
-          </Menu.Item>
-          <Menu.Item id="right" textValue="Right">
+            <MenuLabel>Center</MenuLabel>
+          </MenuItem>
+          <MenuItem id="right" textValue="Right">
             <IconAlignmentRight />
-            <Menu.Label>Right</Menu.Label>
-          </Menu.Item>
-        </Menu.Section>
-      </Menu.Content>
+            <MenuLabel>Right</MenuLabel>
+          </MenuItem>
+        </MenuSection>
+      </MenuContent>
     </Menu>
   )
 }

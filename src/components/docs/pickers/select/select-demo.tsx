@@ -1,6 +1,6 @@
 "use client"
 
-import { Select } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 export const software = [
   { id: 1, name: "Adobe Photoshop" },
@@ -12,14 +12,14 @@ export const software = [
 export default function SelectDemo() {
   return (
     <Select aria-label="Design software" placeholder="Select a software">
-      <Select.Trigger />
-      <Select.Content items={software}>
+      <SelectTrigger />
+      <SelectContent items={software}>
         {(item) => (
-          <Select.Item id={item.id} textValue={item.name}>
+          <SelectItem id={item.id} textValue={item.name}>
             {item.name}
-          </Select.Item>
+          </SelectItem>
         )}
-      </Select.Content>
+      </SelectContent>
     </Select>
   )
 }

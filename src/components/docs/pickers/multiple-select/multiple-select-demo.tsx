@@ -1,6 +1,6 @@
 "use client"
 
-import { MultipleSelect } from "@/components/ui/multiple-select"
+import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-select"
 
 const fruits = [
   { id: 1, name: "Apple" },
@@ -34,7 +34,7 @@ export default function MultipleSelectDemo() {
       items={fruits}
     >
       {(item) => {
-        return <MultipleSelect.Item textValue={item.name}>{item.name}</MultipleSelect.Item>
+        return <MultipleSelectItem textValue={item.name}>{item.name}</MultipleSelectItem>
       }}
     </MultipleSelect>
   )

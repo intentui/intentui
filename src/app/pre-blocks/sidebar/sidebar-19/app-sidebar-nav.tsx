@@ -10,7 +10,15 @@ import {
 } from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuHeader,
+  MenuItem,
+  MenuSection,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/components/ui/menu"
 import { SearchField } from "@/components/ui/search-field"
 import { SidebarNav, SidebarTrigger } from "@/components/ui/sidebar"
 
@@ -26,41 +34,41 @@ export default function AppSidebarNav() {
       </div>
       <div>
         <Menu>
-          <Menu.Trigger aria-label="Open Menu">
+          <MenuTrigger aria-label="Open Menu">
             <Avatar alt="cobain" src="https://intentui.com/images/avatar/cobain.jpg" />
-          </Menu.Trigger>
-          <Menu.Content placement="bottom" className="sm:min-w-56">
-            <Menu.Section>
-              <Menu.Header separator>
+          </MenuTrigger>
+          <MenuContent placement="bottom" className="sm:min-w-56">
+            <MenuSection>
+              <MenuHeader separator>
                 <span className="block">Kurt Cobain</span>
                 <span className="font-normal text-muted-fg">@cobain</span>
-              </Menu.Header>
-            </Menu.Section>
+              </MenuHeader>
+            </MenuSection>
 
-            <Menu.Item href="#dashboard">
+            <MenuItem href="#dashboard">
               <IconDashboard />
               Dashboard
-            </Menu.Item>
-            <Menu.Item href="#settings">
+            </MenuItem>
+            <MenuItem href="#settings">
               <IconSettings />
               Settings
-            </Menu.Item>
-            <Menu.Separator />
-            <Menu.Item>
+            </MenuItem>
+            <MenuSeparator />
+            <MenuItem>
               <IconCommandRegular />
               Command Menu
-            </Menu.Item>
-            <Menu.Separator />
-            <Menu.Item href="#contact-s">
+            </MenuItem>
+            <MenuSeparator />
+            <MenuItem href="#contact-s">
               <IconHeadphones />
               Contact Support
-            </Menu.Item>
-            <Menu.Separator />
-            <Menu.Item href="#logout">
+            </MenuItem>
+            <MenuSeparator />
+            <MenuItem href="#logout">
               <IconLogout />
               Log out
-            </Menu.Item>
-          </Menu.Content>
+            </MenuItem>
+          </MenuContent>
         </Menu>
       </div>
     </SidebarNav>

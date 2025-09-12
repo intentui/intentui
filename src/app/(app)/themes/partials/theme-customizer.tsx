@@ -5,7 +5,13 @@ import type { Key } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { useTheme } from "@/components/theme-provider"
 import { Badge } from "@/components/ui/badge"
-import { Select } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+} from "@/components/ui/select"
 import colors from "@/json/colors.json"
 import { neutralColors } from "@/lib/colors"
 
@@ -39,10 +45,10 @@ const ColorSelect = ({
       label={label}
       placeholder={placeholder}
     >
-      <Select.Trigger className="capitalize" />
-      <Select.Content>
+      <SelectTrigger className="capitalize" />
+      <SelectContent>
         {filteredKeys.map((key) => (
-          <Select.Item
+          <SelectItem
             className="capitalize hover:**:data-[slot=icon]:inset-ring-fg/30"
             textValue={key}
             key={key}
@@ -64,10 +70,10 @@ const ColorSelect = ({
                 } as React.CSSProperties
               }
             />
-            <Select.Label>{key}</Select.Label>
-          </Select.Item>
+            <SelectLabel>{key}</SelectLabel>
+          </SelectItem>
         ))}
-      </Select.Content>
+      </SelectContent>
     </Select>
   )
 }
@@ -147,22 +153,22 @@ export function ThemeCustomizer({ selectedColors, setSelectedColors }: ThemeCust
           label="Radius"
           placeholder="Select radius"
         >
-          <Select.Trigger className="capitalize" />
-          <Select.Content>
+          <SelectTrigger className="capitalize" />
+          <SelectContent>
             {filteredRadius.map((radius) => (
-              <Select.Item
+              <SelectItem
                 className="tabular-nums tracking-tight"
                 textValue={radius}
                 key={radius}
                 id={radius}
               >
-                <Select.Label>
+                <SelectLabel>
                   {radius.replace("rem", "")}
                   {radius === "0.5rem" && <Badge className="ml-2">Default</Badge>}
-                </Select.Label>
-              </Select.Item>
+                </SelectLabel>
+              </SelectItem>
             ))}
-          </Select.Content>
+          </SelectContent>
         </Select>
       </div>
     </div>

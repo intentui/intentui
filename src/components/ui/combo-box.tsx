@@ -57,7 +57,7 @@ interface ComboBoxListProps<T extends object>
   popover?: Omit<PopoverProps, "children">
 }
 
-const ComboBoxList = <T extends object>({
+const ComboBoxContent = <T extends object>({
   children,
   items,
   className,
@@ -110,13 +110,13 @@ const ComboBoxInput = (props: InputProps) => {
 }
 
 const ComboBoxSection = DropdownSection
-const ComboBoxOption = DropdownItem
+const ComboBoxItem = DropdownItem
 const ComboBoxLabel = DropdownLabel
 const ComboBoxDescription = DropdownDescription
 
 ComboBox.Input = ComboBoxInput
-ComboBox.List = ComboBoxList
-ComboBox.Option = ComboBoxOption
+ComboBox.Content = ComboBoxContent
+ComboBox.Item = ComboBoxItem
 ComboBox.Label = ComboBoxLabel
 ComboBox.Description = ComboBoxDescription
 ComboBox.Section = ComboBoxSection
@@ -125,8 +125,8 @@ export type { ComboBoxProps, ComboBoxListProps }
 export {
   ComboBox,
   ComboBoxInput,
-  ComboBoxList,
-  ComboBoxOption,
+  ComboBoxContent,
+  ComboBoxItem,
   ComboBoxLabel,
   ComboBoxDescription,
   ComboBoxSection,

@@ -29,7 +29,15 @@ import {
 } from "@intentui/icons"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuHeader,
+  MenuItem,
+  MenuSection,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/components/ui/menu"
 import {
   Sidebar,
   SidebarContent,
@@ -75,36 +83,36 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                   </SidebarLink>
                   {(!isCollapsed || isFocused) && (
                     <Menu>
-                      <Menu.Trigger data-slot="menu-action-trigger" aria-label="Manage">
+                      <MenuTrigger data-slot="menu-action-trigger" aria-label="Manage">
                         <IconDotsHorizontal />
-                      </Menu.Trigger>
-                      <Menu.Content
+                      </MenuTrigger>
+                      <MenuContent
                         popover={{
                           offset: 0,
                           placement: "right top",
                         }}
                       >
-                        <Menu.Item href="#new-order">
+                        <MenuItem href="#new-order">
                           <IconPlus />
                           Create New Order
-                        </Menu.Item>
-                        <Menu.Item href="#view-all">
+                        </MenuItem>
+                        <MenuItem href="#view-all">
                           <IconListBulletsFill />
                           View All Orders
-                        </Menu.Item>
-                        <Menu.Item href="#pending-orders">
+                        </MenuItem>
+                        <MenuItem href="#pending-orders">
                           <IconClockFill />
                           Pending Orders
-                        </Menu.Item>
-                        <Menu.Item href="#completed-orders">
+                        </MenuItem>
+                        <MenuItem href="#completed-orders">
                           <IconCircleCheckFill />
                           Completed Orders
-                        </Menu.Item>
-                        <Menu.Item href="#export-orders">
+                        </MenuItem>
+                        <MenuItem href="#export-orders">
                           <IconArrowUpFill />
                           Export Orders
-                        </Menu.Item>
-                      </Menu.Content>
+                        </MenuItem>
+                      </MenuContent>
                     </Menu>
                   )}
                 </>
@@ -119,36 +127,36 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                   </SidebarLink>
                   {(!isCollapsed || isFocused) && (
                     <Menu>
-                      <Menu.Trigger data-slot="menu-action-trigger" aria-label="Manage">
+                      <MenuTrigger data-slot="menu-action-trigger" aria-label="Manage">
                         <IconDotsHorizontal />
-                      </Menu.Trigger>
-                      <Menu.Content
+                      </MenuTrigger>
+                      <MenuContent
                         popover={{
                           offset: 0,
                           placement: "right top",
                         }}
                       >
-                        <Menu.Item href="#new-product">
+                        <MenuItem href="#new-product">
                           <IconPlus />
                           Add New Product
-                        </Menu.Item>
-                        <Menu.Item href="#archive">
+                        </MenuItem>
+                        <MenuItem href="#archive">
                           <IconArchiveFill />
                           Archive Product
-                        </Menu.Item>
-                        <Menu.Item href="#manage-categories">
+                        </MenuItem>
+                        <MenuItem href="#manage-categories">
                           <IconHashtagFill />
                           Manage Categories
-                        </Menu.Item>
-                        <Menu.Item href="#import">
+                        </MenuItem>
+                        <MenuItem href="#import">
                           <IconArrowDownFill />
                           Import Products
-                        </Menu.Item>
-                        <Menu.Item href="#export">
+                        </MenuItem>
+                        <MenuItem href="#export">
                           <IconArrowUpFill />
                           Export Products
-                        </Menu.Item>
-                      </Menu.Content>
+                        </MenuItem>
+                      </MenuContent>
                     </Menu>
                   )}
                 </>
@@ -209,7 +217,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 
       <SidebarFooter className="flex flex-row justify-between gap-4 group-data-[state=collapsed]:flex-col">
         <Menu>
-          <Menu.Trigger className="flex w-full items-center justify-between" aria-label="Profile">
+          <MenuTrigger className="flex w-full items-center justify-between" aria-label="Profile">
             <div className="flex items-center gap-x-2">
               <Avatar
                 className="size-8 *:size-8 group-data-[state=collapsed]:size-6 group-data-[state=collapsed]:*:size-6"
@@ -223,42 +231,42 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               </div>
             </div>
             <IconChevronsY data-slot="chevron" />
-          </Menu.Trigger>
-          <Menu.Content
+          </MenuTrigger>
+          <MenuContent
             className="in-data-[sidebar-collapsible=collapsed]:min-w-56 min-w-(--trigger-width)"
             placement="bottom right"
           >
-            <Menu.Section>
-              <Menu.Header separator>
+            <MenuSection>
+              <MenuHeader separator>
                 <span className="block">Kurt Cobain</span>
                 <span className="font-normal text-muted-fg">@cobain</span>
-              </Menu.Header>
-            </Menu.Section>
+              </MenuHeader>
+            </MenuSection>
 
-            <Menu.Item href="#dashboard">
+            <MenuItem href="#dashboard">
               <IconDashboardFill />
               Dashboard
-            </Menu.Item>
-            <Menu.Item href="#settings">
+            </MenuItem>
+            <MenuItem href="#settings">
               <IconSettingsFill />
               Settings
-            </Menu.Item>
-            <Menu.Item href="#security">
+            </MenuItem>
+            <MenuItem href="#security">
               <IconShieldFill />
               Security
-            </Menu.Item>
-            <Menu.Separator />
+            </MenuItem>
+            <MenuSeparator />
 
-            <Menu.Item href="#contact">
+            <MenuItem href="#contact">
               <IconHeadphonesFill />
               Customer Support
-            </Menu.Item>
-            <Menu.Separator />
-            <Menu.Item href="#logout">
+            </MenuItem>
+            <MenuSeparator />
+            <MenuItem href="#logout">
               <IconLogout />
               Log out
-            </Menu.Item>
-          </Menu.Content>
+            </MenuItem>
+          </MenuContent>
         </Menu>
       </SidebarFooter>
       <SidebarRail />

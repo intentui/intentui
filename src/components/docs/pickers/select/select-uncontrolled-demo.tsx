@@ -1,6 +1,6 @@
 "use client"
 
-import { Select } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 export const movies = [
   { id: 1, title: "Inception" },
@@ -13,14 +13,14 @@ export const movies = [
 export default function SelectUncontrolledDemo() {
   return (
     <Select defaultSelectedKey={2} label="Movies" placeholder="Select a movie">
-      <Select.Trigger />
-      <Select.Content items={movies}>
+      <SelectTrigger />
+      <SelectContent items={movies}>
         {(item) => (
-          <Select.Item id={item.id} textValue={item.title}>
+          <SelectItem id={item.id} textValue={item.title}>
             {item.title}
-          </Select.Item>
+          </SelectItem>
         )}
-      </Select.Content>
+      </SelectContent>
     </Select>
   )
 }

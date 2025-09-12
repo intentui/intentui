@@ -3,7 +3,7 @@
 import { IconChevronLgDown } from "@intentui/icons"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 
 export default function CardActionDemo() {
   return (
@@ -18,10 +18,10 @@ export default function CardActionDemo() {
             <Button size="sm" intent="outline">
               Export... <IconChevronLgDown />
             </Button>
-            <Menu.Content placement="bottom end">
-              <Menu.Item>Export to PDF</Menu.Item>
-              <Menu.Item>Export to CSV</Menu.Item>
-            </Menu.Content>
+            <MenuContent placement="bottom end">
+              <MenuItem>Export to PDF</MenuItem>
+              <MenuItem>Export to CSV</MenuItem>
+            </MenuContent>
           </Menu>
         </Card.Action>
       </Card.Header>

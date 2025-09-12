@@ -3,7 +3,12 @@
 import { useState } from "react"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { CommandMenu } from "@/components/ui/command-menu"
+import {
+  CommandMenu,
+  CommandMenuItem,
+  CommandMenuList,
+  CommandMenuSearch,
+} from "@/components/ui/command-menu"
 
 export default function CommandMenuControlledDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,15 +34,15 @@ export default function CommandMenuControlledDemo() {
         isOpen={isOpen}
         onOpenChange={setIsOpen}
       >
-        <CommandMenu.Search placeholder="Quick search..." />
-        <CommandMenu.List items={results}>
+        <CommandMenuSearch placeholder="Quick search..." />
+        <CommandMenuList items={results}>
           {(user) => (
-            <CommandMenu.Item textValue={user.name} key={user.name}>
+            <CommandMenuItem textValue={user.name} key={user.name}>
               <Avatar src={user.image_url} />
               {user.name}
-            </CommandMenu.Item>
+            </CommandMenuItem>
           )}
-        </CommandMenu.List>
+        </CommandMenuList>
       </CommandMenu>
     </>
   )

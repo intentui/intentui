@@ -3,14 +3,14 @@
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 
 export default function MultipleMenuDemo() {
   const [selected, setSelected] = useState<Selection>(new Set(["autoPlay"]))
   return (
     <Menu>
       <Button intent="outline">Open</Button>
-      <Menu.Content
+      <MenuContent
         popover={{ placement: "bottom" }}
         selectionMode="multiple"
         selectedKeys={selected}
@@ -18,11 +18,11 @@ export default function MultipleMenuDemo() {
         items={items}
       >
         {(item) => (
-          <Menu.Item id={item.slug} textValue={item.name}>
-            <Menu.Label>{item.name}</Menu.Label>
-          </Menu.Item>
+          <MenuItem id={item.slug} textValue={item.name}>
+            <MenuLabel>{item.name}</MenuLabel>
+          </MenuItem>
         )}
-      </Menu.Content>
+      </MenuContent>
     </Menu>
   )
 }

@@ -4,7 +4,14 @@ import { useState } from "react"
 
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { CommandMenu } from "@/components/ui/command-menu"
+import {
+  CommandMenu,
+  CommandMenuItem,
+  CommandMenuList,
+  CommandMenuSearch,
+  CommandMenuSection,
+  CommandMenuSeparator,
+} from "@/components/ui/command-menu"
 
 export default function CommandMenuDynamicDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,29 +21,29 @@ export default function CommandMenuDynamicDemo() {
         Open
       </Button>
       <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>
-        <CommandMenu.Search placeholder="Quick search..." />
-        <CommandMenu.List>
-          <CommandMenu.Section title="Pages">
-            <CommandMenu.Item textValue="Home" href="#">
+        <CommandMenuSearch placeholder="Quick search..." />
+        <CommandMenuList>
+          <CommandMenuSection title="Pages">
+            <CommandMenuItem textValue="Home" href="#">
               Home
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="Docs" href="#">
+            </CommandMenuItem>
+            <CommandMenuItem textValue="Docs" href="#">
               Docs
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="Components" href="#">
+            </CommandMenuItem>
+            <CommandMenuItem textValue="Components" href="#">
               Components
-            </CommandMenu.Item>
-          </CommandMenu.Section>
-          <CommandMenu.Separator />
-          <CommandMenu.Section title="Users" items={users}>
+            </CommandMenuItem>
+          </CommandMenuSection>
+          <CommandMenuSeparator />
+          <CommandMenuSection title="Users" items={users}>
             {(user) => (
-              <CommandMenu.Item>
+              <CommandMenuItem>
                 <Avatar src={user.image_url} alt={user.name} initials={user.name.slice(0, 2)} />
                 {user.name}
-              </CommandMenu.Item>
+              </CommandMenuItem>
             )}
-          </CommandMenu.Section>
-        </CommandMenu.List>
+          </CommandMenuSection>
+        </CommandMenuList>
       </CommandMenu>
     </>
   )

@@ -1,21 +1,27 @@
 "use client"
 
-import { ContextMenu } from "@/components/ui/context-menu"
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
 
 export default function ContextMenuDangerDemo() {
   return (
     <ContextMenu>
-      <ContextMenu.Trigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
+      <ContextMenuTrigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
         Right click me
-      </ContextMenu.Trigger>
-      <ContextMenu.Content>
-        <ContextMenu.Item>Open</ContextMenu.Item>
-        <ContextMenu.Item>Rename</ContextMenu.Item>
-        <ContextMenu.Item>Duplicate</ContextMenu.Item>
-        <ContextMenu.Item>Share</ContextMenu.Item>
-        <ContextMenu.Separator />
-        <ContextMenu.Item isDanger>Delete</ContextMenu.Item>
-      </ContextMenu.Content>
+      </ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem>Open</ContextMenuItem>
+        <ContextMenuItem>Rename</ContextMenuItem>
+        <ContextMenuItem>Duplicate</ContextMenuItem>
+        <ContextMenuItem>Share</ContextMenuItem>
+        <ContextMenuSeparator />
+        <ContextMenuItem isDanger>Delete</ContextMenuItem>
+      </ContextMenuContent>
     </ContextMenu>
   )
 }

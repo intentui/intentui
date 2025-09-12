@@ -1,22 +1,29 @@
 "use client"
 
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuLabel,
+  MenuSection,
+  MenuTrigger,
+} from "@/components/ui/menu"
 
 export default function MenuSectionDemo() {
   return (
     <Menu>
-      <Menu.Trigger>Open</Menu.Trigger>
-      <Menu.Content className="sm:min-w-64" items={cities} popover={{ placement: "bottom" }}>
+      <MenuTrigger>Open</MenuTrigger>
+      <MenuContent className="sm:min-w-64" items={cities} popover={{ placement: "bottom" }}>
         {(city) => (
-          <Menu.Section title={city.name} items={city.landmarks}>
+          <MenuSection title={city.name} items={city.landmarks}>
             {(landmark) => (
-              <Menu.Item textValue={landmark.name}>
-                <Menu.Label>{landmark.name}</Menu.Label>
-              </Menu.Item>
+              <MenuItem textValue={landmark.name}>
+                <MenuLabel>{landmark.name}</MenuLabel>
+              </MenuItem>
             )}
-          </Menu.Section>
+          </MenuSection>
         )}
-      </Menu.Content>
+      </MenuContent>
     </Menu>
   )
 }

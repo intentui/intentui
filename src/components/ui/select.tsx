@@ -52,7 +52,7 @@ const Select = <T extends object>({
   )
 }
 
-interface SelectListProps<T extends object>
+interface SelectContentProps<T extends object>
   extends Omit<ListBoxProps<T>, "layout" | "orientation"> {
   items?: Iterable<T>
   popover?: Omit<PopoverProps, "children">
@@ -63,7 +63,7 @@ const SelectContent = <T extends object>({
   className,
   popover,
   ...props
-}: SelectListProps<T>) => {
+}: SelectContentProps<T>) => {
   return (
     <PopoverContent
       className={cx(

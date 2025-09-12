@@ -3,7 +3,14 @@
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
-import { CommandMenu } from "@/components/ui/command-menu"
+import {
+  CommandMenu,
+  CommandMenuDescription,
+  CommandMenuItem,
+  CommandMenuList,
+  CommandMenuSearch,
+  CommandMenuSection,
+} from "@/components/ui/command-menu"
 
 export default function CommandMenuDisabledDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,35 +20,35 @@ export default function CommandMenuDisabledDemo() {
         Open
       </Button>
       <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>
-        <CommandMenu.Search placeholder="Quick search..." />
-        <CommandMenu.List>
-          <CommandMenu.Section title="Suggestions">
-            <CommandMenu.Item>
+        <CommandMenuSearch placeholder="Quick search..." />
+        <CommandMenuList>
+          <CommandMenuSection title="Suggestions">
+            <CommandMenuItem>
               PhpStorm
-              <CommandMenu.Description>Application</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="webstorm">
+              <CommandMenuDescription>Application</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="webstorm">
               WebStorm
-              <CommandMenu.Description>Application</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="disabled warp" isDisabled>
+              <CommandMenuDescription>Application</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="disabled warp" isDisabled>
               Warp
-              <CommandMenu.Description>Need to enable</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="disabled sublime text" isDisabled>
+              <CommandMenuDescription>Need to enable</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="disabled sublime text" isDisabled>
               Sublime Text
-              <CommandMenu.Description>Need to enable</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="application vscode">
+              <CommandMenuDescription>Need to enable</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="application vscode">
               VS Code
-              <CommandMenu.Description>Application</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="atom" isDisabled>
+              <CommandMenuDescription>Application</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="atom" isDisabled>
               Atom
-              <CommandMenu.Description>Killed</CommandMenu.Description>
-            </CommandMenu.Item>
-          </CommandMenu.Section>
-        </CommandMenu.List>
+              <CommandMenuDescription>Killed</CommandMenuDescription>
+            </CommandMenuItem>
+          </CommandMenuSection>
+        </CommandMenuList>
       </CommandMenu>
     </>
   )

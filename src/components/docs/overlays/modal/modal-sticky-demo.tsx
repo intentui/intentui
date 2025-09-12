@@ -1,20 +1,29 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Modal } from "@/components/ui/modal"
+import {
+  Modal,
+  ModalBody,
+  ModalClose,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+} from "@/components/ui/modal"
 
 export default function ModalStickyDemo() {
   return (
     <Modal>
       <Button>Read</Button>
-      <Modal.Content size="2xl">
-        <Modal.Header>
-          <Modal.Title>Terms of Use</Modal.Title>
-          <Modal.Description>
+      <ModalContent size="2xl">
+        <ModalHeader>
+          <ModalTitle>Terms of Use</ModalTitle>
+          <ModalDescription>
             If you do not agree to these terms, please refrain from using our services.
-          </Modal.Description>
-        </Modal.Header>
-        <Modal.Body>
+          </ModalDescription>
+        </ModalHeader>
+        <ModalBody>
           <div className="prose prose-zinc dark:prose-invert prose-h3:text-sm/6 prose-h4:text-sm/6 prose-p:text-muted-fg">
             <p>
               By accessing or using our services, you agree to be bound by these terms. If you do
@@ -84,12 +93,12 @@ export default function ModalStickyDemo() {
               accordance with these terms.
             </p>
           </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Modal.Close>Close</Modal.Close>
+        </ModalBody>
+        <ModalFooter>
+          <ModalClose>Close</ModalClose>
           <Button>Accept</Button>
-        </Modal.Footer>
-      </Modal.Content>
+        </ModalFooter>
+      </ModalContent>
     </Modal>
   )
 }

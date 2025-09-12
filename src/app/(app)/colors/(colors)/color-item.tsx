@@ -6,7 +6,7 @@ import { ListBox, ListBoxItem } from "react-aria-components"
 import { toast } from "sonner"
 import { twJoin } from "tailwind-merge"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 import colors from "@/json/colors.json"
 import { getTextColor } from "@/lib/colors"
 
@@ -106,25 +106,25 @@ export function SelectFormat({ selected, setSelected }: SelectedFormatProps) {
         {[...selected].join(", ")}
         <IconChevronLgDown className="ml-1" />
       </Button>
-      <Menu.Content
+      <MenuContent
         placement="bottom right"
         selectedKeys={selected}
         onSelectionChange={setSelected}
         selectionMode="single"
       >
-        <Menu.Item id="rgb">
-          <Menu.Label>RGB</Menu.Label>
-        </Menu.Item>
-        <Menu.Item id="hsl">
-          <Menu.Label>HSL</Menu.Label>
-        </Menu.Item>
-        <Menu.Item id="oklch">
-          <Menu.Label>OKLCH</Menu.Label>
-        </Menu.Item>
-        <Menu.Item id="hex">
-          <Menu.Label>HEX</Menu.Label>
-        </Menu.Item>
-      </Menu.Content>
+        <MenuItem id="rgb">
+          <MenuLabel>RGB</MenuLabel>
+        </MenuItem>
+        <MenuItem id="hsl">
+          <MenuLabel>HSL</MenuLabel>
+        </MenuItem>
+        <MenuItem id="oklch">
+          <MenuLabel>OKLCH</MenuLabel>
+        </MenuItem>
+        <MenuItem id="hex">
+          <MenuLabel>HEX</MenuLabel>
+        </MenuItem>
+      </MenuContent>
     </Menu>
   )
 }

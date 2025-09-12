@@ -1,24 +1,24 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuDescription, MenuItem, MenuLabel } from "@/components/ui/menu"
 
 export default function MenuItemDescriptionDemo() {
   return (
     <Menu>
       <Button intent="outline">Open</Button>
-      <Menu.Content
+      <MenuContent
         className="sm:min-w-60 sm:max-w-min"
         popover={{ placement: "bottom" }}
         items={roles}
       >
         {(item) => (
-          <Menu.Item id={item.id} textValue={item.name}>
-            <Menu.Label>{item.name}</Menu.Label>
-            <Menu.Description>{item.description}</Menu.Description>
-          </Menu.Item>
+          <MenuItem id={item.id} textValue={item.name}>
+            <MenuLabel>{item.name}</MenuLabel>
+            <MenuDescription>{item.description}</MenuDescription>
+          </MenuItem>
         )}
-      </Menu.Content>
+      </MenuContent>
     </Menu>
   )
 }

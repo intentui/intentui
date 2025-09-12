@@ -1,22 +1,22 @@
 "use client"
 
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuLabel, MenuTrigger } from "@/components/ui/menu"
 
 export default function MenuDisabledDemo() {
   return (
     <Menu>
-      <Menu.Trigger>Open</Menu.Trigger>
-      <Menu.Content popover={{ placement: "bottom" }}>
-        <Menu.Item id="view">
-          <Menu.Label>View</Menu.Label>
-        </Menu.Item>
-        <Menu.Item id="edit">
-          <Menu.Label>Edit</Menu.Label>
-        </Menu.Item>
-        <Menu.Item id="gsu" isDisabled>
-          <Menu.Label>Generate Short URL</Menu.Label>
-        </Menu.Item>
-      </Menu.Content>
+      <MenuTrigger>Open</MenuTrigger>
+      <MenuContent popover={{ placement: "bottom" }}>
+        <MenuItem id="view">
+          <MenuLabel>View</MenuLabel>
+        </MenuItem>
+        <MenuItem id="edit">
+          <MenuLabel>Edit</MenuLabel>
+        </MenuItem>
+        <MenuItem id="gsu" isDisabled>
+          <MenuLabel>Generate Short URL</MenuLabel>
+        </MenuItem>
+      </MenuContent>
     </Menu>
   )
 }

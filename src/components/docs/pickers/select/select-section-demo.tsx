@@ -1,18 +1,24 @@
 "use client"
 
-import { Select } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectSection,
+  SelectTrigger,
+} from "@/components/ui/select"
 
 export default function SelectSectionDemo() {
   return (
     <Select defaultSelectedKey={1} aria-label="Countries" placeholder="Select a country">
-      <Select.Trigger />
-      <Select.Content items={countries}>
+      <SelectTrigger />
+      <SelectContent items={countries}>
         {(country) => (
-          <Select.Section title={country.name} items={country.cities}>
-            {(city) => <Select.Item textValue={city.name}>{city.name}</Select.Item>}
-          </Select.Section>
+          <SelectSection title={country.name} items={country.cities}>
+            {(city) => <SelectItem textValue={city.name}>{city.name}</SelectItem>}
+          </SelectSection>
         )}
-      </Select.Content>
+      </SelectContent>
     </Select>
   )
 }

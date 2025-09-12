@@ -3,7 +3,14 @@
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
-import { CommandMenu } from "@/components/ui/command-menu"
+import {
+  CommandMenu,
+  CommandMenuDescription,
+  CommandMenuItem,
+  CommandMenuList,
+  CommandMenuSearch,
+  CommandMenuSection,
+} from "@/components/ui/command-menu"
 
 export default function CommandMenuDescriptionDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,63 +20,63 @@ export default function CommandMenuDescriptionDemo() {
         Open
       </Button>
       <CommandMenu escapeButton={false} isOpen={isOpen} onOpenChange={setIsOpen}>
-        <CommandMenu.Search
+        <CommandMenuSearch
           className="*:data-[slot=command-menu-search-icon]:hidden"
           placeholder="Search for apps and commands..."
         />
-        <CommandMenu.List>
-          <CommandMenu.Section className="mt-2" title="Suggestions">
-            <CommandMenu.Item textValue="phpstorm">
+        <CommandMenuList>
+          <CommandMenuSection className="mt-2" title="Suggestions">
+            <CommandMenuItem textValue="phpstorm">
               PhpStorm
-              <CommandMenu.Description>Application</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="webstorm">
+              <CommandMenuDescription>Application</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="webstorm">
               WebStorm
-              <CommandMenu.Description>Application</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="warp">
+              <CommandMenuDescription>Application</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="warp">
               Warp
-              <CommandMenu.Description>Application</CommandMenu.Description>
-            </CommandMenu.Item>
-          </CommandMenu.Section>
+              <CommandMenuDescription>Application</CommandMenuDescription>
+            </CommandMenuItem>
+          </CommandMenuSection>
 
-          <CommandMenu.Section title="Applications">
-            <CommandMenu.Item textValue="terminal">
+          <CommandMenuSection title="Applications">
+            <CommandMenuItem textValue="terminal">
               Terminal
-              <CommandMenu.Description>Application</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="docker">
+              <CommandMenuDescription>Application</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="docker">
               Docker
-              <CommandMenu.Description>Application</CommandMenu.Description>
-            </CommandMenu.Item>
-          </CommandMenu.Section>
+              <CommandMenuDescription>Application</CommandMenuDescription>
+            </CommandMenuItem>
+          </CommandMenuSection>
 
-          <CommandMenu.Section title="Commands">
-            <CommandMenu.Item textValue="git status">
+          <CommandMenuSection title="Commands">
+            <CommandMenuItem textValue="git status">
               Git status
-              <CommandMenu.Description>Command</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="bun add">
+              <CommandMenuDescription>Command</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="bun add">
               Bun add
-              <CommandMenu.Description>Command</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="composer require">
+              <CommandMenuDescription>Command</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="composer require">
               Composer require
-              <CommandMenu.Description>Command</CommandMenu.Description>
-            </CommandMenu.Item>
-          </CommandMenu.Section>
+              <CommandMenuDescription>Command</CommandMenuDescription>
+            </CommandMenuItem>
+          </CommandMenuSection>
 
-          <CommandMenu.Section title="System Settings">
-            <CommandMenu.Item textValue="display brightness">
+          <CommandMenuSection title="System Settings">
+            <CommandMenuItem textValue="display brightness">
               Display Brightness
-              <CommandMenu.Description>System Settings</CommandMenu.Description>
-            </CommandMenu.Item>
-            <CommandMenu.Item textValue="sound output">
+              <CommandMenuDescription>System Settings</CommandMenuDescription>
+            </CommandMenuItem>
+            <CommandMenuItem textValue="sound output">
               Sound Output
-              <CommandMenu.Description>System Settings</CommandMenu.Description>
-            </CommandMenu.Item>
-          </CommandMenu.Section>
-        </CommandMenu.List>
+              <CommandMenuDescription>System Settings</CommandMenuDescription>
+            </CommandMenuItem>
+          </CommandMenuSection>
+        </CommandMenuList>
       </CommandMenu>
     </>
   )

@@ -1,16 +1,16 @@
 "use client"
 
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuTrigger } from "@/components/ui/menu"
 
 export default function MenuBasicDemo() {
   return (
     <Menu>
-      <Menu.Trigger>Open</Menu.Trigger>
-      <Menu.Content popover={{ placement: "bottom" }}>
-        <Menu.Item>Inbox</Menu.Item>
-        <Menu.Item>Sent</Menu.Item>
-        <Menu.Item>New Message</Menu.Item>
-      </Menu.Content>
+      <MenuTrigger>Open</MenuTrigger>
+      <MenuContent popover={{ placement: "bottom" }}>
+        <MenuItem>Inbox</MenuItem>
+        <MenuItem>Sent</MenuItem>
+        <MenuItem>New Message</MenuItem>
+      </MenuContent>
     </Menu>
   )
 }

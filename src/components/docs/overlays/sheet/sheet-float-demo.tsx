@@ -1,22 +1,30 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Sheet } from "@/components/ui/sheet"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet"
 
 export default function SheetFloatDemo() {
   return (
     <Sheet>
       <Button intent="outline">Float</Button>
-      <Sheet.Content isFloat={false}>
-        <Sheet.Header>
-          <Sheet.Title>Not Floated</Sheet.Title>
-          <Sheet.Description>This sheet is not floated.</Sheet.Description>
-        </Sheet.Header>
-        <Sheet.Footer>
-          <Sheet.Close>Cancel</Sheet.Close>
+      <SheetContent isFloat={false}>
+        <SheetHeader>
+          <SheetTitle>Not Floated</SheetTitle>
+          <SheetDescription>This sheet is not floated.</SheetDescription>
+        </SheetHeader>
+        <SheetFooter>
+          <SheetClose>Cancel</SheetClose>
           <Button intent="primary">Save Changes</Button>
-        </Sheet.Footer>
-      </Sheet.Content>
+        </SheetFooter>
+      </SheetContent>
     </Sheet>
   )
 }

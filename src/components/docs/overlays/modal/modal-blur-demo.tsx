@@ -2,22 +2,31 @@
 
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
-import { Modal } from "@/components/ui/modal"
+import {
+  Modal,
+  ModalBody,
+  ModalClose,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+} from "@/components/ui/modal"
 import { TextField } from "@/components/ui/text-field"
 
 export default function ModalBlurDemo() {
   return (
     <Modal>
       <Button>Turn on 2FA</Button>
-      <Modal.Content isBlurred>
-        <Modal.Header>
-          <Modal.Title>Nice! Let's beef up your account.</Modal.Title>
-          <Modal.Description>
+      <ModalContent isBlurred>
+        <ModalHeader>
+          <ModalTitle>Nice! Let's beef up your account.</ModalTitle>
+          <ModalDescription>
             2FA beefs up your account's defense. Pop in your password to keep going.
-          </Modal.Description>
-        </Modal.Header>
+          </ModalDescription>
+        </ModalHeader>
         <Form onSubmit={() => {}}>
-          <Modal.Body className="pb-1">
+          <ModalBody className="pb-1">
             <TextField
               isRequired
               autoFocus
@@ -25,13 +34,13 @@ export default function ModalBlurDemo() {
               type="password"
               placeholder="Enter your password"
             />
-          </Modal.Body>
-          <Modal.Footer>
-            <Modal.Close>Cancel</Modal.Close>
+          </ModalBody>
+          <ModalFooter>
+            <ModalClose>Cancel</ModalClose>
             <Button type="submit">Turn on 2FA</Button>
-          </Modal.Footer>
+          </ModalFooter>
         </Form>
-      </Modal.Content>
+      </ModalContent>
     </Modal>
   )
 }

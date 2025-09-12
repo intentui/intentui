@@ -16,9 +16,9 @@ export default function ComboBoxControlledSelectionDemo() {
         selectedKey={country}
       >
         <ComboBox.Input />
-        <ComboBox.List items={countries}>
-          {(item) => <ComboBox.Option id={item.id}>{item.name}</ComboBox.Option>}
-        </ComboBox.List>
+        <ComboBox.Content items={countries}>
+          {(item) => <ComboBox.Item id={item.id}>{item.name}</ComboBox.Item>}
+        </ComboBox.Content>
       </ComboBox>
 
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">

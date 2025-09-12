@@ -1,68 +1,75 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuLabel,
+  MenuSeparator,
+  MenuSubmenu,
+} from "@/components/ui/menu"
 
 export default function MenuSubDemo() {
   return (
     <Menu>
       <Button intent="outline">Open</Button>
-      <Menu.Content popover={{ placement: "bottom" }}>
-        <Menu.Item>
-          <Menu.Label>Dashboard</Menu.Label>
-        </Menu.Item>
-        <Menu.Item>
-          <Menu.Label>Reports</Menu.Label>
-        </Menu.Item>
-        <Menu.Separator />
-        <Menu.Submenu>
-          <Menu.Item>
-            <Menu.Label>Settings</Menu.Label>
-          </Menu.Item>
-          <Menu.Content>
-            <Menu.Item>
-              <Menu.Label>General</Menu.Label>
-            </Menu.Item>
-            <Menu.Item>
-              <Menu.Label>Security</Menu.Label>
-            </Menu.Item>
-            <Menu.Separator />
-            <Menu.Submenu>
-              <Menu.Item>
-                <Menu.Label>Privacy</Menu.Label>
-              </Menu.Item>
-              <Menu.Content>
-                <Menu.Item>
-                  <Menu.Label>Data Sharing</Menu.Label>
-                </Menu.Item>
-                <Menu.Item>
-                  <Menu.Label>Cookies</Menu.Label>
-                </Menu.Item>
-                <Menu.Separator />
-                <Menu.Submenu>
-                  <Menu.Item>
-                    <Menu.Label>Advanced</Menu.Label>
-                  </Menu.Item>
-                  <Menu.Content>
-                    <Menu.Item>
-                      <Menu.Label>Encryption</Menu.Label>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <Menu.Label>Access Logs</Menu.Label>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <Menu.Label>API Keys</Menu.Label>
-                    </Menu.Item>
-                  </Menu.Content>
-                </Menu.Submenu>
-              </Menu.Content>
-            </Menu.Submenu>
-          </Menu.Content>
-        </Menu.Submenu>
-        <Menu.Item>
-          <Menu.Label>Help</Menu.Label>
-        </Menu.Item>
-      </Menu.Content>
+      <MenuContent popover={{ placement: "bottom" }}>
+        <MenuItem>
+          <MenuLabel>Dashboard</MenuLabel>
+        </MenuItem>
+        <MenuItem>
+          <MenuLabel>Reports</MenuLabel>
+        </MenuItem>
+        <MenuSeparator />
+        <MenuSubmenu>
+          <MenuItem>
+            <MenuLabel>Settings</MenuLabel>
+          </MenuItem>
+          <MenuContent>
+            <MenuItem>
+              <MenuLabel>General</MenuLabel>
+            </MenuItem>
+            <MenuItem>
+              <MenuLabel>Security</MenuLabel>
+            </MenuItem>
+            <MenuSeparator />
+            <MenuSubmenu>
+              <MenuItem>
+                <MenuLabel>Privacy</MenuLabel>
+              </MenuItem>
+              <MenuContent>
+                <MenuItem>
+                  <MenuLabel>Data Sharing</MenuLabel>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLabel>Cookies</MenuLabel>
+                </MenuItem>
+                <MenuSeparator />
+                <MenuSubmenu>
+                  <MenuItem>
+                    <MenuLabel>Advanced</MenuLabel>
+                  </MenuItem>
+                  <MenuContent>
+                    <MenuItem>
+                      <MenuLabel>Encryption</MenuLabel>
+                    </MenuItem>
+                    <MenuItem>
+                      <MenuLabel>Access Logs</MenuLabel>
+                    </MenuItem>
+                    <MenuItem>
+                      <MenuLabel>API Keys</MenuLabel>
+                    </MenuItem>
+                  </MenuContent>
+                </MenuSubmenu>
+              </MenuContent>
+            </MenuSubmenu>
+          </MenuContent>
+        </MenuSubmenu>
+        <MenuItem>
+          <MenuLabel>Help</MenuLabel>
+        </MenuItem>
+      </MenuContent>
     </Menu>
   )
 }

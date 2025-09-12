@@ -3,7 +3,15 @@
 import { IconPlus } from "@intentui/icons"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Modal } from "@/components/ui/modal"
+import {
+  ModalBody,
+  ModalClose,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+} from "@/components/ui/modal"
 import { TextField } from "@/components/ui/text-field"
 
 export default function TextFieldSuffixButtonDemo() {
@@ -11,20 +19,20 @@ export default function TextFieldSuffixButtonDemo() {
   const close = () => setOpen(false)
   return (
     <>
-      <Modal.Content isOpen={open} onOpenChange={close}>
-        <Modal.Header>
-          <Modal.Title>New User</Modal.Title>
-          <Modal.Description>Create a new user account</Modal.Description>
-        </Modal.Header>
-        <Modal.Body className="flex flex-col gap-4">
+      <ModalContent isOpen={open} onOpenChange={close}>
+        <ModalHeader>
+          <ModalTitle>New User</ModalTitle>
+          <ModalDescription>Create a new user account</ModalDescription>
+        </ModalHeader>
+        <ModalBody className="flex flex-col gap-4">
           <TextField label="Username" placeholder="Username" />
           <TextField label="Email" placeholder="Email" type="email" />
-        </Modal.Body>
-        <Modal.Footer>
-          <Modal.Close intent="outline">Cancel</Modal.Close>
+        </ModalBody>
+        <ModalFooter>
+          <ModalClose intent="outline">Cancel</ModalClose>
           <Button onPress={close}>Continue</Button>
-        </Modal.Footer>
-      </Modal.Content>
+        </ModalFooter>
+      </ModalContent>
       <TextField
         label="Username"
         suffix={

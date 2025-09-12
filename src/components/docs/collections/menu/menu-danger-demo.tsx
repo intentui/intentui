@@ -1,26 +1,33 @@
 "use client"
 
 import { IconHighlight, IconTrash } from "@intentui/icons"
-import { Menu } from "@/components/ui/menu"
+import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuLabel,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/components/ui/menu"
 
 export default function MenuDangerDemo() {
   return (
     <Menu>
-      <Menu.Trigger>Open</Menu.Trigger>
-      <Menu.Content popover={{ placement: "bottom" }}>
-        <Menu.Item>
-          <Menu.Label>View</Menu.Label>
-        </Menu.Item>
-        <Menu.Item>
+      <MenuTrigger>Open</MenuTrigger>
+      <MenuContent popover={{ placement: "bottom" }}>
+        <MenuItem>
+          <MenuLabel>View</MenuLabel>
+        </MenuItem>
+        <MenuItem>
           <IconHighlight />
-          <Menu.Label>Edit</Menu.Label>
-        </Menu.Item>
-        <Menu.Separator />
-        <Menu.Item isDanger>
+          <MenuLabel>Edit</MenuLabel>
+        </MenuItem>
+        <MenuSeparator />
+        <MenuItem isDanger>
           <IconTrash />
-          <Menu.Label>Delete</Menu.Label>
-        </Menu.Item>
-      </Menu.Content>
+          <MenuLabel>Delete</MenuLabel>
+        </MenuItem>
+      </MenuContent>
     </Menu>
   )
 }

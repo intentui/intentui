@@ -6,7 +6,7 @@ import { ColorArea } from "@/components/ui/color-area"
 import { ColorField } from "@/components/ui/color-field"
 import { ColorPicker } from "@/components/ui/color-picker"
 import { defaultColor } from "@/components/ui/color-swatch"
-import { Select } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 export default function ColorPickerEnableSelectionFormatDemo() {
   const [color, setColor] = useState(defaultColor)
@@ -24,14 +24,14 @@ export default function ColorPickerEnableSelectionFormatDemo() {
           setIsHexFormat(s === "hex")
         }}
       >
-        <Select.Trigger />
-        <Select.Content>
+        <SelectTrigger />
+        <SelectContent>
           {["rgb", "hex", "hsl", "hsb"].map((s) => (
-            <Select.Item key={s} id={s} textValue={s}>
+            <SelectItem key={s} id={s} textValue={s}>
               {s}
-            </Select.Item>
+            </SelectItem>
           ))}
-        </Select.Content>
+        </SelectContent>
       </Select>
       {isHexFormat ? (
         <ColorField aria-label="Hex color" colorSpace={space} />

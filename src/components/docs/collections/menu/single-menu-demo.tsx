@@ -4,7 +4,7 @@ import type { Placement } from "@react-types/overlays"
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 
 export const placements = [
   "bottom",
@@ -36,7 +36,7 @@ export default function SingleMenuDemo() {
   return (
     <Menu>
       <Button intent="outline">Placement</Button>
-      <Menu.Content
+      <MenuContent
         popover={{ placement: Array.from(selected)[0] as Placement }}
         selectionMode="single"
         selectedKeys={selected}
@@ -45,11 +45,11 @@ export default function SingleMenuDemo() {
         className="min-w-52"
       >
         {(item) => (
-          <Menu.Item id={item.name}>
-            <Menu.Label>{item.name}</Menu.Label>
-          </Menu.Item>
+          <MenuItem id={item.name}>
+            <MenuLabel>{item.name}</MenuLabel>
+          </MenuItem>
         )}
-      </Menu.Content>
+      </MenuContent>
     </Menu>
   )
 }

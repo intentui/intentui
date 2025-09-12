@@ -10,7 +10,14 @@ import {
 } from "@intentui/icons"
 import { useState } from "react"
 
-import { CommandMenu } from "@/components/ui/command-menu"
+import {
+  CommandMenu,
+  CommandMenuItem,
+  CommandMenuKeyboard,
+  CommandMenuList,
+  CommandMenuSearch,
+  CommandMenuSection,
+} from "@/components/ui/command-menu"
 
 export default function CommandMenuTriggerByKeyboardDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,33 +25,33 @@ export default function CommandMenuTriggerByKeyboardDemo() {
     <>
       ⌘ /
       <CommandMenu shortcut="/" isOpen={isOpen} onOpenChange={setIsOpen}>
-        <CommandMenu.Search placeholder="Quick search..." />
-        <CommandMenu.List>
-          <CommandMenu.Section className="mt-2" title="Pages">
-            <CommandMenu.Item href="#" textValue="home">
+        <CommandMenuSearch placeholder="Quick search..." />
+        <CommandMenuList>
+          <CommandMenuSection className="mt-2" title="Pages">
+            <CommandMenuItem href="#" textValue="home">
               <IconHome2 /> Home
-            </CommandMenu.Item>
-            <CommandMenu.Item href="#" textValue="docs">
+            </CommandMenuItem>
+            <CommandMenuItem href="#" textValue="docs">
               <IconNotes /> Docs
-              <CommandMenu.Keyboard keys="⌘k" />
-            </CommandMenu.Item>
-            <CommandMenu.Item href="#" textValue="components">
+              <CommandMenuKeyboard keys="⌘k" />
+            </CommandMenuItem>
+            <CommandMenuItem href="#" textValue="components">
               <IconCube /> Components
-            </CommandMenu.Item>
-          </CommandMenu.Section>
-          <CommandMenu.Section title="Dashboard">
-            <CommandMenu.Item href="#" textValue="billing">
+            </CommandMenuItem>
+          </CommandMenuSection>
+          <CommandMenuSection title="Dashboard">
+            <CommandMenuItem href="#" textValue="billing">
               <IconCreditCard /> Billing
-            </CommandMenu.Item>
-            <CommandMenu.Item href="#" textValue="settings">
+            </CommandMenuItem>
+            <CommandMenuItem href="#" textValue="settings">
               <IconGear /> Settings
-              <CommandMenu.Keyboard keys="⌘s" />
-            </CommandMenu.Item>
-            <CommandMenu.Item href="#" textValue="security">
+              <CommandMenuKeyboard keys="⌘s" />
+            </CommandMenuItem>
+            <CommandMenuItem href="#" textValue="security">
               <IconShield /> Security
-            </CommandMenu.Item>
-          </CommandMenu.Section>
-        </CommandMenu.List>
+            </CommandMenuItem>
+          </CommandMenuSection>
+        </CommandMenuList>
       </CommandMenu>
     </>
   )

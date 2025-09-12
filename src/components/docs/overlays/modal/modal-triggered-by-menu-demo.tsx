@@ -5,8 +5,15 @@ import { useState } from "react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
-import { Menu } from "@/components/ui/menu"
-import { Modal } from "@/components/ui/modal"
+import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
+import {
+  ModalClose,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+} from "@/components/ui/modal"
 import { wait } from "@/lib/utils"
 
 export default function ModalTriggeredByMenuDemo() {
@@ -58,27 +65,27 @@ export default function ModalTriggeredByMenuDemo() {
           Actions...
           <IconChevronLgDown className="decoration-200 transition-transform group-pressed:rotate-180" />
         </Button>
-        <Menu.Content popover={{ placement: "bottom" }}>
-          <Menu.Item onAction={() => setState("delete")}>
-            <IconTrash /> <Menu.Label>Delete</Menu.Label>
-          </Menu.Item>
-          <Menu.Item isDanger onAction={() => setState("ban")}>
+        <MenuContent popover={{ placement: "bottom" }}>
+          <MenuItem onAction={() => setState("delete")}>
+            <IconTrash /> <MenuLabel>Delete</MenuLabel>
+          </MenuItem>
+          <MenuItem isDanger onAction={() => setState("ban")}>
             <IconBlock />
-            <Menu.Label>Ban</Menu.Label>
-          </Menu.Item>
-          <Menu.Item onAction={() => setState("restore")}>
-            <Menu.Label>Restore</Menu.Label>
-          </Menu.Item>
-        </Menu.Content>
+            <MenuLabel>Ban</MenuLabel>
+          </MenuItem>
+          <MenuItem onAction={() => setState("restore")}>
+            <MenuLabel>Restore</MenuLabel>
+          </MenuItem>
+        </MenuContent>
       </Menu>
 
-      <Modal.Content isOpen={state !== null} onOpenChange={closeModal}>
-        <Modal.Header>
-          <Modal.Title>{actionType(state)?.title}</Modal.Title>
-          <Modal.Description>{actionType(state)?.description}</Modal.Description>
-        </Modal.Header>
-        <Modal.Footer>
-          <Modal.Close>Cancel</Modal.Close>
+      <ModalContent isOpen={state !== null} onOpenChange={closeModal}>
+        <ModalHeader>
+          <ModalTitle>{actionType(state)?.title}</ModalTitle>
+          <ModalDescription>{actionType(state)?.description}</ModalDescription>
+        </ModalHeader>
+        <ModalFooter>
+          <ModalClose>Cancel</ModalClose>
           <Button
             intent={state === "ban" ? "danger" : "primary"}
             className="min-w-24"
@@ -87,8 +94,8 @@ export default function ModalTriggeredByMenuDemo() {
           >
             {loading ? <Loader variant="spin" /> : actionType(state)?.confirmText}
           </Button>
-        </Modal.Footer>
-      </Modal.Content>
+        </ModalFooter>
+      </ModalContent>
     </>
   )
 }

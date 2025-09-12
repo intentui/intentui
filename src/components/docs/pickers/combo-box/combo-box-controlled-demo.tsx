@@ -28,13 +28,13 @@ export default function ComboBoxControlledDemo() {
         label="Sports"
       >
         <ComboBox.Input />
-        <ComboBox.List items={sports}>
+        <ComboBox.Content items={sports}>
           {(item) => (
-            <ComboBox.Option id={item.id} textValue={item.name}>
+            <ComboBox.Item id={item.id} textValue={item.name}>
               {item.name}
-            </ComboBox.Option>
+            </ComboBox.Item>
           )}
-        </ComboBox.List>
+        </ComboBox.Content>
       </ComboBox>
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">
         You have selected: <strong>{sport}</strong>

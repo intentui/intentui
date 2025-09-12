@@ -27,7 +27,7 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from "@/components/ui/toolbar"
 
 export default function ToolbarDemo() {
@@ -80,28 +80,28 @@ export default function ToolbarDemo() {
             Options...
             <IconChevronDown />
           </Button>
-          <Menu.Content placement="bottom right">
-            <Menu.Item>
+          <MenuContent placement="bottom right">
+            <MenuItem>
               <IconUndo />
               Undo
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <IconRedo />
               Redo
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <IconLink />
               Insert Link
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <IconGallery />
               Insert Image
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <IconGrid4 />
               Insert Grid
-            </Menu.Item>
-          </Menu.Content>
+            </MenuItem>
+          </MenuContent>
         </Menu>
       </ToolbarGroup>
     </Toolbar>

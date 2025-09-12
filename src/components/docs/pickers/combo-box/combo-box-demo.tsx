@@ -6,13 +6,13 @@ export default function ComboBoxDemo() {
   return (
     <ComboBox placeholder="Select a user" aria-label="Users">
       <ComboBox.Input />
-      <ComboBox.List items={users}>
+      <ComboBox.Content items={users}>
         {(item) => (
-          <ComboBox.Option id={item.id} textValue={item.name}>
+          <ComboBox.Item id={item.id} textValue={item.name}>
             {item.name}
-          </ComboBox.Option>
+          </ComboBox.Item>
         )}
-      </ComboBox.List>
+      </ComboBox.Content>
     </ComboBox>
   )
 }

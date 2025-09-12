@@ -24,7 +24,7 @@ import {
   IconUndo,
 } from "@intentui/icons"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 import { Toggle } from "@/components/ui/toggle"
 import { Toolbar } from "@/components/ui/toolbar"
 
@@ -75,28 +75,28 @@ export default function ToolbarOrientationDemo() {
           <Button aria-label="Other options" intent="outline" size="sq-sm">
             <IconDotsVertical />
           </Button>
-          <Menu.Content placement="right bottom">
-            <Menu.Item>
+          <MenuContent placement="right bottom">
+            <MenuItem>
               <IconUndo />
               Undo
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <IconRedo />
               Redo
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <IconLink />
               Insert Link
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <IconGallery />
               Insert Image
-            </Menu.Item>
-            <Menu.Item>
+            </MenuItem>
+            <MenuItem>
               <IconGrid4 />
               Insert Grid
-            </Menu.Item>
-          </Menu.Content>
+            </MenuItem>
+          </MenuContent>
         </Menu>
       </Toolbar.Group>
     </Toolbar>
