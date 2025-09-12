@@ -1,4 +1,4 @@
-export const blueLight = {
+export const defaultLight = {
   "bg": "oklch(1 0 0)",
   "fg": "oklch(0.21 0.006 285.885)",
   "primary": "oklch(0.546 0.245 262.881)",
@@ -54,7 +54,7 @@ export const blueLight = {
   "radius-3xl": "calc(var(--radius-lg) * 2)",
   "radius-4xl": "calc(var(--radius-lg) * 3)"
 }
-export const blueDark = {
+export const defaultDark = {
   "bg": "oklch(0.181 0.005 285.823)",
   "fg": "oklch(0.985 0 0)",
   "primary": "oklch(0.546 0.245 262.881)",
