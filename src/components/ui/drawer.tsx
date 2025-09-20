@@ -33,7 +33,6 @@ interface DrawerContentProps
   isFloat?: boolean
   isBlurred?: boolean
   className?: string
-  style?: React.CSSProperties
   side?: "top" | "bottom" | "left" | "right"
   notch?: boolean
 }

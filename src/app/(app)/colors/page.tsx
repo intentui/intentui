@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <>
-      <Header>
+      <Header className="border-b">
         <span className="tracking-tight">Col</span>
         <span className="text-muted-fg tracking-tight">ors</span>
       </Header>
