@@ -49,6 +49,16 @@ const config = {
         permanent: true,
       },
       {
+        source: "/docs/components/collections/choicebox",
+        destination: "/docs/components/collections/choice-box",
+        permanent: true,
+      },
+      {
+        source: "/choicebox",
+        destination: "/docs/components/collections/choice-box",
+        permanent: true,
+      },
+      {
         source: "/docs/components/charts/setup",
         destination: "/docs/components/charts/area-chart",
         permanent: true,

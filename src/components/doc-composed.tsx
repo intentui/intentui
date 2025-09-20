@@ -28,7 +28,7 @@ export function DocComposed({
         {components.map((item, i) => (
           <Link
             key={i}
-            href={`/docs/${item}`}
+            href={`/${item}`}
             className="flex items-center gap-x-1.5 rounded-xl border bg-muted px-3 py-1.5 font-medium text-fg text-sm/6 capitalize hover:bg-secondary"
           >
             <IconBrandReactjs />
