@@ -1,9 +1,14 @@
 import { IconBrandLaravel, IconBrandReactjs, IconBrandTypescript } from "@intentui/icons"
-import { Choicebox } from "@/components/ui/choicebox"
+import {
+  ChoiceBox,
+  ChoiceBoxDescription,
+  ChoiceBoxItem,
+  ChoiceBoxLabel,
+} from "@/components/ui/choice-box"
 
 export default function ChoiceboxIconDemo() {
   return (
-    <Choicebox
+    <ChoiceBox
       className="mx-auto max-w-lg"
       selectionMode="multiple"
       defaultSelectedKeys={["Standard"]}
@@ -13,13 +18,13 @@ export default function ChoiceboxIconDemo() {
       items={frameworks}
     >
       {(item) => (
-        <Choicebox.Item textValue={item.label}>
+        <ChoiceBoxItem textValue={item.label}>
           <item.icon />
-          <Choicebox.Label>{item.label}</Choicebox.Label>
-          <Choicebox.Description>{item.description}</Choicebox.Description>
-        </Choicebox.Item>
+          <ChoiceBoxLabel>{item.label}</ChoiceBoxLabel>
+          <ChoiceBoxDescription>{item.description}</ChoiceBoxDescription>
+        </ChoiceBoxItem>
       )}
-    </Choicebox>
+    </ChoiceBox>
   )
 }
 

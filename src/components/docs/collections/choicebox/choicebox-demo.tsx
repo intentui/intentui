@@ -1,33 +1,33 @@
 "use client"
 
 import {
-  Choicebox,
-  ChoiceboxDescription,
-  ChoiceboxItem,
-  ChoiceboxLabel,
-} from "@/components/ui/choicebox"
+  ChoiceBox,
+  ChoiceBoxDescription,
+  ChoiceBoxItem,
+  ChoiceBoxLabel,
+} from "@/components/ui/choice-box"
 
 export default function ChoiceboxDemo() {
   return (
-    <Choicebox aria-label="Select items" selectionMode="multiple">
-      <ChoiceboxItem textValue="premium">
-        <ChoiceboxLabel>Premium</ChoiceboxLabel>
-        <ChoiceboxDescription>Advanced options for growing needs.</ChoiceboxDescription>
-      </ChoiceboxItem>
-      <ChoiceboxItem textValue="deluxe">
-        <ChoiceboxLabel>Deluxe</ChoiceboxLabel>
-        <ChoiceboxDescription>Top-tier features for maximum performance.</ChoiceboxDescription>
-      </ChoiceboxItem>
-      <ChoiceboxItem textValue="ultimate">
-        <ChoiceboxLabel>Ultimate</ChoiceboxLabel>
-        <ChoiceboxDescription>
+    <ChoiceBox aria-label="Select items" selectionMode="multiple">
+      <ChoiceBoxItem textValue="premium">
+        <ChoiceBoxLabel>Premium</ChoiceBoxLabel>
+        <ChoiceBoxDescription>Advanced options for growing needs.</ChoiceBoxDescription>
+      </ChoiceBoxItem>
+      <ChoiceBoxItem textValue="deluxe">
+        <ChoiceBoxLabel>Deluxe</ChoiceBoxLabel>
+        <ChoiceBoxDescription>Top-tier features for maximum performance.</ChoiceBoxDescription>
+      </ChoiceBoxItem>
+      <ChoiceBoxItem textValue="ultimate">
+        <ChoiceBoxLabel>Ultimate</ChoiceBoxLabel>
+        <ChoiceBoxDescription>
           All-inclusive plan with every feature available.
-        </ChoiceboxDescription>
-      </ChoiceboxItem>
-      <ChoiceboxItem textValue="enterprise">
-        <ChoiceboxLabel>Enterprise</ChoiceboxLabel>
-        <ChoiceboxDescription>Customized solutions for large organizations.</ChoiceboxDescription>
-      </ChoiceboxItem>
-    </Choicebox>
+        </ChoiceBoxDescription>
+      </ChoiceBoxItem>
+      <ChoiceBoxItem textValue="enterprise">
+        <ChoiceBoxLabel>Enterprise</ChoiceBoxLabel>
+        <ChoiceBoxDescription>Customized solutions for large organizations.</ChoiceBoxDescription>
+      </ChoiceBoxItem>
+    </ChoiceBox>
   )
 }

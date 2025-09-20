@@ -1,7 +1,12 @@
 "use client"
 
 import { IconBrandLaravel, IconBrandNextjs } from "@intentui/icons"
-import { Choicebox } from "@/components/ui/choicebox"
+import {
+  ChoiceBox,
+  ChoiceBoxDescription,
+  ChoiceBoxItem,
+  ChoiceBoxLabel,
+} from "@/components/ui/choice-box"
 
 export const IconBrandTanstack = (props: React.ComponentProps<"svg">) => (
   <svg
@@ -89,14 +94,14 @@ const frameworks = [
 
 export function FrameworkGuides() {
   return (
-    <Choicebox selectionMode="single" aria-label="Framework guides" items={frameworks}>
+    <ChoiceBox selectionMode="single" aria-label="Framework guides" items={frameworks}>
       {(item) => (
-        <Choicebox.Item href={item.href} id={item.name} textValue={item.name}>
+        <ChoiceBoxItem href={item.href} id={item.name} textValue={item.name}>
           <item.logo />
-          <Choicebox.Label>{item.name}</Choicebox.Label>
-          <Choicebox.Description>{item.description}</Choicebox.Description>
-        </Choicebox.Item>
+          <ChoiceBoxLabel>{item.name}</ChoiceBoxLabel>
+          <ChoiceBoxDescription>{item.description}</ChoiceBoxDescription>
+        </ChoiceBoxItem>
       )}
-    </Choicebox>
+    </ChoiceBox>
   )
 }

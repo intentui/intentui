@@ -5,7 +5,12 @@ import { twMerge } from "tailwind-merge"
 import { IconBrandTanstack, IconBrandVite } from "@/components/framework-guides"
 import { PageContainer } from "@/components/page-container"
 import { CardHeader } from "@/components/ui/card"
-import { Choicebox } from "@/components/ui/choicebox"
+import {
+  ChoiceBox,
+  ChoiceBoxDescription,
+  ChoiceBoxItem,
+  ChoiceBoxLabel,
+} from "@/components/ui/choice-box"
 
 export const starterKits = [
   {
@@ -43,7 +48,7 @@ export function StarterKit() {
         title="Starter kit"
         description="A preconfigured project setup that includes everything you need to start building and shipping faster with Intent UI."
       />
-      <Choicebox
+      <ChoiceBox
         gap={6}
         columns={3}
         selectionMode="single"
@@ -52,13 +57,13 @@ export function StarterKit() {
         aria-label="Starter Kit"
       >
         {(item) => (
-          <Choicebox.Item target="_blank" href={item.url} textValue={item.name} id={item.name}>
+          <ChoiceBoxItem target="_blank" href={item.url} textValue={item.name} id={item.name}>
             <item.icon />
-            <Choicebox.Label>{item.name}</Choicebox.Label>
-            <Choicebox.Description>{item.description}</Choicebox.Description>
-          </Choicebox.Item>
+            <ChoiceBoxLabel>{item.name}</ChoiceBoxLabel>
+            <ChoiceBoxDescription>{item.description}</ChoiceBoxDescription>
+          </ChoiceBoxItem>
         )}
-      </Choicebox>
+      </ChoiceBox>
     </PageContainer>
   )
 }

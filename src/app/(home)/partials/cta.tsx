@@ -2,7 +2,12 @@
 
 import { PageContainer } from "@/components/page-container"
 import { CardHeader } from "@/components/ui/card"
-import { Choicebox } from "@/components/ui/choicebox"
+import {
+  ChoiceBox,
+  ChoiceBoxDescription,
+  ChoiceBoxItem,
+  ChoiceBoxLabel,
+} from "@/components/ui/choice-box"
 
 export function Cta() {
   return (
@@ -13,26 +18,26 @@ export function Cta() {
           title="Ready to get started?"
           description="Explore the core essentials to help you install, build, and start customizing your project with Intent UI in just a few steps."
         />
-        <Choicebox aria-label="Get started" selectionMode="single" gap={6} columns={3}>
-          <Choicebox.Item href="/docs/getting-started/installation" textValue="install">
-            <Choicebox.Label>Setup</Choicebox.Label>
-            <Choicebox.Description>
+        <ChoiceBox aria-label="Get started" selectionMode="single" gap={6} columns={3}>
+          <ChoiceBoxItem href="/docs/getting-started/installation" textValue="install">
+            <ChoiceBoxLabel>Setup</ChoiceBoxLabel>
+            <ChoiceBoxDescription>
               Follow a simple step-by-step guide to install and start building with Intent UI.
-            </Choicebox.Description>
-          </Choicebox.Item>
-          <Choicebox.Item href="/components" textValue="components">
-            <Choicebox.Label>View components</Choicebox.Label>
-            <Choicebox.Description>
+            </ChoiceBoxDescription>
+          </ChoiceBoxItem>
+          <ChoiceBoxItem href="/components" textValue="components">
+            <ChoiceBoxLabel>View components</ChoiceBoxLabel>
+            <ChoiceBoxDescription>
               Browse all available UI components with detailed examples and usage guidance.
-            </Choicebox.Description>
-          </Choicebox.Item>
-          <Choicebox.Item href="/themes" textValue="themes">
-            <Choicebox.Label>Themes</Choicebox.Label>
-            <Choicebox.Description>
+            </ChoiceBoxDescription>
+          </ChoiceBoxItem>
+          <ChoiceBoxItem href="/themes" textValue="themes">
+            <ChoiceBoxLabel>Themes</ChoiceBoxLabel>
+            <ChoiceBoxDescription>
               Customize the entire look and feel using built-in themes and styling options.
-            </Choicebox.Description>
-          </Choicebox.Item>
-        </Choicebox>
+            </ChoiceBoxDescription>
+          </ChoiceBoxItem>
+        </ChoiceBox>
       </PageContainer>
     </div>
   )

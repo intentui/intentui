@@ -1,12 +1,12 @@
 "use client"
 
-import { Choicebox } from "@/components/ui/choicebox"
+import { ChoiceBox, ChoiceBoxItem } from "@/components/ui/choice-box"
 
 export default function ChoiceboxMultipleSelectionDemo() {
   return (
-    <Choicebox aria-label="Select packages" selectionMode="multiple" items={packages}>
-      {(item) => <Choicebox.Item textValue={item.label} {...item} />}
-    </Choicebox>
+    <ChoiceBox aria-label="Select packages" selectionMode="multiple" items={packages}>
+      {(item) => <ChoiceBoxItem textValue={item.label} {...item} />}
+    </ChoiceBox>
   )
 }
 

@@ -2,22 +2,22 @@
 
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
-import { Choicebox } from "@/components/ui/choicebox"
+import { ChoiceBox, ChoiceBoxItem } from "@/components/ui/choice-box"
 import { Description } from "@/components/ui/field"
 
 export default function ChoiceboxControlledDemo() {
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set([packages[0].id]))
   return (
     <>
-      <Choicebox
+      <ChoiceBox
         aria-label="Select packages"
         selectionMode="multiple"
         selectedKeys={selectedKeys}
         onSelectionChange={setSelectedKeys}
         items={packages}
       >
-        {(item) => <Choicebox.Item textValue={item.label} {...item} />}
-      </Choicebox>
+        {(item) => <ChoiceBoxItem textValue={item.label} {...item} />}
+      </ChoiceBox>
 
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">
         You have selected: <strong>{Array.from(selectedKeys).join(", ")}</strong>

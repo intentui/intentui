@@ -1,19 +1,19 @@
 "use client"
 
-import { Choicebox } from "@/components/ui/choicebox"
+import { ChoiceBox, ChoiceBoxItem } from "@/components/ui/choice-box"
 
 export default function ChoiceboxDisabledDemo() {
   return (
     <div className="p-1">
-      <Choicebox aria-label="Select packages" selectionMode="multiple" items={packages}>
+      <ChoiceBox aria-label="Select packages" selectionMode="multiple" items={packages}>
         {(item) => (
-          <Choicebox.Item
+          <ChoiceBoxItem
             textValue={item.id}
             isDisabled={["sm", "lg"].includes(item.id)}
             {...item}
           />
         )}
-      </Choicebox>
+      </ChoiceBox>
     </div>
   )
 }

@@ -1,19 +1,19 @@
 "use client"
 
-import { Choicebox } from "@/components/ui/choicebox"
+import { ChoiceBox, ChoiceBoxItem } from "@/components/ui/choice-box"
 
 export default function ChoiceboxColumnsDemo() {
   return (
     <div className="p-1">
-      <Choicebox
+      <ChoiceBox
         aria-label="Select prices"
         gap={2}
         columns={2}
         selectionMode="multiple"
         items={prices}
       >
-        {(item) => <Choicebox.Item textValue={item.label} {...item} />}
-      </Choicebox>
+        {(item) => <ChoiceBoxItem textValue={item.label} {...item} />}
+      </ChoiceBox>
     </div>
   )
 }
