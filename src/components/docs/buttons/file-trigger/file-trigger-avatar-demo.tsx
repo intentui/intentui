@@ -1,7 +1,7 @@
 "use client"
 
 import type { DropEvent } from "@react-types/shared"
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { isFileDropItem } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
 import { Avatar } from "@/components/ui/avatar"
@@ -18,7 +18,7 @@ export default function FileTriggerAvatarDemo() {
       }
     }
   }, [droppedImage])
-  
+
   const onDropHandler = async (e: DropEvent) => {
     const item = e.items
       .filter(isFileDropItem)
