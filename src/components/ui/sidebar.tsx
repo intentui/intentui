@@ -733,6 +733,25 @@ const SidebarNav = ({ isSticky = false, className, ...props }: SidebarNavProps) 
   )
 }
 
+Sidebar.Content = SidebarContent
+Sidebar.Disclosure = SidebarDisclosure
+Sidebar.DisclosureGroup = SidebarDisclosureGroup
+Sidebar.DisclosurePanel = SidebarDisclosurePanel
+Sidebar.DisclosureTrigger = SidebarDisclosureTrigger
+Sidebar.Footer = SidebarFooter
+Sidebar.Header = SidebarHeader
+Sidebar.Inset = SidebarInset
+Sidebar.Item = SidebarItem
+Sidebar.Label = SidebarLabel
+Sidebar.Link = SidebarLink
+Sidebar.Nav = SidebarNav
+Sidebar.Provider = SidebarProvider
+Sidebar.Rail = SidebarRail
+Sidebar.Section = SidebarSection
+Sidebar.SectionGroup = SidebarSectionGroup
+Sidebar.Separator = SidebarSeparator
+Sidebar.Trigger = SidebarTrigger
+
 export type {
   SidebarProviderProps,
   SidebarProps,
