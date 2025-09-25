@@ -55,7 +55,7 @@ const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
           {typeof children === "function" ? (
             children(values)
           ) : typeof children === "string" ? (
-            <Label>{children}</Label>
+            <Label elementType="span">{children}</Label>
           ) : (
             children
           )}
