@@ -1766,21 +1766,22 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "name": "choicebox",
+      "name": "choice-box",
       "type": "registry:ui",
-      "title": "choicebox",
-      "description": "choicebox",
+      "title": "choice-box",
+      "description": "choice-box",
       "dependencies": [
         "react-aria-components",
         "tailwind-merge",
         "tailwind-variants"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/checkbox"
       ],
       "files": [
         {
-          "path": "src/components/ui/choicebox.tsx",
+          "path": "src/components/ui/choice-box.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3588,7 +3589,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/choicebox",
+        "http://localhost:3000/r/choice-box",
         "http://localhost:3000/r/field"
       ],
       "files": [
@@ -3606,7 +3607,7 @@
       "title": "Choicebox Disabled",
       "description": "choicebox-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/choicebox"
+        "http://localhost:3000/r/choice-box"
       ],
       "files": [
         {
@@ -3626,7 +3627,7 @@
         "@intentui/icons"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/choicebox"
+        "http://localhost:3000/r/choice-box"
       ],
       "files": [
         {
@@ -3643,7 +3644,7 @@
       "title": "Choicebox Columns",
       "description": "choicebox-columns-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/choicebox"
+        "http://localhost:3000/r/choice-box"
       ],
       "files": [
         {
@@ -3660,7 +3661,7 @@
       "title": "Choicebox",
       "description": "choicebox-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/choicebox"
+        "http://localhost:3000/r/choice-box"
       ],
       "files": [
         {
@@ -3677,7 +3678,7 @@
       "title": "Choicebox Multiple Selection",
       "description": "choicebox-multiple-selection-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/choicebox"
+        "http://localhost:3000/r/choice-box"
       ],
       "files": [
         {
@@ -11209,7 +11210,7 @@
         "http://localhost:3000/r/ui/carousel",
         "http://localhost:3000/r/ui/chart",
         "http://localhost:3000/r/ui/checkbox",
-        "http://localhost:3000/r/ui/choicebox",
+        "http://localhost:3000/r/ui/choice-box",
         "http://localhost:3000/r/ui/color-area",
         "http://localhost:3000/r/ui/color-field",
         "http://localhost:3000/r/ui/color-picker",

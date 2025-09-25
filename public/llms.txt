@@ -3,7 +3,6 @@
 - [Release Notes](/docs/prologue/release-notes.md)
 
 ## Getting Started
-- [Colors](/docs/getting-started/colors.md)
 - [Vite](/docs/getting-started/vite.md)
 - [Nextjs](/docs/getting-started/nextjs.md)
 - [Client Side Routing](/docs/getting-started/client-side-routing.md)
@@ -32,7 +31,7 @@
 - [Dropdown](https://intentui.com/docs/components/collections/dropdown.md)
 - [Grid List](https://intentui.com/docs/components/collections/grid-list.md)
 - [Tree](https://intentui.com/docs/components/collections/tree.md)
-- [Choicebox](https://intentui.com/docs/components/collections/choicebox.md)
+- [Choice Box](https://intentui.com/docs/components/collections/choice-box.md)
 - [Menu](https://intentui.com/docs/components/collections/menu.md)
 
 ### Colors
