@@ -1,6 +1,6 @@
 "use client"
 
-import { GridList } from "@/components/ui/grid-list"
+import { GridList, GridListEmptyState } from "@/components/ui/grid-list"
 
 export default function GridListRenderEmptyStateDemo() {
   return (
@@ -9,7 +9,7 @@ export default function GridListRenderEmptyStateDemo() {
       aria-label="Select items"
       selectionMode="multiple"
       className="min-w-64"
-      renderEmptyState={() => <GridList.EmptyState>No bands selected</GridList.EmptyState>}
+      renderEmptyState={() => <GridListEmptyState>No bands selected</GridListEmptyState>}
     />
   )
 }

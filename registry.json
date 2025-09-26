@@ -1876,10 +1876,8 @@
       "title": "grid-list",
       "description": "grid-list",
       "dependencies": [
-        "@intentui/icons",
         "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
+        "tailwind-merge"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
@@ -3063,6 +3061,27 @@
           "path": "src/components/docs/collections/grid-list/grid-list-drag-between-item-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-drag-between-item-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "grid-list-section-demo",
+      "type": "registry:page",
+      "title": "Grid List Section",
+      "description": "grid-list-section-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/avatar",
+        "http://localhost:3000/r/grid-list"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/collections/grid-list/grid-list-section-demo.tsx",
+          "type": "registry:page",
+          "target": "app/grid-list-section-demo/page.tsx"
         }
       ]
     },

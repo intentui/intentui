@@ -2,6 +2,7 @@
 
 import type { DialogProps, DialogTriggerProps, ModalOverlayProps } from "react-aria-components"
 import {
+  composeRenderProps,
   DialogTrigger as DialogTriggerPrimitive,
   ModalOverlay,
   Modal as ModalPrimitive,
@@ -24,6 +25,7 @@ const Modal = (props: DialogTriggerProps) => {
 }
 
 const sizes = {
+  "2xs": "sm:max-w-2xs",
   xs: "sm:max-w-xs",
   sm: "sm:max-w-sm",
   md: "sm:max-w-md",
@@ -33,6 +35,7 @@ const sizes = {
   "3xl": "sm:max-w-3xl",
   "4xl": "sm:max-w-4xl",
   "5xl": "sm:max-w-5xl",
+  fullscreen: "",
 }
 
 interface ModalContentProps
@@ -64,10 +67,11 @@ const ModalContent = ({
       isDismissable={isDismissable}
       className={({ isExiting, isEntering }) =>
         twJoin(
-          "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) bg-black/15 md:p-4",
-          "grid grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_3fr]",
-          isEntering && "fade-in animate-in duration-300",
-          isExiting && "fade-out animate-out duration-200",
+          "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) bg-black/15",
+          "grid grid-rows-[1fr_auto] justify-items-center duration-300 sm:grid-rows-[1fr_auto_3fr]",
+          size === "fullscreen" ? "md:p-3" : "md:p-4",
+          isEntering && "fade-in animate-in",
+          isExiting && "fade-out animate-out",
           isBlurred && "backdrop-blur-sm backdrop-filter",
         )
       }
@@ -75,24 +79,28 @@ const ModalContent = ({
     >
       <ModalPrimitive
         data-slot="modal-content"
-        className={({ isExiting, isEntering }) =>
+        className={composeRenderProps(className, (className, { isEntering, isExiting }) =>
           twMerge(
             "row-start-2 w-full text-left align-middle",
-            "[--visual-viewport-vertical-padding:16px] sm:[--visual-viewport-vertical-padding:32px]",
-            "relative bg-overlay text-overlay-fg",
-            "shadow-lg ring ring-fg/5 dark:ring-border",
-            "rounded-t-2xl md:rounded-xl",
+            "[--visual-viewport-vertical-padding:16px]",
+            size === "fullscreen"
+              ? "md:rounded-md sm:[--visual-viewport-vertical-padding:16px]"
+              : "md:rounded-xl sm:[--visual-viewport-vertical-padding:32px]",
+            "relative overflow-hidden bg-overlay text-overlay-fg",
+            "rounded-t-2xl shadow-lg ring ring-fg/5 dark:ring-border",
             sizes[size],
             isEntering && [
-              "slide-in-from-bottom animate-in duration-300 ease-out",
-              "md:fade-in md:zoom-in-95 md:slide-in-from-bottom-0",
+              "fade-in slide-in-from-bottom animate-in duration-300 ease-out",
+              "md:zoom-in-95 md:slide-in-from-bottom-0",
             ],
             isExiting && [
-              "slide-out-to-bottom animate-out",
-              "md:fade-out md:zoom-out-95 md:slide-out-to-bottom-0",
+              "fade-out slide-out-to-bottom animate-out duration-200 ease-in",
+              "md:zoom-out-95 md:slide-out-to-bottom-0",
             ],
-          )
-        }
+            className,
+          ),
+        )}
+        {...props}
       >
         <Dialog role={role}>
           {(values) => (

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
 import { Description } from "@/components/ui/field"
-import { GridList } from "@/components/ui/grid-list"
+import { GridList, GridListItem } from "@/components/ui/grid-list"
 
 export default function GridListControlledDemo() {
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set([]))
@@ -17,7 +17,7 @@ export default function GridListControlledDemo() {
         selectionMode="multiple"
         className="min-w-64"
       >
-        {(item) => <GridList.Item id={item.id}>{item.name}</GridList.Item>}
+        {(item) => <GridListItem id={item.id}>{item.name}</GridListItem>}
       </GridList>
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">
         You have selected: <strong>{Array.from(selectedKeys).join(", ")}</strong>
