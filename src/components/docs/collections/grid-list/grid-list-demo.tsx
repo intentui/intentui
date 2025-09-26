@@ -1,6 +1,6 @@
 "use client"
 
-import { GridList } from "@/components/ui/grid-list"
+import { GridList, GridListItem } from "@/components/ui/grid-list"
 
 export default function GridListDemo() {
   return (
@@ -10,7 +10,7 @@ export default function GridListDemo() {
       aria-label="Select your favorite bands"
       className="min-w-64"
     >
-      {(item) => <GridList.Item id={item.id}>{item.name}</GridList.Item>}
+      {(item) => <GridListItem id={item.id}>{item.name}</GridListItem>}
     </GridList>
   )
 }

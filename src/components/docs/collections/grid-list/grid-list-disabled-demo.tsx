@@ -1,6 +1,6 @@
 "use client"
 
-import { GridList } from "@/components/ui/grid-list"
+import { GridList, GridListItem } from "@/components/ui/grid-list"
 
 export default function GridListDisabledDemo() {
   return (
@@ -11,9 +11,9 @@ export default function GridListDisabledDemo() {
       className="min-w-64"
     >
       {(item) => (
-        <GridList.Item isDisabled={[2, 5].includes(Number(item.id))} id={item.id}>
+        <GridListItem isDisabled={[2, 5].includes(Number(item.id))} id={item.id}>
           {item.name}
-        </GridList.Item>
+        </GridListItem>
       )}
     </GridList>
   )

@@ -18,7 +18,6 @@
     "build": "next build",
     "format": "biome lint --fix && biome check --write",
     "format:unsafe": "biome check --unsafe --write",
-    "bb": "bun run format && bun run build:everything",
     "start": "next start",
     "preview": "bun run build && next start",
     "ic": "bun run src/scripts/identify-color.ts",

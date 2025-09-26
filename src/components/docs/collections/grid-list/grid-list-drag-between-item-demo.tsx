@@ -3,7 +3,7 @@
 import { useDragAndDrop } from "react-aria-components"
 import { useListData } from "react-stately"
 import GridListDragDemo from "@/components/docs/collections/grid-list/grid-list-drag-demo"
-import { GridList } from "@/components/ui/grid-list"
+import { GridList, GridListEmptyState, GridListItem } from "@/components/ui/grid-list"
 
 export default function GridListDragBetweenItemDemo() {
   const list = useListData({
@@ -34,7 +34,7 @@ export default function GridListDragBetweenItemDemo() {
     <div className="grid gap-4 lg:grid-cols-3">
       <GridListDragDemo />
       <GridList aria-label="Droppable list" items={list.items} dragAndDropHooks={dragAndDropHooks}>
-        {(item) => <GridList.Item>{item.name}</GridList.Item>}
+        {(item) => <GridListItem>{item.name}</GridListItem>}
       </GridList>
       <OtherEmptyList />
     </div>
@@ -68,9 +68,9 @@ export function OtherEmptyList() {
       aria-label="Droppable list"
       items={list.items}
       dragAndDropHooks={dragAndDropHooks}
-      renderEmptyState={() => <GridList.EmptyState>No bands selected</GridList.EmptyState>}
+      renderEmptyState={() => <GridListEmptyState>No bands selected</GridListEmptyState>}
     >
-      {(item) => <GridList.Item>{item.name}</GridList.Item>}
+      {(item) => <GridListItem>{item.name}</GridListItem>}
     </GridList>
   )
 }

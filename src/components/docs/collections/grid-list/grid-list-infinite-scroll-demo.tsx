@@ -27,7 +27,11 @@ export default function GridListInfiniteScrollDemo() {
     },
   })
   return (
-    <GridList selectionMode="multiple" aria-label="Async loading ListView example">
+    <GridList
+      className="max-h-56"
+      selectionMode="multiple"
+      aria-label="Async loading ListView example"
+    >
       <Collection items={list.items}>
         {(item) => <GridListItem id={item.name}>{item.name}</GridListItem>}
       </Collection>
