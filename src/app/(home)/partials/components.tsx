@@ -1,5 +1,4 @@
 "use client"
-import { Header, ListBox, ListBoxItem, ListBoxSection } from "react-aria-components"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
@@ -17,28 +16,25 @@ export function Components() {
           title="Components"
           description="Browse a complete set of UI components, built for flexibility and ready to drop into your project."
         />
-        <ListBox
-          aria-label="List components"
-          className="columns-2 gap-6 pb-6 sm:pb-12 md:columns-3 lg:columns-4"
-        >
-          {components?.children?.slice(0, 8).map((item) => (
-            <ListBoxSection
-              className="mb-12 flex break-inside-avoid flex-col gap-y-4"
-              key={item.subsection}
-            >
-              <Header className="font-semibold text-fg text-sm">{item?.subsection}</Header>
-              {item?.children?.map((item) => (
-                <ListBoxItem
-                  className="text-muted-fg text-sm hover:text-fg focus:text-fg"
-                  key={item.slug}
-                  href={item.slug}
-                >
-                  {item.title}
-                </ListBoxItem>
-              ))}
-            </ListBoxSection>
+        <div className="columns-2 gap-6 pb-6 sm:pb-12 md:columns-3 lg:columns-4">
+          {components?.children?.map((item) => (
+            <div className="mb-12 flex break-inside-avoid flex-col gap-y-2" key={item.subsection}>
+              <h3 className="font-semibold text-fg text-sm">{item?.subsection}</h3>
+              <ul>
+                {item?.children?.map((item) => (
+                  <li key={item.slug}>
+                    <Link
+                      className="block py-2 text-muted-fg text-sm hover:text-fg focus:text-fg"
+                      href={item.slug}
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ListBox>
+        </div>
       </PageContainer>
       <div className="mt-5 flex items-center justify-center">
         <Link href="/components" className={buttonStyles({ intent: "secondary" })}>
