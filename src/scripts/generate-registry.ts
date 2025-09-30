@@ -353,6 +353,7 @@ const buildComponentItem = async (absPath: string) => {
   const files: FileOut[] = [await fileEntryOther(absPath, "registry:ui")]
   const raw = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
+    extends: "none",
     name,
     type: "registry:ui",
     title: name,
@@ -373,6 +374,7 @@ const buildLibItem = async (absPath: string) => {
   const files: FileOut[] = [await fileEntryOther(absPath, "registry:lib")]
   const raw = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
+    extends: "none",
     name,
     type: "registry:lib",
     title: name,
@@ -393,6 +395,7 @@ const buildHookItem = async (absPath: string) => {
   const files: FileOut[] = [await fileEntryOther(absPath, "registry:hook")]
   const raw = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
+    extends: "none",
     name,
     type: "registry:hook",
     title: name,
@@ -413,6 +416,7 @@ const buildDemoItem = async (file: string) => {
   const files: FileOut[] = [await fileEntryPage(file, `${PAGE_TARGET_ROOT}/${slug}/page.tsx`)]
   const raw = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
+    extends: "none",
     name: slug,
     type: "registry:page",
     title: titleCase(slug.replace(/-demo$/, "").replace(/-/g, " ")),
@@ -483,6 +487,7 @@ const buildBlockItem = async (pagePath: string) => {
   }
   const raw = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
+    extends: "none",
     name: slug.split("/").join("-"),
     type: "registry:block",
     title,
@@ -503,6 +508,7 @@ const buildAllItems = (items: any[]) => {
 
   return registryItemSchema.parse({
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
+    extends: "none",
     name: "all",
     type: "registry:item",
     title: "All UI components",
