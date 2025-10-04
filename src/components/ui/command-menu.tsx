@@ -103,8 +103,8 @@ const CommandMenu = ({
             twJoin(
               "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
               "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
-              isEntering && "fade-in animate-in duration-300",
-              isExiting && "fade-out animate-out duration-200",
+              isEntering && "fade-in animate-in",
+              isExiting && "fade-out animate-out",
               isBlurred && "backdrop-blur-sm",
             )
           }
