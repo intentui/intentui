@@ -1,7 +1,7 @@
 "use client"
 
 import { IconPlus } from "@intentui/icons"
-import { cloneElement, isValidElement, useRef } from "react"
+import { useRef } from "react"
 import {
   Autocomplete,
   Select,
@@ -9,8 +9,9 @@ import {
   SelectValue,
   useFilter,
 } from "react-aria-components"
+import { cx } from "@/lib/primitive"
 import { Button } from "./button"
-import { Label } from "./field"
+import { Description, FieldError, type FieldProps, Label } from "./field"
 import { ListBox, ListBoxItem } from "./list-box"
 import { PopoverContent } from "./popover"
 import { SearchField } from "./search-field"
@@ -22,46 +23,35 @@ interface OptionBase {
 }
 
 interface MultipleSelectProps<T extends OptionBase>
-  extends Omit<SelectProps<T>, "selectionMode" | "children"> {
-  label?: string
+  extends Omit<SelectProps<T, "multiple">, "selectionMode" | "children">,
+    FieldProps {
   items: Iterable<T>
   placeholder?: string
   className?: string
   children?: (item: T) => React.ReactNode
 }
 
-interface MultipleSelectItemProps {
-  textValue?: string
-  className?: string
-  children: React.ReactNode
-}
-
-function MultipleSelectItem(props: MultipleSelectItemProps) {
-  return <ListBoxItem {...props} />
-}
-
 function MultipleSelect<T extends OptionBase>({
   label,
+  errorMessage,
+  description,
   items,
   placeholder = "No selected items",
   className,
   children,
+  ...props
 }: MultipleSelectProps<T>) {
   const triggerRef = useRef<HTMLDivElement | null>(null)
   const { contains } = useFilter({ sensitivity: "base" })
 
   return (
     <Select
+      className={cx("group relative flex w-fit flex-col gap-1 disabled:opacity-50", className)}
       selectionMode="multiple"
-      className={["group relative mx-auto mt-4 flex w-fit flex-col gap-1", className]
-        .filter(Boolean)
-        .join(" ")}
+      {...props}
     >
       {label && <Label>{label}</Label>}
-      <div
-        ref={triggerRef}
-        className="flex w-[250px] items-center gap-2 rounded-lg border border-black/10 bg-white p-2"
-      >
+      <div ref={triggerRef} className="flex items-center gap-2 rounded-lg border p-1">
         <SelectValue<T> className="flex-1">
           {({ selectedItems, state }) => (
             <TagGroup
@@ -74,21 +64,21 @@ function MultipleSelect<T extends OptionBase>({
             >
               <TagList
                 items={selectedItems.filter((i) => i != null)}
-                renderEmptyState={() => <i className="pl-2 text-gray-600 text-sm">{placeholder}</i>}
+                renderEmptyState={() => <i className="pl-2 text-muted-fg text-sm">{placeholder}</i>}
               >
-                {(item) => <Tag>{item.name}</Tag>}
+                {(item) => <Tag className="rounded-md">{item.name}</Tag>}
               </TagList>
             </TagGroup>
           )}
         </SelectValue>
-        <Button size="sq-xs">
+        <Button intent="secondary" size="sq-xs" className="self-end">
           <IconPlus />
         </Button>
       </div>
       <PopoverContent
         triggerRef={triggerRef}
         placement="bottom end"
-        className="flex w-[250px] flex-col p-2"
+        className="flex w-[250px] flex-col"
       >
         <Autocomplete filter={contains}>
           <SearchField
@@ -96,25 +86,16 @@ function MultipleSelect<T extends OptionBase>({
             className="rounded-none border-b shadow-none **:[[role=group]]:inset-ring-0 **:[[role=group]]:ring-0"
           />
           <ListBox className="rounded-t-none border-0 bg-tranparent shadow-none" items={items}>
-            {(item) => {
-              const node = children ? (
-                children(item)
-              ) : (
-                <MultipleSelectItem>{item.name}</MultipleSelectItem>
-              )
-              if (isValidElement(node) && (node.type as any) === MultipleSelectItem) {
-                return cloneElement(node as React.ReactElement<MultipleSelectItemProps>, {
-                  key: item.id as React.Key,
-                  textValue: item.name,
-                })
-              }
-              return node
-            }}
+            {children}
           </ListBox>
         </Autocomplete>
       </PopoverContent>
+      {description && <Description>{description}</Description>}
+      <FieldError>{errorMessage}</FieldError>
     </Select>
   )
 }
+
+const MultipleSelectItem = ListBoxItem
 
 export { MultipleSelect, MultipleSelectItem }

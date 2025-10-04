@@ -4,7 +4,7 @@ import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-sel
 
 export default function MultipleSelectDisabledDemo() {
   return (
-    <MultipleSelect isDisabled className="max-w-xs" label="Fruits" items={fruits}>
+    <MultipleSelect isDisabled className="min-w-2xs max-w-min" label="Fruits" items={fruits}>
       {(item) => {
         return <MultipleSelectItem textValue={item.name}>{item.name}</MultipleSelectItem>
       }}
