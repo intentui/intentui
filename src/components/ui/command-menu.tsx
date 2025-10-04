@@ -121,7 +121,7 @@ const CommandMenu = ({
                   "md:fade-in md:zoom-in-95 md:slide-in-from-bottom-0",
                 ],
                 isExiting && [
-                  "slide-out-to-bottom animate-out",
+                  "slide-out-to-bottom animate-out duration-150",
                   "md:fade-out md:zoom-out-95 md:slide-out-to-bottom-0",
                 ],
                 sizes[size],
