@@ -17,7 +17,7 @@ import {
 } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { composeTailwindRenderProps, cx } from "@/lib/primitive"
 
 interface FieldProps {
   label?: string
@@ -70,7 +70,7 @@ const FieldGroup = ({ className, ref, ...props }: FieldGroupProps) => {
     <Group
       {...props}
       ref={ref}
-      className={composeTailwindRenderProps(className, [
+      className={cx(
         "[--gutter-inset:--spacing(6)] [--gutter-x:--spacing(2.5)]",
         "*:text-base/6 *:sm:text-sm/6",
         "group relative inset-ring inset-ring-input flex items-center overflow-hidden rounded-lg shadow-xs transition duration-200 ease-out",
@@ -87,7 +87,8 @@ const FieldGroup = ({ className, ref, ...props }: FieldGroupProps) => {
         "hover:inset-ring-[color-mix(in_oklab,var(--color-input)_50%,var(--color-muted-fg)_25%)] focus-within:hover:inset-ring-ring/70 has-invalid:hover:inset-ring-danger/70",
         "invalid:inset-ring-danger/70 focus-within:invalid:inset-ring-danger/70 focus-within:invalid:ring-danger/20 group-invalid:inset-ring-danger/70 group-invalid:focus-within:inset-ring-danger/70 group-invalid:focus-within:ring-danger/20",
         "focus-within:inset-ring-ring/70 focus-within:ring-3 focus-within:ring-ring/20",
-      ])}
+        className,
+      )}
     />
   )
 }

@@ -36,7 +36,12 @@ export default function TextFieldSuffixButtonDemo() {
       <TextField
         label="Username"
         suffix={
-          <Button aria-label="New user" onPress={() => setOpen(true)} intent="outline">
+          <Button
+            size="sq-xs"
+            aria-label="New user"
+            onPress={() => setOpen(true)}
+            intent="secondary"
+          >
             <IconPlus />
           </Button>
         }

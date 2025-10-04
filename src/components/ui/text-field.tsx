@@ -4,7 +4,7 @@ import { IconEye, IconEyeClosed } from "@intentui/icons"
 import { useState } from "react"
 import type { InputProps, TextFieldProps as TextFieldPrimitiveProps } from "react-aria-components"
 import { TextField as TextFieldPrimitive } from "react-aria-components"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import type { FieldProps } from "./field"
 import { Description, FieldError, FieldGroup, Input, Label } from "./field"
 import { Loader } from "./loader"
@@ -43,10 +43,7 @@ const TextField = ({
     <TextFieldPrimitive
       type={inputType}
       {...props}
-      className={composeTailwindRenderProps(
-        className,
-        "group flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
-      )}
+      className={cx("group flex flex-col gap-y-1 *:data-[slot=label]:font-medium", className)}
     >
       {!props.children ? (
         <>
