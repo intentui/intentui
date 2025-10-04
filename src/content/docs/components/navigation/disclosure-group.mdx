@@ -49,33 +49,6 @@ import {
 </DisclosureGroup>
 ```
 
-## CSS Variables
-You need to add this snippet to your `main.css` or `global.css` to enable the animation.
-```
-@theme inline {
-  --animate-disclosure-collapsed: disclosure-collapsed 0.2s ease-out;
-  --animate-disclosure-expanded: disclosure-expanded 0.2s ease-out;
-
-  @keyframes disclosure-collapsed {
-    from {
-      height: var(--disclosure-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-
-  @keyframes disclosure-expanded {
-    from {
-      height: 0
-    }
-    to {
-      height: var(--disclosure-height)
-    }
-  }
-}
-```
-
 ## Default expanded
 Set the initially expanded sections by providing an array of keys to the `defaultExpandedKeys` prop. These keys can be either numbers or strings.
 <How isCenter={false} toUse="navigation/disclosure-group/disclosure-group-default-expand-demo" />

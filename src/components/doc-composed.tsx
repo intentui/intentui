@@ -24,12 +24,12 @@ export function DocComposed({
       ) : (
         <p className="mb-4">{text}</p>
       )}
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-4">
         {components.map((item, i) => (
           <Link
             key={i}
             href={`/${item}`}
-            className="flex items-center gap-x-1.5 rounded-xl border bg-muted px-3 py-1.5 font-medium text-fg text-sm/6 capitalize hover:bg-secondary"
+            className="flex items-center gap-x-1.5 rounded-md border bg-muted px-3 py-1.5 font-medium text-fg text-sm/6 capitalize hover:bg-secondary"
           >
             <IconBrandReactjs />
             {item.replaceAll("-", " ")}

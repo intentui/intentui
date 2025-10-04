@@ -39,33 +39,6 @@ import { Disclosure, DisclosurePanel, DisclosureTrigger } from "@/components/ui/
 </Disclosure>
 ```
 
-## CSS Variables
-You need to add this snippet to your `main.css` or `global.css` to enable the animation.
-```
-@theme inline {
-  --animate-disclosure-collapsed: disclosure-collapsed 0.2s ease-out;
-  --animate-disclosure-expanded: disclosure-expanded 0.2s ease-out;
-
-  @keyframes disclosure-collapsed {
-    from {
-      height: var(--disclosure-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-
-  @keyframes disclosure-expanded {
-    from {
-      height: 0
-    }
-    to {
-      height: var(--disclosure-height)
-    }
-  }
-}
-```
-
 ## Disabled
 You can disable all disclosure by setting the `isDisabled` prop.
 <How isCenter={false} toUse="navigation/disclosure/disclosure-disabled-demo" />

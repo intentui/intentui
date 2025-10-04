@@ -71,7 +71,11 @@ function MultipleSelect<T extends OptionBase>({
             </TagGroup>
           )}
         </SelectValue>
-        <Button intent="secondary" size="sq-xs" className="self-end">
+        <Button
+          intent="secondary"
+          size="sq-xs"
+          className="self-end rounded-[calc(var(--radius-lg)-(--spacing(1)))]"
+        >
           <IconPlus />
         </Button>
       </div>
