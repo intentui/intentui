@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { Selection } from "react-aria-components"
+import type { Key } from "react-aria-components"
 import { Description } from "@/components/ui/field"
 import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-select"
 
@@ -14,15 +14,15 @@ const tags = [
 ]
 
 export default function MultipleSelectControlledDemo() {
-  const [selectedItems, setSelectedItems] = useState<Selection>(new Set([2, 4]))
+  const [selectedItems, setSelectedItems] = useState<Key[]>([2, 4])
 
   return (
     <>
       <MultipleSelect
-        className="max-w-xs"
+        className="min-w-2xs max-w-min"
         label="Select tags"
-        selectedKeys={selectedItems}
-        onSelectionChange={setSelectedItems}
+        value={selectedItems}
+        onChange={setSelectedItems}
         items={tags}
       >
         {(item) => {

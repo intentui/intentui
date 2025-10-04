@@ -1,89 +1,56 @@
 "use client"
-import { IconX } from "@intentui/icons"
-import type {
-  TagGroupProps as TagGroupPrimitiveProps,
-  TagListProps,
-  TagProps as TagPrimitiveProps,
-} from "react-aria-components"
+
+import { IconCircleXFill } from "@intentui/icons"
+import type { TagGroupProps, TagListProps, TagProps } from "react-aria-components"
 import {
   Button,
-  composeRenderProps,
-  TagGroup as TagGroupPrimitive,
-  TagList as TagListPrimitive,
-  Tag as TagPrimitive,
+  Tag as PrimitiveTag,
+  TagGroup as PrimitiveTagGroup,
+  TagList as PrimitiveTagList,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
-import { Description, Label } from "./field"
+import { cx } from "@/lib/primitive"
 
-interface TagGroupProps extends TagGroupPrimitiveProps {
-  errorMessage?: string
-  label?: string
-  description?: string
-  ref?: React.RefObject<HTMLDivElement>
-}
-
-const TagGroup = ({ children, ref, className, ...props }: TagGroupProps) => {
+export function TagGroup({ className, ...props }: TagGroupProps) {
   return (
-    <TagGroupPrimitive
-      ref={ref}
-      className={twMerge("flex flex-col flex-wrap", className)}
+    <PrimitiveTagGroup
+      className={twMerge("flex flex-col gap-y-1 *:data-[slot=label]:font-medium", className)}
       {...props}
-    >
-      {props.label && <Label className="mb-1">{props.label}</Label>}
-      {children}
-      {props.description && <Description>{props.description}</Description>}
-    </TagGroupPrimitive>
-  )
-}
-
-const TagList = <T extends object>({ className, ...props }: TagListProps<T>) => {
-  return (
-    <TagListPrimitive
-      {...props}
-      className={composeTailwindRenderProps(className, "flex flex-wrap gap-1")}
     />
   )
 }
 
-interface TagProps extends TagPrimitiveProps {}
+export function TagList<T extends object>({ className, ...props }: TagListProps<T>) {
+  return <PrimitiveTagList className={cx("flex flex-wrap gap-1", className)} {...props} />
+}
 
-const Tag = ({ className, children, ...props }: TagProps) => {
+export function Tag({ children, className, ...props }: TagProps) {
   const textValue = typeof children === "string" ? children : undefined
+
   return (
-    <TagPrimitive
+    <PrimitiveTag
       textValue={textValue}
-      {...props}
-      className={composeRenderProps(
+      className={cx(
+        "inset-ring inset-ring-border",
+        "inline-flex items-center gap-x-1.5 py-0.5 font-medium text-xs/5 forced-colors:outline",
+        "*:data-[slot=icon]:size-3 *:data-[slot=icon]:shrink-0",
+        "cursor-default rounded-full px-2",
+        "selected:inset-ring-ring/70 selected:bg-primary-subtle selected:text-primary-subtle-fg",
+        "disabled:opacity-50 disabled:forced-colors:text-[GrayText]",
         className,
-        (className, { isFocusVisible, isSelected, isDisabled, allowsRemoving }) =>
-          twMerge(
-            "inset-ring inset-ring-border inline-flex cursor-default items-center gap-x-1.5 rounded-full px-2 py-0.5 font-medium text-sm/5 outline-hidden sm:text-xs/5 forced-colors:outline",
-            isSelected &&
-              "inset-ring-primary bg-primary text-primary-fg focus-visible:bg-primary/90",
-            isFocusVisible && "inset-ring inset-ring-current/10 bg-secondary text-secondary-fg",
-            isDisabled && "opacity-50",
-            allowsRemoving && "pr-2",
-            className,
-          ),
       )}
+      {...props}
     >
       {({ allowsRemoving }) => (
         <>
           {children}
           {allowsRemoving && (
-            <Button
-              slot="remove"
-              className="-mx-0.5 grid size-3.5 shrink-0 place-content-center rounded-full text-muted-fg outline-hidden hover:text-fg"
-            >
-              <IconX data-slot="close" className="size-3" />
+            <Button slot="remove" className="">
+              <IconCircleXFill className="-mr-1 size-4" />
             </Button>
           )}
         </>
       )}
-    </TagPrimitive>
+    </PrimitiveTag>
   )
 }
-
-export type { TagGroupProps, TagProps, TagListProps }
-export { Tag, TagList, TagGroup }

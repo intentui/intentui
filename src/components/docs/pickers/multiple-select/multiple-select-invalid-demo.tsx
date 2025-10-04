@@ -1,35 +1,18 @@
 "use client"
 
-import { type FormEvent, useState } from "react"
-import type { Selection } from "react-aria-components"
+import type { FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-select"
 
 export default function MultipleSelectInvalidDemo() {
-  const [invalid, setInvalid] = useState<boolean>(false)
-  const [selectedItems, setSelectedItems] = useState<Selection>(new Set([]))
-
   function submit(e: FormEvent<HTMLFormElement>) {
-    if ([...selectedItems].length === 0) {
-      setInvalid(true)
-      e.preventDefault()
-      return
-    }
-    setInvalid(false)
+    e.preventDefault()
   }
 
   return (
     <Form className="space-y-2" onSubmit={submit}>
-      <MultipleSelect
-        className="max-w-xs"
-        label="Fruits"
-        selectedKeys={selectedItems}
-        onSelectionChange={setSelectedItems}
-        items={fruits}
-        isInvalid={invalid}
-        errorMessage={invalid ? "Please select at least one fruit" : undefined}
-      >
+      <MultipleSelect className="min-w-2xs max-w-min" isRequired label="Fruits" items={fruits}>
         {(item) => {
           return <MultipleSelectItem textValue={item.name}>{item.name}</MultipleSelectItem>
         }}

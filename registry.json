@@ -61,9 +61,7 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)",
-          "animate-disclosure-collapsed": "disclosure-collapsed 0.2s ease-out",
-          "animate-disclosure-expanded": "disclosure-expanded 0.2s ease-out"
+          "color-chart-5": "var(--chart-5)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -215,22 +213,6 @@
             "min-width": "44px",
             "z-index": "9999"
           }
-        },
-        "@keyframes disclosure-expanded": {
-          "from": {
-            "height": "0"
-          },
-          "to": {
-            "height": "var(--disclosure-height)"
-          }
-        },
-        "@keyframes disclosure-collapsed": {
-          "from": {
-            "height": "var(--disclosure-height)"
-          },
-          "to": {
-            "height": "0"
-          }
         }
       }
     },
@@ -289,9 +271,7 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)",
-          "animate-disclosure-collapsed": "disclosure-collapsed 0.2s ease-out",
-          "animate-disclosure-expanded": "disclosure-expanded 0.2s ease-out"
+          "color-chart-5": "var(--chart-5)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -454,9 +434,7 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)",
-          "animate-disclosure-collapsed": "disclosure-collapsed 0.2s ease-out",
-          "animate-disclosure-expanded": "disclosure-expanded 0.2s ease-out"
+          "color-chart-5": "var(--chart-5)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -619,9 +597,7 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)",
-          "animate-disclosure-collapsed": "disclosure-collapsed 0.2s ease-out",
-          "animate-disclosure-expanded": "disclosure-expanded 0.2s ease-out"
+          "color-chart-5": "var(--chart-5)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -784,9 +760,7 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)",
-          "animate-disclosure-collapsed": "disclosure-collapsed 0.2s ease-out",
-          "animate-disclosure-expanded": "disclosure-expanded 0.2s ease-out"
+          "color-chart-5": "var(--chart-5)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -896,6 +870,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "show-more",
       "type": "registry:ui",
       "title": "show-more",
@@ -916,6 +891,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-field",
       "type": "registry:ui",
       "title": "tag-field",
@@ -939,6 +915,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "navbar",
       "type": "registry:ui",
       "title": "navbar",
@@ -964,6 +941,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "note",
       "type": "registry:ui",
       "title": "note",
@@ -981,6 +959,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart",
       "type": "registry:ui",
       "title": "area-chart",
@@ -1001,6 +980,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "keyboard",
       "type": "registry:ui",
       "title": "keyboard",
@@ -1018,6 +998,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-range-picker",
       "type": "registry:ui",
       "title": "date-range-picker",
@@ -1042,6 +1023,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart",
       "type": "registry:ui",
       "title": "bar-chart",
@@ -1062,6 +1044,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-list",
       "type": "registry:ui",
       "title": "bar-list",
@@ -1079,6 +1062,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box",
       "type": "registry:ui",
       "title": "list-box",
@@ -1101,6 +1085,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pagination",
       "type": "registry:ui",
       "title": "pagination",
@@ -1123,6 +1108,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "link",
       "type": "registry:ui",
       "title": "link",
@@ -1143,6 +1129,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tabs",
       "type": "registry:ui",
       "title": "tabs",
@@ -1163,6 +1150,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pie-chart",
       "type": "registry:ui",
       "title": "pie-chart",
@@ -1183,6 +1171,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "card",
       "type": "registry:ui",
       "title": "card",
@@ -1199,6 +1188,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider",
       "type": "registry:ui",
       "title": "slider",
@@ -1222,6 +1212,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "popover",
       "type": "registry:ui",
       "title": "popover",
@@ -1242,6 +1233,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field",
       "type": "registry:ui",
       "title": "text-field",
@@ -1264,6 +1256,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "loader",
       "type": "registry:ui",
       "title": "loader",
@@ -1283,6 +1276,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "radio",
       "type": "registry:ui",
       "title": "radio",
@@ -1304,6 +1298,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-field",
       "type": "registry:ui",
       "title": "date-field",
@@ -1325,6 +1320,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "visually-hidden",
       "type": "registry:ui",
       "title": "visually-hidden",
@@ -1341,6 +1337,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-picker",
       "type": "registry:ui",
       "title": "date-picker",
@@ -1371,6 +1368,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure",
       "type": "registry:ui",
       "title": "disclosure",
@@ -1391,6 +1389,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "container",
       "type": "registry:ui",
       "title": "container",
@@ -1407,6 +1406,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "input-otp",
       "type": "registry:ui",
       "title": "input-otp",
@@ -1425,6 +1425,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "chart",
       "type": "registry:ui",
       "title": "chart",
@@ -1446,6 +1447,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-group",
       "type": "registry:ui",
       "title": "tag-group",
@@ -1456,8 +1458,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -1468,6 +1469,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sheet",
       "type": "registry:ui",
       "title": "sheet",
@@ -1489,6 +1491,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "field",
       "type": "registry:ui",
       "title": "field",
@@ -1509,6 +1512,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drop-zone",
       "type": "registry:ui",
       "title": "drop-zone",
@@ -1526,6 +1530,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toolbar",
       "type": "registry:ui",
       "title": "toolbar",
@@ -1548,6 +1553,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "meter",
       "type": "registry:ui",
       "title": "meter",
@@ -1570,6 +1576,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-slider",
       "type": "registry:ui",
       "title": "color-slider",
@@ -1591,6 +1598,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "scroll-area",
       "type": "registry:ui",
       "title": "scroll-area",
@@ -1608,6 +1616,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "time-field",
       "type": "registry:ui",
       "title": "time-field",
@@ -1629,6 +1638,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "breadcrumbs",
       "type": "registry:ui",
       "title": "breadcrumbs",
@@ -1651,6 +1661,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-thumb",
       "type": "registry:ui",
       "title": "color-thumb",
@@ -1668,6 +1679,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drawer",
       "type": "registry:ui",
       "title": "drawer",
@@ -1689,6 +1701,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tooltip",
       "type": "registry:ui",
       "title": "tooltip",
@@ -1707,6 +1720,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger",
       "type": "registry:ui",
       "title": "file-trigger",
@@ -1729,6 +1743,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "heading",
       "type": "registry:ui",
       "title": "heading",
@@ -1745,6 +1760,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-swatch-picker",
       "type": "registry:ui",
       "title": "color-swatch-picker",
@@ -1766,6 +1782,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "choice-box",
       "type": "registry:ui",
       "title": "choice-box",
@@ -1788,6 +1805,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "switch",
       "type": "registry:ui",
       "title": "switch",
@@ -1809,6 +1827,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "description-list",
       "type": "registry:ui",
       "title": "description-list",
@@ -1825,6 +1844,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "calendar",
       "type": "registry:ui",
       "title": "calendar",
@@ -1849,6 +1869,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tree",
       "type": "registry:ui",
       "title": "tree",
@@ -1871,6 +1892,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list",
       "type": "registry:ui",
       "title": "grid-list",
@@ -1892,6 +1914,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-group",
       "type": "registry:ui",
       "title": "toggle-group",
@@ -1913,6 +1936,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "multiple-select",
       "type": "registry:ui",
       "title": "multiple-select",
@@ -1923,9 +1947,11 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/dropdown",
+        "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
+        "http://localhost:3000/r/list-box",
         "http://localhost:3000/r/popover",
+        "http://localhost:3000/r/search-field",
         "http://localhost:3000/r/tag-group"
       ],
       "files": [
@@ -1937,6 +1963,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "dropdown",
       "type": "registry:ui",
       "title": "dropdown",
@@ -1959,6 +1986,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart",
       "type": "registry:ui",
       "title": "line-chart",
@@ -1979,6 +2007,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "avatar",
       "type": "registry:ui",
       "title": "avatar",
@@ -1995,6 +2024,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-swatch",
       "type": "registry:ui",
       "title": "color-swatch",
@@ -2015,6 +2045,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "range-calendar",
       "type": "registry:ui",
       "title": "range-calendar",
@@ -2036,6 +2067,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box",
       "type": "registry:ui",
       "title": "combo-box",
@@ -2060,6 +2092,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field",
       "type": "registry:ui",
       "title": "search-field",
@@ -2082,6 +2115,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "dialog",
       "type": "registry:ui",
       "title": "dialog",
@@ -2104,6 +2138,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu",
       "type": "registry:ui",
       "title": "menu",
@@ -2128,6 +2163,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "progress-bar",
       "type": "registry:ui",
       "title": "progress-bar",
@@ -2149,6 +2185,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "badge",
       "type": "registry:ui",
       "title": "badge",
@@ -2165,6 +2202,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker",
       "type": "registry:ui",
       "title": "color-picker",
@@ -2193,6 +2231,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "number-field",
       "type": "registry:ui",
       "title": "number-field",
@@ -2217,6 +2256,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar",
       "type": "registry:ui",
       "title": "sidebar",
@@ -2243,6 +2283,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "table",
       "type": "registry:ui",
       "title": "table",
@@ -2265,6 +2306,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "separator",
       "type": "registry:ui",
       "title": "separator",
@@ -2282,6 +2324,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "progress-circle",
       "type": "registry:ui",
       "title": "progress-circle",
@@ -2299,6 +2342,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-wheel",
       "type": "registry:ui",
       "title": "color-wheel",
@@ -2318,6 +2362,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button",
       "type": "registry:ui",
       "title": "button",
@@ -2335,6 +2380,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle",
       "type": "registry:ui",
       "title": "toggle",
@@ -2353,6 +2399,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "modal",
       "type": "registry:ui",
       "title": "modal",
@@ -2373,6 +2420,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu",
       "type": "registry:ui",
       "title": "command-menu",
@@ -2397,6 +2445,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toast",
       "type": "registry:ui",
       "title": "toast",
@@ -2413,6 +2462,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox",
       "type": "registry:ui",
       "title": "checkbox",
@@ -2435,6 +2485,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tracker",
       "type": "registry:ui",
       "title": "tracker",
@@ -2455,6 +2506,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select",
       "type": "registry:ui",
       "title": "select",
@@ -2479,6 +2531,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "textarea",
       "type": "registry:ui",
       "title": "textarea",
@@ -2500,6 +2553,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-area",
       "type": "registry:ui",
       "title": "color-area",
@@ -2520,6 +2574,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "skeleton",
       "type": "registry:ui",
       "title": "skeleton",
@@ -2536,6 +2591,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "context-menu",
       "type": "registry:ui",
       "title": "context-menu",
@@ -2555,6 +2611,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-field",
       "type": "registry:ui",
       "title": "color-field",
@@ -2578,6 +2635,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "form",
       "type": "registry:ui",
       "title": "form",
@@ -2594,6 +2652,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "carousel",
       "type": "registry:ui",
       "title": "carousel",
@@ -2616,6 +2675,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "avatar-size-demo",
       "type": "registry:page",
       "title": "Avatar Size",
@@ -2633,6 +2693,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "avatar-initials-demo",
       "type": "registry:page",
       "title": "Avatar Initials",
@@ -2650,6 +2711,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "avatar-shape-demo",
       "type": "registry:page",
       "title": "Avatar Shape",
@@ -2667,6 +2729,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "avatar-basic-demo",
       "type": "registry:page",
       "title": "Avatar Basic",
@@ -2684,6 +2747,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "avatar-group-demo",
       "type": "registry:page",
       "title": "Avatar Group",
@@ -2701,6 +2765,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "carousel-demo",
       "type": "registry:page",
       "title": "Carousel",
@@ -2718,6 +2783,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "carousel-api-demo",
       "type": "registry:page",
       "title": "Carousel Api",
@@ -2740,6 +2806,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "carousel-options-demo",
       "type": "registry:page",
       "title": "Carousel Options",
@@ -2758,6 +2825,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "carousel-autoplay-demo",
       "type": "registry:page",
       "title": "Carousel Autoplay",
@@ -2779,6 +2847,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "carousel-orientation-demo",
       "type": "registry:page",
       "title": "Carousel Orientation",
@@ -2797,6 +2866,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-group-disabled-demo",
       "type": "registry:page",
       "title": "Tag Group Disabled",
@@ -2814,6 +2884,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-group-demo",
       "type": "registry:page",
       "title": "Tag Group",
@@ -2831,6 +2902,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-group-controlled-demo",
       "type": "registry:page",
       "title": "Tag Group Controlled",
@@ -2852,6 +2924,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-group-with-remove-demo",
       "type": "registry:page",
       "title": "Tag Group With Remove",
@@ -2872,6 +2945,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-group-href-demo",
       "type": "registry:page",
       "title": "Tag Group Href",
@@ -2889,6 +2963,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box-demo",
       "type": "registry:page",
       "title": "List Box",
@@ -2906,6 +2981,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box-infinite-scroll-demo",
       "type": "registry:page",
       "title": "List Box Infinite Scroll",
@@ -2928,6 +3004,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box-multiple-demo",
       "type": "registry:page",
       "title": "List Box Multiple",
@@ -2949,6 +3026,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box-section-demo",
       "type": "registry:page",
       "title": "List Box Section",
@@ -2966,6 +3044,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box-rearrange-demo",
       "type": "registry:page",
       "title": "List Box Rearrange",
@@ -2987,6 +3066,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box-controlled-demo",
       "type": "registry:page",
       "title": "List Box Controlled",
@@ -3008,6 +3088,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box-description-demo",
       "type": "registry:page",
       "title": "List Box Description",
@@ -3028,6 +3109,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "list-box-disabled-demo",
       "type": "registry:page",
       "title": "List Box Disabled",
@@ -3045,6 +3127,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-drag-between-item-demo",
       "type": "registry:page",
       "title": "Grid List Drag Between Item",
@@ -3066,6 +3149,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-section-demo",
       "type": "registry:page",
       "title": "Grid List Section",
@@ -3074,7 +3158,6 @@
         "react-aria-components"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/grid-list"
       ],
       "files": [
@@ -3087,6 +3170,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-multiple-demo",
       "type": "registry:page",
       "title": "Grid List Multiple",
@@ -3104,6 +3188,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-infinite-scroll-demo",
       "type": "registry:page",
       "title": "Grid List Infinite Scroll",
@@ -3126,6 +3211,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-render-empty-state-demo",
       "type": "registry:page",
       "title": "Grid List Render Empty State",
@@ -3143,6 +3229,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-controlled-demo",
       "type": "registry:page",
       "title": "Grid List Controlled",
@@ -3164,6 +3251,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-disabled-demo",
       "type": "registry:page",
       "title": "Grid List Disabled",
@@ -3181,6 +3269,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-drag-demo",
       "type": "registry:page",
       "title": "Grid List Drag",
@@ -3202,6 +3291,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "grid-list-demo",
       "type": "registry:page",
       "title": "Grid List",
@@ -3219,6 +3309,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "single-menu-demo",
       "type": "registry:page",
       "title": "Single Menu",
@@ -3241,6 +3332,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "multiple-menu-demo",
       "type": "registry:page",
       "title": "Multiple Menu",
@@ -3262,6 +3354,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-section-level-selection",
       "type": "registry:page",
       "title": "Menu Section Level Selection",
@@ -3283,6 +3376,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-item-description-demo",
       "type": "registry:page",
       "title": "Menu Item Description",
@@ -3301,6 +3395,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-dynamic-demo",
       "type": "registry:page",
       "title": "Menu Dynamic",
@@ -3319,6 +3414,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-danger-demo",
       "type": "registry:page",
       "title": "Menu Danger",
@@ -3339,6 +3435,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-section-demo",
       "type": "registry:page",
       "title": "Menu Section",
@@ -3356,6 +3453,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-with-arrow-demo",
       "type": "registry:page",
       "title": "Menu With Arrow",
@@ -3377,6 +3475,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-with-icon-demo",
       "type": "registry:page",
       "title": "Menu With Icon",
@@ -3399,6 +3498,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-sub-demo",
       "type": "registry:page",
       "title": "Menu Sub",
@@ -3417,6 +3517,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-basic-demo",
       "type": "registry:page",
       "title": "Menu Basic",
@@ -3434,6 +3535,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-disabled-demo",
       "type": "registry:page",
       "title": "Menu Disabled",
@@ -3451,6 +3553,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "table-infinite-scroll-demo",
       "type": "registry:page",
       "title": "Table Infinite Scroll",
@@ -3473,6 +3576,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "table-resize-demo",
       "type": "registry:page",
       "title": "Table Resize",
@@ -3490,6 +3594,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "table-demo",
       "type": "registry:page",
       "title": "Table",
@@ -3512,6 +3617,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "table-sorting-demo",
       "type": "registry:page",
       "title": "Table Sorting",
@@ -3533,6 +3639,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "table-bulk-demo",
       "type": "registry:page",
       "title": "Table Bulk",
@@ -3554,6 +3661,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "table-with-autocomplete-demo",
       "type": "registry:page",
       "title": "Table With Autocomplete",
@@ -3578,6 +3686,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "table-drag-demo",
       "type": "registry:page",
       "title": "Table Drag",
@@ -3600,6 +3709,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "choicebox-controlled-demo",
       "type": "registry:page",
       "title": "Choicebox Controlled",
@@ -3621,6 +3731,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "choicebox-disabled-demo",
       "type": "registry:page",
       "title": "Choicebox Disabled",
@@ -3638,6 +3749,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "choicebox-icon-demo",
       "type": "registry:page",
       "title": "Choicebox Icon",
@@ -3658,6 +3770,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "choicebox-columns-demo",
       "type": "registry:page",
       "title": "Choicebox Columns",
@@ -3675,6 +3788,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "choicebox-demo",
       "type": "registry:page",
       "title": "Choicebox",
@@ -3692,6 +3806,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "choicebox-multiple-selection-demo",
       "type": "registry:page",
       "title": "Choicebox Multiple Selection",
@@ -3709,6 +3824,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tree-folder-demo",
       "type": "registry:page",
       "title": "Tree Folder",
@@ -3729,6 +3845,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tree-drag-demo",
       "type": "registry:page",
       "title": "Tree Drag",
@@ -3751,6 +3868,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tree-multiple-demo",
       "type": "registry:page",
       "title": "Tree Multiple",
@@ -3768,6 +3886,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tree-infinite-scroll-demo",
       "type": "registry:page",
       "title": "Tree Infinite Scroll",
@@ -3790,6 +3909,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tree-demo",
       "type": "registry:page",
       "title": "Tree",
@@ -3807,6 +3927,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "badge-demo",
       "type": "registry:page",
       "title": "Badge",
@@ -3824,6 +3945,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "badge-shape-demo",
       "type": "registry:page",
       "title": "Badge Shape",
@@ -3841,6 +3963,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "badge-intent-demo",
       "type": "registry:page",
       "title": "Badge Intent",
@@ -3858,6 +3981,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "meter-decimal-format-demo",
       "type": "registry:page",
       "title": "Meter Decimal Format",
@@ -3875,6 +3999,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "meter-value-label-demo",
       "type": "registry:page",
       "title": "Meter Value Label",
@@ -3892,6 +4017,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "meter-currency-format-demo",
       "type": "registry:page",
       "title": "Meter Currency Format",
@@ -3909,6 +4035,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "meter-demo",
       "type": "registry:page",
       "title": "Meter",
@@ -3926,6 +4053,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "progress-bar-demo",
       "type": "registry:page",
       "title": "Progress Bar",
@@ -3943,6 +4071,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "indeterminate-progress-bar-demo",
       "type": "registry:page",
       "title": "Indeterminate Progress Bar",
@@ -3960,6 +4089,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "loader-demo",
       "type": "registry:page",
       "title": "Loader",
@@ -3977,6 +4107,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "loader-variant-demo",
       "type": "registry:page",
       "title": "Loader Variant",
@@ -3994,6 +4125,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "loader-intent-demo",
       "type": "registry:page",
       "title": "Loader Intent",
@@ -4011,6 +4143,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "loader-size-demo",
       "type": "registry:page",
       "title": "Loader Size",
@@ -4028,6 +4161,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toast-description-demo",
       "type": "registry:page",
       "title": "Toast Description",
@@ -4048,6 +4182,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toast-action-demo",
       "type": "registry:page",
       "title": "Toast Action",
@@ -4068,6 +4203,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toast-status-demo",
       "type": "registry:page",
       "title": "Toast Status",
@@ -4088,6 +4224,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toast-positions-demo",
       "type": "registry:page",
       "title": "Toast Positions",
@@ -4108,6 +4245,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toast-demo",
       "type": "registry:page",
       "title": "Toast",
@@ -4128,6 +4266,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "skeleton-soft-demo",
       "type": "registry:page",
       "title": "Skeleton Soft",
@@ -4146,6 +4285,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "skeleton-shape-demo",
       "type": "registry:page",
       "title": "Skeleton Shape",
@@ -4164,6 +4304,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "skeleton-demo",
       "type": "registry:page",
       "title": "Skeleton",
@@ -4182,6 +4323,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "note-no-indicator-demo",
       "type": "registry:page",
       "title": "Note No Indicator",
@@ -4199,6 +4341,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "note-demo",
       "type": "registry:page",
       "title": "Note",
@@ -4216,6 +4359,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "note-intent-demo",
       "type": "registry:page",
       "title": "Note Intent",
@@ -4233,6 +4377,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "progress-circle-controlled-demo",
       "type": "registry:page",
       "title": "Progress Circle Controlled",
@@ -4251,6 +4396,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "progress-circle-indeterminate-demo",
       "type": "registry:page",
       "title": "Progress Circle Indeterminate",
@@ -4268,6 +4414,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "progress-circle-color-demo",
       "type": "registry:page",
       "title": "Progress Circle Color",
@@ -4285,6 +4432,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "progress-circle-custom-size-demo",
       "type": "registry:page",
       "title": "Progress Circle Custom Size",
@@ -4302,6 +4450,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "progress-circle-demo",
       "type": "registry:page",
       "title": "Progress Circle",
@@ -4319,6 +4468,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "description-list-demo",
       "type": "registry:page",
       "title": "Description List",
@@ -4336,6 +4486,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "description-list-heading-demo",
       "type": "registry:page",
       "title": "Description List Heading",
@@ -4354,6 +4505,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "description-list-card-demo",
       "type": "registry:page",
       "title": "Description List Card",
@@ -4374,6 +4526,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "heading-level-demo",
       "type": "registry:page",
       "title": "Heading Level",
@@ -4391,6 +4544,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "heading-demo",
       "type": "registry:page",
       "title": "Heading",
@@ -4408,6 +4562,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "separator-demo",
       "type": "registry:page",
       "title": "Separator",
@@ -4425,6 +4580,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "separator-orientation-demo",
       "type": "registry:page",
       "title": "Separator Orientation",
@@ -4442,6 +4598,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "card-action-demo",
       "type": "registry:page",
       "title": "Card Action",
@@ -4464,6 +4621,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "card-login-form-demo",
       "type": "registry:page",
       "title": "Card Login Form",
@@ -4485,6 +4643,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "card-table-demo",
       "type": "registry:page",
       "title": "Card Table",
@@ -4508,6 +4667,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "card-demo",
       "type": "registry:page",
       "title": "Card",
@@ -4526,6 +4686,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "show-more-controlled-demo",
       "type": "registry:page",
       "title": "Show More Controlled",
@@ -4546,6 +4707,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "show-more-as-text-demo",
       "type": "registry:page",
       "title": "Show More As Text",
@@ -4563,6 +4725,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "show-more-orientation-demo",
       "type": "registry:page",
       "title": "Show More Orientation",
@@ -4580,6 +4743,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "show-more-demo",
       "type": "registry:page",
       "title": "Show More",
@@ -4601,6 +4765,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-disabled-demo",
       "type": "registry:page",
       "title": "Select Disabled",
@@ -4618,6 +4783,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-demo",
       "type": "registry:page",
       "title": "Select",
@@ -4635,6 +4801,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-validation-demo",
       "type": "registry:page",
       "title": "Select Validation",
@@ -4654,6 +4821,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-with-icon-demo",
       "type": "registry:page",
       "title": "Select With Icon",
@@ -4674,6 +4842,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-with-avatar-demo",
       "type": "registry:page",
       "title": "Select With Avatar",
@@ -4692,6 +4861,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-details-description-demo",
       "type": "registry:page",
       "title": "Select Details Description",
@@ -4709,6 +4879,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-searchable-demo",
       "type": "registry:page",
       "title": "Select Searchable",
@@ -4732,6 +4903,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-controlled-demo",
       "type": "registry:page",
       "title": "Select Controlled",
@@ -4753,6 +4925,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-uncontrolled-demo",
       "type": "registry:page",
       "title": "Select Uncontrolled",
@@ -4770,6 +4943,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "select-section-demo",
       "type": "registry:page",
       "title": "Select Section",
@@ -4787,6 +4961,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-controlled-demo",
       "type": "registry:page",
       "title": "Combo Box Controlled",
@@ -4805,6 +4980,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-readonly-demo",
       "type": "registry:page",
       "title": "Combo Box Readonly",
@@ -4823,6 +4999,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-demo",
       "type": "registry:page",
       "title": "Combo Box",
@@ -4840,6 +5017,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-detail-description-demo",
       "type": "registry:page",
       "title": "Combo Box Detail Description",
@@ -4857,6 +5035,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-controlled-selection-demo",
       "type": "registry:page",
       "title": "Combo Box Controlled Selection",
@@ -4878,6 +5057,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-avatar-demo",
       "type": "registry:page",
       "title": "Combo Box Avatar",
@@ -4896,6 +5076,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-section-demo",
       "type": "registry:page",
       "title": "Combo Box Section",
@@ -4913,6 +5094,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-invalid-demo",
       "type": "registry:page",
       "title": "Combo Box Invalid",
@@ -4931,6 +5113,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-disabled-demo",
       "type": "registry:page",
       "title": "Combo Box Disabled",
@@ -4949,6 +5132,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-validation-demo",
       "type": "registry:page",
       "title": "Combo Box Validation",
@@ -4969,6 +5153,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "multiple-select-disabled-demo",
       "type": "registry:page",
       "title": "Multiple Select Disabled",
@@ -4986,27 +5171,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "name": "multiple-select-max-items-demo",
-      "type": "registry:page",
-      "title": "Multiple Select Max Items",
-      "description": "multiple-select-max-items-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/multiple-select"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/pickers/multiple-select/multiple-select-max-items-demo.tsx",
-          "type": "registry:page",
-          "target": "app/multiple-select-max-items-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "multiple-select-demo",
       "type": "registry:page",
       "title": "Multiple Select",
@@ -5024,6 +5189,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "multiple-select-controlled-demo",
       "type": "registry:page",
       "title": "Multiple Select Controlled",
@@ -5045,13 +5211,11 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "multiple-select-invalid-demo",
       "type": "registry:page",
       "title": "Multiple Select Invalid",
       "description": "multiple-select-invalid-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/form",
@@ -5067,6 +5231,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "controlled-values",
       "type": "registry:page",
       "title": "Controlled Values",
@@ -5088,6 +5253,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-wheel-controlled-demo",
       "type": "registry:page",
       "title": "Color Wheel Controlled",
@@ -5108,6 +5274,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-wheel-disabled-demo",
       "type": "registry:page",
       "title": "Color Wheel Disabled",
@@ -5125,6 +5292,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-wheel-demo",
       "type": "registry:page",
       "title": "Color Wheel",
@@ -5142,6 +5310,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-controlled-demo",
       "type": "registry:page",
       "title": "Color Picker Controlled",
@@ -5160,6 +5329,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-with-description-demo",
       "type": "registry:page",
       "title": "Color Picker With Description",
@@ -5178,6 +5348,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-eye-dropper-demo",
       "type": "registry:page",
       "title": "Color Picker Eye Dropper",
@@ -5198,6 +5369,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-demo",
       "type": "registry:page",
       "title": "Color Picker",
@@ -5218,6 +5390,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-enable-swatch-demo",
       "type": "registry:page",
       "title": "Color Picker Enable Swatch",
@@ -5243,6 +5416,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-disabled-demo",
       "type": "registry:page",
       "title": "Color Picker Disabled",
@@ -5263,6 +5437,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-with-label-demo",
       "type": "registry:page",
       "title": "Color Picker With Label",
@@ -5281,6 +5456,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-enable-selection-format-demo",
       "type": "registry:page",
       "title": "Color Picker Enable Selection Format",
@@ -5305,6 +5481,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-picker-combination-demo",
       "type": "registry:page",
       "title": "Color Picker Combination",
@@ -5329,6 +5506,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-swatch-demo",
       "type": "registry:page",
       "title": "Color Swatch",
@@ -5346,6 +5524,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-swatch-picker-item-disabled-demo",
       "type": "registry:page",
       "title": "Color Swatch Picker Item Disabled",
@@ -5366,6 +5545,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-swatch-controlled-demo",
       "type": "registry:page",
       "title": "Color Swatch Controlled",
@@ -5386,6 +5566,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-swatch-picker-demo",
       "type": "registry:page",
       "title": "Color Swatch Picker",
@@ -5406,6 +5587,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-field-disabled-demo",
       "type": "registry:page",
       "title": "Color Field Disabled",
@@ -5423,6 +5605,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-field-with-prefix-demo",
       "type": "registry:page",
       "title": "Color Field With Prefix",
@@ -5443,6 +5626,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-field-validation-demo",
       "type": "registry:page",
       "title": "Color Field Validation",
@@ -5462,6 +5646,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-field-with-suffix-demo",
       "type": "registry:page",
       "title": "Color Field With Suffix",
@@ -5482,6 +5667,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-field-demo",
       "type": "registry:page",
       "title": "Color Field",
@@ -5499,6 +5685,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-field-controlled-demo",
       "type": "registry:page",
       "title": "Color Field Controlled",
@@ -5519,6 +5706,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-area-channel-demo",
       "type": "registry:page",
       "title": "Color Area Channel",
@@ -5536,6 +5724,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-area-demo",
       "type": "registry:page",
       "title": "Color Area",
@@ -5553,6 +5742,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-area-space-demo",
       "type": "registry:page",
       "title": "Color Area Space",
@@ -5571,6 +5761,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-area-controlled-demo",
       "type": "registry:page",
       "title": "Color Area Controlled",
@@ -5592,6 +5783,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-area-with-slider-demo",
       "type": "registry:page",
       "title": "Color Area With Slider",
@@ -5614,6 +5806,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-area-disabled-demo",
       "type": "registry:page",
       "title": "Color Area Disabled",
@@ -5632,6 +5825,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-slider-disabled-demo",
       "type": "registry:page",
       "title": "Color Slider Disabled",
@@ -5649,6 +5843,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-slider-vertical-demo",
       "type": "registry:page",
       "title": "Color Slider Vertical",
@@ -5666,6 +5861,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-slider-demo",
       "type": "registry:page",
       "title": "Color Slider",
@@ -5683,6 +5879,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-slider-with-label-demo",
       "type": "registry:page",
       "title": "Color Slider With Label",
@@ -5700,6 +5897,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "color-slider-controlled-demo",
       "type": "registry:page",
       "title": "Color Slider Controlled",
@@ -5718,6 +5916,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drop-zone-and-file-trigger-demo",
       "type": "registry:page",
       "title": "Drop Zone And File Trigger",
@@ -5742,6 +5941,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drop-zone-demo",
       "type": "registry:page",
       "title": "Drop Zone",
@@ -5760,6 +5960,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart-demo",
       "type": "registry:page",
       "title": "Line Chart",
@@ -5778,6 +5979,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart-monotone-demo",
       "type": "registry:page",
       "title": "Line Chart Monotone",
@@ -5796,6 +5998,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart-controlled-demo",
       "type": "registry:page",
       "title": "Line Chart Controlled",
@@ -5818,6 +6021,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart-custom-tooltip-demo",
       "type": "registry:page",
       "title": "Line Chart Custom Tooltip",
@@ -5840,6 +6044,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart-custom-format-demo",
       "type": "registry:page",
       "title": "Line Chart Custom Format",
@@ -5858,6 +6063,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart-stacked-demo",
       "type": "registry:page",
       "title": "Line Chart Stacked",
@@ -5876,6 +6082,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart-custom-legend-demo",
       "type": "registry:page",
       "title": "Line Chart Custom Legend",
@@ -5898,6 +6105,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart-custom-colors-demo",
       "type": "registry:page",
       "title": "Line Chart Custom Colors",
@@ -5916,6 +6124,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart-demo",
       "type": "registry:page",
       "title": "Area Chart",
@@ -5934,6 +6143,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart-custom-tooltip-demo",
       "type": "registry:page",
       "title": "Area Chart Custom Tooltip",
@@ -5956,6 +6166,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart-controlled-demo",
       "type": "registry:page",
       "title": "Area Chart Controlled",
@@ -5978,6 +6189,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart-stacked-demo",
       "type": "registry:page",
       "title": "Area Chart Stacked",
@@ -5996,6 +6208,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart-custom-format-demo",
       "type": "registry:page",
       "title": "Area Chart Custom Format",
@@ -6014,6 +6227,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart-custom-legend-demo",
       "type": "registry:page",
       "title": "Area Chart Custom Legend",
@@ -6036,6 +6250,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart-custom-colors-demo",
       "type": "registry:page",
       "title": "Area Chart Custom Colors",
@@ -6054,6 +6269,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "area-chart-monotone-demo",
       "type": "registry:page",
       "title": "Area Chart Monotone",
@@ -6072,6 +6288,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-list-demo",
       "type": "registry:page",
       "title": "Bar List",
@@ -6090,6 +6307,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-list-controlled-demo",
       "type": "registry:page",
       "title": "Bar List Controlled",
@@ -6108,6 +6326,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tracker-without-tooltip-demo",
       "type": "registry:page",
       "title": "Tracker Without Tooltip",
@@ -6125,6 +6344,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tracker-demo",
       "type": "registry:page",
       "title": "Tracker",
@@ -6143,6 +6363,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart-monotone-demo",
       "type": "registry:page",
       "title": "Bar Chart Monotone",
@@ -6161,6 +6382,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart-custom-colors-demo",
       "type": "registry:page",
       "title": "Bar Chart Custom Colors",
@@ -6179,6 +6401,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart-custom-legend-demo",
       "type": "registry:page",
       "title": "Bar Chart Custom Legend",
@@ -6201,6 +6424,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart-custom-format-demo",
       "type": "registry:page",
       "title": "Bar Chart Custom Format",
@@ -6219,6 +6443,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart-controlled-demo",
       "type": "registry:page",
       "title": "Bar Chart Controlled",
@@ -6241,6 +6466,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart-demo",
       "type": "registry:page",
       "title": "Bar Chart",
@@ -6259,6 +6485,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart-custom-tooltip-demo",
       "type": "registry:page",
       "title": "Bar Chart Custom Tooltip",
@@ -6281,6 +6508,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "bar-chart-stacked-demo",
       "type": "registry:page",
       "title": "Bar Chart Stacked",
@@ -6299,6 +6527,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pie-chart-interactive-demo",
       "type": "registry:page",
       "title": "Pie Chart Interactive",
@@ -6321,6 +6550,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pie-chart-gap-demo",
       "type": "registry:page",
       "title": "Pie Chart Gap",
@@ -6339,6 +6569,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pie-chart-donut-custom-label-demo",
       "type": "registry:page",
       "title": "Pie Chart Donut Custom Label",
@@ -6357,6 +6588,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pie-chart-demo",
       "type": "registry:page",
       "title": "Pie Chart",
@@ -6375,6 +6607,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pie-chart-donut-demo",
       "type": "registry:page",
       "title": "Pie Chart Donut",
@@ -6393,6 +6626,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pie-chart-donut-label-demo",
       "type": "registry:page",
       "title": "Pie Chart Donut Label",
@@ -6411,6 +6645,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pie-chart-custom-colors-demo",
       "type": "registry:page",
       "title": "Pie Chart Custom Colors",
@@ -6429,6 +6664,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "switch-description-demo",
       "type": "registry:page",
       "title": "Switch Description",
@@ -6448,6 +6684,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "switch-demo",
       "type": "registry:page",
       "title": "Switch",
@@ -6465,6 +6702,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "switch-controlled-demo",
       "type": "registry:page",
       "title": "Switch Controlled",
@@ -6483,6 +6721,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "switch-uncontrolled-demo",
       "type": "registry:page",
       "title": "Switch Uncontrolled",
@@ -6501,6 +6740,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "switch-disabled-demo",
       "type": "registry:page",
       "title": "Switch Disabled",
@@ -6518,6 +6758,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-dynamic-demo",
       "type": "registry:page",
       "title": "Command Menu Dynamic",
@@ -6537,6 +6778,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-disabled-demo",
       "type": "registry:page",
       "title": "Command Menu Disabled",
@@ -6555,6 +6797,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-trigger-by-keyboard-demo",
       "type": "registry:page",
       "title": "Command Menu Trigger By Keyboard",
@@ -6575,6 +6818,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-blur-demo",
       "type": "registry:page",
       "title": "Command Menu Blur",
@@ -6597,6 +6841,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-demo",
       "type": "registry:page",
       "title": "Command Menu",
@@ -6619,6 +6864,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-pending-demo",
       "type": "registry:page",
       "title": "Command Menu Pending",
@@ -6638,6 +6884,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-separator-demo",
       "type": "registry:page",
       "title": "Command Menu Separator",
@@ -6656,6 +6903,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-keyboard-demo",
       "type": "registry:page",
       "title": "Command Menu Keyboard",
@@ -6674,6 +6922,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-description-demo",
       "type": "registry:page",
       "title": "Command Menu Description",
@@ -6692,6 +6941,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-controlled-demo",
       "type": "registry:page",
       "title": "Command Menu Controlled",
@@ -6711,6 +6961,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "command-menu-danger-item-demo",
       "type": "registry:page",
       "title": "Command Menu Danger Item",
@@ -6729,6 +6980,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "context-menu-disabled-demo",
       "type": "registry:page",
       "title": "Context Menu Disabled",
@@ -6749,6 +7001,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "context-menu-separator-demo",
       "type": "registry:page",
       "title": "Context Menu Separator",
@@ -6766,6 +7019,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "context-menu-detail-description-demo",
       "type": "registry:page",
       "title": "Context Menu Detail Description",
@@ -6783,6 +7037,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "context-menu-demo",
       "type": "registry:page",
       "title": "Context Menu",
@@ -6800,6 +7055,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "context-menu-danger-demo",
       "type": "registry:page",
       "title": "Context Menu Danger",
@@ -6817,6 +7073,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "context-menu-with-icon-demo",
       "type": "registry:page",
       "title": "Context Menu With Icon",
@@ -6837,6 +7094,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-range-demo",
       "type": "registry:page",
       "title": "Slider Range",
@@ -6854,6 +7112,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-orientation-demo",
       "type": "registry:page",
       "title": "Slider Orientation",
@@ -6873,6 +7132,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-tooltip-demo",
       "type": "registry:page",
       "title": "Slider Tooltip",
@@ -6890,6 +7150,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-controlled-demo",
       "type": "registry:page",
       "title": "Slider Controlled",
@@ -6907,6 +7168,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-description-demo",
       "type": "registry:page",
       "title": "Slider Description",
@@ -6924,6 +7186,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-demo",
       "type": "registry:page",
       "title": "Slider",
@@ -6941,6 +7204,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-prefix-suffix-demo",
       "type": "registry:page",
       "title": "Slider Prefix Suffix",
@@ -6961,6 +7225,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-disabled-demo",
       "type": "registry:page",
       "title": "Slider Disabled",
@@ -6978,6 +7243,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-label-demo",
       "type": "registry:page",
       "title": "Slider Label",
@@ -6995,6 +7261,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "slider-step-demo",
       "type": "registry:page",
       "title": "Slider Step",
@@ -7012,6 +7279,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toolbar-disabled-demo",
       "type": "registry:page",
       "title": "Toolbar Disabled",
@@ -7033,6 +7301,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toolbar-demo",
       "type": "registry:page",
       "title": "Toolbar",
@@ -7056,6 +7325,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toolbar-orientation-demo",
       "type": "registry:page",
       "title": "Toolbar Orientation",
@@ -7079,6 +7349,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "option-preview",
       "type": "registry:page",
       "title": "Option Preview",
@@ -7096,6 +7367,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "breadcrumbs-collections-demo",
       "type": "registry:page",
       "title": "Breadcrumbs Collections",
@@ -7116,6 +7388,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "breadcrumbs-menu-demo",
       "type": "registry:page",
       "title": "Breadcrumbs Menu",
@@ -7138,6 +7411,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "breadcrumbs-current-demo",
       "type": "registry:page",
       "title": "Breadcrumbs Current",
@@ -7155,6 +7429,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "breadcrumbs-demo",
       "type": "registry:page",
       "title": "Breadcrumbs",
@@ -7172,6 +7447,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "breadcrumbs-separator-demo",
       "type": "registry:page",
       "title": "Breadcrumbs Separator",
@@ -7189,6 +7465,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "link-unstyled-demo",
       "type": "registry:page",
       "title": "Link Unstyled",
@@ -7206,6 +7483,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "link-button-demo",
       "type": "registry:page",
       "title": "Link Button",
@@ -7224,6 +7502,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "link-demo",
       "type": "registry:page",
       "title": "Link",
@@ -7241,6 +7520,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "link-disabled-demo",
       "type": "registry:page",
       "title": "Link Disabled",
@@ -7258,6 +7538,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-hide-indicator-demo",
       "type": "registry:page",
       "title": "Disclosure Group Hide Indicator",
@@ -7275,6 +7556,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-disabled-demo",
       "type": "registry:page",
       "title": "Disclosure Group Disabled",
@@ -7292,6 +7574,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-nested-demo",
       "type": "registry:page",
       "title": "Disclosure Group Nested",
@@ -7312,6 +7595,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-border-hidden-demo",
       "type": "registry:page",
       "title": "Disclosure Group Border Hidden",
@@ -7332,6 +7616,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-with-icon-demo",
       "type": "registry:page",
       "title": "Disclosure Group With Icon",
@@ -7352,6 +7637,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-demo",
       "type": "registry:page",
       "title": "Disclosure Group",
@@ -7369,6 +7655,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-hide-everything-demo",
       "type": "registry:page",
       "title": "Disclosure Group Hide Everything",
@@ -7386,6 +7673,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-allow-multiple-expand-demo",
       "type": "registry:page",
       "title": "Disclosure Group Allow Multiple Expand",
@@ -7403,6 +7691,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-default-expand-demo",
       "type": "registry:page",
       "title": "Disclosure Group Default Expand",
@@ -7420,6 +7709,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pagination-dynamic-demo",
       "type": "registry:page",
       "title": "Pagination Dynamic",
@@ -7437,6 +7727,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pagination-demo",
       "type": "registry:page",
       "title": "Pagination",
@@ -7454,6 +7745,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "simple-pagination-demo",
       "type": "registry:page",
       "title": "Simple Pagination",
@@ -7471,6 +7763,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tabs-demo",
       "type": "registry:page",
       "title": "Tabs",
@@ -7488,6 +7781,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tabs-icons-demo",
       "type": "registry:page",
       "title": "Tabs Icons",
@@ -7508,6 +7802,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tabs-link-demo",
       "type": "registry:page",
       "title": "Tabs Link",
@@ -7525,6 +7820,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tabs-collections-demo",
       "type": "registry:page",
       "title": "Tabs Collections",
@@ -7545,6 +7841,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tabs-orientation-demo",
       "type": "registry:page",
       "title": "Tabs Orientation",
@@ -7562,6 +7859,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tabs-disabled-demo",
       "type": "registry:page",
       "title": "Tabs Disabled",
@@ -7579,6 +7877,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-demo",
       "type": "registry:page",
       "title": "Disclosure",
@@ -7596,6 +7895,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-controlled-demo",
       "type": "registry:page",
       "title": "Disclosure Controlled",
@@ -7613,6 +7913,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-disabled-demo",
       "type": "registry:page",
       "title": "Disclosure Disabled",
@@ -7630,6 +7931,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sheet-custom-close-demo",
       "type": "registry:page",
       "title": "Sheet Custom Close",
@@ -7649,6 +7951,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sheet-float-demo",
       "type": "registry:page",
       "title": "Sheet Float",
@@ -7667,6 +7970,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sheet-menu-demo",
       "type": "registry:page",
       "title": "Sheet Menu",
@@ -7695,6 +7999,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sheet-controlled-demo",
       "type": "registry:page",
       "title": "Sheet Controlled",
@@ -7714,6 +8019,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sheet-position-demo",
       "type": "registry:page",
       "title": "Sheet Position",
@@ -7735,6 +8041,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sheet-demo",
       "type": "registry:page",
       "title": "Sheet",
@@ -7755,6 +8062,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sheet-sticky-demo",
       "type": "registry:page",
       "title": "Sheet Sticky",
@@ -7773,6 +8081,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "modal-triggered-by-menu-demo",
       "type": "registry:page",
       "title": "Modal Triggered By Menu",
@@ -7798,6 +8107,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "modal-nested-demo",
       "type": "registry:page",
       "title": "Modal Nested",
@@ -7821,6 +8131,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "modal-size-demo",
       "type": "registry:page",
       "title": "Modal Size",
@@ -7840,6 +8151,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "modal-sticky-demo",
       "type": "registry:page",
       "title": "Modal Sticky",
@@ -7858,6 +8170,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "alert-dialog-demo",
       "type": "registry:page",
       "title": "Alert Dialog",
@@ -7876,6 +8189,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "modal-blur-demo",
       "type": "registry:page",
       "title": "Modal Blur",
@@ -7896,6 +8210,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "modal-controlled-demo",
       "type": "registry:page",
       "title": "Modal Controlled",
@@ -7914,6 +8229,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "modal-demo",
       "type": "registry:page",
       "title": "Modal",
@@ -7933,6 +8249,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "popover-controlled-demo",
       "type": "registry:page",
       "title": "Popover Controlled",
@@ -7956,6 +8273,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "popover-placement-demo",
       "type": "registry:page",
       "title": "Popover Placement",
@@ -7977,6 +8295,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "popover-arrow-demo",
       "type": "registry:page",
       "title": "Popover Arrow",
@@ -7998,6 +8317,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "popover-custom-close",
       "type": "registry:page",
       "title": "Popover Custom Close",
@@ -8021,6 +8341,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "popover-trigger-demo",
       "type": "registry:page",
       "title": "Popover Trigger",
@@ -8040,6 +8361,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "popover-demo",
       "type": "registry:page",
       "title": "Popover",
@@ -8058,6 +8380,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tooltip-delay-demo",
       "type": "registry:page",
       "title": "Tooltip Delay",
@@ -8079,6 +8402,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tooltip-demo",
       "type": "registry:page",
       "title": "Tooltip",
@@ -8097,6 +8421,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tooltip-placement-demo",
       "type": "registry:page",
       "title": "Tooltip Placement",
@@ -8118,6 +8443,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tooltip-without-arrow-demo",
       "type": "registry:page",
       "title": "Tooltip Without Arrow",
@@ -8137,6 +8463,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tooltip-intent-demo",
       "type": "registry:page",
       "title": "Tooltip Intent",
@@ -8158,6 +8485,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drawer-float-demo",
       "type": "registry:page",
       "title": "Drawer Float",
@@ -8178,6 +8506,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drawer-nested-demo",
       "type": "registry:page",
       "title": "Drawer Nested",
@@ -8201,6 +8530,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drawer-basic-demo",
       "type": "registry:page",
       "title": "Drawer Basic",
@@ -8220,6 +8550,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drawer-sticky-demo",
       "type": "registry:page",
       "title": "Drawer Sticky",
@@ -8238,6 +8569,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drawer-controlled-demo",
       "type": "registry:page",
       "title": "Drawer Controlled",
@@ -8257,6 +8589,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drawer-side-demo",
       "type": "registry:page",
       "title": "Drawer Side",
@@ -8277,6 +8610,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "drawer-without-notch-demo",
       "type": "registry:page",
       "title": "Drawer Without Notch",
@@ -8295,6 +8629,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-intent-demo",
       "type": "registry:page",
       "title": "Button Intent",
@@ -8315,6 +8650,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-icon-demo",
       "type": "registry:page",
       "title": "Button Icon",
@@ -8335,6 +8671,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-loader-demo",
       "type": "registry:page",
       "title": "Button Loader",
@@ -8356,6 +8693,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-disabled-demo",
       "type": "registry:page",
       "title": "Button Disabled",
@@ -8373,6 +8711,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-size-demo",
       "type": "registry:page",
       "title": "Button Size",
@@ -8394,6 +8733,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-shape-demo",
       "type": "registry:page",
       "title": "Button Shape",
@@ -8411,6 +8751,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-basic-demo",
       "type": "registry:page",
       "title": "Button Basic",
@@ -8428,6 +8769,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-pending-demo",
       "type": "registry:page",
       "title": "Button Pending",
@@ -8449,6 +8791,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-link-demo",
       "type": "registry:page",
       "title": "Button Link",
@@ -8467,6 +8810,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-disabled-demo",
       "type": "registry:page",
       "title": "Toggle Disabled",
@@ -8487,6 +8831,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-shape-demo",
       "type": "registry:page",
       "title": "Toggle Shape",
@@ -8504,6 +8849,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-demo",
       "type": "registry:page",
       "title": "Toggle",
@@ -8521,6 +8867,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-size-demo",
       "type": "registry:page",
       "title": "Toggle Size",
@@ -8542,6 +8889,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-controlled-demo",
       "type": "registry:page",
       "title": "Toggle Controlled",
@@ -8562,6 +8910,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-intent-demo",
       "type": "registry:page",
       "title": "Toggle Intent",
@@ -8579,6 +8928,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-group-controlled-demo",
       "type": "registry:page",
       "title": "Toggle Group Controlled",
@@ -8599,6 +8949,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-group-demo",
       "type": "registry:page",
       "title": "Toggle Group",
@@ -8616,6 +8967,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-group-disabled-demo",
       "type": "registry:page",
       "title": "Toggle Group Disabled",
@@ -8633,6 +8985,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-group-selection-demo",
       "type": "registry:page",
       "title": "Toggle Group Selection",
@@ -8650,6 +9003,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-group-orientation-demo",
       "type": "registry:page",
       "title": "Toggle Group Orientation",
@@ -8670,6 +9024,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-group-square-size-demo",
       "type": "registry:page",
       "title": "Toggle Group Square Size",
@@ -8690,6 +9045,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toggle-group-size-demo",
       "type": "registry:page",
       "title": "Toggle Group Size",
@@ -8707,6 +9063,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-disabled-demo",
       "type": "registry:page",
       "title": "File Trigger Disabled",
@@ -8724,6 +9081,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-circle-demo",
       "type": "registry:page",
       "title": "File Trigger Circle",
@@ -8741,6 +9099,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-folder-demo",
       "type": "registry:page",
       "title": "File Trigger Folder",
@@ -8758,6 +9117,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-pending-demo",
       "type": "registry:page",
       "title": "File Trigger Pending",
@@ -8775,6 +9135,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-demo",
       "type": "registry:page",
       "title": "File Trigger",
@@ -8792,6 +9153,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-controlled-demo",
       "type": "registry:page",
       "title": "File Trigger Controlled",
@@ -8810,6 +9172,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-multiple-demo",
       "type": "registry:page",
       "title": "File Trigger Multiple",
@@ -8827,6 +9190,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-camera-demo",
       "type": "registry:page",
       "title": "File Trigger Camera",
@@ -8844,6 +9208,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "file-trigger-avatar-demo",
       "type": "registry:page",
       "title": "File Trigger Avatar",
@@ -8868,6 +9233,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-field-disabled-demo",
       "type": "registry:page",
       "title": "Tag Field Disabled",
@@ -8888,6 +9254,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-field-max-demo",
       "type": "registry:page",
       "title": "Tag Field Max",
@@ -8908,6 +9275,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-field-controlled-demo",
       "type": "registry:page",
       "title": "Tag Field Controlled",
@@ -8929,6 +9297,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-field-demo",
       "type": "registry:page",
       "title": "Tag Field",
@@ -8949,6 +9318,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "tag-field-appearance-demo",
       "type": "registry:page",
       "title": "Tag Field Appearance",
@@ -8969,6 +9339,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-controlled-demo",
       "type": "registry:page",
       "title": "Search Field Controlled",
@@ -8987,6 +9358,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-pending-demo",
       "type": "registry:page",
       "title": "Search Field Pending",
@@ -9004,6 +9376,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-disabled-demo",
       "type": "registry:page",
       "title": "Search Field Disabled",
@@ -9021,6 +9394,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-demo",
       "type": "registry:page",
       "title": "Search Field",
@@ -9038,6 +9412,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-readonly-demo",
       "type": "registry:page",
       "title": "Search Field Readonly",
@@ -9055,6 +9430,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-uncontrolled-demo",
       "type": "registry:page",
       "title": "Search Field Uncontrolled",
@@ -9072,6 +9448,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-with-label-demo",
       "type": "registry:page",
       "title": "Search Field With Label",
@@ -9089,6 +9466,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-description-demo",
       "type": "registry:page",
       "title": "Search Field Description",
@@ -9106,6 +9484,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "search-field-validation-demo",
       "type": "registry:page",
       "title": "Search Field Validation",
@@ -9125,6 +9504,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "radio-group-demo",
       "type": "registry:page",
       "title": "Radio Group",
@@ -9143,6 +9523,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "radio-group-validation-demo",
       "type": "registry:page",
       "title": "Radio Group Validation",
@@ -9163,6 +9544,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "radio-group-controlled-demo",
       "type": "registry:page",
       "title": "Radio Group Controlled",
@@ -9181,6 +9563,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "radio-group-uncontrolled-demo",
       "type": "registry:page",
       "title": "Radio Group Uncontrolled",
@@ -9198,6 +9581,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "radio-group-orientation-demo",
       "type": "registry:page",
       "title": "Radio Group Orientation",
@@ -9215,6 +9599,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "radio-group-disabled-demo",
       "type": "registry:page",
       "title": "Radio Group Disabled",
@@ -9232,6 +9617,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "radio-group-description-demo",
       "type": "registry:page",
       "title": "Radio Group Description",
@@ -9250,6 +9636,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-validation-demo",
       "type": "registry:page",
       "title": "Text Field Validation",
@@ -9269,6 +9656,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-readonly-demo",
       "type": "registry:page",
       "title": "Text Field Readonly",
@@ -9286,6 +9674,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-prefix-suffix-demo",
       "type": "registry:page",
       "title": "Text Field Prefix Suffix",
@@ -9306,6 +9695,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-uncontrolled-demo",
       "type": "registry:page",
       "title": "Text Field Uncontrolled",
@@ -9323,6 +9713,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-description-demo",
       "type": "registry:page",
       "title": "Text Field Description",
@@ -9340,6 +9731,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-revealable-demo",
       "type": "registry:page",
       "title": "Text Field Revealable",
@@ -9357,6 +9749,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-demo",
       "type": "registry:page",
       "title": "Text Field",
@@ -9374,6 +9767,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-disabled-demo",
       "type": "registry:page",
       "title": "Text Field Disabled",
@@ -9391,6 +9785,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-controlled-demo",
       "type": "registry:page",
       "title": "Text Field Controlled",
@@ -9409,6 +9804,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-suffix-button-demo",
       "type": "registry:page",
       "title": "Text Field Suffix Button",
@@ -9431,6 +9827,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "text-field-pending-demo",
       "type": "registry:page",
       "title": "Text Field Pending",
@@ -9448,6 +9845,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "textarea-demo",
       "type": "registry:page",
       "title": "Textarea",
@@ -9465,6 +9863,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "textarea-controlled-demo",
       "type": "registry:page",
       "title": "Textarea Controlled",
@@ -9483,6 +9882,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "textarea-uncontrolled-demo",
       "type": "registry:page",
       "title": "Textarea Uncontrolled",
@@ -9500,6 +9900,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "textarea-readonly-demo",
       "type": "registry:page",
       "title": "Textarea Readonly",
@@ -9517,6 +9918,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "textarea-description-demo",
       "type": "registry:page",
       "title": "Textarea Description",
@@ -9534,6 +9936,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "textarea-disabled-demo",
       "type": "registry:page",
       "title": "Textarea Disabled",
@@ -9551,6 +9954,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "textarea-validation-demo",
       "type": "registry:page",
       "title": "Textarea Validation",
@@ -9570,6 +9974,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-demo",
       "type": "registry:page",
       "title": "Checkbox",
@@ -9587,6 +9992,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-group-demo",
       "type": "registry:page",
       "title": "Checkbox Group",
@@ -9604,6 +10010,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-group-validation-demo",
       "type": "registry:page",
       "title": "Checkbox Group Validation",
@@ -9623,6 +10030,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-uncontrolled-demo",
       "type": "registry:page",
       "title": "Checkbox Uncontrolled",
@@ -9640,6 +10048,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-indeterminate-demo",
       "type": "registry:page",
       "title": "Checkbox Indeterminate",
@@ -9657,6 +10066,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-description-demo",
       "type": "registry:page",
       "title": "Checkbox Description",
@@ -9675,6 +10085,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-group-description-demo",
       "type": "registry:page",
       "title": "Checkbox Group Description",
@@ -9693,6 +10104,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-controlled-demo",
       "type": "registry:page",
       "title": "Checkbox Controlled",
@@ -9711,6 +10123,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-invalid-demo",
       "type": "registry:page",
       "title": "Checkbox Invalid",
@@ -9728,6 +10141,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-group-uncontrolled-demo",
       "type": "registry:page",
       "title": "Checkbox Group Uncontrolled",
@@ -9745,6 +10159,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-group-indeterminate-demo",
       "type": "registry:page",
       "title": "Checkbox Group Indeterminate",
@@ -9762,6 +10177,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-disabled-demo",
       "type": "registry:page",
       "title": "Checkbox Disabled",
@@ -9779,6 +10195,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-group-disabled-demo",
       "type": "registry:page",
       "title": "Checkbox Group Disabled",
@@ -9796,6 +10213,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-group-controlled-demo",
       "type": "registry:page",
       "title": "Checkbox Group Controlled",
@@ -9814,6 +10232,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "number-field-invalid-demo",
       "type": "registry:page",
       "title": "Number Field Invalid",
@@ -9833,6 +10252,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "number-field-disabled-demo",
       "type": "registry:page",
       "title": "Number Field Disabled",
@@ -9850,6 +10270,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "number-field-controlled-demo",
       "type": "registry:page",
       "title": "Number Field Controlled",
@@ -9868,6 +10289,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "number-field-uncontrolled-demo",
       "type": "registry:page",
       "title": "Number Field Uncontrolled",
@@ -9885,6 +10307,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "number-field-demo",
       "type": "registry:page",
       "title": "Number Field",
@@ -9902,6 +10325,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "form-validation-demo",
       "type": "registry:page",
       "title": "Form Validation",
@@ -9921,6 +10345,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "form-demo",
       "type": "registry:page",
       "title": "Form",
@@ -9941,6 +10366,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "input-otp-controlled-demo",
       "type": "registry:page",
       "title": "Input Otp Controlled",
@@ -9958,6 +10384,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "input-otp-separator-demo",
       "type": "registry:page",
       "title": "Input Otp Separator",
@@ -9975,6 +10402,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "input-otp-demo",
       "type": "registry:page",
       "title": "Input Otp",
@@ -9992,6 +10420,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-picker-custom-validation-demo",
       "type": "registry:page",
       "title": "Date Picker Custom Validation",
@@ -10014,6 +10443,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-picker-demo",
       "type": "registry:page",
       "title": "Date Picker",
@@ -10031,6 +10461,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-time-demo",
       "type": "registry:page",
       "title": "Date Time",
@@ -10051,6 +10482,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-picker-required-demo",
       "type": "registry:page",
       "title": "Date Picker Required",
@@ -10070,6 +10502,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-picker-disabled-demo",
       "type": "registry:page",
       "title": "Date Picker Disabled",
@@ -10087,6 +10520,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-picker-controlled-demo",
       "type": "registry:page",
       "title": "Date Picker Controlled",
@@ -10108,6 +10542,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "time-field-disabled-demo",
       "type": "registry:page",
       "title": "Time Field Disabled",
@@ -10125,6 +10560,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "time-field-validation-demo",
       "type": "registry:page",
       "title": "Time Field Validation",
@@ -10144,6 +10580,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "time-field-suffix-demo",
       "type": "registry:page",
       "title": "Time Field Suffix",
@@ -10165,6 +10602,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "time-field-hc-demo",
       "type": "registry:page",
       "title": "Time Field Hc",
@@ -10187,6 +10625,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "time-field-controlled-demo",
       "type": "registry:page",
       "title": "Time Field Controlled",
@@ -10207,6 +10646,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "time-field-readonly-demo",
       "type": "registry:page",
       "title": "Time Field Readonly",
@@ -10227,6 +10667,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "time-field-demo",
       "type": "registry:page",
       "title": "Time Field",
@@ -10247,6 +10688,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-range-picker-disabled-demo",
       "type": "registry:page",
       "title": "Date Range Picker Disabled",
@@ -10264,6 +10706,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-range-picker-controlled-demo",
       "type": "registry:page",
       "title": "Date Range Picker Controlled",
@@ -10285,6 +10728,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-range-picker-time-demo",
       "type": "registry:page",
       "title": "Date Range Picker Time",
@@ -10305,6 +10749,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-range-picker-custom-validation-demo",
       "type": "registry:page",
       "title": "Date Range Picker Custom Validation",
@@ -10327,6 +10772,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-range-picker-visible-duration-demo",
       "type": "registry:page",
       "title": "Date Range Picker Visible Duration",
@@ -10344,6 +10790,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-range-picker-demo",
       "type": "registry:page",
       "title": "Date Range Picker",
@@ -10361,6 +10808,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-range-picker-validation-demo",
       "type": "registry:page",
       "title": "Date Range Picker Validation",
@@ -10380,6 +10828,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "range-calendar-uncontrolled-demo",
       "type": "registry:page",
       "title": "Range Calendar Uncontrolled",
@@ -10400,6 +10849,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "range-calendar-demo",
       "type": "registry:page",
       "title": "Range Calendar",
@@ -10417,6 +10867,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "calendar-demo",
       "type": "registry:page",
       "title": "Calendar",
@@ -10434,6 +10885,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "range-calendar-controlled-demo",
       "type": "registry:page",
       "title": "Range Calendar Controlled",
@@ -10454,6 +10906,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-field-demo",
       "type": "registry:page",
       "title": "Date Field",
@@ -10471,6 +10924,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-field-controlled-demo",
       "type": "registry:page",
       "title": "Date Field Controlled",
@@ -10492,6 +10946,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-field-suffix-demo",
       "type": "registry:page",
       "title": "Date Field Suffix",
@@ -10512,6 +10967,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-field-uncontrolled-demo",
       "type": "registry:page",
       "title": "Date Field Uncontrolled",
@@ -10532,6 +10988,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-field-disabled-demo",
       "type": "registry:page",
       "title": "Date Field Disabled",
@@ -10549,6 +11006,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-field-readonly-demo",
       "type": "registry:page",
       "title": "Date Field Readonly",
@@ -10569,6 +11027,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-time-field-demo",
       "type": "registry:page",
       "title": "Date Time Field",
@@ -10589,6 +11048,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "date-field-validation-demo",
       "type": "registry:page",
       "title": "Date Field Validation",
@@ -10608,6 +11068,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "primitive",
       "type": "registry:lib",
       "title": "primitive",
@@ -10625,6 +11086,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "use-media-query",
       "type": "registry:hook",
       "title": "use-media-query",
@@ -10638,6 +11100,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "navbar-01",
       "type": "registry:block",
       "title": "navbar-01",
@@ -10670,6 +11133,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "navbar-03",
       "type": "registry:block",
       "title": "navbar-03",
@@ -10701,6 +11165,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "navbar-04",
       "type": "registry:block",
       "title": "navbar-04",
@@ -10733,6 +11198,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "navbar-05",
       "type": "registry:block",
       "title": "navbar-05",
@@ -10765,6 +11231,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "navbar-02",
       "type": "registry:block",
       "title": "navbar-02",
@@ -10797,6 +11264,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-09",
       "type": "registry:block",
       "title": "sidebar-09",
@@ -10826,6 +11294,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-07",
       "type": "registry:block",
       "title": "sidebar-07",
@@ -10855,6 +11324,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-01",
       "type": "registry:block",
       "title": "sidebar-01",
@@ -10885,6 +11355,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-06",
       "type": "registry:block",
       "title": "sidebar-06",
@@ -10915,6 +11386,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-08",
       "type": "registry:block",
       "title": "sidebar-08",
@@ -10944,6 +11416,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-15",
       "type": "registry:block",
       "title": "sidebar-15",
@@ -10975,6 +11448,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-12",
       "type": "registry:block",
       "title": "sidebar-12",
@@ -11004,6 +11478,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-03",
       "type": "registry:block",
       "title": "sidebar-03",
@@ -11034,6 +11509,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-04",
       "type": "registry:block",
       "title": "sidebar-04",
@@ -11064,6 +11540,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-05",
       "type": "registry:block",
       "title": "sidebar-05",
@@ -11093,6 +11570,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-02",
       "type": "registry:block",
       "title": "sidebar-02",
@@ -11123,6 +11601,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-16",
       "type": "registry:block",
       "title": "sidebar-16",
@@ -11152,6 +11631,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-19",
       "type": "registry:block",
       "title": "sidebar-19",
@@ -11183,6 +11663,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "sidebar-17",
       "type": "registry:block",
       "title": "sidebar-17",
@@ -11212,6 +11693,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "all",
       "type": "registry:item",
       "title": "All UI components",

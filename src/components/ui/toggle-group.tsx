@@ -3,12 +3,13 @@
 import { createContext, use } from "react"
 import {
   composeRenderProps,
+  SelectionIndicator,
   ToggleButton,
   ToggleButtonGroup,
   type ToggleButtonGroupProps,
   type ToggleButtonProps,
 } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
 import { cx } from "@/lib/primitive"
 
@@ -59,18 +60,13 @@ interface ToggleGroupItemProps extends ToggleButtonProps {}
 
 const toggleGroupItemStyles = tv({
   base: [
-    "[--toggle-group-item-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))]",
-    "relative isolate inline-flex flex-row items-center font-medium outline-hidden",
-    "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-(--toggle-group-item-icon)",
+    "group relative isolate inline-flex flex-row items-center font-medium outline-hidden",
+    "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center",
   ],
   variants: {
     orientation: {
       horizontal: "justify-center",
       vertical: "justify-start",
-    },
-    selectionMode: {
-      single: "rounded-[calc(var(--radius-lg)-2px)]",
-      multiple: "rounded-none",
     },
     size: {
       xs: [
@@ -102,18 +98,6 @@ const toggleGroupItemStyles = tv({
       "sq-lg":
         "touch-target size-11 *:data-[slot=icon]:size-5 *:data-[slot=loader]:size-5 sm:size-10 sm:*:data-[slot=icon]:size-5 sm:*:data-[slot=loader]:size-5",
     },
-    isPressed: {
-      true: "bg-primary/90 text-primary-fg",
-    },
-    isSelected: {
-      true: "bg-primary text-primary-fg [--toggle-group-item-icon:var(--primary-fg)] hover:bg-primary/90",
-    },
-    isFocused: {
-      true: "not-selected:bg-secondary not-selected:text-secondary-fg not-selected:[--toggle-group-item-icon:var(--secondary-fg)]",
-    },
-    isHovered: {
-      true: "enabled:not-selected:bg-secondary enabled:not-selected:text-secondary-fg enabled:not-selected:[--toggle-group-item-icon:var(--secondary-fg)]",
-    },
     isDisabled: {
       true: "opacity-50 forced-colors:text-[GrayText]",
     },
@@ -122,23 +106,9 @@ const toggleGroupItemStyles = tv({
     size: "md",
     isCircle: false,
   },
-  compoundVariants: [
-    {
-      selectionMode: "multiple",
-      orientation: "horizontal",
-      className:
-        "not-first:-ml-px first:rounded-l-[calc(var(--toggle-group-radius)-var(--toggle-padding))] last:rounded-r-[calc(var(--toggle-group-radius)-var(--toggle-padding))]",
-    },
-    {
-      selectionMode: "multiple",
-      orientation: "vertical",
-      className:
-        "not-first:-mt-px first:rounded-t-[calc(var(--toggle-group-radius)-var(--toggle-padding))] last:rounded-b-[calc(var(--toggle-group-radius)-var(--toggle-padding))]",
-    },
-  ],
 })
 
-const ToggleGroupItem = ({ className, ...props }: ToggleGroupItemProps) => {
+const ToggleGroupItem = ({ className, children, ...props }: ToggleGroupItemProps) => {
   const { size, selectionMode, orientation } = useToggleGroupContext()
 
   return (
@@ -150,13 +120,32 @@ const ToggleGroupItem = ({ className, ...props }: ToggleGroupItemProps) => {
             ...renderProps,
             size,
             orientation,
-            selectionMode,
             className,
           }),
         ),
       )}
       {...props}
-    />
+    >
+      {(values) => (
+        <>
+          {typeof children === "function" ? children(values) : children}
+          <SelectionIndicator
+            className={twJoin(
+              "-z-1 absolute top-0 left-0 h-full w-full bg-primary text-primary-fg transition-[translate,width] duration-200",
+              selectionMode === "multiple" &&
+                orientation === "horizontal" &&
+                "not-group-first:-ml-px group-first:rounded-l-[calc(var(--toggle-group-radius)-var(--toggle-padding))] group-last:rounded-r-[calc(var(--toggle-group-radius)-var(--toggle-padding))]",
+              selectionMode === "multiple" &&
+                orientation === "vertical" &&
+                "not-first:-mt-px first:rounded-t-[calc(var(--toggle-group-radius)-var(--toggle-padding))] last:rounded-b-[calc(var(--toggle-group-radius)-var(--toggle-padding))]",
+              selectionMode === "single"
+                ? "rounded-[calc(var(--toggle-group-radius)-var(--toggle-padding))]"
+                : "rounded-none",
+            )}
+          />
+        </>
+      )}
+    </ToggleButton>
   )
 }
 

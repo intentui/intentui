@@ -8,6 +8,7 @@ import type {
 } from "react-aria-components"
 import {
   composeRenderProps,
+  SelectionIndicator,
   TabList as TabListPrimitive,
   TabPanel as TabPanelPrimitive,
   Tab as TabPrimitive,
@@ -71,19 +72,17 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
         className,
       )}
     >
-      {({ isSelected }) => (
+      {(values) => (
         <>
-          {children}
-          {isSelected && (
-            <span
-              data-slot="selected-indicator"
-              className={twMerge(
-                "absolute rounded bg-fg",
-                "group-orientation-horizontal/tabs:-bottom-px group-orientation-horizontal/tabs:inset-x-0 group-orientation-horizontal/tabs:h-0.5 group-orientation-horizontal/tabs:w-full",
-                "group-orientation-vertical/tabs:left-0 group-orientation-vertical/tabs:h-[calc(100%-10%)] group-orientation-vertical/tabs:w-0.5 group-orientation-vertical/tabs:transform",
-              )}
-            />
-          )}
+          {typeof children === "function" ? children(values) : children}
+          <SelectionIndicator
+            data-slot="selected-indicator"
+            className={twMerge(
+              "absolute rounded bg-fg transition-[translate,width,height] duration-200",
+              "group-orientation-horizontal/tabs:-bottom-px group-orientation-horizontal/tabs:left-0 group-orientation-horizontal/tabs:h-0.5 group-orientation-horizontal/tabs:w-full",
+              "group-orientation-vertical/tabs:left-0 group-orientation-vertical/tabs:h-[calc(100%-10%)] group-orientation-vertical/tabs:w-0.5 group-orientation-vertical/tabs:transform",
+            )}
+          />
         </>
       )}
     </TabPrimitive>
