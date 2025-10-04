@@ -1,7 +1,7 @@
 "use client"
 
 import { IconSidebarFill } from "@intentui/icons"
-import { createContext, use, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { createContext, use, useCallback, useEffect, useMemo, useState } from "react"
 import {
   type ButtonProps,
   composeRenderProps,
@@ -11,7 +11,6 @@ import {
   DisclosurePanel,
   type DisclosurePanelProps,
   type DisclosureProps,
-  DisclosureStateContext,
   Header,
   Heading,
   type LinkProps,
@@ -24,7 +23,7 @@ import {
 import { twJoin, twMerge } from "tailwind-merge"
 import { SheetContent } from "@/components/ui/sheet"
 import { useMediaQuery } from "@/hooks/use-media-query"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { composeTailwindRenderProps, cx } from "@/lib/primitive"
 import { Button } from "./button"
 import { Link } from "./link"
 import { Tooltip, TooltipContent } from "./tooltip"
@@ -591,33 +590,15 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
 }
 
 const SidebarDisclosurePanel = ({ className, ...props }: DisclosurePanelProps) => {
-  const { isExpanded } = use(DisclosureStateContext)!
-  const contentRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const el = contentRef.current
-    if (!el) return
-    const ro = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        el.parentElement?.style.setProperty("--disclosure-height", `${entry.target.clientHeight}px`)
-      }
-    })
-    ro.observe(el)
-    return () => ro.unobserve(el)
-  }, [])
-
   return (
     <DisclosurePanel
-      className={composeTailwindRenderProps(className, [
-        "col-span-full overflow-hidden transition-all",
-        "grid grid-cols-[auto_1fr] gap-y-0.5",
-        isExpanded ? "animate-disclosure-expanded" : "animate-disclosure-collapsed",
-      ])}
+      className={cx(
+        "col-span-full grid h-(--disclosure-panel-height) grid-cols-[auto_1fr] gap-y-0.5 overflow-clip transition-[height] duration-200",
+        className,
+      )}
       {...props}
     >
-      <div ref={contentRef} className="col-span-full grid min-w-0 grid-cols-[auto_1fr]">
-        {props.children}
-      </div>
+      <div className="col-span-full grid min-w-0 grid-cols-[auto_1fr]">{props.children}</div>
     </DisclosurePanel>
   )
 }

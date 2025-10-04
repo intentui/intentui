@@ -73,15 +73,6 @@ const customCSS = {
         "z-index": "9999"
       }
   },
-
-  "@keyframes disclosure-expanded": {
-    from: { height: "0" },
-    to: { height: "var(--disclosure-height)" }
-  },
-  "@keyframes disclosure-collapsed": {
-    from: { height: "var(--disclosure-height)" },
-    to: { height: "0" }
-  },
 }
 
 const themeDefs = [
@@ -100,11 +91,7 @@ const makeThemeItem = (name: string, light: Token, dark: Token) => {
     name,
     type: "registry:style",
     cssVars: {
-      theme: {
-        ...baseTheme,
-        "animate-disclosure-collapsed": "disclosure-collapsed 0.2s ease-out",
-        "animate-disclosure-expanded": "disclosure-expanded 0.2s ease-out"
-      },
+      theme: baseTheme,
       light,
       dark
     }
