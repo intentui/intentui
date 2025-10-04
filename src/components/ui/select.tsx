@@ -19,18 +19,20 @@ import type { FieldProps } from "./field"
 import { Description, FieldError, Label } from "./field"
 import { PopoverContent } from "./popover"
 
-interface SelectProps<T extends object> extends SelectPrimitiveProps<T>, FieldProps {
-  items?: Iterable<T>
+interface SelectProps<T extends object, M extends "single" | "multiple" = "single">
+  extends SelectPrimitiveProps<T, M>,
+    FieldProps {
+  items?: Iterable<T, M>
 }
 
-const Select = <T extends object>({
+const Select = <T extends object, M extends "single" | "multiple" = "single">({
   label,
   children,
   description,
   errorMessage,
   className,
   ...props
-}: SelectProps<T>) => {
+}: SelectProps<T, M>) => {
   return (
     <SelectPrimitive
       data-slot="select"
@@ -110,15 +112,17 @@ const SelectTrigger = ({ children, className, ...props }: SelectTriggerProps) =>
               <SelectValue
                 data-slot="select-value"
                 className={twJoin([
-                  "grid flex-1 grid-cols-[auto_1fr] items-center truncate data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden",
+                  "has-data-[slot=avatar]:grid has-data-[slot=avatar]:grid-cols-[1fr_auto]",
+                  "has-data-[slot=icon]:grid has-data-[slot=icon]:grid-cols-[1fr_auto]",
+                  "truncate text-start data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden",
                   "has-data-[slot=avatar]:gap-x-2 has-data-[slot=icon]:gap-x-2",
-                  "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
+                  "items-center *:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
                   "*:data-[slot=avatar]:*:size-5 *:data-[slot=avatar]:size-5 sm:*:data-[slot=avatar]:*:size-4.5 sm:*:data-[slot=avatar]:size-4.5",
                 ])}
               />
               <IconChevronsY
                 data-slot="chevron"
-                className="-mr-1 shrink-0 text-muted-fg group-open/select:text-fg group-disabled/select:opacity-50 sm:mr-0"
+                className="-mr-1 ml-auto shrink-0 text-muted-fg group-open/select:text-fg group-disabled/select:opacity-50 sm:mr-0"
               />
             </>
           )}

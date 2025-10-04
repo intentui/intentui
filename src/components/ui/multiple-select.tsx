@@ -46,12 +46,12 @@ function MultipleSelect<T extends OptionBase>({
 
   return (
     <Select
-      className={cx("group relative flex w-fit flex-col gap-1 disabled:opacity-50", className)}
+      className={cx("group relative flex w-full flex-col gap-1 disabled:opacity-50", className)}
       selectionMode="multiple"
       {...props}
     >
       {label && <Label>{label}</Label>}
-      <div ref={triggerRef} className="flex items-center gap-2 rounded-lg border p-1">
+      <div ref={triggerRef} className="flex w-[250px] items-center gap-2 rounded-lg border p-1">
         <SelectValue<T> className="flex-1">
           {({ selectedItems, state }) => (
             <TagGroup
@@ -81,7 +81,7 @@ function MultipleSelect<T extends OptionBase>({
       </div>
       <PopoverContent
         triggerRef={triggerRef}
-        placement="bottom end"
+        placement="bottom"
         className="flex w-[250px] flex-col"
       >
         <Autocomplete filter={contains}>

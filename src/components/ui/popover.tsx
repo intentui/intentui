@@ -9,7 +9,7 @@ import {
   OverlayArrow,
   Popover as PopoverPrimitive,
 } from "react-aria-components"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import {
   DialogBody,
   DialogClose,
@@ -47,14 +47,14 @@ const PopoverContent = ({
     <PopoverPrimitive
       ref={ref}
       offset={offset}
-      className={composeTailwindRenderProps(className, [
+      className={cx(
         "group/popover min-w-(--trigger-width) max-w-xs origin-(--trigger-anchor-point) rounded-xl border bg-overlay text-overlay-fg shadow-xs outline-hidden transition-transform [--gutter:--spacing(6)] sm:text-sm dark:backdrop-saturate-200 **:[[role=dialog]]:[--gutter:--spacing(4)]",
-        "entering:fade-in entering:animate-in",
-        "exiting:fade-out exiting:animate-out",
+        "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
         "placement-left:entering:slide-in-from-right-1 placement-right:entering:slide-in-from-left-1 placement-top:entering:slide-in-from-bottom-1 placement-bottom:entering:slide-in-from-top-1",
         "placement-left:exiting:slide-out-to-right-1 placement-right:exiting:slide-out-to-left-1 placement-top:exiting:slide-out-to-bottom-1 placement-bottom:exiting:slide-out-to-top-1",
         "forced-colors:bg-[Canvas]",
-      ])}
+        className,
+      )}
       {...props}
     >
       {(values) => (
