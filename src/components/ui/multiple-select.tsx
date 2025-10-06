@@ -46,7 +46,10 @@ function MultipleSelect<T extends OptionBase>({
 
   return (
     <Select
-      className={cx("group relative flex w-full flex-col gap-1 disabled:opacity-50", className)}
+      className={cx(
+        "group relative flex w-full flex-col gap-y-1 disabled:opacity-50 *:data-[slot=label]:font-medium",
+        className,
+      )}
       selectionMode="multiple"
       {...props}
     >
