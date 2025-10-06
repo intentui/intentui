@@ -20,11 +20,7 @@ const Link = ({ className, ref, intent = "unstyled", ...props }: LinkProps) => {
         intent === "secondary" && "text-muted-fg hover:text-fg",
         className,
       )}
-    >
-      {(values) => (
-        <>{typeof props.children === "function" ? props.children(values) : props.children}</>
-      )}
-    </LinkPrimitive>
+    />
   )
 }
 
