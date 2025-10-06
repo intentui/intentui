@@ -31,7 +31,7 @@ export default function SelectSearchableDemo() {
               <SearchField className="rounded-lg bg-bg" autoFocus />
             </div>
             <ListBox
-              className="max-h-[inherit] min-w-[inherit] border-0 shadow-none"
+              className="max-h-[inherit] min-w-[inherit] rounded-t-none border-0 bg-transparent shadow-none"
               items={languages}
             >
               {(item) => <SelectItem>{item.name}</SelectItem>}
