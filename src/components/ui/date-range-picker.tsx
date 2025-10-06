@@ -8,7 +8,7 @@ import {
   type DateValue,
   type ValidationResult,
 } from "react-aria-components"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { DateInput } from "./date-field"
 import { DatePickerIcon, DatePickerOverlay } from "./date-picker"
 import { Description, FieldError, FieldGroup, Label } from "./field"
@@ -34,10 +34,7 @@ const DateRangePicker = <T extends DateValue>({
   return (
     <DateRangePickerPrimitive
       {...props}
-      className={composeTailwindRenderProps(
-        className,
-        "group flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
-      )}
+      className={cx("group flex flex-col gap-y-1 *:data-[slot=label]:font-medium", className)}
     >
       {label && <Label>{label}</Label>}
       <FieldGroup className="min-w-40 *:[button]:last:mr-1.5 sm:*:[button]:last:mr-0.5">

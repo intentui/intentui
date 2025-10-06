@@ -3,7 +3,7 @@ import {
   type SwitchProps as SwitchPrimitiveProps,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Label } from "./field"
 
 interface SwitchProps extends SwitchPrimitiveProps {
@@ -15,13 +15,11 @@ const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
       data-slot="switch"
       ref={ref}
       {...props}
-      className={composeTailwindRenderProps(
+      className={cx(
+        "[--switch-bg-ring:var(--color-primary)]/90 [--switch-bg:var(--color-primary)] dark:[--switch-bg-ring:transparent]",
+        "[--switch-ring:var(--color-primary)]/90 [--switch-shadow:color-mix(in_oklab,var(--color-primary)_30%,var(--color-secondary-fg)_70%))]/20 [--switch:white]",
+        "group relative grid cursor-default grid-cols-[1fr_auto] gap-x-6 gap-y-1 disabled:opacity-50 *:data-[slot=indicator]:col-start-2 *:data-[slot=label]:col-start-1 *:data-[slot=label]:row-start-1 *:data-[slot=indicator]:self-start has-[[slot=description]]:**:data-[slot=label]:font-medium sm:*:data-[slot=indicator]:mt-0.5 *:[[slot=description]]:col-start-1 *:[[slot=description]]:row-start-2",
         className,
-        twJoin(
-          "[--switch-bg-ring:var(--color-primary)]/90 [--switch-bg:var(--color-primary)] dark:[--switch-bg-ring:transparent]",
-          "[--switch-ring:var(--color-primary)]/90 [--switch-shadow:color-mix(in_oklab,var(--color-primary)_30%,var(--color-secondary-fg)_70%))]/20 [--switch:white]",
-          "group relative grid cursor-default grid-cols-[1fr_auto] gap-x-6 gap-y-1 disabled:opacity-50 *:data-[slot=indicator]:col-start-2 *:data-[slot=label]:col-start-1 *:data-[slot=label]:row-start-1 *:data-[slot=indicator]:self-start has-[[slot=description]]:**:data-[slot=label]:font-medium sm:*:data-[slot=indicator]:mt-0.5 *:[[slot=description]]:col-start-1 *:[[slot=description]]:row-start-2",
-        ),
       )}
       style={{ WebkitTapHighlightColor: "transparent" }}
     >

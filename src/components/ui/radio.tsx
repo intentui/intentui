@@ -10,7 +10,7 @@ import {
   Radio as RadioPrimitive,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Description, FieldError, type FieldProps, Label } from "./field"
 
 interface RadioGroupProps extends RadioGroupPrimitiveProps, Omit<FieldProps, "placeholder"> {}
@@ -26,9 +26,9 @@ const RadioGroup = ({
   return (
     <RadioGroupPrimitive
       {...props}
-      className={composeTailwindRenderProps(
-        className,
+      className={cx(
         "space-y-3 has-[[slot=description]]:space-y-6 has-[[slot=description]]:**:data-[slot=label]:font-medium **:[[slot=description]]:block",
+        className,
       )}
     >
       {(values) => (
@@ -47,10 +47,7 @@ interface RadioProps extends RadioPrimitiveProps, Pick<FieldProps, "label" | "de
 
 const Radio = ({ className, children, description, label, ...props }: RadioProps) => {
   return (
-    <RadioPrimitive
-      {...props}
-      className={composeTailwindRenderProps(className, "group block disabled:opacity-50")}
-    >
+    <RadioPrimitive {...props} className={cx("group block disabled:opacity-50", className)}>
       {composeRenderProps(children, (children, { isSelected, isFocusVisible, isInvalid }) => {
         const isStringChild = typeof children === "string"
         const hasCustomChildren = typeof children !== "undefined"

@@ -1,8 +1,7 @@
 "use client"
 
 import { Link as LinkPrimitive, type LinkProps as LinkPrimitiveProps } from "react-aria-components"
-import { twJoin } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 
 interface LinkProps extends LinkPrimitiveProps {
   intent?: "primary" | "secondary" | "unstyled"
@@ -14,14 +13,12 @@ const Link = ({ className, ref, intent = "unstyled", ...props }: LinkProps) => {
     <LinkPrimitive
       ref={ref}
       {...props}
-      className={composeTailwindRenderProps(
+      className={cx(
+        "disabled:cursor-default disabled:opacity-60 forced-colors:disabled:text-[GrayText]",
+        intent === "unstyled" && "text-current",
+        intent === "primary" && "text-primary hover:text-primary/80",
+        intent === "secondary" && "text-muted-fg hover:text-fg",
         className,
-        twJoin([
-          "disabled:cursor-default disabled:opacity-60 forced-colors:disabled:text-[GrayText]",
-          intent === "unstyled" && "text-current",
-          intent === "primary" && "text-primary hover:text-primary/80",
-          intent === "secondary" && "text-muted-fg hover:text-fg",
-        ]),
       )}
     >
       {(values) => (

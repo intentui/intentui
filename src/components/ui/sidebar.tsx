@@ -2,28 +2,30 @@
 
 import { IconSidebarFill } from "@intentui/icons"
 import { createContext, use, useCallback, useEffect, useMemo, useState } from "react"
+import type {
+  ButtonProps,
+  DisclosureGroupProps,
+  DisclosurePanelProps,
+  DisclosureProps,
+  LinkProps,
+  LinkRenderProps,
+  SeparatorProps as SidebarSeparatorProps,
+} from "react-aria-components"
 import {
-  type ButtonProps,
   composeRenderProps,
   Disclosure,
   DisclosureGroup,
-  type DisclosureGroupProps,
   DisclosurePanel,
-  type DisclosurePanelProps,
-  type DisclosureProps,
   Header,
   Heading,
-  type LinkProps,
-  type LinkRenderProps,
   Separator,
-  type SeparatorProps as SidebarSeparatorProps,
   Text,
   Button as Trigger,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { SheetContent } from "@/components/ui/sheet"
 import { useMediaQuery } from "@/hooks/use-media-query"
-import { composeTailwindRenderProps, cx } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Button } from "./button"
 import { Link } from "./link"
 import { Tooltip, TooltipContent } from "./tooltip"
@@ -470,10 +472,11 @@ const SidebarLink = ({ className, ref, ...props }: SidebarLinkProps) => {
   return (
     <Link
       ref={ref}
-      className={composeTailwindRenderProps(className, [
+      className={cx(
         "col-span-full min-w-0 shrink-0 items-center p-2 focus:outline-hidden",
         "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
-      ])}
+        className,
+      )}
       {...props}
     />
   )
@@ -504,10 +507,7 @@ const SidebarDisclosureGroup = ({
     <DisclosureGroup
       data-slot="sidebar-disclosure-group"
       allowsMultipleExpanded={allowsMultipleExpanded}
-      className={composeTailwindRenderProps(
-        className,
-        "col-span-full flex min-w-0 flex-col gap-y-0.5",
-      )}
+      className={cx("col-span-full flex min-w-0 flex-col gap-y-0.5", className)}
       {...props}
     />
   )
@@ -523,10 +523,11 @@ const SidebarDisclosure = ({ className, ref, ...props }: SidebarDisclosureProps)
     <Disclosure
       ref={ref}
       data-slot="sidebar-disclosure"
-      className={composeTailwindRenderProps(className, [
+      className={cx(
         state === "collapsed" ? "p-2" : "p-4",
         "group col-span-full min-w-0",
-      ])}
+        className,
+      )}
       {...props}
     />
   )
@@ -630,7 +631,7 @@ const SidebarTrigger = ({
       data-slot="sidebar-trigger"
       intent={props.intent || "plain"}
       size={props.size || "sq-sm"}
-      className={composeTailwindRenderProps(className, "shrink-0")}
+      className={cx("shrink-0", className)}
       onPress={(event) => {
         onPress?.(event)
         toggleSidebar()

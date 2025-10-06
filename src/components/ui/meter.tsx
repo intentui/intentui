@@ -6,7 +6,7 @@ import {
   Meter as MeterPrimitive,
   type MeterProps as MeterPrimitiveProps,
 } from "react-aria-components"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Label } from "./field"
 
 interface MeterProps extends MeterPrimitiveProps {
@@ -15,10 +15,7 @@ interface MeterProps extends MeterPrimitiveProps {
 
 const Meter = ({ label, className, ...props }: MeterProps) => {
   return (
-    <MeterPrimitive
-      {...props}
-      className={composeTailwindRenderProps(className, "flex min-w-56 flex-col gap-1")}
-    >
+    <MeterPrimitive {...props} className={cx("flex min-w-56 flex-col gap-y-1", className)}>
       {({ percentage, valueText }) => (
         <>
           <div className="flex w-full justify-between gap-2">

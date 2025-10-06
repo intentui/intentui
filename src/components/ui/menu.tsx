@@ -21,7 +21,7 @@ import {
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
-import { composeTailwindRenderProps, cx } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import {
   DropdownDescription,
   DropdownKeyboard,
@@ -83,15 +83,15 @@ const MenuContent = <T extends object>({
 }: MenuContentProps<T>) => {
   return (
     <PopoverContent
-      className={composeTailwindRenderProps(popover?.className, "min-w-40")}
+      className={cx("min-w-40", popover?.className)}
       placement={placement}
       {...popover}
     >
       <MenuPrimitive
         data-slot="menu-content"
-        className={composeTailwindRenderProps(
-          className,
+        className={cx(
           "grid max-h-[inherit] grid-cols-[auto_1fr] overflow-y-auto overscroll-contain p-1 outline-hidden [clip-path:inset(0_0_0_0_round_calc(var(--radius-lg)-2px))] *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
+          className,
         )}
         {...props}
       />

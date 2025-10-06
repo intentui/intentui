@@ -12,9 +12,9 @@ import {
   SliderTrack as SliderTrackPrimitive,
   type SliderTrackProps,
 } from "react-aria-components"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Description, Label } from "./field"
 import { Tooltip } from "./tooltip"
 
@@ -127,13 +127,11 @@ const SliderTrack = ({ className, ...props }: SliderTrackProps) => {
   return (
     <SliderTrackPrimitive
       {...props}
-      className={composeTailwindRenderProps(
+      className={cx(
+        "[--slider:color-mix(in_oklab,var(--color-muted)_90%,black_10%)] dark:[--slider:color-mix(in_oklab,var(--color-muted)_90%,white_10%)]",
+        "group/track relative cursor-default rounded-full bg-(--slider) disabled:cursor-default disabled:opacity-60",
+        "grow group-data-[orientation=horizontal]:h-1.5 group-data-[orientation=horizontal]:w-full group-data-[orientation=vertical]:w-1.5 group-data-[orientation=vertical]:flex-1",
         className,
-        twJoin([
-          "[--slider:color-mix(in_oklab,var(--color-muted)_90%,black_10%)] dark:[--slider:color-mix(in_oklab,var(--color-muted)_90%,white_10%)]",
-          "group/track relative cursor-default rounded-full bg-(--slider) disabled:cursor-default disabled:opacity-60",
-          "grow group-data-[orientation=horizontal]:h-1.5 group-data-[orientation=horizontal]:w-full group-data-[orientation=vertical]:w-1.5 group-data-[orientation=vertical]:flex-1",
-        ]),
       )}
     />
   )

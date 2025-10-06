@@ -6,7 +6,7 @@ import {
   ColorSwatchPicker as ColorSwatchPickerPrimitive,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { ColorSwatch } from "./color-swatch"
 
 const ColorSwatchPicker = ({
@@ -16,11 +16,7 @@ const ColorSwatchPicker = ({
   ...props
 }: ColorSwatchPickerProps) => {
   return (
-    <ColorSwatchPickerPrimitive
-      layout={layout}
-      className={composeTailwindRenderProps(className, "flex gap-1")}
-      {...props}
-    >
+    <ColorSwatchPickerPrimitive layout={layout} className={cx("flex gap-1", className)} {...props}>
       {children}
     </ColorSwatchPickerPrimitive>
   )
@@ -29,9 +25,9 @@ const ColorSwatchPicker = ({
 const ColorSwatchPickerItem = ({ className, children, ...props }: ColorSwatchPickerItemProps) => {
   return (
     <ColorSwatchPickerItemPrimitive
-      className={composeTailwindRenderProps(
-        className,
+      className={cx(
         "relative overflow-hidden rounded-sm outline-hidden disabled:opacity-50",
+        className,
       )}
       {...props}
     >

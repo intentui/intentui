@@ -10,7 +10,7 @@ import {
   type ValidationResult,
 } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { Description, FieldError, FieldGroup, Label } from "./field"
 
 interface DateFieldProps<T extends DateValue> extends DateFieldPrimitiveProps<T> {
@@ -27,13 +27,11 @@ const DateField = <T extends DateValue>({
   label,
   description,
   errorMessage,
+  className,
   ...props
 }: DateFieldProps<T>) => {
   return (
-    <DateFieldPrimitive
-      {...props}
-      className={composeTailwindRenderProps(props.className, "group flex flex-col gap-y-1")}
-    >
+    <DateFieldPrimitive {...props} className={cx("group flex flex-col gap-y-1", className)}>
       {label && <Label>{label}</Label>}
       <FieldGroup>
         {prefix && typeof prefix === "string" ? (
@@ -59,9 +57,9 @@ const DateField = <T extends DateValue>({
 const DateInput = ({ className, ...props }: Omit<DateInputProps, "children">) => {
   return (
     <DateInputPrimitive
-      className={composeTailwindRenderProps(
-        className,
+      className={cx(
         "px-3 py-2 text-base text-fg placeholder-muted-fg outline-hidden sm:px-2.5 sm:py-1.5 sm:text-sm/6",
+        className,
       )}
       {...props}
     >

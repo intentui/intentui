@@ -4,7 +4,7 @@ import { useState } from "react"
 import type { Key } from "react-aria-components"
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
-export const moods = [
+const moods = [
   { id: 1, name: "Excited" },
   { id: 2, name: "Relaxed" },
   { id: 3, name: "Focused" },

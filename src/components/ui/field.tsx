@@ -17,7 +17,7 @@ import {
 } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
-import { composeTailwindRenderProps, cx } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 
 interface FieldProps {
   label?: string
@@ -53,13 +53,7 @@ interface FieldErrorProps extends FieldErrorPrimitiveProps {
   ref?: React.RefObject<HTMLElement>
 }
 const FieldError = ({ className, ref, ...props }: FieldErrorProps) => {
-  return (
-    <FieldErrorPrimitive
-      ref={ref}
-      {...props}
-      className={composeTailwindRenderProps(className, fieldError())}
-    />
-  )
+  return <FieldErrorPrimitive ref={ref} {...props} className={cx(fieldError(), className)} />
 }
 
 interface FieldGroupProps extends GroupProps {
@@ -102,9 +96,9 @@ const Input = ({ className, ref, ...props }: InputProps) => {
     <InputPrimitive
       ref={ref}
       {...props}
-      className={composeTailwindRenderProps(
-        className,
+      className={cx(
         "relative block w-full px-3.5 py-2 placeholder-muted-fg outline-hidden sm:px-3 sm:py-1.5 sm:text-sm/6 [&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden",
+        className,
       )}
     />
   )

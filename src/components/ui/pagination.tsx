@@ -10,7 +10,7 @@ import {
 import type { ListBoxItemProps, ListBoxProps, ListBoxSectionProps } from "react-aria-components"
 import { ListBox, ListBoxItem, ListBoxSection, Separator } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 import { type ButtonProps, buttonStyles } from "./button"
 
 type PaginationProps = React.ComponentProps<"nav">
@@ -44,7 +44,7 @@ const PaginationList = <T extends object>({ className, ref, ...props }: Paginati
       orientation="horizontal"
       aria-label={props["aria-label"] || "Pagination"}
       layout="grid"
-      className={composeTailwindRenderProps(className, "flex flex-row gap-1.5")}
+      className={cx("flex flex-row gap-1.5", className)}
       {...props}
     />
   )
