@@ -4784,27 +4784,6 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "multiple-select-demo",
-      "type": "registry:page",
-      "title": "Multiple Select",
-      "description": "multiple-select-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/select"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/pickers/select/multiple-select-demo.tsx",
-          "type": "registry:page",
-          "target": "app/multiple-select-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "select-demo",
       "type": "registry:page",
       "title": "Select",
@@ -4858,6 +4837,27 @@
           "path": "src/components/docs/pickers/select/select-with-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/select-with-icon-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "select-multiple-demo",
+      "type": "registry:page",
+      "title": "Select Multiple",
+      "description": "select-multiple-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/select"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/select/select-multiple-demo.tsx",
+          "type": "registry:page",
+          "target": "app/select-multiple-demo/page.tsx"
         }
       ]
     },

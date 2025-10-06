@@ -17,7 +17,7 @@ export const moods = [
   { id: 10, name: "Motivated" },
 ]
 
-export default function MultipleSelectDemo() {
+export default function SelectMultipleDemo() {
   const [selectedItems, setSelectedItems] = useState<Key[]>([1, 4])
 
   return (
