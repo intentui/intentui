@@ -16,49 +16,11 @@ Before executing the command, ensure that **tailwind** is installed. If not, fol
 Begin by executing this command:
 
 ```
-npx shadcn@latest init https://intentui.com/r/theme-default
+npx shadcn@latest init @intentui/theme-default
 ```
 
 We use [shadcn CLI](https://ui.shadcn.com/docs/cli) to manage the installation of Intent UI components.
 
-### Component config
-After running the `init` command, a `components.json` file will appear in your project. This file holds your project's configuration, including settings for gray tones, paths, and more.
-```
-{
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "default",
-  "rsc": true,
-  "tsx": true,
-  "tailwind": {
-    "config": "",
-    "css": "src/app/globals.css",
-    "baseColor": "neutral",
-    "cssVariables": true,
-    "prefix": ""
-  },
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
-  },
-  "iconLibrary": "@intentui/icons",
-  "registry: {}
-}
-```
-Now please add @intentui into registry like so
-
-```
-"registries": {
-  "@intentui": "https://intentui.com/r/{name}"
-}
-```
-
-And after that, you can start adding components to your project.
-
-### Add components
-Next, use `add [component-name]` to include a specific component in your project. This allows for selective installation without the need for a full setup. If you need a file-trigger or even a button, this command facilitates that. Install only what you need, or refer to the documentation to manually include components. Here's how to add a `combo-box`:
 ```
 npx shadcn@latest add @intentui/combo-box
 ```

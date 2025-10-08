@@ -1,3 +1,5 @@
+"use client"
+
 import { IconBrandLaravel, IconBrandReactjs, IconBrandTypescript } from "@intentui/icons"
 import {
   ChoiceBox,
