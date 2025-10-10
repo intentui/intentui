@@ -5,7 +5,7 @@ import { ComboBox } from "@/components/ui/combo-box"
 
 export default function ComboBoxAvatarDemo() {
   return (
-    <ComboBox placeholder="Select a user" label="Users" isRequired>
+    <ComboBox placeholder="Select a user" aria-label="Users" isRequired>
       <ComboBox.Input />
       <ComboBox.Content items={users}>
         {(item) => (
