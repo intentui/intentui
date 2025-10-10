@@ -103,7 +103,7 @@ const DropdownItem = ({ className, children, ...props }: DropdownItemProps) => {
     >
       {composeRenderProps(children, (children, { isSelected }) => (
         <>
-          {isSelected && <IconCheck data-slot="check-indicator" />}
+          {isSelected && <IconCheck className="mr-2" data-slot="check-indicator" />}
           {typeof children === "string" ? <DropdownLabel>{children}</DropdownLabel> : children}
         </>
       ))}
