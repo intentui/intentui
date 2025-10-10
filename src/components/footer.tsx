@@ -17,7 +17,7 @@ const navigation = {
     { name: "Blog", href: "/blog" },
   ],
   labs: [
-    { name: "Github", href: "https://github.com/intentuilabs" },
+    { name: "Github", href: "https://github.com/intentui" },
     {
       name: "X",
       href: "https://x.com/intent/follow?screen_name=irsyadadl",

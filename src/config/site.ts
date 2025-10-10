@@ -6,7 +6,7 @@ export const siteConfig = {
   author: "irsyadadl",
   links: {
     twitter: "https://x.com/intent/follow?screen_name=intentui",
-    github: "https://github.com/intentuilabs",
+    github: "https://github.com/intentui",
     discord: "https://discord.gg/DYmVJ66JUD",
   },
   discord: "https://discord.gg/DYmVJ66JUD",
