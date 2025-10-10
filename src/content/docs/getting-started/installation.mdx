@@ -87,38 +87,6 @@ Hooks are only used in specific components like the **Navbar**, **Sidebar**, **P
         'hooks/use-media-query.ts': 'hooks/use-media-query.ts',
     }} />
 
-
-### Simple Import
-Indeed, it's efficient because the `index.ts` file in your UI folder serves as a hub. Even if the button and badge components are in separate files, you can import them together easily. First, create a `ui/index.ts` file:
-
-```ts title="ui/index.ts"
-export * from "./sidebar";
-export * from "./navbar";
-export * from "./tree";
-export * from "./table";
-export * from "./text-field";
-export * from "./button";
-export * from "./card";
-// ...
-```
-
-So, here's the scoop: your UI folder contains an `index.ts` file, right? This file consolidates all your components for straightforward access. Simply tell TypeScript where to find it and import them as needed, hassle-free!
-
-<CodeBlock
-    source={{
-        'component.tsx': 'installation/component.tsx',
-        'tsconfig.json': 'installation/not-tsconfig.json',
-    }} />
-
-If you're using a `src` folder, you can use the following config:
-
-```json
-"paths": {
-  "@/*": ["./src/*"],
-  "ui": ["./src/components/ui"]
-}
-```
-
 ### Fonts
 This is currently using the [Inter font](https://rsms.me/inter/). If you want to use a different font, you can define your font-family in your JS or CSS file.
 

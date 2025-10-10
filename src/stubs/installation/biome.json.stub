@@ -1,12 +1,12 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
     "useIgnoreFile": false
   },
   "files": {
-    "includes": ["src/**/*.tsx", "src/**/*.ts", "!src/scripts"],
+    "includes": ["src/**/*.tsx", "src/**/*.ts"],
     "ignoreUnknown": false
   },
   "formatter": {
@@ -28,6 +28,8 @@
         "useImportType": "warn"
       },
       "complexity": {
+        "noUselessFragments": "off",
+        "useOptionalChain": "off",
         "useArrowFunction": "error",
         "noForEach": "off"
       },
@@ -38,6 +40,7 @@
         "useSemanticElements": "off"
       },
       "correctness": {
+        "useUniqueElementIds": "off",
         "noUnusedImports": { "level": "error", "fix": "safe" },
         "useExhaustiveDependencies": "off",
         "useHookAtTopLevel": "error",

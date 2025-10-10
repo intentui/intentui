@@ -283,3 +283,8 @@
     border-radius: 4px;
   }
 }
+
+.react-aria-DropIndicator[data-drop-target] {
+  outline: 1px solid var(--primary);
+  transform: translateZ(0);
+}

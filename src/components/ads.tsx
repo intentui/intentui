@@ -11,7 +11,7 @@ export function Ads({ className }: { className?: string }) {
       rel="noreferrer"
       href="https://dub.sh/designiui"
       className={twMerge(
-        "not-prose group block w-full rounded-2xl bg-linear-to-br from-blue-700 via-blue-600 to-sky-500 p-4 text-white sm:w-60",
+        "not-prose group block w-full rounded-lg bg-linear-to-br from-blue-700 via-blue-600 to-sky-500 p-4 text-white sm:w-60 sm:rounded-xl",
         className,
       )}
     >
@@ -20,7 +20,7 @@ export function Ads({ className }: { className?: string }) {
       </span>
       <div className="mb-1 block text-pretty text-[0.83rem]/5 text-blue-100">
         Build modern web apps faster with{" "}
-        <strong className="font-semibold text-white">350+ blocks</strong> and polished templates
+        <strong className="font-semibold text-white">400+ blocks</strong> and polished templates
         crafted for professionals.
       </div>
 
