@@ -12,13 +12,13 @@ export function Hero() {
   return (
     <div className="-mt-20 bg-gradient-to-b from-blue-50 to-bg pt-20 pb-8 lg:pt-40 lg:pb-16 dark:from-muted dark:to-zinc-950">
       <PageContainer>
-        <Header className="text-left">
+        <Header className="pt-6 text-left">
           <Link href="https://design.intentui.com">
             <Badge className="inset-ring-current/25 hover:bg-primary-subtle-fg/20">
               Design Intent UI <IconOpenLink2 />
             </Badge>
           </Link>
-          <h1 className="mt-4 mb-4 max-w-6xl pb-1 font-semibold text-3xl text-fg tracking-tight lg:mb-6 lg:text-6xl">
+          <h1 className="mt-4 mb-4 max-w-3xl pb-1 font-semibold text-3xl text-fg tracking-tight lg:mb-6 lg:text-5xl/14">
             Accessible React component library to copy, customize, and own your UI.
           </h1>
           <p className="block max-w-2xl text-base text-muted-fg leading-relaxed md:leading-relaxed lg:text-xl [&_strong]:font-medium [&_strong]:text-fg">
