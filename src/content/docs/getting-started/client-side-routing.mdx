@@ -39,6 +39,14 @@ The Ziggy JS library, when running Laravel, is located in the `vendor` folder. T
         'tsconfig.json': 'csr/inertia/tsconfig.json',
     }} />
 
+### Setup ziggy
+I’ll assume you already have [Ziggy](https://github.com/tighten/ziggy) installed, as this setup is intended for Inertia.js with Ziggy. Once it’s installed, generate the Ziggy routes by running:
+
+```
+php artisan ziggy:generate
+```
+
+
 ### Global Declaration
 To integrate with Inertia.js, you must first declare it in your `.d.ts` file, such as in `global.d.ts`.
 <CodeBlock
@@ -46,23 +54,12 @@ To integrate with Inertia.js, you must first declare it in your `.d.ts` file, su
         'types/global.d.ts': 'csr/inertia/global.d.ts',
     }} />
 
-
-### Providers
-Next, you'll need to create a provider for this, but because we're using react aria components, I also show you how to combine your router provider with the theme provider. So we need 2 files:
-1. `providers/index.tsx`
-2. `providers/theme-provider.tsx`
+### App.tsx
+Once the global declaration is set up, create a `use-theme.ts` file in your hooks folder to handle theme preferences, and initialize it in your `app.tsx` file.
 
 <CodeBlock
     source={{
-        'providers/theme-provider.tsx': 'csr/inertia/theme-provider.tsx',
-        'providers/index.tsx': 'csr/inertia/index.tsx',
-    }} />
-
-### Usage
-After you create the provider files, you can use them in your `app.tsx` file like this:
-
-<CodeBlock
-    source={{
+        'use-theme.ts': 'csr/inertia/use-theme.ts',
         'app.tsx': 'csr/inertia/app.tsx',
     }} />
 

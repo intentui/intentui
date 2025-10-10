@@ -1,19 +1,22 @@
 import "../css/app.css"
-
-import "./bootstrap"
-
 import { createInertiaApp } from "@inertiajs/react"
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers"
 import { createRoot, hydrateRoot } from "react-dom/client"
-import { Providers } from "./providers"
+import { useRoute } from "ziggy-js"
+import { Providers } from "@/components/providers"
+import { Ziggy } from "@/ziggy"
+import { initializeTheme } from "./hooks/use-theme"
 
-const appName = import.meta.env.VITE_APP_NAME || "Laravel"
+const appName = "Design"
 
 createInertiaApp({
-  title: (title) => `${title} - ${appName}`,
+  title: (title) => (title ? `${title} / ${appName}` : appName),
   resolve: (name) =>
-    resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob("./Pages/**/*.tsx")),
+    resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob("./pages/**/*.tsx")),
   setup({ el, App, props }) {
+    // @ts-expect-error
+    window.route = useRoute(Ziggy)
+
     const appElement = (
       <Providers>
         <App {...props} />
@@ -26,7 +29,7 @@ createInertiaApp({
 
     createRoot(el).render(appElement)
   },
-  progress: {
-    color: "#4B5563",
-  },
+  progress: false,
 })
+
+initializeTheme()

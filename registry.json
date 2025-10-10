@@ -1114,8 +1114,7 @@
       "title": "link",
       "description": "link",
       "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
+        "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive"
