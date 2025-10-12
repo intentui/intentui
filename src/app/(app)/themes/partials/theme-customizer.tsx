@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import type { Key } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { useTheme } from "@/components/theme-provider"
 import { Badge } from "@/components/ui/badge"
@@ -16,8 +15,6 @@ import colors from "@/json/colors.json"
 import { neutralColors } from "@/lib/colors"
 
 interface ColorSelectProps extends React.ComponentProps<typeof Select> {
-  selectedKey: string
-  onSelectionChange: (key: Key | null) => void
   label: string
   className?: string
   placeholder: string
@@ -26,8 +23,8 @@ interface ColorSelectProps extends React.ComponentProps<typeof Select> {
 
 const ColorSelect = ({
   className,
-  selectedKey,
-  onSelectionChange,
+  value,
+  onChange,
   label,
   placeholder,
   filterKeys,
@@ -38,13 +35,7 @@ const ColorSelect = ({
     : Object.keys(colors)
   const { theme } = useTheme()
   return (
-    <Select
-      {...props}
-      selectedKey={selectedKey}
-      onSelectionChange={onSelectionChange}
-      label={label}
-      placeholder={placeholder}
-    >
+    <Select {...props} value={value} onChange={onChange} label={label} placeholder={placeholder}>
       <SelectTrigger className="capitalize" />
       <SelectContent>
         {filteredKeys.map((key) => (
@@ -91,7 +82,7 @@ type ThemeCustomizerProps = {
 }
 
 export function ThemeCustomizer({ selectedColors, setSelectedColors }: ThemeCustomizerProps) {
-  const handleSelectionChange = (type: keyof typeof selectedColors) => (key: Key | null) => {
+  const handleSelectionChange = (type: keyof typeof selectedColors) => (key: any) => {
     if (type === "gray") {
       setSelectedColors((prev) => ({
         ...prev,
@@ -127,29 +118,29 @@ export function ThemeCustomizer({ selectedColors, setSelectedColors }: ThemeCust
     <div className="grid max-w-xl gap-4">
       <div className="grid grid-cols-2 gap-x-3 gap-y-6">
         <ColorSelect
-          selectedKey={selectedColors.gray}
-          onSelectionChange={handleSelectionChange("gray")}
+          value={selectedColors.gray}
+          onChange={handleSelectionChange("gray")}
           label="Gray Color"
           placeholder="Select gray color"
           filterKeys={neutralColors}
         />
         <ColorSelect
-          selectedKey={selectedColors.primary}
-          onSelectionChange={handleSelectionChange("primary")}
+          value={selectedColors.primary}
+          onChange={handleSelectionChange("primary")}
           label="Primary Color"
           placeholder="Select primary color"
           filterKeys={filteredPrimaryColors}
         />
         <ColorSelect
-          selectedKey={selectedColors.accent}
-          onSelectionChange={handleSelectionChange("accent")}
+          value={selectedColors.accent}
+          onChange={handleSelectionChange("accent")}
           label="Accent Color"
           placeholder="Select accent color"
           filterKeys={filteredAccentColors}
         />
         <Select
-          selectedKey={selectedColors.radius}
-          onSelectionChange={handleSelectionChange("radius")}
+          value={selectedColors.radius}
+          onChange={handleSelectionChange("radius")}
           label="Radius"
           placeholder="Select radius"
         >
