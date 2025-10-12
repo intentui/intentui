@@ -29,7 +29,6 @@ export default function ModalBlurDemo() {
           <ModalBody className="pb-1">
             <TextField
               isRequired
-              autoFocus
               label="Password"
               type="password"
               placeholder="Enter your password"

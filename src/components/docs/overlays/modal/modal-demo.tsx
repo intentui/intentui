@@ -28,7 +28,7 @@ export default function ModalDemo() {
               </ModalDescription>
             </ModalHeader>
             <ModalBody>
-              <TextField autoFocus aria-label="Name" placeholder="Enter a name" />
+              <TextField aria-label="Name" placeholder="Enter a name" />
             </ModalBody>
             <ModalFooter>
               <ModalClose>Cancel</ModalClose>
