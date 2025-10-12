@@ -1,18 +1,18 @@
 "use client"
 
-import { ComboBox } from "@/components/ui/combo-box"
+import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/components/ui/combo-box"
 
 export default function ComboBoxDemo() {
   return (
     <ComboBox placeholder="Select a user" aria-label="Users">
-      <ComboBox.Input />
-      <ComboBox.Content items={users}>
+      <ComboBoxInput />
+      <ComboBoxContent items={users}>
         {(item) => (
-          <ComboBox.Item id={item.id} textValue={item.name}>
+          <ComboBoxItem id={item.id} textValue={item.name}>
             {item.name}
-          </ComboBox.Item>
+          </ComboBoxItem>
         )}
-      </ComboBox.Content>
+      </ComboBoxContent>
     </ComboBox>
   )
 }

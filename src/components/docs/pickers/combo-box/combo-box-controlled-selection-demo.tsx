@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import type { Key } from "react-aria-components"
-import { ComboBox } from "@/components/ui/combo-box"
+import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/components/ui/combo-box"
 import { Description } from "@/components/ui/field"
 
 export default function ComboBoxControlledSelectionDemo() {
@@ -15,10 +15,10 @@ export default function ComboBoxControlledSelectionDemo() {
         onSelectionChange={setCountry}
         selectedKey={country}
       >
-        <ComboBox.Input />
-        <ComboBox.Content items={countries}>
-          {(item) => <ComboBox.Item id={item.id}>{item.name}</ComboBox.Item>}
-        </ComboBox.Content>
+        <ComboBoxInput />
+        <ComboBoxContent items={countries}>
+          {(item) => <ComboBoxItem id={item.id}>{item.name}</ComboBoxItem>}
+        </ComboBoxContent>
       </ComboBox>
 
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">

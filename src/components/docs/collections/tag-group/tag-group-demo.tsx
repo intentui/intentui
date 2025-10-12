@@ -1,5 +1,6 @@
 "use client"
 
+import { Label } from "@/components/ui/field"
 import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 
 export const androidBrands = [
@@ -11,7 +12,8 @@ export const androidBrands = [
 
 export default function TagGroupDemo() {
   return (
-    <TagGroup label="Android Brands" selectionMode="multiple">
+    <TagGroup selectionMode="multiple">
+      <Label>Android Brands</Label>
       <TagList items={androidBrands}>{(item) => <Tag>{item.name}</Tag>}</TagList>
     </TagGroup>
   )

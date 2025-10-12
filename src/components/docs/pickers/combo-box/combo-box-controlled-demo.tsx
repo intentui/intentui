@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-import { ComboBox } from "@/components/ui/combo-box"
+import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/components/ui/combo-box"
 import { Description } from "@/components/ui/field"
 
 const sports = [
@@ -27,14 +27,14 @@ export default function ComboBoxControlledDemo() {
         placeholder="Select a sports"
         label="Sports"
       >
-        <ComboBox.Input />
-        <ComboBox.Content items={sports}>
+        <ComboBoxInput />
+        <ComboBoxContent items={sports}>
           {(item) => (
-            <ComboBox.Item id={item.id} textValue={item.name}>
+            <ComboBoxItem id={item.id} textValue={item.name}>
               {item.name}
-            </ComboBox.Item>
+            </ComboBoxItem>
           )}
-        </ComboBox.Content>
+        </ComboBoxContent>
       </ComboBox>
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">
         You have selected: <strong>{sport}</strong>

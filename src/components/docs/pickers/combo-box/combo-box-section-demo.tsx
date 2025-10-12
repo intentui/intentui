@@ -1,18 +1,24 @@
 "use client"
 
-import { ComboBox } from "@/components/ui/combo-box"
+import {
+  ComboBox,
+  ComboBoxContent,
+  ComboBoxInput,
+  ComboBoxItem,
+  ComboBoxSection,
+} from "@/components/ui/combo-box"
 
 export default function ComboBoxSectionDemo() {
   return (
     <ComboBox placeholder="Select a author" label="Authors">
-      <ComboBox.Input />
-      <ComboBox.Content defaultSelectedKeys={[1]} items={movies}>
+      <ComboBoxInput />
+      <ComboBoxContent defaultSelectedKeys={[1]} items={movies}>
         {(movie) => (
-          <ComboBox.Section title={movie.title} items={movie.genres}>
-            {(genre) => <ComboBox.Item textValue={genre.name}>{genre.name}</ComboBox.Item>}
-          </ComboBox.Section>
+          <ComboBoxSection title={movie.title} items={movie.genres}>
+            {(genre) => <ComboBoxItem textValue={genre.name}>{genre.name}</ComboBoxItem>}
+          </ComboBoxSection>
         )}
-      </ComboBox.Content>
+      </ComboBoxContent>
     </ComboBox>
   )
 }

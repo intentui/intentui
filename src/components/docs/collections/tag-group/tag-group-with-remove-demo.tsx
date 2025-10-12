@@ -22,6 +22,7 @@ export default function TagGroupWithRemoveDemo() {
   return (
     <TagGroup
       selectionMode="multiple"
+      aria-label="Car Brands"
       className="max-w-sm"
       onRemove={(keys) => list.remove(...keys)}
     >

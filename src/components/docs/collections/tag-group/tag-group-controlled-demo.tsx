@@ -16,7 +16,12 @@ export default function TagGroupControlledDemo() {
   const [selected, setSelected] = useState<Selection>(new Set([]))
   return (
     <div>
-      <TagGroup selectionMode="multiple" selectedKeys={selected} onSelectionChange={setSelected}>
+      <TagGroup
+        aria-label="Fruite"
+        selectionMode="multiple"
+        selectedKeys={selected}
+        onSelectionChange={setSelected}
+      >
         <TagList items={fruitList}>{(item) => <Tag>{item.name}</Tag>}</TagList>
       </TagGroup>
 

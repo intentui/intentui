@@ -10,7 +10,7 @@ const articles = [
 
 export default function TagGroupHrefDemo() {
   return (
-    <TagGroup>
+    <TagGroup aria-label="Articles">
       <TagList items={articles}>
         {(item) => (
           <Tag id={item.name} href={item.url}>

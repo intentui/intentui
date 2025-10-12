@@ -1,7 +1,7 @@
 "use client"
 
 import { Avatar } from "@/components/ui/avatar"
-import { ComboBox } from "@/components/ui/combo-box"
+import { ComboBox, ComboBoxContent, ComboBoxItem, ComboBoxLabel } from "@/components/ui/combo-box"
 
 const users = [
   {
@@ -14,14 +14,14 @@ const users = [
 export default function ComboBoxInvalidDemo() {
   return (
     <ComboBox placeholder="Select a user" label="Users" isInvalid>
-      <ComboBox.Content items={users}>
+      <ComboBoxContent items={users}>
         {(item) => (
-          <ComboBox.Item key={item.id} id={item.id} textValue={item.name}>
+          <ComboBoxItem key={item.id} id={item.id} textValue={item.name}>
             <Avatar src={item.image_url} />
-            <ComboBox.Label>{item.name}</ComboBox.Label>
-          </ComboBox.Item>
+            <ComboBoxLabel>{item.name}</ComboBoxLabel>
+          </ComboBoxItem>
         )}
-      </ComboBox.Content>
+      </ComboBoxContent>
     </ComboBox>
   )
 }

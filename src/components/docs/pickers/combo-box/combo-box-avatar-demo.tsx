@@ -1,20 +1,26 @@
 "use client"
 
 import { Avatar } from "@/components/ui/avatar"
-import { ComboBox } from "@/components/ui/combo-box"
+import {
+  ComboBox,
+  ComboBoxContent,
+  ComboBoxInput,
+  ComboBoxItem,
+  ComboBoxLabel,
+} from "@/components/ui/combo-box"
 
 export default function ComboBoxAvatarDemo() {
   return (
     <ComboBox placeholder="Select a user" aria-label="Users" isRequired>
-      <ComboBox.Input />
-      <ComboBox.Content items={users}>
+      <ComboBoxInput />
+      <ComboBoxContent items={users}>
         {(item) => (
-          <ComboBox.Item id={item.id} textValue={item.name}>
+          <ComboBoxItem id={item.id} textValue={item.name}>
             <Avatar src={item.image_url} />
-            <ComboBox.Label>{item.name}</ComboBox.Label>
-          </ComboBox.Item>
+            <ComboBoxLabel>{item.name}</ComboBoxLabel>
+          </ComboBoxItem>
         )}
-      </ComboBox.Content>
+      </ComboBoxContent>
     </ComboBox>
   )
 }

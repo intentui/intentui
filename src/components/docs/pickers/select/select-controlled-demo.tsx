@@ -17,12 +17,7 @@ export default function SelectControlledDemo() {
   const [movie, setMovie] = useState<Key | null>("")
   return (
     <>
-      <Select
-        selectedKey={movie}
-        onSelectionChange={setMovie}
-        label="Movies"
-        placeholder="Select a movie"
-      >
+      <Select value={movie} onChange={setMovie} label="Movies" placeholder="Select a movie">
         <SelectTrigger />
         <SelectContent items={movies}>
           {(item) => (
