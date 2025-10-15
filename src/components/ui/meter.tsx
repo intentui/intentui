@@ -15,7 +15,10 @@ interface MeterProps extends MeterPrimitiveProps {
 
 const Meter = ({ label, className, ...props }: MeterProps) => {
   return (
-    <MeterPrimitive {...props} className={cx("flex min-w-56 flex-col gap-y-1", className)}>
+    <MeterPrimitive
+      {...props}
+      className={cx("flex min-w-56 flex-col gap-y-1 **:data-[slot=label]:font-medium", className)}
+    >
       {({ percentage, valueText }) => (
         <>
           <div className="flex w-full justify-between gap-2">

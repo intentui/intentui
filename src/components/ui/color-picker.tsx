@@ -57,7 +57,7 @@ const ColorPicker = ({
             {label && label}
           </Button>
           <PopoverContent
-            className="overflow-auto **:data-[slot=color-area]:w-full **:data-[slot=color-slider]:w-full sm:min-w-min sm:max-w-56 sm:**:data-[slot=color-area]:size-56 *:[[role=dialog]]:p-4 sm:*:[[role=dialog]]:p-3"
+            className="overflow-auto p-2 **:data-[slot=color-area]:w-full **:data-[slot=color-slider]:w-full sm:min-w-min sm:max-w-56 sm:**:data-[slot=color-area]:size-56"
             showArrow={showArrow}
             placement={placement}
           >
