@@ -1,4 +1,5 @@
 import { Hero } from "@/app/(app)/blocks/hero"
+import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { PageContainer } from "@/components/page-container"
 import { Sandbox } from "./sandbox"
 
@@ -25,6 +26,7 @@ export default function Page() {
           ]}
         />
       </PageContainer>
+      <DesignIntentui />
     </div>
   )
 }
