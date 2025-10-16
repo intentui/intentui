@@ -75,9 +75,6 @@ export function Navigation() {
                     </Menu.Content>
                   </Menu>
                 </div>
-                <NavLink isNextLink isActive={pathname === "/"} href="/">
-                  Home
-                </NavLink>
                 <NavLink
                   isNextLink
                   isActive={
