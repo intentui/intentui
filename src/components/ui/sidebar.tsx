@@ -636,17 +636,7 @@ const SidebarTrigger = ({
     >
       {children || (
         <>
-          <svg
-            data-slot="icon"
-            className="size-4"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            width={16}
-            height={16}
-            fill="currentcolor"
-          >
-            <path d="M13.25 2.5c.69 0 1.25.56 1.25 1.25v8.5c0 .69-.56 1.25-1.25 1.25H7.5V15h5.75A2.75 2.75 0 0 0 16 12.25v-8.5A2.75 2.75 0 0 0 13.25 1H7.5v1.5zM5.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-3A2.75 2.75 0 0 1 0 12.25v-8.5A2.75 2.75 0 0 1 2.75 1z" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="none" viewBox="0 0 24 24" data-slot="icon" aria-hidden="true"><path fill="currentColor" d="M6 8.5a1 1 0 1 0 2 0 1 1 0 0 0-2 0M6 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0m0 3.5a1 1 0 1 0 2 0 1 1 0 0 0-2 0" /><path fill="currentColor" fillRule="evenodd" d="M2 5.75C2 4.784 2.784 4 3.75 4h16.5c.966 0 1.75.784 1.75 1.75v12.5A1.75 1.75 0 0 1 20.25 20H3.75A1.75 1.75 0 0 1 2 18.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h6.75v-13z" clipRule="evenodd" /></svg>
           <span className="sr-only">Toggle Sidebar</span>
         </>
       )}
