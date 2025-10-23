@@ -1,7 +1,13 @@
 "use client"
 
-import { NumberField } from "@/components/ui/number-field"
+import { Label } from "@/components/ui/field"
+import { NumberField, NumberInput } from "@/components/ui/number-field"
 
 export default function NumberFieldUncontrolledDemo() {
-  return <NumberField label="Width" defaultValue={1997} />
+  return (
+    <NumberField defaultValue={1997}>
+      <Label>Width</Label>
+      <NumberInput />
+    </NumberField>
+  )
 }

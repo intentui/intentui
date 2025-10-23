@@ -15,7 +15,7 @@ export default function MenuSectionDemo() {
       <MenuTrigger>Open</MenuTrigger>
       <MenuContent className="sm:min-w-64" items={cities} popover={{ placement: "bottom" }}>
         {(city) => (
-          <MenuSection title={city.name} items={city.landmarks}>
+          <MenuSection label={city.name} items={city.landmarks}>
             {(landmark) => (
               <MenuItem textValue={landmark.name}>
                 <MenuLabel>{landmark.name}</MenuLabel>

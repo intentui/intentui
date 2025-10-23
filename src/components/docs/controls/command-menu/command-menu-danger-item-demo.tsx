@@ -23,11 +23,11 @@ export default function CommandMenuDangerItemDemo() {
         <CommandMenuList>
           <CommandMenuSection>
             <CommandMenuItem textValue="system shutdown">System Shutdown</CommandMenuItem>
-            <CommandMenuItem isDanger>Format Disk</CommandMenuItem>
+            <CommandMenuItem intent="danger">Format Disk</CommandMenuItem>
             <CommandMenuItem textValue="restart service">Restart Service</CommandMenuItem>
             <CommandMenuItem textValue="empty trash">Empty Trash</CommandMenuItem>
             <CommandMenuItem textValue="overwrite file">Overwrite File</CommandMenuItem>
-            <CommandMenuItem textValue="reset factory settings" isDanger>
+            <CommandMenuItem textValue="reset factory settings" intent="danger">
               Reset Factory Settings
             </CommandMenuItem>
             <CommandMenuItem textValue="disconnect network">Disconnect Network</CommandMenuItem>

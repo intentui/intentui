@@ -1,7 +1,14 @@
 "use client"
 
+import { Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { TextField } from "@/components/ui/text-field"
 
 export default function TextFieldUncontrolledDemo() {
-  return <TextField defaultValue="Irsyad" label="Name" className="mb-2" />
+  return (
+    <TextField defaultValue="Irsyad">
+      <Label>Name</Label>
+      <Input />
+    </TextField>
+  )
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import * as icons from "@intentui/icons"
+import * as icons from "@heroicons/react/24/outline"
 import { IconDownload } from "@intentui/icons"
 import { useSearchParams } from "next/navigation"
 import type React from "react"
@@ -96,7 +96,7 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
       <Icon className={selectedSize} key={name} />
       <Menu isOpen={isSelected} onOpenChange={setSelected}>
         <MenuContent
-          popover={{ triggerRef: triggerRef, showArrow: true }}
+          popover={{ triggerRef: triggerRef, arrow: true }}
           className="sm:min-w-48"
           aria-label="Options"
         >

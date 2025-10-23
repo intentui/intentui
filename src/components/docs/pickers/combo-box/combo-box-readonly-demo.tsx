@@ -8,6 +8,7 @@ import {
   ComboBoxItem,
   ComboBoxLabel,
 } from "@/components/ui/combo-box"
+import { Label } from "@/components/ui/field"
 
 const users = [
   {
@@ -19,8 +20,9 @@ const users = [
 ]
 export default function ComboBoxReadonlyDemo() {
   return (
-    <ComboBox defaultSelectedKey={1} placeholder="Select a user" label="Users" isReadOnly>
-      <ComboBoxInput />
+    <ComboBox defaultSelectedKey={1} isReadOnly>
+      <Label>Users</Label>
+      <ComboBoxInput placeholder="Select a user" />
       <ComboBoxContent items={users}>
         {(item) => (
           <ComboBoxItem key={item.id} id={item.id} textValue={item.name}>

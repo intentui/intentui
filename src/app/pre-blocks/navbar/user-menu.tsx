@@ -1,13 +1,13 @@
 "use client"
 
 import {
-  IconCommandRegular,
-  IconDashboard,
-  IconHeadphones,
-  IconLogout,
-  IconSettings,
-  IconShield,
-} from "@intentui/icons"
+  ArrowRightOnRectangleIcon,
+  Cog6ToothIcon,
+  CommandLineIcon,
+  LifebuoyIcon,
+  ShieldCheckIcon,
+  Squares2X2Icon,
+} from "@heroicons/react/24/outline"
 import { Avatar } from "@/components/ui/avatar"
 import {
   Menu,
@@ -39,30 +39,30 @@ export function UserMenu() {
         </MenuSection>
 
         <MenuItem href="#dashboard">
-          <IconDashboard />
+          <Squares2X2Icon />
           Dashboard
         </MenuItem>
         <MenuItem href="#settings">
-          <IconSettings />
+          <Cog6ToothIcon />
           Settings
         </MenuItem>
         <MenuItem href="#security">
-          <IconShield />
+          <ShieldCheckIcon />
           Security
         </MenuItem>
         <MenuSeparator />
         <MenuItem>
-          <IconCommandRegular />
+          <CommandLineIcon />
           Command Menu
         </MenuItem>
 
         <MenuItem href="#contact">
-          <IconHeadphones />
+          <LifebuoyIcon />
           Customer Support
         </MenuItem>
         <MenuSeparator />
         <MenuItem href="#logout">
-          <IconLogout />
+          <ArrowRightOnRectangleIcon />
           Log out
         </MenuItem>
       </MenuContent>

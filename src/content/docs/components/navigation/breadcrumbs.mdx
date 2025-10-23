@@ -21,7 +21,7 @@ npx shadcn@latest add @intentui/breadcrumbs
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 
 <SourceCode toShow={'breadcrumbs'}/>
@@ -46,7 +46,7 @@ The separator appears when the breadcrumb changes. By default, it uses a chevron
 If you need a unique separator for each item (not recommended), set the `separator` prop directly:
 
 ```
-<Breadcrumbs.Item href="#" separator="slash"/>
+<BreadcrumbsItem href="#" separator="slash"/>
 ```
 
 ## Menu
@@ -58,17 +58,17 @@ You can also use breadcrumbs to navigate between collections.
 <How toUse="navigation/breadcrumbs/breadcrumbs-collections-demo" />
 
 ## Current
-The current breadcrumb indicates the active page in the breadcrumb navigation. It is automatically added as the last item and its color is updated accordingly. But you can also control the color of the current breadcrumb by passing a `className` prop to the `Breadcrumbs.Item` component.
+The current breadcrumb indicates the active page in the breadcrumb navigation. It is automatically added as the last item and its color is updated accordingly. But you can also control the color of the current breadcrumb by passing a `className` prop to the `BreadcrumbsItem` component.
 <How toUse="navigation/breadcrumbs/breadcrumbs-current-demo" />
 
 if you think you want to render an element inside that current breadcrumb, you can do it like this:
 ```
-<Breadcrumbs.Item className="data-current:text-primary">
+<BreadcrumbsItem className="data-current:text-primary">
   {({ isCurrent }: { isCurrent: boolean }) => (
     <span className="flex items-center gap-x-2">
       Navbar
-      {isCurrent && <IconChevronLgDown />}
+      {isCurrent && <ChevronDownIcon />}
     </span>
   )}
-</Breadcrumbs.Item>
+</BreadcrumbsItem>
 ```

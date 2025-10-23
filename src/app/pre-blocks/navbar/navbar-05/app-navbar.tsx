@@ -1,14 +1,13 @@
 "use client"
 
+import { MagnifyingGlassIcon, ShoppingBagIcon } from "@heroicons/react/24/outline"
 import {
-  IconBrandIntentui,
-  IconHomeFill,
-  IconPercentBadgeFill,
-  IconSearch,
-  IconShippingBagFill,
-  IconShoppingBag,
-  IconShoppingBagFill,
-} from "@intentui/icons"
+  HomeIcon as HomeSolid,
+  ShoppingBagIcon as ShoppingBagSolid,
+  TagIcon as TagSolid,
+  TruckIcon as TruckSolid,
+} from "@heroicons/react/24/solid"
+import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import {
@@ -37,7 +36,7 @@ export default function AppNavbar(props: NavbarProps) {
             aria-label="Goto documentation of Navbar"
             href="/docs/components/layouts/navbar"
           >
-            <IconBrandIntentui className="size-6 sm:size-5" />
+            <BrandIntentuiIcon className="size-6 sm:size-5" />
             <span>
               Intent <span className="text-muted-fg">UI</span>
             </span>
@@ -46,29 +45,29 @@ export default function AppNavbar(props: NavbarProps) {
         <NavbarGap />
         <NavbarSection>
           <NavbarItem href="#" isCurrent>
-            <IconHomeFill />
+            <HomeSolid />
             <NavbarLabel>Home</NavbarLabel>
           </NavbarItem>
           <NavbarItem href="#">
-            <IconShoppingBagFill />
+            <ShoppingBagSolid />
             <NavbarLabel>Shop</NavbarLabel>
           </NavbarItem>
           <NavbarItem href="#">
-            <IconPercentBadgeFill />
+            <TagSolid />
             <NavbarLabel>Offers</NavbarLabel>
           </NavbarItem>
           <NavbarItem href="#">
-            <IconShippingBagFill />
+            <TruckSolid />
             <NavbarLabel>Orders</NavbarLabel>
           </NavbarItem>
         </NavbarSection>
         <NavbarSpacer />
         <NavbarSection className="max-md:hidden">
           <Button intent="plain" size="sq-sm" aria-label="Search for products">
-            <IconSearch />
+            <MagnifyingGlassIcon />
           </Button>
           <Button intent="plain" size="sq-sm" aria-label="Your Bag">
-            <IconShoppingBag />
+            <ShoppingBagIcon />
           </Button>
           <Separator orientation="vertical" className="mr-3 ml-1 h-5" />
           <UserMenu />
@@ -79,10 +78,10 @@ export default function AppNavbar(props: NavbarProps) {
         <NavbarTrigger />
         <NavbarSpacer />
         <Button intent="plain" size="sq-sm" aria-label="Search for products">
-          <IconSearch />
+          <MagnifyingGlassIcon />
         </Button>
         <Button intent="plain" size="sq-sm" aria-label="Your Bag">
-          <IconShoppingBag />
+          <ShoppingBagIcon />
         </Button>
         <NavbarSeparator className="mr-2.5" />
         <UserMenu />

@@ -1,5 +1,6 @@
 "use client"
 
+import { Cog6ToothIcon } from "@heroicons/react/24/outline"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuDescription, MenuItem, MenuLabel } from "@/components/ui/menu"
 
@@ -14,6 +15,7 @@ export default function MenuItemDescriptionDemo() {
       >
         {(item) => (
           <MenuItem id={item.id} textValue={item.name}>
+            <Cog6ToothIcon />
             <MenuLabel>{item.name}</MenuLabel>
             <MenuDescription>{item.description}</MenuDescription>
           </MenuItem>

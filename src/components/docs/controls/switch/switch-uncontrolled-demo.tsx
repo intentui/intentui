@@ -1,14 +1,14 @@
 "use client"
 
-import { Description, Label } from "@/components/ui/field"
-import { Switch } from "@/components/ui/switch"
+import { Description } from "@/components/ui/field"
+import { Switch, SwitchLabel } from "@/components/ui/switch"
 
 export default function SwitchUncontrolledDemo() {
   return (
     <Switch defaultSelected>
       {({ isSelected }) => (
         <>
-          <Label>Dark mode</Label>
+          <SwitchLabel>Dark mode</SwitchLabel>
           <Description>Dark mode is {isSelected ? "enabled" : "disabled"}.</Description>
         </>
       )}

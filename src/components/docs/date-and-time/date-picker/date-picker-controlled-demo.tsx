@@ -4,7 +4,8 @@ import { getLocalTimeZone, parseDate, today } from "@internationalized/date"
 import { useDateFormatter } from "@react-aria/i18n"
 import { useState } from "react"
 
-import { DatePicker } from "@/components/ui/date-picker"
+import { DatePicker, DatePickerTrigger } from "@/components/ui/date-picker"
+import { Label } from "@/components/ui/field"
 
 export default function DatePickerControlledDemo() {
   const now = today(getLocalTimeZone())
@@ -19,7 +20,10 @@ export default function DatePickerControlledDemo() {
         <p>{value ? formatter.format(value.toDate(getLocalTimeZone())) : "--"}</p>
         <p>{value ? value.toString() : "--"}</p>
       </div>
-      <DatePicker value={value} onChange={(newValue) => setValue(newValue!)} label="Event date" />
+      <DatePicker value={value} onChange={(newValue) => setValue(newValue!)}>
+        <Label>Event date</Label>
+        <DatePickerTrigger />
+      </DatePicker>
     </div>
   )
 }

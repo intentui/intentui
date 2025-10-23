@@ -1,6 +1,6 @@
 "use client"
 
-import { IconPlus } from "@intentui/icons"
+import { PlusIcon } from "@heroicons/react/20/solid"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ProgressCircle } from "@/components/ui/progress-circle"
@@ -18,7 +18,7 @@ export default function ButtonPendingDemo() {
     <Button onPress={handlePress} isPending={isLoading}>
       {({ isPending }) => (
         <>
-          {isPending ? <ProgressCircle isIndeterminate aria-label="Creating..." /> : <IconPlus />}
+          {isPending ? <ProgressCircle isIndeterminate aria-label="Creating..." /> : <PlusIcon />}
           {isLoading ? "Creating..." : "Create"}
         </>
       )}

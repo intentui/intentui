@@ -1,6 +1,7 @@
 "use client"
 
-import { IconBrandDiscord, IconBrandGithub } from "@intentui/icons"
+import { BrandDiscordIcon } from "@/components/icons/brand-discord-icon"
+import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import {
   Select,
   SelectContent,
@@ -12,16 +13,16 @@ import {
 
 export default function SelectWithIconDemo() {
   return (
-    <Select aria-label="Devices" defaultSelectedKey="desktop" placeholder="Select a device">
+    <Select aria-label="Devices" defaultValue="desktop" placeholder="Select a device">
       <SelectTrigger />
       <SelectContent>
         <SelectItem id="discord" textValue="Discord">
-          <IconBrandDiscord />
+          <BrandDiscordIcon />
           <SelectLabel>Discord</SelectLabel>
         </SelectItem>
         <SelectSeparator />
         <SelectItem id="github" textValue="GitHub">
-          <IconBrandGithub />
+          <BrandGithubIcon />
           <SelectLabel>GitHub</SelectLabel>
         </SelectItem>
         <SelectItem id="gitlab" textValue="GitLab">

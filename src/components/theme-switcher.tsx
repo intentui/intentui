@@ -1,6 +1,6 @@
 "use client"
 
-import { IconCircleHalf, IconCircleHalfFill } from "@intentui/icons"
+import { ComputerDesktopIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
@@ -27,13 +27,7 @@ export function ThemeSwitcher({
       onPress={toggleTheme}
       {...props}
     >
-      {theme === "light" ? (
-        <IconCircleHalf />
-      ) : theme === "dark" ? (
-        <IconCircleHalfFill />
-      ) : (
-        <IconCircleHalf />
-      )}
+      {theme === "light" ? <SunIcon /> : theme === "dark" ? <MoonIcon /> : <ComputerDesktopIcon />}
     </Button>
   )
 }

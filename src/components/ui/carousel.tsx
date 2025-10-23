@@ -1,6 +1,6 @@
 "use client"
 
-import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react"
 import { createContext, use, useCallback, useEffect, useState } from "react"
 import { twMerge } from "tailwind-merge"
@@ -167,7 +167,7 @@ const CarouselItem = ({ className, ...props }: React.ComponentProps<"div">) => {
   return (
     <div
       className={twMerge(
-        "xd24r group relative min-w-0 shrink-0 grow-0 basis-full focus:outline-hidden focus-visible:outline-hidden",
+        "group/carousel-item relative min-w-0 shrink-0 grow-0 basis-full focus:outline-hidden focus-visible:outline-hidden",
         orientation === "horizontal" ? "pl-4" : "pt-4",
         className,
       )}
@@ -205,7 +205,7 @@ const CarouselButton = ({
   const isNext = segment === "next"
   const canScroll = isNext ? canScrollNext : canScrollPrev
   const scroll = isNext ? scrollNext : scrollPrev
-  const Icon = isNext ? IconChevronLgRight : IconChevronLgLeft
+  const Icon = isNext ? ChevronRightIcon : ChevronLeftIcon
 
   return (
     <Button
@@ -215,7 +215,7 @@ const CarouselButton = ({
       ref={ref}
       size={size}
       isCircle={isCircle}
-      className={cx(orientation === "vertical" ? "rotate-90" : "", className)}
+      className={cx([orientation === "vertical" ? "rotate-90" : "", "shrink-0"], className)}
       isDisabled={!canScroll}
       onPress={scroll}
       {...props}
@@ -224,11 +224,6 @@ const CarouselButton = ({
     </Button>
   )
 }
-
-Carousel.Content = CarouselContent
-Carousel.Handler = CarouselHandler
-Carousel.Item = CarouselItem
-Carousel.Button = CarouselButton
 
 export type { CarouselApi }
 export { Carousel, CarouselContent, CarouselHandler, CarouselItem, CarouselButton }

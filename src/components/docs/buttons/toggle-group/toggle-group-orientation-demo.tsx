@@ -1,13 +1,11 @@
 "use client"
 
+import { BellIcon, LanguageIcon, SunIcon } from "@heroicons/react/24/outline"
 import {
-  IconBell,
-  IconBellFill,
-  IconMoonFill,
-  IconSun,
-  IconTranslate,
-  IconTranslateFill,
-} from "@intentui/icons"
+  BellIcon as BellIconFill,
+  LanguageIcon as LanguageIconFill,
+  MoonIcon as MoonIconFill,
+} from "@heroicons/react/24/solid"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export default function ToggleGroupOrientationDemo() {
@@ -17,7 +15,7 @@ export default function ToggleGroupOrientationDemo() {
         <ToggleGroupItem id="dm">
           {({ isSelected }) => (
             <>
-              {isSelected ? <IconMoonFill /> : <IconSun />}
+              {isSelected ? <MoonIconFill /> : <SunIcon />}
               {isSelected ? "Dark" : "Light"} Mode
             </>
           )}
@@ -25,7 +23,7 @@ export default function ToggleGroupOrientationDemo() {
         <ToggleGroupItem id="n">
           {({ isSelected }) => (
             <>
-              {isSelected ? <IconBellFill /> : <IconBell />}
+              {isSelected ? <BellIconFill /> : <BellIcon />}
               Notifications {isSelected ? "On" : "Off"}
             </>
           )}
@@ -33,7 +31,7 @@ export default function ToggleGroupOrientationDemo() {
         <ToggleGroupItem id="t">
           {({ isSelected }) => (
             <>
-              {isSelected ? <IconTranslateFill /> : <IconTranslate />}
+              {isSelected ? <LanguageIconFill /> : <LanguageIcon />}
               Always Translate
             </>
           )}

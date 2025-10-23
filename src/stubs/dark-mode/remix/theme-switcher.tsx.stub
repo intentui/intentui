@@ -1,5 +1,5 @@
 import { Button } from '@/components/button/ui'
-import { IconMoon, IconSun } from '@intentui/icons'
+import { MoonIcon, SunIcon } from '@intentui/icons'
 import { Theme, useTheme } from '@/components/theme-provider'
 
 export function ThemeSwitcher() {
@@ -19,8 +19,8 @@ export function ThemeSwitcher() {
       aria-label="Switch theme"
       onPress={switchTheme}
     >
-      <IconSun className="transition-all scale-100 rotate-0 dark:scale-0 dark:-rotate-90 h-[1.2rem] w-[1.2rem]" />
-      <IconMoon className="absolute transition-all scale-0 rotate-90 dark:scale-100 dark:rotate-0 h-[1.2rem] w-[1.2rem]" />
+      <SunIcon className="transition-all scale-100 rotate-0 dark:scale-0 dark:-rotate-90 h-[1.2rem] w-[1.2rem]" />
+      <MoonIcon className="absolute transition-all scale-0 rotate-90 dark:scale-100 dark:rotate-0 h-[1.2rem] w-[1.2rem]" />
     </Button>
   )
 }

@@ -1,28 +1,28 @@
 "use client"
 
-import { IconGear } from "@intentui/icons"
+import { Cog6ToothIcon } from "@heroicons/react/24/outline"
 import { Button } from "@/components/ui/button"
 
 export default function ButtonIntentDemo() {
   return (
     <div className="mx-auto flex max-w-xs flex-wrap items-start justify-center gap-6">
       <Button intent="primary">
-        <IconGear /> Label
+        <Cog6ToothIcon /> Label
       </Button>
       <Button intent="secondary">
-        <IconGear /> Label
+        <Cog6ToothIcon /> Label
       </Button>
       <Button intent="warning">
-        <IconGear /> Label
+        <Cog6ToothIcon /> Label
       </Button>
       <Button intent="danger">
-        <IconGear /> Label
+        <Cog6ToothIcon /> Label
       </Button>
       <Button intent="outline">
-        <IconGear /> Label
+        <Cog6ToothIcon /> Label
       </Button>
       <Button intent="plain">
-        <IconGear /> Label
+        <Cog6ToothIcon /> Label
       </Button>
     </div>
   )

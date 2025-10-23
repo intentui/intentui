@@ -20,7 +20,7 @@ export default function ContextMenuDangerDemo() {
         <ContextMenuItem>Duplicate</ContextMenuItem>
         <ContextMenuItem>Share</ContextMenuItem>
         <ContextMenuSeparator />
-        <ContextMenuItem isDanger>Delete</ContextMenuItem>
+        <ContextMenuItem intent="danger">Delete</ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>
   )

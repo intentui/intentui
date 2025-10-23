@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
 
 export default function LineChartCustomFormatDemo() {
@@ -18,11 +18,11 @@ export default function LineChartCustomFormatDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Net revenue by month</Card.Title>
-        <Card.Description>Revenue minus expenses to show monthly profitability.</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader>
+        <CardTitle>Net revenue by month</CardTitle>
+        <CardDescription>Revenue minus expenses to show monthly profitability.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <LineChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
@@ -57,7 +57,7 @@ export default function LineChartCustomFormatDemo() {
             net: { label: "Net" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

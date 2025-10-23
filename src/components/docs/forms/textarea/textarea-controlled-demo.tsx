@@ -2,17 +2,19 @@
 
 import { useState } from "react"
 
-import { Description } from "@/components/ui/field"
+import { Description, Label } from "@/components/ui/field"
+import { TextField } from "@/components/ui/text-field"
 import { Textarea } from "@/components/ui/textarea"
 
 export default function TextareaControlledDemo() {
   const [value, setValue] = useState("")
   return (
-    <div>
-      <Textarea value={value} onChange={setValue} label="Address" />
-      <Description className="mt-2 block">
+    <TextField value={value} onChange={setValue}>
+      <Label>Address</Label>
+      <Textarea />
+      <Description>
         You have typed: <strong className="text-fg">{value ?? "-"}</strong>
       </Description>
-    </div>
+    </TextField>
   )
 }

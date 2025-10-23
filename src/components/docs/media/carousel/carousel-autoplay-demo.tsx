@@ -2,8 +2,14 @@
 
 import Autoplay from "embla-carousel-autoplay"
 import { useRef } from "react"
-import { Card } from "@/components/ui/card"
-import { Carousel } from "@/components/ui/carousel"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselButton,
+  CarouselContent,
+  CarouselHandler,
+  CarouselItem,
+} from "@/components/ui/carousel"
 
 export default function CarouselAutoplayDemo() {
   const plugin = useRef(Autoplay({ delay: 1000, stopOnInteraction: true }))
@@ -19,25 +25,25 @@ export default function CarouselAutoplayDemo() {
       }}
       className="w-full max-w-xs"
     >
-      <Carousel.Content>
+      <CarouselContent>
         {items.map((item) => (
-          <Carousel.Item key={item.id}>
+          <CarouselItem key={item.id}>
             <div className="p-1">
               <Card>
-                <Card.Header>
-                  <Card.Title className="line-clamp-1 sm:text-lg">{item.title}</Card.Title>
-                  <Card.Description className="line-clamp-2">{item.description}</Card.Description>
-                </Card.Header>
+                <CardHeader>
+                  <CardTitle className="line-clamp-1 sm:text-lg">{item.title}</CardTitle>
+                  <CardDescription className="line-clamp-2">{item.description}</CardDescription>
+                </CardHeader>
               </Card>
             </div>
-          </Carousel.Item>
+          </CarouselItem>
         ))}
-      </Carousel.Content>
+      </CarouselContent>
 
-      <Carousel.Handler>
-        <Carousel.Button segment="previous" />
-        <Carousel.Button segment="next" />
-      </Carousel.Handler>
+      <CarouselHandler>
+        <CarouselButton segment="previous" />
+        <CarouselButton segment="next" />
+      </CarouselHandler>
     </Carousel>
   )
 }

@@ -28,6 +28,7 @@
         "useImportType": "warn"
       },
       "complexity": {
+        "noUselessFragments": "off",
         "useArrowFunction": "error",
         "noForEach": "off"
       },

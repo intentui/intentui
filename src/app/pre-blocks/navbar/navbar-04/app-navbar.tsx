@@ -1,5 +1,6 @@
 "use client"
-import { IconBrandApple, IconBrandIntentui } from "@intentui/icons"
+
+import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { Link } from "@/components/ui/link"
 import {
   Navbar,
@@ -19,7 +20,7 @@ export default function AppNavbar(props: NavbarProps) {
       <Navbar {...props}>
         <NavbarStart>
           <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
-            <IconBrandIntentui className="size-6 sm:size-5" />
+            <BrandIntentuiIcon className="size-6 sm:size-5" />
           </Link>
         </NavbarStart>
         <NavbarGap />
@@ -35,7 +36,7 @@ export default function AppNavbar(props: NavbarProps) {
         <NavbarTrigger />
         <NavbarSpacer />
         <Link aria-label="Goto documentation of Navbar" href="/docs/components/layouts/navbar">
-          <IconBrandApple className="size-5" />
+          <BrandIntentuiIcon className="size-5" />
         </Link>
       </NavbarMobile>
     </>

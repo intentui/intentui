@@ -1,9 +1,10 @@
 "use client"
 
-import { IconBrandReactjs } from "@intentui/icons"
 import { useEffect, useMemo, useState } from "react"
+import { twJoin } from "tailwind-merge"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
+import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
 import { createFetchRegistryFile } from "@/lib/fetch-registry"
 
 type SourceCodeProps = {
@@ -29,20 +30,26 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
   if (processedSourceCode) {
     return (
       <section {...props} className="group not-prose relative my-6">
-        <p className="-mt-2 mb-4">
+        <p className="mb-3 text-sm/6">
           {props.message
             ? props.message
             : "You can copy the code below and paste it into your component folder."}
         </p>
-        {props.title && <figcaption data-rehype-pretty-code-title="">{props.title}</figcaption>}
-        <div className="flex items-center justify-between">
-          <div className="flex cursor-default items-center gap-x-1 p-2 font-medium text-sm/6">
-            <IconBrandReactjs className="text-sky-500" />
-            {toShow}.tsx
+        <div
+          className={twJoin(
+            "overflow-hidden rounded-lg",
+            "border border-muted-fg/40",
+            "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
+          )}
+        >
+          {props.title && <figcaption data-rehype-pretty-code-title="">{props.title}</figcaption>}
+          <div className="flex items-center justify-between border-b">
+            <div className="flex cursor-default items-center gap-x-1 px-3 py-2 font-medium text-sm/6">
+              <BrandReactjsIcon className="size-4 text-sky-500" />
+              {toShow}.tsx
+            </div>
+            <CopyButton className="grid size-10 place-content-center" text={processedSourceCode} />
           </div>
-          <CopyButton text={processedSourceCode} />
-        </div>
-        <div className="overflow-hidden rounded-lg border border-shiki-border bg-shiki-bg">
           <CodeHighlighter
             className="**:[pre]:p-4"
             removeLastLine

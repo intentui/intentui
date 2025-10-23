@@ -3,7 +3,8 @@
 import { getLocalTimeZone, now, parseZonedDateTime } from "@internationalized/date"
 import { useState } from "react"
 
-import { DateField } from "@/components/ui/date-field"
+import { DateField, DateInput } from "@/components/ui/date-field"
+import { Label } from "@/components/ui/field"
 
 export default function DateTimeFieldDemo() {
   const today = parseZonedDateTime(now(getLocalTimeZone()).toString())
@@ -14,7 +15,9 @@ export default function DateTimeFieldDemo() {
       hourCycle={24}
       value={value}
       onChange={(newValue) => setValue(newValue!)}
-      label="Event date"
-    />
+    >
+      <Label>Event date</Label>
+      <DateInput />
+    </DateField>
   )
 }

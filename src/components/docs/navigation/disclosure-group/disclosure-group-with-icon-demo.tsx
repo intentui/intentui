@@ -1,26 +1,25 @@
 "use client"
 
 import {
-  IconArchive,
-  IconChartTrending,
-  IconCheck,
-  IconChevronRight,
-  IconCircleCheck,
-  IconGiroCard,
-  IconHighlight,
-  IconMacbookAir,
-  IconPencilBox,
-  IconRobot,
-  IconService,
-  IconShieldCheck,
-  IconWhiteboard,
-} from "@intentui/icons"
+  ArchiveBoxIcon,
+  ArrowTrendingUpIcon,
+  CheckCircleIcon,
+  CheckIcon,
+  ChevronRightIcon,
+  ComputerDesktopIcon,
+  CpuChipIcon,
+  CreditCardIcon,
+  PencilSquareIcon,
+  PresentationChartBarIcon,
+  ShieldCheckIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline"
 import {
-  Disclosure,
+  DisclosureItem as Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,
-} from "@/components/ui/disclosure"
+} from "@/components/ui/disclosure-group"
 
 export default function DisclosureGroupWithIconDemo() {
   return (
@@ -39,7 +38,7 @@ export default function DisclosureGroupWithIconDemo() {
                 <Disclosure key={childIndex} id={childIndex}>
                   <DisclosureTrigger className="group">
                     <span>
-                      <IconChevronRight className="size-5 duration-300 group-aria-expanded:rotate-90" />
+                      <ChevronRightIcon className="size-5 duration-300 group-aria-expanded:rotate-90" />
                       <child.icon />
                       {child.title}
                     </span>
@@ -58,25 +57,25 @@ export default function DisclosureGroupWithIconDemo() {
 const items = [
   {
     id: 1,
-    icon: IconMacbookAir,
+    icon: ComputerDesktopIcon,
     title: "Computer Science Department",
     description: "Explore our cutting-edge programs in computer science and technology.",
     children: [
       {
         id: 101,
-        icon: IconRobot,
+        icon: CpuChipIcon,
         title: "Artificial Intelligence",
         description: "Courses on machine learning, neural networks, and deep learning.",
       },
       {
         id: 102,
-        icon: IconShieldCheck,
+        icon: ShieldCheckIcon,
         title: "Cybersecurity",
         description: "Programs focused on protecting information and systems.",
       },
       {
         id: 103,
-        icon: IconService,
+        icon: WrenchScrewdriverIcon,
         title: "Software Engineering",
         description: "Learn best practices for designing and building software.",
       },
@@ -84,25 +83,25 @@ const items = [
   },
   {
     id: 2,
-    icon: IconGiroCard,
+    icon: CreditCardIcon,
     title: "Business Administration Department",
     description: "Develop skills in management, finance, and entrepreneurship.",
     children: [
       {
         id: 201,
-        icon: IconWhiteboard,
+        icon: PresentationChartBarIcon,
         title: "Marketing Strategies",
         description: "Courses on digital marketing and customer engagement.",
       },
       {
         id: 202,
-        icon: IconChartTrending,
+        icon: ArrowTrendingUpIcon,
         title: "Financial Analysis",
         description: "Learn techniques for financial decision-making and planning.",
       },
       {
         id: 203,
-        icon: IconCircleCheck,
+        icon: CheckCircleIcon,
         title: "Entrepreneurship",
         description: "Develop your business ideas and startup skills.",
       },
@@ -110,25 +109,25 @@ const items = [
   },
   {
     id: 3,
-    icon: IconPencilBox,
+    icon: PencilSquareIcon,
     title: "Arts & Humanities Department",
     description: "Dive into creativity and the study of human culture.",
     children: [
       {
         id: 301,
-        icon: IconHighlight,
+        icon: PencilSquareIcon,
         title: "Creative Writing",
         description: "Programs for aspiring authors and poets.",
       },
       {
         id: 302,
-        icon: IconCheck,
+        icon: CheckIcon,
         title: "Philosophy",
         description: "Explore key questions about life, existence, and ethics.",
       },
       {
         id: 303,
-        icon: IconArchive,
+        icon: ArchiveBoxIcon,
         title: "Art History",
         description: "Study the evolution and impact of art across cultures.",
       },

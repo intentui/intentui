@@ -3,6 +3,7 @@
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/field"
 import {
   SheetBody,
   SheetContent,
@@ -11,6 +12,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet"
+import { TextField } from "@/components/ui/text-field"
 import { Textarea } from "@/components/ui/textarea"
 
 export default function SheetControlledDemo() {
@@ -26,7 +28,10 @@ export default function SheetControlledDemo() {
           </SheetDescription>
         </SheetHeader>
         <SheetBody>
-          <Textarea label="Your Feedback" placeholder="Type your feedback here..." />
+          <TextField name="feedback">
+            <Label>Your Feedback</Label>
+            <Textarea placeholder="Type your feedback here..." />
+          </TextField>
         </SheetBody>
         <SheetFooter>
           <Button intent="outline" onPress={() => setIsOpen(false)}>

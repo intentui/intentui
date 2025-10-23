@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button"
 import {
   CommandMenu,
   CommandMenuItem,
-  CommandMenuKeyboard,
   CommandMenuList,
   CommandMenuSearch,
+  CommandMenuShortcut,
 } from "@/components/ui/command-menu"
 
-export default function CommandMenuKeyboardDemo() {
+export default function CommandMenuShortcutDemo() {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>
@@ -23,32 +23,32 @@ export default function CommandMenuKeyboardDemo() {
         <CommandMenuList>
           <CommandMenuItem textValue="account settings">
             Account Settings
-            <CommandMenuKeyboard keys="⌘A" />
+            <CommandMenuShortcut keys="⌘A" />
           </CommandMenuItem>
 
           <CommandMenuItem textValue="profile">
             Profile
-            <CommandMenuKeyboard keys="⌘P" />
+            <CommandMenuShortcut keys="⌘P" />
           </CommandMenuItem>
 
           <CommandMenuItem textValue="notifications">
             Notifications
-            <CommandMenuKeyboard keys="⌘N" />
+            <CommandMenuShortcut keys="⌘N" />
           </CommandMenuItem>
 
           <CommandMenuItem textValue="privacy settings">
             Privacy Settings
-            <CommandMenuKeyboard keys="⌘S" />
+            <CommandMenuShortcut keys="⌘S" />
           </CommandMenuItem>
 
           <CommandMenuItem textValue="billing information">
             Billing Information
-            <CommandMenuKeyboard keys="⌘B" />
+            <CommandMenuShortcut keys="⌘B" />
           </CommandMenuItem>
 
           <CommandMenuItem textValue="logout">
             Logout
-            <CommandMenuKeyboard keys="⌘L" />
+            <CommandMenuShortcut keys="⌘L" />
           </CommandMenuItem>
         </CommandMenuList>
       </CommandMenu>

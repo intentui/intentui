@@ -1,20 +1,22 @@
 "use client"
 
 import {
-  IconBrandIntentui,
-  IconCart,
-  IconChartBar,
-  IconChevronsY,
-  IconCube,
-  IconDashboard,
-  IconDashboardFill,
-  IconGear,
-  IconHeadphonesFill,
-  IconLogout,
-  IconPeople,
-  IconSettingsFill,
-  IconShieldFill,
-} from "@intentui/icons"
+  ArrowRightOnRectangleIcon,
+  ChartBarIcon,
+  ChevronUpDownIcon,
+  Cog6ToothIcon,
+  CubeIcon,
+  ShoppingCartIcon,
+  SparklesIcon,
+  Squares2X2Icon,
+  UsersIcon,
+} from "@heroicons/react/24/outline"
+import {
+  Cog6ToothIcon as Cog6ToothSolid,
+  LifebuoyIcon as LifebuoySolid,
+  ShieldCheckIcon as ShieldCheckSolid,
+  Squares2X2Icon as Squares2X2Solid,
+} from "@heroicons/react/24/solid"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
 import {
@@ -45,7 +47,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandIntentui className="size-6" />
+          <SparklesIcon className="size-6" />
           <SidebarLabel className="font-medium">
             Intent <span className="text-muted-fg">UI</span>
           </SidebarLabel>
@@ -80,13 +82,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                 isSquare
                 src="https://intentui.com/images/avatar/cobain.jpg"
               />
-
               <div className="in-data-[collapsible=dock]:hidden text-sm">
                 <SidebarLabel>Kurt Cobain</SidebarLabel>
                 <span className="-mt-0.5 block text-muted-fg">kurt@domain.com</span>
               </div>
             </div>
-            <IconChevronsY data-slot="chevron" />
+            <ChevronUpDownIcon data-slot="chevron" />
           </MenuTrigger>
           <MenuContent
             className="in-data-[sidebar-collapsible=collapsed]:min-w-56 min-w-(--trigger-width)"
@@ -100,26 +101,26 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </MenuSection>
 
             <MenuItem href="#dashboard">
-              <IconDashboardFill />
+              <Squares2X2Solid />
               Dashboard
             </MenuItem>
             <MenuItem href="#settings">
-              <IconSettingsFill />
+              <Cog6ToothSolid />
               Settings
             </MenuItem>
             <MenuItem href="#security">
-              <IconShieldFill />
+              <ShieldCheckSolid />
               Security
             </MenuItem>
             <MenuSeparator />
 
             <MenuItem href="#contact">
-              <IconHeadphonesFill />
+              <LifebuoySolid />
               Customer Support
             </MenuItem>
             <MenuSeparator />
             <MenuItem href="#logout">
-              <IconLogout />
+              <ArrowRightOnRectangleIcon />
               Log out
             </MenuItem>
           </MenuContent>
@@ -130,10 +131,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 }
 
 const navigation = [
-  { label: "Overview", icon: <IconDashboard />, isCurrent: true, badge: undefined },
-  { label: "Orders", icon: <IconCart />, isCurrent: false, badge: 24 },
-  { label: "Products", icon: <IconCube />, isCurrent: false, badge: "31.51K" },
-  { label: "Customers", icon: <IconPeople />, isCurrent: false, badge: "12K" },
-  { label: "Reports", icon: <IconChartBar />, isCurrent: false, badge: 3 },
-  { label: "Settings", icon: <IconGear />, isCurrent: false, badge: undefined },
+  { label: "Overview", icon: <Squares2X2Icon />, isCurrent: true, badge: undefined },
+  { label: "Orders", icon: <ShoppingCartIcon />, isCurrent: false, badge: 24 },
+  { label: "Products", icon: <CubeIcon />, isCurrent: false, badge: "31.51K" },
+  { label: "Customers", icon: <UsersIcon />, isCurrent: false, badge: "12K" },
+  { label: "Reports", icon: <ChartBarIcon />, isCurrent: false, badge: 3 },
+  { label: "Settings", icon: <Cog6ToothIcon />, isCurrent: false, badge: undefined },
 ]

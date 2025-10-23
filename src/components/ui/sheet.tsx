@@ -44,10 +44,10 @@ const sheetContentStyles = tv({
   ],
   variants: {
     isEntering: {
-      true: "animate-in duration-500",
+      true: "fade-in animate-in duration-500",
     },
     isExiting: {
-      true: "animate-out duration-300",
+      true: "fade-in animate-out duration-300",
     },
     side: {
       top: "entering:slide-in-from-top exiting:slide-out-to-top inset-x-0 top-0 rounded-b-2xl border-b",
@@ -96,12 +96,14 @@ const SheetContent = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={twJoin(
-        "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
-        "entering:fade-in-0 entering:animate-in entering:duration-500",
-        "exiting:fade-out-0 exiting:animate-out exiting:duration-300",
-        isBlurred && "backdrop-blur-sm backdrop-filter",
-      )}
+      className={({ isExiting, isEntering }) =>
+        twJoin(
+          "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
+          isEntering && "fade-in animate-in duration-500",
+          isExiting && "fade-out animate-out duration-300",
+          isBlurred && "backdrop-blur-[1px] backdrop-filter",
+        )
+      }
       {...props}
     >
       <Modal
@@ -136,15 +138,6 @@ const SheetTitle = DialogTitle
 const SheetDescription = DialogDescription
 const SheetBody = DialogBody
 const SheetClose = DialogClose
-
-Sheet.Trigger = SheetTrigger
-Sheet.Footer = SheetFooter
-Sheet.Header = SheetHeader
-Sheet.Title = SheetTitle
-Sheet.Description = SheetDescription
-Sheet.Body = SheetBody
-Sheet.Close = SheetClose
-Sheet.Content = SheetContent
 
 export type { SheetProps, SheetContentProps, Sides }
 export {

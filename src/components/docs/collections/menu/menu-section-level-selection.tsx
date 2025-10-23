@@ -1,16 +1,13 @@
 "use client"
 
 import {
-  IconAlignmentCenter,
-  IconAlignmentLeft,
-  IconAlignmentRight,
-  IconBold,
-  IconClipboard,
-  IconCut,
-  IconDuplicate,
-  IconItalic,
-  IconUnderline,
-} from "@intentui/icons"
+  BoldIcon,
+  ClipboardDocumentIcon,
+  DocumentDuplicateIcon,
+  ItalicIcon,
+  ScissorsIcon,
+  UnderlineIcon,
+} from "@heroicons/react/24/outline"
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
 import {
@@ -29,17 +26,17 @@ export default function MenuSectionLevelSelection() {
     <Menu>
       <MenuTrigger>Open</MenuTrigger>
       <MenuContent popover={{ placement: "bottom" }} className="min-w-52">
-        <MenuSection title="Actions">
+        <MenuSection label="Actions">
           <MenuItem textValue="Cut">
-            <IconCut />
+            <ScissorsIcon />
             <MenuLabel>Cut</MenuLabel>
           </MenuItem>
           <MenuItem textValue="Copy">
-            <IconDuplicate />
+            <DocumentDuplicateIcon />
             <MenuLabel>Copy</MenuLabel>
           </MenuItem>
           <MenuItem textValue="Paste">
-            <IconClipboard />
+            <ClipboardDocumentIcon />
             <MenuLabel>Paste</MenuLabel>
           </MenuItem>
         </MenuSection>
@@ -47,18 +44,18 @@ export default function MenuSectionLevelSelection() {
           selectionMode="multiple"
           selectedKeys={style}
           onSelectionChange={setStyle}
-          title="Text style"
+          label="Text style"
         >
           <MenuItem id="bold" textValue="Bold">
-            <IconBold />
+            <BoldIcon />
             <MenuLabel>Bold</MenuLabel>
           </MenuItem>
           <MenuItem id="italic" textValue="Italic">
-            <IconItalic />
+            <ItalicIcon />
             <MenuLabel>Italic</MenuLabel>
           </MenuItem>
           <MenuItem id="underline" textValue="Underline">
-            <IconUnderline />
+            <UnderlineIcon />
             <MenuLabel>Underline</MenuLabel>
           </MenuItem>
         </MenuSection>
@@ -66,18 +63,15 @@ export default function MenuSectionLevelSelection() {
           selectionMode="single"
           selectedKeys={align}
           onSelectionChange={setAlign}
-          title="Text alignment"
+          label="Text alignment"
         >
           <MenuItem id="left" textValue="Left">
-            <IconAlignmentLeft />
             <MenuLabel>Left</MenuLabel>
           </MenuItem>
           <MenuItem id="center" textValue="Cente">
-            <IconAlignmentCenter />
             <MenuLabel>Center</MenuLabel>
           </MenuItem>
           <MenuItem id="right" textValue="Right">
-            <IconAlignmentRight />
             <MenuLabel>Right</MenuLabel>
           </MenuItem>
         </MenuSection>

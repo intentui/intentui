@@ -22,7 +22,7 @@ export default function CommandMenuDisabledDemo() {
       <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>
         <CommandMenuSearch placeholder="Quick search..." />
         <CommandMenuList>
-          <CommandMenuSection title="Suggestions">
+          <CommandMenuSection label="Suggestions">
             <CommandMenuItem>
               PhpStorm
               <CommandMenuDescription>Application</CommandMenuDescription>

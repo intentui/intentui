@@ -1,23 +1,20 @@
 "use client"
-import {
-  IconBrandDiscord,
-  IconBrandIntentui,
-  IconBrandX,
-  IconChevronDown,
-  IconSearch,
-} from "@intentui/icons"
+import { ChevronDownIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { GithubLink } from "@/components/github-link"
+import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
+import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { DesignUiIcon } from "@/components/icons/design-intent-ui-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
-import { Menu } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 import { siteConfig } from "@/config/site"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { CommandPalette } from "./command-palette"
+import { BrandDiscordIcon } from "./icons/brand-discord-icon"
 import { NavLink } from "./nav-item"
 import { ThemeSwitcher } from "./theme-switcher"
 
@@ -36,11 +33,11 @@ export function Navigation() {
                 <div className="flex items-center">
                   <Link
                     href="/"
-                    className="-ml-3 mr-2 flex items-center gap-x-2 p-2 font-medium"
+                    className="mr-2 flex items-center gap-x-2"
                     aria-label="Goto homepage"
                   >
-                    <IconBrandIntentui className="size-6 text-white" />
-                    <span className="hidden sm:inline">
+                    <BrandIntentuiIcon className="size-5 shrink-0" />
+                    <span className="hidden min-w-0 sm:inline">
                       <span>Intent</span> <span className="text-muted-fg">UI</span>
                     </span>
                   </Link>
@@ -48,10 +45,10 @@ export function Navigation() {
                   <Menu>
                     <Button intent="plain" size="xs">
                       3.x
-                      <IconChevronDown />
+                      <ChevronDownIcon />
                     </Button>
-                    <Menu.Content>
-                      <Menu.Item
+                    <MenuContent>
+                      <MenuItem
                         href="https://intentui.com/docs/getting-started/introduction"
                         className="group"
                       >
@@ -59,11 +56,11 @@ export function Navigation() {
                         <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
                           latest
                         </span>
-                      </Menu.Item>
-                      <Menu.Item href="https://2x.intentui.com/docs/getting-started/introduction">
+                      </MenuItem>
+                      <MenuItem href="https://2x.intentui.com/docs/getting-started/introduction">
                         2.x
-                      </Menu.Item>
-                      <Menu.Item
+                      </MenuItem>
+                      <MenuItem
                         href="https://1x.intentui.com/docs/getting-started/introduction"
                         className="group"
                       >
@@ -71,8 +68,8 @@ export function Navigation() {
                         <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
                           deprecated
                         </span>
-                      </Menu.Item>
-                    </Menu.Content>
+                      </MenuItem>
+                    </MenuContent>
                   </Menu>
                 </div>
                 <NavLink
@@ -96,8 +93,6 @@ export function Navigation() {
                   Themes
                 </NavLink>
 
-                <NavLink href="/icons">Icons</NavLink>
-
                 <NavLink href="/colors">Colors</NavLink>
 
                 <NavLink href="/blocks">Blocks</NavLink>
@@ -109,7 +104,7 @@ export function Navigation() {
                   isCircle
                   intent="plain"
                 >
-                  <IconSearch />
+                  <MagnifyingGlassIcon />
                 </Button>
 
                 <Link
@@ -124,7 +119,7 @@ export function Navigation() {
                   target="_blank"
                   href={siteConfig.discord}
                 >
-                  <IconBrandDiscord />
+                  <BrandDiscordIcon />
                 </Link>
                 <Link
                   aria-label="Follow Update on X"
@@ -137,7 +132,7 @@ export function Navigation() {
                   target="_blank"
                   href="https://x.com/intent/follow?screen_name=irsyadadl"
                 >
-                  <IconBrandX />
+                  <BrandXIcon />
                 </Link>
                 <Link
                   aria-label="Follow Update on X"

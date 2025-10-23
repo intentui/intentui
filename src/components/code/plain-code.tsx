@@ -1,13 +1,6 @@
 "use client"
 import type { ScrollAreaViewportProps } from "@radix-ui/react-scroll-area"
-import {
-  type ButtonHTMLAttributes,
-  type HTMLAttributes,
-  type ReactElement,
-  type ReactNode,
-  useCallback,
-  useRef,
-} from "react"
+import { type HTMLAttributes, type ReactNode, useCallback, useRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { CopyButton } from "@/components/code/copy-button"
 import { ScrollArea, ScrollBar, ScrollViewport } from "@/components/ui/scroll-area"
@@ -74,19 +67,21 @@ export const PlainCode = ({
 
     void navigator.clipboard.writeText(clone.textContent ?? "")
   }, [])
-
+  const [checked, onClick] = useCopyButton(onCopy)
   return (
     <figure
       ref={ref}
       {...props}
       className={twMerge(
-        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6",
+        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg bg-secondary/50 text-sm/6 shadow-sm",
+        "border border-muted-fg/40",
+        "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
         keepBackground && "bg-white dark:bg-zinc-950!",
         className,
       )}
     >
       {title ? (
-        <div className="jb flex w-full flex-row items-center gap-2 border-b bg-fd-muted px-4 py-1.5">
+        <div className="flex w-full flex-row items-center gap-2 border-b px-4 py-1.5">
           {icon ? (
             <div
               className="text-muted-fg [&_svg]:size-3.5"
@@ -103,12 +98,23 @@ export const PlainCode = ({
           ) : null}
           <figcaption className="flex-1 truncate text-muted-fg">{title}</figcaption>
           {allowCopy ? (
-            <InternalCopyButton className="absolute top-1 right-1 z-[2]" onCopy={onCopy} />
+            <CopyButton
+              className="absolute top-1 right-1 z-[2] grid size-10 place-content-center"
+              onClick={onClick}
+              isCopied={checked}
+            />
           ) : null}
         </div>
       ) : (
-        allowCopy && <InternalCopyButton className="absolute top-1 right-1 z-[2]" onCopy={onCopy} />
+        allowCopy && (
+          <CopyButton
+            className="absolute top-1 right-1 z-[2] grid size-10 place-content-center"
+            onClick={onClick}
+            isCopied={checked}
+          />
+        )
       )}
+
       <ScrollArea ref={areaRef} className="w-full" dir="ltr">
         <ScrollViewport
           {...viewportProps}
@@ -120,15 +126,4 @@ export const PlainCode = ({
       </ScrollArea>
     </figure>
   )
-}
-
-function InternalCopyButton({
-  className,
-  onCopy,
-}: ButtonHTMLAttributes<HTMLButtonElement> & {
-  onCopy: () => void
-}): ReactElement {
-  const [checked, onClick] = useCopyButton(onCopy)
-
-  return <CopyButton className={className} onClick={onClick} isCopied={checked} />
 }

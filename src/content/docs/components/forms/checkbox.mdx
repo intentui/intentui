@@ -21,7 +21,7 @@ npx shadcn@latest add @intentui/checkbox
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 
 <SourceCode toShow='checkbox'/>
@@ -39,16 +39,6 @@ import { Description, Label } from "@/components/ui/field"
 </Checkbox>
 ```
 
-## Label Prop
-You can add a label to the checkbox by passing the `label` prop.
-```
-<Checkbox label="Enable Notifications" />
-```
-
-## Description props
-Add a description to the checkbox group by passing the `description` prop.
-<How minW72 toUse="forms/checkbox/checkbox-description-demo" />
-
 ## Invalid
 The checkbox is in an error state.
 <How toUse="forms/checkbox/checkbox-invalid-demo" />
@@ -59,7 +49,7 @@ The checkbox is in an indeterminate state.
 
 ## Controlled
 You can control the checkbox value by using the `value` prop.
-<How minW72 toUse="forms/checkbox/checkbox-controlled-demo" />
+<How minW60 toUse="forms/checkbox/checkbox-controlled-demo" />
 
 ## Uncontrolled
 You can control the checkbox value by using the `defaultValue` prop.

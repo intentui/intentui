@@ -1,108 +1,69 @@
 "use client"
 
-import type {
-  FieldErrorProps as FieldErrorPrimitiveProps,
-  GroupProps,
-  InputProps as InputPrimitiveProps,
-  LabelProps,
-  TextProps,
-  ValidationResult,
-} from "react-aria-components"
+import type { FieldErrorProps, LabelProps, TextProps } from "react-aria-components"
 import {
   FieldError as FieldErrorPrimitive,
-  Group,
-  Input as InputPrimitive,
   Label as LabelPrimitive,
   Text,
 } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
-
 import { cx } from "@/lib/primitive"
 
-interface FieldProps {
-  label?: string
-  placeholder?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
-}
-
-const fieldStyles = tv({
-  slots: {
-    description: "text-base/6 text-muted-fg group-disabled:opacity-50 sm:text-sm/6",
-    label: "select-none text-base/6 text-fg group-disabled:opacity-50 sm:text-sm/6",
-    fieldError:
-      "text-base/6 text-danger group-disabled:opacity-50 sm:text-sm/6 forced-colors:text-[Mark]",
-  },
+export const labelStyles = tv({
+  base: "select-none text-base/6 text-fg in-disabled:opacity-50 group-disabled:opacity-50 sm:text-sm/6",
 })
 
-const { description, label, fieldError } = fieldStyles()
+export const descriptionStyles = tv({
+  base: "block text-muted-fg text-sm/6 in-disabled:opacity-50 group-disabled:opacity-50",
+})
+
+export const fieldErrorStyles = tv({
+  base: "block text-danger-subtle-fg text-sm/6 in-disabled:opacity-50 group-disabled:opacity-50 forced-colors:text-[Mark]",
+})
+
+export const fieldStyles = tv({
+  base: [
+    "w-full",
+    "[&>[data-slot=label]+[data-slot=control]]:mt-2",
+    "[&>[data-slot=label]+[data-slot=control]]:mt-2",
+    "[&>[data-slot=label]+[slot='description']]:mt-1",
+    "[&>[slot='description']+[data-slot=control]]:mt-2",
+    "[&>[data-slot=control]+[slot=description]]:mt-2",
+    "[&>[data-slot=control]+[slot=errorMessage]]:mt-2",
+    "*:data-[slot=label]:font-medium",
+  ],
+})
 
 const Label = ({ className, ...props }: LabelProps) => {
-  return <LabelPrimitive data-slot="label" {...props} className={label({ className })} />
+  return <LabelPrimitive data-slot="label" {...props} className={labelStyles({ className })} />
 }
 
-interface DescriptionProps extends TextProps {
-  ref?: React.RefObject<HTMLElement>
+const Description = ({ className, ...props }: TextProps) => {
+  return <Text {...props} slot="description" className={descriptionStyles({ className })} />
 }
 
-const Description = ({ ref, className, ...props }: DescriptionProps) => {
-  return <Text ref={ref} {...props} slot="description" className={description({ className })} />
+const FieldError = ({ className, ...props }: FieldErrorProps) => {
+  return <FieldErrorPrimitive {...props} className={cx(fieldErrorStyles(), className)} />
 }
 
-interface FieldErrorProps extends FieldErrorPrimitiveProps {
-  ref?: React.RefObject<HTMLElement>
-}
-const FieldError = ({ className, ref, ...props }: FieldErrorProps) => {
-  return <FieldErrorPrimitive ref={ref} {...props} className={cx(fieldError(), className)} />
-}
-
-interface FieldGroupProps extends GroupProps {
-  ref?: React.RefObject<HTMLDivElement>
-}
-const FieldGroup = ({ className, ref, ...props }: FieldGroupProps) => {
+const Fieldset = ({ className, ...props }: React.ComponentProps<"fieldset">) => {
   return (
-    <Group
+    <fieldset
+      className={twMerge("*:data-[slot=text]:mt-1 [&>*+[data-slot=control]]:mt-6", className)}
       {...props}
-      ref={ref}
-      className={cx(
-        "[--gutter-inset:--spacing(6)] [--gutter-x:--spacing(2.5)]",
-        "*:text-base/6 *:sm:text-sm/6",
-        "group relative inset-ring inset-ring-input flex items-center overflow-hidden rounded-lg shadow-xs transition duration-200 ease-out",
-        "[&>[role=progressbar]:first-child]:ml-(--gutter-x) [&>[role=progressbar]:last-child]:mr-(--gutter-x)",
-        "*:data-[slot=icon]:z-10 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:[button]:shrink-0",
-        "[&>button:has([data-slot=icon]):first-child]:left-0 [&>button:has([data-slot=icon]):last-child]:right-0 [&>button:has([data-slot=icon])]:absolute",
-        "*:data-[slot=icon]:-translate-y-1/2 *:data-[slot=icon]:pointer-events-none *:data-[slot=icon]:absolute *:data-[slot=icon]:top-1/2 *:data-[slot=icon]:text-muted-fg",
-        "[&>[data-slot=icon]:first-child]:left-(--gutter-x) [&>[data-slot=icon]:last-child]:right-(--gutter-x)",
-        "[&:has([data-slot=icon]+input)]:pl-(--gutter-inset) [&:has(input+[data-slot=icon])]:pr-(--gutter-inset)",
-        "[&:has([data-slot=icon]+[role=group])]:pl-(--gutter-inset) [&:has([role=group]+[data-slot=icon])]:pr-(--gutter-inset)",
-        "has-[[data-slot=icon]:last-child]:[&_input]:pr-[calc(var(--gutter-inset)+1)]",
-        "*:[button]:rounded-[calc(var(--radius-lg)-2.5px)] *:[button]:px-(--gutter-x) *:[button]:py-[calc(--spacing(1)-1px)]",
-        "*:[button]:first:ml-[--spacing(0.7)] *:[button]:last:mr-[--spacing(0.7)]",
-        "hover:inset-ring-[color-mix(in_oklab,var(--color-input)_50%,var(--color-muted-fg)_25%)] focus-within:hover:inset-ring-ring/70 has-invalid:hover:inset-ring-danger/70",
-        "invalid:inset-ring-danger/70 focus-within:invalid:inset-ring-danger/70 focus-within:invalid:ring-danger/20 group-invalid:inset-ring-danger/70 group-invalid:focus-within:inset-ring-danger/70 group-invalid:focus-within:ring-danger/20",
-        "focus-within:inset-ring-ring/70 focus-within:ring-3 focus-within:ring-ring/20",
-        className,
-      )}
     />
   )
 }
 
-interface InputProps extends InputPrimitiveProps {
-  ref?: React.RefObject<HTMLInputElement>
-}
-
-const Input = ({ className, ref, ...props }: InputProps) => {
+const Legend = ({ className, ...props }: React.ComponentProps<"legend">) => {
   return (
-    <InputPrimitive
-      ref={ref}
+    <legend
+      data-slot="legend"
       {...props}
-      className={cx(
-        "relative block w-full px-3.5 py-2 placeholder-muted-fg outline-hidden sm:px-3 sm:py-1.5 sm:text-sm/6 [&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden",
-        className,
-      )}
+      className={twMerge("font-semibold text-base/6 data-disabled:opacity-50", className)}
     />
   )
 }
 
-export type { FieldProps, InputProps, DescriptionProps, FieldErrorProps }
-export { Description, FieldError, FieldGroup, Input, Label, fieldStyles }
+export { Description, FieldError, Fieldset, Legend, Label }

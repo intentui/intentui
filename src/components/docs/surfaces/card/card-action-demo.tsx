@@ -1,30 +1,30 @@
 "use client"
 
-import { IconChevronLgDown } from "@intentui/icons"
+import { ChevronDownIcon } from "@heroicons/react/24/outline"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { Card, CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 
 export default function CardActionDemo() {
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Customers</Card.Title>
-        <Card.Description>
+      <CardHeader>
+        <CardTitle>Customers</CardTitle>
+        <CardDescription>
           Manage and view customer details with available actions aligned to the right.
-        </Card.Description>
-        <Card.Action>
+        </CardDescription>
+        <CardAction>
           <Menu>
             <Button size="sm" intent="outline">
-              Export... <IconChevronLgDown />
+              Export... <ChevronDownIcon />
             </Button>
             <MenuContent placement="bottom end">
               <MenuItem>Export to PDF</MenuItem>
               <MenuItem>Export to CSV</MenuItem>
             </MenuContent>
           </Menu>
-        </Card.Action>
-      </Card.Header>
+        </CardAction>
+      </CardHeader>
     </Card>
   )
 }

@@ -4,6 +4,7 @@ import type React from "react"
 import { twMerge } from "tailwind-merge"
 import { useTheme } from "@/components/theme-provider"
 import { Badge } from "@/components/ui/badge"
+import { Label } from "@/components/ui/field"
 import {
   Select,
   SelectContent,
@@ -35,7 +36,8 @@ const ColorSelect = ({
     : Object.keys(colors)
   const { theme } = useTheme()
   return (
-    <Select {...props} value={value} onChange={onChange} label={label} placeholder={placeholder}>
+    <Select {...props} value={value} onChange={onChange} placeholder={placeholder}>
+      <Label>{label}</Label>
       <SelectTrigger className="capitalize" />
       <SelectContent>
         {filteredKeys.map((key) => (
@@ -141,9 +143,9 @@ export function ThemeCustomizer({ selectedColors, setSelectedColors }: ThemeCust
         <Select
           value={selectedColors.radius}
           onChange={handleSelectionChange("radius")}
-          label="Radius"
           placeholder="Select radius"
         >
+          <Label>Radius</Label>
           <SelectTrigger className="capitalize" />
           <SelectContent>
             {filteredRadius.map((radius) => (

@@ -7,11 +7,13 @@ import {
   ComboBoxItem,
   ComboBoxSection,
 } from "@/components/ui/combo-box"
+import { Label } from "@/components/ui/field"
 
 export default function ComboBoxSectionDemo() {
   return (
-    <ComboBox placeholder="Select a author" label="Authors">
-      <ComboBoxInput />
+    <ComboBox>
+      <Label>Authors</Label>
+      <ComboBoxInput placeholder="Select a author" />
       <ComboBoxContent defaultSelectedKeys={[1]} items={movies}>
         {(movie) => (
           <ComboBoxSection title={movie.title} items={movie.genres}>

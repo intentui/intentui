@@ -1,9 +1,11 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Dialog } from "@/components/ui/dialog"
-import { Form } from "@/components/ui/form"
+import { FieldError, Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { Link } from "@/components/ui/link"
 import {
   Popover,
@@ -30,22 +32,21 @@ export default function PopoverCustomClose() {
           <Form onSubmit={() => {}} className="overflow-auto">
             <PopoverBody>
               <div className="space-y-4">
-                <TextField
-                  autoFocus
-                  isRequired
-                  type="email"
-                  label="Email"
-                  placeholder="Enter your email"
-                />
-                <TextField
-                  isRequired
-                  label="Password"
-                  type="password"
-                  placeholder="Enter your password"
-                />
+                <TextField autoFocus isRequired>
+                  <Label>Email</Label>
+                  <Input type="email" placeholder="Enter your email" />
+                </TextField>
+                <TextField isRequired>
+                  <Label>Password</Label>
+                  <Input type="password" placeholder="Enter your password" />
+                  <FieldError />
+                </TextField>
                 <div className="flex items-center justify-between">
                   <Checkbox name="remember-me">Remember me</Checkbox>
-                  <Link intent="primary" href="#">
+                  <Link
+                    className="text-base/6 text-primary-subtle-fg hover:underline sm:text-sm/6"
+                    href="#"
+                  >
                     Forgot password?
                   </Link>
                 </div>

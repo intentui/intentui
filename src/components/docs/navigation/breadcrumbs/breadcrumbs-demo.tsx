@@ -1,15 +1,15 @@
 "use client"
 
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
 
 export default function BreadcrumbsDemo() {
   return (
     <Breadcrumbs>
-      <Breadcrumbs.Item href="#">Home</Breadcrumbs.Item>
+      <BreadcrumbsItem href="#">Home</BreadcrumbsItem>
 
-      <Breadcrumbs.Item href="#">Design System</Breadcrumbs.Item>
+      <BreadcrumbsItem href="#">Design System</BreadcrumbsItem>
 
-      <Breadcrumbs.Item>Collections</Breadcrumbs.Item>
+      <BreadcrumbsItem>Collections</BreadcrumbsItem>
     </Breadcrumbs>
   )
 }

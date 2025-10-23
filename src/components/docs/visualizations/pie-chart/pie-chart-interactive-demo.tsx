@@ -2,7 +2,14 @@
 
 import { useMemo, useState } from "react"
 import type { Key } from "react-aria-components"
-import { Card } from "@/components/ui/card"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { PieChart } from "@/components/ui/pie-chart"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
@@ -23,10 +30,10 @@ export default function PieChartAudienceSegmentDemo() {
 
   return (
     <Card>
-      <Card.Header className="text-center">
-        <Card.Title>Audience insights</Card.Title>
-        <Card.Description>Engagement metrics by type</Card.Description>
-        <Card.Action>
+      <CardHeader className="text-center">
+        <CardTitle>Audience insights</CardTitle>
+        <CardDescription>Engagement metrics by type</CardDescription>
+        <CardAction>
           <ToggleGroup
             selectedKeys={selected}
             onSelectionChange={setSelected}
@@ -39,9 +46,9 @@ export default function PieChartAudienceSegmentDemo() {
               </ToggleGroupItem>
             ))}
           </ToggleGroup>
-        </Card.Action>
-      </Card.Header>
-      <Card.Content>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
         <PieChart
           className="mx-auto h-64"
           data={data}
@@ -61,7 +68,7 @@ export default function PieChartAudienceSegmentDemo() {
             CR: { label: "CR" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

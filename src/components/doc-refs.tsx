@@ -1,15 +1,11 @@
 "use client"
 
-import {
-  IconBell,
-  IconBrandAdobe,
-  IconBrandFramer,
-  IconBrandGithub,
-  IconBrandIntentui,
-  IconChartBar,
-} from "@intentui/icons"
-import type { FC, SVGProps } from "react"
+import { BellIcon, ChartBarIcon } from "@heroicons/react/24/outline"
 import { ListBox, ListBoxItem } from "react-aria-components"
+import { BrandAdobeIcon } from "@/components/icons/brand-adobe-icon"
+import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
+import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
+import { MotionBrandIcon } from "@/components/icons/motion-brand-icon"
 import { Logo } from "@/components/logo"
 import { buttonStyles } from "@/components/ui/button"
 
@@ -21,24 +17,24 @@ function getComponentName(url: string): string {
 export function DocRefs({ references }: { references: string[] }) {
   const urls = references.map((url: string) => {
     let title = ""
-    let icon: FC<SVGProps<SVGSVGElement>>
+    let icon: React.FC<React.SVGProps<SVGSVGElement>>
 
     switch (true) {
       case url.includes("react-spectrum"):
         title = getComponentName(url)
-        icon = IconBrandAdobe
+        icon = BrandAdobeIcon
         break
       case url.includes("icons"):
         title = "Explore"
-        icon = IconBrandIntentui
+        icon = BrandIntentuiIcon
         break
       case url.includes("recharts"):
         title = "Props"
-        icon = IconChartBar
+        icon = ChartBarIcon
         break
       case url.includes("motion"):
         title = "Motion"
-        icon = IconBrandFramer
+        icon = MotionBrandIcon
         break
       case url.includes("docs/components"):
         title = "Internal"
@@ -46,11 +42,11 @@ export function DocRefs({ references }: { references: string[] }) {
         break
       case url.includes("sonner"):
         title = "Sonner"
-        icon = IconBell
+        icon = BellIcon
         break
       case url.includes("github"):
         title = "Github"
-        icon = IconBrandGithub
+        icon = BrandGithubIcon
         break
       case url.includes("embla-carousel"):
         title = "Props"
@@ -74,7 +70,7 @@ export function DocRefs({ references }: { references: string[] }) {
       aria-label="Link References"
       items={urls}
     >
-      {(item: { url: string; title: string; icon: FC<SVGProps<SVGSVGElement>> }) => (
+      {(item: { url: string; title: string; icon: React.FC<React.SVGProps<SVGSVGElement>> }) => (
         <ListBoxItem
           textValue={item.title}
           target="_blank"

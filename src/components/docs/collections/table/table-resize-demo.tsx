@@ -1,34 +1,41 @@
 "use client"
-import { Table } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 export default function TableResizeDemo() {
   return (
     <div className="rounded-lg border p-4">
       <Table allowResize aria-label="Vocalists">
-        <Table.Header>
-          <Table.Column className="max-w-10">ID</Table.Column>
-          <Table.Column isRowHeader isResizable>
+        <TableHeader>
+          <TableColumn className="max-w-10">ID</TableColumn>
+          <TableColumn isRowHeader isResizable>
             Name
-          </Table.Column>
-          <Table.Column isResizable>Email</Table.Column>
-          <Table.Column>Age</Table.Column>
-          <Table.Column>Role</Table.Column>
-          <Table.Column isResizable>Band</Table.Column>
-          <Table.Column>Status</Table.Column>
-        </Table.Header>
-        <Table.Body items={items}>
+          </TableColumn>
+          <TableColumn isResizable>Email</TableColumn>
+          <TableColumn>Age</TableColumn>
+          <TableColumn>Role</TableColumn>
+          <TableColumn isResizable>Band</TableColumn>
+          <TableColumn>Status</TableColumn>
+        </TableHeader>
+        <TableBody items={items}>
           {(item) => (
-            <Table.Row id={item.id}>
-              <Table.Cell>{item.id}</Table.Cell>
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell>{item.email}</Table.Cell>
-              <Table.Cell>{item.age}</Table.Cell>
-              <Table.Cell>{item.role}</Table.Cell>
-              <Table.Cell>{item.band}</Table.Cell>
-              <Table.Cell>{item.status}</Table.Cell>
-            </Table.Row>
+            <TableRow id={item.id}>
+              <TableCell>{item.id}</TableCell>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.email}</TableCell>
+              <TableCell>{item.age}</TableCell>
+              <TableCell>{item.role}</TableCell>
+              <TableCell>{item.band}</TableCell>
+              <TableCell>{item.status}</TableCell>
+            </TableRow>
           )}
-        </Table.Body>
+        </TableBody>
       </Table>
     </div>
   )

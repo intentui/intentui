@@ -1,16 +1,23 @@
 "use client"
 
-import { IconHeartFill, IconMessagesFill, IconUpload } from "@intentui/icons"
+import { ArrowUpTrayIcon, ChatBubbleLeftRightIcon, HeartIcon } from "@heroicons/react/24/outline"
 import { useMemo } from "react"
 import type { LegendPayload } from "recharts"
 import { AreaChart } from "@/components/ui/area-chart"
-import { Card, CardFooter } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 function CustomLegend({ payload }: { payload?: ReadonlyArray<LegendPayload> }) {
   const icons: Record<string, React.ReactNode> = {
-    likes: <IconHeartFill />,
-    comments: <IconMessagesFill />,
-    shares: <IconUpload />,
+    likes: <HeartIcon />,
+    comments: <ChatBubbleLeftRightIcon />,
+    shares: <ArrowUpTrayIcon />,
   }
 
   return (
@@ -42,11 +49,11 @@ export default function AreaChartCustomLegendDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Engagement last 7d</Card.Title>
-        <Card.Description>Likes, comments, and shares for the recent week.</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader>
+        <CardTitle>Engagement last 7d</CardTitle>
+        <CardDescription>Likes, comments, and shares for the recent week.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <AreaChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
@@ -59,7 +66,7 @@ export default function AreaChartCustomLegendDemo() {
             shares: { label: "Shares" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

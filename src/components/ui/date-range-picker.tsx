@@ -1,58 +1,93 @@
 "use client"
 
+import { CalendarDateRangeIcon } from "@heroicons/react/24/outline"
 import type { DateDuration } from "@internationalized/date"
-import type { Placement } from "@react-types/overlays"
 import {
+  Button,
   DateRangePicker as DateRangePickerPrimitive,
   type DateRangePickerProps as DateRangePickerPrimitiveProps,
   type DateValue,
-  type ValidationResult,
+  type PopoverProps,
 } from "react-aria-components"
+import { twJoin } from "tailwind-merge"
+import { DateInput as PrimitiveDateInput } from "@/components/ui/date-field"
+import { InputGroup } from "@/components/ui/input"
 import { cx } from "@/lib/primitive"
-import { DateInput } from "./date-field"
-import { DatePickerIcon, DatePickerOverlay } from "./date-picker"
-import { Description, FieldError, FieldGroup, Label } from "./field"
+import { DatePickerOverlay } from "./date-picker"
+import { fieldStyles } from "./field"
 
-interface DateRangePickerProps<T extends DateValue> extends DateRangePickerPrimitiveProps<T> {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
+export interface DateRangePickerProps<T extends DateValue>
+  extends DateRangePickerPrimitiveProps<T> {
   visibleDuration?: DateDuration
   pageBehavior?: "visible" | "single"
-  contentPlacement?: Placement
+  popover?: Omit<PopoverProps, "children">
 }
 
-const DateRangePicker = <T extends DateValue>({
-  label,
+export function DateRangePicker<T extends DateValue>({
   className,
-  description,
-  errorMessage,
-  contentPlacement = "bottom",
+  popover,
+  children,
   visibleDuration = { months: 1 },
   ...props
-}: DateRangePickerProps<T>) => {
+}: DateRangePickerProps<T>) {
   return (
     <DateRangePickerPrimitive
+      data-slot="control"
+      className={cx(fieldStyles(), className)}
       {...props}
-      className={cx("group flex flex-col gap-y-1 *:data-[slot=label]:font-medium", className)}
     >
-      {label && <Label>{label}</Label>}
-      <FieldGroup className="min-w-40 *:[button]:last:mr-1.5 sm:*:[button]:last:mr-0.5">
-        <DateInput slot="start" className="pl-2" />
-        <span
-          aria-hidden="true"
-          className="-mx-2 text-fg group-disabled:text-muted-fg forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
-        >
-          –
-        </span>
-        <DateInput className="pr-10 sm:pr-8" slot="end" />
-        <DatePickerIcon />
-      </FieldGroup>
-      {description && <Description>{description}</Description>}
-      <FieldError>{errorMessage}</FieldError>
-      <DatePickerOverlay placement={contentPlacement} visibleDuration={visibleDuration} range />
+      {(values) => (
+        <>
+          {typeof children === "function" ? children(values) : children}
+          <DatePickerOverlay {...popover} visibleDuration={visibleDuration} range />
+        </>
+      )}
     </DateRangePickerPrimitive>
   )
 }
-export type { DateRangePickerProps }
-export { DateRangePicker }
+
+export function DateRangePickerTrigger({
+  className,
+  ...props
+}: React.ComponentProps<typeof InputGroup>) {
+  return (
+    <InputGroup
+      className={cx(
+        "flex items-center rounded-lg",
+        "border border-input hover:border-muted-fg/30",
+        "focus-within:border-ring/70 focus-within:bg-primary-subtle/5 focus-within:outline-hidden focus-within:ring-3 focus-within:ring-ring/20 focus-within:hover:border-ring/80",
+        "invalid:border-danger-subtle-fg/70 invalid:bg-danger-subtle/5 focus-within:invalid:border-danger-subtle-fg/70 focus-within:invalid:bg-danger-subtle/5 focus-within:invalid:ring-danger-subtle-fg/20 invalid:hover:border-danger-subtle-fg/80 focus-within:invalid:hover:border-danger-subtle-fg/80",
+        "disabled:bg-muted disabled:opacity-50",
+        className,
+      )}
+      {...props}
+    >
+      <DateInput slot="start" />
+      <span
+        aria-hidden="true"
+        className="-mx-2.5 sm:-mx-2 pointer-events-none block h-0.5 w-2 shrink-0 self-center rounded-full bg-fg group-disabled:text-opacity-50 forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
+      />
+      <DateInput slot="end" />
+      <Button
+        data-slot="date-picker-trigger"
+        className={twJoin(
+          "touch-target grid place-content-center outline-hidden focus-visible:text-fg",
+          "pressed:text-fg text-muted-fg hover:text-fg focus-visible:text-fg",
+          "px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/6",
+          "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
+        )}
+      >
+        <CalendarDateRangeIcon />
+      </Button>
+    </InputGroup>
+  )
+}
+
+function DateInput({ className, ...props }: React.ComponentProps<typeof PrimitiveDateInput>) {
+  return (
+    <PrimitiveDateInput
+      className={cx("rounded-none border-none focus-within:ring-0", className)}
+      {...props}
+    />
+  )
+}

@@ -1,6 +1,6 @@
 "use client"
 
-import { ListBox } from "@/components/ui/list-box"
+import { ListBox, ListBoxItem } from "@/components/ui/list-box"
 
 export default function ListBoxDisabledDemo() {
   return (
@@ -11,7 +11,7 @@ export default function ListBoxDisabledDemo() {
       aria-label="Fruits"
       selectionMode="multiple"
     >
-      {(fruit) => <ListBox.Item id={fruit.id}>{fruit.name}</ListBox.Item>}
+      {(fruit) => <ListBoxItem id={fruit.id}>{fruit.name}</ListBoxItem>}
     </ListBox>
   )
 }

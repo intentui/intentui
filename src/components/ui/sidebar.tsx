@@ -1,6 +1,6 @@
 "use client"
 
-import { IconSidebarFill } from "@intentui/icons"
+import { ChevronDownIcon } from "@heroicons/react/24/solid"
 import { createContext, use, useCallback, useEffect, useMemo, useState } from "react"
 import type {
   ButtonProps,
@@ -201,7 +201,7 @@ const Sidebar = ({
           aria-label="Sidebar"
           data-slot="sidebar"
           data-intent="default"
-          className="w-(--sidebar-width) [--sidebar-width:18rem] has-data-[slot=calendar]:[--sidebar-width:23rem]"
+          className="w-(--sidebar-width) entering:blur-in exiting:blur-out [--sidebar-width:18rem] has-data-[slot=calendar]:[--sidebar-width:23rem]"
           side={side}
         >
           {children}
@@ -229,7 +229,7 @@ const Sidebar = ({
           "relative h-svh bg-transparent transition-[width] duration-200 ease-linear",
           intent === "default" && "group-data-[collapsible=dock]:w-(--sidebar-width-dock)",
           intent === "float" &&
-            "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+(--spacing(4)))]",
+            "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(4))]",
           intent === "inset" &&
             "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(2))]",
         ])}
@@ -280,7 +280,7 @@ const SidebarHeader = ({ className, ref, ...props }: React.ComponentProps<"div">
       ref={ref}
       data-slot="sidebar-header"
       className={twMerge(
-        "flex flex-col gap-2 [.border-b]:border-sidebar-border",
+        "flex flex-col gap-2 p-2.5 [.border-b]:border-sidebar-border",
         "in-data-[intent=inset]:p-4",
         state === "collapsed" ? "p-2.5" : "p-4",
         className,
@@ -348,17 +348,20 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
       data-slot="sidebar-section"
       className={twMerge(
         "col-span-full flex min-w-0 flex-col gap-y-0.5 **:data-[slot=sidebar-section]:**:gap-y-0",
-        state === "collapsed" ? "p-2" : "p-4",
+        "in-data-[state=collapsed]:p-2 p-4",
         className,
       )}
       {...props}
     >
       {state !== "collapsed" && "label" in props && (
-        <Header className="group-data-[collapsible=dock]:-mt-8 mb-1 flex shrink-0 items-center rounded-md px-2.5 font-medium text-sidebar-fg/70 text-xs/6 outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[collapsible=dock]:opacity-0">
+        <Header className="group-data-[collapsible=dock]:-mt-8 mb-1 flex shrink-0 items-center rounded-md px-2 font-medium text-sidebar-fg/70 text-xs/6 outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[collapsible=dock]:opacity-0">
           {props.label}
         </Header>
       )}
-      <div data-slot="sidebar-section-inner" className="grid grid-cols-[auto_1fr] gap-y-0.5">
+      <div
+        data-slot="sidebar-section-inner"
+        className="grid grid-cols-[auto_1fr] gap-y-0.5 in-data-[state=collapsed]:gap-y-1.5"
+      >
         {props.children}
       </div>
     </div>
@@ -370,10 +373,7 @@ interface SidebarItemProps extends Omit<React.ComponentProps<typeof Link>, "chil
   children?:
     | React.ReactNode
     | ((
-        values: LinkRenderProps & {
-          defaultChildren: React.ReactNode
-          isCollapsed: boolean
-        },
+        values: LinkRenderProps & { defaultChildren: React.ReactNode; isCollapsed: boolean },
       ) => React.ReactNode)
   badge?: string | number | undefined
   tooltip?: string | React.ComponentProps<typeof TooltipContent>
@@ -400,18 +400,18 @@ const SidebarItem = ({
         (className, { isPressed, isFocusVisible, isHovered, isDisabled }) =>
           twMerge([
             "href" in props ? "cursor-pointer" : "cursor-default",
-            "relative w-full min-w-0 items-center rounded-lg text-left font-medium text-base/6 text-sidebar-fg",
+            "w-full min-w-0 items-center rounded-lg text-left font-medium text-base/6 text-sidebar-fg",
             "group/sidebar-item relative col-span-full overflow-hidden focus-visible:outline-hidden",
-            "**:data-[slot=menu-action-trigger]:absolute **:data-[slot=menu-action-trigger]:right-0 **:data-[slot=menu-action-trigger]:flex **:data-[slot=menu-action-trigger]:h-full **:data-[slot=menu-action-trigger]:w-[calc(var(--sidebar-width)-90%)] **:data-[slot=menu-action-trigger]:items-center **:data-[slot=menu-action-trigger]:justify-end **:data-[slot=menu-action-trigger]:pr-2.5 **:data-[slot=menu-action-trigger]:opacity-0 **:data-[slot=menu-action-trigger]:pressed:opacity-100 **:data-[slot=menu-action-trigger]:has-data-focus:opacity-100 **:data-[slot=menu-action-trigger]:focus-visible:opacity-100 hover:**:data-[slot=menu-action-trigger]:opacity-100",
+            "**:data-[slot=menu-trigger]:absolute **:data-[slot=menu-trigger]:right-0 **:data-[slot=menu-trigger]:flex **:data-[slot=menu-trigger]:h-full **:data-[slot=menu-trigger]:w-[calc(var(--sidebar-width)-90%)] **:data-[slot=menu-trigger]:items-center **:data-[slot=menu-trigger]:justify-end **:data-[slot=menu-trigger]:pr-2.5 **:data-[slot=menu-trigger]:opacity-0 **:data-[slot=menu-trigger]:pressed:opacity-100 **:data-[slot=menu-trigger]:has-data-focus:opacity-100 **:data-[slot=menu-trigger]:focus-visible:opacity-100 hover:**:data-[slot=menu-trigger]:opacity-100",
             "**:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg sm:**:data-[slot=icon]:size-4",
             "**:last:data-[slot=icon]:size-5 sm:**:last:data-[slot=icon]:size-4",
             "**:data-[slot=avatar]:*:size-5 **:data-[slot=avatar]:size-5",
             "has-[[data-slot=avatar]]:has-[[data-slot=sidebar-label]]:gap-2 has-[[data-slot=icon]]:has-[[data-slot=sidebar-label]]:gap-2",
-            "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] p-2 **:last:data-[slot=icon]:ml-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:text-sm/5",
-            "has-[a]:p-0",
+            "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] **:last:data-[slot=icon]:ml-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:text-sm/5",
+            "p-2 has-[a]:p-0",
             "[--sidebar-current-bg:var(--color-sidebar-primary)] [--sidebar-current-fg:var(--color-sidebar-primary-fg)]",
             isCurrent &&
-              "bg-(--sidebar-current-bg)/90 font-medium text-(--sidebar-current-fg) hover:bg-(--sidebar-current-bg) hover:text-(--sidebar-current-fg) **:data-[slot=icon]:text-(--sidebar-current-fg) hover:**:data-[slot=icon]:text-(--sidebar-current-fg) [&_.text-muted-fg]:text-sidebar-primary-fg/80",
+              "font-medium text-(--sidebar-current-fg) hover:bg-(--sidebar-current-bg) hover:text-(--sidebar-current-fg) **:data-[slot=icon]:text-(--sidebar-current-fg) hover:**:data-[slot=icon]:text-(--sidebar-current-fg) [&_.text-muted-fg]:text-fg/80",
             isFocusVisible && "inset-ring inset-ring-sidebar-ring outline-hidden",
             (isPressed || isHovered) &&
               "bg-sidebar-accent text-sidebar-accent-fg **:data-[slot=icon]:text-text-sidebar-accent-fg",
@@ -456,7 +456,7 @@ const SidebarItem = ({
         className="**:data-[slot=icon]:hidden **:data-[slot=sidebar-label-mask]:hidden"
         inverse
         placement="right"
-        showArrow
+        arrow
         hidden={!isCollapsed || isMobile || !tooltip}
         {...tooltip}
       />
@@ -489,7 +489,7 @@ const SidebarInset = ({ className, ref, ...props }: React.ComponentProps<"main">
       className={twMerge(
         "relative flex w-full flex-1 flex-col bg-bg lg:min-w-0",
         "peer-data-[intent=inset]:border peer-data-[intent=inset]:border-sidebar-border md:peer-data-[intent=inset]:peer-data-[state=collapsed]:ml-2 md:peer-data-[intent=inset]:m-2 md:peer-data-[intent=inset]:ml-0 md:peer-data-[intent=inset]:rounded-2xl",
-        "peer-data-[intent=inset]:bg-bg dark:peer-data-[intent=inset]:bg-sidebar",
+        "peer-data-[intent=inset]:bg-overlay",
         className,
       )}
       {...props}
@@ -507,7 +507,10 @@ const SidebarDisclosureGroup = ({
     <DisclosureGroup
       data-slot="sidebar-disclosure-group"
       allowsMultipleExpanded={allowsMultipleExpanded}
-      className={cx("col-span-full flex min-w-0 flex-col gap-y-0.5", className)}
+      className={cx(
+        "col-span-full flex min-w-0 flex-col gap-y-0.5 in-data-[state=collapsed]:gap-y-1.5",
+        className,
+      )}
       {...props}
     />
   )
@@ -523,11 +526,7 @@ const SidebarDisclosure = ({ className, ref, ...props }: SidebarDisclosureProps)
     <Disclosure
       ref={ref}
       data-slot="sidebar-disclosure"
-      className={cx(
-        state === "collapsed" ? "p-2" : "p-4",
-        "group col-span-full min-w-0",
-        className,
-      )}
+      className={cx("col-span-full min-w-0", state === "collapsed" ? "px-2" : "px-4", className)}
       {...props}
     />
   )
@@ -569,19 +568,10 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
           <>
             {typeof props.children === "function" ? props.children(values) : props.children}
             {state !== "collapsed" && (
-              <svg
+              <ChevronDownIcon
                 data-slot="chevron"
                 className="z-10 ml-auto size-3.5 transition-transform duration-200 group-aria-expanded/sidebar-disclosure-trigger:rotate-180"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              />
             )}
           </>
         )}
@@ -593,13 +583,19 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
 const SidebarDisclosurePanel = ({ className, ...props }: DisclosurePanelProps) => {
   return (
     <DisclosurePanel
+      data-slot="sidebar-disclosure-panel"
       className={cx(
-        "col-span-full grid h-(--disclosure-panel-height) grid-cols-[auto_1fr] gap-y-0.5 overflow-clip transition-[height] duration-200",
+        "h-(--disclosure-panel-height) overflow-clip transition-[height] duration-200",
         className,
       )}
       {...props}
     >
-      <div className="col-span-full grid min-w-0 grid-cols-[auto_1fr]">{props.children}</div>
+      <div
+        data-slot="sidebar-disclosure-panel-content"
+        className="col-span-full grid grid-cols-[auto_1fr] gap-y-0.5 in-data-[state=collapsed]:gap-y-1.5"
+      >
+        {props.children}
+      </div>
     </DisclosurePanel>
   )
 }
@@ -640,7 +636,17 @@ const SidebarTrigger = ({
     >
       {children || (
         <>
-          <IconSidebarFill />
+          <svg
+            data-slot="icon"
+            className="size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            width={16}
+            height={16}
+            fill="currentcolor"
+          >
+            <path d="M13.25 2.5c.69 0 1.25.56 1.25 1.25v8.5c0 .69-.56 1.25-1.25 1.25H7.5V15h5.75A2.75 2.75 0 0 0 16 12.25v-8.5A2.75 2.75 0 0 0 13.25 1H7.5v1.5zM5.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-3A2.75 2.75 0 0 1 0 12.25v-8.5A2.75 2.75 0 0 1 2.75 1z" />
+          </svg>
           <span className="sr-only">Toggle Sidebar</span>
         </>
       )}

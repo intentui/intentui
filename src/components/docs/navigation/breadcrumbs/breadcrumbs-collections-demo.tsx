@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import type { Key } from "react-aria-components"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
 
 export default function BreadcrumbsCollectionsDemo() {
   const [breadcrumbs, setBreadcrumbs] = useState([
@@ -19,7 +19,7 @@ export default function BreadcrumbsCollectionsDemo() {
     <Breadcrumbs items={breadcrumbs} onAction={navigate}>
       {(item) => (
         <>
-          <Breadcrumbs.Item href={item.href}>{item.label}</Breadcrumbs.Item>
+          <BreadcrumbsItem href={item.href}>{item.label}</BreadcrumbsItem>
         </>
       )}
     </Breadcrumbs>

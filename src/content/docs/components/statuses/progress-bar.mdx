@@ -16,22 +16,33 @@ Progress bars show how much an operation is done, either exactly or roughly, ove
 npx shadcn@latest add @intentui/progress-bar
 ```
 
-## Composed components
-<Composed components={['field']}/>
-
 ## Manual installation
 ```bash
-npm i react-aria-components motion
+npm i tailwind-merge
 ```
 <SourceCode toShow='progress-bar'/>
 
 ## Anatomy
 ```
-import { ProgressBar } from "@/components/ui/progress-bar"
-<ProgressBar label="Loading…" value={25} />
+import { Description, Label } from "@/components/ui/field"
+import {
+  ProgressBar,
+  ProgressBarHeader,
+  ProgressBarTrack,
+  ProgressBarValue,
+} from "@/components/ui/progress-bar"
+```
+```
+<ProgressBar value={value}>
+  <ProgressBarHeader>
+    <Label>Loading…</Label>
+    <ProgressBarValue />
+  </ProgressBarHeader>
+  <ProgressBarTrack />
+  <Description>This is an example of a progress bar indicating 50% completion.</Description>
+</ProgressBar>
 ```
 
 ## Indeterminate
-
 An indeterminate progress bar is a type of progress indicator that does not show a specific amount of progress or percentage complete.
 <How toUse="statuses/progress-bar/indeterminate-progress-bar-demo" />

@@ -1,6 +1,6 @@
 "use client"
 
-import { IconGallery } from "@intentui/icons"
+import { PhotoIcon } from "@heroicons/react/24/outline"
 import type { DropEvent } from "@react-types/shared"
 import { useState } from "react"
 import { isFileDropItem } from "react-aria-components"
@@ -43,7 +43,7 @@ export default function DropZoneAndFileTriggerDemo() {
       ) : (
         <div className="grid space-y-3">
           <div className="mx-auto grid size-12 place-content-center rounded-full border bg-secondary/70 group-data-[drop-target]:border-primary/70 group-data-[drop-target]:bg-primary/20">
-            <IconGallery className="size-5" />
+            <PhotoIcon className="size-5" />
           </div>
           <div className="flex justify-center">
             <FileTrigger

@@ -1,17 +1,14 @@
 "use client"
 
-import {
-  IconBrackets2,
-  IconBrandCss,
-  IconBrandReactjs,
-  IconBrandTypescript,
-  IconFile,
-} from "@intentui/icons"
+import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
 import { Tab } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/pull-registry"
+import { BrandCssIcon } from "@/components/icons/brand-css-icon"
+import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
+import { BrandTypescriptIcon } from "@/components/icons/brand-typescript-icon"
 import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 import { copyToClipboard } from "@/lib/copy"
 
@@ -70,15 +67,15 @@ export function CodeBlock({ source }: Props) {
                   id={key}
                 >
                   {key.includes("css") ? (
-                    <IconBrandCss className="text-blue-500" />
+                    <BrandCssIcon className="size-4 text-blue-500" />
                   ) : key.includes(".tsx") ? (
-                    <IconBrandReactjs className="text-sky-500" />
+                    <BrandReactjsIcon className="size-4 text-sky-500" />
                   ) : key.includes(".ts") ? (
-                    <IconBrandTypescript className="text-sky-500" />
+                    <BrandTypescriptIcon className="size-4 text-sky-500" />
                   ) : key.includes(".json") ? (
-                    <IconBrackets2 className="text-purple-400" />
+                    <CodeBracketIcon className="size-4 text-purple-400" />
                   ) : (
-                    <IconFile />
+                    <DocumentTextIcon />
                   )}
                   <span className="inline sm:hidden">{key.split("/").pop()}</span>
                   <span className="hidden sm:inline">{key}</span>

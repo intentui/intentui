@@ -1,5 +1,5 @@
 import { useMemo } from "react"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
 
 type EngagementPoint = {
@@ -23,13 +23,13 @@ export default function LineChartCustomColorsDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Engagement last 7d</Card.Title>
-        <Card.Description>
+      <CardHeader>
+        <CardTitle>Engagement last 7d</CardTitle>
+        <CardDescription>
           Tracks likes, comments, and shares during the most recent 7-day period.
-        </Card.Description>
-      </Card.Header>
-      <Card.Content>
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
         <LineChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={engagementData}
@@ -47,7 +47,7 @@ export default function LineChartCustomColorsDemo() {
             },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

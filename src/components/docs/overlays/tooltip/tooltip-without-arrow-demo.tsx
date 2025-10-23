@@ -2,18 +2,18 @@
 
 import { Badge } from "@/components/ui/badge"
 import { Description } from "@/components/ui/field"
-import { Tooltip } from "@/components/ui/tooltip"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 
 export default function TooltipWithoutArrowDemo() {
   return (
     <Tooltip>
-      <Tooltip.Trigger aria-label="Fresh drop alert">
+      <TooltipTrigger aria-label="Fresh drop alert">
         <Badge isCircle>New</Badge>
-      </Tooltip.Trigger>
-      <Tooltip.Content showArrow={false}>
+      </TooltipTrigger>
+      <TooltipContent arrow={false}>
         <strong className="font-semibold">Fresh drop alert</strong> <br />
         <Description>Scope the newest addition to our stash.</Description>
-      </Tooltip.Content>
+      </TooltipContent>
     </Tooltip>
   )
 }

@@ -1,22 +1,23 @@
 "use client"
 
 import {
-  IconArchive2,
-  IconBrandIntentui,
-  IconChevronsY,
-  IconCube,
-  IconDashboard,
-  IconDashboardFill,
-  IconDotsHorizontal,
-  IconHashtag,
-  IconHeadphonesFill,
-  IconHighlight,
-  IconLogout,
-  IconSettingsFill,
-  IconShieldFill,
-  IconTrash,
-  IconUpload,
-} from "@intentui/icons"
+  ArchiveBoxIcon,
+  ArrowUpTrayIcon,
+  ChevronUpDownIcon,
+  CubeIcon,
+  EllipsisHorizontalIcon,
+  HashtagIcon,
+  HomeIcon as HomeOutline,
+  PencilSquareIcon,
+  SparklesIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline"
+import {
+  Cog6ToothIcon as Cog6ToothSolid,
+  HomeIcon as HomeSolid,
+  LifebuoyIcon as LifebuoySolid,
+  ShieldCheckIcon as ShieldCheckSolid,
+} from "@heroicons/react/24/solid"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
 import {
@@ -48,7 +49,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandIntentui className="size-6" />
+          <SparklesIcon className="size-6" />
           <SidebarLabel className="font-medium">
             Intent <span className="text-muted-fg">UI</span>
           </SidebarLabel>
@@ -59,11 +60,11 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
         <SidebarSectionGroup>
           <SidebarSection>
             <SidebarItem isCurrent href="#">
-              <IconDashboard />
+              <HomeOutline />
               <SidebarLabel>Overview</SidebarLabel>
             </SidebarItem>
             <SidebarItem href="#">
-              <IconCube />
+              <CubeIcon />
               <SidebarLabel>Blog</SidebarLabel>
             </SidebarItem>
           </SidebarSection>
@@ -73,29 +74,29 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                 {({ isCollapsed }) => (
                   <>
                     <SidebarLink href="#">
-                      <IconHashtag />
+                      <HashtagIcon />
                       <SidebarLabel>{item.label}</SidebarLabel>
                     </SidebarLink>
                     {!isCollapsed && (
                       <Menu>
                         <MenuTrigger data-slot="menu-action-trigger" aria-label="Manage">
-                          <IconDotsHorizontal />
+                          <EllipsisHorizontalIcon />
                         </MenuTrigger>
                         <MenuContent popover={{ offset: 0, placement: "right top" }}>
                           <MenuItem href="#edit">
-                            <IconHighlight />
+                            <PencilSquareIcon />
                             Edit
                           </MenuItem>
                           <MenuItem href="#share">
-                            <IconUpload />
+                            <ArrowUpTrayIcon />
                             Share
                           </MenuItem>
                           <MenuItem href="#archive">
-                            <IconArchive2 />
+                            <ArchiveBoxIcon />
                             Archive
                           </MenuItem>
-                          <MenuItem isDanger={true} href="#delete">
-                            <IconTrash />
+                          <MenuItem intent="danger" href="#delete">
+                            <TrashIcon />
                             Delete
                           </MenuItem>
                         </MenuContent>
@@ -124,7 +125,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                 <span className="-mt-0.5 block text-muted-fg">kurt@domain.com</span>
               </div>
             </div>
-            <IconChevronsY data-slot="chevron" />
+            <ChevronUpDownIcon data-slot="chevron" />
           </MenuTrigger>
           <MenuContent
             className="in-data-[sidebar-collapsible=collapsed]:min-w-56 min-w-(--trigger-width)"
@@ -138,26 +139,26 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </MenuSection>
 
             <MenuItem href="#dashboard">
-              <IconDashboardFill />
+              <HomeSolid />
               Dashboard
             </MenuItem>
             <MenuItem href="#settings">
-              <IconSettingsFill />
+              <Cog6ToothSolid />
               Settings
             </MenuItem>
             <MenuItem href="#security">
-              <IconShieldFill />
+              <ShieldCheckSolid />
               Security
             </MenuItem>
             <MenuSeparator />
 
             <MenuItem href="#contact">
-              <IconHeadphonesFill />
+              <LifebuoySolid />
               Customer Support
             </MenuItem>
             <MenuSeparator />
             <MenuItem href="#logout">
-              <IconLogout />
+              <ArrowUpTrayIcon />
               Log out
             </MenuItem>
           </MenuContent>

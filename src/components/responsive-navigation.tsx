@@ -1,4 +1,3 @@
-import { IconBrandDiscord, IconBrandGithub, IconBrandX } from "@intentui/icons"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import type { LinkProps, PopoverProps } from "react-aria-components"
@@ -6,8 +5,11 @@ import { DialogTrigger, Link, Popover } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { menus } from "@/app/(home)/partials/navbar"
 import { components, dm, gs, prologue, sortedGsChildren } from "@/components/aside"
+import { BrandDiscordIcon } from "@/components/icons/brand-discord-icon"
+import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
+import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { ThemeSwitcher } from "@/components/theme-switcher"
-import { Button } from "@/components/ui/button"
+import { Button, buttonStyles } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
 import { cx } from "@/lib/primitive"
@@ -130,26 +132,25 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
       <div className="flex-1" aria-hidden />
       <div className="flex items-center gap-x-0.5">
         <Link
-          className="p-2 text-muted-fg outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
+          className={buttonStyles({ intent: "plain", size: "sq-sm" })}
           href={siteConfig.links.twitter}
           target="_blank"
         >
-          <IconBrandX className="size-5" />
+          <BrandXIcon className="size-5" />
         </Link>
         <Link
-          className="p-2 text-muted-fg outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
+          className={buttonStyles({ intent: "plain", size: "sq-sm" })}
           href={siteConfig.discord}
           target="_blank"
         >
-          <IconBrandDiscord className="size-5" />
+          <BrandDiscordIcon className="size-5" />
         </Link>
         <Link
-          className="inline-flex gap-x-2 p-2 font-medium font-mono text-muted-fg text-sm outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
+          className={buttonStyles({ intent: "plain", size: "sq-sm" })}
           href={siteConfig.repo}
           target="_blank"
         >
-          <IconBrandGithub className="size-5" />
-          {siteConfig.repoStars}K
+          <BrandGithubIcon className="size-5" />
         </Link>
         <Separator orientation="vertical" className="mr-1.5 ml-2.5 h-5" />
         <ThemeSwitcher className="**:data-[slot=icon]:size-5" intent="plain" />

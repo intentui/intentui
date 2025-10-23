@@ -1,6 +1,6 @@
 "use client"
-import { IconBrandIntentui } from "@intentui/icons"
 import { starterKits } from "@/app/(home)/partials/starter-kit"
+import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { PageContainer } from "@/components/page-container"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
@@ -26,7 +26,6 @@ const navigation = {
     { name: "Design", href: "https://design.intentui.com" },
     { name: "Templates", href: "https://design.intentui.com/products" },
     { name: "Sponsor", href: "https://github.com/sponsors/irsyadadl" },
-    { name: "Icons", href: "/icons" },
   ],
   templates: [
     { name: "Deploy", href: "https://design.intentui.com/products/ecommerce-design-template" },
@@ -58,7 +57,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[20rem_auto] lg:grid-cols-[18rem_auto] lg:gap-10 xl:grid-cols-[20rem_auto] xl:gap-24">
           <div>
             <Link href="/" className="flex items-center font-semibold text-fg text-lg">
-              <IconBrandIntentui className="size-5 text-primary" />
+              <BrandIntentuiIcon className="size-5" />
               <span className="ml-2">
                 Intent <span className="text-muted-fg">UI</span>
               </span>

@@ -1,27 +1,52 @@
 "use client"
 
-import { useListData } from "react-stately"
-import { Description } from "@/components/ui/field"
+import { useState } from "react"
+import type { Selection } from "react-aria-components"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { TagField } from "@/components/ui/tag-field"
 
 export default function TagFieldControlledDemo() {
-  const selectedItems = useListData({
-    initialItems: [{ id: 1, name: "Ferrari" }],
-  })
+  const [codes, setCodes] = useState<Selection>(new Set(["WELCOME10", "FREESHIP"]))
+  const [text, setText] = useState("")
+
+  const handleText = (v: string) => {
+    const cleaned = v
+      .replace(/[^A-Z0-9]/gi, "")
+      .toUpperCase()
+      .slice(0, 10)
+    setText(cleaned)
+  }
 
   return (
-    <div className="max-w-xs">
-      <TagField
-        appearance="outline"
-        label="Add tag"
-        onItemInserted={(key) => console.info("onItemInserted", key)}
-        onItemCleared={(key) => console.info("onItemCleared", key)}
-        description="You can add multiple tags"
-        list={selectedItems}
-      />
-      <Description className="mt-4 block max-w-xs [&>strong]:text-fg [&>strong]:text-medium">
-        {JSON.stringify(selectedItems.items)}
-      </Description>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Controlled input</CardTitle>
+        <CardDescription>
+          The input value is managed externally, allowing you to validate, sanitize, or sync it with
+          other parts of your app, such as forms, counters, or APIs.
+        </CardDescription>
+        <CardAction className="text-muted-fg text-sm tabular-nums">{text.length}/10</CardAction>
+      </CardHeader>
+      <CardContent>
+        <TagField
+          value={codes}
+          onChange={setCodes}
+          inputValue={text}
+          onInputValueChange={handleText}
+        >
+          <Label>Coupon codes</Label>
+          <Input placeholder="Add codes, press Enter" />
+        </TagField>
+      </CardContent>
+    </Card>
   )
 }

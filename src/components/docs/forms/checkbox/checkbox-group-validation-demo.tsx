@@ -1,13 +1,15 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
-import { Form } from "@/components/ui/form"
+import { Label } from "@/components/ui/field"
 
 export default function CheckboxValidationDemo() {
   return (
     <Form onSubmit={() => {}} className="space-y-6">
-      <CheckboxGroup label="Settings" isRequired>
+      <CheckboxGroup isRequired>
+        <Label>Settings</Label>
         <Checkbox value="notifications">Enable notifications</Checkbox>
         <Checkbox value="auto_update">Auto-update applications</Checkbox>
         <Checkbox value="dark_mode">Enable dark mode</Checkbox>

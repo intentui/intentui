@@ -2,12 +2,12 @@
 
 import type { DialogProps, DialogTriggerProps, ModalOverlayProps } from "react-aria-components"
 import {
-  composeRenderProps,
   DialogTrigger as DialogTriggerPrimitive,
   ModalOverlay,
   Modal as ModalPrimitive,
 } from "react-aria-components"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twJoin } from "tailwind-merge"
+import { cx } from "@/lib/primitive"
 import {
   Dialog,
   DialogBody,
@@ -65,40 +65,31 @@ const ModalContent = ({
     <ModalOverlay
       data-slot="modal-overlay"
       isDismissable={isDismissable}
-      className={({ isExiting, isEntering }) =>
-        twJoin(
-          "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) bg-black/15",
-          "grid grid-rows-[1fr_auto] justify-items-center duration-300 sm:grid-rows-[1fr_auto_3fr]",
-          size === "fullscreen" ? "md:p-3" : "md:p-4",
-          isEntering && "fade-in animate-in",
-          isExiting && "fade-out animate-out",
-          isBlurred && "backdrop-blur-sm backdrop-filter",
-        )
-      }
+      className={twJoin(
+        "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) bg-black/15",
+        "grid grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_3fr]",
+        size === "fullscreen" ? "md:p-3" : "md:p-4",
+        "entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
+        "exiting:fade-out exiting:animate-out exiting:ease-in",
+        isBlurred && "backdrop-blur-[1px] backdrop-filter",
+      )}
       {...props}
     >
       <ModalPrimitive
         data-slot="modal-content"
-        className={composeRenderProps(className, (className, { isEntering, isExiting }) =>
-          twMerge(
-            "row-start-2 w-full text-left align-middle",
-            "[--visual-viewport-vertical-padding:16px]",
-            size === "fullscreen"
-              ? "md:rounded-md sm:[--visual-viewport-vertical-padding:16px]"
-              : "md:rounded-xl sm:[--visual-viewport-vertical-padding:32px]",
-            "relative overflow-hidden bg-overlay text-overlay-fg",
-            "rounded-t-2xl shadow-lg ring ring-fg/5 dark:ring-border",
-            sizes[size],
-            isEntering && [
-              "fade-in slide-in-from-bottom animate-in duration-300 ease-out",
-              "md:zoom-in-95 md:slide-in-from-bottom-0",
-            ],
-            isExiting && [
-              "fade-out slide-out-to-bottom animate-out duration-200 ease-in",
-              "md:zoom-out-95 md:slide-out-to-bottom-0",
-            ],
-            className,
-          ),
+        className={cx(
+          "row-start-2 w-full text-left align-middle",
+          "[--visual-viewport-vertical-padding:16px]",
+          size === "fullscreen"
+            ? "sm:rounded-md sm:[--visual-viewport-vertical-padding:16px]"
+            : "sm:rounded-xl sm:[--visual-viewport-vertical-padding:32px]",
+          "relative overflow-hidden bg-overlay text-overlay-fg",
+          "rounded-t-2xl shadow-lg ring ring-fg/5 dark:ring-border",
+          sizes[size],
+
+          "entering:slide-in-from-bottom sm:entering:zoom-in-95 sm:entering:slide-in-from-bottom-0 entering:animate-in entering:duration-300 entering:ease-out",
+          "exiting:slide-out-to-bottom sm:exiting:zoom-out-95 sm:exiting:slide-out-to-bottom-0 exiting:animate-out exiting:ease-in",
+          className,
         )}
         {...props}
       >
@@ -122,15 +113,6 @@ const ModalDescription = DialogDescription
 const ModalFooter = DialogFooter
 const ModalBody = DialogBody
 const ModalClose = DialogClose
-
-Modal.Trigger = ModalTrigger
-Modal.Header = ModalHeader
-Modal.Title = ModalTitle
-Modal.Description = ModalDescription
-Modal.Footer = ModalFooter
-Modal.Body = ModalBody
-Modal.Close = ModalClose
-Modal.Content = ModalContent
 
 export {
   Modal,

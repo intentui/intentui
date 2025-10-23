@@ -1,7 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxGroup, CheckboxLabel } from "@/components/ui/checkbox"
+import { Description } from "@/components/ui/field"
 import {
   Sheet,
   SheetBody,
@@ -24,21 +25,22 @@ export default function SheetControlledDemo() {
         </SheetHeader>
         <SheetBody>
           <CheckboxGroup aria-label="Notification Settings">
-            <Checkbox
-              value="n1"
-              label="Email Notifications"
-              description="Receive updates via email."
-            />
-            <Checkbox
-              value="n2"
-              label="SMS Notifications"
-              description="Receive updates via SMS messages."
-            />
-            <Checkbox
-              value="n3"
-              label="Push Notifications"
-              description="Receive real-time notifications on your device."
-            />
+            <Checkbox value="n1">
+              <CheckboxLabel>Email Notifications</CheckboxLabel>
+              <Description>Receive updates via email.</Description>
+            </Checkbox>
+            <Checkbox value="n2">
+              <CheckboxLabel>SMS Notifications</CheckboxLabel>
+              <Description>Receive updates via SMS messages.</Description>
+            </Checkbox>
+            <Checkbox>
+              <CheckboxLabel>SMS Notifications</CheckboxLabel>
+              <Description>Receive updates via SMS messages.</Description>
+            </Checkbox>
+            <Checkbox value="n3">
+              <CheckboxLabel>Push Notifications</CheckboxLabel>
+              <Description>Receive real-time notifications on your device.</Description>
+            </Checkbox>
           </CheckboxGroup>
         </SheetBody>
         <SheetFooter>

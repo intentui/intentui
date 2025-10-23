@@ -25,7 +25,7 @@ export default function CommandMenuDescriptionDemo() {
           placeholder="Search for apps and commands..."
         />
         <CommandMenuList>
-          <CommandMenuSection className="mt-2" title="Suggestions">
+          <CommandMenuSection className="mt-2" label="Suggestions">
             <CommandMenuItem textValue="phpstorm">
               PhpStorm
               <CommandMenuDescription>Application</CommandMenuDescription>
@@ -40,7 +40,7 @@ export default function CommandMenuDescriptionDemo() {
             </CommandMenuItem>
           </CommandMenuSection>
 
-          <CommandMenuSection title="Applications">
+          <CommandMenuSection label="Applications">
             <CommandMenuItem textValue="terminal">
               Terminal
               <CommandMenuDescription>Application</CommandMenuDescription>
@@ -51,7 +51,7 @@ export default function CommandMenuDescriptionDemo() {
             </CommandMenuItem>
           </CommandMenuSection>
 
-          <CommandMenuSection title="Commands">
+          <CommandMenuSection label="Commands">
             <CommandMenuItem textValue="git status">
               Git status
               <CommandMenuDescription>Command</CommandMenuDescription>
@@ -66,7 +66,7 @@ export default function CommandMenuDescriptionDemo() {
             </CommandMenuItem>
           </CommandMenuSection>
 
-          <CommandMenuSection title="System Settings">
+          <CommandMenuSection label="System Settings">
             <CommandMenuItem textValue="display brightness">
               Display Brightness
               <CommandMenuDescription>System Settings</CommandMenuDescription>

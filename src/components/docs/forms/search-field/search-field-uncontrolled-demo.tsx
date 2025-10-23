@@ -1,7 +1,11 @@
 "use client"
 
-import { SearchField } from "@/components/ui/search-field"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 
 export default function SearchFieldControlledDemo() {
-  return <SearchField defaultValue="Laravel" />
+  return (
+    <SearchField defaultValue="Laravel" aria-label="Framework">
+      <SearchInput />
+    </SearchField>
+  )
 }

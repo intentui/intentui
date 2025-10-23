@@ -14,14 +14,11 @@ import { tv } from "tailwind-variants"
 
 const tooltipStyles = tv({
   base: [
-    "group origin-(--trigger-anchor-point) rounded-lg border px-2.5 py-1.5 text-sm/6 will-change-transform dark:shadow-none *:[strong]:font-medium",
+    "group origin-(--trigger-anchor-point) rounded-lg border border-(--tooltip-border) px-2.5 py-1.5 text-sm/6 will-change-transform [--tooltip-border:var(--color-muted-fg)]/30 dark:shadow-none *:[strong]:font-medium",
   ],
   variants: {
     inverse: {
-      true: [
-        "border-transparent bg-fg text-bg [.text-muted-fg]:text-secondary",
-        "*:[.text-muted-fg]:text-secondary",
-      ],
+      true: ["border-transparent bg-fg text-bg", "**:[.text-muted-fg]:text-bg/60"],
       false: "bg-overlay text-overlay-fg",
     },
     isEntering: {
@@ -48,13 +45,13 @@ const Tooltip = (props: TooltipProps) => <TooltipTriggerPrimitive {...props} />
 interface TooltipContentProps
   extends Omit<TooltipPrimitiveProps, "children">,
     VariantProps<typeof tooltipStyles> {
-  showArrow?: boolean
+  arrow?: boolean
   children?: React.ReactNode
 }
 
 const TooltipContent = ({
   offset = 10,
-  showArrow = true,
+  arrow = true,
   inverse,
   children,
   ...props
@@ -71,7 +68,7 @@ const TooltipContent = ({
         }),
       )}
     >
-      {showArrow && (
+      {arrow && (
         <OverlayArrow className="group">
           <svg
             width={12}
@@ -80,7 +77,7 @@ const TooltipContent = ({
             // inverse
             className={twJoin(
               "group-placement-left:-rotate-90 block group-placement-bottom:rotate-180 group-placement-right:rotate-90 forced-colors:fill-[Canvas] forced-colors:stroke-[ButtonBorder]",
-              inverse ? "fill-fg stroke-transparent" : "fill-overlay stroke-border",
+              inverse ? "fill-fg stroke-transparent" : "fill-overlay stroke-(--tooltip-border)",
             )}
           >
             <path d="M0 0 L6 6 L12 0" />
@@ -92,9 +89,7 @@ const TooltipContent = ({
   )
 }
 
-Tooltip.Trigger = Button
-Tooltip.Content = TooltipContent
-const TooltipTrigger = Tooltip.Trigger
+const TooltipTrigger = Button
 
 export type { TooltipProps, TooltipContentProps }
 export { Tooltip, TooltipTrigger, TooltipContent }

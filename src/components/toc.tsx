@@ -1,5 +1,5 @@
 "use client"
-import { IconAlignmentLeft } from "@intentui/icons"
+import { ListBulletIcon } from "@heroicons/react/24/outline"
 import type { TableOfContents, TOCItemType } from "fumadocs-core/server"
 import { Suspense, useEffect, useRef, useState } from "react"
 import { Heading } from "react-aria-components"
@@ -60,7 +60,7 @@ export function Toc({ className, items }: Props) {
             level={2}
             className="mb-6 flex items-center gap-x-2 font-medium text-base text-fg leading-7 lg:text-sm"
           >
-            <IconAlignmentLeft className="text-muted-fg" /> On this page
+            <ListBulletIcon className="size-4 text-muted-fg" /> On this page
           </Heading>
           {items.length > 0 && (
             <ul className="flex flex-col gap-y-2.5">

@@ -2,7 +2,7 @@
 
 import { useMemo } from "react"
 import { AreaChart } from "@/components/ui/area-chart"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function AreaChartStackedDemo() {
   const data = useMemo(
@@ -18,13 +18,13 @@ export default function AreaChartStackedDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Engagement last 7d</Card.Title>
-        <Card.Description>
+      <CardHeader>
+        <CardTitle>Engagement last 7d</CardTitle>
+        <CardDescription>
           Tracks likes, comments, and shares during the most recent 7-day period.
-        </Card.Description>
-      </Card.Header>
-      <Card.Content>
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
         <AreaChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
@@ -40,7 +40,7 @@ export default function AreaChartStackedDemo() {
             shares: { label: "Shares" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

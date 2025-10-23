@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBlock, IconChevronLgDown, IconTrash } from "@intentui/icons"
+import { ChevronDownIcon, NoSymbolIcon, TrashIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
@@ -20,36 +20,37 @@ export default function ModalTriggeredByMenuDemo() {
   const [state, setState] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
   const closeModal = () => setState(null)
-  const executeAction = (action: string) => {
+
+  const executeAction = async (action: string) => {
     setLoading(true)
-    toast(`${action.charAt(0).toUpperCase() + action.slice(1)} action executed!`)
-    wait(2000).then(() => {
-      setLoading(false)
+    try {
+      await wait(2000)
       closeModal()
-    })
+      toast(`${action.charAt(0).toUpperCase() + action.slice(1)} action executed!`)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const actionType = (t: string | null) => {
     switch (t) {
       case "delete":
         return {
-          title: "Delete User",
+          title: "Delete user",
           description: "Are you sure you want to delete this item?",
           confirmText: "Delete",
           action: () => executeAction(t),
         }
-
       case "ban":
         return {
-          title: "Ban User",
+          title: "Ban user",
           description: "Are you sure you want to ban this user?",
           confirmText: "Ban",
           action: () => executeAction(t),
         }
-
       case "restore":
         return {
-          title: "Restore User",
+          title: "Restore user",
           description: "Are you sure you want to restore this user?",
           confirmText: "Restore",
           action: () => executeAction(t),
@@ -58,19 +59,20 @@ export default function ModalTriggeredByMenuDemo() {
         return
     }
   }
+
   return (
     <>
       <Menu>
         <Button intent="outline" className="group">
           Actions...
-          <IconChevronLgDown className="decoration-200 transition-transform group-pressed:rotate-180" />
+          <ChevronDownIcon className="decoration-200 transition-transform group-pressed:rotate-180" />
         </Button>
         <MenuContent popover={{ placement: "bottom" }}>
           <MenuItem onAction={() => setState("delete")}>
-            <IconTrash /> <MenuLabel>Delete</MenuLabel>
+            <TrashIcon /> <MenuLabel>Delete</MenuLabel>
           </MenuItem>
-          <MenuItem isDanger onAction={() => setState("ban")}>
-            <IconBlock />
+          <MenuItem intent="danger" onAction={() => setState("ban")}>
+            <NoSymbolIcon />
             <MenuLabel>Ban</MenuLabel>
           </MenuItem>
           <MenuItem onAction={() => setState("restore")}>
@@ -87,6 +89,7 @@ export default function ModalTriggeredByMenuDemo() {
         <ModalFooter>
           <ModalClose>Cancel</ModalClose>
           <Button
+            autoFocus
             intent={state === "ban" ? "danger" : "primary"}
             className="min-w-24"
             isDisabled={loading}

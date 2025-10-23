@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 
-import { Description, Label } from "@/components/ui/field"
-import { Switch } from "@/components/ui/switch"
+import { Description } from "@/components/ui/field"
+import { Switch, SwitchLabel } from "@/components/ui/switch"
 
 export default function SwitchControlledDemo() {
   const [darkMode, setDarkMode] = useState(false)
@@ -11,7 +11,7 @@ export default function SwitchControlledDemo() {
     <Switch isSelected={darkMode} onChange={setDarkMode} value="dark_mode">
       {({ isSelected }) => (
         <>
-          <Label>Dark mode</Label>
+          <SwitchLabel>Dark mode</SwitchLabel>
           <Description>Dark mode is {isSelected ? "enabled" : "disabled"}.</Description>
         </>
       )}

@@ -1,19 +1,19 @@
 "use client"
 
 import {
-  IconBell,
-  IconCreditCard,
-  IconDownload,
-  IconSettings,
-  IconShield,
-  IconSupport,
-} from "@intentui/icons"
+  ArrowDownTrayIcon,
+  BellIcon,
+  Cog6ToothIcon,
+  CreditCardIcon,
+  LifebuoyIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/outline"
 import {
-  Disclosure,
+  DisclosureItem as Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,
-} from "@/components/ui/disclosure"
+} from "@/components/ui/disclosure-group"
 
 export default function DisclosureGroupBorderHiddenDemo() {
   return (
@@ -30,36 +30,36 @@ export default function DisclosureGroupBorderHiddenDemo() {
 
 const items = [
   {
-    icon: <IconSettings />,
+    icon: <Cog6ToothIcon />,
     title: "Personal Settings",
     description:
       "You can update your profile, change your password, and manage your account settings here.",
   },
   {
-    icon: <IconBell />,
+    icon: <BellIcon />,
     title: "Notifications",
     description:
       "Manage your notifications preferences, including alerts, emails, and push notifications.",
   },
   {
-    icon: <IconShield />,
+    icon: <ShieldCheckIcon />,
     title: "Privacy Options",
     description:
       "Adjust your privacy settings to control who can see your information and contact you.",
   },
   {
-    icon: <IconCreditCard />,
+    icon: <CreditCardIcon />,
     title: "Payment Methods",
     description:
       "Add, remove, or update your payment methods including credit cards and digital wallets.",
   },
   {
-    icon: <IconSupport />,
+    icon: <LifebuoyIcon />,
     title: "Support Center",
     description: "Find help with common issues, or contact support for further assistance.",
   },
   {
-    icon: <IconDownload />,
+    icon: <ArrowDownTrayIcon />,
     title: "Download Data",
     description:
       "Request a download of all your data we have stored, including account activity and user data.",

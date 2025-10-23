@@ -1,6 +1,6 @@
 "use client"
 
-import { IconCircleCheckFill, IconKey } from "@intentui/icons"
+import { CheckCircleIcon, KeyIcon } from "@heroicons/react/20/solid"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
@@ -24,11 +24,11 @@ export default function ButtonLoaderDemo() {
       intent="primary"
     >
       {loading === "success" ? (
-        <IconCircleCheckFill />
+        <CheckCircleIcon />
       ) : loading === "loading" ? (
         <Loader variant="spin" />
       ) : (
-        <IconKey />
+        <KeyIcon />
       )}
       {loading === "loading"
         ? "Generating Key..."

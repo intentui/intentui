@@ -4,8 +4,8 @@ import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/compon
 
 export default function ComboBoxDemo() {
   return (
-    <ComboBox placeholder="Select a user" aria-label="Users">
-      <ComboBoxInput />
+    <ComboBox name="user" aria-label="Users">
+      <ComboBoxInput placeholder="Select a user" />
       <ComboBoxContent items={users}>
         {(item) => (
           <ComboBoxItem id={item.id} textValue={item.name}>

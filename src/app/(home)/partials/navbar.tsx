@@ -1,25 +1,25 @@
 "use client"
 
 import {
-  IconArrowUpFill,
-  IconBrandDiscord,
-  IconBrandIntentui,
-  IconBrandX,
-  IconColorPaletteFill,
-  IconColorsFill,
-  IconHamburger,
-  IconHome,
-  IconNotesFill,
-  IconPackageFill,
-  IconSearch,
-  IconWindowFill,
-} from "@intentui/icons"
+  Bars3Icon,
+  BookOpenIcon,
+  CubeIcon,
+  HomeIcon,
+  MagnifyingGlassIcon,
+  PaintBrushIcon,
+  Squares2X2Icon,
+  SwatchIcon,
+} from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { Button } from "react-aria-components"
 import { CommandPalette } from "@/components/command-palette"
 import { GithubLink } from "@/components/github-link"
+import { BrandDiscordIcon } from "@/components/icons/brand-discord-icon"
+import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
+import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
+import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
@@ -34,13 +34,9 @@ export function Navbar() {
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <PageContainer className="hidden items-center justify-between py-4 lg:flex">
         <div className="flex items-center">
-          <Link
-            href="/"
-            className="-ml-3 mr-2 flex items-center gap-x-2 p-2 font-medium"
-            aria-label="Goto homepage"
-          >
-            <IconBrandIntentui className="size-6 text-white" />
-            <span className="hidden sm:inline">
+          <Link href="/" className="mr-2 flex items-center gap-x-2" aria-label="Goto homepage">
+            <BrandIntentuiIcon className="size-5 shrink-0" />
+            <span className="hidden min-w-0 sm:inline">
               <span>Intent</span> <span className="text-muted-fg">UI</span>
             </span>
           </Link>
@@ -56,23 +52,23 @@ export function Navbar() {
           <Button
             onPress={() => setOpen(true)}
             aria-label="Search docs"
-            className="p-2 text-muted-fg outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
+            className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
           >
-            <IconSearch />
+            <MagnifyingGlassIcon className="size-5" />
           </Button>
           <Link
-            className="p-2 text-muted-fg outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
+            className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
             href={siteConfig.links.twitter}
             target="_blank"
           >
-            <IconBrandX />
+            <BrandXIcon />
           </Link>
           <Link
-            className="p-2 text-muted-fg outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
+            className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
             href={siteConfig.discord}
             target="_blank"
           >
-            <IconBrandDiscord />
+            <BrandDiscordIcon />
           </Link>
           <GithubLink />
 
@@ -80,19 +76,19 @@ export function Navbar() {
             <Separator orientation="vertical" className="mx-2.5 h-5 bg-white/20" />
             <Menu>
               <Button
-                aria-label="Search docs"
+                aria-label="Open menu"
                 className="-ml-2 p-2 text-muted-fg outline-hidden hover:text-fg focus-visible:ring-2 focus-visible:ring-blue-500"
               >
-                <IconHamburger className="size-5" />
+                <Bars3Icon className="size-5" />
               </Button>
               <MenuContent placement="bottom" className="min-w-56">
                 <MenuItem href="/">
-                  <IconHome />
+                  <HomeIcon className="size-5" />
                   <MenuLabel>Home</MenuLabel>
                 </MenuItem>
                 {menus.map((menu) => (
                   <MenuItem key={menu.href} href={menu.href}>
-                    {menu.icon && <menu.icon />}
+                    {menu.icon && <menu.icon className="size-5" />}
                     <MenuLabel>{menu.label}</MenuLabel>
                   </MenuItem>
                 ))}
@@ -126,11 +122,10 @@ export const menus = [
   {
     href: "/docs/getting-started/introduction",
     label: "Docs",
-    icon: IconNotesFill,
+    icon: BookOpenIcon,
   },
-  { href: "/components", label: "Components", icon: IconPackageFill },
-  { href: "/themes", label: "Themes", icon: IconColorsFill },
-  { href: "/icons", label: "Icons", icon: IconArrowUpFill },
-  { href: "/colors", label: "Colors", icon: IconColorPaletteFill },
-  { href: "/blocks", label: "Blocks", icon: IconWindowFill },
+  { href: "/components", label: "Components", icon: CubeIcon },
+  { href: "/themes", label: "Themes", icon: PaintBrushIcon },
+  { href: "/colors", label: "Colors", icon: SwatchIcon },
+  { href: "/blocks", label: "Blocks", icon: Squares2X2Icon },
 ]

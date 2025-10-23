@@ -1,10 +1,21 @@
 "use client"
 
 import { useState } from "react"
+import { Form } from "react-aria-components"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
-import { Drawer } from "@/components/ui/drawer"
-import { Form } from "@/components/ui/form"
+import {
+  Drawer,
+  DrawerBody,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer"
+import { FieldError, Label } from "@/components/ui/field"
+import { TextField } from "@/components/ui/text-field"
 import { Textarea } from "@/components/ui/textarea"
 
 export default function DrawerNestedDemo() {
@@ -22,13 +33,13 @@ export default function DrawerNestedDemo() {
         isOpen={isRegistrationDrawerOpen}
         onOpenChange={() => setIsRegistrationDrawerOpen(false)}
       >
-        <Drawer.Content>
-          <Drawer.Header>
-            <Drawer.Title>Confirm Registration</Drawer.Title>
-            <Drawer.Description>Please confirm your registration details.</Drawer.Description>
-          </Drawer.Header>
-          <Drawer.Footer>
-            <Drawer.Close>Cancel</Drawer.Close>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Confirm Registration</DrawerTitle>
+            <DrawerDescription>Please confirm your registration details.</DrawerDescription>
+          </DrawerHeader>
+          <DrawerFooter>
+            <DrawerClose>Cancel</DrawerClose>
             <Button
               onPress={() => {
                 setIsProfileSetupDrawerOpen(true)
@@ -36,8 +47,8 @@ export default function DrawerNestedDemo() {
             >
               Confirm
             </Button>
-          </Drawer.Footer>
-        </Drawer.Content>
+          </DrawerFooter>
+        </DrawerContent>
       </Drawer>
 
       <Drawer
@@ -50,13 +61,13 @@ export default function DrawerNestedDemo() {
           setIsProfileSetupDrawerOpen(isOpen)
         }}
       >
-        <Drawer.Content>
-          <Drawer.Header>
-            <Drawer.Title>Set Up Your Profile</Drawer.Title>
-            <Drawer.Description>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Set Up Your Profile</DrawerTitle>
+            <DrawerDescription>
               We need a bit more information before you can get started.
-            </Drawer.Description>
-          </Drawer.Header>
+            </DrawerDescription>
+          </DrawerHeader>
           <Form
             onSubmit={(e) => {
               e.preventDefault()
@@ -67,20 +78,22 @@ export default function DrawerNestedDemo() {
               setIsRegistrationDrawerOpen(false)
             }}
           >
-            <Drawer.Body className="space-y-4">
-              <Textarea
-                isRequired
-                label="Bio"
-                placeholder="Tell us something about yourself"
-                onInput={() => setIsTyping(true)}
-              />
-            </Drawer.Body>
-            <Drawer.Footer>
-              <Drawer.Close>Skip for now</Drawer.Close>
+            <DrawerBody className="space-y-4">
+              <TextField isRequired>
+                <Label>Bio</Label>
+                <Textarea
+                  placeholder="Tell us something about yourself"
+                  onInput={() => setIsTyping(true)}
+                />
+                <FieldError />
+              </TextField>
+            </DrawerBody>
+            <DrawerFooter>
+              <DrawerClose>Skip for now</DrawerClose>
               <Button type="submit">Complete Setup</Button>
-            </Drawer.Footer>
+            </DrawerFooter>
           </Form>
-        </Drawer.Content>
+        </DrawerContent>
       </Drawer>
     </>
   )

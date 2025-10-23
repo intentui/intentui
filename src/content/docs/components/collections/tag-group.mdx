@@ -20,7 +20,7 @@ npx shadcn@latest add @intentui/tag-group
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 
 <SourceCode toShow='tag-group'/>
@@ -28,10 +28,12 @@ npm i react-aria-components @intentui/icons
 ## Anatomy
 ```
 import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
+import { Label } from "@/components/ui/field"
 ```
 
 ```
-<TagGroup label="Serverless" selectionMode="multiple">
+<TagGroup selectionMode="multiple">
+  <Label>Serverless</Label>
   <TagList>
     <Tag>AWS Lambda</Tag>
     <Tag>Google Cloud Functions</Tag>

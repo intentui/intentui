@@ -1,4 +1,4 @@
-import { IconDashboard } from "@intentui/icons"
+import { HomeIcon } from "@heroicons/react/24/outline"
 import MenuSubDemo from "@/components/docs/collections/menu/menu-sub-demo"
 import RangeCalendarControlledDemo from "@/components/docs/date-and-time/calendar/range-calendar-controlled-demo"
 import ModalDemo from "@/components/docs/overlays/modal/modal-demo"
@@ -9,10 +9,11 @@ import AreaChartDemo from "@/components/docs/visualizations/area-chart/area-char
 import BarChartDemo from "@/components/docs/visualizations/bar-chart/bar-chart-demo"
 import { Avatar } from "@/components/ui/avatar"
 import { Button, buttonStyles } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
-import { ComboBox } from "@/components/ui/combo-box"
-import { Description, Label } from "@/components/ui/field"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Checkbox, CheckboxGroup, CheckboxLabel } from "@/components/ui/checkbox"
+import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/components/ui/combo-box"
+import { Description, Fieldset, Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { Link } from "@/components/ui/link"
 import { Radio, RadioGroup } from "@/components/ui/radio"
 import {
@@ -23,7 +24,7 @@ import {
   SelectLabel,
   SelectTrigger,
 } from "@/components/ui/select"
-import { Switch } from "@/components/ui/switch"
+import { Switch, SwitchLabel } from "@/components/ui/switch"
 import { TextField } from "@/components/ui/text-field"
 
 export function Blocks() {
@@ -34,35 +35,35 @@ export function Blocks() {
           <div className="grid grid-cols-2 gap-2">
             {Object.keys(buttonStyles.variants.intent).map((intent) => (
               <Button key={intent} intent={intent as keyof typeof buttonStyles.variants.intent}>
-                <IconDashboard /> Label
+                <HomeIcon /> Label
               </Button>
             ))}
           </div>
         </Card>
         <Card>
-          <Card.Header>
-            <Card.Title>Login</Card.Title>
-            <Card.Description>Don't loose the level, just keep on going.</Card.Description>
-          </Card.Header>
-          <Card.Content className="space-y-6">
-            <TextField isRequired label="Email" placeholder="Enter your email" />
-            <TextField
-              isRequired
-              label="Password"
-              isRevealable
-              type="password"
-              placeholder="Enter your password"
-            />
-            <div className="flex items-center justify-between">
-              <Checkbox>Remember me</Checkbox>
-              <Link intent="primary" className="text-sm" href="#">
-                Forgot password?
-              </Link>
-            </div>
-          </Card.Content>
-          <Card.Footer>
-            <Button className="w-full">Login</Button>
-          </Card.Footer>
+          <CardHeader>
+            <CardTitle>Login</CardTitle>
+            <CardDescription>Don't loose the level, just keep on going.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Fieldset>
+              <TextField isRequired>
+                <Label>Email</Label>
+                <Input placeholder="Enter your email" />
+              </TextField>
+              <TextField isRequired>
+                <Label>Password</Label>
+                <Input type="password" placeholder="Enter your password" />
+              </TextField>
+              <div data-slot="control" className="flex items-center justify-between">
+                <Checkbox>Remember me</Checkbox>
+                <Link className="text-base/6 sm:text-sm/6" href="#">
+                  Forgot password?
+                </Link>
+              </div>
+              <Button className="mt-6 w-full">Login</Button>
+            </Fieldset>
+          </CardContent>
         </Card>
         <Card className="flex items-center justify-center gap-2 p-6">
           <div className="space-y-2">
@@ -82,16 +83,16 @@ export function Blocks() {
                 )}
               </SelectContent>
             </Select>
-            <ComboBox placeholder="Select a user" aria-label="Select a user">
-              <ComboBox.Input />
-              <ComboBox.Content items={users}>
+            <ComboBox aria-label="Select a user">
+              <ComboBoxInput placeholder="Select a user" />
+              <ComboBoxContent items={users}>
                 {(item) => (
-                  <ComboBox.Item id={item.id} textValue={item.name}>
+                  <ComboBoxItem id={item.id} textValue={item.name}>
                     <Avatar src={item.image_url} />
                     {item.name}
-                  </ComboBox.Item>
+                  </ComboBoxItem>
                 )}
-              </ComboBox.Content>
+              </ComboBoxContent>
             </ComboBox>
           </div>
         </Card>
@@ -100,41 +101,40 @@ export function Blocks() {
         </Card>
         <Card className="flex items-center justify-center p-6">
           <RadioGroup defaultValue="highSecurity" aria-label="Security settings">
-            <Radio
-              value="highSecurity"
-              label="High security"
-              description="Set all protections to maximum."
-            />
+            <Radio value="highSecurity">
+              <Label>High security</Label>
+              <Description>Set all protections to maximum.</Description>
+            </Radio>
             <CheckboxGroup
               aria-label="Advanced Security Features"
               defaultValue={["encryption", "firewall"]}
               className="ml-6"
             >
-              <Checkbox
-                value="encryption"
-                label="Encryption"
-                description="Encrypt all data at rest and in transit."
-              />
-              <Checkbox value="firewall" label="Firewall" description="Enable network firewall." />
+              <Checkbox value="encryption">
+                <CheckboxLabel>Encryption</CheckboxLabel>
+                <Description>Encrypt all data at rest and in transit.</Description>
+              </Checkbox>
+              <Checkbox value="firewall">
+                <CheckboxLabel>Firewall</CheckboxLabel>
+                <Description>Enable network firewall.</Description>
+              </Checkbox>
             </CheckboxGroup>
 
-            <Radio
-              value="balancedSecurity"
-              label="Balanced security"
-              description="Balance between protection and performance."
-            />
-            <Radio
-              value="lowSecurity"
-              label="Low security"
-              description="Minimal protection enabled."
-            />
+            <Radio value="balancedSecurity">
+              <Label>Balanced security</Label>
+              <Description>Balance between protection and performance.</Description>
+            </Radio>
+            <Radio value="lowSecurity">
+              <Label>Low security</Label>
+              <Description>Minimal protection enabled.</Description>
+            </Radio>
           </RadioGroup>
         </Card>
         <Card className="grid place-content-center">
           <Switch aria-label="Dark mode">
             {({ isSelected }) => (
               <>
-                <Label>Dark mode</Label>
+                <SwitchLabel>Dark mode</SwitchLabel>
                 <Description>
                   {isSelected ? "Dark theme is enabled" : "Light theme is currently active"}
                 </Description>
@@ -145,7 +145,7 @@ export function Blocks() {
           <Switch aria-label="Location services">
             {({ isSelected }) => (
               <>
-                <Label>Location services</Label>
+                <SwitchLabel>Location services</SwitchLabel>
                 <Description>
                   {isSelected ? "Apps can access your location" : "Location access is disabled"}
                 </Description>
@@ -156,7 +156,7 @@ export function Blocks() {
           <Switch isDisabled isSelected aria-label="Email notifications">
             {({ isSelected }) => (
               <>
-                <Label>Email notifications</Label>
+                <SwitchLabel>Email notifications</SwitchLabel>
                 <Description>
                   {isSelected
                     ? "You will receive email notifications"

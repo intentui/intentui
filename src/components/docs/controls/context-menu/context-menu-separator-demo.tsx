@@ -4,8 +4,8 @@ import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuItem,
-  ContextMenuKeyboard,
   ContextMenuSeparator,
+  ContextMenuShortcut,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 
@@ -22,20 +22,20 @@ export default function ContextMenuSeparatorDemo() {
         <ContextMenuItem>Go to Implementations</ContextMenuItem>
         <ContextMenuItem>
           Go to References
-          <ContextMenuKeyboard keys={["⌘F12"]} />
+          <ContextMenuShortcut keys={["⌘F12"]} />
         </ContextMenuItem>
         <ContextMenuItem>
           Peek
-          <ContextMenuKeyboard keys={["⇧F12"]} />
+          <ContextMenuShortcut keys={["⇧F12"]} />
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem>
           Find All References
-          <ContextMenuKeyboard keys={["⌘⇧F"]} />
+          <ContextMenuShortcut keys={["⌘⇧F"]} />
         </ContextMenuItem>
         <ContextMenuItem>
           Find All Implementations
-          <ContextMenuKeyboard keys={["⌘⇧I"]} />
+          <ContextMenuShortcut keys={["⌘⇧I"]} />
         </ContextMenuItem>
         <ContextMenuItem>Show Call Hierarchy</ContextMenuItem>
         <ContextMenuSeparator />
@@ -44,7 +44,7 @@ export default function ContextMenuSeparatorDemo() {
         <ContextMenuItem>Format Document</ContextMenuItem>
         <ContextMenuItem>
           Refactor...
-          <ContextMenuKeyboard keys={["⌘⇧R"]} />
+          <ContextMenuShortcut keys={["⌘⇧R"]} />
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

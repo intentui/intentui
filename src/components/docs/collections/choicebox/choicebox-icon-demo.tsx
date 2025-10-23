@@ -1,6 +1,8 @@
 "use client"
 
-import { IconBrandLaravel, IconBrandReactjs, IconBrandTypescript } from "@intentui/icons"
+import { BrandLaravelIcon } from "@/components/icons/brand-laravel-icon"
+import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
+import { BrandTypescriptIcon } from "@/components/icons/brand-typescript-icon"
 import {
   ChoiceBox,
   ChoiceBoxDescription,
@@ -35,18 +37,18 @@ const frameworks = [
     id: "laravel",
     label: "Laravel",
     description: "Laravel is a web application framework with expressive, elegant syntax.",
-    icon: IconBrandLaravel,
+    icon: BrandLaravelIcon,
   },
   {
     id: "react",
     label: "React",
     description: "React is a JavaScript library for building user interfaces.",
-    icon: IconBrandReactjs,
+    icon: BrandReactjsIcon,
   },
   {
     id: "ts",
     label: "Typescript",
     description: "Typescript is a typed superset of JavaScript that compiles to plain JavaScript.",
-    icon: IconBrandTypescript,
+    icon: BrandTypescriptIcon,
   },
 ]

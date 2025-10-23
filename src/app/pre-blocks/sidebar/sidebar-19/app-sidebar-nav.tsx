@@ -1,13 +1,13 @@
 "use client"
 
 import {
-  IconCommandRegular,
-  IconDashboard,
-  IconHeadphones,
-  IconLogout,
-  IconMic,
-  IconSettings,
-} from "@intentui/icons"
+  ArrowLeftEndOnRectangleIcon,
+  Cog6ToothIcon,
+  CommandLineIcon,
+  LifebuoyIcon,
+  MicrophoneIcon,
+  Squares2X2Icon,
+} from "@heroicons/react/24/outline"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -29,7 +29,7 @@ export default function AppSidebarNav() {
       <div className="mx-auto flex items-center gap-x-2 sm:min-w-120">
         <SearchField className="w-full" />
         <Button size="sq-sm" className="size-10" intent="plain">
-          <IconMic />
+          <MicrophoneIcon />
         </Button>
       </div>
       <div>
@@ -46,26 +46,26 @@ export default function AppSidebarNav() {
             </MenuSection>
 
             <MenuItem href="#dashboard">
-              <IconDashboard />
+              <Squares2X2Icon />
               Dashboard
             </MenuItem>
             <MenuItem href="#settings">
-              <IconSettings />
+              <Cog6ToothIcon />
               Settings
             </MenuItem>
             <MenuSeparator />
             <MenuItem>
-              <IconCommandRegular />
+              <CommandLineIcon />
               Command Menu
             </MenuItem>
             <MenuSeparator />
             <MenuItem href="#contact-s">
-              <IconHeadphones />
+              <LifebuoyIcon />
               Contact Support
             </MenuItem>
             <MenuSeparator />
             <MenuItem href="#logout">
-              <IconLogout />
+              <ArrowLeftEndOnRectangleIcon />
               Log out
             </MenuItem>
           </MenuContent>

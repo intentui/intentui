@@ -3,7 +3,7 @@
 import { composeRenderProps, Text, ToggleButton } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
-import { buttonStyles } from "./button"
+import { buttonStyles } from "@/components/ui/button"
 
 const showMoreStyles = tv({
   base: "text-sm leading-6 before:border-border after:border-border",
@@ -30,7 +30,7 @@ const showMoreStyles = tv({
   },
 })
 
-interface ShowMoreProps extends React.ComponentProps<typeof ToggleButton> {
+interface ShowMoreProps extends Omit<React.ComponentProps<typeof ToggleButton>, "className"> {
   className?: string
   orientation?: "horizontal" | "vertical"
   as?: "text" | "button"
@@ -39,7 +39,6 @@ interface ShowMoreProps extends React.ComponentProps<typeof ToggleButton> {
 
 const ShowMore = ({
   as = "button",
-  children,
   orientation = "horizontal",
   className,
   ...props
@@ -49,13 +48,9 @@ const ShowMore = ({
       {as === "button" ? (
         <ToggleButton
           {...props}
-          className={buttonStyles({
-            isCircle: true,
-            intent: "outline",
-            size: "sm",
-          })}
+          className={buttonStyles({ isCircle: true, intent: "outline", size: "sm" })}
         >
-          {composeRenderProps(children, (children) => children)}
+          {composeRenderProps(props.children, (children) => children)}
         </ToggleButton>
       ) : (
         <Text slot="description">{props.text}</Text>

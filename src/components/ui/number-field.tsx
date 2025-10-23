@@ -1,96 +1,31 @@
-"use client"
-
-import { IconChevronDown, IconChevronUp, IconMinus, IconPlus } from "@intentui/icons"
+import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid"
 import {
   Button,
   type ButtonProps,
   NumberField as NumberFieldPrimitive,
-  type NumberFieldProps as NumberFieldPrimitiveProps,
-  type ValidationResult,
+  type NumberFieldProps,
 } from "react-aria-components"
-import { twJoin } from "tailwind-merge"
-import { tv } from "tailwind-variants"
-import { useMediaQuery } from "@/hooks/use-media-query"
+import { Input, InputGroup } from "@/components/ui/input"
 import { cx } from "@/lib/primitive"
-import { Description, FieldError, FieldGroup, Input, Label } from "./field"
+import { fieldStyles } from "./field"
 
-const fieldBorderStyles = tv({
-  base: "group-focus:border-primary/70 forced-colors:border-[Highlight]",
-  variants: {
-    isInvalid: {
-      true: "group-focus:border-danger/70 forced-colors:border-[Mark]",
-    },
-    isDisabled: {
-      true: "group-focus:border-input/70",
-    },
-  },
-})
-
-interface NumberFieldProps extends NumberFieldPrimitiveProps {
-  label?: string
-  description?: string
-  placeholder?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
+const NumberField = ({ className, ...props }: NumberFieldProps) => {
+  return (
+    <NumberFieldPrimitive {...props} data-slot="control" className={cx(fieldStyles(), className)} />
+  )
 }
 
-const NumberField = ({
-  label,
-  placeholder,
-  description,
-  className,
-  errorMessage,
-  ...props
-}: NumberFieldProps) => {
-  const isMobile = useMediaQuery("(max-width: 768px)") ?? false
+function NumberInput(props: React.ComponentProps<typeof Input>) {
   return (
-    <NumberFieldPrimitive
-      {...props}
-      className={cx("group flex flex-col gap-y-1 *:data-[slot=label]:font-medium", className)}
-    >
-      {label && <Label>{label}</Label>}
-      <FieldGroup
-        className={twJoin(
-          isMobile && [
-            "**:[button]:inset-ring **:[button]:inset-ring-fg/5 **:[button]:grid **:[button]:size-8 **:[button]:place-content-center",
-            "*:[button]:first:ml-1 *:[button]:last:mr-1",
-            "**:[button]:bg-secondary **:[button]:pressed:bg-secondary/80",
-          ],
-        )}
-      >
-        {(renderProps) => (
-          <>
-            {isMobile ? <StepperButton slot="decrement" /> : null}
-            <Input
-              className="px-[calc(--spacing(12)-1px)] tabular-nums"
-              placeholder={placeholder}
-            />
-            {!isMobile ? (
-              <div
-                className={fieldBorderStyles({
-                  ...renderProps,
-                  className: "grid place-content-center sm:border-s",
-                })}
-              >
-                <div className="flex h-full flex-col">
-                  <StepperButton slot="increment" emblemType="chevron" className="h-4 px-1" />
-                  <div
-                    className={fieldBorderStyles({
-                      ...renderProps,
-                      className: "border-input border-b",
-                    })}
-                  />
-                  <StepperButton slot="decrement" emblemType="chevron" className="h-4 px-1" />
-                </div>
-              </div>
-            ) : (
-              <StepperButton slot="increment" />
-            )}
-          </>
-        )}
-      </FieldGroup>
-      {description && <Description>{description}</Description>}
-      <FieldError>{errorMessage}</FieldError>
-    </NumberFieldPrimitive>
+    <InputGroup className="[--input-gutter-end:--spacing(19)]">
+      <Input className="tabular-nums" {...props} />
+      <div data-slot="text" className="pointer-events-auto right-0 p-px">
+        <div className="flex h-full items-center divide-x overflow-hidden rounded-r-[calc(var(--radius-lg)-1px)] border-l">
+          <StepperButton slot="decrement" />
+          <StepperButton slot="increment" />
+        </div>
+      </div>
+    </InputGroup>
   )
 }
 
@@ -106,31 +41,25 @@ const StepperButton = ({
   emblemType = "default",
   ...props
 }: StepperButtonProps) => {
-  const icon =
-    emblemType === "chevron" ? (
-      slot === "increment" ? (
-        <IconChevronUp className="size-5" />
-      ) : (
-        <IconChevronDown className="size-5" />
-      )
-    ) : slot === "increment" ? (
-      <IconPlus />
-    ) : (
-      <IconMinus />
-    )
   return (
     <Button
       className={cx(
-        "relative z-10 h-10 cursor-default pressed:text-primary-fg text-muted-fg group-disabled:bg-secondary/70 sm:pressed:bg-primary forced-colors:group-disabled:text-[GrayText]",
+        "grid place-content-center pressed:text-fg text-muted-fg hover:text-fg disabled:opacity-50",
+        "size-full min-w-11 grow bg-input/20 pressed:bg-input/60 sm:min-w-8.5",
+        "*:data-[slot=stepper-icon]:size-5 sm:*:data-[slot=stepper-icon]:size-4",
         className,
       )}
       slot={slot}
       {...props}
     >
-      {icon}
+      {slot === "increment" ? (
+        <PlusIcon data-slot="stepper-icon" />
+      ) : (
+        <MinusIcon data-slot="stepper-icon" />
+      )}
     </Button>
   )
 }
 
 export type { NumberFieldProps }
-export { NumberField }
+export { NumberInput, NumberField }

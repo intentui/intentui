@@ -3,7 +3,14 @@
 import { useState } from "react"
 import { titleCase } from "usemods"
 import { Button } from "@/components/ui/button"
-import { SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet"
+import {
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet"
 
 type Side = "left" | "right" | "top" | "bottom"
 export default function SheetPositionDemo() {
@@ -31,6 +38,9 @@ export default function SheetPositionDemo() {
           <SheetTitle>{titleCase(sheetSide)}</SheetTitle>
           <SheetDescription>The sheet will go from {sheetSide} side.</SheetDescription>
         </SheetHeader>
+        <SheetFooter>
+          <SheetClose>Close</SheetClose>
+        </SheetFooter>
       </SheetContent>
     </>
   )

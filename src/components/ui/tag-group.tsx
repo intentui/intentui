@@ -1,6 +1,6 @@
 "use client"
 
-import { IconCircleXFill } from "@intentui/icons"
+import { XCircleIcon } from "@heroicons/react/16/solid"
 import type { TagGroupProps, TagListProps, TagProps } from "react-aria-components"
 import {
   Button,
@@ -14,6 +14,7 @@ import { cx } from "@/lib/primitive"
 export function TagGroup({ className, ...props }: TagGroupProps) {
   return (
     <PrimitiveTagGroup
+      data-slot="control"
       className={twMerge("flex flex-col gap-y-1 *:data-[slot=label]:font-medium", className)}
       {...props}
     />
@@ -31,7 +32,7 @@ export function Tag({ children, className, ...props }: TagProps) {
     <PrimitiveTag
       textValue={textValue}
       className={cx(
-        "inset-ring inset-ring-border",
+        "inset-ring inset-ring-input outline-hidden dark:bg-input/30",
         "inline-flex items-center gap-x-1.5 py-0.5 font-medium text-xs/5 forced-colors:outline",
         "*:data-[slot=icon]:size-3 *:data-[slot=icon]:shrink-0",
         "cursor-default rounded-full px-2",
@@ -46,7 +47,7 @@ export function Tag({ children, className, ...props }: TagProps) {
           {children}
           {allowsRemoving && (
             <Button slot="remove" className="">
-              <IconCircleXFill className="-mr-1 size-4" />
+              <XCircleIcon className="-mr-1 size-4" />
             </Button>
           )}
         </>

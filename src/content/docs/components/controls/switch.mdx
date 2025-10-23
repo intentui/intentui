@@ -27,30 +27,30 @@ npm i react-aria-components
 
 ## Anatomy
 ```
-import { Description, Label } from "@/components/ui/field"
-import { Switch } from "@/components/ui/switch"
+import { Description } from "@/components/ui/field"
+import { Switch, SwitchLabel } from "@/components/ui/switch"
 ```
 
 ```
 <>
   <Switch value="profileVisible">
-    <Label>Public profile</Label>
+    <SwitchLabel>Public profile</SwitchLabel>
     <Description>Allow others to see your profile.</Description>
   </Switch>
   <Switch value="searchEngineIndexing">
-    <Label>Search engine indexing</Label>
+    <SwitchLabel>Search engine indexing</SwitchLabel>
     <Description>
       Allow search engines to index your profile.
     </Description>
   </Switch>
   <Switch defaultSelected value="twoFactor">
-    <Label>Two-factor authentication</Label>
+    <SwitchLabel>Two-factor authentication</SwitchLabel>
     <Description>
       Add an extra layer of security to your account.
     </Description>
   </Switch>
   <Switch value="activityStatus">
-    <Label>Show activity status</Label>
+    <SwitchLabel>Show activity status</SwitchLabel>
     <Description>Let others see when you're online.</Description>
   </Switch>
 </>
@@ -75,16 +75,16 @@ A disabled switch cannot be toggled and is non-interactive.
 <How toUse="controls/switch/switch-disabled-demo" />
 
 ## Installation
-To use the Switch component, you need to install the `@intentui/switch` package. You can do this using npm or yarn:
+To use the Switch component, you need to install the `@/components/ui/switch` package. You can do this using npm or yarn:
 
 ```bash
-npm i @intentui/switch
+npm i @/components/ui/switch
 ```
 
 or
 
 ```bash
-yarn add @intentui/switch
+yarn add @/components/ui/switch
 ```
 
 Additionally, the Switch component requires the `react-aria-components` package. If you haven't installed it yet, you can do so with the following command:
@@ -97,7 +97,7 @@ npm i react-aria-components
 The Switch component is composed of the following sub-components:
 
 - `Switch`: The main toggle switch component.
-- `Label`: A component to display the label of the switch.
+- `SwitchLabel`: The label of the switch component.
 - `Description`: A component to display a description or helper text for the switch.
 
 ## Manual installation
@@ -109,28 +109,10 @@ To install the package, run the following command:
 npm i react-aria-components
 ```
 
-Once installed, you can import the components directly from the package:
-
-```jsx
-import { Switch, Label, Description } from 'react-aria-components';
-```
-
 ## Anatomy
-The Switch component consists of the following parts:
-
-- A container element that wraps the entire switch.
-- A hidden checkbox input that represents the on/off state of the switch.
-- A visual indicator (the switch knob) that shows the current state of the switch.
-- A label element that describes the purpose of the switch.
-- An optional description element that provides additional information about the switch.
-
-The following diagram illustrates the anatomy of the Switch component:
-
 ```
 <Switch>
-  <input type="checkbox" />
-  <span class="switch-knob" />
-  <Label>Switch Label</Label>
+  <SwitchLabel>Switch Label</Label>
   <Description>Switch Description</Description>
 </Switch>
 ```
@@ -143,8 +125,9 @@ To add a description to the switch, you can use the `description` prop or includ
 Here's an example of using the `description` prop:
 
 ```jsx
-<Switch value="notifications" description="Enable or disable notifications.">
-  <Label>Notifications</Label>
+<Switch value="notifications">
+  <SwitchLabel>Notifications</SwitchLabel>
+  <Description>Enable or disable notifications.</Description>
 </Switch>
 ```
 
@@ -152,7 +135,7 @@ And here's an example of using the `Description` component:
 
 ```jsx
 <Switch value="notifications">
-  <Label>Notifications</Label>
+  <SwitchLabel>Notifications</SwitchLabel>
   <Description>Enable or disable notifications.</Description>
 </Switch>
 ```
@@ -166,7 +149,7 @@ Here's an example:
 
 ```jsx
 import { useState } from 'react';
-import { Switch, Label } from '@intentui/switch';
+import { Switch, SwitchLabel } from '@/components/ui/switch';
 
 function ControlledSwitch() {
   const [isSelected, setIsSelected] = useState(false);
@@ -177,7 +160,7 @@ function ControlledSwitch() {
 
   return (
     <Switch isSelected={isSelected} onChange={handleToggle}>
-      <Label>Toggle Me</Label>
+      <SwitchLabel>Toggle Me</SwitchLabel>
     </Switch>
   );
 }
@@ -191,12 +174,12 @@ To use the switch in an uncontrolled manner, simply render the `Switch` componen
 Here's an example:
 
 ```jsx
-import { Switch, Label } from '@intentui/switch';
+import { Switch, SwitchLabel } from '@/components/ui/switch';
 
 function UncontrolledSwitch() {
   return (
     <Switch defaultSelected>
-      <Label>Toggle Me</Label>
+      <SwitchLabel>Toggle Me</SwitchLabel>
     </Switch>
   );
 }
@@ -210,12 +193,12 @@ To disable the switch, you can set the `isDisabled` prop to `true`.
 Here's an example:
 
 ```jsx
-import { Switch, Label } from '@intentui/switch';
+import { Switch, SwitchLabel } from '@/components/ui/switch';
 
 function DisabledSwitch() {
   return (
     <Switch isDisabled>
-      <Label>Can't Touch This</Label>
+      <SwitchLabel>Can't Touch This</SwitchLabel>
     </Switch>
   );
 }

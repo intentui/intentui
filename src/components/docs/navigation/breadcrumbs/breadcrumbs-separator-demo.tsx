@@ -1,15 +1,15 @@
 "use client"
 
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
 
 export default function BreadcrumbsSeparatorDemo() {
   return (
     <Breadcrumbs separator="slash">
-      <Breadcrumbs.Item separator="slash" href="#">
+      <BreadcrumbsItem separator="slash" href="#">
         Home
-      </Breadcrumbs.Item>
-      <Breadcrumbs.Item href="#">Design System</Breadcrumbs.Item>
-      <Breadcrumbs.Item>Collections</Breadcrumbs.Item>
+      </BreadcrumbsItem>
+      <BreadcrumbsItem href="#">Design System</BreadcrumbsItem>
+      <BreadcrumbsItem>Collections</BreadcrumbsItem>
     </Breadcrumbs>
   )
 }

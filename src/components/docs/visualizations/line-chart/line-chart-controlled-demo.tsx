@@ -2,7 +2,14 @@
 
 import { useMemo, useState } from "react"
 import type { Key } from "react-aria-components"
-import { Card } from "@/components/ui/card"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
@@ -44,19 +51,19 @@ export default function LineChartControlledSmart() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Engagement</Card.Title>
-        <Card.Description>Likes, comments, and shares over a dynamic time range.</Card.Description>
-        <Card.Action>
+      <CardHeader>
+        <CardTitle>Engagement</CardTitle>
+        <CardDescription>Likes, comments, and shares over a dynamic time range.</CardDescription>
+        <CardAction>
           <ToggleGroup size="sm" selectedKeys={selected} onSelectionChange={setSelected}>
             <ToggleGroupItem id="3d">3d</ToggleGroupItem>
             <ToggleGroupItem id="7d">7d</ToggleGroupItem>
             <ToggleGroupItem id="2w">2w</ToggleGroupItem>
             <ToggleGroupItem id="1m">1m</ToggleGroupItem>
           </ToggleGroup>
-        </Card.Action>
-      </Card.Header>
-      <Card.Content>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
         <LineChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={engagementData}
@@ -68,7 +75,7 @@ export default function LineChartControlledSmart() {
             shares: { label: "Shares" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

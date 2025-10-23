@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandGithub } from "@intentui/icons"
+import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
@@ -28,7 +28,7 @@ export function OpenSource() {
               className: "w-full bg-bg text-fg hover:bg-bg/95",
             })}
           >
-            <IconBrandGithub />
+            <BrandGithubIcon />
             GitHub
           </Link>
         </div>

@@ -1,55 +1,94 @@
 "use client"
 
-import { motion } from "motion/react"
-import {
-  ProgressBar as ProgressBarPrimitive,
-  type ProgressBarProps as ProgressBarPrimitiveProps,
-} from "react-aria-components"
+import { createContext, use } from "react"
+import type { ProgressBarProps, ProgressBarRenderProps } from "react-aria-components"
+import { ProgressBar as ProgressBarPrimitive } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
-import { Label } from "./field"
 
-interface ProgressBarProps extends ProgressBarPrimitiveProps {
-  label?: string
-  ref?: React.RefObject<HTMLDivElement>
-}
+const ProgressBarContext = createContext<ProgressBarRenderProps | null>(null)
 
-const ProgressBar = ({ label, ref, className, ...props }: ProgressBarProps) => {
+export function ProgressBar({ className, children, ...props }: ProgressBarProps) {
   return (
-    <ProgressBarPrimitive ref={ref} className={cx("flex flex-col", className)} {...props}>
-      {({ percentage, valueText, isIndeterminate }) => (
-        <>
-          <div className="flex justify-between gap-2">
-            {label && <Label>{label}</Label>}
-            <span className="text-muted-fg text-sm tabular-nums">{valueText}</span>
-          </div>
-          <div className="-outline-offset-1 relative mt-1 h-2 min-w-64 overflow-hidden rounded-full bg-secondary outline-1 outline-transparent">
-            {!isIndeterminate ? (
-              <motion.div
-                data-slot="progress-content"
-                className="absolute top-0 left-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight]"
-                initial={{ width: "0%" }}
-                animate={{ width: `${percentage}%` }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              />
-            ) : (
-              <motion.div
-                data-slot="progress-content"
-                className="absolute top-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight]"
-                initial={{ left: "0%", width: "40%" }}
-                animate={{ left: ["0%", "100%", "0%"] }}
-                transition={{
-                  repeat: Number.POSITIVE_INFINITY,
-                  duration: 2,
-                  ease: "easeInOut",
-                }}
-              />
-            )}
-          </div>
-        </>
+    <ProgressBarPrimitive
+      data-slot="control"
+      className={cx(
+        "w-full",
+        "[&>[data-slot=progress-bar-header]+[data-slot=progress-bar-track]]:mt-2",
+        "[&>[data-slot=progress-bar-header]+[data-slot=progress-bar-track]]:mt-2",
+        "[&>[data-slot=progress-bar-header]+[slot='description']]:mt-1",
+        "[&>[slot='description']+[data-slot=progress-bar-track]]:mt-2",
+        "[&>[data-slot=progress-bar-track]+[slot=description]]:mt-2",
+        "[&>[data-slot=progress-bar-track]+[slot=errorMessage]]:mt-2",
+        "*:data-[slot=progress-bar-header]:font-medium",
+        className,
+      )}
+      {...props}
+    >
+      {(values) => (
+        <ProgressBarContext value={{ ...values }}>
+          {typeof children === "function" ? children(values) : children}
+        </ProgressBarContext>
       )}
     </ProgressBarPrimitive>
   )
 }
 
-export type { ProgressBarProps }
-export { ProgressBar }
+export function ProgressBarHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="progress-bar-header"
+      className={twMerge("flex items-center justify-between", className)}
+      {...props}
+    />
+  )
+}
+
+export function ProgressBarValue({
+  className,
+  ...props
+}: Omit<React.ComponentProps<"span">, "children">) {
+  const { valueText } = use(ProgressBarContext)!
+  return (
+    <span className={twMerge("text-base/6 sm:text-sm/6", className)} {...props}>
+      {valueText}
+    </span>
+  )
+}
+
+export function ProgressBarTrack({ className, ref, ...props }: React.ComponentProps<"div">) {
+  const { isIndeterminate, percentage } = use(ProgressBarContext)!
+  return (
+    <span data-slot="progress-bar-track" className="relative block w-full">
+      <style>{`
+        @keyframes progress-slide {
+          0% { left: 0% }
+          50% { left: 100% }
+          100% { left: 0% }
+        }
+      `}</style>
+      <div ref={ref} className="flex w-full items-center gap-x-2" {...props}>
+        <div
+          className={twMerge(
+            "-outline-offset-1 relative h-1.5 w-full min-w-52 overflow-hidden rounded-full bg-secondary outline-1 outline-transparent will-change-transform",
+            className,
+          )}
+        >
+          {!isIndeterminate ? (
+            <div
+              data-slot="progress-content"
+              className="absolute top-0 left-0 h-full rounded-full bg-primary transition-[width] duration-200 ease-linear will-change-[width] motion-reduce:transition-none forced-colors:bg-[Highlight]"
+              style={{ width: `${percentage}%` }}
+            />
+          ) : (
+            <div
+              data-slot="progress-content"
+              className="absolute top-0 h-full rounded-full bg-primary [animation:progress-slide_2000ms_ease-in-out_infinite] forced-colors:bg-[Highlight]"
+              style={{ width: "40%" }}
+            />
+          )}
+        </div>
+      </div>
+    </span>
+  )
+}

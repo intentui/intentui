@@ -1,10 +1,12 @@
 "use client"
 
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
+import { Label } from "@/components/ui/field"
 
 export default function CheckboxDisabledDemo() {
   return (
-    <CheckboxGroup isDisabled label="Settings">
+    <CheckboxGroup isDisabled>
+      <Label>Settings</Label>
       <Checkbox value="notifications">Enable notifications</Checkbox>
       <Checkbox value="auto_update">Auto-update applications</Checkbox>
       <Checkbox value="dark_mode">Enable dark mode</Checkbox>

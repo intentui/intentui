@@ -3,7 +3,8 @@
 import { parseColor } from "@react-stately/color"
 import { useState } from "react"
 import { ControlledValues } from "@/components/docs/colors/controlled-values"
-import { ColorSwatchPicker } from "@/components/ui/color-swatch-picker"
+import { ColorSwatch } from "@/components/ui/color-swatch"
+import { ColorSwatchPicker, ColorSwatchPickerItem } from "@/components/ui/color-swatch-picker"
 
 export default function ColorSwatchPickerDemo() {
   const [value, setValue] = useState(parseColor("#0d6efd"))
@@ -15,11 +16,21 @@ export default function ColorSwatchPickerDemo() {
         onChange={setValue}
         className="flex justify-center gap-2"
       >
-        <ColorSwatchPicker.Item isDisabled color="#f59e0b" />
-        <ColorSwatchPicker.Item color="#84cc16" />
-        <ColorSwatchPicker.Item color="#0d6efd" />
-        <ColorSwatchPicker.Item isDisabled color="#ec4899" />
-        <ColorSwatchPicker.Item isDisabled color="#f43f5e" />
+        <ColorSwatchPickerItem isDisabled color="#f59e0b">
+          <ColorSwatch />
+        </ColorSwatchPickerItem>
+        <ColorSwatchPickerItem color="#84cc16">
+          <ColorSwatch />
+        </ColorSwatchPickerItem>
+        <ColorSwatchPickerItem color="#0d6efd">
+          <ColorSwatch />
+        </ColorSwatchPickerItem>
+        <ColorSwatchPickerItem isDisabled color="#ec4899">
+          <ColorSwatch />
+        </ColorSwatchPickerItem>
+        <ColorSwatchPickerItem isDisabled color="#f43f5e">
+          <ColorSwatch />
+        </ColorSwatchPickerItem>
       </ColorSwatchPicker>
 
       <ControlledValues color={value} />

@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tracker } from "@/components/ui/tracker"
 
 const deployments = [
@@ -60,13 +60,13 @@ const data = deployments.map((d) => ({
 export default function TrackerDemo() {
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Recent deployments</Card.Title>
-        <Card.Description>Visual timeline of deployment outcomes by hour</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader>
+        <CardTitle>Recent deployments</CardTitle>
+        <CardDescription>Visual timeline of deployment outcomes by hour</CardDescription>
+      </CardHeader>
+      <CardContent>
         <Tracker data={data} />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

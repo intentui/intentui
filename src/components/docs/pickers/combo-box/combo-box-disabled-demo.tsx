@@ -8,11 +8,13 @@ import {
   ComboBoxItem,
   ComboBoxLabel,
 } from "@/components/ui/combo-box"
+import { Label } from "@/components/ui/field"
 
 export default function ComboBoxDisabledDemo() {
   return (
-    <ComboBox placeholder="Select a user" label="Users" isDisabled>
-      <ComboBoxInput />
+    <ComboBox isDisabled>
+      <Label>Users</Label>
+      <ComboBoxInput placeholder="Select a user" />
       <ComboBoxContent items={users}>
         {(item) => (
           <ComboBoxItem key={item.id} id={item.id} textValue={item.name}>

@@ -1,17 +1,13 @@
 "use client"
 
-import {
-  IconBrandCss,
-  IconChevronLgDown,
-  IconDuplicate,
-  IconLayoutColumnRightsideFill,
-} from "@intentui/icons"
+import { ChevronDownIcon, EyeIcon, Square2StackIcon } from "@heroicons/react/24/outline"
 import { Suspense, useState } from "react"
 import { toast } from "sonner"
 import { Blocks } from "@/app/(app)/themes/partials/blocks"
 import { GeneratedTheme } from "@/app/(app)/themes/partials/generated-theme"
 import { ThemeCustomizer } from "@/app/(app)/themes/partials/theme-customizer"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
+import { BrandCssIcon } from "@/components/icons/brand-css-icon"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
 import { CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -59,7 +55,7 @@ export function ThemeContainer() {
               <ThemeCustomizer {...{ selectedColors, setSelectedColors }} />
               <div className="mt-3 flex justify-end">
                 <Button className="flex w-full lg:hidden" onPress={handleOpen}>
-                  <IconBrandCss />
+                  <BrandCssIcon />
                   Get theme
                 </Button>
               </div>
@@ -75,15 +71,15 @@ export function ThemeContainer() {
                 <Menu>
                   <Button>
                     Get theme
-                    <IconChevronLgDown />
+                    <ChevronDownIcon />
                   </Button>
                   <MenuContent placement="bottom right" className="min-w-(--trigger-width)">
                     <MenuItem onAction={copy}>
-                      <IconDuplicate />
+                      <Square2StackIcon />
                       Copy
                     </MenuItem>
                     <MenuItem onAction={handleOpen}>
-                      <IconLayoutColumnRightsideFill />
+                      <EyeIcon />
                       Show theme
                     </MenuItem>
                   </MenuContent>
@@ -128,7 +124,7 @@ export function ThemeContainer() {
               handleClose()
             }}
           >
-            <IconDuplicate />
+            <Square2StackIcon />
             Copy
           </Button>
         </SheetFooter>

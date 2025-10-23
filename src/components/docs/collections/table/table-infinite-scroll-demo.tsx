@@ -3,7 +3,14 @@
 import { Collection, TableLoadMoreItem } from "react-aria-components"
 import { useAsyncList } from "react-stately"
 import { ProgressCircle } from "@/components/ui/progress-circle"
-import { Table } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 interface Character {
   name: string
@@ -41,15 +48,15 @@ export default function TableInfiniteScrollDemo() {
         aria-label="People"
         className="h-72 [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]"
       >
-        <Table.Header className="sticky top-0 z-10 bg-muted">
-          <Table.Column isRowHeader>Name</Table.Column>
-          <Table.Column>Height</Table.Column>
-          <Table.Column>Mass</Table.Column>
-          <Table.Column>Birth year</Table.Column>
-          <Table.Column>Gender</Table.Column>
-          <Table.Column>Eye</Table.Column>
-        </Table.Header>
-        <Table.Body
+        <TableHeader className="sticky top-0 z-10 bg-muted">
+          <TableColumn isRowHeader>Name</TableColumn>
+          <TableColumn>Height</TableColumn>
+          <TableColumn>Mass</TableColumn>
+          <TableColumn>Birth year</TableColumn>
+          <TableColumn>Gender</TableColumn>
+          <TableColumn>Eye</TableColumn>
+        </TableHeader>
+        <TableBody
           renderEmptyState={() => (
             <div className="flex h-full items-center justify-center p-4 text-muted-fg">
               No characters found.
@@ -58,14 +65,14 @@ export default function TableInfiniteScrollDemo() {
         >
           <Collection items={list.items}>
             {(item) => (
-              <Table.Row id={item.name}>
-                <Table.Cell>{item.name}</Table.Cell>
-                <Table.Cell>{item.height}</Table.Cell>
-                <Table.Cell>{item.mass}</Table.Cell>
-                <Table.Cell>{item.birth_year}</Table.Cell>
-                <Table.Cell>{item.gender}</Table.Cell>
-                <Table.Cell>{item.eye_color}</Table.Cell>
-              </Table.Row>
+              <TableRow id={item.name}>
+                <TableCell>{item.name}</TableCell>
+                <TableCell>{item.height}</TableCell>
+                <TableCell>{item.mass}</TableCell>
+                <TableCell>{item.birth_year}</TableCell>
+                <TableCell>{item.gender}</TableCell>
+                <TableCell>{item.eye_color}</TableCell>
+              </TableRow>
             )}
           </Collection>
           <TableLoadMoreItem
@@ -75,7 +82,7 @@ export default function TableInfiniteScrollDemo() {
           >
             <ProgressCircle className="mx-auto" isIndeterminate aria-label="Loading more..." />
           </TableLoadMoreItem>
-        </Table.Body>
+        </TableBody>
       </Table>
     </div>
   )

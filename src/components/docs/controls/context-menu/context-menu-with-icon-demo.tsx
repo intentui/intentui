@@ -1,21 +1,21 @@
 "use client"
 
 import {
-  IconDuplicate,
-  IconFile,
-  IconFolder,
-  IconHighlight,
-  IconTrash,
-  IconTrashPaper,
-} from "@intentui/icons"
+  ArchiveBoxIcon,
+  DocumentIcon,
+  FolderOpenIcon,
+  PencilSquareIcon,
+  Square2StackIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline"
 
 import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuItem,
-  ContextMenuKeyboard,
   ContextMenuLabel,
   ContextMenuSeparator,
+  ContextMenuShortcut,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 
@@ -27,11 +27,11 @@ export default function ContextMenuWithIconDemo() {
       </ContextMenuTrigger>
       <ContextMenuContent className="min-w-52">
         <ContextMenuItem>
-          <IconFolder />
+          <FolderOpenIcon />
           <ContextMenuLabel>Open Folder</ContextMenuLabel>
         </ContextMenuItem>
         <ContextMenuItem>
-          <IconFile />
+          <DocumentIcon />
           <ContextMenuLabel>Open File</ContextMenuLabel>
         </ContextMenuItem>
         <ContextMenuItem>
@@ -39,11 +39,11 @@ export default function ContextMenuWithIconDemo() {
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem>
-          <IconHighlight />
+          <PencilSquareIcon />
           <ContextMenuLabel>Rename</ContextMenuLabel>
         </ContextMenuItem>
         <ContextMenuItem>
-          <IconDuplicate />
+          <Square2StackIcon />
           <ContextMenuLabel>Duplicate</ContextMenuLabel>
         </ContextMenuItem>
         <ContextMenuItem>
@@ -51,12 +51,12 @@ export default function ContextMenuWithIconDemo() {
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem>
-          <IconTrash />
+          <TrashIcon />
           <ContextMenuLabel>Delete</ContextMenuLabel>
-          <ContextMenuKeyboard keys="⌘←" />
+          <ContextMenuShortcut keys="⌘←" />
         </ContextMenuItem>
         <ContextMenuItem>
-          <IconTrashPaper />
+          <ArchiveBoxIcon />
           <ContextMenuLabel>Bin</ContextMenuLabel>
         </ContextMenuItem>
       </ContextMenuContent>

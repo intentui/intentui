@@ -1,11 +1,18 @@
 "use client"
-import { IconDotsVertical } from "@intentui/icons"
+import { EllipsisVerticalIcon } from "@heroicons/react/24/outline"
 import { use, useMemo } from "react"
 import { Autocomplete, AutocompleteStateContext, useFilter } from "react-aria-components"
 import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
 import { SearchField } from "@/components/ui/search-field"
-import { Table } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 export default function TableDemo() {
   const { contains } = useFilter({
@@ -22,50 +29,50 @@ export default function TableDemo() {
           <SearchField aria-label="Search" />
         </div>
         <Table className="mt-4" aria-label="Users">
-          <Table.Header>
-            <Table.Column className="w-0">#</Table.Column>
-            <Table.Column isRowHeader>Name</Table.Column>
-            <Table.Column>Email</Table.Column>
-            <Table.Column>Role</Table.Column>
-            <Table.Column>Status</Table.Column>
-            <Table.Column>Joined</Table.Column>
-            <Table.Column />
-          </Table.Header>
-          <Table.Body items={users}>
+          <TableHeader>
+            <TableColumn className="w-0">#</TableColumn>
+            <TableColumn isRowHeader>Name</TableColumn>
+            <TableColumn>Email</TableColumn>
+            <TableColumn>Role</TableColumn>
+            <TableColumn>Status</TableColumn>
+            <TableColumn>Joined</TableColumn>
+            <TableColumn />
+          </TableHeader>
+          <TableBody items={users}>
             {(item) => (
-              <Table.Row id={item.id}>
-                <Table.Cell>{item.id}</Table.Cell>
-                <Table.Cell textValue={item.name}>
+              <TableRow id={item.id}>
+                <TableCell>{item.id}</TableCell>
+                <TableCell textValue={item.name}>
                   <AutocompleteHighlight>{item.name}</AutocompleteHighlight>
-                </Table.Cell>
-                <Table.Cell textValue={item.email}>
+                </TableCell>
+                <TableCell textValue={item.email}>
                   <AutocompleteHighlight>{item.email}</AutocompleteHighlight>
-                </Table.Cell>
-                <Table.Cell textValue={item.role}>
+                </TableCell>
+                <TableCell textValue={item.role}>
                   <AutocompleteHighlight>{item.role}</AutocompleteHighlight>
-                </Table.Cell>
-                <Table.Cell textValue={item.status}>
+                </TableCell>
+                <TableCell textValue={item.status}>
                   <AutocompleteHighlight>{item.status}</AutocompleteHighlight>
-                </Table.Cell>
-                <Table.Cell>{item.joined}</Table.Cell>
-                <Table.Cell>
+                </TableCell>
+                <TableCell>{item.joined}</TableCell>
+                <TableCell>
                   <div className="flex justify-end">
                     <Menu>
                       <MenuTrigger className="size-6">
-                        <IconDotsVertical />
+                        <EllipsisVerticalIcon />
                       </MenuTrigger>
                       <MenuContent aria-label="Actions" placement="left top">
                         <MenuItem>View</MenuItem>
                         <MenuItem>Edit</MenuItem>
                         <MenuSeparator />
-                        <MenuItem isDanger>Delete</MenuItem>
+                        <MenuItem intent="danger">Delete</MenuItem>
                       </MenuContent>
                     </Menu>
                   </div>
-                </Table.Cell>
-              </Table.Row>
+                </TableCell>
+              </TableRow>
             )}
-          </Table.Body>
+          </TableBody>
         </Table>
       </Autocomplete>
     </div>

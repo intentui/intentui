@@ -3,13 +3,14 @@
 import { useState } from "react"
 
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
-import { Description } from "@/components/ui/field"
+import { Description, Label } from "@/components/ui/field"
 
 export default function CheckboxGroupControlledDemo() {
   const [values, setValues] = useState<string[]>([])
   return (
     <>
-      <CheckboxGroup value={values} onChange={setValues} label="Options">
+      <CheckboxGroup value={values} onChange={setValues}>
+        <Label>Options</Label>
         <Checkbox value="sound">Sound</Checkbox>
         <Checkbox value="wifi">Wi-Fi</Checkbox>
         <Checkbox value="sync">Sync</Checkbox>

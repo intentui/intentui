@@ -4,7 +4,8 @@ import { getLocalTimeZone, today } from "@internationalized/date"
 import { useDateFormatter } from "@react-aria/i18n"
 import { useState } from "react"
 
-import { DateRangePicker } from "@/components/ui/date-range-picker"
+import { DateRangePicker, DateRangePickerTrigger } from "@/components/ui/date-range-picker"
+import { Label } from "@/components/ui/field"
 
 export default function DateRangePickerControlledDemo() {
   const now = today(getLocalTimeZone())
@@ -26,11 +27,10 @@ export default function DateRangePickerControlledDemo() {
         </p>
         <p>{value ? `${value.start.toString()} to ${value.end.toString()}` : "-- to --"}</p>
       </div>
-      <DateRangePicker
-        value={value}
-        onChange={(newValue) => setValue(newValue!)}
-        label="Event date"
-      />
+      <DateRangePicker value={value} onChange={(newValue) => setValue(newValue!)}>
+        <Label>Event date</Label>
+        <DateRangePickerTrigger />
+      </DateRangePicker>
     </div>
   )
 }

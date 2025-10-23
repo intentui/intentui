@@ -1,5 +1,5 @@
 "use client"
-import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
 import { findNeighbour, type PageTree } from "fumadocs-core/server"
 import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
@@ -21,7 +21,7 @@ export const Pager = ({
       {neighbours.previous && (
         <div className="group w-40">
           <Link className={buttonStyles({ intent: "outline" })} href={neighbours.previous.url}>
-            <IconChevronLgLeft className="group-hover:-translate-x-0.5 transition-transform" />
+            <ChevronLeftIcon className="group-hover:-translate-x-0.5 transition-transform" />
             <span className="line-clamp-1 text-fg">{neighbours.previous.name}</span>
           </Link>
         </div>
@@ -31,7 +31,7 @@ export const Pager = ({
         <div className="group flex w-40 justify-end">
           <Link className={buttonStyles({ intent: "outline" })} href={neighbours.next.url}>
             <span className="line-clamp-1 text-fg">{neighbours.next.name}</span>
-            <IconChevronLgRight className="transition-transform group-hover:translate-x-0.5" />
+            <ChevronRightIcon className="transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
       )}

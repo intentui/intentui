@@ -1,13 +1,18 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Form } from "@/components/ui/form"
-import { SearchField } from "@/components/ui/search-field"
+import { FieldError, Label } from "@/components/ui/field"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 
 export default function SearchFieldValidationDemo() {
   return (
     <Form className="space-y-4">
-      <SearchField isRequired label="Name" />
+      <SearchField isRequired>
+        <Label>Name</Label>
+        <SearchInput />
+        <FieldError />
+      </SearchField>
       <Button type="submit">Submit</Button>
     </Form>
   )

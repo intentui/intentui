@@ -1,8 +1,18 @@
 "use client"
 
-import { IconColors } from "@intentui/icons"
+import { SwatchIcon } from "@heroicons/react/24/outline"
 import { ColorField } from "@/components/ui/color-field"
+import { Label } from "@/components/ui/field"
+import { Input, InputGroup } from "@/components/ui/input"
 
 export default function ColorFieldWithSuffixDemo() {
-  return <ColorField label="Color" suffix={<IconColors />} placeholder="#FAFAFA" />
+  return (
+    <ColorField>
+      <Label>Color</Label>
+      <InputGroup>
+        <Input placeholder="#155DFC" />
+        <SwatchIcon />
+      </InputGroup>
+    </ColorField>
+  )
 }

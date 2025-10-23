@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Description, Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { TextField } from "@/components/ui/text-field"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -29,8 +30,14 @@ export function Examples() {
         <BlocksCard className="w-full lg:w-1/3">
           <div className="flex flex-col gap-y-6">
             <CardHeader title="Sign in" description="Enter your email and password to sign in." />
-            <TextField label="Email" type="email" placeholder="you@domain.com" />
-            <TextField label="Password" type="password" isRevealable placeholder="Shhh..." />
+            <TextField>
+              <Label>Email</Label>
+              <Input type="email" placeholder="you@domain.com" />
+            </TextField>
+            <TextField>
+              <Label>Password</Label>
+              <Input type="password" placeholder="Shhh..." />
+            </TextField>
             <Checkbox>
               <Label>Remember me</Label>
               <Description>
@@ -66,9 +73,18 @@ export function Examples() {
               title="Settings"
               description="Update your profile information and preferences."
             />
-            <TextField label="Name" placeholder="Irsyad A. Panjaitan" />
-            <TextField label="Email" type="email" placeholder="you@domain.com" />
-            <Textarea label="Bio" placeholder="Introduce your self." />
+            <TextField>
+              <Label>Name</Label>
+              <Input placeholder="Irsyad A. Panjaitan" />
+            </TextField>
+            <TextField>
+              <Label>Email</Label>
+              <Input type="email" placeholder="you@domain.com" />
+            </TextField>
+            <TextField>
+              <Label>About me</Label>
+              <Textarea placeholder="Introduce your self." />
+            </TextField>
             <Button className="self-end">Save changes</Button>
           </div>
         </BlocksCard>

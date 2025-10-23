@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { PieChart } from "@/components/ui/pie-chart"
 
 export default function PieChartDonutLabelDeviceDemo() {
@@ -17,11 +17,11 @@ export default function PieChartDonutLabelDeviceDemo() {
 
   return (
     <Card>
-      <Card.Header className="text-center">
-        <Card.Title>Device usage</Card.Title>
-        <Card.Description>Breakdown of users by device type.</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader className="text-center">
+        <CardTitle>Device usage</CardTitle>
+        <CardDescription>Breakdown of users by device type.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <PieChart
           className="mx-auto h-56"
           data={data}
@@ -37,7 +37,7 @@ export default function PieChartDonutLabelDeviceDemo() {
             Other: { label: "Other" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

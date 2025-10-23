@@ -3,7 +3,18 @@
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
-import { Drawer } from "@/components/ui/drawer"
+import {
+  Drawer,
+  DrawerBody,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer"
+import { Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { TextField } from "@/components/ui/text-field"
 
 export default function DrawerControlledDemo() {
@@ -14,27 +25,28 @@ export default function DrawerControlledDemo() {
         Login
       </Button>
       <Drawer isOpen={isOpen} onOpenChange={setIsOpen}>
-        <Drawer.Content>
-          <Drawer.Header>
-            <Drawer.Title>Login</Drawer.Title>
-            <Drawer.Description>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Login</DrawerTitle>
+            <DrawerDescription>
               Please enter your credentials to access your account.
-            </Drawer.Description>
-          </Drawer.Header>
-          <Drawer.Body className="flex flex-col gap-4">
-            <TextField label="Email" isRequired type="email" placeholder="Enter your email" />
-            <TextField
-              label="Password"
-              isRequired
-              type="password"
-              placeholder="Enter your password"
-            />
-          </Drawer.Body>
-          <Drawer.Footer>
-            <Drawer.Close>Close</Drawer.Close>
+            </DrawerDescription>
+          </DrawerHeader>
+          <DrawerBody className="flex flex-col gap-4">
+            <TextField isRequired>
+              <Label>Email</Label>
+              <Input type="email" placeholder="Enter your email" />
+            </TextField>
+            <TextField isRequired>
+              <Label>Password</Label>
+              <Input type="password" placeholder="Enter your password" />
+            </TextField>
+          </DrawerBody>
+          <DrawerFooter>
+            <DrawerClose>Close</DrawerClose>
             <Button onPress={() => setIsOpen(false)}>Login</Button>
-          </Drawer.Footer>
-        </Drawer.Content>
+          </DrawerFooter>
+        </DrawerContent>
       </Drawer>
     </>
   )

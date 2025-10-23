@@ -1,56 +1,64 @@
 "use client"
 
-import { IconBulletFill } from "@intentui/icons"
+import { MinusIcon } from "@heroicons/react/20/solid"
 import { OTPInput, OTPInputContext } from "input-otp"
 import { use } from "react"
 import { twMerge } from "tailwind-merge"
+import { fieldStyles, Label } from "@/components/ui/field"
 
-type InputOTOPProps = React.ComponentProps<typeof OTPInput>
-const InputOTP = ({
+export function InputOTP({
   className,
-  autoFocus = true,
   containerClassName,
-  ref,
   ...props
-}: InputOTOPProps) => (
-  <OTPInput
-    data-1p-ignore
-    ref={ref}
-    autoFocus={autoFocus}
-    containerClassName={twMerge(
-      "flex items-center gap-2 has-disabled:opacity-50",
-      containerClassName,
-    )}
-    className={twMerge("mt-auto h-[2.5rem] bg-danger disabled:cursor-not-allowed", className)}
-    {...props}
-  />
-)
-
-type InputOTPGroupProps = React.ComponentProps<"div">
-const InputOTPGroup = ({ className, ref, ...props }: InputOTPGroupProps) => (
-  <div ref={ref} className={twMerge("flex items-center gap-x-1.5", className)} {...props} />
-)
-
-interface InputOTPSlotProps extends React.ComponentProps<"div"> {
-  index: number
+}: React.ComponentPropsWithoutRef<typeof OTPInput>) {
+  return (
+    <span data-slot="control" className="relative block">
+      <OTPInput
+        data-slot="input-otp"
+        containerClassName={twMerge(fieldStyles(), containerClassName)}
+        className={twMerge("disabled:cursor-not-allowed", className)}
+        {...props}
+      />
+    </span>
+  )
 }
 
-const InputOTPSlot = ({ index, className, ref, ...props }: InputOTPSlotProps) => {
+export function InputOTPControl({ className, ...props }: React.ComponentProps<"span">) {
+  return (
+    <span
+      data-slot="control"
+      className={twMerge("flex items-center gap-2 has-disabled:opacity-50", className)}
+      {...props}
+    />
+  )
+}
+
+export function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <span
+      data-slot="input-otp-group"
+      className={twMerge("flex items-center", className)}
+      {...props}
+    />
+  )
+}
+
+export function InputOTPSlot({
+  index,
+  className,
+  ...props
+}: React.ComponentProps<"div"> & {
+  index: number
+}) {
   const inputOTPContext = use(OTPInputContext)
-  const slot = inputOTPContext.slots[index]
-
-  if (!slot) {
-    throw new Error("Slot not found")
-  }
-
-  const { char, hasFakeCaret, isActive } = slot
+  const { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index] ?? {}
 
   return (
     <div
-      ref={ref}
+      data-slot="input-otp-slot"
+      data-active={isActive}
       className={twMerge(
-        "relative flex size-10 items-center justify-center rounded-md border border-input text-sm tabular-nums transition-all",
-        isActive && "z-10 border-ring/70 ring-3 ring-ring/20",
+        "relative flex size-9 items-center justify-center border-input border-y border-r shadow-xs outline-none transition-all [--input-otp-radius:calc(var(--radius-lg)-1px)] first:rounded-l-(--input-otp-radius) first:border-l last:rounded-r-(--input-otp-radius) aria-invalid:border-danger data-[active=true]:z-10 data-[active=true]:border-ring data-[active=true]:bg-primary-subtle/10 data-[active=true]:ring-3 data-[active=true]:ring-ring/20 data-[active=true]:aria-invalid:border-danger-subtle-fg/70 data-[active=true]:aria-invalid:ring-danger-subtle-fg/20 sm:text-sm/6 dark:data-[active=true]:aria-invalid:ring-danger-subtle-fg/70",
         className,
       )}
       {...props}
@@ -65,16 +73,14 @@ const InputOTPSlot = ({ index, className, ref, ...props }: InputOTPSlotProps) =>
   )
 }
 
-type InputOTPSeparatorProps = React.ComponentProps<"div">
-const InputOTPSeparator = ({ ref, ...props }: InputOTPSeparatorProps) => (
-  <div ref={ref} {...props}>
-    <IconBulletFill className="size-2" />
-  </div>
-)
+export function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
+  return (
+    <div data-slot="input-otp-separator" {...props}>
+      <MinusIcon className="size-4" />
+    </div>
+  )
+}
 
-InputOTP.Group = InputOTPGroup
-InputOTP.Slot = InputOTPSlot
-InputOTP.Separator = InputOTPSeparator
-
-export type { InputOTPGroupProps, InputOTOPProps, InputOTPSlotProps, InputOTPSeparatorProps }
-export { InputOTP }
+export function InputOTPLabel(props: React.ComponentProps<typeof Label>) {
+  return <Label elementType="span" {...props} />
+}

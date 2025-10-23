@@ -1,30 +1,21 @@
 "use client"
 
 import { getLocalTimeZone, today } from "@internationalized/date"
-import type {
-  DateValue,
-  RangeCalendarProps as RangeCalendarPrimitiveProps,
-} from "react-aria-components"
+import type { DateValue, RangeCalendarProps } from "react-aria-components"
 import {
   CalendarCell,
   CalendarGrid,
   CalendarGridBody,
   RangeCalendar as RangeCalendarPrimitive,
-  Text,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { CalendarGridHeader, CalendarHeader } from "./calendar"
 
-interface RangeCalendarProps<T extends DateValue> extends RangeCalendarPrimitiveProps<T> {
-  errorMessage?: string
-}
-
-const RangeCalendar = <T extends DateValue>({
-  errorMessage,
+export function RangeCalendar<T extends DateValue>({
   className,
   visibleDuration = { months: 1 },
   ...props
-}: RangeCalendarProps<T>) => {
+}: RangeCalendarProps<T>) {
   const now = today(getLocalTimeZone())
   return (
     <RangeCalendarPrimitive data-slot="calendar" visibleDuration={visibleDuration} {...props}>
@@ -92,15 +83,6 @@ const RangeCalendar = <T extends DateValue>({
           )
         })}
       </div>
-
-      {errorMessage && (
-        <Text slot="errorMessage" className="text-danger text-sm">
-          {errorMessage}
-        </Text>
-      )}
     </RangeCalendarPrimitive>
   )
 }
-
-export type { RangeCalendarProps }
-export { RangeCalendar }

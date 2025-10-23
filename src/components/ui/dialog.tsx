@@ -1,13 +1,12 @@
 "use client"
 
-import { IconX } from "@intentui/icons"
+import { XMarkIcon } from "@heroicons/react/24/solid"
 import { useEffect, useRef } from "react"
 import type { HeadingProps, TextProps } from "react-aria-components"
 import {
-  Button as ButtonPrimitive,
-  Dialog as DialogPrimitive,
   Heading,
-  Text,
+  Button as PrimitiveButton,
+  Dialog as PrimitiveDialog,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
@@ -17,9 +16,10 @@ const Dialog = ({
   role = "dialog",
   className,
   ...props
-}: React.ComponentProps<typeof DialogPrimitive>) => {
+}: React.ComponentProps<typeof PrimitiveDialog>) => {
   return (
-    <DialogPrimitive
+    <PrimitiveDialog
+      data-slot="dialog"
       role={role}
       className={twMerge(
         "peer/dialog group/dialog relative flex max-h-[inherit] flex-col overflow-hidden outline-hidden [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]",
@@ -30,8 +30,8 @@ const Dialog = ({
   )
 }
 
-const DialogTrigger = (props: React.ComponentProps<typeof ButtonPrimitive>) => (
-  <ButtonPrimitive {...props} />
+const DialogTrigger = ({ className, ...props }: ButtonProps) => (
+  <PrimitiveButton className={cx("cursor-pointer", className)} {...props} />
 )
 
 interface DialogHeaderProps extends Omit<React.ComponentProps<"div">, "title"> {
@@ -97,8 +97,8 @@ interface DialogDescriptionProps extends TextProps {
   ref?: React.Ref<HTMLDivElement>
 }
 const DialogDescription = ({ className, ref, ...props }: DialogDescriptionProps) => (
-  <Text
-    slot="description"
+  <p
+    data-slot="description"
     className={twMerge(
       "text-pretty text-base/6 text-muted-fg group-disabled:opacity-50 sm:text-sm/6",
       className,
@@ -114,7 +114,8 @@ const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
     data-slot="dialog-body"
     ref={ref}
     className={twMerge(
-      "flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-(--gutter) py-1",
+      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-(--gutter) py-1",
+      "**:data-[slot=dialog-footer]:px-0 **:data-[slot=dialog-footer]:pt-0",
       className,
     )}
     {...props}
@@ -151,7 +152,7 @@ const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
       ref={footerRef}
       data-slot="dialog-footer"
       className={twMerge(
-        "mt-auto flex flex-col-reverse justify-between gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(3))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row",
+        "isolate mt-auto flex flex-col-reverse justify-end gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(3))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row",
         className,
       )}
       {...props}
@@ -159,8 +160,8 @@ const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
   )
 }
 
-const DialogClose = ({ className, intent = "outline", ref, ...props }: ButtonProps) => {
-  return <Button slot="close" className={className} ref={ref} intent={intent} {...props} />
+const DialogClose = ({ intent = "plain", ref, ...props }: ButtonProps) => {
+  return <Button slot="close" ref={ref} intent={intent} {...props} />
 }
 
 interface CloseButtonIndicatorProps extends Omit<ButtonProps, "children"> {
@@ -170,7 +171,7 @@ interface CloseButtonIndicatorProps extends Omit<ButtonProps, "children"> {
 
 const DialogCloseIcon = ({ className, ...props }: CloseButtonIndicatorProps) => {
   return props.isDismissable ? (
-    <ButtonPrimitive
+    <PrimitiveButton
       aria-label="Close"
       slot="close"
       className={cx(
@@ -178,8 +179,8 @@ const DialogCloseIcon = ({ className, ...props }: CloseButtonIndicatorProps) => 
         className,
       )}
     >
-      <IconX className="size-4" />
-    </ButtonPrimitive>
+      <XMarkIcon className="size-4" />
+    </PrimitiveButton>
   ) : null
 }
 

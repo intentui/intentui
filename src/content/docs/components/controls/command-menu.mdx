@@ -3,7 +3,7 @@ title: "Command Menu"
 description: A command menu is an enhanced button that opens a menu of options, making it a powerful alternative to a combobox, perfect for command palettes, menus, and more.
 order: 4
 published: true
-references: ["https://react-spectrum.adobe.com/react-aria/Autocomplete.html#props", "https://react-spectrum.adobe.com/react-aria/Modal.html#props"]
+references: ["https://react-spectrum.adobe.com/react-aria/Autocomplete.html#props", "https://react-spectrum.adobe.com/react-aria/Modalhtml#props"]
 ---
 
 ## Basic
@@ -20,7 +20,7 @@ npx shadcn@latest add @intentui/command-menu
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 <SourceCode toShow='command-menu' />
 
@@ -35,13 +35,13 @@ import {
   IconHome,
   IconNotes,
   IconShield,
-} from "@intentui/icons"
+} from "@heroicons/react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   CommandMenu,
   CommandMenuItem,
-  CommandMenuKeyboard,
+  CommandMenuShortcut,
   CommandMenuLabel,
   CommandMenuList,
   CommandMenuSearch,
@@ -60,7 +60,7 @@ export function CommandPalette() {
       <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>
         <CommandMenuSearch placeholder="Quick search..." />
         <CommandMenuList>
-          <CommandMenuSection title="Pages">
+          <CommandMenuSection label="Pages">
             <CommandMenuItem textValue="Home" href="#">
               <IconHome />
               <CommandMenuLabel>Home</CommandMenuLabel>
@@ -68,14 +68,14 @@ export function CommandPalette() {
             <CommandMenuItem textValue="Docs" href="#">
               <IconNotes />
               <CommandMenuLabel>Docs</CommandMenuLabel>
-              <CommandMenuKeyboard keys="⌘k" />
+              <CommandMenuShortcut keys="⌘k" />
             </CommandMenuItem>
             <CommandMenuItem textValue="Components" href="#">
               <IconCube />
               <CommandMenuLabel>Components</CommandMenuLabel>
             </CommandMenuItem>
           </CommandMenuSection>
-          <CommandMenuSection title="Dashboard">
+          <CommandMenuSection label="Dashboard">
             <CommandMenuItem textValue="billing" href="#">
               <IconBill />
               <CommandMenuLabel>Billing</CommandMenuLabel>
@@ -83,7 +83,7 @@ export function CommandPalette() {
             <CommandMenuItem textValue="settings" href="#">
               <IconGear />
               <CommandMenuLabel>Settings</CommandMenuLabel>
-              <CommandMenuKeyboard keys="⌘s" />
+              <CommandMenuShortcut keys="⌘s" />
             </CommandMenuItem>
             <CommandMenuItem textValue="security" href="#">
               <IconShield />
@@ -98,7 +98,7 @@ export function CommandPalette() {
 ```
 
 ## Separator
-Creating a separator is super simple—just use `CommandMenu.Separator`. However, make sure to place it within a `CommandMenu.Section` for proper structure.
+Creating a separator is super simple—just use `CommandMenuSeparator`. However, make sure to place it within a `CommandMenuSection` for proper structure.
 <How toUse="controls/command-menu/command-menu-separator-demo" />
 
 ## Blurred
@@ -118,7 +118,7 @@ Highlight a command item as dangerous by changing its color to red, indicating a
 <How toUse="controls/command-menu/command-menu-danger-item-demo" />
 
 ## Controlled
-Dynamically manage the command palette with the `inputValue` and `onInputChange` props, ensuring it stays responsive to updates from the parent component. Additionally, ensure each `CommandMenu.Item` includes a `textValue` prop, enabling seamless item filtering through the search input.
+Dynamically manage the command palette with the `inputValue` and `onInputChange` props, ensuring it stays responsive to updates from the parent component. Additionally, ensure each `CommandMenuItem` includes a `textValue` prop, enabling seamless item filtering through the search input.
 <How toUse="controls/command-menu/command-menu-controlled-demo" />
 Additionally, control the execution of an action upon selecting an item:
 ```
@@ -160,7 +160,7 @@ To hide the scrollbar, set `className` to `scrollbar-hidden`. But before you do 
 ```
 
 ```
-<CommandMenu.List className="scrollbar-hidden">
+<CommandMenuList className="scrollbar-hidden">
 ```
 
 ## Navigating

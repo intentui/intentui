@@ -1,7 +1,14 @@
 "use client"
-import { IconLoader } from "@intentui/icons"
 import { useAsyncList } from "@react-stately/data"
-import { Table } from "@/components/ui/table"
+import { Loader } from "@/components/ui/loader"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 interface Character {
   title: string
@@ -40,35 +47,35 @@ export default function TableSortingDemo() {
   return (
     <div className="rounded-lg border p-4">
       <Table aria-label="Movies" sortDescriptor={list.sortDescriptor} onSortChange={list.sort}>
-        <Table.Header>
-          <Table.Column id="title" isRowHeader>
+        <TableHeader>
+          <TableColumn id="title" isRowHeader>
             Title
-          </Table.Column>
-          <Table.Column id="director" allowsSorting>
+          </TableColumn>
+          <TableColumn id="director" allowsSorting>
             Director
-          </Table.Column>
-          <Table.Column id="producer">Producer</Table.Column>
-          <Table.Column id="release_date" allowsSorting>
+          </TableColumn>
+          <TableColumn id="producer">Producer</TableColumn>
+          <TableColumn id="release_date" allowsSorting>
             Release Date
-          </Table.Column>
-        </Table.Header>
-        <Table.Body
+          </TableColumn>
+        </TableHeader>
+        <TableBody
           items={list.items}
           renderEmptyState={() => (
             <div className="grid place-content-center p-10">
-              <IconLoader className="animate-spin" />
+              <Loader />
             </div>
           )}
         >
           {(item) => (
-            <Table.Row id={item.title}>
-              <Table.Cell className="whitespace-nowrap">{item.title}</Table.Cell>
-              <Table.Cell className="whitespace-nowrap">{item.director}</Table.Cell>
-              <Table.Cell className="whitespace-nowrap">{item.producer}</Table.Cell>
-              <Table.Cell>{item.release_date}</Table.Cell>
-            </Table.Row>
+            <TableRow id={item.title}>
+              <TableCell className="whitespace-nowrap">{item.title}</TableCell>
+              <TableCell className="whitespace-nowrap">{item.director}</TableCell>
+              <TableCell className="whitespace-nowrap">{item.producer}</TableCell>
+              <TableCell>{item.release_date}</TableCell>
+            </TableRow>
           )}
-        </Table.Body>
+        </TableBody>
       </Table>
     </div>
   )

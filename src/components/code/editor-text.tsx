@@ -1,18 +1,15 @@
 "use client"
 
-import {
-  IconBrackets2,
-  IconBrandCss,
-  IconBrandReactjs,
-  IconBrandTypescript,
-  IconFile,
-} from "@intentui/icons"
+import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
 import React, { useState } from "react"
 import { Tab } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
+import { BrandCssIcon } from "@/components/icons/brand-css-icon"
+import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
+import { BrandTypescriptIcon } from "@/components/icons/brand-typescript-icon"
 import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 import { copyToClipboard } from "@/lib/copy"
 import type { RegistryItem } from "@/types"
@@ -97,15 +94,15 @@ export function EditorText({ source }: Props) {
                   id={key}
                 >
                   {key.includes("css") ? (
-                    <IconBrandCss className="text-blue-500" />
+                    <BrandCssIcon className="size-4 text-blue-500" />
                   ) : key.includes(".tsx") ? (
-                    <IconBrandReactjs className="text-sky-500" />
+                    <BrandReactjsIcon className="size-4 text-sky-500" />
                   ) : key.includes(".ts") ? (
-                    <IconBrandTypescript className="text-sky-500" />
+                    <BrandTypescriptIcon className="size-4 text-sky-500" />
                   ) : key.includes(".json") ? (
-                    <IconBrackets2 className="text-purple-400" />
+                    <CodeBracketIcon className="size-4 text-purple-400" />
                   ) : (
-                    <IconFile />
+                    <DocumentTextIcon />
                   )}
                   <span>{key}</span>
                 </Tab>

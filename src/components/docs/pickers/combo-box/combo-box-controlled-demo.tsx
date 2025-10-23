@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/components/ui/combo-box"
-import { Description } from "@/components/ui/field"
+import { Description, Label } from "@/components/ui/field"
 
 const sports = [
   { id: 1, name: "Football" },
@@ -21,13 +21,9 @@ export default function ComboBoxControlledDemo() {
   const [sport, setSport] = useState("")
   return (
     <>
-      <ComboBox
-        onInputChange={setSport}
-        inputValue={sport}
-        placeholder="Select a sports"
-        label="Sports"
-      >
-        <ComboBoxInput />
+      <ComboBox onInputChange={setSport} inputValue={sport} name="sports">
+        <Label>Sports</Label>
+        <ComboBoxInput placeholder="Select a sports" />
         <ComboBoxContent items={sports}>
           {(item) => (
             <ComboBoxItem id={item.id} textValue={item.name}>

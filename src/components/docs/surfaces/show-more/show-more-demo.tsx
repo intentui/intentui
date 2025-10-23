@@ -1,5 +1,5 @@
 "use client"
-import { IconChevronLgDown } from "@intentui/icons"
+import { ChevronDownIcon } from "@heroicons/react/24/outline"
 import { twMerge } from "tailwind-merge"
 import { ShowMore } from "@/components/ui/show-more"
 
@@ -10,7 +10,7 @@ export default function ShowMoreDemo() {
         {({ isSelected }) => (
           <>
             Show {isSelected ? "less" : "more"}
-            <IconChevronLgDown
+            <ChevronDownIcon
               className={twMerge(
                 isSelected ? "rotate-180" : "",
                 "size-4 transition-transform duration-200",

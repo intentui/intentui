@@ -1,5 +1,6 @@
 "use client"
 
+import { Label } from "@/components/ui/field"
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 export const movies = [
@@ -12,7 +13,8 @@ export const movies = [
 
 export default function SelectUncontrolledDemo() {
   return (
-    <Select defaultSelectedKey={2} label="Movies" placeholder="Select a movie">
+    <Select defaultValue={2} placeholder="Select a movie">
+      <Label>Movies</Label>
       <SelectTrigger />
       <SelectContent items={movies}>
         {(item) => (

@@ -1,16 +1,12 @@
 "use client"
 
-import {
-  IconBrandReactjs,
-  IconCheck,
-  IconCodeBrackets,
-  IconFullscreen,
-  IconWindow,
-} from "@intentui/icons"
+import { CheckIcon, CodeBracketIcon, WindowIcon } from "@heroicons/react/24/outline"
 import { useInView } from "motion/react"
 import { useEffect, useMemo, useRef, useState } from "react"
 import { Button, type Key, Tab, TabList, TabPanel, Tabs } from "react-aria-components"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
+import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
+import { FullscreenIcon } from "@/components/icons/fullscreen-icon"
 import { ShadcnuiLogo } from "@/components/icons/shadcn-logo"
 import { Heading } from "@/components/ui/heading"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -71,7 +67,7 @@ function SourceTabs({ files }: { files: RegistryFile[] }) {
             id={it.id}
             key={it.id}
           >
-            <IconBrandReactjs className="text-muted-fg group-selected:text-cyan-500" />
+            <BrandReactjsIcon className="text-muted-fg group-selected:text-cyan-500" />
             <span className="font-mono">{it.id}</span>
           </Tab>
         ))}
@@ -107,7 +103,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
                 }}
                 className="flex items-center gap-x-2 font-mono text-muted-fg text-sm tracking-tigth"
               >
-                {copied ? <IconCheck /> : <ShadcnuiLogo className="size-4" />}
+                {copied ? <CheckIcon /> : <ShadcnuiLogo className="size-4" />}
                 @intentui/block/{item.title}
               </Button>
               <TooltipContent className="rounded-full text-muted-fg text-sm/6" inverse>
@@ -120,14 +116,14 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
               className="group inline-flex cursor-default items-center gap-x-2 rounded-lg selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary"
               id="preview"
             >
-              <IconWindow className="text-muted-fg group-selected:text-fg" />
+              <WindowIcon className="text-muted-fg group-selected:text-fg" />
               Preview
             </Tab>
             <Tab
               className="group inline-flex cursor-default items-center gap-x-2 rounded-lg selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary"
               id="source"
             >
-              <IconCodeBrackets className="text-muted-fg group-selected:text-fg" />
+              <CodeBracketIcon className="text-muted-fg group-selected:text-fg" />
               Source
             </Tab>
             <Tab
@@ -136,7 +132,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
               href={`/pre-blocks/${b}/${encodeURIComponent(c)}`}
               target="_blank"
             >
-              <IconFullscreen className="text-muted-fg group-selected:text-fg" />
+              <FullscreenIcon className="text-muted-fg group-selected:text-fg" />
               Fullscreen
             </Tab>
           </TabList>

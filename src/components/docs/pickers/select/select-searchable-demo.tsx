@@ -2,6 +2,7 @@
 
 import { Autocomplete, Popover, useFilter } from "react-aria-components"
 import { Dialog } from "@/components/ui/dialog"
+import { Label } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
 import { SearchField } from "@/components/ui/search-field"
 import { Select, SelectItem, SelectTrigger } from "@/components/ui/select"
@@ -22,7 +23,8 @@ const languages = [
 export default function SelectSearchableDemo() {
   const { contains } = useFilter({ sensitivity: "base" })
   return (
-    <Select label="Select a language">
+    <Select>
+      <Label>Select a language</Label>
       <SelectTrigger />
       <Popover className="entering:fade-in exiting:fade-out flex max-h-80 w-(--trigger-width) entering:animate-in exiting:animate-out flex-col overflow-hidden rounded-lg border bg-overlay">
         <Dialog aria-label="Language">

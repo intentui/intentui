@@ -1,4 +1,4 @@
-import { IconCheck, IconChevronLgDown, IconDuplicate } from "@intentui/icons"
+import { CheckIcon, ChevronDownIcon, Square2StackIcon } from "@heroicons/react/24/outline"
 import { formatHex, formatHsl, formatRgb, oklch, parse } from "culori"
 import { useEffect, useState } from "react"
 import type { Selection } from "react-aria-components"
@@ -86,7 +86,7 @@ export function ColorItem({ color }: { color: keyof typeof colors }) {
             }}
           >
             {shade}
-            {copiedShade === shade ? <IconCheck /> : <IconDuplicate />}
+            {copiedShade === shade ? <CheckIcon /> : <Square2StackIcon />}
           </ListBoxItem>
         ))}
       </ListBox>
@@ -104,7 +104,7 @@ export function SelectFormat({ selected, setSelected }: SelectedFormatProps) {
     <Menu>
       <Button intent="outline" className="w-32 justify-between font-mono uppercase">
         {[...selected].join(", ")}
-        <IconChevronLgDown className="ml-1" />
+        <ChevronDownIcon className="ml-1" />
       </Button>
       <MenuContent
         placement="bottom right"

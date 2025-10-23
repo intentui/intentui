@@ -1,52 +1,59 @@
 "use client"
-import { IconDotsVertical } from "@intentui/icons"
+import { EllipsisVerticalIcon } from "@heroicons/react/24/outline"
 import { NumberFormatter } from "@internationalized/number"
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
-import { Table } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 export default function TableDemo() {
   return (
     <div className="rounded-lg border p-4">
       <Table aria-label="Products">
-        <Table.Header>
-          <Table.Column className="w-0">#</Table.Column>
-          <Table.Column isRowHeader>Name</Table.Column>
-          <Table.Column>Category</Table.Column>
-          <Table.Column>Price</Table.Column>
-          <Table.Column>Stock</Table.Column>
-          <Table.Column />
-        </Table.Header>
-        <Table.Body items={products}>
+        <TableHeader>
+          <TableColumn className="w-0">#</TableColumn>
+          <TableColumn isRowHeader>Name</TableColumn>
+          <TableColumn>Category</TableColumn>
+          <TableColumn>Price</TableColumn>
+          <TableColumn>Stock</TableColumn>
+          <TableColumn />
+        </TableHeader>
+        <TableBody items={products}>
           {(item) => (
-            <Table.Row id={item.id}>
-              <Table.Cell>{item.id}</Table.Cell>
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell>{item.category}</Table.Cell>
-              <Table.Cell>
+            <TableRow id={item.id}>
+              <TableCell>{item.id}</TableCell>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.category}</TableCell>
+              <TableCell>
                 {new NumberFormatter("en-US", {
                   style: "currency",
                   currency: "USD",
                 }).format(item.price)}
-              </Table.Cell>
-              <Table.Cell>{item.stock}</Table.Cell>
-              <Table.Cell>
+              </TableCell>
+              <TableCell>{item.stock}</TableCell>
+              <TableCell>
                 <div className="flex justify-end">
                   <Menu>
                     <MenuTrigger className="size-6">
-                      <IconDotsVertical />
+                      <EllipsisVerticalIcon />
                     </MenuTrigger>
                     <MenuContent aria-label="Actions" placement="left top">
                       <MenuItem>View</MenuItem>
                       <MenuItem>Edit</MenuItem>
                       <MenuSeparator />
-                      <MenuItem isDanger>Delete</MenuItem>
+                      <MenuItem intent="danger">Delete</MenuItem>
                     </MenuContent>
                   </Menu>
                 </div>
-              </Table.Cell>
-            </Table.Row>
+              </TableCell>
+            </TableRow>
           )}
-        </Table.Body>
+        </TableBody>
       </Table>
     </div>
   )

@@ -1,16 +1,22 @@
 "use client"
 
-import { IconHashtag, IconHeadphones, IconLogout, IconPlus, IconSettings } from "@intentui/icons"
+import {
+  ArrowLeftStartOnRectangleIcon,
+  Cog6ToothIcon,
+  HashtagIcon,
+  LifebuoyIcon,
+  PlusIcon,
+} from "@heroicons/react/24/outline"
 import { Avatar } from "@/components/ui/avatar"
 import {
   Menu,
   MenuContent,
   MenuHeader,
   MenuItem,
-  MenuKeyboard,
   MenuLabel,
   MenuSection,
   MenuSeparator,
+  MenuShortcut,
   MenuTrigger,
 } from "@/components/ui/menu"
 
@@ -20,7 +26,7 @@ export default function MenuWithArrowDemo() {
       <MenuTrigger aria-label="Open Menu">
         <Avatar src="https://intentui.com/images/avatar/cobain.jpg" />
       </MenuTrigger>
-      <MenuContent popover={{ showArrow: true, placement: "top" }} className="min-w-54">
+      <MenuContent popover={{ arrow: true, placement: "top" }} className="min-w-54">
         <MenuSection>
           <MenuHeader separator>
             <span className="block">Irsyad A. Panjaitan</span>
@@ -28,26 +34,26 @@ export default function MenuWithArrowDemo() {
           </MenuHeader>
         </MenuSection>
         <MenuItem>
-          <IconSettings />
+          <Cog6ToothIcon className="size-6" aria-hidden="true" />
           <MenuLabel>Settings</MenuLabel>
         </MenuItem>
         <MenuItem href="#">
-          <IconPlus />
+          <PlusIcon className="size-6" aria-hidden="true" />
           <MenuLabel>Create Team</MenuLabel>
         </MenuItem>
         <MenuItem href="#">
-          <IconHashtag />
+          <HashtagIcon className="size-6" aria-hidden="true" />
           <MenuLabel>Command Menu</MenuLabel>
-          <MenuKeyboard keys="⌘K" />
+          <MenuShortcut keys="⌘K" />
         </MenuItem>
         <MenuSeparator />
         <MenuItem href="#">
-          <IconHeadphones />
+          <LifebuoyIcon className="size-6" aria-hidden="true" />
           <MenuLabel>Contact Support</MenuLabel>
         </MenuItem>
         <MenuSeparator />
         <MenuItem>
-          <IconLogout />
+          <ArrowLeftStartOnRectangleIcon className="size-6" aria-hidden="true" />
           <MenuLabel>Log out</MenuLabel>
         </MenuItem>
       </MenuContent>

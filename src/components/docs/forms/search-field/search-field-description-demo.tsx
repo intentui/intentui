@@ -1,7 +1,13 @@
 "use client"
 
-import { SearchField } from "@/components/ui/search-field"
+import { Description } from "@/components/ui/field"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 
 export default function SearchFieldDescriptionDemo() {
-  return <SearchField aria-label="Search" placeholder="Search" description="Search for a product" />
+  return (
+    <SearchField aria-label="Search">
+      <SearchInput placeholder="Search" />
+      <Description>Search for a product</Description>
+    </SearchField>
+  )
 }

@@ -28,7 +28,7 @@ export function SelectSize() {
 
   return (
     <Menu aria-label="Select Icon Size">
-      <Button intent="outline" size="sm">
+      <Button className="shrink-0" intent="outline" size="sm">
         <span className="inline sm:hidden sm:text-sm/6">
           {title([...selectedSize].join(", ").replace("size-", " ")) || "5"}
         </span>

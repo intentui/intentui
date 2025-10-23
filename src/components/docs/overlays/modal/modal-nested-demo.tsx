@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
+import { Form } from "react-aria-components"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
-import { Form } from "@/components/ui/form"
+import { Label } from "@/components/ui/field"
 import {
   ModalBody,
   ModalClose,
@@ -13,6 +14,7 @@ import {
   ModalHeader,
   ModalTitle,
 } from "@/components/ui/modal"
+import { TextField } from "@/components/ui/text-field"
 import { Textarea } from "@/components/ui/textarea"
 
 export default function ModalNestedDemo() {
@@ -70,12 +72,13 @@ export default function ModalNestedDemo() {
           }}
         >
           <ModalBody className="space-y-4">
-            <Textarea
-              isRequired
-              label="Bio"
-              placeholder="Tell us something about yourself"
-              onInput={() => setIsTyping(true)}
-            />
+            <TextField>
+              <Label>Bio</Label>
+              <Textarea
+                placeholder="Tell us something about yourself"
+                onInput={() => setIsTyping(true)}
+              />
+            </TextField>
           </ModalBody>
           <ModalFooter>
             <ModalClose>Skip for now</ModalClose>

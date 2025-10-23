@@ -1,6 +1,6 @@
 "use client"
 
-import { IconHighlight, IconTrash } from "@intentui/icons"
+import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline"
 import {
   Menu,
   MenuContent,
@@ -19,12 +19,12 @@ export default function MenuDangerDemo() {
           <MenuLabel>View</MenuLabel>
         </MenuItem>
         <MenuItem>
-          <IconHighlight />
+          <PencilSquareIcon />
           <MenuLabel>Edit</MenuLabel>
         </MenuItem>
         <MenuSeparator />
-        <MenuItem isDanger>
-          <IconTrash />
+        <MenuItem intent="danger">
+          <TrashIcon />
           <MenuLabel>Delete</MenuLabel>
         </MenuItem>
       </MenuContent>

@@ -1,5 +1,5 @@
 import { useMemo } from "react"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
 
 export default function LineChartStackedDemo() {
@@ -16,13 +16,13 @@ export default function LineChartStackedDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Engagement last 7d</Card.Title>
-        <Card.Description>
+      <CardHeader>
+        <CardTitle>Engagement last 7d</CardTitle>
+        <CardDescription>
           Tracks likes, comments, and shares during the most recent 7-day period.
-        </Card.Description>
-      </Card.Header>
-      <Card.Content>
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
         <LineChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
@@ -38,7 +38,7 @@ export default function LineChartStackedDemo() {
             shares: { label: "Shares" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

@@ -1,38 +1,49 @@
 "use client"
 
 import { buttonStyles } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { DescriptionList } from "@/components/ui/description-list"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  DescriptionDetails,
+  DescriptionList,
+  DescriptionTerm,
+} from "@/components/ui/description-list"
 import { Link } from "@/components/ui/link"
 
 export default function DescriptionListCardDemo() {
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Product Details</Card.Title>
-        <Card.Description>
+      <CardHeader>
+        <CardTitle>Product Details</CardTitle>
+        <CardDescription>
           The product details card is a great way to display information about a product.
-        </Card.Description>
-      </Card.Header>
-      <Card.Content>
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
         <DescriptionList>
-          <DescriptionList.Term>Product Name</DescriptionList.Term>
-          <DescriptionList.Details>Wireless Headphones</DescriptionList.Details>
-          <DescriptionList.Term>Battery Life</DescriptionList.Term>
-          <DescriptionList.Details>20 hours</DescriptionList.Details>
-          <DescriptionList.Term>Weight</DescriptionList.Term>
-          <DescriptionList.Details>250 grams</DescriptionList.Details>
-          <DescriptionList.Term>Color</DescriptionList.Term>
-          <DescriptionList.Details>Black</DescriptionList.Details>
-          <DescriptionList.Term>Warranty</DescriptionList.Term>
-          <DescriptionList.Details>2 years</DescriptionList.Details>
+          <DescriptionTerm>Product Name</DescriptionTerm>
+          <DescriptionDetails>Wireless Headphones</DescriptionDetails>
+          <DescriptionTerm>Battery Life</DescriptionTerm>
+          <DescriptionDetails>20 hours</DescriptionDetails>
+          <DescriptionTerm>Weight</DescriptionTerm>
+          <DescriptionDetails>250 grams</DescriptionDetails>
+          <DescriptionTerm>Color</DescriptionTerm>
+          <DescriptionDetails>Black</DescriptionDetails>
+          <DescriptionTerm>Warranty</DescriptionTerm>
+          <DescriptionDetails>2 years</DescriptionDetails>
         </DescriptionList>
-      </Card.Content>
-      <Card.Footer>
+      </CardContent>
+      <CardFooter>
         <Link className={buttonStyles()} href="#">
           Edit
         </Link>
-      </Card.Footer>
+      </CardFooter>
     </Card>
   )
 }

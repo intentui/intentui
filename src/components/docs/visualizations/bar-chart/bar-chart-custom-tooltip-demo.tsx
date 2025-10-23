@@ -1,11 +1,11 @@
 "use client"
 
-import { IconHeartFill, IconMessagesFill, IconUpload } from "@intentui/icons"
+import { ArrowUpTrayIcon, ChatBubbleLeftRightIcon, HeartIcon } from "@heroicons/react/24/outline"
 import { useMemo } from "react"
 import type { TooltipProps as RechartsTooltipProps } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import { BarChart } from "@/components/ui/bar-chart"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface CustomTooltipProps extends Partial<RechartsTooltipProps<ValueType, NameType>> {
   active?: boolean
@@ -28,9 +28,11 @@ function CustomTooltip({ active, payload, label }: CustomTooltipProps) {
         {payload.map((entry) => (
           <div key={entry.dataKey} className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-muted-fg capitalize">
-              {entry.dataKey === "likes" && <IconHeartFill style={{ color: entry.color }} />}
-              {entry.dataKey === "comments" && <IconMessagesFill style={{ color: entry.color }} />}
-              {entry.dataKey === "shares" && <IconUpload style={{ color: entry.color }} />}
+              {entry.dataKey === "likes" && <HeartIcon style={{ color: entry.color }} />}
+              {entry.dataKey === "comments" && (
+                <ChatBubbleLeftRightIcon style={{ color: entry.color }} />
+              )}
+              {entry.dataKey === "shares" && <ArrowUpTrayIcon style={{ color: entry.color }} />}
               <span>{entry.name}</span>
             </div>
             <span className="font-mono text-fg tabular-nums">{entry.value}</span>
@@ -55,11 +57,11 @@ export default function BarChartCustomTooltipDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Engagement last 7d</Card.Title>
-        <Card.Description>Likes, comments, and shares for the recent week.</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader>
+        <CardTitle>Engagement last 7d</CardTitle>
+        <CardDescription>Likes, comments, and shares for the recent week.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <BarChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
@@ -72,7 +74,7 @@ export default function BarChartCustomTooltipDemo() {
             shares: { label: "Shares" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

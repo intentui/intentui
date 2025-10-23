@@ -1,8 +1,9 @@
 "use client"
 
-import { IconBrandLaravel, IconBrandNextjs } from "@intentui/icons"
 import { twMerge } from "tailwind-merge"
 import { IconBrandTanstack, IconBrandVite } from "@/components/framework-guides"
+import { BrandLaravelIcon } from "@/components/icons/brand-laravel-icon"
+import { BrandNextjsIcon } from "@/components/icons/brand-nextjs-icon"
 import { PageContainer } from "@/components/page-container"
 import { CardHeader } from "@/components/ui/card"
 import {
@@ -14,13 +15,13 @@ import {
 
 export const starterKits = [
   {
-    icon: IconBrandNextjs,
+    icon: BrandNextjsIcon,
     name: "Next.js",
     url: "https://github.com/intentui/next.js",
     description: "A full-featured starter with routing, layouts, and authentication built in.",
   },
   {
-    icon: IconBrandLaravel,
+    icon: BrandLaravelIcon,
     name: "Laravel",
     url: "https://github.com/intentui/laravel",
     description: "Server-driven starter with routing, auth, and front-end integration ready to go.",

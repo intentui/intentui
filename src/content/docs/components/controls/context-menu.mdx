@@ -24,13 +24,13 @@ npx shadcn@latest add @intentui/context-menu
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 
 <SourceCode toShow='context-menu' />
 
 ## Description
-You can add details to menu items by using the `ContextMenu.Description` component.
+You can add details to menu items by using the `ContextMenuDescription` component.
 <How toUse="controls/context-menu/context-menu-detail-description-demo" />
 
 ## Danger
@@ -54,5 +54,5 @@ Disable specific menu items.
 <How toUse="controls/context-menu/context-menu-disabled-demo" />
 Also, you can disable items directly in `MenuContent` by using the `disabledKeys` prop.
 ```tsx
-<ContextMenu.Content disabledKeys={['gsu']} />
+<ContextMenuContent disabledKeys={['gsu']} />
 ```

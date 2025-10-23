@@ -2,8 +2,12 @@
 
 import { useState } from "react"
 import type { Key } from "react-aria-components"
-import { Description } from "@/components/ui/field"
-import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-select"
+import { Description, FieldError, Label } from "@/components/ui/field"
+import {
+  MultipleSelect,
+  MultipleSelectContent,
+  MultipleSelectItem,
+} from "@/components/ui/multiple-select"
 
 const tags = [
   { id: 1, name: "Travel" },
@@ -17,14 +21,14 @@ export default function MultipleSelectControlledDemo() {
   const [selectedItems, setSelectedItems] = useState<Key[]>([2, 4])
 
   return (
-    <>
-      <MultipleSelect
-        className="min-w-2xs max-w-min"
-        label="Select tags"
-        value={selectedItems}
-        onChange={setSelectedItems}
-        items={tags}
-      >
+    <MultipleSelect
+      className="mx-auto max-w-2xs"
+      isRequired
+      value={selectedItems}
+      onChange={setSelectedItems}
+    >
+      <Label>Select tags</Label>
+      <MultipleSelectContent items={tags}>
         {(item) => {
           return (
             <MultipleSelectItem id={item.id} textValue={item.name}>
@@ -32,12 +36,9 @@ export default function MultipleSelectControlledDemo() {
             </MultipleSelectItem>
           )
         }}
-      </MultipleSelect>
-      {[...selectedItems].length > 0 && (
-        <Description className="mt-2 block max-w-xs text-muted-fg [&>strong]:text-fg">
-          You have selected: <strong>{[...selectedItems]}</strong>
-        </Description>
-      )}
-    </>
+      </MultipleSelectContent>
+      <Description>Select at least one tag.</Description>
+      <FieldError />
+    </MultipleSelect>
   )
 }
