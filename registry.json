@@ -7500,17 +7500,8 @@
       "type": "registry:page",
       "title": "Disclosure",
       "description": "disclosure-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
       "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/disclosure-group",
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/input",
-        "http://localhost:3000/r/text",
-        "http://localhost:3000/r/text-field"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
@@ -7605,17 +7596,8 @@
       "type": "registry:page",
       "title": "Disclosure Controlled",
       "description": "disclosure-controlled-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
       "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/disclosure-group",
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/input",
-        "http://localhost:3000/r/text",
-        "http://localhost:3000/r/text-field"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
