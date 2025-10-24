@@ -200,7 +200,7 @@ const Sidebar = ({
           aria-label="Sidebar"
           data-slot="sidebar"
           data-intent="default"
-          className="w-(--sidebar-width) entering:blur-in exiting:blur-out [--sidebar-width:18rem] has-data-[slot=calendar]:[--sidebar-width:23rem]"
+          className="w-(--sidebar-width) [--sidebar-width:18rem] has-data-[slot=calendar]:[--sidebar-width:23rem]"
           side={side}
         >
           {children}
@@ -308,7 +308,7 @@ const SidebarContent = ({ className, ...props }: React.ComponentProps<"div">) =>
       data-slot="sidebar-content"
       className={twMerge(
         "flex min-h-0 flex-1 scroll-mb-96 flex-col overflow-auto *:data-[slot=sidebar-section]:border-l-0",
-        state === "collapsed" ? "items-center" : "mask-b-from-95%",
+        state === "collapsed" ? "items-center" : "",
         className,
       )}
       {...props}
