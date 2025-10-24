@@ -22,7 +22,7 @@ export default function SheetFloatDemo() {
         </SheetHeader>
         <SheetFooter>
           <SheetClose>Cancel</SheetClose>
-          <Button intent="primary">Save Changes</Button>
+          <Button intent="primary">Save</Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>

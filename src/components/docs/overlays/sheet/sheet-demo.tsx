@@ -44,7 +44,7 @@ export default function SheetDemo() {
             <SheetFooter>
               <SheetClose>Cancel</SheetClose>
               <Button onPress={close} intent="primary" type="submit">
-                Save Changes
+                Save
               </Button>
             </SheetFooter>
           </>
