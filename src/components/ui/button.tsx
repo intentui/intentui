@@ -7,7 +7,7 @@ import {
 import { tv, type VariantProps } from "tailwind-variants"
 import { cx } from "@/lib/primitive"
 
-const buttonStyles = tv({
+export const buttonStyles = tv({
   base: [
     "[--btn-border:var(--color-fg)]/15 [--btn-icon-active:var(--btn-fg)] [--btn-outline:var(--btn-bg)] [--btn-radius:calc(var(--radius-lg)-1px)] [--btn-ring:var(--btn-bg)]/20",
     "bg-(--btn-bg) text-(--btn-fg) outline-(--btn-outline) ring-(--btn-ring) hover:bg-(--btn-overlay)",
@@ -40,17 +40,17 @@ const buttonStyles = tv({
         "*:data-[slot=loader]:-mx-px *:data-[slot=loader]:size-3.5 sm:*:data-[slot=loader]:size-3",
       ],
       sm: [
-        "min-h-9 gap-x-1.5 px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)] sm:min-h-8 sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/5",
+        "min-h-9 gap-x-1.5 px-3 py-[calc(--spacing(2)-1px)] sm:min-h-8 sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/5",
         "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
         "*:data-[slot=loader]:size-4.5 sm:*:data-[slot=loader]:size-4",
       ],
       md: [
-        "min-h-10 gap-x-2 px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:min-h-9 sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/6",
+        "min-h-10 gap-x-2 px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:min-h-9 sm:px-3 sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/6",
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4",
         "*:data-[slot=loader]:size-5 sm:*:data-[slot=loader]:size-4",
       ],
       lg: [
-        "min-h-11 gap-x-2 px-[calc(--spacing(4)-1px)] py-[calc(--spacing(2.5)-1px)] sm:min-h-10 sm:px-[calc(--spacing(3.5)-1px)] sm:py-[calc(--spacing(2)-1px)] sm:text-sm/6",
+        "min-h-10 gap-x-2 px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(3)-1px)] sm:min-h-9 sm:px-3 sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/7",
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
         "*:data-[slot=loader]:size-5 sm:*:data-[slot=loader]:size-4.5",
       ],
@@ -76,11 +76,11 @@ const buttonStyles = tv({
   },
 })
 
-interface ButtonProps extends ButtonPrimitiveProps, VariantProps<typeof buttonStyles> {
+export interface ButtonProps extends ButtonPrimitiveProps, VariantProps<typeof buttonStyles> {
   ref?: React.Ref<HTMLButtonElement>
 }
 
-const Button = ({ className, intent, size, isCircle, ref, ...props }: ButtonProps) => {
+export function Button({ className, intent, size, isCircle, ref, ...props }: ButtonProps) {
   return (
     <ButtonPrimitive
       ref={ref}
@@ -96,6 +96,3 @@ const Button = ({ className, intent, size, isCircle, ref, ...props }: ButtonProp
     />
   )
 }
-
-export type { ButtonProps }
-export { Button, buttonStyles }
