@@ -6,7 +6,6 @@ import {
   EllipsisHorizontalIcon,
   HashtagIcon,
   PlusIcon,
-  SparklesIcon,
 } from "@heroicons/react/24/outline"
 import {
   ArchiveBoxIcon as ArchiveBoxSolid,
@@ -62,7 +61,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
     <Sidebar {...props}>
       <SidebarHeader>
         <Link href="/docs/components/layouts/sidebar" className="flex items-center gap-x-2">
-          <SparklesIcon className="size-8" />
+          <Avatar
+            isSquare
+            size="sm"
+            className="outline-hidden"
+            src="https://design.intentui.com/logo?color=155DFC"
+          />
           <SidebarLabel className="font-medium">
             Intent <span className="text-muted-fg">UI</span>
           </SidebarLabel>

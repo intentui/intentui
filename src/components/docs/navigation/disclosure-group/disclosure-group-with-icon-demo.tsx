@@ -1,11 +1,11 @@
 "use client"
 
+import { ChevronRightIcon } from "@heroicons/react/20/solid"
 import {
   ArchiveBoxIcon,
   ArrowTrendingUpIcon,
   CheckCircleIcon,
   CheckIcon,
-  ChevronRightIcon,
   ComputerDesktopIcon,
   CpuChipIcon,
   CreditCardIcon,
@@ -15,7 +15,7 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline"
 import {
-  DisclosureItem as Disclosure,
+  Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,
@@ -23,25 +23,27 @@ import {
 
 export default function DisclosureGroupWithIconDemo() {
   return (
-    <DisclosureGroup
-      className="rounded-xl border **:data-[slot=disclosure]:last:border-b-0"
-      defaultExpandedKeys={[1]}
-    >
+    <DisclosureGroup defaultExpandedKeys={[1]}>
       {items.map((item, index) => (
         <Disclosure key={index} id={index}>
-          <DisclosureTrigger className="px-4">
-            <item.icon /> {item.title}
+          <DisclosureTrigger>
+            <span className="flex items-center gap-x-2">
+              <item.icon /> {item.title}
+            </span>
           </DisclosureTrigger>
-          <DisclosurePanel className="bg-muted">
-            <DisclosureGroup allowsMultipleExpanded>
+          <DisclosurePanel>
+            <DisclosureGroup
+              className="**:data-[slot=disclosure-indicator]:hidden"
+              allowsMultipleExpanded
+            >
               {item.children.map((child, childIndex) => (
                 <Disclosure key={childIndex} id={childIndex}>
-                  <DisclosureTrigger className="group">
-                    <span>
-                      <ChevronRightIcon className="size-5 duration-300 group-aria-expanded:rotate-90" />
+                  <DisclosureTrigger className="group justify-start">
+                    <span className="mr-2 flex items-center gap-x-2">
+                      <ChevronRightIcon className="size-4 duration-300 group-aria-expanded:rotate-90" />
                       <child.icon />
-                      {child.title}
                     </span>
+                    {child.title}
                   </DisclosureTrigger>
                   <DisclosurePanel>{child.description}</DisclosurePanel>
                 </Disclosure>
@@ -84,7 +86,7 @@ const items = [
   {
     id: 2,
     icon: CreditCardIcon,
-    title: "Business Administration Department",
+    title: "Business administration",
     description: "Develop skills in management, finance, and entrepreneurship.",
     children: [
       {

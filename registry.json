@@ -7478,24 +7478,6 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "disclosure-group-hide-indicator-demo",
-      "type": "registry:page",
-      "title": "Disclosure Group Hide Indicator",
-      "description": "disclosure-group-hide-indicator-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-hide-indicator-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-group-hide-indicator-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "disclosure-group-disabled-demo",
       "type": "registry:page",
       "title": "Disclosure Group Disabled",
@@ -7508,6 +7490,33 @@
           "path": "src/components/docs/navigation/disclosure-group/disclosure-group-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-disabled-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "disclosure-demo",
+      "type": "registry:page",
+      "title": "Disclosure",
+      "description": "disclosure-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/disclosure-group",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/text",
+        "http://localhost:3000/r/text-field"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/navigation/disclosure-group/disclosure-demo.tsx",
+          "type": "registry:page",
+          "target": "app/disclosure-demo/page.tsx"
         }
       ]
     },
@@ -7529,27 +7538,6 @@
           "path": "src/components/docs/navigation/disclosure-group/disclosure-group-nested-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-nested-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "disclosure-group-border-hidden-demo",
-      "type": "registry:page",
-      "title": "Disclosure Group Border Hidden",
-      "description": "disclosure-group-border-hidden-demo",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-border-hidden-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-group-border-hidden-demo/page.tsx"
         }
       ]
     },
@@ -7595,24 +7583,6 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "disclosure-group-hide-everything-demo",
-      "type": "registry:page",
-      "title": "Disclosure Group Hide Everything",
-      "description": "disclosure-group-hide-everything-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-hide-everything-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-group-hide-everything-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "disclosure-group-allow-multiple-expand-demo",
       "type": "registry:page",
       "title": "Disclosure Group Allow Multiple Expand",
@@ -7631,6 +7601,33 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "disclosure-controlled-demo",
+      "type": "registry:page",
+      "title": "Disclosure Controlled",
+      "description": "disclosure-controlled-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/disclosure-group",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/text",
+        "http://localhost:3000/r/text-field"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/navigation/disclosure-group/disclosure-controlled-demo.tsx",
+          "type": "registry:page",
+          "target": "app/disclosure-controlled-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-default-expand-demo",
       "type": "registry:page",
       "title": "Disclosure Group Default Expand",
@@ -7643,6 +7640,24 @@
           "path": "src/components/docs/navigation/disclosure-group/disclosure-group-default-expand-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-default-expand-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "disclosure-disabled-demo",
+      "type": "registry:page",
+      "title": "Disclosure Disabled",
+      "description": "disclosure-disabled-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/disclosure-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/navigation/disclosure-group/disclosure-disabled-demo.tsx",
+          "type": "registry:page",
+          "target": "app/disclosure-disabled-demo/page.tsx"
         }
       ]
     },
@@ -11096,12 +11111,12 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11128,12 +11143,12 @@
       "description": "navbar-03",
       "registryDependencies": [
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11161,12 +11176,12 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11194,12 +11209,12 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11227,12 +11242,12 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {

@@ -282,7 +282,7 @@ const SidebarHeader = ({ className, ref, ...props }: React.ComponentProps<"div">
       className={twMerge(
         "flex flex-col gap-2 p-2.5 [.border-b]:border-sidebar-border",
         "in-data-[intent=inset]:p-4",
-        state === "collapsed" ? "p-2.5" : "p-4",
+        state === "collapsed" ? "items-center p-2.5" : "p-4",
         className,
       )}
       {...props}
@@ -635,10 +635,18 @@ const SidebarTrigger = ({
       {...props}
     >
       {children || (
-        <>
-          <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="none" viewBox="0 0 24 24" data-slot="icon" aria-hidden="true"><path fill="currentColor" d="M6 8.5a1 1 0 1 0 2 0 1 1 0 0 0-2 0M6 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0m0 3.5a1 1 0 1 0 2 0 1 1 0 0 0-2 0" /><path fill="currentColor" fillRule="evenodd" d="M2 5.75C2 4.784 2.784 4 3.75 4h16.5c.966 0 1.75.784 1.75 1.75v12.5A1.75 1.75 0 0 1 20.25 20H3.75A1.75 1.75 0 0 1 2 18.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h6.75v-13z" clipRule="evenodd" /></svg>
-          <span className="sr-only">Toggle Sidebar</span>
-        </>
+        <svg
+          data-slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width={16}
+          height={16}
+          fill="currentColor"
+          className="bi bi-layout-sidebar-inset"
+          viewBox="0 0 16 16"
+        >
+          <path d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+          <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+        </svg>
       )}
     </Button>
   )

@@ -35,7 +35,7 @@ export function DateInput({ className, ...props }: Omit<DateInputProps, "childre
           <DateSegment
             segment={segment}
             className={twJoin(
-              "inline shrink-0 rounded px-1.5 type-literal:px-0 text-fg tracking-wider caret-transparent outline-0 forced-color-adjust-none data-placeholder:not-data-focused:text-muted-fg sm:p-0.5 sm:py-0.5 sm:text-sm forced-colors:text-[ButtonText]",
+              "inline shrink-0 rounded px-1 type-literal:px-0 text-fg tracking-wider caret-transparent outline-0 forced-color-adjust-none data-placeholder:not-data-focused:text-muted-fg sm:p-0.5 sm:px-1.5 sm:py-0.5 sm:text-sm forced-colors:text-[ButtonText]",
               "focus:bg-primary-subtle focus:text-primary-subtle-fg focus:data-invalid:bg-danger-subtle focus:data-invalid:text-danger-subtle-fg forced-colors:focus:bg-[Highlight] forced-colors:focus:text-[HighlightText]",
               "disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
             )}

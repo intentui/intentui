@@ -2,7 +2,7 @@
 
 import { ChevronRightIcon } from "@heroicons/react/20/solid"
 import {
-  DisclosureItem as Disclosure,
+  Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,

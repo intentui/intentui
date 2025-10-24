@@ -1,7 +1,7 @@
 "use client"
 
 import {
-  DisclosureItem as Disclosure,
+  Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,

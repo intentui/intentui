@@ -78,12 +78,12 @@ export function EditorText({ source }: Props) {
       {rawSourceCode && Object.keys(rawSourceCode).length > 0 ? (
         <Tabs className="relative gap-0">
           <div className="flex items-center justify-between overflow-hidden rounded-t-lg border-x border-y">
-            <TabList className="gap-0 border-0">
+            <TabList className="gap-0 border-0 py-0">
               {Object.keys(rawSourceCode).map((key) => (
                 <Tab
                   className={(values) =>
                     twMerge(
-                      "flex cursor-default items-center gap-x-1.5 whitespace-nowrap px-2 py-2.5 font-mono text-muted-fg text-xs tracking-tight",
+                      "flex cursor-default items-center gap-x-1.5 whitespace-nowrap px-2 py-2.5 font-mono text-muted-fg text-xs tracking-tight first:pl-3",
                       "**:data-[slot=icon]:-ml-0.5 border-transparent border-x outline-hidden first:border-l-0 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
                       (values.isSelected || values.isFocused || values.isFocusVisible) &&
                         "border-input bg-secondary/50 text-secondary-fg dark:bg-muted",
@@ -116,7 +116,7 @@ export function EditorText({ source }: Props) {
               className="overflow-hidden rounded-b-lg border-x border-b bg-shiki-bg"
             >
               <CopyButton
-                className="absolute top-0.5 right-1"
+                className="-right-6 absolute top-0.5"
                 alwaysVisible
                 isCopied={copiedStates[key] || false}
                 onPress={() => handleCopy(key, value)}

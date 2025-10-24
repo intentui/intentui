@@ -50,6 +50,7 @@ const MenuTrigger = ({ className, ref, ...props }: MenuTriggerProps) => (
     data-slot="menu-trigger"
     className={cx(
       "relative inline text-left outline-hidden focus-visible:ring-1 focus-visible:ring-primary",
+      "*:data-[slot=chevron]:size-5 sm:*:data-[slot=chevron]:size-4",
       className,
     )}
     {...props}

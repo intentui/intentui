@@ -1,10 +1,6 @@
 "use client"
-import {
-  ChevronDownIcon,
-  MagnifyingGlassIcon,
-  ShoppingBagIcon,
-  SparklesIcon,
-} from "@heroicons/react/24/outline"
+import { ChevronDownIcon, MagnifyingGlassIcon, ShoppingBagIcon } from "@heroicons/react/24/outline"
+import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
@@ -47,7 +43,12 @@ export default function AppNavbar(props: NavbarProps) {
             aria-label="Goto documentation of Navbar"
             href="/docs/components/layouts/navbar"
           >
-            <SparklesIcon className="size-6 sm:size-5" />
+            <Avatar
+              isSquare
+              size="sm"
+              className="outline-hidden"
+              src="https://design.intentui.com/logo?color=155DFC"
+            />
             <span>
               Intent <span className="text-muted-fg">UI</span>
             </span>

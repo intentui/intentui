@@ -9,7 +9,6 @@ import {
   HashtagIcon,
   HomeIcon as HomeOutline,
   PencilSquareIcon,
-  SparklesIcon,
   TrashIcon,
 } from "@heroicons/react/24/outline"
 import {
@@ -49,7 +48,12 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <SparklesIcon className="size-6" />
+          <Avatar
+            isSquare
+            size="sm"
+            className="outline-hidden"
+            src="https://design.intentui.com/logo?color=155DFC"
+          />
           <SidebarLabel className="font-medium">
             Intent <span className="text-muted-fg">UI</span>
           </SidebarLabel>

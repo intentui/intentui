@@ -7,7 +7,7 @@ import {
   TagIcon as TagSolid,
   TruckIcon as TruckSolid,
 } from "@heroicons/react/24/solid"
-import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
+import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import {
@@ -36,7 +36,12 @@ export default function AppNavbar(props: NavbarProps) {
             aria-label="Goto documentation of Navbar"
             href="/docs/components/layouts/navbar"
           >
-            <BrandIntentuiIcon className="size-6 sm:size-5" />
+            <Avatar
+              isSquare
+              size="sm"
+              className="outline-hidden"
+              src="https://design.intentui.com/logo?color=155DFC"
+            />
             <span>
               Intent <span className="text-muted-fg">UI</span>
             </span>

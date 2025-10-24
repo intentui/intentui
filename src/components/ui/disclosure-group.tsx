@@ -10,9 +10,9 @@ import type {
 import {
   Button,
   composeRenderProps,
-  Disclosure,
   DisclosureStateContext,
   Heading,
+  Disclosure as PrimitiveDisclosure,
   DisclosureGroup as PrimitiveDisclosureGroup,
   DisclosurePanel as PrimitiveDisclosurePanel,
 } from "react-aria-components"
@@ -41,15 +41,15 @@ const DisclosureGroup = ({ className, ...props }: DisclosureGroupProps) => {
   )
 }
 
-const DisclosureItem = ({ className, ...props }: DisclosureProps) => {
+const Disclosure = ({ className, ...props }: DisclosureProps) => {
   return (
-    <Disclosure
+    <PrimitiveDisclosure
       className={composeRenderProps(className, (className, { isExpanded, isFocusVisibleWithin }) =>
         twMerge(
-          "group/disclosure-item inset-ring inset-ring-(--disclosure-collapsed-border) w-full rounded-(--disclosure-radius) bg-(--disclosure-collapsed-bg) duration-200",
+          "group/disclosure-item inset-ring inset-ring-(--disclosure-collapsed-border,transparent) w-full rounded-(--disclosure-radius,--spacing(0)) bg-(--disclosure-collapsed-bg,transparent) duration-200",
           (isExpanded || isFocusVisibleWithin) &&
-            "inset-ring-(--disclosure-expanded-border) bg-(--disclosure-expanded-bg)",
-          "has-data-hovered:inset-ring-(--disclosure-expanded-border) has-data-hovered:bg-(--disclosure-expanded-bg)",
+            "inset-ring-(--disclosure-expanded-border,transparent) bg-(--disclosure-expanded-bg)",
+          "has-data-hovered:inset-ring-(--disclosure-expanded-border,transparent) has-data-hovered:bg-(--disclosure-expanded-bg)",
           className,
         ),
       )}
@@ -72,8 +72,10 @@ const DisclosureTrigger = ({ ref, className, ...props }: DisclosureTriggerProps)
         slot="trigger"
         className={cx(
           [
-            "outline-hidden [--width:--spacing(2.5)] [&_[data-slot='icon']:not([class*='size-'])]:size-4",
-            "relative isolate flex w-full cursor-pointer items-center justify-between px-(--disclosure-gutter-x) py-[calc(var(--disclosure-gutter-x)-(--spacing(1)))] text-left font-medium text-sm/6",
+            "outline-hidden [--width:--spacing(2.5)]",
+            "relative isolate flex w-full cursor-default items-center justify-between px-(--disclosure-gutter-x,--spacing(0)) py-[calc(var(--disclosure-gutter-x,--spacing(0))-(--spacing(1)))] text-left font-medium text-sm/6",
+            "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4",
+            "disabled:opacity-50",
             state.isExpanded
               ? "rounded-t-(--disclosure-radius) rounded-b-none text-(--disclosure-expanded-fg)"
               : "rounded-(--disclosure-radius) text-(--disclosure-collapsed-fg) hover:text-(--disclosure-expanded-fg)",
@@ -86,7 +88,7 @@ const DisclosureTrigger = ({ ref, className, ...props }: DisclosureTriggerProps)
             {typeof props.children === "function" ? props.children(values) : props.children}
             <span
               data-slot="disclosure-indicator"
-              className="-mr-[calc(var(--disclosure-gutter-x)-(--spacing(3)))] pointer-events-none relative ml-(--disclosure-gutter-x) flex size-6 items-center justify-center"
+              className="-mr-[calc(var(--disclosure-gutter-x,--spacing(0))-(--spacing(3)))] pointer-events-none relative ml-(--disclosure-gutter-x,--spacing(0)) flex size-6 items-center justify-center"
             >
               <span
                 className={twJoin([
@@ -114,7 +116,7 @@ const DisclosurePanel = ({ className, ...props }: DisclosurePanelProps) => {
     >
       <div
         data-slot="disclosure-panel-content"
-        className="justify-start self-stretch text-pretty px-(--disclosure-gutter-x) pt-0 pb-(--disclosure-gutter-x) text-(--disclosure-collapsed-fg)"
+        className="justify-start self-stretch text-pretty px-(--disclosure-gutter-x,--spacing(0)) pt-2 pb-(--disclosure-gutter-x,--spacing(0)) text-(--disclosure-collapsed-fg)"
       >
         {props.children}
       </div>
@@ -122,4 +124,4 @@ const DisclosurePanel = ({ className, ...props }: DisclosurePanelProps) => {
   )
 }
 
-export { DisclosureGroup, DisclosureItem, DisclosureTrigger, DisclosurePanel }
+export { DisclosureGroup, Disclosure, DisclosureTrigger, DisclosurePanel }

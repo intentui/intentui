@@ -8,7 +8,7 @@ references: ["https://react-spectrum.adobe.com/react-aria/Disclosure.html#props"
 
 ## Basic
 A disclosure, also known as a collapsible, is a vertical stack of headers that expand or collapse to show or hide content sections. It helps organize large amounts of information, making it easier for users to navigate and find what they need.
-<How isCenter={false} toUse="navigation/disclosure/disclosure-demo" />
+<How className="w-full max-w-2xs" toUse="navigation/disclosure-group/disclosure-demo" />
 
 ## Installation
 ```bash
@@ -24,28 +24,27 @@ npm i react-aria-components @heroicons/react
 
 ## Anatomy
 ```
-import { Disclosure, DisclosurePanel, DisclosureTrigger } from "@/components/ui/disclosure-group"
+import { Disclosure, DisclosurePanel, DisclosureTrigger } from "@/components/ui/disclosure-group";
 ```
 
 ```
 <Disclosure>
-  <DisclosureTrigger>What are the benefits of regular exercise?</DisclosureTrigger>
+  <DisclosureTrigger>
+    Trigger
+  </DisclosureTrigger>
   <DisclosurePanel>
-    <p>
-      Regular exercise can improve your overall health, boost your mood, increase energy levels,
-      and help you maintain a healthy weight.
-    </p>
+    Content
   </DisclosurePanel>
 </Disclosure>
 ```
 
 ## Disabled
 You can disable all disclosure by setting the `isDisabled` prop.
-<How isCenter={false} toUse="navigation/disclosure/disclosure-disabled-demo" />
+<How className="w-full max-w-2xs" toUse="navigation/disclosure-group/disclosure-disabled-demo" />
 
 ## Controlled
 You can control the disclosure by using the `isExpanded` prop.
-<How isCenter={false} toUse="navigation/disclosure/disclosure-controlled-demo" />
+<How className="w-full max-w-2xs" toUse="navigation/disclosure-group/disclosure-controlled-demo" />
 
 ## Accordion
 If you're looking for a more advanced accordion, check out the [Disclosure Group](/docs/components/navigation/disclosure-group) component.
