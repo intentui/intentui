@@ -1,7 +1,9 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Form } from "@/components/ui/form"
+import { FieldError, Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import {
   Modal,
   ModalBody,
@@ -27,12 +29,11 @@ export default function ModalBlurDemo() {
         </ModalHeader>
         <Form onSubmit={() => {}}>
           <ModalBody className="pb-1">
-            <TextField
-              isRequired
-              label="Password"
-              type="password"
-              placeholder="Enter your password"
-            />
+            <TextField isRequired>
+              <Label>Password</Label>
+              <Input placeholder="Enter your password" type="password" />
+              <FieldError />
+            </TextField>
           </ModalBody>
           <ModalFooter>
             <ModalClose>Cancel</ModalClose>

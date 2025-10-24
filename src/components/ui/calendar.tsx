@@ -1,6 +1,6 @@
 "use client"
 
-import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import { type CalendarDate, getLocalTimeZone, today } from "@internationalized/date"
 import { useDateFormatter } from "@react-aria/i18n"
 import { use } from "react"
@@ -19,7 +19,6 @@ import {
   CalendarStateContext,
   composeRenderProps,
   Heading,
-  Text,
   useLocale,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
@@ -28,11 +27,10 @@ import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger } from ".
 
 interface CalendarProps<T extends DateValue>
   extends Omit<CalendarPrimitiveProps<T>, "visibleDuration"> {
-  errorMessage?: string
   className?: string
 }
 
-const Calendar = <T extends DateValue>({ errorMessage, className, ...props }: CalendarProps<T>) => {
+const Calendar = <T extends DateValue>({ className, ...props }: CalendarProps<T>) => {
   const now = today(getLocalTimeZone())
 
   return (
@@ -59,11 +57,6 @@ const Calendar = <T extends DateValue>({ errorMessage, className, ...props }: Ca
           )}
         </CalendarGridBody>
       </CalendarGrid>
-      {errorMessage && (
-        <Text slot="errorMessage" className="text-danger text-sm/6">
-          {errorMessage}
-        </Text>
-      )}
     </CalendarPrimitive>
   )
 }
@@ -106,7 +99,7 @@ const CalendarHeader = ({
           intent="plain"
           slot="previous"
         >
-          {direction === "rtl" ? <IconChevronLgRight /> : <IconChevronLgLeft />}
+          {direction === "rtl" ? <ChevronRightIcon /> : <ChevronLeftIcon />}
         </Button>
         <Button
           size="sq-sm"
@@ -115,7 +108,7 @@ const CalendarHeader = ({
           intent="plain"
           slot="next"
         >
-          {direction === "rtl" ? <IconChevronLgLeft /> : <IconChevronLgRight />}
+          {direction === "rtl" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
         </Button>
       </div>
     </header>
@@ -139,8 +132,8 @@ const SelectMonth = ({ state }: { state: CalendarState }) => {
     <Select
       className="[popover-width:8rem]"
       aria-label="Select month"
-      selectedKey={state.focusedDate.month.toString() ?? (new Date().getMonth() + 1).toString()}
-      onSelectionChange={(value) => {
+      value={state.focusedDate.month.toString() ?? (new Date().getMonth() + 1).toString()}
+      onChange={(value) => {
         state.setFocusedDate(state.focusedDate.set({ month: Number(value) }))
       }}
     >
@@ -173,8 +166,8 @@ const SelectYear = ({ state }: { state: CalendarState }) => {
   return (
     <Select
       aria-label="Select year"
-      selectedKey={20}
-      onSelectionChange={(value) => {
+      value={20}
+      onChange={(value) => {
         state.setFocusedDate(years[Number(value)]?.value as CalendarDate)
       }}
     >
@@ -203,4 +196,4 @@ const CalendarGridHeader = () => {
 }
 
 export type { CalendarProps }
-export { Calendar, CalendarHeader, CalendarGridHeader }
+export { Calendar, SelectMonth, SelectYear, CalendarHeader, CalendarGridHeader }

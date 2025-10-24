@@ -1,8 +1,10 @@
 "use client"
 
-import { IconPlus } from "@intentui/icons"
+import { PlusIcon } from "@heroicons/react/20/solid"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/field"
+import { Input, InputGroup } from "@/components/ui/input"
 import {
   ModalBody,
   ModalClose,
@@ -25,27 +27,29 @@ export default function TextFieldSuffixButtonDemo() {
           <ModalDescription>Create a new user account</ModalDescription>
         </ModalHeader>
         <ModalBody className="flex flex-col gap-4">
-          <TextField label="Username" placeholder="Username" />
-          <TextField label="Email" placeholder="Email" type="email" />
+          <TextField>
+            <Label>Username</Label>
+            <Input placeholder="Username" />
+          </TextField>
+          <TextField>
+            <Label>Email</Label>
+            <Input type="email" placeholder="Email" />
+          </TextField>
         </ModalBody>
         <ModalFooter>
           <ModalClose intent="outline">Cancel</ModalClose>
           <Button onPress={close}>Continue</Button>
         </ModalFooter>
       </ModalContent>
-      <TextField
-        label="Username"
-        suffix={
-          <Button
-            size="sq-xs"
-            aria-label="New user"
-            onPress={() => setOpen(true)}
-            intent="secondary"
-          >
-            <IconPlus />
+      <TextField>
+        <Label>Username</Label>
+        <InputGroup>
+          <Input />
+          <Button aria-label="New user" onPress={() => setOpen(true)} intent="secondary">
+            <PlusIcon />
           </Button>
-        }
-      />
+        </InputGroup>
+      </TextField>
     </>
   )
 }

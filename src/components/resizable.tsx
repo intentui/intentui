@@ -1,6 +1,6 @@
 "use client"
 
-import { IconDotGrid2X3 } from "@intentui/icons"
+import { Squares2X2Icon } from "@heroicons/react/24/outline"
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels"
 import { twMerge } from "tailwind-merge"
 
@@ -32,7 +32,7 @@ const ResizableHandle = ({
   >
     {withHandle && (
       <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
-        <IconDotGrid2X3 className="size-2.5" />
+        <Squares2X2Icon className="size-2.5" />
       </div>
     )}
   </PanelResizeHandle>

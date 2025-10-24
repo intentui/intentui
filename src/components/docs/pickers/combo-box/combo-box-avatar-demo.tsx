@@ -11,8 +11,8 @@ import {
 
 export default function ComboBoxAvatarDemo() {
   return (
-    <ComboBox placeholder="Select a user" aria-label="Users" isRequired>
-      <ComboBoxInput />
+    <ComboBox aria-label="Users" isRequired>
+      <ComboBoxInput placeholder="Select a user" />
       <ComboBoxContent items={users}>
         {(item) => (
           <ComboBoxItem id={item.id} textValue={item.name}>

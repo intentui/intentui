@@ -1,29 +1,31 @@
 "use client"
 
 import {
-  IconAlignmentCenter,
-  IconAlignmentCenterFill,
-  IconAlignmentJustify,
-  IconAlignmentJustifyFill,
-  IconAlignmentLeft,
-  IconAlignmentLeftFill,
-  IconAlignmentRight,
-  IconAlignmentRightFill,
-  IconBold,
-  IconBoldFill,
-  IconChevronDown,
-  IconGallery,
-  IconGrid4,
-  IconItalic,
-  IconItalicFill,
-  IconLink,
-  IconRedo,
-  IconStrikeThrough,
-  IconStrikeThroughFill,
-  IconUnderline,
-  IconUnderlineFill,
-  IconUndo,
-} from "@intentui/icons"
+  AdjustmentsHorizontalIcon as AdjustmentsHorizontalOutline,
+  ArrowUturnLeftIcon,
+  ArrowUturnRightIcon,
+  Bars3BottomLeftIcon,
+  Bars3BottomRightIcon,
+  Bars3Icon,
+  BoltIcon as BoltOutline,
+  ChevronDownIcon,
+  CursorArrowRaysIcon as CursorArrowRaysOutline,
+  LinkIcon,
+  NoSymbolIcon as NoSymbolOutline,
+  PencilIcon as PencilOutline,
+  PhotoIcon,
+  Squares2X2Icon,
+} from "@heroicons/react/24/outline"
+import {
+  AdjustmentsHorizontalIcon as AdjustmentsHorizontalSolid,
+  Bars3BottomLeftIcon as Bars3BottomLeftSolid,
+  Bars3BottomRightIcon as Bars3BottomRightSolid,
+  Bars3Icon as Bars3Solid,
+  BoltIcon as BoltSolid,
+  CursorArrowRaysIcon as CursorArrowRaysSolid,
+  NoSymbolIcon as NoSymbolSolid,
+  PencilIcon as PencilSolid,
+} from "@heroicons/react/24/solid"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -35,41 +37,39 @@ export default function ToolbarDemo() {
     <Toolbar aria-label="Toolbars">
       <ToolbarGroup aria-label="Text Formatting Options">
         <ToolbarItem defaultSelected aria-label="Bold" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconBoldFill /> : <IconBold />}</>}
+          {({ isSelected }) => <>{isSelected ? <BoltSolid /> : <BoltOutline />}</>}
         </ToolbarItem>
         <ToolbarItem aria-label="Italic" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconItalicFill /> : <IconItalic />}</>}
+          {({ isSelected }) => <>{isSelected ? <PencilSolid /> : <PencilOutline />}</>}
         </ToolbarItem>
         <ToolbarItem aria-label="Underline" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconUnderlineFill /> : <IconUnderline />}</>}
+          {({ isSelected }) => (
+            <>{isSelected ? <CursorArrowRaysSolid /> : <CursorArrowRaysOutline />}</>
+          )}
         </ToolbarItem>
         <ToolbarItem aria-label="Strikethrough" size="sq-sm">
-          {({ isSelected }) => (
-            <>{isSelected ? <IconStrikeThroughFill /> : <IconStrikeThrough />}</>
-          )}
+          {({ isSelected }) => <>{isSelected ? <NoSymbolSolid /> : <NoSymbolOutline />}</>}
         </ToolbarItem>
       </ToolbarGroup>
       <ToolbarSeparator />
       <ToolbarGroup aria-label="Alignment">
         <ToolbarItem aria-label="Align Left" size="sq-sm">
           {({ isSelected }) => (
-            <>{isSelected ? <IconAlignmentLeftFill /> : <IconAlignmentLeft />}</>
+            <>{isSelected ? <Bars3BottomLeftSolid /> : <Bars3BottomLeftIcon />}</>
           )}
         </ToolbarItem>
         <ToolbarItem size="sq-sm" aria-label="Align Center">
           {({ isSelected }) => (
-            <>{isSelected ? <IconAlignmentCenterFill /> : <IconAlignmentCenter />}</>
+            <>{isSelected ? <AdjustmentsHorizontalSolid /> : <AdjustmentsHorizontalOutline />}</>
           )}
         </ToolbarItem>
         <ToolbarItem size="sq-sm" aria-label="Align Right">
           {({ isSelected }) => (
-            <>{isSelected ? <IconAlignmentRightFill /> : <IconAlignmentRight />}</>
+            <>{isSelected ? <Bars3BottomRightSolid /> : <Bars3BottomRightIcon />}</>
           )}
         </ToolbarItem>
         <ToolbarItem size="sq-sm" aria-label="Align Justify">
-          {({ isSelected }) => (
-            <>{isSelected ? <IconAlignmentJustifyFill /> : <IconAlignmentJustify />}</>
-          )}
+          {({ isSelected }) => <>{isSelected ? <Bars3Solid /> : <Bars3Icon />}</>}
         </ToolbarItem>
       </ToolbarGroup>
       <ToolbarSeparator />
@@ -78,27 +78,27 @@ export default function ToolbarDemo() {
         <Menu>
           <Button aria-label="Other options" size="sm" intent="outline">
             Options...
-            <IconChevronDown />
+            <ChevronDownIcon />
           </Button>
           <MenuContent placement="bottom right">
             <MenuItem>
-              <IconUndo />
+              <ArrowUturnLeftIcon />
               Undo
             </MenuItem>
             <MenuItem>
-              <IconRedo />
+              <ArrowUturnRightIcon />
               Redo
             </MenuItem>
             <MenuItem>
-              <IconLink />
+              <LinkIcon />
               Insert Link
             </MenuItem>
             <MenuItem>
-              <IconGallery />
+              <PhotoIcon />
               Insert Image
             </MenuItem>
             <MenuItem>
-              <IconGrid4 />
+              <Squares2X2Icon />
               Insert Grid
             </MenuItem>
           </MenuContent>

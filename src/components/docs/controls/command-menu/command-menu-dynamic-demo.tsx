@@ -23,7 +23,7 @@ export default function CommandMenuDynamicDemo() {
       <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>
         <CommandMenuSearch placeholder="Quick search..." />
         <CommandMenuList>
-          <CommandMenuSection title="Pages">
+          <CommandMenuSection label="Pages">
             <CommandMenuItem textValue="Home" href="#">
               Home
             </CommandMenuItem>
@@ -35,7 +35,7 @@ export default function CommandMenuDynamicDemo() {
             </CommandMenuItem>
           </CommandMenuSection>
           <CommandMenuSeparator />
-          <CommandMenuSection title="Users" items={users}>
+          <CommandMenuSection label="Users" items={users}>
             {(user) => (
               <CommandMenuItem>
                 <Avatar src={user.image_url} alt={user.name} initials={user.name.slice(0, 2)} />

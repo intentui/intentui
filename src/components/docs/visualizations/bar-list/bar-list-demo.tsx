@@ -1,14 +1,14 @@
 import { BarList } from "@/components/ui/bar-list"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function BarListDemo() {
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Page visits by section</Card.Title>
-        <Card.Description>Unique visits for the most viewed docs pages this month</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader>
+        <CardTitle>Page visits by section</CardTitle>
+        <CardDescription>Unique visits for the most viewed docs pages this month</CardDescription>
+      </CardHeader>
+      <CardContent>
         <BarList
           data={[
             {
@@ -33,7 +33,7 @@ export default function BarListDemo() {
           ]}
           valueFormatter={(value) => `${value} visits`}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

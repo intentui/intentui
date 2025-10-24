@@ -1,17 +1,24 @@
 "use client"
 
-import { IconBill, IconCube, IconGear, IconHome, IconNotes, IconShield } from "@intentui/icons"
+import {
+  Cog6ToothIcon,
+  CreditCardIcon,
+  CubeIcon,
+  DocumentTextIcon,
+  HomeIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
   CommandMenu,
   CommandMenuItem,
-  CommandMenuKeyboard,
   CommandMenuLabel,
   CommandMenuList,
   CommandMenuSearch,
   CommandMenuSection,
+  CommandMenuShortcut,
 } from "@/components/ui/command-menu"
 
 export default function CommandMenuDemo() {
@@ -24,37 +31,37 @@ export default function CommandMenuDemo() {
       <CommandMenu isOpen={isOpen} onOpenChange={setIsOpen}>
         <CommandMenuSearch placeholder="Quick search..." />
         <CommandMenuList>
-          <CommandMenuSection title="Pages">
+          <CommandMenuSection label="Pages">
             <CommandMenuItem textValue="Home" href="#">
-              <IconHome />
+              <HomeIcon />
               <CommandMenuLabel>Home</CommandMenuLabel>
             </CommandMenuItem>
             <CommandMenuItem textValue="Docs" href="#">
-              <IconNotes />
+              <DocumentTextIcon />
               <CommandMenuLabel>Docs</CommandMenuLabel>
-              <CommandMenuKeyboard keys="⌘k" />
+              <CommandMenuShortcut keys="⌘k" />
             </CommandMenuItem>
             <CommandMenuItem textValue="Components" href="#">
-              <IconCube />
+              <CubeIcon />
               <CommandMenuLabel>Components</CommandMenuLabel>
             </CommandMenuItem>
           </CommandMenuSection>
-          <CommandMenuSection title="Dashboard">
+          <CommandMenuSection label="Dashboard">
             <CommandMenuItem textValue="billing" href="#">
-              <IconBill />
+              <CreditCardIcon />
               <CommandMenuLabel>Billing</CommandMenuLabel>
             </CommandMenuItem>
             <CommandMenuItem textValue="settings" href="#">
-              <IconGear />
+              <Cog6ToothIcon />
               <CommandMenuLabel>Settings</CommandMenuLabel>
-              <CommandMenuKeyboard keys="⌘s" />
+              <CommandMenuShortcut keys="⌘s" />
             </CommandMenuItem>
             <CommandMenuItem textValue="security" href="#">
-              <IconShield />
+              <ShieldCheckIcon />
               <CommandMenuLabel>Security</CommandMenuLabel>
             </CommandMenuItem>
           </CommandMenuSection>
-          <CommandMenuSection title="Team">
+          <CommandMenuSection label="Team">
             {users.map((user) => (
               <CommandMenuItem textValue={user.name} key={user.id}>
                 <Avatar src={user.image_url} />

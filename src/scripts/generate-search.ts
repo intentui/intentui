@@ -5,8 +5,8 @@ import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
 const sectionOrder = ["prologue", "getting-started", "dark-mode", "components"]
 
 const rawStatusMap: Record<"new" | "updated" | "beta" | "alpha", string[]> = {
-  new: [],
-  updated: ["color-picker"],
+  new: ["input", "button-group", "text"],
+  updated: [],
   beta: [],
   alpha: [],
 }

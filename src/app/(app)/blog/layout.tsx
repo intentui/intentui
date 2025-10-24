@@ -1,3 +1,11 @@
+import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      {children}
+
+      <DesignIntentui />
+    </>
+  )
 }

@@ -1,6 +1,6 @@
 import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Description, Label } from "@/components/ui/field"
-import { Switch } from "@/components/ui/switch"
+import { Description } from "@/components/ui/field"
+import { Switch, SwitchLabel } from "@/components/ui/switch"
 
 export default function SwitchDescriptionDemo() {
   return (
@@ -10,19 +10,19 @@ export default function SwitchDescriptionDemo() {
         <CardDescription>Choose what others can see and how your account is shown.</CardDescription>
       </CardHeader>
       <Switch value="profileVisible">
-        <Label>Public profile</Label>
+        <SwitchLabel>Public profile</SwitchLabel>
         <Description>Allow others to see your profile.</Description>
       </Switch>
       <Switch value="searchEngineIndexing">
-        <Label>Search engine indexing</Label>
+        <SwitchLabel>Search engine indexing</SwitchLabel>
         <Description>Allow search engines to index your profile.</Description>
       </Switch>
       <Switch defaultSelected value="twoFactor">
-        <Label>Two-factor authentication</Label>
+        <SwitchLabel>Two-factor authentication</SwitchLabel>
         <Description>Add an extra layer of security to your account.</Description>
       </Switch>
       <Switch value="activityStatus">
-        <Label>Show activity status</Label>
+        <SwitchLabel>Show activity status</SwitchLabel>
         <Description>Let others see when you're online.</Description>
       </Switch>
     </div>

@@ -1,4 +1,4 @@
-import { IconArrowUpRight } from "@intentui/icons"
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import type React from "react"
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
@@ -39,7 +39,7 @@ export const mdxComponents = {
       {...props}
     >
       {(props.children as string) ?? "Preview"}
-      <IconArrowUpRight className="ml-1 inline size-3.5" />
+      <ArrowUpRightIcon className="ml-1 inline size-3.5" />
     </Link>
   ),
   How: DocHow,

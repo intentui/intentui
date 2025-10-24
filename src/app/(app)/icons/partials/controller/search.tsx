@@ -1,6 +1,6 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useDebouncedCallback } from "use-debounce"
-import { SearchField } from "@/components/ui/search-field"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 
 export function Search() {
   const searchParams = useSearchParams()
@@ -24,7 +24,8 @@ export function Search() {
       onChange={handleSearch}
       defaultValue={searchParams.get("query")?.toString()}
       aria-label="Search icons"
-      placeholder="Search icons..."
-    />
+    >
+      <SearchInput placeholder="Search icons..." />
+    </SearchField>
   )
 }

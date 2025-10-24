@@ -1,6 +1,11 @@
 "use client"
 
-import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-select"
+import { FieldError, Label } from "@/components/ui/field"
+import {
+  MultipleSelect,
+  MultipleSelectContent,
+  MultipleSelectItem,
+} from "@/components/ui/multiple-select"
 
 const fruits = [
   { id: 1, name: "Apple" },
@@ -27,15 +32,18 @@ const fruits = [
 
 export default function MultipleSelectDemo() {
   return (
-    <MultipleSelect
-      className="min-w-2xs max-w-min"
-      placeholder="Select fruits"
-      aria-label="Fruits"
-      items={fruits}
-    >
-      {(item) => {
-        return <MultipleSelectItem textValue={item.name}>{item.name}</MultipleSelectItem>
-      }}
+    <MultipleSelect className="mx-auto w-full max-w-2xs">
+      <Label>Select fruits</Label>
+      <MultipleSelectContent items={fruits}>
+        {(item) => {
+          return (
+            <MultipleSelectItem id={item.id} textValue={item.name}>
+              {item.name}
+            </MultipleSelectItem>
+          )
+        }}
+      </MultipleSelectContent>
+      <FieldError />
     </MultipleSelect>
   )
 }

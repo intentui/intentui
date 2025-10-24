@@ -2,14 +2,15 @@
 
 import { useState } from "react"
 
-import { Description } from "@/components/ui/field"
+import { Description, Label } from "@/components/ui/field"
 import { Radio, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupControlledDemo() {
   const [selected, setSelected] = useState("")
   return (
     <>
-      <RadioGroup label="Features" value={selected} onChange={setSelected}>
+      <RadioGroup value={selected} onChange={setSelected}>
+        <Label>Features</Label>
         <Radio value="theme">Theme</Radio>
         <Radio value="language">Language</Radio>
         <Radio value="timezone">Timezone</Radio>

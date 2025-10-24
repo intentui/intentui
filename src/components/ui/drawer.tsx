@@ -57,7 +57,10 @@ const DrawerContent = ({
           onOpenChange={props?.onOpenChange || state?.setOpen}
           animate={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
           exit={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-          className="fixed inset-0 z-50 will-change-auto [--visual-viewport-vertical-padding:32px]"
+          className={twJoin(
+            "fixed inset-0 z-50 will-change-auto [--visual-viewport-vertical-padding:32px]",
+            isBlurred && "backdrop-blur-[1px] backdrop-filter",
+          )}
         >
           {({ state }) => (
             <DrawerRoot
@@ -197,16 +200,7 @@ const DrawerClose = ({ className, intent = "outline", ref, ...props }: ButtonPro
   return <Button slot="close" className={className} ref={ref} intent={intent} {...props} />
 }
 
-Drawer.Trigger = ButtonPrimitive
-Drawer.Footer = DrawerFooter
-Drawer.Header = DrawerHeader
-Drawer.Title = DrawerTitle
-Drawer.Description = DrawerDescription
-Drawer.Body = DrawerBody
-Drawer.Content = DrawerContent
-Drawer.Close = DrawerClose
-
-const DrawerTrigger = Drawer.Trigger
+const DrawerTrigger = ButtonPrimitive
 
 export {
   Drawer,

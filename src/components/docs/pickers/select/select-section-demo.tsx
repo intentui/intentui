@@ -10,7 +10,7 @@ import {
 
 export default function SelectSectionDemo() {
   return (
-    <Select defaultSelectedKey={1} aria-label="Countries" placeholder="Select a country">
+    <Select defaultValue={1} aria-label="Countries" placeholder="Select a country">
       <SelectTrigger />
       <SelectContent items={countries}>
         {(country) => (

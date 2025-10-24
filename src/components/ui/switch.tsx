@@ -1,27 +1,27 @@
-import {
-  Switch as SwitchPrimitive,
-  type SwitchProps as SwitchPrimitiveProps,
-} from "react-aria-components"
+"use client"
+
+import { Switch as SwitchPrimitive, type SwitchProps } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import { Label } from "./field"
 
-interface SwitchProps extends SwitchPrimitiveProps {
-  ref?: React.RefObject<HTMLLabelElement>
-}
-const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
+export function Switch({ children, className, ...props }: SwitchProps) {
   return (
     <SwitchPrimitive
-      data-slot="switch"
-      ref={ref}
       {...props}
+      data-slot="control"
       className={cx(
-        "[--switch-bg-ring:var(--color-primary)]/90 [--switch-bg:var(--color-primary)] dark:[--switch-bg-ring:transparent]",
-        "[--switch-ring:var(--color-primary)]/90 [--switch-shadow:color-mix(in_oklab,var(--color-primary)_30%,var(--color-secondary-fg)_70%))]/20 [--switch:white]",
-        "group relative grid cursor-default grid-cols-[1fr_auto] gap-x-6 gap-y-1 disabled:opacity-50 *:data-[slot=indicator]:col-start-2 *:data-[slot=label]:col-start-1 *:data-[slot=label]:row-start-1 *:data-[slot=indicator]:self-start has-[[slot=description]]:**:data-[slot=label]:font-medium sm:*:data-[slot=indicator]:mt-0.5 *:[[slot=description]]:col-start-1 *:[[slot=description]]:row-start-2",
+        [
+          "[--switch-bg-ring:var(--color-blue-700)]/90 [--switch-bg:var(--color-blue-600)] dark:[--switch-bg-ring:transparent]",
+          "[--switch-ring:var(--color-blue-700)]/90 [--switch-shadow:var(--color-blue-900)]/20 [--switch:white]",
+          "group relative grid cursor-default grid-cols-[1fr_auto] gap-x-6 gap-y-1 disabled:opacity-50 *:data-[slot=indicator]:col-start-2 *:data-[slot=label]:col-start-1 *:data-[slot=label]:row-start-1 *:data-[slot=indicator]:self-start has-[[slot=description]]:**:data-[slot=label]:font-medium sm:*:data-[slot=indicator]:mt-0.5 *:[[slot=description]]:col-start-1 *:[[slot=description]]:row-start-2",
+        ],
         className,
       )}
-      style={{ WebkitTapHighlightColor: "transparent" }}
+      style={({ defaultStyle }) => ({
+        ...defaultStyle,
+        WebkitTapHighlightColor: "transparent",
+      })}
     >
       {(values) => (
         <>
@@ -30,15 +30,15 @@ const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
             className={twMerge(
               "relative isolate inline-flex h-6 w-10 cursor-default rounded-full p-[3px] sm:h-5 sm:w-8",
               "transition duration-200 ease-in-out",
-              "inset-ring inset-ring-fg/5 bg-secondary dark:inset-ring-fg/15",
+              "inset-ring inset-ring-input bg-input/30",
               "forced-colors:outline forced-colors:[--switch-bg:Highlight]",
-              values.isHovered && "inset-ring-fg/15 dark:inset-ring-fg/25",
+              values.isHovered && "inset-ring-muted-fg/30",
               values.isFocusVisible &&
                 "inset-ring-ring/70 selected:inset-ring-ring/30 bg-ring/20 ring-2 ring-ring/20 dark:inset-ring-ring/70",
               values.isSelected &&
-                "inset-ring-(--switch-shadow) bg-(--switch-bg) dark:inset-ring-(--switch-bg-ring)",
+                "inset-ring-(--switch-shadow) bg-(--switch-bg) dark:inset-ring-(--switch-bg-ring) dark:bg-(--switch-bg)",
               values.isDisabled &&
-                "dark:group-disabled:bg-fg/15 dark:group-disabled:group-selected:inset-ring-fg/15 dark:group-disabled:group-selected:bg-(--switch-bg)",
+                "dark:group-disabled:bg-muted-fg/30 dark:group-disabled:group-selected:inset-ring-muted-fg/30 dark:group-disabled:group-selected:bg-(--switch-bg)",
             )}
           >
             <span
@@ -53,7 +53,7 @@ const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
           {typeof children === "function" ? (
             children(values)
           ) : typeof children === "string" ? (
-            <Label elementType="span">{children}</Label>
+            <SwitchLabel>{children}</SwitchLabel>
           ) : (
             children
           )}
@@ -63,5 +63,6 @@ const Switch = ({ children, className, ref, ...props }: SwitchProps) => {
   )
 }
 
-export type { SwitchProps }
-export { Switch }
+export function SwitchLabel(props: React.ComponentProps<typeof Label>) {
+  return <Label elementType="span" {...props} />
+}

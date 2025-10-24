@@ -7,7 +7,6 @@ export default function LoaderVariantDemo() {
     <div className="flex gap-6">
       <Loader variant="ring" />
       <Loader variant="spin" />
-      <Loader variant="bars" />
     </div>
   )
 }

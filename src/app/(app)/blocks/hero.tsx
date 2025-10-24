@@ -1,6 +1,6 @@
 "use client"
 
-import { IconOpenLink } from "@intentui/icons"
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
@@ -21,7 +21,7 @@ export function Hero() {
             rel="noopener"
           >
             Explore premium blocks
-            <IconOpenLink />
+            <ArrowTopRightOnSquareIcon />
           </a>
         </div>
       </PageContainer>

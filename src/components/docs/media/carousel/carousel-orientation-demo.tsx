@@ -1,26 +1,32 @@
-import { Card } from "@/components/ui/card"
-import { Carousel } from "@/components/ui/carousel"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselButton,
+  CarouselContent,
+  CarouselHandler,
+  CarouselItem,
+} from "@/components/ui/carousel"
 
 export default function CarouselOrientationDemo() {
   return (
     <Carousel orientation="vertical" className="relative w-full max-w-xs">
-      <Carousel.Content className="h-64 snap-y py-4">
+      <CarouselContent className="h-64 snap-y py-4">
         {items.map((item) => (
-          <Carousel.Item key={item.id} className="basis-1/2 snap-center pt-1 md:basis-1/3">
+          <CarouselItem key={item.id} className="basis-1/2 snap-center pt-1 md:basis-1/3">
             <Card>
-              <Card.Header>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Description>{item.description}</Card.Description>
-              </Card.Header>
+              <CardHeader>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
             </Card>
-          </Carousel.Item>
+          </CarouselItem>
         ))}
-      </Carousel.Content>
+      </CarouselContent>
 
-      <Carousel.Handler>
-        <Carousel.Button segment="previous" />
-        <Carousel.Button segment="next" />
-      </Carousel.Handler>
+      <CarouselHandler>
+        <CarouselButton segment="previous" />
+        <CarouselButton segment="next" />
+      </CarouselHandler>
     </Carousel>
   )
 }

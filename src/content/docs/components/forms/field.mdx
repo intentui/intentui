@@ -7,17 +7,34 @@ status: primitive
 ---
 
 ## Basic
-This is a basic component that can be integrated into other components such as [TextField](/docs/components/forms/text-field), [Checkbox](/docs/components/forms/checkbox), and more.
-<How minW72 toUse="forms/text-field/text-field-demo" />
+Field is a wrapper component that provides context for form elements like labels, descriptions, and error messages.
+<How toUse="forms/field/field-demo" />
 
-## Installation
-```bash
-npx shadcn@latest add @intentui/field
+## Anatomy
 ```
-
-## Manual installation
-```bash
-npm i react-aria-components tailwind-variants
+import { Form } from "react-aria-components"
+import { Button } from "@/components/ui/button"
+import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+import { Text } from "@/components/ui/text"
+import { TextField } from "@/components/ui/text-field"
 ```
+```
+<Form>
+  <Fieldset>
+    <Legend/>
+    <Text/>
 
-<SourceCode toShow='field'/>
+    <TextField isRequired name="name">
+      <Label/>
+      <Input />
+      <FieldError />
+      <Description/>
+    </TextField>
+
+    <div data-slot="control">
+      <Button type="submit">Register</Button>
+    </div>
+  </Fieldset>
+</Form>
+```

@@ -2,17 +2,17 @@
 
 import { useState } from "react"
 import { BarList } from "@/components/ui/bar-list"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function BarListControlledDemo() {
   const [selectedItem, setSelectedItem] = useState("")
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Department budget usage</Card.Title>
-        <Card.Description>Select a department to inspect budget usage</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader>
+        <CardTitle>Department budget usage</CardTitle>
+        <CardDescription>Select a department to inspect budget usage</CardDescription>
+      </CardHeader>
+      <CardContent>
         <BarList
           data={[
             { name: "Marketing", value: 45000 },
@@ -25,7 +25,7 @@ export default function BarListControlledDemo() {
           valueFormatter={(value) => `$${value.toLocaleString()}`}
         />
         {selectedItem && <pre className="font-mono text-xs">{selectedItem}</pre>}
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

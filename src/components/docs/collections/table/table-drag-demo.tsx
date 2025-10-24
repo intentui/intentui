@@ -1,8 +1,15 @@
 "use client"
-import { IconStarFill } from "@intentui/icons"
+import { StarIcon } from "@heroicons/react/24/solid"
 import { useDragAndDrop } from "react-aria-components"
 import { useListData } from "react-stately"
-import { Table } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 export default function TableDragDemo() {
   const list = useListData({
@@ -30,28 +37,28 @@ export default function TableDragDemo() {
         selectionMode="multiple"
         dragAndDropHooks={dragAndDropHooks}
       >
-        <Table.Header>
-          <Table.Column>#</Table.Column>
-          <Table.Column isRowHeader>Name</Table.Column>
-          <Table.Column>Genre</Table.Column>
-          <Table.Column>Release</Table.Column>
-          <Table.Column>Rating</Table.Column>
-        </Table.Header>
-        <Table.Body items={list.items}>
+        <TableHeader>
+          <TableColumn>#</TableColumn>
+          <TableColumn isRowHeader>Name</TableColumn>
+          <TableColumn>Genre</TableColumn>
+          <TableColumn>Release</TableColumn>
+          <TableColumn>Rating</TableColumn>
+        </TableHeader>
+        <TableBody items={list.items}>
           {(item) => (
-            <Table.Row>
-              <Table.Cell>{item.id}</Table.Cell>
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell>{item.genre}</Table.Cell>
-              <Table.Cell>{item.releaseYear}</Table.Cell>
-              <Table.Cell>
+            <TableRow>
+              <TableCell>{item.id}</TableCell>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.genre}</TableCell>
+              <TableCell>{item.releaseYear}</TableCell>
+              <TableCell>
                 <div className="flex items-center gap-x-2">
-                  <IconStarFill className="size-3.5 text-warning" /> <span>{item.rating}</span>
+                  <StarIcon className="size-3.5 text-warning" /> <span>{item.rating}</span>
                 </div>
-              </Table.Cell>
-            </Table.Row>
+              </TableCell>
+            </TableRow>
           )}
-        </Table.Body>
+        </TableBody>
       </Table>
     </div>
   )

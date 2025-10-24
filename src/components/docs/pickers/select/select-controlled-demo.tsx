@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import type { Key } from "react-aria-components"
-import { Description } from "@/components/ui/field"
+import { Description, Label } from "@/components/ui/field"
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 export const movies = [
@@ -17,7 +17,8 @@ export default function SelectControlledDemo() {
   const [movie, setMovie] = useState<Key | null>("")
   return (
     <>
-      <Select value={movie} onChange={setMovie} label="Movies" placeholder="Select a movie">
+      <Select name="movie" value={movie} onChange={setMovie} placeholder="Select a movie">
+        <Label>Movies</Label>
         <SelectTrigger />
         <SelectContent items={movies}>
           {(item) => (

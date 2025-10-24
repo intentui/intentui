@@ -1,5 +1,6 @@
 "use client"
-import { IconChevronLgRight } from "@intentui/icons"
+
+import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import { createContext, use } from "react"
 import type { BreadcrumbProps, BreadcrumbsProps, LinkProps } from "react-aria-components"
 import { Breadcrumb, Breadcrumbs as BreadcrumbsPrimitive } from "react-aria-components"
@@ -7,9 +8,7 @@ import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import { Link } from "./link"
 
-type BreadcrumbsContextProps = {
-  separator?: "chevron" | "slash" | boolean
-}
+type BreadcrumbsContextProps = { separator?: "chevron" | "slash" | boolean }
 const BreadcrumbsProvider = createContext<BreadcrumbsContextProps>({
   separator: "chevron",
 })
@@ -40,7 +39,11 @@ const BreadcrumbsItem = ({
   const separatorValue = separator === true ? "chevron" : separator
 
   return (
-    <Breadcrumb {...props} className={cx("flex items-center gap-2 text-sm", className)}>
+    <Breadcrumb
+      className={cx("flex items-center gap-2 text-sm", className)}
+      data-slot="breadcrumb-item"
+      {...props}
+    >
       {({ isCurrent }) => (
         <>
           <Link href={href} {...props} />
@@ -58,13 +61,11 @@ const Separator = ({
 }) => {
   return (
     <span className="*:shrink-0 *:text-muted-fg *:data-[slot=icon]:size-3.5">
-      {separator === "chevron" && <IconChevronLgRight />}
+      {separator === "chevron" && <ChevronRightIcon />}
       {separator === "slash" && <span className="text-muted-fg">/</span>}
     </span>
   )
 }
-
-Breadcrumbs.Item = BreadcrumbsItem
 
 export type { BreadcrumbsProps, BreadcrumbsItemProps }
 export { Breadcrumbs, BreadcrumbsItem }

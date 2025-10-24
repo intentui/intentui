@@ -898,13 +898,12 @@
       "description": "tag-field",
       "dependencies": [
         "react-aria-components",
-        "react-stately",
-        "tailwind-merge",
-        "tailwind-variants"
+        "tailwind-merge"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/field",
-        "http://localhost:3000/r/tag-group"
+        "http://localhost:3000/r/tag-group",
+        "http://localhost:3000/r/text-field"
       ],
       "files": [
         {
@@ -921,14 +920,15 @@
       "title": "navbar",
       "description": "navbar",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
+        "motion",
+        "react-aria-components",
         "tailwind-merge"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/use-media-query",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/separator",
         "http://localhost:3000/r/sheet"
       ],
@@ -947,7 +947,7 @@
       "title": "note",
       "description": "note",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "tailwind-merge"
       ],
       "files": [
@@ -1004,13 +1004,15 @@
       "title": "date-range-picker",
       "description": "date-range-picker",
       "dependencies": [
+        "@heroicons/react",
         "@internationalized/date",
-        "@react-types/overlays",
-        "react-aria-components"
+        "react-aria-components",
+        "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/date-picker",
         "http://localhost:3000/r/field"
       ],
@@ -1068,7 +1070,7 @@
       "title": "list-box",
       "description": "list-box",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -1091,13 +1093,11 @@
       "title": "pagination",
       "description": "pagination",
       "dependencies": [
-        "@intentui/icons",
-        "react-aria-components",
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/button"
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/link"
       ],
       "files": [
         {
@@ -1171,6 +1171,24 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "button-group",
+      "description": "button-group",
+      "dependencies": [
+        "tailwind-merge",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "card",
       "type": "registry:ui",
       "title": "card",
@@ -1194,13 +1212,10 @@
       "description": "slider",
       "dependencies": [
         "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
+        "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/tooltip"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -1238,13 +1253,11 @@
       "title": "text-field",
       "description": "text-field",
       "dependencies": [
-        "@intentui/icons",
         "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/loader"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -1261,10 +1274,8 @@
       "title": "loader",
       "description": "loader",
       "dependencies": [
-        "@intentui/icons",
         "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
+        "tailwind-merge"
       ],
       "files": [
         {
@@ -1320,16 +1331,20 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "visually-hidden",
+      "name": "disclosure-group",
       "type": "registry:ui",
-      "title": "visually-hidden",
-      "description": "visually-hidden",
+      "title": "disclosure-group",
+      "description": "disclosure-group",
       "dependencies": [
-        "react-aria"
+        "react-aria-components",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
-          "path": "src/components/ui/visually-hidden.tsx",
+          "path": "src/components/ui/disclosure-group.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1342,18 +1357,18 @@
       "title": "date-picker",
       "description": "date-picker",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "@internationalized/date",
         "react-aria-components",
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/use-media-query",
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/calendar",
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/use-media-query",
+        "http://localhost:3000/r/primitive",
+        "http://localhost:3000/r/calendar",
         "http://localhost:3000/r/modal",
         "http://localhost:3000/r/popover",
         "http://localhost:3000/r/range-calendar"
@@ -1361,27 +1376,6 @@
       "files": [
         {
           "path": "src/components/ui/date-picker.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "disclosure",
-      "type": "registry:ui",
-      "title": "disclosure",
-      "description": "disclosure",
-      "dependencies": [
-        "@intentui/icons",
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/disclosure.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1411,9 +1405,12 @@
       "title": "input-otp",
       "description": "input-otp",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "input-otp",
         "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -1452,7 +1449,7 @@
       "title": "tag-group",
       "description": "tag-group",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -1497,6 +1494,7 @@
       "description": "field",
       "dependencies": [
         "react-aria-components",
+        "tailwind-merge",
         "tailwind-variants"
       ],
       "registryDependencies": [
@@ -1558,13 +1556,11 @@
       "title": "meter",
       "description": "meter",
       "dependencies": [
-        "@intentui/icons",
-        "motion",
-        "react-aria-components"
+        "react-aria-components",
+        "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -1581,12 +1577,11 @@
       "title": "color-slider",
       "description": "color-slider",
       "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
+        "react-aria-components"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/color-thumb",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -1625,7 +1620,6 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field"
       ],
       "files": [
@@ -1643,7 +1637,7 @@
       "title": "breadcrumbs",
       "description": "breadcrumbs",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -1666,8 +1660,10 @@
       "title": "color-thumb",
       "description": "color-thumb",
       "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -1725,7 +1721,7 @@
       "title": "file-trigger",
       "description": "file-trigger",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-variants"
       ],
@@ -1765,12 +1761,10 @@
       "title": "color-swatch-picker",
       "description": "color-swatch-picker",
       "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
+        "react-aria-components"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/color-swatch"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -1849,7 +1843,7 @@
       "title": "calendar",
       "description": "calendar",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "@internationalized/date",
         "@react-aria/i18n",
         "react-aria-components",
@@ -1874,7 +1868,7 @@
       "title": "tree",
       "description": "tree",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -1941,7 +1935,7 @@
       "title": "multiple-select",
       "description": "multiple-select",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components"
       ],
       "registryDependencies": [
@@ -1968,7 +1962,7 @@
       "title": "dropdown",
       "description": "dropdown",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge",
         "tailwind-variants"
@@ -2029,7 +2023,6 @@
       "title": "color-swatch",
       "description": "color-swatch",
       "dependencies": [
-        "@react-stately/color",
         "react-aria-components"
       ],
       "registryDependencies": [
@@ -2072,14 +2065,14 @@
       "title": "combo-box",
       "description": "combo-box",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/dropdown",
         "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/primitive",
+        "http://localhost:3000/r/dropdown",
         "http://localhost:3000/r/popover"
       ],
       "files": [
@@ -2097,13 +2090,14 @@
       "title": "search-field",
       "description": "search-field",
       "dependencies": [
-        "@intentui/icons",
-        "react-aria-components"
+        "@heroicons/react",
+        "react-aria-components",
+        "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/field",
-        "http://localhost:3000/r/loader"
+        "http://localhost:3000/r/primitive",
+        "http://localhost:3000/r/input"
       ],
       "files": [
         {
@@ -2120,7 +2114,7 @@
       "title": "dialog",
       "description": "dialog",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -2143,7 +2137,7 @@
       "title": "menu",
       "description": "menu",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge",
         "tailwind-variants"
@@ -2168,12 +2162,11 @@
       "title": "progress-bar",
       "description": "progress-bar",
       "dependencies": [
-        "motion",
-        "react-aria-components"
+        "react-aria-components",
+        "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -2207,19 +2200,14 @@
       "title": "color-picker",
       "description": "color-picker",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "@react-stately/color",
         "react-aria-components",
         "tailwind-merge"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/color-area",
-        "http://localhost:3000/r/color-field",
-        "http://localhost:3000/r/color-slider",
-        "http://localhost:3000/r/color-swatch",
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/popover"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -2236,13 +2224,11 @@
       "title": "number-field",
       "description": "number-field",
       "dependencies": [
-        "@intentui/icons",
-        "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
+        "@heroicons/react",
+        "react-aria-components"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/use-media-query",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/field"
       ],
@@ -2261,7 +2247,7 @@
       "title": "sidebar",
       "description": "sidebar",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -2288,7 +2274,7 @@
       "title": "table",
       "description": "table",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -2370,6 +2356,9 @@
         "react-aria-components",
         "tailwind-variants"
       ],
+      "registryDependencies": [
+        "http://localhost:3000/r/primitive"
+      ],
       "files": [
         {
           "path": "src/components/ui/button.tsx",
@@ -2408,6 +2397,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/dialog"
       ],
       "files": [
@@ -2425,7 +2415,7 @@
       "title": "command-menu",
       "description": "command-menu",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -2445,12 +2435,30 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "text",
+      "type": "registry:ui",
+      "title": "text",
+      "description": "text",
+      "dependencies": [
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toast",
       "type": "registry:ui",
       "title": "toast",
       "description": "toast",
       "dependencies": [
-        "sonner"
+        "sonner",
+        "tailwind-merge"
       ],
       "files": [
         {
@@ -2467,7 +2475,7 @@
       "title": "checkbox",
       "description": "checkbox",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -2511,7 +2519,7 @@
       "title": "select",
       "description": "select",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "tailwind-merge"
       ],
@@ -2540,12 +2548,31 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
           "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "input",
+      "type": "registry:ui",
+      "title": "input",
+      "description": "input",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/primitive"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2616,13 +2643,10 @@
       "title": "color-field",
       "description": "color-field",
       "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
+        "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/color-picker",
-        "http://localhost:3000/r/color-swatch",
         "http://localhost:3000/r/field"
       ],
       "files": [
@@ -2635,29 +2659,12 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "form",
-      "type": "registry:ui",
-      "title": "form",
-      "description": "form",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/form.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "carousel",
       "type": "registry:ui",
       "title": "carousel",
       "description": "carousel",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "embla-carousel-react",
         "tailwind-merge"
       ],
@@ -2871,6 +2878,7 @@
       "title": "Tag Group Disabled",
       "description": "tag-group-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/tag-group"
       ],
       "files": [
@@ -2889,6 +2897,7 @@
       "title": "Tag Group",
       "description": "tag-group-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/tag-group"
       ],
       "files": [
@@ -3359,7 +3368,7 @@
       "title": "Menu Section Level Selection",
       "description": "menu-section-level-selection",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components"
       ],
       "registryDependencies": [
@@ -3380,6 +3389,9 @@
       "type": "registry:page",
       "title": "Menu Item Description",
       "description": "menu-item-description-demo",
+      "dependencies": [
+        "@heroicons/react"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/menu"
@@ -3419,7 +3431,7 @@
       "title": "Menu Danger",
       "description": "menu-danger-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/menu"
@@ -3458,7 +3470,7 @@
       "title": "Menu With Arrow",
       "description": "menu-with-arrow-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
@@ -3480,7 +3492,7 @@
       "title": "Menu With Icon",
       "description": "menu-with-icon-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "next-themes"
       ],
       "registryDependencies": [
@@ -3599,7 +3611,7 @@
       "title": "Table",
       "description": "table-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "@internationalized/number"
       ],
       "registryDependencies": [
@@ -3622,10 +3634,10 @@
       "title": "Table Sorting",
       "description": "table-sorting-demo",
       "dependencies": [
-        "@intentui/icons",
         "@react-stately/data"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/loader",
         "http://localhost:3000/r/table"
       ],
       "files": [
@@ -3666,7 +3678,7 @@
       "title": "Table With Autocomplete",
       "description": "table-with-autocomplete-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components"
       ],
       "registryDependencies": [
@@ -3691,7 +3703,7 @@
       "title": "Table Drag",
       "description": "table-drag-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components",
         "react-stately"
       ],
@@ -3753,9 +3765,6 @@
       "type": "registry:page",
       "title": "Choicebox Icon",
       "description": "choicebox-icon-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/choice-box"
       ],
@@ -3829,7 +3838,7 @@
       "title": "Tree Folder",
       "description": "tree-folder-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/tree"
@@ -3850,7 +3859,7 @@
       "title": "Tree Drag",
       "description": "tree-drag-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "@react-stately/data",
         "react-aria-components"
       ],
@@ -3986,6 +3995,7 @@
       "title": "Meter Decimal Format",
       "description": "meter-decimal-format-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/meter"
       ],
       "files": [
@@ -3999,29 +4009,12 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "meter-value-label-demo",
-      "type": "registry:page",
-      "title": "Meter Value Label",
-      "description": "meter-value-label-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/meter"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/statuses/meter/meter-value-label-demo.tsx",
-          "type": "registry:page",
-          "target": "app/meter-value-label-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "meter-currency-format-demo",
       "type": "registry:page",
       "title": "Meter Currency Format",
       "description": "meter-currency-format-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/meter"
       ],
       "files": [
@@ -4040,6 +4033,7 @@
       "title": "Meter",
       "description": "meter-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/meter"
       ],
       "files": [
@@ -4047,42 +4041,6 @@
           "path": "src/components/docs/statuses/meter/meter-demo.tsx",
           "type": "registry:page",
           "target": "app/meter-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "progress-bar-demo",
-      "type": "registry:page",
-      "title": "Progress Bar",
-      "description": "progress-bar-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/progress-bar"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/statuses/progres-bar/progress-bar-demo.tsx",
-          "type": "registry:page",
-          "target": "app/progress-bar-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "indeterminate-progress-bar-demo",
-      "type": "registry:page",
-      "title": "Indeterminate Progress Bar",
-      "description": "indeterminate-progress-bar-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/progress-bar"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/statuses/progres-bar/indeterminate-progress-bar-demo.tsx",
-          "type": "registry:page",
-          "target": "app/indeterminate-progress-bar-demo/page.tsx"
         }
       ]
     },
@@ -4119,24 +4077,6 @@
           "path": "src/components/docs/statuses/loader/loader-variant-demo.tsx",
           "type": "registry:page",
           "target": "app/loader-variant-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "loader-intent-demo",
-      "type": "registry:page",
-      "title": "Loader Intent",
-      "description": "loader-intent-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/loader"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/statuses/loader/loader-intent-demo.tsx",
-          "type": "registry:page",
-          "target": "app/loader-intent-demo/page.tsx"
         }
       ]
     },
@@ -4266,6 +4206,44 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "progress-bar-demo",
+      "type": "registry:page",
+      "title": "Progress Bar",
+      "description": "progress-bar-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/progress-bar"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/statuses/progress-bar/progress-bar-demo.tsx",
+          "type": "registry:page",
+          "target": "app/progress-bar-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "indeterminate-progress-bar-demo",
+      "type": "registry:page",
+      "title": "Indeterminate Progress Bar",
+      "description": "indeterminate-progress-bar-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/progress-bar"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/statuses/progress-bar/indeterminate-progress-bar-demo.tsx",
+          "type": "registry:page",
+          "target": "app/indeterminate-progress-bar-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "skeleton-soft-demo",
       "type": "registry:page",
       "title": "Skeleton Soft",
@@ -4323,24 +4301,6 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "note-no-indicator-demo",
-      "type": "registry:page",
-      "title": "Note No Indicator",
-      "description": "note-no-indicator-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/note"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/statuses/note/note-no-indicator-demo.tsx",
-          "type": "registry:page",
-          "target": "app/note-no-indicator-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "note-demo",
       "type": "registry:page",
       "title": "Note",
@@ -4382,6 +4342,7 @@
       "title": "Progress Circle Controlled",
       "description": "progress-circle-controlled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/progress-circle",
         "http://localhost:3000/r/slider"
       ],
@@ -4462,6 +4423,24 @@
           "path": "src/components/docs/statuses/progress-circle/progress-circle-demo.tsx",
           "type": "registry:page",
           "target": "app/progress-circle-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "text-basic-demo",
+      "type": "registry:page",
+      "title": "Text Basic",
+      "description": "text-basic-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/text"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/surfaces/text/text-basic-demo.tsx",
+          "type": "registry:page",
+          "target": "app/text-basic-demo/page.tsx"
         }
       ]
     },
@@ -4603,7 +4582,7 @@
       "title": "Card Action",
       "description": "card-action-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
@@ -4625,10 +4604,15 @@
       "type": "registry:page",
       "title": "Card Login Form",
       "description": "card-login-form-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/text-field"
       ],
@@ -4648,7 +4632,7 @@
       "title": "Card Table",
       "description": "card-table-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/card",
@@ -4691,7 +4675,7 @@
       "title": "Show More Controlled",
       "description": "show-more-controlled-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/show-more"
@@ -4748,7 +4732,7 @@
       "title": "Show More",
       "description": "show-more-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "tailwind-merge"
       ],
       "registryDependencies": [
@@ -4770,6 +4754,7 @@
       "title": "Select Disabled",
       "description": "select-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/select"
       ],
       "files": [
@@ -4805,9 +4790,12 @@
       "type": "registry:page",
       "title": "Select Validation",
       "description": "select-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/select"
       ],
       "files": [
@@ -4825,9 +4813,6 @@
       "type": "registry:page",
       "title": "Select With Icon",
       "description": "select-with-icon-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/select"
       ],
@@ -4887,6 +4872,7 @@
       "title": "Select Details Description",
       "description": "select-details-description-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/select"
       ],
       "files": [
@@ -4909,6 +4895,7 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/dialog",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/list-box",
         "http://localhost:3000/r/search-field",
         "http://localhost:3000/r/select"
@@ -4951,6 +4938,7 @@
       "title": "Select Uncontrolled",
       "description": "select-uncontrolled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/select"
       ],
       "files": [
@@ -5007,7 +4995,8 @@
       "description": "combo-box-readonly-demo",
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
-        "http://localhost:3000/r/combo-box"
+        "http://localhost:3000/r/combo-box",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -5102,7 +5091,8 @@
       "title": "Combo Box Section",
       "description": "combo-box-section-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/combo-box"
+        "http://localhost:3000/r/combo-box",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -5121,7 +5111,8 @@
       "description": "combo-box-invalid-demo",
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
-        "http://localhost:3000/r/combo-box"
+        "http://localhost:3000/r/combo-box",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -5140,7 +5131,8 @@
       "description": "combo-box-disabled-demo",
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
-        "http://localhost:3000/r/combo-box"
+        "http://localhost:3000/r/combo-box",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -5157,11 +5149,14 @@
       "type": "registry:page",
       "title": "Combo Box Validation",
       "description": "combo-box-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/combo-box",
-        "http://localhost:3000/r/form"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -5179,6 +5174,7 @@
       "title": "Multiple Select Disabled",
       "description": "multiple-select-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/multiple-select"
       ],
       "files": [
@@ -5197,6 +5193,7 @@
       "title": "Multiple Select",
       "description": "multiple-select-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/multiple-select"
       ],
       "files": [
@@ -5236,9 +5233,12 @@
       "type": "registry:page",
       "title": "Multiple Select Invalid",
       "description": "multiple-select-invalid-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/multiple-select"
       ],
       "files": [
@@ -5335,55 +5335,25 @@
       "type": "registry:page",
       "title": "Color Picker Controlled",
       "description": "color-picker-controlled-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/color-area",
+        "http://localhost:3000/r/color-field",
         "http://localhost:3000/r/color-picker",
-        "http://localhost:3000/r/color-swatch"
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/color-swatch",
+        "http://localhost:3000/r/color-thumb",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/popover"
       ],
       "files": [
         {
           "path": "src/components/docs/colors/color-picker/color-picker-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-picker-controlled-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "color-picker-with-description-demo",
-      "type": "registry:page",
-      "title": "Color Picker With Description",
-      "description": "color-picker-with-description-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/color-picker",
-        "http://localhost:3000/r/color-swatch"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/colors/color-picker/color-picker-with-description-demo.tsx",
-          "type": "registry:page",
-          "target": "app/color-picker-with-description-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "color-picker-eye-dropper-demo",
-      "type": "registry:page",
-      "title": "Color Picker Eye Dropper",
-      "description": "color-picker-eye-dropper-demo",
-      "dependencies": [
-        "@react-stately/color"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/color-picker"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/colors/color-picker/color-picker-eye-dropper-demo.tsx",
-          "type": "registry:page",
-          "target": "app/color-picker-eye-dropper-demo/page.tsx"
         }
       ]
     },
@@ -5398,39 +5368,21 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/color-picker"
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/color-area",
+        "http://localhost:3000/r/color-field",
+        "http://localhost:3000/r/color-picker",
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/color-swatch",
+        "http://localhost:3000/r/color-thumb",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/popover"
       ],
       "files": [
         {
           "path": "src/components/docs/colors/color-picker/color-picker-demo.tsx",
           "type": "registry:page",
           "target": "app/color-picker-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "color-picker-enable-swatch-demo",
-      "type": "registry:page",
-      "title": "Color Picker Enable Swatch",
-      "description": "color-picker-enable-swatch-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/color-area",
-        "http://localhost:3000/r/color-field",
-        "http://localhost:3000/r/color-picker",
-        "http://localhost:3000/r/color-slider",
-        "http://localhost:3000/r/color-swatch",
-        "http://localhost:3000/r/color-swatch-picker"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/colors/color-picker/color-picker-enable-swatch-demo.tsx",
-          "type": "registry:page",
-          "target": "app/color-picker-enable-swatch-demo/page.tsx"
         }
       ]
     },
@@ -5445,82 +5397,21 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/color-picker"
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/color-area",
+        "http://localhost:3000/r/color-field",
+        "http://localhost:3000/r/color-picker",
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/color-swatch",
+        "http://localhost:3000/r/color-thumb",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/popover"
       ],
       "files": [
         {
           "path": "src/components/docs/colors/color-picker/color-picker-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-picker-disabled-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "color-picker-with-label-demo",
-      "type": "registry:page",
-      "title": "Color Picker With Label",
-      "description": "color-picker-with-label-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/color-picker",
-        "http://localhost:3000/r/color-swatch"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/colors/color-picker/color-picker-with-label-demo.tsx",
-          "type": "registry:page",
-          "target": "app/color-picker-with-label-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "color-picker-enable-selection-format-demo",
-      "type": "registry:page",
-      "title": "Color Picker Enable Selection Format",
-      "description": "color-picker-enable-selection-format-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/color-area",
-        "http://localhost:3000/r/color-field",
-        "http://localhost:3000/r/color-picker",
-        "http://localhost:3000/r/color-swatch",
-        "http://localhost:3000/r/select"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/colors/color-picker/color-picker-enable-selection-format-demo.tsx",
-          "type": "registry:page",
-          "target": "app/color-picker-enable-selection-format-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "color-picker-combination-demo",
-      "type": "registry:page",
-      "title": "Color Picker Combination",
-      "description": "color-picker-combination-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/color-area",
-        "http://localhost:3000/r/color-field",
-        "http://localhost:3000/r/color-picker",
-        "http://localhost:3000/r/color-slider",
-        "http://localhost:3000/r/select"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/colors/color-picker/color-picker-combination-demo.tsx",
-          "type": "registry:page",
-          "target": "app/color-picker-combination-demo/page.tsx"
         }
       ]
     },
@@ -5553,6 +5444,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/color-swatch",
         "http://localhost:3000/r/color-swatch-picker"
       ],
       "files": [
@@ -5574,6 +5466,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/color-swatch",
         "http://localhost:3000/r/color-swatch-picker"
       ],
       "files": [
@@ -5581,6 +5474,24 @@
           "path": "src/components/docs/colors/color-swatch/color-swatch-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-swatch-controlled-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "color-swatch-size-demo",
+      "type": "registry:page",
+      "title": "Color Swatch Size",
+      "description": "color-swatch-size-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/color-swatch"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/colors/color-swatch/color-swatch-size-demo.tsx",
+          "type": "registry:page",
+          "target": "app/color-swatch-size-demo/page.tsx"
         }
       ]
     },
@@ -5595,6 +5506,7 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/color-swatch",
         "http://localhost:3000/r/color-swatch-picker"
       ],
       "files": [
@@ -5613,7 +5525,9 @@
       "title": "Color Field Disabled",
       "description": "color-field-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/color-field"
+        "http://localhost:3000/r/color-field",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input"
       ],
       "files": [
         {
@@ -5631,10 +5545,12 @@
       "title": "Color Field With Prefix",
       "description": "color-field-with-prefix-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/color-field"
+        "http://localhost:3000/r/color-field",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input"
       ],
       "files": [
         {
@@ -5651,10 +5567,14 @@
       "type": "registry:page",
       "title": "Color Field Validation",
       "description": "color-field-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/color-field",
-        "http://localhost:3000/r/form"
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input"
       ],
       "files": [
         {
@@ -5672,10 +5592,12 @@
       "title": "Color Field With Suffix",
       "description": "color-field-with-suffix-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/color-field"
+        "http://localhost:3000/r/color-field",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input"
       ],
       "files": [
         {
@@ -5693,7 +5615,9 @@
       "title": "Color Field",
       "description": "color-field-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/color-field"
+        "http://localhost:3000/r/color-field",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input"
       ],
       "files": [
         {
@@ -5714,7 +5638,9 @@
         "@react-stately/color"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/color-field"
+        "http://localhost:3000/r/color-field",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input"
       ],
       "files": [
         {
@@ -5814,7 +5740,10 @@
       "registryDependencies": [
         "http://localhost:3000/r/color-area",
         "http://localhost:3000/r/color-field",
-        "http://localhost:3000/r/color-slider"
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/slider"
       ],
       "files": [
         {
@@ -5851,7 +5780,8 @@
       "title": "Color Slider Disabled",
       "description": "color-slider-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/color-slider"
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/color-thumb"
       ],
       "files": [
         {
@@ -5869,7 +5799,8 @@
       "title": "Color Slider Vertical",
       "description": "color-slider-vertical-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/color-slider"
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/color-thumb"
       ],
       "files": [
         {
@@ -5887,7 +5818,9 @@
       "title": "Color Slider",
       "description": "color-slider-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/color-slider"
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/color-thumb",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -5905,7 +5838,9 @@
       "title": "Color Slider With Label",
       "description": "color-slider-with-label-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/color-slider"
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/color-thumb",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -5922,9 +5857,12 @@
       "type": "registry:page",
       "title": "Color Slider Controlled",
       "description": "color-slider-controlled-demo",
+      "dependencies": [
+        "@react-stately/color"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/color-slider",
-        "http://localhost:3000/r/color-swatch"
+        "http://localhost:3000/r/color-thumb"
       ],
       "files": [
         {
@@ -5942,7 +5880,7 @@
       "title": "Drop Zone And File Trigger",
       "description": "drop-zone-and-file-trigger-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "@react-types/shared",
         "react-aria-components"
       ],
@@ -6047,7 +5985,7 @@
       "title": "Line Chart Custom Tooltip",
       "description": "line-chart-custom-tooltip-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "recharts"
       ],
       "registryDependencies": [
@@ -6108,7 +6046,7 @@
       "title": "Line Chart Custom Legend",
       "description": "line-chart-custom-legend-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "recharts"
       ],
       "registryDependencies": [
@@ -6169,7 +6107,7 @@
       "title": "Area Chart Custom Tooltip",
       "description": "area-chart-custom-tooltip-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "recharts"
       ],
       "registryDependencies": [
@@ -6253,7 +6191,7 @@
       "title": "Area Chart Custom Legend",
       "description": "area-chart-custom-legend-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "recharts"
       ],
       "registryDependencies": [
@@ -6427,7 +6365,7 @@
       "title": "Bar Chart Custom Legend",
       "description": "bar-chart-custom-legend-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "recharts"
       ],
       "registryDependencies": [
@@ -6511,7 +6449,7 @@
       "title": "Bar Chart Custom Tooltip",
       "description": "bar-chart-custom-tooltip-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "recharts"
       ],
       "registryDependencies": [
@@ -6823,7 +6761,7 @@
       "title": "Command Menu Trigger By Keyboard",
       "description": "command-menu-trigger-by-keyboard-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/command-menu"
@@ -6844,7 +6782,7 @@
       "title": "Command Menu Blur",
       "description": "command-menu-blur-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
@@ -6867,7 +6805,7 @@
       "title": "Command Menu",
       "description": "command-menu-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
@@ -7005,9 +6943,6 @@
       "type": "registry:page",
       "title": "Context Menu Disabled",
       "description": "context-menu-disabled-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/context-menu"
       ],
@@ -7099,7 +7034,7 @@
       "title": "Context Menu With Icon",
       "description": "context-menu-with-icon-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/context-menu"
@@ -7120,6 +7055,7 @@
       "title": "Slider Range",
       "description": "slider-range-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/slider"
       ],
       "files": [
@@ -7138,7 +7074,6 @@
       "title": "Slider Orientation",
       "description": "slider-orientation-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/card",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/slider"
       ],
@@ -7153,29 +7088,12 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "slider-tooltip-demo",
-      "type": "registry:page",
-      "title": "Slider Tooltip",
-      "description": "slider-tooltip-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/slider"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/controls/slider/slider-tooltip-demo.tsx",
-          "type": "registry:page",
-          "target": "app/slider-tooltip-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "slider-controlled-demo",
       "type": "registry:page",
       "title": "Slider Controlled",
       "description": "slider-controlled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/slider"
       ],
       "files": [
@@ -7194,6 +7112,7 @@
       "title": "Slider Description",
       "description": "slider-description-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/slider"
       ],
       "files": [
@@ -7212,6 +7131,7 @@
       "title": "Slider",
       "description": "slider-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/slider"
       ],
       "files": [
@@ -7230,9 +7150,10 @@
       "title": "Slider Prefix Suffix",
       "description": "slider-prefix-suffix-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/slider"
       ],
       "files": [
@@ -7251,6 +7172,7 @@
       "title": "Slider Disabled",
       "description": "slider-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/slider"
       ],
       "files": [
@@ -7264,29 +7186,12 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "slider-label-demo",
-      "type": "registry:page",
-      "title": "Slider Label",
-      "description": "slider-label-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/slider"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/controls/slider/slider-label-demo.tsx",
-          "type": "registry:page",
-          "target": "app/slider-label-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "slider-step-demo",
       "type": "registry:page",
       "title": "Slider Step",
       "description": "slider-step-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/slider"
       ],
       "files": [
@@ -7305,10 +7210,9 @@
       "title": "Toolbar Disabled",
       "description": "toolbar-disabled-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/toggle",
         "http://localhost:3000/r/toolbar"
       ],
       "files": [
@@ -7327,7 +7231,7 @@
       "title": "Toolbar",
       "description": "toolbar-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
@@ -7351,12 +7255,9 @@
       "title": "Toolbar Orientation",
       "description": "toolbar-orientation-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/menu",
-        "http://localhost:3000/r/toggle",
         "http://localhost:3000/r/toolbar"
       ],
       "files": [
@@ -7364,6 +7265,24 @@
           "path": "src/components/docs/controls/toolbar/toolbar-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/toolbar-orientation-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "toolbar-demo2",
+      "type": "registry:page",
+      "title": "Toolbar Demo2",
+      "description": "toolbar-demo2",
+      "registryDependencies": [
+        "http://localhost:3000/r/toolbar"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/controls/toolbar/toolbar-demo2.tsx",
+          "type": "registry:page",
+          "target": "app/toolbar-demo2/page.tsx"
         }
       ]
     },
@@ -7414,7 +7333,7 @@
       "title": "Breadcrumbs Menu",
       "description": "breadcrumbs-menu-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/breadcrumbs",
@@ -7559,30 +7478,12 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "disclosure-group-hide-indicator-demo",
-      "type": "registry:page",
-      "title": "Disclosure Group Hide Indicator",
-      "description": "disclosure-group-hide-indicator-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-hide-indicator-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-group-hide-indicator-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "disclosure-group-disabled-demo",
       "type": "registry:page",
       "title": "Disclosure Group Disabled",
       "description": "disclosure-group-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
@@ -7595,15 +7496,33 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "disclosure-demo",
+      "type": "registry:page",
+      "title": "Disclosure",
+      "description": "disclosure-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/disclosure-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/navigation/disclosure-group/disclosure-demo.tsx",
+          "type": "registry:page",
+          "target": "app/disclosure-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-nested-demo",
       "type": "registry:page",
       "title": "Disclosure Group Nested",
       "description": "disclosure-group-nested-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
@@ -7616,36 +7535,15 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "disclosure-group-border-hidden-demo",
-      "type": "registry:page",
-      "title": "Disclosure Group Border Hidden",
-      "description": "disclosure-group-border-hidden-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-border-hidden-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-group-border-hidden-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "disclosure-group-with-icon-demo",
       "type": "registry:page",
       "title": "Disclosure Group With Icon",
       "description": "disclosure-group-with-icon-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
@@ -7663,7 +7561,7 @@
       "title": "Disclosure Group",
       "description": "disclosure-group-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
@@ -7676,30 +7574,12 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "disclosure-group-hide-everything-demo",
-      "type": "registry:page",
-      "title": "Disclosure Group Hide Everything",
-      "description": "disclosure-group-hide-everything-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-hide-everything-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-group-hide-everything-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "disclosure-group-allow-multiple-expand-demo",
       "type": "registry:page",
       "title": "Disclosure Group Allow Multiple Expand",
       "description": "disclosure-group-allow-multiple-expand-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
@@ -7712,12 +7592,30 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "disclosure-controlled-demo",
+      "type": "registry:page",
+      "title": "Disclosure Controlled",
+      "description": "disclosure-controlled-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/disclosure-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/navigation/disclosure-group/disclosure-controlled-demo.tsx",
+          "type": "registry:page",
+          "target": "app/disclosure-controlled-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "disclosure-group-default-expand-demo",
       "type": "registry:page",
       "title": "Disclosure Group Default Expand",
       "description": "disclosure-group-default-expand-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
@@ -7730,18 +7628,18 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "pagination-dynamic-demo",
+      "name": "disclosure-disabled-demo",
       "type": "registry:page",
-      "title": "Pagination Dynamic",
-      "description": "pagination-dynamic-demo",
+      "title": "Disclosure Disabled",
+      "description": "disclosure-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/pagination"
+        "http://localhost:3000/r/disclosure-group"
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/pagination/pagination-dynamic-demo.tsx",
+          "path": "src/components/docs/navigation/disclosure-group/disclosure-disabled-demo.tsx",
           "type": "registry:page",
-          "target": "app/pagination-dynamic-demo/page.tsx"
+          "target": "app/disclosure-disabled-demo/page.tsx"
         }
       ]
     },
@@ -7753,6 +7651,7 @@
       "title": "Pagination",
       "description": "pagination-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/container",
         "http://localhost:3000/r/pagination"
       ],
       "files": [
@@ -7807,7 +7706,7 @@
       "title": "Tabs Icons",
       "description": "tabs-icons-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/tabs"
@@ -7835,27 +7734,6 @@
           "path": "src/components/docs/navigation/tabs/tabs-link-demo.tsx",
           "type": "registry:page",
           "target": "app/tabs-link-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "tabs-collections-demo",
-      "type": "registry:page",
-      "title": "Tabs Collections",
-      "description": "tabs-collections-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/tabs"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/tabs/tabs-collections-demo.tsx",
-          "type": "registry:page",
-          "target": "app/tabs-collections-demo/page.tsx"
         }
       ]
     },
@@ -7898,60 +7776,6 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "disclosure-demo",
-      "type": "registry:page",
-      "title": "Disclosure",
-      "description": "disclosure-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure/disclosure-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "disclosure-controlled-demo",
-      "type": "registry:page",
-      "title": "Disclosure Controlled",
-      "description": "disclosure-controlled-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure/disclosure-controlled-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-controlled-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "disclosure-disabled-demo",
-      "type": "registry:page",
-      "title": "Disclosure Disabled",
-      "description": "disclosure-disabled-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/navigation/disclosure/disclosure-disabled-demo.tsx",
-          "type": "registry:page",
-          "target": "app/disclosure-disabled-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "sheet-custom-close-demo",
       "type": "registry:page",
       "title": "Sheet Custom Close",
@@ -7959,6 +7783,7 @@
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/sheet"
       ],
       "files": [
@@ -7996,13 +7821,15 @@
       "title": "Sheet Menu",
       "description": "sheet-menu-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/modal",
         "http://localhost:3000/r/select",
@@ -8026,7 +7853,9 @@
       "description": "sheet-controlled-demo",
       "registryDependencies": [
         "http://localhost:3000/r/button",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/sheet",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -8069,6 +7898,8 @@
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/sheet",
         "http://localhost:3000/r/text-field"
       ],
@@ -8107,7 +7938,7 @@
       "title": "Modal Triggered By Menu",
       "description": "modal-triggered-by-menu-demo",
       "dependencies": [
-        "@intentui/icons",
+        "@heroicons/react",
         "sonner"
       ],
       "registryDependencies": [
@@ -8133,12 +7964,14 @@
       "title": "Modal Nested",
       "description": "modal-nested-demo",
       "dependencies": [
+        "react-aria-components",
         "sonner"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/modal",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -8214,9 +8047,13 @@
       "type": "registry:page",
       "title": "Modal Blur",
       "description": "modal-blur-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/modal",
         "http://localhost:3000/r/text-field"
       ],
@@ -8256,6 +8093,7 @@
       "description": "modal-demo",
       "registryDependencies": [
         "http://localhost:3000/r/button",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/modal",
         "http://localhost:3000/r/text-field"
       ],
@@ -8275,7 +8113,7 @@
       "title": "Popover Controlled",
       "description": "popover-controlled-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
@@ -8321,7 +8159,7 @@
       "title": "Popover Arrow",
       "description": "popover-arrow-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
@@ -8342,11 +8180,15 @@
       "type": "registry:page",
       "title": "Popover Custom Close",
       "description": "popover-custom-close",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
         "http://localhost:3000/r/dialog",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/popover",
         "http://localhost:3000/r/text-field"
@@ -8405,9 +8247,6 @@
       "type": "registry:page",
       "title": "Tooltip Delay",
       "description": "tooltip-delay-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/tooltip"
@@ -8489,7 +8328,7 @@
       "title": "Tooltip Intent",
       "description": "tooltip-intent-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
@@ -8532,12 +8371,14 @@
       "title": "Drawer Nested",
       "description": "drawer-nested-demo",
       "dependencies": [
+        "react-aria-components",
         "sonner"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/drawer",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -8558,6 +8399,8 @@
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/drawer",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -8597,6 +8440,8 @@
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/drawer",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -8650,12 +8495,98 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "button-group-with-menu-demo",
+      "type": "registry:page",
+      "title": "Button Group With Menu",
+      "description": "button-group-with-menu-demo",
+      "dependencies": [
+        "@heroicons/react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/button-group",
+        "http://localhost:3000/r/menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/buttons/button-group/button-group-with-menu-demo.tsx",
+          "type": "registry:page",
+          "target": "app/button-group-with-menu-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "button-group-orientation-demo",
+      "type": "registry:page",
+      "title": "Button Group Orientation",
+      "description": "button-group-orientation-demo",
+      "dependencies": [
+        "@heroicons/react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/button-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/buttons/button-group/button-group-orientation-demo.tsx",
+          "type": "registry:page",
+          "target": "app/button-group-orientation-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "button-group-with-text-demo",
+      "type": "registry:page",
+      "title": "Button Group With Text",
+      "description": "button-group-with-text-demo",
+      "dependencies": [
+        "@heroicons/react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/button-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/buttons/button-group/button-group-with-text-demo.tsx",
+          "type": "registry:page",
+          "target": "app/button-group-with-text-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "button-group-demo",
+      "type": "registry:page",
+      "title": "Button Group",
+      "description": "button-group-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/button-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/buttons/button-group/button-group-demo.tsx",
+          "type": "registry:page",
+          "target": "app/button-group-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-intent-demo",
       "type": "registry:page",
       "title": "Button Intent",
       "description": "button-intent-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button"
@@ -8676,7 +8607,7 @@
       "title": "Button Icon",
       "description": "button-icon-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button"
@@ -8697,7 +8628,7 @@
       "title": "Button Loader",
       "description": "button-loader-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
@@ -8736,9 +8667,6 @@
       "type": "registry:page",
       "title": "Button Size",
       "description": "button-size-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/separator"
@@ -8795,7 +8723,7 @@
       "title": "Button Pending",
       "description": "button-pending-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
@@ -8835,9 +8763,6 @@
       "type": "registry:page",
       "title": "Toggle Disabled",
       "description": "toggle-disabled-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/toggle"
       ],
@@ -8893,7 +8818,7 @@
       "title": "Toggle Size",
       "description": "toggle-size-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/separator",
@@ -8914,9 +8839,6 @@
       "type": "registry:page",
       "title": "Toggle Controlled",
       "description": "toggle-controlled-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/toggle"
       ],
@@ -9029,7 +8951,7 @@
       "title": "Toggle Group Orientation",
       "description": "toggle-group-orientation-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/toggle-group"
@@ -9050,7 +8972,7 @@
       "title": "Toggle Group Square Size",
       "description": "toggle-group-square-size-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/toggle-group"
@@ -9258,10 +9180,9 @@
       "type": "registry:page",
       "title": "Tag Field Disabled",
       "description": "tag-field-disabled-demo",
-      "dependencies": [
-        "react-stately"
-      ],
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/tag-field"
       ],
       "files": [
@@ -9275,36 +9196,17 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "tag-field-max-demo",
-      "type": "registry:page",
-      "title": "Tag Field Max",
-      "description": "tag-field-max-demo",
-      "dependencies": [
-        "react-stately"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/tag-field"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/forms/tag-field/tag-field-max-demo.tsx",
-          "type": "registry:page",
-          "target": "app/tag-field-max-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "tag-field-controlled-demo",
       "type": "registry:page",
       "title": "Tag Field Controlled",
       "description": "tag-field-controlled-demo",
       "dependencies": [
-        "react-stately"
+        "react-aria-components"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/card",
         "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/tag-field"
       ],
       "files": [
@@ -9322,10 +9224,9 @@
       "type": "registry:page",
       "title": "Tag Field",
       "description": "tag-field-demo",
-      "dependencies": [
-        "react-stately"
-      ],
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/tag-field"
       ],
       "files": [
@@ -9333,27 +9234,6 @@
           "path": "src/components/docs/forms/tag-field/tag-field-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-field-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "tag-field-appearance-demo",
-      "type": "registry:page",
-      "title": "Tag Field Appearance",
-      "description": "tag-field-appearance-demo",
-      "dependencies": [
-        "react-stately"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/tag-field"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/forms/tag-field/tag-field-appearance-demo.tsx",
-          "type": "registry:page",
-          "target": "app/tag-field-appearance-demo/page.tsx"
         }
       ]
     },
@@ -9373,24 +9253,6 @@
           "path": "src/components/docs/forms/search-field/search-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-controlled-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "search-field-pending-demo",
-      "type": "registry:page",
-      "title": "Search Field Pending",
-      "description": "search-field-pending-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/search-field"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/forms/search-field/search-field-pending-demo.tsx",
-          "type": "registry:page",
-          "target": "app/search-field-pending-demo/page.tsx"
         }
       ]
     },
@@ -9474,6 +9336,7 @@
       "title": "Search Field With Label",
       "description": "search-field-with-label-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/search-field"
       ],
       "files": [
@@ -9492,6 +9355,7 @@
       "title": "Search Field Description",
       "description": "search-field-description-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/search-field"
       ],
       "files": [
@@ -9509,9 +9373,12 @@
       "type": "registry:page",
       "title": "Search Field Validation",
       "description": "search-field-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/search-field"
       ],
       "files": [
@@ -9548,10 +9415,12 @@
       "type": "registry:page",
       "title": "Radio Group Validation",
       "description": "radio-group-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
-        "http://localhost:3000/r/form",
         "http://localhost:3000/r/radio"
       ],
       "files": [
@@ -9589,6 +9458,7 @@
       "title": "Radio Group Uncontrolled",
       "description": "radio-group-uncontrolled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/radio"
       ],
       "files": [
@@ -9607,6 +9477,7 @@
       "title": "Radio Group Orientation",
       "description": "radio-group-orientation-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/radio"
       ],
       "files": [
@@ -9625,6 +9496,7 @@
       "title": "Radio Group Disabled",
       "description": "radio-group-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/radio"
       ],
       "files": [
@@ -9661,9 +9533,13 @@
       "type": "registry:page",
       "title": "Text Field Validation",
       "description": "text-field-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9682,6 +9558,8 @@
       "title": "Text Field Readonly",
       "description": "text-field-readonly-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9700,9 +9578,12 @@
       "title": "Text Field Prefix Suffix",
       "description": "text-field-prefix-suffix-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/text",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9721,6 +9602,8 @@
       "title": "Text Field Uncontrolled",
       "description": "text-field-uncontrolled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9739,6 +9622,8 @@
       "title": "Text Field Description",
       "description": "text-field-description-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9756,7 +9641,13 @@
       "type": "registry:page",
       "title": "Text Field Revealable",
       "description": "text-field-revealable-demo",
+      "dependencies": [
+        "@heroicons/react"
+      ],
       "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9775,6 +9666,7 @@
       "title": "Text Field",
       "description": "text-field-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9793,6 +9685,8 @@
       "title": "Text Field Disabled",
       "description": "text-field-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9812,6 +9706,7 @@
       "description": "text-field-controlled-demo",
       "registryDependencies": [
         "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -9830,10 +9725,12 @@
       "title": "Text Field Suffix Button",
       "description": "text-field-suffix-button-demo",
       "dependencies": [
-        "@intentui/icons"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/modal",
         "http://localhost:3000/r/text-field"
       ],
@@ -9848,29 +9745,13 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "text-field-pending-demo",
-      "type": "registry:page",
-      "title": "Text Field Pending",
-      "description": "text-field-pending-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/text-field"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/forms/text-field/text-field-pending-demo.tsx",
-          "type": "registry:page",
-          "target": "app/text-field-pending-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "textarea-demo",
       "type": "registry:page",
       "title": "Textarea",
       "description": "textarea-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -9890,6 +9771,7 @@
       "description": "textarea-controlled-demo",
       "registryDependencies": [
         "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -9908,6 +9790,8 @@
       "title": "Textarea Uncontrolled",
       "description": "textarea-uncontrolled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -9926,6 +9810,8 @@
       "title": "Textarea Readonly",
       "description": "textarea-readonly-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -9944,6 +9830,8 @@
       "title": "Textarea Description",
       "description": "textarea-description-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -9962,6 +9850,8 @@
       "title": "Textarea Disabled",
       "description": "textarea-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -9979,9 +9869,13 @@
       "type": "registry:page",
       "title": "Textarea Validation",
       "description": "textarea-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea"
       ],
       "files": [
@@ -9989,6 +9883,31 @@
           "path": "src/components/docs/forms/textarea/textarea-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/textarea-validation-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "field-demo",
+      "type": "registry:page",
+      "title": "Field",
+      "description": "field-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/text",
+        "http://localhost:3000/r/text-field"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/forms/field/field-demo.tsx",
+          "type": "registry:page",
+          "target": "app/field-demo/page.tsx"
         }
       ]
     },
@@ -10018,7 +9937,8 @@
       "title": "Checkbox Group",
       "description": "checkbox-group-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10035,10 +9955,13 @@
       "type": "registry:page",
       "title": "Checkbox Group Validation",
       "description": "checkbox-group-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/form"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10081,25 +10004,6 @@
           "path": "src/components/docs/forms/checkbox/checkbox-indeterminate-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-indeterminate-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "checkbox-description-demo",
-      "type": "registry:page",
-      "title": "Checkbox Description",
-      "description": "checkbox-description-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/forms/checkbox/checkbox-description-demo.tsx",
-          "type": "registry:page",
-          "target": "app/checkbox-description-demo/page.tsx"
         }
       ]
     },
@@ -10167,7 +10071,8 @@
       "title": "Checkbox Group Uncontrolled",
       "description": "checkbox-group-uncontrolled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10185,7 +10090,8 @@
       "title": "Checkbox Group Indeterminate",
       "description": "checkbox-group-indeterminate-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10221,7 +10127,8 @@
       "title": "Checkbox Group Disabled",
       "description": "checkbox-group-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10257,9 +10164,12 @@
       "type": "registry:page",
       "title": "Number Field Invalid",
       "description": "number-field-invalid-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/number-field"
       ],
       "files": [
@@ -10278,6 +10188,7 @@
       "title": "Number Field Disabled",
       "description": "number-field-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/number-field"
       ],
       "files": [
@@ -10315,6 +10226,7 @@
       "title": "Number Field Uncontrolled",
       "description": "number-field-uncontrolled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/number-field"
       ],
       "files": [
@@ -10333,6 +10245,7 @@
       "title": "Number Field",
       "description": "number-field-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/number-field"
       ],
       "files": [
@@ -10346,41 +10259,98 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "form-validation-demo",
+      "name": "input-controlled-demo",
       "type": "registry:page",
-      "title": "Form Validation",
-      "description": "form-validation-demo",
+      "title": "Input Controlled",
+      "description": "input-controlled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
-        "http://localhost:3000/r/text-field"
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/text"
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/forms/form-validation-demo.tsx",
+          "path": "src/components/docs/forms/input/input-controlled-demo.tsx",
           "type": "registry:page",
-          "target": "app/form-validation-demo/page.tsx"
+          "target": "app/input-controlled-demo/page.tsx"
         }
       ]
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "form-demo",
+      "name": "input-group-demo",
       "type": "registry:page",
-      "title": "Form",
-      "description": "form-demo",
+      "title": "Input Group",
+      "description": "input-group-demo",
+      "dependencies": [
+        "@heroicons/react"
+      ],
       "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
-        "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/text"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/forms/input/input-group-demo.tsx",
+          "type": "registry:page",
+          "target": "app/input-group-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "input-text-field-demo",
+      "type": "registry:page",
+      "title": "Input Text Field",
+      "description": "input-text-field-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/forms/form-demo.tsx",
+          "path": "src/components/docs/forms/input/input-text-field-demo.tsx",
           "type": "registry:page",
-          "target": "app/form-demo/page.tsx"
+          "target": "app/input-text-field-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "input-label-description-demo",
+      "type": "registry:page",
+      "title": "Input Label Description",
+      "description": "input-label-description-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/forms/input/input-label-description-demo.tsx",
+          "type": "registry:page",
+          "target": "app/input-label-description-demo/page.tsx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "input-basic-demo",
+      "type": "registry:page",
+      "title": "Input Basic",
+      "description": "input-basic-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/input"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/forms/input/input-basic-demo.tsx",
+          "type": "registry:page",
+          "target": "app/input-basic-demo/page.tsx"
         }
       ]
     },
@@ -10392,6 +10362,7 @@
       "title": "Input Otp Controlled",
       "description": "input-otp-controlled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/input-otp"
       ],
       "files": [
@@ -10428,6 +10399,7 @@
       "title": "Input Otp",
       "description": "input-otp-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/input-otp"
       ],
       "files": [
@@ -10446,12 +10418,13 @@
       "title": "Date Picker Custom Validation",
       "description": "date-picker-custom-validation-demo",
       "dependencies": [
-        "@internationalized/date"
+        "@internationalized/date",
+        "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-picker",
-        "http://localhost:3000/r/form"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10469,7 +10442,8 @@
       "title": "Date Picker",
       "description": "date-picker-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/date-picker"
+        "http://localhost:3000/r/date-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10490,7 +10464,8 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/date-picker"
+        "http://localhost:3000/r/date-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10507,10 +10482,13 @@
       "type": "registry:page",
       "title": "Date Picker Required",
       "description": "date-picker-required-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-picker",
-        "http://localhost:3000/r/form"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10528,7 +10506,8 @@
       "title": "Date Picker Disabled",
       "description": "date-picker-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/date-picker"
+        "http://localhost:3000/r/date-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10550,7 +10529,8 @@
         "@react-aria/i18n"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/date-picker"
+        "http://localhost:3000/r/date-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10568,6 +10548,8 @@
       "title": "Time Field Disabled",
       "description": "time-field-disabled-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/time-field"
       ],
       "files": [
@@ -10585,9 +10567,13 @@
       "type": "registry:page",
       "title": "Time Field Validation",
       "description": "time-field-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/form",
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/time-field"
       ],
       "files": [
@@ -10595,28 +10581,6 @@
           "path": "src/components/docs/date-and-time/time-field/time-field-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/time-field-validation-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "time-field-suffix-demo",
-      "type": "registry:page",
-      "title": "Time Field Suffix",
-      "description": "time-field-suffix-demo",
-      "dependencies": [
-        "@intentui/icons",
-        "@internationalized/date"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/time-field"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/date-and-time/time-field/time-field-suffix-demo.tsx",
-          "type": "registry:page",
-          "target": "app/time-field-suffix-demo/page.tsx"
         }
       ]
     },
@@ -10631,6 +10595,7 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/switch",
         "http://localhost:3000/r/time-field"
@@ -10654,6 +10619,8 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/time-field"
       ],
       "files": [
@@ -10675,6 +10642,8 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/time-field"
       ],
       "files": [
@@ -10696,6 +10665,8 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/time-field"
       ],
       "files": [
@@ -10714,7 +10685,8 @@
       "title": "Date Range Picker Disabled",
       "description": "date-range-picker-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/date-range-picker"
+        "http://localhost:3000/r/date-range-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10736,7 +10708,8 @@
         "@react-aria/i18n"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/date-range-picker"
+        "http://localhost:3000/r/date-range-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10757,7 +10730,8 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/date-range-picker"
+        "http://localhost:3000/r/date-range-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10775,12 +10749,13 @@
       "title": "Date Range Picker Custom Validation",
       "description": "date-range-picker-custom-validation-demo",
       "dependencies": [
-        "@internationalized/date"
+        "@internationalized/date",
+        "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-range-picker",
-        "http://localhost:3000/r/form"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10798,7 +10773,8 @@
       "title": "Date Range Picker Visible Duration",
       "description": "date-range-picker-visible-duration-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/date-range-picker"
+        "http://localhost:3000/r/date-range-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10816,7 +10792,8 @@
       "title": "Date Range Picker",
       "description": "date-range-picker-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/date-range-picker"
+        "http://localhost:3000/r/date-range-picker",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10833,10 +10810,13 @@
       "type": "registry:page",
       "title": "Date Range Picker Validation",
       "description": "date-range-picker-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-range-picker",
-        "http://localhost:3000/r/form"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10932,7 +10912,8 @@
       "title": "Date Field",
       "description": "date-field-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/date-field"
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -10954,34 +10935,14 @@
         "@react-aria/i18n"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/date-field"
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
           "path": "src/components/docs/date-and-time/date-field/date-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/date-field-controlled-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "date-field-suffix-demo",
-      "type": "registry:page",
-      "title": "Date Field Suffix",
-      "description": "date-field-suffix-demo",
-      "dependencies": [
-        "@intentui/icons"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/date-field"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/date-and-time/date-field/date-field-suffix-demo.tsx",
-          "type": "registry:page",
-          "target": "app/date-field-suffix-demo/page.tsx"
         }
       ]
     },
@@ -10996,7 +10957,8 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/date-field"
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -11014,7 +10976,8 @@
       "title": "Date Field Disabled",
       "description": "date-field-disabled-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/date-field"
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -11031,11 +10994,9 @@
       "type": "registry:page",
       "title": "Date Field Readonly",
       "description": "date-field-readonly-demo",
-      "dependencies": [
-        "@internationalized/date"
-      ],
       "registryDependencies": [
-        "http://localhost:3000/r/date-field"
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -11056,7 +11017,8 @@
         "@internationalized/date"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/date-field"
+        "http://localhost:3000/r/date-field",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -11073,10 +11035,13 @@
       "type": "registry:page",
       "title": "Date Field Validation",
       "description": "date-field-validation-demo",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-field",
-        "http://localhost:3000/r/form"
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -11128,12 +11093,12 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11160,12 +11125,12 @@
       "description": "navbar-03",
       "registryDependencies": [
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11193,12 +11158,12 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11226,12 +11191,12 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11259,12 +11224,12 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
-        "http://localhost:3000/r/separator",
-        "http://localhost:3000/r/avatar"
+        "http://localhost:3000/r/separator"
       ],
       "files": [
         {
@@ -11726,6 +11691,7 @@
         "http://localhost:3000/r/ui/bar-list",
         "http://localhost:3000/r/ui/breadcrumbs",
         "http://localhost:3000/r/ui/button",
+        "http://localhost:3000/r/ui/button-group",
         "http://localhost:3000/r/ui/calendar",
         "http://localhost:3000/r/ui/card",
         "http://localhost:3000/r/ui/carousel",
@@ -11749,15 +11715,15 @@
         "http://localhost:3000/r/ui/date-range-picker",
         "http://localhost:3000/r/ui/description-list",
         "http://localhost:3000/r/ui/dialog",
-        "http://localhost:3000/r/ui/disclosure",
+        "http://localhost:3000/r/ui/disclosure-group",
         "http://localhost:3000/r/ui/drawer",
         "http://localhost:3000/r/ui/drop-zone",
         "http://localhost:3000/r/ui/dropdown",
         "http://localhost:3000/r/ui/field",
         "http://localhost:3000/r/ui/file-trigger",
-        "http://localhost:3000/r/ui/form",
         "http://localhost:3000/r/ui/grid-list",
         "http://localhost:3000/r/ui/heading",
+        "http://localhost:3000/r/ui/input",
         "http://localhost:3000/r/ui/input-otp",
         "http://localhost:3000/r/ui/keyboard",
         "http://localhost:3000/r/ui/line-chart",
@@ -11792,6 +11758,7 @@
         "http://localhost:3000/r/ui/tabs",
         "http://localhost:3000/r/ui/tag-field",
         "http://localhost:3000/r/ui/tag-group",
+        "http://localhost:3000/r/ui/text",
         "http://localhost:3000/r/ui/text-field",
         "http://localhost:3000/r/ui/textarea",
         "http://localhost:3000/r/ui/time-field",
@@ -11801,8 +11768,7 @@
         "http://localhost:3000/r/ui/toolbar",
         "http://localhost:3000/r/ui/tooltip",
         "http://localhost:3000/r/ui/tracker",
-        "http://localhost:3000/r/ui/tree",
-        "http://localhost:3000/r/ui/visually-hidden"
+        "http://localhost:3000/r/ui/tree"
       ]
     }
   ]

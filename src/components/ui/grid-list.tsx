@@ -64,7 +64,7 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
             "[--grid-list-item-bg-active:var(--color-primary-subtle)] [--grid-list-item-text-active:var(--color-primary-subtle-fg)]",
             "group inset-ring inset-ring-border rounded-lg px-3 py-2.5",
             "relative min-w-0 outline-hidden [--mr-icon:--spacing(2)]",
-            "flex min-w-0 cursor-default items-center gap-2",
+            "flex min-w-0 cursor-default items-center gap-2 sm:gap-2.5",
             "dragging:cursor-grab dragging:opacity-70 dragging:**:[[slot=drag]]:text-(--grid-list-item-text-active)",
             "**:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg sm:**:data-[slot=icon]:size-4",
             (isSelected || isHovered || isFocusVisible) &&
@@ -114,7 +114,10 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
           )}
 
           {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <Checkbox className="[--indicator-mt:0] sm:[--indicator-mt:0]" slot="selection" />
+            <Checkbox
+              className="[--indicator-mt:0] *:gap-x-0 sm:[--indicator-mt:0]"
+              slot="selection"
+            />
           )}
           {typeof children === "function" ? children(values) : children}
         </>
@@ -135,7 +138,7 @@ const GridListStart = ({ className, ref, ...props }: React.ComponentProps<"div">
   return (
     <div
       ref={ref}
-      className={twMerge("relative flex items-center gap-x-2 sm:gap-x-2.5", className)}
+      className={twMerge("relative flex items-center gap-x-2.5 sm:gap-x-3", className)}
       {...props}
     />
   )

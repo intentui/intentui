@@ -1,12 +1,12 @@
 "use client"
 
-import { IconDuplicate } from "@intentui/icons"
+import { CheckIcon, DocumentDuplicateIcon, Square2StackIcon } from "@heroicons/react/24/outline"
 import type React from "react"
 import { useEffect, useState } from "react"
 import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { copyToClipboard } from "@/lib/copy"
-import { composeTailwindRenderProps } from "@/lib/primitive"
+import { cx } from "@/lib/primitive"
 
 interface CopyButtonProps extends React.ComponentProps<typeof Button> {
   isCopied?: boolean
@@ -47,31 +47,16 @@ export function CopyButton({
     <Button
       aria-label="Copy to clipboard"
       onPress={props.onPress || onPressHandler}
-      className={composeTailwindRenderProps(
-        className,
+      className={cx(
         twJoin(
           "relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg",
           isCopied && "text-fg",
         ),
+        className,
       )}
       {...props}
     >
-      <span
-        className={twJoin(
-          "absolute inset-0 flex items-center justify-center transition duration-300",
-          isCopied ? "-translate-y-1.5 opacity-0" : "translate-y-0 opacity-100",
-        )}
-      >
-        Copy
-      </span>
-      <span
-        className={twJoin(
-          "absolute inset-0 flex items-center justify-center transition duration-300",
-          isCopied ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
-        )}
-      >
-        Copied
-      </span>
+      {isCopied ? <CheckIcon className="size-4" /> : <Square2StackIcon className="size-4" />}
     </Button>
   )
 }
@@ -112,7 +97,7 @@ export function CopyMotionButton({ className, text }: { className?: string; text
           copied && "-translate-y-1.5 opacity-0",
         )}
       >
-        <IconDuplicate className="size-3.5 fill-zinc-600/20 stroke-zinc-600 transition-colors group-hover/button:stroke-zinc-500 dark:fill-zinc-500/20 dark:stroke-zinc-500 dark:group-hover/button:stroke-zinc-400" />
+        <DocumentDuplicateIcon className="size-3.5 fill-zinc-600/20 stroke-zinc-600 transition-colors group-hover/button:stroke-zinc-500 dark:fill-zinc-500/20 dark:stroke-zinc-500 dark:group-hover/button:stroke-zinc-400" />
         Copy
       </span>
       <span

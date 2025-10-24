@@ -3,7 +3,8 @@
 import { getLocalTimeZone, now, parseZonedDateTime } from "@internationalized/date"
 import { useState } from "react"
 
-import { DatePicker } from "@/components/ui/date-picker"
+import { DatePicker, DatePickerTrigger } from "@/components/ui/date-picker"
+import { Label } from "@/components/ui/field"
 
 export default function DateTimeDemo() {
   const today = parseZonedDateTime(now(getLocalTimeZone()).toString())
@@ -13,10 +14,11 @@ export default function DateTimeDemo() {
     <DatePicker
       hideTimeZone
       hourCycle={24}
-      className="max-w-xs"
       value={value}
       onChange={(newValue) => setValue(newValue!)}
-      label="Event date"
-    />
+    >
+      <Label>Event date</Label>
+      <DatePickerTrigger />
+    </DatePicker>
   )
 }

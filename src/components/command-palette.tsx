@@ -1,23 +1,33 @@
 "use client"
+
 import {
-  IconBrandIntentui,
-  IconColorPaletteFill,
-  IconColorsFill,
-  IconDuplicateFill,
-  IconHashtag,
-  IconHomeFill,
-  IconNotepadFill,
-  IconNotesFill,
-  IconPackageFill,
-  IconWindowVisitFill,
-} from "@intentui/icons"
+  BookOpenIcon,
+  CubeIcon,
+  DocumentTextIcon,
+  HashtagIcon,
+  HomeIcon,
+  PaintBrushIcon,
+  SparklesIcon,
+  Squares2X2Icon,
+  SwatchIcon,
+} from "@heroicons/react/24/outline"
 import { formatHex, parse } from "culori"
 import { useRouter } from "next/navigation"
 import { useMemo, useState } from "react"
 import { twJoin } from "tailwind-merge"
 import { useDebounce } from "use-debounce"
 import { ColorSwatch } from "@/components/ui/color-swatch"
-import { CommandMenu } from "@/components/ui/command-menu"
+import {
+  CommandMenu,
+  CommandMenuDescription,
+  CommandMenuFooter,
+  CommandMenuItem,
+  CommandMenuLabel,
+  CommandMenuList,
+  CommandMenuSearch,
+  CommandMenuSection,
+  CommandMenuSeparator,
+} from "@/components/ui/command-menu"
 import results from "@/components-search.json"
 import { useCopy } from "@/hooks/use-copy"
 import colors from "@/json/colors.json"
@@ -47,19 +57,15 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
 
   const filteredDocs = useMemo(() => {
     if (!inputLower) return []
-
     return docs
       .map((group) => {
         const sectionMatch = group.section.toLowerCase().includes(inputLower)
-
         if (!isComponentArray(group.children)) return sectionMatch ? group : null
-
         const children = group.children.filter(
           (item) =>
             item.title.toLowerCase().includes(inputLower) ||
             item.slug.toLowerCase().includes(inputLower),
         )
-
         if (sectionMatch) return group
         if (children.length) return { ...group, children }
         return null
@@ -69,20 +75,16 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
 
   const filteredComponents = useMemo(() => {
     if (!inputLower) return []
-
     return components.children
       .map((component: any) => {
         const subsectionMatch = component.subsection?.toLowerCase().includes(inputLower)
         const idMatch = String(component.id).includes(inputLower)
-
         if (subsectionMatch || idMatch) return component
-
         const children = component.children.filter(
           (item: CollectionComponent) =>
             item.title.toLowerCase().includes(inputLower) ||
             item.slug.toLowerCase().includes(inputLower),
         )
-
         return children.length ? { ...component, children } : null
       })
       .filter(Boolean)
@@ -90,14 +92,12 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
 
   const filteredColors = useMemo(() => {
     if (!inputLower) return []
-
     return Object.entries(colors)
       .map(([colorName, shades]) => {
         const items = Object.entries(shades).filter(([shade, value]) => {
           const label = `${colorName}-${shade}`
           return label.includes(inputLower) || value.toLowerCase().includes(inputLower)
         })
-
         return items.length ? { colorName, items } : null
       })
       .filter(Boolean) as {
@@ -115,56 +115,52 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
       onInputChange={setInput}
       isPending={isLoading}
     >
-      <CommandMenu.Search placeholder="Search components, color..." />
-      <CommandMenu.List>
-        <CommandMenu.Section aria-label="Pages">
-          <CommandMenu.Item textValue="Home" href="/">
-            <IconHomeFill />
-            <CommandMenu.Label>Home</CommandMenu.Label>
-          </CommandMenu.Item>
-          <CommandMenu.Item textValue="Docs" href={"/docs/getting-started/installation"}>
-            <IconNotesFill />
-            <CommandMenu.Label>Docs</CommandMenu.Label>
-          </CommandMenu.Item>
-          <CommandMenu.Item textValue="components" href="/components">
-            <IconPackageFill />
-            <CommandMenu.Label>Components</CommandMenu.Label>
-          </CommandMenu.Item>
-          <CommandMenu.Item textValue="themes" href="/themes">
-            <IconColorPaletteFill />
-            <CommandMenu.Label>Themes</CommandMenu.Label>
-          </CommandMenu.Item>
-          <CommandMenu.Item textValue="icons" href="/icons">
-            <IconDuplicateFill />
-            <CommandMenu.Label>Icons</CommandMenu.Label>
-          </CommandMenu.Item>
-          <CommandMenu.Item textValue="colors" href="/colors">
-            <IconColorsFill />
-            <CommandMenu.Label>Colors</CommandMenu.Label>
-          </CommandMenu.Item>
-          <CommandMenu.Item textValue="blocks" href="/blocks">
-            <IconWindowVisitFill />
-            <CommandMenu.Label>Blocks</CommandMenu.Label>
-          </CommandMenu.Item>
-          <CommandMenu.Separator />
-          <CommandMenu.Item textValue="blog" href="/blog">
-            <IconNotepadFill />
-            <CommandMenu.Label>Blog</CommandMenu.Label>
-          </CommandMenu.Item>
-          <CommandMenu.Item textValue="premium block" href="https://dub.sh/designiui">
-            <IconBrandIntentui />
-            <CommandMenu.Label>Premium blocks</CommandMenu.Label>
-          </CommandMenu.Item>
-        </CommandMenu.Section>
+      <CommandMenuSearch placeholder="Search components, color..." />
+      <CommandMenuList>
+        <CommandMenuSection aria-label="Pages">
+          <CommandMenuItem textValue="Home" href="/">
+            <HomeIcon className="size-5" />
+            <CommandMenuLabel>Home</CommandMenuLabel>
+          </CommandMenuItem>
+          <CommandMenuItem textValue="Docs" href={"/docs/getting-started/installation"}>
+            <BookOpenIcon className="size-5" />
+            <CommandMenuLabel>Docs</CommandMenuLabel>
+          </CommandMenuItem>
+          <CommandMenuItem textValue="components" href="/components">
+            <CubeIcon className="size-5" />
+            <CommandMenuLabel>Components</CommandMenuLabel>
+          </CommandMenuItem>
+          <CommandMenuItem textValue="themes" href="/themes">
+            <PaintBrushIcon className="size-5" />
+            <CommandMenuLabel>Themes</CommandMenuLabel>
+          </CommandMenuItem>
+          <CommandMenuItem textValue="colors" href="/colors">
+            <SwatchIcon className="size-5" />
+            <CommandMenuLabel>Colors</CommandMenuLabel>
+          </CommandMenuItem>
+          <CommandMenuItem textValue="blocks" href="/blocks">
+            <Squares2X2Icon className="size-5" />
+            <CommandMenuLabel>Blocks</CommandMenuLabel>
+          </CommandMenuItem>
+          <CommandMenuSeparator />
+          <CommandMenuItem textValue="blog" href="/blog">
+            <DocumentTextIcon className="size-5" />
+            <CommandMenuLabel>Blog</CommandMenuLabel>
+          </CommandMenuItem>
+          <CommandMenuItem textValue="premium block" href="https://dub.sh/designiui">
+            <SparklesIcon className="size-5" />
+            <CommandMenuLabel>Premium blocks</CommandMenuLabel>
+          </CommandMenuItem>
+        </CommandMenuSection>
 
         {filteredDocs.map((result) => (
-          <CommandMenu.Section
+          <CommandMenuSection
             key={result.id}
-            title={result.section}
+            label={result.section}
             items={result.children as CollectionComponent[]}
           >
             {(item: CollectionComponent) => (
-              <CommandMenu.Item
+              <CommandMenuItem
                 key={item.slug}
                 id={item.slug.split("/").pop()}
                 textValue={`${result.section} ${item.title}`}
@@ -173,22 +169,22 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
                   setOpen?.(false)
                 }}
               >
-                <IconHashtag />
-                <CommandMenu.Label>{item.title}</CommandMenu.Label>
-              </CommandMenu.Item>
+                <HashtagIcon className="size-5" />
+                <CommandMenuLabel>{item.title}</CommandMenuLabel>
+              </CommandMenuItem>
             )}
-          </CommandMenu.Section>
+          </CommandMenuSection>
         ))}
 
         {filteredComponents.map((component: any) => (
-          <CommandMenu.Section
+          <CommandMenuSection
             key={component.id}
             id={component.id}
-            title={component.subsection}
+            label={component.subsection}
             items={component.children as CollectionComponent[]}
           >
             {(item: CollectionComponent) => (
-              <CommandMenu.Item
+              <CommandMenuItem
                 key={item.slug}
                 id={item.slug.split("/").pop()}
                 textValue={`${component.subsection} ${item.title} ${item.slug.split("/").pop()}`}
@@ -197,15 +193,15 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
                   setOpen?.(false)
                 }}
               >
-                <IconHashtag />
-                <CommandMenu.Label>{item.title}</CommandMenu.Label>
-              </CommandMenu.Item>
+                <HashtagIcon className="size-5" />
+                <CommandMenuLabel>{item.title}</CommandMenuLabel>
+              </CommandMenuItem>
             )}
-          </CommandMenu.Section>
+          </CommandMenuSection>
         ))}
 
         {filteredColors.map(({ colorName, items }) => (
-          <CommandMenu.Section key={colorName} title={colorName}>
+          <CommandMenuSection key={colorName} label={colorName}>
             {items.map(([shade, value]) => {
               const label = `${colorName}-${shade}`
               return (
@@ -217,16 +213,16 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
                 />
               )
             })}
-          </CommandMenu.Section>
+          </CommandMenuSection>
         ))}
-      </CommandMenu.List>
-      <CommandMenu.Footer className="text-xs">
+      </CommandMenuList>
+      <CommandMenuFooter className="text-xs">
         Use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate, <kbd>↵</kbd> to{" "}
         {filteredColors.length > 0 && filteredDocs.length === 0 && filteredComponents.length === 0
           ? "copy"
           : "select"}
         .
-      </CommandMenu.Footer>
+      </CommandMenuFooter>
     </CommandMenu>
   )
 }
@@ -241,16 +237,15 @@ interface ColorItemProps {
 function ColorItem({ label, value, colorName = label, textValue }: ColorItemProps) {
   const { copied, copy } = useCopy()
   return (
-    <CommandMenu.Item onAction={() => copy(value)} textValue={textValue}>
+    <CommandMenuItem onAction={() => copy(value)} textValue={textValue}>
       <ColorSwatch
         className="mt-1"
         color={formatHex(parse(value))}
         colorName={colorName}
         data-slot="icon"
       />
-      <CommandMenu.Label>{label}</CommandMenu.Label>
-      <CommandMenu.Description className="text-xs tracking-tight">
-        {/*{copied ? "Copied" : value}*/}
+      <CommandMenuLabel>{label}</CommandMenuLabel>
+      <CommandMenuDescription className="text-xs tracking-tight">
         <span
           className={twJoin(
             "absolute inset-y-0 right-2 left-0 self-center justify-self-end font-mono focus:transition focus:duration-300",
@@ -267,7 +262,7 @@ function ColorItem({ label, value, colorName = label, textValue }: ColorItemProp
         >
           Copied
         </span>
-      </CommandMenu.Description>
-    </CommandMenu.Item>
+      </CommandMenuDescription>
+    </CommandMenuItem>
   )
 }

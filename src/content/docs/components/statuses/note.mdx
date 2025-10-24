@@ -7,7 +7,7 @@ published: true
 
 ## Basic
 The Note component displays a note with a title and description, providing an easy way to highlight important information.
-<How isCenter={false} toUse="statuses/note/note-demo" />
+<How toUse="statuses/note/note-demo" />
 
 ## Installation
 ```bash
@@ -16,7 +16,7 @@ npx shadcn@latest add @intentui/note
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 <SourceCode toShow='note'/>
 
@@ -38,7 +38,3 @@ import { Note } from "@/components/ui/note"
 ## Intent
 By default, the note is displayed with a primary intent. You can change the intent by passing the `intent` prop. This example demonstrates different intents.
 <How toUse="statuses/note/note-intent-demo" />
-
-## No indicator
-If you don't want an indicator, you can set the `indicator` prop to `false`.
-<How isCenter={false} toUse="statuses/note/note-no-indicator-demo" />

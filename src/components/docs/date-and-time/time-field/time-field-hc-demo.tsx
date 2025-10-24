@@ -2,8 +2,9 @@
 
 import { Time } from "@internationalized/date"
 import { useState } from "react"
+import { DateInput } from "@/components/ui/date-field"
 import { Label } from "@/components/ui/field"
-import { Switch } from "@/components/ui/switch"
+import { Switch, SwitchLabel } from "@/components/ui/switch"
 import { TimeField } from "@/components/ui/time-field"
 
 export default function TimeFieldHcDemo() {
@@ -12,14 +13,12 @@ export default function TimeFieldHcDemo() {
   return (
     <div className="flex flex-col gap-y-6">
       <Switch isSelected={hc === 24} onChange={() => setHc((prevHc) => (prevHc === 24 ? 12 : 24))}>
-        <Label>{hc} hour</Label>
+        <SwitchLabel>{hc} hour</SwitchLabel>
       </Switch>
-      <TimeField
-        value={value}
-        onChange={(newValue) => setValue(newValue!)}
-        hourCycle={hc}
-        label="Event time"
-      />
+      <TimeField value={value} onChange={(newValue) => setValue(newValue!)} hourCycle={hc}>
+        <Label>Event time</Label>
+        <DateInput />
+      </TimeField>
     </div>
   )
 }

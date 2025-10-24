@@ -16,53 +16,68 @@ npx shadcn@latest add @intentui/color-picker
 ```
 
 ## Composed components
-<Composed components={['color-area', 'color-field', 'color-slider', 'color-swatch', 'field', 'popover']}/>
+<Composed components={[
+  'color-picker',
+  'popover',
+  'button',
+  'color-swatch',
+  'color-area',
+  'color-slider',
+  'color-thumb',
+  'color-field',
+  'input',
+]}/>
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 <SourceCode toShow='color-picker'/>
 
 ## Anatomy
 ```
-import { ColorPicker } from "@/components/ui/color-picker"
-
-<ColorPicker
-  label="Theme Color"
-  description="Snag a color for the app theme"
-  defaultValue="hsl(216, 98%, 52%)"
-/>
+import { ColorPicker } from "@/components/ui/color-picker";
+import { Popover, PopoverBody, PopoverContent } from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { ColorSwatch } from "@/components/ui/color-swatch";
+import { ColorArea } from "@/components/ui/color-area";
+import { ColorSlider, ColorSliderTrack } from "@/components/ui/color-slider";
+import { ColorThumb } from "@/components/ui/color-thumb";
+import { ColorField } from "@/components/ui/color-field";
+import { Input } from "@/components/ui/input";
 ```
-
-## Enable format selection
-Enable users to select the format of the color value (e.g., RGB, HSL).
-<How className='min-w-40' toUse="colors/color-picker/color-picker-enable-selection-format-demo" />
-
-## Combination
-Combine both swatch and selection format options in the color picker.
-<How className='min-w-40' toUse="colors/color-picker/color-picker-combination-demo" />
-
-## Eye dropper
-Add an eye dropper button to the color picker to allow users to select a color from the screen.
-<How className='min-w-40' toUse="colors/color-picker/color-picker-eye-dropper-demo" />
-
-## Label
-Add a label to the color picker for better accessibility and user guidance.
-<How className='min-w-40' toUse="colors/color-picker/color-picker-with-label-demo" />
-
-## Dynamic label
-Dynamically update the label based on the selected color.
 ```
-import { ColorPicker, defaultColor } from "@/components/ui/ui"
-
-const [color, setColor] = useState(defaultColor)
-return <ColorPicker label={color.toString('hex')} value={color} onChange={setColor} />
+<ColorPicker defaultValue="rgb(120,140,200)">
+  <Popover>
+    <Button intent="plain" data-slot="control">
+      <ColorSwatch />
+      Select color
+    </Button>
+    <PopoverContent className="[--gutter:--spacing(1)]">
+      <PopoverBody>
+        <div className="space-y-(--gutter)">
+          <ColorArea
+            colorSpace="rgb"
+            defaultValue="rgb(120,140,200)"
+            xChannel="red"
+            yChannel="green"
+            xName="red"
+            yName="green"
+          />
+          <ColorSlider colorSpace="hsb" channel="hue">
+            <ColorSliderTrack>
+              <ColorThumb />
+            </ColorSliderTrack>
+          </ColorSlider>
+          <ColorField aria-label="Color">
+            <Input />
+          </ColorField>
+        </div>
+      </PopoverBody>
+    </PopoverContent>
+  </Popover>
+</ColorPicker>
 ```
-
-## Description
-Include a description to provide additional information or instructions.
-<How className='min-w-40' toUse="colors/color-picker/color-picker-with-description-demo" />
 
 ## Controlled
 Control the selected color with the `value` prop to sync it with your application's state.

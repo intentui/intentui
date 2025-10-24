@@ -1,141 +1,34 @@
 "use client"
 
-import { IconLoader } from "@intentui/icons"
 import { ProgressBar } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
-import type { VariantProps } from "tailwind-variants"
-import { tv } from "tailwind-variants"
 
-const loaderStyles = tv({
-  base: "relative",
-  variants: {
-    intent: {
-      current: "text-current",
-      primary: "text-primary",
-      secondary: "text-muted-fg",
-      success: "text-success",
-      warning: "text-warning",
-      danger: "text-danger",
-    },
-    size: {
-      sm: "size-4",
-      md: "size-6",
-      lg: "size-8",
-      xl: "size-10",
-    },
-  },
-  defaultVariants: {
-    intent: "current",
-    size: "sm",
-  },
-})
-
-type LoaderVariantProps = VariantProps<typeof loaderStyles>
-
-const Bars = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+const Ring = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
   <svg
     className={twMerge("size-4", className)}
-    data-slot="icon"
-    viewBox="0 0 135 140"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
     {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
+    fill="none"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
   >
-    <rect y="10" width="15" height="120" rx="6">
-      <animate
-        attributeName="height"
-        begin="0.5s"
-        dur="1s"
-        values="120;110;100;90;80;70;60;50;40;140;120"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="y"
-        begin="0.5s"
-        dur="1s"
-        values="10;15;20;25;30;35;40;45;50;0;10"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-    </rect>
-    <rect x="30" y="10" width="15" height="120" rx="6">
-      <animate
-        attributeName="height"
-        begin="0.25s"
-        dur="1s"
-        values="120;110;100;90;80;70;60;50;40;140;120"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="y"
-        begin="0.25s"
-        dur="1s"
-        values="10;15;20;25;30;35;40;45;50;0;10"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-    </rect>
-    <rect x="60" width="15" height="140" rx="6">
-      <animate
-        attributeName="height"
-        begin="0s"
-        dur="1s"
-        values="120;110;100;90;80;70;60;50;40;140;120"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="y"
-        begin="0s"
-        dur="1s"
-        values="10;15;20;25;30;35;40;45;50;0;10"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-    </rect>
-    <rect x="90" y="10" width="15" height="120" rx="6">
-      <animate
-        attributeName="height"
-        begin="0.25s"
-        dur="1s"
-        values="120;110;100;90;80;70;60;50;40;140;120"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="y"
-        begin="0.25s"
-        dur="1s"
-        values="10;15;20;25;30;35;40;45;50;0;10"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-    </rect>
-    <rect x="120" y="10" width="15" height="120" rx="6">
-      <animate
-        attributeName="height"
-        begin="0.5s"
-        dur="1s"
-        values="120;110;100;90;80;70;60;50;40;140;120"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="y"
-        begin="0.5s"
-        dur="1s"
-        values="10;15;20;25;30;35;40;45;50;0;10"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-    </rect>
+    <path
+      stroke="currentColor"
+      strokeOpacity="0.25"
+      strokeWidth="3.636"
+      d="M11.909 21a9.09 9.09 0 1 0 0-18.182 9.09 9.09 0 0 0 0 18.182Z"
+    />
+    <path
+      fill="currentColor"
+      d="M4.636 11.91a7.273 7.273 0 0 1 7.273-7.274V1C5.885 1 1 5.885 1 11.91zm1.819 4.81a7.24 7.24 0 0 1-1.819-4.81H1c0 2.764 1.032 5.294 2.727 7.215z"
+    />
   </svg>
 )
-const Ring = (props: React.SVGProps<SVGSVGElement>) => <IconLoader {...props} />
+
 const Spin = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
-  <svg className={twMerge("size-4", className)} data-slot="icon" viewBox="0 0 2400 2400" {...props}>
+  <svg className={twMerge("size-4", className)} viewBox="0 0 2400 2400" {...props}>
     <g strokeWidth="200" strokeLinecap="round" fill="none">
       <line x1="1200" y1="600" x2="1200" y2="100" />
       <line opacity="0.5" x1="1200" y1="2300" x2="1200" y2="1800" />
@@ -165,16 +58,14 @@ const Spin = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
 )
 
 const LOADERS = {
-  bars: Bars,
   ring: Ring,
   spin: Spin,
 }
 
 const DEFAULT_SPINNER = "spin"
 
-interface LoaderProps
-  extends Omit<React.ComponentPropsWithoutRef<"svg">, "display" | "opacity" | "intent">,
-    LoaderVariantProps {
+export interface LoaderProps
+  extends Omit<React.ComponentPropsWithoutRef<"svg">, "display" | "opacity" | "intent"> {
   variant?: keyof typeof LOADERS
   percentage?: number
   isIndeterminate?: boolean
@@ -182,33 +73,28 @@ interface LoaderProps
   ref?: React.RefObject<SVGSVGElement>
 }
 
-const Loader = ({ isIndeterminate = true, ref, ...props }: LoaderProps) => {
-  const { className, variant = DEFAULT_SPINNER, intent, size, ...spinnerProps } = props
+export function Loader({ isIndeterminate = true, ref, ...props }: LoaderProps) {
+  const { className, variant = DEFAULT_SPINNER, ...spinnerProps } = props
   const LoaderPrimitive = LOADERS[variant in LOADERS ? variant : DEFAULT_SPINNER]
 
   return (
     <ProgressBar
       data-slot="loader"
-      aria-label={props["aria-label"] ?? "Loading..."}
+      aria-label={props["aria-label"] ?? "Pending..."}
       formatOptions={props.formatOptions}
       isIndeterminate={isIndeterminate}
     >
       <LoaderPrimitive
         role="presentation"
-        className={loaderStyles({
-          intent,
-          size,
-          className: twMerge([
-            ["ring"].includes(variant) && "animate-spin",
-            variant === "spin" && "stroke-current",
-            className,
-          ]),
-        })}
+        className={twMerge(
+          "size-4",
+          ["ring"].includes(variant) && "animate-spin",
+          variant === "spin" && "stroke-current",
+          className,
+        )}
         ref={ref}
         {...spinnerProps}
       />
     </ProgressBar>
   )
 }
-
-export { Loader }

@@ -1,13 +1,19 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Form } from "@/components/ui/form"
+import { FieldError, Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { TextField } from "@/components/ui/text-field"
 
 export default function TextFieldValidationDemo() {
   return (
     <Form className="space-y-4">
-      <TextField isRequired label="Name" />
+      <TextField isRequired>
+        <Label>Name</Label>
+        <Input />
+        <FieldError />
+      </TextField>
       <Button type="submit">Submit</Button>
     </Form>
   )

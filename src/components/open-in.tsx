@@ -1,7 +1,8 @@
 "use client"
 
-import { IconBrandGithub, IconCheck, IconDuplicate } from "@intentui/icons"
+import { CheckIcon, Square2StackIcon } from "@heroicons/react/24/outline"
 import type { PageTree } from "fumadocs-core/server"
+import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { MobilePager } from "@/components/mobile-pager"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -19,7 +20,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
       <Button intent="secondary" size="sm" onPress={() => copy(page)}>
-        {copied ? <IconCheck /> : <IconDuplicate />}
+        {copied ? <CheckIcon /> : <Square2StackIcon />}
         Markdown
       </Button>
       <div className="flex items-center gap-x-1.5">
@@ -39,7 +40,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; 
               />
             </svg>
           </Button>
-          <MenuContent placement="bottom end">
+          <MenuContent className="min-w-40" placement="bottom end">
             <MenuItem
               href={getPromptUrl("https://grok.com", fullUrl)}
               target="_blank"
@@ -108,7 +109,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; 
               target="_blank"
               rel="noopener noreferrer"
             >
-              <IconBrandGithub />
+              <BrandGithubIcon />
               <span className="sr-only">Open in</span> Github
             </MenuItem>
           </MenuContent>

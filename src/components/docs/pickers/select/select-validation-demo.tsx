@@ -1,7 +1,8 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Form } from "@/components/ui/form"
+import { Label } from "@/components/ui/field"
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 const software = [
@@ -12,7 +13,8 @@ const software = [
 export default function SelectValidationDemo() {
   return (
     <Form onSubmit={(e) => e.preventDefault()} className="space-y-2">
-      <Select label="Design software" placeholder="Select a software" isRequired>
+      <Select placeholder="Select a software" isRequired>
+        <Label>Design software</Label>
         <SelectTrigger />
         <SelectContent items={software}>
           {(item) => (

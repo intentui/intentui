@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-
+import { Input } from "@/components/ui/input"
 import {
   Modal,
   ModalBody,
@@ -28,7 +28,9 @@ export default function ModalDemo() {
               </ModalDescription>
             </ModalHeader>
             <ModalBody>
-              <TextField aria-label="Name" placeholder="Enter a name" />
+              <TextField aria-label="Name">
+                <Input placeholder="Enter a name" />
+              </TextField>
             </ModalBody>
             <ModalFooter>
               <ModalClose>Cancel</ModalClose>

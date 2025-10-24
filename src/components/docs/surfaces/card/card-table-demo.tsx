@@ -1,88 +1,128 @@
 "use client"
 
-import { IconDotsVertical, IconEye, IconHighlight, IconTrash } from "@intentui/icons"
-import { Card } from "@/components/ui/card"
+import {
+  EllipsisVerticalIcon,
+  EyeIcon,
+  PencilSquareIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
-import { Pagination } from "@/components/ui/pagination"
-import { Table } from "@/components/ui/table"
+import {
+  Pagination,
+  PaginationFirst,
+  PaginationGap,
+  PaginationItem,
+  PaginationLabel,
+  PaginationLast,
+  PaginationList,
+  PaginationNext,
+  PaginationPrevious,
+  PaginationSection,
+} from "@/components/ui/pagination"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 export default function CardTableDemo() {
   return (
-    <Card>
-      <Card.Header>
-        <Card.Title>Users</Card.Title>
-        <Card.Description>Manage users, groups, and roles.</Card.Description>
-      </Card.Header>
-      <Card.Content>
+    <Card className="[--card-spacing:var(--gutter)]">
+      <CardHeader>
+        <CardTitle>Users</CardTitle>
+        <CardDescription>Manage users, groups, and roles.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <Table
           bleed
           className="[--gutter:var(--card-spacing)] sm:[--gutter:var(--card-spacing)]"
           aria-label="Users"
         >
-          <Table.Header>
-            <Table.Column className="w-0">#</Table.Column>
-            <Table.Column isRowHeader>Name</Table.Column>
-            <Table.Column>Gender</Table.Column>
-            <Table.Column>Age</Table.Column>
-            <Table.Column>Occupation</Table.Column>
-            <Table.Column />
-          </Table.Header>
-          <Table.Body items={users}>
+          <TableHeader>
+            <TableColumn className="w-0">#</TableColumn>
+            <TableColumn isRowHeader>Name</TableColumn>
+            <TableColumn>Gender</TableColumn>
+            <TableColumn>Age</TableColumn>
+            <TableColumn>Occupation</TableColumn>
+            <TableColumn />
+          </TableHeader>
+          <TableBody items={users}>
             {(item) => (
-              <Table.Row id={item.id}>
-                <Table.Cell>{item.id}</Table.Cell>
-                <Table.Cell>{item.name}</Table.Cell>
-                <Table.Cell>{item.gender}</Table.Cell>
-                <Table.Cell>{item.age}</Table.Cell>
-                <Table.Cell>{item.occupation}</Table.Cell>
-                <Table.Cell className="text-end last:pr-2.5">
+              <TableRow id={item.id}>
+                <TableCell>{item.id}</TableCell>
+                <TableCell>{item.name}</TableCell>
+                <TableCell>{item.gender}</TableCell>
+                <TableCell>{item.age}</TableCell>
+                <TableCell>{item.occupation}</TableCell>
+                <TableCell className="text-end last:pr-2.5">
                   <Menu>
                     <MenuTrigger>
-                      <IconDotsVertical />
+                      <EllipsisVerticalIcon />
                     </MenuTrigger>
                     <MenuContent placement="left top">
                       <MenuItem>
-                        <IconEye /> View
+                        <EyeIcon /> View
                       </MenuItem>
                       <MenuItem>
-                        <IconHighlight /> Edit
+                        <PencilSquareIcon /> Edit
                       </MenuItem>
                       <MenuSeparator />
-                      <MenuItem isDanger>
-                        <IconTrash /> Delete
+                      <MenuItem intent="danger">
+                        <TrashIcon /> Delete
                       </MenuItem>
                     </MenuContent>
                   </Menu>
-                </Table.Cell>
-              </Table.Row>
+                </TableCell>
+              </TableRow>
             )}
-          </Table.Body>
+          </TableBody>
         </Table>
-      </Card.Content>
-      <Card.Footer>
+      </CardContent>
+      <CardFooter>
         <Pagination>
-          <Pagination.List>
-            <Pagination.Item segment="first" />
-            <Pagination.Item segment="previous" />
-            <Pagination.Section className="rounded-lg border lg:hidden">
-              <Pagination.Item segment="label">1</Pagination.Item>
-              <Pagination.Item segment="separator" />
-              <Pagination.Item className="text-muted-fg" segment="label">
-                {users.length}
-              </Pagination.Item>
-            </Pagination.Section>
-            <Pagination.Section className="hidden lg:flex" items={pages}>
-              {(item) => (
-                <Pagination.Item id={item.value.toString()} isCurrent={item.value === 4} href="#">
-                  {item.value}
-                </Pagination.Item>
-              )}
-            </Pagination.Section>
-            <Pagination.Item segment="next" />
-            <Pagination.Item segment="last" />
-          </Pagination.List>
+          <PaginationList className="hidden md:flex">
+            <PaginationFirst href="#" />
+            <PaginationPrevious href="#" />
+            <PaginationSection>
+              <PaginationItem href="#">1</PaginationItem>
+              <PaginationItem href="#">2</PaginationItem>
+              <PaginationItem href="#">3</PaginationItem>
+              <PaginationGap />
+              <PaginationItem href="#">23</PaginationItem>
+              <PaginationItem href="#" isCurrent>
+                24
+              </PaginationItem>
+              <PaginationItem href="#">25</PaginationItem>
+            </PaginationSection>
+
+            <PaginationNext href="#" />
+            <PaginationLast href="#" />
+          </PaginationList>
+
+          <PaginationList className="md:hidden">
+            <PaginationFirst href="#" />
+            <PaginationPrevious href="#" />
+            <PaginationSection className="rounded-(--section-radius) border px-3 *:min-w-4">
+              <PaginationLabel>3</PaginationLabel>
+              <PaginationLabel className="text-muted-fg">/</PaginationLabel>
+              <PaginationLabel>10</PaginationLabel>
+            </PaginationSection>
+            <PaginationNext href="#" />
+            <PaginationLast href="#" />
+          </PaginationList>
         </Pagination>
-      </Card.Footer>
+      </CardFooter>
     </Card>
   )
 }
@@ -159,6 +199,3 @@ const users = [
     occupation: "Writer",
   },
 ]
-const pages = Array.from({ length: users.length / 2 }, (_, i) => ({
-  value: i + 1,
-}))

@@ -2,7 +2,14 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Drawer, type DrawerContentProps } from "@/components/ui/drawer"
+import {
+  Drawer,
+  DrawerContent,
+  type DrawerContentProps,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer"
 import { Radio, RadioGroup } from "@/components/ui/radio"
 import { Separator } from "@/components/ui/separator"
 
@@ -22,14 +29,14 @@ export default function DrawerFloatDemo() {
         <Button intent="outline" className="capitalize">
           {side}
         </Button>
-        <Drawer.Content isFloat side={side as DrawerContentProps["side"]}>
-          <Drawer.Header>
-            <Drawer.Title className="capitalize">{side}</Drawer.Title>
-            <Drawer.Description>
+        <DrawerContent isFloat side={side as DrawerContentProps["side"]}>
+          <DrawerHeader>
+            <DrawerTitle className="capitalize">{side}</DrawerTitle>
+            <DrawerDescription>
               The drawer will be positioned on the {side} side of the screen.
-            </Drawer.Description>
-          </Drawer.Header>
-        </Drawer.Content>
+            </DrawerDescription>
+          </DrawerHeader>
+        </DrawerContent>
       </Drawer>
     </>
   )

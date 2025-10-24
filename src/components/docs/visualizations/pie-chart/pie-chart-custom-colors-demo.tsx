@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { PieChart } from "@/components/ui/pie-chart"
 
 export default function PieChartTrafficSourceDemo() {
@@ -17,11 +17,11 @@ export default function PieChartTrafficSourceDemo() {
 
   return (
     <Card>
-      <Card.Header className="text-center">
-        <Card.Title>Traffic source breakdown</Card.Title>
-        <Card.Description>Where your website traffic is coming from.</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader className="text-center">
+        <CardTitle>Traffic source breakdown</CardTitle>
+        <CardDescription>Where your website traffic is coming from.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <PieChart
           className="mx-auto h-56"
           data={data}
@@ -43,7 +43,7 @@ export default function PieChartTrafficSourceDemo() {
             },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

@@ -1,10 +1,7 @@
 "use client"
 
-import { IconCheck, IconMinus } from "@intentui/icons"
-import type {
-  CheckboxGroupProps as CheckboxGroupPrimitiveProps,
-  CheckboxProps as CheckboxPrimitiveProps,
-} from "react-aria-components"
+import { CheckIcon, MinusIcon } from "@heroicons/react/20/solid"
+import type { CheckboxGroupProps, CheckboxProps } from "react-aria-components"
 import {
   CheckboxGroup as CheckboxGroupPrimitive,
   Checkbox as CheckboxPrimitive,
@@ -12,88 +9,69 @@ import {
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
-import { Description, FieldError, type FieldProps, Label } from "./field"
+import { Label } from "./field"
 
-interface CheckboxGroupProps extends CheckboxGroupPrimitiveProps, Omit<FieldProps, "placeholder"> {}
-
-const CheckboxGroup = ({ className, children, ...props }: CheckboxGroupProps) => {
+export function CheckboxGroup({ className, ...props }: CheckboxGroupProps) {
   return (
     <CheckboxGroupPrimitive
       {...props}
+      data-slot="control"
       className={cx(
         "space-y-3 has-[[slot=description]]:space-y-6 has-[[slot=description]]:**:data-[slot=label]:font-medium **:[[slot=description]]:block",
         className,
       )}
-    >
-      {(values) => (
-        <>
-          {props.label && <Label>{props.label}</Label>}
-          {props.description && <Description>{props.description}</Description>}
-          {typeof children === "function" ? children(values) : children}
-          <FieldError>{props.errorMessage}</FieldError>
-        </>
-      )}
-    </CheckboxGroupPrimitive>
+    />
   )
 }
 
-interface CheckboxProps extends CheckboxPrimitiveProps, Pick<FieldProps, "label" | "description"> {}
-
-const Checkbox = ({ className, children, description, label, ...props }: CheckboxProps) => {
+export function Checkbox({ className, children, ...props }: CheckboxProps) {
   return (
-    <CheckboxPrimitive {...props} className={cx("group block disabled:opacity-50", className)}>
+    <CheckboxPrimitive
+      data-slot="control"
+      className={cx(
+        "group block [--indicator-mt:--spacing(0.75)] disabled:opacity-50 sm:[--indicator-mt:--spacing(1)]",
+        className,
+      )}
+      {...props}
+    >
       {composeRenderProps(
         children,
         (children, { isSelected, isIndeterminate, isFocusVisible, isInvalid }) => {
           const isStringChild = typeof children === "string"
-          const hasCustomChildren = typeof children !== "undefined"
-
           const indicator = isIndeterminate ? (
-            <IconMinus data-slot="check-indicator" />
+            <MinusIcon data-slot="check-indicator" />
           ) : isSelected ? (
-            <IconCheck data-slot="check-indicator" />
+            <CheckIcon data-slot="check-indicator" />
           ) : null
 
-          const content = hasCustomChildren ? (
-            isStringChild ? (
-              <Label>{children}</Label>
-            ) : (
-              children
-            )
-          ) : (
-            <>
-              {label && <Label>{label}</Label>}
-              {description && <Description>{description}</Description>}
-            </>
-          )
+          const content = isStringChild ? <CheckboxLabel>{children}</CheckboxLabel> : children
 
           return (
             <div
               className={twMerge(
-                "grid grid-cols-[1.125rem_1fr] sm:grid-cols-[1rem_1fr]",
-                "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1",
+                "grid grid-cols-[1.125rem_1fr] gap-x-3 gap-y-1 sm:grid-cols-[1rem_1fr]",
+                "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1 *:data-[slot=indicator]:mt-(--indicator-mt)",
                 "*:data-[slot=label]:col-start-2 *:data-[slot=label]:row-start-1",
                 "*:[[slot=description]]:col-start-2 *:[[slot=description]]:row-start-2",
                 "has-[[slot=description]]:**:data-[slot=label]:font-medium",
-                props.slot !== "selection" &&
-                  "gap-x-3 gap-y-1 *:data-[slot=indicator]:mt-0.75 sm:*:data-[slot=indicator]:mt-1",
               )}
             >
               <span
                 data-slot="indicator"
                 className={twMerge([
-                  "relative inset-ring inset-ring-fg/10 isolate flex shrink-0 items-center justify-center rounded bg-muted text-bg transition",
+                  "relative inset-ring inset-ring-input isolate flex shrink-0 items-center justify-center rounded text-bg transition group-hover:inset-ring-muted-fg/30",
                   "sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
                   "size-4.5 *:data-[slot=check-indicator]:size-4",
                   (isSelected || isIndeterminate) && [
-                    "bg-primary text-primary-fg dark:inset-ring-primary",
-                    "group-invalid:inset-ring-danger/70 group-invalid:bg-danger group-invalid:text-danger-fg dark:group-invalid:inset-ring-danger/70",
+                    "inset-ring-primary bg-primary text-primary-fg",
+                    "group-invalid:inset-ring-danger-subtle-fg/70 group-invalid:bg-danger group-invalid:text-danger-subtle-fg dark:group-invalid:inset-ring-danger-subtle-fg/70",
                   ],
                   isFocusVisible && [
                     "inset-ring-primary ring-3 ring-ring/20",
-                    "group-invalid:inset-ring-danger/70 group-invalid:text-danger-fg group-invalid:ring-danger/20",
+                    "group-invalid:inset-ring-danger-subtle-fg/70 group-invalid:text-danger-fg group-invalid:ring-danger-subtle-fg/20",
                   ],
-                  isInvalid && "inset-ring-danger/70 bg-danger/20 text-danger-fg ring-danger/20",
+                  isInvalid &&
+                    "inset-ring-danger-subtle-fg/70 bg-danger-subtle/5 text-danger-fg ring-danger-subtle-fg/20 group-hover:inset-ring-danger-subtle-fg/70",
                 ])}
               >
                 {indicator}
@@ -107,5 +85,6 @@ const Checkbox = ({ className, children, description, label, ...props }: Checkbo
   )
 }
 
-export type { CheckboxGroupProps, CheckboxProps }
-export { CheckboxGroup, Checkbox }
+export function CheckboxLabel(props: React.ComponentProps<typeof Label>) {
+  return <Label elementType="span" {...props} />
+}

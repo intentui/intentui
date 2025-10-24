@@ -1,6 +1,6 @@
 "use client"
 
-import { IconChevronLgDown, IconDotGrid2X3 } from "@intentui/icons"
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { createContext, use } from "react"
 import type {
   CellProps,
@@ -33,6 +33,8 @@ interface TableProps extends Omit<TablePrimitiveProps, "className"> {
   allowResize?: boolean
   className?: string
   bleed?: boolean
+  grid?: boolean
+  striped?: boolean
   ref?: React.Ref<HTMLTableElement>
 }
 
@@ -51,9 +53,17 @@ const Root = (props: TableProps) => {
   )
 }
 
-const Table = ({ allowResize, className, bleed, ref, ...props }: TableProps) => {
+const Table = ({
+  allowResize,
+  className,
+  bleed = false,
+  grid = false,
+  striped = false,
+  ref,
+  ...props
+}: TableProps) => {
   return (
-    <TableContext.Provider value={{ allowResize, bleed }}>
+    <TableContext.Provider value={{ allowResize, bleed, grid, striped }}>
       <div className="flow-root">
         <div
           className={twMerge(
@@ -95,39 +105,39 @@ const TableBody = <T extends object>(props: TableBodyProps<T>) => (
 )
 
 interface TableColumnProps extends ColumnProps {
-  className?: string
   isResizable?: boolean
 }
 
 const TableColumn = ({ isResizable = false, className, ...props }: TableColumnProps) => {
-  const { bleed } = useTableContext()
+  const { bleed, grid } = useTableContext()
   return (
     <Column
       data-slot="table-column"
       {...props}
       className={cx(
-        twJoin(
+        [
           "text-left font-medium text-muted-fg",
           "relative allows-sorting:cursor-default outline-hidden data-dragging:cursor-grabbing",
-          "px-4 py-(--gutter-y) first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2))",
+          "px-4 py-(--gutter-y)",
+          "first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2))",
           !bleed && "sm:last:pr-1 sm:first:pl-1",
+          grid && "border-l first:border-l-0",
           isResizable && "overflow-hidden truncate",
-        ),
+        ],
         className,
       )}
     >
       {(values) => (
-        <div className="flex items-center gap-2 **:data-[slot=icon]:shrink-0">
+        <div className={twJoin(["inline-flex items-center gap-2 **:data-[slot=icon]:shrink-0"])}>
           {typeof props.children === "function" ? props.children(values) : props.children}
           {values.allowsSorting && (
             <span
-              className={twMerge(
+              className={twJoin(
                 "grid size-[1.15rem] flex-none shrink-0 place-content-center rounded bg-secondary text-fg *:data-[slot=icon]:size-3.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:transition-transform *:data-[slot=icon]:duration-200",
                 values.isHovered ? "bg-secondary-fg/10" : "",
-                className,
               )}
             >
-              <IconChevronLgDown
+              <ChevronDownIcon
                 className={values.sortDirection === "ascending" ? "rotate-180" : ""}
               />
             </span>
@@ -163,7 +173,7 @@ const TableHeader = <T extends object>({
         <Column
           data-slot="table-column"
           className={twMerge(
-            "w-0 max-w-8 px-4 first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2))",
+            "first:pl-(--gutter,--spacing(2))",
             !bleed && "sm:last:pr-1 sm:first:pl-1",
           )}
         />
@@ -172,7 +182,7 @@ const TableHeader = <T extends object>({
         <Column
           data-slot="table-column"
           className={twMerge(
-            "w-0 max-w-8 px-4 first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2))",
+            "first:pl-(--gutter,--spacing(2))",
             !bleed && "sm:last:pr-1 sm:first:pl-1",
           )}
         >
@@ -197,7 +207,7 @@ const TableRow = <T extends object>({
   ...props
 }: TableRowProps<T>) => {
   const { selectionBehavior, allowsDragging } = useTableOptions()
-  const { bleed } = useTableContext()
+  const { striped } = useTableContext()
   return (
     <Row
       ref={ref}
@@ -206,11 +216,24 @@ const TableRow = <T extends object>({
       {...props}
       className={composeRenderProps(
         className,
-        (className, { isSelected, selectionMode, isFocusVisibleWithin, isDragging, isDisabled }) =>
+        (
+          className,
+          {
+            isSelected,
+            selectionMode,
+            isFocusVisibleWithin,
+            isDragging,
+            isDisabled,
+            isFocusVisible,
+          },
+        ) =>
           twMerge(
-            "group relative cursor-default border-b text-muted-fg outline-transparent ring-primary last:border-b-0",
-            isDragging && "outline outline-blue-500",
+            "group relative cursor-default text-muted-fg outline outline-transparent",
+            isFocusVisible &&
+              "bg-primary/5 outline-primary ring-3 ring-ring/20 hover:bg-primary/10",
+            isDragging && "cursor-grabbing bg-primary/10 text-fg outline-primary",
             isSelected && "bg-(--table-selected-bg) text-fg hover:bg-(--table-selected-bg)/50",
+            striped && "even:bg-muted",
             (props.href || props.onAction || selectionMode === "multiple") &&
               "hover:bg-(--table-selected-bg) hover:text-fg",
             (props.href || props.onAction || selectionMode === "multiple") &&
@@ -222,17 +245,37 @@ const TableRow = <T extends object>({
       )}
     >
       {allowsDragging && (
-        <TableCell className="max-w-4 sm:last:pr-1 sm:first:pl-1">
+        <TableCell className="px-0">
           <Button
             slot="drag"
             className="grid place-content-center rounded-xs px-[calc(var(--gutter)/2)] outline-hidden focus-visible:ring focus-visible:ring-ring"
           >
-            <IconDotGrid2X3 />
+            <svg
+              aria-hidden
+              data-slot="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width={16}
+              height={16}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-grip-vertical-icon lucide-grip-vertical"
+            >
+              <circle cx={9} cy={12} r={1} />
+              <circle cx={9} cy={5} r={1} />
+              <circle cx={9} cy={19} r={1} />
+              <circle cx={15} cy={12} r={1} />
+              <circle cx={15} cy={5} r={1} />
+              <circle cx={15} cy={19} r={1} />
+            </svg>
           </Button>
         </TableCell>
       )}
       {selectionBehavior === "toggle" && (
-        <TableCell className={twJoin(!bleed && "max-w-4 sm:last:pr-1 sm:first:pl-1")}>
+        <TableCell className="px-0">
           <Checkbox slot="selection" />
         </TableCell>
       )}
@@ -241,15 +284,21 @@ const TableRow = <T extends object>({
   )
 }
 
-const TableCell = ({ className, ...props }: CellProps) => {
-  const { allowResize, bleed } = useTableContext()
+interface TableCellProps extends CellProps {
+  ref?: React.Ref<HTMLTableCellElement>
+}
+const TableCell = ({ className, ref, ...props }: TableCellProps) => {
+  const { allowResize, bleed, grid, striped } = useTableContext()
   return (
     <Cell
+      ref={ref}
       data-slot="table-cell"
       {...props}
       className={cx(
         twJoin(
           "group px-4 py-(--gutter-y) align-middle outline-hidden first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2)) group-has-data-focus-visible-within:text-fg",
+          !striped && "border-b",
+          grid && "border-l first:border-l-0",
           !bleed && "sm:last:pr-1 sm:first:pl-1",
           allowResize && "overflow-hidden truncate",
         ),
@@ -258,12 +307,6 @@ const TableCell = ({ className, ...props }: CellProps) => {
     />
   )
 }
-
-Table.Body = TableBody
-Table.Cell = TableCell
-Table.Column = TableColumn
-Table.Header = TableHeader
-Table.Row = TableRow
 
 export type { TableProps, TableColumnProps, TableRowProps }
 export { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow }

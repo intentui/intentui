@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
-import { ListBox } from "@/components/ui/list-box"
+import { ListBox, ListBoxDescription, ListBoxItem, ListBoxLabel } from "@/components/ui/list-box"
 
 export default function ListBoxDescriptionDemo() {
   const [selected, setSelected] = useState<Selection>(new Set([1]))
@@ -15,10 +15,10 @@ export default function ListBoxDescriptionDemo() {
       aria-label="Bands"
     >
       {(item) => (
-        <ListBox.Item id={item.id} textValue={item.name}>
-          <ListBox.Label>{item.name}</ListBox.Label>
-          <ListBox.Description>{item.description}</ListBox.Description>
-        </ListBox.Item>
+        <ListBoxItem id={item.id} textValue={item.name}>
+          <ListBoxLabel>{item.name}</ListBoxLabel>
+          <ListBoxDescription>{item.description}</ListBoxDescription>
+        </ListBoxItem>
       )}
     </ListBox>
   )

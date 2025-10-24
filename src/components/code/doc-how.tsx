@@ -15,7 +15,7 @@ const registry = generated as Record<string, RegistryItem>
 type HowProps = {
   toUse: string
   copyButton?: boolean
-  minW72?: boolean
+  minW60?: boolean
   description?: string
   isCenter?: boolean
   className?: string
@@ -29,7 +29,7 @@ const fetchRegistryFile = createFetchRegistryFile("/r")
 export const DocHow = ({
   toUse,
   className,
-  minW72 = false,
+  minW60 = false,
   isCenter = true,
   withNoPadding = false,
   copyButton = true,
@@ -77,7 +77,7 @@ export const DocHow = ({
   }
   return (
     <div className="not-prose">
-      <Toolbar className="flex items-center justify-between">
+      <Toolbar className="mb-1 flex items-center justify-between">
         <Group>
           <ToggleButton
             className={twJoin(
@@ -108,42 +108,54 @@ export const DocHow = ({
           />
         </Group>
       </Toolbar>
-      <div className="w-full">
+
+      <div className="h-fit w-full">
         {currentTab === "tab_preview" ? (
           <div
             className={twMerge(
-              !withNoPadding && "relative gap-4 rounded-lg border bg-overlay p-6",
-              isCenter &&
-                "preview flex min-h-56 items-center justify-center overflow-x-auto py-6 sm:py-24 lg:max-h-120 lg:min-h-120",
+              "overflow-y-auto py-6",
+              !withNoPadding
+                ? [
+                    "relative gap-4 rounded-lg border bg-overlay",
+
+                    "border border-muted-fg/40",
+                    "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
+                  ]
+                : "py-6 sm:py-24",
             )}
           >
-            <Suspense
-              fallback={
-                <div className="flex items-center justify-center py-6 text-muted-fg text-sm">
-                  <Loader variant="spin" />
-                  <span className="sr-only">Loading...</span>
+            <div className={twMerge(isCenter && "flex items-center justify-center")}>
+              <Suspense
+                fallback={
+                  <div className="flex items-center justify-center py-6 text-muted-fg text-sm">
+                    <Loader variant="spin" />
+                    <span className="sr-only">Loading...</span>
+                  </div>
+                }
+              >
+                <div className={twMerge(minW60 && "min-w-60", "not-prose", className)}>
+                  <Component />
                 </div>
-              }
-            >
-              <div className={twMerge(minW72 && "min-w-72", "not-prose", className)}>
-                <Component />
-              </div>
-            </Suspense>
+              </Suspense>
+            </div>
           </div>
         ) : (
           <div>
             {processedSourceCode ? (
-              <Group className="group relative">
+              <div
+                className={twJoin(
+                  "group relative rounded-lg",
+                  "border border-muted-fg/40",
+                  "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
+                )}
+              >
                 <CodeHighlighter
-                  className="h-full max-h-140"
+                  className="h-full rounded-[calc(var(--radius-lg)-1px)]"
                   removeLastLine
                   code={processedSourceCode}
                 />
-              </Group>
+              </div>
             ) : (
-              /*
-               * Display a loading message while the source code is being fetched.
-               */
               <p>Loading source code...</p>
             )}
           </div>

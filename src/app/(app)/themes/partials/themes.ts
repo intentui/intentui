@@ -233,7 +233,7 @@ export const generateTheme = (
     --danger-subtle: ${`${getColorValue("red", "500").slice(0, -1)} / 0.1)`};
     --danger-subtle-fg: ${getColorValue("red", "400")};
 
-    --border: ${adjustLightness(getColorValue(gray, "700"), -10)};
+    --border: ${adjustLightness(getColorValue(gray, "600"), -10)};
     --input: ${adjustLightness(getColorValue(gray, "700"), -5)};
     --ring: ${getColorValue(primary, darkRingShade)};
 

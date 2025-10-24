@@ -2,7 +2,7 @@
 
 import { useMemo } from "react"
 import { BarChart } from "@/components/ui/bar-chart"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 type EngagementPoint = {
   day: string
@@ -25,13 +25,13 @@ export default function BarChartDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Engagement last 7d</Card.Title>
-        <Card.Description>
+      <CardHeader>
+        <CardTitle>Engagement last 7d</CardTitle>
+        <CardDescription>
           Tracks likes, comments, and shares during the most recent 7-day period.
-        </Card.Description>
-      </Card.Header>
-      <Card.Content>
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
         <BarChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={engagementData}
@@ -43,7 +43,7 @@ export default function BarChartDemo() {
             shares: { label: "Shares" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

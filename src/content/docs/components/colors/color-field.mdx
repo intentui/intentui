@@ -27,8 +27,15 @@ npm i react-aria-components
 ## Anatomy
 ```
 import { ColorField } from "@/components/ui/color-field"
-
-<ColorField defaultValue="#0d6efd" />
+import { Label, Description } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+```
+```
+<ColorField>
+  <Label/>
+  <Input/>
+  <Description/>
+</ColorField>
 ```
 
 ## Prefix
@@ -42,10 +49,7 @@ A color field can also have a suffix.
 ## Controlled
 Manage the color field in a controlled manner to automatically update the [ColorSwatch](/docs/components/colors/color-swatch) and display the current color.
 <How toUse="colors/color-field/color-field-controlled-demo" />
-You can typically click the color swatch to open the color picker. To disable this feature, set `enableColorPicker` to false.
-```
-<ColorField enableColorPicker={false}/>
-```
+
 
 ## Disabled
 You can disable the color field, making it non-interactive.
@@ -54,18 +58,3 @@ You can disable the color field, making it non-interactive.
 ## Validation
 In this example, we’ll ensure it’s treated as a strict requirement.
 <How toUse="colors/color-field/color-field-validation-demo" />
-
-
-## Props
-The `ColorField` component includes all standard props from `react-aria-components`, plus these additional features:
-
-| Property          | Type                                                 | Optional             |
-|-------------------|------------------------------------------------------|----------------------|
-| label             | string                                               | Yes                  |
-| description       | string                                               | Yes                  |
-| errorMessage      | string \| ((validation: ValidationResult) => string) | Yes                  |
-| placeholder       | string                                               | Yes                  |
-| prefix            | React.ReactNode                                      | Yes                  |
-| suffix            | React.ReactNode                                      | Yes                  |
-| isLoading         | boolean                                              | Yes                  |
-| enableColorPicker | boolean                                              | Yes ( default: true) |

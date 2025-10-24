@@ -11,8 +11,8 @@ import {
 
 export default function ComboBoxDetailDescriptionDemo() {
   return (
-    <ComboBox aria-label="Roles" placeholder="Select role">
-      <ComboBoxInput />
+    <ComboBox aria-label="Roles" name="roles">
+      <ComboBoxInput placeholder="Select role" />
       <ComboBoxContent className="max-w-(--trigger-width)" items={roles}>
         {(item) => (
           <ComboBoxItem id={item.id} textValue={item.name}>

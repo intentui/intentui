@@ -1,13 +1,18 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Form } from "@/components/ui/form"
-import { NumberField } from "@/components/ui/number-field"
+import { FieldError, Label } from "@/components/ui/field"
+import { NumberField, NumberInput } from "@/components/ui/number-field"
 
 export default function NumberFieldInvalidDemo() {
   return (
     <Form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-      <NumberField isRequired label="Cookies" />
+      <NumberField isRequired>
+        <Label>Cookies</Label>
+        <NumberInput />
+        <FieldError />
+      </NumberField>
       <Button type="submit">Submit</Button>
     </Form>
   )

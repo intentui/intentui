@@ -1,9 +1,8 @@
 "use client"
 
-import { IconBookOpen, IconOpenLink2, IconPackage } from "@intentui/icons"
+import { BookOpenIcon, CubeIcon } from "@heroicons/react/24/outline"
 import { Header } from "react-aria-components"
 import { PageContainer } from "@/components/page-container"
-import { Badge } from "@/components/ui/badge"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
@@ -13,11 +12,6 @@ export function Hero() {
     <div className="-mt-20 bg-gradient-to-b from-blue-50 to-bg pt-20 pb-8 lg:pt-40 lg:pb-16 dark:from-muted dark:to-zinc-950">
       <PageContainer>
         <Header className="pt-6 text-left">
-          <Link href="https://design.intentui.com">
-            <Badge className="inset-ring-current/25 hover:bg-primary-subtle-fg/20">
-              Design Intent UI <IconOpenLink2 />
-            </Badge>
-          </Link>
           <h1 className="mt-4 mb-4 max-w-3xl pb-1 font-semibold text-3xl text-fg tracking-tight lg:mb-6 lg:text-5xl/14">
             Accessible React component library to copy, customize, and own your UI.
           </h1>
@@ -38,7 +32,7 @@ export function Hero() {
             })}
             href="/docs/getting-started/installation"
           >
-            <IconBookOpen />
+            <BookOpenIcon />
             Get started
           </Link>
           <Link
@@ -49,7 +43,7 @@ export function Hero() {
             })}
             href="/components"
           >
-            <IconPackage />
+            <CubeIcon />
             Components
           </Link>
         </div>

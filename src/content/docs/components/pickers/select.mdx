@@ -9,7 +9,7 @@ references: ["https://react-spectrum.adobe.com/react-aria/Select.html#props"]
 ## Basic
 
 A select component displays a dropdown list of options, allowing users to pick one from the list.
-<How minW72 toUse="pickers/select/select-demo" />
+<How minW60 toUse="pickers/select/select-demo" />
 
 ## Installation
 ```bash
@@ -21,7 +21,7 @@ npx shadcn@latest add @intentui/select
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 
 <SourceCode toShow='select'/>
@@ -59,51 +59,51 @@ const software = [
 
 ## Section
 A select component can display items grouped together in sections.
-<How minW72 toUse="pickers/select/select-section-demo" />
+<How minW60 toUse="pickers/select/select-section-demo" />
 
 ## Searchable select
 Sometimes, you may need to search for an item in a select component. Here's how you can do it.
-<How minW72 toUse="pickers/select/select-searchable-demo" />
+<How minW60 toUse="pickers/select/select-searchable-demo" />
 
 ## With icon
 
-<How minW72 toUse="pickers/select/select-with-icon-demo" />
+<How minW60 toUse="pickers/select/select-with-icon-demo" />
 
 ## With avatar
-<How minW72 toUse="pickers/select/select-with-avatar-demo" />
+<How minW60 toUse="pickers/select/select-with-avatar-demo" />
 
 ## Multiple select
 Enable selecting more than one option by setting `selectionMode` to `multiple`.
-<How minW72 toUse="pickers/select/select-multiple-demo" />
+<How minW60 toUse="pickers/select/select-multiple-demo" />
 
 
 ## Validation
 If a user submits the form without selecting an item, an error message will appear.
-<How minW72 toUse="pickers/select/select-validation-demo" />
+<How minW60 toUse="pickers/select/select-validation-demo" />
 
 ## Label
 When the `children` option is a string, `Select.Label` will automatically wrap it. However, if the option includes an icon or avatar, you'll need to manually define the wrapper like this:
 
 ```
 <SelectItem id="discord" textValue="Discord">
-  <IconBrandDiscord />
+  <BrandDiscordIcon />
   <SelectLabel>Discord</SelectLabel>
 </SelectItem>
 ```
 
 ## Details description
 If you need to provide more information about an option, use the `Select.Description` component to display additional details.
-<How minW72 toUse="pickers/select/select-details-description-demo" />
+<How minW60 toUse="pickers/select/select-details-description-demo" />
 
 ## Controlled
 You can control the select component by passing the `selectedKey` prop.
-<How minW72 toUse="pickers/select/select-controlled-demo" />
+<How minW60 toUse="pickers/select/select-controlled-demo" />
 
 ## Uncontrolled
 You can uncontrolled the select component by passing the `defaultSelectedKey` prop.
-<How minW72 toUse="pickers/select/select-uncontrolled-demo" />
+<How minW60 toUse="pickers/select/select-uncontrolled-demo" />
 
 
 ## Disabled
 When the select component is disabled, it cannot be interacted with.
-<How minW72 toUse="pickers/select/select-disabled-demo" />
+<How minW60 toUse="pickers/select/select-disabled-demo" />

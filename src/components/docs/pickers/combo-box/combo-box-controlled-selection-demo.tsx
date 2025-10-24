@@ -3,19 +3,15 @@
 import { useState } from "react"
 import type { Key } from "react-aria-components"
 import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/components/ui/combo-box"
-import { Description } from "@/components/ui/field"
+import { Description, Label } from "@/components/ui/field"
 
 export default function ComboBoxControlledSelectionDemo() {
   const [country, setCountry] = useState<Key | null>(null)
   return (
     <>
-      <ComboBox
-        label="Country"
-        placeholder="Country"
-        onSelectionChange={setCountry}
-        selectedKey={country}
-      >
-        <ComboBoxInput />
+      <ComboBox onSelectionChange={setCountry} selectedKey={country}>
+        <Label>Country</Label>
+        <ComboBoxInput placeholder="Country" />
         <ComboBoxContent items={countries}>
           {(item) => <ComboBoxItem id={item.id}>{item.name}</ComboBoxItem>}
         </ComboBoxContent>

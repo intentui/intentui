@@ -1,26 +1,34 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Drawer } from "@/components/ui/drawer"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer"
 
 export default function DrawerWithoutNotchDemo() {
   return (
     <Drawer>
       <Button intent="outline">Open</Button>
-      <Drawer.Content notch={false}>
-        <Drawer.Header>
-          <Drawer.Title>The Beatles</Drawer.Title>
-          <Drawer.Description>
+      <DrawerContent notch={false}>
+        <DrawerHeader>
+          <DrawerTitle>The Beatles</DrawerTitle>
+          <DrawerDescription>
             The Beatles were an English rock band formed in Liverpool in 1960, comprising John
             Lennon, Paul McCartney, George Harrison and Ringo Starr.
-          </Drawer.Description>
-        </Drawer.Header>
-        <Drawer.Footer className="justify-center">
-          <Drawer.Close isCircle className="w-full">
+          </DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter className="justify-center">
+          <DrawerClose isCircle className="w-full">
             Close
-          </Drawer.Close>
-        </Drawer.Footer>
-      </Drawer.Content>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
     </Drawer>
   )
 }

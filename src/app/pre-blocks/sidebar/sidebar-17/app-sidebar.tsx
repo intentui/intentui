@@ -1,7 +1,7 @@
 "use client"
 
-import { IconBrandIntentui } from "@intentui/icons"
 import { parseDate } from "@internationalized/date"
+import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { Link } from "@/components/ui/link"
 import { RangeCalendar } from "@/components/ui/range-calendar"
 import { SearchField } from "@/components/ui/search-field"
@@ -25,7 +25,7 @@ export default function AppSidebar() {
           className="flex items-center gap-x-2 group-data-[collapsible=dock]:size-10 group-data-[collapsible=dock]:justify-center"
           href="/docs/components/layouts/sidebar"
         >
-          <IconBrandIntentui className="size-6" />
+          <BrandIntentuiIcon className="size-6" />
           <SidebarLabel className="font-medium">
             Intent <span className="text-muted-fg">UI</span>
           </SidebarLabel>

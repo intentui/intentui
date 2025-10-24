@@ -1,4 +1,4 @@
-import { IconCheck, IconChevronRight, IconDuplicate } from "@intentui/icons"
+import { CheckIcon, ChevronRightIcon, Square2StackIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { copyToClipboard } from "usemods"
 import { Button } from "@/components/ui/button"
@@ -30,7 +30,7 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
   return (
     <div className="[&_.xd]:-mt-px xd flex h-10 w-full items-center justify-between rounded-lg border p-1 pl-3 font-mono text-sm backdrop-blur-xs duration-200 hover:border-current/10 sm:min-w-72 sm:max-w-72 dark:bg-secondary [&_.xd]:mr-[-0.30rem]">
       <div className="flex items-center">
-        <IconChevronRight className="-ml-1.5 size-5.5 text-muted-fg" />
+        <ChevronRightIcon className="-ml-1.5 size-5.5 text-muted-fg" />
         {command || "npm i @intentui/icons"}
       </div>
       <Menu>
@@ -40,7 +40,7 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
           className="size-7 rounded-sm bg-bg hover:bg-bg/80"
           aria-label="Copy npm command"
         >
-          {isCopied ? <IconCheck /> : <IconDuplicate />}
+          {isCopied ? <CheckIcon /> : <Square2StackIcon />}
         </Button>
         <MenuContent placement="bottom end">
           <MenuItem onAction={() => handleCopy("NPM")}>NPM</MenuItem>

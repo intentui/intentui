@@ -1,6 +1,6 @@
 "use client"
 
-import { IconApple, IconClock, IconCut } from "@intentui/icons"
+import { CheckIcon, FaceSmileIcon, ScissorsIcon } from "@heroicons/react/24/outline"
 import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 
 export default function TabsIconsDemo() {
@@ -8,22 +8,18 @@ export default function TabsIconsDemo() {
     <Tabs aria-label="Fitness App">
       <TabList>
         <Tab id="w">
-          <IconCut /> Workouts
+          <ScissorsIcon /> Workouts
         </Tab>
         <Tab id="n">
-          <IconApple /> Nutrition
+          <FaceSmileIcon /> Nutrition
         </Tab>
         <Tab id="t">
-          <IconClock /> Tracker
+          <CheckIcon /> Tracker
         </Tab>
       </TabList>
-      <TabPanel id="w">
-        Find a variety of workout plans tailored to your fitness level and goals.
-      </TabPanel>
-      <TabPanel id="n">
-        Get nutrition tips and meal plans to complement your fitness journey.
-      </TabPanel>
-      <TabPanel id="t">Track your progress with detailed statistics and analytics.</TabPanel>
+      <TabPanel id="w">Workouts</TabPanel>
+      <TabPanel id="n">Nutrition</TabPanel>
+      <TabPanel id="t">Tracker</TabPanel>
     </Tabs>
   )
 }

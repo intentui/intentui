@@ -1,7 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
+import { Description, Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import {
   Sheet,
   SheetBody,
@@ -26,17 +28,23 @@ export default function SheetDemo() {
               <SheetDescription>Adjust your preferences and configurations here.</SheetDescription>
             </SheetHeader>
             <SheetBody className="space-y-4">
-              <TextField label="Username" type="text" placeholder="Enter your username" />
-              <TextField label="Email" type="email" placeholder="Enter your email address" />
-              <Checkbox
-                label="Enable notifications"
-                description="Receive updates and alerts via email."
-              />
+              <TextField>
+                <Label>Username</Label>
+                <Input type="text" placeholder="Enter your username" />
+              </TextField>
+              <TextField>
+                <Label>Email</Label>
+                <Input type="email" placeholder="Enter your email address" />
+              </TextField>
+              <Checkbox>
+                <CheckboxLabel>Enable notifications</CheckboxLabel>
+                <Description>Receive updates and alerts via email.</Description>
+              </Checkbox>
             </SheetBody>
             <SheetFooter>
               <SheetClose>Cancel</SheetClose>
               <Button onPress={close} intent="primary" type="submit">
-                Save Changes
+                Save
               </Button>
             </SheetFooter>
           </>

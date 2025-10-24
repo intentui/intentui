@@ -1,8 +1,8 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Description, Label } from "@/components/ui/field"
-import { Form } from "@/components/ui/form"
 import { Radio, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupValidationDemo() {

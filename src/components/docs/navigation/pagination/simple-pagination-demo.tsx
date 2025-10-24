@@ -1,26 +1,30 @@
 "use client"
 
-import { Pagination } from "@/components/ui/pagination"
+import {
+  Pagination,
+  PaginationFirst,
+  PaginationLabel,
+  PaginationLast,
+  PaginationList,
+  PaginationNext,
+  PaginationPrevious,
+  PaginationSection,
+} from "@/components/ui/pagination"
 
 export default function SimplePaginationDemo() {
   return (
     <Pagination>
-      <Pagination.List>
-        <Pagination.Item segment="first" href="#" />
-        <Pagination.Item segment="previous" href="#" />
-        <Pagination.Section
-          aria-label="Pagination Segment"
-          className="inset-ring inset-ring-border rounded-[calc(var(--radius-lg)+0.5px)]"
-        >
-          <Pagination.Item segment="label">1</Pagination.Item>
-          <Pagination.Item segment="separator" />
-          <Pagination.Item className="text-muted-fg" segment="label">
-            10
-          </Pagination.Item>
-        </Pagination.Section>
-        <Pagination.Item segment="next" href="#" />
-        <Pagination.Item segment="last" href="#" />
-      </Pagination.List>
+      <PaginationList>
+        <PaginationFirst href="#" />
+        <PaginationPrevious href="#" />
+        <PaginationSection className="rounded-(--section-radius) border px-3 *:min-w-4">
+          <PaginationLabel>3</PaginationLabel>
+          <PaginationLabel className="text-muted-fg">/</PaginationLabel>
+          <PaginationLabel>10</PaginationLabel>
+        </PaginationSection>
+        <PaginationNext href="#" />
+        <PaginationLast href="#" />
+      </PaginationList>
     </Pagination>
   )
 }

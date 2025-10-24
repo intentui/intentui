@@ -1,5 +1,5 @@
-import { IconBrandReactjs } from "@intentui/icons"
 import Link from "next/link"
+import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
 
 export function DocComposed({
   components,
@@ -31,7 +31,7 @@ export function DocComposed({
             href={`/${item}`}
             className="flex items-center gap-x-1.5 rounded-md border bg-muted px-3 py-1.5 font-medium text-fg text-sm/6 capitalize hover:bg-secondary"
           >
-            <IconBrandReactjs />
+            <BrandReactjsIcon className="size-4 text-cyan-500 dark:text-cyan-400" />
             {item.replaceAll("-", " ")}
           </Link>
         ))}

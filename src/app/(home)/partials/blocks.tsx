@@ -1,5 +1,5 @@
 "use client"
-import { IconArrowUpRight } from "@intentui/icons"
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import { twMerge } from "tailwind-merge"
 import SwitchDescriptionDemo from "@/components/docs/controls/switch/switch-description-demo"
 import CheckboxGroupDescriptionDemo from "@/components/docs/forms/checkbox/checkbox-group-description-demo"
@@ -70,7 +70,7 @@ export function Blocks() {
           href="/docs/components/buttons/button"
         >
           Show More
-          <IconArrowUpRight />
+          <ArrowUpRightIcon />
         </Link>
       </div>
     </PageContainer>

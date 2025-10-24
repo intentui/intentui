@@ -1,6 +1,7 @@
 "use client"
 
-import { IconBrandLaravel, IconBrandNextjs } from "@intentui/icons"
+import { BrandLaravelIcon } from "@/components/icons/brand-laravel-icon"
+import { BrandNextjsIcon } from "@/components/icons/brand-nextjs-icon"
 import {
   ChoiceBox,
   ChoiceBoxDescription,
@@ -69,13 +70,13 @@ const frameworks = [
   {
     name: "Laravel",
     description: "Laravel is a PHP framework for building web applications.",
-    logo: IconBrandLaravel,
+    logo: BrandLaravelIcon,
     href: "/docs/getting-started/laravel",
   },
   {
     name: "Next.js",
     description: "Next.js is a React framework for building server-side rendered applications.",
-    logo: IconBrandNextjs,
+    logo: BrandNextjsIcon,
     href: "/docs/getting-started/nextjs",
   },
   {

@@ -2,7 +2,8 @@
 
 import { Time } from "@internationalized/date"
 import { useState } from "react"
-
+import { DateInput } from "@/components/ui/date-field"
+import { Label } from "@/components/ui/field"
 import { TimeField } from "@/components/ui/time-field"
 
 export default function TimeFieldControlledDemo() {
@@ -12,7 +13,10 @@ export default function TimeFieldControlledDemo() {
       <div className="[&_p]:py-2">
         <p>{value ? value.toString() : "--"}</p>
       </div>
-      <TimeField label="Event time" value={value} onChange={(newValue) => setValue(newValue!)} />
+      <TimeField value={value} onChange={(newValue) => setValue(newValue!)}>
+        <Label>Event time</Label>
+        <DateInput />
+      </TimeField>
     </div>
   )
 }

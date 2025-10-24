@@ -1,6 +1,6 @@
 "use client"
 
-import { IconSearch } from "@intentui/icons"
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid"
 import { createContext, use, useEffect } from "react"
 import type {
   AutocompleteProps,
@@ -75,7 +75,7 @@ const CommandMenu = ({
   isDismissable = true,
   escapeButton = true,
   isPending,
-  size = "xl",
+  size = "lg",
   isBlurred,
   shortcut,
   ...props
@@ -99,35 +99,25 @@ const CommandMenu = ({
       <ModalContext value={{ isOpen: props.isOpen, onOpenChange: onOpenChange }}>
         <ModalOverlay
           isDismissable={isDismissable}
-          className={({ isExiting, isEntering }) =>
-            twJoin(
-              "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
-              "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
-              isEntering && "fade-in animate-in",
-              isExiting && "fade-out animate-out",
-              isBlurred && "backdrop-blur-sm",
-            )
-          }
+          className={twJoin(
+            "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
+            "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
+            "entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
+            "exiting:fade-out exiting:animate-out exiting:ease-in",
+            isBlurred && "backdrop-blur-[1px] backdrop-filter",
+          )}
           {...props}
         >
           <Modal
-            className={({ isExiting, isEntering }) =>
-              twMerge(
-                "row-start-2 bg-overlay text-left text-overlay-fg shadow-lg outline-none ring ring-muted-fg/15 md:row-start-1 dark:ring-border",
-                "sm:-translate-x-1/2 max-h-[calc(var(--visual-viewport-height)*0.8)] w-full sm:fixed sm:top-[10%] sm:left-1/2",
-                "rounded-t-2xl md:rounded-xl",
-                isEntering && [
-                  "slide-in-from-bottom animate-in duration-300 ease-out",
-                  "md:fade-in md:zoom-in-95 md:slide-in-from-bottom-0",
-                ],
-                isExiting && [
-                  "slide-out-to-bottom animate-out duration-150",
-                  "md:fade-out md:zoom-out-95 md:slide-out-to-bottom-0",
-                ],
-                sizes[size],
-                className,
-              )
-            }
+            className={cx(
+              "row-start-2 bg-overlay text-left text-overlay-fg shadow-lg outline-none ring ring-muted-fg/15 md:row-start-1 dark:ring-border",
+              "sm:-translate-x-1/2 max-h-[calc(var(--visual-viewport-height)*0.8)] w-full sm:fixed sm:top-[10%] sm:left-1/2",
+              "rounded-t-2xl md:rounded-xl",
+              sizes[size],
+              "entering:slide-in-from-bottom sm:entering:zoom-in-95 sm:entering:slide-in-from-bottom-0 entering:animate-in entering:duration-300 entering:ease-out",
+              "exiting:slide-out-to-bottom sm:exiting:zoom-out-95 sm:exiting:slide-out-to-bottom-0 exiting:animate-out exiting:ease-in",
+              className,
+            )}
           >
             <Dialog
               aria-label={props["aria-label"] ?? "Command Menu"}
@@ -154,13 +144,13 @@ const CommandMenuSearch = ({ className, placeholder, ...props }: CommandMenuSear
     <SearchField
       aria-label="Quick search"
       autoFocus
-      className={cx("flex w-full items-center border-b px-2.5 py-1", className)}
+      className={cx("flex w-full items-center px-2.5 py-1", className)}
       {...props}
     >
       {isPending ? (
         <Loader className="size-4.5" variant="spin" />
       ) : (
-        <IconSearch
+        <MagnifyingGlassIcon
           data-slot="command-menu-search-icon"
           className="size-5 shrink-0 text-muted-fg"
         />
@@ -186,7 +176,7 @@ const CommandMenuList = <T extends object>({ className, ...props }: MenuProps<T>
     <CollectionRendererContext.Provider value={renderer}>
       <MenuPrimitive
         className={cx(
-          "grid max-h-full flex-1 grid-cols-[auto_1fr] content-start overflow-y-auto p-2 sm:max-h-110 *:[[role=group]]:mb-6 *:[[role=group]]:last:mb-0",
+          "grid max-h-full flex-1 grid-cols-[auto_1fr] content-start overflow-y-auto border-t p-2 sm:max-h-110 *:[[role=group]]:mb-6 *:[[role=group]]:last:mb-0",
           className,
         )}
         {...props}
@@ -209,9 +199,9 @@ const CommandMenuSection = <T extends object>({
       )}
       {...props}
     >
-      {"title" in props && (
+      {"label" in props && (
         <Header className="col-span-full mb-1 block min-w-(--trigger-width) truncate px-2.5 text-muted-fg text-xs">
-          {props.title}
+          {props.label}
         </Header>
       )}
       <Collection items={props.items}>{props.children}</Collection>
@@ -272,16 +262,18 @@ const CommandMenuFooter = ({ className, ...props }: React.ComponentProps<"div">)
 }
 
 const CommandMenuLabel = MenuLabel
-const CommandMenuKeyboard = DropdownKeyboard
-CommandMenu.Search = CommandMenuSearch
-CommandMenu.List = CommandMenuList
-CommandMenu.Item = CommandMenuItem
-CommandMenu.Label = CommandMenuLabel
-CommandMenu.Section = CommandMenuSection
-CommandMenu.Description = CommandMenuDescription
-CommandMenu.Keyboard = CommandMenuKeyboard
-CommandMenu.Separator = CommandMenuSeparator
-CommandMenu.Footer = CommandMenuFooter
+const CommandMenuShortcut = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof DropdownKeyboard>) => (
+  <DropdownKeyboard
+    className={twMerge(
+      "gap-0.5 font-sans text-[10.5px] uppercase *:inset-ring *:inset-ring-muted-fg/20 *:grid *:size-5.5 *:place-content-center *:rounded-xs *:bg-bg",
+      className,
+    )}
+    {...props}
+  />
+)
 
 export type { CommandMenuProps, CommandMenuSearchProps, CommandMenuDescriptionProps }
 export {
@@ -292,7 +284,7 @@ export {
   CommandMenuLabel,
   CommandMenuSection,
   CommandMenuDescription,
-  CommandMenuKeyboard,
+  CommandMenuShortcut,
   CommandMenuSeparator,
   CommandMenuFooter,
 }

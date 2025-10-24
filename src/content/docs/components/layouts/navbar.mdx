@@ -33,9 +33,19 @@ npm i react-aria-components motion
 
 ## Anatomy
 ```
-import { IconChevronsY } from "@intentui/icons"
+import { IconChevronsY } from "@heroicons/react"
 import { Button } from "@/components/ui/button"
-import { Menu } from "@/components/ui/menu"
+  import { Menu,
+  MenuShortcut,
+  MenuContent,
+  MenuHeader,
+  MenuItem,
+  MenuSection,
+  MenuSeparator,
+  MenuLabel,
+  MenuDescription,
+  MenuTrigger,
+  MenuSubMenu } from "@/components/ui/menu"
 import {
   Navbar,
   NavbarGap,
@@ -66,9 +76,9 @@ import {
           Account
           <IconChevronsY className="col-start-3" />
         </NavbarItem>
-        <Menu.Content>
-          <Menu.Item />
-        </Menu.Content>
+        <MenuContent>
+          <MenuItem />
+        </MenuContent>
       </Menu>
     </NavbarSection>
   </Navbar>
@@ -83,9 +93,9 @@ import {
         Account
         <IconChevronsY className="col-start-3" />
       </NavbarItem>
-      <Menu.Content>
-        <Menu.Item />
-      </Menu.Content>
+      <MenuContent>
+        <MenuItem />
+      </MenuContent>
     </Menu>
   </NavbarMobile>
 
@@ -176,15 +186,15 @@ If there’s no icon, use `col-start-2`.
   <Menu>
     <NavbarItem>
       Categories
-      <IconChevronLgDown className="col-start-2" />
+      <ChevronDownIcon className="col-start-2" />
     </NavbarItem>
-    <Menu.Content className="min-w-(--trigger-width) sm:min-w-56" items={categories}>
+    <MenuContent className="min-w-(--trigger-width) sm:min-w-56" items={categories}>
       {(item) => (
-        <Menu.Item id={item.id} textValue={item.label} href={item.url}>
+        <MenuItem id={item.id} textValue={item.label} href={item.url}>
           {item.label}
-        </Menu.Item>
+        </MenuItem>
       )}
-    </Menu.Content>
+    </MenuContent>
   </Menu>
 </NavbarSection>
 ```
@@ -195,7 +205,7 @@ When using an icon on the left, wrap the text in `NavbarLabel` and place the che
 <NavbarItem>
   <IconHashtag />
   <NavbarLabel>Categories</NavbarLabel>
-  <IconChevronLgDown className="col-start-3" />
+  <ChevronDownIcon className="col-start-3" />
 </NavbarItem>
 ```
 

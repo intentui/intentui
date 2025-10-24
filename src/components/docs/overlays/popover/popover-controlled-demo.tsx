@@ -1,6 +1,7 @@
 "use client"
 
-import { IconCircleCheckFill, IconTrash } from "@intentui/icons"
+import { TrashIcon } from "@heroicons/react/24/outline"
+import { CheckCircleIcon } from "@heroicons/react/24/solid"
 import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
@@ -60,12 +61,12 @@ export default function PopoverControlledDemo() {
               </>
             ) : loading === "success" ? (
               <>
-                <IconCircleCheckFill />
+                <CheckCircleIcon />
                 Deleted
               </>
             ) : (
               <>
-                <IconTrash />
+                <TrashIcon />
                 Delete
               </>
             )}

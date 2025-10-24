@@ -1,5 +1,6 @@
 "use client"
-import { IconChevronsY } from "@intentui/icons"
+
+import { ChevronUpDownIcon } from "@heroicons/react/20/solid"
 import type {
   ListBoxProps,
   PopoverProps,
@@ -15,46 +16,28 @@ import {
   DropdownSection,
   DropdownSeparator,
 } from "./dropdown"
-import type { FieldProps } from "./field"
-import { Description, FieldError, Label } from "./field"
+import { fieldStyles } from "./field"
 import { PopoverContent } from "./popover"
 
 interface SelectProps<T extends object, M extends "single" | "multiple" = "single">
-  extends SelectPrimitiveProps<T, M>,
-    FieldProps {
+  extends SelectPrimitiveProps<T, M> {
   items?: Iterable<T, M>
 }
 
 const Select = <T extends object, M extends "single" | "multiple" = "single">({
-  label,
-  children,
-  description,
-  errorMessage,
   className,
   ...props
 }: SelectProps<T, M>) => {
   return (
     <SelectPrimitive
-      data-slot="select"
+      data-slot="control"
+      className={cx(fieldStyles({ className: "group/select" }), className)}
       {...props}
-      className={cx(
-        "group/select flex w-full flex-col gap-y-1 *:data-[slot=label]:font-medium",
-        className,
-      )}
-    >
-      {(values) => (
-        <>
-          {label && <Label>{label}</Label>}
-          {typeof children === "function" ? children(values) : children}
-          {description && <Description>{description}</Description>}
-          <FieldError>{errorMessage}</FieldError>
-        </>
-      )}
-    </SelectPrimitive>
+    />
   )
 }
 
-interface SelectContentProps<T extends object>
+interface SelectListProps<T extends object>
   extends Omit<ListBoxProps<T>, "layout" | "orientation"> {
   items?: Iterable<T>
   popover?: Omit<PopoverProps, "children">
@@ -65,9 +48,10 @@ const SelectContent = <T extends object>({
   className,
   popover,
   ...props
-}: SelectContentProps<T>) => {
+}: SelectListProps<T>) => {
   return (
     <PopoverContent
+      placement={popover?.placement ?? "bottom"}
       className={cx(
         "min-w-(--trigger-width) scroll-py-1 overflow-y-auto overscroll-contain",
         popover?.className,
@@ -95,40 +79,51 @@ interface SelectTriggerProps extends React.ComponentProps<typeof Button> {
 
 const SelectTrigger = ({ children, className, ...props }: SelectTriggerProps) => {
   return (
-    <Button
-      className={cx(
-        "inset-ring inset-ring-input flex w-full min-w-0 cursor-default items-center gap-x-2 rounded-lg px-3.5 py-2 text-start text-fg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] outline-hidden transition duration-200 sm:py-1.5 sm:pr-2 sm:pl-3 sm:text-sm/6 sm:*:text-sm/6 dark:shadow-none",
-        "group-open/select:inset-ring-ring/70 group-open/select:ring-3 group-open/select:ring-ring/20",
-        className,
-      )}
-    >
-      {(values) => (
-        <>
-          {props.prefix && <span className="text-muted-fg">{props.prefix}</span>}
-          {typeof children === "function" ? children(values) : children}
+    <span data-slot="control" className="relative block w-full">
+      <Button
+        className={cx(
+          [
+            "group/select-trigger flex w-full min-w-0 cursor-default items-center gap-x-2 rounded-lg border border-input px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] text-start text-fg outline-hidden transition duration-200 sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/6 sm:*:text-sm/6 dark:shadow-none",
+            "group-disabled/select:opacity-50 forced-colors:group-disabled/select:border-[GrayText] forced-colors:group-disabled/select/select:text-[GrayText]",
+            "focus:border-ring/70 focus:bg-primary-subtle/5 focus:ring-3 focus:ring-ring/20",
+            "hover:border-muted-fg/30 group-hover/select:invalid:border-danger-subtle-fg/70",
+            "group-open/select:border-ring/70 group-open/select:bg-primary-subtle/5 group-open/select:ring-3 group-open/select:ring-ring/20 group-open/select:hover:border-ring/70",
+            "group-open/select:invalid:border-danger-subtle-fg/70 group-open/select:invalid:bg-danger-subtle/5 group-open/select:invalid:ring-3 group-open/select:invalid:ring-danger-subtle-fg/20 group-invalid/select:border-danger-subtle-fg/70 group-invalid/select:bg-danger-subtle/5 group-invalid/select:ring-danger-subtle-fg/20 group-invalid/select:hover:border-danger-subtle-fg/70 group-focus/select:group-invalid/select:border-danger-subtle-fg/70 group-focus/select:group-invalid/select:ring-danger-subtle-fg/20",
+            "*:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-(--btn-icon) pressed:*:data-[slot=icon]:text-(--btn-icon-active) focus-visible:*:data-[slot=icon]:text-(--btn-icon-active)/80 hover:*:data-[slot=icon]:text-(--btn-icon-active)/90 sm:*:data-[slot=icon]:size-4 forced-colors:[--btn-icon:ButtonText] forced-colors:hover:[--btn-icon:ButtonText]",
+            "*:data-[slot=loader]:size-5 *:data-[slot=loader]:shrink-0 *:data-[slot=loader]:self-center *:data-[slot=loader]:text-(--btn-icon) sm:*:data-[slot=loader]:size-4",
+            "forced-colors:group-focus/select:border-[Highlight] forced-colors:group-invalid/select:border-[Mark] forced-colors:group-focus/select:group-invalid/select:border-[Mark]",
+            "motion-reduce:transition-none",
+          ],
+          className,
+        )}
+      >
+        {(values) => (
+          <>
+            {props.prefix && <span className="text-muted-fg">{props.prefix}</span>}
+            {typeof children === "function" ? children(values) : children}
 
-          {!children && (
-            <>
-              <SelectValue
-                data-slot="select-value"
-                className={twJoin([
-                  "has-data-[slot=avatar]:grid has-data-[slot=avatar]:grid-cols-[1fr_auto]",
-                  "has-data-[slot=icon]:grid has-data-[slot=icon]:grid-cols-[1fr_auto]",
-                  "truncate text-start data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden",
-                  "has-data-[slot=avatar]:gap-x-2 has-data-[slot=icon]:gap-x-2",
-                  "items-center *:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
-                  "*:data-[slot=avatar]:*:size-5 *:data-[slot=avatar]:size-5 sm:*:data-[slot=avatar]:*:size-4.5 sm:*:data-[slot=avatar]:size-4.5",
-                ])}
-              />
-              <IconChevronsY
-                data-slot="chevron"
-                className="-mr-1 ml-auto shrink-0 text-muted-fg group-open/select:text-fg group-disabled/select:opacity-50 sm:mr-0"
-              />
-            </>
-          )}
-        </>
-      )}
-    </Button>
+            {!children && (
+              <>
+                <SelectValue
+                  data-slot="select-value"
+                  className={twJoin([
+                    "truncate text-start data-placeholder:text-muted-fg sm:text-sm/6 [&_[slot=description]]:hidden",
+                    "has-data-[slot=avatar]:grid has-data-[slot=avatar]:grid-cols-[1fr_auto] has-data-[slot=avatar]:items-center has-data-[slot=avatar]:gap-x-2",
+                    "has-data-[slot=icon]:grid has-data-[slot=icon]:grid-cols-[1fr_auto] has-data-[slot=icon]:items-center has-data-[slot=icon]:gap-x-2",
+                    "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4",
+                    "*:data-[slot=avatar]:[--avatar-size:--spacing(5)] sm:*:data-[slot=avatar]:[--avatar-size:--spacing(4.5)]",
+                  ])}
+                />
+                <ChevronUpDownIcon
+                  data-slot="chevron"
+                  className="-mr-1 ml-auto size-5 text-muted-fg sm:size-4"
+                />
+              </>
+            )}
+          </>
+        )}
+      </Button>
+    </span>
   )
 }
 
@@ -137,14 +132,6 @@ const SelectSeparator = DropdownSeparator
 const SelectLabel = DropdownLabel
 const SelectDescription = DropdownDescription
 const SelectItem = DropdownItem
-
-Select.Description = SelectDescription
-Select.Item = SelectItem
-Select.Label = SelectLabel
-Select.Separator = SelectSeparator
-Select.Section = SelectSection
-Select.Trigger = SelectTrigger
-Select.Content = SelectContent
 
 export {
   Select,

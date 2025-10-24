@@ -5,7 +5,7 @@ const Card = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => 
     <div
       data-slot="card"
       className={twMerge(
-        "group/card flex flex-col gap-(--card-spacing) rounded-lg border bg-bg py-(--card-spacing) text-fg shadow-xs [--card-spacing:--spacing(6)] has-[table]:overflow-hidden has-[table]:not-has-data-[slot=card-footer]:pb-0 **:data-[slot=table-header]:bg-muted/50 has-[table]:**:data-[slot=card-footer]:border-t **:[table]:overflow-hidden",
+        "group/card flex flex-col gap-(--gutter) rounded-lg border py-(--gutter) text-fg shadow-xs [--gutter:--spacing(6)] has-[table]:overflow-hidden has-[table]:not-has-data-[slot=card-footer]:pb-0 **:data-[slot=table-header]:bg-muted/50 has-[table]:**:data-[slot=card-footer]:border-t **:[table]:overflow-hidden",
         className,
       )}
       {...props}
@@ -22,7 +22,7 @@ const CardHeader = ({ className, title, description, children, ...props }: Heade
   <div
     data-slot="card-header"
     className={twMerge(
-      "grid auto-rows-min grid-rows-[auto_auto] items-start gap-1 px-(--card-spacing) has-data-[slot=card-action]:grid-cols-[1fr_auto]",
+      "grid auto-rows-min grid-rows-[auto_auto] items-start gap-1 px-(--gutter) has-data-[slot=card-action]:grid-cols-[1fr_auto]",
       className,
     )}
     {...props}
@@ -37,7 +37,7 @@ const CardTitle = ({ className, ...props }: React.ComponentProps<"div">) => {
   return (
     <div
       data-slot="card-title"
-      className={twMerge("text-balance font-semibold text-fg text-lg/6 sm:text-base/6", className)}
+      className={twMerge("text-balance font-semibold text-base/6", className)}
       {...props}
     />
   )
@@ -48,7 +48,7 @@ const CardDescription = ({ className, ...props }: React.HTMLAttributes<HTMLDivEl
     <div
       {...props}
       data-slot="card-description"
-      className={twMerge("row-start-2 text-pretty text-muted-fg text-sm", className)}
+      className={twMerge("row-start-2 text-pretty text-muted-fg text-sm/6", className)}
       {...props}
     />
   )
@@ -71,7 +71,7 @@ const CardContent = ({ className, ...props }: React.HTMLAttributes<HTMLDivElemen
   return (
     <div
       data-slot="card-content"
-      className={twMerge("px-(--card-spacing) has-[table]:border-t", className)}
+      className={twMerge("px-(--gutter) has-[table]:border-t", className)}
       {...props}
     />
   )
@@ -82,19 +82,12 @@ const CardFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement
     <div
       data-slot="card-footer"
       className={twMerge(
-        "flex items-center px-(--card-spacing) group-has-[table]/card:pt-(--card-spacing) [.border-t]:pt-6",
+        "flex items-center px-(--gutter) group-has-[table]/card:pt-(--gutter) [.border-t]:pt-6",
         className,
       )}
       {...props}
     />
   )
 }
-
-Card.Content = CardContent
-Card.Description = CardDescription
-Card.Footer = CardFooter
-Card.Header = CardHeader
-Card.Title = CardTitle
-Card.Action = CardAction
 
 export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, CardAction }

@@ -1,20 +1,24 @@
-import { DescriptionList } from "@/components/ui/description-list"
+import {
+  DescriptionDetails,
+  DescriptionList,
+  DescriptionTerm,
+} from "@/components/ui/description-list"
 
 export default function DescriptionListDemo() {
   return (
     <DescriptionList>
-      <DescriptionList.Term>Invoice Number</DescriptionList.Term>
-      <DescriptionList.Details>INV-12345</DescriptionList.Details>
-      <DescriptionList.Term>Invoice Date</DescriptionList.Term>
-      <DescriptionList.Details>September 21, 2024</DescriptionList.Details>
-      <DescriptionList.Term>Due Date</DescriptionList.Term>
-      <DescriptionList.Details>October 21, 2024</DescriptionList.Details>
-      <DescriptionList.Term>Customer Name</DescriptionList.Term>
-      <DescriptionList.Details>John Doe</DescriptionList.Details>
-      <DescriptionList.Term>Total Amount</DescriptionList.Term>
-      <DescriptionList.Details>$1,250.00</DescriptionList.Details>
-      <DescriptionList.Term>Status</DescriptionList.Term>
-      <DescriptionList.Details>Pending</DescriptionList.Details>
+      <DescriptionTerm>Invoice Number</DescriptionTerm>
+      <DescriptionDetails>INV-12345</DescriptionDetails>
+      <DescriptionTerm>Invoice Date</DescriptionTerm>
+      <DescriptionDetails>September 21, 2024</DescriptionDetails>
+      <DescriptionTerm>Due Date</DescriptionTerm>
+      <DescriptionDetails>October 21, 2024</DescriptionDetails>
+      <DescriptionTerm>Customer Name</DescriptionTerm>
+      <DescriptionDetails>John Doe</DescriptionDetails>
+      <DescriptionTerm>Total Amount</DescriptionTerm>
+      <DescriptionDetails>$1,250.00</DescriptionDetails>
+      <DescriptionTerm>Status</DescriptionTerm>
+      <DescriptionDetails>Pending</DescriptionDetails>
     </DescriptionList>
   )
 }

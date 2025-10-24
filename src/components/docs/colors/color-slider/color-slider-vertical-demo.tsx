@@ -1,6 +1,7 @@
 "use client"
 
-import { ColorSlider } from "@/components/ui/color-slider"
+import { ColorSlider, ColorSliderOutput, ColorSliderTrack } from "@/components/ui/color-slider"
+import { ColorThumb } from "@/components/ui/color-thumb"
 
 export default function ColorSliderVerticalDemo() {
   return (
@@ -10,7 +11,12 @@ export default function ColorSliderVerticalDemo() {
         aria-label="Fill Color"
         channel="hue"
         defaultValue="hsl(0, 100%, 50%)"
-      />
+      >
+        <ColorSliderOutput />
+        <ColorSliderTrack>
+          <ColorThumb />
+        </ColorSliderTrack>
+      </ColorSlider>
     </div>
   )
 }

@@ -1,104 +1,68 @@
 "use client"
 
 import {
-  IconAlignmentCenter,
-  IconAlignmentCenterFill,
-  IconAlignmentJustify,
-  IconAlignmentJustifyFill,
-  IconAlignmentLeft,
-  IconAlignmentLeftFill,
-  IconCamera,
-  IconCameraFill,
-  IconCursor,
-  IconCursorFill,
-  IconDotsVertical,
-  IconGallery,
-  IconGalleryFill,
-  IconGrid4,
-  IconLink,
-  IconPencilBox,
-  IconPencilBoxFill,
-  IconRedo,
-  IconToolbox,
-  IconToolboxFill,
-  IconUndo,
-} from "@intentui/icons"
-import { Button } from "@/components/ui/button"
-import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
-import { Toggle } from "@/components/ui/toggle"
-import { Toolbar } from "@/components/ui/toolbar"
+  AdjustmentsHorizontalIcon as AdjustmentsHorizontalOutline,
+  Bars3BottomLeftIcon,
+  Bars3BottomRightIcon,
+  Bars3Icon,
+  BoltIcon as BoltOutline,
+  CursorArrowRaysIcon as CursorArrowRaysOutline,
+  NoSymbolIcon as NoSymbolOutline,
+  PencilIcon as PencilOutline,
+} from "@heroicons/react/24/outline"
+import {
+  AdjustmentsHorizontalIcon as AdjustmentsHorizontalSolid,
+  Bars3BottomLeftIcon as Bars3BottomLeftSolid,
+  Bars3BottomRightIcon as Bars3BottomRightSolid,
+  Bars3Icon as Bars3Solid,
+  BoltIcon as BoltSolid,
+  CursorArrowRaysIcon as CursorArrowRaysSolid,
+  NoSymbolIcon as NoSymbolSolid,
+  PencilIcon as PencilSolid,
+} from "@heroicons/react/24/solid"
 
-export default function ToolbarOrientationDemo() {
+import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from "@/components/ui/toolbar"
+
+export default function ToolbarDemo() {
   return (
-    <Toolbar aria-label="Toolbox" orientation="vertical">
-      <Toolbar.Group aria-label="Toolbox">
-        <Toolbar.Item aria-label="Cursor" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconCursorFill /> : <IconCursor />}</>}
-        </Toolbar.Item>
-        <Toolbar.Item aria-label="Pencil Box" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconPencilBoxFill /> : <IconPencilBox />}</>}
-        </Toolbar.Item>
-        <Toolbar.Item aria-label="Pencil Box" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconToolboxFill /> : <IconToolbox />}</>}
-        </Toolbar.Item>
-      </Toolbar.Group>
-      <Toolbar.Separator />
-      <Toolbar.Group aria-label="Gallery">
-        <Toolbar.Item aria-label="Camera" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconCameraFill /> : <IconCamera />}</>}
-        </Toolbar.Item>
-        <Toolbar.Item aria-label="Gallery" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconGalleryFill /> : <IconGallery />}</>}
-        </Toolbar.Item>
-      </Toolbar.Group>
-      <Toolbar.Separator />
-      <Toolbar.Group aria-label="Alignment">
-        <Toggle aria-label="Align Left" size="sq-sm">
+    <Toolbar orientation="vertical" aria-label="Toolbars">
+      <ToolbarGroup aria-label="Text Formatting Options">
+        <ToolbarItem defaultSelected aria-label="Bold" size="sq-sm">
+          {({ isSelected }) => <>{isSelected ? <BoltSolid /> : <BoltOutline />}</>}
+        </ToolbarItem>
+        <ToolbarItem aria-label="Italic" size="sq-sm">
+          {({ isSelected }) => <>{isSelected ? <PencilSolid /> : <PencilOutline />}</>}
+        </ToolbarItem>
+        <ToolbarItem aria-label="Underline" size="sq-sm">
           {({ isSelected }) => (
-            <>{isSelected ? <IconAlignmentLeftFill /> : <IconAlignmentLeft />}</>
+            <>{isSelected ? <CursorArrowRaysSolid /> : <CursorArrowRaysOutline />}</>
           )}
-        </Toggle>
-        <Toolbar.Item aria-label="Align Center" size="sq-sm">
+        </ToolbarItem>
+        <ToolbarItem aria-label="Strikethrough" size="sq-sm">
+          {({ isSelected }) => <>{isSelected ? <NoSymbolSolid /> : <NoSymbolOutline />}</>}
+        </ToolbarItem>
+      </ToolbarGroup>
+      <ToolbarSeparator />
+      <ToolbarGroup aria-label="Alignment">
+        <ToolbarItem aria-label="Align Left" size="sq-sm">
           {({ isSelected }) => (
-            <>{isSelected ? <IconAlignmentCenterFill /> : <IconAlignmentCenter />}</>
+            <>{isSelected ? <Bars3BottomLeftSolid /> : <Bars3BottomLeftIcon />}</>
           )}
-        </Toolbar.Item>
-        <Toolbar.Item aria-label="Align Justify" size="sq-sm">
+        </ToolbarItem>
+        <ToolbarItem size="sq-sm" aria-label="Align Center">
           {({ isSelected }) => (
-            <>{isSelected ? <IconAlignmentJustifyFill /> : <IconAlignmentJustify />}</>
+            <>{isSelected ? <AdjustmentsHorizontalSolid /> : <AdjustmentsHorizontalOutline />}</>
           )}
-        </Toolbar.Item>
-      </Toolbar.Group>
-      <Toolbar.Separator />
-      <Toolbar.Group>
-        <Menu>
-          <Button aria-label="Other options" intent="outline" size="sq-sm">
-            <IconDotsVertical />
-          </Button>
-          <MenuContent placement="right bottom">
-            <MenuItem>
-              <IconUndo />
-              Undo
-            </MenuItem>
-            <MenuItem>
-              <IconRedo />
-              Redo
-            </MenuItem>
-            <MenuItem>
-              <IconLink />
-              Insert Link
-            </MenuItem>
-            <MenuItem>
-              <IconGallery />
-              Insert Image
-            </MenuItem>
-            <MenuItem>
-              <IconGrid4 />
-              Insert Grid
-            </MenuItem>
-          </MenuContent>
-        </Menu>
-      </Toolbar.Group>
+        </ToolbarItem>
+        <ToolbarItem size="sq-sm" aria-label="Align Right">
+          {({ isSelected }) => (
+            <>{isSelected ? <Bars3BottomRightSolid /> : <Bars3BottomRightIcon />}</>
+          )}
+        </ToolbarItem>
+        <ToolbarItem size="sq-sm" aria-label="Align Justify">
+          {({ isSelected }) => <>{isSelected ? <Bars3Solid /> : <Bars3Icon />}</>}
+        </ToolbarItem>
+      </ToolbarGroup>
     </Toolbar>
   )
 }

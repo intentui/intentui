@@ -2,60 +2,14 @@
 
 import {
   TimeField as TimeFieldPrimitive,
-  type TimeFieldProps as TimeFieldPrimitiveProps,
+  type TimeFieldProps,
   type TimeValue,
-  type ValidationResult,
 } from "react-aria-components"
 import { cx } from "@/lib/primitive"
-import { DateInput } from "./date-field"
-import { Description, FieldError, FieldGroup, Label } from "./field"
+import { fieldStyles } from "./field"
 
-interface TimeFieldProps<T extends TimeValue> extends TimeFieldPrimitiveProps<T> {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
-  prefix?: React.ReactNode | string
-  suffix?: React.ReactNode | string
-}
-
-const TimeField = <T extends TimeValue>({
-  prefix,
-  suffix,
-  label,
-  className,
-  description,
-  errorMessage,
-  ...props
-}: TimeFieldProps<T>) => {
+export function TimeField<T extends TimeValue>({ className, ...props }: TimeFieldProps<T>) {
   return (
-    <TimeFieldPrimitive
-      {...props}
-      className={cx(
-        "group/time-field flex flex-col gap-y-1 *:data-[slot=label]:font-medium",
-        className,
-      )}
-    >
-      {label && <Label>{label}</Label>}
-      <FieldGroup>
-        {prefix && typeof prefix === "string" ? (
-          <span className="ml-2 text-muted-fg">{prefix}</span>
-        ) : (
-          prefix
-        )}
-        <DateInput className="flex w-fit min-w-28 justify-around whitespace-nowrap" />
-        {suffix ? (
-          typeof suffix === "string" ? (
-            <span className="mr-2 text-muted-fg">{suffix}</span>
-          ) : (
-            suffix
-          )
-        ) : null}
-      </FieldGroup>
-      {description && <Description>{description}</Description>}
-      <FieldError>{errorMessage}</FieldError>
-    </TimeFieldPrimitive>
+    <TimeFieldPrimitive {...props} data-slot="control" className={cx(fieldStyles(), className)} />
   )
 }
-
-export type { TimeFieldProps }
-export { TimeField }

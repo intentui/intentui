@@ -3,7 +3,14 @@
 import { useState } from "react"
 import type { Selection } from "react-aria-components"
 import { Description } from "@/components/ui/field"
-import { Table } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 export default function TableBulkDemo() {
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set())
@@ -15,24 +22,24 @@ export default function TableBulkDemo() {
         selectedKeys={selectedKeys}
         onSelectionChange={setSelectedKeys}
       >
-        <Table.Header>
-          <Table.Column className="w-0">#</Table.Column>
-          <Table.Column isRowHeader>Title</Table.Column>
-          <Table.Column>Author</Table.Column>
-          <Table.Column>Genre</Table.Column>
-          <Table.Column>Published</Table.Column>
-        </Table.Header>
-        <Table.Body items={books}>
+        <TableHeader>
+          <TableColumn className="w-0">#</TableColumn>
+          <TableColumn isRowHeader>Title</TableColumn>
+          <TableColumn>Author</TableColumn>
+          <TableColumn>Genre</TableColumn>
+          <TableColumn>Published</TableColumn>
+        </TableHeader>
+        <TableBody items={books}>
           {(item) => (
-            <Table.Row>
-              <Table.Cell>{item.id}</Table.Cell>
-              <Table.Cell className="whitespace-nowrap">{item.title}</Table.Cell>
-              <Table.Cell className="whitespace-nowrap">{item.author}</Table.Cell>
-              <Table.Cell>{item.genre}</Table.Cell>
-              <Table.Cell>{item.publishedYear}</Table.Cell>
-            </Table.Row>
+            <TableRow>
+              <TableCell>{item.id}</TableCell>
+              <TableCell className="whitespace-nowrap">{item.title}</TableCell>
+              <TableCell className="whitespace-nowrap">{item.author}</TableCell>
+              <TableCell>{item.genre}</TableCell>
+              <TableCell>{item.publishedYear}</TableCell>
+            </TableRow>
           )}
-        </Table.Body>
+        </TableBody>
       </Table>
       <Description className="mt-2 block text-muted-fg [&>strong]:text-fg">
         {Array.from(selectedKeys).length > 0 ? (

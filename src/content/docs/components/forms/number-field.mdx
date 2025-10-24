@@ -9,7 +9,7 @@ references: ["https://react-spectrum.adobe.com/react-aria/NumberField.html#props
 ## Basic
 
 A field specifically designed for entering numeric values.
-<How minW72 toUse="forms/number-field/number-field-demo" />
+<How minW60 toUse="forms/number-field/number-field-demo" />
 
 ## Installation
 
@@ -30,14 +30,20 @@ npm i react-aria-components
 
 ## Anatomy
 ```
-import { NumberField } from "@/components/ui/number-field"
+import { NumberField, NumberInput } from "@/components/ui/number-field"
+import { Label, Description, FieldError } from "@/components/ui/field"
 
-<NumberField label="Cookies" />
+<NumberField>
+  <Label/>
+  <NumberInput />
+  <Description />
+  <FieldError />
+</NumberField>
 ```
 
 ## Controlled
 You can use the number field as a controlled component by managing its state externally.
-<How minW72 toUse="forms/number-field/number-field-controlled-demo" />
+<How minW60 toUse="forms/number-field/number-field-controlled-demo" />
 
 ## Uncontrolled
 Like other fields, the search field can be controlled by managing its value through the `defaultValue` prop.
@@ -45,8 +51,8 @@ Like other fields, the search field can be controlled by managing its value thro
 
 ## Validation
 The field is in an error state, usually caused by invalid input. Try submitting the form without filling it out to see the error state in action.
-<How minW72 toUse="forms/number-field/number-field-invalid-demo" />
+<How minW60 toUse="forms/number-field/number-field-invalid-demo" />
 
 ## Disabled
 The field is disabled and cannot be interacted with.
-<How minW72 toUse="forms/number-field/number-field-disabled-demo" />
+<How minW60 toUse="forms/number-field/number-field-disabled-demo" />

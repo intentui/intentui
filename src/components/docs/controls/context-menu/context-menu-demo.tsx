@@ -4,8 +4,8 @@ import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuItem,
-  ContextMenuKeyboard,
   ContextMenuSeparator,
+  ContextMenuShortcut,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 
@@ -24,7 +24,7 @@ export default function ContextMenuDemo() {
         <ContextMenuItem>Save as</ContextMenuItem>
         <ContextMenuItem>
           Select all
-          <ContextMenuKeyboard keys="⌘A" />
+          <ContextMenuShortcut keys="⌘A" />
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem>View source</ContextMenuItem>

@@ -1,8 +1,13 @@
 "use client"
 
-import { IconCommandRegular, IconDashboard, IconLogout, IconSettings } from "@intentui/icons"
+import {
+  ArrowRightOnRectangleIcon,
+  Cog6ToothIcon,
+  CommandLineIcon,
+  Squares2X2Icon,
+} from "@heroicons/react/24/outline"
 import { Avatar } from "@/components/ui/avatar"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
 import {
   Menu,
   MenuContent,
@@ -19,10 +24,10 @@ export default function AppSidebarNav() {
   return (
     <SidebarNav>
       <span className="flex items-center gap-x-4">
-        <SidebarTrigger className="-ml-2" />
+        <SidebarTrigger />
         <Breadcrumbs className="hidden md:flex">
-          <Breadcrumbs.Item href="/blocks/sidebar/sidebar-01">Dashboard</Breadcrumbs.Item>
-          <Breadcrumbs.Item>Newsletter</Breadcrumbs.Item>
+          <BreadcrumbsItem href="/blocks/sidebar/sidebar-01">Dashboard</BreadcrumbsItem>
+          <BreadcrumbsItem>Newsletter</BreadcrumbsItem>
         </Breadcrumbs>
       </span>
       <UserMenu />
@@ -44,16 +49,16 @@ function UserMenu() {
           </MenuHeader>
         </MenuSection>
         <MenuItem href="#dashboard">
-          <IconDashboard />
+          <Squares2X2Icon />
           <MenuLabel>Dashboard</MenuLabel>
         </MenuItem>
         <MenuItem href="#settings">
-          <IconSettings />
+          <Cog6ToothIcon />
           <MenuLabel>Settings</MenuLabel>
         </MenuItem>
         <MenuSeparator />
         <MenuItem>
-          <IconCommandRegular />
+          <CommandLineIcon />
           <MenuLabel>Command Menu</MenuLabel>
         </MenuItem>
         <MenuSeparator />
@@ -62,7 +67,7 @@ function UserMenu() {
         </MenuItem>
         <MenuSeparator />
         <MenuItem href="#logout">
-          <IconLogout />
+          <ArrowRightOnRectangleIcon />
           <MenuLabel>Log out</MenuLabel>
         </MenuItem>
       </MenuContent>

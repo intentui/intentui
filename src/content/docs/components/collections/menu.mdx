@@ -3,7 +3,7 @@ title: "Menu"
 description: A collapsible menu that reveals actions or navigation options when triggered, distinct from a select as it is not used for form input.
 order: 1
 published: true
-references: ["https://react-spectrum.adobe.com/react-aria/Menu.html#props"]
+references: ["https://react-spectrum.adobe.com/react-aria/Menuhtml#props"]
 ---
 
 ## Basic
@@ -20,7 +20,7 @@ npx shadcn@latest add @intentui/menu
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 
 <SourceCode toShow='menu' />
@@ -29,13 +29,13 @@ npm i react-aria-components @intentui/icons
 ```
 import {
   IconCommandRegular,
-  IconDashboard,
+  HomeIcon,
   IconDeviceDesktop,
   IconLogout,
-  IconMoon,
+  MoonIcon,
   IconSettings,
-  IconSun,
-} from "@intentui/icons"
+  SunIcon,
+} from "@heroicons/react"
 import {
   Menu,
   MenuContent,
@@ -44,7 +44,7 @@ import {
   MenuLabel,
   MenuSection,
   MenuSeparator,
-  MenuSubmenu,
+  MenuSubMenu,
   MenuTrigger,
 } from "@/components/ui/menu"
 ```
@@ -59,7 +59,7 @@ import {
 
     <MenuSection>
       <MenuItem href="#dashboard">
-        <IconDashboard />
+        <HomeIcon />
         <MenuLabel>Dashboard</MenuLabel>
       </MenuItem>
       <MenuItem href="#settings">
@@ -72,7 +72,7 @@ import {
       <IconCommandRegular />
       <MenuLabel>Command Menu</MenuLabel>
     </MenuItem>
-    <MenuSubmenu>
+    <MenuSubMenu>
       <MenuItem>
         <IconDeviceDesktop />
         <MenuLabel>Switch theme</MenuLabel>
@@ -83,15 +83,15 @@ import {
           <MenuLabel>System</MenuLabel>
         </MenuItem>
         <MenuItem>
-          <IconMoon />
+          <MoonIcon />
           <MenuLabel>Dark</MenuLabel>
         </MenuItem>
         <MenuItem>
-          <IconSun />
+          <SunIcon />
           <MenuLabel>Light</MenuLabel>
         </MenuItem>
       </MenuContent>
-    </MenuSubmenu>
+    </MenuSubMenu>
     <MenuSeparator />
     <MenuItem href="#contact-s">
       <MenuLabel>Contact Support</MenuLabel>
@@ -139,24 +139,24 @@ Organize menu items into grouped sections with level selection.
 <How toUse="collections/menu/menu-section-level-selection" />
 
 ## Arrow
-Incorporate an arrow into the menu using the `showArrow` from `popover` in the `Menu.Content` component.
+Incorporate an arrow into the menu using the `arrow` from `popover` in the `MenuContent` component.
 <How toUse="collections/menu/menu-with-arrow-demo" />
 
 ## Disabled
 Disable specific menu items.
 <How toUse="collections/menu/menu-disabled-demo" />
 
-Also, you can disable items directly in `Menu.Content` by using the `disabledKeys` prop.
+Also, you can disable items directly in `MenuContent` by using the `disabledKeys` prop.
 ```tsx
-<Menu.Content disabledKeys={['gsu']} />
+<MenuContent disabledKeys={['gsu']} />
 ```
 
 ## Menu label
-In the examples above, you might notice that the `Menu.Label` component is used inconsistently. This is because it is not mandatory, but it is considered a best practice. Using `Menu.Label` ensures proper alignment between icons and text, especially when dealing with items that vary. For instance, one item might have an icon while another does not. Adding `Menu.Label` helps create a polished and consistent appearance.
+In the examples above, you might notice that the `MenuLabel` component is used inconsistently. This is because it is not mandatory, but it is considered a best practice. Using `MenuLabel` ensures proper alignment between icons and text, especially when dealing with items that vary. For instance, one item might have an icon while another does not. Adding `MenuLabel` helps create a polished and consistent appearance.
 
 
 ## Description
-You can add details to menu items by using the `Menu.Description` component.
+You can add details to menu items by using the `MenuDescription` component.
 <How toUse="collections/menu/menu-item-description-demo" />
 
 

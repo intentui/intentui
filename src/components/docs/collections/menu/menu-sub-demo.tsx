@@ -7,7 +7,7 @@ import {
   MenuItem,
   MenuLabel,
   MenuSeparator,
-  MenuSubmenu,
+  MenuSubMenu,
 } from "@/components/ui/menu"
 
 export default function MenuSubDemo() {
@@ -22,7 +22,7 @@ export default function MenuSubDemo() {
           <MenuLabel>Reports</MenuLabel>
         </MenuItem>
         <MenuSeparator />
-        <MenuSubmenu>
+        <MenuSubMenu>
           <MenuItem>
             <MenuLabel>Settings</MenuLabel>
           </MenuItem>
@@ -34,7 +34,7 @@ export default function MenuSubDemo() {
               <MenuLabel>Security</MenuLabel>
             </MenuItem>
             <MenuSeparator />
-            <MenuSubmenu>
+            <MenuSubMenu>
               <MenuItem>
                 <MenuLabel>Privacy</MenuLabel>
               </MenuItem>
@@ -46,7 +46,7 @@ export default function MenuSubDemo() {
                   <MenuLabel>Cookies</MenuLabel>
                 </MenuItem>
                 <MenuSeparator />
-                <MenuSubmenu>
+                <MenuSubMenu>
                   <MenuItem>
                     <MenuLabel>Advanced</MenuLabel>
                   </MenuItem>
@@ -61,11 +61,11 @@ export default function MenuSubDemo() {
                       <MenuLabel>API Keys</MenuLabel>
                     </MenuItem>
                   </MenuContent>
-                </MenuSubmenu>
+                </MenuSubMenu>
               </MenuContent>
-            </MenuSubmenu>
+            </MenuSubMenu>
           </MenuContent>
-        </MenuSubmenu>
+        </MenuSubMenu>
         <MenuItem>
           <MenuLabel>Help</MenuLabel>
         </MenuItem>

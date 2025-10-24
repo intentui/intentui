@@ -3,13 +3,13 @@ title: "Combo Box"
 description: An advanced dropdown component that allows users to search, filter, and select options dynamically for a smoother selection experience.
 order: 1
 published: true
-references: ["https://react-spectrum.adobe.com/react-aria/ComboBox.html#props"]
+references: ["https://react-spectrum.adobe.com/react-aria/ComboBoxhtml#props"]
 ---
 
 ## Basic
 
 A combo box combines a text input with a listbox, allowing users to filter options to match what they're looking for.
-<How minW72 toUse="pickers/combo-box/combo-box-demo" />
+<How minW60 toUse="pickers/combo-box/combo-box-demo" />
 
 ## Installation
 ```bash
@@ -21,13 +21,14 @@ npx shadcn@latest add @intentui/combo-box
 
 ## Manual installation
 ```bash
-npm i react-aria-components @intentui/icons
+npm i react-aria-components @heroicons/react
 ```
 
 <SourceCode toShow='combo-box'/>
 
 ## Anatomy
 ```
+import { Label } from "@/components/ui/field"
 import {
   ComboBox,
   ComboBoxInput,
@@ -37,8 +38,9 @@ import {
 ```
 
 ```
-<ComboBox placeholder="Select a user" label="Users">
-  <ComboBoxInput />
+<ComboBox name="users">
+  <Label>Users</Label>
+  <ComboBoxInput placeholder="Select a user" />
   <ComboBoxContent>
     <ComboBoxItem>John Lennon</ComboBoxItem>
     <ComboBoxItem>Paul McCartney</ComboBoxItem>
@@ -50,33 +52,33 @@ import {
 
 ## Using avatars
 The combo box can be configured to display avatars instead of just regular text.
-<How minW72 toUse="pickers/combo-box/combo-box-avatar-demo" />
+<How minW60 toUse="pickers/combo-box/combo-box-avatar-demo" />
 
 ## Section
 A combo box can display items grouped together in sections.
-<How minW72 toUse="pickers/combo-box/combo-box-section-demo" />
+<How minW60 toUse="pickers/combo-box/combo-box-section-demo" />
 
 ## Readonly
 When the combo box is in a readonly state, it cannot be edited.
-<How minW72 toUse="pickers/combo-box/combo-box-readonly-demo" />
+<How minW60 toUse="pickers/combo-box/combo-box-readonly-demo" />
 
 ## Label
-If the `children` of a `ComboBox.Item` is a string, the `ComboBox.Label` will automatically wrap it. However, if you're including additional elements like an icon or avatar, you'll need to manually wrap the label, as shown below:
+If the `children` of a `ComboBoxItem` is a string, the `ComboBoxLabel` will automatically wrap it. However, if you're including additional elements like an icon or avatar, you'll need to manually wrap the label, as shown below:
 
 ```
-<ComboBox.Item id={item.id} textValue={item.name}>
+<ComboBoxItem id={item.id} textValue={item.name}>
   <Avatar src={item.image_url} />
-  <ComboBox.Label>{item.name}</ComboBox.Label>
-</ComboBox.Item>
+  <ComboBoxLabel>{item.name}</ComboBoxLabel>
+</ComboBoxItem>
 ```
 
 ## Details description
-If you need to provide more information about an option, use the `ComboBox.Description` component to display additional details.
-<How minW72 toUse="pickers/combo-box/combo-box-detail-description-demo" />
+If you need to provide more information about an option, use the `ComboBoxDescription` component to display additional details.
+<How minW60 toUse="pickers/combo-box/combo-box-detail-description-demo" />
 
 ## Validation
 If a user submits the form without selecting an item, an error message will appear.
-<How minW72 toUse="pickers/combo-box/combo-box-validation-demo" />
+<How minW60 toUse="pickers/combo-box/combo-box-validation-demo" />
 
 ## Controlled
 There are two ways to control the combo box: using the `onInputChange` prop or the `onSelectionChange` prop. These methods serve different purposes, as illustrated in the examples below. Both examples follow the same approach, defining `id` and `textValue` for the options.
@@ -85,12 +87,12 @@ When you only need the `textValue` of the selected option, use the `onInputChang
 
 ### Input
 This combo box is controlled by the `onInputChange` prop.
-<How minW72 toUse="pickers/combo-box/combo-box-controlled-demo" />
+<How minW60 toUse="pickers/combo-box/combo-box-controlled-demo" />
 
 ### Selection
 This combo box is controlled by the `onSelectionChange` prop.
-<How minW72 toUse="pickers/combo-box/combo-box-controlled-selection-demo" />
+<How minW60 toUse="pickers/combo-box/combo-box-controlled-selection-demo" />
 
 ## Disabled
 When the combo box is disabled, it becomes non-interactive and cannot be edited.
-<How minW72 toUse="pickers/combo-box/combo-box-disabled-demo" />
+<How minW60 toUse="pickers/combo-box/combo-box-disabled-demo" />

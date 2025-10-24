@@ -21,29 +21,34 @@ npx shadcn@latest add @intentui/input-otp
 
 ## Manual installation
 ```bash
-npm i input-otp @intentui/icons
+npm i input-otp @heroicons/react
 ```
 
 <SourceCode toShow='input-otp'/>
 
 ## Anatomy
 ```
-import { InputOTP } from "@/components/ui/input-otp"
+import { Description } from "@/components/ui/field"
+import {
+  InputOTP,
+  InputOTPControl,
+  InputOTPGroup,
+  InputOTPLabel,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
 ```
 
 ```
 <InputOTP maxLength={6}>
-  <InputOTP.Group>
-    <InputOTP.Slot index={0} />
-    <InputOTP.Slot index={1} />
-    <InputOTP.Slot index={2} />
-  </InputOTP.Group>
-  <InputOTP.Separator />
-  <InputOTP.Group>
-    <InputOTP.Slot index={3} />
-    <InputOTP.Slot index={4} />
-    <InputOTP.Slot index={5} />
-  </InputOTP.Group>
+  <InputOTPLabel>Code</InputOTPLabel>
+  <InputOTPControl>
+    <InputOTPGroup>
+      {[...Array(6)].map((_, index) => (
+        <InputOTPSlot key={index} index={index} />
+      ))}
+    </InputOTPGroup>
+  </InputOTPControl>
+  <Description>Please enter the 6-digit code we sent to your email.</Description>
 </InputOTP>
 ```
 

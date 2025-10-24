@@ -1,22 +1,22 @@
 "use client"
 
 import {
-  IconCreditCard,
-  IconCube,
-  IconGear,
-  IconHome2,
-  IconNotes,
-  IconShield,
-} from "@intentui/icons"
+  Cog6ToothIcon,
+  CreditCardIcon,
+  CubeIcon,
+  DocumentTextIcon,
+  HomeIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/outline"
 import { useState } from "react"
 
 import {
   CommandMenu,
   CommandMenuItem,
-  CommandMenuKeyboard,
   CommandMenuList,
   CommandMenuSearch,
   CommandMenuSection,
+  CommandMenuShortcut,
 } from "@/components/ui/command-menu"
 
 export default function CommandMenuTriggerByKeyboardDemo() {
@@ -27,28 +27,28 @@ export default function CommandMenuTriggerByKeyboardDemo() {
       <CommandMenu shortcut="/" isOpen={isOpen} onOpenChange={setIsOpen}>
         <CommandMenuSearch placeholder="Quick search..." />
         <CommandMenuList>
-          <CommandMenuSection className="mt-2" title="Pages">
+          <CommandMenuSection className="mt-2" label="Pages">
             <CommandMenuItem href="#" textValue="home">
-              <IconHome2 /> Home
+              <HomeIcon /> Home
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="docs">
-              <IconNotes /> Docs
-              <CommandMenuKeyboard keys="⌘k" />
+              <DocumentTextIcon /> Docs
+              <CommandMenuShortcut keys="⌘k" />
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="components">
-              <IconCube /> Components
+              <CubeIcon /> Components
             </CommandMenuItem>
           </CommandMenuSection>
-          <CommandMenuSection title="Dashboard">
+          <CommandMenuSection label="Dashboard">
             <CommandMenuItem href="#" textValue="billing">
-              <IconCreditCard /> Billing
+              <CreditCardIcon /> Billing
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="settings">
-              <IconGear /> Settings
-              <CommandMenuKeyboard keys="⌘s" />
+              <Cog6ToothIcon /> Settings
+              <CommandMenuShortcut keys="⌘s" />
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="security">
-              <IconShield /> Security
+              <ShieldCheckIcon /> Security
             </CommandMenuItem>
           </CommandMenuSection>
         </CommandMenuList>

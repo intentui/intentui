@@ -1,5 +1,6 @@
 "use client"
 
+import { Form } from "react-aria-components"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -9,7 +10,7 @@ import {
   ComboBoxItem,
   ComboBoxLabel,
 } from "@/components/ui/combo-box"
-import { Form } from "@/components/ui/form"
+import { FieldError, Label } from "@/components/ui/field"
 
 const users = [
   {
@@ -22,8 +23,9 @@ const users = [
 export default function ComboBoxValidationDemo() {
   return (
     <Form onSubmit={(e) => e.preventDefault()} className="space-y-2">
-      <ComboBox placeholder="Select a user" label="Users" isRequired>
-        <ComboBoxInput />
+      <ComboBox isRequired>
+        <Label>Users</Label>
+        <ComboBoxInput placeholder="Select a user" />
         <ComboBoxContent items={users}>
           {(item) => (
             <ComboBoxItem key={item.id} id={item.id} textValue={item.name}>
@@ -32,6 +34,7 @@ export default function ComboBoxValidationDemo() {
             </ComboBoxItem>
           )}
         </ComboBoxContent>
+        <FieldError />
       </ComboBox>
       <Button type="submit">Submit</Button>
     </Form>

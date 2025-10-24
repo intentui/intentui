@@ -1,7 +1,6 @@
 "use client"
 
-import { IconChevronsY } from "@intentui/icons"
-import type React from "react"
+import { ChevronUpDownIcon } from "@heroicons/react/20/solid"
 import type {
   ComboBoxProps as ComboboxPrimitiveProps,
   InputProps,
@@ -9,45 +8,25 @@ import type {
   PopoverProps,
 } from "react-aria-components"
 import {
+  Button,
   ComboBoxContext,
   ComboBox as ComboboxPrimitive,
   ListBox,
   useSlottedContext,
 } from "react-aria-components"
+import { fieldStyles } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { cx } from "@/lib/primitive"
-import { Button } from "./button"
 import { DropdownDescription, DropdownItem, DropdownLabel, DropdownSection } from "./dropdown"
-import { Description, FieldError, FieldGroup, type FieldProps, Input, Label } from "./field"
 import { PopoverContent } from "./popover"
 
-interface ComboBoxProps<T extends object>
-  extends Omit<ComboboxPrimitiveProps<T>, "children">,
-    FieldProps {
+interface ComboBoxProps<T extends object> extends Omit<ComboboxPrimitiveProps<T>, "children"> {
   children: React.ReactNode
 }
 
-const ComboBox = <T extends object>({
-  label,
-  description,
-  errorMessage,
-  children,
-  className,
-  ...props
-}: ComboBoxProps<T>) => {
+const ComboBox = <T extends object>({ className, ...props }: ComboBoxProps<T>) => {
   return (
-    <ComboboxPrimitive
-      data-slot="combo-box"
-      {...props}
-      className={cx(
-        "group flex w-full flex-col gap-y-1 *:data-[slot=label]:font-medium",
-        className,
-      )}
-    >
-      {label && <Label>{label}</Label>}
-      {children}
-      {description && <Description>{description}</Description>}
-      <FieldError>{errorMessage}</FieldError>
-    </ComboboxPrimitive>
+    <ComboboxPrimitive data-slot="control" className={cx(fieldStyles(), className)} {...props} />
   )
 }
 
@@ -66,6 +45,7 @@ const ComboBoxContent = <T extends object>({
 }: ComboBoxListProps<T>) => {
   return (
     <PopoverContent
+      placement={popover?.placement ?? "bottom"}
       className={cx(
         "min-w-(--trigger-width) scroll-py-1 overflow-y-auto overscroll-contain",
         popover?.className,
@@ -91,21 +71,17 @@ const ComboBoxContent = <T extends object>({
 const ComboBoxInput = (props: InputProps) => {
   const context = useSlottedContext(ComboBoxContext)!
   return (
-    <FieldGroup>
+    <span
+      data-slot="control"
+      className="relative isolate block has-[[data-slot=icon]:last-child]:[&_input]:pr-10"
+    >
       <Input {...props} placeholder={props?.placeholder} />
-      <Button
-        size="sq-xs"
-        intent="plain"
-        className="rounded pressed:bg-transparent outline-offset-0 hover:bg-transparent active:bg-transparent **:data-[slot=icon]:pressed:text-fg **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:hover:text-fg forced-colors:group-disabled:border-[GrayText] forced-colors:group-disabled:text-[GrayText]"
-      >
+      <Button className="absolute top-0 right-0 grid h-full w-11 cursor-default place-content-center sm:w-9">
         {!context?.inputValue && (
-          <IconChevronsY
-            data-slot="chevron"
-            className="size-4 shrink-0 text-muted-fg group-open:text-fg"
-          />
+          <ChevronUpDownIcon data-slot="chevron" className="-mr-1 size-5 text-muted-fg sm:size-4" />
         )}
       </Button>
-    </FieldGroup>
+    </span>
   )
 }
 
@@ -113,13 +89,6 @@ const ComboBoxSection = DropdownSection
 const ComboBoxItem = DropdownItem
 const ComboBoxLabel = DropdownLabel
 const ComboBoxDescription = DropdownDescription
-
-ComboBox.Input = ComboBoxInput
-ComboBox.Content = ComboBoxContent
-ComboBox.Item = ComboBoxItem
-ComboBox.Label = ComboBoxLabel
-ComboBox.Description = ComboBoxDescription
-ComboBox.Section = ComboBoxSection
 
 export type { ComboBoxProps, ComboBoxListProps }
 export {

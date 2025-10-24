@@ -5,7 +5,7 @@ published: true
 order: 1
 ---
 ## Basic
-Top spots to hit in 2024, no cap!
+Top spots to hit in 2025, no cap!
 <How toUse="surfaces/card/card-demo"/>
 
 ## Installation
@@ -14,6 +14,9 @@ npx shadcn@latest add @intentui/card
 ```
 
 ## Manual installation
+```bash
+npm i tailwind-merge
+```
 <SourceCode toShow='card'/>
 
 ## Anatomy
@@ -43,15 +46,15 @@ import {
 
 ## With form
 Sometimes, you may need a card with a form inside.
-<How isCenter={false} toUse="surfaces/card/card-login-form-demo"/>
+<How toUse="surfaces/card/card-login-form-demo"/>
 
 ## Action
 You can add actions to your card, which will be aligned to the right. This example demonstrates using the menu component, but you can use any component you prefer.
-<How isCenter={false} toUse="surfaces/card/card-action-demo"/>
+<How toUse="surfaces/card/card-action-demo"/>
 
 ## With table
 When you place a table inside a card, The table gutter inherits the padding from its parent card to ensure visual consistency.
-<How isCenter={false} withNoPadding toUse="surfaces/card/card-table-demo"/>
+<How isCenter={false} className="px-6" toUse="surfaces/card/card-table-demo"/>
 
 For table docs, check out the [Table](/docs/components/collections/table) docs.
 
@@ -62,12 +65,4 @@ Sometimes, you may only need a card header without wrapping container itself. Of
   title="List Daemons"
   description="List of daemons to use in your sites."
 />
-```
-
-## Adjust padding
-
-The padding for all sections of the card—header, content, and footer—is controlled by a CSS variable defined on the card’s parent container. To update the padding for the entire card, simply set the variable via a class on the parent like this:
-
-```
-<Card className='[--card-spacing:--spacing(2)'/>
 ```

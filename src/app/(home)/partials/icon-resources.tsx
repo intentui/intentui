@@ -1,67 +1,69 @@
 "use client"
 import {
-  IconArrowRight,
-  IconCheck,
-  IconCircleCheckFill,
-  IconCirclePerson,
-  IconCirclePersonFill,
-  IconClapperboard,
-  IconClapperboardFill,
-  IconCreditCard,
-  IconCreditCardFill,
-  IconCube,
-  IconCubeFill,
-  IconDeviceDesktop2,
-  IconDeviceDesktop2Fill,
-  IconFileText,
-  IconFileTextFill,
-  IconFolderCloud,
-  IconFolderCloudFill,
-  IconGiroCards,
-  IconGiroCardsFill,
-  IconInboxEmpty,
-  IconInboxEmptyFill,
-  IconLayoutAlignLeft,
-  IconLayoutAlignLeftFill,
-  IconLayoutColumnLeftside,
-  IconLayoutColumnLeftsideFill,
-  IconMoon,
-  IconMoonFill,
-  IconNotepad,
-  IconNotepadFill,
-  IconPackage,
-  IconPackageFill,
-  IconPercentBadge,
-  IconPercentBadgeFill,
-  IconPieChart,
-  IconPieChartFill,
-  IconRainy,
-  IconRainyFill,
-  IconRunShortcut,
-  IconRunShortcutFill,
-  IconScreenSharing,
-  IconScreenSharingFill,
-  IconSearch,
-  IconSearchFill,
-  IconSend,
-  IconSendFill,
-  IconService,
-  IconServiceFill,
-  IconShield,
-  IconShieldFill,
-  IconShoppingBag,
-  IconShoppingBagFill,
-  IconStorage,
-  IconStorageFill,
-  IconStore3,
-  IconStore3Fill,
-  IconTicket,
-  IconTicketFill,
-  IconTrash,
-  IconTrashFill,
-  IconTriangleExclamation,
-  IconTriangleExclamationFill,
-} from "@intentui/icons"
+  AdjustmentsHorizontalIcon,
+  ArchiveBoxIcon,
+  ArrowRightIcon,
+  BanknotesIcon,
+  BoltIcon,
+  BuildingStorefrontIcon,
+  ChartPieIcon,
+  CheckIcon,
+  ClipboardDocumentListIcon,
+  CloudIcon,
+  ComputerDesktopIcon,
+  CreditCardIcon,
+  CubeIcon,
+  DocumentTextIcon,
+  ExclamationTriangleIcon,
+  FilmIcon,
+  FolderIcon,
+  InboxIcon,
+  MagnifyingGlassIcon,
+  MoonIcon,
+  PaperAirplaneIcon,
+  PercentBadgeIcon,
+  PresentationChartBarIcon,
+  ServerStackIcon,
+  ShieldCheckIcon,
+  ShoppingBagIcon,
+  TicketIcon,
+  TrashIcon,
+  UserCircleIcon,
+  ViewColumnsIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline"
+import {
+  AdjustmentsHorizontalIcon as AdjustmentsHorizontalIconSolid,
+  ArchiveBoxIcon as ArchiveBoxIconSolid,
+  BanknotesIcon as BanknotesIconSolid,
+  BoltIcon as BoltIconSolid,
+  BuildingStorefrontIcon as BuildingStorefrontIconSolid,
+  ChartPieIcon as ChartPieIconSolid,
+  CheckCircleIcon,
+  ClipboardDocumentListIcon as ClipboardDocumentListIconSolid,
+  CloudIcon as CloudIconSolid,
+  ComputerDesktopIcon as ComputerDesktopIconSolid,
+  CreditCardIcon as CreditCardIconSolid,
+  CubeIcon as CubeIconSolid,
+  DocumentTextIcon as DocumentTextIconSolid,
+  ExclamationTriangleIcon as ExclamationTriangleIconSolid,
+  FilmIcon as FilmIconSolid,
+  FolderIcon as FolderIconSolid,
+  InboxIcon as InboxIconSolid,
+  MagnifyingGlassIcon as MagnifyingGlassIconSolid,
+  MoonIcon as MoonIconSolid,
+  PaperAirplaneIcon as PaperAirplaneIconSolid,
+  PercentBadgeIcon as PercentBadgeIconSolid,
+  PresentationChartBarIcon as PresentationChartBarIconSolid,
+  ServerStackIcon as ServerStackIconSolid,
+  ShieldCheckIcon as ShieldCheckIconSolid,
+  ShoppingBagIcon as ShoppingBagIconSolid,
+  TicketIcon as TicketIconSolid,
+  TrashIcon as TrashIconSolid,
+  UserCircleIcon as UserCircleIconSolid,
+  ViewColumnsIcon as ViewColumnsIconSolid,
+  WrenchScrewdriverIcon as WrenchScrewdriverIconSolid,
+} from "@heroicons/react/24/solid"
 import { useEffect, useState } from "react"
 import { InstallIcon } from "@/app/(app)/icons/partials/controller/install-icon"
 import { PageContainer } from "@/components/page-container"
@@ -96,75 +98,75 @@ export function IconResources() {
             </div>
             <div className="mt-4">
               <Link className={buttonStyles({ intent: "secondary" })} href="/icons">
-                View all icons <IconArrowRight />
+                View all icons <ArrowRightIcon />
               </Link>
             </div>
           </div>
           <div>
             <div className="grid flex-1 items-start gap-2 **:data-[slot=icon]:size-5 **:data-[slot=icon]:text-muted-fg **:data-[slot=icon]:hover:text-fg sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
               <div className="flex flex-wrap gap-6 rounded-lg border p-6">
-                <IconCheck />
-                <IconShoppingBag />
-                <IconTriangleExclamation />
-                <IconCirclePerson />
-                <IconCube />
-                <IconClapperboard />
-                <IconPieChart />
-                <IconFileText />
-                <IconFolderCloud />
-                <IconInboxEmpty />
-                <IconCreditCard />
-                <IconDeviceDesktop2 />
-                <IconGiroCards />
-                <IconMoon />
-                <IconShield />
-                <IconStore3 />
-                <IconPackage />
-                <IconTicket />
-                <IconService />
-                <IconLayoutAlignLeft />
-                <IconLayoutColumnLeftside />
-                <IconNotepad />
-                <IconPercentBadge />
-                <IconSearch />
-                <IconStorage />
-                <IconRainy />
-                <IconTrash />
-                <IconSend />
-                <IconRunShortcut />
-                <IconScreenSharing />
+                <CheckIcon />
+                <ShoppingBagIcon />
+                <ExclamationTriangleIcon />
+                <UserCircleIcon />
+                <CubeIcon />
+                <FilmIcon />
+                <ChartPieIcon />
+                <DocumentTextIcon />
+                <FolderIcon />
+                <InboxIcon />
+                <CreditCardIcon />
+                <ComputerDesktopIcon />
+                <BanknotesIcon />
+                <MoonIcon />
+                <ShieldCheckIcon />
+                <BuildingStorefrontIcon />
+                <ArchiveBoxIcon />
+                <TicketIcon />
+                <WrenchScrewdriverIcon />
+                <AdjustmentsHorizontalIcon />
+                <ViewColumnsIcon />
+                <ClipboardDocumentListIcon />
+                <PercentBadgeIcon />
+                <MagnifyingGlassIcon />
+                <ServerStackIcon />
+                <CloudIcon />
+                <TrashIcon />
+                <PaperAirplaneIcon />
+                <BoltIcon />
+                <PresentationChartBarIcon />
               </div>
               <div className="flex flex-wrap gap-6 rounded-lg border p-6">
-                <IconCircleCheckFill />
-                <IconShoppingBagFill />
-                <IconTriangleExclamationFill />
-                <IconCirclePersonFill />
-                <IconCubeFill />
-                <IconClapperboardFill />
-                <IconPieChartFill />
-                <IconFileTextFill />
-                <IconFolderCloudFill />
-                <IconInboxEmptyFill />
-                <IconCreditCardFill />
-                <IconDeviceDesktop2Fill />
-                <IconGiroCardsFill />
-                <IconMoonFill />
-                <IconShieldFill />
-                <IconStore3Fill />
-                <IconPackageFill />
-                <IconTicketFill />
-                <IconServiceFill />
-                <IconLayoutAlignLeftFill />
-                <IconLayoutColumnLeftsideFill />
-                <IconNotepadFill />
-                <IconPercentBadgeFill />
-                <IconSearchFill />
-                <IconStorageFill />
-                <IconRainyFill />
-                <IconTrashFill />
-                <IconSendFill />
-                <IconRunShortcutFill />
-                <IconScreenSharingFill />
+                <CheckCircleIcon />
+                <ShoppingBagIconSolid />
+                <ExclamationTriangleIconSolid />
+                <UserCircleIconSolid />
+                <CubeIconSolid />
+                <FilmIconSolid />
+                <ChartPieIconSolid />
+                <DocumentTextIconSolid />
+                <FolderIconSolid />
+                <InboxIconSolid />
+                <CreditCardIconSolid />
+                <ComputerDesktopIconSolid />
+                <BanknotesIconSolid />
+                <MoonIconSolid />
+                <ShieldCheckIconSolid />
+                <BuildingStorefrontIconSolid />
+                <ArchiveBoxIconSolid />
+                <TicketIconSolid />
+                <WrenchScrewdriverIconSolid />
+                <AdjustmentsHorizontalIconSolid />
+                <ViewColumnsIconSolid />
+                <ClipboardDocumentListIconSolid />
+                <PercentBadgeIconSolid />
+                <MagnifyingGlassIconSolid />
+                <ServerStackIconSolid />
+                <CloudIconSolid />
+                <TrashIconSolid />
+                <PaperAirplaneIconSolid />
+                <BoltIconSolid />
+                <PresentationChartBarIconSolid />
               </div>
             </div>
           </div>

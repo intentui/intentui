@@ -1,7 +1,5 @@
 "use client"
 
-import { IconClipboard, IconDuplicate, IconHighlight } from "@intentui/icons"
-
 import {
   ContextMenu,
   ContextMenuContent,
@@ -19,17 +17,17 @@ export default function ContextMenuDisabledDemo() {
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuItem>
-          <IconDuplicate /> <ContextMenuLabel>Copy</ContextMenuLabel>
+          <ContextMenuLabel>Copy</ContextMenuLabel>
         </ContextMenuItem>
         <ContextMenuItem isDisabled>
-          <IconClipboard /> <ContextMenuLabel>Paste</ContextMenuLabel>
+          <ContextMenuLabel>Paste</ContextMenuLabel>
         </ContextMenuItem>
         <ContextMenuItem>
           <ContextMenuLabel>Convert</ContextMenuLabel>
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem isDisabled>
-          <IconHighlight /> <ContextMenuLabel>Rename</ContextMenuLabel>
+          <ContextMenuLabel>Rename</ContextMenuLabel>
         </ContextMenuItem>
         <ContextMenuItem>
           <ContextMenuLabel>Refactor</ContextMenuLabel>

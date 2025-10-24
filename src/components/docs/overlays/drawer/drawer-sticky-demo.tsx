@@ -1,15 +1,23 @@
 "use client"
 
 import { buttonStyles } from "@/components/ui/button"
-import { Drawer } from "@/components/ui/drawer"
+import {
+  Drawer,
+  DrawerBody,
+  DrawerClose,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
 
 export default function DrawerStickyDemo() {
   return (
     <Drawer>
-      <Drawer.Trigger className={buttonStyles({ intent: "outline" })}>Open</Drawer.Trigger>
-      <Drawer.Content>
-        <Drawer.Header>The Beatles</Drawer.Header>
-        <Drawer.Body>
+      <DrawerTrigger className={buttonStyles({ intent: "outline" })}>Open</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>The Beatles</DrawerHeader>
+        <DrawerBody>
           <div className="prose prose-zinc dark:prose-invert">
             <p>
               Welcome to our Terms of Use. By accessing or using our services, you agree to be bound
@@ -101,11 +109,11 @@ export default function DrawerStickyDemo() {
             <h3> Contact Information</h3>
             If you have any questions about these terms, please contact us at xxx@example.com.
           </div>
-        </Drawer.Body>
-        <Drawer.Footer>
-          <Drawer.Close isCircle>Close</Drawer.Close>
-        </Drawer.Footer>
-      </Drawer.Content>
+        </DrawerBody>
+        <DrawerFooter>
+          <DrawerClose isCircle>Close</DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
     </Drawer>
   )
 }

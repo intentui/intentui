@@ -1,6 +1,6 @@
 'use client'
 
-import { IconMoon, IconSun } from '@intentui/icons'
+import { MoonIcon, SunIcon } from '@intentui/icons'
 import { useEffect, useState } from 'react'
 import { Button } from '@/components/button/ui'
 import { twMerge } from 'tailwind-merge';
@@ -39,13 +39,13 @@ return (
     aria-label='Switch theme'
     onPress={handleSwitchTheme}
   >
-    <IconSun
+    <SunIcon
       className={twMerge(
         'h-[1.2rem] w-[1.2rem] transition-all',
         theme === 'dark' ? 'opacity-0 scale-0 -rotate-90' : 'opacity-100 scale-100 rotate-0'
       )}
     />
-    <IconMoon
+    <MoonIcon
       className={twMerge(
         'absolute h-[1.2rem] w-[1.2rem] transition-all',
         theme === 'dark' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-0 rotate-90'

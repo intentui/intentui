@@ -1,48 +1,49 @@
 "use client"
 
+import { ChevronRightIcon } from "@heroicons/react/20/solid"
 import {
-  IconArchive,
-  IconChartTrending,
-  IconCheck,
-  IconChevronRight,
-  IconCircleCheck,
-  IconGiroCard,
-  IconHighlight,
-  IconMacbookAir,
-  IconPencilBox,
-  IconRobot,
-  IconService,
-  IconShieldCheck,
-  IconWhiteboard,
-} from "@intentui/icons"
+  ArchiveBoxIcon,
+  ArrowTrendingUpIcon,
+  CheckCircleIcon,
+  CheckIcon,
+  ComputerDesktopIcon,
+  CpuChipIcon,
+  CreditCardIcon,
+  PencilSquareIcon,
+  PresentationChartBarIcon,
+  ShieldCheckIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline"
 import {
   Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,
-} from "@/components/ui/disclosure"
+} from "@/components/ui/disclosure-group"
 
 export default function DisclosureGroupWithIconDemo() {
   return (
-    <DisclosureGroup
-      className="rounded-xl border **:data-[slot=disclosure]:last:border-b-0"
-      defaultExpandedKeys={[1]}
-    >
+    <DisclosureGroup defaultExpandedKeys={[1]}>
       {items.map((item, index) => (
         <Disclosure key={index} id={index}>
-          <DisclosureTrigger className="px-4">
-            <item.icon /> {item.title}
+          <DisclosureTrigger>
+            <span className="flex items-center gap-x-2">
+              <item.icon /> {item.title}
+            </span>
           </DisclosureTrigger>
-          <DisclosurePanel className="bg-muted">
-            <DisclosureGroup allowsMultipleExpanded>
+          <DisclosurePanel>
+            <DisclosureGroup
+              className="**:data-[slot=disclosure-indicator]:hidden"
+              allowsMultipleExpanded
+            >
               {item.children.map((child, childIndex) => (
                 <Disclosure key={childIndex} id={childIndex}>
-                  <DisclosureTrigger className="group">
-                    <span>
-                      <IconChevronRight className="size-5 duration-300 group-aria-expanded:rotate-90" />
+                  <DisclosureTrigger className="group justify-start">
+                    <span className="mr-2 flex items-center gap-x-2">
+                      <ChevronRightIcon className="size-4 duration-300 group-aria-expanded:rotate-90" />
                       <child.icon />
-                      {child.title}
                     </span>
+                    {child.title}
                   </DisclosureTrigger>
                   <DisclosurePanel>{child.description}</DisclosurePanel>
                 </Disclosure>
@@ -58,25 +59,25 @@ export default function DisclosureGroupWithIconDemo() {
 const items = [
   {
     id: 1,
-    icon: IconMacbookAir,
+    icon: ComputerDesktopIcon,
     title: "Computer Science Department",
     description: "Explore our cutting-edge programs in computer science and technology.",
     children: [
       {
         id: 101,
-        icon: IconRobot,
+        icon: CpuChipIcon,
         title: "Artificial Intelligence",
         description: "Courses on machine learning, neural networks, and deep learning.",
       },
       {
         id: 102,
-        icon: IconShieldCheck,
+        icon: ShieldCheckIcon,
         title: "Cybersecurity",
         description: "Programs focused on protecting information and systems.",
       },
       {
         id: 103,
-        icon: IconService,
+        icon: WrenchScrewdriverIcon,
         title: "Software Engineering",
         description: "Learn best practices for designing and building software.",
       },
@@ -84,25 +85,25 @@ const items = [
   },
   {
     id: 2,
-    icon: IconGiroCard,
-    title: "Business Administration Department",
+    icon: CreditCardIcon,
+    title: "Business administration",
     description: "Develop skills in management, finance, and entrepreneurship.",
     children: [
       {
         id: 201,
-        icon: IconWhiteboard,
+        icon: PresentationChartBarIcon,
         title: "Marketing Strategies",
         description: "Courses on digital marketing and customer engagement.",
       },
       {
         id: 202,
-        icon: IconChartTrending,
+        icon: ArrowTrendingUpIcon,
         title: "Financial Analysis",
         description: "Learn techniques for financial decision-making and planning.",
       },
       {
         id: 203,
-        icon: IconCircleCheck,
+        icon: CheckCircleIcon,
         title: "Entrepreneurship",
         description: "Develop your business ideas and startup skills.",
       },
@@ -110,25 +111,25 @@ const items = [
   },
   {
     id: 3,
-    icon: IconPencilBox,
+    icon: PencilSquareIcon,
     title: "Arts & Humanities Department",
     description: "Dive into creativity and the study of human culture.",
     children: [
       {
         id: 301,
-        icon: IconHighlight,
+        icon: PencilSquareIcon,
         title: "Creative Writing",
         description: "Programs for aspiring authors and poets.",
       },
       {
         id: 302,
-        icon: IconCheck,
+        icon: CheckIcon,
         title: "Philosophy",
         description: "Explore key questions about life, existence, and ethics.",
       },
       {
         id: 303,
-        icon: IconArchive,
+        icon: ArchiveBoxIcon,
         title: "Art History",
         description: "Study the evolution and impact of art across cultures.",
       },

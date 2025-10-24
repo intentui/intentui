@@ -1,21 +1,23 @@
 "use client"
 
 import {
-  IconBook,
-  IconBrandCopilot,
-  IconBrandGithub,
-  IconGear,
-  IconHeart,
-  IconLogout,
-  IconMessageDots,
-  IconPerson,
-  IconStar,
-} from "@intentui/icons"
+  ArrowLeftStartOnRectangleIcon,
+  BookOpenIcon,
+  ChatBubbleLeftRightIcon,
+  Cog6ToothIcon,
+  HeartIcon,
+  PencilSquareIcon,
+  SparklesIcon,
+  StarIcon,
+  UserIcon,
+} from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { Menu as MenuPrimitive } from "react-aria-components"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
+import { Description, Label } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { MenuItem, MenuLabel, MenuSection } from "@/components/ui/menu"
 import {
   ModalBody,
@@ -49,12 +51,15 @@ export default function SheetMenuDemo() {
         </ModalHeader>
         <ModalBody>
           <div className="space-y-4">
-            <TextField
-              prefix={<IconBrandGithub />}
-              label="Status"
-              placeholder="What's your status?"
-            />
-            <Select label="Clear Status">
+            <div className="flex items-center gap-2">
+              <PencilSquareIcon className="size-5" />
+              <TextField>
+                <Label>Status</Label>
+                <Input placeholder="What's your status?" />
+              </TextField>
+            </div>
+            <Select>
+              <Label>Clear Status</Label>
               <SelectTrigger />
               <SelectContent>
                 <SelectItem>Never</SelectItem>
@@ -66,7 +71,8 @@ export default function SheetMenuDemo() {
                 <SelectItem>after a Month</SelectItem>
               </SelectContent>
             </Select>
-            <Select label="Visible to">
+            <Select>
+              <Label>Visible to</Label>
               <SelectTrigger />
               <SelectContent>
                 <SelectItem>Everyone</SelectItem>
@@ -74,10 +80,13 @@ export default function SheetMenuDemo() {
                 <SelectItem>Public</SelectItem>
               </SelectContent>
             </Select>
-            <Checkbox
-              label="Busy"
-              description="When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability."
-            />
+            <Checkbox>
+              <CheckboxLabel>Busy</CheckboxLabel>
+              <Description>
+                When others mention you, assign you, or request your review, GitHub will let them
+                know that you have limited availability.
+              </Description>
+            </Checkbox>
           </div>
         </ModalBody>
         <ModalFooter>
@@ -101,20 +110,23 @@ export default function SheetMenuDemo() {
             <MenuPrimitive className="divide-y *:[[role=group]]:p-2">
               <MenuSection>
                 <MenuItem>
-                  <IconPerson />
+                  <UserIcon className="size-5" />
                   <MenuLabel>Your profile</MenuLabel>
                 </MenuItem>
                 <MenuItem>
-                  <IconBook /> <MenuLabel>Your repositories</MenuLabel>
+                  <BookOpenIcon className="size-5" />
+                  <MenuLabel>Your repositories</MenuLabel>
                 </MenuItem>
                 <MenuItem>
-                  <IconBrandCopilot /> <MenuLabel>Copilot</MenuLabel>
+                  <SparklesIcon className="size-5" />
+                  <MenuLabel>Copilot</MenuLabel>
                 </MenuItem>
                 <MenuItem>
                   <MenuLabel>Your projects</MenuLabel>
                 </MenuItem>
                 <MenuItem>
-                  <IconStar /> <MenuLabel>Your stars</MenuLabel>
+                  <StarIcon className="size-5" />
+                  <MenuLabel>Your stars</MenuLabel>
                 </MenuItem>
                 <MenuItem>
                   <MenuLabel>Your gists</MenuLabel>
@@ -126,7 +138,7 @@ export default function SheetMenuDemo() {
                   <MenuLabel>Your enterprises</MenuLabel>
                 </MenuItem>
                 <MenuItem>
-                  <IconHeart />
+                  <HeartIcon className="size-5" />
                   <MenuLabel>Your sponsors</MenuLabel>
                 </MenuItem>
               </MenuSection>
@@ -135,7 +147,7 @@ export default function SheetMenuDemo() {
                   <MenuLabel>Feature preview</MenuLabel>
                 </MenuItem>
                 <MenuItem>
-                  <IconGear />
+                  <Cog6ToothIcon className="size-5" />
                   <MenuLabel>Settings</MenuLabel>
                 </MenuItem>
               </MenuSection>
@@ -147,7 +159,8 @@ export default function SheetMenuDemo() {
                   <MenuLabel>GitHub Support</MenuLabel>
                 </MenuItem>
                 <MenuItem>
-                  <IconMessageDots /> <MenuLabel>GitHub Community</MenuLabel>
+                  <ChatBubbleLeftRightIcon className="size-5" />
+                  <MenuLabel>GitHub Community</MenuLabel>
                 </MenuItem>
               </MenuSection>
             </MenuPrimitive>
@@ -155,7 +168,7 @@ export default function SheetMenuDemo() {
           <SheetFooter className="border-t bg-muted/20 sm:p-4">
             <Button size="sm" className="w-full justify-between bg-bg" intent="outline">
               <span>Sign out</span>
-              <IconLogout />
+              <ArrowLeftStartOnRectangleIcon className="size-5" />
             </Button>
           </SheetFooter>
         </SheetContent>

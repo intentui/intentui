@@ -2,7 +2,7 @@
 
 import { useMemo } from "react"
 import { AreaChart } from "@/components/ui/area-chart"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function AreaChartMonotoneDemo() {
   const data = useMemo(
@@ -17,11 +17,11 @@ export default function AreaChartMonotoneDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Traffic last 14d</Card.Title>
-        <Card.Description>Daily visits versus sign-ups trend.</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader>
+        <CardTitle>Traffic last 14d</CardTitle>
+        <CardDescription>Daily visits versus sign-ups trend.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <AreaChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
@@ -36,7 +36,7 @@ export default function AreaChartMonotoneDemo() {
             signups: { label: "Sign-ups" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

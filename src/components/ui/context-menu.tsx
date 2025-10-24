@@ -2,17 +2,23 @@
 
 import { createContext, use, useRef, useState } from "react"
 import { twMerge } from "tailwind-merge"
-import type { MenuContentProps } from "./menu"
-import { Menu } from "./menu"
+import {
+  MenuContent,
+  type MenuContentProps,
+  MenuDescription,
+  MenuHeader,
+  MenuItem,
+  MenuLabel,
+  MenuSection,
+  MenuSeparator,
+  MenuShortcut,
+} from "./menu"
 
 interface ContextMenuTriggerContextType {
   buttonRef: React.RefObject<HTMLButtonElement | null>
   contextMenuOffset: { offset: number; crossOffset: number } | null
   setContextMenuOffset: React.Dispatch<
-    React.SetStateAction<{
-      offset: number
-      crossOffset: number
-    } | null>
+    React.SetStateAction<{ offset: number; crossOffset: number } | null>
   >
 }
 
@@ -76,13 +82,13 @@ const ContextMenuTrigger = ({ className, ...props }: ContextMenuTriggerProps) =>
 
 type ContextMenuContentProps<T> = Omit<
   MenuContentProps<T>,
-  "showArrow" | "isOpen" | "onOpenChange" | "triggerRef" | "placement" | "shouldFlip"
+  "arrow" | "isOpen" | "onOpenChange" | "triggerRef" | "placement" | "shouldFlip"
 >
 
 const ContextMenuContent = <T extends object>(props: ContextMenuContentProps<T>) => {
   const { contextMenuOffset, setContextMenuOffset, buttonRef } = useContextMenuTrigger()
   return contextMenuOffset ? (
-    <Menu.Content
+    <MenuContent
       popover={{
         isOpen: !!contextMenuOffset,
         shouldFlip: false,
@@ -98,23 +104,13 @@ const ContextMenuContent = <T extends object>(props: ContextMenuContentProps<T>)
   ) : null
 }
 
-const ContextMenuItem = Menu.Item
-const ContextMenuSeparator = Menu.Separator
-const ContextMenuDescription = Menu.Description
-const ContextMenuSection = Menu.Section
-const ContextMenuHeader = Menu.Header
-const ContextMenuKeyboard = Menu.Keyboard
-const ContextMenuLabel = Menu.Label
-
-ContextMenu.Trigger = ContextMenuTrigger
-ContextMenu.Content = ContextMenuContent
-ContextMenu.Item = ContextMenuItem
-ContextMenu.Label = ContextMenuLabel
-ContextMenu.Separator = ContextMenuSeparator
-ContextMenu.Description = ContextMenuDescription
-ContextMenu.Section = ContextMenuSection
-ContextMenu.Header = ContextMenuHeader
-ContextMenu.Keyboard = ContextMenuKeyboard
+const ContextMenuItem = MenuItem
+const ContextMenuSeparator = MenuSeparator
+const ContextMenuDescription = MenuDescription
+const ContextMenuSection = MenuSection
+const ContextMenuHeader = MenuHeader
+const ContextMenuShortcut = MenuShortcut
+const ContextMenuLabel = MenuLabel
 
 export type { ContextMenuProps }
 export {
@@ -127,5 +123,5 @@ export {
   ContextMenuDescription,
   ContextMenuSection,
   ContextMenuHeader,
-  ContextMenuKeyboard,
+  ContextMenuShortcut,
 }

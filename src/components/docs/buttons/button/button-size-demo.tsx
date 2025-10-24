@@ -1,6 +1,6 @@
 "use client"
 
-import { IconBrandTwitter } from "@intentui/icons"
+import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
@@ -16,16 +16,16 @@ export default function ButtonSizeDemo() {
       <Separator />
       <div className="flex flex-wrap items-end gap-2">
         <Button size="sq-xs">
-          <IconBrandTwitter />
+          <BrandXIcon />
         </Button>
         <Button size="sq-sm">
-          <IconBrandTwitter />
+          <BrandXIcon />
         </Button>
         <Button size="sq-md">
-          <IconBrandTwitter />
+          <BrandXIcon />
         </Button>
         <Button size="sq-lg">
-          <IconBrandTwitter />
+          <BrandXIcon />
         </Button>
       </div>
     </div>

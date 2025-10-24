@@ -2,55 +2,62 @@
 
 import { Avatar } from "@/components/ui/avatar"
 import { Heading } from "@/components/ui/heading"
-import { Table } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 export default function Page() {
   return (
     <>
       <Heading>Users</Heading>
       <Table aria-label="Users" bleed className="[--gutter:var(--layout-padding)]">
-        <Table.Header>
-          <Table.Column>ID</Table.Column>
-          <Table.Column isRowHeader>Name</Table.Column>
-          <Table.Column>Email</Table.Column>
-          <Table.Column>Username</Table.Column>
-          <Table.Column>Phone</Table.Column>
-          <Table.Column>Address</Table.Column>
-          <Table.Column>City</Table.Column>
-          <Table.Column>State</Table.Column>
-          <Table.Column>Country</Table.Column>
-          <Table.Column>Postal Code</Table.Column>
-          <Table.Column>Avatar</Table.Column>
-          <Table.Column>Status</Table.Column>
-          <Table.Column>Role</Table.Column>
-          <Table.Column>Last Login</Table.Column>
-          <Table.Column>Created At</Table.Column>
-          <Table.Column>Updated At</Table.Column>
-        </Table.Header>
-        <Table.Body items={users}>
+        <TableHeader>
+          <TableColumn>ID</TableColumn>
+          <TableColumn isRowHeader>Name</TableColumn>
+          <TableColumn>Email</TableColumn>
+          <TableColumn>Username</TableColumn>
+          <TableColumn>Phone</TableColumn>
+          <TableColumn>Address</TableColumn>
+          <TableColumn>City</TableColumn>
+          <TableColumn>State</TableColumn>
+          <TableColumn>Country</TableColumn>
+          <TableColumn>Postal Code</TableColumn>
+          <TableColumn>Avatar</TableColumn>
+          <TableColumn>Status</TableColumn>
+          <TableColumn>Role</TableColumn>
+          <TableColumn>Last Login</TableColumn>
+          <TableColumn>Created At</TableColumn>
+          <TableColumn>Updated At</TableColumn>
+        </TableHeader>
+        <TableBody items={users}>
           {(item) => (
-            <Table.Row id={item.id}>
-              <Table.Cell>{item.id}</Table.Cell>
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell>{item.email}</Table.Cell>
-              <Table.Cell>{item.username}</Table.Cell>
-              <Table.Cell>{item.phone}</Table.Cell>
-              <Table.Cell>{item.address}</Table.Cell>
-              <Table.Cell>{item.city}</Table.Cell>
-              <Table.Cell>{item.state}</Table.Cell>
-              <Table.Cell>{item.country}</Table.Cell>
-              <Table.Cell>{item.postalCode}</Table.Cell>
-              <Table.Cell>
+            <TableRow id={item.id}>
+              <TableCell>{item.id}</TableCell>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.email}</TableCell>
+              <TableCell>{item.username}</TableCell>
+              <TableCell>{item.phone}</TableCell>
+              <TableCell>{item.address}</TableCell>
+              <TableCell>{item.city}</TableCell>
+              <TableCell>{item.state}</TableCell>
+              <TableCell>{item.country}</TableCell>
+              <TableCell>{item.postalCode}</TableCell>
+              <TableCell>
                 <Avatar size="xs" src={item.avatar} alt="Avatar" />
-              </Table.Cell>
-              <Table.Cell>{item.status}</Table.Cell>
-              <Table.Cell>{item.role}</Table.Cell>
-              <Table.Cell>{new Date(item.lastLogin).toLocaleString()}</Table.Cell>
-              <Table.Cell>{new Date(item.createdAt).toLocaleString()}</Table.Cell>
-              <Table.Cell>{new Date(item.updatedAt).toLocaleString()}</Table.Cell>
-            </Table.Row>
+              </TableCell>
+              <TableCell>{item.status}</TableCell>
+              <TableCell>{item.role}</TableCell>
+              <TableCell>{new Date(item.lastLogin).toLocaleString()}</TableCell>
+              <TableCell>{new Date(item.createdAt).toLocaleString()}</TableCell>
+              <TableCell>{new Date(item.updatedAt).toLocaleString()}</TableCell>
+            </TableRow>
           )}
-        </Table.Body>
+        </TableBody>
       </Table>
     </>
   )

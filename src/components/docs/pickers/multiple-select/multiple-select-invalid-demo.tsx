@@ -1,9 +1,14 @@
 "use client"
 
 import type { FormEvent } from "react"
+import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Form } from "@/components/ui/form"
-import { MultipleSelect, MultipleSelectItem } from "@/components/ui/multiple-select"
+import { FieldError, Label } from "@/components/ui/field"
+import {
+  MultipleSelect,
+  MultipleSelectContent,
+  MultipleSelectItem,
+} from "@/components/ui/multiple-select"
 
 export default function MultipleSelectInvalidDemo() {
   function submit(e: FormEvent<HTMLFormElement>) {
@@ -12,10 +17,18 @@ export default function MultipleSelectInvalidDemo() {
 
   return (
     <Form className="space-y-2" onSubmit={submit}>
-      <MultipleSelect className="min-w-2xs max-w-min" isRequired label="Fruits" items={fruits}>
-        {(item) => {
-          return <MultipleSelectItem textValue={item.name}>{item.name}</MultipleSelectItem>
-        }}
+      <MultipleSelect className="mx-auto max-w-2xs" isRequired>
+        <Label>Select fruits</Label>
+        <MultipleSelectContent items={fruits}>
+          {(item) => {
+            return (
+              <MultipleSelectItem id={item.id} textValue={item.name}>
+                {item.name}
+              </MultipleSelectItem>
+            )
+          }}
+        </MultipleSelectContent>
+        <FieldError />
       </MultipleSelect>
       <Button type="submit">Submit</Button>
     </Form>

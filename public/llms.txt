@@ -20,6 +20,7 @@
 
 ### Buttons
 - [File Trigger](https://intentui.com/docs/components/buttons/file-trigger.md)
+- [Button Group](https://intentui.com/docs/components/buttons/button-group.md)
 - [Button](https://intentui.com/docs/components/buttons/button.md)
 - [Toggle](https://intentui.com/docs/components/buttons/toggle.md)
 - [Toggle Group](https://intentui.com/docs/components/buttons/toggle-group.md)
@@ -69,9 +70,9 @@
 - [Input Otp](https://intentui.com/docs/components/forms/input-otp.md)
 - [Text Field](https://intentui.com/docs/components/forms/text-field.md)
 - [Number Field](https://intentui.com/docs/components/forms/number-field.md)
-- [Form](https://intentui.com/docs/components/forms/form.md)
 - [Checkbox](https://intentui.com/docs/components/forms/checkbox.md)
 - [Textarea](https://intentui.com/docs/components/forms/textarea.md)
+- [Input](https://intentui.com/docs/components/forms/input.md)
 - [Radio Group](https://intentui.com/docs/components/forms/radio-group.md)
 - [Search Field](https://intentui.com/docs/components/forms/search-field.md)
 - [Checkbox Group](https://intentui.com/docs/components/forms/checkbox-group.md)
@@ -120,11 +121,9 @@
 - [Heading](https://intentui.com/docs/components/surfaces/heading.md)
 - [Show More](https://intentui.com/docs/components/surfaces/show-more.md)
 - [Card](https://intentui.com/docs/components/surfaces/card.md)
+- [Text](https://intentui.com/docs/components/surfaces/text.md)
 - [Separator](https://intentui.com/docs/components/surfaces/separator.md)
 - [Description List](https://intentui.com/docs/components/surfaces/description-list.md)
-
-### Utilities
-- [Visually Hidden](https://intentui.com/docs/components/utilities/visually-hidden.md)
 
 ### Visualizations
 - [Chart](https://intentui.com/docs/components/visualizations/chart.md)

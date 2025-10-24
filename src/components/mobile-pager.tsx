@@ -1,5 +1,5 @@
 "use client"
-import { IconChevronLgLeft, IconChevronLgRight } from "@intentui/icons"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
 import { findNeighbour, type PageTree } from "fumadocs-core/server"
 import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
@@ -27,7 +27,7 @@ export const MobilePager = ({
           href={neighbours.previous.url}
         >
           <span className="sr-only">{neighbours.previous.name}</span>
-          <IconChevronLgLeft />
+          <ChevronLeftIcon />
         </Link>
       )}
 
@@ -40,7 +40,7 @@ export const MobilePager = ({
           href={neighbours.next.url}
         >
           <span className="sr-only">{neighbours.next.name}</span>
-          <IconChevronLgRight />
+          <ChevronRightIcon />
         </Link>
       )}
     </div>

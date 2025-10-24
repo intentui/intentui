@@ -1,31 +1,29 @@
 "use client"
 
-import { IconChevronRight } from "@intentui/icons"
+import { ChevronRightIcon } from "@heroicons/react/20/solid"
 import {
   Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,
-} from "@/components/ui/disclosure"
+} from "@/components/ui/disclosure-group"
 
 export default function DisclosureGroupNestedDemo() {
   return (
-    <DisclosureGroup
-      className="rounded-xl border **:data-[slot=disclosure]:last:border-b-0"
-      defaultExpandedKeys={[1]}
-    >
+    <DisclosureGroup defaultExpandedKeys={[1]}>
       {items.map((item, index) => (
         <Disclosure key={index} id={index}>
           <DisclosureTrigger className="px-4">{item.title}</DisclosureTrigger>
-          <DisclosurePanel className="bg-muted">
-            <DisclosureGroup allowsMultipleExpanded>
+          <DisclosurePanel>
+            <DisclosureGroup
+              allowsMultipleExpanded
+              className="**:data-[slot=disclosure-indicator]:hidden"
+            >
               {item.children.map((child, childIndex) => (
                 <Disclosure key={childIndex} id={childIndex}>
-                  <DisclosureTrigger className="group">
-                    <span>
-                      <IconChevronRight className="size-5 duration-300 group-aria-expanded:rotate-90" />
-                      {child.title}
-                    </span>
+                  <DisclosureTrigger className="group flex items-center justify-start gap-x-2">
+                    <ChevronRightIcon className="size-4 duration-300 group-aria-expanded:rotate-90" />
+                    {child.title}
                   </DisclosureTrigger>
                   <DisclosurePanel>{child.description}</DisclosurePanel>
                 </Disclosure>

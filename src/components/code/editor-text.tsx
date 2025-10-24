@@ -1,18 +1,15 @@
 "use client"
 
-import {
-  IconBrackets2,
-  IconBrandCss,
-  IconBrandReactjs,
-  IconBrandTypescript,
-  IconFile,
-} from "@intentui/icons"
+import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
 import React, { useState } from "react"
 import { Tab } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
+import { BrandCssIcon } from "@/components/icons/brand-css-icon"
+import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
+import { BrandTypescriptIcon } from "@/components/icons/brand-typescript-icon"
 import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 import { copyToClipboard } from "@/lib/copy"
 import type { RegistryItem } from "@/types"
@@ -81,12 +78,12 @@ export function EditorText({ source }: Props) {
       {rawSourceCode && Object.keys(rawSourceCode).length > 0 ? (
         <Tabs className="relative gap-0">
           <div className="flex items-center justify-between overflow-hidden rounded-t-lg border-x border-y">
-            <TabList className="gap-0 border-0">
+            <TabList className="gap-0 border-0 py-0">
               {Object.keys(rawSourceCode).map((key) => (
                 <Tab
                   className={(values) =>
                     twMerge(
-                      "flex cursor-default items-center gap-x-1.5 whitespace-nowrap px-2 py-2.5 font-mono text-muted-fg text-xs tracking-tight",
+                      "flex cursor-default items-center gap-x-1.5 whitespace-nowrap px-2 py-2.5 font-mono text-muted-fg text-xs tracking-tight first:pl-3",
                       "**:data-[slot=icon]:-ml-0.5 border-transparent border-x outline-hidden first:border-l-0 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
                       (values.isSelected || values.isFocused || values.isFocusVisible) &&
                         "border-input bg-secondary/50 text-secondary-fg dark:bg-muted",
@@ -97,15 +94,15 @@ export function EditorText({ source }: Props) {
                   id={key}
                 >
                   {key.includes("css") ? (
-                    <IconBrandCss className="text-blue-500" />
+                    <BrandCssIcon className="size-4 text-blue-500" />
                   ) : key.includes(".tsx") ? (
-                    <IconBrandReactjs className="text-sky-500" />
+                    <BrandReactjsIcon className="size-4 text-sky-500" />
                   ) : key.includes(".ts") ? (
-                    <IconBrandTypescript className="text-sky-500" />
+                    <BrandTypescriptIcon className="size-4 text-sky-500" />
                   ) : key.includes(".json") ? (
-                    <IconBrackets2 className="text-purple-400" />
+                    <CodeBracketIcon className="size-4 text-purple-400" />
                   ) : (
-                    <IconFile />
+                    <DocumentTextIcon />
                   )}
                   <span>{key}</span>
                 </Tab>
@@ -119,7 +116,7 @@ export function EditorText({ source }: Props) {
               className="overflow-hidden rounded-b-lg border-x border-b bg-shiki-bg"
             >
               <CopyButton
-                className="absolute top-0.5 right-1"
+                className="-right-6 absolute top-0.5"
                 alwaysVisible
                 isCopied={copiedStates[key] || false}
                 onPress={() => handleCopy(key, value)}

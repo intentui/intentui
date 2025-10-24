@@ -1,23 +1,23 @@
 "use client"
 
 import {
-  IconArchive,
-  IconBell,
-  IconBellAlarm,
-  IconBug,
-  IconCamera,
-  IconCodeBrackets,
-  IconFile,
-  IconFileCloud,
-  IconFileText,
-  IconGallery,
-  IconMailNotify,
-  IconMusicNote,
-  IconSettings,
-  IconTerminal,
-  IconTriangleExclamation,
-  IconVideoCam,
-} from "@intentui/icons"
+  ArchiveBoxIcon,
+  BellAlertIcon,
+  BellIcon,
+  BugAntIcon,
+  CameraIcon,
+  CloudIcon,
+  CodeBracketIcon,
+  Cog6ToothIcon,
+  CommandLineIcon,
+  DocumentIcon,
+  DocumentTextIcon,
+  EnvelopeOpenIcon,
+  ExclamationTriangleIcon,
+  MusicalNoteIcon,
+  PhotoIcon,
+  VideoCameraIcon,
+} from "@heroicons/react/24/outline"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export default function ToggleGroupSquareSizeDemo() {
@@ -26,64 +26,64 @@ export default function ToggleGroupSquareSizeDemo() {
       <div>
         <ToggleGroup size="sq-xs">
           <ToggleGroupItem id="bell">
-            <IconBell />
+            <BellIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="alarm">
-            <IconBellAlarm />
+            <BellAlertIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="notification">
-            <IconMailNotify />
+            <EnvelopeOpenIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="alert">
-            <IconTriangleExclamation />
+            <ExclamationTriangleIcon />
           </ToggleGroupItem>
         </ToggleGroup>
       </div>
       <div>
         <ToggleGroup size="sq-sm">
           <ToggleGroupItem id="code">
-            <IconCodeBrackets />
+            <CodeBracketIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="terminal">
-            <IconTerminal />
+            <CommandLineIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="bug">
-            <IconBug />
+            <BugAntIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="settings">
-            <IconSettings />
+            <Cog6ToothIcon />
           </ToggleGroupItem>
         </ToggleGroup>
       </div>
       <div>
         <ToggleGroup size="sq-md">
           <ToggleGroupItem id="image">
-            <IconGallery />
+            <PhotoIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="camera">
-            <IconCamera />
+            <CameraIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="video">
-            <IconVideoCam />
+            <VideoCameraIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="music">
-            <IconMusicNote />
+            <MusicalNoteIcon />
           </ToggleGroupItem>
         </ToggleGroup>
       </div>
       <div>
         <ToggleGroup size="sq-lg">
           <ToggleGroupItem id="file">
-            <IconFile />
+            <DocumentIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="doc">
-            <IconFileText />
+            <DocumentTextIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="pdf">
-            <IconFileCloud />
+            <CloudIcon />
           </ToggleGroupItem>
           <ToggleGroupItem id="archive">
-            <IconArchive />
+            <ArchiveBoxIcon />
           </ToggleGroupItem>
         </ToggleGroup>
       </div>

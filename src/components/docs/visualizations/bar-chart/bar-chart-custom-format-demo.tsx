@@ -2,7 +2,7 @@
 
 import { useMemo } from "react"
 import { BarChart } from "@/components/ui/bar-chart"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function BarChartCustomFormatDemo() {
   const data = useMemo(() => {
@@ -18,11 +18,11 @@ export default function BarChartCustomFormatDemo() {
 
   return (
     <Card>
-      <Card.Header>
-        <Card.Title>Net revenue by month</Card.Title>
-        <Card.Description>Revenue minus expenses to show monthly profitability.</Card.Description>
-      </Card.Header>
-      <Card.Content>
+      <CardHeader>
+        <CardTitle>Net revenue by month</CardTitle>
+        <CardDescription>Revenue minus expenses to show monthly profitability.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <BarChart
           className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
           data={data}
@@ -57,7 +57,7 @@ export default function BarChartCustomFormatDemo() {
             net: { label: "Net" },
           }}
         />
-      </Card.Content>
+      </CardContent>
     </Card>
   )
 }

@@ -1,4 +1,5 @@
-import { IconCheck, IconDuplicate } from "@intentui/icons"
+import { CheckIcon } from "@heroicons/react/20/solid"
+import { Square2StackIcon } from "@heroicons/react/24/outline"
 import { parseColor, type Color as RacColor } from "@react-stately/color"
 import type { Color } from "culori"
 import { formatHex, formatHsl, formatRgb, interpolate, parse } from "culori"
@@ -135,7 +136,7 @@ export function ColorGenerator() {
                   }}
                 >
                   {shade}
-                  {copiedShade === shade ? <IconCheck /> : <IconDuplicate />}
+                  {copiedShade === shade ? <CheckIcon /> : <Square2StackIcon />}
                 </ListBoxItem>
               ))}
             </ListBox>

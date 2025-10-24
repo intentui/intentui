@@ -1,6 +1,7 @@
 "use client"
 
-import { IconAccessible, IconAccessibleFill } from "@intentui/icons"
+import { HandRaisedIcon as HandRaisedIconOutline } from "@heroicons/react/24/outline"
+import { HandRaisedIcon as HandRaisedIconSolid } from "@heroicons/react/24/solid"
 import { Separator } from "@/components/ui/separator"
 import { Toggle } from "@/components/ui/toggle"
 
@@ -9,16 +10,24 @@ export default function ToggleSizeDemo() {
     <div className="flex flex-col gap-y-4">
       <div className="flex flex-wrap items-end gap-2">
         <Toggle intent="outline" size="sq-xs">
-          {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}
+          {({ isSelected }) => (
+            <>{isSelected ? <HandRaisedIconSolid /> : <HandRaisedIconOutline />}</>
+          )}
         </Toggle>
         <Toggle intent="outline" size="sq-sm">
-          {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}
+          {({ isSelected }) => (
+            <>{isSelected ? <HandRaisedIconSolid /> : <HandRaisedIconOutline />}</>
+          )}
         </Toggle>
         <Toggle intent="outline" size="sq-md">
-          {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}
+          {({ isSelected }) => (
+            <>{isSelected ? <HandRaisedIconSolid /> : <HandRaisedIconOutline />}</>
+          )}
         </Toggle>
         <Toggle intent="outline" size="sq-lg">
-          {({ isSelected }) => <>{isSelected ? <IconAccessibleFill /> : <IconAccessible />}</>}
+          {({ isSelected }) => (
+            <>{isSelected ? <HandRaisedIconSolid /> : <HandRaisedIconOutline />}</>
+          )}
         </Toggle>
       </div>
       <Separator />
