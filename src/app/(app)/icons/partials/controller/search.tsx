@@ -22,7 +22,7 @@ export function Search() {
   return (
     <SearchField
       onChange={handleSearch}
-      defaultValue={searchParams.get("query")?.toString()}
+      value={searchParams.get("query")?.toString()}
       aria-label="Search icons"
     >
       <SearchInput placeholder="Search icons..." />
