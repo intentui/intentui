@@ -142,7 +142,7 @@ const SidebarProvider = ({
         }
         className={twMerge(
           "@container **:data-[slot=icon]:shrink-0",
-          "flex min-h-svh w-full text-sidebar-fg",
+          "flex w-full text-sidebar-fg",
           "group/sidebar-root peer/sidebar-root has-data-[intent=inset]:bg-sidebar dark:has-data-[intent=inset]:bg-bg",
           className,
         )}
@@ -177,7 +177,6 @@ const Sidebar = ({
     return (
       <div
         data-intent={intent}
-        data-collapsible="none"
         data-slot="sidebar"
         className={twMerge(
           "flex h-full w-(--sidebar-width) flex-col bg-sidebar text-sidebar-fg",
@@ -218,15 +217,14 @@ const Sidebar = ({
       data-side={side}
       data-slot="sidebar"
       className="group peer hidden text-sidebar-fg md:block"
-      {...props}
     >
       <div
         data-slot="sidebar-gap"
         aria-hidden="true"
         className={twMerge([
-          "w-(--sidebar-width) group-data-[collapsible=hidden]:w-0",
+          "relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear",
+          "group-data-[collapsible=hidden]:w-0",
           "group-data-[side=right]:rotate-180",
-          "relative h-svh bg-transparent transition-[width] duration-200 ease-linear",
           intent === "default" && "group-data-[collapsible=dock]:w-(--sidebar-width-dock)",
           intent === "float" &&
             "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(4))]",
@@ -237,10 +235,8 @@ const Sidebar = ({
       <div
         data-slot="sidebar-container"
         className={twMerge(
-          "fixed inset-y-0 z-10 hidden h-svh min-h-svh w-(--sidebar-width) bg-sidebar",
+          "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) bg-sidebar transition-[left,right,width] duration-200 ease-linear md:flex",
           "not-has-data-[slot=sidebar-footer]:pb-2",
-          "transition-[left,right,width] duration-200 ease-linear",
-          "md:flex",
           side === "left" &&
             "left-0 group-data-[collapsible=hidden]:left-[calc(var(--sidebar-width)*-1)]",
           side === "right" &&
@@ -258,6 +254,7 @@ const Sidebar = ({
         {...props}
       >
         <div
+          {...props}
           data-sidebar="default"
           data-slot="sidebar-inner"
           className={twJoin(
@@ -635,15 +632,17 @@ const SidebarTrigger = ({
       {...props}
     >
       {children || (
-        <svg
-          data-slot="icon"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 16 16"
-        >
-          <path d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
-          <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
-        </svg>
+        <>
+          <svg
+            data-slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+            <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+          </svg>
+        </>
       )}
     </Button>
   )

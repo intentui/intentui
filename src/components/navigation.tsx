@@ -5,7 +5,6 @@ import { useState } from "react"
 import { GithubLink } from "@/components/github-link"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
-import { DesignUiIcon } from "@/components/icons/design-intent-ui-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
 import { Button, buttonStyles } from "@/components/ui/button"
@@ -113,8 +112,6 @@ export function Navigation() {
                     intent: "plain",
                     isCircle: true,
                     size: "sq-sm",
-                    className:
-                      "**:data-[slot=icon]:text-indigo-500 hover:**:data-[slot=icon]:text-indigo-600",
                   })}
                   target="_blank"
                   href={siteConfig.discord}
@@ -134,22 +131,9 @@ export function Navigation() {
                 >
                   <BrandXIcon />
                 </Link>
-                <Link
-                  aria-label="Follow Update on X"
-                  className={buttonStyles({
-                    intent: "plain",
-                    size: "sq-sm",
-                    isCircle: true,
-                    className: "hover:border-blue-500/20**:data-[slot=icon]:text-fg",
-                  })}
-                  target="_blank"
-                  href="https://design.intentui.com"
-                >
-                  <DesignUiIcon />
-                </Link>
 
-                <ThemeSwitcher intent="plain" isCircle />
                 <GithubLink />
+                <ThemeSwitcher intent="plain" isCircle />
               </div>
             </div>
           </PageContainer>

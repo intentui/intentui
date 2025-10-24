@@ -19,6 +19,7 @@ import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
+import { ThemeSwitcher } from "@/components/theme-switcher"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
@@ -71,7 +72,7 @@ export function Navbar() {
             <BrandDiscordIcon />
           </Link>
           <GithubLink />
-
+          <ThemeSwitcher intent="plain" isCircle />
           <div className="flex items-center lg:hidden">
             <Separator orientation="vertical" className="mx-2.5 h-5 bg-white/20" />
             <Menu>

@@ -15,7 +15,7 @@ export function DesignIntentui() {
           </h1>
           <p className="max-w-[39rem] text-pretty text-bg/50 text-lg/8 leading-relaxed sm:text-xl">
             Copy, customize, and deploy{" "}
-            <strong className="font-semibold text-bg">400+ pre-built UI blocks</strong> and{" "}
+            <strong className="font-semibold text-bg">450+ pre-built UI blocks</strong> and{" "}
             <strong className="font-semibold text-bg">templates</strong> to accelerate your
             workflow. Save time on pricing pages, dashboards, and more.
           </p>
@@ -23,7 +23,7 @@ export function DesignIntentui() {
             <Link
               className={buttonStyles({
                 size: "lg",
-                className: "inset-ring-0 bg-bg pressed:bg-bg/90 text-fg hover:bg-bg/90",
+                className: "border-bg bg-bg pressed:bg-bg/90 text-fg hover:bg-bg/90",
               })}
               href="https://design.intentui.com/blocks"
             >
@@ -33,7 +33,7 @@ export function DesignIntentui() {
               className={buttonStyles({
                 size: "lg",
                 intent: "outline",
-                className: "inset-ring-bg/20 pressed:bg-bg/10 hover:bg-bg/5",
+                className: "border-bg/20 pressed:bg-bg/10 hover:bg-bg/5",
               })}
               href="https://design.intentui.com/products"
             >

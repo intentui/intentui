@@ -6,7 +6,6 @@ import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
 import { Footer } from "@/components/footer"
 import { Hero } from "./partials/hero"
-import { IconResources } from "./partials/icon-resources"
 import { Navbar } from "./partials/navbar"
 import { OpenSource } from "./partials/open-source"
 
@@ -26,7 +25,6 @@ export default function Page() {
         <StarterKit />
       </div>
       <DesignIntentui />
-      <IconResources />
       <Components />
       <Cta />
       <OpenSource />
