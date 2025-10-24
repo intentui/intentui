@@ -1,10 +1,10 @@
 "use client"
 
+import { useTheme } from "next-themes"
 import { Toaster as ToasterPrimitive, type ToasterProps } from "sonner"
 import { twJoin } from "tailwind-merge"
-import { useTheme } from "@/components/theme-provider"
 
-const Toast = (props: ToasterProps) => {
+export function Toast(props: ToasterProps) {
   const { theme = "system" } = useTheme()
   return (
     <ToasterPrimitive
@@ -13,7 +13,7 @@ const Toast = (props: ToasterProps) => {
       richColors
       toastOptions={{
         className: twJoin(
-          "*:data-icon:mt-0.5 *:data-icon:self-start has-data-description:*:data-icon:mt-1",
+          "not-has-data-[slot=note]:backdrop-blur-3xl *:data-icon:mt-0.5 *:data-icon:self-start has-data-description:*:data-icon:mt-1",
           "**:data-action:[--normal-bg:var(--color-primary-fg)] **:data-action:[--normal-text:var(--color-primary)]",
         ),
       }}
@@ -44,6 +44,3 @@ const Toast = (props: ToasterProps) => {
     />
   )
 }
-
-export type { ToasterProps }
-export { Toast }

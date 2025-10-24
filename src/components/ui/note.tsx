@@ -5,12 +5,12 @@ import {
 } from "@heroicons/react/24/solid"
 import { twJoin, twMerge } from "tailwind-merge"
 
-interface NoteProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+export interface NoteProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   intent?: "default" | "info" | "warning" | "danger" | "success"
   indicator?: boolean
 }
 
-const Note = ({ indicator = true, intent = "default", className, ...props }: NoteProps) => {
+export function Note({ indicator = true, intent = "default", className, ...props }: NoteProps) {
   const iconMap: Record<string, React.ElementType | null> = {
     info: InformationCircleIcon,
     warning: ExclamationCircleIcon,
@@ -23,6 +23,7 @@ const Note = ({ indicator = true, intent = "default", className, ...props }: Not
 
   return (
     <div
+      data-slot="note"
       className={twMerge([
         "grid w-full grid-cols-[auto_1fr] overflow-hidden rounded-lg border border-current/15 p-[calc(--spacing(4)-1px)] backdrop-blur-2xl sm:text-sm/6",
         "*:[a]:hover:underline **:[strong]:font-medium",
@@ -68,6 +69,3 @@ const Note = ({ indicator = true, intent = "default", className, ...props }: Not
     </div>
   )
 }
-
-export type { NoteProps }
-export { Note }
