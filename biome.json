@@ -48,6 +48,7 @@
         "noChildrenProp": "off"
       },
       "suspicious": {
+        "noNonNullAssertedOptionalChain": "off",
         "noDocumentCookie": "off",
         "noExplicitAny": "off",
         "noArrayIndexKey": "off"
