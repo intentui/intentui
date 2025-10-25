@@ -2457,6 +2457,7 @@
       "title": "toast",
       "description": "toast",
       "dependencies": [
+        "next-themes",
         "sonner",
         "tailwind-merge"
       ],
