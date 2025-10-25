@@ -38,6 +38,27 @@ export function Aside() {
           ))}
         </div>
         <div>
+          <AsideHeader>Products</AsideHeader>
+          <AsideLink href="/components">
+            Components{" "}
+            <Badge className="-mr-1.5 rounded-sm" intent="info">
+              Free
+            </Badge>
+          </AsideLink>
+          <AsideLink target="_blank" href="https://design.intentui.com/blocks">
+            Components & Blocks{" "}
+            <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
+              Pro
+            </Badge>
+          </AsideLink>
+          <AsideLink target="_blank" href="https://design.intentui.com/products">
+            Templates{" "}
+            <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
+              Pro
+            </Badge>
+          </AsideLink>
+        </div>
+        <div>
           <AsideHeader>{gs?.section}</AsideHeader>
           {sortedGsChildren.map((item) => (
             <AsideLink key={item.slug} href={item.slug}>
