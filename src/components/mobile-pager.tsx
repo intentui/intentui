@@ -1,5 +1,5 @@
 "use client"
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import { findNeighbour, type PageTree } from "fumadocs-core/server"
 import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
@@ -23,6 +23,7 @@ export const MobilePager = ({
           className={buttonStyles({
             size: "sq-sm",
             intent: "secondary",
+            className: "focus-visible:outline-fg",
           })}
           href={neighbours.previous.url}
         >
@@ -36,6 +37,7 @@ export const MobilePager = ({
           className={buttonStyles({
             size: "sq-sm",
             intent: "secondary",
+            className: "focus-visible:outline-fg",
           })}
           href={neighbours.next.url}
         >

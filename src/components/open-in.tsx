@@ -1,6 +1,7 @@
 "use client"
 
-import { CheckIcon, Square2StackIcon } from "@heroicons/react/24/outline"
+import { CheckIcon } from "@heroicons/react/24/outline"
+import { ChevronDownIcon } from "@heroicons/react/24/solid"
 import type { PageTree } from "fumadocs-core/server"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { MobilePager } from "@/components/mobile-pager"
@@ -18,27 +19,27 @@ export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; 
   const fullUrl = `https://intentui.com${url}`
   const { copied, copy } = useCopy()
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
-      <Button intent="secondary" size="sm" onPress={() => copy(page)}>
-        {copied ? <CheckIcon /> : <Square2StackIcon />}
+    <div className="not-prose fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
+      <Button className="h-10 sm:h-auto" intent="secondary" size="sm" onPress={() => copy(page)}>
+        {copied ? (
+          <CheckIcon />
+        ) : (
+          <svg data-slot="icon" strokeLinejoin="round" viewBox="0 0 22 16">
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M19.5 2.25H2.5C1.80964 2.25 1.25 2.80964 1.25 3.5V12.5C1.25 13.1904 1.80964 13.75 2.5 13.75H19.5C20.1904 13.75 20.75 13.1904 20.75 12.5V3.5C20.75 2.80964 20.1904 2.25 19.5 2.25ZM2.5 1C1.11929 1 0 2.11929 0 3.5V12.5C0 13.8807 1.11929 15 2.5 15H19.5C20.8807 15 22 13.8807 22 12.5V3.5C22 2.11929 20.8807 1 19.5 1H2.5ZM3 4.5H4H4.25H4.6899L4.98715 4.82428L7 7.02011L9.01285 4.82428L9.3101 4.5H9.75H10H11V5.5V11.5H9V7.79807L7.73715 9.17572L7 9.97989L6.26285 9.17572L5 7.79807V11.5H3V5.5V4.5ZM15 8V4.5H17V8H19.5L17 10.5L16 11.5L15 10.5L12.5 8H15Z"
+              fill="currentColor"
+            />
+          </svg>
+        )}
         Markdown
       </Button>
       <div className="flex items-center gap-x-1.5">
         <Menu>
-          <Button intent="secondary" size="sm">
+          <Button className="h-10 sm:h-auto" intent="secondary" size="sm">
             Open in...
-            <svg
-              data-slot="icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <ChevronDownIcon className="rotate-180 sm:rotate-0" />
           </Button>
           <MenuContent className="min-w-40" placement="bottom end">
             <MenuItem
