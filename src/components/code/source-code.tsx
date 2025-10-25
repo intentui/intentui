@@ -38,7 +38,7 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
         <div
           className={twJoin(
             "overflow-hidden rounded-lg",
-            "border border-muted-fg/40",
+            "border border-muted-fg/40 bg-shiki-bg",
             "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
           )}
         >
