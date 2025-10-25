@@ -10,9 +10,6 @@ export default function ToggleGroupSelectionDemo() {
       <ToggleGroupItem id="7d">7d</ToggleGroupItem>
       <ToggleGroupItem id="2w">2w</ToggleGroupItem>
       <ToggleGroupItem id="1m">1m</ToggleGroupItem>
-      <ToggleGroupItem id="3m">3m</ToggleGroupItem>
-      <ToggleGroupItem id="6m">6m</ToggleGroupItem>
-      <ToggleGroupItem id="1y">1y</ToggleGroupItem>
     </ToggleGroup>
   )
 }
