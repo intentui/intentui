@@ -18,13 +18,15 @@ export function Input({ className, ref, ...props }: InputProps) {
       <InputPrimitive
         ref={ref}
         className={cx(
+          "[--input-focus-bg:theme(--color-primary-subtle/5%)]",
           "relative block w-full appearance-none rounded-lg px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)]",
           "text-base/6 text-fg placeholder:text-muted-fg sm:text-sm/6",
-          "border border-input hover:border-muted-fg/30",
-          "focus:border-ring/70 focus:bg-primary-subtle/5 focus:outline-hidden focus:ring-3 focus:ring-ring/20 focus:hover:border-ring/80",
+          "border border-input enabled:hover:border-muted-fg/30",
+          "focus:border-ring/70 focus:bg-(--input-focus-bg) focus:outline-hidden focus:ring-3 focus:ring-ring/20 focus:hover:border-ring/80",
           "invalid:border-danger-subtle-fg/70 invalid:bg-danger-subtle/5 invalid:hover:border-danger-subtle-fg/80 focus:invalid:border-danger-subtle-fg/70 focus:invalid:bg-danger-subtle/5 focus:invalid:ring-danger-subtle-fg/20 focus:invalid:hover:border-danger-subtle-fg/80",
           "[&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden",
-          "disabled:bg-muted disabled:opacity-50",
+          "disabled:bg-muted disabled:opacity-50 forced-colors:in-disabled:text-[GrayText]",
+          "in-disabled:bg-muted in-disabled:opacity-50 forced-colors:in-disabled:text-[GrayText]",
           "dark:scheme-dark",
           className,
         )}
@@ -63,7 +65,7 @@ export function InputGroup({ className, ...props }: GroupProps) {
         // button
         "has-[>button:last-child]:[&_input]:pr-(--input-gutter-end,--spacing(16)) has-[>button:first-child]:[&_input]:pl-(--input-gutter-start,--spacing(16)) sm:has-[>button:last-child]:[&_input]:pr-(--input-gutter-end,--spacing(14)) sm:has-[>button:first-child]:[&_input]:pl-(--input-gutter-start,--spacing(14))",
         "[&>button:first-child]:rounded-r-none [&>button:last-child]:rounded-l-none",
-        "*:[button]:absolute *:[button]:top-0 *:[button]:z-10 *:[button]:min-h-11 sm:*:[button]:min-h-9",
+        "[&>button[data-intent=outline]]:border-input *:[button]:absolute *:[button]:top-0 *:[button]:z-10 *:[button]:min-h-11 sm:*:[button]:min-h-9",
         "[&>button:first-child]:left-0 [&>button:last-child]:right-0",
 
         "[&>[data-slot='icon']:not([class*='text-'])]:text-muted-fg [&>[data-slot='loader']:not([class*='text-'])]:text-muted-fg [&>[data-slot='text']:not([class*='text-'])]:text-muted-fg",
