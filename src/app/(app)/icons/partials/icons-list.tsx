@@ -1,7 +1,7 @@
 "use client"
 
-import * as icons from "@heroicons/react/24/outline"
-import { IconDownload } from "@intentui/icons"
+import { ArrowDownTrayIcon } from "@heroicons/react/20/solid"
+import * as icons from "@intentui/icons"
 import { useSearchParams } from "next/navigation"
 import type React from "react"
 import { useRef, useState } from "react"
@@ -115,7 +115,7 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
           <MenuSeparator />
           <MenuItem onAction={() => downloadSvg(Icon, name)}>
             <MenuLabel>Download SVG</MenuLabel>
-            <IconDownload />
+            <ArrowDownTrayIcon />
           </MenuItem>
         </MenuContent>
       </Menu>
