@@ -1,8 +1,6 @@
 "use client"
 
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import { twMerge } from "tailwind-merge"
-import { buttonStyles } from "@/components/ui/button"
 
 export function Ads({ className }: { className?: string }) {
   return (
@@ -20,20 +18,8 @@ export function Ads({ className }: { className?: string }) {
       </span>
       <div className="mb-1 block text-pretty text-[0.83rem]/5 text-muted-fg">
         Build modern web apps faster with{" "}
-        <strong className="font-semibold text-fg">450+ blocks</strong> and polished{" "}
+        <strong className="font-semibold text-fg">500+ blocks</strong> and polished{" "}
         <strong className="font-semibold text-fg">templates</strong> crafted for you.
-      </div>
-
-      <div className="mt-2">
-        <span
-          className={buttonStyles({
-            size: "sm",
-            className:
-              "inset-ring-transparent mt-2 bg-white text-zinc-900 shadow-md hover:bg-white group-hover:shadow-none",
-          })}
-        >
-          Claim 35% Off <ArrowTopRightOnSquareIcon className="text-bg/60!" />
-        </span>
       </div>
     </a>
   )
