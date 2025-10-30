@@ -133,7 +133,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                   </SidebarLink>
                   {(!isCollapsed || isFocused) && (
                     <Menu>
-                      <MenuTrigger data-slot="menu-action-trigger" aria-label="Manage">
+                      <MenuTrigger aria-label="Manage">
                         <EllipsisHorizontalIcon />
                       </MenuTrigger>
                       <MenuContent
