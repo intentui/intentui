@@ -19,7 +19,7 @@ import {
   MenuSeparator,
   MenuTrigger,
 } from "@/components/ui/menu"
-import { SearchField } from "@/components/ui/search-field"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 import { SidebarNav, SidebarTrigger } from "@/components/ui/sidebar"
 
 export default function AppSidebarNav() {
@@ -27,7 +27,9 @@ export default function AppSidebarNav() {
     <SidebarNav className="flex justify-between border-b-0 sm:mt-2">
       <SidebarTrigger />
       <div className="mx-auto flex items-center gap-x-2 sm:min-w-120">
-        <SearchField className="w-full" />
+        <SearchField aria-label="Search" className="w-full">
+          <SearchInput />
+        </SearchField>
         <Button size="sq-sm" className="size-10" intent="plain">
           <MicrophoneIcon />
         </Button>

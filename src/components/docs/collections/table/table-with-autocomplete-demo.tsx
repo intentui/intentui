@@ -4,7 +4,7 @@ import { use, useMemo } from "react"
 import { Autocomplete, AutocompleteStateContext, useFilter } from "react-aria-components"
 import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
-import { SearchField } from "@/components/ui/search-field"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 import {
   Table,
   TableBody,
@@ -26,7 +26,9 @@ export default function TableDemo() {
           <CardDescription>A list of users with search functionality.</CardDescription>
         </CardHeader>
         <div className="flex justify-end">
-          <SearchField aria-label="Search" />
+          <SearchField aria-label="Search">
+            <SearchInput />
+          </SearchField>
         </div>
         <Table className="mt-4" aria-label="Users">
           <TableHeader>

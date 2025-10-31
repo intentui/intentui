@@ -4,7 +4,7 @@ import { parseDate } from "@internationalized/date"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { Link } from "@/components/ui/link"
 import { RangeCalendar } from "@/components/ui/range-calendar"
-import { SearchField } from "@/components/ui/search-field"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 import {
   Sidebar,
   SidebarContent,
@@ -35,7 +35,9 @@ export default function AppSidebar() {
         <SidebarSectionGroup>
           {state !== "collapsed" && (
             <SidebarSection className="pt-1">
-              <SearchField className="col-span-full mb-6" />
+              <SearchField className="col-span-full mb-6">
+                <SearchInput />
+              </SearchField>
               <RangeCalendar
                 defaultValue={{
                   start: parseDate(`${new Date().getFullYear()}-02-03`),

@@ -4,7 +4,7 @@ import { Autocomplete, Popover, useFilter } from "react-aria-components"
 import { Dialog } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/field"
 import { ListBox } from "@/components/ui/list-box"
-import { SearchField } from "@/components/ui/search-field"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 import { Select, SelectItem, SelectTrigger } from "@/components/ui/select"
 
 const languages = [
@@ -30,7 +30,9 @@ export default function SelectSearchableDemo() {
         <Dialog aria-label="Language">
           <Autocomplete filter={contains}>
             <div className="border-b bg-muted p-2">
-              <SearchField className="rounded-lg bg-bg" autoFocus />
+              <SearchField className="rounded-lg bg-bg" autoFocus>
+                <SearchInput />
+              </SearchField>
             </div>
             <ListBox
               className="max-h-[inherit] min-w-[inherit] rounded-t-none border-0 bg-transparent shadow-none"
