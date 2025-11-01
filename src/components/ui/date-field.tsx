@@ -11,13 +11,17 @@ import { fieldStyles } from "./field"
 
 export function DateField<T extends DateValue>({ className, ...props }: DateFieldProps<T>) {
   return (
-    <DateFieldPrimitive {...props} data-slot="control" className={cx(fieldStyles(), className)} />
+    <DateFieldPrimitive
+      {...props}
+      data-slot="control"
+      className={cx(fieldStyles({ className: "w-fit" }), className)}
+    />
   )
 }
 
 export function DateInput({ className, ...props }: Omit<DateInputProps, "children">) {
   return (
-    <span data-slot="control" className="relative block w-fit">
+    <span data-slot="control" className="relative block">
       <DateInputPrimitive
         className={cx(
           "relative block appearance-none rounded-lg px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)]",
