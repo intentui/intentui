@@ -49,4 +49,12 @@ export const baseTheme = {
   "color-chart-3": "var(--chart-3)",
   "color-chart-4": "var(--chart-4)",
   "color-chart-5": "var(--chart-5)",
+  "radius-xs": "var(--radius-xs)",
+  "radius-sm": "var(--radius-sm)",
+  "radius-md": "var(--radius-md)",
+  "radius-lg": "var(--radius-lg)",
+  "radius-xl": "var(--radius-xl)",
+  "radius-2xl": "var(--radius-2xl)",
+  "radius-3xl": "var(--radius-3xl)",
+  "radius-4xl": "var(--radius-4xl)",
 }
