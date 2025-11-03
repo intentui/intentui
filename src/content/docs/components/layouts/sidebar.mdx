@@ -40,34 +40,13 @@ The sidebar just need one base color to work, the accent will generate from the 
   --color-sidebar-accent-fg: var(--sidebar-accent-fg);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
-  --animate-disclosure-collapsed: disclosure-collapsed 0.2s ease-out;
-  --animate-disclosure-expanded: disclosure-expanded 0.2s ease-out;
-
-  @keyframes disclosure-collapsed {
-    from {
-      height: var(--disclosure-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-
-  @keyframes disclosure-expanded {
-    from {
-      height: 0
-    }
-    to {
-      height: var(--disclosure-height)
-    }
-  }
 }
 
 :root {
   --sidebar: oklch(0.985 0 0);
   --sidebar-fg: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.546 0.245 262.881);
-  --sidebar-primary-fg: oklch(1 0 0);
+  --sidebar-primary: oklch(0.623 0.214 259.815 / 0.15);
+  --sidebar-primary-fg: oklch(0.488 0.243 264.376);
   --sidebar-accent: oklch(0.92 0.004 286.32);
   --sidebar-accent-fg: oklch(0.141 0.005 285.823);
   --sidebar-border: oklch(0.901 0.006 286.286);
@@ -75,10 +54,10 @@ The sidebar just need one base color to work, the accent will generate from the 
 }
 
 .dark {
-  --sidebar: oklch(0.180 0.006 285.885);
+  --sidebar: oklch(0.21 0.006 285.885);
   --sidebar-fg: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.546 0.245 262.881);
-  --sidebar-primary-fg: oklch(1 0 0);
+  --sidebar-primary: oklch(0.623 0.214 259.815 / 0.1);
+  --sidebar-primary-fg: oklch(0.707 0.165 254.624);
   --sidebar-accent: oklch(0.274 0.006 286.033);
   --sidebar-accent-fg: oklch(0.985 0 0);
   --sidebar-border: oklch(0.274 0.006 286.033);
@@ -209,7 +188,7 @@ The sidebar supports menus for displaying additional actions or options. When us
       </SidebarLink>
       {(!isCollapsed || isFocused) && (
         <Menu>
-          <MenuTrigger data-slot="menu-action-trigger" aria-label="Manage">
+          <SidebarMenuTrigger aria-label="Manage">
             <EllipsisHorizontalIcon />
           </MenuTrigger>
           <MenuContent popover={{ offset: 0, placement: "right top" }}>
@@ -236,12 +215,18 @@ The sidebar supports menus for displaying additional actions or options. When us
   )}
 </SidebarItem>
 ```
-
 <Sandbox
   registries={[
     "sidebar-08",
   ]}
 />
+
+By default, the sidebar menu trigger will be visible when you hover over the sidebar item. If you want to always show the menu trigger, you can use the `alwaysVisible` prop.
+```
+<SidebarMenuTrigger alwaysVisible aria-label="Manage">
+  <EllipsisHorizontalIcon />
+</SidebarMenuTrigger>
+```
 
 
 ## Badge

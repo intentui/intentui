@@ -36,6 +36,7 @@ import {
   SidebarItem,
   SidebarLabel,
   SidebarLink,
+  SidebarMenuTrigger,
   SidebarSection,
   SidebarSectionGroup,
 } from "@/components/ui/sidebar"
@@ -83,9 +84,9 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                     </SidebarLink>
                     {!isCollapsed && (
                       <Menu>
-                        <MenuTrigger data-slot="menu-action-trigger" aria-label="Manage">
+                        <SidebarMenuTrigger aria-label="Manage">
                           <EllipsisHorizontalIcon />
-                        </MenuTrigger>
+                        </SidebarMenuTrigger>
                         <MenuContent popover={{ offset: 0, placement: "right top" }}>
                           <MenuItem href="#edit">
                             <PencilSquareIcon />

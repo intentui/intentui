@@ -1,7 +1,8 @@
 "use client"
 import { useMemo } from "react"
-import { Button, Link } from "react-aria-components"
+import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
+import { Link } from "./link"
 
 type Bar<T> = T & {
   key?: string
@@ -13,15 +14,13 @@ type Bar<T> = T & {
 interface BarListProps<T = unknown> extends React.ComponentProps<"div"> {
   data: Bar<T>[]
   valueFormatter?: (value: number) => string
-  showAnimation?: boolean
   onValueChange?: (payload: Bar<T>) => void
   sortOrder?: "ascending" | "descending" | "none"
 }
 
-function BarList<T>({
+export function BarList<T>({
   data = [],
   valueFormatter = (value) => value.toString(),
-  showAnimation = false,
   onValueChange,
   sortOrder = "descending",
   className,
@@ -64,21 +63,19 @@ function BarList<T>({
           >
             <div
               className={twJoin(
-                "flex items-center rounded-sm bg-primary/15 transition-all dark:bg-primary/20",
+                "flex items-center rounded-sm bg-primary/30",
                 rowHeight,
-                onValueChange ? "group-hover:bg-primary/20 dark:group-hover:bg-primary/35" : "",
+                onValueChange ? "group-hover:bg-primary/40 dark:group-hover:bg-primary/40" : "",
                 index === sortedData.length - 1 && "mb-0",
-                showAnimation && "duration-700",
               )}
               style={{ width: `${widths[index]}%` }}
             >
-              <div className="absolute left-2 flex max-w-full pr-2">
+              <div className="absolute left-2 flex max-w-full pr-3 sm:pr-2">
                 {item.href ? (
                   <Link
                     href={item.href}
                     className={twJoin(
-                      "truncate whitespace-nowrap rounded-sm text-sm",
-                      "text-fg",
+                      "truncate whitespace-nowrap rounded-sm font-normal text-base/6 text-fg sm:text-sm/6",
                       "hover:underline hover:underline-offset-2",
                       "focus:inset-ring focus:inset-ring-ring focus:outline-hidden focus:ring-2 focus:ring-ring/20",
                     )}
@@ -89,7 +86,9 @@ function BarList<T>({
                     {item.name}
                   </Link>
                 ) : (
-                  <p className="truncate whitespace-nowrap text-fg text-sm">{item.name}</p>
+                  <p className="truncate whitespace-nowrap text-base/6 text-fg sm:text-sm/6">
+                    {item.name}
+                  </p>
                 )}
               </div>
             </div>
@@ -115,5 +114,3 @@ function BarList<T>({
     </div>
   )
 }
-
-export { BarList, type BarListProps }

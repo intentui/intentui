@@ -1,32 +1,26 @@
 "use client"
 
+import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
+import { ChevronUpDownIcon, CubeIcon, HashtagIcon, PlusIcon } from "@heroicons/react/24/outline"
 import {
-  ChevronUpDownIcon,
-  CubeIcon,
-  EllipsisHorizontalIcon,
-  HashtagIcon,
-  PlusIcon,
-} from "@heroicons/react/24/outline"
-import {
-  ArchiveBoxIcon as ArchiveBoxSolid,
-  ArrowDownTrayIcon as ArrowDownTraySolid,
-  ArrowLeftStartOnRectangleIcon as ArrowRightOnRectangleSolid,
-  ArrowUpTrayIcon as ArrowUpTraySolid,
-  BuildingOfficeIcon as BuildingOfficeSolid,
-  ChatBubbleLeftRightIcon as ChatBubbleLeftRightSolid,
-  CheckCircleIcon as CheckCircleSolid,
-  ClockIcon as ClockSolid,
-  Cog6ToothIcon as Cog6ToothSolid,
-  CreditCardIcon as CreditCardSolid,
-  DocumentTextIcon as DocumentTextSolid,
-  HomeIcon as HomeSolid,
-  LifebuoyIcon as LifebuoySolid,
-  ListBulletIcon as ListBulletSolid,
-  CubeIcon as PackageSolid,
-  QuestionMarkCircleIcon as QuestionMarkCircleSolid,
-  ShieldCheckIcon as ShieldCheckSolid,
-  ShoppingBagIcon as ShoppingBagSolid,
-  TicketIcon as TicketSolid,
+  ArchiveBoxIcon,
+  ArrowDownTrayIcon,
+  ArrowRightStartOnRectangleIcon,
+  ArrowUpTrayIcon,
+  BuildingOfficeIcon,
+  ChatBubbleLeftRightIcon,
+  CheckCircleIcon,
+  ClockIcon,
+  Cog6ToothIcon,
+  CreditCardIcon,
+  DocumentTextIcon,
+  HomeIcon,
+  LifebuoyIcon,
+  ListBulletIcon,
+  QuestionMarkCircleIcon,
+  ShieldCheckIcon,
+  ShoppingBagIcon,
+  TicketIcon,
 } from "@heroicons/react/24/solid"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
@@ -51,6 +45,7 @@ import {
   SidebarItem,
   SidebarLabel,
   SidebarLink,
+  SidebarMenuTrigger,
   SidebarRail,
   SidebarSection,
   SidebarSectionGroup,
@@ -76,7 +71,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
         <SidebarSectionGroup>
           <SidebarSection label="Overview">
             <SidebarItem tooltip="Overview" isCurrent href="#">
-              <HomeSolid />
+              <HomeIcon />
               <SidebarLabel>Overview</SidebarLabel>
             </SidebarItem>
 
@@ -84,14 +79,14 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               {({ isCollapsed, isFocused }) => (
                 <>
                   <SidebarLink href="#">
-                    <ShoppingBagSolid />
+                    <ShoppingBagIcon />
                     <SidebarLabel>Orders</SidebarLabel>
                   </SidebarLink>
                   {(!isCollapsed || isFocused) && (
                     <Menu>
-                      <MenuTrigger aria-label="Manage">
+                      <SidebarMenuTrigger aria-label="Manage">
                         <EllipsisHorizontalIcon />
-                      </MenuTrigger>
+                      </SidebarMenuTrigger>
                       <MenuContent
                         popover={{
                           offset: 0,
@@ -103,19 +98,19 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                           Create New Order
                         </MenuItem>
                         <MenuItem href="#view-all">
-                          <ListBulletSolid />
+                          <ListBulletIcon />
                           View All Orders
                         </MenuItem>
                         <MenuItem href="#pending-orders">
-                          <ClockSolid />
+                          <ClockIcon />
                           Pending Orders
                         </MenuItem>
                         <MenuItem href="#completed-orders">
-                          <CheckCircleSolid />
+                          <CheckCircleIcon />
                           Completed Orders
                         </MenuItem>
                         <MenuItem href="#export-orders">
-                          <ArrowUpTraySolid />
+                          <ArrowUpTrayIcon />
                           Export Orders
                         </MenuItem>
                       </MenuContent>
@@ -124,6 +119,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                 </>
               )}
             </SidebarItem>
+
             <SidebarItem tooltip="Products">
               {({ isCollapsed, isFocused }) => (
                 <>
@@ -133,9 +129,9 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                   </SidebarLink>
                   {(!isCollapsed || isFocused) && (
                     <Menu>
-                      <MenuTrigger aria-label="Manage">
+                      <SidebarMenuTrigger aria-label="Manage">
                         <EllipsisHorizontalIcon />
-                      </MenuTrigger>
+                      </SidebarMenuTrigger>
                       <MenuContent
                         popover={{
                           offset: 0,
@@ -147,7 +143,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                           Add New Product
                         </MenuItem>
                         <MenuItem href="#archive">
-                          <ArchiveBoxSolid />
+                          <ArchiveBoxIcon />
                           Archive Product
                         </MenuItem>
                         <MenuItem href="#manage-categories">
@@ -155,11 +151,11 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                           Manage Categories
                         </MenuItem>
                         <MenuItem href="#import">
-                          <ArrowDownTraySolid />
+                          <ArrowDownTrayIcon />
                           Import Products
                         </MenuItem>
                         <MenuItem href="#export">
-                          <ArrowUpTraySolid />
+                          <ArrowUpTrayIcon />
                           Export Products
                         </MenuItem>
                       </MenuContent>
@@ -168,8 +164,9 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                 </>
               )}
             </SidebarItem>
+
             <SidebarItem href="#" badge="4 Pending" tooltip="Payments">
-              <CreditCardSolid />
+              <CreditCardIcon />
               <SidebarLabel>Payments</SidebarLabel>
             </SidebarItem>
           </SidebarSection>
@@ -182,31 +179,31 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               </SidebarDisclosureTrigger>
               <SidebarDisclosurePanel>
                 <SidebarItem href="#" tooltip="Tickets">
-                  <TicketSolid />
+                  <TicketIcon />
                   <SidebarLabel>Tickets</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="Chat Support">
-                  <ChatBubbleLeftRightSolid />
+                  <ChatBubbleLeftRightIcon />
                   <SidebarLabel>Chat Support</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="FAQ">
-                  <QuestionMarkCircleSolid />
+                  <QuestionMarkCircleIcon />
                   <SidebarLabel>FAQ</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="Documentation">
-                  <DocumentTextSolid />
+                  <DocumentTextIcon />
                   <SidebarLabel>Documentation</SidebarLabel>
                 </SidebarItem>
               </SidebarDisclosurePanel>
             </SidebarDisclosure>
             <SidebarDisclosure id={2}>
               <SidebarDisclosureTrigger>
-                <PackageSolid />
+                <ArchiveBoxIcon />
                 <SidebarLabel>Inventory</SidebarLabel>
               </SidebarDisclosureTrigger>
               <SidebarDisclosurePanel>
                 <SidebarItem href="#" tooltip="Warehouse">
-                  <BuildingOfficeSolid />
+                  <BuildingOfficeIcon />
                   <SidebarLabel>Warehouse</SidebarLabel>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="Stock Levels">
@@ -230,7 +227,6 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                 isSquare
                 src="https://intentui.com/images/avatar/cobain.jpg"
               />
-
               <div className="in-data-[collapsible=dock]:hidden text-sm">
                 <SidebarLabel>Kurt Cobain</SidebarLabel>
                 <span className="-mt-0.5 block text-muted-fg">kurt@domain.com</span>
@@ -250,26 +246,25 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
             </MenuSection>
 
             <MenuItem href="#dashboard">
-              <HomeSolid />
+              <HomeIcon />
               Dashboard
             </MenuItem>
             <MenuItem href="#settings">
-              <Cog6ToothSolid />
+              <Cog6ToothIcon />
               Settings
             </MenuItem>
             <MenuItem href="#security">
-              <ShieldCheckSolid />
+              <ShieldCheckIcon />
               Security
             </MenuItem>
             <MenuSeparator />
-
             <MenuItem href="#contact">
-              <LifebuoySolid />
+              <LifebuoyIcon />
               Customer Support
             </MenuItem>
             <MenuSeparator />
             <MenuItem href="#logout">
-              <ArrowRightOnRectangleSolid />
+              <ArrowRightStartOnRectangleIcon />
               Log out
             </MenuItem>
           </MenuContent>

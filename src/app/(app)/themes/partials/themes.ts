@@ -177,8 +177,8 @@ export const generateTheme = (
 
     --sidebar: ${getColorValue(gray, "50")};
     --sidebar-fg: ${getColorValue(gray, "950")};
-    --sidebar-primary: ${getColorValue(primary, lightPrimary)};
-    --sidebar-primary-fg: ${lightPrimaryFgValue};
+    --sidebar-primary: ${`${getColorValue(primary, subtleBaseShadePrimary).slice(0, -1)} / ${subtleAlphaLight})`};
+    --sidebar-primary-fg: ${getColorValue(primary, "700")};
     --sidebar-accent: ${getColorValue(accent, lightAccent)};
     --sidebar-accent-fg: ${lightAccentFgValue};
     --sidebar-border: ${adjustLightness(getColorValue(gray, "300"), +3)};
@@ -242,8 +242,8 @@ export const generateTheme = (
 
     --sidebar: ${getColorValue(gray, "900")};
     --sidebar-fg: ${getColorValue(gray, "50")};
-    --sidebar-primary: ${getColorValue(primary, darkPrimary)};
-    --sidebar-primary-fg: ${darkPrimaryFgValue};
+    --sidebar-primary: ${`${getColorValue(primary, subtleBaseShadePrimary).slice(0, -1)} / ${subtleAlphaDark})`};
+    --sidebar-primary-fg: ${getColorValue(primary, isSubtle300Primary ? "300" : "400")};
     --sidebar-accent: ${getColorValue(accent, darkAccent)};
     --sidebar-accent-fg: ${darkAccentFgValue};
     --sidebar-border: ${getColorValue(gray, "800")};
