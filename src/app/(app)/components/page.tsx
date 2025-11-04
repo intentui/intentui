@@ -1,19 +1,11 @@
 import type { Metadata } from "next"
 import { ListComponents } from "@/app/(app)/components/(partials)/list-components"
-import { Header } from "@/components/header"
-import { PageContainer } from "@/components/page-container"
 import { siteConfig } from "@/config/site"
 
 export default function Page() {
   return (
     <>
-      <Header>
-        <span className="text-fg tracking-tight">Comp</span>
-        <span className="text-muted-fg tracking-tight">onents</span>
-      </Header>
-      <PageContainer>
-        <ListComponents />
-      </PageContainer>
+      <ListComponents />
     </>
   )
 }
