@@ -49,7 +49,7 @@ const currentYear = new Date().getFullYear()
 
 export function Footer() {
   return (
-    <footer className="border-t bg-muted pb-16 text-fg sm:pb-0">
+    <footer className="border-t bg-white pb-16 text-fg sm:pb-0 dark:bg-muted">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>

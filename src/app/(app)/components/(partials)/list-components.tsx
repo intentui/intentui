@@ -62,34 +62,33 @@ export function ListComponents() {
         </SearchField>
       </Header>
 
-      <PageContainer>
-        <GridList
-          layout="grid"
-          className="my-6 grid grid-cols-1 gap-6 sm:my-12 sm:grid-cols-2 lg:grid-cols-4"
-        >
-          {allChildren.map((item: any) => {
-            const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""
-            const suffix = mounted && resolvedTheme === "dark" ? "-dark" : ""
-            return (
-              <GridListItem
-                textValue={`${item.slug} ${item.title}`}
-                key={item.slug}
-                className="group flex flex-col gap-y-2 outline-hidden hover:opacity-80"
-                href={item.slug}
-              >
-                <Image
-                  className="rounded-xl ring ring-fg/10 group-focus:ring-muted-fg/50"
-                  width={708}
-                  height={480}
-                  src={`/images/thumbnails/${name}${suffix}.png`}
-                  alt={item.title}
-                />
-                <span className="text-sm/6">{item.title}</span>
-              </GridListItem>
-            )
-          })}
-        </GridList>
-      </PageContainer>
+      <div className="bg-muted py-6 sm:py-12">
+        <PageContainer>
+          <GridList layout="grid" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {allChildren.map((item: any) => {
+              const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""
+              const suffix = mounted && resolvedTheme === "dark" ? "-dark" : ""
+              return (
+                <GridListItem
+                  textValue={`${item.slug} ${item.title}`}
+                  key={item.slug}
+                  className="group flex flex-col gap-y-2 outline-hidden hover:opacity-80"
+                  href={item.slug}
+                >
+                  <Image
+                    className="rounded-xl ring ring-fg/10 group-focus:ring-muted-fg/50"
+                    width={708}
+                    height={480}
+                    src={`/images/thumbnails/${name}${suffix}.png`}
+                    alt={item.title}
+                  />
+                  <span className="text-sm/6">{item.title}</span>
+                </GridListItem>
+              )
+            })}
+          </GridList>
+        </PageContainer>
+      </div>
     </Autocomplete>
   )
 }
