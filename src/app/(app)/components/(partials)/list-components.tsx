@@ -52,9 +52,9 @@ export function ListComponents() {
 
   return (
     <Autocomplete filter={contains}>
-      <div className="border-fg/10 border-b bg-overlay py-6 lg:py-10">
+      <div className="border-fg/10 border-t border-b bg-navbar py-6 md:border-t-0 lg:py-10">
         <PageContainer>
-          <div className="flex flex-col items-center justify-between md:flex-row">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <Heading level={1} className="text-2xl sm:text-3xl">
                 Components
@@ -65,10 +65,14 @@ export function ListComponents() {
                 powered by react aria components, easy to customize and ready for production.
               </Text>
             </div>
-            <SearchField className="max-w-2xs font-normal" aria-label="Search components">
+            <SearchField className="font-normal sm:max-w-2xs" aria-label="Search components">
               <InputGroup>
                 <MagnifyingGlassIcon />
-                <Input ref={inputRef as any} placeholder="Search components" />
+                <Input
+                  className="bg-overlay"
+                  ref={inputRef as any}
+                  placeholder="Search components"
+                />
                 <Keyboard>f</Keyboard>
               </InputGroup>
             </SearchField>

@@ -3,11 +3,7 @@ import { ListComponents } from "@/app/(app)/components/(partials)/list-component
 import { siteConfig } from "@/config/site"
 
 export default function Page() {
-  return (
-    <>
-      <ListComponents />
-    </>
-  )
+  return <ListComponents />
 }
 
 export const metadata: Metadata = {
