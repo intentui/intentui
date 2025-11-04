@@ -5,11 +5,12 @@ import Image from "next/image"
 import { useTheme } from "next-themes"
 import { useEffect, useRef, useState } from "react"
 import { Autocomplete, GridList, GridListItem, useFilter } from "react-aria-components"
-import { Header } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
+import { Heading } from "@/components/ui/heading"
 import { Input, InputGroup } from "@/components/ui/input"
 import { Keyboard } from "@/components/ui/keyboard"
 import { SearchField } from "@/components/ui/search-field"
+import { Text } from "@/components/ui/text"
 import menus from "@/components-search.json"
 
 const components = menus[3]
@@ -51,20 +52,37 @@ export function ListComponents() {
 
   return (
     <Autocomplete filter={contains}>
-      <Header className="border-fg/10 border-b bg-overlay">
-        Components
-        <SearchField className="mt-6 max-w-2xs font-normal" aria-label="Search components">
-          <InputGroup>
-            <MagnifyingGlassIcon />
-            <Input ref={inputRef as HTMLInputElement} placeholder="Search components" />
-            <Keyboard>f</Keyboard>
-          </InputGroup>
-        </SearchField>
-      </Header>
+      <div className="border-fg/10 border-b bg-overlay py-6 lg:py-10">
+        <PageContainer>
+          <div className="flex flex-col items-center justify-between md:flex-row">
+            <div>
+              <Heading level={1} className="text-2xl sm:text-3xl">
+                Components
+              </Heading>
+              <Text className="mt-2 max-w-lg text-muted-fg sm:text-base/6">
+                Explore{" "}
+                <strong className="font-medium text-fg">80+ accessible UI components</strong>{" "}
+                powered by react aria components, easy to customize and ready for production.
+              </Text>
+            </div>
+            <SearchField className="max-w-2xs font-normal" aria-label="Search components">
+              <InputGroup>
+                <MagnifyingGlassIcon />
+                <Input ref={inputRef as any} placeholder="Search components" />
+                <Keyboard>f</Keyboard>
+              </InputGroup>
+            </SearchField>
+          </div>
+        </PageContainer>
+      </div>
 
       <div className="bg-muted py-6 sm:py-12">
         <PageContainer>
-          <GridList layout="grid" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <GridList
+            aria-label="Components"
+            layout="grid"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
             {allChildren.map((item: any) => {
               const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""
               const suffix = mounted && resolvedTheme === "dark" ? "-dark" : ""
@@ -82,7 +100,7 @@ export function ListComponents() {
                     src={`/images/thumbnails/${name}${suffix}.png`}
                     alt={item.title}
                   />
-                  <span className="text-sm/6">{item.title}</span>
+                  <span className="font-medium text-sm/6">{item.title}</span>
                 </GridListItem>
               )
             })}

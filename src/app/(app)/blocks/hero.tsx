@@ -10,8 +10,7 @@ export function Hero() {
     <div className="border-b py-6 sm:py-12">
       <PageContainer>
         <Heading level={1} className="text-2xl sm:text-3xl">
-          Blo
-          <span className="text-muted-fg">cks</span>
+          Blocks
         </Heading>
         <div className="mt-6">
           <a

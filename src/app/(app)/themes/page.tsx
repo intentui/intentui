@@ -7,10 +7,7 @@ import { ThemeContainer } from "./partials/theme-container"
 export default function Page() {
   return (
     <div>
-      <Header>
-        <span className="text-fg">Them</span>
-        <span className="text-muted-fg">es</span>
-      </Header>
+      <Header>Themes</Header>
       <ThemeContainer />
     </div>
   )
