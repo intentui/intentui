@@ -85,7 +85,7 @@ export function ListComponents() {
           <GridList
             aria-label="Components"
             layout="grid"
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4"
           >
             {allChildren.map((item: any) => {
               const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""
