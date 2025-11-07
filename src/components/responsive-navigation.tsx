@@ -1,7 +1,18 @@
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
-import type { LinkProps, PopoverProps } from "react-aria-components"
-import { DialogTrigger, Link, Popover } from "react-aria-components"
+import {
+  Autocomplete,
+  Header,
+  Link,
+  Menu,
+  MenuItem,
+  type MenuItemProps,
+  MenuSection,
+  MenuTrigger,
+  Popover,
+  type PopoverProps,
+  useFilter,
+} from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { menus } from "@/app/(home)/partials/navbar"
 import { components, dm, gs, prologue, sortedGsChildren } from "@/components/aside"
@@ -10,6 +21,7 @@ import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Button, buttonStyles } from "@/components/ui/button"
+import { SearchField, SearchInput } from "@/components/ui/search-field"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/config/site"
 import { cx } from "@/lib/primitive"
@@ -19,6 +31,8 @@ interface ResponsiveNavigationProps {
   popover?: Pick<PopoverProps, "className">
 }
 export function ResponsiveNavigation({ className, popover }: ResponsiveNavigationProps) {
+  const { contains } = useFilter({ sensitivity: "base" })
+
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
@@ -33,15 +47,15 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
       )}
     >
       <div className="flex items-center gap-x-2">
-        <DialogTrigger>
+        <MenuTrigger>
           <Button
             size="sq-sm"
             onPress={() => setOpen((p) => !p)}
             intent="plain"
             className="pressed:bg-transparent outline-hidden"
           >
-            <div className="relative flex h-8 w-(--width) items-center justify-center [--width:--spacing(4.5)]">
-              <div className="relative size-(--width)">
+            <span className="relative flex h-8 w-(--width) items-center justify-center [--width:--spacing(4.5)]">
+              <span className="relative size-(--width)">
                 <span
                   className={twJoin(
                     "absolute left-0 block h-0.5 w-(--width) bg-fg transition-all duration-100",
@@ -54,9 +68,9 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                     open ? "top-[0.4rem] rotate-45" : "top-[--spacing(2.6)]",
                   )}
                 />
-              </div>
+              </span>
               <span className="sr-only">Toggle Menu</span>
-            </div>
+            </span>
           </Button>
           <Popover
             placement="bottom"
@@ -64,66 +78,86 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
             onOpenChange={setOpen}
             isOpen={open}
             className={cx(
-              "placement-bottom:entering:slide-in-from-top-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]",
-              "entering:fade-in entering:animate-in",
-              "exiting:fade-out exiting:animate-out",
-              "placement-bottom:entering:slide-in-from-top-1",
-              "placement-bottom:exiting:slide-out-to-top-1",
-              "relative z-50 flex w-full flex-col gap-y-8 px-2 py-(--gap)",
+              "-mt-1 placement-bottom:entering:slide-in-from-top-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]",
+              "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
+              "slide-out-to-top-1 slide-in-from-top-1",
               popover?.className,
             )}
             containerPadding={0}
           >
-            <div>
-              <NavHeading>Menu</NavHeading>
-              <div>
-                <NavLink href="/">Home</NavLink>
-                {menus.map((menu) => (
-                  <NavLink key={menu.href} href={menu.href}>
-                    {menu.label}
-                  </NavLink>
-                ))}
-                <NavLink href="/blog">Blog</NavLink>
+            <Autocomplete filter={contains}>
+              <div className="sticky top-0 h-16 bg-linear-to-b from-bg via-bg pt-2">
+                <SearchField autoFocus aria-label="Search...">
+                  <SearchInput
+                    className="bg-muted focus:border-input focus:ring-0 focus:enabled:hover:border-input"
+                    placeholder="Search&hellip;"
+                  />
+                </SearchField>
               </div>
-            </div>
-            <div>
-              <NavHeading>{prologue?.section}</NavHeading>
-              {prologue?.children?.map((item) => (
-                <NavLink key={item.slug} href={item.slug}>
-                  {item.title}
-                </NavLink>
-              ))}
-            </div>
-            <div>
-              <NavHeading>{gs?.section}</NavHeading>
-              {sortedGsChildren.map((item) => (
-                <NavLink key={item.slug} href={item.slug}>
-                  {item.title}
-                </NavLink>
-              ))}
-            </div>
-            <div>
-              <NavHeading>{dm?.section}</NavHeading>
-              {dm?.children?.map((item) => (
-                <NavLink key={item.slug} href={item.slug}>
-                  {item.title}
-                </NavLink>
-              ))}
-            </div>
-            <div className="flex flex-col gap-y-8">
-              {components?.children?.map((item) => (
-                <div key={item.subsection}>
-                  <NavHeading>{item?.subsection}</NavHeading>
-                  {item?.children?.map((item) => (
+              <Menu className="outline-hidden">
+                <MenuSection>
+                  <NavHeading>Pages</NavHeading>
+                  <NavLink href="/">Home</NavLink>
+                  {menus.map((menu) => (
+                    <NavLink key={menu.href} href={menu.href}>
+                      {menu.label}
+                    </NavLink>
+                  ))}
+                  <NavLink href="/blog">Blog</NavLink>
+                </MenuSection>
+                <MenuSection>
+                  <NavHeading>{prologue?.section}</NavHeading>
+                  {prologue?.children?.map((item) => (
                     <NavLink key={item.slug} href={item.slug}>
                       {item.title}
                     </NavLink>
                   ))}
-                </div>
-              ))}
-            </div>
+                </MenuSection>
+                <MenuSection>
+                  <NavHeading>{gs?.section}</NavHeading>
+                  {sortedGsChildren.map((item) => (
+                    <NavLink
+                      textValue={`${gs?.section} ${item.title} ${item.slug.replaceAll("-", "")} ${item.slug}`}
+                      key={item.slug}
+                      href={item.slug}
+                    >
+                      {item.title}
+                    </NavLink>
+                  ))}
+                </MenuSection>
+                <MenuSection>
+                  <NavHeading>{dm?.section}</NavHeading>
+                  {dm?.children?.map((item) => (
+                    <NavLink
+                      textValue={`${dm?.section} ${item.title} ${item.slug.replaceAll("-", "")} ${item.slug}`}
+                      key={item.slug}
+                      href={item.slug}
+                    >
+                      {item.title}
+                    </NavLink>
+                  ))}
+                </MenuSection>
+                {components?.children?.map((item) => (
+                  <MenuSection
+                    aria-label={item?.subsection}
+                    className="flex flex-col gap-y-1"
+                    key={item.subsection}
+                  >
+                    {item?.children?.map((child) => (
+                      <NavLink
+                        textValue={`${item?.subsection} ${child.title} ${child.slug.replaceAll("-", "")} ${child.slug}`}
+                        key={child.slug}
+                        href={child.slug}
+                      >
+                        {child.title}
+                      </NavLink>
+                    ))}
+                  </MenuSection>
+                ))}
+              </Menu>
+            </Autocomplete>
           </Popover>
-        </DialogTrigger>
+        </MenuTrigger>
         <Separator orientation="vertical" className="mr-1 h-4" />
         <Link href="/" className="font-semibold text-base text-fg">
           Intent <span className="text-muted-fg">UI</span>
@@ -159,7 +193,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
   )
 }
 
-interface NavLinkProps extends LinkProps {
+interface NavLinkProps extends MenuItemProps {
   isActive?: boolean
   href: string
 }
@@ -178,7 +212,7 @@ function NavLink({ href, ...props }: NavLinkProps) {
   }, [isActive])
 
   return (
-    <Link
+    <MenuItem
       {...props}
       href={href}
       ref={ref}
@@ -199,5 +233,5 @@ function NavLink({ href, ...props }: NavLinkProps) {
 }
 
 function NavHeading({ children }: { children: React.ReactNode }) {
-  return <div className="mb-2 px-2 font-medium text-muted-fg text-sm/6">{children}</div>
+  return <Header className="mt-6 mb-2 px-2 font-medium text-muted-fg text-sm/6">{children}</Header>
 }

@@ -148,10 +148,10 @@ const DropdownDescription = ({ className, ref, ...props }: DropdownDescriptionPr
   />
 )
 
-const DropdownSeparator = ({ className, ...props }: Omit<SeparatorProps, 'orientation'>) => (
+const DropdownSeparator = ({ className, ...props }: Omit<SeparatorProps, "orientation">) => (
   <Separator
     orientation="horizontal"
-    className={twMerge("-mx-1 col-span-full my-1 h-px bg-fg/10", className)}
+    className={twMerge("-mx-1 col-span-full h-px bg-fg/10", className)}
     {...props}
   />
 )

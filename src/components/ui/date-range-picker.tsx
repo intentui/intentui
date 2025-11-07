@@ -54,10 +54,9 @@ export function DateRangePickerTrigger({
     <InputGroup
       className={cx(
         "flex items-center rounded-lg",
-        "border border-input hover:border-muted-fg/30",
-        "focus-within:border-ring/70 focus-within:bg-primary-subtle/5 focus-within:outline-hidden focus-within:ring-3 focus-within:ring-ring/20 focus-within:hover:border-ring/80",
-        "invalid:border-danger-subtle-fg/70 invalid:bg-danger-subtle/5 focus-within:invalid:border-danger-subtle-fg/70 focus-within:invalid:bg-danger-subtle/5 focus-within:invalid:ring-danger-subtle-fg/20 invalid:hover:border-danger-subtle-fg/80 focus-within:invalid:hover:border-danger-subtle-fg/80",
-        "disabled:bg-muted disabled:opacity-50",
+        "border border-input enabled:hover:border-muted-fg/30",
+        "focus-within:border-ring/70 focus-within:outline-hidden focus-within:ring-3 focus-within:ring-ring/20 focus-within:enabled:hover:border-ring/80",
+        "invalid:border-danger-subtle-fg/70 focus-within:invalid:border-danger-subtle-fg/70 focus-within:invalid:ring-danger-subtle-fg/20 invalid:hover:border-danger-subtle-fg/80 focus-within:invalid:hover:border-danger-subtle-fg/80",
         className,
       )}
       {...props}

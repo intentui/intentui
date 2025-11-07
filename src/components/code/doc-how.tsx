@@ -113,7 +113,7 @@ export const DocHow = ({
         {currentTab === "tab_preview" ? (
           <div
             className={twMerge(
-              "overflow-y-auto py-6",
+              "overflow-y-auto p-4 sm:p-8",
               !withNoPadding
                 ? [
                     "relative gap-4 rounded-lg border bg-overlay",
@@ -121,7 +121,7 @@ export const DocHow = ({
                     "border border-muted-fg/40",
                     "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
                   ]
-                : "py-6 sm:py-24",
+                : "sm:py-24",
             )}
           >
             <div className={twMerge(isCenter && "flex items-center justify-center")}>

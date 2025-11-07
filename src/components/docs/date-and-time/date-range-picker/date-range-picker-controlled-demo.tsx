@@ -6,6 +6,7 @@ import { useState } from "react"
 
 import { DateRangePicker, DateRangePickerTrigger } from "@/components/ui/date-range-picker"
 import { Label } from "@/components/ui/field"
+import { Text } from "@/components/ui/text"
 
 export default function DateRangePickerControlledDemo() {
   const now = today(getLocalTimeZone())
@@ -18,19 +19,17 @@ export default function DateRangePickerControlledDemo() {
   })
 
   return (
-    <div className="space-y-3">
-      <div className="divide-y [&_p]:py-2">
-        <p>
-          {value
-            ? `${formatter.format(value.start.toDate(getLocalTimeZone()))} to ${formatter.format(value.end.toDate(getLocalTimeZone()))}`
-            : "-- to --"}
-        </p>
-        <p>{value ? `${value.start.toString()} to ${value.end.toString()}` : "-- to --"}</p>
-      </div>
+    <span data-slot="layout">
+      <Text>
+        {value
+          ? `${formatter.format(value.start.toDate(getLocalTimeZone()))} to ${formatter.format(value.end.toDate(getLocalTimeZone()))}`
+          : "-- to --"}
+      </Text>
+      <Text>{value ? `${value.start.toString()} to ${value.end.toString()}` : "-- to --"}</Text>
       <DateRangePicker value={value} onChange={(newValue) => setValue(newValue!)}>
         <Label>Event date</Label>
         <DateRangePickerTrigger />
       </DateRangePicker>
-    </div>
+    </span>
   )
 }

@@ -19,7 +19,7 @@ export default function DateRangePickerCustomValidationDemo() {
         }}
         className="mb-2"
       >
-        <Label>Room Booking Dates</Label>
+        <Label>Room booking</Label>
         <DateRangePickerTrigger />
         <FieldError />
       </DateRangePicker>
