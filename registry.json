@@ -61,7 +61,15 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)"
+          "color-chart-5": "var(--chart-5)",
+          "radius-xs": "var(--radius-xs)",
+          "radius-sm": "var(--radius-sm)",
+          "radius-md": "var(--radius-md)",
+          "radius-lg": "var(--radius-lg)",
+          "radius-xl": "var(--radius-xl)",
+          "radius-2xl": "var(--radius-2xl)",
+          "radius-3xl": "var(--radius-3xl)",
+          "radius-4xl": "var(--radius-4xl)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -271,7 +279,15 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)"
+          "color-chart-5": "var(--chart-5)",
+          "radius-xs": "var(--radius-xs)",
+          "radius-sm": "var(--radius-sm)",
+          "radius-md": "var(--radius-md)",
+          "radius-lg": "var(--radius-lg)",
+          "radius-xl": "var(--radius-xl)",
+          "radius-2xl": "var(--radius-2xl)",
+          "radius-3xl": "var(--radius-3xl)",
+          "radius-4xl": "var(--radius-4xl)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -434,7 +450,15 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)"
+          "color-chart-5": "var(--chart-5)",
+          "radius-xs": "var(--radius-xs)",
+          "radius-sm": "var(--radius-sm)",
+          "radius-md": "var(--radius-md)",
+          "radius-lg": "var(--radius-lg)",
+          "radius-xl": "var(--radius-xl)",
+          "radius-2xl": "var(--radius-2xl)",
+          "radius-3xl": "var(--radius-3xl)",
+          "radius-4xl": "var(--radius-4xl)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -597,7 +621,15 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)"
+          "color-chart-5": "var(--chart-5)",
+          "radius-xs": "var(--radius-xs)",
+          "radius-sm": "var(--radius-sm)",
+          "radius-md": "var(--radius-md)",
+          "radius-lg": "var(--radius-lg)",
+          "radius-xl": "var(--radius-xl)",
+          "radius-2xl": "var(--radius-2xl)",
+          "radius-3xl": "var(--radius-3xl)",
+          "radius-4xl": "var(--radius-4xl)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -760,7 +792,15 @@
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
-          "color-chart-5": "var(--chart-5)"
+          "color-chart-5": "var(--chart-5)",
+          "radius-xs": "var(--radius-xs)",
+          "radius-sm": "var(--radius-sm)",
+          "radius-md": "var(--radius-md)",
+          "radius-lg": "var(--radius-lg)",
+          "radius-xl": "var(--radius-xl)",
+          "radius-2xl": "var(--radius-2xl)",
+          "radius-3xl": "var(--radius-3xl)",
+          "radius-4xl": "var(--radius-4xl)"
         },
         "light": {
           "bg": "oklch(1 0 0)",
@@ -1054,6 +1094,9 @@
       "dependencies": [
         "react-aria-components",
         "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/link"
       ],
       "files": [
         {
@@ -7272,24 +7315,6 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "toolbar-demo2",
-      "type": "registry:page",
-      "title": "Toolbar Demo2",
-      "description": "toolbar-demo2",
-      "registryDependencies": [
-        "http://localhost:3000/r/toolbar"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/controls/toolbar/toolbar-demo2.tsx",
-          "type": "registry:page",
-          "target": "app/toolbar-demo2/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
       "name": "option-preview",
       "type": "registry:page",
       "title": "Option Preview",
@@ -10710,7 +10735,8 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/date-range-picker",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/text"
       ],
       "files": [
         {
