@@ -32,6 +32,7 @@ export const fieldStyles = tv({
     "[&>[data-slot=control]+[slot=description]]:mt-2",
     "[&>[data-slot=control]+[slot=errorMessage]]:mt-2",
     "*:data-[slot=label]:font-medium",
+    "in-disabled:opacity-50 disabled:opacity-50",
   ],
 })
 
