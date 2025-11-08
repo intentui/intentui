@@ -77,7 +77,7 @@ interface MenuContentProps<T>
 }
 
 const menuContentStyles = tv({
-  base: "grid max-h-[inherit] grid-cols-[auto_1fr] gap-y-1 overflow-y-auto overflow-x-hidden overscroll-contain p-1 outline-hidden [clip-path:inset(0_0_0_0_round_calc(var(--radius-xl)-(--spacing(1))))] *:[[role='group']+[role=group]]:mt-1 *:[[role='group']+[role=separator]]:mt-1",
+  base: "grid max-h-[inherit] grid-cols-[auto_1fr] gap-y-1 overflow-y-auto overflow-x-hidden overscroll-contain p-1 outline-hidden [clip-path:inset(0_0_0_0_round_calc(var(--radius-xl)-(--spacing(1))))] *:[[role='group']+[role=group]]:mt-3",
 })
 
 const MenuContent = <T extends object>({
@@ -177,11 +177,16 @@ interface MenuSectionProps<T> extends MenuSectionPrimitiveProps<T> {
   label?: string
 }
 
-const MenuSection = <T extends object>({ className, ref, ...props }: MenuSectionProps<T>) => {
+const MenuSection = <T extends object>({
+  className,
+  children,
+  ref,
+  ...props
+}: MenuSectionProps<T>) => {
   return (
     <MenuSectionPrimitive ref={ref} className={section({ className })} {...props}>
       {"label" in props && <Header className={header()}>{props.label}</Header>}
-      <Collection items={props.items}>{props.children}</Collection>
+      <Collection items={props.items}>{children}</Collection>
     </MenuSectionPrimitive>
   )
 }

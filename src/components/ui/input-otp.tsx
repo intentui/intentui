@@ -15,8 +15,10 @@ export function InputOTP({
     <span data-slot="control" className="relative block">
       <OTPInput
         data-slot="input-otp"
-        containerClassName={twMerge(fieldStyles(), containerClassName)}
-        className={twMerge("disabled:cursor-not-allowed", className)}
+        containerClassName={twMerge(
+          fieldStyles({ className: "has-[:disabled]:opacity-50" }),
+          containerClassName,
+        )}
         {...props}
       />
     </span>
@@ -35,7 +37,7 @@ export function InputOTPControl({ className, ...props }: React.ComponentProps<"s
 
 export function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <span
+    <div
       data-slot="input-otp-group"
       className={twMerge("flex items-center", className)}
       {...props}
