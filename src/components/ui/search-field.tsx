@@ -11,6 +11,7 @@ import { Input, InputGroup } from "./input"
 export function SearchField({ className, ...props }: SearchFieldProps) {
   return (
     <SearchFieldPrimitive
+      data-slot="control"
       {...props}
       aria-label={props["aria-label"] ?? "Search"}
       className={cx(fieldStyles({ className: "group/search-field" }), className)}
@@ -21,7 +22,7 @@ export function SearchField({ className, ...props }: SearchFieldProps) {
 export function SearchInput(props: InputProps) {
   return (
     <InputGroup className="[--input-gutter-end:--spacing(8)]">
-      <MagnifyingGlassIcon />
+      <MagnifyingGlassIcon className="in-disabled:opacity-50" />
       <Input {...props} />
       <Button
         className={twJoin(
