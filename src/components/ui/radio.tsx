@@ -54,7 +54,7 @@ export function Radio({ className, children, ...props }: RadioProps) {
                   "group-invalid:inset-ring-danger-subtle-fg/70 group-invalid:text-danger-fg group-invalid:ring-danger-subtle-fg/20",
                 ],
                 isInvalid &&
-                  "inset-ring-danger-subtle-fg/70 bg-danger-subtle/5 text-danger-fg ring-danger-subtle-fg/20",
+                  "inset-ring-danger-subtle-fg/70 text-danger-fg ring-danger-subtle-fg/20",
               ])}
             />
             {content}

@@ -71,7 +71,7 @@ export function Checkbox({ className, children, ...props }: CheckboxProps) {
                     "group-invalid:inset-ring-danger-subtle-fg/70 group-invalid:text-danger-fg group-invalid:ring-danger-subtle-fg/20",
                   ],
                   isInvalid &&
-                    "inset-ring-danger-subtle-fg/70 bg-danger-subtle/5 text-danger-fg ring-danger-subtle-fg/20 group-hover:inset-ring-danger-subtle-fg/70",
+                    "inset-ring-danger-subtle-fg/70 text-danger-fg ring-danger-subtle-fg/20 group-hover:inset-ring-danger-subtle-fg/70",
                 ])}
               >
                 {indicator}
