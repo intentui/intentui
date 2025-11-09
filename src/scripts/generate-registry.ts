@@ -9,6 +9,13 @@ import { baseTheme } from "@/scripts/styles/base-theme";
 import { defaultDark, defaultLight } from "@/scripts/styles/default";
 import { blueDark, blueLight } from "@/scripts/styles/blue";
 import { skyDark, skyLight } from "@/scripts/styles/sky";
+import { tealDark, tealLight } from "@/scripts/styles/teal";
+import { purpleDark, purpleLight } from "@/scripts/styles/purple";
+import { pinkDark, pinkLight } from "@/scripts/styles/pink";
+import { roseDark, roseLight } from "@/scripts/styles/rose";
+import { greenDark, greenLight } from "@/scripts/styles/green";
+import { limeDark, limeLight } from "@/scripts/styles/lime";
+import { cyanDark, cyanLight } from "@/scripts/styles/cyan";
 import { indigoDark, indigoLight } from "@/scripts/styles/indigo";
 import { emeraldDark, emeraldLight } from "@/scripts/styles/emerald";
 import { makeRegistry } from "@/scripts/make-registry";
@@ -81,6 +88,13 @@ const themeDefs = [
   ["theme-sky", skyLight, skyDark],
   ["theme-indigo", indigoLight, indigoDark],
   ["theme-emerald", emeraldLight, emeraldDark],
+  ["theme-teal", tealLight, tealDark],
+  ["theme-purple", purpleLight, purpleDark],
+  ["theme-pink", pinkLight, pinkDark],
+  ["theme-rose", roseLight, roseDark],
+  ["theme-green", greenLight, greenDark],
+  ["theme-lime", limeLight, limeDark],
+  ["theme-cyan", cyanLight, cyanDark],
 ]
 
 type Token = Record<string, string>
