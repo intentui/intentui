@@ -1,7 +1,6 @@
 "use client"
 
 import { XMarkIcon } from "@heroicons/react/24/solid"
-import { useEffect, useRef } from "react"
 import type { HeadingProps, TextProps } from "react-aria-components"
 import {
   Heading,
@@ -22,7 +21,7 @@ const Dialog = ({
       data-slot="dialog"
       role={role}
       className={twMerge(
-        "peer/dialog group/dialog relative flex max-h-[inherit] flex-col overflow-hidden outline-hidden [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]",
+        "peer/dialog group/dialog relative flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding))] flex-col overflow-hidden outline-hidden [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]",
         className,
       )}
       {...props}
@@ -40,31 +39,9 @@ interface DialogHeaderProps extends Omit<React.ComponentProps<"div">, "title"> {
 }
 
 const DialogHeader = ({ className, ...props }: DialogHeaderProps) => {
-  const headerRef = useRef<HTMLHeadingElement>(null)
-
-  useEffect(() => {
-    const header = headerRef.current
-    if (!header) {
-      return
-    }
-
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        header.parentElement?.style.setProperty(
-          "--dialog-header-height",
-          `${entry.target.clientHeight}px`,
-        )
-      }
-    })
-
-    observer.observe(header)
-    return () => observer.unobserve(header)
-  }, [])
-
   return (
     <div
       data-slot="dialog-header"
-      ref={headerRef}
       className={twMerge(
         "relative space-y-1 p-(--gutter) pb-[calc(var(--gutter)---spacing(3))]",
         className,
@@ -73,7 +50,7 @@ const DialogHeader = ({ className, ...props }: DialogHeaderProps) => {
       {props.title && <DialogTitle>{props.title}</DialogTitle>}
       {props.description && <DialogDescription>{props.description}</DialogDescription>}
       {!props.title && typeof props.children === "string" ? (
-        <DialogTitle {...props} />
+        <DialogTitle>{props.children}</DialogTitle>
       ) : (
         props.children
       )}
@@ -109,12 +86,11 @@ const DialogDescription = ({ className, ref, ...props }: DialogDescriptionProps)
 )
 
 interface DialogBodyProps extends React.ComponentProps<"div"> {}
-const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
+const DialogBody = ({ className, ...props }: DialogBodyProps) => (
   <div
     data-slot="dialog-body"
-    ref={ref}
     className={twMerge(
-      "isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] flex-1 flex-col overflow-auto px-(--gutter) py-1",
+      "isolate flex min-h-0 flex-1 flex-col overflow-auto px-(--gutter) py-1",
       "**:data-[slot=dialog-footer]:px-0 **:data-[slot=dialog-footer]:pt-0",
       className,
     )}
@@ -124,35 +100,11 @@ const DialogBody = ({ className, ref, ...props }: DialogBodyProps) => (
 
 interface DialogFooterProps extends React.ComponentProps<"div"> {}
 const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
-  const footerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const footer = footerRef.current
-
-    if (!footer) {
-      return
-    }
-
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        footer.parentElement?.style.setProperty(
-          "--dialog-footer-height",
-          `${entry.target.clientHeight}px`,
-        )
-      }
-    })
-
-    observer.observe(footer)
-    return () => {
-      observer.unobserve(footer)
-    }
-  }, [])
   return (
     <div
-      ref={footerRef}
       data-slot="dialog-footer"
       className={twMerge(
-        "isolate mt-auto flex flex-col-reverse justify-end gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(3))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row",
+        "isolate mt-auto flex flex-col-reverse justify-end gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(2))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row",
         className,
       )}
       {...props}
