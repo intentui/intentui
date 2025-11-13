@@ -39,21 +39,24 @@ import {
   PopoverTitle,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { Dialog } from "@/components/ui/dialog"
 ```
 
 ```
 <Popover>
   <PopoverTrigger>Open Popover</PopoverTrigger>
   <PopoverContent>
-    <PopoverHeader>
-      <PopoverTitle>Popover Title</PopoverTitle>
-      <PopoverDescription>Popover Description</PopoverDescription>
-    </PopoverHeader>
-    <PopoverBody>Popover Body</PopoverBody>
-    <PopoverFooter>
-      <PopoverClose>Close</PopoverClose>
-      <PopoverClose>Confirm</PopoverClose>
-    </PopoverFooter>
+    <Dialog>
+      <PopoverHeader>
+        <PopoverTitle>Popover Title</PopoverTitle>
+        <PopoverDescription>Popover Description</PopoverDescription>
+      </PopoverHeader>
+      <PopoverBody>Popover Body</PopoverBody>
+      <PopoverFooter>
+        <PopoverClose>Close</PopoverClose>
+        <PopoverClose>Confirm</PopoverClose>
+      </PopoverFooter>
+    </Dialog>
   </PopoverContent>
 </Popover>
 ```
