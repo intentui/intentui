@@ -66,7 +66,7 @@ const ModalContent = ({
       data-slot="modal-overlay"
       isDismissable={isDismissable}
       className={twJoin(
-        "fixed inset-0 z-50 h-(--page-height) bg-black/15",
+        "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) bg-black/15",
         "grid grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_3fr]",
         size === "fullscreen" ? "md:p-3" : "md:p-4",
         "entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
@@ -81,11 +81,12 @@ const ModalContent = ({
           "row-start-2 w-full text-left align-middle",
           "[--visual-viewport-vertical-padding:16px]",
           size === "fullscreen"
-            ? "sm:rounded-md sm:[--visual-viewport-vertical-padding:16px]"
+            ? "**:data-[slot=dialog-body]:min-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))] sm:rounded-md sm:[--visual-viewport-vertical-padding:16px]"
             : "sm:rounded-xl sm:[--visual-viewport-vertical-padding:32px]",
           "relative overflow-hidden bg-overlay text-overlay-fg",
           "rounded-t-2xl shadow-lg ring ring-fg/5 dark:ring-border",
           sizes[size],
+
           "entering:slide-in-from-bottom sm:entering:zoom-in-95 sm:entering:slide-in-from-bottom-0 entering:animate-in entering:duration-300 entering:ease-out",
           "exiting:slide-out-to-bottom sm:exiting:zoom-out-95 sm:exiting:slide-out-to-bottom-0 exiting:animate-out exiting:ease-in",
           className,
