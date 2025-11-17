@@ -48,16 +48,16 @@ interface ModalContentProps
 }
 
 const ModalContent = ({
-                        className,
-                        isDismissable: isDismissableInternal,
-                        isBlurred = false,
-                        children,
-                        overlay,
-                        size = "lg",
-                        role = "dialog",
-                        closeButton = true,
-                        ...props
-                      }: ModalContentProps) => {
+  className,
+  isDismissable: isDismissableInternal,
+  isBlurred = false,
+  children,
+  overlay,
+  size = "lg",
+  role = "dialog",
+  closeButton = true,
+  ...props
+}: ModalContentProps) => {
   const isDismissable = isDismissableInternal ?? role !== "alertdialog"
 
   return (
