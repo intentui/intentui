@@ -18,7 +18,6 @@ export const makeRegistry = () => {
 
   const sources = [
     { type: "ui", path: "src/components/ui" },
-    { type: "anatomies", path: "src/components/docs/anatomies" },
     { type: "demo", path: "src/components/docs" },
     { type: "pre-blocks", path: "src/app/pre-blocks" },
   ]
