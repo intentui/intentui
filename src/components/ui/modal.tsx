@@ -39,26 +39,25 @@ const sizes = {
 }
 
 interface ModalContentProps
-  extends Omit<ModalOverlayProps, "className" | "children">,
+  extends Omit<ModalOverlayProps, "children">,
     Pick<DialogProps, "aria-label" | "aria-labelledby" | "role" | "children"> {
   size?: keyof typeof sizes
   closeButton?: boolean
   isBlurred?: boolean
-  className?: ModalOverlayProps["className"]
   overlay?: Omit<ModalOverlayProps, "children">
 }
 
 const ModalContent = ({
-  className,
-  isDismissable: isDismissableInternal,
-  isBlurred = false,
-  children,
-  overlay,
-  size = "lg",
-  role = "dialog",
-  closeButton = true,
-  ...props
-}: ModalContentProps) => {
+                        className,
+                        isDismissable: isDismissableInternal,
+                        isBlurred = false,
+                        children,
+                        overlay,
+                        size = "lg",
+                        role = "dialog",
+                        closeButton = true,
+                        ...props
+                      }: ModalContentProps) => {
   const isDismissable = isDismissableInternal ?? role !== "alertdialog"
 
   return (
@@ -86,7 +85,6 @@ const ModalContent = ({
           "relative overflow-hidden bg-overlay text-overlay-fg",
           "rounded-t-2xl shadow-lg ring ring-fg/5 dark:ring-border",
           sizes[size],
-
           "entering:slide-in-from-bottom sm:entering:zoom-in-95 sm:entering:slide-in-from-bottom-0 entering:animate-in entering:duration-300 entering:ease-out",
           "exiting:slide-out-to-bottom sm:exiting:zoom-out-95 sm:exiting:slide-out-to-bottom-0 exiting:animate-out exiting:ease-in",
           className,
