@@ -1,5 +1,5 @@
-import type React from "react"
-
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Providers } from "@/components/providers"
 import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import "@/styles/app.css"
@@ -154,6 +154,8 @@ export default function RootLayout({ children }: Readonly<Props>) {
         <Providers>
           <Toast />
           <main>{children}</main>
+          <SpeedInsights />
+          <Analytics />
         </Providers>
       </body>
     </html>
