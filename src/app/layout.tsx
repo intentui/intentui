@@ -154,9 +154,9 @@ export default function RootLayout({ children }: Readonly<Props>) {
         <Providers>
           <Toast />
           <main>{children}</main>
-          <SpeedInsights />
-          <Analytics />
         </Providers>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
