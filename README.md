@@ -12,10 +12,10 @@ Design pages faster than ever with [design.](https://design.intentui.com).
 
 ## Contributing
 
-Make sure to check out the [contributing guide](https://intentui.com/docs/prologue/contribution-guide), and join our awesome list of [contributors](https://github.com/irsyadadl/intentui/graphs/contributors). We can't wait to see what you bring to the table!
+Make sure to check out the [contributing guide](https://intentui.com/docs/prologue/contribution-guide), and join our awesome list of [contributors](https://github.com/intentui/intentui/graphs/contributors). We can't wait to see what you bring to the table!
 
 ## License
-Licensed under the [MIT license](https://github.com/irsyadadl/intentui/blob/main/LICENSE), so feel free to tweak, share, and remix as long as you give the proper shout-out!
+Licensed under the [MIT license](https://github.com/intentui/intentui/blob/main/LICENSE), so feel free to tweak, share, and remix as long as you give the proper shout-out!
 
 <br />
 <br />

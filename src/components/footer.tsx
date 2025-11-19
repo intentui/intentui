@@ -140,7 +140,7 @@ export function Footer() {
             Vercel
           </Link>
           . The source code's got the{" "}
-          <Link href="https://github.com/irsyadadl/intentui/blob/main/LICENSE">MIT</Link> license.
+          <Link href="https://github.com/intentui/intentui/blob/main/LICENSE">MIT</Link> license.
         </p>
       </PageContainer>
     </footer>

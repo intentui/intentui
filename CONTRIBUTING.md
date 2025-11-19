@@ -18,7 +18,7 @@ Quick ask: take a moment to review this doc before submitting your first pull re
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [Intent Code of Conduct](https://github.com/irsyadadl/intentui/blob/main/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [irsyad@parsinta.com](mailto:irsyad@parsinta.com).
+This project and everyone participating in it is governed by the [Intent Code of Conduct](https://github.com/intentui/intentui/blob/main/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [irsyad@parsinta.com](mailto:irsyad@parsinta.com).
 
 ## How to Contribute
 

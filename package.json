@@ -84,7 +84,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/irsyadadl/intentui.git"
+    "url": "git+https://github.com/intentui/intentui.git"
   },
   "trustedDependencies": ["es5-ext", "esbuild", "sharp"],
   "overrides": {

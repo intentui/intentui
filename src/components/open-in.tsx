@@ -106,7 +106,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; 
               <span className="sr-only">Open in</span> Markdown
             </MenuItem>
             <MenuItem
-              href={`https://github.com/irsyadadl/intentui/blob/3.x/src/content${url}.mdx`}
+              href={`https://github.com/intentui/intentui/blob/3.x/src/content${url}.mdx`}
               target="_blank"
               rel="noopener noreferrer"
             >
