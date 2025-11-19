@@ -1,5 +1,6 @@
 "use client"
 
+import { track } from "@vercel/analytics"
 import { useState } from "react"
 import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
@@ -73,7 +74,13 @@ export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullR
         label="Copy"
         copiedLabel="Copied"
         isCopied={copy.code}
-        onCopy={() => handleCopy("code", processedSourceCode as string)}
+        onCopy={() => {
+          const text = processedSourceCode as string
+          handleCopy("code", text)
+          track("copy to clipboard", {
+            text: text,
+          })
+        }}
       />
       {readMore && (
         <Link

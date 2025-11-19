@@ -67,7 +67,9 @@ export const PlainCode = ({
       node.remove()
     }
 
-    track(`copied: ${clone.textContent}`)
+    track("copy to clipboard", {
+      text: clone.textContent,
+    })
     void navigator.clipboard.writeText(clone.textContent ?? "")
   }, [])
   const [checked, onClick] = useCopyButton(onCopy)
