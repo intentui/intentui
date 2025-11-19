@@ -1,5 +1,7 @@
 "use client"
+
 import type { ScrollAreaViewportProps } from "@radix-ui/react-scroll-area"
+import { track } from "@vercel/analytics"
 import { type HTMLAttributes, type ReactNode, useCallback, useRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { CopyButton } from "@/components/code/copy-button"
@@ -65,6 +67,7 @@ export const PlainCode = ({
       node.remove()
     }
 
+    track(`copied: ${clone.textContent}`)
     void navigator.clipboard.writeText(clone.textContent ?? "")
   }, [])
   const [checked, onClick] = useCopyButton(onCopy)
