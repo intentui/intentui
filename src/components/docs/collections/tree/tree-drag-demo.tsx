@@ -185,23 +185,23 @@ interface TreeItemProps extends Partial<TreeItemPrimitiveProps> {
 function TreeItem({ title, children, ...props }: TreeItemProps) {
   return (
     <PrimitiveItem textValue={title} {...props}>
-      <TreeContent className="**:data-[slot=icon]:text-muted-fg">
+      <TreeContent>
         {({ isExpanded, hasChildItems }) => (
           <>
             {hasChildItems ? (
               isExpanded ? (
-                <FolderOpenIcon className="mr-2" />
+                <FolderOpenIcon />
               ) : (
-                <FolderIcon className="mr-2" />
+                <FolderIcon />
               )
             ) : title.endsWith(".fig") ? (
-              <Squares2X2Icon className="mr-2" />
+              <Squares2X2Icon />
             ) : title.endsWith(".mp4") ? (
-              <PlayCircleIcon className="mr-2" />
+              <PlayCircleIcon />
             ) : title.endsWith(".pdf") ? (
-              <DocumentIcon className="mr-2 size-4" />
+              <DocumentIcon />
             ) : (
-              <DocumentTextIcon className="mr-2" />
+              <DocumentTextIcon />
             )}
             {title}
           </>

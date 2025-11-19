@@ -23,7 +23,7 @@ const Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {
       className={cx(
         twJoin(
           "flex cursor-default flex-col gap-y-2 overflow-auto outline-hidden forced-color-adjust-none",
-          "[--tree-active-bg:var(--color-secondary)] [--tree-active-fg:var(--color-secondary-fg)]",
+          "[--tree-active-bg:var(--color-primary-subtle)] [--tree-active-fg:var(--color-primary-subtle-fg)]",
         ),
         className,
       )}
@@ -40,8 +40,9 @@ const TreeItem = <T extends object>({ className, ...props }: TreeItemProps<T>) =
           "shrink-0 rounded-lg px-2 py-1.5 pr-2",
           "group/tree-item relative flex select-none rounded-lg focus:outline-hidden",
           "focus:bg-(--tree-active-bg) focus:text-(--tree-active-fg) focus:**:[.text-muted-fg]:text-(--tree-active-fg)",
-          "**:data-[slot=avatar]:*:mr-1.5 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:mr-(--mr-icon) **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
-          "*:data-[slot=icon]:mr-(--mr-icon) **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 sm:**:data-[slot=icon]:size-4",
+          "**:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
+          "**:data-[slot=icon]:mr-1 **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 sm:**:data-[slot=icon]:size-4",
+          "disabled:opacity-50 forced-colors:[",
           "href" in props ? "cursor-pointer" : "cursor-default",
         ],
         className,
@@ -61,16 +62,16 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
       {(values) => (
         <div
           className={twMerge(
-            "relative flex w-full min-w-0 items-center truncate text-sm/6",
+            "relative flex w-full min-w-0 items-center gap-x-1 truncate text-sm/6",
             className,
           )}
         >
           {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <Checkbox className="mr-2" slot="selection" />
+            <Checkbox className="[--indicator-mt:0] sm:[--indicator-mt:0]" slot="selection" />
           )}
           <div
             className={twJoin(
-              "relative w-[calc(calc(var(--tree-item-level)-1)*calc(var(--spacing)*5.5))] shrink-0",
+              "relative w-[calc(calc(var(--tree-item-level)-1)*calc(var(--spacing)*5))] shrink-0",
               "before:-ms-1 before:absolute before:inset-0 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-item-level)-1px),var(--border)_calc(var(--tree-item-level)-1px),var(--border)_calc(var(--tree-item-level)))]",
             )}
           />
@@ -82,7 +83,7 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
               }}
             />
           ) : (
-            <span className="block size-5 shrink-0" />
+            <span aria-hidden className="block w-5 shrink-0" />
           )}
           {typeof children === "function" ? children(values) : children}
         </div>
@@ -101,13 +102,14 @@ const TreeIndicator = ({
       slot="chevron"
       isDisabled={values.isDisabled}
       className={twJoin(
-        "size-5 shrink-0 content-center text-muted-fg hover:text-fg",
+        "shrink-0 content-center text-muted-fg hover:text-fg",
         values.isExpanded && "text-fg",
       )}
     >
       <ChevronRightIcon
+        data-slot="chevron"
         className={twJoin(
-          "size-5 transition-transform duration-200 ease-in-out",
+          "size-4 transition-transform duration-200 ease-in-out sm:size-5",
           values.isExpanded && "rotate-90",
         )}
       />

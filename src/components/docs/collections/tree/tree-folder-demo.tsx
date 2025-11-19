@@ -183,23 +183,23 @@ function renderTree(nodes: FileNode[], path: string[] = []) {
     const currentPath = [...path, node.id].join("/")
     return (
       <TreeItem key={currentPath} id={currentPath} textValue={node.name}>
-        <TreeContent className="**:data-[slot=icon]:text-muted-fg">
+        <TreeContent>
           {({ isExpanded, hasChildItems }) => (
             <>
               {hasChildItems ? (
                 isExpanded ? (
-                  <FolderOpenIcon className="mr-2" />
+                  <FolderOpenIcon />
                 ) : (
-                  <FolderIcon className="mr-2" />
+                  <FolderIcon />
                 )
               ) : node.name.endsWith(".fig") ? (
-                <Squares2X2Icon className="mr-2" />
+                <Squares2X2Icon />
               ) : node.name.endsWith(".mp4") ? (
-                <PlayCircleIcon className="mr-2" />
+                <PlayCircleIcon />
               ) : node.name.endsWith(".pdf") ? (
-                <DocumentIcon className="mr-2 size-4" />
+                <DocumentIcon />
               ) : (
-                <DocumentTextIcon className="mr-2" />
+                <DocumentTextIcon />
               )}
               {node.name}
             </>
