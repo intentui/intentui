@@ -185,7 +185,7 @@ interface TreeItemProps extends Partial<TreeItemPrimitiveProps> {
 function TreeItem({ title, children, ...props }: TreeItemProps) {
   return (
     <PrimitiveItem textValue={title} {...props}>
-      <TreeContent className="**:data-[slot=icon]:text-muted-fg">
+      <TreeContent>
         {({ isExpanded, hasChildItems }) => (
           <>
             {hasChildItems ? (

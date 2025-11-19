@@ -183,7 +183,7 @@ function renderTree(nodes: FileNode[], path: string[] = []) {
     const currentPath = [...path, node.id].join("/")
     return (
       <TreeItem key={currentPath} id={currentPath} textValue={node.name}>
-        <TreeContent className="**:data-[slot=icon]:text-muted-fg">
+        <TreeContent>
           {({ isExpanded, hasChildItems }) => (
             <>
               {hasChildItems ? (
