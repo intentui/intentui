@@ -18,7 +18,8 @@ export function Ads({ className }: { className?: string }) {
       </span>
       <div className="mb-1 block text-pretty text-[0.83rem]/5 text-muted-fg">
         Build modern web apps faster with{" "}
-        <strong className="font-semibold text-fg">500+ blocks</strong> and polished{" "}
+        <strong className="font-semibold text-fg">500+ blocks</strong>,
+        <strong className="font-semibold text-fg">patterns</strong> and polished{" "}
         <strong className="font-semibold text-fg">templates</strong> crafted for you.
       </div>
     </a>

@@ -46,7 +46,7 @@ export function Aside() {
             </Badge>
           </AsideLink>
           <AsideLink target="_blank" href="https://design.intentui.com/blocks">
-            Components & Blocks{" "}
+            Patterns & Blocks{" "}
             <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
               Pro
             </Badge>
