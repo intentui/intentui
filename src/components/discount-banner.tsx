@@ -14,7 +14,7 @@ export function AppDiscountBanner() {
     <a
       href="https://design.intentui.com/pricing?utm_source=intentui.com&utm_medium=referral&utm_campaign=alert-black-friday-2025"
       target="blank"
-      className="relative mb-1.5 block w-full cursor-pointer border-fg/10 border-b bg-blue-600 px-4 py-3 text-center font-medium text-white text-xs sm:text-sm/6"
+      className="relative block w-full cursor-pointer border-fg/10 border-b bg-blue-600 px-4 py-3 text-center font-medium text-white text-xs sm:text-sm/6"
     >
       <Container>
         Black Friday: Save 40% on all plans with code <code>BF2025UI</code>
