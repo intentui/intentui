@@ -4,6 +4,7 @@
   "items": [
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-default",
       "type": "registry:style",
       "dependencies": [
@@ -226,6 +227,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-blue",
       "type": "registry:style",
       "cssVars": {
@@ -397,6 +399,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-sky",
       "type": "registry:style",
       "cssVars": {
@@ -568,6 +571,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-indigo",
       "type": "registry:style",
       "cssVars": {
@@ -739,6 +743,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-emerald",
       "type": "registry:style",
       "cssVars": {
@@ -910,6 +915,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-teal",
       "type": "registry:style",
       "cssVars": {
@@ -1081,6 +1087,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-purple",
       "type": "registry:style",
       "cssVars": {
@@ -1252,6 +1259,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-pink",
       "type": "registry:style",
       "cssVars": {
@@ -1423,6 +1431,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-rose",
       "type": "registry:style",
       "cssVars": {
@@ -1594,6 +1603,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-green",
       "type": "registry:style",
       "cssVars": {
@@ -1765,6 +1775,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-lime",
       "type": "registry:style",
       "cssVars": {
@@ -1936,6 +1947,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "theme-cyan",
       "type": "registry:style",
       "cssVars": {
