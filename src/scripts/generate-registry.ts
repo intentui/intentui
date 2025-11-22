@@ -104,7 +104,7 @@ const makeThemeItem = (name: string, light: Token, dark: Token) => {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name,
     extends: "none",
-    type: "registry:style",
+    type: "registry:theme",
     cssVars: {
       theme: baseTheme,
       light,
@@ -114,6 +114,7 @@ const makeThemeItem = (name: string, light: Token, dark: Token) => {
   if (name === "theme-default") {
     return registryItemSchema.parse({
       ...base,
+      extends: "none",
       dependencies: ["tailwindcss-react-aria-components", "tw-animate-css"],
       css: customCSS
     })
