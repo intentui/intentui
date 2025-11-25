@@ -5,7 +5,6 @@ type HeadingType = { level?: 1 | 2 | 3 | 4 } & React.ComponentPropsWithoutRef<
 >
 
 interface HeadingProps extends HeadingType {
-  tracking?: "tighter" | "tight" | "normal" | "wide" | "wider" | "widest"
   className?: string | undefined
 }
 
