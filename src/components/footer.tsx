@@ -20,7 +20,7 @@ const navigation = {
     { name: "Github", href: "https://github.com/intentui" },
     {
       name: "X",
-      href: "https://x.com/intent/follow?screen_name=irsyadadl",
+      href: "https://x.com/intent/follow?screen_name=irsyad",
     },
     { name: "Discord", href: "https://discord.gg/DYmVJ66JUD" },
     { name: "Design", href: "https://design.intentui.com" },
@@ -131,8 +131,8 @@ export function Footer() {
           </strong>{" "}
           <br />
           <br />
-          This project’s crafted by <Link href="https://x.com/irsyadadl">Irsyad</Link>. Peep the
-          Source Code on <Link href={siteConfig.repo}>GitHub</Link>.
+          This project’s crafted by <Link href="https://x.com/irsyad">Irsyad</Link>. Peep the Source
+          Code on <Link href={siteConfig.repo}>GitHub</Link>.
         </p>
         <p>
           Hosted on{" "}

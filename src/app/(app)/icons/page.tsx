@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "irsyadadl",
-      url: "https://x.com/irsyadadl",
+      url: "https://x.com/irsyad",
     },
   ],
 }

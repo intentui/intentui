@@ -62,11 +62,11 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   authors: [
     {
-      name: "irsyadadl",
-      url: "https://x.com/irsyadadl",
+      name: "irsyad",
+      url: "https://x.com/irsyad",
     },
   ],
-  creator: "irsyadadl",
+  creator: "irsyad",
 }
 
 export const viewport: Viewport = {
