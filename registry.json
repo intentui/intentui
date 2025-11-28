@@ -2175,7 +2175,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/use-media-query",
+        "http://localhost:3000/r/use-mobile",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/separator",
@@ -2615,7 +2615,7 @@
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
-        "http://localhost:3000/r/use-media-query",
+        "http://localhost:3000/r/use-mobile",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/calendar",
         "http://localhost:3000/r/modal",
@@ -3502,7 +3502,7 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/sheet",
-        "http://localhost:3000/r/use-media-query",
+        "http://localhost:3000/r/use-mobile",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/link",
