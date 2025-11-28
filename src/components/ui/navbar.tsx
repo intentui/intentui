@@ -6,7 +6,7 @@ import { createContext, use, useCallback, useId, useMemo, useState } from "react
 import type { LinkProps } from "react-aria-components"
 import { Link } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
-import { useMediaQuery } from "@/hooks/use-media-query"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { cx } from "@/lib/primitive"
 import { Button, type ButtonProps } from "./button"
 import { Separator } from "./separator"
@@ -61,7 +61,7 @@ const NavbarProvider = ({
     setOpen((open) => !open)
   }, [setOpen])
 
-  const isMobile = useMediaQuery("(max-width: 767px)")
+  const isMobile = useIsMobile()
 
   const contextValue = useMemo<NavbarContextProps>(
     () => ({
