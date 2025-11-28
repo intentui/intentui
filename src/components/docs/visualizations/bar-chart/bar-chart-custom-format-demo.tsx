@@ -3,8 +3,10 @@
 import { useMemo } from "react"
 import { BarChart } from "@/components/ui/bar-chart"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function BarChartCustomFormatDemo() {
+  const isMobile = useIsMobile()
   const data = useMemo(() => {
     return Array.from({ length: 12 }, (_, i) => {
       const month = new Date(0, i).toLocaleString("en-US", {
@@ -24,7 +26,7 @@ export default function BarChartCustomFormatDemo() {
       </CardHeader>
       <CardContent>
         <BarChart
-          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
+          containerHeight={isMobile ? 200 : 300}
           data={data}
           dataKey="month"
           barProps={{

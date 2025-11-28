@@ -50,7 +50,7 @@ export default function PieChartAudienceSegmentDemo() {
       </CardHeader>
       <CardContent>
         <PieChart
-          className="mx-auto h-64"
+          containerHeight={250}
           data={data}
           dataKey="value"
           nameKey="name"

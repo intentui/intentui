@@ -3,8 +3,10 @@
 import { useMemo } from "react"
 import { AreaChart } from "@/components/ui/area-chart"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function AreaChartStackedDemo() {
+  const isMobile = useIsMobile()
   const data = useMemo(
     () =>
       Array.from({ length: 7 }, (_, i) => ({
@@ -26,7 +28,7 @@ export default function AreaChartStackedDemo() {
       </CardHeader>
       <CardContent>
         <AreaChart
-          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
+          containerHeight={isMobile ? 200 : 300}
           data={data}
           dataKey="day"
           type="stacked"

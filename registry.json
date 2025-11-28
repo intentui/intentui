@@ -2214,8 +2214,7 @@
       "title": "area-chart",
       "description": "area-chart",
       "dependencies": [
-        "recharts",
-        "tailwind-merge"
+        "recharts"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/chart"
@@ -2280,8 +2279,7 @@
       "title": "bar-chart",
       "description": "bar-chart",
       "dependencies": [
-        "recharts",
-        "tailwind-merge"
+        "recharts"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/chart"
@@ -2407,8 +2405,7 @@
       "title": "pie-chart",
       "description": "pie-chart",
       "dependencies": [
-        "recharts",
-        "tailwind-merge"
+        "recharts"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/chart"
@@ -2684,6 +2681,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/use-mobile",
         "http://localhost:3000/r/primitive"
       ],
       "files": [
@@ -3237,8 +3235,7 @@
       "title": "line-chart",
       "description": "line-chart",
       "dependencies": [
-        "recharts",
-        "tailwind-merge"
+        "recharts"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/chart"
@@ -7178,7 +7175,8 @@
       "description": "line-chart-demo",
       "registryDependencies": [
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/line-chart"
+        "http://localhost:3000/r/line-chart",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7197,7 +7195,8 @@
       "description": "line-chart-monotone-demo",
       "registryDependencies": [
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/line-chart"
+        "http://localhost:3000/r/line-chart",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7220,7 +7219,8 @@
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/line-chart",
-        "http://localhost:3000/r/toggle-group"
+        "http://localhost:3000/r/toggle-group",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7243,7 +7243,8 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/line-chart"
+        "http://localhost:3000/r/line-chart",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7262,7 +7263,8 @@
       "description": "line-chart-custom-format-demo",
       "registryDependencies": [
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/line-chart"
+        "http://localhost:3000/r/line-chart",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7281,7 +7283,8 @@
       "description": "line-chart-stacked-demo",
       "registryDependencies": [
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/line-chart"
+        "http://localhost:3000/r/line-chart",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7304,7 +7307,8 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/line-chart"
+        "http://localhost:3000/r/line-chart",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7323,7 +7327,8 @@
       "description": "line-chart-custom-colors-demo",
       "registryDependencies": [
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/line-chart"
+        "http://localhost:3000/r/line-chart",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7342,7 +7347,8 @@
       "description": "area-chart-demo",
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7365,7 +7371,8 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7388,7 +7395,8 @@
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/toggle-group"
+        "http://localhost:3000/r/toggle-group",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7407,7 +7415,8 @@
       "description": "area-chart-stacked-demo",
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7426,7 +7435,8 @@
       "description": "area-chart-custom-format-demo",
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7449,7 +7459,8 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7468,7 +7479,8 @@
       "description": "area-chart-custom-colors-demo",
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7487,7 +7499,8 @@
       "description": "area-chart-monotone-demo",
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7581,7 +7594,8 @@
       "description": "bar-chart-monotone-demo",
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7600,7 +7614,8 @@
       "description": "bar-chart-custom-colors-demo",
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7623,7 +7638,8 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7642,7 +7658,8 @@
       "description": "bar-chart-custom-format-demo",
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7665,7 +7682,8 @@
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/toggle-group"
+        "http://localhost:3000/r/toggle-group",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7684,7 +7702,8 @@
       "description": "bar-chart-demo",
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7707,7 +7726,8 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7726,7 +7746,8 @@
       "description": "bar-chart-stacked-demo",
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
-        "http://localhost:3000/r/card"
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
       ],
       "files": [
         {
@@ -7832,25 +7853,6 @@
           "path": "src/components/docs/visualizations/pie-chart/pie-chart-donut-demo.tsx",
           "type": "registry:page",
           "target": "app/pie-chart-donut-demo/page.tsx"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "pie-chart-donut-label-demo",
-      "type": "registry:page",
-      "title": "Pie Chart Donut Label",
-      "description": "pie-chart-donut-label-demo",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/pie-chart"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/visualizations/pie-chart/pie-chart-donut-label-demo.tsx",
-          "type": "registry:page",
-          "target": "app/pie-chart-donut-label-demo/page.tsx"
         }
       ]
     },

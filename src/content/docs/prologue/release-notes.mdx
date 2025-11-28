@@ -8,6 +8,28 @@ published: true
 ## 2025
 This all changes are made on the 2025 release.
 
+## 28 Nov
+
+All chart components have been updated. We introduced a new `containerHeight` prop on the Charts components that lets you control the height of the chart container. This helps prevent warnings like:
+
+```
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+```
+
+## Components affected
+
+* Charts
+* AreaChart
+* BarChart
+* LineChart
+* PieChart
+
+We also added a new `useMobile` hook to make it easier to detect mobile devices, replacing the previous `useMediaQuery` hook.
+
+
 ## 19 Nov
 A few components has been updated including:
 - Checkbox

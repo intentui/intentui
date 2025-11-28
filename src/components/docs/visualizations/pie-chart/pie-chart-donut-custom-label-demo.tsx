@@ -25,7 +25,7 @@ export default function PieChartDonutCustomLabelDemo() {
       </CardHeader>
       <CardContent>
         <PieChart
-          className="mx-auto h-56"
+          containerHeight={200}
           data={data}
           dataKey="amount"
           nameKey="name"

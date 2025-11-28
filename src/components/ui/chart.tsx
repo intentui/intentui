@@ -24,6 +24,7 @@ import type {
 } from "recharts/types/component/DefaultTooltipContent"
 import type { ContentType as TooltipContentType } from "recharts/types/component/Tooltip"
 import { twJoin, twMerge } from "tailwind-merge"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { cx } from "@/lib/primitive"
 
 // #region Chart Types
@@ -141,6 +142,7 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
 
 interface BaseChartProps<TValue extends ValueType, TName extends NameType>
   extends React.HTMLAttributes<HTMLDivElement> {
+  containerHeight?: number
   config: ChartConfig
   data: Record<string, any>[]
   dataKey: string
@@ -185,13 +187,16 @@ const Chart = ({
   dataKey,
   ref,
   layout = "horizontal",
+  containerHeight,
   ...props
 }: Omit<React.ComponentProps<"div">, "children"> &
   Pick<ChartContextProps, "data" | "dataKey"> & {
     config: ChartConfig
+    containerHeight?: number
     layout?: ChartLayout
     children: ReactElement | ((props: ChartContextProps) => ReactElement)
   }) => {
+  const isMobile = useIsMobile()
   const uniqueId = useId()
   const chartId = useMemo(() => `chart-${id || uniqueId.replace(/:/g, "")}`, [id, uniqueId])
 
@@ -230,7 +235,7 @@ const Chart = ({
         {...props}
       >
         <ChartStyle id={chartId} config={config} />
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer height={containerHeight ?? (isMobile ? 200 : 370)}>
           {typeof children === "function" ? children(value) : children}
         </ResponsiveContainer>
       </div>

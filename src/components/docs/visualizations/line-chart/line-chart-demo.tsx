@@ -3,8 +3,10 @@
 import { useMemo } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function LineChartDemo() {
+  const isMobile = useIsMobile()
   const engagementData = useMemo(
     () =>
       Array.from({ length: 7 }, (_, i) => ({
@@ -26,7 +28,7 @@ export default function LineChartDemo() {
       </CardHeader>
       <CardContent>
         <LineChart
-          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
+          containerHeight={isMobile ? 200 : 300}
           data={engagementData}
           dataKey="day"
           xAxisProps={{ interval: 0 }}

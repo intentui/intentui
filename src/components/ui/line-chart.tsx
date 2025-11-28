@@ -2,7 +2,6 @@
 
 import { Line, LineChart as LineChartPrimitive, type LineProps } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
-import { twMerge } from "tailwind-merge"
 import {
   type BaseChartProps,
   CartesianGrid,
@@ -19,20 +18,19 @@ import {
   YAxis,
 } from "./chart"
 
-interface LineChartProps<TValue extends ValueType, TName extends NameType>
+export interface LineChartProps<TValue extends ValueType, TName extends NameType>
   extends BaseChartProps<TValue, TName> {
   connectNulls?: boolean
   lineProps?: LineProps
   chartProps?: Omit<React.ComponentProps<typeof LineChartPrimitive>, "data" | "stackOffset">
 }
 
-export const LineChart = <TValue extends ValueType, TName extends NameType>({
+export function LineChart<TValue extends ValueType, TName extends NameType>({
   data = [],
   dataKey,
   colors = DEFAULT_COLORS,
   connectNulls = false,
   type = "default",
-  className,
   config,
   children,
 
@@ -60,17 +58,11 @@ export const LineChart = <TValue extends ValueType, TName extends NameType>({
   chartProps,
   lineProps,
   ...props
-}: LineChartProps<TValue, TName>) => {
+}: LineChartProps<TValue, TName>) {
   const categoryColors = constructCategoryColors(Object.keys(config), colors)
 
   return (
-    <Chart
-      className={twMerge("w-full", className)}
-      config={config}
-      data={data}
-      dataKey={dataKey}
-      {...props}
-    >
+    <Chart config={config} data={data} dataKey={dataKey} {...props}>
       {({ onLegendSelect, selectedLegend }) => (
         <LineChartPrimitive
           onClick={() => {

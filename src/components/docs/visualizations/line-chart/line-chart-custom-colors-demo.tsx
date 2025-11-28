@@ -1,6 +1,7 @@
 import { useMemo } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 type EngagementPoint = {
   day: string
@@ -10,6 +11,7 @@ type EngagementPoint = {
 }
 
 export default function LineChartCustomColorsDemo() {
+  const isMobile = useIsMobile()
   const engagementData: EngagementPoint[] = useMemo(
     () =>
       Array.from({ length: 7 }, (_, i) => ({
@@ -31,7 +33,7 @@ export default function LineChartCustomColorsDemo() {
       </CardHeader>
       <CardContent>
         <LineChart
-          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
+          containerHeight={isMobile ? 200 : 300}
           data={engagementData}
           dataKey="day"
           xAxisProps={{ interval: 0 }}

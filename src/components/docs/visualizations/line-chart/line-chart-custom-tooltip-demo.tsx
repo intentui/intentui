@@ -6,6 +6,7 @@ import type { TooltipProps as RechartsTooltipProps } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 interface CustomTooltipProps extends Partial<RechartsTooltipProps<ValueType, NameType>> {
   active?: boolean
@@ -44,6 +45,7 @@ function CustomTooltip({ active, payload, label }: CustomTooltipProps) {
 }
 
 export default function LineChartCustomTooltipDemo() {
+  const isMobile = useIsMobile()
   const data = useMemo(
     () =>
       Array.from({ length: 7 }, (_, i) => ({
@@ -63,7 +65,7 @@ export default function LineChartCustomTooltipDemo() {
       </CardHeader>
       <CardContent>
         <LineChart
-          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
+          containerHeight={isMobile ? 200 : 300}
           data={data}
           dataKey="day"
           xAxisProps={{ interval: 0 }}
