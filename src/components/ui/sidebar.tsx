@@ -24,7 +24,7 @@ import {
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { SheetContent } from "@/components/ui/sheet"
-import { useMediaQuery } from "@/hooks/use-media-query"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { cx } from "@/lib/primitive"
 import { Button } from "./button"
 import { Link } from "./link"
@@ -93,7 +93,7 @@ const SidebarProvider = ({
     [setOpenProp, open],
   )
 
-  const isMobile = useMediaQuery("(max-width: 767px)")
+  const isMobile = useIsMobile()
 
   const toggleSidebar = useCallback(() => {
     return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open)

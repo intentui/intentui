@@ -13,7 +13,7 @@ import { twJoin } from "tailwind-merge"
 import { DateInput } from "@/components/ui/date-field"
 import { fieldStyles } from "@/components/ui/field"
 import { InputGroup } from "@/components/ui/input"
-import { useMediaQuery } from "@/hooks/use-media-query"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { cx } from "@/lib/primitive"
 import { Calendar } from "./calendar"
 import { ModalContent } from "./modal"
@@ -55,7 +55,7 @@ export function DatePickerOverlay({
   range,
   ...props
 }: DatePickerOverlayProps) {
-  const isMobile = useMediaQuery("(max-width: 768px)") ?? false
+  const isMobile = useIsMobile()
 
   return isMobile ? (
     <ModalContent aria-label="Date picker" closeButton={false}>
