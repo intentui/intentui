@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 function CustomLegend({ payload }: { payload?: ReadonlyArray<LegendPayload> }) {
   const icons: Record<string, React.ReactNode> = {
@@ -36,6 +37,7 @@ function CustomLegend({ payload }: { payload?: ReadonlyArray<LegendPayload> }) {
 }
 
 export default function AreaChartCustomLegendDemo() {
+  const isMobile = useIsMobile()
   const data = useMemo(
     () =>
       Array.from({ length: 7 }, (_, i) => ({
@@ -55,7 +57,7 @@ export default function AreaChartCustomLegendDemo() {
       </CardHeader>
       <CardContent>
         <AreaChart
-          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
+          containerHeight={isMobile ? 200 : 300}
           data={data}
           dataKey="day"
           xAxisProps={{ interval: 0 }}

@@ -3,7 +3,6 @@
 import { type ComponentProps, startTransition } from "react"
 import { Bar, BarChart as BarChartPrimitive } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
-import { twMerge } from "tailwind-merge"
 import {
   type BaseChartProps,
   CartesianGrid,
@@ -20,7 +19,7 @@ import {
   YAxis,
 } from "./chart"
 
-interface BarChartProps<TValue extends ValueType, TName extends NameType>
+export interface BarChartProps<TValue extends ValueType, TName extends NameType>
   extends BaseChartProps<TValue, TName> {
   barCategoryGap?: number
   barRadius?: number
@@ -31,12 +30,11 @@ interface BarChartProps<TValue extends ValueType, TName extends NameType>
   chartProps?: Omit<ComponentProps<typeof BarChartPrimitive>, "data" | "stackOffset">
 }
 
-const BarChart = <TValue extends ValueType, TName extends NameType>({
+export function BarChart<TValue extends ValueType, TName extends NameType>({
   data = [],
   dataKey,
   colors = DEFAULT_COLORS,
   type = "default",
-  className,
   config,
   children,
   layout = "horizontal",
@@ -69,20 +67,14 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
 
   hideGridLines = false,
   chartProps,
+
   ...props
-}: BarChartProps<TValue, TName>) => {
+}: BarChartProps<TValue, TName>) {
   const categoryColors = constructCategoryColors(Object.keys(config), colors)
 
   const stacked = type === "stacked" || type === "percent"
   return (
-    <Chart
-      className={twMerge("w-full", className)}
-      config={config}
-      data={data}
-      dataKey={dataKey}
-      layout={layout}
-      {...props}
-    >
+    <Chart config={config} data={data} dataKey={dataKey} layout={layout} {...props}>
       {({ onLegendSelect, selectedLegend }) => (
         <BarChartPrimitive
           onClick={() => {
@@ -164,6 +156,3 @@ const BarChart = <TValue extends ValueType, TName extends NameType>({
     </Chart>
   )
 }
-
-export type { BarChartProps }
-export { BarChart }

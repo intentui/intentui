@@ -19,14 +19,53 @@ npm i recharts
 
 <SourceCode toShow={'chart'} />
 
+## Hooks
+For responsive charts, you can use this hook (`hooks/use-mobile.ts`):
+```tsx
+import { useEffect, useState } from "react"
+
+const MOBILE_BREAKPOINT = 768
+export function useIsMobile() {
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined)
+
+  useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
+    const onChange = () => {
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
+    }
+    mql.addEventListener("change", onChange)
+    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
+    return () => mql.removeEventListener("change", onChange)
+  }, [])
+
+  return !!isMobile
+}
+```
+
 ## Area
 Area charts are great for showing trends, comparisons, and patterns over time. They keep your data clean and easy to read.
-<How withNoPadding={true} isCenter={false} toUse="visualizations/area-chart/area-chart-demo" />
+<How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-demo" />
 
 ## Bar
 Bar charts help visualize data comparisons across categories. They are effective for highlighting differences and trends using vertical or horizontal bars.
-<How withNoPadding={true} isCenter={false} toUse="visualizations/bar-chart/bar-chart-demo" />
+<How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-demo" />
 
 ## Pie
 Pie charts are useful for showing how parts contribute to a whole. They are best for displaying proportions and percentages in a visually appealing way.
-<How withNoPadding={true} isCenter={false} toUse="visualizations/pie-chart/pie-chart-demo" />
+<How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-demo" />
+
+## Container height
+
+When using charts, whether area, bar, or pie, you can control the container height to match your layout. Setting an explicit height ensures the chart renders correctly. If you want different heights for desktop and mobile, you can use the `useIsMobile` hook:
+
+```tsx
+export default function App() {
+  const isMobile = useIsMobile();
+
+  return (
+    <AreaChart
+      containerHeight={isMobile ? 200 : 300}
+      ...
+```
+
+If you do not set a height, the chart defaults to 370 on desktop and 200 on mobile.

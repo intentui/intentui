@@ -3,7 +3,6 @@
 import type { ComponentProps } from "react"
 import { Cell, Pie, PieChart as PieChartPrimitive } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
-import { twMerge } from "tailwind-merge"
 import {
   type BaseChartProps,
   Chart,
@@ -51,7 +50,6 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
   data = [],
   dataKey,
   colors = DEFAULT_COLORS,
-  className,
   config,
   children,
   label,
@@ -73,14 +71,7 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
   const parsedLabelInput = parseLabelInput(label, valueFormatter, data, dataKey)
 
   return (
-    <Chart
-      className={twMerge("aspect-square", className)}
-      config={config}
-      data={data}
-      layout="radial"
-      dataKey={dataKey}
-      {...props}
-    >
+    <Chart config={config} data={data} layout="radial" dataKey={dataKey} {...props}>
       {({ onLegendSelect }) => (
         <PieChartPrimitive
           data={data}

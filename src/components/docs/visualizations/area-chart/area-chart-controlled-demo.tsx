@@ -12,8 +12,10 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function AreaChartControlledSmart() {
+  const isMobile = useIsMobile()
   const [selected, setSelected] = useState<Set<Key>>(new Set(["7d"]))
   const selectedKey = Array.from(selected)[0] as string | undefined
 
@@ -65,7 +67,7 @@ export default function AreaChartControlledSmart() {
       </CardHeader>
       <CardContent>
         <AreaChart
-          className="aspect-video h-56 min-h-[224px] sm:h-72 sm:min-h-[288px]"
+          containerHeight={isMobile ? 200 : 300}
           data={engagementData}
           dataKey="label"
           xAxisProps={{ interval: showAllTicks ? 0 : undefined }}

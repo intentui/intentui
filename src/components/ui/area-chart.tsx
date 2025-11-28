@@ -3,7 +3,6 @@
 import { type ComponentProps, Fragment, useId } from "react"
 import { Area, AreaChart as AreaChartPrimitive } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
-import { twMerge } from "tailwind-merge"
 import {
   type BaseChartProps,
   CartesianGrid,
@@ -20,7 +19,7 @@ import {
   YAxis,
 } from "./chart"
 
-interface AreaChartProps<TValue extends ValueType, TName extends NameType>
+export interface AreaChartProps<TValue extends ValueType, TName extends NameType>
   extends BaseChartProps<TValue, TName> {
   chartProps?: Omit<ComponentProps<typeof AreaChartPrimitive>, "data" | "stackOffset">
   areaProps?: Partial<ComponentProps<typeof Area>>
@@ -28,13 +27,12 @@ interface AreaChartProps<TValue extends ValueType, TName extends NameType>
   fillType?: "gradient" | "solid" | "none"
 }
 
-export const AreaChart = <TValue extends ValueType, TName extends NameType>({
+export function AreaChart<TValue extends ValueType, TName extends NameType>({
   data = [],
   dataKey,
   colors = DEFAULT_COLORS,
   connectNulls = false,
   type = "default",
-  className,
 
   fillType = "gradient",
   config,
@@ -67,7 +65,7 @@ export const AreaChart = <TValue extends ValueType, TName extends NameType>({
   hideGridLines = false,
   chartProps,
   ...props
-}: AreaChartProps<TValue, TName>) => {
+}: AreaChartProps<TValue, TName>) {
   const categoryColors = constructCategoryColors(Object.keys(config), colors)
   const stacked = type === "stacked" || type === "percent"
   const areaId = useId()
@@ -98,13 +96,7 @@ export const AreaChart = <TValue extends ValueType, TName extends NameType>({
   }
 
   return (
-    <Chart
-      className={twMerge("h-56 w-full", className)}
-      config={config}
-      data={data}
-      dataKey={dataKey}
-      {...props}
-    >
+    <Chart config={config} data={data} dataKey={dataKey} {...props}>
       {({ onLegendSelect, selectedLegend }) => (
         <AreaChartPrimitive
           onClick={() => {
