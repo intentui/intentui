@@ -104,7 +104,7 @@ const makeThemeItem = (name: string, light: Token, dark: Token) => {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name,
     extends: "none",
-    type: "registry:theme",
+    type: "registry:style",
     cssVars: {
       theme: baseTheme,
       light,
