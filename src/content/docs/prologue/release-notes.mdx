@@ -19,7 +19,7 @@ The width(-1) and height(-1) of chart should be greater than 0,
        height and width.
 ```
 
-We also added a new `useMobile` hook to make it easier to detect mobile devices, replacing the previous `useMediaQuery` hook. With that, all usage of useMediaQuery in the core components has been update to `useMobile`.
+We also added a new `useMobile` hook to make mobile detection simpler, replacing the old `useMediaQuery` hook. All core components that previously used `useMediaQuery` have now been updated to use `useMobile`.
 
 ## Components affected
 * Navbar
