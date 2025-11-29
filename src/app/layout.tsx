@@ -130,7 +130,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
         <script defer src="https://assets.onedollarstats.com/stonks.js" />
         <script
           defer
-          src={process.env.NEXT_PUBLIC_AURELIE_URL ?? "https://app.useaurelie.com/tracker.js"}
+          src={process.env.NEXT_PUBLIC_AURELIE_URL ?? "https://app.useaurelie.com/tracker.js?v1"}
           data-site-key={process.env.NEXT_PUBLIC_AURELIE_PUBLIC_KEY}
         ></script>
 
