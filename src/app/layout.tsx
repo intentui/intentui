@@ -129,6 +129,11 @@ export default function RootLayout({ children }: Readonly<Props>) {
       <head>
         <script defer src="https://assets.onedollarstats.com/stonks.js" />
         <script
+          src="http://app.useaurelie.test/tracker.js"
+          data-site-key="pub_NoeKNFsW1764341968cewM5"
+          defer
+        ></script>
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
