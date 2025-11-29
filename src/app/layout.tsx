@@ -128,11 +128,12 @@ export default function RootLayout({ children }: Readonly<Props>) {
     >
       <head>
         <script defer src="https://assets.onedollarstats.com/stonks.js" />
-        <script
-          src="https://app.useaurelie.com/tracker.js"
-          data-site-key={process.env.NEXT_PUBLIC_AURELIE_PUBLIC_KEY}
-          defer
-        ></script>
+        {/*<script*/}
+        {/*  src="https://app.useaurelie.com/tracker.js"*/}
+        {/*  data-site-key={process.env.NEXT_PUBLIC_AURELIE_PUBLIC_KEY}*/}
+        {/*  defer*/}
+        {/*></script>*/}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
