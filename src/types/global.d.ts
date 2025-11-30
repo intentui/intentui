@@ -17,6 +17,7 @@ declare global {
   interface Window {
     aurelie?: {
       track?: (name: string, properties?: Record<string, unknown>) => void
+      trackPageview?: () => void
     }
   }
 }

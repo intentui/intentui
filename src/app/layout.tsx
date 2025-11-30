@@ -5,6 +5,7 @@ import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import "@/styles/app.css"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
+import { AurelieAnalytics } from "@/components/aurelie-analytics"
 import { Toast } from "@/components/ui/toast"
 
 export const metadata: Metadata = {
@@ -129,7 +130,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
       <head>
         <script defer src="https://assets.onedollarstats.com/stonks.js" />
         <script
-          defer
+          async
           src={process.env.NEXT_PUBLIC_AURELIE_URL ?? "https://app.useaurelie.com/tracker.js?v1"}
           data-site-key={process.env.NEXT_PUBLIC_AURELIE_PUBLIC_KEY}
         ></script>
@@ -161,6 +162,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
           <Toast />
           <main>{children}</main>
         </Providers>
+        <AurelieAnalytics />
         <Analytics />
         <SpeedInsights />
       </body>
