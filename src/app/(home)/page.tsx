@@ -4,7 +4,6 @@ import { Cta } from "@/app/(home)/partials/cta"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
-import { DiscountBanner } from "@/components/discount-banner"
 import { Footer } from "@/components/footer"
 import { Hero } from "./partials/hero"
 import { Navbar } from "./partials/navbar"
@@ -13,7 +12,6 @@ import { OpenSource } from "./partials/open-source"
 export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">
-      <DiscountBanner />
       <div className="relative isolate mb-6 overflow-hidden border-b">
         <Navbar />
         <Hero />
