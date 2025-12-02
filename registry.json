@@ -12310,6 +12310,20 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "use-mobile",
+      "description": "use-mobile",
+      "files": [
+        {
+          "path": "src/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "use-media-query",
       "type": "registry:hook",
       "title": "use-media-query",
