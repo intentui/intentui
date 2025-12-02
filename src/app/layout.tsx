@@ -5,6 +5,7 @@ import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import "@/styles/app.css"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
+import { Suspense } from "react"
 import { AurelieAnalytics } from "@/components/aurelie-analytics"
 import { Toast } from "@/components/ui/toast"
 
@@ -162,7 +163,9 @@ export default function RootLayout({ children }: Readonly<Props>) {
           <Toast />
           <main>{children}</main>
         </Providers>
-        <AurelieAnalytics />
+        <Suspense>
+          <AurelieAnalytics />
+        </Suspense>
         <Analytics />
         <SpeedInsights />
       </body>
