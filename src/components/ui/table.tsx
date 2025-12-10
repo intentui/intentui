@@ -1,7 +1,7 @@
 "use client"
 
-import { ChevronDownIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid"
-import { createContext, use } from "react"
+import { ChevronDownIcon, MinusIcon } from "@heroicons/react/20/solid";
+import { createContext, use } from "react";
 import type {
   CellProps,
   ColumnProps,
@@ -138,7 +138,7 @@ const TableColumn = ({ isResizable = false, className, ...props }: TableColumnPr
               )}
             >
               {values.sortDirection === undefined ? (
-                <ChevronUpDownIcon data-slot="icon" aria-hidden />
+                <MinusIcon data-slot="icon" aria-hidden />
               ) : (
                 <ChevronDownIcon
                   data-slot="icon"
