@@ -5,6 +5,8 @@ import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import "@/styles/app.css"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
+import { Suspense } from "react"
+import { AurelieAnalytics } from "@/components/aurelie-analytics"
 import { Toast } from "@/components/ui/toast"
 
 export const metadata: Metadata = {
@@ -129,6 +131,12 @@ export default function RootLayout({ children }: Readonly<Props>) {
       <head>
         <script defer src="https://assets.onedollarstats.com/stonks.js" />
         <script
+          async
+          src={process.env.NEXT_PUBLIC_AURELIE_URL ?? "https://app.useaurelie.com/florin.js?v1"}
+          data-site-key={process.env.NEXT_PUBLIC_AURELIE_PUBLIC_KEY}
+        ></script>
+
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
@@ -155,6 +163,9 @@ export default function RootLayout({ children }: Readonly<Props>) {
           <Toast />
           <main>{children}</main>
         </Providers>
+        <Suspense>
+          <AurelieAnalytics />
+        </Suspense>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -1,7 +1,6 @@
 "use client"
 
 import type { ScrollAreaViewportProps } from "@radix-ui/react-scroll-area"
-import { track } from "@vercel/analytics"
 import { type HTMLAttributes, type ReactNode, useCallback, useRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { CopyButton } from "@/components/code/copy-button"
@@ -66,8 +65,8 @@ export const PlainCode = ({
     for (const node of clone.querySelectorAll(".nd-copy-ignore")) {
       node.remove()
     }
-
-    track("copy to clipboard", {
+    window.aurelie?.track?.("copy to clipboard", {
+      name: "Copy",
       text: clone.textContent,
     })
     void navigator.clipboard.writeText(clone.textContent ?? "")
