@@ -59,7 +59,7 @@ export function Ads({ className }: { className?: string }) {
       rel="noreferrer"
       href={variant.href}
       className={twMerge(
-        "not-prose group block w-full rounded-lg border bg-muted p-4 sm:w-60 sm:rounded-xl",
+        "not-prose group block w-full rounded-lg border bg-muted p-4 hover:border-fg/30 sm:w-60 sm:rounded-xl",
         className,
       )}
     >
