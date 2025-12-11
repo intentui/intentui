@@ -49,7 +49,7 @@ export function Aside() {
             target="_blank"
             href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
           >
-            Patterns & Blocks{" "}
+            Blocks & Patterns{" "}
             <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
               Pro
             </Badge>
@@ -58,16 +58,7 @@ export function Aside() {
             target="_blank"
             href="https://design.intentui.com/products?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
           >
-            Templates{" "}
-            <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
-              Pro
-            </Badge>
-          </AsideLink>
-          <AsideLink
-            target="_blank"
-            href="https://design.intentui.com/starter-kits?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
-          >
-            Auth Starter Kits{" "}
+            Templates & Starter kits{" "}
             <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
               Pro
             </Badge>

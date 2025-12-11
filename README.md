@@ -17,8 +17,15 @@ Make sure to check out the [contributing guide](https://intentui.com/docs/prolog
 ## License
 Licensed under the [MIT license](https://github.com/intentui/intentui/blob/main/LICENSE), so feel free to tweak, share, and remix as long as you give the proper shout-out!
 
+## Sponsorship
+- [Aurelie](https://useaurelie.com) - Turn your traffic into a story you can profit from
+- [Vercel](https://vercel.com) - Build and deploy on the AI Cloud.
+
 <br />
 <br />
 <a href="https://vercel.com/oss">
   <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
 </a>
+
+<br />
+<br />

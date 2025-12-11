@@ -29,15 +29,10 @@ export function ListSites({ sites }: Props) {
                 target="_blank"
                 className="flex items-center gap-x-3 rounded-lg bg-secondary/70 px-3 py-2.5 ring-1 ring-border transition hover:bg-secondary focus:outline-hidden focus-visible:ring-1 focus-visible:ring-ring"
                 textValue={item.name}
-                href={`${item.url}?ref=intentui.com/showcase`}
+                href={`${item.url}?utm_source=intentui.com&utm_medium=referral&utm_campaign=showcase`}
                 id={getSiteName(item.url)}
               >
-                <Avatar
-                  size="md"
-                  isSquare
-                  src={`https://favicon.im/${item.url}`}
-                  alt="irsyad.co favicon (large)"
-                />
+                <Avatar size="md" isSquare src={`https://favicon.im/${item.url}`} alt={item.name} />
                 <div className="flex flex-col gap-y-0.5">
                   <Text slot="label" className="font-medium sm:text-sm">
                     {item.name}
