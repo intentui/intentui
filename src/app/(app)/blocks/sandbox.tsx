@@ -101,12 +101,12 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
                 onPress={() => {
                   copy(`npx shadcn@latest add @intentui/block/${item.title}`)
                 }}
-                className="flex items-center gap-x-2 font-mono text-muted-fg text-sm tracking-tigth"
+                className="flex items-center gap-x-2 truncate font-mono text-muted-fg text-sm tracking-tigth"
               >
-                {copied ? <CheckIcon /> : <ShadcnuiLogo className="size-4" />}
+                {copied ? <CheckIcon className="size-4" /> : <ShadcnuiLogo className="size-4" />}
                 @intentui/block/{item.title}
               </Button>
-              <TooltipContent className="rounded-full text-muted-fg text-sm/6" inverse>
+              <TooltipContent className="rounded-full" inverse>
                 Click to copy
               </TooltipContent>
             </Tooltip>
