@@ -72,7 +72,7 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
           <div
             className={twJoin(
               "relative w-[calc(calc(var(--tree-item-level)-1)*calc(var(--spacing)*5))] shrink-0",
-              "before:-ms-1 before:absolute before:inset-0 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-item-level)-1px),var(--border)_calc(var(--tree-item-level)-1px),var(--border)_calc(var(--tree-item-level)))]",
+              "before:absolute before:inset-0 before:-ms-1 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-item-level)-1px),var(--border)_calc(var(--tree-item-level)-1px),var(--border)_calc(var(--tree-item-level)))]",
             )}
           />
           {values.hasChildItems ? (

@@ -37,7 +37,7 @@ const choiceBoxStyles = tv({
       gap: 0,
       columns: 1,
       className:
-        "*:data-[slot=choice-box-item]:-mt-px rounded-lg *:data-[slot=choice-box-item]:inset-ring *:data-[slot=choice-box-item]:rounded-none *:data-[slot=choice-box-item]:last:rounded-b-[calc(var(--radius-lg)-1px)] *:data-[slot=choice-box-item]:first:rounded-t-[calc(var(--radius-lg)-1px)]",
+        "rounded-lg *:data-[slot=choice-box-item]:inset-ring *:data-[slot=choice-box-item]:-mt-px *:data-[slot=choice-box-item]:rounded-none *:data-[slot=choice-box-item]:last:rounded-b-[calc(var(--radius-lg)-1px)] *:data-[slot=choice-box-item]:first:rounded-t-[calc(var(--radius-lg)-1px)]",
     },
   ],
 })

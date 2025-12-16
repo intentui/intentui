@@ -59,7 +59,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                 <span
                   className={twJoin(
                     "absolute left-0 block h-0.5 w-(--width) bg-fg transition-all duration-100",
-                    open ? "-rotate-45 top-[0.4rem]" : "top-1",
+                    open ? "top-[0.4rem] -rotate-45" : "top-1",
                   )}
                 />
                 <span
@@ -78,7 +78,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
             onOpenChange={setOpen}
             isOpen={open}
             className={cx(
-              "-mt-1 placement-bottom:entering:slide-in-from-top-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]",
+              "placement-bottom:entering:slide-in-from-top-1 -mt-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]",
               "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
               "slide-out-to-top-1 slide-in-from-top-1",
               popover?.className,

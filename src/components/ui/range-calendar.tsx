@@ -43,7 +43,7 @@ export function RangeCalendar<T extends DateValue>({
                       "[td:first-child_&]:rounded-s-lg [td:last-child_&]:rounded-e-lg",
                       "forced-colors:selected:bg-[Highlight] forced-colors:selected:text-[HighlightText] forced-colors:invalid:selected:bg-[Mark]",
                       date.compare(now) === 0 &&
-                        "after:-translate-x-1/2 after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-[3px] after:rounded-full after:bg-primary selected:after:bg-primary-fg",
+                        "after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-[3px] after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg",
                     ])}
                   >
                     {({

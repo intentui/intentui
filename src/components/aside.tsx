@@ -27,7 +27,7 @@ export const sortedGsChildren =
 
 export function Aside() {
   return (
-    <div className="-ml-0.5 sticky h-screen w-full overflow-y-auto overflow-x-hidden pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-16 xl:w-60">
+    <div className="sticky -ml-0.5 h-screen w-full overflow-y-auto overflow-x-hidden pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-16 xl:w-60">
       <div className="flex flex-col gap-y-(--gap) px-4 pb-10 [--gap:--spacing(6)]">
         <div>
           <AsideHeader>{prologue?.section}</AsideHeader>
@@ -136,7 +136,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
       href={href}
       ref={ref}
       className={twMerge(
-        "-ml-3 group mb-0.5 flex items-center justify-between rounded-lg px-3 py-1 text-base text-fg sm:text-sm/6",
+        "group mb-0.5 -ml-3 flex items-center justify-between rounded-lg px-3 py-1 text-base text-fg sm:text-sm/6",
         "focus:outline-hidden",
         "hover:bg-muted hover:text-secondary-fg",
         "focus:bg-muted focus:text-secondary-fg",

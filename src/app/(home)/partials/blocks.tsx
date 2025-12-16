@@ -61,7 +61,7 @@ export function Blocks() {
         </div>
       </div>
 
-      <div className="md:-mt-10 relative z-30 mt-10 flex items-center justify-center">
+      <div className="relative z-30 mt-10 flex items-center justify-center md:-mt-10">
         <Link
           className={buttonStyles({
             intent: "outline",

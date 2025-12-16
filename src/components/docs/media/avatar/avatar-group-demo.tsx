@@ -2,7 +2,7 @@ import { Avatar } from "@/components/ui/avatar"
 
 export default function AvatarGroupDemo() {
   return (
-    <div className="-space-x-2 flex items-center justify-center">
+    <div className="flex items-center justify-center -space-x-2">
       {users.map((user) => (
         <Avatar
           key={user.id}

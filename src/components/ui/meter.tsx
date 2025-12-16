@@ -50,7 +50,7 @@ export function MeterTrack({ className, ...props }: React.ComponentProps<"div">)
       data-slot="meter-track"
       className={twMerge(
         "[--meter-height:--spacing(1.5)]",
-        "-outline-offset-1 relative h-(--meter-height) w-full overflow-hidden rounded-full bg-secondary outline outline-transparent",
+        "relative h-(--meter-height) w-full overflow-hidden rounded-full bg-secondary outline outline-transparent -outline-offset-1",
         className,
       )}
       {...props}

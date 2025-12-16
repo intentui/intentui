@@ -67,7 +67,7 @@ const Table = ({
       <div className="flow-root">
         <div
           className={twMerge(
-            "-mx-(--gutter) relative overflow-x-auto whitespace-nowrap [--gutter-y:--spacing(2)] has-data-[slot=table-resizable-container]:overflow-auto",
+            "relative -mx-(--gutter) overflow-x-auto whitespace-nowrap [--gutter-y:--spacing(2)] has-data-[slot=table-resizable-container]:overflow-auto",
             className,
           )}
         >

@@ -77,11 +77,11 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
       className={cx(
         "group/tab rounded-lg [--tab-gutter:var(--tab-gutter-x)]",
         orientation === "horizontal"
-          ? "first:-ml-(--tab-gutter) last:-mr-(--tab-gutter) [--tab-gutter-x:--spacing(2.5)] [--tab-gutter-y:--spacing(1)]"
+          ? "[--tab-gutter-x:--spacing(2.5)] [--tab-gutter-y:--spacing(1)] first:-ml-(--tab-gutter) last:-mr-(--tab-gutter)"
           : "w-full justify-start [--tab-gutter-x:--spacing(4)] [--tab-gutter-y:--spacing(1.5)]",
         "relative isolate flex cursor-default items-center whitespace-nowrap font-medium text-sm/6 outline-hidden transition",
         "px-(--tab-gutter-x) py-(--tab-gutter-y)",
-        "*:data-[slot=icon]:-ml-0.5 *:data-[slot=icon]:mr-2 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-muted-fg selected:*:data-[slot=icon]:text-primary-subtle-fg",
+        "*:data-[slot=icon]:mr-2 *:data-[slot=icon]:-ml-0.5 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-muted-fg selected:*:data-[slot=icon]:text-primary-subtle-fg",
         "selected:text-primary-subtle-fg text-muted-fg hover:bg-secondary selected:hover:bg-primary-subtle hover:text-fg selected:hover:text-primary-subtle-fg focus:ring-0",
         "disabled:opacity-50",
         "href" in props ? "cursor-pointer" : "cursor-default",
@@ -96,8 +96,8 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
             className={twMerge(
               "absolute bg-primary-subtle-fg transition-[translate,width,height] duration-200",
               orientation === "horizontal"
-                ? "-bottom-[calc(var(--tab-gutter-y)+1px)] right-(--tab-gutter-x) left-(--tab-gutter-x) h-[2px]"
-                : "-left-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] top-(--tab-gutter-y) bottom-(--tab-gutter-y) w-[2px]",
+                ? "right-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] left-(--tab-gutter-x) h-[2px]"
+                : "top-(--tab-gutter-y) bottom-(--tab-gutter-y) -left-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] w-[2px]",
             )}
           />
         </>

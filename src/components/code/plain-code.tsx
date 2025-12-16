@@ -65,9 +65,8 @@ export const PlainCode = ({
     for (const node of clone.querySelectorAll(".nd-copy-ignore")) {
       node.remove()
     }
-    window.aurelie?.track?.("copy to clipboard", {
-      name: "Copy",
-      text: clone.textContent,
+    window.aurelie?.track?.("copy", {
+      name: clone.textContent,
     })
     void navigator.clipboard.writeText(clone.textContent ?? "")
   }, [])

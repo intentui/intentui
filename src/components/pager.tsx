@@ -21,7 +21,7 @@ export const Pager = ({
       {neighbours.previous && (
         <div className="group w-40">
           <Link className={buttonStyles({ intent: "outline" })} href={neighbours.previous.url}>
-            <ChevronLeftIcon className="group-hover:-translate-x-0.5 transition-transform" />
+            <ChevronLeftIcon className="transition-transform group-hover:-translate-x-0.5" />
             <span className="line-clamp-1 text-fg">{neighbours.previous.name}</span>
           </Link>
         </div>

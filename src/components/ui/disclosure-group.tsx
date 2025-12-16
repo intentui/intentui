@@ -88,7 +88,7 @@ const DisclosureTrigger = ({ ref, className, ...props }: DisclosureTriggerProps)
             {typeof props.children === "function" ? props.children(values) : props.children}
             <span
               data-slot="disclosure-indicator"
-              className="-mr-[calc(var(--disclosure-gutter-x,--spacing(0))-(--spacing(3)))] pointer-events-none relative ml-(--disclosure-gutter-x,--spacing(0)) flex size-6 items-center justify-center"
+              className="pointer-events-none relative -mr-[calc(var(--disclosure-gutter-x,--spacing(0))-(--spacing(3)))] ml-(--disclosure-gutter-x,--spacing(0)) flex size-6 items-center justify-center"
             >
               <span
                 className={twJoin([

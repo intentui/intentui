@@ -46,7 +46,7 @@ export function Controller({ searchParams }: SearchParamsProps) {
           </div>
         </div>
 
-        <div className="-mt-5 pointer-events-none absolute inset-x-0 top-0 z-0 hidden h-24 bg-linear-to-b from-bg via-bg/90 to-transparent md:block" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-0 -mt-5 hidden h-24 bg-linear-to-b from-bg via-bg/90 to-transparent md:block" />
       </div>
     </div>
   )

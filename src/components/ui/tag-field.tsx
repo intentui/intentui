@@ -142,7 +142,7 @@ export function TagField({
         readOnly
         aria-hidden="true"
         tabIndex={-1}
-        className="-z-10 sr-only absolute h-0 w-0 opacity-0"
+        className="sr-only absolute -z-10 h-0 w-0 opacity-0"
       />
     </div>
   )
