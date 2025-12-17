@@ -1,0 +1,46 @@
+---
+title: "MCP Server"
+description: "Browse, search, and install registry components via MCP."
+order: 4
+published: true
+---
+
+## Registry
+
+To use the Intent UI registry, add the following entry to your `components.json`:
+
+```json
+{
+  "registries": {
+    "@intentui": "https://intentui.com/r/{name}"
+  }
+}
+```
+
+## Initialize
+
+Choose a client and run one of the following commands:
+
+```bash
+# claude
+npx shadcn@latest mcp init --client claude
+
+# cursor
+npx shadcn@latest mcp init --client cursor
+
+# vscode
+npx shadcn@latest mcp init --client vscode
+
+# codex
+npx shadcn@latest mcp init --client codex
+```
+
+## Codex configuration
+
+If you are using Codex, add the following to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.shadcn]
+command = "npx"
+args = ["shadcn@latest", "mcp"]
+```

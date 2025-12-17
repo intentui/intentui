@@ -10,6 +10,7 @@
 - [Tanstack Router](/docs/getting-started/tanstack-router.md)
 - [Laravel](/docs/getting-started/laravel.md)
 - [Installation](/docs/getting-started/installation.md)
+- [Mcp](/docs/getting-started/mcp.md)
 
 ## Dark Mode
 - [Next.js](/docs/dark-mode/next-js.md)

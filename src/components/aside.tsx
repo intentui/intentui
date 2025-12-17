@@ -19,7 +19,7 @@ export const gs = menus[1] as SidebarItem
 export const dm = menus[2] as SidebarItem
 export const components = menus[3] as Component
 
-export const orderGs = ["Introduction", "Installation", "Client Side Routing", "Colors", "CLI"]
+export const orderGs = ["Introduction", "Installation", "Client Side Routing", "MCP"]
 export const sortedGsChildren =
   gs?.children
     ?.filter((item) => orderGs.includes(item.title))
@@ -71,6 +71,18 @@ export function Aside() {
               {item.title}
             </AsideLink>
           ))}
+          <AsideLink target="_blank" href="/llms.txt">
+            llms.txt{" "}
+            <Badge className="-mr-1.5 rounded-sm" intent="info">
+              New
+            </Badge>
+          </AsideLink>
+          <AsideLink href="/docs/getting-started/mcp-server">
+            MCP Server{" "}
+            <Badge className="-mr-1.5 rounded-sm" intent="info">
+              New
+            </Badge>
+          </AsideLink>
         </div>
         <div>
           <AsideHeader>{dm?.section}</AsideHeader>
