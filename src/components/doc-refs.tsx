@@ -2,9 +2,10 @@
 
 import { BellIcon, ChartBarIcon } from "@heroicons/react/24/outline"
 import { ListBox, ListBoxItem } from "react-aria-components"
-import { BrandAdobeIcon } from "@/components/icons/brand-adobe-icon"
+import { twJoin } from "tailwind-merge"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
+import { BrandReactAriaIcon } from "@/components/icons/brand-react-aria-icon"
 import { MotionBrandIcon } from "@/components/icons/motion-brand-icon"
 import { Logo } from "@/components/logo"
 import { buttonStyles } from "@/components/ui/button"
@@ -20,9 +21,9 @@ export function DocRefs({ references }: { references: string[] }) {
     let icon: React.FC<React.SVGProps<SVGSVGElement>>
 
     switch (true) {
-      case url.includes("react-spectrum"):
+      case url.includes("react-aria"):
         title = getComponentName(url)
-        icon = BrandAdobeIcon
+        icon = BrandReactAriaIcon
         break
       case url.includes("icons"):
         title = "Explore"
@@ -75,14 +76,19 @@ export function DocRefs({ references }: { references: string[] }) {
           textValue={item.title}
           target="_blank"
           className={buttonStyles({
-            intent: "secondary",
+            intent: "outline",
             size: "sm",
             className: "max-w-32 sm:w-auto",
           })}
           id={item.url}
           href={item.url}
         >
-          {item.icon && <item.icon data-slot="icon" />}
+          {item.icon && (
+            <item.icon
+              className={twJoin(item.url.includes("react-aria") ? "size-3!" : "")}
+              data-slot="icon"
+            />
+          )}
 
           {item.title === "Props Reference" ? (
             <span>
