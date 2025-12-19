@@ -53,7 +53,7 @@ export default function ContextMenuWithIconDemo() {
         <ContextMenuItem>
           <TrashIcon />
           <ContextMenuLabel>Delete</ContextMenuLabel>
-          <ContextMenuShortcut keys="⌘←" />
+          <ContextMenuShortcut>⌘←</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuItem>
           <ArchiveBoxIcon />

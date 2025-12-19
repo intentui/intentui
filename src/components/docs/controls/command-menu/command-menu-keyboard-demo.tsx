@@ -23,32 +23,32 @@ export default function CommandMenuShortcutDemo() {
         <CommandMenuList>
           <CommandMenuItem textValue="account settings">
             Account Settings
-            <CommandMenuShortcut keys="⌘A" />
+            <CommandMenuShortcut>⌘A</CommandMenuShortcut>
           </CommandMenuItem>
 
           <CommandMenuItem textValue="profile">
             Profile
-            <CommandMenuShortcut keys="⌘P" />
+            <CommandMenuShortcut>⌘P</CommandMenuShortcut>
           </CommandMenuItem>
 
           <CommandMenuItem textValue="notifications">
             Notifications
-            <CommandMenuShortcut keys="⌘N" />
+            <CommandMenuShortcut>⌘N</CommandMenuShortcut>
           </CommandMenuItem>
 
           <CommandMenuItem textValue="privacy settings">
             Privacy Settings
-            <CommandMenuShortcut keys="⌘S" />
+            <CommandMenuShortcut>⌘S</CommandMenuShortcut>
           </CommandMenuItem>
 
           <CommandMenuItem textValue="billing information">
             Billing Information
-            <CommandMenuShortcut keys="⌘B" />
+            <CommandMenuShortcut>⌘B</CommandMenuShortcut>
           </CommandMenuItem>
 
           <CommandMenuItem textValue="logout">
             Logout
-            <CommandMenuShortcut keys="⌘L" />
+            <CommandMenuShortcut>⌘L</CommandMenuShortcut>
           </CommandMenuItem>
         </CommandMenuList>
       </CommandMenu>

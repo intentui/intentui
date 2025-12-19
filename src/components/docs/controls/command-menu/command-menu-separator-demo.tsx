@@ -32,14 +32,14 @@ export default function CommandMenuSeparatorDemo() {
             <CommandMenuItem textValue="security settings" href="#">
               Security Settings
             </CommandMenuItem>
-            <CommandMenuSeparator />
+            <CommandMenuSeparator className="my-1" />
             <CommandMenuItem textValue="notification preferences" href="#">
               Notification Preferences
             </CommandMenuItem>
             <CommandMenuItem textValue="privacy settings" href="#">
               Privacy Settings
             </CommandMenuItem>
-            <CommandMenuSeparator />
+            <CommandMenuSeparator className="my-1" />
 
             <CommandMenuItem textValue="billing information" href="#">
               Billing Information
@@ -47,7 +47,7 @@ export default function CommandMenuSeparatorDemo() {
             <CommandMenuItem textValue="subscription plans" href="#">
               Subscription Plans
             </CommandMenuItem>
-            <CommandMenuSeparator />
+            <CommandMenuSeparator className="my-1" />
             <CommandMenuItem textValue="connected apps" href="#">
               Connected Apps
             </CommandMenuItem>

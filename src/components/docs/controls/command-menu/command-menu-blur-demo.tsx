@@ -37,7 +37,7 @@ export default function CommandMenuBlurDemo() {
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="docs">
               <DocumentTextIcon /> Docs
-              <CommandMenuShortcut keys="⌘k" />
+              <CommandMenuShortcut>⌘k</CommandMenuShortcut>
             </CommandMenuItem>
             <CommandMenuItem textValue="components" href="#">
               <CubeIcon /> Components
@@ -49,7 +49,7 @@ export default function CommandMenuBlurDemo() {
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="settings">
               <Cog6ToothIcon /> Settings
-              <CommandMenuShortcut keys="⌘s" />
+              <CommandMenuShortcut>⌘s</CommandMenuShortcut>
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="security">
               <ShieldCheckIcon /> Security

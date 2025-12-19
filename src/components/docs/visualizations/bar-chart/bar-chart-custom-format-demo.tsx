@@ -7,6 +7,11 @@ import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function BarChartCustomFormatDemo() {
   const isMobile = useIsMobile()
+  const formatCompact = (value: number) =>
+    new Intl.NumberFormat("en-US", {
+      notation: "compact",
+      compactDisplay: "short",
+    }).format(value)
   const data = useMemo(() => {
     return Array.from({ length: 12 }, (_, i) => {
       const month = new Date(0, i).toLocaleString("en-US", {
@@ -33,25 +38,17 @@ export default function BarChartCustomFormatDemo() {
             type: "monotone",
           }}
           type="stacked"
-          valueFormatter={(value: number) =>
-            new Intl.NumberFormat("en-US", {
-              notation: "compact",
-              compactDisplay: "short",
-            }).format(value)
-          }
+          valueFormatter={formatCompact}
           tooltipProps={{
-            formatter: (value: number, label: string) => (
-              <span className="flex w-full justify-between gap-x-4 font-mono">
-                <span className="flex-1">{label}</span>
-                <span>
-                  {" "}
-                  {new Intl.NumberFormat("en-US", {
-                    notation: "compact",
-                    compactDisplay: "short",
-                  }).format(value)}
+            formatter: (value, label) => {
+              const formattedValue = typeof value === "number" ? formatCompact(value) : "-"
+              return (
+                <span className="flex w-full justify-between gap-x-4 font-mono">
+                  <span className="flex-1">{label}</span>
+                  <span> {formattedValue}</span>
                 </span>
-              </span>
-            ),
+              )
+            },
           }}
           config={{
             revenue: { label: "Revenue" },

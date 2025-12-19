@@ -22,20 +22,20 @@ export default function ContextMenuSeparatorDemo() {
         <ContextMenuItem>Go to Implementations</ContextMenuItem>
         <ContextMenuItem>
           Go to References
-          <ContextMenuShortcut keys={["⌘F12"]} />
+          <ContextMenuShortcut>⌘F12</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuItem>
           Peek
-          <ContextMenuShortcut keys={["⇧F12"]} />
+          <ContextMenuShortcut>⇧F12</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem>
           Find All References
-          <ContextMenuShortcut keys={["⌘⇧F"]} />
+          <ContextMenuShortcut>⌘⇧F</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuItem>
           Find All Implementations
-          <ContextMenuShortcut keys={["⌘⇧I"]} />
+          <ContextMenuShortcut>⌘⇧I</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuItem>Show Call Hierarchy</ContextMenuItem>
         <ContextMenuSeparator />
@@ -44,7 +44,7 @@ export default function ContextMenuSeparatorDemo() {
         <ContextMenuItem>Format Document</ContextMenuItem>
         <ContextMenuItem>
           Refactor...
-          <ContextMenuShortcut keys={["⌘⇧R"]} />
+          <ContextMenuShortcut>⌘⇧R</ContextMenuShortcut>
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

@@ -39,7 +39,7 @@ export default function CommandMenuDemo() {
             <CommandMenuItem textValue="Docs" href="#">
               <DocumentTextIcon />
               <CommandMenuLabel>Docs</CommandMenuLabel>
-              <CommandMenuShortcut keys="⌘k" />
+              <CommandMenuShortcut>⌘k</CommandMenuShortcut>
             </CommandMenuItem>
             <CommandMenuItem textValue="Components" href="#">
               <CubeIcon />
@@ -54,7 +54,7 @@ export default function CommandMenuDemo() {
             <CommandMenuItem textValue="settings" href="#">
               <Cog6ToothIcon />
               <CommandMenuLabel>Settings</CommandMenuLabel>
-              <CommandMenuShortcut keys="⌘s" />
+              <CommandMenuShortcut>⌘s</CommandMenuShortcut>
             </CommandMenuItem>
             <CommandMenuItem textValue="security" href="#">
               <ShieldCheckIcon />

@@ -201,7 +201,7 @@ interface NavLinkProps extends MenuItemProps {
 function NavLink({ href, ...props }: NavLinkProps) {
   const pathname = usePathname()
   const isActive = pathname === href
-  const ref = useRef<HTMLAnchorElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (isActive && ref.current) {
       ref.current.scrollIntoView({

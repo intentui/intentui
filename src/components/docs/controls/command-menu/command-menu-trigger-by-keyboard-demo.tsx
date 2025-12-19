@@ -33,7 +33,7 @@ export default function CommandMenuTriggerByKeyboardDemo() {
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="docs">
               <DocumentTextIcon /> Docs
-              <CommandMenuShortcut keys="⌘k" />
+              <CommandMenuShortcut>⌘k</CommandMenuShortcut>
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="components">
               <CubeIcon /> Components
@@ -45,7 +45,7 @@ export default function CommandMenuTriggerByKeyboardDemo() {
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="settings">
               <Cog6ToothIcon /> Settings
-              <CommandMenuShortcut keys="⌘s" />
+              <CommandMenuShortcut>⌘s</CommandMenuShortcut>
             </CommandMenuItem>
             <CommandMenuItem href="#" textValue="security">
               <ShieldCheckIcon /> Security

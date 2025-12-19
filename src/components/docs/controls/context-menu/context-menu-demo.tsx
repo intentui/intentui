@@ -24,7 +24,7 @@ export default function ContextMenuDemo() {
         <ContextMenuItem>Save as</ContextMenuItem>
         <ContextMenuItem>
           Select all
-          <ContextMenuShortcut keys="⌘A" />
+          <ContextMenuShortcut>⌘A</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem>View source</ContextMenuItem>

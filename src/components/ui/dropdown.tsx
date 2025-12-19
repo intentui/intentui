@@ -165,11 +165,7 @@ const DropdownSeparator = ({ className, ...props }: Omit<SeparatorProps, "orient
   />
 )
 
-type DropdownKeyboardProps = React.ComponentProps<typeof Keyboard> & {
-  keys?: React.ReactNode
-}
-
-const DropdownKeyboard = ({ className, ...props }: DropdownKeyboardProps) => {
+const DropdownKeyboard = ({ className, ...props }: React.ComponentProps<typeof Keyboard>) => {
   return (
     <Keyboard
       className={twMerge(

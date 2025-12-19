@@ -44,7 +44,7 @@ export default function MenuWithArrowDemo() {
         <MenuItem href="#">
           <HashtagIcon className="size-6" aria-hidden="true" />
           <MenuLabel>Command Menu</MenuLabel>
-          <MenuShortcut keys="⌘K" />
+          <MenuShortcut>⌘K</MenuShortcut>
         </MenuItem>
         <MenuSeparator />
         <MenuItem href="#">
