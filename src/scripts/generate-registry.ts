@@ -228,7 +228,6 @@ const pkgName = (specifier: string) => {
 }
 
 const topLevelPackages = (specs: string[]) =>
-  // @ts-expect-error
   [...new Set(specs.filter((s) => !s.startsWith(".") && !s.startsWith("@/")).map(pkgName).filter((p) => !DEP_EXCLUDE.has(p)))]
 
 async function findInternalDepsForFile(file: string, specs: string[]) {
