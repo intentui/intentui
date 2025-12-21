@@ -1,21 +1,21 @@
-- [Upgrade Guide](/docs/prologue/upgrade-guide.md)
-- [Contribution Guide](/docs/prologue/contribution-guide.md)
-- [Release Notes](/docs/prologue/release-notes.md)
+- [Upgrade Guide](https://intentui.com/docs/prologue/upgrade-guide.md)
+- [Contribution Guide](https://intentui.com/docs/prologue/contribution-guide.md)
+- [Release Notes](https://intentui.com/docs/prologue/release-notes.md)
 
 ## Getting Started
-- [Vite](/docs/getting-started/vite.md)
-- [Nextjs](/docs/getting-started/nextjs.md)
-- [Client Side Routing](/docs/getting-started/client-side-routing.md)
-- [Introduction](/docs/getting-started/introduction.md)
-- [Tanstack Router](/docs/getting-started/tanstack-router.md)
-- [Laravel](/docs/getting-started/laravel.md)
-- [Installation](/docs/getting-started/installation.md)
-- [Mcp](/docs/getting-started/mcp.md)
+- [Mcp Server](https://intentui.com/docs/getting-started/mcp-server.md)
+- [Vite](https://intentui.com/docs/getting-started/vite.md)
+- [Nextjs](https://intentui.com/docs/getting-started/nextjs.md)
+- [Client Side Routing](https://intentui.com/docs/getting-started/client-side-routing.md)
+- [Introduction](https://intentui.com/docs/getting-started/introduction.md)
+- [Tanstack Router](https://intentui.com/docs/getting-started/tanstack-router.md)
+- [Laravel](https://intentui.com/docs/getting-started/laravel.md)
+- [Installation](https://intentui.com/docs/getting-started/installation.md)
 
 ## Dark Mode
-- [Next.js](/docs/dark-mode/next-js.md)
-- [Vite](/docs/dark-mode/vite.md)
-- [Inertia.js](/docs/dark-mode/inertia-js.md)
+- [Next.js](https://intentui.com/docs/dark-mode/next-js.md)
+- [Vite](https://intentui.com/docs/dark-mode/vite.md)
+- [Inertia.js](https://intentui.com/docs/dark-mode/inertia-js.md)
 
 ## Components
 
