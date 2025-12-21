@@ -98,8 +98,7 @@ const DialogBody = ({ className, ...props }: DialogBodyProps) => (
   />
 )
 
-interface DialogFooterProps extends React.ComponentProps<"div"> {}
-const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
+const DialogFooter = ({ className, ...props }: React.ComponentProps<"div">) => {
   return (
     <div
       data-slot="dialog-footer"
@@ -140,7 +139,6 @@ export type {
   DialogHeaderProps,
   DialogTitleProps,
   DialogBodyProps,
-  DialogFooterProps,
   DialogDescriptionProps,
   CloseButtonIndicatorProps,
 }
