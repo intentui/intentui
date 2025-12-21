@@ -26,7 +26,7 @@
         "./.content-collections/generated"
       ],
       "#site/content": [
-        "./.source"
+        "./.source/server"
       ]
     }
   },

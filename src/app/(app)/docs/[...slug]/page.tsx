@@ -81,6 +81,7 @@ export default async function Page(props: DocPageProps) {
   }
   const doc = page.data
   const MDX = doc.body
+  const pageText = await doc.getText("raw")
 
   return (
     <>
@@ -120,7 +121,7 @@ export default async function Page(props: DocPageProps) {
               {doc.references && doc.references?.length > 0 && (
                 <DocRefs references={doc.references} />
               )}
-              <OpenIn page={doc.content} tree={source.pageTree} url={page.url} />
+              <OpenIn page={pageText} tree={source.pageTree} url={page.url} />
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 "use client"
 import { ListBulletIcon } from "@heroicons/react/24/outline"
-import type { TableOfContents, TOCItemType } from "fumadocs-core/server"
+import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
 import { Suspense, useEffect, useRef, useState } from "react"
 import { Heading } from "react-aria-components"
 import scrollIntoView from "scroll-into-view-if-needed"

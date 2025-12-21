@@ -1,6 +1,6 @@
 "use client"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
-import { findNeighbour, type PageTree } from "fumadocs-core/server"
+import { findNeighbour, type Root as PageTreeRoot } from "fumadocs-core/page-tree"
 import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
@@ -10,7 +10,7 @@ export const Pager = ({
   url,
   className,
 }: {
-  tree: PageTree.Root
+  tree: PageTreeRoot
   url: string
   className?: string
 }) => {
