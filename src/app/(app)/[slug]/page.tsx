@@ -9,7 +9,7 @@ export default async function Page(props: PageProps) {
   const params = await props.params
 
   const originalUrl = docs
-    .map((i) => i._file?.path)
+    .map((i) => i.info.path)
     .find((i) => i?.split("/").at(-1)?.split(".")[0] === params.slug)
     ?.replace(".mdx", "")
 

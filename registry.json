@@ -2721,10 +2721,10 @@
       "description": "sheet",
       "dependencies": [
         "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
+        "tailwind-merge"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/dialog"
       ],
       "files": [

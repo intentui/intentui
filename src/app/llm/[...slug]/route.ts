@@ -13,7 +13,9 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
     notFound()
   }
 
-  return new NextResponse(page.data.content, {
+  const text = await page.data.getText("raw")
+
+  return new NextResponse(text, {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
     },

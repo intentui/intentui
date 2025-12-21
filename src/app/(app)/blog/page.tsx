@@ -21,7 +21,7 @@ export default function Page() {
                 key={item.title}
               >
                 <Link
-                  href={`/blog/${item._file?.path.replace(".mdx", "")}`}
+                  href={`/blog/${item.info.path.replace(".mdx", "")}`}
                   className="absolute inset-0 size-full"
                 />
                 <div>

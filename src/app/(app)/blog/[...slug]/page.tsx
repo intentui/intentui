@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site"
 
 export default async function Page(props: DocPageProps) {
   const { slug } = await props.params
-  const article = blog.find((i) => i._file?.path.replace(".mdx", "") === slug[0])
+  const article = blog.find((i) => i.info.path.replace(".mdx", "") === slug[0])
 
   if (!article) {
     notFound()
@@ -60,7 +60,7 @@ export default async function Page(props: DocPageProps) {
 
 export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
   const { slug } = await props.params
-  const article = blog.find((i) => i._file?.path.replace(".mdx", "") === slug[0])
+  const article = blog.find((i) => i.info.path.replace(".mdx", "") === slug[0])
 
   if (!article) {
     return {}

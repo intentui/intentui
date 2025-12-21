@@ -2,7 +2,7 @@
 
 import { CheckIcon } from "@heroicons/react/24/outline"
 import { ChevronDownIcon } from "@heroicons/react/24/solid"
-import type { PageTree } from "fumadocs-core/server"
+import type { Root as PageTreeRoot } from "fumadocs-core/page-tree"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { MobilePager } from "@/components/mobile-pager"
 import { Avatar } from "@/components/ui/avatar"
@@ -15,7 +15,7 @@ function getPromptUrl(baseURL: string, url: string) {
     `Read the Intent UI docs at ${url} and treat them as the source of truth. Explain how to use the library, provide step by step examples, and help debug issues in my code. Ask clarifying questions only when needed.`,
   )}`
 }
-export function OpenIn({ tree, url, page }: { tree: PageTree.Root; url: string; page: any }) {
+export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; page: string }) {
   const fullUrl = `https://intentui.com${url}`
   const { copied, copy } = useCopy()
   return (

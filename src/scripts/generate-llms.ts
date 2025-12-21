@@ -16,7 +16,7 @@ async function build() {
 
     if (isPrologue) {
       for (const item of group.children as Item[])
-        lines.push(`- [${item.title}](${item.slug}.md)`)
+        lines.push(`- [${item.title}](https://intentui.com${item.slug}.md)`)
       continue
     }
 
@@ -33,7 +33,7 @@ async function build() {
       }
     } else {
       for (const item of group.children as Item[])
-        lines.push(`- [${item.title}](${item.slug}.md)`)
+        lines.push(`- [${item.title}](https://intentui.com${item.slug}.md)`)
     }
   }
 

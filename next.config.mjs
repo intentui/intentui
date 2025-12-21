@@ -2,6 +2,10 @@ import { createMDX } from "fumadocs-mdx/next"
 const withMDX = createMDX()
 /** @type {import("next").NextConfig} */
 const config = {
+  reactCompiler: true,
+  experimental: {
+    viewTransition: true,
+  },
   devIndicators: false,
   outputFileTracingIncludes: {
     "/**": ["./src/content/**", "./content/**"]
