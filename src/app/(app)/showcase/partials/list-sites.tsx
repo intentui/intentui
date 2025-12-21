@@ -20,7 +20,7 @@ interface Props {
 export function ListSites({ sites }: Props) {
   return (
     <Primitive aria-label="Showcase">
-      <ListBoxSection className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+      <ListBoxSection className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
         <Collection items={sites}>
           {(item) => {
             return (

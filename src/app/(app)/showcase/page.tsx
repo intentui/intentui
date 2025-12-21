@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
+import { AddMore } from "@/app/(app)/showcase/partials/add-more"
 import { ListSites } from "@/app/(app)/showcase/partials/list-sites"
-import { Header } from "@/components/header"
-import { Container } from "@/components/ui/container"
+import { PageContainer } from "@/components/page-container"
+import { Heading } from "@/components/ui/heading"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
@@ -21,13 +22,18 @@ export default async function Page() {
   const sites = await res.json()
   return (
     <>
-      <Header>
-        <span className="tracking-tight">Show</span>
-        <span className="text-muted-fg tracking-tight">case</span>
-      </Header>
-      <Container className="py-4 sm:py-16">
+      <div className="border-b bg-muted/50 py-6 sm:py-12">
+        <PageContainer>
+          <div className="flex items-center justify-between">
+            <Heading>Showcase</Heading>
+            <AddMore />
+          </div>
+        </PageContainer>
+      </div>
+
+      <PageContainer className="py-4 sm:py-16">
         <ListSites sites={sites} />
-      </Container>
+      </PageContainer>
     </>
   )
 }
