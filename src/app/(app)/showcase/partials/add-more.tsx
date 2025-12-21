@@ -1,4 +1,5 @@
 "use client"
+import { PlusIcon } from "@heroicons/react/24/outline"
 import { buttonStyles } from "@/components/ui/button"
 
 export function AddMore() {
@@ -9,6 +10,7 @@ export function AddMore() {
       target="_blank"
       rel="noopener"
     >
+      <PlusIcon />
       Add yours
     </a>
   )
