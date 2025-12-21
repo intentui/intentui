@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -14,12 +10,9 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "noUncheckedIndexedAccess": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "target": "ESNext",
-    "downlevelIteration": true,
     "plugins": [
       {
         "name": "next"
