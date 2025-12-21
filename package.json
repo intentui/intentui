@@ -53,7 +53,7 @@
     "recharts": "^3.6.0",
     "rehype-stringify": "^10.0.1",
     "scroll-into-view-if-needed": "^3.1.0",
-    "shadcn": "^3.6.1",
+    "shadcn": "^3.6.2",
     "sharp": "^0.34.5",
     "shiki": "^3.20.0",
     "sonner": "^2.0.7",
@@ -64,10 +64,10 @@
     "usemods": "^1.15.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.9",
+    "@biomejs/biome": "^2.3.10",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
-    "@types/bun": "^1.3.4",
+    "@types/bun": "^1.3.5",
     "@types/culori": "^4.0.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24.10.4",
