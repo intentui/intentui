@@ -233,7 +233,6 @@ export default function TreeDragDemo() {
           const targetIndex = targetNode.children ? targetNode.children.length : 0
           const keyArray = Array.from(e.keys)
           for (let i = 0; i < keyArray.length; i++) {
-            // @ts-expect-error
             tree.move(keyArray[i], e.target.key, targetIndex + i)
           }
         }

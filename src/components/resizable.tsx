@@ -1,7 +1,7 @@
 "use client"
 
 import { Squares2X2Icon } from "@heroicons/react/24/outline"
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels"
+import { Panel, Group as PanelGroup, Separator as PanelResizeHandle } from "react-resizable-panels"
 import { twMerge } from "tailwind-merge"
 
 const ResizablePanelGroup = ({ className, ...props }: React.ComponentProps<typeof PanelGroup>) => (

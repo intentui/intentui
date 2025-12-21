@@ -45,7 +45,6 @@ export function Ads({ className }: { className?: string }) {
 
   useEffect(() => {
     const index = Math.floor(Math.random() * variants.length)
-    // @ts-expect-error
     setVariant(variants[index])
   }, [])
 
