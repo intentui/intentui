@@ -56,7 +56,7 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
             {allowsDragging && (
               <svg
                 data-slot="drag-icon"
-                className="mr-2 size-5 h-[1lh] text-muted-fg sm:w-4"
+                className="mr-2 size-5 h-lh text-muted-fg sm:w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -89,7 +89,7 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
             )}
             {isSelected && (
               <CheckIcon
-                className="-mx-0.5 mr-2 h-[1lh] w-5 shrink-0 group-allows-dragging:col-start-2 sm:w-4"
+                className="-mx-0.5 mr-2 h-lh w-5 shrink-0 group-allows-dragging:col-start-2 sm:w-4"
                 data-slot="check-icon"
               />
             )}

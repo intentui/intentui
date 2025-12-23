@@ -83,7 +83,7 @@ export function ProgressBarTrack({ className, ref, ...props }: React.ComponentPr
           ) : (
             <div
               data-slot="progress-content"
-              className="absolute top-0 h-full rounded-full bg-primary [animation:progress-slide_2000ms_ease-in-out_infinite] forced-colors:bg-[Highlight]"
+              className="absolute top-0 h-full animate-[progress-slide_2000ms_ease-in-out_infinite] rounded-full bg-primary forced-colors:bg-[Highlight]"
               style={{ width: "40%" }}
             />
           )}

@@ -163,7 +163,7 @@ const MenuHeader = ({ className, separator = false, ...props }: MenuHeaderProps)
   <Header
     className={twMerge(
       "col-span-full px-2.5 py-2 font-medium text-base sm:text-sm",
-      separator && "-mx-1 border-b sm:px-3 sm:pb-[0.625rem]",
+      separator && "-mx-1 border-b sm:px-3 sm:pb-2.5",
       className,
     )}
     {...props}

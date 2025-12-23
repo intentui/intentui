@@ -46,7 +46,7 @@ const ProgressCircle = ({ className, ref, ...props }: ProgressCircleProps) => {
               strokeDasharray="100 200"
               strokeDashoffset={100 - 30}
               strokeLinecap="round"
-              className="origin-center animate-[spin_1s_cubic-bezier(0.4,_0,_0.2,_1)_infinite]"
+              className="origin-center animate-[spin_1s_cubic-bezier(0.4,0,0.2,1)_infinite]"
             />
           )}
         </svg>

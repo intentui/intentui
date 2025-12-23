@@ -405,7 +405,7 @@ const SidebarItem = ({
             "**:last:data-[slot=icon]:size-5 sm:**:last:data-[slot=icon]:size-4",
             "[&_[data-slot='icon']:not([class*='size-'])]:size-4 [&_[data-slot='icon']:not([class*='size-'])]:*:size-5",
             "*:data-[slot=avatar]:*:size-5 *:data-[slot=avatar]:size-5",
-            "has-[[data-slot=avatar]]:has-[[data-slot=sidebar-label]]:gap-x-2 has-[[data-slot=icon]]:has-[[data-slot=sidebar-label]]:gap-x-2",
+            "has-data-[slot=avatar]:has-data-[slot=sidebar-label]:gap-x-2 has-data-[slot=icon]:has-data-[slot=sidebar-label]:gap-x-2",
             "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] **:last:data-[slot=icon]:ml-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:text-sm/5",
             "p-2 has-[a]:p-0",
             "[--sidebar-current-bg:var(--color-sidebar-primary)] [--sidebar-current-fg:var(--color-sidebar-primary-fg)]",
@@ -428,7 +428,7 @@ const SidebarItem = ({
             (state !== "collapsed" ? (
               <span
                 data-slot="sidebar-badge"
-                className="absolute inset-ring-1 inset-ring-sidebar-border inset-y-1/2 right-1.5 h-5.5 w-auto -translate-y-1/2 rounded-full bg-fg/5 px-2 text-[10px]/5.5 group-hover/sidebar-item:inset-ring-muted-fg/30 group-data-current:inset-ring-transparent"
+                className="absolute inset-ring-1 inset-ring-sidebar-border inset-y-1/2 right-1.5 h-5.5 w-auto -translate-y-1/2 rounded-full bg-fg/5 px-2 text-[10px]/5.5 group-hover/sidebar-item:inset-ring-muted-fg/30 group-current:inset-ring-transparent"
               >
                 {badge}
               </span>
@@ -666,7 +666,7 @@ const SidebarRail = ({ className, ref, ...props }: React.ComponentProps<"button"
       tabIndex={-1}
       onClick={toggleSidebar}
       className={twMerge(
-        "absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 outline-hidden transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] hover:after:bg-transparent group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex",
+        "absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 outline-hidden transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-0.5 hover:after:bg-transparent group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex",
         "in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize",
         "[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize",
         "group-data-[collapsible=hidden]:translate-x-0 group-data-[collapsible=hidden]:hover:bg-sidebar-accent group-data-[collapsible=hidden]:after:left-full",

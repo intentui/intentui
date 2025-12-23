@@ -36,14 +36,14 @@ export function RangeCalendar<T extends DateValue>({
                     date={date}
                     className={twMerge([
                       "shrink-0 [--cell-fg:var(--color-primary-subtle-fg)] [--cell:var(--color-primary-subtle)]",
-                      "group/calendar-cell relative size-11 cursor-default outline-hidden [line-height:2.286rem] selection-start:rounded-s-lg data-selection-end:rounded-e-lg data-outside-month:text-muted-fg sm:size-9 sm:text-sm",
+                      "group/calendar-cell relative size-11 cursor-default outside-month:text-muted-fg leading-[2.286rem] outline-hidden selection-start:rounded-s-lg selection-end:rounded-e-lg sm:size-9 sm:text-sm",
                       "selected:bg-(--cell) selected:text-(--cell-fg)",
                       "selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
                       "invalid:selected:bg-danger-subtle",
                       "[td:first-child_&]:rounded-s-lg [td:last-child_&]:rounded-e-lg",
                       "forced-colors:selected:bg-[Highlight] forced-colors:selected:text-[HighlightText] forced-colors:invalid:selected:bg-[Mark]",
                       date.compare(now) === 0 &&
-                        "after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-[3px] after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg",
+                        "after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-0.75 after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg",
                     ])}
                   >
                     {({

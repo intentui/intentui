@@ -194,7 +194,7 @@ const CommandMenuSection = <T extends object>({
     <MenuSection
       ref={ref}
       className={twMerge(
-        "col-span-full grid grid-cols-[auto_1fr] content-start gap-y-[calc(var(--spacing)*0.25)]",
+        "col-span-full grid grid-cols-[auto_1fr] content-start gap-y-0.25",
         className,
       )}
       {...props}

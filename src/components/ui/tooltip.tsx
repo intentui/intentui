@@ -18,7 +18,7 @@ const tooltipStyles = tv({
   ],
   variants: {
     inverse: {
-      true: ["border-transparent bg-fg text-bg **:[.text-muted-fg]:text-bg/80"],
+      true: "border-transparent bg-fg text-bg **:[.text-muted-fg]:text-bg/80",
       false: "bg-overlay text-overlay-fg",
     },
     isEntering: {

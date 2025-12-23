@@ -96,8 +96,8 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
             className={twMerge(
               "absolute bg-primary-subtle-fg transition-[translate,width,height] duration-200",
               orientation === "horizontal"
-                ? "right-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] left-(--tab-gutter-x) h-[2px]"
-                : "top-(--tab-gutter-y) bottom-(--tab-gutter-y) -left-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] w-[2px]",
+                ? "right-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] left-(--tab-gutter-x) h-0.5"
+                : "top-(--tab-gutter-y) bottom-(--tab-gutter-y) -left-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] w-0.5",
             )}
           />
         </>

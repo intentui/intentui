@@ -48,7 +48,7 @@ export function SliderThumb({
   return (
     <PrimitiveSliderThumb
       className={cx(
-        "top-[50%] left-[50%] size-[1.25rem] rounded-full border border-fg/10 bg-white outline-hidden ring-black transition-[width,height]",
+        "top-[50%] left-[50%] size-5 rounded-full border border-fg/10 bg-white outline-hidden ring-black transition-[width,height]",
         className,
       )}
       {...props}

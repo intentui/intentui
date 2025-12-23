@@ -28,7 +28,7 @@ export function Switch({ children, className, ...props }: SwitchProps) {
           <span
             data-slot="indicator"
             className={twMerge(
-              "relative isolate inline-flex h-6 w-10 cursor-default rounded-full p-[3px] sm:h-5 sm:w-8",
+              "relative isolate inline-flex h-6 w-10 cursor-default rounded-full p-0.75 sm:h-5 sm:w-8",
               "transition duration-200 ease-in-out",
               "inset-ring inset-ring-input bg-input/30",
               "forced-colors:outline forced-colors:[--switch-bg:Highlight]",
