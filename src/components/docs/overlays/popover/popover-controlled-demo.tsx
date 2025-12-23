@@ -46,7 +46,7 @@ export default function PopoverControlledDemo() {
           </PopoverDescription>
         </PopoverHeader>
         <PopoverFooter>
-          <Button intent="outline" onPress={() => setIsOpen(false)} className="mr-2">
+          <Button intent="outline" onPress={() => setIsOpen(false)}>
             Cancel
           </Button>
           <Button
