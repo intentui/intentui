@@ -2,10 +2,14 @@
 
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import { PageContainer } from "@/components/page-container"
-import { buttonStyles } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
 
 export function Hero() {
+  function go() {
+    window.aurelie?.track?.("press")
+    window.open("https://dub.sh/designiui", "_blank", "noopener")
+  }
   return (
     <div className="border-b py-6 sm:py-12">
       <PageContainer>
@@ -13,15 +17,10 @@ export function Hero() {
           Blocks
         </Heading>
         <div className="mt-6">
-          <a
-            className={buttonStyles({ intent: "secondary" })}
-            href="https://dub.sh/designiui"
-            target="_blank"
-            rel="noopener"
-          >
+          <Button onPress={go} intent="secondary">
             Explore premium blocks
             <ArrowTopRightOnSquareIcon />
-          </a>
+          </Button>
         </div>
       </PageContainer>
     </div>
