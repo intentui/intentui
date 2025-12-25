@@ -9,6 +9,7 @@ import {
   OverlayArrow,
   Popover as PopoverPrimitive,
 } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import {
   DialogBody,
@@ -28,7 +29,12 @@ const Popover = (props: PopoverProps) => {
 const PopoverTitle = DialogTitle
 const PopoverHeader = DialogHeader
 const PopoverBody = DialogBody
-const PopoverFooter = DialogFooter
+const PopoverFooter = ({ className, ...props }: React.ComponentProps<typeof DialogFooter>) => (
+  <DialogFooter
+    className={twMerge("justify-start has-[button]:justify-end", className)}
+    {...props}
+  />
+)
 
 interface PopoverContentProps extends PopoverPrimitiveProps {
   arrow?: boolean
@@ -48,9 +54,8 @@ const PopoverContent = ({
       ref={ref}
       offset={offset}
       className={cx(
-        "group/popover min-w-(--trigger-width) max-w-xs origin-(--trigger-anchor-point) overflow-y-auto rounded-(--popover-radius) border border-fg/10 bg-overlay text-overlay-fg shadow-xs outline-hidden transition-transform [--gutter:--spacing(6)] [--popover-radius:var(--radius-xl)] sm:text-sm dark:backdrop-saturate-200 **:[[role=dialog]]:[--gutter:--spacing(4)]",
-        "entering:fade-in entering:animate-in",
-        "exiting:fade-out exiting:animate-out",
+        "group/popover min-w-(--trigger-width) max-w-xs origin-(--trigger-anchor-point) rounded-(--popover-radius) border border-fg/10 bg-overlay text-overlay-fg shadow-xs outline-hidden transition-transform [--gutter:--spacing(6)] [--popover-radius:var(--radius-xl)] sm:text-sm dark:backdrop-saturate-200 **:[[role=dialog]]:[--gutter:--spacing(6)]",
+        "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
         "placement-left:entering:slide-in-from-right-1 placement-right:entering:slide-in-from-left-1 placement-top:entering:slide-in-from-bottom-1 placement-bottom:entering:slide-in-from-top-1",
         "placement-left:exiting:slide-out-to-right-1 placement-right:exiting:slide-out-to-left-1 placement-top:exiting:slide-out-to-bottom-1 placement-bottom:exiting:slide-out-to-top-1",
         "forced-colors:bg-[Canvas]",
@@ -72,7 +77,9 @@ const PopoverContent = ({
               </svg>
             </OverlayArrow>
           )}
-          {typeof children === "function" ? children(values) : children}
+          <div data-slot="popover-content" className="max-h-[inherit] overflow-y-auto">
+            {typeof children === "function" ? children(values) : children}
+          </div>
         </>
       )}
     </PopoverPrimitive>

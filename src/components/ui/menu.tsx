@@ -88,7 +88,7 @@ const MenuContent = <T extends object>({
 }: MenuContentProps<T>) => {
   return (
     <PopoverContent
-      className={cx("min-w-32 overflow-hidden", popover?.className)}
+      className={cx("min-w-32 *:data-[slot=popover-content]:overflow-hidden", popover?.className)}
       placement={placement}
       {...popover}
     >
@@ -147,7 +147,7 @@ const MenuItem = ({ className, intent, children, ...props }: MenuItemProps) => {
           {typeof children === "function" ? children(values) : children}
 
           {values.hasSubmenu && (
-            <ChevronRightIcon data-slot="chevron" className="absolute right-2 size-3.5" />
+            <ChevronRightIcon data-slot="chevron" className="absolute right-2 size-4" />
           )}
         </>
       )}
