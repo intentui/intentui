@@ -88,7 +88,7 @@ const MenuContent = <T extends object>({
 }: MenuContentProps<T>) => {
   return (
     <PopoverContent
-      className={cx("min-w-32 *:data-[slot=popover-content]:overflow-hidden", popover?.className)}
+      className={cx("min-w-32 *:data-[slot=popover-inner]:overflow-hidden", popover?.className)}
       placement={placement}
       {...popover}
     >
