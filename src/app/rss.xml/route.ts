@@ -8,8 +8,8 @@ export async function GET(request: NextRequest) {
 
   const rssXml = await generateRegistryRssFeed({
     baseUrl,
-    blocksUrl: '/blocks',
-    componentsUrl: '/components',
+    blocksUrl: "/blocks",
+    componentsUrl: "/docs/components",
     rss: {
       title: "@intentui",
       description: "Subscribe to @intentui updates",
