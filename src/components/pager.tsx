@@ -5,15 +5,13 @@ import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 
-export const Pager = ({
-  tree,
-  url,
-  className,
-}: {
+interface PageProps {
   tree: PageTreeRoot
   url: string
   className?: string
-}) => {
+}
+
+export const Pager = ({ tree, url, className }: PageProps) => {
   const neighbours = findNeighbour(tree, url)
 
   return (

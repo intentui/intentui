@@ -17,7 +17,7 @@ export function Hero() {
           Blocks
         </Heading>
         <div className="mt-6">
-          <Button onPress={go} intent="secondary">
+          <Button className="cursor-pointer" onPress={go} intent="secondary">
             Explore premium blocks
             <ArrowTopRightOnSquareIcon />
           </Button>

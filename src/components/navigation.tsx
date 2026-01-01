@@ -1,5 +1,6 @@
 "use client"
-import { ChevronDownIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
+import { ChevronDownIcon } from "@heroicons/react/16/solid"
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { GithubLink } from "@/components/github-link"
@@ -27,50 +28,8 @@ export function Navigation() {
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
         <nav className="border-fg/10 border-b bg-overlay py-1.5 dark:supports-backdrop-filter:bg-overlay/60 dark:supports-backdrop-filter:backdrop-blur-3xl">
           <PageContainer className="lg:px-8">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-x-6">
-                <div className="flex items-center">
-                  <Link
-                    href="/"
-                    className="mr-2 flex items-center gap-x-2"
-                    aria-label="Goto homepage"
-                  >
-                    <BrandIntentuiIcon className="size-5 shrink-0" />
-                    <span className="hidden min-w-0 sm:inline">
-                      <span>Intent</span> <span className="text-muted-fg">UI</span>
-                    </span>
-                  </Link>
-                  <span className="mx-2 text-muted-fg">/</span>
-                  <Menu>
-                    <Button intent="plain" size="xs">
-                      3.x
-                      <ChevronDownIcon />
-                    </Button>
-                    <MenuContent>
-                      <MenuItem
-                        href="https://intentui.com/docs/getting-started/introduction"
-                        className="group"
-                      >
-                        3.x{" "}
-                        <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
-                          latest
-                        </span>
-                      </MenuItem>
-                      <MenuItem href="https://2x.intentui.com/docs/getting-started/introduction">
-                        2.x
-                      </MenuItem>
-                      <MenuItem
-                        href="https://1x.intentui.com/docs/getting-started/introduction"
-                        className="group"
-                      >
-                        1.x{" "}
-                        <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
-                          deprecated
-                        </span>
-                      </MenuItem>
-                    </MenuContent>
-                  </Menu>
-                </div>
+            <div className="relative flex items-center justify-between">
+              <div className="flex items-center gap-x-1.5">
                 <NavLink
                   isNextLink
                   isActive={
@@ -96,7 +55,36 @@ export function Navigation() {
 
                 <NavLink href="/blocks">Blocks</NavLink>
               </div>
-              <div className="flex items-center gap-x-2">
+              <div className="mx-auto flex items-center">
+                <Link
+                  href="/"
+                  className="mr-2 flex items-center gap-x-2"
+                  aria-label="Goto homepage"
+                >
+                  <BrandIntentuiIcon className="size-5 shrink-0" />
+                  <span className="hidden min-w-0 sm:inline">
+                    <span>Intent</span> <span className="text-muted-fg">UI</span>
+                  </span>
+                  <Menu>
+                    <Button
+                      intent="secondary"
+                      className="*:data-[slot=icon]:text-fg sm:size-3.5"
+                      isCircle
+                      size="sq-xs"
+                      aria-label="Explore more products"
+                    >
+                      <ChevronDownIcon />
+                    </Button>
+                    <MenuContent placement="bottom">
+                      <MenuItem href="https://design.intentui.com/?utm_source=intentui&utm_medium=navbar&utm_campaign=internal_nav&utm_content=design">
+                        Design
+                      </MenuItem>
+                      <MenuItem>Intent UI</MenuItem>
+                    </MenuContent>
+                  </Menu>
+                </Link>
+              </div>
+              <div className="flex items-center gap-x-1.5">
                 <Button
                   onPress={() => setOpen((open: boolean) => !open)}
                   size="sq-sm"
@@ -134,6 +122,35 @@ export function Navigation() {
 
                 <GithubLink />
                 <ThemeSwitcher intent="plain" isCircle />
+                <Menu>
+                  <Button intent="plain" size="xs">
+                    3.x
+                    <ChevronDownIcon />
+                  </Button>
+                  <MenuContent>
+                    <MenuItem
+                      href="https://intentui.com/docs/getting-started/introduction"
+                      className="group"
+                    >
+                      3.x{" "}
+                      <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
+                        latest
+                      </span>
+                    </MenuItem>
+                    <MenuItem href="https://2x.intentui.com/docs/getting-started/introduction">
+                      2.x
+                    </MenuItem>
+                    <MenuItem
+                      href="https://1x.intentui.com/docs/getting-started/introduction"
+                      className="group"
+                    >
+                      1.x{" "}
+                      <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
+                        deprecated
+                      </span>
+                    </MenuItem>
+                  </MenuContent>
+                </Menu>
               </div>
             </div>
           </PageContainer>

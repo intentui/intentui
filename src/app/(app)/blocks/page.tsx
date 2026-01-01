@@ -1,9 +1,10 @@
+import type { Metadata } from "next"
 import { Hero } from "@/app/(app)/blocks/hero"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { PageContainer } from "@/components/page-container"
 import { Sandbox } from "./sandbox"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blocks",
   description:
     "Blocks offers a comprehensive collection of example guides demonstrating how to effectively use components in their entirety.",

@@ -102,7 +102,7 @@ export const PlainCode = ({
           <figcaption className="flex-1 truncate text-muted-fg">{title}</figcaption>
           {allowCopy ? (
             <CopyButton
-              className="absolute top-1 right-1 z-[2] grid size-10 place-content-center"
+              className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
               onClick={onClick}
               isCopied={checked}
             />
@@ -111,7 +111,7 @@ export const PlainCode = ({
       ) : (
         allowCopy && (
           <CopyButton
-            className="absolute top-1 right-1 z-[2] grid size-10 place-content-center"
+            className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
             onClick={onClick}
             isCopied={checked}
           />
@@ -121,7 +121,7 @@ export const PlainCode = ({
       <ScrollArea ref={areaRef} className="w-full" dir="ltr">
         <ScrollViewport
           {...viewportProps}
-          className={twMerge("max-h-[600px]", viewportProps?.className)}
+          className={twMerge("max-h-150", viewportProps?.className)}
         >
           {props.children}
         </ScrollViewport>

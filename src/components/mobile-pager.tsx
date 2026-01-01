@@ -5,15 +5,13 @@ import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 
-export const MobilePager = ({
-  tree,
-  url,
-  className,
-}: {
+interface MobilePagerProps {
   tree: PageTreeRoot
   url: string
   className?: string
-}) => {
+}
+
+export const MobilePager = ({ tree, url, className }: MobilePagerProps) => {
   const neighbours = findNeighbour(tree, url)
 
   return (
@@ -22,8 +20,7 @@ export const MobilePager = ({
         <Link
           className={buttonStyles({
             size: "sq-sm",
-            intent: "secondary",
-            className: "focus-visible:outline-fg",
+            intent: "outline",
           })}
           href={neighbours.previous.url}
         >
@@ -36,8 +33,7 @@ export const MobilePager = ({
         <Link
           className={buttonStyles({
             size: "sq-sm",
-            intent: "secondary",
-            className: "focus-visible:outline-fg",
+            intent: "outline",
           })}
           href={neighbours.next.url}
         >
