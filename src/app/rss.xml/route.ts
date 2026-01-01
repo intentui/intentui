@@ -17,7 +17,13 @@ export async function GET(request: NextRequest) {
       return `/docs/${originalUrl?.toLowerCase()}`
     }) as UrlResolverByItem,
 
-    excludeItemTypes: ["registry:style", "registry:block", "registry:page"],
+    excludeItemTypes: [
+      "registry:style",
+      "registry:block",
+      "registry:page",
+      "registry:hook",
+      "registry:lib",
+    ],
     rss: {
       title: "@intentui",
       description: "Subscribe to @intentui updates",
@@ -38,7 +44,12 @@ export async function GET(request: NextRequest) {
     })
   }
 
-  return new Response(rssXml, {
+  const rssXmlFiltered = rssXml.replace(/<item>[\s\S]*?<\/item>/g, (itemXml) => {
+    const link = itemXml.match(/<link>([^<]+)<\/link>/)?.[1] ?? ""
+    if (/\/items\/all?\/?$/.test(link)) return ""
+    return itemXml
+  })
+  return new Response(rssXmlFiltered, {
     headers: {
       "Content-Type": "application/rss+xml; charset=utf-8",
       "Cache-Control": "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400",
