@@ -1,5 +1,6 @@
-import { generateRegistryRssFeed } from "@wandry/analytics-sdk"
+import { generateRegistryRssFeed, type UrlResolverByItem } from "@wandry/analytics-sdk"
 import type { NextRequest } from "next/server"
+import { docs } from "#site/content"
 
 export const revalidate = 3600
 
@@ -8,8 +9,29 @@ export async function GET(request: NextRequest) {
 
   const rssXml = await generateRegistryRssFeed({
     baseUrl,
-    blocksUrl: "/blocks",
-    componentsUrl: "/docs/components",
+    componentsUrl: ((item) => {
+      const originalUrl = docs
+        .map((i) => i.info.path)
+        .find((i) => i?.split("/").at(-1)?.split(".")[0] === item.title)
+        ?.replace(".mdx", "")
+      return `/docs/${originalUrl?.toLowerCase()}`
+    }) as UrlResolverByItem,
+
+    blocksUrl: ((item) => {
+      const path = item.files.at(0)?.path
+      if (!path) return
+
+      const parts = path.replace(/\\/g, "/").split("/").filter(Boolean)
+      const docsIndex = parts.indexOf("docs")
+
+      const section = docsIndex >= 0 ? parts.at(docsIndex + 1) : undefined
+      const name = docsIndex >= 0 ? parts.at(docsIndex + 2) : undefined
+
+      if (!section || !name) return
+
+      return `/docs/components/${section}/${name}`
+    }) as UrlResolverByItem,
+
     rss: {
       title: "@intentui",
       description: "Subscribe to @intentui updates",

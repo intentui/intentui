@@ -2480,7 +2480,8 @@
       "title": "popover",
       "description": "popover",
       "dependencies": [
-        "react-aria-components"
+        "react-aria-components",
+        "tailwind-merge"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
