@@ -17,21 +17,13 @@ export async function GET(request: NextRequest) {
       return `/docs/${originalUrl?.toLowerCase()}`
     }) as UrlResolverByItem,
 
-    blocksUrl: ((item) => {
-      const path = item.files.at(0)?.path
-      if (!path) return
-
-      const parts = path.replace(/\\/g, "/").split("/").filter(Boolean)
-      const docsIndex = parts.indexOf("docs")
-
-      const section = docsIndex >= 0 ? parts.at(docsIndex + 1) : undefined
-      const name = docsIndex >= 0 ? parts.at(docsIndex + 2) : undefined
-
-      if (!section || !name) return
-
-      return `/docs/components/${section}/${name}`
-    }) as UrlResolverByItem,
-
+    excludeItemTypes: [
+      "registry:style",
+      "registry:block",
+      "registry:page",
+      "registry:hook",
+      "registry:lib",
+    ],
     rss: {
       title: "@intentui",
       description: "Subscribe to @intentui updates",
@@ -52,7 +44,12 @@ export async function GET(request: NextRequest) {
     })
   }
 
-  return new Response(rssXml, {
+  const rssXmlFiltered = rssXml.replace(/<item>[\s\S]*?<\/item>/g, (itemXml) => {
+    const link = itemXml.match(/<link>([^<]+)<\/link>/)?.[1] ?? ""
+    if (/\/items\/all?\/?$/.test(link)) return ""
+    return itemXml
+  })
+  return new Response(rssXmlFiltered, {
     headers: {
       "Content-Type": "application/rss+xml; charset=utf-8",
       "Cache-Control": "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400",
