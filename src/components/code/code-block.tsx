@@ -3,9 +3,9 @@
 import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
 import { Tab } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { CopyButton } from "@/components/code/pull-registry"
+import { CopyButton } from "@/components/code/copy-button"
 import { BrandCssIcon } from "@/components/icons/brand-css-icon"
 import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
 import { BrandTypescriptIcon } from "@/components/icons/brand-typescript-icon"
@@ -84,20 +84,25 @@ export function CodeBlock({ source }: Props) {
             </TabList>
           </div>
           {Object.entries(contents).map(([key, value]) => (
-            <TabPanel key={key} id={key} className="overflow-hidden rounded-lg border bg-shiki-bg">
-              <CopyButton
-                className="absolute top-1.5 right-0"
-                label="Copy"
-                copiedLabel="Copied"
-                isCopied={copiedStates[key] || false}
-                onCopy={() => handleCopy(key, value)}
-              />
-              <CodeHighlighter
-                plain
-                removeLastLine
-                className="overflow-auto p-4"
-                code={value || "No source code available"}
-              />
+            <TabPanel key={key} id={key}>
+              <div
+                className={twJoin(
+                  "relative overflow-hidden rounded-lg border bg-muted dark:bg-shiki-bg",
+                  "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
+                )}
+              >
+                <CopyButton
+                  className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
+                  onClick={() => handleCopy(key, value)}
+                  isCopied={copiedStates[key] || false}
+                />
+                <CodeHighlighter
+                  plain
+                  className="px-4 py-3"
+                  removeLastLine
+                  code={value || "No source code available"}
+                />
+              </div>
             </TabPanel>
           ))}
         </Tabs>

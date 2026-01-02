@@ -1,6 +1,6 @@
 "use client"
 
-import React, { Suspense, useState } from "react"
+import { Suspense, useEffect, useMemo, useState } from "react"
 import { Group, ToggleButton, Toolbar } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
@@ -52,7 +52,7 @@ export const DocHow = ({
 
   const blockDemo = toUse.split("/").pop() ?? ""
 
-  const processedSourceCode = React.useMemo(() => {
+  const processedSourceCode = useMemo(() => {
     if (!rawSourceCode) return null
 
     /*
@@ -64,7 +64,7 @@ export const DocHow = ({
     return rawSourceCode.replace(defaultExportRegex, "export function Component(")
   }, [rawSourceCode])
 
-  React.useEffect(() => {
+  useEffect(() => {
     const name = `${toUse?.split("/").pop()}`
     fetchRegistryFile(name).then(setRawSourceCode)
   }, [toUse])
@@ -117,9 +117,7 @@ export const DocHow = ({
               !withNoPadding
                 ? [
                     "relative gap-4 rounded-lg border bg-overlay",
-
-                    "border border-muted-fg/40",
-                    "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
+                    "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
                   ]
                 : "sm:py-24",
             )}
@@ -144,9 +142,8 @@ export const DocHow = ({
             {processedSourceCode ? (
               <div
                 className={twJoin(
-                  "group relative rounded-lg",
-                  "border border-muted-fg/40",
-                  "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
+                  "group relative rounded-lg border",
+                  "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
                 )}
               >
                 <CodeHighlighter

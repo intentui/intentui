@@ -76,10 +76,9 @@ export const PlainCode = ({
       ref={ref}
       {...props}
       className={twMerge(
-        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg bg-secondary/50 text-sm/6 shadow-sm",
-        "border border-muted-fg/40",
-        "ring ring-muted-fg/30 ring-offset-4 ring-offset-muted",
-        keepBackground && "bg-white dark:bg-zinc-950!",
+        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6 shadow-sm",
+        "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
+        // keepBackground && "bg-white dark:bg-zinc-950!",
         className,
       )}
     >

@@ -15,14 +15,20 @@ interface PullRegistryProps {
 }
 
 interface CopyButtonProps {
-  label: string
-  copiedLabel: string
+  label?: string
+  copiedLabel?: string
   isCopied: boolean
   onCopy: () => void
   className?: string
 }
 
-export function CopyButton({ label, copiedLabel, className, isCopied, onCopy }: CopyButtonProps) {
+export function CopyButton({
+  label = "Copy",
+  copiedLabel = "Copied",
+  className,
+  isCopied,
+  onCopy,
+}: CopyButtonProps) {
   return (
     <Button
       className={twMerge(

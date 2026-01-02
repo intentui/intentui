@@ -163,10 +163,10 @@
 }
 
 .dark {
-  --shiki-bg: #09090b;
+  --shiki-bg: #1d1d20;
   --shiki-da--bg: oklch(0.091 0.005 285.823);
 
-  --bg: oklch(0.181 0.005 285.823);
+  --bg: var(--color-zinc-900);
   --fg: oklch(0.985 0 0);
 
   --primary: oklch(0.546 0.245 262.881);
