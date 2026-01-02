@@ -13,7 +13,7 @@ type AdVariant = {
 
 const variants: AdVariant[] = [
   {
-    href: "https://dub.sh/designiui",
+    href: "https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=docs_intentui",
     title: (
       <>
         Unlock the full power of <br /> Design Intent UI
