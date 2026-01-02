@@ -43,6 +43,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
     <nav
       className={twMerge(
         "sticky top-0 z-40 flex items-center bg-bg px-2 py-2 lg:hidden",
+        pathname === "/" && "bg-transparent",
         className,
       )}
     >
@@ -81,15 +82,21 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
               "placement-bottom:entering:slide-in-from-top-1 -mt-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]",
               "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
               "slide-out-to-top-1 slide-in-from-top-1",
+              pathname === "/" && "from-blue-50 dark:from-[#151518]",
               popover?.className,
             )}
             containerPadding={0}
           >
             <Autocomplete filter={contains}>
-              <div className="sticky top-0 h-16 bg-linear-to-b from-bg via-bg pt-2">
+              <div
+                className={twJoin(
+                  "sticky top-0 h-16 bg-linear-to-b via-bg pt-2",
+                  pathname === "/" ? "from-blue-50 dark:from-[#151518]" : "from-bg",
+                )}
+              >
                 <SearchField autoFocus aria-label="Search...">
                   <SearchInput
-                    className="bg-muted focus:border-input focus:ring-0 focus:enabled:hover:border-input"
+                    className="bg-bg focus:border-input focus:ring-0 focus:enabled:hover:border-input"
                     placeholder="Search&hellip;"
                   />
                 </SearchField>

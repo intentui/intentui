@@ -98,14 +98,7 @@ export function Navbar() {
           </div>
         </div>
       </PageContainer>
-      {isMobile && (
-        <ResponsiveNavigation
-          className="bg-transparent"
-          popover={{
-            className: "from-blue-50 dark:from-[#161619]",
-          }}
-        />
-      )}
+      {isMobile && <ResponsiveNavigation />}
     </>
   )
 }

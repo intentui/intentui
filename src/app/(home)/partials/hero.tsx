@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site"
 
 export function Hero() {
   return (
-    <div className="-mt-20 bg-gradient-to-b from-blue-50 to-bg pt-20 pb-8 lg:pt-40 lg:pb-16 dark:from-muted dark:to-zinc-950">
+    <div className="-mt-20 bg-linear-to-b from-blue-50 to-bg pt-20 pb-8 lg:pt-40 lg:pb-16 dark:from-muted dark:to-zinc-950">
       <PageContainer>
         <Header className="pt-6 text-left">
           <h1 className="mt-4 mb-4 max-w-3xl pb-1 font-semibold text-3xl text-fg tracking-tight lg:mb-6 lg:text-5xl/14">
