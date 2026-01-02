@@ -76,7 +76,7 @@ export function Ads({ className }: { className?: string }) {
             "border-none bg-white shadow-xs ring ring-border group-hover:ring-muted-fg/20 dark:bg-white/10 dark:ring-white/20 dark:group-hover:ring-white/30",
         })}
       >
-        Learn more &rarr;
+        Learn more <span aria-hidden className="group-hover:translate-x-0.5 duration-200">&rarr;</span>
       </span>
     </a>
   )
