@@ -94,7 +94,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                   />
                 </SearchField>
               </div>
-              <Menu className="outline-hidden">
+              <Menu className="-mt-4 outline-hidden">
                 <MenuSection>
                   <NavHeading>Pages</NavHeading>
                   <NavLink href="/">Home</NavLink>

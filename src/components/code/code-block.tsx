@@ -87,7 +87,7 @@ export function CodeBlock({ source }: Props) {
             <TabPanel key={key} id={key}>
               <div
                 className={twJoin(
-                  "relative overflow-hidden rounded-lg border bg-muted dark:bg-shiki-bg",
+                  "relative overflow-hidden rounded-lg border bg-shiki-bg",
                   "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
                 )}
               >
