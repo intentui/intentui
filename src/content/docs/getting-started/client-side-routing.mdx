@@ -8,7 +8,7 @@ published: true
 ## Introduction
 React Aria components such as [Link](/docs/components/navigation/link), [Menu](/docs/components/collections/menu), [Tabs](/docs/components/navigation/tabs), and [Table](/docs/components/collections/table) transform elements into clickable links that navigate when clicked. These components utilize the `href` prop to render as an `<a>` tag, supporting attributes like `target` and `download`.
 
-User interactions with these links vary by component. For instance, one might use arrow keys to navigate tabs or press enter to open a link within a ComboBox With the href prop, React Aria facilitates seamless navigation for each component.
+User interactions with these links vary by component. For instance, one might use arrow keys to navigate tabs or press Enter to open a link within a ComboBox. With the href prop, React Aria facilitates seamless navigation for each component.
 
 Typically, links perform the default browser action when clicked. However, many applications employ client-side routers to prevent full page reloads. The RouterProvider configures React Aria components to integrate with your client-side router. Simply set it up at the root, and any React Aria component with an href will automatically utilize your router.
 
@@ -39,7 +39,7 @@ The Ziggy JS library, when running Laravel, is located in the `vendor` folder. T
         'tsconfig.json': 'csr/inertia/tsconfig.json',
     }} />
 
-### Setup ziggy
+### Set up Ziggy
 I’ll assume you already have [Ziggy](https://github.com/tighten/ziggy) installed, as this setup is intended for Inertia.js with Ziggy. Once it’s installed, generate the Ziggy routes by running:
 
 ```
@@ -81,7 +81,7 @@ After you create the provider files, you can use them in your `app/layout.tsx` f
 
 
 ## Remix
-For Remix, we can use the `useNavigate` hooks. First, let's create a file `route-provider.tsx` in `app/components` folder.
+For Remix, we can use the `useNavigate` hook. First, let's create a file `route-provider.tsx` in the `app/components` folder.
 
 For comprehensive details, consult the [Remix documentation](https://remix.run/docs/en/main/file-conventions/root).
 <CodeBlock
