@@ -2,6 +2,8 @@
 
 import { type ReactNode, useEffect, useState } from "react"
 import { twMerge } from "tailwind-merge"
+import { buttonStyles } from "@/components/ui/button"
+import { Text } from "@/components/ui/text"
 
 type AdVariant = {
   href: string
@@ -20,9 +22,12 @@ const variants: AdVariant[] = [
     description: (
       <>
         Build modern web apps faster with{" "}
-        <strong className="font-semibold text-fg">500+ blocks</strong>,{" "}
-        <strong className="font-semibold text-fg">patterns</strong> and polished{" "}
-        <strong className="font-semibold text-fg">templates</strong> crafted for you.
+        <strong className="font-semibold text-fg">1000+ resources</strong> across{" "}
+        <strong className="font-semibold text-fg">components</strong>,{" "}
+        <strong className="font-semibold text-fg">blocks</strong>,{" "}
+        <strong className="font-semibold text-fg">patterns</strong>,{" "}
+        <strong className="font-semibold text-fg">templates</strong>, and{" "}
+        <strong className="font-semibold text-fg">starter kits</strong>.
       </>
     ),
   },
@@ -58,14 +63,21 @@ export function Ads({ className }: { className?: string }) {
       rel="noreferrer"
       href={variant.href}
       className={twMerge(
-        "not-prose group block w-full rounded-lg border bg-muted p-4 hover:border-fg/30 sm:w-60 sm:rounded-xl",
+        "not-prose group block w-full rounded-lg bg-zinc-100/80 p-6 sm:w-60 dark:bg-zinc-800",
         className,
       )}
     >
-      <span className="mb-1.5 block font-semibold text-sm/5">{variant.title}</span>
-      <div className="mb-1 block text-pretty text-[0.83rem]/5 text-muted-fg">
-        {variant.description}
-      </div>
+      <span className="mb-1.5 block font-medium text-base/6">{variant.title}</span>
+      <Text className="mt-1 mb-3 block text-pretty text-muted-fg">{variant.description}</Text>
+      <span
+        className={buttonStyles({
+          intent: "outline",
+          className:
+            "border-none bg-white shadow-xs ring ring-border group-hover:ring-muted-fg/20 dark:bg-white/10 dark:ring-white/20 dark:group-hover:ring-white/30",
+        })}
+      >
+        Learn more &rarr;
+      </span>
     </a>
   )
 }
