@@ -76,7 +76,7 @@ export function Navigation() {
                       <ChevronDownIcon />
                     </Button>
                     <MenuContent placement="bottom">
-                      <MenuItem href="https://design.intentui.com/?utm_source=intentui&utm_medium=navbar&utm_campaign=internal_nav&utm_content=design">
+                      <MenuItem href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=navbar&utm_campaign=internal_nav&utm_content=design">
                         Design
                       </MenuItem>
                       <MenuItem>Intent UI</MenuItem>
