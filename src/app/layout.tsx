@@ -15,14 +15,6 @@ export const metadata: Metadata = {
     default: `${siteConfig.name}`,
     template: `%s / ${siteConfig.name}`,
   },
-
-  openGraph: {
-    title: siteConfig.name,
-    description: siteConfig.description,
-    url: "https://intentui.com",
-    siteName: siteConfig.name,
-  },
-  description: siteConfig.description,
   alternates: {
     canonical: "./",
   },

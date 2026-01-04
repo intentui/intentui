@@ -5,10 +5,20 @@ import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
 import { Footer } from "@/components/footer"
+import { siteConfig } from "@/config/site"
 import { Hero } from "./partials/hero"
 import { Navbar } from "./partials/navbar"
 import { OpenSource } from "./partials/open-source"
 
+export const metadata = {
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: "https://intentui.com",
+    siteName: siteConfig.name,
+  },
+  description: siteConfig.description,
+}
 export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">
