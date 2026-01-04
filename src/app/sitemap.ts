@@ -4,35 +4,36 @@ import { source } from "@/lib/source"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const docs = source.pageTree
+  const lastModified = new Date()
   return [
     {
       url: siteConfig.url,
-      lastModified: new Date(),
+      lastModified,
     },
     {
       url: `${siteConfig.url}/components`,
-      lastModified: new Date(),
+      lastModified,
     },
     {
       url: `${siteConfig.url}/icons`,
-      lastModified: new Date(),
+      lastModified,
     },
     {
       url: `${siteConfig.url}/colors`,
-      lastModified: new Date(),
+      lastModified,
     },
     {
       url: `${siteConfig.url}/themes`,
-      lastModified: new Date(),
+      lastModified,
     },
     {
       url: `${siteConfig.url}/blocks`,
-      lastModified: new Date(),
+      lastModified,
     },
     //   @ts-expect-error
-    ...extractUrls(docs.children[0].children).map((i) => ({
+    ...extractUrls(docs.children).map((i) => ({
       ...i,
-      lastModified: new Date(),
+      lastModified,
     })),
   ]
 }
@@ -54,7 +55,8 @@ function extractUrls(data: DocNode[]): { url: string }[] {
       urls.push({
         url: `${siteConfig.url}${node.url}`,
       })
-    } else if (node.children) {
+    }
+    if (node.children?.length) {
       node.children.forEach(traverse)
     }
   }
