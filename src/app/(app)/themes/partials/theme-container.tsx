@@ -46,8 +46,8 @@ export function ThemeContainer() {
               <CardHeader>
                 <CardTitle>Theme customizer</CardTitle>
                 <CardDescription>
-                  Customize your theme by selecting colors from the color picker or by entering a
-                  hex code.
+                  Easily select colors, fine-tune styles, and generate a theme that fits your
+                  project in minutes.
                 </CardDescription>
               </CardHeader>
             </div>
