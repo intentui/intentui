@@ -36,36 +36,7 @@ Several pages have been updated, and there's also a new one.
 
 ### Blocks
 The new **Blocks** page showcases complex components like sidebars and navbars. If you're interested, you can check it out [here](/blocks).
-<BlockSandbox
-    {...{
-        isIframe: true,
-        title: "Default Sidebar",
-        defaultSelected: "app-sidebar.tsx",
-        fullscreen: "/blocks/sidebar/sidebar-01",
-        preview: "/blocks/sidebar/sidebar-01",
-        expandKeys: ["components", "app"],
-        initialRegistry: "blocks/sidebar/sidebar-01/app-sidebar",
-        folders: {
-            components: {
-                ui: {
-                    "badge.tsx": "ui/badge",
-                    "separator.tsx": "ui/separator",
-                    "sheet.tsx": "ui/sheet",
-                    "tooltip.tsx": "ui/tooltip",
-                    "primitive.tsx": "ui/primitive",
-                    "button.tsx": "ui/button",
-                    "sidebar.tsx": "ui/sidebar",
-                },
-            "app-sidebar.tsx": "blocks/sidebar/sidebar-01/app-sidebar",
-        },
-        app: {
-            "page.tsx": "blocks/sidebar/sidebar-01/page",
-            "layout.tsx": "blocks/sidebar/sidebar-01/layout",
-            "global.css": "docs/installation/main.css",
-        },
-    },
-    }}
-/>
+<Sandbox registries={["sidebar-01"]} />
 
 ### Themes
 The **Themes** page has been improved. It's no longer just a list of themes; instead, it allows you to customize your theme, including options for primary colors, accents, base grays, and default border radius. Explore it [here](/themes).
