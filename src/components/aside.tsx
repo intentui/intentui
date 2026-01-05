@@ -56,7 +56,7 @@ export function Aside() {
           </AsideLink>
           <AsideLink
             target="_blank"
-            href="https://design.intentui.com/products?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
+            href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
           >
             Templates & Starter kits{" "}
             <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">

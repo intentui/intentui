@@ -53,7 +53,7 @@ export function DesignIntentui() {
                 intent: "outline",
                 className: "border-bg/20 pressed:bg-bg/10 hover:bg-bg/5",
               })}
-              href="https://design.intentui.com/products"
+              href="https://design.intentui.com/templates"
             >
               Get templates
             </Link>

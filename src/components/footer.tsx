@@ -24,24 +24,54 @@ const navigation = {
     },
     { name: "Discord", href: "https://discord.gg/DYmVJ66JUD" },
     { name: "Design", href: "https://design.intentui.com" },
-    { name: "Templates", href: "https://design.intentui.com/products" },
+    { name: "Templates", href: "https://design.intentui.com/templates" },
     { name: "Sponsor", href: "https://github.com/sponsors/irsyadadl" },
   ],
   templates: [
-    { name: "Deploy", href: "https://design.intentui.com/products/ecommerce-design-template" },
-    { name: "Screencast", href: "https://design.intentui.com/products/course-platform-template" },
+    {
+      name: "Screencast",
+      href: "https://design.intentui.com/templates/course-platform-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=screencast",
+    },
+    {
+      name: "Deploy",
+      href: "https://design.intentui.com/templates/server-management-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=deploy",
+    },
+    {
+      name: "Axis",
+      href: "https://design.intentui.com/templates/retail-dashboard-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=axis",
+    },
+    {
+      name: "Cartel",
+      href: "https://design.intentui.com/templates/commerce-dashboard-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=cartel",
+    },
     {
       name: "Provision",
-      href: "https://design.intentui.com/products/provision-dashboard-template",
+      href: "https://design.intentui.com/templates/provision-dashboard-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=provision",
     },
-    { name: "Clinic", href: "https://design.intentui.com/products/clinic-dashboard-template" },
-    { name: "Cartel", href: "https://design.intentui.com/products/commerce-dashboard-template" },
     {
       name: "Personal",
-      href: "https://design.intentui.com/products/modern-personal-website-template",
+      href: "https://design.intentui.com/templates/modern-personal-website-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=personal",
     },
-    { name: "Axis", href: "https://design.intentui.com/products/retail-dashboard-template" },
-    { name: "Explore more", href: "https://design.intentui.com/products" },
+    {
+      name: "Clinic",
+      href: "https://design.intentui.com/templates/clinic-dashboard-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=clinic",
+    },
+    {
+      name: "Spotlight",
+      href: "https://design.intentui.com/templates/simple-personal-website-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=spotlight",
+    },
+    {
+      name: "Scale",
+      href: "https://design.intentui.com/templates/saas-landing-page-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=scale",
+    },
+    {
+      name: "Commerce",
+      href: "https://design.intentui.com/templates/commerce-design-template?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer&utm_content=commerce",
+    },
+    {
+      name: "Explore more",
+      href: "https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer",
+    },
   ],
 }
 

@@ -38,6 +38,11 @@ const config = {
   async redirects() {
     return [
       {
+        source: "/docs/components/charts/area-chart",
+        destination: "/docs/components/visualizations/area-chart",
+        permanent: true,
+      },
+      {
         source: "/docs",
         destination: "/docs/getting-started/installation",
         permanent: false,

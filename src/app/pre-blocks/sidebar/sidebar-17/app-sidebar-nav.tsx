@@ -9,7 +9,7 @@ export default function AppSidebarNav() {
       <SidebarTrigger />
       <span className="flex items-center gap-x-4">
         <Breadcrumbs className="hidden md:flex">
-          <BreadcrumbsItem href="/blocks/sidebar/sidebar-01">Dashboard</BreadcrumbsItem>
+          <BreadcrumbsItem href="/pre-blocks/sidebar/sidebar-01">Dashboard</BreadcrumbsItem>
           <BreadcrumbsItem>Newsletter</BreadcrumbsItem>
         </Breadcrumbs>
       </span>
