@@ -9,7 +9,7 @@ import { IconsList } from "./partials/icons-list"
 export const metadata: Metadata = {
   title: "Intent Icons",
   description:
-    " A library of beautifully crafted react icons, perfect for enhancing the visual appeal and user experience of your web applications. ",
+    "A library of beautifully crafted @intentui/icons to elevate your web apps with crisp visuals, consistent style, and a polished, delightful user experience.",
   metadataBase: new URL("https://intentui.com"),
   applicationName: siteConfig.name,
   keywords: [

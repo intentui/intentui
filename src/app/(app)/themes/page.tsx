@@ -16,7 +16,7 @@ export default function Page() {
 export const metadata: Metadata = {
   title: "Themes",
   description:
-    "Curated themes, selected for you, ready to copy, paste, and integrate into your apps for a polished, custom look without the hassle.",
+    "Curated themes picked for you, ready to copy, paste, and drop into your app for a polished custom look, consistent styling, and zero hassle from setup to launch.",
   metadataBase: new URL("https://intentui.com"),
   applicationName: siteConfig.name,
   category: "Themes",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Themes",
     description:
-      "Curated themes, selected for you, ready to copy, paste, and integrate into your apps for a polished, custom look without the hassle.",
+      "Curated themes picked for you, ready to copy, paste, and drop into your app for a polished custom look, consistent styling, and zero hassle from setup to launch.",
   },
   keywords: [
     "Themes",

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Intent UI",
   url: "https://intentui.com",
   description:
-    "Intent UI lets developers copy-paste fully-accessible React components, tailor them with Tailwind, and ship production UIs in minutes.",
+    "Intent UI helps developers copy and paste fully accessible React components, customize them with Tailwind, and ship production ready UIs in minutes.",
   author: "irsyadadl",
   links: {
     twitter: "https://x.com/intent/follow?screen_name=intentui",

@@ -7,7 +7,7 @@ import { Sandbox } from "./sandbox"
 export const metadata: Metadata = {
   title: "Blocks",
   description:
-    "Blocks offers a comprehensive collection of example guides demonstrating how to effectively use components in their entirety.",
+    "Blocks provides a comprehensive library of example guides that show how to use each component end to end, from setup to real world implementation.",
 }
 
 export default function Page() {

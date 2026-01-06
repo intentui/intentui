@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site"
 export const metadata: Metadata = {
   title: "Colors",
   description:
-    "A stash of over 154 colors blending TailwindCSS vibes with HTML color names, served up in 4 slick formats.",
+    "A stash of 154+ colors mixing TailwindCSS vibes with classic HTML color names, delivered in four clean formats so you can pick, paste, and ship faster.",
   metadataBase: new URL("https://intentui.com"),
   applicationName: siteConfig.name,
   category: "Colors",

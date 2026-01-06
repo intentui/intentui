@@ -9,7 +9,7 @@ export default function Page() {
 export const metadata: Metadata = {
   title: "Components",
   description:
-    "Explore 80+ accessible UI components powered by react aria components, easy to customize and ready for production.",
+    "Explore 80+ accessible UI components built on React Aria, fully customizable and production ready, with consistent patterns for fast, polished interfaces.",
   metadataBase: new URL("https://intentui.com"),
   applicationName: siteConfig.name,
   keywords: [
