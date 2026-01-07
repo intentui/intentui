@@ -31,7 +31,7 @@ export function Cta() {
               Browse all available UI components with detailed examples and usage guidance.
             </ChoiceBoxDescription>
           </ChoiceBoxItem>
-          <ChoiceBoxItem href="/themes" textValue="themes">
+          <ChoiceBoxItem href="https://design.intentui.com/themes" textValue="themes">
             <ChoiceBoxLabel>Themes</ChoiceBoxLabel>
             <ChoiceBoxDescription>
               Customize the entire look and feel using built-in themes and styling options.

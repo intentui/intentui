@@ -17,7 +17,7 @@ export default function BarListDemo() {
               href: "/installation",
             },
             { name: "Components", value: 980, href: "/components" },
-            { name: "Themes", value: 760, href: "/themes" },
+            { name: "Themes", value: 760, href: "https://design.intentui.com/themes" },
             { name: "Colors", value: 430, href: "/colors" },
             { name: "Icons", value: 150, href: "/icons" },
             {

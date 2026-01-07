@@ -130,7 +130,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
             <CubeIcon className="size-5" />
             <CommandMenuLabel>Components</CommandMenuLabel>
           </CommandMenuItem>
-          <CommandMenuItem textValue="themes" href="/themes">
+          <CommandMenuItem textValue="themes" href="https://design.intentui.com/themes">
             <PaintBrushIcon className="size-5" />
             <CommandMenuLabel>Themes</CommandMenuLabel>
           </CommandMenuItem>

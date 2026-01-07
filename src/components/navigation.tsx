@@ -47,7 +47,7 @@ export function Navigation() {
                   Components
                 </NavLink>
 
-                <NavLink isNextLink href="/themes">
+                <NavLink isNextLink href="https://design.intentui.com/themes">
                   Themes
                 </NavLink>
 

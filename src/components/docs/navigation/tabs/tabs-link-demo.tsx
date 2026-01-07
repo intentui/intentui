@@ -4,7 +4,7 @@ import { Tab, TabList, Tabs } from "@/components/ui/tabs"
 
 const navs = [
   { url: "/", label: "Home" },
-  { url: "/themes", label: "Themes" },
+  { url: "https://design.intentui.com/themes", label: "Themes" },
   { url: "/colors", label: "Colors" },
 ]
 

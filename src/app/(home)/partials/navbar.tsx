@@ -119,7 +119,7 @@ export const menus = [
     icon: BookOpenIcon,
   },
   { href: "/components", label: "Components", icon: CubeIcon },
-  { href: "/themes", label: "Themes", icon: PaintBrushIcon },
+  { href: "https://design.intentui.com/themes", label: "Themes", icon: PaintBrushIcon },
   { href: "/colors", label: "Colors", icon: SwatchIcon },
   { href: "/blocks", label: "Blocks", icon: Squares2X2Icon },
 ]

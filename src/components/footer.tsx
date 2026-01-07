@@ -9,7 +9,7 @@ const navigation = {
   resources: [
     { name: "Home", href: "/" },
     { name: "Colors", href: "/colors" },
-    { name: "Themes", href: "/themes" },
+    { name: "Themes", href: "https://design.intentui.com/themes" },
     { name: "All components", href: "/components" },
     { name: "Docs", href: "/docs" },
     { name: "Blocks", href: "/blocks" },
