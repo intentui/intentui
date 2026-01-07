@@ -2,7 +2,6 @@ import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import type React from "react"
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
-import { GeneratedTheme } from "@/app/(app)/themes/partials/generated-theme"
 import { CodeBlock } from "@/components/code/code-block"
 import { EditorText } from "@/components/code/editor-text"
 import { PlainCode, Pre } from "@/components/code/plain-code"
@@ -14,7 +13,6 @@ import { Link } from "@/components/ui/link"
 import { DocHow } from "./code/doc-how"
 
 export const mdxComponents = {
-  GeneratedTheme,
   pre: (props: React.ComponentProps<typeof PlainCode>) => (
     <PlainCode className="not-prose bg-black" {...props}>
       <Pre>{props.children}</Pre>

@@ -23,10 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
     },
     {
-      url: `${siteConfig.url}/themes`,
-      lastModified,
-    },
-    {
       url: `${siteConfig.url}/blocks`,
       lastModified,
     },
