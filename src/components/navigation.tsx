@@ -1,6 +1,6 @@
 "use client"
 import { ChevronDownIcon } from "@heroicons/react/16/solid"
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
+import { ArrowTopRightOnSquareIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { GithubLink } from "@/components/github-link"
@@ -47,13 +47,13 @@ export function Navigation() {
                   Components
                 </NavLink>
 
-                <NavLink isNextLink href="/themes">
-                  Themes
-                </NavLink>
-
                 <NavLink href="/colors">Colors</NavLink>
 
                 <NavLink href="/blocks">Blocks</NavLink>
+
+                <NavLink isNextLink href="https://design.intentui.com/themes">
+                  Themes <ArrowTopRightOnSquareIcon className="ml-2 size-4" />
+                </NavLink>
               </div>
               <div className="mx-auto flex items-center">
                 <Link
