@@ -4,11 +4,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import { type CalendarDate, getLocalTimeZone, today } from "@internationalized/date"
 import { useDateFormatter } from "@react-aria/i18n"
 import { use } from "react"
-import type {
-  CalendarProps as CalendarPrimitiveProps,
-  CalendarState,
-  DateValue,
-} from "react-aria-components"
 import {
   CalendarCell,
   CalendarGrid,
@@ -16,9 +11,12 @@ import {
   CalendarGridHeader as CalendarGridHeaderPrimitive,
   CalendarHeaderCell,
   Calendar as CalendarPrimitive,
+  type CalendarProps as CalendarPrimitiveProps,
   CalendarStateContext,
   composeRenderProps,
+  type DateValue,
   Heading,
+  RangeCalendarStateContext,
   useLocale,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
@@ -46,10 +44,10 @@ const Calendar = <T extends DateValue>({ className, ...props }: CalendarProps<T>
                 twMerge(
                   "relative flex size-11 cursor-default items-center justify-center rounded-lg text-fg tabular-nums outline-hidden hover:bg-secondary-fg/15 sm:size-9 sm:text-sm/6 forced-colors:text-[ButtonText] forced-colors:outline-0",
                   isSelected &&
-                    "bg-primary pressed:bg-primary text-primary-fg hover:bg-primary/90 data-invalid:bg-danger data-invalid:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[Highlight] forced-colors:data-invalid:bg-[Mark]",
+                  "bg-primary pressed:bg-primary text-primary-fg hover:bg-primary/90 data-invalid:bg-danger data-invalid:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[Highlight] forced-colors:data-invalid:bg-[Mark]",
                   isDisabled && "text-muted-fg forced-colors:text-[GrayText]",
                   date.compare(now) === 0 &&
-                    "after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-0.75 after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
+                  "after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-0.75 after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
                   className,
                 ),
               )}
@@ -62,13 +60,11 @@ const Calendar = <T extends DateValue>({ className, ...props }: CalendarProps<T>
 }
 
 const CalendarHeader = ({
-  isRange,
-  className,
-  ...props
-}: React.ComponentProps<"header"> & { isRange?: boolean }) => {
+                          isRange,
+                          className,
+                          ...props
+                        }: React.ComponentProps<"header"> & { isRange?: boolean }) => {
   const { direction } = useLocale()
-  const state = use(CalendarStateContext)!
-
   return (
     <header
       data-slot="calendar-header"
@@ -78,19 +74,11 @@ const CalendarHeader = ({
       )}
       {...props}
     >
-      {!isRange && (
-        <div className="flex items-center gap-1.5">
-          <SelectMonth state={state} />
-          <SelectYear state={state} />
-        </div>
-      )}
-      <Heading
-        className={twMerge(
-          "mr-2 flex-1 text-left font-medium text-muted-fg sm:text-sm",
-          !isRange && "sr-only",
-          className,
-        )}
-      />
+      <div className="flex items-center gap-1.5">
+        <SelectMonth />
+        <SelectYear />
+      </div>
+      <Heading className="sr-only" />
       <div className="flex items-center gap-1">
         <Button
           size="sq-sm"
@@ -115,69 +103,91 @@ const CalendarHeader = ({
   )
 }
 
-const SelectMonth = ({ state }: { state: CalendarState }) => {
-  const months = []
+interface CalendarDropdown {
+  id: number
+  date: CalendarDate
+  formatted: string
+}
 
+const SelectMonth = () => {
+  const calendarState = use(CalendarStateContext)
+  const rangeCalendarState = use(RangeCalendarStateContext)
+  const state = calendarState || rangeCalendarState!
   const formatter = useDateFormatter({
-    month: "long",
+    month: "short",
     timeZone: state.timeZone,
   })
 
+  const months: CalendarDropdown[] = []
   const numMonths = state.focusedDate.calendar.getMonthsInYear(state.focusedDate)
   for (let i = 1; i <= numMonths; i++) {
     const date = state.focusedDate.set({ month: i })
-    months.push(formatter.format(date.toDate(state.timeZone)))
+    months.push({
+      id: i,
+      date,
+      formatted: formatter.format(date.toDate(state.timeZone)),
+    })
   }
+
   return (
     <Select
       className="[popover-width:8rem]"
-      aria-label="Select month"
-      value={state.focusedDate.month.toString() ?? (new Date().getMonth() + 1).toString()}
-      onChange={(value) => {
-        state.setFocusedDate(state.focusedDate.set({ month: Number(value) }))
+      aria-label="Month"
+      style={{ flex: 1, width: "fit-content" }}
+      value={state.focusedDate.month}
+      onChange={(key) => {
+        if (typeof key === "number") {
+          state.setFocusedDate(months[key - 1].date)
+        }
       }}
     >
       <SelectTrigger className="w-22 text-sm/5 **:data-[slot=select-value]:inline-block **:data-[slot=select-value]:truncate sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
-      <SelectContent className="min-w-0">
-        {months.map((month, index) => (
-          <SelectItem key={index} id={(index + 1).toString()} textValue={month}>
-            <SelectLabel>{month}</SelectLabel>
+      <SelectContent className="min-w-0" items={months}>
+        {(item) => (
+          <SelectItem>
+            <SelectLabel>{item.formatted}</SelectLabel>
           </SelectItem>
-        ))}
+        )}
       </SelectContent>
     </Select>
   )
 }
 
-const SelectYear = ({ state }: { state: CalendarState }) => {
-  const years: { value: CalendarDate; formatted: string }[] = []
+const SelectYear = () => {
+  const calendarState = use(CalendarStateContext)
+  const rangeCalendarState = use(RangeCalendarStateContext)
+  const state = calendarState || rangeCalendarState!
   const formatter = useDateFormatter({
     year: "numeric",
     timeZone: state.timeZone,
   })
 
+  const years: CalendarDropdown[] = []
   for (let i = -20; i <= 20; i++) {
     const date = state.focusedDate.add({ years: i })
     years.push({
-      value: date,
+      id: years.length,
+      date,
       formatted: formatter.format(date.toDate(state.timeZone)),
     })
   }
   return (
     <Select
-      aria-label="Select year"
+      aria-label="Year"
       value={20}
-      onChange={(value) => {
-        state.setFocusedDate(years[Number(value)]?.value as CalendarDate)
+      onChange={(key) => {
+        if (typeof key === "number") {
+          state.setFocusedDate(years[key].date)
+        }
       }}
     >
       <SelectTrigger className="text-sm/5 sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
-      <SelectContent>
-        {years.map((year, i) => (
-          <SelectItem key={i} id={i} textValue={year.formatted}>
-            <SelectLabel>{year.formatted}</SelectLabel>
+      <SelectContent items={years}>
+        {(item) => (
+          <SelectItem>
+            <SelectLabel>{item.formatted}</SelectLabel>
           </SelectItem>
-        ))}
+        )}
       </SelectContent>
     </Select>
   )
