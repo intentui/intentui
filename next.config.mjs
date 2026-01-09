@@ -43,6 +43,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/themes",
+        destination: "https://design.intentui.com/themes",
+        permanent: true,
+      },
+      {
         source: "/docs",
         destination: "/docs/getting-started/installation",
         permanent: false,
