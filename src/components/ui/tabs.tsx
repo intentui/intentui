@@ -1,14 +1,16 @@
 "use client"
 
+import { createContext, use } from "react"
 import type {
   TabListProps as TabListPrimitiveProps,
   TabPanelProps as TabPanelPrimitiveProps,
+  TabPanelsProps,
   TabProps as TabPrimitiveProps,
   TabsProps as TabsPrimitiveProps,
 } from "react-aria-components"
-
 import {
   composeRenderProps,
+  TabPanels as PrimitiveTabPanels,
   SelectionIndicator,
   TabList as TabListPrimitive,
   TabPanel as TabPanelPrimitive,
@@ -25,7 +27,7 @@ interface TabsProps extends TabsPrimitiveProps {
 }
 const Tabs = ({ className, ref, orientation = "horizontal", ...props }: TabsProps) => {
   return (
-    <TabsContext value={{ orientation: orientation }}>
+    <TabsContext value={{ orientation }}>
       <TabsPrimitive
         orientation={orientation}
         className={cx(
@@ -39,36 +41,70 @@ const Tabs = ({ className, ref, orientation = "horizontal", ...props }: TabsProp
     </TabsContext>
   )
 }
+interface TabListContextValue {
+  selectionIndicator?: boolean
+}
+const TabListContext = createContext<TabListContextValue | undefined>(undefined)
 
-interface TabListProps<T extends object> extends TabListPrimitiveProps<T> {
+export function useTabListContext() {
+  const context = use(TabListContext)
+  if (!context) {
+    throw new Error("useTabsContext must be used within TabsContext.Provider")
+  }
+  return context
+}
+
+interface TabListProps<T extends object> extends TabListPrimitiveProps<T>, TabListContextValue {
   ref?: React.RefObject<HTMLDivElement>
 }
-const TabList = <T extends object>({ className, ref, ...props }: TabListProps<T>) => {
+const TabList = <T extends object>({
+  className,
+  selectionIndicator = true,
+  ref,
+  ...props
+}: TabListProps<T>) => {
   return (
-    <TabListPrimitive
-      ref={ref}
-      data-slot="tab-list"
-      {...props}
-      className={composeRenderProps(className, (className, { orientation }) =>
-        twMerge([
-          "[--tab-list-gutter:--spacing(1)]",
-          "relative flex forced-color-adjust-none",
-          orientation === "horizontal" &&
-            "flex-row gap-x-(--tab-list-gutter) rounded-(--tab-list-rounded) border-b py-(--tab-list-gutter)",
-          orientation === "vertical" &&
-            "min-w-56 shrink-0 flex-col items-start gap-y-(--tab-list-gutter) border-l px-(--tab-list-gutter) [--tab-list-gutter:--spacing(2)]",
-          className,
-        ]),
-      )}
-    />
+    <TabListContext value={{ selectionIndicator }}>
+      <TabListPrimitive
+        ref={ref}
+        data-slot="tab-list"
+        {...props}
+        className={composeRenderProps(className, (className, { orientation }) =>
+          twMerge([
+            "[--tab-list-gutter:--spacing(1)]",
+            "relative flex forced-color-adjust-none",
+            orientation === "horizontal" &&
+              "flex-row gap-x-(--tab-list-gutter) rounded-(--tab-list-rounded) border-b py-(--tab-list-gutter)",
+            orientation === "vertical" &&
+              "min-w-56 shrink-0 flex-col items-start gap-y-(--tab-list-gutter) border-l px-(--tab-list-gutter) [--tab-list-gutter:--spacing(2)]",
+            className,
+          ]),
+        )}
+      />
+    </TabListContext>
+  )
+}
+
+export function TabScrollArea({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div className="relative">
+      <div className={twMerge("scrollbar-hidden overflow-x-auto sm:overflow-x-visible", className)}>
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-px w-full bg-border"
+          aria-hidden
+        />
+        {props.children}
+      </div>
+    </div>
   )
 }
 
 interface TabProps extends TabPrimitiveProps {
   ref?: React.RefObject<HTMLDivElement>
 }
-const Tab = ({ children, className, ref, ...props }: TabProps) => {
+const Tab = ({ className, ref, ...props }: TabProps) => {
   const { orientation } = useSlottedContext(TabsContext)!
+  const { selectionIndicator } = useTabListContext()
   return (
     <TabPrimitive
       {...props}
@@ -88,20 +124,22 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
         className,
       )}
     >
-      {(values) => (
+      {composeRenderProps(props.children, (children) => (
         <>
-          {typeof children === "function" ? children(values) : children}
-          <SelectionIndicator
-            data-slot="selected-indicator"
-            className={twMerge(
-              "absolute bg-primary-subtle-fg transition-[translate,width,height] duration-200",
-              orientation === "horizontal"
-                ? "right-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] left-(--tab-gutter-x) h-0.5"
-                : "top-(--tab-gutter-y) bottom-(--tab-gutter-y) -left-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] w-0.5",
-            )}
-          />
+          {children}
+          {selectionIndicator && (
+            <SelectionIndicator
+              data-slot="selected-indicator"
+              className={twMerge(
+                "absolute bg-primary-subtle-fg transition-[translate,width,height] duration-200",
+                orientation === "horizontal"
+                  ? "right-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] left-(--tab-gutter-x) h-0.5"
+                  : "top-(--tab-gutter-y) bottom-(--tab-gutter-y) -left-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] w-[2px]",
+              )}
+            />
+          )}
         </>
-      )}
+      ))}
     </TabPrimitive>
   )
 }
@@ -109,6 +147,11 @@ const Tab = ({ children, className, ref, ...props }: TabProps) => {
 interface TabPanelProps extends TabPanelPrimitiveProps {
   ref?: React.RefObject<HTMLDivElement>
 }
+
+const TabPanels = <T extends object>(props: TabPanelsProps<T>) => {
+  return <PrimitiveTabPanels {...props} />
+}
+
 const TabPanel = ({ className, ref, ...props }: TabPanelProps) => {
   return (
     <TabPanelPrimitive
@@ -121,4 +164,4 @@ const TabPanel = ({ className, ref, ...props }: TabPanelProps) => {
 }
 
 export type { TabsProps, TabListProps, TabProps, TabPanelProps }
-export { Tabs, TabList, Tab, TabPanel }
+export { Tabs, TabList, Tab, TabPanels, TabPanel }
