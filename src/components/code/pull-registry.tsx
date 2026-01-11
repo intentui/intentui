@@ -6,7 +6,7 @@ import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
-import { copyToClipboard } from "@/lib/copy"
+import { useClipboard } from "@/hooks/use-clipboard"
 
 interface PullRegistryProps {
   readMore?: string
@@ -59,12 +59,13 @@ export function CopyButton({
 
 export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullRegistryProps) {
   const [copy, setCopy] = useState({ code: false, command: false })
+  const { copy: copyToClipboard } = useClipboard()
 
-  const handleCopy = (key: "code" | "command", value: string) => {
-    copyToClipboard(value).then(() => {
-      setCopy((prev) => ({ ...prev, [key]: true }))
-      setTimeout(() => setCopy((prev) => ({ ...prev, [key]: false })), 2000)
-    })
+  const handleCopy = async (key: "code" | "command", value: string) => {
+    const didCopy = await copyToClipboard(value)
+    if (!didCopy) return
+    setCopy((prev) => ({ ...prev, [key]: true }))
+    setTimeout(() => setCopy((prev) => ({ ...prev, [key]: false })), 2000)
   }
 
   return (

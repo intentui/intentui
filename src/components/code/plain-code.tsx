@@ -4,7 +4,7 @@ import { type HTMLAttributes, type ReactNode, useCallback, useRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { CopyButton } from "@/components/code/copy-button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { useCopyButton } from "@/lib/copy"
+import { useClipboard } from "@/hooks/use-clipboard"
 
 export interface PreProps extends HTMLAttributes<HTMLElement> {
   ref?: React.Ref<HTMLElement>
@@ -52,7 +52,8 @@ export const PlainCode = ({
   ...props
 }: PreProps) => {
   const areaRef = useRef<HTMLDivElement>(null)
-  const onCopy = useCallback(() => {
+  const { copy, copied } = useClipboard()
+  const onCopy = useCallback(async () => {
     const pre = areaRef.current?.getElementsByTagName("pre").item(0)
 
     if (!pre) return
@@ -64,9 +65,8 @@ export const PlainCode = ({
     window.aurelie?.track?.("copy", {
       name: clone.textContent,
     })
-    void navigator.clipboard.writeText(clone.textContent ?? "")
-  }, [])
-  const [checked, onClick] = useCopyButton(onCopy)
+    await copy(clone.textContent ?? "")
+  }, [copy])
   return (
     <figure
       ref={ref}
@@ -98,8 +98,8 @@ export const PlainCode = ({
           {allowCopy ? (
             <CopyButton
               className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
-              onClick={onClick}
-              isCopied={checked}
+              onPress={onCopy}
+              isCopied={copied}
             />
           ) : null}
         </div>
@@ -107,8 +107,8 @@ export const PlainCode = ({
         allowCopy && (
           <CopyButton
             className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
-            onClick={onClick}
-            isCopied={checked}
+            onPress={onCopy}
+            isCopied={copied}
           />
         )
       )}

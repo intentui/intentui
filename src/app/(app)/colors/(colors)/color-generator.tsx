@@ -10,12 +10,14 @@ import { twJoin } from "tailwind-merge"
 import { isOklch, SelectFormat, toOklchString } from "@/app/(app)/colors/(colors)/color-item"
 import { ColorField } from "@/components/ui/color-field"
 import { Heading } from "@/components/ui/heading"
+import { useClipboard } from "@/hooks/use-clipboard"
 import { getColorName, getTextColor } from "@/lib/colors"
 
 export function ColorGenerator() {
   const [value, setValue] = useState(parseColor("#0D6DFD"))
   const [selectedFormat, setSelectedFormat] = useState<Selection>(new Set(["oklch"]))
   const [copiedShade, setCopiedShade] = useState<string | null>(null)
+  const { copy } = useClipboard()
   const generateShades = (baseColor: string) => {
     const parsedBase = parse(baseColor.toString())
     if (!parsedBase) {
@@ -51,7 +53,7 @@ export function ColorGenerator() {
 
   const tailwindShades = generateShades(value.toString())
 
-  const handleCopy = (color: string, shade: string) => {
+  const handleCopy = async (color: string, shade: string) => {
     const _selectedFormat = [...selectedFormat].join(", ")
 
     let formattedColor: string = color
@@ -70,10 +72,10 @@ export function ColorGenerator() {
         break
     }
 
-    navigator.clipboard.writeText(formattedColor).then(() => {
-      toast(`Copied: ${formattedColor}`)
-      setCopiedShade(shade)
-    })
+    const didCopy = await copy(formattedColor)
+    if (!didCopy) return
+    toast(`Copied: ${formattedColor}`)
+    setCopiedShade(shade)
   }
 
   React.useEffect(() => {

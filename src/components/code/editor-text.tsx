@@ -11,7 +11,7 @@ import { BrandCssIcon } from "@/components/icons/brand-css-icon"
 import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
 import { BrandTypescriptIcon } from "@/components/icons/brand-typescript-icon"
 import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
-import { copyToClipboard } from "@/lib/copy"
+import { useClipboard } from "@/hooks/use-clipboard"
 import type { RegistryItem } from "@/types"
 
 interface Props {
@@ -22,12 +22,14 @@ const registry = generated as Record<string, RegistryItem>
 
 export function EditorText({ source }: Props) {
   const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({})
+  const { copy } = useClipboard()
 
   const [rawSourceCode, setRawSourceCode] = useState<Record<string, string | null>>({})
 
-  const handleCopy = (key: string, value: string | null) => {
+  const handleCopy = async (key: string, value: string | null) => {
     if (value) {
-      copyToClipboard(value)
+      const didCopy = await copy(value)
+      if (!didCopy) return
       setCopiedStates((prev) => ({ ...prev, [key]: true }))
       setTimeout(() => {
         setCopiedStates((prev) => ({ ...prev, [key]: false }))
@@ -124,7 +126,7 @@ export function EditorText({ source }: Props) {
               <CodeHighlighter
                 plain
                 removeLastLine
-                className="overflow-auto p-4"
+                className="p-4"
                 code={value || "No source code available"}
               />
             </TabPanel>

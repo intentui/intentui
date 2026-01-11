@@ -8,7 +8,7 @@ import { MobilePager } from "@/components/mobile-pager"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu"
-import { useCopy } from "@/hooks/use-copy"
+import { useClipboard } from "@/hooks/use-clipboard"
 import { DuplicateIcon } from "./icons/duplicate-icon"
 
 function getPromptUrl(baseURL: string, url: string) {
@@ -18,7 +18,7 @@ function getPromptUrl(baseURL: string, url: string) {
 }
 export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; page: string }) {
   const fullUrl = `https://intentui.com${url}`
-  const { copied, copy } = useCopy()
+  const { copied, copy } = useClipboard()
   return (
     <div className="not-prose fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
       <Button

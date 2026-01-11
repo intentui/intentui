@@ -27,7 +27,7 @@ import {
   CommandMenuSeparator,
 } from "@/components/ui/command-menu"
 import results from "@/components-search.json"
-import { useCopy } from "@/hooks/use-copy"
+import { useClipboard } from "@/hooks/use-clipboard"
 import colors from "@/json/colors.json"
 import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
 
@@ -232,14 +232,13 @@ interface ColorItemProps {
 }
 
 function ColorItem({ label, value, colorName = label, textValue }: ColorItemProps) {
-  const { copied, copy } = useCopy()
+  const { copied, copy } = useClipboard()
   return (
     <CommandMenuItem onAction={() => copy(value)} textValue={textValue}>
       <ColorSwatch
-        className="mt-1"
+        className="mt-0.5 mr-2 [--color-swatch-size:--spacing(5)]"
         color={formatHex(parse(value))}
         colorName={colorName}
-        data-slot="icon"
       />
       <CommandMenuLabel>{label}</CommandMenuLabel>
       <CommandMenuDescription className="text-xs tracking-tight">

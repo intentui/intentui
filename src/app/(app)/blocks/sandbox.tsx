@@ -11,7 +11,7 @@ import { ShadcnuiLogo } from "@/components/icons/shadcn-logo"
 import { Heading } from "@/components/ui/heading"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Tooltip, TooltipContent } from "@/components/ui/tooltip"
-import { useCopy } from "@/hooks/use-copy"
+import { useClipboard } from "@/hooks/use-clipboard"
 
 type RegistryFile = {
   path: string
@@ -86,7 +86,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   const b = item.name.split("-")[0]
   const c = item.name
   const src = `${REGISTRY_ORIGIN}/pre-blocks/${b}/${encodeURIComponent(c)}`
-  const { copied, copy } = useCopy()
+  const { copied, copy } = useClipboard()
   return (
     <section className="space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">

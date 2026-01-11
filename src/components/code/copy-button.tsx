@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import { Button } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
 import { DuplicateIcon } from "@/components/icons/duplicate-icon"
-import { copyToClipboard } from "@/lib/copy"
+import { useClipboard } from "@/hooks/use-clipboard"
 import { cx } from "@/lib/primitive"
 
 interface CopyButtonProps extends React.ComponentProps<typeof Button> {
@@ -24,6 +24,7 @@ export function CopyButton({
   className,
   ...props
 }: CopyButtonProps) {
+  const { copy } = useClipboard()
   const [isCopiedState, setIsCopiedState] = useState(false)
 
   const isControlled = isCopiedProp !== undefined
@@ -37,10 +38,10 @@ export function CopyButton({
     }
   }, [isCopied, setIsCopied])
 
-  const onPressHandler = () => {
+  const onPressHandler = async () => {
     if (text) {
-      copyToClipboard(text)
-      setIsCopied(true)
+      const didCopy = await copy(text)
+      if (didCopy) setIsCopied(true)
     }
   }
 

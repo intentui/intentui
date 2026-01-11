@@ -10,7 +10,7 @@ import { BrandCssIcon } from "@/components/icons/brand-css-icon"
 import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
 import { BrandTypescriptIcon } from "@/components/icons/brand-typescript-icon"
 import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
-import { copyToClipboard } from "@/lib/copy"
+import { useClipboard } from "@/hooks/use-clipboard"
 
 interface Props {
   source: Record<string, string>
@@ -19,10 +19,12 @@ interface Props {
 export function CodeBlock({ source }: Props) {
   const [contents, setContents] = useState<Record<string, string>>({})
   const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({})
+  const { copy } = useClipboard()
 
-  const handleCopy = (key: string, value: string | null) => {
+  const handleCopy = async (key: string, value: string | null) => {
     if (value) {
-      copyToClipboard(value)
+      const didCopy = await copy(value)
+      if (!didCopy) return
       setCopiedStates((prev) => ({ ...prev, [key]: true }))
       setTimeout(() => {
         setCopiedStates((prev) => ({ ...prev, [key]: false }))
@@ -93,7 +95,7 @@ export function CodeBlock({ source }: Props) {
               >
                 <CopyButton
                   className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
-                  onClick={() => handleCopy(key, value)}
+                  onPress={() => handleCopy(key, value)}
                   isCopied={copiedStates[key] || false}
                 />
                 <CodeHighlighter
