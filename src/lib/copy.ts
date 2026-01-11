@@ -1,4 +1,5 @@
 "use client"
+
 import { type MouseEventHandler, useCallback, useEffect, useRef, useState } from "react"
 
 export function copyToClipboard(text: string): Promise<void> {

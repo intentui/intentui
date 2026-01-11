@@ -1,12 +1,12 @@
 "use client"
 
 import {
+  ArrowTopRightOnSquareIcon,
   Bars3Icon,
   BookOpenIcon,
   CubeIcon,
   HomeIcon,
   MagnifyingGlassIcon,
-  PaintBrushIcon,
   Squares2X2Icon,
   SwatchIcon,
 } from "@heroicons/react/24/outline"
@@ -45,6 +45,7 @@ export function Navbar() {
             {menus.map((menu) => (
               <NavLink key={menu.href} href={menu.href}>
                 {menu.label}
+                {menu.on && <menu.icon className="size-4" />}
               </NavLink>
             ))}
           </div>
@@ -119,7 +120,12 @@ export const menus = [
     icon: BookOpenIcon,
   },
   { href: "/components", label: "Components", icon: CubeIcon },
-  { href: "https://design.intentui.com/themes", label: "Themes", icon: PaintBrushIcon },
   { href: "/colors", label: "Colors", icon: SwatchIcon },
   { href: "/blocks", label: "Blocks", icon: Squares2X2Icon },
+  {
+    href: "https://design.intentui.com/themes",
+    label: "Themes",
+    icon: ArrowTopRightOnSquareIcon,
+    on: true,
+  },
 ]

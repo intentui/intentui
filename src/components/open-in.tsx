@@ -77,7 +77,10 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Avatar src="https://t3.chat/favicon.ico?favicon.71cdc391.ico" />
+              <Avatar
+                className="-ml-0.5 [--avatar-size:--spacing(4.2)]!"
+                src="https://t3.chat/favicon.ico?favicon.71cdc391.ico"
+              />
               <span className="sr-only">Open in</span> T3 chat
             </MenuItem>
             <MenuItem

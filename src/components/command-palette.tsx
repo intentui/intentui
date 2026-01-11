@@ -1,14 +1,12 @@
 "use client"
 
 import {
+  ArrowTopRightOnSquareIcon,
   BookOpenIcon,
   CubeIcon,
   DocumentTextIcon,
   HashtagIcon,
   HomeIcon,
-  PaintBrushIcon,
-  SparklesIcon,
-  Squares2X2Icon,
   SwatchIcon,
 } from "@heroicons/react/24/outline"
 import { formatHex, parse } from "culori"
@@ -119,37 +117,36 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
       <CommandMenuList>
         <CommandMenuSection aria-label="Pages">
           <CommandMenuItem textValue="Home" href="/">
-            <HomeIcon className="size-5" />
+            <HomeIcon />
             <CommandMenuLabel>Home</CommandMenuLabel>
           </CommandMenuItem>
           <CommandMenuItem textValue="Docs" href={"/docs/getting-started/installation"}>
-            <BookOpenIcon className="size-5" />
+            <BookOpenIcon />
             <CommandMenuLabel>Docs</CommandMenuLabel>
           </CommandMenuItem>
           <CommandMenuItem textValue="components" href="/components">
-            <CubeIcon className="size-5" />
+            <CubeIcon />
             <CommandMenuLabel>Components</CommandMenuLabel>
           </CommandMenuItem>
-          <CommandMenuItem textValue="themes" href="https://design.intentui.com/themes">
-            <PaintBrushIcon className="size-5" />
-            <CommandMenuLabel>Themes</CommandMenuLabel>
-          </CommandMenuItem>
           <CommandMenuItem textValue="colors" href="/colors">
-            <SwatchIcon className="size-5" />
+            <SwatchIcon />
             <CommandMenuLabel>Colors</CommandMenuLabel>
           </CommandMenuItem>
           <CommandMenuItem textValue="blocks" href="/blocks">
-            <Squares2X2Icon className="size-5" />
             <CommandMenuLabel>Blocks</CommandMenuLabel>
           </CommandMenuItem>
-          <CommandMenuSeparator />
+          <CommandMenuSeparator className="my-1.5" />
           <CommandMenuItem textValue="blog" href="/blog">
-            <DocumentTextIcon className="size-5" />
+            <DocumentTextIcon />
             <CommandMenuLabel>Blog</CommandMenuLabel>
           </CommandMenuItem>
           <CommandMenuItem textValue="premium block" href="https://dub.sh/designiui">
-            <SparklesIcon className="size-5" />
             <CommandMenuLabel>Premium blocks</CommandMenuLabel>
+            <ArrowTopRightOnSquareIcon className="-mt-2" />
+          </CommandMenuItem>
+          <CommandMenuItem textValue="themes" href="https://design.intentui.com/themes">
+            <CommandMenuLabel>Themes</CommandMenuLabel>
+            <ArrowTopRightOnSquareIcon className="-mt-2" />
           </CommandMenuItem>
         </CommandMenuSection>
 
@@ -169,7 +166,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
                   setOpen?.(false)
                 }}
               >
-                <HashtagIcon className="size-5" />
+                <HashtagIcon />
                 <CommandMenuLabel>{item.title}</CommandMenuLabel>
               </CommandMenuItem>
             )}
@@ -193,7 +190,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
                   setOpen?.(false)
                 }}
               >
-                <HashtagIcon className="size-5" />
+                <HashtagIcon />
                 <CommandMenuLabel>{item.title}</CommandMenuLabel>
               </CommandMenuItem>
             )}

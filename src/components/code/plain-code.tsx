@@ -1,13 +1,12 @@
 "use client"
 
-import type { ScrollAreaViewportProps } from "@radix-ui/react-scroll-area"
 import { type HTMLAttributes, type ReactNode, useCallback, useRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { CopyButton } from "@/components/code/copy-button"
-import { ScrollArea, ScrollBar, ScrollViewport } from "@/components/ui/scroll-area"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import { useCopyButton } from "@/lib/copy"
 
-export type PreProps = HTMLAttributes<HTMLElement> & {
+export interface PreProps extends HTMLAttributes<HTMLElement> {
   ref?: React.Ref<HTMLElement>
   /**
    * Icon of code block
@@ -29,8 +28,6 @@ export type PreProps = HTMLAttributes<HTMLElement> & {
    * @defaultValue false
    */
   keepBackground?: boolean
-
-  viewportProps?: ScrollAreaViewportProps
 }
 
 export const Pre = ({ className, ref, ...props }: React.ComponentProps<"pre">) => {
@@ -52,7 +49,6 @@ export const PlainCode = ({
   keepBackground = true,
   icon,
   ref,
-  viewportProps,
   ...props
 }: PreProps) => {
   const areaRef = useRef<HTMLDivElement>(null)
@@ -117,14 +113,8 @@ export const PlainCode = ({
         )
       )}
 
-      <ScrollArea ref={areaRef} className="w-full" dir="ltr">
-        <ScrollViewport
-          {...viewportProps}
-          className={twMerge("max-h-150", viewportProps?.className)}
-        >
-          {props.children}
-        </ScrollViewport>
-        <ScrollBar orientation="horizontal" />
+      <ScrollArea ref={areaRef} orientation="both" className="w-full *:max-h-150" scrollFade>
+        {props.children}
       </ScrollArea>
     </figure>
   )
