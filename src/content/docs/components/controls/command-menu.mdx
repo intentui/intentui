@@ -109,7 +109,7 @@ The `isBlurred` prop can be used to blur-sm the background of the `CommandMenu` 
 Integrate keyboard interaction with the command menu. Note that keyboard functionality may be limited on smaller screens.
 <How toUse="controls/command-menu/command-menu-keyboard-demo" />
 
-## Trigger by Keyboard
+## Trigger by keyboard
 Activate the command menu via keyboard commands, ideal for initiating command palettes.
 <How toUse="controls/command-menu/command-menu-trigger-by-keyboard-demo" />
 
@@ -133,7 +133,7 @@ The `isPending` prop can be used to indicate that the command menu is loading da
 Disable items in the command menu to make them non-interactive, appearing grayed out.
 <How toUse="controls/command-menu/command-menu-disabled-demo" />
 
-## Hide Escape Button
+## Hide escape button
 To hide the escape button, set `escapeButton` to `false`. View this setup in the [Command Description](#description) section.
 ```
 <CommandMenu
@@ -147,7 +147,7 @@ To hide the escape button, set `escapeButton` to `false`. View this setup in the
 Enhance command items with descriptions using the `CommandDescription` component. Be aware that keyboard accessibility might be limited on smaller screens.
 <How toUse="controls/command-menu/command-menu-description-demo" />
 
-## Hide Scrollbar
+## Hide scrollbar
 To hide the scrollbar, set `className` to `scrollbar-hidden`. But before you do that, make sure to add this snippet into your css file.
 ```css
 @utility scrollbar-hidden {
@@ -172,7 +172,7 @@ This setup ensures that the command palette closes seamlessly when the user navi
 
 ```tsx
 export function CommandPalette({ open, setOpen }: Props) {
-  React.useEffect(() => {
+  useEffect(() => {
     router.on('navigate', () => setOpen(false))
   }, [pathname, setOpen])
   return (...)
@@ -191,7 +191,7 @@ export function CommandPalette({ open, setOpen }: Props) {
   return (...)
 ```
 
-### On Action
+### On action
 
 To close the command palette when an action is performed, use the `onAction` prop. This prop accepts a callback function that is called when an action is performed. The callback function receives the action object as an argument.
 

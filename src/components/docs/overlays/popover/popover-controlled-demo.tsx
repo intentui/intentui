@@ -2,7 +2,7 @@
 
 import { TrashIcon } from "@heroicons/react/24/outline"
 import { CheckCircleIcon } from "@heroicons/react/24/solid"
-import React, { useState } from "react"
+import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
 import {
@@ -17,7 +17,7 @@ import { wait } from "@/lib/utils"
 export default function PopoverControlledDemo() {
   const [isOpen, setIsOpen] = useState(false)
   const [loading, setLoading] = useState<"idle" | "loading" | "success">("idle")
-  const triggerRef = React.useRef(null)
+  const triggerRef = useRef(null)
 
   const deleteAccount = async () => {
     setLoading("loading")

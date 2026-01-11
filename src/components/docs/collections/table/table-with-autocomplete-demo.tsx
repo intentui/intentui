@@ -2,7 +2,7 @@
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline"
 import { use, useMemo } from "react"
 import { Autocomplete, AutocompleteStateContext, useFilter } from "react-aria-components"
-import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
 import { SearchField, SearchInput } from "@/components/ui/search-field"
 import {
@@ -24,12 +24,13 @@ export default function TableDemo() {
         <CardHeader>
           <CardTitle>Users</CardTitle>
           <CardDescription>A list of users with search functionality.</CardDescription>
+          <CardAction>
+
+            <SearchField aria-label="Search">
+              <SearchInput placeholder="Search" />
+            </SearchField>
+          </CardAction>
         </CardHeader>
-        <div className="flex justify-end">
-          <SearchField aria-label="Search">
-            <SearchInput />
-          </SearchField>
-        </div>
         <Table className="mt-4" aria-label="Users">
           <TableHeader>
             <TableColumn className="w-0">#</TableColumn>

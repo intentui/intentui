@@ -2848,7 +2848,6 @@
       "title": "scroll-area",
       "description": "scroll-area",
       "dependencies": [
-        "@radix-ui/react-scroll-area",
         "tailwind-merge"
       ],
       "files": [

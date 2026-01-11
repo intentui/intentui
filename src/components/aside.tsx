@@ -6,6 +6,7 @@ import type { LinkProps } from "react-aria-components"
 import { Link } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { Badge } from "@/components/ui/badge"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import menus from "@/components-search.json"
 import type { Component } from "@/types/search"
 
@@ -27,99 +28,101 @@ export const sortedGsChildren =
 
 export function Aside() {
   return (
-    <div className="sticky -ml-0.5 h-screen w-full overflow-y-auto overflow-x-hidden pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-16 xl:w-60">
-      <div className="flex flex-col gap-y-(--gap) px-4 pb-10 [--gap:--spacing(6)]">
-        <div>
-          <AsideHeader>{prologue?.section}</AsideHeader>
-          {prologue?.children?.map((item) => (
-            <AsideLink key={item.slug} href={item.slug}>
-              {item.title}
+    <div className="sticky -ml-0.5 h-screen w-full pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-16 xl:w-60">
+      <ScrollArea scrollFade className="*:[--fade-size:--spacing(10)]" orientation="vertical">
+        <div className="flex flex-col gap-y-(--gap) px-4 pb-10 [--gap:--spacing(6)]">
+          <div>
+            <AsideHeader>{prologue?.section}</AsideHeader>
+            {prologue?.children?.map((item) => (
+              <AsideLink key={item.slug} href={item.slug}>
+                {item.title}
+              </AsideLink>
+            ))}
+          </div>
+          <div>
+            <AsideHeader>Products</AsideHeader>
+            <AsideLink href="/components">
+              Components{" "}
+              <Badge className="-mr-1.5 rounded-sm" intent="info">
+                Free
+              </Badge>
             </AsideLink>
-          ))}
-        </div>
-        <div>
-          <AsideHeader>Products</AsideHeader>
-          <AsideLink href="/components">
-            Components{" "}
-            <Badge className="-mr-1.5 rounded-sm" intent="info">
-              Free
-            </Badge>
-          </AsideLink>
-          <AsideLink
-            target="_blank"
-            href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
-          >
-            Blocks & Patterns{" "}
-            <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
-              Pro
-            </Badge>
-          </AsideLink>
-          <AsideLink
-            target="_blank"
-            href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
-          >
-            Templates & Starter kits{" "}
-            <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
-              Pro
-            </Badge>
-          </AsideLink>
-        </div>
-        <div>
-          <AsideHeader>{gs?.section}</AsideHeader>
-          {sortedGsChildren.map((item) => (
-            <AsideLink key={item.slug} href={item.slug}>
-              {item.title}
+            <AsideLink
+              target="_blank"
+              href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
+            >
+              Blocks & Patterns{" "}
+              <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
+                Pro
+              </Badge>
             </AsideLink>
-          ))}
-          <AsideLink href="/docs/getting-started/mcp-server">
-            MCP Server{" "}
-            <Badge className="-mr-1.5 rounded-sm" intent="info">
-              New
-            </Badge>
-          </AsideLink>
-          <AsideLink target="_blank" href="/llms.txt">
-            llms.txt{" "}
-            <Badge className="-mr-1.5 rounded-sm" intent="info">
-              New
-            </Badge>
-          </AsideLink>
-        </div>
-        <div>
-          <AsideHeader>{dm?.section}</AsideHeader>
-          {dm?.children?.map((item) => (
-            <AsideLink key={item.slug} href={item.slug}>
-              {item.title}
+            <AsideLink
+              target="_blank"
+              href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
+            >
+              Templates & Starter kits{" "}
+              <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
+                Pro
+              </Badge>
             </AsideLink>
-          ))}
+          </div>
+          <div>
+            <AsideHeader>{gs?.section}</AsideHeader>
+            {sortedGsChildren.map((item) => (
+              <AsideLink key={item.slug} href={item.slug}>
+                {item.title}
+              </AsideLink>
+            ))}
+            <AsideLink href="/docs/getting-started/mcp-server">
+              MCP Server{" "}
+              <Badge className="-mr-1.5 rounded-sm" intent="info">
+                New
+              </Badge>
+            </AsideLink>
+            <AsideLink target="_blank" href="/llms.txt">
+              llms.txt{" "}
+              <Badge className="-mr-1.5 rounded-sm" intent="info">
+                New
+              </Badge>
+            </AsideLink>
+          </div>
+          <div>
+            <AsideHeader>{dm?.section}</AsideHeader>
+            {dm?.children?.map((item) => (
+              <AsideLink key={item.slug} href={item.slug}>
+                {item.title}
+              </AsideLink>
+            ))}
+          </div>
+          <div className="flex flex-col gap-y-(--gap)">
+            {components?.children?.map((item) => (
+              <div key={item.subsection}>
+                <AsideHeader>{item?.subsection}</AsideHeader>
+                {item?.children?.map((item) => (
+                  <AsideLink key={item.slug} href={item.slug}>
+                    {item.title}
+                    {item.status && (
+                      <Badge
+                        className="-mr-1.5"
+                        isCircle={false}
+                        intent={
+                          item.status === "new"
+                            ? "success"
+                            : item.status === "beta" || item.status === "alpha"
+                              ? "warning"
+                              : "primary"
+                        }
+                      >
+                        {item.status}
+                      </Badge>
+                    )}
+                  </AsideLink>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-y-(--gap)">
-          {components?.children?.map((item) => (
-            <div key={item.subsection}>
-              <AsideHeader>{item?.subsection}</AsideHeader>
-              {item?.children?.map((item) => (
-                <AsideLink key={item.slug} href={item.slug}>
-                  {item.title}
-                  {item.status && (
-                    <Badge
-                      className="-mr-1.5"
-                      isCircle={false}
-                      intent={
-                        item.status === "new"
-                          ? "success"
-                          : item.status === "beta" || item.status === "alpha"
-                            ? "warning"
-                            : "primary"
-                      }
-                    >
-                      {item.status}
-                    </Badge>
-                  )}
-                </AsideLink>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      </ScrollArea>
     </div>
   )
 }

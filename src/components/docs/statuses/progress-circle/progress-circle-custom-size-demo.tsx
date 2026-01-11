@@ -1,13 +1,13 @@
 "use client"
 
-import React, { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { ProgressCircle } from "@/components/ui/progress-circle"
 
 export default function ProgressCircleCustomSizeDemo() {
   const [value, setValue] = useState(1)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setValue((prev) => (prev < 100 ? prev + 1 : 100))
     }, 100)

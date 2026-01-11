@@ -1,7 +1,7 @@
 "use client"
 
 import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
-import React, { useState } from "react"
+import { useEffect, useState } from "react"
 import { Tab } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
@@ -37,7 +37,7 @@ export function EditorText({ source }: Props) {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchRegistryData = async () => {
       const fetchedSourceCode: Record<string, string | null> = {}
       await Promise.all(

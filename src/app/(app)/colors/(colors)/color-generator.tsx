@@ -3,7 +3,7 @@ import { Square2StackIcon } from "@heroicons/react/24/outline"
 import { parseColor, type Color as RacColor } from "@react-stately/color"
 import type { Color } from "culori"
 import { formatHex, formatHsl, formatRgb, interpolate, parse } from "culori"
-import React, { useState } from "react"
+import { useEffect, useState } from "react"
 import { ListBox, ListBoxItem, type Selection } from "react-aria-components"
 import { toast } from "sonner"
 import { twJoin } from "tailwind-merge"
@@ -78,7 +78,7 @@ export function ColorGenerator() {
     setCopiedShade(shade)
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (copiedShade) {
       const timeout = setTimeout(() => {
         setCopiedShade(null)

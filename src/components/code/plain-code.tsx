@@ -1,19 +1,19 @@
 "use client"
 
-import { type HTMLAttributes, type ReactNode, useCallback, useRef } from "react"
+import { useCallback, useRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { CopyButton } from "@/components/code/copy-button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useClipboard } from "@/hooks/use-clipboard"
 
-export interface PreProps extends HTMLAttributes<HTMLElement> {
+export interface PreProps extends React.HTMLAttributes<HTMLElement> {
   ref?: React.Ref<HTMLElement>
   /**
    * Icon of code block
    *
    * When passed as a string, it assumes the value is the HTML of icon
    */
-  icon?: ReactNode
+  icon?: React.ReactNode
 
   /**
    * Allow to copy code with copy button
