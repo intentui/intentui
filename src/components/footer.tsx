@@ -174,8 +174,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mask-b-from-50% h-60">
-          <LogoType className="absolute bottom-0 left-1/2 h-60 -translate-x-1/2" />
+        <div className="sm:mask-b-from-50% h-10 sm:h-60">
+          <LogoType className="absolute -bottom-16 left-1/2 h-18 -translate-x-1/2 sm:bottom-0 sm:h-40 lg:h-60" />
         </div>
       </PageContainer>
     </footer>
