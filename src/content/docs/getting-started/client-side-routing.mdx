@@ -14,7 +14,7 @@ Typically, links perform the default browser action when clicked. However, many 
 
 Note that links to external sites will default to the browser's native navigation, and links not targeting "_self", using the download attribute, or modified with keys like Command or Alt, will also follow the browser's native behavior.
 
-## Router Provider
+## Router provider
 The `RouterProvider` component accepts two properties: `navigate`. Assign `navigate` to a function from your routing framework that handles client-side navigation. Below are setup examples for various frameworks.
 ```tsx
 import { RouterProvider } from 'react-aria-components';
@@ -47,7 +47,7 @@ php artisan ziggy:generate
 ```
 
 
-### Global Declaration
+### Global declaration
 To integrate with Inertia.js, you must first declare it in your `.d.ts` file, such as in `global.d.ts`.
 <CodeBlock
     source={{
@@ -96,7 +96,7 @@ Then in `app/root.tsx` or your main layout file you can use the `RouteProvider` 
         'app/root.tsx': 'csr/remix/root.tsx',
     }} />
 
-## Tanstack Router
+## Tanstack router
 Use these providers if you are using Tanstack Router in your project.
 <CodeBlock
     source={{

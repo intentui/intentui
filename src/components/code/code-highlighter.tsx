@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { codeToHtml } from "shiki"
 import { twMerge } from "tailwind-merge"
@@ -27,7 +27,7 @@ export const CodeHighlighter = ({
   const [formattedCode, setFormattedCode] = useState("")
   const [error, setError] = useState("")
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLoading(true)
     const processCode = async () => {
       try {

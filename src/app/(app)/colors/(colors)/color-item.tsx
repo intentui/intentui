@@ -7,6 +7,7 @@ import { toast } from "sonner"
 import { twJoin } from "tailwind-merge"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
+import { useClipboard } from "@/hooks/use-clipboard"
 import colors from "@/json/colors.json"
 import { getTextColor } from "@/lib/colors"
 
@@ -20,8 +21,9 @@ export const toOklchString = (color: string): string => {
 export function ColorItem({ color }: { color: keyof typeof colors }) {
   const [selectedFormat, setSelectedFormat] = useState<Selection>(new Set(["oklch"]))
   const [copiedShade, setCopiedShade] = useState<string | null>(null)
+  const { copy } = useClipboard()
 
-  const handleCopy = (color: string, shade: string) => {
+  const handleCopy = async (color: string, shade: string) => {
     const _selectedFormat = [...selectedFormat].join(", ")
 
     let formattedColor: string = color
@@ -40,10 +42,10 @@ export function ColorItem({ color }: { color: keyof typeof colors }) {
         break
     }
 
-    navigator.clipboard.writeText(formattedColor).then(() => {
-      toast(`Copied: ${formattedColor}`)
-      setCopiedShade(shade)
-    })
+    const didCopy = await copy(formattedColor)
+    if (!didCopy) return
+    toast(`Copied: ${formattedColor}`)
+    setCopiedShade(shade)
   }
 
   useEffect(() => {

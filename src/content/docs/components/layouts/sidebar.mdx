@@ -28,7 +28,7 @@ npm i react-aria-components @heroicons/react tailwind-merge
 ```
 <SourceCode toShow={'sidebar'}/>
 
-## CSS Variables
+## CSS variables
 The sidebar just needs one base color to work; the accent is generated from the base, and the primary color is taken from the primary color you already have. Make sure you have set everything up, or head to the [theme page](/themes) to see the colors you can use. Too lazy? Just copy the default color below to your stylesheet.
 ```
 @theme inline {
@@ -103,14 +103,14 @@ When toggled, the sidebar docks to a minimal state, showing only icons. Hovering
 <Sidebar intent="dock" />
 ```
 
-## Default Open
+## Default open
 The sidebar’s initial state can be controlled using the `defaultOpen` prop. For example, you can set `defaultOpen` to `false` and keep the sidebar docked.
 ```
 <SidebarProvider defaultOpen={false}>
   <Sidebar collapsible="dock" />
 ```
 
-## Sidebar Section
+## Sidebar section
 The sidebar section is a container for sidebar items. It accepts a `label` prop, which will be displayed as a heading.
 ```
 <SidebarSection>
@@ -125,7 +125,7 @@ The sidebar section is a container for sidebar items. It accepts a `label` prop,
 </SidebarSection>
 ```
 
-## Sidebar Disclosure Group
+## Sidebar disclosure group
 If you need to collapse multiple items, you can use the `SidebarDisclosureGroup` component. <NewTab href='/pre-blocks/sidebar/sidebar-15'/>
 ```
 {sections.map((section, sectionIndex) => (
@@ -330,7 +330,7 @@ The sidebar has two sides, left and right. You can set the side of the sidebar b
     'page.tsx': 'pre-blocks/sidebar/sidebar-16/page',
   }} />
 
-## Put Anything
+## Put anything
 You can put anything you want in it. You can use the `SidebarContent` component to wrap your content. Let's try to add a range-calendar and search-field to the sidebar. <NewTab href='/pre-blocks/sidebar/sidebar-17'/>
 <EditorText
   source={{

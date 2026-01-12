@@ -1,20 +1,19 @@
 "use client"
 
-import type { ScrollAreaViewportProps } from "@radix-ui/react-scroll-area"
-import { type HTMLAttributes, type ReactNode, useCallback, useRef } from "react"
+import { useCallback, useRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { CopyButton } from "@/components/code/copy-button"
-import { ScrollArea, ScrollBar, ScrollViewport } from "@/components/ui/scroll-area"
-import { useCopyButton } from "@/lib/copy"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { useClipboard } from "@/hooks/use-clipboard"
 
-export type PreProps = HTMLAttributes<HTMLElement> & {
+export interface PreProps extends React.HTMLAttributes<HTMLElement> {
   ref?: React.Ref<HTMLElement>
   /**
    * Icon of code block
    *
    * When passed as a string, it assumes the value is the HTML of icon
    */
-  icon?: ReactNode
+  icon?: React.ReactNode
 
   /**
    * Allow to copy code with copy button
@@ -29,8 +28,6 @@ export type PreProps = HTMLAttributes<HTMLElement> & {
    * @defaultValue false
    */
   keepBackground?: boolean
-
-  viewportProps?: ScrollAreaViewportProps
 }
 
 export const Pre = ({ className, ref, ...props }: React.ComponentProps<"pre">) => {
@@ -52,11 +49,11 @@ export const PlainCode = ({
   keepBackground = true,
   icon,
   ref,
-  viewportProps,
   ...props
 }: PreProps) => {
   const areaRef = useRef<HTMLDivElement>(null)
-  const onCopy = useCallback(() => {
+  const { copy, copied } = useClipboard()
+  const onCopy = useCallback(async () => {
     const pre = areaRef.current?.getElementsByTagName("pre").item(0)
 
     if (!pre) return
@@ -68,9 +65,8 @@ export const PlainCode = ({
     window.aurelie?.track?.("copy", {
       name: clone.textContent,
     })
-    void navigator.clipboard.writeText(clone.textContent ?? "")
-  }, [])
-  const [checked, onClick] = useCopyButton(onCopy)
+    await copy(clone.textContent ?? "")
+  }, [copy])
   return (
     <figure
       ref={ref}
@@ -102,8 +98,8 @@ export const PlainCode = ({
           {allowCopy ? (
             <CopyButton
               className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
-              onClick={onClick}
-              isCopied={checked}
+              onPress={onCopy}
+              isCopied={copied}
             />
           ) : null}
         </div>
@@ -111,20 +107,14 @@ export const PlainCode = ({
         allowCopy && (
           <CopyButton
             className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
-            onClick={onClick}
-            isCopied={checked}
+            onPress={onCopy}
+            isCopied={copied}
           />
         )
       )}
 
-      <ScrollArea ref={areaRef} className="w-full" dir="ltr">
-        <ScrollViewport
-          {...viewportProps}
-          className={twMerge("max-h-150", viewportProps?.className)}
-        >
-          {props.children}
-        </ScrollViewport>
-        <ScrollBar orientation="horizontal" />
+      <ScrollArea ref={areaRef} orientation="both" className="w-full *:max-h-150" scrollFade>
+        {props.children}
       </ScrollArea>
     </figure>
   )

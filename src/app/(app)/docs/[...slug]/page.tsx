@@ -24,9 +24,9 @@ export function generateStaticParams() {
   return source.generateParams()
 }
 
-const extractSegment = (str: string): string | null => {
+function extractSegment(str: string): string | null {
   const segments = str.split("/")
-  return segments.length === 5 ? title(segments[3]!) : title(segments[3]!)
+  return segments.length === 4 ? title(segments[2]!) : title(segments[3]!)
 }
 
 export async function generateMetadata(props: DocPageProps): Promise<Metadata> {

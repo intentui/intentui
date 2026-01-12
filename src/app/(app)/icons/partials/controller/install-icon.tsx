@@ -1,14 +1,15 @@
 import { CheckIcon, ChevronRightIcon, Square2StackIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
-import { copyToClipboard } from "usemods"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
+import { useClipboard } from "@/hooks/use-clipboard"
 
 type Tool = "Bun" | "Yarn" | "PNPM" | "NPM"
 
 export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
   const [isCopied, setIsCopied] = useState(false)
   const [command, setCommand] = useState("")
+  const { copy } = useClipboard()
   const commandArgs = pkg
 
   const installMap: Record<Tool, string> = {
@@ -18,13 +19,13 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
     NPM: "npm i",
   }
 
-  const handleCopy = (tool: Tool) => {
+  const handleCopy = async (tool: Tool) => {
     const newCommand = `${installMap[tool]} ${commandArgs}`
     setCommand(newCommand)
-    copyToClipboard(newCommand).then(() => {
-      setIsCopied(true)
-      setTimeout(() => setIsCopied(false), 2000)
-    })
+    const didCopy = await copy(newCommand)
+    if (!didCopy) return
+    setIsCopied(true)
+    setTimeout(() => setIsCopied(false), 2000)
   }
 
   return (

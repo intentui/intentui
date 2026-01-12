@@ -1,6 +1,7 @@
 "use client"
 import { starterKits } from "@/app/(home)/partials/starter-kit"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
+import { LogoType } from "@/components/logo-type"
 import { PageContainer } from "@/components/page-container"
 import { Link } from "@/components/ui/link"
 import { siteConfig } from "@/config/site"
@@ -79,7 +80,7 @@ const currentYear = new Date().getFullYear()
 
 export function Footer() {
   return (
-    <footer className="border-t bg-white pb-16 text-fg sm:pb-0 dark:bg-muted">
+    <footer className="border-muted-fg/15 border-t bg-bg pb-16 text-fg sm:pb-0">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -95,6 +96,26 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-muted-fg text-sm">
               Accessible React component library to copy, customize, and own your UI.
             </p>
+            <div className="space-y-2 text-muted-fg text-xs **:[a]:text-fg">
+              <p>
+                <strong className="text-fg">
+                  {currentYear} &middot; {siteConfig.name} &trade;
+                </strong>{" "}
+                <br />
+                <br />
+                This project’s crafted by <Link href="https://x.com/irsyad">Irsyad</Link>. Peep the
+                Source Code on <Link href={siteConfig.repo}>GitHub</Link>.
+              </p>
+              <p>
+                Hosted on{" "}
+                <Link href="https://vercel.com?ref=intentui.com" target="_blank">
+                  Vercel
+                </Link>
+                . The source code's got the{" "}
+                <Link href="https://github.com/intentui/intentui/blob/main/LICENSE">MIT</Link>{" "}
+                license.
+              </p>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-y-10 lg:grid-cols-4 lg:gap-10 xl:gap-6 xl:gap-y-6">
             <div>
@@ -152,26 +173,10 @@ export function Footer() {
             </div>
           </div>
         </div>
-      </PageContainer>
 
-      <PageContainer className="relative z-20 space-y-1.5 border-t py-6 text-center text-muted-fg text-sm **:[a]:font-medium **:[a]:text-fg **:[strong]:font-medium">
-        <p>
-          <strong className="text-fg">
-            {currentYear} &middot; {siteConfig.name} &trade;
-          </strong>{" "}
-          <br />
-          <br />
-          This project’s crafted by <Link href="https://x.com/irsyad">Irsyad</Link>. Peep the Source
-          Code on <Link href={siteConfig.repo}>GitHub</Link>.
-        </p>
-        <p>
-          Hosted on{" "}
-          <Link href="https://vercel.com?ref=intentui.com" target="_blank">
-            Vercel
-          </Link>
-          . The source code's got the{" "}
-          <Link href="https://github.com/intentui/intentui/blob/main/LICENSE">MIT</Link> license.
-        </p>
+        <div className="mask-b-from-50% h-60">
+          <LogoType className="absolute bottom-0 left-1/2 h-60 -translate-x-1/2" />
+        </div>
       </PageContainer>
     </footer>
   )

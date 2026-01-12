@@ -27,7 +27,7 @@ src/components-search.json
 
 # production
 /build
-
+.tmp
 # misc
 .DS_Store
 *.pem

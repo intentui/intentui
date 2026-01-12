@@ -1,5 +1,6 @@
-import "dotenv/config"
+import dotenv from "dotenv"
 import { promises as fs } from "fs"
+import { existsSync } from "node:fs"
 import path from "path"
 import { registryItemSchema, registrySchema } from "shadcn/schema"
 import { builtinModules } from "node:module"
@@ -19,6 +20,12 @@ import { cyanDark, cyanLight } from "@/scripts/styles/cyan";
 import { indigoDark, indigoLight } from "@/scripts/styles/indigo";
 import { emeraldDark, emeraldLight } from "@/scripts/styles/emerald";
 import { makeRegistry } from "@/scripts/make-registry";
+
+dotenv.config()
+const envLocalPath = path.resolve(process.cwd(), ".env.local")
+if (existsSync(envLocalPath)) {
+  dotenv.config({ path: envLocalPath })
+}
 
 makeRegistry()
 

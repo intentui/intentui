@@ -8,7 +8,6 @@ import { useRef, useState } from "react"
 import { ListBox, ListBoxItem } from "react-aria-components"
 import * as ReactDOMServer from "react-dom/server"
 import { toast } from "sonner"
-import { copyToClipboard } from "usemods"
 import { aliasLookup } from "@/app/(app)/icons/partials/aliases"
 import {
   Menu,
@@ -18,6 +17,7 @@ import {
   MenuLabel,
   MenuSeparator,
 } from "@/components/ui/menu"
+import { useClipboard } from "@/hooks/use-clipboard"
 import { Controller } from "./controller"
 import { box, item } from "./styles"
 
@@ -71,18 +71,19 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
   const [isSelected, setSelected] = useState(false)
   const searchParams = useSearchParams()
   const selectedSize = searchParams.get("s") ?? "size-5"
-  const handleCopy = (type: "text" | "jsx") => {
+  const { copy } = useClipboard()
+  const handleCopy = async (type: "text" | "jsx") => {
     const textToCopy = type === "jsx" ? `<${name} />` : name
-    copyToClipboard(textToCopy).then(() => {
-      toast(
-        <>
-          <code className="mr-1 text-xs tracking-tight">{textToCopy}</code> copied to clipboard.
-        </>,
-        {
-          closeButton: false,
-        },
-      )
-    })
+    const didCopy = await copy(textToCopy)
+    if (!didCopy) return
+    toast(
+      <>
+        <code className="mr-1 text-xs tracking-tight">{textToCopy}</code> copied to clipboard.
+      </>,
+      {
+        closeButton: false,
+      },
+    )
   }
   const triggerRef = useRef<HTMLDivElement>(null)
   return (
@@ -106,7 +107,7 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
           <MenuItem onAction={() => handleCopy("jsx")}>
             <MenuLabel>Copy JSX</MenuLabel>
           </MenuItem>
-          <MenuItem onAction={() => copySvgToClipboard(Icon)}>
+          <MenuItem onAction={() => copySvgToClipboard(Icon, copy)}>
             <MenuLabel>Copy SVG</MenuLabel>
           </MenuItem>
           <MenuItem onAction={() => handleCopy("text")}>
@@ -123,11 +124,13 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
   )
 }
 
-const copySvgToClipboard = (IconComponent: React.ComponentType) => {
+const copySvgToClipboard = async (
+  IconComponent: React.ComponentType,
+  copy: (value: string) => Promise<boolean>,
+) => {
   const svgString = ReactDOMServer.renderToStaticMarkup(<IconComponent />)
-  navigator.clipboard.writeText(svgString).then(() => {
-    toast("SVG copied to clipboard")
-  })
+  const didCopy = await copy(svgString)
+  if (didCopy) toast("SVG copied to clipboard")
 }
 
 const downloadSvg = (IconComponent: React.ComponentType, fileName: string) => {

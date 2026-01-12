@@ -1,14 +1,14 @@
 "use client"
 
-import { type ReactNode, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
 import { Text } from "@/components/ui/text"
 
 type AdVariant = {
   href: string
-  title: ReactNode
-  description: ReactNode
+  title: React.ReactNode
+  description: React.ReactNode
 }
 
 const variants: AdVariant[] = [
