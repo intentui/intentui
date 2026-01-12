@@ -25,7 +25,6 @@ export default function TableDemo() {
           <CardTitle>Users</CardTitle>
           <CardDescription>A list of users with search functionality.</CardDescription>
           <CardAction>
-
             <SearchField aria-label="Search">
               <SearchInput placeholder="Search" />
             </SearchField>

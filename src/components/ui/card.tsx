@@ -81,10 +81,7 @@ const CardFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement
   return (
     <div
       data-slot="card-footer"
-      className={twMerge(
-        "flex items-center px-(--gutter) [.border-t]:pt-6",
-        className,
-      )}
+      className={twMerge("flex items-center px-(--gutter) [.border-t]:pt-6", className)}
       {...props}
     />
   )

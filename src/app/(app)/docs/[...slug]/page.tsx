@@ -24,7 +24,7 @@ export function generateStaticParams() {
   return source.generateParams()
 }
 
-function extractSegment (str: string): string | null {
+function extractSegment(str: string): string | null {
   const segments = str.split("/")
   return segments.length === 4 ? title(segments[2]!) : title(segments[3]!)
 }

@@ -11,7 +11,7 @@
   --font-mono: var(--font-geist-mono), "ui-monospace", "SFMono-Regular", "Menlo", "Monaco",
   "Consolas", '"Liberation Mono"', '"Courier New"', "monospace";
 
-  --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11", "cv13";
   --font-mono--font-feature-settings: "ss02", "zero";
 
   --color-shiki-bg: var(--shiki-bg);
