@@ -115,6 +115,8 @@ const SidebarProvider = ({
           event.preventDefault()
           toggleSidebar()
         }
+        event.preventDefault()
+        toggleSidebar()
       }
     }
 
@@ -247,10 +249,8 @@ const Sidebar = ({
       <div
         data-slot="sidebar-container"
         className={twMerge(
-          "fixed inset-y-0 z-10 hidden w-(--sidebar-width) bg-sidebar",
-          "not-has-data-[slot=sidebar-footer]:pb-2",
+          "fixed inset-y-0 z-10 hidden w-(--sidebar-width) bg-sidebar not-has-data-[slot=sidebar-footer]:pb-2 md:flex",
           "transition-[left,right,width] duration-200 ease-linear",
-          "md:flex",
           side === "left" &&
             "left-0 group-data-[collapsible=hidden]:left-[calc(var(--sidebar-width)*-1)]",
           side === "right" &&
@@ -258,7 +258,7 @@ const Sidebar = ({
           intent === "float" &&
             "bg-bg p-2 group-data-[collapsible=dock]:w-[calc(--spacing(4)+2px)]",
           intent === "inset" &&
-            "bg-sidebar group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(2)+2px)] dark:bg-bg",
+            "group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(2)+2px)] dark:bg-bg",
           intent === "default" && [
             "group-data-[collapsible=dock]:w-(--sidebar-width-dock)",
             "border-sidebar-border group-data-[side=left]:border-r group-data-[side=right]:border-l",
@@ -272,7 +272,6 @@ const Sidebar = ({
           data-slot="sidebar-inner"
           className={twJoin(
             "flex h-full w-full flex-col text-sidebar-fg",
-            "group-data-[intent=inset]:bg-sidebar dark:group-data-[intent=inset]:bg-bg",
             "group-data-[intent=float]:rounded-lg group-data-[intent=float]:border group-data-[intent=float]:border-sidebar-border group-data-[intent=float]:bg-sidebar group-data-[intent=float]:shadow-xs",
           )}
         >
@@ -364,13 +363,13 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
       {...props}
     >
       {state !== "collapsed" && "label" in props && (
-        <Header className="mb-1 flex shrink-0 items-center rounded-md px-2 font-medium text-sidebar-fg/70 text-xs/6 outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[collapsible=dock]:-mt-8 group-data-[collapsible=dock]:opacity-0">
+        <Header className="mb-1 flex shrink-0 items-center rounded-md px-2 text-sidebar-fg/70 text-xs/6 outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 group-data-[collapsible=dock]:-mt-8 group-data-[collapsible=dock]:opacity-0">
           {props.label}
         </Header>
       )}
       <div
         data-slot="sidebar-section-inner"
-        className="grid grid-cols-[auto_1fr] gap-y-0.5 in-data-[state=collapsed]:gap-y-1.5"
+        className="grid grid-cols-[auto_1fr] gap-y-0.5 in-data-[state=collapsed]:gap-y-1.5 *:data-[slot=control]:col-span-full"
       >
         {props.children}
       </div>
@@ -383,10 +382,7 @@ interface SidebarItemProps extends Omit<React.ComponentProps<typeof Link>, "chil
   children?:
     | React.ReactNode
     | ((
-        values: LinkRenderProps & {
-          defaultChildren: React.ReactNode
-          isCollapsed: boolean
-        },
+        values: LinkRenderProps & { defaultChildren: React.ReactNode; isCollapsed: boolean },
       ) => React.ReactNode)
   badge?: string | number | undefined
   tooltip?: string | React.ComponentProps<typeof TooltipContent>
@@ -415,13 +411,14 @@ const SidebarItem = ({
             "href" in props ? "cursor-pointer" : "cursor-default",
             "w-full min-w-0 items-center rounded-lg text-left font-medium text-base/6 text-sidebar-fg",
             "group/sidebar-item relative col-span-full overflow-hidden focus-visible:outline-hidden",
-            "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4 [&_[data-slot='icon']:not([class*='text-'])]:text-muted-fg",
-            "**:last:data-[slot=icon]:size-5 sm:**:last:data-[slot=icon]:size-4",
-            "[&_[data-slot='icon']:not([class*='size-'])]:size-4 [&_[data-slot='icon']:not([class*='size-'])]:*:size-5",
-            "*:data-[slot=avatar]:*:size-5 *:data-[slot=avatar]:size-5",
-            "has-data-[slot=avatar]:has-data-[slot=sidebar-label]:gap-x-2 has-data-[slot=icon]:has-data-[slot=sidebar-label]:gap-x-2",
             "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] **:last:data-[slot=icon]:ml-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:text-sm/5",
             "p-2 has-[a]:p-0",
+            // icon
+            "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4 [&_[data-slot='icon']:not([class*='text-'])]:text-muted-fg",
+            "**:last:data-[slot=icon]:size-5 sm:**:last:data-[slot=icon]:size-4",
+            // avatar
+            "**:data-[slot=avatar]:[--avatar-size:--spacing(5)]",
+            "has-data-[slot=avatar]:has-data-[slot=sidebar-label]:gap-x-2 has-data-[slot=icon]:has-data-[slot=sidebar-label]:gap-x-2",
             "[--sidebar-current-bg:var(--color-sidebar-primary)] [--sidebar-current-fg:var(--color-sidebar-primary-fg)]",
             isCurrent &&
               "font-medium text-(--sidebar-current-fg) hover:bg-(--sidebar-current-bg) hover:text-(--sidebar-current-fg) [&_.text-muted-fg]:text-fg/80 [&_[data-slot='icon']:not([class*='text-'])]:text-(--sidebar-current-fg) hover:[&_[data-slot='icon']:not([class*='text-'])]:text-(--sidebar-current-fg)",
@@ -655,13 +652,16 @@ const SidebarTrigger = ({
         <>
           <svg
             data-slot="icon"
+            className="size-4"
             xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
             viewBox="0 0 16 16"
+            width={16}
+            height={16}
+            fill="currentcolor"
           >
-            <path d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
-            <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+            <path d="M13.25 2.5c.69 0 1.25.56 1.25 1.25v8.5c0 .69-.56 1.25-1.25 1.25H7.5V15h5.75A2.75 2.75 0 0 0 16 12.25v-8.5A2.75 2.75 0 0 0 13.25 1H7.5v1.5zM5.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-3A2.75 2.75 0 0 1 0 12.25v-8.5A2.75 2.75 0 0 1 2.75 1z" />
           </svg>
+          <span className="sr-only">Toggle Sidebar</span>
         </>
       )}
     </Button>
@@ -749,7 +749,7 @@ const SidebarMenuTrigger = ({
         !alwaysVisible &&
           "opacity-0 pressed:opacity-100 group-hover/sidebar-item:opacity-100 group-focus-visible/sidebar-item:opacity-100 group/sidebar-item:pressed:opacity-100",
         "absolute right-0 flex h-full w-[calc(var(--sidebar-width)-90%)] items-center justify-end pr-2.5 outline-hidden",
-        "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4",
+        "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4 pressed:[&_[data-slot='icon']:not([class*='text-'])]:text-fg",
         "pressed:text-fg text-muted-fg hover:text-fg",
         className,
       )}

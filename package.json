@@ -12,7 +12,7 @@
     "prebuild": "bunx fumadocs-mdx && bun run build:search && bun run build:llms && bun run registry:generate && bun run src/scripts/extract-components-from-registry.ts && bun run build:stubs",
     "cuc": "bun run src/scripts/check-use-client.ts",
     "cdc": "bun run src/scripts/check-duplicated-classes.ts",
-    "registry:generate": "bun run src/scripts/generate-registry.ts && npx shadcn build && bun run src/scripts/cleanup-staged.ts",
+    "registry:generate": "bun run src/scripts/generate-registry.ts && bunx shadcn build && bun run src/scripts/cleanup-staged.ts",
     "r": "bun run registry:generate",
     "dev": "next dev --turbopack",
     "build": "_FUMADOCS_MDX=1 next build --webpack",
@@ -20,7 +20,6 @@
     "format:unsafe": "biome check --unsafe --write",
     "start": "next start",
     "preview": "bun run build && next start",
-    "ic": "bun run src/scripts/identify-color.ts",
     "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
