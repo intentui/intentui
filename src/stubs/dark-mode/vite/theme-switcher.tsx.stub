@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui"
-import { MoonIcon, SunIcon } from "@intentui/icons"
-import { useTheme } from "./theme-provider.tsx.stubs"
+import { Button } from "@/components/ui/button"
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"
+import { useTheme } from "@/components/providers/theme-provider"
 
 interface Props {
   appearance?: "plain" | "outline"
