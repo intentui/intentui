@@ -8,13 +8,12 @@ Quick ask: take a moment to review this doc before submitting your first pull re
 
 1. Fork the repository.
 2. Clone the forked repository.
-3. Create a file `.env` and make sure it has the following content: `NEXT_PUBLIC_APP_V1_URL=https://1x.intentui.com`
-4. Install the dependencies with `bun run first-time`.
-5. Create a new branch: `git checkout -b my-branch-name`.
-6. Make your changes.
-7. Commit your changes: `git commit -m 'Add some feature'`.
-8. Push to the branch: `git push origin my-branch-name`.
-9. Submit a pull request.
+3. Install the dependencies with `bun run first-time`.
+4. Create a new branch: `git checkout -b my-branch-name`.
+5. Make your changes.
+6. Commit your changes: `git commit -m 'Add some feature'`.
+7. Push to the branch: `git push origin my-branch-name`.
+8. Submit a pull request.
 
 ## Code of Conduct
 
