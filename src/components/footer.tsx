@@ -178,26 +178,6 @@ export function Footer() {
           <LogoType className="absolute bottom-0 left-1/2 h-60 -translate-x-1/2" />
         </div>
       </PageContainer>
-
-      {/*<PageContainer className="relative z-20 space-y-1.5 border-muted-fg/15 border-t py-6 text-center text-muted-fg text-sm **:[a]:font-medium **:[a]:text-fg **:[strong]:font-medium">*/}
-      {/*  <p>*/}
-      {/*    <strong className="text-fg">*/}
-      {/*      {currentYear} &middot; {siteConfig.name} &trade;*/}
-      {/*    </strong>{" "}*/}
-      {/*    <br />*/}
-      {/*    <br />*/}
-      {/*    This project’s crafted by <Link href="https://x.com/irsyad">Irsyad</Link>. Peep the Source*/}
-      {/*    Code on <Link href={siteConfig.repo}>GitHub</Link>.*/}
-      {/*  </p>*/}
-      {/*  <p>*/}
-      {/*    Hosted on{" "}*/}
-      {/*    <Link href="https://vercel.com?ref=intentui.com" target="_blank">*/}
-      {/*      Vercel*/}
-      {/*    </Link>*/}
-      {/*    . The source code's got the{" "}*/}
-      {/*    <Link href="https://github.com/intentui/intentui/blob/main/LICENSE">MIT</Link> license.*/}
-      {/*  </p>*/}
-      {/*</PageContainer>*/}
     </footer>
   )
 }
