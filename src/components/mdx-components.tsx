@@ -9,6 +9,7 @@ import { SourceCode } from "@/components/code/source-code"
 import { DocComposed } from "@/components/doc-composed"
 import { DocNote } from "@/components/doc-note"
 import { FrameworkGuides } from "@/components/framework-guides"
+import { ReleaseNotes } from "@/components/release-notes"
 import { Link } from "@/components/ui/link"
 import { DocHow } from "./code/doc-how"
 
@@ -22,6 +23,7 @@ export const mdxComponents = {
   Sandbox,
   EditorText: (props: React.ComponentProps<typeof EditorText>) => <EditorText {...props} />,
   Note: DocNote,
+  ReleaseNotes,
   Composed: DocComposed,
   FrameworkGuides,
   Image,

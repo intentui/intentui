@@ -7,6 +7,7 @@ ignore
 /.vercel
 /.source
 /note.md
+/CLAUDE.md
 delete-me.txt
 # dependencies
 /node_modules
@@ -24,7 +25,6 @@ src/components-search.json
 # next.js
 /.next/
 /out/
-
 # production
 /build
 .tmp

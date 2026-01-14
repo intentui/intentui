@@ -1,4 +1,4 @@
-import { ProgressBar, type ProgressBarProps } from "react-aria-components"
+import { Label, type LabelProps, ProgressBar, type ProgressBarProps } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 
@@ -99,9 +99,9 @@ export function LeaderboardItem({
   )
 }
 
-export function LeaderboardStart({ className, ...props }: React.ComponentProps<"div">) {
+export function LeaderboardStart({ className, ...props }: LabelProps) {
   return (
-    <div
+    <Label
       data-slot="leaderboard-start"
       className={twMerge("flex items-center gap-x-2", className)}
       {...props}
