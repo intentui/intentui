@@ -25,6 +25,7 @@ src/components-search.json
 /.next/
 /out/
 
+CLAUDE.md
 # production
 /build
 .tmp
