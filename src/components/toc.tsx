@@ -44,7 +44,7 @@ export function Toc({ className, items }: Props) {
       ref={tocRef}
       className={twMerge(
         "not-prose forced-color-adjust-none",
-        "scrollbar-hidden xl:sticky xl:top-14 xl:-mr-6 xl:h-[calc(100vh-16rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-12",
+        "scrollbar-hidden xl:sticky xl:top-14 xl:-mr-6 xl:h-[calc(100vh-16rem)] xl:flex-none xl:overflow-y-auto xl:py-14 xl:pr-12",
         "top-10",
         className,
       )}
@@ -56,18 +56,21 @@ export function Toc({ className, items }: Props) {
     >
       <nav aria-labelledby="on-this-page-title" className="w-56">
         <Suspense>
-          <Heading
-            level={2}
-            className="mb-6 flex items-center gap-x-2 font-medium text-base text-fg leading-7 lg:text-sm"
-          >
-            <ListBulletIcon className="size-4 text-muted-fg" /> On this page
-          </Heading>
           {items.length > 0 && (
-            <ul className="flex flex-col gap-y-2.5">
-              {items.map((item) => (
-                <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
-              ))}
-            </ul>
+            <>
+              <Heading
+                level={2}
+                className="mb-6 flex items-center gap-x-2 font-medium text-base text-fg leading-7 lg:text-sm"
+              >
+                <ListBulletIcon className="size-4 text-muted-fg" /> On this page
+              </Heading>
+
+              <ul className="flex flex-col gap-y-2.5">
+                {items.map((item) => (
+                  <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
+                ))}
+              </ul>
+            </>
           )}
         </Suspense>
       </nav>

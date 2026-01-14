@@ -14,6 +14,7 @@
     "cdc": "node --import tsx src/scripts/check-duplicated-classes.ts",
     "registry:generate": "node --import tsx src/scripts/generate-registry.ts && npx shadcn build && node --import tsx src/scripts/cleanup-staged.ts",
     "r": "npm run registry:generate",
+    "gr": "node --import tsx src/scripts/generate-release-notes.ts",
     "dev": "next dev --turbopack",
     "build": "_FUMADOCS_MDX=1 next build --webpack",
     "format": "biome lint --fix && biome check --write",
