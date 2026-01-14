@@ -9765,17 +9765,35 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
-      "name": "scroll-area-orientation-demo",
-      "title": "Scroll Area Orientation",
-      "description": "scroll-area-orientation-demo",
+      "name": "scroll-area-horizontal-demo",
+      "title": "Scroll Area Horizontal",
+      "description": "scroll-area-horizontal-demo",
       "registryDependencies": [
         "http://localhost:3000/r/scroll-area"
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/scroll-area/scroll-area-orientation-demo.tsx",
+          "path": "src/components/docs/controls/scroll-area/scroll-area-horizontal-demo.tsx",
           "type": "registry:page",
-          "target": "app/scroll-area-orientation-demo/page.tsx"
+          "target": "app/scroll-area-horizontal-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "scroll-area-vertical-demo",
+      "title": "Scroll Area Vertical",
+      "description": "scroll-area-vertical-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/controls/scroll-area/scroll-area-vertical-demo.tsx",
+          "type": "registry:page",
+          "target": "app/scroll-area-vertical-demo/page.tsx"
         }
       ],
       "type": "registry:page"
