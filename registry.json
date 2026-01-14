@@ -3013,6 +3013,27 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "leaderboard",
+      "title": "leaderboard",
+      "description": "leaderboard",
+      "dependencies": [
+        "react-aria-components",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/primitive"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/leaderboard.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "line-chart",
       "title": "line-chart",
       "description": "line-chart",
@@ -4252,6 +4273,122 @@
           "path": "src/components/docs/visualizations/line-chart/line-chart-stacked-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-stacked-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "leaderboard-controlled-demo",
+      "title": "Leaderboard Controlled",
+      "description": "leaderboard-controlled-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/leaderboard"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/visualizations/leaderboard/leaderboard-controlled-demo.tsx",
+          "type": "registry:page",
+          "target": "app/leaderboard-controlled-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "leaderboard-currency-demo",
+      "title": "Leaderboard Currency",
+      "description": "leaderboard-currency-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/leaderboard"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/visualizations/leaderboard/leaderboard-currency-demo.tsx",
+          "type": "registry:page",
+          "target": "app/leaderboard-currency-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "leaderboard-demo",
+      "title": "Leaderboard",
+      "description": "leaderboard-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/leaderboard"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/visualizations/leaderboard/leaderboard-demo.tsx",
+          "type": "registry:page",
+          "target": "app/leaderboard-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "leaderboard-header-demo",
+      "title": "Leaderboard Header",
+      "description": "leaderboard-header-demo",
+      "dependencies": [
+        "@heroicons/react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/leaderboard",
+        "http://localhost:3000/r/text"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/visualizations/leaderboard/leaderboard-header-demo.tsx",
+          "type": "registry:page",
+          "target": "app/leaderboard-header-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "leaderboard-icon-demo",
+      "title": "Leaderboard Icon",
+      "description": "leaderboard-icon-demo",
+      "dependencies": [
+        "@heroicons/react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/leaderboard"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/visualizations/leaderboard/leaderboard-icon-demo.tsx",
+          "type": "registry:page",
+          "target": "app/leaderboard-icon-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "leaderboard-percentage-demo",
+      "title": "Leaderboard Percentage",
+      "description": "leaderboard-percentage-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/leaderboard"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/visualizations/leaderboard/leaderboard-percentage-demo.tsx",
+          "type": "registry:page",
+          "target": "app/leaderboard-percentage-demo/page.tsx"
         }
       ],
       "type": "registry:page"
@@ -12977,6 +13114,7 @@
         "http://localhost:3000/r/ui/input",
         "http://localhost:3000/r/ui/input-otp",
         "http://localhost:3000/r/ui/keyboard",
+        "http://localhost:3000/r/ui/leaderboard",
         "http://localhost:3000/r/ui/line-chart",
         "http://localhost:3000/r/ui/link",
         "http://localhost:3000/r/ui/list-box",

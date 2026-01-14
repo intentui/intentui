@@ -27,7 +27,7 @@ export function Navigation() {
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
         <nav className="border-fg/10 border-b bg-white py-1.5 dark:bg-zinc-950 dark:supports-backdrop-filter:bg-zinc-950/60 dark:supports-backdrop-filter:backdrop-blur-3xl">
-          <PageContainer className="lg:px-8">
+          <PageContainer>
             <div className="relative flex items-center justify-between">
               <div className="flex items-center gap-x-1.5">
                 <NavLink
