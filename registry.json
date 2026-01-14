@@ -9729,6 +9729,60 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "scroll-area-demo",
+      "title": "Scroll Area",
+      "description": "scroll-area-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/controls/scroll-area/scroll-area-demo.tsx",
+          "type": "registry:page",
+          "target": "app/scroll-area-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "scroll-area-fade-demo",
+      "title": "Scroll Area Fade",
+      "description": "scroll-area-fade-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/controls/scroll-area/scroll-area-fade-demo.tsx",
+          "type": "registry:page",
+          "target": "app/scroll-area-fade-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "scroll-area-orientation-demo",
+      "title": "Scroll Area Orientation",
+      "description": "scroll-area-orientation-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/controls/scroll-area/scroll-area-orientation-demo.tsx",
+          "type": "registry:page",
+          "target": "app/scroll-area-orientation-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "context-menu-danger-demo",
       "title": "Context Menu Danger",
       "description": "context-menu-danger-demo",
