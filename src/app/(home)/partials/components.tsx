@@ -10,7 +10,7 @@ const components = menus[3] as Component
 export function Components() {
   return (
     <div className="border-t bg-linear-to-b from-secondary/20 py-6 sm:py-12">
-      <PageContainer className="mask-b-from-80% sm:mask-b-from-70% max-h-120 sm:max-h-140">
+      <PageContainer className="mask-b-from-80% sm:mask-b-from-80% max-h-120 sm:max-h-140">
         <CardHeader
           className="mb-6 max-w-lg"
           title="Components"

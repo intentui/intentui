@@ -18,7 +18,7 @@ export function Cta() {
           title="Ready to get started?"
           description="Explore the core essentials to help you install, build, and start customizing your project with Intent UI in just a few steps."
         />
-        <ChoiceBox aria-label="Get started" selectionMode="single" gap={6} columns={3}>
+        <ChoiceBox aria-label="Get started" selectionMode="none" gap={6} columns={3}>
           <ChoiceBoxItem href="/docs/getting-started/installation" textValue="install">
             <ChoiceBoxLabel>Setup</ChoiceBoxLabel>
             <ChoiceBoxDescription>
