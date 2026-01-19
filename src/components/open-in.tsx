@@ -44,6 +44,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
         intent="outline"
         size="sm"
         onPress={() => void getMarkdown()}
+        isPending={pending}
       >
         {pending ? <Loader /> : copied ? <CheckIcon /> : <DuplicateIcon />}
         Copy page
