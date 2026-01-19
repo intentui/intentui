@@ -3752,7 +3752,12 @@
       "title": "text",
       "description": "text",
       "dependencies": [
-        "tailwind-merge"
+        "tailwind-merge",
+        "tailwind-variants"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/primitive",
+        "http://localhost:3000/r/link"
       ],
       "files": [
         {
@@ -13133,6 +13138,34 @@
         {
           "path": "registry/blocks/navbar-01/user-menu.tsx",
           "type": "registry:component"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "auth-01",
+      "title": "auth-01",
+      "description": "auth-01",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/avatar",
+        "http://localhost:3000/r/link",
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/text",
+        "http://localhost:3000/r/text-field"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/auth-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/auth-01/page.tsx"
         }
       ],
       "type": "registry:block"
