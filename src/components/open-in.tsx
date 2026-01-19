@@ -52,7 +52,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
       <div className="flex items-center gap-x-1.5">
         <Menu>
           <Button className="h-10 sm:h-auto" intent="outline" size="sm">
-            Open in...
+            Open in
             <ChevronDownIcon className="rotate-180 sm:rotate-0" />
           </Button>
           <MenuContent className="min-w-40" placement="bottom end">

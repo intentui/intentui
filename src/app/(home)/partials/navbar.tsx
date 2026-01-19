@@ -125,6 +125,10 @@ export const menus = [
   {
     href: "https://design.intentui.com/themes",
     label: "Themes",
+  },
+  {
+    href: "https://buy.polar.sh/polar_cl_Ro49EUalfykVhZrYUBr7m1NJOwlcfyRlqDcXS4G38Sm",
+    label: "Sponsor",
     icon: ArrowTopRightOnSquareIcon,
     on: true,
   },

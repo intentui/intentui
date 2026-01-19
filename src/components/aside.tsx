@@ -28,7 +28,7 @@ export const sortedGsChildren =
 
 export function Aside() {
   return (
-    <div className="sticky -ml-0.5 h-screen w-full pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-14 xl:w-60">
+    <div className="sticky -mt-10 -ml-3 h-screen w-full pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-14 xl:w-60">
       <ScrollArea scrollFade className="*:[--fade-size:--spacing(10)]" orientation="vertical">
         <div className="flex flex-col gap-y-(--gap) px-4 pb-10 [--gap:--spacing(6)]">
           <div>
