@@ -7,6 +7,7 @@ import { mdxComponents } from "@/components/mdx-components"
 import { OpenIn } from "@/components/open-in"
 import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
+import { ogImage } from "@/lib/og"
 import { source } from "@/lib/source"
 import { title } from "@/lib/utils"
 
@@ -49,27 +50,21 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       description: doc.description,
       type: "article",
       url: `https://intentui.com${page.url}`,
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(
-            doc.title,
-          )}&description=${encodeURIComponent(doc.description)}`,
-        },
-      ],
+      images: [{ url: ogImage({ title: doc.title, description: doc.description }) }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${doc.title} / Intent UI`,
       description: doc.description,
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(
-            doc.title,
-          )}&description=${encodeURIComponent(doc.description)}`,
-        },
-      ],
-      creator: "@irsyadadl",
+      images: [{ url: ogImage({ title: doc.title, description: doc.description }) }],
+      creator: "@irsyad",
     },
+    authors: [
+      {
+        name: "Irsyad",
+        url: "https://x.com/irsyad",
+      },
+    ],
   }
 }
 

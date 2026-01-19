@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 
 async function loadAssets(): Promise<
-  { name: string; data: Buffer; weight: 400 | 600; style: "normal" }[]
+  { name: string; data: Buffer; weight: 400 | 500; style: "normal" }[]
 > {
   const [{ base64Font: normal }, { base64Font: semibold }] = await Promise.all([
     import("./inter-regular.json").then((mod) => mod.default || mod),
@@ -18,7 +18,7 @@ async function loadAssets(): Promise<
     {
       name: "Inter",
       data: Buffer.from(semibold, "base64"),
-      weight: 600 as const,
+      weight: 500 as const,
       style: "normal" as const,
     },
   ]
@@ -32,8 +32,14 @@ export async function GET(request: Request) {
   const [fonts] = await Promise.all([loadAssets()])
 
   return new ImageResponse(
-    <div tw="flex h-full w-full bg-zinc-900 text-white" style={{ fontFamily: "Geist Sans" }}>
-      <div tw="flex absolute flex-row top-24 left-32 text-white">
+    <div
+      tw="flex h-full w-full bg-zinc-900 text-white"
+      style={{
+        fontFamily: "Inter",
+        backgroundImage: `url(${new URL("/images/og-background.png", process.env.NEXT_PUBLIC_APP_URL).toString()})`,
+      }}
+    >
+      <div tw="flex absolute flex-row top-0 left-32 top-32 text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={48}
@@ -82,28 +88,31 @@ export async function GET(request: Request) {
             </filter>
           </defs>
         </svg>
-        <div tw="flex gap-x-2 text-3xl font-semibold ml-4 items-center">
+        <div tw="flex gap-x-2 ml-2 text-4xl tracking-tight items-center">
           <span>Intent</span>
           <span tw="ml-2 text-zinc-400">UI</span>
         </div>
       </div>
-      <div tw="flex flex-col absolute w-[896px] justify-center inset-32 mt-16">
+      <div tw="flex flex-col justify-start items-start inset-34 mt-24">
         <div
-          tw="tracking-tight capitalize flex-grow-1 flex flex-col justify-center leading-[1.1]"
+          tw="tracking-tight leading-[1.5] mt-12 mb-6"
           style={{
             textWrap: "balance",
-            fontWeight: 600,
-            fontSize: title && title.length > 20 ? 64 : 80,
+            fontWeight: 400,
+            fontSize: 54,
             letterSpacing: "-0.04em",
           }}
         >
           {title}
         </div>
         <div
-          tw="text-[40px] leading-[1.5] flex-grow-1 text-zinc-400"
+          tw="max-w-3xl leading-relaxed text-white/80"
           style={{
-            fontWeight: 500,
+            lineHeight: 1.7,
+            fontSize: 28,
             textWrap: "balance",
+            fontWeight: 400,
+            letterSpacing: "-0.02em",
           }}
         >
           {description}
