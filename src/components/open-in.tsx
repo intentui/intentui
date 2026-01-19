@@ -3,10 +3,12 @@
 import { CheckIcon } from "@heroicons/react/24/outline"
 import { ChevronDownIcon } from "@heroicons/react/24/solid"
 import type { Root as PageTreeRoot } from "fumadocs-core/page-tree"
+import { useState } from "react"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { MobilePager } from "@/components/mobile-pager"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { Loader } from "@/components/ui/loader"
 import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu"
 import { useClipboard } from "@/hooks/use-clipboard"
 import { DuplicateIcon } from "./icons/duplicate-icon"
@@ -18,21 +20,33 @@ function getPromptUrl(baseURL: string, url: string) {
 }
 export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; page: string }) {
   const fullUrl = `https://intentui.com${url}`
+  const [pending, setPending] = useState(false)
+  const llmUrl = `${fullUrl}.md`
   const { copied, copy } = useClipboard()
+
+  async function getMarkdown() {
+    setPending(true)
+
+    try {
+      const res = await fetch(llmUrl, { method: "GET" })
+      const text = res.ok ? await res.text() : page
+      await copy(text)
+      window.aurelie?.track?.(`copy page: ${fullUrl}`, { url: fullUrl })
+    } finally {
+      setPending(false)
+    }
+  }
+
   return (
     <div className="not-prose fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
       <Button
         className="h-10 sm:h-auto"
         intent="outline"
         size="sm"
-        onPress={() => {
-          copy(page)
-          window.aurelie?.track?.("copy page", {
-            url: fullUrl,
-          })
-        }}
+        onPress={() => void getMarkdown()}
+        isPending={pending}
       >
-        {copied ? <CheckIcon /> : <DuplicateIcon />}
+        {pending ? <Loader /> : copied ? <CheckIcon /> : <DuplicateIcon />}
         Copy page
       </Button>
       <div className="flex items-center gap-x-1.5">
