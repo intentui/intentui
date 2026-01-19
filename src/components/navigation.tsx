@@ -8,6 +8,7 @@ import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
+import { SponsorButton } from "@/components/sponsor-button"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
@@ -96,7 +97,6 @@ export function Navigation() {
                 <Button
                   onPress={() => setOpen((open: boolean) => !open)}
                   size="sq-sm"
-                  isCircle
                   intent="plain"
                 >
                   <MagnifyingGlassIcon />
@@ -106,7 +106,6 @@ export function Navigation() {
                   aria-label="Join Discord"
                   className={buttonStyles({
                     intent: "plain",
-                    isCircle: true,
                     size: "sq-sm",
                   })}
                   target="_blank"
@@ -118,7 +117,6 @@ export function Navigation() {
                   aria-label="Follow Update on X"
                   className={buttonStyles({
                     intent: "plain",
-                    isCircle: true,
                     size: "sq-sm",
                     className: "**:data-[slot=icon]:text-fg",
                   })}
@@ -129,7 +127,7 @@ export function Navigation() {
                 </Link>
 
                 <GithubLink />
-                <ThemeSwitcher intent="plain" isCircle />
+                <ThemeSwitcher intent="plain" />
                 <Menu>
                   <Button intent="plain" size="xs">
                     3.x
@@ -159,6 +157,7 @@ export function Navigation() {
                     </MenuItem>
                   </MenuContent>
                 </Menu>
+                <SponsorButton />
               </div>
             </div>
           </PageContainer>

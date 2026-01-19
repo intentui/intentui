@@ -19,6 +19,7 @@ import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
+import { SponsorButton } from "@/components/sponsor-button"
 import { ThemeSwitcher } from "@/components/theme-switcher"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
@@ -97,6 +98,7 @@ export function Navbar() {
               </MenuContent>
             </Menu>
           </div>
+          <SponsorButton className="ml-3" />
         </div>
       </PageContainer>
       {isMobile && <ResponsiveNavigation />}
@@ -125,10 +127,6 @@ export const menus = [
   {
     href: "https://design.intentui.com/themes",
     label: "Themes",
-  },
-  {
-    href: "https://buy.polar.sh/polar_cl_Ro49EUalfykVhZrYUBr7m1NJOwlcfyRlqDcXS4G38Sm",
-    label: "Sponsor",
     icon: ArrowTopRightOnSquareIcon,
     on: true,
   },
