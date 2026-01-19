@@ -54,13 +54,6 @@ export function Navigation() {
 
                 <NavLink target="_blank" href="https://design.intentui.com/themes">
                   Themes
-                </NavLink>
-
-                <NavLink
-                  target="_blank"
-                  href="https://buy.polar.sh/polar_cl_Ro49EUalfykVhZrYUBr7m1NJOwlcfyRlqDcXS4G38Sm"
-                >
-                  Sponsor
                   <ArrowTopRightOnSquareIcon className="ml-2 size-4" />
                 </NavLink>
               </div>
