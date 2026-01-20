@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import { Avatar } from "@/components/ui/avatar"
-import { Link } from "@/components/ui/link"
+import { useState } from "react"
 import { Form } from "react-aria-components"
+import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
 import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { Link } from "@/components/ui/link"
 import { Text, TextLink } from "@/components/ui/text"
 import { TextField } from "@/components/ui/text-field"
-import { useState } from "react";
 
 export default function Page() {
   const [email, setEmail] = useState("")
@@ -25,7 +25,8 @@ export default function Page() {
           <Fieldset>
             <Legend className="text-xl/6">Sign in</Legend>
             <Text>
-              Access your account to manage projects, view analytics, and collaborate with your team.
+              Access your account to manage projects, view analytics, and collaborate with your
+              team.
             </Text>
             <TextField isRequired value={email} onChange={setEmail}>
               <Label>Email address</Label>
@@ -44,7 +45,9 @@ export default function Page() {
             </TextField>
             <Checkbox>
               <CheckboxLabel>Remember me</CheckboxLabel>
-              <Description>Keep me signed in on this device for faster access next time.</Description>
+              <Description>
+                Keep me signed in on this device for faster access next time.
+              </Description>
             </Checkbox>
           </Fieldset>
           <Button type="submit" className="mt-6 w-full">

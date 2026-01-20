@@ -106,9 +106,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
                 {copied ? <CheckIcon className="size-4" /> : <ShadcnuiLogo className="size-4" />}
                 @intentui/block/{item.title}
               </Button>
-              <TooltipContent className="rounded-full">
-                Click to copy
-              </TooltipContent>
+              <TooltipContent className="rounded-full">Click to copy</TooltipContent>
             </Tooltip>
           </header>
           <TabList className="flex w-full gap-x-2 md:w-auto">

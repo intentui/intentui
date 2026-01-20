@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container"
 
 export function DesignIntentui() {
   return (
-    <div className="border-t bg-black py-6 text-bg sm:py-20 dark:bg-white">
+    <div className="border-t bg-overlay py-6 text-fg sm:py-20">
       <Container>
         <div className="relative mx-auto max-w-3xl text-center">
           <Link href="https://design.intentui.com">
@@ -28,20 +28,17 @@ export function DesignIntentui() {
               />
             </svg>
           </Link>
-          <h3 className="mt-4 mb-4 text-3xl sm:text-5xl">
+          <h3 className="mt-4 mb-4 text-3xl sm:text-5xl/16">
             Launch faster with ready-made blocks and templates
           </h3>
-          <p className="mx-auto max-w-xl text-pretty text-center text-bg/50 text-lg/8 leading-relaxed sm:text-xl">
-            Copy, customize, and deploy{" "}
-            <strong className="font-semibold text-bg">450+ pre-built UI blocks</strong> and{" "}
-            <strong className="font-semibold text-bg">templates</strong> to accelerate your
-            workflow. Save time on pricing pages, dashboards, and more.
+          <p className="mx-auto max-w-xl text-pretty text-center text-lg/8 text-muted-fg leading-relaxed sm:text-xl">
+            Build modern web apps faster with 1000+ resources across components, blocks, patterns,
+            templates, and starter kits.
           </p>
           <div className="mt-6 flex flex-col justify-center gap-2 sm:mt-10 sm:flex-row sm:items-center">
             <Link
               className={buttonStyles({
                 size: "lg",
-                className: "border-bg bg-bg pressed:bg-bg/90 text-fg hover:bg-bg/90",
               })}
               href="https://design.intentui.com/blocks"
             >
@@ -50,8 +47,7 @@ export function DesignIntentui() {
             <Link
               className={buttonStyles({
                 size: "lg",
-                intent: "outline",
-                className: "border-bg/20 pressed:bg-bg/10 hover:bg-bg/5",
+                intent: "secondary",
               })}
               href="https://design.intentui.com/templates"
             >
