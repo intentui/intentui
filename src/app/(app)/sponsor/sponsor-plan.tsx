@@ -26,7 +26,7 @@ const individualPlan = plans[0]
 
 export function SponsorPlan() {
   return (
-    <div className="-mb-px [--border:var(--color-muted-fg)]/15 [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)] lg:[--gutter:--spacing(12)]">
+    <div className="-mb-px [--border:var(--color-muted-fg)]/18 [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)] lg:[--gutter:--spacing(12)]">
       <div className="border-y bg-muted">
         <PageContainer>
           <div className="flex flex-col items-center gap-6 border-x bg-bg p-(--gutter) sm:flex-row">
