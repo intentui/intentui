@@ -1,6 +1,5 @@
 "use client"
 
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
@@ -8,8 +7,7 @@ import { Link } from "@/components/ui/link"
 export function SponsorButton({ className }: { className?: string }) {
   return (
     <Link
-      target="_blank"
-      href="https://buy.polar.sh/polar_cl_Ro49EUalfykVhZrYUBr7m1NJOwlcfyRlqDcXS4G38Sm"
+      href="/sponsor"
       className={buttonStyles({
         size: "sm",
         intent: "outline",
@@ -20,7 +18,6 @@ export function SponsorButton({ className }: { className?: string }) {
       })}
     >
       Sponsor
-      <ArrowTopRightOnSquareIcon />
     </Link>
   )
 }

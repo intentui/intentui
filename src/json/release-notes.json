@@ -1,5 +1,17 @@
 [
   {
+    "name": "Text link demo",
+    "component": "text-link-demo.tsx",
+    "url": "/text",
+    "type": "demo",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 6,
+    "deletions": 0,
+    "date": "2026-01-20"
+  },
+  {
     "name": "Text",
     "component": "text.tsx",
     "url": "/text",
