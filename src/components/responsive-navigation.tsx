@@ -111,6 +111,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                     </NavLink>
                   ))}
                   <NavLink href="/blog">Blog</NavLink>
+                  <NavLink href="/sponsor">Sposor</NavLink>
                 </MenuSection>
                 <MenuSection>
                   <NavHeading>{prologue?.section}</NavHeading>

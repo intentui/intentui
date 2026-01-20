@@ -11,7 +11,7 @@ export function Hero() {
     window.open("https://dub.sh/designiui", "_blank", "noopener")
   }
   return (
-    <div className="border-b py-6 sm:py-12">
+    <div className="border-b bg-bg py-6 sm:py-12">
       <PageContainer>
         <Heading level={1} className="text-2xl sm:text-3xl">
           Blocks

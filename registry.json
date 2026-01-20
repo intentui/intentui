@@ -4801,6 +4801,24 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "text-link-demo",
+      "title": "Text Link",
+      "description": "text-link-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/text"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/surfaces/text/text-link-demo.tsx",
+          "type": "registry:page",
+          "target": "app/text-link-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "show-more-as-text-demo",
       "title": "Show More As Text",
       "description": "show-more-as-text-demo",
@@ -13153,11 +13171,11 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/text",
         "http://localhost:3000/r/text-field"
       ],
