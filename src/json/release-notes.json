@@ -360,18 +360,6 @@
     "date": "2025-07-15"
   },
   {
-    "name": "Grid",
-    "component": "grid.tsx",
-    "url": "/grid",
-    "type": "component",
-    "category": "surfaces",
-    "kind": "improvement",
-    "description": null,
-    "additions": 0,
-    "deletions": 0,
-    "date": "2025-07-15"
-  },
-  {
     "name": "Sidebar",
     "component": "sidebar.tsx",
     "url": "/sidebar",
@@ -629,18 +617,6 @@
     "url": "/button",
     "type": "component",
     "category": "buttons",
-    "kind": "improvement",
-    "description": null,
-    "additions": 0,
-    "deletions": 0,
-    "date": "2025-07-10"
-  },
-  {
-    "name": "Command",
-    "component": "command.tsx",
-    "url": "/command",
-    "type": "component",
-    "category": "controls",
     "kind": "improvement",
     "description": null,
     "additions": 0,
