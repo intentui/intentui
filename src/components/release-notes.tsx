@@ -6,19 +6,6 @@ import { Badge } from "@/components/ui/badge"
 import { Text } from "@/components/ui/text"
 import releaseNotes from "@/json/release-notes.json"
 
-interface ReleaseNote {
-  name: string
-  component: string
-  url: string
-  type: "component" | "demo"
-  category: string
-  kind: string | null
-  description: string | null
-  additions: number
-  deletions: number
-  date: string
-}
-
 type GroupedByYear = Record<string, Record<string, ReleaseNote[]>>
 
 function groupByYearAndDate(notes: ReleaseNote[]): GroupedByYear {
@@ -76,6 +63,7 @@ export function ReleaseNotes() {
                             <Link
                               href={note.url}
                               className="inline-block text-primary-subtle-fg hover:underline sm:text-sm/6"
+                              target={note.type === "block" ? "_blank" : undefined}
                             >
                               {note.name}
                             </Link>

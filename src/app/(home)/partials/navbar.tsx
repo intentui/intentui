@@ -12,10 +12,10 @@ import {
 } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { Button } from "react-aria-components"
+import { BrandLogoLink } from "@/components/brand-logo-link"
 import { CommandPalette } from "@/components/command-palette"
 import { GithubLink } from "@/components/github-link"
 import { BrandDiscordIcon } from "@/components/icons/brand-discord-icon"
-import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
@@ -36,12 +36,7 @@ export function Navbar() {
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <PageContainer className="hidden items-center justify-between py-4 lg:flex">
         <div className="flex items-center">
-          <Link href="/" className="mr-2 flex items-center gap-x-2" aria-label="Goto homepage">
-            <BrandIntentuiIcon className="size-5 shrink-0" />
-            <span className="hidden min-w-0 sm:inline">
-              <span>Intent</span> <span className="text-muted-fg">UI</span>
-            </span>
-          </Link>
+          <BrandLogoLink />
           <div className="flex items-center gap-x-1">
             {menus.map((menu) => (
               <NavLink key={menu.href} href={menu.href}>

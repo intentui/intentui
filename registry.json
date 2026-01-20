@@ -13163,6 +13163,121 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "chart-03",
+      "title": "chart-03",
+      "description": "chart-03",
+      "registryDependencies": [
+        "http://localhost:3000/r/bar-chart",
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/chart-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-03/page.tsx"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "chart-02",
+      "title": "chart-02",
+      "description": "chart-02",
+      "registryDependencies": [
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/line-chart",
+        "http://localhost:3000/r/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/chart-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-02/page.tsx"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "chart-01",
+      "title": "chart-01",
+      "description": "chart-01",
+      "registryDependencies": [
+        "http://localhost:3000/r/area-chart",
+        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/chart-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-01/page.tsx"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "auth-03",
+      "title": "auth-03",
+      "description": "auth-03",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/avatar",
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/link",
+        "http://localhost:3000/r/text",
+        "http://localhost:3000/r/text-field"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/auth-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/auth-03/page.tsx"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "auth-02",
+      "title": "auth-02",
+      "description": "auth-02",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/avatar",
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/link",
+        "http://localhost:3000/r/text",
+        "http://localhost:3000/r/text-field"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/auth-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/auth-02/page.tsx"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "auth-01",
       "title": "auth-01",
       "description": "auth-01",

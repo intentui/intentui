@@ -1,7 +1,4 @@
 import type { Metadata } from "next"
-import { Hero } from "@/app/(app)/blocks/hero"
-import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
-import { PageContainer } from "@/components/page-container"
 import { Sandbox } from "./sandbox"
 
 export const metadata: Metadata = {
@@ -45,24 +42,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return (
-    <div>
-      <Hero />
-      <PageContainer className="space-y-12 py-6 sm:py-12">
-        <Sandbox
-          registries={[
-            "sidebar-01",
-            "sidebar-02",
-            "sidebar-03",
-            "sidebar-04",
-            "navbar-01",
-            "navbar-02",
-            "navbar-03",
-            "auth-01",
-          ]}
-        />
-      </PageContainer>
-      <DesignIntentui />
-    </div>
-  )
+  return <Sandbox registries={["sidebar-02", "navbar-01", "auth-01"]} />
 }

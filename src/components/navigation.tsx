@@ -3,8 +3,8 @@ import { ChevronDownIcon } from "@heroicons/react/16/solid"
 import { ArrowTopRightOnSquareIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
+import { BrandLogoLink } from "@/components/brand-logo-link"
 import { GithubLink } from "@/components/github-link"
-import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
@@ -27,10 +27,13 @@ export function Navigation() {
     <>
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
-        <nav className="border-fg/10 border-b bg-white py-1.5 dark:bg-zinc-950 dark:supports-backdrop-filter:bg-zinc-950/60 dark:supports-backdrop-filter:backdrop-blur-3xl">
+        <nav className="bg-bg py-3">
           <PageContainer>
             <div className="relative flex items-center justify-between">
               <div className="flex items-center gap-x-1.5">
+                <div className="mx-auto flex items-center">
+                  <BrandLogoLink />
+                </div>
                 <NavLink
                   isNextLink
                   isActive={
@@ -48,43 +51,15 @@ export function Navigation() {
                   Components
                 </NavLink>
 
+                <NavLink isActive={pathname.startsWith("/blocks")} href="/blocks">
+                  Blocks
+                </NavLink>
                 <NavLink href="/colors">Colors</NavLink>
-
-                <NavLink href="/blocks">Blocks</NavLink>
 
                 <NavLink target="_blank" href="https://design.intentui.com/themes">
                   Themes
                   <ArrowTopRightOnSquareIcon className="ml-2 size-4" />
                 </NavLink>
-              </div>
-              <div className="mx-auto flex items-center">
-                <Link
-                  href="/"
-                  className="mr-2 flex items-center gap-x-2"
-                  aria-label="Goto homepage"
-                >
-                  <BrandIntentuiIcon className="size-5 shrink-0" />
-                  <span className="hidden min-w-0 sm:inline">
-                    <span>Intent</span> <span className="text-muted-fg">UI</span>
-                  </span>
-                  <Menu>
-                    <Button
-                      intent="secondary"
-                      className="*:data-[slot=icon]:text-fg sm:size-3.5"
-                      isCircle
-                      size="sq-xs"
-                      aria-label="Explore more products"
-                    >
-                      <ChevronDownIcon />
-                    </Button>
-                    <MenuContent placement="bottom">
-                      <MenuItem href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=navbar&utm_campaign=internal_nav&utm_content=design">
-                        Design
-                      </MenuItem>
-                      <MenuItem>Intent UI</MenuItem>
-                    </MenuContent>
-                  </Menu>
-                </Link>
               </div>
               <div className="flex items-center gap-x-1.5">
                 <Button

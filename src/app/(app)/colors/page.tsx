@@ -1,12 +1,12 @@
 import type { Metadata } from "next"
 import { ColorPalette } from "@/app/(app)/colors/(colors)/color-palette"
-import { Header } from "@/components/header"
+import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
   title: "Colors",
   description:
-    "A stash of 154+ colors mixing Tailwind CSS vibes with classic HTML color names, delivered in four clean formats so you can pick, paste, and ship faster.",
+    "Pick and generate Tailwind-style color scales from 50 to 950. Browse palettes, choose a base color, then instantly create a full ramp with copy-ready output.",
   metadataBase: new URL("https://intentui.com"),
   applicationName: siteConfig.name,
   category: "Colors",
@@ -53,7 +53,15 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <>
-      <Header className="border-b">Colors</Header>
+      <Header className="border-b">
+        <HeaderInner>
+          <HeaderTitle>Colors</HeaderTitle>
+          <HeaderDescription>
+            Browse palettes, choose a base color, then instantly create a full ramp with copy-ready
+            output.
+          </HeaderDescription>
+        </HeaderInner>
+      </Header>
       <ColorPalette />
     </>
   )

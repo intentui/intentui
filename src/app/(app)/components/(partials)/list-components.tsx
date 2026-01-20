@@ -5,12 +5,11 @@ import Image from "next/image"
 import { useTheme } from "next-themes"
 import { useEffect, useRef, useState } from "react"
 import { Autocomplete, GridList, GridListItem, useFilter } from "react-aria-components"
+import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
-import { Heading } from "@/components/ui/heading"
 import { Input, InputGroup } from "@/components/ui/input"
 import { Keyboard } from "@/components/ui/keyboard"
 import { SearchField } from "@/components/ui/search-field"
-import { Text } from "@/components/ui/text"
 import menus from "@/components-search.json"
 
 const components = menus[3]
@@ -52,35 +51,24 @@ export function ListComponents() {
 
   return (
     <Autocomplete filter={contains}>
-      <div className="border-fg/10 border-t border-b bg-navbar py-6 md:border-t-0 lg:py-10">
-        <PageContainer>
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <Heading level={1} className="text-2xl sm:text-3xl">
-                Components
-              </Heading>
-              <Text className="mt-2 max-w-lg text-muted-fg sm:text-base/6">
-                Explore{" "}
-                <strong className="font-medium text-fg">80+ accessible UI components</strong>{" "}
-                powered by react aria components, easy to customize and ready for production.
-              </Text>
-            </div>
-            <SearchField className="font-normal sm:max-w-2xs" aria-label="Search components">
-              <InputGroup>
-                <MagnifyingGlassIcon />
-                <Input
-                  className="bg-overlay"
-                  ref={inputRef as any}
-                  placeholder="Search components"
-                />
-                <Keyboard>f</Keyboard>
-              </InputGroup>
-            </SearchField>
-          </div>
-        </PageContainer>
-      </div>
+      <Header>
+        <HeaderInner>
+          <HeaderTitle>Components</HeaderTitle>
+          <HeaderDescription>
+            Explore 80+ accessible UI components powered by react aria components, easy to customize
+            and ready for production.
+          </HeaderDescription>
+          <SearchField className="mt-6 font-normal sm:max-w-2xs" aria-label="Search components">
+            <InputGroup>
+              <MagnifyingGlassIcon />
+              <Input className="bg-overlay" ref={inputRef as any} placeholder="Search components" />
+              <Keyboard>f</Keyboard>
+            </InputGroup>
+          </SearchField>
+        </HeaderInner>
+      </Header>
 
-      <div className="bg-muted py-6 sm:py-12">
+      <div className="border-t bg-muted/50 py-6 sm:py-12">
         <PageContainer>
           <GridList
             aria-label="Components"
