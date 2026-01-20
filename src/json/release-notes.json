@@ -1,5 +1,17 @@
 [
   {
+    "name": "Text",
+    "component": "text.tsx",
+    "url": "/text",
+    "type": "component",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 4,
+    "deletions": 0,
+    "date": "2026-01-20"
+  },
+  {
     "name": "Leaderboard controlled demo",
     "component": "leaderboard-controlled-demo.tsx",
     "url": "/leaderboard",
