@@ -23,7 +23,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { SearchField, SearchInput } from "@/components/ui/search-field"
 import { Separator } from "@/components/ui/separator"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 import { cx } from "@/lib/primitive"
 
 interface ResponsiveNavigationProps {
@@ -175,21 +175,21 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
       <div className="flex items-center gap-x-0.5">
         <Link
           className={buttonStyles({ intent: "plain", size: "sq-sm" })}
-          href={siteConfig.links.twitter}
+          href={app.links.twitter}
           target="_blank"
         >
           <BrandXIcon className="size-5" />
         </Link>
         <Link
           className={buttonStyles({ intent: "plain", size: "sq-sm" })}
-          href={siteConfig.discord}
+          href={app.discord}
           target="_blank"
         >
           <BrandDiscordIcon className="size-5" />
         </Link>
         <Link
           className={buttonStyles({ intent: "plain", size: "sq-sm" })}
-          href={siteConfig.repo}
+          href={app.repo}
           target="_blank"
         >
           <BrandGithubIcon className="size-5" />

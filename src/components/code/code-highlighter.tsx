@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 
 import { codeToHtml } from "shiki"
 import { twMerge } from "tailwind-merge"
+import { app } from "@/config/app"
 
 export interface CodeHighlighterProps {
   plain?: boolean
@@ -33,7 +34,7 @@ export const CodeHighlighter = ({
       try {
         const file = await codeToHtml(code, {
           lang: lang,
-          themes: { light: "github-light", dark: "github-dark" },
+          themes: app.editorThemes,
         })
         setFormattedCode(String(file))
       } catch (err) {

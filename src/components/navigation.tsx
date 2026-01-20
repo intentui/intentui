@@ -14,7 +14,7 @@ import { SponsorButton } from "@/components/sponsor-button"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { useScrollPosition } from "@/hooks/use-scroll-position"
 import { CommandPalette } from "./command-palette"
@@ -100,7 +100,7 @@ export function Navigation() {
                     size: "sq-sm",
                   })}
                   target="_blank"
-                  href={siteConfig.discord}
+                  href={app.discord}
                 >
                   <BrandDiscordIcon />
                 </Link>

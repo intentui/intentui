@@ -5,19 +5,19 @@ import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
 import { Footer } from "@/components/footer"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 import { Hero } from "./partials/hero"
 import { Navbar } from "./partials/navbar"
 import { OpenSource } from "./partials/open-source"
 
 export const metadata = {
   openGraph: {
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: app.name,
+    description: app.description,
     url: "https://intentui.com",
-    siteName: siteConfig.name,
+    siteName: app.name,
   },
-  description: siteConfig.description,
+  description: app.description,
 }
 export default function Page() {
   return (

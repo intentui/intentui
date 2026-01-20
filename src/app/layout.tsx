@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Providers } from "@/components/providers"
-import { META_THEME_COLORS, siteConfig } from "@/config/site"
+import { app, META_THEME_COLORS } from "@/config/app"
 import "@/styles/app.css"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
@@ -12,8 +12,8 @@ import { Toast } from "@/components/ui/toast"
 export const metadata: Metadata = {
   metadataBase: new URL("https://intentui.com"),
   title: {
-    default: `${siteConfig.name}`,
-    template: `%s / ${siteConfig.name}`,
+    default: `${app.name}`,
+    template: `%s / ${app.name}`,
   },
   alternates: {
     canonical: "./",

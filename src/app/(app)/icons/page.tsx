@@ -3,7 +3,7 @@ import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
 import { Loader } from "@/components/ui/loader"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 import { IconsList } from "./partials/icons-list"
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "A library of beautifully crafted @intentui/icons to elevate your web apps with crisp visuals, consistent style, and a polished, delightful user experience.",
   metadataBase: new URL("https://intentui.com"),
-  applicationName: siteConfig.name,
+  applicationName: app.name,
   keywords: [
     "Intent Icons",
     "Tailwind CSS",

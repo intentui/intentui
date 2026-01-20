@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
 import { Link } from "@/components/ui/link"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 import { useClipboard } from "@/hooks/use-clipboard"
 
 interface PullRegistryProps {
@@ -75,7 +75,7 @@ export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullR
         className="hidden sm:inline"
         copiedLabel="Copied"
         isCopied={copy.command}
-        onCopy={() => handleCopy("command", `${siteConfig.shadcn} add @intentui/${blockDemo}`)}
+        onCopy={() => handleCopy("command", `${app.shadcn} add @intentui/${blockDemo}`)}
       />
       <CopyButton
         label="Copy"

@@ -2,8 +2,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import { findNeighbour, type Root as PageTreeRoot } from "fumadocs-core/page-tree"
 import { twMerge } from "tailwind-merge"
-import { buttonStyles } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
+import { LinkButton } from "@/components/link-button"
 
 interface MobilePagerProps {
   tree: PageTreeRoot
@@ -17,29 +16,17 @@ export const MobilePager = ({ tree, url, className }: MobilePagerProps) => {
   return (
     <div className={twMerge("not-prose flex items-center gap-x-1.5", className)}>
       {neighbours.previous && (
-        <Link
-          className={buttonStyles({
-            size: "sq-sm",
-            intent: "outline",
-          })}
-          href={neighbours.previous.url}
-        >
+        <LinkButton size="sq-sm" intent="outline" href={neighbours.previous.url}>
           <span className="sr-only">{neighbours.previous.name}</span>
           <ChevronLeftIcon />
-        </Link>
+        </LinkButton>
       )}
 
       {neighbours.next && (
-        <Link
-          className={buttonStyles({
-            size: "sq-sm",
-            intent: "outline",
-          })}
-          href={neighbours.next.url}
-        >
+        <LinkButton size="sq-sm" intent="outline" href={neighbours.next.url}>
           <span className="sr-only">{neighbours.next.name}</span>
           <ChevronRightIcon />
-        </Link>
+        </LinkButton>
       )}
     </div>
   )

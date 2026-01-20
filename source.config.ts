@@ -1,6 +1,7 @@
 import { remarkHeading, remarkImage } from "fumadocs-core/mdx-plugins"
 import { defineCollections, defineConfig, defineDocs, frontmatterSchema } from "fumadocs-mdx/config"
 import { z } from "zod"
+import { app } from "@/config/app";
 
 export const { docs, meta } = defineDocs({
   dir: "src/content/docs",
@@ -30,10 +31,7 @@ export default defineConfig({
   mdxOptions: {
     rehypeCodeOptions: {
       inline: "tailing-curly-colon",
-      themes: {
-        light: "github-light",
-        dark: "github-dark",
-      },
+      themes: app.editorThemes,
       langs: ["ts", "tsx", "json", "css", "bash"],
       defaultLanguage: "tsx",
     },

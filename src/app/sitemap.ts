@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 import { source } from "@/lib/source"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -7,23 +7,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
   return [
     {
-      url: siteConfig.url,
+      url: app.url,
       lastModified,
     },
     {
-      url: `${siteConfig.url}/components`,
+      url: `${app.url}/components`,
       lastModified,
     },
     {
-      url: `${siteConfig.url}/icons`,
+      url: `${app.url}/icons`,
       lastModified,
     },
     {
-      url: `${siteConfig.url}/colors`,
+      url: `${app.url}/colors`,
       lastModified,
     },
     {
-      url: `${siteConfig.url}/blocks`,
+      url: `${app.url}/blocks`,
       lastModified,
     },
     //   @ts-expect-error
@@ -49,7 +49,7 @@ function extractUrls(data: DocNode[]): { url: string }[] {
   const traverse = (node: DocNode): void => {
     if (node.type === "page" && node.url) {
       urls.push({
-        url: `${siteConfig.url}${node.url}`,
+        url: `${app.url}${node.url}`,
       })
     }
     if (node.children?.length) {

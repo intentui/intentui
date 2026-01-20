@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ListComponents } from "@/app/(app)/components/(partials)/list-components"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 
 export default function Page() {
   return <ListComponents />
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Explore 80+ accessible UI components built on React Aria, fully customizable and production ready, with consistent patterns for fast, polished interfaces.",
   metadataBase: new URL("https://intentui.com"),
-  applicationName: siteConfig.name,
+  applicationName: app.name,
   keywords: [
     "Components",
     "Intent Components",

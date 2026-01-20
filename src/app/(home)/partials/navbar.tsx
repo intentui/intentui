@@ -25,7 +25,7 @@ import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 import { useMediaQuery } from "@/hooks/use-media-query"
 
 export function Navbar() {
@@ -56,14 +56,14 @@ export function Navbar() {
           </Button>
           <Link
             className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
-            href={siteConfig.links.twitter}
+            href={app.links.twitter}
             target="_blank"
           >
             <BrandXIcon />
           </Link>
           <Link
             className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
-            href={siteConfig.discord}
+            href={app.discord}
             target="_blank"
           >
             <BrandDiscordIcon />

@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 import { BlocksHeader } from "@/app/(app)/blocks/blocks-header"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { PageContainer } from "@/components/page-container"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 
 export const metadata: Metadata = {
   title: {
     default: "Blocks",
-    template: `%s / ${siteConfig.name}`,
+    template: `%s / ${app.name}`,
   },
   description:
     "Blocks provides a comprehensive library of example guides that show how to use each component end to end, from setup to real world implementation.",

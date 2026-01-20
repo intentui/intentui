@@ -11,6 +11,7 @@ import { Heading } from "@/components/ui/heading"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Tooltip, TooltipContent } from "@/components/ui/tooltip"
 import { useClipboard } from "@/hooks/use-clipboard"
+import { cx } from "@/lib/primitive"
 
 type RegistryFile = {
   path: string
@@ -89,7 +90,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   return (
     <section className="space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div className="not-prose flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <header className="space-y-1">
             <Heading className="font-medium capitalize sm:text-base" level={2}>
               {item.title.replaceAll("-", " ")}
@@ -115,6 +116,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
               id="fullscreen"
               href={`/pre-blocks/${b}/${encodeURIComponent(c)}`}
               target="_blank"
+              className="no-underline"
             >
               Fullscreen
             </SourceTab>
@@ -136,10 +138,13 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   )
 }
 
-function SourceTab(props: React.ComponentProps<typeof Tab>) {
+function SourceTab({ className, ...props }: React.ComponentProps<typeof Tab>) {
   return (
     <Tab
-      className="group inline-flex cursor-default items-center gap-x-2 rounded-sm selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary"
+      className={cx(
+        "group inline-flex cursor-default items-center gap-x-2 rounded-sm selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary",
+        className,
+      )}
       {...props}
     />
   )

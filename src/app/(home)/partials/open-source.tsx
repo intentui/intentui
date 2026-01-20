@@ -5,7 +5,7 @@ import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
 import { Link } from "@/components/ui/link"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 export function OpenSource() {
   return (
     <div className="border-transparent border-y bg-secondary/20 sm:mb-0 sm:border-border">
@@ -22,7 +22,7 @@ export function OpenSource() {
           <div className="flex items-center justify-center gap-x-2">
             <Link
               target="_blank"
-              href={siteConfig.repo}
+              href={app.repo}
               className={buttonStyles({
                 size: "lg",
                 intent: "outline",
@@ -35,7 +35,7 @@ export function OpenSource() {
 
             <Link
               target="_blank"
-              href={siteConfig.repo}
+              href={app.repo}
               className={buttonStyles({
                 size: "lg",
                 intent: "outline",
