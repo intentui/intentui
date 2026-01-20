@@ -92,7 +92,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <header className="space-y-1">
-            <Heading className="font-medium capitalize" level={2}>
+            <Heading className="font-medium capitalize sm:text-base" level={2}>
               {item.title.replaceAll("-", " ")}
             </Heading>
 
@@ -106,9 +106,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
                 {copied ? <CheckIcon className="size-4" /> : <ShadcnuiLogo className="size-4" />}
                 @intentui/block/{item.title}
               </Button>
-              <TooltipContent className="rounded-full" inverse>
-                Click to copy
-              </TooltipContent>
+              <TooltipContent className="rounded-full">Click to copy</TooltipContent>
             </Tooltip>
           </header>
           <TabList className="flex w-full gap-x-2 md:w-auto">
@@ -169,7 +167,7 @@ function LazyRegistryItem({ name }: { name: string }) {
     return () => ac.abort()
   }, [isInView, name, item, error])
   return (
-    <div ref={ref} className="min-h-[360px]">
+    <div ref={ref} className="min-h-90">
       {error ? (
         <div className="rounded-lg border p-4 text-red-600 text-sm">{error}</div>
       ) : item ? (

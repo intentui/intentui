@@ -8,6 +8,7 @@ ignore
 /.source
 /note.md
 /CLAUDE.md
+/.claude
 delete-me.txt
 # dependencies
 /node_modules

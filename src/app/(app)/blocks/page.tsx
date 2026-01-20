@@ -24,6 +24,7 @@ export default function Page() {
             "navbar-01",
             "navbar-02",
             "navbar-03",
+            "auth-01",
           ]}
         />
       </PageContainer>

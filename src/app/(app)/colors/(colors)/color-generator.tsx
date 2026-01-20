@@ -10,6 +10,7 @@ import { twJoin } from "tailwind-merge"
 import { isOklch, SelectFormat, toOklchString } from "@/app/(app)/colors/(colors)/color-item"
 import { ColorField } from "@/components/ui/color-field"
 import { Heading } from "@/components/ui/heading"
+import { Input } from "@/components/ui/input"
 import { useClipboard } from "@/hooks/use-clipboard"
 import { getColorName, getTextColor } from "@/lib/colors"
 
@@ -103,7 +104,9 @@ export function ColorGenerator() {
               aria-label="Choose color"
               onChange={(newColor: RacColor | null) => newColor && setValue(newColor)}
               value={value}
-            />
+            >
+              <Input />
+            </ColorField>
           </div>
 
           <div
