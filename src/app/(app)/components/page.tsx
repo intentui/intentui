@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "UI Kit",
     "UI Library",
     "UI Framework",
-    "Intent",
+    "Intent UI",
     "Next.js 15",
     "React Aria",
     "React Aria Components",

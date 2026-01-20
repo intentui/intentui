@@ -87,7 +87,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       "UI Kit",
       "UI Library",
       "UI Framework",
-      "Intent",
+      "Intent UI",
       "React Aria",
       "React Aria Components",
       "Server Components",
