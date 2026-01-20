@@ -27,7 +27,7 @@ export function Navigation() {
   const [open, setOpen] = useState(false)
   const isDesktop = useMediaQuery("(min-width: 1024px)")
   const scrollPosition = useScrollPosition()
-  const isScrolled = scrollPosition > 100
+  const isScrolled = scrollPosition > 280
   return (
     <>
       <CommandPalette setOpen={setOpen} openCmd={open} />
