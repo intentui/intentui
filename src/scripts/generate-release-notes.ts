@@ -4,22 +4,10 @@ import { basename, join, resolve } from "node:path"
 
 const UI_COMPONENTS_PATH = "src/components/ui"
 const DOCS_COMPONENTS_PATH = "src/components/docs"
+const PRE_BLOCKS_PATH = "src/app/pre-blocks"
 const MDX_DOCS_PATH = "src/content/docs/components"
 const OUTPUT_PATH = resolve(process.cwd(), "src/json/release-notes.json")
 const SEARCH_SCRIPT_PATH = resolve(process.cwd(), "src/scripts/generate-search.ts")
-
-interface ComponentChange {
-  name: string
-  component: string
-  url: string
-  type: "component" | "demo"
-  category: string
-  kind: string | null
-  description: string | null
-  additions: number
-  deletions: number
-  date: string
-}
 
 function toName(filename: string): string {
   const withoutExt = filename.replace(".tsx", "")
@@ -107,15 +95,15 @@ function getDiffStats(file: string): { additions: number; deletions: number } {
   return { additions, deletions }
 }
 
-function getChangedComponents(): ComponentChange[] {
-  const changes: ComponentChange[] = []
+function getChangedComponents(): ReleaseNote[] {
+  const changes: ReleaseNote[] = []
   const date = new Date().toISOString().split("T")[0]
 
   try {
-    const status = execSync(`git status --porcelain ${UI_COMPONENTS_PATH} ${DOCS_COMPONENTS_PATH}`, { encoding: "utf-8" })
+    const status = execSync(`git status --porcelain ${UI_COMPONENTS_PATH} ${DOCS_COMPONENTS_PATH} ${PRE_BLOCKS_PATH}`, { encoding: "utf-8" })
 
     if (!status.trim()) {
-      console.log("No changes detected in src/components/ui/ or src/components/docs/")
+      console.log("No changes detected in src/components/ui/, src/components/docs/, or src/app/pre-blocks/")
       return []
     }
 
@@ -124,21 +112,25 @@ function getChangedComponents(): ComponentChange[] {
       .split("\n")
       .map((line) => {
         const parts = line.trim().split(/\s+/)
-        return parts[parts.length - 1]
+        const statusFlag = parts[0]
+        const filePath = parts[parts.length - 1]
+        return { statusFlag, filePath }
       })
-      .filter((file) => file.endsWith(".tsx"))
+      .filter(({ filePath }) => filePath.endsWith(".tsx"))
 
-    for (const file of files) {
+    for (const { statusFlag, filePath: file } of files) {
       let component: string
       let url: string
-      let type: "component" | "demo"
+      let type: "component" | "demo" | "block"
       let category: string
+      let displayName: string
 
       if (file.startsWith(UI_COMPONENTS_PATH)) {
         component = file.replace(`${UI_COMPONENTS_PATH}/`, "")
         url = `/${component.replace(".tsx", "")}`
         type = "component"
         category = findCategoryForComponent(component.replace(".tsx", ""))
+        displayName = toName(component)
       } else if (file.startsWith(DOCS_COMPONENTS_PATH)) {
         const parts = file.replace(`${DOCS_COMPONENTS_PATH}/`, "").split("/")
         component = parts[parts.length - 1]
@@ -146,19 +138,35 @@ function getChangedComponents(): ComponentChange[] {
         url = result.url
         category = result.category
         type = "demo"
+        displayName = toName(component)
+      } else if (file.startsWith(PRE_BLOCKS_PATH)) {
+        // Handle pre-blocks: src/app/pre-blocks/{category}/{block-name}/page.tsx
+        const relativePath = file.replace(`${PRE_BLOCKS_PATH}/`, "")
+        const parts = relativePath.split("/")
+        category = parts[0] // e.g., "auth", "navbar"
+        const blockName = parts[1] // e.g., "auth-02"
+        component = `${blockName}/page.tsx`
+        url = `/pre-blocks/${category}/${blockName}`
+        type = "block"
+        displayName = toName(blockName)
       } else {
         continue
       }
 
       const { additions, deletions } = getDiffStats(file)
 
+      // Determine kind based on git status flag
+      // A = added (new), M = modified (improvement), AM = added + modified (new)
+      const isNew = statusFlag.includes("A") || statusFlag.startsWith("?")
+      const kind = isNew ? "new" : "improvement"
+
       changes.push({
-        name: toName(component),
+        name: displayName,
         component,
         url,
         type,
         category,
-        kind: "improvement",
+        kind,
         description: null,
         additions,
         deletions,
@@ -203,7 +211,7 @@ function main() {
     return
   }
 
-  let existingNotes: ComponentChange[] = []
+  let existingNotes: ReleaseNote[] = []
   try {
     const existingContent = readFileSync(OUTPUT_PATH, "utf-8")
     existingNotes = JSON.parse(existingContent)
@@ -221,8 +229,12 @@ function main() {
   }
   console.log(`Total entries: ${merged.length}`)
 
-  const componentNames = [...new Set(changes.map((c) => c.url.replace("/", "")))]
-  updateSearchScript(componentNames)
+  // Only update search script for components, not demos or blocks
+  const componentChanges = changes.filter((c) => c.type === "component")
+  if (componentChanges.length > 0) {
+    const componentNames = [...new Set(componentChanges.map((c) => c.url.replace("/", "")))]
+    updateSearchScript(componentNames)
+  }
 }
 
 main()

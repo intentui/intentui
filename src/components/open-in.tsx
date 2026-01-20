@@ -40,7 +40,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
   return (
     <div className="not-prose fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
       <Button
-        className="h-10 sm:h-auto"
+        className="h-10 rounded-sm sm:h-auto"
         intent="outline"
         size="sm"
         onPress={() => void getMarkdown()}
@@ -51,7 +51,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
       </Button>
       <div className="flex items-center gap-x-1.5">
         <Menu>
-          <Button className="h-10 sm:h-auto" intent="outline" size="sm">
+          <Button className="h-10 rounded-sm sm:h-auto" intent="outline" size="sm">
             Open in
             <ChevronDownIcon className="rotate-180 sm:rotate-0" />
           </Button>

@@ -1,5 +1,65 @@
 [
   {
+    "name": "Auth 02",
+    "component": "auth-02/page.tsx",
+    "url": "/pre-blocks/auth/auth-02",
+    "type": "block",
+    "category": "auth",
+    "kind": "new",
+    "description": null,
+    "additions": 14,
+    "deletions": 32,
+    "date": "2026-01-20"
+  },
+  {
+    "name": "Auth 03",
+    "component": "auth-03/page.tsx",
+    "url": "/pre-blocks/auth/auth-03",
+    "type": "block",
+    "category": "auth",
+    "kind": "new",
+    "description": null,
+    "additions": 35,
+    "deletions": 15,
+    "date": "2026-01-20"
+  },
+  {
+    "name": "Chart 01",
+    "component": "chart-01/page.tsx",
+    "url": "/pre-blocks/chart/chart-01",
+    "type": "block",
+    "category": "chart",
+    "kind": "new",
+    "description": null,
+    "additions": 15,
+    "deletions": 17,
+    "date": "2026-01-20"
+  },
+  {
+    "name": "Chart 02",
+    "component": "chart-02/page.tsx",
+    "url": "/pre-blocks/chart/chart-02",
+    "type": "block",
+    "category": "chart",
+    "kind": "new",
+    "description": null,
+    "additions": 15,
+    "deletions": 17,
+    "date": "2026-01-20"
+  },
+  {
+    "name": "Chart 03",
+    "component": "chart-03/page.tsx",
+    "url": "/pre-blocks/chart/chart-03",
+    "type": "block",
+    "category": "chart",
+    "kind": "new",
+    "description": null,
+    "additions": 15,
+    "deletions": 17,
+    "date": "2026-01-20"
+  },
+  {
     "name": "Text link demo",
     "component": "text-link-demo.tsx",
     "url": "/text",

@@ -4,7 +4,7 @@ import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { LogoType } from "@/components/logo-type"
 import { PageContainer } from "@/components/page-container"
 import { Link } from "@/components/ui/link"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 
 const navigation = {
   resources: [
@@ -99,12 +99,12 @@ export function Footer() {
             <div className="space-y-2 text-muted-fg text-xs **:[a]:text-fg">
               <p>
                 <strong className="text-fg">
-                  {currentYear} &middot; {siteConfig.name} &trade;
+                  {currentYear} &middot; {app.name} &trade;
                 </strong>{" "}
                 <br />
                 <br />
                 This project’s crafted by <Link href="https://x.com/irsyad">Irsyad</Link>. Peep the
-                Source Code on <Link href={siteConfig.repo}>GitHub</Link>.
+                Source Code on <Link href={app.repo}>GitHub</Link>.
               </p>
               <p>
                 Hosted on{" "}

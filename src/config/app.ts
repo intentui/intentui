@@ -1,4 +1,4 @@
-export const siteConfig = {
+export const app = {
   name: "Intent UI",
   url: "https://intentui.com",
   description:
@@ -21,9 +21,13 @@ export const siteConfig = {
     return `${this.cli.command}@${this.cli.version}`
   },
   shadcn: "npx shadcn@latest",
+  editorThemes: {
+    light: "github-light",
+    dark: "github-dark",
+  },
 }
 
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof app
 
 export const META_THEME_COLORS = {
   light: "#ffffff",

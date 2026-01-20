@@ -1,14 +1,13 @@
 "use client"
 
 import { BellIcon, ChartBarIcon } from "@heroicons/react/24/outline"
-import { ListBox, ListBoxItem } from "react-aria-components"
 import { twJoin } from "tailwind-merge"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { BrandReactAriaIcon } from "@/components/icons/brand-react-aria-icon"
 import { MotionBrandIcon } from "@/components/icons/motion-brand-icon"
+import { LinkButton } from "@/components/link-button"
 import { Logo } from "@/components/logo"
-import { buttonStyles } from "@/components/ui/button"
 
 function getComponentName(url: string): string {
   const lastSegment = url.split("/").pop()
@@ -65,41 +64,28 @@ export function DocRefs({ references }: { references: string[] }) {
   })
 
   return (
-    <ListBox
-      orientation="horizontal"
-      className="not-prose flex items-center gap-x-1.5"
-      aria-label="Link References"
-      items={urls}
-    >
-      {(item: { url: string; title: string; icon: React.FC<React.SVGProps<SVGSVGElement>> }) => (
-        <ListBoxItem
-          textValue={item.title}
-          target="_blank"
-          className={buttonStyles({
-            intent: "outline",
-            size: "sm",
-            className: "max-w-32 sm:w-auto",
-          })}
-          id={item.url}
-          href={item.url}
-        >
-          {item.icon && (
-            <item.icon
-              className={twJoin(item.url.includes("react-aria") ? "size-3!" : "")}
-              data-slot="icon"
-            />
-          )}
+    <div className="not-prose flex items-center gap-x-1.5">
+      {urls.map(
+        (item: { url: string; title: string; icon: React.FC<React.SVGProps<SVGSVGElement>> }) => (
+          <LinkButton key={item.url} target="_blank" size="sm" intent="outline" href={item.url}>
+            {item.icon && (
+              <item.icon
+                className={twJoin(item.url.includes("react-aria") ? "size-3!" : "")}
+                data-slot="icon"
+              />
+            )}
 
-          {item.title === "Props Reference" ? (
-            <span>
-              Props <span className="hidden sm:inline">Reference</span>
-            </span>
-          ) : (
-            <span className="block truncate">{item.title}</span>
-          )}
-        </ListBoxItem>
+            {item.title === "Props Reference" ? (
+              <span>
+                Props <span className="hidden sm:inline">Reference</span>
+              </span>
+            ) : (
+              <span className="block truncate">{item.title}</span>
+            )}
+          </LinkButton>
+        ),
       )}
-    </ListBox>
+    </div>
   )
 }
 

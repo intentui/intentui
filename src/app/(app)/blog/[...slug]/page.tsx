@@ -5,7 +5,7 @@ import { blog } from "#site/content"
 import type { DocPageProps } from "@/app/(app)/docs/[...slug]/page"
 import { mdxComponents } from "@/components/mdx-components"
 import { Toc } from "@/components/toc"
-import { siteConfig } from "@/config/site"
+import { app } from "@/config/app"
 
 export default async function Page(props: DocPageProps) {
   const { slug } = await props.params
@@ -72,7 +72,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
   return {
     title: article.title,
     description: article.description,
-    applicationName: siteConfig.name,
+    applicationName: app.name,
     category: "Blog",
     keywords: [
       article.title,

@@ -1,17 +1,17 @@
 "use client"
 
-import { CheckIcon, CodeBracketIcon, WindowIcon } from "@heroicons/react/24/outline"
+import { CheckIcon } from "@heroicons/react/24/outline"
 import { useInView } from "motion/react"
 import { useEffect, useMemo, useRef, useState } from "react"
 import { Button, type Key, Tab, TabList, TabPanel, Tabs } from "react-aria-components"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
-import { FullscreenIcon } from "@/components/icons/fullscreen-icon"
 import { ShadcnuiLogo } from "@/components/icons/shadcn-logo"
 import { Heading } from "@/components/ui/heading"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Tooltip, TooltipContent } from "@/components/ui/tooltip"
 import { useClipboard } from "@/hooks/use-clipboard"
+import { cx } from "@/lib/primitive"
 
 type RegistryFile = {
   path: string
@@ -63,11 +63,11 @@ function SourceTabs({ files }: { files: RegistryFile[] }) {
       <TabList className="scrollbar-hidden flex flex-nowrap gap-x-2 overflow-x-auto font-medium text-xs/5">
         {items.map((it) => (
           <Tab
-            className="group flex cursor-pointer items-center gap-x-1 whitespace-nowrap rounded-lg selected:bg-secondary px-2 py-1 selected:text-fg text-muted-fg"
+            className="group flex cursor-pointer items-center gap-x-1 whitespace-nowrap rounded-sm selected:bg-secondary px-2 py-1 selected:text-fg text-muted-fg"
             id={it.id}
             key={it.id}
           >
-            <BrandReactjsIcon className="text-muted-fg group-selected:text-cyan-500" />
+            <BrandReactjsIcon className="size-3.5 shrink-0 text-muted-fg group-selected:text-cyan-500" />
             <span className="font-mono">{it.id}</span>
           </Tab>
         ))}
@@ -90,7 +90,7 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
   return (
     <section className="space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div className="not-prose flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <header className="space-y-1">
             <Heading className="font-medium capitalize sm:text-base" level={2}>
               {item.title.replaceAll("-", " ")}
@@ -109,30 +109,17 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
               <TooltipContent className="rounded-full">Click to copy</TooltipContent>
             </Tooltip>
           </header>
-          <TabList className="flex w-full gap-x-2 md:w-auto">
-            <Tab
-              className="group inline-flex cursor-default items-center gap-x-2 rounded-lg selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary"
-              id="preview"
-            >
-              <WindowIcon className="text-muted-fg group-selected:text-fg" />
-              Preview
-            </Tab>
-            <Tab
-              className="group inline-flex cursor-default items-center gap-x-2 rounded-lg selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary"
-              id="source"
-            >
-              <CodeBracketIcon className="text-muted-fg group-selected:text-fg" />
-              Source
-            </Tab>
-            <Tab
-              className="group ml-auto inline-flex cursor-default items-center gap-x-2 rounded-lg selected:bg-secondary px-2 py-1 font-medium text-fg text-sm/6 no-underline hover:bg-secondary md:ml-0"
+          <TabList className="flex w-full gap-x-1 md:w-auto">
+            <SourceTab id="preview">Preview</SourceTab>
+            <SourceTab id="source">Source</SourceTab>
+            <SourceTab
               id="fullscreen"
               href={`/pre-blocks/${b}/${encodeURIComponent(c)}`}
               target="_blank"
+              className="no-underline"
             >
-              <FullscreenIcon className="text-muted-fg group-selected:text-fg" />
               Fullscreen
-            </Tab>
+            </SourceTab>
           </TabList>
         </div>
         <TabPanel id="preview" className="rounded-lg border">
@@ -148,6 +135,18 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
         </TabPanel>
       </Tabs>
     </section>
+  )
+}
+
+function SourceTab({ className, ...props }: React.ComponentProps<typeof Tab>) {
+  return (
+    <Tab
+      className={cx(
+        "group inline-flex cursor-default items-center gap-x-2 rounded-sm selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary",
+        className,
+      )}
+      {...props}
+    />
   )
 }
 
