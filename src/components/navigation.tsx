@@ -1,6 +1,8 @@
 "use client"
+
 import { ChevronDownIcon } from "@heroicons/react/16/solid"
 import { ArrowTopRightOnSquareIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
+import { motion, useMotionValueEvent, useScroll } from "motion/react"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { BrandLogoLink } from "@/components/brand-logo-link"
@@ -20,6 +22,24 @@ import { NavLink } from "./nav-item"
 import { ThemeSwitcher } from "./theme-switcher"
 
 export function Navigation() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0
+    const direction = latest > previous ? "down" : "up"
+
+    setIsScrolled(latest > 50)
+
+    if (latest < 50) {
+      setIsVisible(true)
+    } else if (direction === "down" && latest > 100) {
+      setIsVisible(false)
+    } else if (direction === "up") {
+      setIsVisible(true)
+    }
+  })
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const isDesktop = useMediaQuery("(min-width: 1024px)")
@@ -27,7 +47,34 @@ export function Navigation() {
     <>
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
-        <nav className="bg-bg py-3">
+        <motion.nav
+          className="border-b bg-bg"
+          style={{ borderColor: "var(--color-border)" }}
+          initial={{
+            y: 0,
+            opacity: 1,
+            paddingTop: 12,
+            paddingBottom: 12,
+            borderBottomWidth: 0,
+            filter: "blur(0px)",
+          }}
+          animate={{
+            y: isVisible ? 0 : -96,
+            opacity: isVisible ? 1 : 0,
+            paddingTop: isScrolled ? 4 : 12,
+            paddingBottom: isScrolled ? 4 : 12,
+            borderBottomWidth: isScrolled ? 1 : 0,
+            filter: isVisible ? "blur(0px)" : "blur(6px)",
+          }}
+          transition={{
+            y: { type: "spring", stiffness: 520, damping: 46, mass: 0.9 },
+            opacity: { duration: 0.18, ease: "easeOut" },
+            paddingTop: { type: "spring", stiffness: 700, damping: 52, mass: 0.7 },
+            paddingBottom: { type: "spring", stiffness: 700, damping: 52, mass: 0.7 },
+            borderBottomWidth: { duration: 0.14, ease: "easeOut" },
+            filter: { duration: 0.18, ease: "easeOut" },
+          }}
+        >
           <PageContainer>
             <div className="relative flex items-center justify-between">
               <div className="flex items-center gap-x-1.5">
@@ -129,7 +176,7 @@ export function Navigation() {
               </div>
             </div>
           </PageContainer>
-        </nav>
+        </motion.nav>
       </div>
       {!isDesktop && <ResponsiveNavigation />}
     </>
