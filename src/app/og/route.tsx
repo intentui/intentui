@@ -93,9 +93,9 @@ export async function GET(request: Request) {
           <span tw="ml-2 text-zinc-400">UI</span>
         </div>
       </div>
-      <div tw="flex flex-col justify-start items-start inset-34 mt-24">
+      <div tw="flex flex-col justify-start items-start inset-34 mt-20">
         <div
-          tw="tracking-tight leading-[1.5] mt-12 mb-6"
+          tw="tracking-tight leading-[1.5] mt-9 mb-6"
           style={{
             textWrap: "balance",
             fontWeight: 400,
@@ -106,10 +106,10 @@ export async function GET(request: Request) {
           {title}
         </div>
         <div
-          tw="max-w-3xl leading-relaxed text-white/80"
+          tw="max-w-3xl text-white/80"
           style={{
             lineHeight: 1.7,
-            fontSize: 28,
+            fontSize: 33,
             textWrap: "balance",
             fontWeight: 400,
             letterSpacing: "-0.02em",
