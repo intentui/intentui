@@ -16,8 +16,8 @@ const meta = {
   ],
 }
 export const metadata = {
-  title: "",
-  description: "",
+  title: meta.title,
+  description: meta.description,
   openGraph: {
     ...meta,
     type: "article",
