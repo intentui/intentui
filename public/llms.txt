@@ -94,6 +94,7 @@
 - [Disclosure](https://intentui.com/docs/components/navigation/disclosure.md)
 - [Link](https://intentui.com/docs/components/navigation/link.md)
 - [Pagination](https://intentui.com/docs/components/navigation/pagination.md)
+- [Snippet](https://intentui.com/docs/components/navigation/snippet.md)
 - [Tabs](https://intentui.com/docs/components/navigation/tabs.md)
 
 ### Overlays
