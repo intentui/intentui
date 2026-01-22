@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import {
   Snippet,
   SnippetTab,
@@ -21,13 +21,14 @@ type InstallCommandProps = {
 
 type PackageManager = "npm" | "pnpm" | "yarn" | "bun"
 
-// Global event system for syncing package manager choice
 const PM_STORAGE_KEY = "preferred-package-manager"
 const PM_EVENT = "package-manager-change"
 
 function getStoredPackageManager(): PackageManager {
   if (typeof window === "undefined") return "npm"
-  return (localStorage.getItem(PM_STORAGE_KEY) as PackageManager) || "npm"
+  const v = localStorage.getItem(PM_STORAGE_KEY)
+  if (v === "npm" || v === "pnpm" || v === "yarn" || v === "bun") return v
+  return "npm"
 }
 
 function setStoredPackageManager(pm: PackageManager) {
@@ -40,19 +41,28 @@ function parseCommand(
   input: string,
   mode: InstallCommandProps["mode"],
 ): { mode: "install" | "exec"; args: string } {
-  const cmd = input.trim()
+  const cmd = input.trim().replace(/\s+/g, " ")
 
-  if (mode === "install")
-    return { mode: "install", args: cmd.replace(/^(npm install|pnpm add|yarn add|bun add)\s+/, "") }
-  if (mode === "exec")
-    return { mode: "exec", args: cmd.replace(/^(npx|pnpm dlx|yarn dlx|bunx)\s+/, "") }
-
-  if (/^(npm install|pnpm add|yarn add|bun add)\s+/.test(cmd)) {
-    return { mode: "install", args: cmd.replace(/^(npm install|pnpm add|yarn add|bun add)\s+/, "") }
+  if (mode === "install") {
+    return {
+      mode: "install",
+      args: cmd.replace(/^(npm\s+(?:i|install)|pnpm\s+add|yarn\s+add|bun\s+add)\s+/, ""),
+    }
   }
 
-  if (/^(npx|pnpm dlx|yarn dlx|bunx)\s+/.test(cmd)) {
-    return { mode: "exec", args: cmd.replace(/^(npx|pnpm dlx|yarn dlx|bunx)\s+/, "") }
+  if (mode === "exec") {
+    return { mode: "exec", args: cmd.replace(/^(npx|pnpm\s+dlx|yarn\s+dlx|bunx)\s+/, "") }
+  }
+
+  if (/^(npm\s+(?:i|install)|pnpm\s+add|yarn\s+add|bun\s+add)\s+/.test(cmd)) {
+    return {
+      mode: "install",
+      args: cmd.replace(/^(npm\s+(?:i|install)|pnpm\s+add|yarn\s+add|bun\s+add)\s+/, ""),
+    }
+  }
+
+  if (/^(npx|pnpm\s+dlx|yarn\s+dlx|bunx)\s+/.test(cmd)) {
+    return { mode: "exec", args: cmd.replace(/^(npx|pnpm\s+dlx|yarn\s+dlx|bunx)\s+/, "") }
   }
 
   if (
@@ -88,11 +98,10 @@ function buildItems(parsed: { mode: "install" | "exec"; args: string }): Command
 }
 
 export default function InstallCommand({ command, mode = "auto" }: InstallCommandProps) {
-  const parsed = parseCommand(command, mode)
-  const items = buildItems(parsed)
+  const parsed = useMemo(() => parseCommand(command, mode), [command, mode])
+  const items = useMemo(() => buildItems(parsed), [parsed])
   const [selectedPM, setSelectedPM] = useState<PackageManager>(() => getStoredPackageManager())
 
-  // Listen for changes from other instances
   useEffect(() => {
     const handlePMChange = (e: Event) => {
       const customEvent = e as CustomEvent<PackageManager>
@@ -104,7 +113,7 @@ export default function InstallCommand({ command, mode = "auto" }: InstallComman
   }, [])
 
   const handleSelectionChange = (key: string | number) => {
-    const pm = key as PackageManager
+    const pm = String(key) as PackageManager
     setSelectedPM(pm)
     setStoredPackageManager(pm)
   }
