@@ -4843,7 +4843,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
       "name": "show-more-as-text-demo",
-      "title": "Show More As Text",
+      "title": "Show More as Text",
       "description": "show-more-as-text-demo",
       "registryDependencies": [
         "http://localhost:3000/r/show-more"
@@ -6361,12 +6361,10 @@
       "name": "sheet-position-demo",
       "title": "Sheet Position",
       "description": "sheet-position-demo",
-      "dependencies": [
-        "usemods"
-      ],
       "registryDependencies": [
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/sheet"
+        "http://localhost:3000/r/sheet",
+        "http://localhost:3000/r/utils"
       ],
       "files": [
         {
@@ -6684,7 +6682,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
       "name": "modal-triggered-by-menu-demo",
-      "title": "Modal Triggered By Menu",
+      "title": "Modal Triggered by Menu",
       "description": "modal-triggered-by-menu-demo",
       "dependencies": [
         "@heroicons/react",
@@ -8793,7 +8791,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
       "name": "drop-zone-and-file-trigger-demo",
-      "title": "Drop Zone And File Trigger",
+      "title": "Drop Zone and File Trigger",
       "description": "drop-zone-and-file-trigger-demo",
       "dependencies": [
         "@heroicons/react",
@@ -10178,7 +10176,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
       "name": "command-menu-trigger-by-keyboard-demo",
-      "title": "Command Menu Trigger By Keyboard",
+      "title": "Command Menu Trigger by Keyboard",
       "description": "command-menu-trigger-by-keyboard-demo",
       "dependencies": [
         "@heroicons/react"
@@ -12561,6 +12559,20 @@
         }
       ],
       "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "date",
+      "title": "date",
+      "description": "date",
+      "files": [
+        {
+          "path": "src/lib/date.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:lib"
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
