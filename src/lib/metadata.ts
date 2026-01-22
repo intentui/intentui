@@ -24,7 +24,6 @@ export function createMetadata({
   const url = `${app.url}${path}`
   const fullTitle = title === app.name ? title : `${title} / ${app.name}`
 
-  // If image is explicitly null, don't include images (static opengraph-image file exists)
   const shouldIncludeImage = image !== null
   const ogImageUrl = image === null ? undefined : image || ogImage({ title, description })
 

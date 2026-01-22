@@ -15,6 +15,7 @@ export const metadata = createMetadata({
   title: app.name,
   description: app.description,
   path: "/",
+  image: null,
   keywords: [
     "react components",
     "ui library",
