@@ -1,5 +1,17 @@
 [
   {
+    "name": "Snippet",
+    "component": "snippet.tsx",
+    "url": "/snippet",
+    "type": "component",
+    "category": "unknown",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-01-22"
+  },
+  {
     "name": "Sidebar",
     "component": "sidebar.tsx",
     "url": "/sidebar",
@@ -9,18 +21,6 @@
     "description": null,
     "additions": 51,
     "deletions": 51,
-    "date": "2026-01-22"
-  },
-  {
-    "name": "Snippet",
-    "component": "snippet.tsx",
-    "url": "/snippet",
-    "type": "component",
-    "category": "unknown",
-    "kind": "new",
-    "description": null,
-    "additions": 111,
-    "deletions": 0,
     "date": "2026-01-22"
   },
   {
