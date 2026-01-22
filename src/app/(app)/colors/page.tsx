@@ -7,6 +7,7 @@ export const metadata = createMetadata({
   description:
     "Pick and generate Tailwind-style color scales from 50 to 950. Browse palettes, choose a base color, then instantly create a full ramp with copy-ready output.",
   path: "/colors",
+  image: null,
   keywords: [
     "color palette generator",
     "tailwind colors",

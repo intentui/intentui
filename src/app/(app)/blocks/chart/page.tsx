@@ -1,35 +1,23 @@
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
-import { app } from "@/config/app"
-import { ogImage } from "@/lib/og"
+import { createMetadata } from "@/lib/metadata"
 
-const title = "Blocks of Charts"
-const meta = {
-  title: `${title} / Intent UI`,
+export const metadata = createMetadata({
+  title: "Blocks of Charts",
   description:
     "Explore ready-to-use chart blocks for Area, Bar, Line, and more. Swap data, tweak options, and copy the code to ship dashboards faster.",
-  images: [
-    {
-      url: ogImage({
-        title: title,
-        description: "Ready-to-use chart blocks you can copy and customize",
-      }),
-    },
+  path: "/blocks/chart",
+  type: "article",
+  keywords: [
+    "chart blocks",
+    "data visualization",
+    "react charts",
+    "dashboard charts",
+    "area charts",
+    "bar charts",
+    "intent ui",
+    "intentui",
   ],
-}
-export const metadata = {
-  title: meta.title,
-  description: meta.description,
-  openGraph: {
-    ...meta,
-    type: "article",
-    url: `${app.url}/blocks/chart`,
-  },
-  twitter: {
-    card: "summary_large_image",
-    ...meta,
-    creator: `@${app.author.username}`,
-  },
-}
+})
 export default function Page() {
   return <Sandbox registries={["chart-01", "chart-02", "chart-03"]} />
 }

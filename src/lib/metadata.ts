@@ -6,7 +6,7 @@ export interface CreateMetadataOptions {
   title: string
   description: string
   path?: string
-  image?: string
+  image?: string | null
   keywords?: string[]
   noindex?: boolean
   type?: "website" | "article"
@@ -22,8 +22,11 @@ export function createMetadata({
   type = "website",
 }: CreateMetadataOptions): Metadata {
   const url = `${app.url}${path}`
-  const ogImageUrl = image || ogImage({ title, description })
   const fullTitle = title === app.name ? title : `${title} / ${app.name}`
+
+  // If image is explicitly null, don't include images (static opengraph-image file exists)
+  const shouldIncludeImage = image !== null
+  const ogImageUrl = image === null ? undefined : image || ogImage({ title, description })
 
   return {
     title,
@@ -37,14 +40,14 @@ export function createMetadata({
       description,
       url,
       siteName: app.name,
-      images: [{ url: ogImageUrl }],
+      ...(shouldIncludeImage && ogImageUrl && { images: [{ url: ogImageUrl }] }),
       type,
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [ogImageUrl],
+      ...(shouldIncludeImage && ogImageUrl && { images: [ogImageUrl] }),
       creator: `@${app.author.username}`,
     },
     ...(noindex && { robots: { index: false, follow: false } }),

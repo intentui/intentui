@@ -1,35 +1,22 @@
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
-import { app } from "@/config/app"
-import { ogImage } from "@/lib/og"
+import { createMetadata } from "@/lib/metadata"
 
-const title = "Blocks of Navbar"
-const meta = {
-  title: `${title} / Intent UI`,
+export const metadata = createMetadata({
+  title: "Blocks of Navbar",
   description:
     "Explore a curated gallery of responsive, accessible navbar design blocks. Copy, customize, and ship faster with ready-to-use layouts for modern websites.",
-  images: [
-    {
-      url: ogImage({
-        title: title,
-        description: "Responsive blocks of navbar you can copy and customize",
-      }),
-    },
+  path: "/blocks/navbar",
+  type: "article",
+  keywords: [
+    "navbar blocks",
+    "navigation components",
+    "responsive navbar",
+    "accessible navigation",
+    "react navbar",
+    "intent ui",
+    "intentui",
   ],
-}
-export const metadata = {
-  title: meta.title,
-  description: meta.description,
-  openGraph: {
-    ...meta,
-    type: "article",
-    url: `${app.url}/blocks/navbar`,
-  },
-  twitter: {
-    card: "summary_large_image",
-    ...meta,
-    creator: `@${app.author.username}`,
-  },
-}
+})
 export default function Page() {
   return <Sandbox registries={["navbar-01", "navbar-02", "navbar-03"]} />
 }

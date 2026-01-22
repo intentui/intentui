@@ -1,35 +1,22 @@
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
-import { app } from "@/config/app"
-import { ogImage } from "@/lib/og"
+import { createMetadata } from "@/lib/metadata"
 
-const title = "Blocks of Auth"
-const meta = {
-  title: `${title} / Intent UI`,
+export const metadata = createMetadata({
+  title: "Blocks of Auth",
   description:
     "Browse polished, accessible authentication design blocks for login, registration, and password reset. Copy, customize, and ship faster with ready-to-use layouts.",
-  images: [
-    {
-      url: ogImage({
-        title: title,
-        description: "Accessible authentication blocks you can copy and customize",
-      }),
-    },
+  path: "/blocks/auth",
+  type: "article",
+  keywords: [
+    "authentication blocks",
+    "login forms",
+    "registration forms",
+    "password reset",
+    "auth ui",
+    "intent ui",
+    "intentui",
   ],
-}
-export const metadata = {
-  title: meta.title,
-  description: meta.description,
-  openGraph: {
-    ...meta,
-    type: "article",
-    url: `${app.url}/blocks/auth`,
-  },
-  twitter: {
-    card: "summary_large_image",
-    ...meta,
-    creator: `@${app.author.username}`,
-  },
-}
+})
 export default function Page() {
   return <Sandbox registries={["auth-01", "auth-02", "auth-03"]} />
 }

@@ -1,59 +1,27 @@
-import type { Metadata } from "next"
 import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
 import { Loader } from "@/components/ui/loader"
-import { app } from "@/config/app"
+import { createMetadata } from "@/lib/metadata"
 import { IconsList } from "./partials/icons-list"
 
-export const metadata: Metadata = {
-  title: "Intent UI Icons",
+export const metadata = createMetadata({
+  title: "Icons",
   description:
     "A library of beautifully crafted @intentui/icons to elevate your web apps with crisp visuals, consistent style, and a polished, delightful user experience.",
-  metadataBase: new URL(app.url),
-  applicationName: app.name,
+  path: "/icons",
+  image: null,
   keywords: [
     "intent ui icons",
-    "tailwind css",
-    "ui components",
-    "ui kit",
-    "ui library",
-    "ui framework",
+    "react icons",
+    "icon library",
+    "svg icons",
+    "ui icons",
+    "icon components",
     "intent ui",
-    "next.js 15",
-    "react aria",
-    "react aria components",
-    "server components",
-    "react components",
-    "next ui components",
-    "ui design system",
-    "ui for laravel inertia",
-    "laravel inertia ui",
-    "laravel inertia components",
-    "laravel inertia ui components",
-    "laravel inertia ui kit",
-    "laravel inertia ui library",
-    "laravel inertia ui framework",
-    "laravel inertia intent ui",
-    "laravel intent ui",
-    "intent components",
-    "intent ui components",
-    "intent ui kit",
-    "intent ui library",
-    "intent ui framework",
-    "intent ui laravel inertia",
-    "intent ui laravel",
-    "intent ui inertia",
     "intentui",
   ],
-
-  authors: [
-    {
-      name: app.author.name,
-      url: app.author.url,
-    },
-  ],
-}
+})
 
 interface Props {
   searchParams: Promise<{
