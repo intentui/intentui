@@ -22,7 +22,7 @@ export function OpenSource() {
           <div className="flex items-center justify-center gap-x-2">
             <Link
               target="_blank"
-              href={app.repo}
+              href={app.repo.url}
               className={buttonStyles({
                 size: "lg",
                 intent: "outline",
@@ -35,7 +35,7 @@ export function OpenSource() {
 
             <Link
               target="_blank"
-              href={app.repo}
+              href={app.repo.url}
               className={buttonStyles({
                 size: "lg",
                 intent: "outline",

@@ -1,6 +1,7 @@
 import { generateRegistryRssFeed, type UrlResolverByItem } from "@wandry/analytics-sdk"
 import type { NextRequest } from "next/server"
 import { docs } from "#site/content"
+import { app } from "@/config/app"
 
 export const revalidate = 3600
 
@@ -27,12 +28,12 @@ export async function GET(request: NextRequest) {
     rss: {
       title: "@intentui",
       description: "Subscribe to @intentui updates",
-      link: "https://intentui.com",
+      link: app.url,
       pubDateStrategy: "githubLastEdit",
     },
     github: {
-      owner: "intentui",
-      repo: "intentui",
+      owner: app.repo.url.split("/").slice(-2, -1)[0] || "intentui",
+      repo: app.repo.url.split("/").slice(-1)[0] || "intentui",
       token: process.env.GITHUB_TOKEN,
     },
   })

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Intent Icons",
   description:
     "A library of beautifully crafted @intentui/icons to elevate your web apps with crisp visuals, consistent style, and a polished, delightful user experience.",
-  metadataBase: new URL("https://intentui.com"),
+  metadataBase: new URL(app.url),
   applicationName: app.name,
   keywords: [
     "Intent Icons",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "irsyadadl",
-      url: "https://x.com/irsyad",
+      name: app.author.name,
+      url: app.author.url,
     },
   ],
 }

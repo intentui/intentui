@@ -1,6 +1,6 @@
 ---
 title: "Modal"
-description: A Centered overlay that requires user interaction before returning to the main interface. It focuses attention on critical information or actions, ideal for confirmations.
+description: Centered overlay that blocks the interface until dismissed, focusing attention on key info or actions, ideal for confirmations, alerts, and quick approvals
 order: 1
 published: true
 references: ["https://react-aria.adobe.com/Modal#api"]
@@ -12,17 +12,16 @@ A modal is a pop-up window that demands your attention. You have to deal with it
 <How toUse="overlays/modal/modal-demo" />
 
 ## Installation
-```bash
-npx shadcn@latest add @intentui/modal
-```
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/modal"/>
 
 ## Composed components
 <Composed components={['button', 'dialog']}/>
 
 ## Manual installation
-```bash
-npm i react-aria-components
-```
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components"/>
 
 <SourceCode toShow='modal'/>
 

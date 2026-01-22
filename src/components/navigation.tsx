@@ -100,7 +100,7 @@ export function Navigation() {
                     size: "sq-sm",
                   })}
                   target="_blank"
-                  href={app.discord}
+                  href={app.links.discord}
                 >
                   <BrandDiscordIcon />
                 </Link>
@@ -126,7 +126,7 @@ export function Navigation() {
                   </Button>
                   <MenuContent>
                     <MenuItem
-                      href="https://intentui.com/docs/getting-started/introduction"
+                      href={`${app.url}/docs/getting-started/introduction`}
                       className="group"
                     >
                       3.x{" "}

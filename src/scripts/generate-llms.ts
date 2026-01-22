@@ -1,4 +1,5 @@
 import { promises as fs } from "node:fs"
+import { app } from "@/config/app"
 
 type Item = { slug: string; title: string }
 type SubSection = { subsection: string; children: Item[] }
@@ -16,7 +17,7 @@ async function build() {
 
     if (isPrologue) {
       for (const item of group.children as Item[])
-        lines.push(`- [${item.title}](https://intentui.com${item.slug}.md)`)
+        lines.push(`- [${item.title}](${app.url}${item.slug}.md)`)
       continue
     }
 
@@ -29,11 +30,11 @@ async function build() {
       for (const sub of group.children as SubSection[]) {
         lines.push(`\n### ${sub.subsection}`)
         for (const item of sub.children)
-          lines.push(`- [${item.title}](https://intentui.com${item.slug}.md)`)
+          lines.push(`- [${item.title}](${app.url}${item.slug}.md)`)
       }
     } else {
       for (const item of group.children as Item[])
-        lines.push(`- [${item.title}](https://intentui.com${item.slug}.md)`)
+        lines.push(`- [${item.title}](${app.url}${item.slug}.md)`)
     }
   }
 

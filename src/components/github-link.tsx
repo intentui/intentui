@@ -7,7 +7,7 @@ export function GithubLink() {
   return (
     <Link
       target="_blank"
-      href={app.repo}
+      href={app.repo.url}
       className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
     >
       <BrandGithubIcon />

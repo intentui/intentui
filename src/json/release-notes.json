@@ -1,5 +1,29 @@
 [
   {
+    "name": "Sidebar",
+    "component": "sidebar.tsx",
+    "url": "/sidebar",
+    "type": "component",
+    "category": "layouts",
+    "kind": "improvement",
+    "description": null,
+    "additions": 51,
+    "deletions": 51,
+    "date": "2026-01-22"
+  },
+  {
+    "name": "Snippet",
+    "component": "snippet.tsx",
+    "url": "/snippet",
+    "type": "component",
+    "category": "unknown",
+    "kind": "new",
+    "description": null,
+    "additions": 111,
+    "deletions": 0,
+    "date": "2026-01-22"
+  },
+  {
     "name": "Auth 02",
     "component": "auth-02/page.tsx",
     "url": "/pre-blocks/auth/auth-02",

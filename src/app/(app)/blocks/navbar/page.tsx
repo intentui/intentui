@@ -1,4 +1,5 @@
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
+import { app } from "@/config/app"
 import { ogImage } from "@/lib/og"
 
 const title = "Blocks of Navbar"
@@ -21,12 +22,12 @@ export const metadata = {
   openGraph: {
     ...meta,
     type: "article",
-    url: `https://intentui.com/blocks/navbar`,
+    url: `${app.url}/blocks/navbar`,
   },
   twitter: {
     card: "summary_large_image",
     ...meta,
-    creator: "@irsyad",
+    creator: `@${app.author.username}`,
   },
 }
 export default function Page() {

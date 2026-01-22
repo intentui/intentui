@@ -1,4 +1,5 @@
 import { titleCase } from "usemods"
+import { app } from "@/config/app"
 
 export function title(title: string) {
   const minorWords = [
@@ -82,6 +83,6 @@ export function extractImports(code: string) {
 
 export const openInV0Url = (blockName: string) => {
   const title = titleCase(blockName.replace(/-/g, " "))
-  const url = `https://intentui.com/r/block/${blockName}`
+  const url = `${app.url}/r/block/${blockName}`
   return `https://v0.dev/chat/api/open?title=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`
 }

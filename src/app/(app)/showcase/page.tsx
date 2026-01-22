@@ -6,7 +6,7 @@ import { app } from "@/config/app"
 export const metadata: Metadata = {
   title: "Showcase",
   description: "A showcase of Intent UI components, tools, and more.",
-  metadataBase: new URL("https://intentui.com"),
+  metadataBase: new URL(app.url),
   applicationName: app.name,
 }
 

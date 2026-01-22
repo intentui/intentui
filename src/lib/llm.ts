@@ -15,6 +15,7 @@ const HOW_RE = /<How[\s\S]*?toUse=(?:"([^"]+)"|'([^']+)')[\s\S]*?\/>/g
 const SOURCE_RE = /<SourceCode[\s\S]*?toShow=(?:"([^"]+)"|'([^']+)')[\s\S]*?\/>/g
 const SANDBOX_RE = /<Sandbox[\s\S]*?\/>/g
 const COMPOSED_RE = /<Composed[\s\S]*?\/>/g
+const INSTALL_COMMAND_RE = /<InstallCommand[\s\S]*?command=(?:"([^"]+)"|'([^']+)')[\s\S]*?\/>/g
 
 export function processMdxForLLMs(content: string) {
   const llmsIndex = buildLlmsUrlIndex()
@@ -26,6 +27,11 @@ export function processMdxForLLMs(content: string) {
 
   output = output.replace(SOURCE_RE, (match, a?: string, b?: string) => {
     return embedRegistryCode(match, extractRegistryId((a ?? b ?? "").trim()))
+  })
+
+  output = output.replace(INSTALL_COMMAND_RE, (match, a?: string, b?: string) => {
+    const cmd = (a ?? b ?? "").trim()
+    return cmd ? `\n\`\`\`bash\n${cmd}\n\`\`\`\n` : match
   })
 
   output = output.replace(SANDBOX_RE, (match) => {

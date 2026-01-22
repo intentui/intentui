@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Colors",
   description:
     "Pick and generate Tailwind-style color scales from 50 to 950. Browse palettes, choose a base color, then instantly create a full ramp with copy-ready output.",
-  metadataBase: new URL("https://intentui.com"),
+  metadataBase: new URL(app.url),
   applicationName: app.name,
   category: "Colors",
   keywords: [
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Irsyad",
-      url: "https://x.com/irsyad",
+      name: app.author.name,
+      url: app.author.url,
     },
   ],
 }

@@ -63,7 +63,7 @@ export function Navbar() {
           </Link>
           <Link
             className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
-            href={app.discord}
+            href={app.links.discord}
             target="_blank"
           >
             <BrandDiscordIcon />

@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: app.name,
     description: app.description,
-    url: "https://intentui.com",
+    url: app.url,
     siteName: app.name,
   },
   description: app.description,

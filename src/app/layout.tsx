@@ -10,7 +10,7 @@ import { AurelieAnalytics } from "@/components/aurelie-analytics"
 import { Toast } from "@/components/ui/toast"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://intentui.com"),
+  metadataBase: new URL(app.url),
   title: {
     default: `${app.name}`,
     template: `%s / ${app.name}`,
@@ -56,11 +56,11 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   authors: [
     {
-      name: "irsyad",
-      url: "https://x.com/irsyad",
+      name: app.author.name,
+      url: app.author.url,
     },
   ],
-  creator: "irsyad",
+  creator: app.author.username,
 }
 
 export const viewport: Viewport = {
@@ -108,9 +108,9 @@ export default function RootLayout({ children }: Readonly<Props>) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Intent UI",
-    url: "https://intentui.com",
-    logo: "https://intentui.com/icon.svg",
+    name: app.name,
+    url: app.url,
+    logo: `${app.url}/icon.svg`,
   }
 
   return (
