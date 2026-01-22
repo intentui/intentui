@@ -10,16 +10,17 @@ import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Loader } from "@/components/ui/loader"
 import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu"
+import { app } from "@/config/app"
 import { useClipboard } from "@/hooks/use-clipboard"
 import { DuplicateIcon } from "./icons/duplicate-icon"
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
-    `Read the Intent UI docs at ${url} and treat them as the source of truth. Explain how to use the library, provide step by step examples, and help debug issues in my code. Ask clarifying questions only when needed.`,
+    `Read the ${app.name} docs at ${url} and treat them as the source of truth. Explain how to use the library, provide step by step examples, and help debug issues in my code. Ask clarifying questions only when needed.`,
   )}`
 }
 export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; page: string }) {
-  const fullUrl = `https://intentui.com${url}`
+  const fullUrl = `${app.url}${url}`
   const [pending, setPending] = useState(false)
   const llmUrl = `${fullUrl}.md`
   const { copied, copy } = useClipboard()
@@ -123,7 +124,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
               <span className="sr-only">Open in</span> Markdown
             </MenuItem>
             <MenuItem
-              href={`https://github.com/intentui/intentui/blob/3.x/src/content${url}.mdx`}
+              href={`${app.repo.url}/blob/${app.repo.currentVersion}/src/content${url}.mdx`}
               target="_blank"
               rel="noopener noreferrer"
             >

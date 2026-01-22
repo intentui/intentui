@@ -182,14 +182,14 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
         </Link>
         <Link
           className={buttonStyles({ intent: "plain", size: "sq-sm" })}
-          href={app.discord}
+          href={app.links.discord}
           target="_blank"
         >
           <BrandDiscordIcon className="size-5" />
         </Link>
         <Link
           className={buttonStyles({ intent: "plain", size: "sq-sm" })}
-          href={app.repo}
+          href={app.repo.url}
           target="_blank"
         >
           <BrandGithubIcon className="size-5" />

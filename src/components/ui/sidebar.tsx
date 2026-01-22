@@ -416,9 +416,11 @@ const SidebarItem = ({
             // icon
             "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4 [&_[data-slot='icon']:not([class*='text-'])]:text-muted-fg",
             "**:last:data-[slot=icon]:size-5 sm:**:last:data-[slot=icon]:size-4",
+            "[&:has([data-slot=icon]+[data-slot=sidebar-label])_[data-slot=icon]]:mr-2",
+
             // avatar
             "**:data-[slot=avatar]:[--avatar-size:--spacing(5)]",
-            "has-data-[slot=avatar]:has-data-[slot=sidebar-label]:gap-x-2 has-data-[slot=icon]:has-data-[slot=sidebar-label]:gap-x-2",
+            "[&:has([data-slot=avatar]+[data-slot=sidebar-label])_[data-slot=avatar]]:mr-2",
             "[--sidebar-current-bg:var(--color-sidebar-primary)] [--sidebar-current-fg:var(--color-sidebar-primary-fg)]",
             isCurrent &&
               "font-medium text-(--sidebar-current-fg) hover:bg-(--sidebar-current-bg) hover:text-(--sidebar-current-fg) [&_.text-muted-fg]:text-fg/80 [&_[data-slot='icon']:not([class*='text-'])]:text-(--sidebar-current-fg) hover:[&_[data-slot='icon']:not([class*='text-'])]:text-(--sidebar-current-fg)",

@@ -4,6 +4,7 @@ import type React from "react"
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
 import { CodeBlock } from "@/components/code/code-block"
 import { EditorText } from "@/components/code/editor-text"
+import InstallCommand from "@/components/code/install-command"
 import { PlainCode, Pre } from "@/components/code/plain-code"
 import { SourceCode } from "@/components/code/source-code"
 import { DocComposed } from "@/components/doc-composed"
@@ -42,6 +43,7 @@ export const mdxComponents = {
       <ArrowUpRightIcon className="ml-1 inline size-3.5" />
     </Link>
   ),
+  InstallCommand,
   How: DocHow,
   a: (props: React.ComponentProps<"a">) => (
     <a

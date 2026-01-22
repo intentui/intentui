@@ -15,9 +15,7 @@ Before executing the command, ensure that **tailwind** is installed. If not, fol
 ### Initial setup
 Begin by executing this command:
 
-```
-npx shadcn@latest init @intentui/theme-default
-```
+<InstallCommand command="npx shadcn@latest init @intentui/theme-default"/>
 
 If you see this output:
 
@@ -31,7 +29,7 @@ To start over, remove the components.json file and run init again
 No problem: just run `npx shadcn@latest init @intentui/theme-default` again and it should complete successfully. See the related issue: [https://github.com/intentui/intentui/issues/518](https://github.com/intentui/intentui/issues/518).
 
 Here are more theme options you can choose from:
-```
+```bash
 npx shadcn@latest add @intentui/theme-blue
 npx shadcn@latest add @intentui/theme-sky
 npx shadcn@latest add @intentui/theme-indigo
@@ -47,26 +45,20 @@ npx shadcn@latest add @intentui/theme-cyan
 
 We use [shadcn CLI](https://ui.shadcn.com/docs/cli) to manage the installation of Intent UI components.
 
-```
-npx shadcn@latest add @intentui/combo-box
-```
+<InstallCommand command="npx shadcn@latest add @intentui/combo-box"/>
 
 Sometimes, you may want to add components individually, such as `select` and `text-field`. You can easily do this by using the following command:
-```
-npx shadcn@latest add @intentui/select @intentui/text-field
-```
+<InstallCommand command="npx shadcn@latest add @intentui/select @intentui/text-field"/>
 
 ### Add all components
 To add all components at once, use `@intentui/all`. This will install every available component in Intent UI in a single step.
-```
-npx shadcn@latest add @intentui/all
-```
+<InstallCommand command="npx shadcn@latest add @intentui/all"/>
 
 ### Overwrite
 You can override the existing components by using the `-o` flag. This will overwrite the existing files with the new ones.
-```
-npx shadcn@latest add @intentui/text-field -o
-```
+
+<InstallCommand command="npx shadcn@latest add @intentui/text-field -o"/>
+
 
 ## Formatter
 Intent utilizes the <NewTab href='https://biomejs.dev/'>Biome</NewTab> formatter for code formatting. To use the Biome formatter with Intent components, we recommend the following configuration:
@@ -79,21 +71,15 @@ Intent utilizes the <NewTab href='https://biomejs.dev/'>Biome</NewTab> formatter
 ## Manual installation
 To begin setting up the design system, start by installing these packages:
 
-```bash
-npm i react-aria-components tailwindcss-react-aria-components
-```
+<InstallCommand command="npm i react-aria-components tailwindcss-react-aria-components"/>
 
 Next, add **Tailwind Variant**, **Tailwind Merge**, and for utility functions:
 
-```bash
-npm i tailwind-variants tailwind-merge
-```
+<InstallCommand command="npm i tailwind-variants tailwind-merge"/>
 
 Following that, include the **Tailwind Animate** for managing animations and **Intent Icons** for icons:
 
-```bash
-npm i @heroicons/react tw-animate-css
-```
+<InstallCommand command="npm i @heroicons/react tw-animate-css"/>
 
 ### Style and primitive
 After installing the required packages, you can copy the CSS below into your global CSS file and move the primitives to your UI folder. Primitives serve as utilities for managing states, including `focusRing`, `focusStyles`, and `focusButtonStyles`.

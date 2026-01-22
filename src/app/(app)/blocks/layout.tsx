@@ -3,6 +3,18 @@ import { BlocksHeader } from "@/app/(app)/blocks/blocks-header"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { PageContainer } from "@/components/page-container"
 import { app } from "@/config/app"
+import { ogImage } from "@/lib/og"
+
+const meta = {
+  images: [
+    {
+      url: ogImage({
+        title: "Blocks",
+        description: "Ready-to-use chart blocks you can copy and customize",
+      }),
+    },
+  ],
+}
 
 export const metadata: Metadata = {
   title: {
@@ -39,10 +51,19 @@ export const metadata: Metadata = {
     "Intent Laravel",
     "Intent Inertia",
   ],
+  openGraph: {
+    ...meta,
+    url: `${app.url}/blocks`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    ...meta,
+    creator: `@${app.author.username}`,
+  },
   authors: [
     {
-      name: "Irsyad",
-      url: "https://x.com/irsyad",
+      name: app.author.name,
+      url: app.author.url,
     },
   ],
 }

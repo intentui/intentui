@@ -18,12 +18,12 @@ const navigation = {
     { name: "Blog", href: "/blog" },
   ],
   labs: [
-    { name: "Github", href: "https://github.com/intentui" },
+    { name: "Github", href: app.links.github },
     {
       name: "X",
       href: "https://x.com/intent/follow?screen_name=irsyad",
     },
-    { name: "Discord", href: "https://discord.gg/DYmVJ66JUD" },
+    { name: "Discord", href: app.links.discord },
     { name: "Design", href: "https://design.intentui.com" },
     { name: "Templates", href: "https://design.intentui.com/templates" },
     { name: "Sponsor", href: "https://github.com/sponsors/irsyadadl" },
@@ -103,8 +103,8 @@ export function Footer() {
                 </strong>{" "}
                 <br />
                 <br />
-                This project’s crafted by <Link href="https://x.com/irsyad">Irsyad</Link>. Peep the
-                Source Code on <Link href={app.repo}>GitHub</Link>.
+                This project's crafted by <Link href={app.author.url}>{app.author.name}</Link>. Peep
+                the Source Code on <Link href={app.repo.url}>GitHub</Link>.
               </p>
               <p>
                 Hosted on{" "}
@@ -112,8 +112,7 @@ export function Footer() {
                   Vercel
                 </Link>
                 . The source code's got the{" "}
-                <Link href="https://github.com/intentui/intentui/blob/main/LICENSE">MIT</Link>{" "}
-                license.
+                <Link href={`${app.repo.url}/blob/main/LICENSE`}>MIT</Link> license.
               </p>
             </div>
           </div>

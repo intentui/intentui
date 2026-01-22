@@ -12,30 +12,31 @@ import {
   ChoiceBoxItem,
   ChoiceBoxLabel,
 } from "@/components/ui/choice-box"
+import { app } from "@/config/app"
 
 export const starterKits = [
   {
     icon: BrandNextjsIcon,
     name: "Next.js",
-    url: "https://github.com/intentui/next.js",
+    url: `${app.links.github}/next.js`,
     description: "A full-featured starter with routing, layouts, and authentication built in.",
   },
   {
     icon: BrandLaravelIcon,
     name: "Laravel",
-    url: "https://github.com/intentui/laravel",
+    url: `${app.links.github}/laravel`,
     description: "Server-driven starter with routing, auth, and front-end integration ready to go.",
   },
   {
     icon: IconBrandTanstack,
     name: "Tanstack Router",
-    url: "https://github.com/intentui/tanstack-router",
+    url: `${app.links.github}/tanstack-router`,
     description: "Opinionated setup with routing, layouts, and auth, ready for modern apps.",
   },
   {
     icon: IconBrandVite,
     name: "Vite",
-    url: "https://github.com/intentui/vite",
+    url: `${app.links.github}/vite`,
     description: "The simple way to start Vite with Intent UI installed.",
     label: "Starter Kit",
   },

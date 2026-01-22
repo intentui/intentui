@@ -3,16 +3,21 @@ export const app = {
   url: "https://intentui.com",
   description:
     "Intent UI helps developers copy and paste fully accessible React components, customize them with Tailwind, and ship production ready UIs in minutes.",
-  author: "irsyadadl",
+  author: {
+    username: "irsyad",
+    name: "Irsyad",
+    url: "https://x.com/irsyad",
+  },
   links: {
     twitter: "https://x.com/intent/follow?screen_name=intentui",
     github: "https://github.com/intentui",
     discord: "https://discord.gg/DYmVJ66JUD",
   },
-  discord: "https://discord.gg/DYmVJ66JUD",
-  repo: "https://github.com/intentui/intentui",
-  repoStars: "1.6",
-  currentVersion: "3.x",
+  repo: {
+    url: "https://github.com/intentui/intentui",
+    currentVersion: "3.x",
+    repoStars: "1.9",
+  },
   cli: {
     version: "latest",
     command: "shadcn@latest",
