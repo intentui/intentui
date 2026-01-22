@@ -6970,6 +6970,24 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "snippet-demo",
+      "title": "Snippet",
+      "description": "snippet-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/snippet"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/navigation/snippet/snippet-demo.tsx",
+          "type": "registry:page",
+          "target": "app/snippet-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "pagination-demo",
       "title": "Pagination",
       "description": "pagination-demo",

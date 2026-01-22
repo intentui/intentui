@@ -1,0 +1,54 @@
+---
+title: "Snippet"
+description: A tabbed code snippet UI with copy to clipboard support, built on accessible React Aria snippet, styled with Tailwind, and designed for clean, compact command switching.
+order: 3
+published: true
+references: ["https://react-aria.adobe.com/Tabs#api"]
+---
+
+
+## Basic
+Tabs divide content into sections, allowing users to easily switch between them.
+<How toUse="navigation/snippet/snippet-demo" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/snippet"/>
+
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components"/>
+
+<SourceCode toShow='snippet' />
+
+## Anatomy
+```
+import {
+  Snippet,
+  SnippetTab,
+  SnippetTabPanel,
+  SnippetTabPanels,
+  SnippetTabsList,
+} from "@/components/ui/snippet"
+```
+
+```
+const commands = [
+  { id: "npm", label: "NPM", command: "npm install react-aria-components" },
+  { id: "pnpm", label: "PNPM", command: "pnpm add react-aria-components" },
+  { id: "yarn", label: "Yarn", command: "yarn add react-aria-components" },
+  { id: "bun", label: "Bun", command: "bun add react-aria-components" },
+]
+
+<Snippet>
+  <SnippetTabsList items={commands}>
+    {(cmd) => <SnippetTab key={cmd.id}>{cmd.label}</SnippetTab>}
+  </SnippetTabsList>
+  <SnippetTabPanels items={commands}>
+    {(cmd) => <SnippetTabPanel id={cmd.id}>{cmd.command}</SnippetTabPanel>}
+  </SnippetTabPanels>
+</Snippet>
+```

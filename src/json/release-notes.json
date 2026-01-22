@@ -1,5 +1,17 @@
 [
   {
+    "name": "Snippet demo",
+    "component": "snippet-demo.tsx",
+    "url": "/snippet",
+    "type": "demo",
+    "category": "navigation",
+    "kind": "new",
+    "description": null,
+    "additions": 26,
+    "deletions": 15,
+    "date": "2026-01-22"
+  },
+  {
     "name": "Snippet",
     "component": "snippet.tsx",
     "url": "/snippet",
