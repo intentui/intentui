@@ -4,7 +4,7 @@ import { existsSync } from "node:fs"
 import path from "path"
 import { registryItemSchema, registrySchema } from "shadcn/schema"
 import { builtinModules } from "node:module"
-import { titleCase } from "usemods";
+import { title as titleCase } from "@/lib/utils";
 import * as process from "node:process";
 import { baseTheme } from "@/scripts/styles/base-theme";
 import { defaultDark, defaultLight } from "@/scripts/styles/default";

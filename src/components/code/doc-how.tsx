@@ -77,7 +77,7 @@ export const DocHow = ({
   }
   return (
     <div className="not-prose">
-      <Toolbar className="mb-1 flex items-center justify-between">
+      <Toolbar className="mb-1 flex items-center justify-between sm:*:-mx-2">
         <Group>
           <ToggleButton
             className={twJoin(

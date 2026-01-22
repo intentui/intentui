@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { titleCase } from "usemods"
 import { Button } from "@/components/ui/button"
 import {
   SheetClose,
@@ -11,6 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet"
+import { title } from "@/lib/utils"
 
 type Side = "left" | "right" | "top" | "bottom"
 export default function SheetPositionDemo() {
@@ -29,13 +29,13 @@ export default function SheetPositionDemo() {
       <div className="grid grid-cols-2 gap-2">
         {sides.map((side, idx) => (
           <Button intent="outline" onPress={() => pressHandler(side, true)} key={idx}>
-            {titleCase(side)}
+            {title(side)}
           </Button>
         ))}
       </div>
       <SheetContent isOpen={isOpen} onOpenChange={setIsOpen} side={sheetSide}>
         <SheetHeader>
-          <SheetTitle>{titleCase(sheetSide)}</SheetTitle>
+          <SheetTitle>{title(sheetSide)}</SheetTitle>
           <SheetDescription>The sheet will go from {sheetSide} side.</SheetDescription>
         </SheetHeader>
         <SheetFooter>

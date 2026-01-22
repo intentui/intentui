@@ -4,6 +4,7 @@ import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
 import { LogoType } from "@/components/logo-type"
 import { PageContainer } from "@/components/page-container"
 import { Link } from "@/components/ui/link"
+import { Text, TextLink } from "@/components/ui/text"
 import { app } from "@/config/app"
 
 const navigation = {
@@ -16,18 +17,9 @@ const navigation = {
     { name: "Blocks", href: "/blocks" },
     { name: "Showcase", href: "/showcase" },
     { name: "Blog", href: "/blog" },
+    { name: "Sponsor", href: "/sponsor" },
   ],
-  labs: [
-    { name: "Github", href: app.links.github },
-    {
-      name: "X",
-      href: "https://x.com/intent/follow?screen_name=irsyad",
-    },
-    { name: "Discord", href: app.links.discord },
-    { name: "Design", href: "https://design.intentui.com" },
-    { name: "Templates", href: "https://design.intentui.com/templates" },
-    { name: "Sponsor", href: "https://github.com/sponsors/irsyadadl" },
-  ],
+
   templates: [
     {
       name: "Screencast",
@@ -74,13 +66,23 @@ const navigation = {
       href: "https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=footer",
     },
   ],
+  labs: [
+    { name: "Github", href: app.links.github },
+    {
+      name: "X / Twitter",
+      href: "https://x.com/intent/follow?screen_name=irsyad",
+    },
+    { name: "Discord", href: app.links.discord },
+    { name: "Design", href: "https://design.intentui.com" },
+    { name: "Templates", href: "https://design.intentui.com/templates" },
+  ],
 }
 
 const currentYear = new Date().getFullYear()
 
 export function Footer() {
   return (
-    <footer className="border-muted-fg/15 border-t bg-bg pb-16 text-fg sm:pb-0">
+    <footer className="border-muted-fg/15 border-t bg-bg pb-16 text-fg sm:pb-0 dark:bg-muted">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -93,36 +95,33 @@ export function Footer() {
                 Intent <span className="text-muted-fg">UI</span>
               </span>
             </Link>
-            <p className="mt-4 max-w-xs text-muted-fg text-sm">
-              Accessible React component library to copy, customize, and own your UI.
-            </p>
-            <div className="space-y-2 text-muted-fg text-xs **:[a]:text-fg">
-              <p>
-                <strong className="text-fg">
-                  {currentYear} &middot; {app.name} &trade;
-                </strong>{" "}
-                <br />
-                <br />
-                This project's crafted by <Link href={app.author.url}>{app.author.name}</Link>. Peep
-                the Source Code on <Link href={app.repo.url}>GitHub</Link>.
-              </p>
-              <p>
+            <div className="mt-3 space-y-3">
+              <Text>Accessible React component library to copy, customize, and own your UI.</Text>
+              <Text>
+                This project's crafted by{" "}
+                <TextLink href={app.author.url}>{app.author.name}</TextLink>. Peep the Source Code
+                on <TextLink href={app.repo.url}>GitHub</TextLink>.
+              </Text>
+              <Text>
                 Hosted on{" "}
-                <Link href="https://vercel.com?ref=intentui.com" target="_blank">
+                <TextLink href="https://vercel.com?ref=intentui.com" target="_blank">
                   Vercel
-                </Link>
+                </TextLink>
                 . The source code's got the{" "}
                 <Link href={`${app.repo.url}/blob/main/LICENSE`}>MIT</Link> license.
-              </p>
+              </Text>
+              <Text className="text-fg">
+                2024 - {currentYear} &middot; {app.name} &trade;
+              </Text>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-y-10 lg:grid-cols-4 lg:gap-10 xl:gap-6 xl:gap-y-6">
+          <div className="grid grid-cols-2 gap-y-10 lg:grid-cols-5 lg:gap-10 xl:gap-6 xl:gap-y-6">
             <div>
-              <h3 className="mb-2 font-medium text-muted-fg text-sm/6">Resources</h3>
-              <ul className="space-y-2 text-sm/6">
+              <div className="font-medium text-base text-fg">Resources</div>
+              <ul className="mt-3 space-y-3 text-sm/6">
                 {navigation.resources.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="hover:underline">
+                    <Link href={item.href} className="font-normal text-fg/60 hover:text-fg">
                       {item.name}
                     </Link>
                   </li>
@@ -130,25 +129,46 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="mb-2 font-medium text-muted-fg text-sm/6">Labs</h3>
-              <ul className="space-y-2 text-sm/6">
+              <div className="font-medium text-base text-fg">Templates</div>
+              <ul className="mt-3 space-y-3 text-sm/6">
+                {navigation.templates.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="font-normal text-fg/60 hover:text-fg"
+                      target="_blank"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div className="font-medium text-base text-fg">Labs</div>
+              <ul className="mt-3 space-y-3 text-sm/6">
                 {navigation.labs.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="hover:underline" target="_blank">
+                    <Link
+                      href={item.href}
+                      className="font-normal text-fg/60 hover:text-fg"
+                      target="_blank"
+                    >
                       {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
+
             <div>
-              <h3 className="mb-2 font-medium text-muted-fg text-sm/6">Starter Kits</h3>
-              <ul className="space-y-2 text-sm/6">
+              <div className="font-medium text-base text-fg">Starter Kits</div>
+              <ul className="mt-3 space-y-3 text-sm/6">
                 {starterKits.map((kit) => (
                   <li key={kit.name}>
                     <Link
                       href={kit.url}
-                      className="hover:underline"
+                      className="font-normal text-fg/60 hover:text-fg"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -158,22 +178,10 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="mb-2 font-medium text-muted-fg text-sm/6">Templates</h3>
-              <ul className="space-y-2 text-sm/6">
-                {navigation.templates.map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} className="hover:underline" target="_blank">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
 
-        <div className="sm:mask-b-from-50% h-10 sm:h-60">
+        <div className="h-10 sm:h-60">
           <LogoType className="absolute -bottom-16 left-1/2 h-18 -translate-x-1/2 sm:bottom-0 sm:h-40 lg:h-60" />
         </div>
       </PageContainer>

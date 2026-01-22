@@ -17,7 +17,7 @@ export function Components() {
           description="Browse a complete set of UI components, built for flexibility and ready to drop into your project."
         />
         <div className="columns-2 gap-6 pb-6 sm:pb-12 md:columns-3 lg:columns-4">
-          {components?.children?.map((item) => (
+          {components?.children?.slice(1, 20).map((item) => (
             <div className="mb-12 flex break-inside-avoid flex-col gap-y-2" key={item.subsection}>
               <h3 className="font-semibold text-fg text-sm">{item?.subsection}</h3>
               <ul>

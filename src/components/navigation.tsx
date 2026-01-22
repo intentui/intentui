@@ -33,8 +33,7 @@ export function Navigation() {
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
         <motion.nav
-          className="border-b bg-bg"
-          style={{ borderColor: "var(--color-border)" }}
+          className="border-fg/10 border-b bg-bg"
           initial={{
             paddingTop: 12,
             paddingBottom: 12,

@@ -12,31 +12,30 @@ import {
   ChoiceBoxItem,
   ChoiceBoxLabel,
 } from "@/components/ui/choice-box"
-import { app } from "@/config/app"
 
 export const starterKits = [
   {
     icon: BrandNextjsIcon,
     name: "Next.js",
-    url: `${app.links.github}/next.js`,
+    url: `/docs/getting-started/nextjs`,
     description: "A full-featured starter with routing, layouts, and authentication built in.",
   },
   {
     icon: BrandLaravelIcon,
     name: "Laravel",
-    url: `${app.links.github}/laravel`,
+    url: `/docs/getting-started/laravel`,
     description: "Server-driven starter with routing, auth, and front-end integration ready to go.",
   },
   {
     icon: IconBrandTanstack,
     name: "Tanstack Router",
-    url: `${app.links.github}/tanstack-router`,
+    url: `/docs/getting-started/tanstack-router`,
     description: "Opinionated setup with routing, layouts, and auth, ready for modern apps.",
   },
   {
     icon: IconBrandVite,
     name: "Vite",
-    url: `${app.links.github}/vite`,
+    url: `/docs/getting-started/vite`,
     description: "The simple way to start Vite with Intent UI installed.",
     label: "Starter Kit",
   },
@@ -51,15 +50,20 @@ export function StarterKit() {
         description="A preconfigured project setup that includes everything you need to start building and shipping faster with Intent UI."
       />
       <ChoiceBox
-        gap={6}
-        columns={3}
+        gap={2}
+        columns={4}
         selectionMode="single"
         className="*:data-[slot=choicebox-item]:bg-bg"
         items={starterKits}
         aria-label="Starter Kit"
       >
         {(item) => (
-          <ChoiceBoxItem target="_blank" href={item.url} textValue={item.name} id={item.name}>
+          <ChoiceBoxItem
+            className="hover:bg-muted"
+            href={item.url}
+            textValue={item.name}
+            id={item.name}
+          >
             <item.icon />
             <ChoiceBoxLabel>{item.name}</ChoiceBoxLabel>
             <ChoiceBoxDescription>{item.description}</ChoiceBoxDescription>
@@ -82,16 +86,6 @@ export function Wrapper({
         "relative rounded-md border bg-overlay px-4 py-10 sm:px-6 sm:py-8",
         className,
       )}
-      {...props}
-    />
-  )
-}
-
-export function WrapperIcon(props: React.ComponentProps<"div">) {
-  return (
-    <div
-      id="support"
-      className="inset-ring inset-ring-fg/10 mr-4 grid size-14 shrink-0 place-content-center rounded-full bg-secondary/20 text-xl group-hover:inset-ring-primary/25 group-hover:bg-primary/5 **:group-hover:text-primary **:[svg]:size-6"
       {...props}
     />
   )

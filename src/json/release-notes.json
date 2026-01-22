@@ -1,5 +1,41 @@
 [
   {
+    "name": "Sheet position demo",
+    "component": "sheet-position-demo.tsx",
+    "url": "/sheet",
+    "type": "demo",
+    "category": "overlays",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 3,
+    "date": "2026-01-22"
+  },
+  {
+    "name": "Heading",
+    "component": "heading.tsx",
+    "url": "/heading",
+    "type": "component",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-01-22"
+  },
+  {
+    "name": "Input",
+    "component": "input.tsx",
+    "url": "/input",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-01-22"
+  },
+  {
     "name": "Snippet demo",
     "component": "snippet-demo.tsx",
     "url": "/snippet",

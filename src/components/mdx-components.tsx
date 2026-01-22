@@ -5,6 +5,7 @@ import { Sandbox } from "@/app/(app)/blocks/sandbox"
 import { CodeBlock } from "@/components/code/code-block"
 import { EditorText } from "@/components/code/editor-text"
 import InstallCommand from "@/components/code/install-command"
+import { McpTabs } from "@/components/code/mcp-tabs"
 import { PlainCode, Pre } from "@/components/code/plain-code"
 import { SourceCode } from "@/components/code/source-code"
 import { DocComposed } from "@/components/doc-composed"
@@ -44,6 +45,7 @@ export const mdxComponents = {
     </Link>
   ),
   InstallCommand,
+  McpTabs,
   How: DocHow,
   a: (props: React.ComponentProps<"a">) => (
     <a

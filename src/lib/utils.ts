@@ -1,6 +1,3 @@
-import { titleCase } from "usemods"
-import { app } from "@/config/app"
-
 export function title(title: string) {
   const minorWords = [
     "and",
@@ -45,44 +42,17 @@ export function title(title: string) {
     .replaceAll("-", " ")
 }
 
+export function slugify(str: string) {
+  return str
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+}
+
 export function wait(number: number) {
   return new Promise((resolve) => setTimeout(resolve, number))
-}
-
-export function getSiteName(url: string): string {
-  return url.replace(/^(https?:\/\/)?(www\.)?/, "").split(".")[0]!
-}
-
-export function extractJSX(code: string) {
-  const match = code.match(/return\s*(\([\s\S]*?\)|.*?);?\s*}/)
-  if (match?.[1]) {
-    const jsx = match[1].replace(/^\(|\)$/g, "").trim()
-    const lines = jsx.split("\n")
-
-    if (lines.length === 1) {
-      return jsx
-    }
-
-    return lines
-      .map((line) => {
-        // @ts-expect-error
-        const indent = line.match(/^\s*/)[0]
-        return indent.slice(4) + line.trim()
-      })
-      .join("\n")
-      .trim()
-  }
-  return null
-}
-
-export function extractImports(code: string) {
-  const importRegex = /^(import\s+(?:\{[^}]*}|[^;]+)\s*from\s*['"][^'"]+['"]\s*;?)$/gm
-  const matches = code.match(importRegex)
-  return matches ? matches.join("\n") : ""
-}
-
-export const openInV0Url = (blockName: string) => {
-  const title = titleCase(blockName.replace(/-/g, " "))
-  const url = `${app.url}/r/block/${blockName}`
-  return `https://v0.dev/chat/api/open?title=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`
 }

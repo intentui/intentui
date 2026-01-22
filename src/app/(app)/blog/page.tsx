@@ -1,8 +1,8 @@
-import dayjs from "dayjs"
 import Link from "next/link"
 import { blog } from "#site/content"
 import { PageContainer } from "@/components/page-container"
 import { Avatar } from "@/components/ui/avatar"
+import { formatDate } from "@/lib/date"
 import { createMetadata } from "@/lib/metadata"
 
 export const metadata = createMetadata({
@@ -58,7 +58,7 @@ export default function Page() {
                       <strong className="font-semibold text-sm">{item.author}</strong>
                     </div>
                     <span className="font-mono text-muted-fg text-sm">
-                      {dayjs(item.published).format("MMMM D, YYYY")}
+                      {formatDate(item.published)}
                     </span>
                   </div>
                 </div>
