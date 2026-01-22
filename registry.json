@@ -3616,6 +3616,29 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "snippet",
+      "title": "snippet",
+      "description": "snippet",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/tabs",
+        "http://localhost:3000/r/use-clipboard",
+        "http://localhost:3000/r/primitive"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/snippet.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "switch",
       "title": "switch",
       "description": "switch",
@@ -13380,6 +13403,7 @@
         "http://localhost:3000/r/ui/sidebar",
         "http://localhost:3000/r/ui/skeleton",
         "http://localhost:3000/r/ui/slider",
+        "http://localhost:3000/r/ui/snippet",
         "http://localhost:3000/r/ui/switch",
         "http://localhost:3000/r/ui/table",
         "http://localhost:3000/r/ui/tabs",
