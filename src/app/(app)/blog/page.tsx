@@ -3,6 +3,23 @@ import Link from "next/link"
 import { blog } from "#site/content"
 import { PageContainer } from "@/components/page-container"
 import { Avatar } from "@/components/ui/avatar"
+import { createMetadata } from "@/lib/metadata"
+
+export const metadata = createMetadata({
+  title: "Blog",
+  description:
+    "Articles about React, Next.js, UI design patterns, and building accessible web interfaces with Intent UI components.",
+  path: "/blog",
+  keywords: [
+    "blog",
+    "react tutorials",
+    "nextjs articles",
+    "ui design",
+    "web development",
+    "intent ui",
+    "intentui",
+  ],
+})
 
 export default function Page() {
   return (

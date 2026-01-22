@@ -6,19 +6,27 @@ import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
 import { Footer } from "@/components/footer"
 import { app } from "@/config/app"
+import { createMetadata } from "@/lib/metadata"
 import { Hero } from "./partials/hero"
 import { Navbar } from "./partials/navbar"
 import { OpenSource } from "./partials/open-source"
 
-export const metadata = {
-  openGraph: {
-    title: app.name,
-    description: app.description,
-    url: app.url,
-    siteName: app.name,
-  },
+export const metadata = createMetadata({
+  title: app.name,
   description: app.description,
-}
+  path: "/",
+  keywords: [
+    "react components",
+    "ui library",
+    "react aria",
+    "tailwind css",
+    "accessible components",
+    "next.js ui",
+    "laravel ui",
+    "intent ui",
+    "intentui",
+  ],
+})
 export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">
