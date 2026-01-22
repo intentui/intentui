@@ -1,54 +1,22 @@
-import type { Metadata } from "next"
 import { ColorPalette } from "@/app/(app)/colors/(colors)/color-palette"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
-import { app } from "@/config/app"
+import { createMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Colors",
   description:
     "Pick and generate Tailwind-style color scales from 50 to 950. Browse palettes, choose a base color, then instantly create a full ramp with copy-ready output.",
-  metadataBase: new URL(app.url),
-  applicationName: app.name,
-  category: "Colors",
+  path: "/colors",
   keywords: [
-    "Intent Colors",
-    "Tailwind CSS",
-    "UI Components",
-    "UI Kit",
-    "UI Library",
-    "UI Framework",
-    "Intent UI",
-    "React Aria",
-    "React Aria Components",
-    "Server Components",
-    "React Components",
-    "Next UI Components",
-    "UI Design System",
-    "UI for Laravel Inertia",
-    "Laravel Inertia UI",
-    "Laravel Inertia Components",
-    "Laravel Inertia UI Components",
-    "Laravel Inertia UI Kit",
-    "Laravel Inertia UI Library",
-    "Laravel Inertia UI Framework",
-    "Laravel Inertia Intent",
-    "Laravel Intent",
-    "Intent Components",
-    "Intent UI Components",
-    "Intent UI Kit",
-    "Intent UI Library",
-    "Intent UI Framework",
-    "Intent Laravel Inertia",
-    "Intent Laravel",
-    "Intent Inertia",
+    "color palette generator",
+    "tailwind colors",
+    "color scales",
+    "ui color picker",
+    "design system colors",
+    "intent ui",
+    "intentui",
   ],
-  authors: [
-    {
-      name: app.author.name,
-      url: app.author.url,
-    },
-  ],
-}
+})
 
 export default async function Page() {
   return (

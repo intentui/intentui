@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     "Intent UI Library",
     "Intent UI Framework",
     "Intent Laravel Inertia",
-    "Intent Laravel",
-    "Intent Inertia",
+    "intent ui laravel",
+    "Intent UI Inertia",
   ],
   openGraph: {
     ...meta,

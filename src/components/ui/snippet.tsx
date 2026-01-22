@@ -41,7 +41,7 @@ export const SnippetTabPanels = TabPanels
 export function SnippetTabPanel({ className, children, ...props }: TabPanelProps) {
   const { copy, copied } = useClipboard()
   return (
-    <TabPanel className={cx("mt-0 bg-secondary/70 px-4 py-2 text-sm", className)} {...props}>
+    <TabPanel className={cx("mt-0 px-4 py-2 text-sm dark:bg-secondary/70", className)} {...props}>
       {(values) => (
         <>
           {typeof children === "function" ? (
