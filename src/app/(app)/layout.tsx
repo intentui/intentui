@@ -6,7 +6,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="relative flex min-h-svh flex-col bg-bg">
       <Navigation />
       <main className="flex-1">{children}</main>
-
       <Footer />
     </div>
   )

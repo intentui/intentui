@@ -1488,42 +1488,6 @@
     "date": "2024-10-10"
   },
   {
-    "name": "Chart area",
-    "component": "chart-area.tsx",
-    "url": "/chart-area",
-    "type": "component",
-    "category": "charts",
-    "kind": "improvement",
-    "description": null,
-    "additions": 0,
-    "deletions": 0,
-    "date": "2024-10-10"
-  },
-  {
-    "name": "Chart bar",
-    "component": "chart-bar.tsx",
-    "url": "/chart-bar",
-    "type": "component",
-    "category": "charts",
-    "kind": "improvement",
-    "description": null,
-    "additions": 0,
-    "deletions": 0,
-    "date": "2024-10-10"
-  },
-  {
-    "name": "Chart line",
-    "component": "chart-line.tsx",
-    "url": "/chart-line",
-    "type": "component",
-    "category": "charts",
-    "kind": "improvement",
-    "description": null,
-    "additions": 0,
-    "deletions": 0,
-    "date": "2024-10-10"
-  },
-  {
     "name": "Button",
     "component": "button.tsx",
     "url": "/button",
