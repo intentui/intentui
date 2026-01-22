@@ -9,6 +9,8 @@ ignore
 /note.md
 /CLAUDE.md
 /.claude
+/.codex
+/.opencode
 delete-me.txt
 # dependencies
 /node_modules
