@@ -9,6 +9,7 @@ ignore
 /note.md
 /CLAUDE.md
 /.claude
+/.agents
 /.codex
 /.opencode
 delete-me.txt
