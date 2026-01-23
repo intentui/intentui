@@ -36,7 +36,7 @@ export default function AppSidebar() {
           {state !== "collapsed" && (
             <SidebarSection className="pt-1">
               <SearchField className="col-span-full mb-6">
-                <SearchInput />
+                <SearchInput placeholder="Search" />
               </SearchField>
               <RangeCalendar
                 defaultValue={{

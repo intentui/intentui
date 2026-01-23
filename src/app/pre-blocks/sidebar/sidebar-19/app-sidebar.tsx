@@ -78,7 +78,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
           </SidebarItem>
         </SidebarSection>
         <SidebarSeparator />
-        <SidebarDisclosure defaultExpanded>
+        <SidebarDisclosure className="mt-4" defaultExpanded>
           <SidebarDisclosureTrigger>
             <UsersIcon />
             <SidebarLabel>Your Subscriptions</SidebarLabel>
