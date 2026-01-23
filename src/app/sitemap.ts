@@ -26,6 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${app.url}/blocks`,
       lastModified,
     },
+    {
+      url: `${app.url}/sponsor`,
+      lastModified,
+    },
     //   @ts-expect-error
     ...extractUrls(docs.children).map((i) => ({
       ...i,
