@@ -18,5 +18,5 @@ export const metadata = createMetadata({
   ],
 })
 export default function Page() {
-  return <Sandbox registries={["navbar-01", "navbar-02", "navbar-03"]} />
+  return <Sandbox registries={["navbar-01", "navbar-02", "navbar-03", "navbar-04", "navbar-05"]} />
 }
