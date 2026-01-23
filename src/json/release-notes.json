@@ -1,5 +1,17 @@
 [
   {
+    "name": "Sidebar 19",
+    "component": "sidebar-19/page.tsx",
+    "url": "/pre-blocks/sidebar/sidebar-19",
+    "type": "block",
+    "category": "sidebar",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-01-23"
+  },
+  {
     "name": "Sidebar 08",
     "component": "sidebar-08/page.tsx",
     "url": "/pre-blocks/sidebar/sidebar-08",
@@ -27,30 +39,6 @@
     "name": "Sidebar 17",
     "component": "sidebar-17/page.tsx",
     "url": "/pre-blocks/sidebar/sidebar-17",
-    "type": "block",
-    "category": "sidebar",
-    "kind": "improvement",
-    "description": null,
-    "additions": 1,
-    "deletions": 1,
-    "date": "2026-01-23"
-  },
-  {
-    "name": "Sidebar 19",
-    "component": "sidebar-19/page.tsx",
-    "url": "/pre-blocks/sidebar/sidebar-19",
-    "type": "block",
-    "category": "sidebar",
-    "kind": "improvement",
-    "description": null,
-    "additions": 9,
-    "deletions": 5,
-    "date": "2026-01-23"
-  },
-  {
-    "name": "Sidebar 19",
-    "component": "sidebar-19/page.tsx",
-    "url": "/pre-blocks/sidebar/sidebar-19",
     "type": "block",
     "category": "sidebar",
     "kind": "improvement",
