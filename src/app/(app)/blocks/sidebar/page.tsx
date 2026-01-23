@@ -18,5 +18,23 @@ export const metadata = createMetadata({
   ],
 })
 export default function Page() {
-  return <Sandbox registries={["sidebar-01", "sidebar-02", "sidebar-03", "sidebar-04","sidebar-05","sidebar-06", "sidebar-07", "sidebar-09", "sidebar-12", "sidebar-15", "sidebar-16", "sidebar-17", "sidebar-19"]} />
+  return (
+    <Sandbox
+      registries={[
+        "sidebar-01",
+        "sidebar-02",
+        "sidebar-03",
+        "sidebar-04",
+        "sidebar-05",
+        "sidebar-06",
+        "sidebar-07",
+        "sidebar-09",
+        "sidebar-12",
+        "sidebar-15",
+        "sidebar-16",
+        "sidebar-17",
+        "sidebar-19",
+      ]}
+    />
+  )
 }

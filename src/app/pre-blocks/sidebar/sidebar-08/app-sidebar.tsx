@@ -1,5 +1,6 @@
 "use client"
 
+import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
 import {
   ArchiveBoxIcon,
   ArrowUpTrayIcon,
@@ -10,7 +11,6 @@ import {
   PencilSquareIcon,
   TrashIcon,
 } from "@heroicons/react/24/outline"
-import {EllipsisHorizontalIcon} from "@heroicons/react/16/solid"
 import {
   Cog6ToothIcon as Cog6ToothSolid,
   HomeIcon as HomeSolid,

@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDownIcon, MinusIcon } from "@heroicons/react/20/solid"
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { createContext, use } from "react"
 import type {
   CellProps,
@@ -26,6 +26,7 @@ import {
   useTableOptions,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
+import { Text } from "@/components/ui/text"
 import { cx } from "@/lib/primitive"
 import { Checkbox } from "./checkbox"
 
@@ -100,8 +101,22 @@ const ColumnResizer = ({ className, ...props }: ColumnResizerProps) => (
   </ColumnResizerPrimitive>
 )
 
-const TableBody = <T extends object>(props: TableBodyProps<T>) => (
-  <TableBodyPrimitive data-slot="table-body" {...props} />
+const TableBody = <T extends object>({ renderEmptyState, ...props }: TableBodyProps<T>) => (
+  <TableBodyPrimitive
+    data-slot="table-body"
+    renderEmptyState={(state) => (
+      <>
+        {renderEmptyState ? (
+          renderEmptyState(state)
+        ) : (
+          <div className="flex min-h-56 items-center justify-center sm:min-h-96">
+            <Text>No records found.</Text>
+          </div>
+        )}
+      </>
+    )}
+    {...props}
+  />
 )
 
 interface TableColumnProps extends ColumnProps {
@@ -137,15 +152,9 @@ const TableColumn = ({ isResizable = false, className, ...props }: TableColumnPr
                 values.isHovered ? "bg-secondary-fg/10" : "",
               )}
             >
-              {values.sortDirection === undefined ? (
-                <MinusIcon data-slot="icon" aria-hidden />
-              ) : (
-                <ChevronDownIcon
-                  data-slot="icon"
-                  aria-hidden
-                  className={values.sortDirection === "ascending" ? "rotate-180" : ""}
-                />
-              )}
+              <ChevronDownIcon
+                className={values.sortDirection === "ascending" ? "rotate-180" : ""}
+              />
             </span>
           )}
           {isResizable && <ColumnResizer />}
@@ -234,7 +243,7 @@ const TableRow = <T extends object>({
           },
         ) =>
           twMerge(
-            "group relative cursor-default text-muted-fg outline outline-transparent",
+            "group relative cursor-default outline outline-transparent",
             isFocusVisible &&
               "bg-primary/5 outline-primary ring-3 ring-ring/20 hover:bg-primary/10",
             isDragging && "cursor-grabbing bg-primary/10 text-fg outline-primary",

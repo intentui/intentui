@@ -5,11 +5,13 @@ import {
   Cog6ToothIcon,
   CommandLineIcon,
   LifebuoyIcon,
+  MagnifyingGlassIcon,
   MicrophoneIcon,
   Squares2X2Icon,
 } from "@heroicons/react/24/outline"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { Input, InputGroup } from "@/components/ui/input"
 import {
   Menu,
   MenuContent,
@@ -19,7 +21,7 @@ import {
   MenuSeparator,
   MenuTrigger,
 } from "@/components/ui/menu"
-import { SearchField, SearchInput } from "@/components/ui/search-field"
+import { SearchField } from "@/components/ui/search-field"
 import { SidebarNav, SidebarTrigger } from "@/components/ui/sidebar"
 
 export default function AppSidebarNav() {
@@ -28,11 +30,13 @@ export default function AppSidebarNav() {
       <SidebarTrigger />
       <div className="mx-auto flex items-center gap-x-2 sm:min-w-120">
         <SearchField aria-label="Search" className="w-full">
-          <SearchInput />
+          <InputGroup>
+            <MagnifyingGlassIcon />
+            <Input placeholder="Search" />
+            <MicrophoneIcon />
+          </InputGroup>
         </SearchField>
-        <Button size="sq-sm" className="size-10" intent="plain">
-          <MicrophoneIcon />
-        </Button>
+        <Button size="sq-sm" className="size-10" intent="plain"></Button>
       </div>
       <div>
         <Menu>
