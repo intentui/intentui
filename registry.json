@@ -3670,6 +3670,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/text",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/checkbox"
       ],
