@@ -1,6 +1,6 @@
 ## Intent UI
 
-![OG](https://intentui.com/images/opengraph-image.png?v=4)
+![OG](https://intentui.com/images/opengraph-image.png?v=5)
 Intent UI is a chill set of React components, built on top of [React Aria Components](https://react-aria.adobe.com/getting-started.html?ref=intentui.com), all about keeping the web accessible. Easy to customize and just copy & paste into your React projects. Plus, it includes Tailwind CSS for sleek styling right out of the box.
 
 
