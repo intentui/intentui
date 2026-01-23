@@ -5,12 +5,12 @@ import {
   ArrowUpTrayIcon,
   ChevronUpDownIcon,
   CubeIcon,
-  EllipsisHorizontalIcon,
   HashtagIcon,
   HomeIcon as HomeOutline,
   PencilSquareIcon,
   TrashIcon,
 } from "@heroicons/react/24/outline"
+import {EllipsisHorizontalIcon} from "@heroicons/react/16/solid"
 import {
   Cog6ToothIcon as Cog6ToothSolid,
   HomeIcon as HomeSolid,
@@ -175,8 +175,8 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 
 const articles = [
   { href: "#article-1", label: "How to" },
-  { href: "#article-2", label: "The Future of Remote Work" },
-  { href: "#article-3", label: "Top 10 Design Tips" },
-  { href: "#article-4", label: "Guide to Mental Health" },
-  { href: "#article-5", label: "AI in Everyday Life" },
+  { href: "#article-2", label: "The future of remote work The future of remote work" },
+  { href: "#article-3", label: "Top 10 design tips" },
+  { href: "#article-4", label: "Guide to mental health" },
+  { href: "#article-5", label: "Ai in everyday life" },
 ]

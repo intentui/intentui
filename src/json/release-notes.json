@@ -1,5 +1,41 @@
 [
   {
+    "name": "Sidebar 08",
+    "component": "sidebar-08/page.tsx",
+    "url": "/pre-blocks/sidebar/sidebar-08",
+    "type": "block",
+    "category": "sidebar",
+    "kind": "improvement",
+    "description": null,
+    "additions": 5,
+    "deletions": 5,
+    "date": "2026-01-23"
+  },
+  {
+    "name": "Sidebar 16",
+    "component": "sidebar-16/page.tsx",
+    "url": "/pre-blocks/sidebar/sidebar-16",
+    "type": "block",
+    "category": "sidebar",
+    "kind": "improvement",
+    "description": null,
+    "additions": 5,
+    "deletions": 26,
+    "date": "2026-01-23"
+  },
+  {
+    "name": "Sidebar",
+    "component": "sidebar.tsx",
+    "url": "/sidebar",
+    "type": "component",
+    "category": "layouts",
+    "kind": "improvement",
+    "description": null,
+    "additions": 55,
+    "deletions": 55,
+    "date": "2026-01-23"
+  },
+  {
     "name": "Sheet position demo",
     "component": "sheet-position-demo.tsx",
     "url": "/sheet",
