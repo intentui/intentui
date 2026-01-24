@@ -77,25 +77,19 @@ html.dark .shiki span {
   @apply mt-0;
 }
 
-.steps > h3 {
-  @apply mt-8 mb-4 text-base font-medium;
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply font-medium tracking-tight;
 }
-
-.prose h2 > a.xd2432,
-.prose h3 > a.xd2432,
-.prose h4 > a.xd2432 {
-  @apply text-fg hover:text-fg hover:no-underline;
+.prose h2 {
+  @apply text-[1.4rem];
 }
-.prose h2 > a.xd2432 {
-  @apply text-2xl sm:text-2xl;
+.prose h3 {
+  @apply text-[1.3rem];
 }
-
-.prose h3 > a.xd2432 {
-  @apply text-xl sm:text-xl;
-}
-
-.prose h4 > a.xd2432 {
-  @apply text-lg sm:text-lg;
+.prose h4 {
+  @apply text-[1.2rem];
 }
 
 [data-rehype-pretty-code-title] {

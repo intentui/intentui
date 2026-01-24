@@ -27,6 +27,7 @@ delete-me.txt
 /coverage
 
 src/components-search.json
+src/generated
 # next.js
 /.next/
 /out/

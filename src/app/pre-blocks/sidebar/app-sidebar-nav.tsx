@@ -24,7 +24,7 @@ export default function AppSidebarNav() {
   return (
     <SidebarNav>
       <span className="flex items-center gap-x-4">
-        <SidebarTrigger />
+        <SidebarTrigger className="-ml-2.5 lg:ml-0" />
         <Breadcrumbs className="hidden md:flex">
           <BreadcrumbsItem href="/pre-blocks/sidebar/sidebar-01">Dashboard</BreadcrumbsItem>
           <BreadcrumbsItem>Newsletter</BreadcrumbsItem>

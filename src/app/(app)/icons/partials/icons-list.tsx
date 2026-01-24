@@ -3,8 +3,7 @@
 import { ArrowDownTrayIcon } from "@heroicons/react/20/solid"
 import * as icons from "@intentui/icons"
 import { useSearchParams } from "next/navigation"
-import type React from "react"
-import { useRef, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import { ListBox, ListBoxItem } from "react-aria-components"
 import * as ReactDOMServer from "react-dom/server"
 import { toast } from "sonner"
@@ -17,43 +16,65 @@ import {
   MenuLabel,
   MenuSeparator,
 } from "@/components/ui/menu"
+import iconMetadata from "@/generated/icon-metadata.json"
 import { useClipboard } from "@/hooks/use-clipboard"
 import { Controller } from "./controller"
+import { IconSearchProvider, useIconSearch } from "./controller/use-icon-search"
 import { box, item } from "./styles"
 
 export interface SearchParamsProps {
   searchParams: {
-    query: string
-    t: "solid" | "regular"
+    query?: string
+    t?: "solid" | "regular"
   }
 }
 
-export function IconsList({ searchParams }: SearchParamsProps) {
-  const { query, t } = searchParams
+function IconsListContent({ searchParams }: SearchParamsProps) {
+  const { t } = searchParams
   const filterType = t ?? "regular"
+  const { searchQuery } = useIconSearch()
 
-  const filteredIcons = (query = "", filterType?: "solid" | "regular") => {
-    const queryLower = query.toLowerCase()
+  const iconsByType = useMemo(() => {
+    const typeMap = new Map<"solid" | "regular", Set<string>>()
+    typeMap.set("solid", new Set())
+    typeMap.set("regular", new Set())
+
+    for (const icon of iconMetadata.icons) {
+      const type = icon.isSolid ? "solid" : "regular"
+      typeMap.get(type)?.add(icon.name)
+    }
+
+    return typeMap
+  }, [])
+
+  const filteredIcons = useMemo(() => {
+    const queryLower = searchQuery?.toLowerCase() || ""
 
     const matchingIcons = new Set(aliasLookup[queryLower] || [])
-    return Object.entries(icons).filter(([name]) => {
-      const nameLower = name.toLowerCase()
 
-      const matchesSearch = nameLower.includes(queryLower) || matchingIcons.has(name)
-      const isSolid = nameLower.endsWith("fill")
+    const filteredMetadata = iconMetadata.icons.filter((icon) => {
+      const nameLower = icon.name.toLowerCase()
+      const matchesSearch =
+        !searchQuery || nameLower.includes(queryLower) || matchingIcons.has(icon.name)
       const matchesFilter =
-        !filterType || (filterType === "solid" && isSolid) || (filterType === "regular" && !isSolid)
+        !filterType ||
+        (filterType === "solid" && icon.isSolid) ||
+        (filterType === "regular" && !icon.isSolid)
       return matchesSearch && matchesFilter
     })
-  }
-  const iconsList = filteredIcons(query, filterType)
+
+    return filteredMetadata.map(
+      // biome-ignore lint/performance/noDynamicNamespaceImportAccess: intentional
+      (icon) => [icon.name, icons[icon.name as keyof typeof icons]] as const,
+    )
+  }, [searchQuery, filterType, iconsByType])
 
   return (
     <>
       <Controller searchParams={searchParams} />
       <div className="sm:-mx-2">
         <ListBox selectionMode="single" aria-label="List Icon" layout="grid" className={box()}>
-          {iconsList.map(([name, Icon]) => (
+          {filteredIcons.map(([name, Icon]) => (
             <IconListItem key={name} name={name} Icon={Icon} />
           ))}
         </ListBox>
@@ -95,31 +116,33 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
       textValue={name}
     >
       <Icon className={selectedSize} key={name} />
-      <Menu isOpen={isSelected} onOpenChange={setSelected}>
-        <MenuContent
-          popover={{ triggerRef: triggerRef, arrow: true }}
-          className="sm:min-w-48"
-          aria-label="Options"
-        >
-          <MenuHeader className="font-mono font-normal text-xs sm:text-xs" separator>
-            {name}
-          </MenuHeader>
-          <MenuItem onAction={() => handleCopy("jsx")}>
-            <MenuLabel>Copy JSX</MenuLabel>
-          </MenuItem>
-          <MenuItem onAction={() => copySvgToClipboard(Icon, copy)}>
-            <MenuLabel>Copy SVG</MenuLabel>
-          </MenuItem>
-          <MenuItem onAction={() => handleCopy("text")}>
-            <MenuLabel>Copy Name</MenuLabel>
-          </MenuItem>
-          <MenuSeparator />
-          <MenuItem onAction={() => downloadSvg(Icon, name)}>
-            <MenuLabel>Download SVG</MenuLabel>
-            <ArrowDownTrayIcon />
-          </MenuItem>
-        </MenuContent>
-      </Menu>
+      {isSelected && (
+        <Menu isOpen onOpenChange={setSelected}>
+          <MenuContent
+            popover={{ triggerRef: triggerRef, arrow: true }}
+            className="sm:min-w-48"
+            aria-label="Options"
+          >
+            <MenuHeader className="font-mono font-normal text-xs sm:text-xs" separator>
+              {name}
+            </MenuHeader>
+            <MenuItem onAction={() => handleCopy("jsx")}>
+              <MenuLabel>Copy JSX</MenuLabel>
+            </MenuItem>
+            <MenuItem onAction={() => copySvgToClipboard(Icon, copy)}>
+              <MenuLabel>Copy SVG</MenuLabel>
+            </MenuItem>
+            <MenuItem onAction={() => handleCopy("text")}>
+              <MenuLabel>Copy Name</MenuLabel>
+            </MenuItem>
+            <MenuSeparator />
+            <MenuItem onAction={() => downloadSvg(Icon, name)}>
+              <MenuLabel>Download SVG</MenuLabel>
+              <ArrowDownTrayIcon />
+            </MenuItem>
+          </MenuContent>
+        </Menu>
+      )}
     </ListBoxItem>
   )
 }
@@ -146,4 +169,12 @@ const downloadSvg = (IconComponent: React.ComponentType, fileName: string) => {
   document.body?.removeChild(link)
 
   URL.revokeObjectURL(url)
+}
+
+export function IconsList({ searchParams }: SearchParamsProps) {
+  return (
+    <IconSearchProvider initialQuery={searchParams.query || ""}>
+      <IconsListContent searchParams={searchParams} />
+    </IconSearchProvider>
+  )
 }

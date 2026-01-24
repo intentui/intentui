@@ -1,8 +1,5 @@
-import * as icons from "@intentui/icons"
+import iconMetadata from "@/generated/icon-metadata.json"
 
-/**
- * Common aliases for icons
- */
 const commonAliases = {
   storage: ["storage", "server", "database"],
   person: ["person", "people", "user", "profile", "account"],
@@ -10,9 +7,6 @@ const commonAliases = {
   music: ["audio", "sound", "music", "melody", "tune", "song"],
 } satisfies Record<string, string[]>
 
-/**
- * Base aliases for icons
- */
 const baseAliases: Record<string, string[]> = {
   fill: ["filled", "solid"],
   arrow: ["direction", "navigate", "arrow", "chevron", "caret"],
@@ -39,11 +33,11 @@ const baseAliases: Record<string, string[]> = {
   inbox: ["storage", "box", "archive", "folder", "file", "document"],
 }
 
-const generateAliases = (iconKeys: string[]): Record<string, string[]> => {
-  return iconKeys.reduce(
+const generateAliases = (iconNames: string[]): Record<string, string[]> => {
+  return iconNames.reduce(
     (acc, icon) => {
       const name = icon.toLowerCase()
-      const isFill = name.endsWith("fill") // Only check if it ends with "fill"
+      const isFill = name.endsWith("fill")
       const typeKey = Object.keys(baseAliases).find((key) => name.includes(key)) || null
 
       acc[icon] = [...(typeKey ? baseAliases[typeKey]! : []), ...(isFill ? baseAliases.fill : [])!]
@@ -54,7 +48,8 @@ const generateAliases = (iconKeys: string[]): Record<string, string[]> => {
   )
 }
 
-const aliases = generateAliases(Object.keys(icons))
+const iconNames = iconMetadata.icons.map((icon) => icon.name)
+const aliases = generateAliases(iconNames)
 
 export const aliasLookup = Object.entries(aliases).reduce(
   (acc, [iconName, aliasList]) => {
