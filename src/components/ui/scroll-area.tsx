@@ -1,10 +1,12 @@
 import { useLayoutEffect, useRef } from "react"
 import { twJoin, twMerge } from "tailwind-merge"
 
+type ScrollAreaOrientation = "vertical" | "horizontal" | "both"
+
 export interface ScrollAreaProps extends React.ComponentPropsWithRef<"div"> {
   scrollFade?: boolean
   scrollbarGutter?: boolean
-  orientation?: "vertical" | "horizontal" | "both"
+  orientation?: ScrollAreaOrientation
 }
 
 export function ScrollArea({
@@ -72,19 +74,23 @@ export function ScrollArea({
         ref={viewportRef}
         className={twJoin(
           "h-full overscroll-auto rounded-[inherit] outline-none transition-shadow data-has-overflow-y:overscroll-y-contain data-has-overflow-x:overscroll-x-contain",
+
           orientation === "vertical"
             ? "overflow-y-auto overflow-x-hidden"
             : orientation === "horizontal"
               ? "overflow-x-auto overflow-y-hidden"
               : "overflow-auto",
-          scrollFade && allowY
-            ? "mask-t-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-start,0)))] mask-b-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-end,0)))]"
+          scrollFade
+            ? twJoin(
+                allowY &&
+                  "mask-t-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-start,0)))] mask-b-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-end,0)))]",
+                allowX &&
+                  "mask-l-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-start,0)))] mask-r-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-end,0)))]",
+              )
             : "",
-          scrollFade && allowX
-            ? "mask-l-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-start,0)))] mask-r-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-end,0)))]"
+          scrollbarGutter
+            ? twJoin(allowY && "data-has-overflow-y:pe-2.5", allowX && "data-has-overflow-x:pb-2.5")
             : "",
-          scrollbarGutter && allowY ? "data-has-overflow-y:pe-2.5" : "",
-          scrollbarGutter && allowX ? "data-has-overflow-x:pb-2.5" : "",
         )}
         data-slot="scroll-area-viewport"
       >
