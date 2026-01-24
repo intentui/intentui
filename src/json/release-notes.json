@@ -1,5 +1,17 @@
 [
   {
+    "name": "Scroll area",
+    "component": "scroll-area.tsx",
+    "url": "/scroll-area",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 18,
+    "deletions": 30,
+    "date": "2026-01-24"
+  },
+  {
     "name": "Sidebar 19",
     "component": "sidebar-19/page.tsx",
     "url": "/pre-blocks/sidebar/sidebar-19",

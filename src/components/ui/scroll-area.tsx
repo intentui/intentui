@@ -1,16 +1,14 @@
 import { useLayoutEffect, useRef } from "react"
 import { twJoin, twMerge } from "tailwind-merge"
 
-type ScrollAreaOrientation = "vertical" | "horizontal" | "both"
-
-export interface ScrollAreaProps extends React.ComponentProps<"div"> {
+export interface ScrollAreaProps extends React.ComponentPropsWithRef<"div"> {
   scrollFade?: boolean
   scrollbarGutter?: boolean
-  orientation?: ScrollAreaOrientation
+  orientation?: "vertical" | "horizontal" | "both"
 }
 
 export function ScrollArea({
-  ref,
+  ref: forwardedRef,
   className,
   children,
   scrollFade = false,
@@ -68,35 +66,25 @@ export function ScrollArea({
     }
   }, [allowX, allowY])
 
-  const overflowClass =
-    orientation === "vertical"
-      ? "overflow-y-auto overflow-x-hidden"
-      : orientation === "horizontal"
-        ? "overflow-x-auto overflow-y-hidden"
-        : "overflow-auto"
-
-  const gutterClass = scrollbarGutter
-    ? twJoin(allowY && "data-has-overflow-y:pe-2.5", allowX && "data-has-overflow-x:pb-2.5")
-    : ""
-
-  const fadeClass = scrollFade
-    ? twJoin(
-        allowY &&
-          "mask-t-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-start,0)))] mask-b-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-end,0)))]",
-        allowX &&
-          "mask-l-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-start,0)))] mask-r-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-end,0)))]",
-      )
-    : ""
-
   return (
-    <div ref={ref} className={twMerge("size-full min-h-0", className)} {...props}>
+    <div ref={forwardedRef} className={twMerge("size-full min-h-0", className)} {...props}>
       <div
         ref={viewportRef}
         className={twJoin(
-          "h-full overscroll-contain rounded-[inherit] outline-none transition-shadow",
-          overflowClass,
-          fadeClass,
-          gutterClass,
+          "h-full overscroll-auto rounded-[inherit] outline-none transition-shadow data-has-overflow-y:overscroll-y-contain data-has-overflow-x:overscroll-x-contain",
+          orientation === "vertical"
+            ? "overflow-y-auto overflow-x-hidden"
+            : orientation === "horizontal"
+              ? "overflow-x-auto overflow-y-hidden"
+              : "overflow-auto",
+          scrollFade && allowY
+            ? "mask-t-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-start,0)))] mask-b-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-end,0)))]"
+            : "",
+          scrollFade && allowX
+            ? "mask-l-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-start,0)))] mask-r-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-end,0)))]"
+            : "",
+          scrollbarGutter && allowY ? "data-has-overflow-y:pe-2.5" : "",
+          scrollbarGutter && allowX ? "data-has-overflow-x:pb-2.5" : "",
         )}
         data-slot="scroll-area-viewport"
       >
