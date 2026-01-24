@@ -1,26 +1,27 @@
-import { CheckIcon, Square2StackIcon } from "@heroicons/react/24/outline"
+import { CheckIcon } from "@heroicons/react/20/solid"
 import { useState } from "react"
+import { DuplicateIcon } from "@/components/icons/duplicate-icon"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 import { useClipboard } from "@/hooks/use-clipboard"
 
-type Tool = "Bun" | "Yarn" | "PNPM" | "NPM"
+const npms = ["bun", "yarn", "pnpm", "npm"] as const
+type Tool = (typeof npms)[number]
 
 export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
   const [isCopied, setIsCopied] = useState(false)
   const [command, setCommand] = useState("")
   const { copy } = useClipboard()
-  const commandArgs = pkg
 
   const installMap: Record<Tool, string> = {
-    Bun: "bun add",
-    Yarn: "yarn add",
-    PNPM: "pnpm add",
-    NPM: "npm i",
+    bun: "bun add",
+    yarn: "yarn add",
+    pnpm: "pnpm add",
+    npm: "npm i",
   }
 
   const handleCopy = async (tool: Tool) => {
-    const newCommand = `${installMap[tool]} ${commandArgs}`
+    const newCommand = `${installMap[tool]} ${pkg}`
     setCommand(newCommand)
     const didCopy = await copy(newCommand)
     if (!didCopy) return
@@ -30,21 +31,22 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
 
   return (
     <div className="xd flex h-10 w-full items-center justify-between rounded-lg border p-1 pl-3 font-mono text-sm backdrop-blur-xs duration-200 hover:border-current/10 sm:min-w-72 sm:max-w-72 dark:bg-secondary [&_.xd]:-mt-px [&_.xd]:mr-[-0.30rem]">
-      <div className="flex items-center">{command || "npm i @intentui/icons"}</div>
+      <div className="flex items-center">{command || `npm i ${pkg}`}</div>
       <Menu>
         <Button
           size="sq-sm"
           intent="secondary"
           className="size-7 rounded-sm bg-bg hover:bg-bg/80"
-          aria-label="Copy npm command"
+          aria-label="Copy install command"
         >
-          {isCopied ? <CheckIcon /> : <Square2StackIcon />}
+          {isCopied ? <CheckIcon /> : <DuplicateIcon />}
         </Button>
         <MenuContent placement="bottom end">
-          <MenuItem onAction={() => handleCopy("NPM")}>NPM</MenuItem>
-          <MenuItem onAction={() => handleCopy("Bun")}>Bun</MenuItem>
-          <MenuItem onAction={() => handleCopy("Yarn")}>Yarn</MenuItem>
-          <MenuItem onAction={() => handleCopy("PNPM")}>PNPM</MenuItem>
+          {npms.map((item) => (
+            <MenuItem key={item} onAction={() => handleCopy(item)}>
+              {item}
+            </MenuItem>
+          ))}
         </MenuContent>
       </Menu>
     </div>

@@ -43,7 +43,7 @@ export default async function Page({ searchParams }: Props) {
           </HeaderDescription>
         </HeaderInner>
       </Header>
-      <PageContainer>
+      <PageContainer className="pb-6">
         <Suspense
           fallback={
             <div className="flex min-h-96 items-center justify-center">

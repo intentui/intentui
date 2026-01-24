@@ -13,14 +13,14 @@ import { Tooltip, TooltipContent } from "@/components/ui/tooltip"
 import { useClipboard } from "@/hooks/use-clipboard"
 import { cx } from "@/lib/primitive"
 
-type RegistryFile = {
+interface RegistryFile {
   path: string
   content: string
   type: string
   target?: string
 }
 
-type RegistryItem = {
+interface RegistryItem {
   name: string
   type: string
   title: string

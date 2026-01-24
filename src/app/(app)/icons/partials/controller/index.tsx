@@ -27,7 +27,7 @@ export function Controller({ searchParams }: SearchParamsProps) {
   }
 
   return (
-    <div className="z-10 lg:sticky lg:top-20">
+    <div className="z-10 lg:sticky lg:top-16">
       <div className="relative">
         <div className="relative z-20 mb-6 flex flex-col items-center justify-between gap-2 sm:mb-12 sm:flex-row">
           <InstallIcon />
