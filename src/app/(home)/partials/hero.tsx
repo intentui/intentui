@@ -36,7 +36,7 @@ export function Hero() {
           <Link
             className={buttonStyles({
               size: "lg",
-              intent: "outline",
+              intent: "secondary",
               className: "shadow-none",
             })}
             href="/components"
