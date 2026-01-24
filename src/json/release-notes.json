@@ -1,5 +1,29 @@
 [
   {
+    "name": "App sidebar nav",
+    "component": "app-sidebar-nav.tsx/page.tsx",
+    "url": "/pre-blocks/sidebar/app-sidebar-nav.tsx",
+    "type": "block",
+    "category": "sidebar",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-01-24"
+  },
+  {
+    "name": "App sidebar",
+    "component": "app-sidebar.tsx/page.tsx",
+    "url": "/pre-blocks/sidebar/app-sidebar.tsx",
+    "type": "block",
+    "category": "sidebar",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-01-24"
+  },
+  {
     "name": "Scroll area",
     "component": "scroll-area.tsx",
     "url": "/scroll-area",
@@ -7,8 +31,20 @@
     "category": "controls",
     "kind": "improvement",
     "description": null,
-    "additions": 32,
-    "deletions": 34,
+    "additions": 12,
+    "deletions": 3,
+    "date": "2026-01-24"
+  },
+  {
+    "name": "Sidebar",
+    "component": "sidebar.tsx",
+    "url": "/sidebar",
+    "type": "component",
+    "category": "layouts",
+    "kind": "improvement",
+    "description": null,
+    "additions": 9,
+    "deletions": 6,
     "date": "2026-01-24"
   },
   {

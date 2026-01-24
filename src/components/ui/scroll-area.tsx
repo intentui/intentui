@@ -20,6 +20,7 @@ export function ScrollArea({
 }: ScrollAreaProps) {
   const viewportRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef<number | null>(null)
+  const isThrottledRef = useRef(false)
 
   const allowY = orientation === "vertical" || orientation === "both"
   const allowX = orientation === "horizontal" || orientation === "both"
@@ -54,15 +55,23 @@ export function ScrollArea({
       rafRef.current = requestAnimationFrame(update)
     }
 
+    const throttledScrollUpdate = () => {
+      if (isThrottledRef.current) return
+      isThrottledRef.current = true
+      scheduleUpdate()
+      setTimeout(() => {
+        isThrottledRef.current = false
+      }, 16)
+    }
+
     const ro = new ResizeObserver(scheduleUpdate)
     ro.observe(el)
 
-    const onScroll = () => scheduleUpdate()
-    el.addEventListener("scroll", onScroll, { passive: true })
+    el.addEventListener("scroll", throttledScrollUpdate, { passive: true })
     update()
 
     return () => {
-      el.removeEventListener("scroll", onScroll)
+      el.removeEventListener("scroll", throttledScrollUpdate)
       ro.disconnect()
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }

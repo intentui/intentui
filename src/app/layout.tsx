@@ -1,5 +1,4 @@
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { DeferredAnalytics } from "@/components/deferred-analytics"
 import { Providers } from "@/components/providers"
 import { app, META_THEME_COLORS } from "@/config/app"
 import "@/styles/app.css"
@@ -158,8 +157,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
         <Suspense>
           <AurelieAnalytics />
         </Suspense>
-        <Analytics />
-        <SpeedInsights />
+        <DeferredAnalytics />
       </body>
     </html>
   )

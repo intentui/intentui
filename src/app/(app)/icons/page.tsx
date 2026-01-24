@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { Header } from "@/components/header"
+import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
 import { Loader } from "@/components/ui/loader"
 import { createMetadata } from "@/lib/metadata"
@@ -25,8 +25,8 @@ export const metadata = createMetadata({
 
 interface Props {
   searchParams: Promise<{
-    query: string
-    t: "solid" | "regular"
+    query?: string
+    t?: "solid" | "regular"
   }>
 }
 
@@ -35,8 +35,13 @@ export default async function Page({ searchParams }: Props) {
   return (
     <>
       <Header>
-        Ico
-        <span className="text-muted-fg">ns</span>
+        <HeaderInner>
+          <HeaderTitle>Icons</HeaderTitle>
+          <HeaderDescription>
+            A library of beautifully crafted @intentui/icons to elevate your web apps with crisp
+            visuals, consistent style, and a polished, delightful user experience.
+          </HeaderDescription>
+        </HeaderInner>
       </Header>
       <PageContainer>
         <Suspense

@@ -1,7 +1,7 @@
 "use client"
 
 import { ChevronDownIcon } from "@heroicons/react/24/solid"
-import { createContext, use, useCallback, useEffect, useMemo, useState } from "react"
+import { createContext, use, useCallback, useEffect, useMemo, useRef, useState } from "react"
 import type {
   ButtonProps,
   DisclosureGroupProps,
@@ -94,17 +94,22 @@ const SidebarProvider = ({
   )
 
   const isMobile = useIsMobile()
+  const isMobileRef = useRef(isMobile)
+  isMobileRef.current = isMobile
 
   const toggleSidebar = useCallback(() => {
-    return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open)
-  }, [isMobile, setOpen])
+    if (isMobileRef.current) {
+      setOpenMobile((prev) => !prev)
+    } else {
+      setOpen((prev) => !prev)
+    }
+  }, [setOpen])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === shortcut && (event.metaKey || event.ctrlKey)) {
         const activeElement = document.activeElement
 
-        // Check if user is in a text input context
         const isInTextInput =
           activeElement instanceof HTMLInputElement ||
           activeElement instanceof HTMLTextAreaElement ||
@@ -115,8 +120,6 @@ const SidebarProvider = ({
           event.preventDefault()
           toggleSidebar()
         }
-        event.preventDefault()
-        toggleSidebar()
       }
     }
 
