@@ -1,4 +1,4 @@
-import { CheckIcon, ChevronRightIcon, Square2StackIcon } from "@heroicons/react/24/outline"
+import { CheckIcon, Square2StackIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
@@ -30,10 +30,7 @@ export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
 
   return (
     <div className="xd flex h-10 w-full items-center justify-between rounded-lg border p-1 pl-3 font-mono text-sm backdrop-blur-xs duration-200 hover:border-current/10 sm:min-w-72 sm:max-w-72 dark:bg-secondary [&_.xd]:-mt-px [&_.xd]:mr-[-0.30rem]">
-      <div className="flex items-center">
-        <ChevronRightIcon className="-ml-1.5 size-5.5 text-muted-fg" />
-        {command || "npm i @intentui/icons"}
-      </div>
+      <div className="flex items-center">{command || "npm i @intentui/icons"}</div>
       <Menu>
         <Button
           size="sq-sm"

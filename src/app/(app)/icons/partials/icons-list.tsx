@@ -64,6 +64,7 @@ function IconsListContent({ searchParams }: SearchParamsProps) {
     })
 
     return filteredMetadata.map(
+      // biome-ignore lint/performance/noDynamicNamespaceImportAccess: intentional
       (icon) => [icon.name, icons[icon.name as keyof typeof icons]] as const,
     )
   }, [searchQuery, filterType, iconsByType])
