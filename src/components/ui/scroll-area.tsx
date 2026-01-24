@@ -81,15 +81,15 @@ export function ScrollArea({
               ? "overflow-x-auto overflow-y-hidden"
               : "overflow-auto",
           scrollFade
-            ? twJoin(
+            ? [
                 allowY &&
                   "mask-t-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-start,0)))] mask-b-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-y-end,0)))]",
                 allowX &&
                   "mask-l-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-start,0)))] mask-r-from-[calc(100%-min(var(--fade-size,--spacing(6)),var(--scroll-area-overflow-x-end,0)))]",
-              )
+              ]
             : "",
           scrollbarGutter
-            ? twJoin(allowY && "data-has-overflow-y:pe-2.5", allowX && "data-has-overflow-x:pb-2.5")
+            ? [allowY && "data-has-overflow-y:pe-2.5", allowX && "data-has-overflow-x:pb-2.5"]
             : "",
         )}
         data-slot="scroll-area-viewport"
