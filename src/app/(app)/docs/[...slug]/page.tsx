@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { twJoin } from "tailwind-merge"
 import { Ads } from "@/components/ads"
 import { DocRefs } from "@/components/doc-refs"
+import { JsonLd } from "@/components/json-ld"
 import { mdxComponents } from "@/components/mdx-components"
 import { OpenIn } from "@/components/open-in"
 import { Pager } from "@/components/pager"
@@ -69,6 +70,23 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
   }
 }
 
+function generateBreadcrumbs(slug: string[], pageTitle: string) {
+  const items = [
+    { name: "Home", url: app.url },
+    { name: "Docs", url: `${app.url}/docs` },
+  ]
+
+  let path = "/docs"
+  for (let i = 0; i < slug.length - 1; i++) {
+    path += `/${slug[i]}`
+    items.push({ name: title(slug[i]!), url: `${app.url}${path}` })
+  }
+
+  items.push({ name: pageTitle, url: `${app.url}${path}/${slug[slug.length - 1]}` })
+
+  return items
+}
+
 export default async function Page(props: DocPageProps) {
   const params = await props.params
   const page = source.getPage(params.slug)
@@ -79,8 +97,50 @@ export default async function Page(props: DocPageProps) {
   const MDX = doc.body
   const pageText = await doc.getText("raw")
 
+  const breadcrumbs = generateBreadcrumbs(params.slug, doc.title)
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        headline: doc.title,
+        description: doc.description,
+        url: `${app.url}${page.url}`,
+        author: {
+          "@type": "Person",
+          name: app.author.name,
+          url: app.author.url,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: app.name,
+          url: app.url,
+          logo: {
+            "@type": "ImageObject",
+            url: `${app.url}/icon.svg`,
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${app.url}${page.url}`,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbs.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.name,
+          item: item.url,
+        })),
+      },
+    ],
+  }
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <div className="min-w-0 max-w-3xl flex-auto px-4 py-8 sm:py-14 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
         <div className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
           <div className="pb-6 sm:border-b">
