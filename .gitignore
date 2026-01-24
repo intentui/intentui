@@ -11,6 +11,7 @@ ignore
 /.claude
 /.agents
 /.ai
+/.github
 /.codex
 /.opencode
 delete-me.txt
