@@ -75,6 +75,31 @@ You can control the modal programmatically.
 The modal is set to `lg` by default. You can adjust it to any size from the available options.
 <How toUse="overlays/modal/modal-size-demo" />
 
+## Modal overlay styles
+
+The overlay uses a subtle 1px blur by default. You can increase it or disable it entirely.
+
+```tsx
+<Modal>
+  <Button intent="outline">Rename</Button>
+  <ModalContent overlay={{ className: "backdrop-blur-2xl" }}>
+```
+
+If you want to turn it off, use `backdrop-blur-none`. If you do not need any blur at all, the recommended approach is to remove the blur class from the component defaults.
+
+```diff
+-"bg-bg/15 backdrop-blur-[1px] motion-reduce:backdrop-blur-0",
++"bg-bg/15",
+```
+
+Or, you can override it per instance from the component usage:
+
+```tsx
+<Modal>
+  <Button intent="outline">Rename</Button>
+  <ModalContent overlay={{ className: "backdrop-blur-none" }}>
+```
+
 ## Sticky
 You can use the `ModalBody` component to make the modal sticky.
 <How toUse="overlays/modal/modal-sticky-demo" />
