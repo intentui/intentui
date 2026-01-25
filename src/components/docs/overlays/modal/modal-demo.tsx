@@ -18,7 +18,7 @@ export default function ModalDemo() {
   return (
     <Modal>
       <Button intent="outline">Rename</Button>
-      <ModalContent>
+      <ModalContent overlay={{ className: "backdrop-blur-2xl" }}>
         {({ close }) => (
           <>
             <ModalHeader>

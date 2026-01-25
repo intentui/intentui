@@ -6,7 +6,6 @@ import {
   ModalOverlay,
   Modal as ModalPrimitive,
 } from "react-aria-components"
-import { twJoin } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import {
   Dialog,
@@ -43,7 +42,7 @@ interface ModalContentProps
     Pick<DialogProps, "aria-label" | "aria-labelledby" | "role" | "children"> {
   size?: keyof typeof sizes
   closeButton?: boolean
-  overlay?: Omit<ModalOverlayProps, "children">
+  overlay?: Pick<ModalOverlayProps, "className">
 }
 
 const ModalContent = ({
@@ -61,13 +60,14 @@ const ModalContent = ({
     <ModalOverlay
       data-slot="modal-overlay"
       isDismissable={isDismissable}
-      className={twJoin(
+      className={cx(
         "fixed start-0 top-0 z-50 h-(--visual-viewport-height,100vh) w-screen",
         "bg-bg/15 backdrop-blur-[1px] motion-reduce:backdrop-blur-0",
         "grid grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_3fr]",
-        size === "fullscreen" ? "md:p-3" : "md:p-4",
         "entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
         "exiting:fade-out exiting:animate-out exiting:ease-in",
+        size === "fullscreen" ? "md:p-3" : "md:p-4",
+        overlay?.className,
       )}
       {...props}
     >
@@ -86,7 +86,6 @@ const ModalContent = ({
           "exiting:slide-out-to-bottom sm:exiting:zoom-out-95 sm:exiting:slide-out-to-bottom-0 exiting:animate-out exiting:ease-in",
           className,
         )}
-        {...props}
       >
         <Dialog role={role}>
           {(values) => (
