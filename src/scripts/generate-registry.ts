@@ -30,7 +30,7 @@ if (existsSync(envLocalPath)) {
 makeRegistry()
 
 const LIB_ALLOW = ["number", "date", "primitive"]
-const HOOKS_ALLOW = ["use-media-query", "use-theme", "use-mobile"]
+const HOOKS_ALLOW = ["use-media-query", "use-clipboard", "use-theme", "use-mobile"]
 const REGISTRY_NAME = process.env.REGISTRY_NAME || "intentui"
 const REGISTRY_HOMEPAGE = process.env.NEXT_PUBLIC_APP_URL
 const REGISTRY_STYLE = process.env.REGISTRY_STYLE || "blocks"
