@@ -61,9 +61,9 @@ const dropdownItemStyles = tv({
     "*:data-[slot=icon]:col-start-1 *:data-[slot=icon]:row-start-1 *:data-[slot=icon]:-ms-0.5 *:data-[slot=icon]:me-(--me-icon) *:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='text-'])]:text-muted-fg",
     "not-has-[[slot=description]]:*:data-[slot=icon]:size-5 sm:not-has-[[slot=description]]:*:data-[slot=icon]:size-4",
     "has-[[slot=description]]:*:data-[slot=icon]:h-lh has-[[slot=description]]:[&_[data-slot='icon']:not([class*='w-'])]:w-5 sm:has-[[slot=description]]:[&_[data-slot='icon']:not([class*='w-'])]:w-4",
-    "[&>[slot=label]+[data-slot=icon]]:absolute [&>[slot=label]+[data-slot=icon]]:top-1 [&>[slot=label]+[data-slot=icon]]:end-0",
-    "selected:[&>[data-slot=icon]:has(+[data-slot=icon])]:absolute selected:[&>[data-slot=icon]:has(+[data-slot=icon])]:top-1 selected:[&>[data-slot=icon]:has(+[data-slot=icon])]:end-0",
-    "selected:[&>[data-slot=icon]:has(+[data-slot=avatar])]:absolute selected:[&>[data-slot=icon]:has(+[data-slot=avatar])]:top-1 selected:[&>[data-slot=icon]:has(+[data-slot=avatar])]:end-0",
+    "[&>[slot=label]+[data-slot=icon]]:absolute [&>[slot=label]+[data-slot=icon]]:end-0 [&>[slot=label]+[data-slot=icon]]:top-1",
+    "selected:[&>[data-slot=icon]:has(+[data-slot=icon])]:absolute selected:[&>[data-slot=icon]:has(+[data-slot=icon])]:end-0 selected:[&>[data-slot=icon]:has(+[data-slot=icon])]:top-1",
+    "selected:[&>[data-slot=icon]:has(+[data-slot=avatar])]:absolute selected:[&>[data-slot=icon]:has(+[data-slot=avatar])]:end-0 selected:[&>[data-slot=icon]:has(+[data-slot=avatar])]:top-1",
     "selected:[&>[data-slot=avatar]+[data-slot=icon]+[slot=label]]:me-6 selected:[&>[data-slot=avatar]+[slot=label]]:me-6 selected:[&>[data-slot=icon]+[data-slot=avatar]+[slot=label]]:me-6 selected:[&>[data-slot=icon]+[slot=label]]:me-6",
     // keyboard
     "*:data-[slot=keyboard]:end-3",
@@ -128,8 +128,8 @@ const DropdownItem = ({ className, children, intent, ...props }: DropdownItemPro
             <CheckIcon
               className={twJoin(
                 "-ms-0.5 me-1.5 h-lh w-4 shrink-0",
-                "group-has-data-[slot=icon]:absolute group-has-data-[slot=icon]:top-1/2 group-has-data-[slot=icon]:end-0.5 group-has-data-[slot=icon]:-translate-y-1/2",
-                "group-has-data-[slot=avatar]:absolute group-has-data-[slot=avatar]:top-1/2 group-has-data-[slot=avatar]:end-0.5 group-has-data-[slot=avatar]:-translate-y-1/2",
+                "group-has-data-[slot=icon]:absolute group-has-data-[slot=icon]:end-0.5 group-has-data-[slot=icon]:top-1/2 group-has-data-[slot=icon]:-translate-y-1/2",
+                "group-has-data-[slot=avatar]:absolute group-has-data-[slot=avatar]:end-0.5 group-has-data-[slot=avatar]:top-1/2 group-has-data-[slot=avatar]:-translate-y-1/2",
               )}
               data-slot="check-indicator"
             />

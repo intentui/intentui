@@ -76,7 +76,7 @@ const ComboBoxInput = (props: InputProps) => {
       className="relative isolate block has-[[data-slot=icon]:last-child]:[&_input]:pe-10"
     >
       <Input {...props} placeholder={props?.placeholder} />
-      <Button className="absolute top-0 end-0 grid h-full w-11 cursor-default place-content-center sm:w-9">
+      <Button className="absolute end-0 top-0 grid h-full w-11 cursor-default place-content-center sm:w-9">
         {!context?.inputValue && (
           <ChevronUpDownIcon data-slot="chevron" className="-me-1 size-5 text-muted-fg sm:size-4" />
         )}

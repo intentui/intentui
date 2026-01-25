@@ -449,7 +449,7 @@ const SidebarItem = ({
                 {badge}
               </span>
             ) : (
-              <div aria-hidden className="absolute top-1 end-1 size-1.5 rounded-full bg-primary" />
+              <div aria-hidden className="absolute end-1 top-1 size-1.5 rounded-full bg-primary" />
             ))}
         </>
       )}

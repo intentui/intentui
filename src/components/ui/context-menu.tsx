@@ -109,7 +109,7 @@ const ContextMenuSeparator = MenuSeparator
 const ContextMenuDescription = MenuDescription
 const ContextMenuSection = MenuSection
 const ContextMenuHeader = MenuHeader
-const ContextMenuKeyboard = MenuShortcut
+const ContextMenuShortcut = MenuShortcut
 const ContextMenuLabel = MenuLabel
 
 export type { ContextMenuProps }
@@ -123,5 +123,5 @@ export {
   ContextMenuDescription,
   ContextMenuSection,
   ContextMenuHeader,
-  ContextMenuKeyboard,
+  ContextMenuShortcut,
 }

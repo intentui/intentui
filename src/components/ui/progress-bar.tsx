@@ -83,7 +83,7 @@ export function ProgressBarTrack({ className, ref, ...props }: React.ComponentPr
           {!isIndeterminate ? (
             <div
               data-slot="progress-content"
-              className="absolute top-0 start-0 h-full rounded-full bg-(--progress-content-bg) transition-[width] duration-200 ease-linear will-change-[width] motion-reduce:transition-none forced-colors:bg-[Highlight]"
+              className="absolute start-0 top-0 h-full rounded-full bg-(--progress-content-bg) transition-[width] duration-200 ease-linear will-change-[width] motion-reduce:transition-none forced-colors:bg-[Highlight]"
               style={{ width: `${percentage}%` }}
             />
           ) : (

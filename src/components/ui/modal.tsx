@@ -62,7 +62,7 @@ const ModalContent = ({
       data-slot="modal-overlay"
       isDismissable={isDismissable}
       className={twJoin(
-        "fixed top-0 start-0 z-50 h-(--visual-viewport-height,100vh) w-screen",
+        "fixed start-0 top-0 z-50 h-(--visual-viewport-height,100vh) w-screen",
         "bg-bg/15 backdrop-blur-[1px] motion-reduce:backdrop-blur-0",
         "grid grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_3fr]",
         size === "fullscreen" ? "md:p-3" : "md:p-4",

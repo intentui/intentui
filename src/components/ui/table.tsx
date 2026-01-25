@@ -26,10 +26,9 @@ import {
   useTableOptions,
 } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
-import { CardDescription, CardTitle } from "@/components/ui/card"
+import { Text } from "@/components/ui/text"
 import { cx } from "@/lib/primitive"
 import { Checkbox } from "./checkbox"
-import { Text } from "@/components/ui/text";
 
 interface TableProps extends Omit<TablePrimitiveProps, "className"> {
   allowResize?: boolean
@@ -94,7 +93,7 @@ const ColumnResizer = ({ className, ...props }: ColumnResizerProps) => (
   <ColumnResizerPrimitive
     {...props}
     className={cx(
-      "absolute top-0 end-0 bottom-0 grid w-px &[data-resizable-direction=left]:cursor-e-resize &[data-resizable-direction=right]:cursor-w-resize resizable-both:cursor-ew-resize touch-none place-content-center px-1 [&[data-resizing]>div]:bg-primary",
+      "absolute end-0 top-0 bottom-0 grid w-px &[data-resizable-direction=left]:cursor-e-resize &[data-resizable-direction=right]:cursor-w-resize resizable-both:cursor-ew-resize touch-none place-content-center px-1 [&[data-resizing]>div]:bg-primary",
       className,
     )}
   >

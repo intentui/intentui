@@ -133,8 +133,8 @@ const Tab = ({ className, ref, ...props }: TabProps) => {
               className={twMerge(
                 "absolute bg-primary-subtle-fg duration-200 will-change-transform",
                 orientation === "horizontal"
-                  ? "end-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] start-(--tab-gutter-x) h-0.5 motion-safe:transition-[translate,width]"
-                  : "top-(--tab-gutter-y) bottom-(--tab-gutter-y) -start-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] w-0.5 motion-safe:transition-[translate,height]",
+                  ? "start-(--tab-gutter-x) end-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] h-0.5 motion-safe:transition-[translate,width]"
+                  : "-start-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] top-(--tab-gutter-y) bottom-(--tab-gutter-y) w-0.5 motion-safe:transition-[translate,height]",
               )}
             />
           )}

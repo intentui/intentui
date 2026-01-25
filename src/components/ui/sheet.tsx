@@ -50,7 +50,7 @@ const SheetContent = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className="entering:fade-in exiting:fade-out fixed top-0 start-0 z-50 size-full entering:animate-in exiting:animate-out overflow-hidden bg-black/15 entering:duration-500 exiting:duration-300"
+      className="entering:fade-in exiting:fade-out fixed start-0 top-0 z-50 size-full entering:animate-in exiting:animate-out overflow-hidden bg-black/15 entering:duration-500 exiting:duration-300"
       {...props}
     >
       <Modal
@@ -71,7 +71,7 @@ const SheetContent = ({
             <>
               {typeof children === "function" ? children(values) : children}
               {closeButton && (
-                <DialogCloseIcon className="top-2.5 end-2.5" isDismissable={isDismissable} />
+                <DialogCloseIcon className="end-2.5 top-2.5" isDismissable={isDismissable} />
               )}
             </>
           )}
