@@ -6,13 +6,11 @@ import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
 import { Footer } from "@/components/footer"
 import { app } from "@/config/app"
-import { createMetadata } from "@/lib/metadata"
 import { Hero } from "./partials/hero"
 import { Navbar } from "./partials/navbar"
 import { OpenSource } from "./partials/open-source"
 
-export const metadata = createMetadata({
-  title: app.name,
+export const metadata = {
   description: app.description,
   path: "/",
   image: null,
@@ -27,7 +25,7 @@ export const metadata = createMetadata({
     "intent ui",
     "intentui",
   ],
-})
+}
 export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">
