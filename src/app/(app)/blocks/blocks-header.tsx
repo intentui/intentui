@@ -1,4 +1,5 @@
 "use client"
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import { usePathname } from "next/navigation"
 import { twJoin } from "tailwind-merge"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
@@ -26,6 +27,9 @@ export function BlocksHeader() {
               <NavLink href="/blocks/navbar">Navbar</NavLink>
               <NavLink href="/blocks/auth">Auth</NavLink>
               <NavLink href="/blocks/chart">Charts</NavLink>
+              <NavLink href="https://design.intentui.com?utm_source=intentui.com&utm_medium=referer&utm_campaign=blocks">
+                More <ArrowTopRightOnSquareIcon className="" />
+              </NavLink>
             </div>
           </div>
         </PageContainer>
@@ -39,7 +43,7 @@ function NavLink(props: LinkProps) {
   return (
     <Link
       className={twJoin(
-        "px-2 py-3 text-sm/6",
+        "inline-flex items-center gap-x-2.5 px-2 py-3 text-sm/6 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0",
         "text-muted-fg hover:text-fg",
         pathname === props.href ? "text-fg" : "text-muted-fg",
       )}
