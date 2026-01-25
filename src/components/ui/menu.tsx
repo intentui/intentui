@@ -136,10 +136,10 @@ const MenuItem = ({ className, intent, children, ...props }: MenuItemProps) => {
               )}
             >
               {values.selectionMode === "single" && (
-                <CheckIcon className="-mx-0.5 mr-2 size-4" data-slot="check-indicator" />
+                <CheckIcon className="-mx-0.5 me-2 size-4" data-slot="check-indicator" />
               )}
               {values.selectionMode === "multiple" && (
-                <CheckIcon className="-mx-0.5 mr-2 size-4" data-slot="check-indicator" />
+                <CheckIcon className="-mx-0.5 me-2 size-4" data-slot="check-indicator" />
               )}
             </span>
           )}

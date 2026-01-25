@@ -70,7 +70,7 @@ export function BarList<T>({
               )}
               style={{ width: `${widths[index]}%` }}
             >
-              <div className="absolute left-2 flex max-w-full pr-3 sm:pr-2">
+              <div className="absolute left-2 flex max-w-full pe-3 sm:pe-2">
                 {item.href ? (
                   <Link
                     href={item.href}

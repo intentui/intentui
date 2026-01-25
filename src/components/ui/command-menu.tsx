@@ -225,7 +225,7 @@ interface CommandMenuDescriptionProps extends React.ComponentProps<typeof MenuDe
 
 const CommandMenuDescription = ({ className, ...props }: CommandMenuDescriptionProps) => {
   return (
-    <MenuDescription className={twMerge("col-start-3 row-start-1 ml-auto", className)} {...props} />
+    <MenuDescription className={twMerge("col-start-3 row-start-1 ms-auto", className)} {...props} />
   )
 }
 

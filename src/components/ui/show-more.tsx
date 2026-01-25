@@ -22,7 +22,7 @@ const showMoreStyles = tv({
     {
       orientation: "horizontal",
       className:
-        "my-2 flex items-center self-stretch before:mr-2 before:flex-1 before:border-t after:ml-2 after:flex-1 after:border-t",
+        "my-2 flex items-center self-stretch before:me-2 before:flex-1 before:border-t after:ms-2 after:flex-1 after:border-t",
     },
   ],
   defaultVariants: {

@@ -69,7 +69,7 @@ const CalendarHeader = ({
     <header
       data-slot="calendar-header"
       className={twMerge(
-        "flex w-full justify-between gap-1.5 pt-1 pr-1 pb-5 pl-1.5 sm:pb-4",
+        "flex w-full justify-between gap-1.5 ps-1.5 pe-1 pt-1 pb-5 sm:pb-4",
         className,
       )}
       {...props}

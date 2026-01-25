@@ -50,7 +50,7 @@ export function SnippetTabPanel({ className, children, ...props }: TabPanelProps
             <div className="flex items-center justify-between">
               <pre className="truncate">{children}</pre>
               <Button
-                className="-mr-2"
+                className="-me-2"
                 size="sq-sm"
                 intent="plain"
                 onPress={() => {

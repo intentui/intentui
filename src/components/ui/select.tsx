@@ -115,7 +115,7 @@ const SelectTrigger = ({ children, className, ...props }: SelectTriggerProps) =>
                 />
                 <ChevronUpDownIcon
                   data-slot="chevron"
-                  className="-mr-1 ml-auto size-5 text-muted-fg sm:size-4"
+                  className="ms-auto -me-1 size-5 text-muted-fg sm:size-4"
                 />
               </>
             )}

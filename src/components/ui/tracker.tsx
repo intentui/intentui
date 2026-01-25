@@ -22,7 +22,7 @@ const Block = ({
   const [open, setOpen] = useState(false)
 
   return disabledTooltip ? (
-    <div className="size-full overflow-hidden px-[0.5px] transition first:rounded-l-sm first:pl-0 last:rounded-r-sm last:pr-0 sm:px-px">
+    <div className="size-full overflow-hidden px-[0.5px] transition first:rounded-l-sm first:ps-0 last:rounded-r-sm last:pe-0 sm:px-px">
       <div
         className={twJoin(
           "size-full rounded-[1px]",
@@ -34,7 +34,7 @@ const Block = ({
   ) : (
     <Tooltip isOpen={open} onOpenChange={setOpen} delay={0} closeDelay={0}>
       <Pressable onClick={() => setOpen(true)}>
-        <div className="size-full overflow-hidden px-[0.5px] transition first:rounded-l-sm first:pl-0 last:rounded-r-sm last:pr-0 sm:px-px">
+        <div className="size-full overflow-hidden px-[0.5px] transition first:rounded-l-sm first:ps-0 last:rounded-r-sm last:pe-0 sm:px-px">
           <div
             className={twJoin(
               "size-full rounded-[1px]",
