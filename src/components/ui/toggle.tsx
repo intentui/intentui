@@ -8,7 +8,7 @@ import { tv, type VariantProps } from "tailwind-variants"
 export const toggleStyles = tv({
   base: [
     "[--toggle-icon-active:var(--secondary-fg)] [--toggle-icon:color-mix(in_oklab,var(--secondary-fg)_50%,var(--secondary))]",
-    "relative inset-ring inset-ring-fg/15 isolate inline-flex items-center justify-center font-medium",
+    "relative isolate inline-flex items-center justify-center border font-medium",
     "focus-visible:outline focus-visible:outline-offset-2 focus-visible:ring-2 focus-visible:ring-offset-3 focus-visible:ring-offset-bg",
     "*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-0.5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-(--toggle-icon) sm:*:data-[slot=icon]:my-1",
     "focus-visible:*:data-[slot=icon]:text-(--toggle-icon-active)",
@@ -23,7 +23,7 @@ export const toggleStyles = tv({
         "bg-transparent selected:bg-secondary outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
       ],
       plain: [
-        "inset-ring-transparent bg-transparent selected:bg-secondary outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
+        "border-transparent bg-transparent selected:bg-secondary outline-secondary-fg ring-secondary-fg/25 hover:bg-secondary",
       ],
     },
     size: {
@@ -65,7 +65,7 @@ export const toggleStyles = tv({
       false: "rounded-[calc(var(--radius-lg)-1px)]",
     },
     isDisabled: {
-      true: "inset-ring-0 opacity-50 forced-colors:text-[GrayText]",
+      true: "border-0 opacity-50 forced-colors:text-[GrayText]",
     },
   },
   defaultVariants: {

@@ -14,7 +14,11 @@ export function Switch({ children, className, ...props }: SwitchProps) {
         [
           "[--switch-bg-ring:var(--color-blue-700)]/90 [--switch-bg:var(--color-blue-600)] dark:[--switch-bg-ring:transparent]",
           "[--switch-ring:var(--color-blue-700)]/90 [--switch-shadow:var(--color-blue-900)]/20 [--switch:white]",
-          "group relative grid cursor-default grid-cols-[1fr_auto] gap-x-6 gap-y-1 disabled:opacity-50 *:data-[slot=indicator]:col-start-2 *:data-[slot=label]:col-start-1 *:data-[slot=label]:row-start-1 *:data-[slot=indicator]:self-start has-[[slot=description]]:**:data-[slot=label]:font-medium sm:*:data-[slot=indicator]:mt-0.5 *:[[slot=description]]:col-start-1 *:[[slot=description]]:row-start-2",
+          "group relative grid cursor-default grid-cols-[1fr_auto] gap-x-6 gap-y-1",
+          "*:data-[slot=indicator]:col-start-2 *:data-[slot=indicator]:self-start sm:*:data-[slot=indicator]:mt-0.5",
+          "*:data-[slot=label]:col-start-1 *:data-[slot=label]:row-start-1 has-[[slot=description]]:**:data-[slot=label]:font-medium",
+          "*:[[slot=description]]:col-start-1 *:[[slot=description]]:row-start-2",
+          "disabled:opacity-50",
         ],
         className,
       )}
@@ -34,7 +38,7 @@ export function Switch({ children, className, ...props }: SwitchProps) {
               "forced-colors:outline forced-colors:[--switch-bg:Highlight]",
               values.isHovered && "inset-ring-muted-fg/30",
               values.isFocusVisible &&
-                "inset-ring-ring/70 selected:inset-ring-ring/30 bg-ring/20 ring-2 ring-ring/20 dark:inset-ring-ring/70",
+                "inset-ring-ring/70 selected:inset-ring-(--switch-bg)/30 bg-(--switch-bg)/20 ring-(--switch-bg)/20 ring-2 dark:inset-ring-(--switch-bg)/70",
               values.isSelected &&
                 "inset-ring-(--switch-shadow) bg-(--switch-bg) dark:inset-ring-(--switch-bg-ring) dark:bg-(--switch-bg)",
               values.isDisabled &&

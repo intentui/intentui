@@ -240,8 +240,8 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
               transition={{ type: "spring", stiffness: 500, damping: 40 }}
               className={twJoin(
                 "absolute rounded-full bg-fg [--gutter:--spacing(0.5)]",
-                "inset-y-[calc(var(--navbar-gutter)---spacing(0.5))] -left-4 w-(--gutter) md:inset-y-auto md:w-auto",
-                "md:inset-x-2 md:-bottom-(--navbar-gutter) md:h-(--gutter)",
+                "inset-y-[calc(var(--navbar-gutter)---spacing(0.5))] -start-4 w-(--gutter) md:inset-y-auto md:w-auto",
+                "md:inset-x-2 md:-bottom-[calc(var(--navbar-gutter)+1px)] md:h-(--gutter)",
               )}
             />
           )}

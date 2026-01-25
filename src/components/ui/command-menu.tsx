@@ -7,6 +7,7 @@ import type {
   CollectionRenderer,
   MenuProps,
   MenuTriggerProps,
+  ModalOverlayProps,
   SearchFieldProps,
 } from "react-aria-components"
 import {
@@ -27,7 +28,7 @@ import {
   SearchField,
   useFilter,
 } from "react-aria-components"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import { DropdownKeyboard } from "./dropdown"
 import { Loader } from "./loader"
@@ -64,9 +65,9 @@ interface CommandMenuProps extends AutocompleteProps, MenuTriggerProps, CommandM
   isDismissable?: boolean
   "aria-label"?: string
   shortcut?: string
-  isBlurred?: boolean
   className?: string
   size?: keyof typeof sizes
+  overlay?: Pick<ModalOverlayProps, "className">
 }
 
 const CommandMenu = ({
@@ -75,8 +76,8 @@ const CommandMenu = ({
   isDismissable = true,
   escapeButton = true,
   isPending,
+  overlay,
   size = "lg",
-  isBlurred,
   shortcut,
   ...props
 }: CommandMenuProps) => {
@@ -98,15 +99,15 @@ const CommandMenu = ({
     <CommandMenuContext value={{ isPending: isPending, escapeButton: escapeButton }}>
       <ModalContext value={{ isOpen: props.isOpen, onOpenChange: onOpenChange }}>
         <ModalOverlay
+          {...props}
           isDismissable={isDismissable}
-          className={twJoin(
+          className={cx(
             "fixed inset-0 z-50 h-(--visual-viewport-height,100vh) w-screen overflow-hidden bg-black/15",
             "grid grid-rows-[1fr_auto] justify-items-center text-center sm:grid-rows-[1fr_auto_3fr]",
             "entering:fade-in entering:animate-in entering:duration-300 entering:ease-out",
             "exiting:fade-out exiting:animate-out exiting:ease-in",
-            isBlurred && "backdrop-blur-[1px] backdrop-filter",
+            overlay?.className,
           )}
-          {...props}
         >
           <Modal
             className={cx(
@@ -194,7 +195,7 @@ const CommandMenuSection = <T extends object>({
     <MenuSection
       ref={ref}
       className={twMerge(
-        "col-span-full grid grid-cols-[auto_1fr] content-start gap-y-px",
+        "col-span-full grid grid-cols-[auto_1fr] content-start gap-y-0.25",
         className,
       )}
       {...props}

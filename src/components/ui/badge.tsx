@@ -1,9 +1,9 @@
-import { tv, type VariantProps } from "tailwind-variants"
+import { tv } from "tailwind-variants"
 
-const badgeStyles = tv({
+export const badgeStyles = tv({
   base: [
-    "inline-flex items-center gap-x-1.5 py-0.5 font-medium text-xs/5 forced-colors:outline",
-    "inset-ring inset-ring-(--badge-ring) bg-(--badge-bg) text-(--badge-fg) [--badge-ring:transparent]",
+    "inline-flex items-center gap-x-1.5 py-px font-medium text-xs/5 forced-colors:outline",
+    "border border-(--badge-border,transparent) bg-(--badge-bg) text-(--badge-fg)",
     "group-hover:bg-(--badge-overlay) group-focus:bg-(--badge-overlay)",
     "*:data-[slot=icon]:size-3 *:data-[slot=icon]:shrink-0",
     "duration-200",
@@ -21,11 +21,11 @@ const badgeStyles = tv({
         "[--badge-bg:var(--color-warning-subtle)] [--badge-fg:var(--color-warning-subtle-fg)] [--badge-overlay:var(--color-warning)]/20",
       danger:
         "[--badge-bg:var(--color-danger-subtle)] [--badge-fg:var(--color-danger-subtle-fg)] [--badge-overlay:var(--color-danger)]/20",
-      outline: "[--badge-overlay:var(--color-secondary)]/20 [--badge-ring:var(--color-border)]",
+      outline: "[--badge-border:var(--color-border)] [--badge-overlay:var(--color-secondary)]/20",
     },
     isCircle: {
-      true: "rounded-full px-2",
-      false: "rounded-sm px-1.5",
+      true: "rounded-full px-[calc(--spacing(2)-1px)]",
+      false: "rounded-sm px-[calc(--spacing(1.5)-1px)]",
     },
   },
   defaultVariants: {
@@ -34,20 +34,11 @@ const badgeStyles = tv({
   },
 })
 
-interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeStyles> {
-  className?: string
-  children: React.ReactNode
+export interface BadgeProps extends React.ComponentProps<"span"> {
+  intent?: "primary" | "secondary" | "success" | "info" | "warning" | "danger" | "outline"
+  isCircle?: boolean
 }
 
-const Badge = ({ children, intent, isCircle = true, className, ...props }: BadgeProps) => {
-  return (
-    <span {...props} className={badgeStyles({ intent, isCircle, className })}>
-      {children}
-    </span>
-  )
+export function Badge({ intent, isCircle, className, ...props }: BadgeProps) {
+  return <span {...props} className={badgeStyles({ intent, isCircle, className })} />
 }
-
-export type { BadgeProps }
-export { Badge, badgeStyles }

@@ -1,5 +1,6 @@
 "use client"
 
+import { useMemo } from "react"
 import { Line, LineChart as LineChartPrimitive, type LineProps } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import {
@@ -59,7 +60,13 @@ export function LineChart<TValue extends ValueType, TName extends NameType>({
   lineProps,
   ...props
 }: LineChartProps<TValue, TName>) {
-  const categoryColors = constructCategoryColors(Object.keys(config), colors)
+  const configKeys = useMemo(() => Object.keys(config), [config])
+  const categoryColors = useMemo(
+    () => constructCategoryColors(configKeys, colors),
+    [configKeys, colors],
+  )
+
+  const configEntries = useMemo(() => Object.entries(config), [config])
 
   return (
     <Chart config={config} data={data} dataKey={dataKey} {...props}>
@@ -108,8 +115,9 @@ export function LineChart<TValue extends ValueType, TName extends NameType>({
           )}
 
           {!children
-            ? Object.entries(config).map(([category, values]) => {
+            ? configEntries.map(([category, values]) => {
                 const strokeOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 1
+                const color = getColorValue(values.color || categoryColors.get(category))
 
                 return (
                   <Line
@@ -118,12 +126,12 @@ export function LineChart<TValue extends ValueType, TName extends NameType>({
                     name={category}
                     type="linear"
                     dataKey={category}
-                    stroke={getColorValue(values.color || categoryColors.get(category))}
+                    stroke={color}
                     style={
                       {
                         strokeOpacity,
                         strokeWidth: 2,
-                        "--line-color": getColorValue(values.color || categoryColors.get(category)),
+                        "--line-color": color,
                       } as React.CSSProperties
                     }
                     strokeLinejoin="round"

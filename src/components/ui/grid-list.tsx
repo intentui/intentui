@@ -59,7 +59,7 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
       {...props}
       className={composeRenderProps(
         className,
-        (className, { isHovered, isFocusVisible, isSelected }) =>
+        (className, { isHovered, isFocusVisible, isSelected, isDisabled }) =>
           twMerge(
             "[--grid-list-item-bg-active:var(--color-primary-subtle)] [--grid-list-item-text-active:var(--color-primary-subtle-fg)]",
             "group inset-ring inset-ring-border rounded-lg px-3 py-2.5",
@@ -69,6 +69,7 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
             "**:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg sm:**:data-[slot=icon]:size-4",
             (isSelected || isHovered || isFocusVisible) &&
               "inset-ring-ring/70 bg-(--grid-list-item-bg-active) text-(--grid-list-item-text-active) **:[.text-muted-fg]:text-(--grid-list-item-text-active)/60",
+            isDisabled && "bg-muted opacity-50",
             "href" in props && "cursor-pointer",
             className,
           ),
@@ -80,7 +81,7 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
             <Button slot="drag">
               <svg
                 data-slot="drag-icon"
-                className="size-4 text-muted-fg"
+                className="size-5 text-muted-fg sm:size-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"

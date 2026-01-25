@@ -57,7 +57,7 @@ export function MeterTrack({ className, ...props }: React.ComponentProps<"div">)
     >
       <div
         data-slot="meter-fill"
-        className="absolute top-0 left-0 h-full rounded-full transition-[width] duration-200 ease-linear will-change-[width] motion-reduce:transition-none forced-colors:bg-[Highlight]"
+        className="absolute top-0 start-0 h-full rounded-full transition-[width] duration-200 ease-linear will-change-[width] motion-reduce:transition-none forced-colors:bg-[Highlight]"
         style={{ width: `${percentage}%`, backgroundColor: color ?? getMeterColor(percentage) }}
       />
     </div>

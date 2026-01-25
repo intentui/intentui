@@ -1,3 +1,5 @@
+"use client"
+
 import { createContext, use } from "react"
 import type { GridListItemProps, GridListProps, TextProps } from "react-aria-components"
 import { composeRenderProps, GridList, GridListItem, Text } from "react-aria-components"
@@ -26,6 +28,9 @@ const choiceBoxStyles = tv({
       4: "gap-4",
       5: "gap-5",
       6: "gap-6",
+      8: "gap-8",
+      10: "gap-10",
+      12: "gap-12",
     },
   },
   defaultVariants: {
@@ -63,7 +68,7 @@ const ChoiceBox = <T extends object>({
   return (
     <ChoiceBoxContext value={{ columns, gap, isReadOnly }}>
       <GridList
-        data-slot="control"
+        data-slot="choice-box"
         layout={columns === 1 ? "stack" : "grid"}
         selectionMode={selectionMode}
         className={cx(
@@ -175,7 +180,7 @@ const ChoiceBoxItem = ({
             {content}
             {selectionMode === "multiple" && (
               <Checkbox
-                className="col-start-2 self-start group-has-data-[slot=avatar]:col-start-3 group-has-data-[slot=icon]:col-start-3 sm:mt-0.5"
+                className="col-start-2 self-start group-has-data-[slot=avatar]:col-start-3 group-has-data-[slot=icon]:col-start-3"
                 slot="selection"
               />
             )}

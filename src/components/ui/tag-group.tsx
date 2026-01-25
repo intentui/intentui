@@ -38,6 +38,7 @@ export function Tag({ children, className, ...props }: TagProps) {
         "cursor-default rounded-full px-2",
         "selected:inset-ring-ring/70 selected:bg-primary-subtle selected:text-primary-subtle-fg",
         "disabled:opacity-50 disabled:forced-colors:text-[GrayText]",
+        props.href && "cursor-pointer hover:inset-ring-muted-fg",
         className,
       )}
       {...props}

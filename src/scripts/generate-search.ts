@@ -6,7 +6,7 @@ const sectionOrder = ["prologue", "getting-started", "dark-mode", "components"]
 
 const rawStatusMap: Record<"new" | "updated" | "beta" | "alpha", string[]> = {
   new: [],
-  updated: ["bar-list", "calendar", "carousel", "color-slider", "combo-box", "command-menu", "disclosure-group", "dropdown", "grid-list", "input", "list-box", "menu", "multiple-select", "navbar", "note", "select", "show-more", "sidebar", "snippet", "table", "tabs", "tag-group", "toggle-group", "tracker", "tree"],
+  updated: ["area-chart", "avatar", "badge", "bar-chart", "bar-list", "breadcrumbs", "button-group", "button", "card", "chart", "choice-box", "color-area", "color-picker", "color-slider", "color-swatch-picker", "color-swatch", "color-thumb", "color-wheel", "combo-box", "command-menu", "container", "context-menu", "date-field", "date-picker", "date-range-picker", "description-list", "dialog", "disclosure-group", "drop-zone", "dropdown", "field", "file-trigger", "grid-list", "heading", "input", "keyboard", "leaderboard", "line-chart", "link", "list-box", "loader", "menu", "meter", "modal", "multiple-select", "navbar", "note", "number-field", "pagination", "pie-chart", "popover", "progress-bar", "radio", "range-calendar", "select", "separator", "sheet", "show-more", "sidebar", "skeleton", "slider", "snippet", "switch", "table", "tabs", "tag-field", "tag-group", "text-field", "text", "time-field", "toast", "toggle", "toolbar", "tooltip"],
   beta: [],
   alpha: [],
 }

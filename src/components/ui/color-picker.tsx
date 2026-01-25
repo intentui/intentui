@@ -18,7 +18,7 @@ interface ColorPickerProps extends ColorPickerPrimitiveProps {
 
 const ColorPicker = ({ className, ...props }: ColorPickerProps) => {
   return (
-    <div data-slot="control" className={twMerge(fieldStyles(), className)}>
+    <div data-slot="control" className={twMerge(fieldStyles({ className: "w-fit" }), className)}>
       <ColorPickerPrimitive {...props} />
     </div>
   )

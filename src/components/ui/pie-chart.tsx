@@ -12,17 +12,22 @@ import {
   getColorValue,
 } from "./chart"
 
-const sumNumericArray = (arr: number[]): number => arr.reduce((sum, num) => sum + num, 0)
+function sumNumericArray(arr: number[]): number {
+  return arr.reduce((sum, num) => sum + num, 0)
+}
 
-const calculateDefaultLabel = (data: any[], valueKey: string): number =>
-  sumNumericArray(data.map((dataPoint) => dataPoint[valueKey]))
+function calculateDefaultLabel(data: any[], valueKey: string): number {
+  return sumNumericArray(data.map((dataPoint) => dataPoint[valueKey]))
+}
 
-const parseLabelInput = (
+function parseLabelInput(
   labelInput: string | undefined,
   valueFormatter: (value: number) => string,
   data: any[],
   valueKey: string,
-): string => labelInput || valueFormatter(calculateDefaultLabel(data, valueKey))
+): string {
+  return labelInput || valueFormatter(calculateDefaultLabel(data, valueKey))
+}
 
 interface PieChartProps<TValue extends ValueType, TName extends NameType>
   extends Omit<

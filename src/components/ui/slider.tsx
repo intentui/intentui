@@ -1,20 +1,17 @@
+"use client"
+
 import { use } from "react"
 import {
   Slider as PrimitiveSlider,
   SliderOutput as PrimitiveSliderOutput,
   SliderThumb as PrimitiveSliderThumb,
   SliderTrack as PrimitiveSliderTrack,
-  type SliderProps,
   SliderStateContext,
 } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 
-export function SliderGroup({ className, ...props }: React.ComponentProps<"div">) {
-  return <div className="flex items-center gap-x-3 *:data-[slot=icon]:size-5" {...props} />
-}
-
-export function Slider({ className, ...props }: SliderProps) {
+export function Slider({ className, ...props }: React.ComponentProps<typeof PrimitiveSlider>) {
   return (
     <PrimitiveSlider
       data-slot="control"
