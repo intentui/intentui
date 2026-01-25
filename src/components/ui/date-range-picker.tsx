@@ -53,11 +53,11 @@ export function DateRangePickerTrigger({
   return (
     <InputGroup
       className={cx(
-        "flex items-center overflow-hidden rounded-lg",
+        "flex items-center overflow-hidden rounded-lg pe-6",
         "border border-input hover:enabled:border-muted-fg/30",
-        "group-open/date-range-picker:border-ring/70 group-open/date-range-picker:outline-hidden group-open/date-range-picker:ring-3 group-open/date-range-picker:ring-ring/20 group-open/date-range-picker:hover:border-ring/80",
-        "focus-within:border-ring/70 focus-within:outline-hidden focus-within:ring-3 focus-within:ring-ring/20 focus-within:enabled:hover:border-ring/80",
-        "invalid:border-danger-subtle-fg/70 focus-within:invalid:border-danger-subtle-fg/70 focus-within:invalid:ring-danger-subtle-fg/20 invalid:hover:border-danger-subtle-fg/80 focus-within:invalid:hover:border-danger-subtle-fg/80",
+        "group-open/date-range-picker:border-ring/70 group-open/date-range-picker:bg-primary-subtle/5 group-open/date-range-picker:outline-hidden group-open/date-range-picker:ring-3 group-open/date-range-picker:ring-ring/20 group-open/date-range-picker:hover:border-ring/80",
+        "focus-within:border-ring/70 focus-within:bg-primary-subtle/5 focus-within:outline-hidden focus-within:ring-3 focus-within:ring-ring/20 focus-within:enabled:hover:border-ring/80",
+        "invalid:border-danger-subtle-fg/70 invalid:bg-danger-subtle/5 focus-within:invalid:border-danger-subtle-fg/70 focus-within:invalid:bg-danger-subtle/5 focus-within:invalid:ring-danger-subtle-fg/20 invalid:hover:border-danger-subtle-fg/80 focus-within:invalid:hover:border-danger-subtle-fg/80",
         "disabled:bg-muted",
         className,
       )}
@@ -74,8 +74,8 @@ export function DateRangePickerTrigger({
         className={twJoin(
           "touch-target grid place-content-center outline-hidden focus-visible:text-fg",
           "pressed:text-fg text-muted-fg hover:text-fg focus-visible:text-fg",
-          "px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/6",
-          "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
+          "px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)]",
+          "*:-me-px *:-mt-0.5 *:size-5 sm:*:size-4",
         )}
       >
         <CalendarDateRangeIcon />

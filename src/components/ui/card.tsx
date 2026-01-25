@@ -5,7 +5,7 @@ const Card = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => 
     <div
       data-slot="card"
       className={twMerge(
-        "group/card flex flex-col gap-(--gutter) rounded-lg border py-(--gutter) text-fg shadow-xs [--gutter:--spacing(6)] has-[table]:overflow-hidden has-[table]:not-has-data-[slot=card-footer]:pb-0 **:data-[slot=table-header]:bg-muted/50 **:[table]:overflow-hidden",
+        "group/card flex flex-col gap-(--gutter) rounded-lg border py-(--gutter) text-fg shadow-xs [--gutter:--spacing(6)] has-[table]:overflow-hidden has-[table]:not-has-data-[slot=card-footer]:pb-0 **:data-[slot=table-header]:bg-muted/50 has-[table]:**:data-[slot=card-footer]:border-t **:[table]:overflow-hidden",
         className,
       )}
       {...props}
@@ -81,7 +81,10 @@ const CardFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement
   return (
     <div
       data-slot="card-footer"
-      className={twMerge("flex items-center px-(--gutter) [.border-t]:pt-6", className)}
+      className={twMerge(
+        "flex items-center px-(--gutter) group-has-[table]/card:pt-(--gutter) [.border-t]:pt-6",
+        className,
+      )}
       {...props}
     />
   )

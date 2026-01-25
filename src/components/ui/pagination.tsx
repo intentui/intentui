@@ -30,7 +30,7 @@ const PaginationList = ({ className, ref, ...props }: React.ComponentProps<"ul">
       ref={ref}
       data-slot="pagination-list"
       aria-label={props["aria-label"] || "Pagination"}
-      className={twMerge("flex gap-[5px]", className)}
+      className={twMerge("flex gap-1.25", className)}
       {...props}
     />
   )

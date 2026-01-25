@@ -25,7 +25,7 @@ export function Note({ indicator = true, intent = "default", className, ...props
     <div
       data-slot="note"
       className={twMerge([
-        "grid w-full grid-cols-[auto_1fr] overflow-hidden rounded-lg border border-current/15 p-[calc(--spacing(4)-1px)] backdrop-blur-2xl sm:text-sm/6",
+        "grid w-full grid-cols-[auto_1fr] overflow-hidden rounded-lg border border-current/15 p-4 backdrop-blur-2xl sm:text-sm/6",
         "*:[a]:hover:underline **:[strong]:font-medium",
         intent === "default" && "bg-muted/50 text-secondary-fg",
         intent === "info" &&
@@ -43,7 +43,7 @@ export function Note({ indicator = true, intent = "default", className, ...props
       {IconComponent && indicator && (
         <div
           className={twJoin(
-            "mr-3 grid size-8 place-content-center rounded-full border-2",
+            "me-3 grid size-8 place-content-center rounded-full border-2",
             intent === "warning" && "border-warning-subtle-fg/40",
             intent === "success" && "border-success-subtle-fg/40",
             intent === "danger" && "border-danger-subtle-fg/40",

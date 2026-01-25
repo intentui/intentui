@@ -2,7 +2,6 @@
 
 import type { DialogProps, ModalOverlayProps } from "react-aria-components"
 import { DialogTrigger as DialogTriggerPrimitive, Modal, ModalOverlay } from "react-aria-components"
-import { twJoin } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import {
   Dialog,
@@ -51,12 +50,7 @@ const SheetContent = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={twJoin(
-        "fixed top-0 left-0 z-50 w-full overflow-hidden bg-black/15",
-        "entering:fade-in entering:animate-in entering:duration-500",
-        "exiting:fade-out exiting:animate-out exiting:duration-300",
-        isFloat ? "h-full" : "h-(--page-height)",
-      )}
+      className="entering:fade-in exiting:fade-out fixed start-0 top-0 z-50 size-full entering:animate-in exiting:animate-out overflow-hidden bg-black/15 entering:duration-500 exiting:duration-300"
       {...props}
     >
       <Modal
@@ -77,7 +71,7 @@ const SheetContent = ({
             <>
               {typeof children === "function" ? children(values) : children}
               {closeButton && (
-                <DialogCloseIcon className="top-2.5 right-2.5" isDismissable={isDismissable} />
+                <DialogCloseIcon className="end-2.5 top-2.5" isDismissable={isDismissable} />
               )}
             </>
           )}

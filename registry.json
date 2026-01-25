@@ -3187,7 +3187,6 @@
       "title": "multiple-select",
       "description": "multiple-select",
       "dependencies": [
-        "@heroicons/react",
         "react-aria-components"
       ],
       "registryDependencies": [
@@ -3323,8 +3322,7 @@
       "title": "popover",
       "description": "popover",
       "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
+        "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
@@ -3512,8 +3510,7 @@
       "title": "sheet",
       "description": "sheet",
       "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
+        "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
@@ -3538,7 +3535,8 @@
         "tailwind-variants"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/button"
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/text"
       ],
       "files": [
         {
@@ -3822,6 +3820,7 @@
         "react-aria-components"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/field"
       ],
@@ -3840,7 +3839,6 @@
       "title": "toast",
       "description": "toast",
       "dependencies": [
-        "next-themes",
         "sonner",
         "tailwind-merge"
       ],
@@ -6545,31 +6543,6 @@
           "path": "src/components/docs/overlays/modal/alert-dialog-demo.tsx",
           "type": "registry:page",
           "target": "app/alert-dialog-demo/page.tsx"
-        }
-      ],
-      "type": "registry:page"
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "modal-blur-demo",
-      "title": "Modal Blur",
-      "description": "modal-blur-demo",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/input",
-        "http://localhost:3000/r/modal",
-        "http://localhost:3000/r/text-field"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/overlays/modal/modal-blur-demo.tsx",
-          "type": "registry:page",
-          "target": "app/modal-blur-demo/page.tsx"
         }
       ],
       "type": "registry:page"
@@ -9968,29 +9941,6 @@
           "path": "src/components/docs/controls/context-menu/context-menu-with-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/context-menu-with-icon-demo/page.tsx"
-        }
-      ],
-      "type": "registry:page"
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "command-menu-blur-demo",
-      "title": "Command Menu Blur",
-      "description": "command-menu-blur-demo",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar",
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/command-menu"
-      ],
-      "files": [
-        {
-          "path": "src/components/docs/controls/command-menu/command-menu-blur-demo.tsx",
-          "type": "registry:page",
-          "target": "app/command-menu-blur-demo/page.tsx"
         }
       ],
       "type": "registry:page"

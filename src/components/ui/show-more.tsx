@@ -1,9 +1,9 @@
 "use client"
 
-import { composeRenderProps, Text, ToggleButton } from "react-aria-components"
+import { composeRenderProps, ToggleButton } from "react-aria-components"
 import { tv } from "tailwind-variants"
-
 import { buttonStyles } from "@/components/ui/button"
+import { Text } from "@/components/ui/text"
 
 const showMoreStyles = tv({
   base: "text-sm leading-6 before:border-border after:border-border",
@@ -22,7 +22,7 @@ const showMoreStyles = tv({
     {
       orientation: "horizontal",
       className:
-        "my-2 flex items-center self-stretch before:mr-2 before:flex-1 before:border-t after:ml-2 after:flex-1 after:border-t",
+        "my-2 flex items-center self-stretch before:me-2 before:flex-1 before:border-t after:ms-2 after:flex-1 after:border-t",
     },
   ],
   defaultVariants: {
@@ -53,7 +53,7 @@ const ShowMore = ({
           {composeRenderProps(props.children, (children) => children)}
         </ToggleButton>
       ) : (
-        <Text slot="description">{props.text}</Text>
+        <Text>{props.text}</Text>
       )}
     </div>
   )

@@ -1,10 +1,10 @@
 import { twMerge } from "tailwind-merge"
 
-interface SkeletonProps extends React.ComponentProps<"div"> {
+export interface SkeletonProps extends React.ComponentProps<"div"> {
   soft?: boolean
 }
 
-const Skeleton = ({ ref, soft = false, className, ...props }: SkeletonProps) => {
+export function Skeleton({ ref, soft = false, className, ...props }: SkeletonProps) {
   return (
     <div
       data-slot="skeleton"
@@ -18,6 +18,3 @@ const Skeleton = ({ ref, soft = false, className, ...props }: SkeletonProps) => 
     />
   )
 }
-
-export type { SkeletonProps }
-export { Skeleton }

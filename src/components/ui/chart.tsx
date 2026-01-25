@@ -1,3 +1,5 @@
+"use client"
+
 import { createContext, type ReactElement, use, useCallback, useId, useMemo, useState } from "react"
 import { ToggleButton, ToggleButtonGroup, type ToggleButtonGroupProps } from "react-aria-components"
 import type {
@@ -54,10 +56,6 @@ type ChartColorKeys = keyof typeof CHART_COLORS | (string & {})
 
 const DEFAULT_COLORS = ["chart-1", "chart-2", "chart-3", "chart-4", "chart-5"] as const
 
-// #endregion
-
-// #region Chart Context
-
 type ChartContextProps = {
   config: ChartConfig
   data?: Record<string, any>[]
@@ -78,10 +76,6 @@ export function useChart() {
 
   return context
 }
-
-// #endregion
-
-// #region helpers
 
 export function valueToPercent(value: number) {
   return `${(value * 100).toFixed(0)}%`
@@ -135,10 +129,6 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
 
   return configLabelKey in config ? config[configLabelKey] : config[key as keyof typeof config]
 }
-
-// #endregion
-
-// #region Base Chart Components
 
 interface BaseChartProps<TValue extends ValueType, TName extends NameType>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -209,14 +199,17 @@ const Chart = ({
   const _data = data ?? []
   const _dataKey = dataKey ?? "value"
 
-  const value = {
-    config,
-    selectedLegend,
-    onLegendSelect,
-    data: _data,
-    dataKey: _dataKey,
-    layout,
-  }
+  const value = useMemo(
+    () => ({
+      config,
+      selectedLegend,
+      onLegendSelect,
+      data: _data,
+      dataKey: _dataKey,
+      layout,
+    }),
+    [config, selectedLegend, onLegendSelect, _data, _dataKey, layout],
+  )
 
   return (
     <ChartContext value={value}>
@@ -226,10 +219,11 @@ const Chart = ({
         className={twMerge(
           "z-20 flex w-full justify-center text-xs",
           "[&_.recharts-cartesian-axis-tick_text]:fill-muted-fg [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/80 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-layer]:outline-hidden [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-hidden [&_.recharts-surface]:outline-hidden",
-          // dot
           "[&_.recharts-dot[fill='#fff']]:fill-(--line-color)",
-          // when hover over the line chart, the active dot should not have a fill or stroke
           "[&_.recharts-active-dot>.recharts-dot]:stroke-fg/10",
+
+          "[&_.recharts-surface_g]:focus:outline-hidden",
+
           className,
         )}
         {...props}
@@ -277,26 +271,29 @@ type ChartTooltipProps<TValue extends ValueType, TName extends NameType> = React
   typeof TooltipPrimitive<TValue, TName>
 >
 
+const tooltipWrapperStyle = { outline: "none" } as const
+
+const cursorStyleRadial = {
+  stroke: "var(--muted)",
+  strokeWidth: 0.1,
+  fill: "var(--muted)",
+  fillOpacity: 0.5,
+} as const
+
+const cursorStyleDefault = {
+  stroke: "var(--muted)",
+  strokeWidth: 1,
+  fill: "var(--muted)",
+  fillOpacity: 0.5,
+} as const
+
 const ChartTooltip = <TValue extends ValueType, TName extends NameType>(
   props: ChartTooltipProps<TValue, TName>,
 ) => {
   const { layout } = useChart()
+  const cursorStyle = layout === "radial" ? cursorStyleRadial : cursorStyleDefault
 
-  return (
-    <TooltipPrimitive
-      wrapperStyle={{ outline: "none" }}
-      isAnimationActive={true}
-      animationDuration={500}
-      offset={10}
-      cursor={{
-        stroke: "var(--muted)",
-        strokeWidth: layout === "radial" ? 0.1 : 1,
-        fill: "var(--muted)",
-        fillOpacity: 0.5,
-      }}
-      {...props}
-    />
-  )
+  return <TooltipPrimitive wrapperStyle={tooltipWrapperStyle} cursor={cursorStyle} {...props} />
 }
 
 type ChartLegendProps = Omit<React.ComponentProps<typeof LegendPrimitive>, "ref">
@@ -309,6 +306,10 @@ interface XAxisProps extends Omit<XAxisPropsPrimitive, "ref"> {
   displayEdgeLabelsOnly?: boolean
   intervalType?: IntervalType
 }
+
+const tickHorizontal = {
+  transform: "translate(32, 6)",
+} as const
 
 const XAxis = ({
   displayEdgeLabelsOnly,
@@ -325,9 +326,7 @@ const XAxis = ({
       ? [data[0]?.[dataKey], data[data.length - 1]?.[dataKey]]
       : undefined
 
-  const tick = {
-    transform: layout === "horizontal" ? "translate(32, 6)" : undefined,
-  }
+  const tick = layout === "horizontal" ? tickHorizontal : undefined
   return (
     <XAxisPrimitive
       className={twMerge("text-muted-fg text-xs **:[text]:fill-muted-fg", className)}
@@ -343,6 +342,14 @@ const XAxis = ({
   )
 }
 
+const yAxisTickHorizontal = {
+  transform: "translate(-3, 0)",
+} as const
+
+const yAxisTickVertical = {
+  transform: "translate(0, 0)",
+} as const
+
 const YAxis = ({
   className,
   width,
@@ -352,14 +359,14 @@ const YAxis = ({
 }: Omit<YAxisPrimitiveProps, "ref">) => {
   const { layout, dataKey } = useChart()
 
+  const tick = layout === "horizontal" ? yAxisTickHorizontal : yAxisTickVertical
+
   return (
     <YAxisPrimitive
       className={twMerge("text-muted-fg text-xs **:[text]:fill-muted-fg", className)}
       width={(width ?? layout === "horizontal") ? 40 : 80}
       domain={domain}
-      tick={{
-        transform: layout === "horizontal" ? "translate(-3, 0)" : "translate(0, 0)",
-      }}
+      tick={tick}
       dataKey={layout === "horizontal" ? undefined : dataKey}
       type={type || layout === "horizontal" ? "number" : "category"}
       interval={layout === "horizontal" ? undefined : "equidistantPreserveStart"}

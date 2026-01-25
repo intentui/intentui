@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, use, useContext } from "react"
+import { createContext, use } from "react"
 
 import type {
   GroupProps,
@@ -94,7 +94,7 @@ const ToolbarItem = ({
 }
 type ToolbarSeparatorProps = SeparatorProps
 const ToolbarSeparator = ({ className, ...props }: ToolbarSeparatorProps) => {
-  const { orientation } = useContext(ToolbarContext)
+  const { orientation } = use(ToolbarContext)
   const reverseOrientation = orientation === "vertical" ? "horizontal" : "vertical"
   return (
     <Separator

@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge"
 
-interface AvatarProps {
+export interface AvatarProps {
   src?: string | null
   initials?: string
   alt?: string
@@ -22,7 +22,7 @@ interface AvatarProps {
     | "9xl"
 }
 
-const Avatar = ({
+export function Avatar({
   src = null,
   isSquare = false,
   size = "md",
@@ -30,7 +30,7 @@ const Avatar = ({
   alt = "",
   className,
   ...props
-}: AvatarProps & React.ComponentPropsWithoutRef<"span">) => {
+}: AvatarProps & React.ComponentPropsWithoutRef<"span">) {
   return (
     <span
       data-slot="avatar"
@@ -49,7 +49,7 @@ const Avatar = ({
         size === "6xl" && "[--avatar-size:--spacing(28)]",
         size === "7xl" && "[--avatar-size:--spacing(32)]",
         size === "8xl" && "[--avatar-size:--spacing(36)]",
-        size === "9xl" && "[--avatar-size:--spacing(32)]",
+        size === "9xl" && "[--avatar-size:--spacing(42)]",
         isSquare
           ? "rounded-(--avatar-radius) *:rounded-(--avatar-radius)"
           : "rounded-full *:rounded-full",
@@ -79,6 +79,3 @@ const Avatar = ({
     </span>
   )
 }
-
-export type { AvatarProps }
-export { Avatar }

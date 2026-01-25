@@ -87,7 +87,7 @@ export function LeaderboardItem({
             </span>
             <span
               className={twJoin(
-                "absolute inset-y-0 left-0 z-1 rounded-r-md bg-secondary/60",
+                "absolute inset-y-0 start-0 z-1 rounded-e-md bg-secondary/60",
                 onAction ? "cursor-default group-hover:bg-secondary" : "",
               )}
               style={{ width: `${values.percentage}%` }}

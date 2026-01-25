@@ -36,7 +36,7 @@ export function RangeCalendar<T extends DateValue>({
                     date={date}
                     className={twMerge([
                       "shrink-0 [--cell-fg:var(--color-primary-subtle-fg)] [--cell:var(--color-primary-subtle)]",
-                      "group/calendar-cell relative size-11 cursor-default outside-month:text-muted-fg leading-[2.286rem] outline-hidden selection-start:rounded-s-lg selection-end:rounded-e-lg sm:size-9 sm:text-sm",
+                      "group/calendar-cell relative size-11 cursor-default leading-[2.286rem] outline-hidden selection-start:rounded-s-lg data-selection-end:rounded-e-lg data-outside-month:text-muted-fg sm:size-9 sm:text-sm",
                       "selected:bg-(--cell) selected:text-(--cell-fg)",
                       "selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
                       "invalid:selected:bg-danger-subtle",

@@ -143,7 +143,7 @@ const toggleGroupItemStyles = tv({
       selectionMode: "multiple",
       orientation: "horizontal",
       className:
-        "not-first:-ml-px first:rounded-l-[calc(var(--toggle-group-radius)-var(--toggle-gutter))] last:rounded-r-[calc(var(--toggle-group-radius)-var(--toggle-gutter))]",
+        "not-first:-ms-px first:rounded-l-[calc(var(--toggle-group-radius)-var(--toggle-gutter))] last:rounded-r-[calc(var(--toggle-group-radius)-var(--toggle-gutter))]",
     },
     {
       selectionMode: "multiple",

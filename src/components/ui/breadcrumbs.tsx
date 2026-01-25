@@ -4,7 +4,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import { createContext, use } from "react"
 import type { BreadcrumbProps, BreadcrumbsProps, LinkProps } from "react-aria-components"
 import { Breadcrumb, Breadcrumbs as BreadcrumbsPrimitive } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import { Link } from "./link"
 
@@ -46,7 +46,15 @@ const BreadcrumbsItem = ({
     >
       {({ isCurrent }) => (
         <>
-          <Link href={href} {...props} />
+          <Link
+            className={twJoin(
+              "has-data-[slot=icon]:inline-flex has-data-[slot=icon]:items-center has-data-[slot=icon]:gap-x-2",
+              "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4",
+              "*:data-[slot=icon]:text-muted-fg hover:*:data-[slot=icon]:text-fg",
+            )}
+            href={href}
+            {...props}
+          />
           {!isCurrent && separator !== false && <Separator separator={separatorValue} />}
         </>
       )}
@@ -66,6 +74,8 @@ const Separator = ({
     </span>
   )
 }
+
+Breadcrumbs.Item = BreadcrumbsItem
 
 export type { BreadcrumbsProps, BreadcrumbsItemProps }
 export { Breadcrumbs, BreadcrumbsItem }

@@ -20,6 +20,7 @@ import {
 const ListBox = <T extends object>({ className, ...props }: ListBoxProps<T>) => (
   <ListBoxPrimitive
     {...props}
+    data-slot="list-box"
     className={cx(
       "grid max-h-96 w-full min-w-56 scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-auto overscroll-contain rounded-xl border bg-bg p-1 outline-hidden [scrollbar-width:thin] has-data-[slot=drag-icon]:grid-cols-[auto_auto_1fr] [&::-webkit-scrollbar]:size-0.5 *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
       className,
@@ -56,7 +57,7 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
             {allowsDragging && (
               <svg
                 data-slot="drag-icon"
-                className="mr-2 size-5 h-lh text-muted-fg sm:w-4"
+                className="me-2 size-5 h-lh text-muted-fg sm:w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -89,7 +90,7 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
             )}
             {isSelected && (
               <CheckIcon
-                className="-mx-0.5 mr-2 h-lh w-5 shrink-0 group-allows-dragging:col-start-2 sm:w-4"
+                className="-mx-0.5 me-2 h-lh w-5 shrink-0 group-allows-dragging:col-start-2 sm:w-4"
                 data-slot="check-icon"
               />
             )}

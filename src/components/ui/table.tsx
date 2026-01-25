@@ -93,7 +93,7 @@ const ColumnResizer = ({ className, ...props }: ColumnResizerProps) => (
   <ColumnResizerPrimitive
     {...props}
     className={cx(
-      "absolute top-0 right-0 bottom-0 grid w-px &[data-resizable-direction=left]:cursor-e-resize &[data-resizable-direction=right]:cursor-w-resize resizable-both:cursor-ew-resize touch-none place-content-center px-1 [&[data-resizing]>div]:bg-primary",
+      "absolute end-0 top-0 bottom-0 grid w-px &[data-resizable-direction=left]:cursor-e-resize &[data-resizable-direction=right]:cursor-w-resize resizable-both:cursor-ew-resize touch-none place-content-center px-1 [&[data-resizing]>div]:bg-primary",
       className,
     )}
   >
@@ -134,8 +134,8 @@ const TableColumn = ({ isResizable = false, className, ...props }: TableColumnPr
           "text-left font-medium text-muted-fg",
           "relative allows-sorting:cursor-default dragging:cursor-grabbing outline-hidden",
           "px-4 py-(--gutter-y)",
-          "first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2))",
-          !bleed && "sm:last:pr-1 sm:first:pl-1",
+          "first:ps-(--gutter,--spacing(2)) last:pe-(--gutter,--spacing(2))",
+          !bleed && "sm:last:pe-1 sm:first:ps-1",
           grid && "border-l first:border-l-0",
           isResizable && "overflow-hidden truncate",
         ],
@@ -188,8 +188,8 @@ const TableHeader = <T extends object>({
         <Column
           data-slot="table-column"
           className={twMerge(
-            "first:pl-(--gutter,--spacing(2))",
-            !bleed && "sm:last:pr-1 sm:first:pl-1",
+            "first:ps-(--gutter,--spacing(2))",
+            !bleed && "sm:last:pe-1 sm:first:ps-1",
           )}
         />
       )}
@@ -197,8 +197,8 @@ const TableHeader = <T extends object>({
         <Column
           data-slot="table-column"
           className={twMerge(
-            "first:pl-(--gutter,--spacing(2))",
-            !bleed && "sm:last:pr-1 sm:first:pl-1",
+            "first:ps-(--gutter,--spacing(2))",
+            !bleed && "sm:last:pe-1 sm:first:ps-1",
           )}
         >
           {selectionMode === "multiple" && <Checkbox slot="selection" />}
@@ -311,10 +311,10 @@ const TableCell = ({ className, ref, ...props }: TableCellProps) => {
       {...props}
       className={cx(
         twJoin(
-          "group px-4 py-(--gutter-y) align-middle outline-hidden first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2)) group-has-data-focus-visible-within:text-fg",
+          "group px-4 py-(--gutter-y) align-middle outline-hidden first:ps-(--gutter,--spacing(2)) last:pe-(--gutter,--spacing(2)) group-has-data-focus-visible-within:text-fg",
           !striped && "border-b",
           grid && "border-l first:border-l-0",
-          !bleed && "sm:last:pr-1 sm:first:pl-1",
+          !bleed && "sm:last:pe-1 sm:first:ps-1",
           allowResize && "overflow-hidden truncate",
         ),
         className,

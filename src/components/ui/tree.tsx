@@ -37,11 +37,11 @@ const TreeItem = <T extends object>({ className, ...props }: TreeItemProps<T>) =
     <TreeItemPrimitive
       className={cx(
         [
-          "shrink-0 rounded-lg px-2 py-1.5 pr-2",
+          "shrink-0 rounded-lg px-2 py-1.5 pe-2",
           "group/tree-item relative flex select-none rounded-lg focus:outline-hidden",
           "focus:bg-(--tree-active-bg) focus:text-(--tree-active-fg) focus:**:[.text-muted-fg]:text-(--tree-active-fg)",
           "**:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
-          "**:data-[slot=icon]:mr-1 **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 sm:**:data-[slot=icon]:size-4",
+          "**:data-[slot=icon]:me-1 **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 sm:**:data-[slot=icon]:size-4",
           "disabled:opacity-50 forced-colors:[",
           "href" in props ? "cursor-pointer" : "cursor-default",
         ],

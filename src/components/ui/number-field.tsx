@@ -1,3 +1,5 @@
+"use client"
+
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid"
 import type { ButtonProps, InputProps, NumberFieldProps } from "react-aria-components"
 import { Button, NumberField as NumberFieldPrimitive } from "react-aria-components"
@@ -17,9 +19,9 @@ function NumberInput({ className, ...props }: InputProps) {
       <Input className={cx("tabular-nums", className)} {...props} />
       <div
         data-slot="text"
-        className="in-disabled:pointer-events-none pointer-events-auto right-0 p-px in-disabled:opacity-50"
+        className="in-disabled:pointer-events-none pointer-events-auto end-0 p-px in-disabled:opacity-50"
       >
-        <div className="flex h-full items-center divide-x overflow-hidden rounded-r-[calc(var(--radius-lg)-1px)] border-l">
+        <div className="flex h-full items-center divide-x overflow-hidden rounded-e-[calc(var(--radius-lg)-1px)] border-s">
           <StepperButton slot="decrement" />
           <StepperButton slot="increment" />
         </div>

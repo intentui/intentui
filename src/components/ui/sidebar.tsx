@@ -414,16 +414,16 @@ const SidebarItem = ({
             "href" in props ? "cursor-pointer" : "cursor-default",
             "w-full min-w-0 items-center rounded-lg text-left font-medium text-base/6 text-sidebar-fg",
             "group/sidebar-item relative col-span-full overflow-hidden focus-visible:outline-hidden",
-            "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] **:last:data-[slot=icon]:ml-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:text-sm/5",
+            "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] **:last:data-[slot=icon]:ms-auto supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:text-sm/5",
             "p-2 has-[a]:p-0",
             // icon
             "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4 [&_[data-slot='icon']:not([class*='text-'])]:text-muted-fg",
             "**:last:data-[slot=icon]:size-5 sm:**:last:data-[slot=icon]:size-4",
-            "[&:has([data-slot=icon]+[data-slot=sidebar-label])_[data-slot=icon]:has(+[data-slot=sidebar-label])]:mr-2",
+            "[&:has([data-slot=icon]+[data-slot=sidebar-label])_[data-slot=icon]:has(+[data-slot=sidebar-label])]:me-2",
 
             // avatar
             "**:data-[slot=avatar]:[--avatar-size:--spacing(5)]",
-            "[&:has([data-slot=avatar]+[data-slot=sidebar-label])_[data-slot=avatar]:has(+[data-slot=sidebar-label])]:mr-2",
+            "[&:has([data-slot=avatar]+[data-slot=sidebar-label])_[data-slot=avatar]:has(+[data-slot=sidebar-label])]:me-2",
             "[--sidebar-current-bg:var(--color-sidebar-primary)] [--sidebar-current-fg:var(--color-sidebar-primary-fg)]",
             isCurrent &&
               "font-medium text-(--sidebar-current-fg) hover:bg-(--sidebar-current-bg) hover:text-(--sidebar-current-fg) [&_.text-muted-fg]:text-fg/80 [&_[data-slot='icon']:not([class*='text-'])]:text-(--sidebar-current-fg) hover:[&_[data-slot='icon']:not([class*='text-'])]:text-(--sidebar-current-fg)",
@@ -444,15 +444,12 @@ const SidebarItem = ({
             (state !== "collapsed" ? (
               <span
                 data-slot="sidebar-badge"
-                className="absolute inset-ring-1 inset-ring-sidebar-border inset-y-1/2 right-1.5 h-5.5 w-auto -translate-y-1/2 rounded-full bg-fg/5 px-2 text-[10px]/5.5 group-hover/sidebar-item:inset-ring-muted-fg/30 group-current:inset-ring-transparent"
+                className="absolute inset-ring-1 inset-ring-sidebar-border inset-y-1/2 end-1.5 h-5.5 w-auto -translate-y-1/2 rounded-full bg-fg/5 px-2 text-[10px]/5.5 group-hover/sidebar-item:inset-ring-muted-fg/30 group-current:inset-ring-transparent"
               >
                 {badge}
               </span>
             ) : (
-              <div
-                aria-hidden
-                className="absolute top-1 right-1 size-1.5 rounded-full bg-primary"
-              />
+              <div aria-hidden className="absolute end-1 top-1 size-1.5 rounded-full bg-primary" />
             ))}
         </>
       )}
@@ -506,10 +503,10 @@ const SidebarInset = ({ className, ref, ...props }: React.ComponentProps<"main">
         "relative flex w-full flex-1 flex-col bg-bg lg:min-w-0",
         "group-has-data-[intent=inset]/sidebar-root:border group-has-data-[intent=inset]/sidebar-root:border-sidebar-border group-has-data-[intent=inset]/sidebar-root:bg-overlay",
         "md:group-has-data-[intent=inset]/sidebar-root:m-2",
-        "md:group-has-data-[side=left]:group-has-data-[intent=inset]/sidebar-root:ml-0",
-        "md:group-has-data-[side=right]:group-has-data-[intent=inset]/sidebar-root:mr-0",
+        "md:group-has-data-[side=left]:group-has-data-[intent=inset]/sidebar-root:ms-0",
+        "md:group-has-data-[side=right]:group-has-data-[intent=inset]/sidebar-root:me-0",
         "md:group-has-data-[intent=inset]/sidebar-root:rounded-2xl",
-        "md:group-has-data-[intent=inset]/sidebar-root:peer-data-[state=collapsed]:ml-2",
+        "md:group-has-data-[intent=inset]/sidebar-root:peer-data-[state=collapsed]:ms-2",
         className,
       )}
       {...props}
@@ -572,7 +569,7 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
               "**:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg sm:**:data-[slot=icon]:size-4",
               "**:last:data-[slot=icon]:size-5 sm:**:last:data-[slot=icon]:size-4",
               "**:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:size-5",
-              "col-span-full gap-3 p-2 **:data-[slot=chevron]:text-muted-fg **:last:data-[slot=icon]:ml-auto sm:gap-2 sm:text-sm/5",
+              "col-span-full gap-3 p-2 **:data-[slot=chevron]:text-muted-fg **:last:data-[slot=icon]:ms-auto sm:gap-2 sm:text-sm/5",
 
               isFocusVisible && "inset-ring inset-ring-ring/70",
               (isPressed || isHovered) &&
@@ -589,7 +586,7 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
             {state !== "collapsed" && (
               <ChevronDownIcon
                 data-slot="chevron"
-                className="z-10 ml-auto size-3.5 transition-transform duration-200 group-aria-expanded/sidebar-disclosure-trigger:rotate-180"
+                className="z-10 ms-auto size-3.5 transition-transform duration-200 group-aria-expanded/sidebar-disclosure-trigger:rotate-180"
               />
             )}
           </>
@@ -709,7 +706,7 @@ const SidebarLabel = ({ className, ref, ...props }: React.ComponentProps<typeof 
         tabIndex={-1}
         ref={ref}
         slot="label"
-        className={twMerge("col-start-2 truncate pr-6 outline-hidden", className)}
+        className={twMerge("col-start-2 truncate pe-6 outline-hidden", className)}
         {...props}
       >
         {props.children}
@@ -750,7 +747,7 @@ const SidebarMenuTrigger = ({
       className={cx(
         !alwaysVisible &&
           "opacity-0 pressed:opacity-100 group-hover/sidebar-item:opacity-100 group-focus-visible/sidebar-item:opacity-100 group/sidebar-item:pressed:opacity-100",
-        "absolute right-0 flex h-full w-[calc(var(--sidebar-width)-90%)] items-center justify-end pr-2.5 outline-hidden",
+        "absolute end-0 flex h-full w-[calc(var(--sidebar-width)-90%)] items-center justify-end pe-2.5 outline-hidden",
         "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4 pressed:[&_[data-slot='icon']:not([class*='text-'])]:text-fg",
         "pressed:text-fg text-muted-fg hover:text-fg",
         className,

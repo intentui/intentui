@@ -1,6 +1,6 @@
 "use client"
 
-import { type ComponentProps, Fragment, useId } from "react"
+import { type ComponentProps, Fragment, useId, useMemo } from "react"
 import { Area, AreaChart as AreaChartPrimitive } from "recharts"
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import {
@@ -18,6 +18,34 @@ import {
   XAxis,
   YAxis,
 } from "./chart"
+
+const slugRegExp = /[^a-zA-Z0-9]/g
+
+const fillNone = <stop stopColor="currentColor" stopOpacity={0} />
+
+const fillGradientEnd = <stop offset="95%" stopColor="currentColor" stopOpacity={0} />
+
+function getFillContent({
+  fillType,
+  stopOpacity,
+}: {
+  fillType: AreaChartProps<any, any>["fillType"]
+  stopOpacity: number
+}): React.ReactNode {
+  switch (fillType) {
+    case "none":
+      return fillNone
+    case "gradient":
+      return (
+        <>
+          <stop offset="5%" stopColor="currentColor" stopOpacity={stopOpacity} />
+          {fillGradientEnd}
+        </>
+      )
+    default:
+      return <stop stopColor="currentColor" stopOpacity={stopOpacity} />
+  }
+}
 
 export interface AreaChartProps<TValue extends ValueType, TName extends NameType>
   extends BaseChartProps<TValue, TName> {
@@ -66,34 +94,15 @@ export function AreaChart<TValue extends ValueType, TName extends NameType>({
   chartProps,
   ...props
 }: AreaChartProps<TValue, TName>) {
-  const categoryColors = constructCategoryColors(Object.keys(config), colors)
+  const configKeys = useMemo(() => Object.keys(config), [config])
+  const categoryColors = useMemo(
+    () => constructCategoryColors(configKeys, colors),
+    [configKeys, colors],
+  )
   const stacked = type === "stacked" || type === "percent"
   const areaId = useId()
-  const getFillContent = ({
-    fillType,
-    activeLegend,
-    category,
-  }: {
-    fillType: AreaChartProps<TValue, TName>["fillType"]
-    activeLegend: string | null
-    category: string
-  }) => {
-    const stopOpacity = activeLegend && activeLegend !== category ? 0.1 : 0.5
 
-    switch (fillType) {
-      case "none":
-        return <stop stopColor="currentColor" stopOpacity={0} />
-      case "gradient":
-        return (
-          <>
-            <stop offset="5%" stopColor="currentColor" stopOpacity={stopOpacity} />
-            <stop offset="95%" stopColor="currentColor" stopOpacity={0} />
-          </>
-        )
-      default:
-        return <stop stopColor="currentColor" stopOpacity={stopOpacity} />
-    }
-  }
+  const configEntries = useMemo(() => Object.entries(config), [config])
 
   return (
     <Chart config={config} data={data} dataKey={dataKey} {...props}>
@@ -159,36 +168,24 @@ export function AreaChart<TValue extends ValueType, TName extends NameType>({
           )}
 
           {!children
-            ? Object.entries(config).map(([category, values]) => {
-                const categoryId = `${areaId}-${category.replace(/[^a-zA-Z0-9]/g, "")}`
-
+            ? configEntries.map(([category, values]) => {
+                const categoryId = `${areaId}-${category.replace(slugRegExp, "")}`
                 const strokeOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 1
+                const stopOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 0.5
+                const color = getColorValue(values.color || categoryColors.get(category))
 
                 return (
                   <Fragment key={categoryId}>
                     <defs>
-                      <linearGradient
-                        style={{
-                          color: getColorValue(values.color || categoryColors.get(category)),
-                        }}
-                        id={categoryId}
-                        x1="0"
-                        y1="0"
-                        x2="0"
-                        y2="1"
-                      >
-                        {getFillContent({
-                          fillType,
-                          activeLegend: selectedLegend,
-                          category: category,
-                        })}
+                      <linearGradient style={{ color }} id={categoryId} x1="0" y1="0" x2="0" y2="1">
+                        {getFillContent({ fillType, stopOpacity })}
                       </linearGradient>
                     </defs>
                     <Area
                       dot={false}
                       name={category}
                       dataKey={category}
-                      stroke={getColorValue(values.color || categoryColors.get(category))}
+                      stroke={color}
                       style={{
                         strokeWidth: 2,
                         strokeOpacity,

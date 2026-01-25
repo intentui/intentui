@@ -1,3 +1,5 @@
+"use client"
+
 import { ColorThumb as ColorThumbPrimitive, type ColorThumbProps } from "react-aria-components"
 import { cx } from "@/lib/primitive"
 

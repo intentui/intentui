@@ -8,7 +8,10 @@ import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 import { TextField } from "@/components/ui/text-field"
 
 interface TagInputProps
-  extends Pick<TextFieldProps, "children" | "aria-label" | "aria-labelledby"> {
+  extends Pick<
+    TextFieldProps,
+    "isDisabled" | "isReadOnly" | "children" | "aria-label" | "aria-labelledby"
+  > {
   value?: Selection
   onChange?: (next: Selection) => void
   defaultValue?: string[]
@@ -124,7 +127,12 @@ export function TagField({
         )}
       </TextField>
       {selection ? (
-        <TagGroup className="mt-1" aria-label="Selected tags" onRemove={removeKeys}>
+        <TagGroup
+          disabledKeys={props.isDisabled ? new Set(list) : undefined}
+          className="mt-1"
+          aria-label="Selected tags"
+          {...(!props.isReadOnly && !props.isDisabled ? { onRemove: removeKeys } : {})}
+        >
           <TagList>
             {list.map((id) => (
               <Tag key={id} id={id}>

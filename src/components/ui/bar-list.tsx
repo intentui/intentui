@@ -1,4 +1,5 @@
 "use client"
+
 import { useMemo } from "react"
 import { Button } from "react-aria-components"
 import { twJoin, twMerge } from "tailwind-merge"
@@ -18,6 +19,7 @@ interface BarListProps<T = unknown> extends React.ComponentProps<"div"> {
   sortOrder?: "ascending" | "descending" | "none"
 }
 
+/** @deprecated Use Leaderboard component instead */
 export function BarList<T>({
   data = [],
   valueFormatter = (value) => value.toString(),
@@ -70,7 +72,7 @@ export function BarList<T>({
               )}
               style={{ width: `${widths[index]}%` }}
             >
-              <div className="absolute left-2 flex max-w-full pr-3 sm:pr-2">
+              <div className="absolute start-2 flex max-w-full pe-3 sm:pe-2">
                 {item.href ? (
                   <Link
                     href={item.href}
