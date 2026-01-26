@@ -27,7 +27,7 @@ export function BlocksHeader() {
               <NavLink href="/blocks/navbar">Navbar</NavLink>
               <NavLink href="/blocks/auth">Auth</NavLink>
               <NavLink href="/blocks/chart">Charts</NavLink>
-              <NavLink href="https://design.intentui.com?utm_source=intentui.com&utm_medium=referer&utm_campaign=blocks">
+              <NavLink href="https://design.intentui.com?utm_source=intentui.com&utm_medium=referral&utm_campaign=blocks">
                 More <ArrowTopRightOnSquareIcon className="" />
               </NavLink>
             </div>
