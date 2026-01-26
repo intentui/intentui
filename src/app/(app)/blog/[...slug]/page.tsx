@@ -2,10 +2,12 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { blog } from "#site/content"
 import type { DocPageProps } from "@/app/(app)/docs/[...slug]/page"
+import { JsonLd } from "@/components/json-ld"
 import { mdxComponents } from "@/components/mdx-components"
 import { Toc } from "@/components/toc"
 import { app } from "@/config/app"
 import { formatDate } from "@/lib/date"
+import { ogImage } from "@/lib/og"
 
 export default async function Page(props: DocPageProps) {
   const { slug } = await props.params
@@ -16,9 +18,49 @@ export default async function Page(props: DocPageProps) {
   }
 
   const MDX = article.body
+  const articleUrl = `${app.url}/blog/${slug[0]}`
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: article.title,
+        description: article.description,
+        url: articleUrl,
+        datePublished: article.published,
+        author: {
+          "@type": "Person",
+          name: article.author,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: app.name,
+          url: app.url,
+          logo: {
+            "@type": "ImageObject",
+            url: `${app.url}/icon.svg`,
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": articleUrl,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: app.url },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${app.url}/blog` },
+          { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+        ],
+      },
+    ],
+  }
 
   return (
     <>
+      <JsonLd data={jsonLd} />
       <div className="min-w-0 max-w-2xl flex-auto px-4 pt-16 pb-32 lg:max-w-none lg:pr-0">
         <main className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
           <div className="-mx-4 sm:mx-0">
@@ -57,43 +99,44 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
     return {}
   }
 
-  const ogSearchParams = new URLSearchParams()
-  ogSearchParams.set("title", article.title)
+  const articleUrl = `${app.url}/blog/${slug[0]}`
+  const ogImageUrl = ogImage({ title: article.title, description: article.description })
 
   return {
     title: article.title,
     description: article.description,
     applicationName: app.name,
     category: "Blog",
+    alternates: {
+      canonical: articleUrl,
+    },
+    openGraph: {
+      title: `${article.title} / Intent UI`,
+      description: article.description,
+      type: "article",
+      url: articleUrl,
+      siteName: app.name,
+      locale: "en_US",
+      publishedTime:
+        article.published instanceof Date ? article.published.toISOString() : article.published,
+      ...(article.author && { authors: [article.author] }),
+      images: [{ url: ogImageUrl }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${article.title} / Intent UI`,
+      description: article.description,
+      images: [ogImageUrl],
+      site: "@intentui",
+      creator: `@${app.author.username}`,
+    },
     keywords: [
       article.title,
-      `${article.title} components`,
-      `${article.title} component`,
-      `${article.title} on React`,
       "react",
       "next.js",
-      "inertia.js",
       "tailwind css",
       "ui components",
-      "ui kit",
-      "ui library",
-      "ui framework",
       "intent ui",
-      "react aria",
-      "react aria components",
-      "server components",
-      "react components",
-      "next ui components",
-      "ui design system",
-      "ui for laravel inertia",
-      "intent ui components",
-      "intent ui components",
-      "intent ui kit",
-      "intent ui library",
-      "intent ui framework",
-      "intent laravel inertia",
-      "intent ui laravel",
-      "intent ui inertia",
       "intentui",
     ],
   }

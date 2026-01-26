@@ -47,11 +47,16 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
   return {
     title: doc.title,
     description: doc.description,
+    alternates: {
+      canonical: `${app.url}${page.url}`,
+    },
     openGraph: {
       title: `${doc.title} / Intent UI`,
       description: doc.description,
       type: "article",
       url: `${app.url}${page.url}`,
+      siteName: app.name,
+      locale: "en_US",
       images: [{ url: ogImage({ title: doc.title, description: doc.description }) }],
     },
     twitter: {
@@ -59,6 +64,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       title: `${doc.title} / Intent UI`,
       description: doc.description,
       images: [{ url: ogImage({ title: doc.title, description: doc.description }) }],
+      site: "@intentui",
       creator: `@${app.author.username}`,
     },
     authors: [

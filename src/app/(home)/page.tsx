@@ -5,13 +5,15 @@ import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
 import { Footer } from "@/components/footer"
-import { app } from "@/config/app"
+import { createMetadata } from "@/lib/metadata"
 import { Hero } from "./partials/hero"
 import { Navbar } from "./partials/navbar"
 import { OpenSource } from "./partials/open-source"
 
-export const metadata = {
-  description: app.description,
+export const metadata = createMetadata({
+  title: "Intent UI",
+  description:
+    "Copy and paste accessible React components built on React Aria and Tailwind CSS. 87+ production-ready components for Next.js and Laravel.",
   path: "/",
   image: null,
   keywords: [
@@ -25,7 +27,7 @@ export const metadata = {
     "intent ui",
     "intentui",
   ],
-}
+})
 export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">

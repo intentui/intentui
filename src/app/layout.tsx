@@ -1,4 +1,5 @@
 import { DeferredAnalytics } from "@/components/deferred-analytics"
+import { JsonLd } from "@/components/json-ld"
 import { Providers } from "@/components/providers"
 import { app, META_THEME_COLORS } from "@/config/app"
 import "@/styles/app.css"
@@ -106,10 +107,36 @@ interface Props {
 export default function RootLayout({ children }: Readonly<Props>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: app.name,
-    url: app.url,
-    logo: `${app.url}/icon.svg`,
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${app.url}/#organization`,
+        name: app.name,
+        url: app.url,
+        logo: {
+          "@type": "ImageObject",
+          url: `${app.url}/icon.svg`,
+        },
+        description: app.description,
+        sameAs: [app.links.twitter, app.links.github, app.links.discord],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${app.url}/#website`,
+        url: app.url,
+        name: app.name,
+        publisher: { "@id": `${app.url}/#organization` },
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        name: app.name,
+        description: app.description,
+        codeRepository: app.repo.url,
+        programmingLanguage: ["TypeScript", "React"],
+        runtimePlatform: "Node.js",
+        license: "https://opensource.org/licenses/MIT",
+      },
+    ],
   }
 
   return (
@@ -125,13 +152,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
           src={process.env.NEXT_PUBLIC_AURELIE_URL ?? "https://app.useaurelie.com/florin.js?v1"}
           data-site-key={process.env.NEXT_PUBLIC_AURELIE_PUBLIC_KEY}
         ></script>
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
-          }}
-        />
+        <JsonLd data={structuredData} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

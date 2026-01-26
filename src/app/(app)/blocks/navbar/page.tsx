@@ -1,4 +1,6 @@
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
+import { JsonLd } from "@/components/json-ld"
+import { app } from "@/config/app"
 import { createMetadata } from "@/lib/metadata"
 
 export const metadata = createMetadata({
@@ -18,5 +20,20 @@ export const metadata = createMetadata({
   ],
 })
 export default function Page() {
-  return <Sandbox registries={["navbar-01", "navbar-02", "navbar-03", "navbar-04", "navbar-05"]} />
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: app.url },
+      { "@type": "ListItem", position: 2, name: "Blocks", item: `${app.url}/blocks` },
+      { "@type": "ListItem", position: 3, name: "Navbar", item: `${app.url}/blocks/navbar` },
+    ],
+  }
+
+  return (
+    <>
+      <JsonLd data={jsonLd} />
+      <Sandbox registries={["navbar-01", "navbar-02", "navbar-03", "navbar-04", "navbar-05"]} />
+    </>
+  )
 }
