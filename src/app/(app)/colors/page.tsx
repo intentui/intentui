@@ -1,5 +1,7 @@
 import { ColorPalette } from "@/app/(app)/colors/(colors)/color-palette"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
+import { JsonLd } from "@/components/json-ld"
+import { app } from "@/config/app"
 import { createMetadata } from "@/lib/metadata"
 
 export const metadata = createMetadata({
@@ -20,8 +22,18 @@ export const metadata = createMetadata({
 })
 
 export default async function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: app.url },
+      { "@type": "ListItem", position: 2, name: "Colors", item: `${app.url}/colors` },
+    ],
+  }
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <Header className="border-b">
         <HeaderInner>
           <HeaderTitle>Colors</HeaderTitle>

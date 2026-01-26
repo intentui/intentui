@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { blog } from "#site/content"
+import { JsonLd } from "@/components/json-ld"
 import { PageContainer } from "@/components/page-container"
 import { Avatar } from "@/components/ui/avatar"
+import { app } from "@/config/app"
 import { formatDate } from "@/lib/date"
 import { createMetadata } from "@/lib/metadata"
 
@@ -22,8 +24,18 @@ export const metadata = createMetadata({
 })
 
 export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: app.url },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${app.url}/blog` },
+    ],
+  }
+
   return (
     <div>
+      <JsonLd data={jsonLd} />
       <PageContainer className="py-6 sm:pb-12">
         <div className="mx-auto flex max-w-2xl flex-col">
           <h1 className="-mt-8 py-8 font-semibold text-2xl sm:px-6 sm:text-5xl md:mt-0">

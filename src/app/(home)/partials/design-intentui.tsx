@@ -25,7 +25,7 @@ export function DesignIntentui() {
               className={buttonStyles({
                 size: "lg",
               })}
-              href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referrer&utm_campaign=cta"
+              href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=cta"
             >
               Browse blocks
             </Link>
@@ -34,7 +34,7 @@ export function DesignIntentui() {
                 size: "lg",
                 intent: "secondary",
               })}
-              href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referrer&utm_campaign=cta"
+              href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=cta"
             >
               Get templates
             </Link>

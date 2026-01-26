@@ -22,13 +22,14 @@ export function createMetadata({
   type = "website",
 }: CreateMetadataOptions): Metadata {
   const url = `${app.url}${path}`
-  const fullTitle = title === app.name ? title : `${title} / ${app.name}`
+  const isHomePage = title === app.name
+  const fullTitle = isHomePage ? title : `${title} / ${app.name}`
 
   const shouldIncludeImage = image !== null
   const ogImageUrl = image === null ? undefined : image || ogImage({ title, description })
 
   return {
-    title,
+    title: isHomePage ? { absolute: title } : title,
     description,
     alternates: {
       canonical: url,
@@ -39,6 +40,7 @@ export function createMetadata({
       description,
       url,
       siteName: app.name,
+      locale: "en_US",
       ...(shouldIncludeImage && ogImageUrl && { images: [{ url: ogImageUrl }] }),
       type,
     },
@@ -47,6 +49,7 @@ export function createMetadata({
       title: fullTitle,
       description,
       ...(shouldIncludeImage && ogImageUrl && { images: [ogImageUrl] }),
+      site: "@intentui",
       creator: `@${app.author.username}`,
     },
     ...(noindex && { robots: { index: false, follow: false } }),
