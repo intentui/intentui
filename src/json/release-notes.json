@@ -1,5 +1,53 @@
 [
   {
+    "name": "Button group",
+    "component": "button-group.tsx",
+    "url": "/button-group",
+    "type": "component",
+    "category": "buttons",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 2,
+    "date": "2026-01-27"
+  },
+  {
+    "name": "Input otp",
+    "component": "input-otp.tsx",
+    "url": "/input-otp",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-01-27"
+  },
+  {
+    "name": "Toggle group",
+    "component": "toggle-group.tsx",
+    "url": "/toggle-group",
+    "type": "component",
+    "category": "buttons",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 2,
+    "date": "2026-01-27"
+  },
+  {
+    "name": "Tracker",
+    "component": "tracker.tsx",
+    "url": "/tracker",
+    "type": "component",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 2,
+    "date": "2026-01-27"
+  },
+  {
     "name": "Area chart",
     "component": "area-chart.tsx",
     "url": "/area-chart",

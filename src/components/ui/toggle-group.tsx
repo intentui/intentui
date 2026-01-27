@@ -61,7 +61,7 @@ const ToggleGroup = ({
               "*:data-[slot=toggle-group-item]:rounded-full",
             selectionMode === "multiple" &&
               isCircle &&
-              "*:data-[slot=toggle-group-item]:last:rounded-r-full *:data-[slot=toggle-group-item]:first:rounded-l-full",
+              "*:data-[slot=toggle-group-item]:last:rounded-e-full *:data-[slot=toggle-group-item]:first:rounded-l-full",
           ],
           className,
         )}
@@ -143,7 +143,7 @@ const toggleGroupItemStyles = tv({
       selectionMode: "multiple",
       orientation: "horizontal",
       className:
-        "not-first:-ms-px first:rounded-l-[calc(var(--toggle-group-radius)-var(--toggle-gutter))] last:rounded-r-[calc(var(--toggle-group-radius)-var(--toggle-gutter))]",
+        "not-first:-ms-px first:rounded-l-[calc(var(--toggle-group-radius)-var(--toggle-gutter))] last:rounded-e-[calc(var(--toggle-group-radius)-var(--toggle-gutter))]",
     },
     {
       selectionMode: "multiple",
