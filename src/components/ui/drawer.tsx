@@ -71,7 +71,7 @@ const DrawerContent = ({
                 side === "right" &&
                   [
                     "w-full max-w-xs overflow-y-auto",
-                    "**:[[slot=header]]:text-left",
+                    "**:[[slot=header]]:text-start",
                     isFloat ? "inset-y-2 right-2 rounded-lg" : "inset-y-0 right-0 h-auto",
                   ].join(" "),
                 side === "bottom" &&
@@ -79,7 +79,7 @@ const DrawerContent = ({
                 side === "left" &&
                   [
                     "w-full max-w-xs overflow-y-auto",
-                    "**:[[slot=header]]:text-left",
+                    "**:[[slot=header]]:text-start",
                     isFloat ? "inset-y-2 left-2 rounded-lg" : "inset-y-0 left-0 h-auto",
                   ].join(" "),
                 className,
@@ -158,7 +158,7 @@ const DrawerHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
   return (
     <div
       slot="header"
-      className={twMerge("flex flex-col p-4 text-center sm:text-left", className)}
+      className={twMerge("flex flex-col p-4 text-center sm:text-start", className)}
       {...props}
     />
   )

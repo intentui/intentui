@@ -74,7 +74,7 @@ const ModalContent = ({
       <ModalPrimitive
         data-slot="modal-content"
         className={cx(
-          "row-start-2 w-full text-left align-middle",
+          "row-start-2 w-full text-start align-middle",
           "[--visual-viewport-vertical-padding:16px]",
           size === "fullscreen"
             ? "**:data-[slot=dialog-body]:min-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height)-var(--dialog-footer-height))] sm:[--visual-viewport-vertical-padding:16px]"
