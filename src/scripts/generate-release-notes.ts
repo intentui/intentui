@@ -33,11 +33,31 @@ function walkMdxFiles(dir: string): string[] {
   return files
 }
 
-function findUrlAndCategoryForDemo(demoFile: string): { url: string; category: string } {
+function getUiComponentNames(): Set<string> {
+  const entries = readdirSync(UI_COMPONENTS_PATH)
+  const names = new Set<string>()
+
+  for (const entry of entries) {
+    if (!entry.endsWith(".tsx")) {
+      continue
+    }
+
+    const fullPath = join(UI_COMPONENTS_PATH, entry)
+    const stat = statSync(fullPath)
+    if (stat.isFile()) {
+      names.add(entry.replace(".tsx", ""))
+    }
+  }
+
+  return names
+}
+
+function findUrlAndCategoryForDemo(demoFile: string): { url: string; category: string; uiComponentName: string } {
   const relativePath = demoFile.replace(`${DOCS_COMPONENTS_PATH}/`, "").replace(".tsx", "")
   const parts = relativePath.split("/")
   const docsCategory = parts[0]
   const demoName = parts[parts.length - 1]
+  const fallbackComponentName = demoName.replace(/-demo$/, "")
 
   const mdxFiles = walkMdxFiles(resolve(process.cwd(), MDX_DOCS_PATH))
 
@@ -49,11 +69,11 @@ function findUrlAndCategoryForDemo(demoFile: string): { url: string; category: s
       const mdxName = basename(mdxFile, ".mdx")
       const mdxRelative = mdxFile.replace(resolve(process.cwd(), MDX_DOCS_PATH) + "/", "")
       const category = mdxRelative.split("/")[0]
-      return { url: `/${mdxName}`, category }
+      return { url: `/${mdxName}`, category, uiComponentName: mdxName }
     }
   }
 
-  return { url: `/${demoName.replace(/-demo$/, "")}`, category: docsCategory }
+  return { url: `/${fallbackComponentName}`, category: docsCategory, uiComponentName: fallbackComponentName }
 }
 
 function findCategoryForComponent(componentName: string): string {
@@ -98,6 +118,7 @@ function getDiffStats(file: string): { additions: number; deletions: number } {
 function getChangedComponents(): ReleaseNote[] {
   const changes: ReleaseNote[] = []
   const date = new Date().toISOString().split("T")[0]
+  const uiComponentNames = getUiComponentNames()
 
   try {
     const status = execSync(`git status --porcelain ${UI_COMPONENTS_PATH} ${DOCS_COMPONENTS_PATH} ${PRE_BLOCKS_PATH}`, { encoding: "utf-8" })
@@ -120,7 +141,7 @@ function getChangedComponents(): ReleaseNote[] {
 
     for (const { statusFlag, filePath: file } of files) {
       let component: string
-      let url: string
+      let url: string | null
       let type: "component" | "demo" | "block"
       let category: string
       let displayName: string
@@ -135,7 +156,7 @@ function getChangedComponents(): ReleaseNote[] {
         const parts = file.replace(`${DOCS_COMPONENTS_PATH}/`, "").split("/")
         component = parts[parts.length - 1]
         const result = findUrlAndCategoryForDemo(file)
-        url = result.url
+        url = uiComponentNames.has(result.uiComponentName) ? result.url : null
         category = result.category
         type = "demo"
         displayName = toName(component)
@@ -144,9 +165,9 @@ function getChangedComponents(): ReleaseNote[] {
         const relativePath = file.replace(`${PRE_BLOCKS_PATH}/`, "")
         const parts = relativePath.split("/")
         category = parts[0] // e.g., "auth", "navbar"
-        const blockName = parts[1] // e.g., "auth-02"
+        const blockName = (parts[1] || basename(relativePath, ".tsx")).replace(".tsx", "") // e.g., "auth-02"
         component = `${blockName}/page.tsx`
-        url = `/pre-blocks/${category}/${blockName}`
+        url = uiComponentNames.has(blockName) ? `/${blockName}` : null
         type = "block"
         displayName = toName(blockName)
       } else {

@@ -1,7 +1,7 @@
 interface ReleaseNote {
   name: string
   component: string
-  url: string
+  url: string | null
   type: "component" | "demo" | "block"
   category: string
   kind: string | null

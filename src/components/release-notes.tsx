@@ -1,9 +1,7 @@
 "use client"
 
 import { CheckIcon } from "@heroicons/react/24/outline"
-import { Link } from "react-aria-components"
-import { Badge } from "@/components/ui/badge"
-import { Text } from "@/components/ui/text"
+import { Text, TextLink } from "@/components/ui/text"
 import releaseNotes from "@/json/release-notes.json"
 
 type GroupedByYear = Record<string, Record<string, ReleaseNote[]>>
@@ -54,34 +52,25 @@ export function ReleaseNotes() {
                   <Text>
                     {notes.length} {notes.length === 1 ? "change" : "changes"}
                   </Text>
-                  <ul className="not-prose space-y-6 text-sm/6">
+                  <ul className="not-prose space-y-1.5 text-sm/6">
                     {notes.map((note) => (
                       <li key={note.component}>
-                        <div className="flex gap-x-3">
+                        <div className="flex gap-x-2.5">
                           <CheckIcon className="h-lh w-4 shrink-0 text-success-subtle-fg" />
-                          <div className="space-y-2">
-                            <Link
-                              href={note.url}
-                              className="inline-block text-primary-subtle-fg hover:underline sm:text-sm/6"
-                              target={note.type === "block" ? "_blank" : undefined}
-                            >
-                              {note.name}
-                            </Link>
-                            <div className="flex items-center gap-x-1">
-                              {note.kind && (
-                                <Badge className="rounded-sm" intent="outline">
-                                  {note.kind}
-                                </Badge>
-                              )}
-                              <Badge className="rounded-sm" intent="outline">
-                                {note.type}
-                              </Badge>
-                              <span className="space-x-2 text-xs">
-                                <span className="text-success-subtle-fg">+{note.additions}</span>
-                                <span className="text-danger-subtle-fg">-{note.deletions}</span>
-                              </span>
-                            </div>
-
+                          <div className="space-y-1">
+                            {note.url ? (
+                              <div className="inline-flex gap-x-2">
+                                <TextLink href={note.url} className="inline-block sm:text-sm/6">
+                                  {note.name}
+                                </TextLink>
+                                <span className="space-x-2 group-hover:no-underline">
+                                  <span className="text-success-subtle-fg">+{note.additions}</span>
+                                  <span className="text-danger-subtle-fg">-{note.deletions}</span>
+                                </span>
+                              </div>
+                            ) : (
+                              <span className="inline-block text-fg sm:text-sm/6">{note.name}</span>
+                            )}
                             {note.description && <Text>{note.description}</Text>}
                           </div>
                         </div>

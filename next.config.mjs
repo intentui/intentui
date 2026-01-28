@@ -38,6 +38,11 @@ const config = {
   async redirects() {
     return [
       {
+        source: "/radio",
+        destination: "/docs/components/forms/radio-group",
+        permanent: true,
+      },
+      {
         source: "/docs/components/charts/area-chart",
         destination: "/docs/components/visualizations/area-chart",
         permanent: true,
@@ -74,12 +79,12 @@ const config = {
       },
       {
         source: "/docs/components/charts/setup",
-        destination: "/docs/components/charts/area-chart",
+        destination: "/docs/components/visualizations/area-chart",
         permanent: true,
       },
       {
         source: "/docs/components/surfaces/chart",
-        destination: "/docs/components/charts/area-chart",
+        destination: "/docs/components/visualizations/area-chart",
         permanent: true,
       },
       {

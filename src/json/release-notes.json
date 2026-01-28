@@ -998,7 +998,7 @@
   {
     "name": "App sidebar nav",
     "component": "app-sidebar-nav.tsx/page.tsx",
-    "url": "/pre-blocks/sidebar/app-sidebar-nav.tsx",
+    "url": null,
     "type": "block",
     "category": "sidebar",
     "kind": "improvement",
@@ -1010,7 +1010,7 @@
   {
     "name": "App sidebar",
     "component": "app-sidebar.tsx/page.tsx",
-    "url": "/pre-blocks/sidebar/app-sidebar.tsx",
+    "url": null,
     "type": "block",
     "category": "sidebar",
     "kind": "improvement",
@@ -1046,7 +1046,7 @@
   {
     "name": "Sidebar 19",
     "component": "sidebar-19/page.tsx",
-    "url": "/pre-blocks/sidebar/sidebar-19",
+    "url": null,
     "type": "block",
     "category": "sidebar",
     "kind": "improvement",
@@ -1058,7 +1058,7 @@
   {
     "name": "Sidebar 08",
     "component": "sidebar-08/page.tsx",
-    "url": "/pre-blocks/sidebar/sidebar-08",
+    "url": null,
     "type": "block",
     "category": "sidebar",
     "kind": "improvement",
@@ -1070,7 +1070,7 @@
   {
     "name": "Sidebar 16",
     "component": "sidebar-16/page.tsx",
-    "url": "/pre-blocks/sidebar/sidebar-16",
+    "url": null,
     "type": "block",
     "category": "sidebar",
     "kind": "improvement",
@@ -1082,7 +1082,7 @@
   {
     "name": "Sidebar 17",
     "component": "sidebar-17/page.tsx",
-    "url": "/pre-blocks/sidebar/sidebar-17",
+    "url": null,
     "type": "block",
     "category": "sidebar",
     "kind": "improvement",
@@ -1118,7 +1118,7 @@
   {
     "name": "Sidebar 15",
     "component": "sidebar-15/page.tsx",
-    "url": "/pre-blocks/sidebar/sidebar-15",
+    "url": null,
     "type": "block",
     "category": "sidebar",
     "kind": "improvement",
@@ -1130,7 +1130,7 @@
   {
     "name": "Sheet position demo",
     "component": "sheet-position-demo.tsx",
-    "url": "/sheet",
+    "url": null,
     "type": "demo",
     "category": "overlays",
     "kind": "improvement",
@@ -1166,7 +1166,7 @@
   {
     "name": "Snippet demo",
     "component": "snippet-demo.tsx",
-    "url": "/snippet",
+    "url": null,
     "type": "demo",
     "category": "navigation",
     "kind": "new",
@@ -1202,7 +1202,7 @@
   {
     "name": "Auth 02",
     "component": "auth-02/page.tsx",
-    "url": "/pre-blocks/auth/auth-02",
+    "url": null,
     "type": "block",
     "category": "auth",
     "kind": "new",
@@ -1214,7 +1214,7 @@
   {
     "name": "Auth 03",
     "component": "auth-03/page.tsx",
-    "url": "/pre-blocks/auth/auth-03",
+    "url": null,
     "type": "block",
     "category": "auth",
     "kind": "new",
@@ -1226,7 +1226,7 @@
   {
     "name": "Chart 01",
     "component": "chart-01/page.tsx",
-    "url": "/pre-blocks/chart/chart-01",
+    "url": null,
     "type": "block",
     "category": "chart",
     "kind": "new",
@@ -1238,7 +1238,7 @@
   {
     "name": "Chart 02",
     "component": "chart-02/page.tsx",
-    "url": "/pre-blocks/chart/chart-02",
+    "url": null,
     "type": "block",
     "category": "chart",
     "kind": "new",
@@ -1250,7 +1250,7 @@
   {
     "name": "Chart 03",
     "component": "chart-03/page.tsx",
-    "url": "/pre-blocks/chart/chart-03",
+    "url": null,
     "type": "block",
     "category": "chart",
     "kind": "new",
@@ -1262,7 +1262,7 @@
   {
     "name": "Text link demo",
     "component": "text-link-demo.tsx",
-    "url": "/text",
+    "url": null,
     "type": "demo",
     "category": "surfaces",
     "kind": "improvement",
@@ -1286,7 +1286,7 @@
   {
     "name": "Leaderboard controlled demo",
     "component": "leaderboard-controlled-demo.tsx",
-    "url": "/leaderboard",
+    "url": null,
     "type": "demo",
     "category": "visualizations",
     "kind": "improvement",
@@ -1298,7 +1298,7 @@
   {
     "name": "Leaderboard currency demo",
     "component": "leaderboard-currency-demo.tsx",
-    "url": "/leaderboard",
+    "url": null,
     "type": "demo",
     "category": "visualizations",
     "kind": "improvement",
@@ -1310,7 +1310,7 @@
   {
     "name": "Leaderboard demo",
     "component": "leaderboard-demo.tsx",
-    "url": "/leaderboard",
+    "url": null,
     "type": "demo",
     "category": "visualizations",
     "kind": "improvement",
@@ -1322,7 +1322,7 @@
   {
     "name": "Leaderboard header demo",
     "component": "leaderboard-header-demo.tsx",
-    "url": "/leaderboard",
+    "url": null,
     "type": "demo",
     "category": "visualizations",
     "kind": "improvement",
@@ -1334,7 +1334,7 @@
   {
     "name": "Leaderboard icon demo",
     "component": "leaderboard-icon-demo.tsx",
-    "url": "/leaderboard",
+    "url": null,
     "type": "demo",
     "category": "visualizations",
     "kind": "improvement",
@@ -1346,7 +1346,7 @@
   {
     "name": "Leaderboard percentage demo",
     "component": "leaderboard-percentage-demo.tsx",
-    "url": "/leaderboard",
+    "url": null,
     "type": "demo",
     "category": "visualizations",
     "kind": "improvement",
@@ -1374,7 +1374,7 @@
     "type": "component",
     "category": "surfaces",
     "kind": "new",
-    "description": "New scroll area component with customizable scrollbar styling",
+    "description": null,
     "additions": 312,
     "deletions": 0,
     "date": "2026-01-14"
