@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation"
 import { twJoin } from "tailwind-merge"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
+import { buttonStyles } from "@/components/ui/button"
 import { Link, type LinkProps } from "@/components/ui/link"
 
 export function BlocksHeader() {
@@ -12,10 +13,18 @@ export function BlocksHeader() {
       <Header>
         <HeaderInner>
           <HeaderTitle>Blocks</HeaderTitle>
-          <HeaderDescription>
+          <HeaderDescription className="mb-6">
             Clean and modern blocks you can copy and paste into your apps, compatible with any React
             framework, open source and free forever
           </HeaderDescription>
+
+          <Link
+            href="https://design.intentui.com?utm_source=intentui.com&utm_medium=referral&utm_campaign=blocks"
+            className={buttonStyles({ intent: "secondary" })}
+          >
+            Explore premium blocks
+            <ArrowTopRightOnSquareIcon />
+          </Link>
         </HeaderInner>
       </Header>
       <div className="border-y bg-overlay">
@@ -27,9 +36,6 @@ export function BlocksHeader() {
               <NavLink href="/blocks/navbar">Navbar</NavLink>
               <NavLink href="/blocks/auth">Auth</NavLink>
               <NavLink href="/blocks/chart">Charts</NavLink>
-              <NavLink href="https://design.intentui.com?utm_source=intentui.com&utm_medium=referral&utm_campaign=blocks">
-                More <ArrowTopRightOnSquareIcon className="" />
-              </NavLink>
             </div>
           </div>
         </PageContainer>
