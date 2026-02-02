@@ -16,7 +16,7 @@ export function Ads({ className }: { className?: string }) {
       )}
     >
       <span className="block font-medium text-base/6">
-        Unlock the full power of <br /> Design Intent UI
+        Unlock the full power of <br /> Intent UI Design
       </span>
       <Text className="mt-2.5 mb-3 block text-pretty text-muted-fg">
         Build modern web apps faster with{" "}
