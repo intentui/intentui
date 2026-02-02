@@ -39,7 +39,7 @@ export default function TableDemo() {
               <TableCell>
                 <div className="flex justify-end">
                   <Menu>
-                    <MenuTrigger className="size-6">
+                    <MenuTrigger className="size-6" aria-label="Options">
                       <EllipsisVerticalIcon />
                     </MenuTrigger>
                     <MenuContent aria-label="Actions" placement="left top">

@@ -13,9 +13,9 @@ export function DesignIntentui() {
           <Link href="https://design.intentui.com">
             <MarkLogo />
           </Link>
-          <h3 className="mt-4 mb-4 text-3xl sm:text-5xl/14">
+          <div className="mt-4 mb-4 text-3xl sm:text-5xl/14">
             Launch faster with ready-made blocks and templates
-          </h3>
+          </div>
           <p className="mx-auto max-w-xl text-pretty text-center text-lg/8 text-muted-fg leading-relaxed sm:text-xl">
             Build modern web apps faster with 1000+ resources across components, blocks, patterns,
             templates, and starter kits.
