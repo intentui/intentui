@@ -83,7 +83,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 
               <div className="in-data-[collapsible=dock]:hidden text-sm">
                 <SidebarLabel>Kurt Cobain</SidebarLabel>
-                <span className="-mt-0.5 block text-muted-fg">kurt@domain.com</span>
+                <span className="-mt-0.5 block text-muted-fg">@kurtcobain</span>
               </div>
             </div>
             <ChevronUpDownIcon data-slot="chevron" />
