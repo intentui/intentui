@@ -1,4 +1,5 @@
 import { ListComponents } from "@/app/(app)/components/(partials)/list-components"
+import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { JsonLd } from "@/components/json-ld"
 import menus from "@/components-search.json"
 import { app } from "@/config/app"
@@ -59,6 +60,7 @@ export default function Page() {
     <>
       <JsonLd data={jsonLd} />
       <ListComponents />
+      <DesignIntentui />
     </>
   )
 }

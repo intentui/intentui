@@ -74,16 +74,10 @@ export function Aside() {
               </AsideLink>
             ))}
             <AsideLink href="/docs/getting-started/mcp-server">
-              MCP Server{" "}
-              <Badge className="-mr-1.5 rounded-sm" intent="info">
-                New
-              </Badge>
+              MCP Server
             </AsideLink>
             <AsideLink target="_blank" href="/llms.txt">
-              llms.txt{" "}
-              <Badge className="-mr-1.5 rounded-sm" intent="info">
-                New
-              </Badge>
+              llms.txt
             </AsideLink>
           </div>
           <div>

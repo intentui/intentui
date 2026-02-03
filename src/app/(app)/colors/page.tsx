@@ -1,4 +1,5 @@
 import { ColorPalette } from "@/app/(app)/colors/(colors)/color-palette"
+import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { JsonLd } from "@/components/json-ld"
 import { app } from "@/config/app"
@@ -44,6 +45,7 @@ export default async function Page() {
         </HeaderInner>
       </Header>
       <ColorPalette />
+      <DesignIntentui />
     </>
   )
 }
