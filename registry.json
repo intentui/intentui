@@ -3165,8 +3165,7 @@
       "title": "modal",
       "description": "modal",
       "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
+        "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
@@ -12542,6 +12541,20 @@
         }
       ],
       "type": "registry:lib"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "use-clipboard",
+      "title": "use-clipboard",
+      "description": "use-clipboard",
+      "files": [
+        {
+          "path": "src/hooks/use-clipboard.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "type": "registry:hook"
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",

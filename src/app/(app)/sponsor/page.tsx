@@ -1,4 +1,5 @@
 import { SponsorPlan } from "@/app/(app)/sponsor/sponsor-plan"
+import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { JsonLd } from "@/components/json-ld"
 import { app } from "@/config/app"
@@ -42,6 +43,7 @@ export default function Page() {
         </HeaderInner>
       </Header>
       <SponsorPlan />
+      <DesignIntentui />
     </>
   )
 }
