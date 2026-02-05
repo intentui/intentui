@@ -3,6 +3,7 @@
 - [Upgrade Guide](https://intentui.com/docs/prologue/upgrade-guide.md)
 
 ## Getting Started
+- [Ai](https://intentui.com/docs/getting-started/ai.md)
 - [Client Side Routing](https://intentui.com/docs/getting-started/client-side-routing.md)
 - [Installation](https://intentui.com/docs/getting-started/installation.md)
 - [Introduction](https://intentui.com/docs/getting-started/introduction.md)
