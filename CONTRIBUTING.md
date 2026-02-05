@@ -115,4 +115,4 @@ The Intent code of conduct is inspired by the Laravel and Ruby code of conduct. 
 
 ## License
 
-By contributing to Intent, you agree that your contributions will be licensed under its MIT license.
+By contributing to Intent UI, you agree that your contributions will be licensed under its MIT license.
