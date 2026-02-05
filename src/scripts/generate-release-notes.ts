@@ -253,7 +253,7 @@ function main() {
   // Only update search script for components, not demos or blocks
   const componentChanges = changes.filter((c) => c.type === "component")
   if (componentChanges.length > 0) {
-    const componentNames = [...new Set(componentChanges.map((c) => c.url.replace("/", "")))]
+    const componentNames = [...new Set(componentChanges.filter((c) => c.url).map((c) => c.url!.replace("/", "")))]
     updateSearchScript(componentNames)
   }
 }

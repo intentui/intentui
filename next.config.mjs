@@ -43,6 +43,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/docs/getting-started/mcp-server",
+        destination: "/docs/getting-started/ai",
+        permanent: true,
+      },
+      {
         source: "/docs/components/charts/area-chart",
         destination: "/docs/components/visualizations/area-chart",
         permanent: true,

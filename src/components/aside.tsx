@@ -73,7 +73,7 @@ export function Aside() {
                 {item.title}
               </AsideLink>
             ))}
-            <AsideLink href="/docs/getting-started/mcp-server">MCP Server</AsideLink>
+            <AsideLink href="/docs/getting-started/ai">Working with AI</AsideLink>
             <AsideLink target="_blank" href="/llms.txt">
               llms.txt
             </AsideLink>

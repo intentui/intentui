@@ -32,7 +32,7 @@ export default defineConfig({
     rehypeCodeOptions: {
       inline: "tailing-curly-colon",
       themes: app.editorThemes,
-      langs: ["ts", "tsx", "json", "css", "bash"],
+      langs: ["ts", "tsx", "json", "css", "bash", "toml"],
       defaultLanguage: "tsx",
     },
     remarkPlugins: [[remarkHeading, { generateToc: true }], remarkImage],

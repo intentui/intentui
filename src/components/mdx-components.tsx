@@ -14,6 +14,7 @@ import { FrameworkGuides } from "@/components/framework-guides"
 import { ReleaseNotes } from "@/components/release-notes"
 import { Link } from "@/components/ui/link"
 import { DocHow } from "./code/doc-how"
+import { McpRac } from "@/components/code/mcp-rac";
 
 export const mdxComponents = {
   pre: (props: React.ComponentProps<typeof PlainCode>) => (
@@ -23,6 +24,7 @@ export const mdxComponents = {
   ),
   CodeBlock,
   Sandbox,
+  McpRac,
   EditorText: (props: React.ComponentProps<typeof EditorText>) => <EditorText {...props} />,
   Note: DocNote,
   ReleaseNotes,

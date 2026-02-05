@@ -12476,6 +12476,27 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "button-render-demo",
+      "title": "Button Render",
+      "description": "button-render-demo",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/buttons/button/button-render-demo.tsx",
+          "type": "registry:page",
+          "target": "app/button-render-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "button-shape-demo",
       "title": "Button Shape",
       "description": "button-shape-demo",

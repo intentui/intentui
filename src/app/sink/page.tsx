@@ -1,9 +1,5 @@
-import ModalDemo from "@/components/docs/overlays/modal/modal-demo"
+"use client"
 
 export default function Page() {
-  return (
-    <div>
-      <ModalDemo />
-    </div>
-  )
+  return <div />
 }
