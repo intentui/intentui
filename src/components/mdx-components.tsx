@@ -5,6 +5,7 @@ import { Sandbox } from "@/app/(app)/blocks/sandbox"
 import { CodeBlock } from "@/components/code/code-block"
 import { EditorText } from "@/components/code/editor-text"
 import InstallCommand from "@/components/code/install-command"
+import { McpRac } from "@/components/code/mcp-rac"
 import { McpTabs } from "@/components/code/mcp-tabs"
 import { PlainCode, Pre } from "@/components/code/plain-code"
 import { SourceCode } from "@/components/code/source-code"
@@ -14,7 +15,6 @@ import { FrameworkGuides } from "@/components/framework-guides"
 import { ReleaseNotes } from "@/components/release-notes"
 import { Link } from "@/components/ui/link"
 import { DocHow } from "./code/doc-how"
-import { McpRac } from "@/components/code/mcp-rac";
 
 export const mdxComponents = {
   pre: (props: React.ComponentProps<typeof PlainCode>) => (

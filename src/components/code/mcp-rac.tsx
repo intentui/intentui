@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useState } from "react"
 import type { Key } from "react-aria-components"
@@ -67,9 +67,7 @@ command = "npx"
 args = ["@react-aria/mcp@latest"]`}
             />
 
-            <p className="mt-4">
-              If you use both MCP servers, your config should look like this:
-            </p>
+            <p className="mt-4">If you use both MCP servers, your config should look like this:</p>
 
             <CodeHighlighter
               lang="toml"
@@ -83,7 +81,6 @@ args = ["@react-aria/mcp@latest"]`}
             />
           </div>
         )}
-
       </>
     </div>
   )

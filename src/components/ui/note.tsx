@@ -25,7 +25,7 @@ export function Note({ indicator = true, intent = "default", className, ...props
     <div
       data-slot="note"
       className={twMerge([
-        "grid w-full grid-cols-[auto_1fr] overflow-hidden rounded-lg border border-current/15 p-4 backdrop-blur-2xl text-base/6 sm:text-sm/6",
+        "grid w-full grid-cols-[auto_1fr] overflow-hidden rounded-lg border border-current/15 p-4 text-base/6 backdrop-blur-2xl sm:text-sm/6",
         "*:[a]:hover:underline **:[strong]:font-medium",
         intent === "default" && "bg-muted/50 text-secondary-fg",
         intent === "info" &&
@@ -63,9 +63,7 @@ export function Note({ indicator = true, intent = "default", className, ...props
           </div>
         </div>
       )}
-      <div className="text-pretty group-has-data-[slot=icon]:col-start-2">
-        {props.children}
-      </div>
+      <div className="text-pretty group-has-data-[slot=icon]:col-start-2">{props.children}</div>
     </div>
   )
 }
