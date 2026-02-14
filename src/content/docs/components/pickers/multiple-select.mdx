@@ -37,15 +37,16 @@ import { MultipleSelect, MultipleSelectItem, MultipleSelectLabel, MultipleSelect
   className="min-w-2xs max-w-min"
   placeholder="Select fruits"
   aria-label="Fruits"
-  items={fruits}
 >
-  {(item) => {
-    return (
-      <MultipleSelect.Item textValue={item.name}>
-        {item.name}
-      </MultipleSelect.Item>
-    )
-  }}
+  <MultipleSelectContent items={fruits}>
+    {(item) => {
+      return (
+        <MultipleSelect.Item textValue={item.name}>
+          {item.name}
+        </MultipleSelect.Item>
+      )
+    }}
+  </MultipleSelectContent>
 </MultipleSelect>
 ```
 
