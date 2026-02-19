@@ -119,7 +119,7 @@ export function Navigation() {
                 <GithubLink />
                 <ThemeSwitcher intent="plain" />
                 <Menu>
-                  <Button intent="plain" size="xs">
+                  <Button intent="plain" size="sm">
                     3.x
                     <ChevronDownIcon />
                   </Button>

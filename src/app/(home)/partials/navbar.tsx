@@ -50,26 +50,26 @@ export function Navbar() {
           <Button
             onPress={() => setOpen(true)}
             aria-label="Search docs"
-            className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
+            className={buttonStyles({ intent: "plain", size: "sq-sm" })}
           >
             <MagnifyingGlassIcon className="size-5" />
           </Button>
           <Link
-            className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
+            className={buttonStyles({ intent: "plain", size: "sq-sm" })}
             href={app.links.twitter}
             target="_blank"
           >
             <BrandXIcon />
           </Link>
           <Link
-            className={buttonStyles({ intent: "plain", size: "sq-md", isCircle: true })}
+            className={buttonStyles({ intent: "plain", size: "sq-sm" })}
             href={app.links.discord}
             target="_blank"
           >
             <BrandDiscordIcon />
           </Link>
           <GithubLink />
-          <ThemeSwitcher intent="plain" isCircle />
+          <ThemeSwitcher intent="plain" />
           <div className="flex items-center lg:hidden">
             <Separator orientation="vertical" className="mx-2.5 h-5 bg-white/20" />
             <Menu>
