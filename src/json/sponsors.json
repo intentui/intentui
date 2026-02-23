@@ -3,7 +3,7 @@
     "id": "sponsor",
     "name": "Sponsor",
     "price": {
-      "amount": 50,
+      "amount": 25,
       "currency": "USD",
       "interval": "month"
     },
