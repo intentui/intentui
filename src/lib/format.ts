@@ -1,8 +1,4 @@
-"use client"
-
-import { useDateFormatter } from "react-aria"
-
 export function format(date: Date) {
-  const formatter = useDateFormatter()
+  const formatter = new Intl.DateTimeFormat()
   return formatter.format(date)
 }
