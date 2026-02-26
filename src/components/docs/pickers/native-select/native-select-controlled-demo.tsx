@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Label } from "@/components/ui/field"
 import { NativeSelect, NativeSelectContent } from "@/components/ui/native-select"
 
-export default function NativeSelectDescriptionDemo() {
+export default function NativeSelectControlledDemo() {
   const [value, setValue] = useState("member")
   return (
     <NativeSelect>
