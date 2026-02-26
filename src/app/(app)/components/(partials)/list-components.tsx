@@ -10,6 +10,7 @@ import { PageContainer } from "@/components/page-container"
 import { Input, InputGroup } from "@/components/ui/input"
 import { Keyboard } from "@/components/ui/keyboard"
 import { SearchField } from "@/components/ui/search-field"
+import { Text } from "@/components/ui/text"
 import menus from "@/components-search.json"
 
 const components = menus[3]
@@ -74,6 +75,11 @@ export function ListComponents() {
             aria-label="Components"
             layout="grid"
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4"
+            renderEmptyState={() => (
+              <div className="flex items-center justify-center">
+                <Text>No results found. Try searching for something else!</Text>
+              </div>
+            )}
           >
             {allChildren.map((item: any) => {
               const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""

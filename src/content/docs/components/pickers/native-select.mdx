@@ -1,0 +1,80 @@
+---
+
+title: "Native select"
+description: A native select component for choosing a single option from a predefined list. Built on the browser select element for accessibility, performance, and broad compatibility.
+published: true
+---
+
+## Basic
+
+Use NativeSelect to let users choose one option from a list.
+
+<How minW60 toUse="pickers/native-select/native-select-demo" />
+
+## Installation
+
+Add the component with the CLI.
+
+<InstallCommand command="npx shadcn@latest add @intentui/native-select" />
+
+## Composed components
+
+<Composed components={['field']} />
+
+## Manual installation
+
+<SourceCode toShow="native-select" />
+
+## Anatomy
+
+```ts
+import { Description, Label } from "@/components/ui/field"
+import { NativeSelect, NativeSelectContent } from "@/components/ui/native-select"
+```
+
+```tsx
+<NativeSelect>
+  <Label>Role</Label>
+  <NativeSelectContent>
+    <option value="owner">Owner</option>
+    <option value="admin">Admin</option>
+    <option value="member">Member</option>
+    <option value="viewer">Viewer</option>
+  </NativeSelectContent>
+  <Description>Pick the default permission level for new teammates.</Description>
+</NativeSelect>
+```
+
+## Label
+
+Use a label to describe what the selection controls.
+
+<How toUse="pickers/native-select/native-select-label-demo" />
+
+## Description
+
+Use a description to provide guidance or context for the selection.
+
+<How toUse="pickers/native-select/native-select-description-demo" />
+
+## Controlled
+
+Control the value via state when you need to react to changes, sync with other inputs, or set the value programmatically.
+
+<How toUse="pickers/native-select/native-select-controlled-demo" />
+
+## Uncontrolled
+
+Use the uncontrolled pattern when you do not need to read or update the value from outside the component.
+
+<How toUse="pickers/native-select/native-select-uncontrolled-demo" />
+
+## Invalid
+Indicate an error state with the `aria-invalid` prop. This will display an error message and apply error styles to the select.
+<How toUse="pickers/native-select/native-select-invalid-demo" />
+
+## Disabled
+
+Disable the select to prevent interaction and communicate that the field is currently unavailable.
+
+<How toUse="pickers/native-select/native-select-disabled-demo" />

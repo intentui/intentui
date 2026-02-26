@@ -3208,6 +3208,27 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "native-select",
+      "title": "native-select",
+      "description": "native-select",
+      "dependencies": [
+        "@heroicons/react",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/field"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "navbar",
       "title": "navbar",
       "description": "navbar",
@@ -5849,6 +5870,138 @@
           "path": "src/components/docs/pickers/select/select-with-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/select-with-icon-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "native-select-controlled-demo",
+      "title": "Native Select Controlled",
+      "description": "native-select-controlled-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/native-select/native-select-controlled-demo.tsx",
+          "type": "registry:page",
+          "target": "app/native-select-controlled-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "native-select-demo",
+      "title": "Native Select",
+      "description": "native-select-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/native-select/native-select-demo.tsx",
+          "type": "registry:page",
+          "target": "app/native-select-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "native-select-description-demo",
+      "title": "Native Select Description",
+      "description": "native-select-description-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/native-select/native-select-description-demo.tsx",
+          "type": "registry:page",
+          "target": "app/native-select-description-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "native-select-disabled-demo",
+      "title": "Native Select Disabled",
+      "description": "native-select-disabled-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/native-select/native-select-disabled-demo.tsx",
+          "type": "registry:page",
+          "target": "app/native-select-disabled-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "native-select-invalid-demo",
+      "title": "Native Select Invalid",
+      "description": "native-select-invalid-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/native-select/native-select-invalid-demo.tsx",
+          "type": "registry:page",
+          "target": "app/native-select-invalid-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "native-select-label-demo",
+      "title": "Native Select Label",
+      "description": "native-select-label-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/native-select/native-select-label-demo.tsx",
+          "type": "registry:page",
+          "target": "app/native-select-label-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "native-select-uncontrolled-demo",
+      "title": "Native Select Uncontrolled",
+      "description": "native-select-uncontrolled-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/native-select/native-select-uncontrolled-demo.tsx",
+          "type": "registry:page",
+          "target": "app/native-select-uncontrolled-demo/page.tsx"
         }
       ],
       "type": "registry:page"
@@ -13399,6 +13552,7 @@
         "http://localhost:3000/r/ui/meter",
         "http://localhost:3000/r/ui/modal",
         "http://localhost:3000/r/ui/multiple-select",
+        "http://localhost:3000/r/ui/native-select",
         "http://localhost:3000/r/ui/navbar",
         "http://localhost:3000/r/ui/note",
         "http://localhost:3000/r/ui/number-field",
