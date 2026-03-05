@@ -6152,6 +6152,25 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "combo-box-custom-value-demo",
+      "title": "Combo Box Custom Value",
+      "description": "combo-box-custom-value-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/combo-box",
+        "http://localhost:3000/r/field"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/combo-box/combo-box-custom-value-demo.tsx",
+          "type": "registry:page",
+          "target": "app/combo-box-custom-value-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-demo",
       "title": "Combo Box",
       "description": "combo-box-demo",
@@ -6233,7 +6252,9 @@
       "description": "combo-box-multi-select-demo",
       "registryDependencies": [
         "http://localhost:3000/r/combo-box",
-        "http://localhost:3000/r/tag-group"
+        "http://localhost:3000/r/tag-group",
+        "http://localhost:3000/r/text",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {

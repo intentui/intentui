@@ -1,5 +1,17 @@
 [
   {
+    "name": "Combo box custom value demo",
+    "component": "combo-box-custom-value-demo.tsx",
+    "url": "/combo-box",
+    "type": "demo",
+    "category": "pickers",
+    "kind": "new",
+    "description": null,
+    "additions": 8,
+    "deletions": 2,
+    "date": "2026-03-05"
+  },
+  {
     "name": "Combo box multi select demo",
     "component": "combo-box-multi-select-demo.tsx",
     "url": "/combo-box",
