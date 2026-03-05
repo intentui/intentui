@@ -6228,6 +6228,25 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "combo-box-multi-select-demo",
+      "title": "Combo Box Multi Select",
+      "description": "combo-box-multi-select-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/combo-box",
+        "http://localhost:3000/r/tag-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/pickers/combo-box/combo-box-multi-select-demo.tsx",
+          "type": "registry:page",
+          "target": "app/combo-box-multi-select-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "combo-box-readonly-demo",
       "title": "Combo Box Readonly",
       "description": "combo-box-readonly-demo",

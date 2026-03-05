@@ -2,7 +2,7 @@
 
 import { ChevronUpDownIcon } from "@heroicons/react/20/solid"
 import type {
-  ComboBoxProps as ComboboxPrimitiveProps,
+  ComboBoxProps as ComboBoxPrimitiveProps, ComboBoxValueProps,
   InputProps,
   ListBoxProps,
   PopoverProps,
@@ -10,7 +10,8 @@ import type {
 import {
   Button,
   ComboBoxContext,
-  ComboBox as ComboboxPrimitive,
+  ComboBox as ComboBoxPrimitive,
+  ComboBoxValue as ComboBoxValuePrimitive,
   ListBox,
   useSlottedContext,
 } from "react-aria-components"
@@ -20,13 +21,13 @@ import { cx } from "@/lib/primitive"
 import { DropdownDescription, DropdownItem, DropdownLabel, DropdownSection } from "./dropdown"
 import { PopoverContent } from "./popover"
 
-interface ComboBoxProps<T extends object> extends Omit<ComboboxPrimitiveProps<T>, "children"> {
+interface ComboBoxProps<T extends object, M extends 'single' | 'multiple' = 'single'> extends Omit<ComboBoxPrimitiveProps<T, M>, "children"> {
   children: React.ReactNode
 }
 
-const ComboBox = <T extends object>({ className, ...props }: ComboBoxProps<T>) => {
+const ComboBox = <T extends object, M extends 'single' | 'multiple' = 'single'>({ className, ...props }: ComboBoxProps<T, M>) => {
   return (
-    <ComboboxPrimitive data-slot="control" className={cx(fieldStyles(), className)} {...props} />
+    <ComboBoxPrimitive data-slot="control" className={cx(fieldStyles(), className)} {...props} />
   )
 }
 
@@ -89,6 +90,9 @@ const ComboBoxSection = DropdownSection
 const ComboBoxItem = DropdownItem
 const ComboBoxLabel = DropdownLabel
 const ComboBoxDescription = DropdownDescription
+const ComboBoxValue = <T extends object>(props: ComboBoxValueProps<T>) => (
+  <ComboBoxValuePrimitive data-slot="control" {...props}/>
+)
 
 export type { ComboBoxProps, ComboBoxListProps }
 export {
@@ -99,4 +103,5 @@ export {
   ComboBoxLabel,
   ComboBoxDescription,
   ComboBoxSection,
+  ComboBoxValue
 }

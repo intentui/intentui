@@ -1,5 +1,41 @@
 [
   {
+    "name": "Combo box multi select demo",
+    "component": "combo-box-multi-select-demo.tsx",
+    "url": "/combo-box",
+    "type": "demo",
+    "category": "pickers",
+    "kind": "new",
+    "description": null,
+    "additions": 53,
+    "deletions": 59,
+    "date": "2026-03-05"
+  },
+  {
+    "name": "Combo box",
+    "component": "combo-box.tsx",
+    "url": "/combo-box",
+    "type": "component",
+    "category": "pickers",
+    "kind": "improvement",
+    "description": null,
+    "additions": 10,
+    "deletions": 5,
+    "date": "2026-03-05"
+  },
+  {
+    "name": "Field",
+    "component": "field.tsx",
+    "url": "/field",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 0,
+    "date": "2026-03-05"
+  },
+  {
     "name": "Button group",
     "component": "button-group.tsx",
     "url": "/button-group",

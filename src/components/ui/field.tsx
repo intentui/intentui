@@ -25,6 +25,7 @@ export const fieldErrorStyles = tv({
 export const fieldStyles = tv({
   base: [
     "w-full",
+    "[&>[data-slot=control]+[data-slot=control]]:mt-2",
     "[&>[data-slot=label]+[data-slot=control]]:mt-2",
     "[&>[data-slot=label]+[data-slot=control]]:mt-2",
     "[&>[data-slot=label]+[slot='description']]:mt-1",
