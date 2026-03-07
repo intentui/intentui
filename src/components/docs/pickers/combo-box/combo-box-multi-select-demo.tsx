@@ -1,9 +1,16 @@
 "use client"
 
-import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem, ComboBoxValue } from "@/components/ui/combo-box"
-import { Tag, TagGroup, TagList } from "@/components/ui/tag-group";
-import { Text } from "@/components/ui/text";
-import { Label } from "@/components/ui/field";
+import {
+  ComboBox,
+  ComboBoxContent,
+  ComboBoxInput,
+  ComboBoxItem,
+  ComboBoxValue,
+} from "@/components/ui/combo-box"
+import { Label } from "@/components/ui/field"
+import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
+import { Text } from "@/components/ui/text"
+
 const roles = [
   { id: 1, name: "Owner" },
   { id: 2, name: "Admin" },
@@ -28,27 +35,29 @@ const roles = [
 ]
 export default function ComboBoxMultiSelectDemo() {
   return (
-    <ComboBox className="sm:min-w-max sm:max-w-xs" name="role" aria-label="Roles" selectionMode="multiple">
-      <Label>
-        Role
-      </Label>
+    <ComboBox
+      className="sm:min-w-max sm:max-w-xs"
+      name="role"
+      aria-label="Roles"
+      selectionMode="multiple"
+    >
+      <Label>Role</Label>
       <ComboBoxInput placeholder="Select a role" />
-      <ComboBoxValue<typeof roles[0]>>
-        {({selectedItems, state}) => (
+      <ComboBoxValue<(typeof roles)[0]>>
+        {({ selectedItems, state }) => (
           <TagGroup
             aria-label="Selected states"
-
-
             onRemove={(keys) => {
               if (Array.isArray(state.value)) {
-                state.setValue(state.value.filter(k => !keys.has(k)));
+                state.setValue(state.value.filter((k) => !keys.has(k)))
               }
-            }}>
+            }}
+          >
             <TagList
-              renderEmptyState={() => <Text>
-                No selected items</Text>}
-              items={selectedItems.filter(item => item != null)}>
-            {item => <Tag>{item.name}</Tag>}
+              renderEmptyState={() => <Text>No selected items</Text>}
+              items={selectedItems.filter((item) => item != null)}
+            >
+              {(item) => <Tag>{item.name}</Tag>}
             </TagList>
           </TagGroup>
         )}

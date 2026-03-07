@@ -1,11 +1,11 @@
 "use client"
 
+import { useState } from "react"
 import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/components/ui/combo-box"
-import { useState } from "react";
-import { Description } from "@/components/ui/field";
+import { Description } from "@/components/ui/field"
 
 export default function ComboBoxCustomValueDemo() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("")
   return (
     <ComboBox name="user" aria-label="Users" inputValue={value} onInputChange={setValue}>
       <ComboBoxInput placeholder="Select a user" />
@@ -16,9 +16,7 @@ export default function ComboBoxCustomValueDemo() {
           </ComboBoxItem>
         )}
       </ComboBoxContent>
-      <Description>
-        {value}
-      </Description>
+      <Description>{value}</Description>
     </ComboBox>
   )
 }
