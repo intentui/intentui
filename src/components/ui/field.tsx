@@ -11,7 +11,11 @@ import { tv } from "tailwind-variants"
 import { cx } from "@/lib/primitive"
 
 export const labelStyles = tv({
-  base: "select-none text-base/6 text-fg in-disabled:opacity-50 group-disabled:opacity-50 sm:text-sm/6",
+  base: [
+    "select-none text-base/6 text-fg in-data-required:after:ml-1.5 sm:text-sm/6",
+    "in-data-required:after:text-danger-subtle-fg in-data-required:after:content-['*']",
+    "in-disabled:pointer-events-none in-disabled:opacity-50 group-disabled:opacity-50",
+  ],
 })
 
 export const descriptionStyles = tv({
