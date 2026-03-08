@@ -197,7 +197,7 @@ export function SponsorPlan() {
                   </div>
 
                   <a href={plan.checkout_url} className={buttonStyles({ intent: "primary" })}>
-                    Become {plan.id === "ambassador" ? "an" : "a"} {plan.id}
+                    Become {plan.id === "ambassador" ? "an" : "a"} {plan.id === 'o-sponsor' ? 'one-time sponsor' : plan.id}
                   </a>
                 </div>
               ))}
