@@ -1,9 +1,11 @@
 "use client"
 
 import { CheckIcon } from "@heroicons/react/24/outline"
+import { useState } from "react"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { Text } from "@/components/ui/text"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import json from "@/json/sponsors.json"
 
 interface SponsorPlanPrice {
@@ -19,12 +21,19 @@ interface SponsorPlanItem {
   description: string
   benefits: string[]
   checkout_url: string
+  type: "individual" | "company"
 }
 
 const plans = json as SponsorPlanItem[]
-const individualPlan = plans[0]
+const individualPlans = plans.filter((i) => i.type === "individual")
 
 export function SponsorPlan() {
+  const [individualInterval, setIndividualInterval] = useState<"monthly" | "one-time">("monthly")
+  const individualPlan =
+    individualInterval === "monthly"
+      ? individualPlans.find((p) => p.id === "sponsor")!
+      : individualPlans.find((p) => p.id === "o-sponsor")!
+
   return (
     <div className="-mb-px [--border:var(--color-muted-fg)]/18 [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)] lg:[--gutter:--spacing(12)]">
       <div className="border-y bg-muted">
@@ -32,23 +41,36 @@ export function SponsorPlan() {
           <div className="flex flex-col items-center gap-6 border-x bg-bg p-(--gutter) sm:flex-row">
             <div className="w-full sm:w-2/3">
               <div className="max-w-xl">
-                <svg
-                  className="size-6 shrink-0 fill-primary-subtle text-primary-subtle-fg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M16 6.5C16 8.70914 14.2091 10.5 12 10.5C9.79086 10.5 8 8.70914 8 6.5C8 4.29086 9.79086 2.5 12 2.5C14.2091 2.5 16 4.29086 16 6.5Z"
-                    stroke="currentColor"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12.0009 12.5C8.27245 12.5 5.47137 14.9458 4.4165 18.3604C4.0701 19.4817 5.01046 20.5 6.18402 20.5H17.8177C18.9912 20.5 19.9316 19.4817 19.5852 18.3604C18.5303 14.9458 15.7292 12.5 12.0009 12.5Z"
-                    stroke="currentColor"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <div className="flex items-center gap-x-3">
+                  <svg
+                    className="size-6 shrink-0 fill-primary-subtle text-primary-subtle-fg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M16 6.5C16 8.70914 14.2091 10.5 12 10.5C9.79086 10.5 8 8.70914 8 6.5C8 4.29086 9.79086 2.5 12 2.5C14.2091 2.5 16 4.29086 16 6.5Z"
+                      stroke="currentColor"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M12.0009 12.5C8.27245 12.5 5.47137 14.9458 4.4165 18.3604C4.0701 19.4817 5.01046 20.5 6.18402 20.5H17.8177C18.9912 20.5 19.9316 19.4817 19.5852 18.3604C18.5303 14.9458 15.7292 12.5 12.0009 12.5Z"
+                      stroke="currentColor"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <ToggleGroup
+                    size="sm"
+                    selectedKeys={[individualInterval]}
+                    onSelectionChange={(keys) => {
+                      const selected = [...keys][0] as "monthly" | "one-time"
+                      if (selected) setIndividualInterval(selected)
+                    }}
+                  >
+                    <ToggleGroupItem id="monthly">Monthly</ToggleGroupItem>
+                    <ToggleGroupItem id="one-time">One time</ToggleGroupItem>
+                  </ToggleGroup>
+                </div>
 
                 <h3 className="mt-4 mb-2 font-medium text-fg text-xl tracking-tight">
                   Support as an individual
@@ -60,7 +82,9 @@ export function SponsorPlan() {
               <div className="mb-6 flex flex-1 flex-col gap-y-6">
                 <div className="font-semibold text-3xl tabular-nums">
                   ${individualPlan.price.amount}{" "}
-                  <span className="font-normal text-base/6 text-muted-fg">/ per month</span>
+                  <span className="font-normal text-base/6 text-muted-fg">
+                    {individualInterval === "monthly" ? "/ per month" : "one time"}
+                  </span>
                 </div>
                 {individualPlan.benefits.length ? (
                   <ul className="space-y-3 text-sm/6 *:flex *:gap-x-3">
@@ -138,7 +162,10 @@ export function SponsorPlan() {
               <h3 className="mt-4 mb-2 font-medium text-fg text-xl tracking-tight">
                 Support as a company
               </h3>
-              <Text>{individualPlan.description}</Text>
+              <Text>
+                A monthly sponsorship for companies who want to fund ongoing development, keep the
+                project sustainable, and get optional public recognition.
+              </Text>
             </div>
           </div>
         </PageContainer>
@@ -147,7 +174,7 @@ export function SponsorPlan() {
         <PageContainer>
           <div className="grid grid-cols-1 divide-y border-x sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {plans
-              .filter((i) => i.id !== "sponsor")
+              .filter((i) => i.type !== "individual")
               .map((plan) => (
                 <div key={plan.id} className="flex flex-col bg-bg p-(--gutter)">
                   <div className="mb-6 flex flex-1 flex-col gap-y-6">

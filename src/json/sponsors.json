@@ -9,7 +9,21 @@
     },
     "description": "Monthly sponsorship for individuals who want to keep development moving, support long term sustainability, and optionally get a public shoutout with your profile photo plus links to your X or GitHub account.",
     "benefits": [],
-    "checkout_url": "https://buy.polar.sh/polar_cl_NpCavu2shVKkSq8638ZU89h0Jx5bYDRWSNEB03H0syx"
+    "checkout_url": "https://buy.polar.sh/polar_cl_NpCavu2shVKkSq8638ZU89h0Jx5bYDRWSNEB03H0syx",
+    "type": "individual"
+  },
+  {
+    "id": "o-sponsor",
+    "name": "One time sponsor",
+    "price": {
+      "amount": 50,
+      "currency": "USD",
+      "interval": "month"
+    },
+    "description": "One time sponsorship for individuals who want to keep development moving, support long term sustainability, and optionally get a public shoutout with your profile photo plus links to your X or GitHub account.",
+    "benefits": [],
+    "checkout_url": "https://buy.polar.sh/polar_cl_ykUxq1qfcntnSVruv3fXfmy1dKCVBWP6iDSLd4KyYcw",
+    "type": "individual"
   },
   {
     "id": "supporter",
