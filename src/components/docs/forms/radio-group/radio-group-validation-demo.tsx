@@ -2,7 +2,7 @@
 
 import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
-import { Description, Label } from "@/components/ui/field"
+import { Description, FieldError, Label } from "@/components/ui/field"
 import { Radio, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupValidationDemo() {
@@ -25,6 +25,7 @@ export default function RadioGroupValidationDemo() {
           <Label>Third-party Integrations</Label>
           <Description>Connect with your favorite tools and services.</Description>
         </Radio>
+      <FieldError/>
       </RadioGroup>
       <Button type="submit" intent="secondary">
         Submit
