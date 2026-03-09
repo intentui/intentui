@@ -86,7 +86,7 @@ const ChoiceBox = <T extends object>({
 
 const choiceBoxItemStyles = tv({
   base: [
-    "group outline-hidden",
+    "group outline-hidden bg-(--control-bg,transparent)",
     "[--choice-box-fg:var(--color-primary-subtle-fg)] [--choice-box:var(--color-primary-subtle)]",
     "[--choice-box-selected-hovered:var(--color-primary-subtle)]/90",
     "inset-ring inset-ring-border rounded-lg p-(--gutter) **:data-[slot=label]:font-medium",
