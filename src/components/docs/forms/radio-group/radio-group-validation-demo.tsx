@@ -3,7 +3,7 @@
 import { Form } from "react-aria-components"
 import { Button } from "@/components/ui/button"
 import { Description, FieldError, Label } from "@/components/ui/field"
-import { Radio, RadioGroup } from "@/components/ui/radio"
+import { Radio, RadioGroup, RadioLabel } from "@/components/ui/radio"
 
 export default function RadioGroupValidationDemo() {
   return (
@@ -12,17 +12,17 @@ export default function RadioGroupValidationDemo() {
         <Label>Features</Label>
         <Description>Choose one of the available features</Description>
         <Radio value="analytics">
-          <Label>Advanced Analytics</Label>
+          <RadioLabel>Advanced Analytics</RadioLabel>
           <Description>Gain insights with real-time data reports.</Description>
         </Radio>
 
         <Radio value="automation">
-          <Label>Workflow Automation</Label>
+          <RadioLabel>Workflow Automation</RadioLabel>
           <Description>Automate repetitive tasks to save time.</Description>
         </Radio>
 
         <Radio value="integrations">
-          <Label>Third-party Integrations</Label>
+          <RadioLabel>Third-party Integrations</RadioLabel>
           <Description>Connect with your favorite tools and services.</Description>
         </Radio>
       <FieldError/>
