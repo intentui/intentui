@@ -17,6 +17,7 @@ export function Input({ className, ref, ...props }: InputProps) {
     <span data-slot="control" className="relative block w-full">
       <InputPrimitive
         ref={ref}
+        data-slot="input"
         className={cx(
           "relative block w-full appearance-none rounded-lg px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)]",
           "text-base/6 text-fg placeholder:text-muted-fg sm:text-sm/6",
