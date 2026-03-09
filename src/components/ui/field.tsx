@@ -16,8 +16,8 @@ import { cx } from '@/lib/primitive';
 
 export const labelStyles = tv({
   base: [
-    "select-none text-base/6 text-fg in-data-required:not-data-[slot='radio-label']:after:ml-1.5 sm:text-sm/6",
-    "in-data-required:not-data-[slot='radio-label']:after:text-danger-subtle-fg in-data-required:not-data-[slot='radio-label']:after:content-['*']",
+    "select-none text-base/6 text-fg in-data-required:not-data-[slot='control-label']:after:ml-1.5 sm:text-sm/6",
+    "in-data-required:not-data-[slot='control-label']:after:text-danger-subtle-fg in-data-required:not-data-[slot='control-label']:after:content-['*']",
     'in-disabled:pointer-events-none in-disabled:opacity-50 group-disabled:opacity-50',
   ],
 });
