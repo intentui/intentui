@@ -2,7 +2,6 @@
 
 import type { ComponentProps } from "react"
 import { Cell, Pie, PieChart as PieChartPrimitive } from "recharts"
-import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import {
   type BaseChartProps,
   Chart,
@@ -12,26 +11,33 @@ import {
   getColorValue,
 } from "./chart"
 
+type PieChartDatum = BaseChartProps["data"][number]
+
 function sumNumericArray(arr: number[]): number {
   return arr.reduce((sum, num) => sum + num, 0)
 }
 
-function calculateDefaultLabel(data: any[], valueKey: string): number {
-  return sumNumericArray(data.map((dataPoint) => dataPoint[valueKey]))
+function calculateDefaultLabel(data: BaseChartProps["data"], valueKey: string): number {
+  return sumNumericArray(
+    data.map((dataPoint) => {
+      const value = dataPoint[valueKey]
+      return typeof value === "number" ? value : 0
+    }),
+  )
 }
 
 function parseLabelInput(
   labelInput: string | undefined,
   valueFormatter: (value: number) => string,
-  data: any[],
+  data: BaseChartProps["data"],
   valueKey: string,
 ): string {
   return labelInput || valueFormatter(calculateDefaultLabel(data, valueKey))
 }
 
-interface PieChartProps<TValue extends ValueType, TName extends NameType>
+interface PieChartProps
   extends Omit<
-    BaseChartProps<TValue, TName>,
+    BaseChartProps,
     | "hideGridLines"
     | "hideXAxis"
     | "hideYAxis"
@@ -51,7 +57,7 @@ interface PieChartProps<TValue extends ValueType, TName extends NameType>
   pieProps?: Omit<ComponentProps<typeof Pie>, "data" | "dataKey" | "name">
 }
 
-const PieChart = <TValue extends ValueType, TName extends NameType>({
+const PieChart = ({
   data = [],
   dataKey,
   colors = DEFAULT_COLORS,
@@ -72,7 +78,7 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
   valueFormatter = (value: number) => value.toString(),
   pieProps,
   ...props
-}: PieChartProps<TValue, TName>) => {
+}: PieChartProps) => {
   const parsedLabelInput = parseLabelInput(label, valueFormatter, data, dataKey)
 
   return (
@@ -118,15 +124,23 @@ const PieChart = <TValue extends ValueType, TName extends NameType>({
               isAnimationActive
               {...pieProps}
             >
-              {data.map((_, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={getColorValue(
-                    config?.[data[index]?.code || data[index]?.name]?.color ??
-                      colors[index % colors.length],
-                  )}
-                />
-              ))}
+              {data.map((datum: PieChartDatum, index: number) => {
+                const configKey =
+                  typeof datum.code === "string"
+                    ? datum.code
+                    : typeof datum.name === "string"
+                      ? datum.name
+                      : undefined
+
+                return (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={getColorValue(
+                      config?.[configKey ?? ""]?.color ?? colors[index % colors.length],
+                    )}
+                  />
+                )
+              })}
             </Pie>
           ) : (
             children

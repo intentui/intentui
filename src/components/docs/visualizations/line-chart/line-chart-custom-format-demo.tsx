@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
+import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart } from "@/components/ui/line-chart"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -40,7 +41,7 @@ export default function LineChartCustomFormatDemo() {
           type="stacked"
           valueFormatter={formatCompact}
           tooltipProps={{
-            formatter: (value, label) => {
+            formatter: (value: ValueType | undefined, label: NameType | undefined) => {
               const formattedValue = typeof value === "number" ? formatCompact(value) : "-"
               return (
                 <span className="flex w-full justify-between gap-x-4 font-mono">

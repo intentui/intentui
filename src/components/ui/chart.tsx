@@ -7,6 +7,7 @@ import type {
   CartesianGridProps,
   LegendPayload,
   LegendProps,
+  TooltipProps,
   XAxisProps as XAxisPropsPrimitive,
   YAxisProps as YAxisPrimitiveProps,
 } from "recharts"
@@ -130,8 +131,7 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
   return configLabelKey in config ? config[configLabelKey] : config[key as keyof typeof config]
 }
 
-interface BaseChartProps<TValue extends ValueType, TName extends NameType>
-  extends React.HTMLAttributes<HTMLDivElement> {
+interface BaseChartProps extends React.HTMLAttributes<HTMLDivElement> {
   containerHeight?: number
   config: ChartConfig
   data: Record<string, any>[]
@@ -142,8 +142,8 @@ interface BaseChartProps<TValue extends ValueType, TName extends NameType>
   layout?: ChartLayout
   valueFormatter?: (value: number) => string
 
-  tooltip?: TooltipContentType<TValue, TName> | boolean
-  tooltipProps?: Omit<ChartTooltipProps<TValue, TName>, "content"> & {
+  tooltip?: TooltipContentType | boolean
+  tooltipProps?: Omit<ChartTooltipProps, "content"> & {
     hideLabel?: boolean
     labelSeparator?: boolean
     hideIndicator?: boolean
@@ -267,9 +267,10 @@ ${colorConfig
   )
 }
 
-type ChartTooltipProps<TValue extends ValueType, TName extends NameType> = React.ComponentProps<
-  typeof TooltipPrimitive<TValue, TName>
->
+type ChartTooltipProps<
+  TValue extends ValueType = ValueType,
+  TName extends NameType = NameType,
+> = TooltipProps<TValue, TName>
 
 const tooltipWrapperStyle = { outline: "none" } as const
 
@@ -287,9 +288,7 @@ const cursorStyleDefault = {
   fillOpacity: 0.5,
 } as const
 
-const ChartTooltip = <TValue extends ValueType, TName extends NameType>(
-  props: ChartTooltipProps<TValue, TName>,
-) => {
+const ChartTooltip = (props: ChartTooltipProps) => {
   const { layout } = useChart()
   const cursorStyle = layout === "radial" ? cursorStyleRadial : cursorStyleDefault
 

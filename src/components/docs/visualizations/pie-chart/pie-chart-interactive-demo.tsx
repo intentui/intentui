@@ -60,7 +60,7 @@ export default function PieChartAudienceSegmentDemo() {
             innerRadius: "50%",
             outerRadius: (dp: { code: string }) => (dp.code === selectedCode ? 110 : 90),
           }}
-          valueFormatter={(v) => `${v.toLocaleString()} units`}
+          valueFormatter={(value: number) => `${value.toLocaleString()} units`}
           config={{
             UV: { label: "UV" },
             PV: { label: "PV" },

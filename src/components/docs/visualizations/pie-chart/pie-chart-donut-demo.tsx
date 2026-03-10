@@ -28,7 +28,7 @@ export default function PieChartDonutDemo() {
           dataKey="amount"
           nameKey="name"
           variant="donut"
-          valueFormatter={(v) => `$${v}`}
+          valueFormatter={(value: number) => `$${value}`}
           config={{
             Rent: { label: "Rent" },
             Groceries: { label: "Groceries" },
