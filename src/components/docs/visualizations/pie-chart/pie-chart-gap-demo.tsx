@@ -29,7 +29,7 @@ export default function PieChartGapDemo() {
           nameKey="name"
           variant="donut"
           showLabel
-          valueFormatter={(v) => `${v} visits`}
+          valueFormatter={(value: number) => `${value} visits`}
           pieProps={{
             paddingAngle: 20,
             startOffset: 30,

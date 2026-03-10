@@ -1,14 +1,14 @@
-'use client';
+"use client"
 
-import type { RadioGroupProps, RadioProps } from 'react-aria-components';
+import type { RadioGroupProps, RadioProps } from "react-aria-components"
 import {
   composeRenderProps,
   RadioGroup as RadioGroupPrimitive,
   Radio as RadioPrimitive,
-} from 'react-aria-components';
-import { twMerge } from 'tailwind-merge';
-import { cx } from '@/lib/primitive';
-import { Label } from './field';
+} from "react-aria-components"
+import { twMerge } from "tailwind-merge"
+import { cx } from "@/lib/primitive"
+import { Label } from "./field"
 
 export function RadioGroup({ className, ...props }: RadioGroupProps) {
   return (
@@ -16,29 +16,20 @@ export function RadioGroup({ className, ...props }: RadioGroupProps) {
       {...props}
       data-slot="control"
       className={cx(
-        'space-y-3 **:data-[slot=label]:font-normal',
-        'has-[slot=description]:space-y-6 has-[[slot=description]]:**:data-[slot=label]:font-medium',
+        "space-y-3 **:data-[slot=label]:font-normal",
+        "has-[slot=description]:space-y-6 has-[[slot=description]]:**:data-[slot=label]:font-medium",
         className,
       )}
     />
-  );
+  )
 }
 
 export function Radio({ className, children, ...props }: RadioProps) {
   return (
-    <RadioPrimitive
-      {...props}
-      className={cx('group block disabled:opacity-50', className)}
-    >
-      {composeRenderProps(
-        children,
-        (children, { isSelected, isFocusVisible, isInvalid }) => {
-          const isStringChild = typeof children === 'string';
-          const content = isStringChild ? (
-            <RadioLabel>{children}</RadioLabel>
-          ) : (
-            children
-          );
+    <RadioPrimitive {...props} className={cx("group block disabled:opacity-50", className)}>
+      {composeRenderProps(children, (children, { isSelected, isFocusVisible, isInvalid }) => {
+        const isStringChild = typeof children === "string"
+        const content = isStringChild ? <RadioLabel>{children}</RadioLabel> : children
 
           return (
             <div
@@ -74,9 +65,9 @@ export function Radio({ className, children, ...props }: RadioProps) {
         },
       )}
     </RadioPrimitive>
-  );
+  )
 }
 
 export function RadioLabel(props: React.ComponentProps<typeof Label>) {
-  return <Label elementType="span" data-slot="control-label" {...props} />;
+  return <Label elementType="span" data-slot="control-label" {...props} />
 }

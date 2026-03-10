@@ -99,7 +99,7 @@ export function SponsorPlan() {
               </div>
 
               <a href={individualPlan.checkout_url} className={buttonStyles({ intent: "primary" })}>
-                Become {individualPlan.id === "ambassador" ? "an" : "a"} {individualPlan.id}
+                Become a sponsor
               </a>
             </div>
           </div>
@@ -197,7 +197,7 @@ export function SponsorPlan() {
                   </div>
 
                   <a href={plan.checkout_url} className={buttonStyles({ intent: "primary" })}>
-                    Become {plan.id === "ambassador" ? "an" : "a"} {plan.id === 'o-sponsor' ? 'one-time sponsor' : plan.id}
+                    Become {plan.name === "Ambassador" ? "an" : "a"} {plan.name.toLowerCase()}
                   </a>
                 </div>
               ))}

@@ -25,7 +25,7 @@ export default function RadioGroupValidationDemo() {
           <RadioLabel>Third-party Integrations</RadioLabel>
           <Description>Connect with your favorite tools and services.</Description>
         </Radio>
-      <FieldError/>
+        <FieldError />
       </RadioGroup>
       <Button type="submit" intent="secondary">
         Submit
