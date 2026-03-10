@@ -75,7 +75,7 @@ function MultipleSelect<T extends OptionBase>({
           <div
             data-slot="control"
             ref={triggerRef}
-            className="flex w-full items-center gap-2 rounded-lg border p-1"
+            className="flex w-full items-center gap-2 rounded-lg border p-1 bg-(--control-bg,transparent)"
           >
             <SelectValue<T> className="flex-1">
               {({ selectedItems, state }) => (
