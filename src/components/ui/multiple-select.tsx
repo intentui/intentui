@@ -77,7 +77,7 @@ function MultipleSelect<T extends OptionBase>({
             ref={triggerRef}
             className="flex w-full items-center gap-2 rounded-lg border p-1"
           >
-            <SelectValue<T> className="flex-1">
+            <SelectValue<T> className="flex-1 ">
               {({ selectedItems, state }) => (
                 <TagGroup
                   aria-label="Selected items"
