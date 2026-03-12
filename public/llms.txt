@@ -109,6 +109,7 @@
 ### Pickers
 - [Combo Box](https://intentui.com/docs/components/pickers/combo-box.md)
 - [Multiple Select](https://intentui.com/docs/components/pickers/multiple-select.md)
+- [Native Select](https://intentui.com/docs/components/pickers/native-select.md)
 - [Select](https://intentui.com/docs/components/pickers/select.md)
 
 ### Statuses

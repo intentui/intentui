@@ -5247,6 +5247,27 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "toast-promise-demo",
+      "title": "Toast Promise",
+      "description": "toast-promise-demo",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/statuses/toast/toast-promise-demo.tsx",
+          "type": "registry:page",
+          "target": "app/toast-promise-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "toast-status-demo",
       "title": "Toast Status",
       "description": "toast-status-demo",
@@ -6252,9 +6273,9 @@
       "description": "combo-box-multi-select-demo",
       "registryDependencies": [
         "http://localhost:3000/r/combo-box",
+        "http://localhost:3000/r/field",
         "http://localhost:3000/r/tag-group",
-        "http://localhost:3000/r/text",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/text"
       ],
       "files": [
         {

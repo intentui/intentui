@@ -11,6 +11,7 @@ ignore
 /.claude
 /.agents
 /.ai
+skills-lock.json
 /.github/skills
 /.codex
 /.opencode
