@@ -1,7 +1,7 @@
 "use client"
 
 import { BuildingOffice2Icon, CheckIcon, UserCircleIcon } from "@heroicons/react/24/outline"
-import { CheckCircleIcon } from "@heroicons/react/24/solid"
+import { HeartIcon } from "@heroicons/react/24/solid"
 import { useState } from "react"
 import { PageContainer } from "@/components/page-container"
 import { Badge, badgeStyles } from "@/components/ui/badge"
@@ -73,11 +73,11 @@ export function SponsorPlan() {
 
                 <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-center">
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="size-4 text-success-subtle-fg" />
+                    <CheckIcon className="size-4 text-primary-subtle-fg" />
                     <span className="text-muted-fg text-sm">Public shoutout</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="size-4 text-success-subtle-fg" />
+                    <CheckIcon className="size-4 text-primary-subtle-fg" />
                     <span className="text-muted-fg text-sm">Profile on sponsors page</span>
                   </div>
                 </div>
@@ -98,14 +98,7 @@ export function SponsorPlan() {
                 href={individualPlan.checkout_url}
                 className={buttonStyles({ intent: "primary", size: "lg" })}
               >
-                <svg
-                  className="mr-1 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.723.723 0 0 1-.69 0l-.002-.001Z" />
-                </svg>
+                <HeartIcon />
                 Become a sponsor
               </a>
             </div>
