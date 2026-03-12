@@ -70,17 +70,6 @@ export function SponsorPlan() {
                   fix, every release. Even a small contribution helps keep Intent UI free and
                   actively maintained for everyone.
                 </Text>
-
-                <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-center">
-                  <div className="flex items-center gap-2">
-                    <CheckIcon className="size-4 text-primary-subtle-fg" />
-                    <span className="text-muted-fg text-sm">Public shoutout</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckIcon className="size-4 text-primary-subtle-fg" />
-                    <span className="text-muted-fg text-sm">Profile on sponsors page</span>
-                  </div>
-                </div>
               </div>
             </div>
             <div className="flex w-full flex-col sm:w-1/3">
