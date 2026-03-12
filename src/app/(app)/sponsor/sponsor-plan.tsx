@@ -71,7 +71,7 @@ export function SponsorPlan() {
                   actively maintained for everyone.
                 </Text>
 
-                <div className="mt-6 flex items-center gap-6">
+                <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-center">
                   <div className="flex items-center gap-2">
                     <CheckCircleIcon className="size-4 text-success-subtle-fg" />
                     <span className="text-muted-fg text-sm">Public shoutout</span>
