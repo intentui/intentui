@@ -4,7 +4,7 @@ import { BuildingOffice2Icon, CheckIcon, UserCircleIcon } from "@heroicons/react
 import { HeartIcon } from "@heroicons/react/24/solid"
 import { useState } from "react"
 import { PageContainer } from "@/components/page-container"
-import { Badge, badgeStyles } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge"
 import { buttonStyles } from "@/components/ui/button"
 import { Note } from "@/components/ui/note"
 import { Text } from "@/components/ui/text"
@@ -85,7 +85,7 @@ export function SponsorPlan() {
 
               <a
                 href={individualPlan.checkout_url}
-                className={buttonStyles({ intent: "primary", size: "lg" })}
+                className={buttonStyles({ intent: "outline", size: "lg" })}
               >
                 <HeartIcon />
                 Become a sponsor
@@ -129,13 +129,8 @@ export function SponsorPlan() {
       <div className="border-y bg-muted">
         <PageContainer>
           <div className="grid grid-cols-1 divide-y border-x sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {companyPlans.map((plan, index) => (
-              <div key={plan.id} className="relative flex flex-col bg-bg p-(--gutter)">
-                {index === 1 && (
-                  <div className="absolute top-4 right-4">
-                    <span className={badgeStyles({ intent: "info" })}>Popular</span>
-                  </div>
-                )}
+            {companyPlans.map((plan) => (
+              <div key={plan.id} className="flex flex-col bg-bg p-(--gutter)">
                 <div className="mb-6 flex flex-1 flex-col gap-y-5">
                   <div className="font-medium text-fg text-sm">{plan.name}</div>
                   <div className="font-semibold text-3xl tabular-nums tracking-tight">
@@ -157,10 +152,7 @@ export function SponsorPlan() {
 
                 <a
                   href={plan.checkout_url}
-                  className={buttonStyles({
-                    intent: index === 1 ? "primary" : "outline",
-                    size: "lg",
-                  })}
+                  className={buttonStyles({ intent: "primary", size: "lg" })}
                 >
                   Become {plan.name === "Ambassador" ? "an" : "a"} {plan.name.toLowerCase()}
                 </a>
