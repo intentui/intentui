@@ -1,9 +1,12 @@
 "use client"
 
-import { CheckIcon } from "@heroicons/react/24/outline"
+import { BuildingOffice2Icon, CheckIcon, UserCircleIcon } from "@heroicons/react/24/outline"
+import { CheckCircleIcon } from "@heroicons/react/24/solid"
 import { useState } from "react"
 import { PageContainer } from "@/components/page-container"
+import { Badge, badgeStyles } from "@/components/ui/badge"
 import { buttonStyles } from "@/components/ui/button"
+import { Note } from "@/components/ui/note"
 import { Text } from "@/components/ui/text"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import json from "@/json/sponsors.json"
@@ -26,6 +29,7 @@ interface SponsorPlanItem {
 
 const plans = json as SponsorPlanItem[]
 const individualPlans = plans.filter((i) => i.type === "individual")
+const companyPlans = plans.filter((i) => i.type !== "individual")
 
 export function SponsorPlan() {
   const [individualInterval, setIndividualInterval] = useState<"monthly" | "one-time">("monthly")
@@ -38,169 +42,148 @@ export function SponsorPlan() {
     <div className="-mb-px [--border:var(--color-muted-fg)]/18 [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)] lg:[--gutter:--spacing(12)]">
       <div className="border-y bg-muted">
         <PageContainer>
-          <div className="flex flex-col items-center gap-6 border-x bg-bg p-(--gutter) sm:flex-row">
+          <div className="flex flex-col items-center gap-8 border-x bg-bg p-(--gutter) sm:flex-row">
             <div className="w-full sm:w-2/3">
               <div className="max-w-xl">
-                <div className="flex items-center gap-x-3">
-                  <svg
-                    className="size-6 shrink-0 fill-primary-subtle text-primary-subtle-fg"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M16 6.5C16 8.70914 14.2091 10.5 12 10.5C9.79086 10.5 8 8.70914 8 6.5C8 4.29086 9.79086 2.5 12 2.5C14.2091 2.5 16 4.29086 16 6.5Z"
-                      stroke="currentColor"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12.0009 12.5C8.27245 12.5 5.47137 14.9458 4.4165 18.3604C4.0701 19.4817 5.01046 20.5 6.18402 20.5H17.8177C18.9912 20.5 19.9316 19.4817 19.5852 18.3604C18.5303 14.9458 15.7292 12.5 12.0009 12.5Z"
-                      stroke="currentColor"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <ToggleGroup
-                    size="sm"
-                    selectedKeys={[individualInterval]}
-                    onSelectionChange={(keys) => {
-                      const selected = [...keys][0] as "monthly" | "one-time"
-                      if (selected) setIndividualInterval(selected)
-                    }}
-                  >
-                    <ToggleGroupItem id="monthly">Monthly</ToggleGroupItem>
-                    <ToggleGroupItem id="one-time">One time</ToggleGroupItem>
-                  </ToggleGroup>
+                <div className="mb-4">
+                  <Badge intent="secondary">
+                    <UserCircleIcon /> Individual
+                  </Badge>
                 </div>
+                <ToggleGroup
+                  size="sm"
+                  selectedKeys={[individualInterval]}
+                  onSelectionChange={(keys) => {
+                    const selected = [...keys][0] as "monthly" | "one-time"
+                    if (selected) setIndividualInterval(selected)
+                  }}
+                >
+                  <ToggleGroupItem id="monthly">Monthly</ToggleGroupItem>
+                  <ToggleGroupItem id="one-time">One time</ToggleGroupItem>
+                </ToggleGroup>
 
-                <h3 className="mt-4 mb-2 font-medium text-fg text-xl tracking-tight">
-                  Support as an individual
+                <h3 className="mt-5 mb-2 font-semibold text-2xl text-fg tracking-tight">
+                  Back the project you rely on
                 </h3>
-                <Text>{individualPlan.description}</Text>
+                <Text className="text-pretty">
+                  Your sponsorship directly funds development time. Every new component, every bug
+                  fix, every release. Even a small contribution helps keep Intent UI free and
+                  actively maintained for everyone.
+                </Text>
+
+                <div className="mt-6 flex items-center gap-6">
+                  <div className="flex items-center gap-2">
+                    <CheckCircleIcon className="size-4 text-success-subtle-fg" />
+                    <span className="text-muted-fg text-sm">Public shoutout</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircleIcon className="size-4 text-success-subtle-fg" />
+                    <span className="text-muted-fg text-sm">Profile on sponsors page</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="flex w-full flex-col sm:w-1/3">
-              <div className="mb-6 flex flex-1 flex-col gap-y-6">
-                <div className="font-semibold text-3xl tabular-nums">
-                  ${individualPlan.price.amount}{" "}
-                  <span className="font-normal text-base/6 text-muted-fg">
-                    {individualInterval === "monthly" ? "/ per month" : "one time"}
+              <div className="mb-6 flex flex-1 flex-col gap-y-4">
+                <div className="font-semibold text-4xl tabular-nums tracking-tight">
+                  ${individualPlan.price.amount}
+                  <span className="ml-1 font-normal text-base text-muted-fg">
+                    {individualInterval === "monthly" ? "/ month" : "one time"}
                   </span>
                 </div>
-                {individualPlan.benefits.length ? (
-                  <ul className="space-y-3 text-sm/6 *:flex *:gap-x-3">
-                    {individualPlan.benefits.map((benefit) => (
-                      <li key={benefit}>
-                        <CheckIcon className="h-lh w-4 text-primary-subtle-fg" />
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
+                <Text className="text-pretty">{individualPlan.description}</Text>
               </div>
 
-              <a href={individualPlan.checkout_url} className={buttonStyles({ intent: "primary" })}>
+              <a
+                href={individualPlan.checkout_url}
+                className={buttonStyles({ intent: "primary", size: "lg" })}
+              >
+                <svg
+                  className="mr-1 size-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.723.723 0 0 1-.69 0l-.002-.001Z" />
+                </svg>
                 Become a sponsor
               </a>
             </div>
           </div>
         </PageContainer>
       </div>
+
       <div className="bg-muted">
         <PageContainer>
           <div className="border-x bg-bg p-(--gutter)">
             <div className="max-w-xl">
-              <svg
-                className="size-6 shrink-0 fill-primary-subtle text-primary-subtle-fg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <circle
-                  cx={12}
-                  cy="7.25"
-                  r={3}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle
-                  cx={5}
-                  cy="9.25"
-                  r={2}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle
-                  cx={19}
-                  cy="9.25"
-                  r={2}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M7.50128 19.5H16.5013C17.6059 19.5 18.4903 18.5988 18.2528 17.52C17.7636 15.298 16.3116 12 12.0013 12C7.69099 12 6.23894 15.298 5.74978 17.52C5.51231 18.5988 6.39671 19.5 7.50128 19.5Z"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M3.50038 18.5H2.25069C1.146 18.5 0.271276 17.5874 0.640565 16.5462C1.21292 14.9326 2.55137 13 5.50038 13"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M20.5 18.5H21.7497C22.8544 18.5 23.7291 17.5874 23.3598 16.5462C22.7875 14.9326 21.449 13 18.5 13"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-
-              <h3 className="mt-4 mb-2 font-medium text-fg text-xl tracking-tight">
-                Support as a company
+              <Badge intent="secondary">
+                <BuildingOffice2Icon /> Company
+              </Badge>
+              <h3 className="mt-4 mb-2 font-semibold text-2xl text-fg tracking-tight">
+                Invest in the tools your team uses
               </h3>
-              <Text>
+              <Text className="text-pretty">
                 A monthly sponsorship for companies who want to fund ongoing development, keep the
-                project sustainable, and get optional public recognition.
+                project sustainable, and get public recognition across the Intent UI ecosystem.
               </Text>
+              <Note className="mt-6">
+                Looking for a one-time sponsorship instead?{" "}
+                <a
+                  href="https://x.com/irsyad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-primary-subtle-fg underline decoration-primary-subtle-fg/50 hover:decoration-primary-subtle-fg"
+                >
+                  Reach out on X
+                </a>{" "}
+                and we&apos;ll work something out.
+              </Note>
             </div>
           </div>
         </PageContainer>
       </div>
+
       <div className="border-y bg-muted">
         <PageContainer>
           <div className="grid grid-cols-1 divide-y border-x sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {plans
-              .filter((i) => i.type !== "individual")
-              .map((plan) => (
-                <div key={plan.id} className="flex flex-col bg-bg p-(--gutter)">
-                  <div className="mb-6 flex flex-1 flex-col gap-y-6">
-                    <div className="text-muted-fg text-sm">{plan.name}</div>
-                    <div className="font-semibold text-3xl tabular-nums">
-                      ${plan.price.amount}{" "}
-                      <span className="font-normal text-base/6 text-muted-fg">/ per month</span>
-                    </div>
-                    <Text>{plan.description}</Text>
-                    {plan.benefits.length ? (
-                      <ul className="space-y-3 text-sm/6 *:flex *:gap-x-3">
-                        {plan.benefits.map((benefit) => (
-                          <li key={benefit}>
-                            <CheckIcon className="h-lh w-4 text-primary-subtle-fg" />
-                            <span>{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
+            {companyPlans.map((plan, index) => (
+              <div key={plan.id} className="relative flex flex-col bg-bg p-(--gutter)">
+                {index === 1 && (
+                  <div className="absolute top-4 right-4">
+                    <span className={badgeStyles({ intent: "info" })}>Popular</span>
                   </div>
-
-                  <a href={plan.checkout_url} className={buttonStyles({ intent: "primary" })}>
-                    Become {plan.name === "Ambassador" ? "an" : "a"} {plan.name.toLowerCase()}
-                  </a>
+                )}
+                <div className="mb-6 flex flex-1 flex-col gap-y-5">
+                  <div className="font-medium text-fg text-sm">{plan.name}</div>
+                  <div className="font-semibold text-3xl tabular-nums tracking-tight">
+                    ${plan.price.amount}
+                    <span className="ml-1 font-normal text-base text-muted-fg">/ month</span>
+                  </div>
+                  <Text className="text-pretty">{plan.description}</Text>
+                  {plan.benefits.length ? (
+                    <ul className="space-y-3 text-sm/6">
+                      {plan.benefits.map((benefit) => (
+                        <li key={benefit} className="flex gap-x-3">
+                          <CheckIcon className="h-lh w-4 shrink-0 text-primary-subtle-fg" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
-              ))}
+
+                <a
+                  href={plan.checkout_url}
+                  className={buttonStyles({
+                    intent: index === 1 ? "primary" : "outline",
+                    size: "lg",
+                  })}
+                >
+                  Become {plan.name === "Ambassador" ? "an" : "a"} {plan.name.toLowerCase()}
+                </a>
+              </div>
+            ))}
           </div>
         </PageContainer>
       </div>
