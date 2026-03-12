@@ -85,7 +85,7 @@ export function SponsorPlan() {
 
               <a
                 href={individualPlan.checkout_url}
-                className={buttonStyles({ intent: "outline", size: "lg" })}
+                className={buttonStyles({ intent: "primary", size: "lg" })}
               >
                 <HeartIcon />
                 Become a sponsor
