@@ -1,7 +1,7 @@
 "use client"
 
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid"
-import type { ButtonProps, InputProps, NumberFieldProps } from "react-aria-components"
+import type { ButtonProps, InputProps as PrimitiveInputProps, NumberFieldProps } from "react-aria-components"
 import { Button, NumberField as NumberFieldPrimitive } from "react-aria-components"
 import { Input, InputGroup } from "@/components/ui/input"
 import { cx } from "@/lib/primitive"
@@ -11,6 +11,10 @@ const NumberField = ({ className, ...props }: NumberFieldProps) => {
   return (
     <NumberFieldPrimitive {...props} data-slot="control" className={cx(fieldStyles(), className)} />
   )
+}
+
+interface InputProps extends PrimitiveInputProps {
+  ref?: React.RefObject<HTMLInputElement>
 }
 
 function NumberInput({ className, ...props }: InputProps) {
