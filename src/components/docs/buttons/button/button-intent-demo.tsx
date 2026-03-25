@@ -15,6 +15,9 @@ export default function ButtonIntentDemo() {
       <Button intent="warning">
         <Cog6ToothIcon /> Label
       </Button>
+      <Button intent="success">
+        <Cog6ToothIcon /> Label
+      </Button>
       <Button intent="danger">
         <Cog6ToothIcon /> Label
       </Button>
