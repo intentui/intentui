@@ -1,5 +1,17 @@
 [
   {
+    "name": "Field",
+    "component": "field.tsx",
+    "url": "/field",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 0,
+    "deletions": 1,
+    "date": "2026-03-25"
+  },
+  {
     "name": "Button intent demo",
     "component": "button-intent-demo.tsx",
     "url": "/button",
