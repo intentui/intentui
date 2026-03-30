@@ -1,5 +1,41 @@
 [
   {
+    "name": "Checkbox",
+    "component": "checkbox.tsx",
+    "url": "/checkbox",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 2,
+    "date": "2026-03-30"
+  },
+  {
+    "name": "Number field",
+    "component": "number-field.tsx",
+    "url": "/number-field",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 5,
+    "deletions": 1,
+    "date": "2026-03-30"
+  },
+  {
+    "name": "Radio",
+    "component": "radio.tsx",
+    "url": "/radio",
+    "type": "component",
+    "category": "unknown",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-03-30"
+  },
+  {
     "name": "Field",
     "component": "field.tsx",
     "url": "/field",
