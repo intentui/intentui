@@ -116,7 +116,7 @@ export const DocHow = ({
               "overflow-y-auto p-4 sm:p-8",
               !withNoPadding
                 ? [
-                    "relative gap-4 rounded-lg border bg-muted/30",
+                    "relative gap-4 rounded-lg border dark:bg-muted/30",
                     "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
                   ]
                 : "sm:py-24",
