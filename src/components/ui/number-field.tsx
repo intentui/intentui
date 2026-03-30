@@ -1,7 +1,11 @@
 "use client"
 
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid"
-import type { ButtonProps, InputProps as PrimitiveInputProps, NumberFieldProps } from "react-aria-components"
+import type {
+  ButtonProps,
+  NumberFieldProps,
+  InputProps as PrimitiveInputProps,
+} from "react-aria-components"
 import { Button, NumberField as NumberFieldPrimitive } from "react-aria-components"
 import { Input, InputGroup } from "@/components/ui/input"
 import { cx } from "@/lib/primitive"
