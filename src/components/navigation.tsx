@@ -21,6 +21,7 @@ import { CommandPalette } from "./command-palette"
 import { BrandDiscordIcon } from "./icons/brand-discord-icon"
 import { NavLink } from "./nav-item"
 import { ThemeSwitcher } from "./theme-switcher"
+import { DiscountBanner } from "@/components/discount-banner";
 
 export function Navigation() {
   const pathname = usePathname()

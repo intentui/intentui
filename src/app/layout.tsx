@@ -8,6 +8,7 @@ import localFont from "next/font/local"
 import { Suspense } from "react"
 import { AurelieAnalytics } from "@/components/aurelie-analytics"
 import { Toast } from "@/components/ui/toast"
+import { DiscountBanner } from "@/components/discount-banner";
 
 export const metadata: Metadata = {
   metadataBase: new URL(app.url),
@@ -172,6 +173,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
       <body className="min-h-svh font-sans antialiased">
         <Providers>
           <Toast />
+          <DiscountBanner/>
           <main>{children}</main>
         </Providers>
         <Suspense>
