@@ -14,6 +14,7 @@ import { useState } from "react"
 import { Button } from "react-aria-components"
 import { BrandLogoLink } from "@/components/brand-logo-link"
 import { CommandPalette } from "@/components/command-palette"
+import { DiscountBanner } from "@/components/discount-banner"
 import { GithubLink } from "@/components/github-link"
 import { BrandDiscordIcon } from "@/components/icons/brand-discord-icon"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
@@ -34,6 +35,7 @@ export function Navbar() {
   return (
     <>
       <CommandPalette setOpen={setOpen} openCmd={open} />
+      <DiscountBanner />
       <PageContainer className="hidden items-center justify-between py-4 lg:flex">
         <div className="flex items-center">
           <BrandLogoLink />
