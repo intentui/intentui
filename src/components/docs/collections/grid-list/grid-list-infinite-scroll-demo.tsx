@@ -28,7 +28,7 @@ export default function GridListInfiniteScrollDemo() {
   })
   return (
     <GridList
-      className="max-h-56"
+      className="max-h-56 overflow-y-auto"
       selectionMode="multiple"
       aria-label="Async loading ListView example"
     >
