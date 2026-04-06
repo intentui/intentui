@@ -2,11 +2,11 @@
 
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
-import { useTheme } from "next-themes"
 import { useEffect, useRef, useState } from "react"
 import { Autocomplete, GridList, GridListItem, useFilter } from "react-aria-components"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
+import { useTheme } from "@/components/theme-provider"
 import { Input, InputGroup } from "@/components/ui/input"
 import { Keyboard } from "@/components/ui/keyboard"
 import { SearchField } from "@/components/ui/search-field"

@@ -78,9 +78,7 @@ const navigation = {
   ],
 }
 
-const currentYear = new Date().getFullYear()
-
-export function Footer() {
+export function Footer({ currentYear }: { currentYear: number }) {
   return (
     <footer className="border-muted-fg/15 border-t bg-bg pb-16 text-fg sm:pb-0 dark:bg-muted">
       <h2 id="footer-heading" className="sr-only">
@@ -111,7 +109,7 @@ export function Footer() {
                 <Link href={`${app.repo.url}/blob/main/LICENSE`}>MIT</Link> license.
               </Text>
               <Text className="text-fg">
-                2024 - {currentYear} &middot; {app.name} &trade;
+                {`2024 - ${currentYear} · ${app.name} ™`}
               </Text>
             </div>
           </div>

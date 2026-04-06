@@ -47,7 +47,7 @@ export default function Page() {
       <Components />
       <Cta />
       <OpenSource />
-      <Footer />
+      <Footer currentYear={new Date().getUTCFullYear()} />
     </div>
   )
 }

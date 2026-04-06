@@ -1,4 +1,5 @@
 import { DeferredAnalytics } from "@/components/deferred-analytics"
+import { AppBootstrap } from "@/components/app-bootstrap"
 import { JsonLd } from "@/components/json-ld"
 import { Providers } from "@/components/providers"
 import { app, META_THEME_COLORS } from "@/config/app"
@@ -147,30 +148,12 @@ export default function RootLayout({ children }: Readonly<Props>) {
       suppressHydrationWarning
     >
       <head>
-        <script
-          async
-          src={process.env.NEXT_PUBLIC_AURELIE_URL ?? "https://app.useaurelie.com/florin.js?v1"}
-          data-site-key={process.env.NEXT_PUBLIC_AURELIE_PUBLIC_KEY}
-        ></script>
         <JsonLd data={structuredData} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
-                }
-                if (localStorage.layout) {
-                  document.documentElement.classList.add('layout-' + localStorage.layout)
-                }
-              } catch (_) {}
-            `,
-          }}
-        />
         <meta name="theme-color" content={META_THEME_COLORS.light} />
       </head>
       <body className="min-h-svh font-sans antialiased">
         <Providers>
+          <AppBootstrap />
           <Toast />
           <main>{children}</main>
         </Providers>

@@ -9,8 +9,8 @@ import {
   Squares2X2Icon,
   SunIcon,
 } from "@heroicons/react/24/outline"
-import { useTheme } from "next-themes"
 import { Avatar } from "@/components/ui/avatar"
+import { useTheme } from "@/components/theme-provider"
 import {
   Menu,
   MenuContent,
