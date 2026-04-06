@@ -3,7 +3,6 @@
 import type { GridListItemProps, GridListProps, TextProps } from "react-aria-components"
 import {
   Button,
-  composeRenderProps,
   GridListHeader as GridListHeaderPrimitive,
   GridListItem as GridListItemPrimitive,
   GridList as GridListPrimitive,
@@ -18,7 +17,7 @@ const GridList = <T extends object>({ className, ...props }: GridListProps<T>) =
   <GridListPrimitive
     data-slot="grid-list"
     className={cx(
-      "relative flex flex-col gap-y-1 *:drop-target:border *:drop-target:border-accent has-data-[slot=grid-list-section]:gap-y-6 sm:text-sm/6",
+      "relative divide-y overflow-hidden rounded-lg border bg-bg *:drop-target:border-accent sm:text-sm/6 dark:bg-muted",
       className,
     )}
     {...props}
@@ -32,7 +31,7 @@ const GridListSection = <T extends object>({
   return (
     <GridListSectionPrimitive
       data-slot="grid-list-section"
-      className={twMerge("space-y-1", className)}
+      className={twMerge("divide-y", className)}
       {...props}
     />
   )
@@ -45,7 +44,7 @@ const GridListHeader = ({
   return (
     <GridListHeaderPrimitive
       data-slot="grid-list-header"
-      className={twMerge("mb-2 font-semibold text-sm/6", className)}
+      className={twMerge("px-3 py-2.5 font-semibold text-sm/6", className)}
       {...props}
     />
   )
@@ -57,22 +56,14 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
     <GridListItemPrimitive
       textValue={textValue}
       {...props}
-      className={composeRenderProps(
+      className={cx(
+        "group relative min-w-0 px-3 py-2.5 outline-hidden [--me-icon:--spacing(2)]",
+        "flex min-w-0 cursor-default items-center gap-2 sm:gap-2.5",
+        "dragging:cursor-grab dragging:opacity-70 dragging:**:[[slot=drag]]:text-fg",
+        "hover:bg-accent/50 **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg sm:**:data-[slot=icon]:size-4",
+        "selected:bg-accent/40 selected:text-fg selected:hover:bg-accent/80 selected:**:[.text-muted-fg]:text-accent-fg/80",
+        "href" in props && "cursor-pointer",
         className,
-        (className, { isHovered, isFocusVisible, isSelected, isDisabled }) =>
-          twMerge(
-            "[--grid-list-item-bg-active:var(--color-primary-subtle)] [--grid-list-item-text-active:var(--color-primary-subtle-fg)]",
-            "group inset-ring inset-ring-border rounded-lg px-3 py-2.5",
-            "relative min-w-0 outline-hidden [--me-icon:--spacing(2)]",
-            "flex min-w-0 cursor-default items-center gap-2 sm:gap-2.5",
-            "dragging:cursor-grab dragging:opacity-70 dragging:**:[[slot=drag]]:text-(--grid-list-item-text-active)",
-            "**:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg sm:**:data-[slot=icon]:size-4",
-            (isSelected || isHovered || isFocusVisible) &&
-              "inset-ring-ring/70 bg-(--grid-list-item-bg-active) text-(--grid-list-item-text-active) **:[.text-muted-fg]:text-(--grid-list-item-text-active)/60",
-            isDisabled && "bg-muted opacity-50",
-            "href" in props && "cursor-pointer",
-            className,
-          ),
       )}
     >
       {(values) => (
@@ -162,15 +153,15 @@ const GridListDescription = ({ className, ref, ...props }: GridListTextProps) =>
   />
 )
 
-export type { GridListProps, GridListItemProps }
+export type { GridListItemProps, GridListProps }
 export {
   GridList,
-  GridListSection,
-  GridListHeader,
-  GridListStart,
-  GridListSpacer,
-  GridListItem,
-  GridListEmptyState,
-  GridListLabel,
   GridListDescription,
+  GridListEmptyState,
+  GridListHeader,
+  GridListItem,
+  GridListLabel,
+  GridListSection,
+  GridListSpacer,
+  GridListStart,
 }

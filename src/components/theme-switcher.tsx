@@ -1,8 +1,8 @@
 "use client"
 
 import { ComputerDesktopIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline"
-import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import { useTheme } from "@/components/theme-provider"
 
 export function ThemeSwitcher({
   isCircle = false,

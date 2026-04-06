@@ -100,9 +100,11 @@ function buildItems(parsed: { mode: "install" | "exec"; args: string }): Command
 export default function InstallCommand({ command, mode = "auto" }: InstallCommandProps) {
   const parsed = useMemo(() => parseCommand(command, mode), [command, mode])
   const items = useMemo(() => buildItems(parsed), [parsed])
-  const [selectedPM, setSelectedPM] = useState<PackageManager>(() => getStoredPackageManager())
+  const [selectedPM, setSelectedPM] = useState<PackageManager>("npm")
 
   useEffect(() => {
+    setSelectedPM(getStoredPackageManager())
+
     const handlePMChange = (e: Event) => {
       const customEvent = e as CustomEvent<PackageManager>
       setSelectedPM(customEvent.detail)

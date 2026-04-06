@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <DiscountBanner />
       <Navigation />
       <main className="flex-1">{children}</main>
-      <Footer />
+      <Footer currentYear={new Date().getUTCFullYear()} />
     </div>
   )
 }

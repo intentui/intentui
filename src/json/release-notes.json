@@ -1,5 +1,29 @@
 [
   {
+    "name": "Grid list infinite scroll demo",
+    "component": "grid-list-infinite-scroll-demo.tsx",
+    "url": "/grid-list",
+    "type": "demo",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-04-06"
+  },
+  {
+    "name": "Grid list",
+    "component": "grid-list.tsx",
+    "url": "/grid-list",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 22,
+    "deletions": 31,
+    "date": "2026-04-06"
+  },
+  {
     "name": "Checkbox",
     "component": "checkbox.tsx",
     "url": "/checkbox",
