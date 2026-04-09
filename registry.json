@@ -4528,6 +4528,9 @@
       "name": "bar-chart-custom-format-demo",
       "title": "Bar Chart Custom Format",
       "description": "bar-chart-custom-format-demo",
+      "dependencies": [
+        "recharts"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
         "http://localhost:3000/r/card",
@@ -4700,6 +4703,9 @@
       "name": "area-chart-custom-format-demo",
       "title": "Area Chart Custom Format",
       "description": "area-chart-custom-format-demo",
+      "dependencies": [
+        "recharts"
+      ],
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
         "http://localhost:3000/r/card",
@@ -11524,8 +11530,7 @@
       "title": "Menu With Icon",
       "description": "menu-with-icon-demo",
       "dependencies": [
-        "@heroicons/react",
-        "next-themes"
+        "@heroicons/react"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
