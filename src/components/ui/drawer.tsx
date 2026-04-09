@@ -202,15 +202,15 @@ const DrawerClose = ({ className, intent = "outline", ref, ...props }: ButtonPro
 
 const DrawerTrigger = ButtonPrimitive
 
+export type { DrawerContentProps }
 export {
   Drawer,
-  DrawerTrigger,
+  DrawerBody,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerDescription,
-  DrawerBody,
-  DrawerContent,
-  DrawerClose,
+  DrawerTrigger,
 }
-export type { DrawerContentProps }

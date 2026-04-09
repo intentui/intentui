@@ -137,21 +137,21 @@ const DialogCloseIcon = ({ className, ...props }: CloseButtonIndicatorProps) => 
 }
 
 export type {
+  CloseButtonIndicatorProps,
+  DialogBodyProps,
+  DialogDescriptionProps,
+  DialogFooterProps,
   DialogHeaderProps,
   DialogTitleProps,
-  DialogBodyProps,
-  DialogFooterProps,
-  DialogDescriptionProps,
-  CloseButtonIndicatorProps,
 }
 export {
   Dialog,
+  DialogBody,
   DialogClose,
-  DialogTrigger,
+  DialogCloseIcon,
+  DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
-  DialogBody,
-  DialogFooter,
-  DialogCloseIcon,
+  DialogTrigger,
 }

@@ -81,15 +81,15 @@ const PopoverTrigger = DialogTrigger
 const PopoverClose = DialogClose
 const PopoverDescription = DialogDescription
 
-export type { PopoverProps, PopoverContentProps }
+export type { PopoverContentProps, PopoverProps }
 export {
   Popover,
-  PopoverTrigger,
-  PopoverClose,
-  PopoverDescription,
-  PopoverContent,
   PopoverBody,
+  PopoverClose,
+  PopoverContent,
+  PopoverDescription,
   PopoverFooter,
   PopoverHeader,
   PopoverTitle,
+  PopoverTrigger,
 }

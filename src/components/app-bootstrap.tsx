@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect } from "react"
-import { META_THEME_COLORS } from "@/config/app"
 import { useTheme } from "@/components/theme-provider"
+import { META_THEME_COLORS } from "@/config/app"
 
 export function AppBootstrap() {
   const { resolvedTheme } = useTheme()

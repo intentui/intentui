@@ -337,19 +337,19 @@ const NavbarLabel = ({ className, ...props }: React.ComponentProps<"span">) => {
   )
 }
 
-export type { NavbarProviderProps, NavbarProps, NavbarTriggerProps, NavbarItemProps }
+export type { NavbarItemProps, NavbarProps, NavbarProviderProps, NavbarTriggerProps }
 export {
-  useNavbar,
-  NavbarProvider,
   Navbar,
-  NavbarMobile,
-  NavbarInset,
-  NavbarTrigger,
-  NavbarItem,
-  NavbarSection,
-  NavbarSpacer,
-  NavbarLabel,
-  NavbarSeparator,
-  NavbarStart,
   NavbarGap,
+  NavbarInset,
+  NavbarItem,
+  NavbarLabel,
+  NavbarMobile,
+  NavbarProvider,
+  NavbarSection,
+  NavbarSeparator,
+  NavbarSpacer,
+  NavbarStart,
+  NavbarTrigger,
+  useNavbar,
 }

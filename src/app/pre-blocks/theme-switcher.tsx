@@ -1,8 +1,8 @@
 "use client"
 
 import { ComputerDesktopIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline"
-import { Button } from "@/components/ui/button"
 import { useTheme } from "@/components/theme-provider"
+import { Button } from "@/components/ui/button"
 import { cx } from "@/lib/primitive"
 
 export function ThemeSwitcher({

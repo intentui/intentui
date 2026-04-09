@@ -1,5 +1,5 @@
-import { DeferredAnalytics } from "@/components/deferred-analytics"
 import { AppBootstrap } from "@/components/app-bootstrap"
+import { DeferredAnalytics } from "@/components/deferred-analytics"
 import { JsonLd } from "@/components/json-ld"
 import { Providers } from "@/components/providers"
 import { app, META_THEME_COLORS } from "@/config/app"

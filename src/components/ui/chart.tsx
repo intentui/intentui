@@ -607,26 +607,28 @@ const ChartLegendContent = ({
 }
 
 export type {
-  ChartConfig,
-  ChartColorKeys,
-  ChartType,
-  ChartLayout,
-  IntervalType,
   BaseChartProps,
-  ChartTooltipProps,
-  XAxisProps,
-  ChartLegendProps,
+  ChartColorKeys,
+  ChartConfig,
+  ChartLayout,
   ChartLegendContentProps,
+  ChartLegendProps,
+  ChartTooltipProps,
+  ChartType,
+  IntervalType,
+  XAxisProps,
 }
-
 export {
+  CartesianGrid,
+  CHART_COLORS,
   Chart,
   ChartLegend,
-  XAxis,
-  YAxis,
-  CartesianGrid,
+  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-  ChartLegendContent,
+  constructCategoryColors,
+  DEFAULT_COLORS,
+  getColorValue,
+  XAxis,
+  YAxis,
 }
-export { getColorValue, constructCategoryColors, DEFAULT_COLORS, CHART_COLORS }

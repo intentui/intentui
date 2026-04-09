@@ -108,9 +108,7 @@ export function Footer({ currentYear }: { currentYear: number }) {
                 . The source code's got the{" "}
                 <Link href={`${app.repo.url}/blob/main/LICENSE`}>MIT</Link> license.
               </Text>
-              <Text className="text-fg">
-                {`2024 - ${currentYear} · ${app.name} ™`}
-              </Text>
+              <Text className="text-fg">{`2024 - ${currentYear} · ${app.name} ™`}</Text>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-y-10 lg:grid-cols-5 lg:gap-10 xl:gap-6 xl:gap-y-6">

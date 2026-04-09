@@ -9,8 +9,8 @@ import {
   Squares2X2Icon,
   SunIcon,
 } from "@heroicons/react/24/outline"
-import { Avatar } from "@/components/ui/avatar"
 import { useTheme } from "@/components/theme-provider"
+import { Avatar } from "@/components/ui/avatar"
 import {
   Menu,
   MenuContent,
@@ -30,7 +30,7 @@ export default function MenuWithIconDemo() {
       <MenuTrigger aria-label="Open Menu">
         <Avatar alt="kurt cobain" size="lg" src="https://intentui.com/images/avatar/cobain.jpg" />
       </MenuTrigger>
-      <MenuContent popover={{ placement: "bottom" }} className="min-w-64">
+      <MenuContent popover={{ placement: "bottom" }} className="min-w-48">
         <MenuHeader separator>
           <span className="block">Kurt Cobain</span>
           <span className="font-normal text-muted-fg">@cobain</span>

@@ -91,5 +91,5 @@ const TooltipContent = ({
 
 const TooltipTrigger = Button
 
-export type { TooltipProps, TooltipContentProps }
-export { Tooltip, TooltipTrigger, TooltipContent }
+export type { TooltipContentProps, TooltipProps }
+export { Tooltip, TooltipContent, TooltipTrigger }

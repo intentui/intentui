@@ -117,5 +117,5 @@ const TreeIndicator = ({
   )
 }
 
-export type { TreeProps, TreeItemProps }
-export { Tree, TreeItem, TreeIndicator, TreeContent }
+export type { TreeItemProps, TreeProps }
+export { Tree, TreeContent, TreeIndicator, TreeItem }

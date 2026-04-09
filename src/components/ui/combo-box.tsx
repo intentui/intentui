@@ -53,7 +53,7 @@ const ComboBoxContent = <T extends object>({
     <PopoverContent
       placement={popover?.placement ?? "bottom"}
       className={cx(
-        "min-w-(--trigger-width) scroll-py-1 overflow-y-auto overscroll-contain",
+        "min-w-(--trigger-width) overflow-hidden *:data-[slot=popover-inner]:overflow-hidden",
         popover?.className,
       )}
       {...popover}
@@ -62,7 +62,7 @@ const ComboBoxContent = <T extends object>({
         layout="stack"
         orientation="vertical"
         className={cx(
-          "grid max-h-96 w-full grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-auto p-1 outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
+          "grid max-h-[inherit] w-full grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-auto p-1 outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
           className,
         )}
         items={items}
@@ -99,14 +99,14 @@ const ComboBoxValue = <T extends object>(props: ComboBoxValueProps<T>) => (
   <ComboBoxValuePrimitive data-slot="control" {...props} />
 )
 
-export type { ComboBoxProps, ComboBoxListProps }
+export type { ComboBoxListProps, ComboBoxProps }
 export {
   ComboBox,
-  ComboBoxInput,
   ComboBoxContent,
+  ComboBoxDescription,
+  ComboBoxInput,
   ComboBoxItem,
   ComboBoxLabel,
-  ComboBoxDescription,
   ComboBoxSection,
   ComboBoxValue,
 }

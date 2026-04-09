@@ -92,12 +92,12 @@ const SheetClose = DialogClose
 export type { SheetContentProps }
 export {
   Sheet,
-  SheetTrigger,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetDescription,
   SheetBody,
   SheetClose,
   SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 }

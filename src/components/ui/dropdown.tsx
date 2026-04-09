@@ -181,14 +181,14 @@ const DropdownKeyboard = ({ className, ...props }: React.ComponentProps<typeof K
  * Note: This is not exposed component, but it's used in other components to render dropdowns.
  * @internal
  */
-export type { DropdownSectionProps, DropdownItemProps }
+export type { DropdownItemProps, DropdownSectionProps }
 export {
-  DropdownSeparator,
-  DropdownItem,
-  DropdownLabel,
   DropdownDescription,
+  DropdownItem,
   DropdownKeyboard,
-  dropdownItemStyles,
+  DropdownLabel,
   DropdownSection,
+  DropdownSeparator,
+  dropdownItemStyles,
   dropdownSectionStyles,
 }

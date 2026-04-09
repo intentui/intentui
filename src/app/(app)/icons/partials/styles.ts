@@ -16,4 +16,4 @@ const styles = tv({
 
 const { item, box } = styles()
 
-export { item, box }
+export { box, item }
