@@ -115,13 +115,13 @@ const ContextMenuLabel = MenuLabel
 export type { ContextMenuProps }
 export {
   ContextMenu,
-  ContextMenuTrigger,
   ContextMenuContent,
+  ContextMenuDescription,
+  ContextMenuHeader,
   ContextMenuItem,
   ContextMenuLabel,
-  ContextMenuSeparator,
-  ContextMenuDescription,
   ContextMenuSection,
-  ContextMenuHeader,
+  ContextMenuSeparator,
   ContextMenuShortcut,
+  ContextMenuTrigger,
 }

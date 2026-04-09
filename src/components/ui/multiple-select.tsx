@@ -143,4 +143,4 @@ function MultipleSelect<T extends OptionBase>({
 
 const MultipleSelectItem = ListBoxItem
 
-export { MultipleSelect, MultipleSelectItem, MultipleSelectContent }
+export { MultipleSelect, MultipleSelectContent, MultipleSelectItem }

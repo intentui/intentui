@@ -323,5 +323,5 @@ const TableCell = ({ className, ref, ...props }: TableCellProps) => {
   )
 }
 
-export type { TableProps, TableColumnProps, TableRowProps }
+export type { TableColumnProps, TableProps, TableRowProps }
 export { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow }

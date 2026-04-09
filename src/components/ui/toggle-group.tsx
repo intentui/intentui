@@ -176,5 +176,5 @@ const ToggleGroupItem = ({ className, ...props }: ToggleGroupItemProps) => {
   )
 }
 
-export type { ToggleGroupProps, ToggleGroupItemProps }
+export type { ToggleGroupItemProps, ToggleGroupProps }
 export { ToggleGroup, ToggleGroupItem }

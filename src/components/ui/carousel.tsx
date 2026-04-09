@@ -226,4 +226,4 @@ const CarouselButton = ({
 }
 
 export type { CarouselApi }
-export { Carousel, CarouselContent, CarouselHandler, CarouselItem, CarouselButton }
+export { Carousel, CarouselButton, CarouselContent, CarouselHandler, CarouselItem }

@@ -90,4 +90,4 @@ const CardFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement
   )
 }
 
-export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, CardAction }
+export { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }

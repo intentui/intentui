@@ -18,6 +18,15 @@ const languages = [
   { id: "ja", name: "Japanese" },
   { id: "zh", name: "Chinese" },
   { id: "ar", name: "Arabic" },
+  { id: "hi", name: "Hindi" },
+  { id: "ko", name: "Korean" },
+  { id: "sv", name: "Swedish" },
+  { id: "nl", name: "Dutch" },
+  { id: "tr", name: "Turkish" },
+  { id: "pl", name: "Polish" },
+  { id: "cs", name: "Czech" },
+  { id: "el", name: "Greek" },
+  { id: "he", name: "Hebrew" },
 ]
 
 export default function SelectSearchableDemo() {
@@ -29,9 +38,12 @@ export default function SelectSearchableDemo() {
       <Popover className="entering:fade-in exiting:fade-out flex max-h-80 w-(--trigger-width) entering:animate-in exiting:animate-out flex-col overflow-hidden rounded-lg border bg-overlay">
         <Dialog aria-label="Language">
           <Autocomplete filter={contains}>
-            <div className="border-b bg-muted p-2">
-              <SearchField className="rounded-lg bg-bg" autoFocus>
-                <SearchInput />
+            <div className="border-b py-0.5">
+              <SearchField className="rounded-lg focus-within:ring-0" autoFocus>
+                <SearchInput
+                  className="border-none ring-0 focus:ring-0"
+                  placeholder="Search&hellip;"
+                />
               </SearchField>
             </div>
             <ListBox

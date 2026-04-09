@@ -163,5 +163,5 @@ const TabPanel = ({ className, ref, ...props }: TabPanelProps) => {
   )
 }
 
-export type { TabsProps, TabListProps, TabProps, TabPanelProps }
-export { Tabs, TabList, Tab, TabPanels, TabPanel }
+export type { TabListProps, TabPanelProps, TabProps, TabsProps }
+export { Tab, TabList, TabPanel, TabPanels, Tabs }

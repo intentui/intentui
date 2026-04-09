@@ -301,15 +301,15 @@ const PaginationInfo = ({ className, ...props }: React.ComponentProps<"p">) => {
 
 export {
   Pagination,
-  PaginationLabel,
-  PaginationItem,
   PaginationFirst,
-  PaginationPrevious,
-  PaginationNext,
-  PaginationLast,
   PaginationGap,
   PaginationInfo,
-  PaginationSpacer,
+  PaginationItem,
+  PaginationLabel,
+  PaginationLast,
   PaginationList,
+  PaginationNext,
+  PaginationPrevious,
   PaginationSection,
+  PaginationSpacer,
 }

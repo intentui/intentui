@@ -121,4 +121,4 @@ const ListBoxLabel = DropdownLabel
 const ListBoxDescription = DropdownDescription
 
 export type { ListBoxItemProps, ListBoxSectionProps }
-export { ListBox, ListBoxSection, ListBoxItem, ListBoxLabel, ListBoxDescription }
+export { ListBox, ListBoxDescription, ListBoxItem, ListBoxLabel, ListBoxSection }

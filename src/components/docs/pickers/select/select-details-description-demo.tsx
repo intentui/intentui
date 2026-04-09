@@ -1,6 +1,6 @@
 "use client"
 
-import { Label } from "@/components/ui/field"
+import { Description, Label } from "@/components/ui/field"
 import {
   Select,
   SelectContent,
@@ -12,7 +12,7 @@ import {
 
 export default function SelectDetailsDescriptionDemo() {
   return (
-    <Select placeholder="Select a role">
+    <Select className="max-w-2xs" placeholder="Select a role">
       <Label>Roles</Label>
       <SelectTrigger />
       <SelectContent className="max-w-(--trigger-width)" items={roles}>
@@ -23,6 +23,7 @@ export default function SelectDetailsDescriptionDemo() {
           </SelectItem>
         )}
       </SelectContent>
+      <Description>Choose the appropriate role based on the level of access required.</Description>
     </Select>
   )
 }

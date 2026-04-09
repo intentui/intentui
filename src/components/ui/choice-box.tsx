@@ -232,5 +232,5 @@ const ChoiceBoxDescription = ({ className, ref, ...props }: ChoiceBoxDescription
   )
 }
 
-export type { ChoiceBoxProps, ChoiceBoxItemProps }
-export { ChoiceBox, ChoiceBoxItem, ChoiceBoxLabel, ChoiceBoxDescription }
+export type { ChoiceBoxItemProps, ChoiceBoxProps }
+export { ChoiceBox, ChoiceBoxDescription, ChoiceBoxItem, ChoiceBoxLabel }

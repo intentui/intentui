@@ -88,7 +88,10 @@ const MenuContent = <T extends object>({
 }: MenuContentProps<T>) => {
   return (
     <PopoverContent
-      className={cx("min-w-32 *:data-[slot=popover-inner]:overflow-hidden", popover?.className)}
+      className={cx(
+        "min-w-32 overflow-hidden *:data-[slot=popover-inner]:overflow-hidden",
+        popover?.className,
+      )}
       placement={placement}
       {...popover}
     >
@@ -189,18 +192,18 @@ const MenuShortcut = DropdownKeyboard
 const MenuLabel = DropdownLabel
 const MenuDescription = DropdownDescription
 
-export type { MenuContentProps, MenuTriggerProps, MenuItemProps, MenuSectionProps }
+export type { MenuContentProps, MenuItemProps, MenuSectionProps, MenuTriggerProps }
 export {
-  menuContentStyles,
   Menu,
-  MenuShortcut,
   MenuContent,
+  MenuDescription,
   MenuHeader,
   MenuItem,
+  MenuLabel,
   MenuSection,
   MenuSeparator,
-  MenuLabel,
-  MenuDescription,
-  MenuTrigger,
+  MenuShortcut,
   MenuSubMenu,
+  MenuTrigger,
+  menuContentStyles,
 }

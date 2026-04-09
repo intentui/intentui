@@ -73,7 +73,11 @@ export function ThemeProvider({
     const savedTheme = localStorage.getItem(storageKey) as Theme | null
     const nextTheme = savedTheme ?? defaultTheme
     const nextResolvedTheme =
-      nextTheme === "system" && enableSystem ? getSystemTheme() : nextTheme === "dark" ? "dark" : "light"
+      nextTheme === "system" && enableSystem
+        ? getSystemTheme()
+        : nextTheme === "dark"
+          ? "dark"
+          : "light"
 
     setThemeState(nextTheme)
     setResolvedTheme(nextResolvedTheme)
@@ -106,7 +110,11 @@ export function ThemeProvider({
   const setTheme = (nextTheme: Theme) => {
     const normalizedTheme = nextTheme === "system" && !enableSystem ? "light" : nextTheme
     const nextResolvedTheme =
-      normalizedTheme === "system" ? getSystemTheme() : normalizedTheme === "dark" ? "dark" : "light"
+      normalizedTheme === "system"
+        ? getSystemTheme()
+        : normalizedTheme === "dark"
+          ? "dark"
+          : "light"
 
     const restoreTransitions = disableTransitionOnChange ? disableTransitionsTemporarily() : null
 
