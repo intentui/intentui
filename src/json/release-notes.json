@@ -1,5 +1,17 @@
 [
   {
+    "name": "Toggle",
+    "component": "toggle.tsx",
+    "url": "/toggle",
+    "type": "component",
+    "category": "buttons",
+    "kind": "improvement",
+    "description": null,
+    "additions": 4,
+    "deletions": 4,
+    "date": "2026-04-12"
+  },
+  {
     "name": "List box demo",
     "component": "list-box-demo.tsx",
     "url": "/list-box",
