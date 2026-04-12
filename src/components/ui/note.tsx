@@ -63,7 +63,7 @@ export function Note({ indicator = true, intent = "default", className, ...props
           </div>
         </div>
       )}
-      <div className="text-pretty group-has-data-[slot=icon]:col-start-2">{props.children}</div>
+      <div className="text-pretty group-has-[svg]:col-start-2">{props.children}</div>
     </div>
   )
 }

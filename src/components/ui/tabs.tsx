@@ -117,7 +117,7 @@ const Tab = ({ className, ref, ...props }: TabProps) => {
           : "w-full justify-start [--tab-gutter-x:--spacing(4)] [--tab-gutter-y:--spacing(1.5)]",
         "relative flex cursor-default items-center whitespace-nowrap font-medium text-sm/6 outline-hidden transition [-webkit-tap-highlight-color:transparent]",
         "px-(--tab-gutter-x) py-(--tab-gutter-y)",
-        "*:data-[slot=icon]:-ms-0.5 *:data-[slot=icon]:me-2 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-muted-fg selected:*:data-[slot=icon]:text-primary-subtle-fg",
+        "*:[svg]:-ms-0.5 *:[svg]:me-2 *:[svg]:size-4 *:[svg]:shrink-0 *:[svg]:self-center *:[svg]:text-muted-fg selected:*:[svg]:text-primary-subtle-fg",
         "selected:text-primary-subtle-fg text-muted-fg hover:bg-secondary selected:hover:bg-primary-subtle hover:text-fg selected:hover:text-primary-subtle-fg focus:ring-0",
         "disabled:opacity-50",
         "href" in props ? "cursor-pointer" : "cursor-default",
@@ -133,8 +133,8 @@ const Tab = ({ className, ref, ...props }: TabProps) => {
               className={twMerge(
                 "absolute bg-primary-subtle-fg duration-200 will-change-transform",
                 orientation === "horizontal"
-                  ? "start-(--tab-gutter-x) end-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] h-0.5 motion-safe:transition-[translate,width]"
-                  : "-start-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] top-(--tab-gutter-y) bottom-(--tab-gutter-y) w-0.5 motion-safe:transition-[translate,height]",
+                  ? "inset-e-(--tab-gutter-x) start-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] h-0.5 motion-safe:transition-[translate,width]"
+                  : "-inset-s-[calc(var(--tab-gutter-x)-var(--tab-list-gutter)+1px)] top-(--tab-gutter-y) bottom-(--tab-gutter-y) w-0.5 motion-safe:transition-[translate,height]",
               )}
             />
           )}

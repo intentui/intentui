@@ -30,37 +30,30 @@ export default function TableDragDemo() {
     },
   })
   return (
-    <div className="rounded-lg border p-4">
-      <Table
-        allowResize
-        aria-label="Movies"
-        selectionMode="multiple"
-        dragAndDropHooks={dragAndDropHooks}
-      >
-        <TableHeader>
-          <TableColumn>#</TableColumn>
-          <TableColumn isRowHeader>Name</TableColumn>
-          <TableColumn>Genre</TableColumn>
-          <TableColumn>Release</TableColumn>
-          <TableColumn>Rating</TableColumn>
-        </TableHeader>
-        <TableBody items={list.items}>
-          {(item) => (
-            <TableRow>
-              <TableCell>{item.id}</TableCell>
-              <TableCell>{item.name}</TableCell>
-              <TableCell>{item.genre}</TableCell>
-              <TableCell>{item.releaseYear}</TableCell>
-              <TableCell>
-                <div className="flex items-center gap-x-2">
-                  <StarIcon className="size-3.5 text-warning" /> <span>{item.rating}</span>
-                </div>
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-    </div>
+    <Table aria-label="Movies" selectionMode="multiple" dragAndDropHooks={dragAndDropHooks}>
+      <TableHeader>
+        <TableColumn>#</TableColumn>
+        <TableColumn isRowHeader>Name</TableColumn>
+        <TableColumn>Genre</TableColumn>
+        <TableColumn>Release</TableColumn>
+        <TableColumn>Rating</TableColumn>
+      </TableHeader>
+      <TableBody items={list.items}>
+        {(item) => (
+          <TableRow>
+            <TableCell>{item.id}</TableCell>
+            <TableCell>{item.name}</TableCell>
+            <TableCell>{item.genre}</TableCell>
+            <TableCell>{item.releaseYear}</TableCell>
+            <TableCell>
+              <div className="flex items-center gap-x-2">
+                <StarIcon className="size-3.5 text-warning" /> <span>{item.rating}</span>
+              </div>
+            </TableCell>
+          </TableRow>
+        )}
+      </TableBody>
+    </Table>
   )
 }
 
