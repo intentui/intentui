@@ -60,7 +60,7 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
         "group relative min-w-0 px-3 py-2.5 outline-hidden [--me-icon:--spacing(2)]",
         "flex min-w-0 cursor-default items-center gap-2 sm:gap-2.5",
         "dragging:cursor-grab dragging:opacity-70 dragging:**:[[slot=drag]]:text-fg",
-        "hover:bg-accent/50 **:data-[slot=icon]:size-5 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg sm:**:data-[slot=icon]:size-4",
+        "hover:bg-accent/50 **:[svg]:size-5 **:[svg]:shrink-0 **:[svg]:text-muted-fg sm:**:[svg]:size-4",
         "selected:bg-accent/40 selected:text-fg selected:hover:bg-accent/80 selected:**:[.text-muted-fg]:text-accent-fg/80",
         "href" in props && "cursor-pointer",
         className,

@@ -120,7 +120,7 @@ const MenuItem = ({ className, intent, children, ...props }: MenuItemProps) => {
                 intent === "danger" && "open:bg-danger-subtle open:text-danger-subtle-fg",
                 intent === "warning" && "open:bg-warning-subtle open:text-warning-subtle-fg",
                 intent === undefined &&
-                  "open:bg-accent open:text-accent-fg open:*:data-[slot=icon]:text-accent-fg open:*:[.text-muted-fg]:text-accent-fg",
+                  "open:bg-accent open:text-accent-fg open:*:[.text-muted-fg]:text-accent-fg open:*:[svg]:text-accent-fg",
                 className,
               )
             : className,
@@ -131,14 +131,20 @@ const MenuItem = ({ className, intent, children, ...props }: MenuItemProps) => {
     >
       {(values) => (
         <>
-          {values.isSelected && (
-            <>{["single", "multiple"].includes(values.selectionMode) && <CheckIcon />}</>
+          {values.isSelected && ["single", "multiple"].includes(values.selectionMode) && (
+            <CheckIcon />
           )}
 
           {typeof children === "function" ? children(values) : children}
 
           {values.hasSubmenu && (
-            <ChevronRightIcon data-slot="chevron" className="absolute end-2 size-3.5" />
+            <ChevronRightIcon
+              data-slot="chevron"
+              className="absolute end-0 size-4 -translate-y-1/2"
+              style={{
+                top: "calc(var(--spacing) * 3)",
+              }}
+            />
           )}
         </>
       )}

@@ -79,7 +79,7 @@ export function DisclosureTrigger({
         className={cx(
           [
             "relative isolate flex w-full cursor-default items-center justify-between px-(--disclosure-gutter-x,--spacing(0)) py-[calc(var(--disclosure-gutter-x,--spacing(0))-(--spacing(1)))] text-start font-medium text-sm/6 outline-hidden",
-            "**:data-[slot=icon]:shrink-0 [&_[data-slot='icon']:not([class*='size-'])]:size-5 sm:[&_[data-slot='icon']:not([class*='size-'])]:size-4",
+            "[&_svg:not([class*='size-'])]:size-5 sm:[&_svg:not([class*='size-'])]:size-4 **:[svg]:shrink-0",
             "disabled:opacity-50",
             state.isExpanded
               ? "rounded-t-(--disclosure-radius) rounded-b-none text-(--disclosure-expanded-fg)"

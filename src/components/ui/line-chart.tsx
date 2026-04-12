@@ -64,10 +64,7 @@ export function LineChart({
     [configKeys, colors],
   )
 
-  const configEntries = useMemo(
-    () => configKeys.map((category) => [category, config[category]] as const),
-    [config, configKeys],
-  )
+  const configEntries = useMemo(() => Object.entries(config), [config])
 
   return (
     <Chart config={config} data={data} dataKey={dataKey} {...props}>

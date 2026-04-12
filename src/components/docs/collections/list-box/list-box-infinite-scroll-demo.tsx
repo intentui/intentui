@@ -24,7 +24,7 @@ export default function ListBoxInfiniteScrollDemo() {
   return (
     <ListBox aria-label="Pick a Pokemon" items={list.items} selectionMode="single">
       <Collection items={list.items}>
-        {(item) => <ListBoxItem id={item.name}>{item.name}</ListBoxItem>}
+        {(item) => <ListBoxItem id={item.name} textValue={item.name}>{item.name}</ListBoxItem>}
       </Collection>
       <ListBoxLoadMoreItem
         onLoadMore={list.loadMore}

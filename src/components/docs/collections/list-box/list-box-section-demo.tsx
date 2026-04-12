@@ -7,7 +7,7 @@ export default function ListBoxSectionDemo() {
     <ListBox className="max-w-2xs" items={bands} aria-label="Bands" selectionMode="multiple">
       {(item) => (
         <ListBoxSection items={item.albums} title={item.name} id={item.id}>
-          {(album) => <ListBoxItem id={album.id}>{album.name}</ListBoxItem>}
+          {(album) => <ListBoxItem textValue={album.name}>{album.name}</ListBoxItem>}
         </ListBoxSection>
       )}
     </ListBox>

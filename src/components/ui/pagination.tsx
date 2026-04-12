@@ -103,7 +103,6 @@ const PaginationFirst = ({
             height={16}
             fill="none"
             viewBox="0 0 25 24"
-            data-slot="icon"
             aria-hidden="true"
           >
             <path
@@ -147,7 +146,6 @@ const PaginationPrevious = ({
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
-            data-slot="icon"
           >
             <path
               fillRule="evenodd"
@@ -189,7 +187,6 @@ const PaginationNext = ({
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
-            data-slot="icon"
           >
             <path
               fillRule="evenodd"
@@ -231,8 +228,6 @@ const PaginationLast = ({
             height={16}
             fill="none"
             viewBox="0 0 25 24"
-            className="intentui-icons size-4"
-            data-slot="icon"
             aria-hidden="true"
           >
             <path
