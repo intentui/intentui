@@ -1,5 +1,17 @@
 [
   {
+    "name": "Tag group",
+    "component": "tag-group.tsx",
+    "url": "/tag-group",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-04-12"
+  },
+  {
     "name": "Table drag demo",
     "component": "table-drag-demo.tsx",
     "url": "/table",
