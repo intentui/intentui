@@ -11,7 +11,7 @@ export default function ListBoxDisabledDemo() {
       aria-label="Fruits"
       selectionMode="multiple"
     >
-      {(fruit) => <ListBoxItem id={fruit.id}>{fruit.name}</ListBoxItem>}
+      {(item) => <ListBoxItem id={item.id} textValue={item.name}>{item.name}</ListBoxItem>}
     </ListBox>
   )
 }

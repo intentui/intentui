@@ -5,7 +5,7 @@ import { ListBox, ListBoxItem } from "@/components/ui/list-box"
 export default function ListBoxDemo() {
   return (
     <ListBox className="max-w-2xs" items={rockPopBands} selectionMode="single" aria-label="Bands">
-      {(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+      {(item) => <ListBoxItem id={item.id} textValue={item.name}>{item.name}</ListBoxItem>}
     </ListBox>
   )
 }

@@ -17,7 +17,7 @@ export default function ListBoxMultipleDemo() {
         selectionMode="multiple"
       >
         {(fruit) => (
-          <ListBoxItem id={fruit.id} textValue={fruit.name}>
+          <ListBoxItem textValue={fruit.name}>
             {fruit.name}
           </ListBoxItem>
         )}

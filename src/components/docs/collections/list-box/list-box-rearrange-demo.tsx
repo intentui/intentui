@@ -38,7 +38,7 @@ export default function ListBoxRearrangeDemo() {
       dragAndDropHooks={dragAndDropHooks}
     >
       {(item) => (
-        <ListBoxItem key={item.id}>
+        <ListBoxItem textValue={item.name}>
           <ListBoxLabel>{item.name}</ListBoxLabel>
         </ListBoxItem>
       )}
