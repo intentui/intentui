@@ -25,9 +25,9 @@ const GridList = <T extends object>({ className, ...props }: GridListProps<T>) =
 )
 
 const GridListSection = <T extends object>({
-  className,
-  ...props
-}: React.ComponentProps<typeof GridListSectionPrimitive<T>>) => {
+                                             className,
+                                             ...props
+                                           }: React.ComponentProps<typeof GridListSectionPrimitive<T>>) => {
   return (
     <GridListSectionPrimitive
       data-slot="grid-list-section"
@@ -38,9 +38,9 @@ const GridListSection = <T extends object>({
 }
 
 const GridListHeader = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof GridListHeaderPrimitive>) => {
+                          className,
+                          ...props
+                        }: React.ComponentProps<typeof GridListHeaderPrimitive>) => {
   return (
     <GridListHeaderPrimitive
       data-slot="grid-list-header"
@@ -60,7 +60,7 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
         "group relative min-w-0 px-3 py-2.5 outline-hidden [--me-icon:--spacing(2)]",
         "flex min-w-0 cursor-default items-center gap-2 sm:gap-2.5",
         "dragging:cursor-grab dragging:opacity-70 dragging:**:[[slot=drag]]:text-fg",
-        "hover:bg-accent/50 **:[svg]:size-5 **:[svg]:shrink-0 **:[svg]:text-muted-fg sm:**:[svg]:size-4",
+        "hover:bg-accent/50 **:[svg:not([data-slot='check-indicator'])]:size-5 **:[svg:not([data-slot='check-indicator'])]:shrink-0 **:[svg:not([data-slot='check-indicator'])]:text-muted-fg sm:**:[svg:not([data-slot='check-indicator'])]:size-4",
         "selected:bg-accent/40 selected:text-fg selected:hover:bg-accent/80 selected:**:[.text-muted-fg]:text-accent-fg/80",
         "href" in props && "cursor-pointer",
         className,

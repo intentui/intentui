@@ -1,5 +1,17 @@
 [
   {
+    "name": "Grid list",
+    "component": "grid-list.tsx",
+    "url": "/grid-list",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 7,
+    "deletions": 7,
+    "date": "2026-04-12"
+  },
+  {
     "name": "Toggle",
     "component": "toggle.tsx",
     "url": "/toggle",
@@ -177,18 +189,6 @@
     "description": null,
     "additions": 24,
     "deletions": 28,
-    "date": "2026-04-12"
-  },
-  {
-    "name": "Grid list",
-    "component": "grid-list.tsx",
-    "url": "/grid-list",
-    "type": "component",
-    "category": "collections",
-    "kind": "improvement",
-    "description": null,
-    "additions": 7,
-    "deletions": 7,
     "date": "2026-04-12"
   },
   {
