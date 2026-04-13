@@ -20,7 +20,6 @@ export function Ads({ className }: { className?: string }) {
   return (
     <a
       target="_blank"
-      rel="noreferrer"
       href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=docs_intentui"
       className={twMerge(
         "not-prose group relative inset-ring inset-ring-border block w-full overflow-hidden rounded-md bg-zinc-50 p-4 [--ads-border-color:0_0_0] sm:w-60 dark:bg-zinc-800 dark:[--ads-border-color:255_255_255]",
