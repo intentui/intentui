@@ -25,6 +25,7 @@ export function Ads({ className }: { className?: string }) {
         "not-prose group relative inset-ring inset-ring-border block w-full overflow-hidden rounded-md bg-zinc-50 p-4 [--ads-border-color:0_0_0] sm:w-60 dark:bg-zinc-800 dark:[--ads-border-color:255_255_255]",
         className,
       )}
+      rel="noopener"
     >
       <span
         aria-hidden="true"

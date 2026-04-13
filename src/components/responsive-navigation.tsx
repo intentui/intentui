@@ -1,3 +1,4 @@
+import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import {
@@ -105,13 +106,24 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                 <MenuSection>
                   <NavHeading>Pages</NavHeading>
                   <NavLink href="/">Home</NavLink>
-                  {menus.map((menu) => (
-                    <NavLink key={menu.href} href={menu.href}>
-                      {menu.label}
-                    </NavLink>
-                  ))}
-                  <NavLink href="/blog">Blog</NavLink>
+                  {menus
+                    .filter((i) => i.label !== "Themes")
+                    .map((menu) => (
+                      <NavLink key={menu.href} href={menu.href}>
+                        {menu.label}
+                      </NavLink>
+                    ))}
+                  <NavLink href="https://design.intentui.com/themes" target="_blank">
+                    Themes <ArrowUpRightIcon className="size-4" />
+                  </NavLink>
+                  <NavLink
+                    href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=navprobutton"
+                    target="_blank"
+                  >
+                    Pro <ArrowUpRightIcon className="size-4" />
+                  </NavLink>
                   <NavLink href="/sponsor">Sponsor</NavLink>
+                  <NavLink href="/blog">Blog</NavLink>
                 </MenuSection>
                 <MenuSection>
                   <NavHeading>{prologue?.section}</NavHeading>
