@@ -20,6 +20,7 @@ import { useScrollPosition } from "@/hooks/use-scroll-position"
 import { CommandPalette } from "./command-palette"
 import { BrandDiscordIcon } from "./icons/brand-discord-icon"
 import { NavLink } from "./nav-item"
+import { NoLimitButton } from "./no-limit-button"
 import { ThemeSwitcher } from "./theme-switcher"
 
 export function Navigation() {
@@ -111,7 +112,7 @@ export function Navigation() {
                     className: "**:data-[slot=icon]:text-fg",
                   })}
                   target="_blank"
-                  href="https://x.com/intent/follow?screen_name=irsyadadl"
+                  href="https://x.com/intent/follow?screen_name=intentui"
                 >
                   <BrandXIcon />
                 </Link>
@@ -148,6 +149,7 @@ export function Navigation() {
                   </MenuContent>
                 </Menu>
                 <SponsorButton />
+                <NoLimitButton />
               </div>
             </div>
           </PageContainer>

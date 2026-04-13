@@ -16,11 +16,7 @@ export default function ListBoxMultipleDemo() {
         aria-label="Fruits"
         selectionMode="multiple"
       >
-        {(fruit) => (
-          <ListBoxItem textValue={fruit.name}>
-            {fruit.name}
-          </ListBoxItem>
-        )}
+        {(fruit) => <ListBoxItem textValue={fruit.name}>{fruit.name}</ListBoxItem>}
       </ListBox>
 
       {[...selected].length > 0 && (
