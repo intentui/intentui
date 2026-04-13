@@ -25,9 +25,9 @@ const GridList = <T extends object>({ className, ...props }: GridListProps<T>) =
 )
 
 const GridListSection = <T extends object>({
-                                             className,
-                                             ...props
-                                           }: React.ComponentProps<typeof GridListSectionPrimitive<T>>) => {
+  className,
+  ...props
+}: React.ComponentProps<typeof GridListSectionPrimitive<T>>) => {
   return (
     <GridListSectionPrimitive
       data-slot="grid-list-section"
@@ -38,9 +38,9 @@ const GridListSection = <T extends object>({
 }
 
 const GridListHeader = ({
-                          className,
-                          ...props
-                        }: React.ComponentProps<typeof GridListHeaderPrimitive>) => {
+  className,
+  ...props
+}: React.ComponentProps<typeof GridListHeaderPrimitive>) => {
   return (
     <GridListHeaderPrimitive
       data-slot="grid-list-header"

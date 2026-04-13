@@ -44,19 +44,19 @@ export const toggleStyles = tv({
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
       ],
       "sq-xs": [
-        "shrink-0 touch-target size-8 sm:size-7",
+        "touch-target size-8 shrink-0 sm:size-7",
         "*:data-[slot=icon]:size-3.5 sm:*:data-[slot=icon]:size-3",
       ],
       "sq-sm": [
-        "shrink-0 touch-target size-10 sm:size-8",
+        "touch-target size-10 shrink-0 sm:size-8",
         "*:data-[slot=icon]:size-4.5 sm:*:data-[slot=icon]:size-4",
       ],
       "sq-md": [
-        "shrink-0 touch-target size-11 sm:size-9",
+        "touch-target size-11 shrink-0 sm:size-9",
         "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4.5",
       ],
       "sq-lg": [
-        "shrink-0 touch-target size-12 sm:size-10",
+        "touch-target size-12 shrink-0 sm:size-10",
         "*:data-[slot=icon]:size-6 sm:*:data-[slot=icon]:size-5",
       ],
     },
