@@ -4,6 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import { type CalendarDate, getLocalTimeZone, today } from "@internationalized/date"
 import { useDateFormatter } from "@react-aria/i18n"
 import { use } from "react"
+import type { CalendarProps as CalendarPrimitiveProps } from "react-aria-components/Calendar"
 import {
   CalendarCell,
   CalendarGrid,
@@ -11,14 +12,13 @@ import {
   CalendarGridHeader as CalendarGridHeaderPrimitive,
   CalendarHeaderCell,
   Calendar as CalendarPrimitive,
-  type CalendarProps as CalendarPrimitiveProps,
   CalendarStateContext,
-  composeRenderProps,
-  type DateValue,
-  Heading,
-  RangeCalendarStateContext,
-  useLocale,
-} from "react-aria-components"
+} from "react-aria-components/Calendar"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import type { DateValue } from "react-aria-components/DateField"
+import { Heading } from "react-aria-components/Heading"
+import { useLocale } from "react-aria-components/I18nProvider"
+import { RangeCalendarStateContext } from "react-aria-components/RangeCalendar"
 import { twMerge } from "tailwind-merge"
 import { Button } from "./button"
 import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger } from "./select"

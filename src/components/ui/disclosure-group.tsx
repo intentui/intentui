@@ -1,21 +1,22 @@
 "use client"
 
 import { use } from "react"
+import { Button, type ButtonProps } from "react-aria-components/Button"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import {
+  type DisclosureProps,
+  Disclosure as PrimitiveDisclosure,
+} from "react-aria-components/Disclosure"
 import type {
-  ButtonProps,
   DisclosureGroupProps,
   DisclosurePanelProps,
-  DisclosureProps,
-} from "react-aria-components"
+} from "react-aria-components/DisclosureGroup"
 import {
-  Button,
-  composeRenderProps,
   DisclosureStateContext,
-  Heading,
-  Disclosure as PrimitiveDisclosure,
   DisclosureGroup as PrimitiveDisclosureGroup,
   DisclosurePanel as PrimitiveDisclosurePanel,
-} from "react-aria-components"
+} from "react-aria-components/DisclosureGroup"
+import { Heading } from "react-aria-components/Heading"
 import { twJoin, twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 

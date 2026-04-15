@@ -7,7 +7,7 @@ import {
   SliderThumb as PrimitiveSliderThumb,
   SliderTrack as PrimitiveSliderTrack,
   SliderStateContext,
-} from "react-aria-components"
+} from "react-aria-components/Slider"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 

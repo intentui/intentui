@@ -3,7 +3,7 @@
 import {
   Button as ButtonPrimitive,
   type ButtonProps as ButtonPrimitiveProps,
-} from "react-aria-components"
+} from "react-aria-components/Button"
 import { tv, type VariantProps } from "tailwind-variants"
 import { cx } from "@/lib/primitive"
 

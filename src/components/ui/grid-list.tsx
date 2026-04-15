@@ -1,14 +1,14 @@
 "use client"
 
-import type { GridListItemProps, GridListProps, TextProps } from "react-aria-components"
+import { Button } from "react-aria-components/Button"
+import type { GridListItemProps, GridListProps } from "react-aria-components/GridList"
 import {
-  Button,
   GridListHeader as GridListHeaderPrimitive,
   GridListItem as GridListItemPrimitive,
   GridList as GridListPrimitive,
   GridListSection as GridListSectionPrimitive,
-  Text,
-} from "react-aria-components"
+} from "react-aria-components/GridList"
+import { Text, type TextProps } from "react-aria-components/Text"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import { Checkbox } from "./checkbox"

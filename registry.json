@@ -3579,6 +3579,7 @@
       ],
       "registryDependencies": [
         "http://localhost:3000/r/sheet",
+        "http://localhost:3000/r/tree",
         "http://localhost:3000/r/use-mobile",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button",
@@ -3688,7 +3689,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/text",
+        "http://localhost:3000/r/card",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/checkbox"
       ],
@@ -11252,6 +11253,24 @@
           "path": "src/components/docs/collections/table/table-drag-demo.tsx",
           "type": "registry:page",
           "target": "app/table-drag-demo/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "table-expandable-demo",
+      "title": "Table Expandable",
+      "description": "table-expandable-demo",
+      "registryDependencies": [
+        "http://localhost:3000/r/table"
+      ],
+      "files": [
+        {
+          "path": "src/components/docs/collections/table/table-expandable-demo.tsx",
+          "type": "registry:page",
+          "target": "app/table-expandable-demo/page.tsx"
         }
       ],
       "type": "registry:page"

@@ -1,10 +1,12 @@
 "use client"
-
-import type { ColorSwatchPickerItemProps, ColorSwatchPickerProps } from "react-aria-components"
+import type {
+  ColorSwatchPickerItemProps,
+  ColorSwatchPickerProps,
+} from "react-aria-components/ColorSwatchPicker"
 import {
   ColorSwatchPicker as PrimitiveColorSwatchPicker,
   ColorSwatchPickerItem as PrimitiveColorSwatchPickerItem,
-} from "react-aria-components"
+} from "react-aria-components/ColorSwatchPicker"
 import { cx } from "@/lib/primitive"
 
 export function ColorSwatchPicker({ className, ...props }: ColorSwatchPickerProps) {

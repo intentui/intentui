@@ -1,7 +1,10 @@
 "use client"
 
-import type { DialogProps, ModalOverlayProps } from "react-aria-components"
-import { DialogTrigger as DialogTriggerPrimitive, Modal, ModalOverlay } from "react-aria-components"
+import {
+  type DialogProps,
+  DialogTrigger as DialogTriggerPrimitive,
+} from "react-aria-components/Dialog"
+import { Modal, ModalOverlay, type ModalOverlayProps } from "react-aria-components/Modal"
 import { cx } from "@/lib/primitive"
 import {
   Dialog,

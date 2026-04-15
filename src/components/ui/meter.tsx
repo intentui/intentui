@@ -5,7 +5,7 @@ import {
   Meter as PrimitiveMeter,
   type MeterProps as PrimitiveMeterProps,
   type MeterRenderProps as PrimitiveMeterRenderProps,
-} from "react-aria-components"
+} from "react-aria-components/Meter"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 

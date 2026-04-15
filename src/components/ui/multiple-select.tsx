@@ -1,13 +1,8 @@
 "use client"
 
 import { Children, isValidElement, useMemo, useRef } from "react"
-import {
-  Autocomplete,
-  Select,
-  type SelectProps,
-  SelectValue,
-  useFilter,
-} from "react-aria-components"
+import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
+import { Select, type SelectProps, SelectValue } from "react-aria-components/Select"
 import { cx } from "@/lib/primitive"
 import { Button } from "./button"
 import { fieldStyles } from "./field"

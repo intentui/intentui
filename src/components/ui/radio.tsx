@@ -1,11 +1,11 @@
 "use client"
 
-import type { RadioGroupProps, RadioProps } from "react-aria-components"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import type { RadioGroupProps, RadioProps } from "react-aria-components/RadioGroup"
 import {
-  composeRenderProps,
   RadioGroup as RadioGroupPrimitive,
   Radio as RadioPrimitive,
-} from "react-aria-components"
+} from "react-aria-components/RadioGroup"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import { Label } from "./field"

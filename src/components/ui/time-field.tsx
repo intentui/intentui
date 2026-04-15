@@ -4,7 +4,7 @@ import {
   TimeField as TimeFieldPrimitive,
   type TimeFieldProps,
   type TimeValue,
-} from "react-aria-components"
+} from "react-aria-components/TimeField"
 import { DateInput } from "@/components/ui/date-field"
 import { cx } from "@/lib/primitive"
 import { fieldStyles } from "./field"

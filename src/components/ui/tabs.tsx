@@ -1,24 +1,24 @@
 "use client"
 
 import { createContext, use } from "react"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import { SelectionIndicator } from "react-aria-components/SelectionIndicator"
+import { useSlottedContext } from "react-aria-components/slots"
 import type {
   TabListProps as TabListPrimitiveProps,
   TabPanelProps as TabPanelPrimitiveProps,
   TabPanelsProps,
   TabProps as TabPrimitiveProps,
   TabsProps as TabsPrimitiveProps,
-} from "react-aria-components"
+} from "react-aria-components/Tabs"
 import {
-  composeRenderProps,
   TabPanels as PrimitiveTabPanels,
-  SelectionIndicator,
   TabList as TabListPrimitive,
   TabPanel as TabPanelPrimitive,
   Tab as TabPrimitive,
   TabsContext,
   Tabs as TabsPrimitive,
-  useSlottedContext,
-} from "react-aria-components"
+} from "react-aria-components/Tabs"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 

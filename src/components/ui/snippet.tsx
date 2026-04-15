@@ -1,7 +1,7 @@
 "use client"
 
-import type { TabPanelProps, TabsProps } from "react-aria-components"
-import { TabsContext, useSlottedContext } from "react-aria-components"
+import { useSlottedContext } from "react-aria-components/slots"
+import { type TabPanelProps, TabsContext, type TabsProps } from "react-aria-components/Tabs"
 import { Button } from "@/components/ui/button"
 import { Tab, TabList, type TabListProps, TabPanel, TabPanels, Tabs } from "@/components/ui/tabs"
 import { useClipboard } from "@/hooks/use-clipboard"

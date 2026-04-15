@@ -1,21 +1,20 @@
 "use client"
 
 import { ChevronUpDownIcon } from "@heroicons/react/20/solid"
+import { Button } from "react-aria-components/Button"
 import type {
   ComboBoxProps as ComboBoxPrimitiveProps,
   ComboBoxValueProps,
-  InputProps,
-  ListBoxProps,
-  PopoverProps,
-} from "react-aria-components"
+} from "react-aria-components/ComboBox"
 import {
-  Button,
   ComboBoxContext,
   ComboBox as ComboBoxPrimitive,
   ComboBoxValue as ComboBoxValuePrimitive,
-  ListBox,
-  useSlottedContext,
-} from "react-aria-components"
+} from "react-aria-components/ComboBox"
+import type { InputProps } from "react-aria-components/Input"
+import { ListBox, type ListBoxProps } from "react-aria-components/ListBox"
+import type { PopoverProps } from "react-aria-components/Popover"
+import { useSlottedContext } from "react-aria-components/slots"
 import { fieldStyles } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { cx } from "@/lib/primitive"

@@ -1,13 +1,12 @@
 "use client"
 
 import { getLocalTimeZone, today } from "@internationalized/date"
-import type { DateValue, RangeCalendarProps } from "react-aria-components"
+import { CalendarCell, CalendarGrid, CalendarGridBody } from "react-aria-components/Calendar"
+import type { DateValue } from "react-aria-components/DateField"
 import {
-  CalendarCell,
-  CalendarGrid,
-  CalendarGridBody,
   RangeCalendar as RangeCalendarPrimitive,
-} from "react-aria-components"
+  type RangeCalendarProps,
+} from "react-aria-components/RangeCalendar"
 import { twMerge } from "tailwind-merge"
 import { CalendarGridHeader, CalendarHeader } from "./calendar"
 

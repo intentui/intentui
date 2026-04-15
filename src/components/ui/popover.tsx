@@ -1,11 +1,14 @@
 "use client"
 
-import type { DialogTriggerProps, PopoverProps } from "react-aria-components"
 import {
   DialogTrigger as DialogTriggerPrimitive,
+  type DialogTriggerProps,
+} from "react-aria-components/Dialog"
+import {
   OverlayArrow,
   Popover as PopoverPrimitive,
-} from "react-aria-components"
+  type PopoverProps,
+} from "react-aria-components/Popover"
 import { cx } from "@/lib/primitive"
 import {
   DialogBody,

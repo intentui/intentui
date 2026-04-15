@@ -1,13 +1,13 @@
 "use client"
 
 import { XCircleIcon } from "@heroicons/react/16/solid"
-import type { TagGroupProps, TagListProps, TagProps } from "react-aria-components"
+import { Button } from "react-aria-components/Button"
+import type { TagGroupProps, TagListProps, TagProps } from "react-aria-components/TagGroup"
 import {
-  Button,
   Tag as PrimitiveTag,
   TagGroup as PrimitiveTagGroup,
   TagList as PrimitiveTagList,
-} from "react-aria-components"
+} from "react-aria-components/TagGroup"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 
