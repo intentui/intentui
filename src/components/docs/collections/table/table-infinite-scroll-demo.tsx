@@ -1,7 +1,7 @@
-"use client"
-
-import { Collection, TableLoadMoreItem } from "react-aria-components"
-import { useAsyncList } from "react-stately"
+"use client";
+import { Collection } from 'react-aria-components/Collection';
+import { TableLoadMoreItem } from 'react-aria-components/Table';
+import { useAsyncList } from 'react-stately/useAsyncList';
 import { ProgressCircle } from "@/components/ui/progress-circle"
 import {
   Table,

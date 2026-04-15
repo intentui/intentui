@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { Key } from "react-aria-components"
+import type { Key } from 'react-aria-components/Breadcrumbs';
 import { ComboBox, ComboBoxContent, ComboBoxInput, ComboBoxItem } from "@/components/ui/combo-box"
 import { Description, Label } from "@/components/ui/field"
 

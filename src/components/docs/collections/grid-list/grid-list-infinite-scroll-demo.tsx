@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import { useAsyncList } from "@react-stately/data"
-import { Collection, GridListLoadMoreItem } from "react-aria-components"
+import { Collection } from 'react-aria-components/Collection';
+import { GridListLoadMoreItem } from 'react-aria-components/GridList';
 import { GridList, GridListItem } from "@/components/ui/grid-list"
 import { ProgressCircle } from "@/components/ui/progress-circle"
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { Form } from "react-aria-components"
+import { Form } from 'react-aria-components/Form';
 import { Button } from "@/components/ui/button"
 import { DateRangePicker, DateRangePickerTrigger } from "@/components/ui/date-range-picker"
 import { FieldError, Label } from "@/components/ui/field"

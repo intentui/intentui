@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { Key } from "react-aria-components"
+import type { Key } from 'react-aria-components/Breadcrumbs';
 import { Description, Label } from "@/components/ui/field"
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { Key } from "react-aria-components"
+import type { Key } from 'react-aria-components/Breadcrumbs';
 import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
 
 export default function BreadcrumbsCollectionsDemo() {

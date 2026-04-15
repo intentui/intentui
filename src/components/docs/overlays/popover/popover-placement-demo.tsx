@@ -1,6 +1,6 @@
 "use client"
 
-import type { TooltipProps } from "react-aria-components"
+import type { TooltipProps } from 'react-aria-components/Tooltip';
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent } from "@/components/ui/popover"
 

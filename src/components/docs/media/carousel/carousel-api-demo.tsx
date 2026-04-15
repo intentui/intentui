@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Button } from "react-aria-components"
+import { Button } from 'react-aria-components/Button';
 import { twJoin } from "tailwind-merge"
 import { Card, CardContent } from "@/components/ui/card"
 import {

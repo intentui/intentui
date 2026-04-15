@@ -1,5 +1,6 @@
-import { Collection, TreeLoadMoreItem, type TreeLoadMoreItemProps } from "react-aria-components"
-import { useAsyncList } from "react-stately"
+import { Collection } from 'react-aria-components/Collection';
+import { TreeLoadMoreItem, type TreeLoadMoreItemProps } from 'react-aria-components/Tree';
+import { useAsyncList } from 'react-stately/useAsyncList';
 import { ProgressCircle } from "@/components/ui/progress-circle"
 import { TreeItem as PrimitiveItem, Tree, TreeContent } from "@/components/ui/tree"
 

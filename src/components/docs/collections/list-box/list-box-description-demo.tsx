@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { Selection } from "react-aria-components"
+import type { Selection } from 'react-aria-components/GridList';
 import { ListBox, ListBoxDescription, ListBoxItem, ListBoxLabel } from "@/components/ui/list-box"
 
 export default function ListBoxDescriptionDemo() {

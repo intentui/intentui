@@ -1,6 +1,6 @@
 "use client"
 
-import { Collection } from "react-aria-components"
+import { Collection } from 'react-aria-components/Collection';
 import {
   GridList,
   GridListDescription,

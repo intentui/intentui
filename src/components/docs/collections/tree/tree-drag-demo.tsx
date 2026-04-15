@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import {
   DocumentIcon,
   DocumentTextIcon,
@@ -9,11 +8,9 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/24/outline"
 import { useTreeData } from "@react-stately/data"
-import {
-  Collection,
-  type TreeItemProps as TreeItemPrimitiveProps,
-  useDragAndDrop,
-} from "react-aria-components"
+import { Collection } from 'react-aria-components/Collection';
+import { type TreeItemProps as TreeItemPrimitiveProps } from 'react-aria-components/Tree';
+import { useDragAndDrop } from 'react-aria-components/useDragAndDrop';
 import { TreeItem as PrimitiveItem, Tree, TreeContent } from "@/components/ui/tree"
 
 const fileStructure = [

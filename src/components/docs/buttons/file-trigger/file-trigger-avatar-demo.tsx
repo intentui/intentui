@@ -2,7 +2,7 @@
 
 import type { DropEvent } from "@react-types/shared"
 import { useEffect, useState } from "react"
-import { isFileDropItem } from "react-aria-components"
+import { isFileDropItem } from 'react-aria-components/useDragAndDrop';
 import { twJoin } from "tailwind-merge"
 import { Avatar } from "@/components/ui/avatar"
 import { DropZone } from "@/components/ui/drop-zone"
