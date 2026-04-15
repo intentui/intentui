@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
-import { Button } from "react-aria-components"
+import { Button } from "react-aria-components/Button"
 import { twJoin, twMerge } from "tailwind-merge"
 import { Link } from "./link"
 

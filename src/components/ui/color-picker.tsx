@@ -7,7 +7,7 @@ import {
   ColorPicker as ColorPickerPrimitive,
   type ColorPickerProps as ColorPickerPrimitiveProps,
   ColorPickerStateContext,
-} from "react-aria-components"
+} from "react-aria-components/ColorPicker"
 import { twMerge } from "tailwind-merge"
 import { Button } from "./button"
 import { fieldStyles } from "./field"

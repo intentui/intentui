@@ -1,6 +1,6 @@
 "use client"
 
-import { Switch as SwitchPrimitive, type SwitchProps } from "react-aria-components"
+import { Switch as SwitchPrimitive, type SwitchProps } from "react-aria-components/Switch"
 import { twJoin, twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import { Label } from "./field"

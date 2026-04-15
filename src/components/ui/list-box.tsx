@@ -1,12 +1,16 @@
 "use client"
 
 import { CheckIcon } from "@heroicons/react/20/solid"
-import type { ListBoxItemProps, ListBoxProps, ListBoxSectionProps } from "react-aria-components"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import type {
+  ListBoxItemProps,
+  ListBoxProps,
+  ListBoxSectionProps,
+} from "react-aria-components/ListBox"
 import {
-  composeRenderProps,
   ListBoxItem as ListBoxItemPrimitive,
   ListBox as ListBoxPrimitive,
-} from "react-aria-components"
+} from "react-aria-components/ListBox"
 import { twJoin, twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import {

@@ -1,21 +1,13 @@
 "use client"
 
 import { CheckIcon } from "@heroicons/react/20/solid"
-import type {
-  ListBoxItemProps,
-  ListBoxSectionProps,
-  SeparatorProps,
-  TextProps,
-} from "react-aria-components"
-import {
-  Collection,
-  composeRenderProps,
-  Header,
-  ListBoxItem as ListBoxItemPrimitive,
-  ListBoxSection,
-  Separator,
-  Text,
-} from "react-aria-components"
+import { Collection } from "react-aria-components/Collection"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import { Header } from "react-aria-components/Header"
+import type { ListBoxItemProps, ListBoxSectionProps } from "react-aria-components/ListBox"
+import { ListBoxItem as ListBoxItemPrimitive, ListBoxSection } from "react-aria-components/ListBox"
+import { Separator, type SeparatorProps } from "react-aria-components/Separator"
+import { Text, type TextProps } from "react-aria-components/Text"
 import { twJoin, twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
 import { Keyboard } from "./keyboard"

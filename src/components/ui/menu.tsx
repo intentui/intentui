@@ -1,24 +1,23 @@
 "use client"
 
 import { CheckIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
+import { Button, type ButtonProps } from "react-aria-components/Button"
+import { Collection } from "react-aria-components/Collection"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import { Header } from "react-aria-components/Header"
 import type {
-  ButtonProps,
   MenuItemProps as MenuItemPrimitiveProps,
   MenuProps as MenuPrimitiveProps,
   MenuSectionProps as MenuSectionPrimitiveProps,
   MenuTriggerProps as MenuTriggerPrimitiveProps,
-} from "react-aria-components"
+} from "react-aria-components/Menu"
 import {
-  Button,
-  Collection,
-  composeRenderProps,
-  Header,
   MenuItem as MenuItemPrimitive,
   Menu as MenuPrimitive,
   MenuSection as MenuSectionPrimitive,
   MenuTrigger as MenuTriggerPrimitive,
   SubmenuTrigger as SubmenuTriggerPrimitive,
-} from "react-aria-components"
+} from "react-aria-components/Menu"
 import { twMerge } from "tailwind-merge"
 import { tv, type VariantProps } from "tailwind-variants"
 import { cx } from "@/lib/primitive"

@@ -1,7 +1,10 @@
 "use client"
 
-import { ChevronDownIcon } from "@heroicons/react/20/solid"
+import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
 import { createContext, use } from "react"
+import { Button } from "react-aria-components/Button"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import { Group } from "react-aria-components/Group"
 import type {
   CellProps,
   ColumnProps,
@@ -10,21 +13,19 @@ import type {
   RowProps,
   TableBodyProps,
   TableProps as TablePrimitiveProps,
-} from "react-aria-components"
+} from "react-aria-components/Table"
 import {
-  Button,
   Cell,
   Collection,
   Column,
   ColumnResizer as ColumnResizerPrimitive,
-  composeRenderProps,
   ResizableTableContainer,
   Row,
   TableBody as TableBodyPrimitive,
   TableHeader as TableHeaderPrimitive,
   Table as TablePrimitive,
   useTableOptions,
-} from "react-aria-components"
+} from "react-aria-components/Table"
 import { twJoin, twMerge } from "tailwind-merge"
 import { CardDescription, CardTitle } from "@/components/ui/card"
 import { cx } from "@/lib/primitive"
@@ -306,12 +307,16 @@ const TableColumn = ({ isResizable = false, className, ...props }: TableColumnPr
       )}
     >
       {(values) => (
-        <div className={twJoin(["inline-flex items-center gap-2 **:[svg]:shrink-0"])}>
+        <Group
+          role="presentation"
+          tabIndex={-1}
+          className={twJoin(["inline-flex items-center gap-2 **:[svg]:shrink-0"])}
+        >
           {typeof props.children === "function" ? props.children(values) : props.children}
           {values.allowsSorting && (
             <span
               className={twJoin(
-                "grid size-[1.15rem] flex-none shrink-0 place-content-center rounded bg-secondary text-fg *:[svg]:size-3.5 *:[svg]:shrink-0 *:[svg]:transition-transform *:[svg]:duration-200",
+                "touch-target grid size-[1.15rem] flex-none shrink-0 place-content-center rounded bg-secondary text-fg *:[svg]:size-3.5 *:[svg]:shrink-0 *:[svg]:transition-transform *:[svg]:duration-200",
                 values.isHovered ? "bg-secondary-fg/10" : "",
               )}
             >
@@ -321,7 +326,7 @@ const TableColumn = ({ isResizable = false, className, ...props }: TableColumnPr
             </span>
           )}
           {isResizable && <ColumnResizer />}
-        </div>
+        </Group>
       )}
     </Column>
   )
@@ -483,7 +488,38 @@ const TableCell = ({ className, ref, ...props }: TableCellProps) => {
         ),
         className,
       )}
-    />
+      style={({ hasChildItems, isTreeColumn, level }) => ({
+        paddingInlineStart: isTreeColumn
+          ? 4 + (hasChildItems ? 0 : 24) + (level - 1) * 20
+          : undefined,
+      })}
+    >
+      {composeRenderProps(
+        props.children,
+        (children, { hasChildItems, isTreeColumn, isExpanded, isDisabled }) => (
+          <div className="flex items-center">
+            {hasChildItems && isTreeColumn && (
+              <Button
+                slot="chevron"
+                className={twJoin(
+                  isDisabled && "opacity-50",
+                  "mr-2 grid size-[1.15rem] flex-none shrink-0 place-content-center rounded text-fg hover:bg-secondary",
+                )}
+              >
+                <ChevronRightIcon
+                  className={twJoin(
+                    "size-4 transition-transform duration-200",
+                    isExpanded && "rotate-90",
+                  )}
+                />
+              </Button>
+            )}
+
+            {children}
+          </div>
+        ),
+      )}
+    </Cell>
   )
 }
 

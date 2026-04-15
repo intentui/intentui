@@ -1,7 +1,9 @@
 "use client"
 
-import type { ColorSwatchProps } from "react-aria-components"
-import { ColorSwatch as ColorSwatchPrimitive } from "react-aria-components"
+import {
+  ColorSwatch as ColorSwatchPrimitive,
+  type ColorSwatchProps,
+} from "react-aria-components/ColorSwatch"
 import { cx } from "@/lib/primitive"
 
 export function ColorSwatch({ className, ...props }: ColorSwatchProps) {

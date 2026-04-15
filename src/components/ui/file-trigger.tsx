@@ -4,7 +4,7 @@ import { CameraIcon, FolderIcon, PaperClipIcon } from "@heroicons/react/24/outli
 import {
   FileTrigger as FileTriggerPrimitive,
   type FileTriggerProps as FileTriggerPrimitiveProps,
-} from "react-aria-components"
+} from "react-aria-components/FileTrigger"
 import type { VariantProps } from "tailwind-variants"
 import { Button, type buttonStyles } from "./button"
 import { Loader } from "./loader"

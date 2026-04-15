@@ -1,10 +1,12 @@
 import { ChevronUpDownIcon } from "@heroicons/react/20/solid"
-import type {
-  ListBoxProps,
-  PopoverProps,
-  SelectProps as SelectPrimitiveProps,
-} from "react-aria-components"
-import { Button, ListBox, Select as SelectPrimitive, SelectValue } from "react-aria-components"
+import { Button } from "react-aria-components/Button"
+import { ListBox, type ListBoxProps } from "react-aria-components/ListBox"
+import type { PopoverProps } from "react-aria-components/Popover"
+import {
+  Select as SelectPrimitive,
+  type SelectProps as SelectPrimitiveProps,
+  SelectValue,
+} from "react-aria-components/Select"
 import { twJoin } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import {

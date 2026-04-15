@@ -1,7 +1,11 @@
 "use client"
 
 import { createContext, type ReactElement, use, useCallback, useId, useMemo, useState } from "react"
-import { ToggleButton, ToggleButtonGroup, type ToggleButtonGroupProps } from "react-aria-components"
+import { ToggleButton } from "react-aria-components/ToggleButton"
+import {
+  ToggleButtonGroup,
+  type ToggleButtonGroupProps,
+} from "react-aria-components/ToggleButtonGroup"
 import type {
   CartesianGridProps as CartesianGridPrimitiveProps,
   CartesianGridProps,

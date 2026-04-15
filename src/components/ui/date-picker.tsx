@@ -2,13 +2,14 @@
 
 import { CalendarDaysIcon } from "@heroicons/react/24/outline"
 import type { DateDuration } from "@internationalized/date"
-import type {
-  DatePickerProps as DatePickerPrimitiveProps,
-  DateValue,
-  GroupProps,
-  PopoverProps,
-} from "react-aria-components"
-import { Button, DatePicker as DatePickerPrimitive } from "react-aria-components"
+import { Button } from "react-aria-components/Button"
+import type { DateValue } from "react-aria-components/DateField"
+import {
+  DatePicker as DatePickerPrimitive,
+  type DatePickerProps as DatePickerPrimitiveProps,
+} from "react-aria-components/DatePicker"
+import type { GroupProps } from "react-aria-components/Group"
+import type { PopoverProps } from "react-aria-components/Popover"
 import { twJoin } from "tailwind-merge"
 import { DateInput } from "@/components/ui/date-field"
 import { fieldStyles } from "@/components/ui/field"

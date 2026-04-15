@@ -2,32 +2,21 @@
 
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { createContext, use, useCallback, useEffect, useMemo, useRef, useState } from "react"
-import type {
-  ButtonProps,
-  DisclosureGroupProps,
-  DisclosurePanelProps,
-  DisclosureProps,
-  LinkProps,
-  LinkRenderProps,
-  SeparatorProps as SidebarSeparatorProps,
-  TreeItemContentProps,
-  TreeItemProps,
-  TreeProps,
-} from "react-aria-components"
+import { type ButtonProps, Button as Trigger } from "react-aria-components/Button"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import type { DisclosurePanelProps, DisclosureProps } from "react-aria-components/Disclosure"
+import { Disclosure, DisclosurePanel } from "react-aria-components/Disclosure"
+import { DisclosureGroup, type DisclosureGroupProps } from "react-aria-components/DisclosureGroup"
+import { Header } from "react-aria-components/Header"
+import { Heading } from "react-aria-components/Heading"
+import type { LinkProps, LinkRenderProps } from "react-aria-components/Link"
 import {
-  composeRenderProps,
-  Disclosure,
-  DisclosureGroup,
-  DisclosurePanel,
-  Header,
-  Heading,
   Separator,
-  Text,
-  Tree,
-  TreeItem,
-  TreeItemContent,
-  Button as Trigger,
-} from "react-aria-components"
+  type SeparatorProps as SidebarSeparatorProps,
+} from "react-aria-components/Separator"
+import { Text } from "react-aria-components/Text"
+import type { TreeItemContentProps, TreeItemProps, TreeProps } from "react-aria-components/Tree"
+import { Tree, TreeItem, TreeItemContent } from "react-aria-components/Tree"
 import { twJoin, twMerge } from "tailwind-merge"
 import { SheetContent } from "@/components/ui/sheet"
 import { TreeIndicator } from "@/components/ui/tree"

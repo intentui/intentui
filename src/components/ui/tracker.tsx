@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Pressable } from "react-aria-components"
+import { Pressable } from "react-aria-components/Pressable"
 import { twJoin, twMerge } from "tailwind-merge"
 import { Tooltip, TooltipContent } from "./tooltip"
 

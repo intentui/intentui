@@ -2,32 +2,22 @@
 
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid"
 import { createContext, use, useEffect } from "react"
-import type {
-  AutocompleteProps,
-  CollectionRenderer,
-  MenuProps,
-  MenuTriggerProps,
-  ModalOverlayProps,
-  SearchFieldProps,
-} from "react-aria-components"
+import { Autocomplete, type AutocompleteProps, useFilter } from "react-aria-components/Autocomplete"
+import { Button } from "react-aria-components/Button"
+import { Collection } from "react-aria-components/Collection"
 import {
-  Autocomplete,
-  Button,
-  Collection,
+  type CollectionRenderer,
   CollectionRendererContext,
   DefaultCollectionRenderer,
-  Dialog,
-  Header,
-  Input,
-  Menu as MenuPrimitive,
-  MenuSection,
-  Modal,
-  ModalContext,
-  ModalOverlay,
-  OverlayTriggerStateContext,
-  SearchField,
-  useFilter,
-} from "react-aria-components"
+} from "react-aria-components/CollectionBuilder"
+import { Dialog, OverlayTriggerStateContext } from "react-aria-components/Dialog"
+import { Header } from "react-aria-components/Header"
+import { Input } from "react-aria-components/Input"
+import type { MenuProps, MenuTriggerProps } from "react-aria-components/Menu"
+import { Menu as MenuPrimitive, MenuSection } from "react-aria-components/Menu"
+import type { ModalOverlayProps } from "react-aria-components/Modal"
+import { Modal, ModalContext, ModalOverlay } from "react-aria-components/Modal"
+import { SearchField, type SearchFieldProps } from "react-aria-components/SearchField"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 import { DropdownKeyboard } from "./dropdown"

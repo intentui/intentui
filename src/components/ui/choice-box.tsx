@@ -1,8 +1,10 @@
 "use client"
 
 import { createContext, use } from "react"
-import type { GridListItemProps, GridListProps, TextProps } from "react-aria-components"
-import { composeRenderProps, GridList, GridListItem, Text } from "react-aria-components"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import type { GridListItemProps, GridListProps } from "react-aria-components/GridList"
+import { GridList, GridListItem } from "react-aria-components/GridList"
+import { Text, type TextProps } from "react-aria-components/Text"
 import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"

@@ -1,7 +1,9 @@
 "use client"
 
-import type { ColorAreaProps } from "react-aria-components"
-import { ColorArea as ColorAreaPrimitive } from "react-aria-components"
+import {
+  ColorArea as ColorAreaPrimitive,
+  type ColorAreaProps,
+} from "react-aria-components/ColorArea"
 import { cx } from "@/lib/primitive"
 import { ColorThumb } from "./color-thumb"
 

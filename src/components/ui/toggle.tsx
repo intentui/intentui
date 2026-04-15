@@ -1,7 +1,7 @@
 "use client"
 
-import type { ToggleButtonProps } from "react-aria-components"
-import { composeRenderProps, ToggleButton } from "react-aria-components"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import { ToggleButton, type ToggleButtonProps } from "react-aria-components/ToggleButton"
 import { twMerge } from "tailwind-merge"
 import { tv, type VariantProps } from "tailwind-variants"
 
