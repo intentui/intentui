@@ -1,8 +1,8 @@
 "use client"
 
-import type { Placement } from "@react-types/overlays"
 import { useState } from "react"
 import type { Selection } from "react-aria-components/GridList"
+import type { Placement } from "react-aria-components/Popover"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 

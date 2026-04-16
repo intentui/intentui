@@ -1,13 +1,13 @@
 "use client"
 
-import type { ColorFormat } from "@react-types/color"
+import type { ColorFormat } from "react-aria-components/ColorSwatch"
 import { Card } from "@/components/ui/card"
 import { ColorSwatch } from "@/components/ui/color-swatch"
 
 const formats: string[] = ["hex", "hexa", "rgb", "rgba", "hsl", "hsla", "hsb", "hsba"]
 export function ControlledValues({ color }: { color: any }) {
   return (
-    <Card className="flex min-w-[15.5rem] flex-col gap-y-2 bg-transparent p-3 text-center sm:min-w-72 [&>span]:flex [&>span]:justify-between [&>span]:gap-x-6">
+    <Card className="flex min-w-62 flex-col gap-y-2 bg-transparent p-3 text-center sm:min-w-72 [&>span]:flex [&>span]:justify-between [&>span]:gap-x-6">
       {formats.map((format, i) => (
         <span key={i}>
           <span className="flex items-center gap-x-1.5">
