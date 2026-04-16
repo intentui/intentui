@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import type { Key } from 'react-aria-components/Breadcrumbs';
+import type { Key } from "react-aria-components/Breadcrumbs"
 import { BarChart } from "@/components/ui/bar-chart"
 import {
   Card,

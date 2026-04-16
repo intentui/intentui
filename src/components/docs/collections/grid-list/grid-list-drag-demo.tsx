@@ -1,7 +1,7 @@
 "use client"
 
-import { useDragAndDrop } from 'react-aria-components/useDragAndDrop';
-import { useListData } from 'react-stately/useListData';
+import { useDragAndDrop } from "react-aria-components/useDragAndDrop"
+import { useListData } from "react-stately/useListData"
 import { GridList, GridListItem } from "@/components/ui/grid-list"
 
 export default function GridListDragDemo() {

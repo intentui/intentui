@@ -1,7 +1,11 @@
 "use client"
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline"
 import { use, useMemo } from "react"
-import { Autocomplete, AutocompleteStateContext, useFilter } from 'react-aria-components/Autocomplete';
+import {
+  Autocomplete,
+  AutocompleteStateContext,
+  useFilter,
+} from "react-aria-components/Autocomplete"
 import { CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
 import { SearchField, SearchInput } from "@/components/ui/search-field"

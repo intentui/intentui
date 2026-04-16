@@ -1,6 +1,6 @@
 "use client"
 
-import { useListData } from 'react-stately/useListData';
+import { useListData } from "react-stately/useListData"
 import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 
 export default function TagGroupWithRemoveDemo() {

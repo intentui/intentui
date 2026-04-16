@@ -1,6 +1,6 @@
 "use client"
 
-import { Form } from 'react-aria-components/Form';
+import { Form } from "react-aria-components/Form"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/field"
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"

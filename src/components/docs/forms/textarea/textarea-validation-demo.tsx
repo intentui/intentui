@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Form } from 'react-aria-components/Form';
+import { Form } from "react-aria-components/Form"
 import { Button } from "@/components/ui/button"
 import { FieldError, Label } from "@/components/ui/field"
 import { TextField } from "@/components/ui/text-field"

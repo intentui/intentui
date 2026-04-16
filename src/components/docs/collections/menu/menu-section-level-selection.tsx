@@ -9,7 +9,7 @@ import {
   UnderlineIcon,
 } from "@heroicons/react/24/outline"
 import { useState } from "react"
-import type { Selection } from 'react-aria-components/GridList';
+import type { Selection } from "react-aria-components/GridList"
 import {
   Menu,
   MenuContent,

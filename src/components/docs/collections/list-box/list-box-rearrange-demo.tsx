@@ -1,7 +1,7 @@
 "use client"
 
-import { useDragAndDrop } from 'react-aria-components/useDragAndDrop';
-import { useListData } from 'react-stately/useListData';
+import { useDragAndDrop } from "react-aria-components/useDragAndDrop"
+import { useListData } from "react-stately/useListData"
 import { ListBox, ListBoxItem, ListBoxLabel } from "@/components/ui/list-box"
 
 export default function ListBoxRearrangeDemo() {

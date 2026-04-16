@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { Selection } from 'react-aria-components/GridList';
+import type { Selection } from "react-aria-components/GridList"
 import { Description } from "@/components/ui/field"
 import { GridList, GridListItem } from "@/components/ui/grid-list"
 

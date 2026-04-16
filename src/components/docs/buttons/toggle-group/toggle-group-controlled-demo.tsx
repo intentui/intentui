@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { Key } from 'react-aria-components/Breadcrumbs';
+import type { Key } from "react-aria-components/Breadcrumbs"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export default function ToggleGroupControlledDemo() {

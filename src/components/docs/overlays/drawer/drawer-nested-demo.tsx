@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Form } from 'react-aria-components/Form';
+import { Form } from "react-aria-components/Form"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import {
