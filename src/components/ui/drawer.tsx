@@ -53,17 +53,20 @@ const DrawerContent = ({
           onOpenChange={onOpenChange}
           initial={{
             backgroundColor: "rgba(0, 0, 0, 0)",
+            backdropFilter: "blur(0px)",
           }}
           animate={{
             backgroundColor: "rgba(0, 0, 0, 0.2)",
+            backdropFilter: "blur(1px)",
           }}
           exit={{
             backgroundColor: "rgba(0, 0, 0, 0)",
+            backdropFilter: "blur(0px)",
           }}
           transition={{ duration: 0.15, ease: "easeInOut" }}
           className={cx(
             "fixed inset-0 z-50 will-change-auto [--visual-viewport-vertical-padding:32px]",
-            "backdrop-blur-[1px] backdrop-filter motion-reduce:backdrop-blur-none",
+            "motion-reduce:backdrop-blur-none",
             overlay?.className,
           )}
         >

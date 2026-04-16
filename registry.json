@@ -2815,6 +2815,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button"
       ],
       "files": [
@@ -10371,7 +10372,7 @@
       "title": "Controlled Values",
       "description": "controlled-values",
       "dependencies": [
-        "@react-types/color"
+        "react-aria-components"
       ],
       "registryDependencies": [
         "http://localhost:3000/r/card",
@@ -11593,7 +11594,6 @@
       "title": "Single Menu",
       "description": "single-menu-demo",
       "dependencies": [
-        "@react-types/overlays",
         "react-aria-components"
       ],
       "registryDependencies": [
