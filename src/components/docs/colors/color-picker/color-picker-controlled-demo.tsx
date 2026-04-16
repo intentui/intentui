@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { parseColor } from 'react-aria-components/ColorArea';
+import { parseColor } from "react-aria-components/ColorArea"
 import { ControlledValues } from "@/components/docs/colors/controlled-values"
 import { Button } from "@/components/ui/button"
 import { ColorArea } from "@/components/ui/color-area"

@@ -1,7 +1,7 @@
 "use client"
 
 import { getLocalTimeZone, today } from "@internationalized/date"
-import { Form } from 'react-aria-components/Form';
+import { Form } from "react-aria-components/Form"
 import { Button } from "@/components/ui/button"
 import { DateRangePicker, DateRangePickerTrigger } from "@/components/ui/date-range-picker"
 import { FieldError, Label } from "@/components/ui/field"

@@ -13,6 +13,7 @@ import {
 } from "react-aria-components/Modal"
 import { Text, type TextProps } from "react-aria-components/Text"
 import { twJoin, twMerge } from "tailwind-merge"
+import { cx } from "@/lib/primitive"
 import { Button, type ButtonProps } from "./button"
 
 const DrawerRoot = motion.create(ModalPrimitive)
@@ -24,8 +25,8 @@ interface DrawerContentProps
   extends Omit<ModalOverlayProps, "className" | "children" | "isDismissable">,
     Pick<DialogProps, "aria-label" | "aria-labelledby" | "role" | "children" | "className"> {
   isFloat?: boolean
-  isBlurred?: boolean
   className?: string
+  overlay?: Pick<ModalOverlayProps, "className">
   side?: "top" | "bottom" | "left" | "right"
   notch?: boolean
 }
@@ -33,26 +34,37 @@ interface DrawerContentProps
 const DrawerContent = ({
   side = "bottom",
   isFloat = false,
-  isBlurred = true,
   notch = true,
   children,
   className,
+  overlay,
   ...props
 }: DrawerContentProps) => {
   const state = use(OverlayTriggerStateContext)!
+  const isOpen = props.isOpen ?? state?.isOpen ?? false
+  const onOpenChange = props.onOpenChange ?? state?.setOpen
 
   return (
     <AnimatePresence>
-      {(props?.isOpen || state?.isOpen) && (
+      {isOpen && (
         <DrawerOverlay
           isDismissable
-          isOpen={props?.isOpen || state?.isOpen}
-          onOpenChange={props?.onOpenChange || state?.setOpen}
-          animate={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-          exit={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-          className={twJoin(
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          initial={{
+            backgroundColor: "rgba(0, 0, 0, 0)",
+          }}
+          animate={{
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+          }}
+          exit={{
+            backgroundColor: "rgba(0, 0, 0, 0)",
+          }}
+          transition={{ duration: 0.15, ease: "easeInOut" }}
+          className={cx(
             "fixed inset-0 z-50 will-change-auto [--visual-viewport-vertical-padding:32px]",
-            isBlurred && "backdrop-blur-[1px] backdrop-filter",
+            "backdrop-blur-[1px] backdrop-filter motion-reduce:backdrop-blur-none",
+            overlay?.className,
           )}
         >
           {({ state }) => (

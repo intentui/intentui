@@ -12,7 +12,7 @@ import {
   UserIcon,
 } from "@heroicons/react/24/outline"
 import { useState } from "react"
-import { Menu as MenuPrimitive } from 'react-aria-components/Menu';
+import { Menu as MenuPrimitive } from "react-aria-components/Menu"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"

@@ -1,7 +1,7 @@
-"use client";
-import { Collection } from 'react-aria-components/Collection';
-import { ListBoxLoadMoreItem } from 'react-aria-components/ListBox';
-import { useAsyncList } from 'react-stately/useAsyncList';
+"use client"
+import { Collection } from "react-aria-components/Collection"
+import { ListBoxLoadMoreItem } from "react-aria-components/ListBox"
+import { useAsyncList } from "react-stately/useAsyncList"
 import { ListBox, ListBoxItem } from "@/components/ui/list-box"
 import { ProgressCircle } from "@/components/ui/progress-circle"
 
