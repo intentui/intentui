@@ -3,7 +3,7 @@
 import NextLink from "next/link"
 import { usePathname } from "next/navigation"
 import type React from "react"
-import { Link } from "react-aria-components"
+import { Link } from "react-aria-components/Link"
 import { twMerge } from "tailwind-merge"
 
 interface NavLinkProps {

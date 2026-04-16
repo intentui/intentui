@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Form } from "react-aria-components"
+import { Form } from "react-aria-components/Form"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"

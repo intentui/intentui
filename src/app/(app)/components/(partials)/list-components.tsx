@@ -1,9 +1,9 @@
 "use client"
-
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
-import { Autocomplete, GridList, GridListItem, useFilter } from "react-aria-components"
+import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
+import { GridList, GridListItem } from "react-aria-components/GridList"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
 import { useTheme } from "@/components/theme-provider"

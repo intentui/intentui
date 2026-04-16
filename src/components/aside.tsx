@@ -2,8 +2,8 @@
 
 import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
-import type { LinkProps } from "react-aria-components"
-import { Link } from "react-aria-components"
+import type { LinkProps } from "react-aria-components/Link"
+import { Link } from "react-aria-components/Link"
 import { twMerge } from "tailwind-merge"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"

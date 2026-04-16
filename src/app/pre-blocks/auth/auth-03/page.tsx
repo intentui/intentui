@@ -1,6 +1,6 @@
 "use client"
 
-import { Form } from "react-aria-components"
+import { Form } from "react-aria-components/Form"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"

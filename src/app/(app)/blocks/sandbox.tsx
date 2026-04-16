@@ -1,9 +1,9 @@
 "use client"
-
 import { CheckIcon } from "@heroicons/react/24/outline"
 import { useInView } from "motion/react"
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Button, type Key, Tab, TabList, TabPanel, Tabs } from "react-aria-components"
+import { Button } from "react-aria-components/Button"
+import { type Key, Tab, TabList, TabPanel, Tabs } from "react-aria-components/Tabs"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
 import { ShadcnuiLogo } from "@/components/icons/shadcn-logo"

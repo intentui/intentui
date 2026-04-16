@@ -2,7 +2,7 @@
 
 import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
-import { Tab } from "react-aria-components"
+import { Tab } from "react-aria-components/Tabs"
 import { twJoin, twMerge } from "tailwind-merge"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
