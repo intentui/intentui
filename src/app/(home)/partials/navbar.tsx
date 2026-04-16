@@ -11,7 +11,7 @@ import {
   SwatchIcon,
 } from "@heroicons/react/24/outline"
 import { useState } from "react"
-import { Button } from "react-aria-components"
+import { Button } from "react-aria-components/Button"
 import { BrandLogoLink } from "@/components/brand-logo-link"
 import { CommandPalette } from "@/components/command-palette"
 import { DiscountBanner } from "@/components/discount-banner"

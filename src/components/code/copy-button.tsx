@@ -3,7 +3,7 @@
 import { CheckIcon } from "@heroicons/react/24/outline"
 import type React from "react"
 import { useEffect, useState } from "react"
-import { Button } from "react-aria-components"
+import { Button } from "react-aria-components/Button"
 import { twJoin } from "tailwind-merge"
 import { DuplicateIcon } from "@/components/icons/duplicate-icon"
 import { useClipboard } from "@/hooks/use-clipboard"

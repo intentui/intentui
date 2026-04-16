@@ -1,6 +1,6 @@
 "use client"
 
-import { Link } from "react-aria-components"
+import { Link } from "react-aria-components/Link"
 import { twMerge } from "tailwind-merge"
 import { buttonStyles } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"

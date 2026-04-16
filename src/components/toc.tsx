@@ -2,7 +2,7 @@
 import { ListBulletIcon } from "@heroicons/react/24/outline"
 import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
 import { Suspense, useEffect, useRef, useState } from "react"
-import { Heading } from "react-aria-components"
+import { Heading } from "react-aria-components/Heading"
 import scrollIntoView from "scroll-into-view-if-needed"
 import { twMerge } from "tailwind-merge"
 import { useMediaQuery } from "@/hooks/use-media-query"

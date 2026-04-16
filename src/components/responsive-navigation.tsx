@@ -1,10 +1,11 @@
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
+import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
+import { Header } from "react-aria-components/Header"
+import { Link } from "react-aria-components/Link"
+
 import {
-  Autocomplete,
-  Header,
-  Link,
   Menu,
   MenuItem,
   type MenuItemProps,
@@ -12,8 +13,8 @@ import {
   MenuTrigger,
   Popover,
   type PopoverProps,
-  useFilter,
-} from "react-aria-components"
+} from "react-aria-components/Menu"
+
 import { twJoin, twMerge } from "tailwind-merge"
 import { menus } from "@/app/(home)/partials/navbar"
 import { components, dm, gs, prologue, sortedGsChildren } from "@/components/aside"

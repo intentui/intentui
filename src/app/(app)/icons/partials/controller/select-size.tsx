@@ -1,7 +1,7 @@
 import { IconChevronsY } from "@intentui/icons"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
-import type { Selection } from "react-aria-components"
+import type { Selection } from "react-aria-components/GridList"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 import { useQueryString } from "@/hooks/use-query-string"

@@ -1,7 +1,8 @@
 "use client"
-
 import { Suspense, useEffect, useMemo, useState } from "react"
-import { Group, ToggleButton, Toolbar } from "react-aria-components"
+import { Group } from "react-aria-components/Group"
+import { ToggleButton } from "react-aria-components/ToggleButton"
+import { Toolbar } from "react-aria-components/Toolbar"
 import { twJoin, twMerge } from "tailwind-merge"
 import generated from "@/../__registry__/generated"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
