@@ -592,11 +592,10 @@ const ChartLegendContent = ({
             aria-label={"Legend Item"}
           >
             {itemConfig?.icon && !hideIcon ? (
-              <itemConfig.icon data-slot="icon" />
+              <itemConfig.icon />
             ) : (
               <div
-                data-slot="icon"
-                className="rounded-full"
+                className="size-2.5 rounded-full"
                 style={{
                   backgroundColor: item.color,
                 }}
