@@ -1,5 +1,17 @@
 [
   {
+    "name": "Multiple select",
+    "component": "multiple-select.tsx",
+    "url": "/multiple-select",
+    "type": "component",
+    "category": "pickers",
+    "kind": "improvement",
+    "description": null,
+    "additions": 20,
+    "deletions": 5,
+    "date": "2026-04-17"
+  },
+  {
     "name": "File trigger avatar demo",
     "component": "file-trigger-avatar-demo.tsx",
     "url": "/file-trigger",
