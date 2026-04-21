@@ -177,6 +177,7 @@
         }
       },
       "css": {
+        "@import \"tw-animate-css\"": {},
         "@plugin tailwindcss-react-aria-components": {},
         "@layer base": {
           "*, ::after, ::before, ::backdrop, ::file-selector-button": {

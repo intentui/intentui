@@ -47,6 +47,7 @@ const STAGE_DIR = path.resolve(ROOT, "registry")
 
 
 const customCSS = {
+  "@import \"tw-animate-css\"": {},
   "@plugin tailwindcss-react-aria-components": {},
 
   "@layer base": {
