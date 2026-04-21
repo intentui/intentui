@@ -1,5 +1,29 @@
 [
   {
+    "name": "Button",
+    "component": "button.tsx",
+    "url": "/button",
+    "type": "component",
+    "category": "buttons",
+    "kind": "improvement",
+    "description": null,
+    "additions": 13,
+    "deletions": 13,
+    "date": "2026-04-21"
+  },
+  {
+    "name": "Pagination",
+    "component": "pagination.tsx",
+    "url": "/pagination",
+    "type": "component",
+    "category": "navigation",
+    "kind": "improvement",
+    "description": null,
+    "additions": 39,
+    "deletions": 38,
+    "date": "2026-04-21"
+  },
+  {
     "name": "Multiple select",
     "component": "multiple-select.tsx",
     "url": "/multiple-select",
