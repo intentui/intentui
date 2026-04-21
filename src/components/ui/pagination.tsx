@@ -45,12 +45,12 @@ interface PaginationItemProps
 }
 
 const PaginationItem = ({
-                          className,
-                          size = "sm",
-                          isCircle,
-                          isCurrent,
-                          ...props
-                        }: PaginationItemProps) => {
+  className,
+  size = "sm",
+  isCircle,
+  isCurrent,
+  ...props
+}: PaginationItemProps) => {
   return (
     <li>
       <Link
@@ -76,13 +76,13 @@ interface PaginationAttributesProps
 }
 
 const PaginationFirst = ({
-                           className,
-                           children,
-                           size = "sq-sm",
-                           intent = "outline",
-                           isCircle,
-                           ...props
-                         }: PaginationAttributesProps) => {
+  className,
+  children,
+  size = "sq-sm",
+  intent = "outline",
+  isCircle,
+  ...props
+}: PaginationAttributesProps) => {
   return (
     <li>
       <Link
@@ -120,13 +120,13 @@ const PaginationFirst = ({
   )
 }
 const PaginationPrevious = ({
-                              className,
-                              children,
-                              size = "sq-sm",
-                              intent = "outline",
-                              isCircle = false,
-                              ...props
-                            }: PaginationAttributesProps) => {
+  className,
+  children,
+  size = "sq-sm",
+  intent = "outline",
+  isCircle = false,
+  ...props
+}: PaginationAttributesProps) => {
   return (
     <li>
       <Link
@@ -160,13 +160,13 @@ const PaginationPrevious = ({
   )
 }
 const PaginationNext = ({
-                          className,
-                          children,
-                          size = "sq-sm",
-                          intent = "outline",
-                          isCircle = false,
-                          ...props
-                        }: PaginationAttributesProps) => {
+  className,
+  children,
+  size = "sq-sm",
+  intent = "outline",
+  isCircle = false,
+  ...props
+}: PaginationAttributesProps) => {
   return (
     <li>
       <Link
@@ -200,13 +200,13 @@ const PaginationNext = ({
   )
 }
 const PaginationLast = ({
-                          className,
-                          children,
-                          size = "sq-sm",
-                          intent = "outline",
-                          isCircle = false,
-                          ...props
-                        }: PaginationAttributesProps) => {
+  className,
+  children,
+  size = "sq-sm",
+  intent = "outline",
+  isCircle = false,
+  ...props
+}: PaginationAttributesProps) => {
   return (
     <li>
       <Link
@@ -250,10 +250,10 @@ const PaginationSpacer = ({ className, ref, ...props }: React.ComponentProps<"di
 }
 
 const PaginationGap = ({
-                         className,
-                         children = <>&hellip;</>,
-                         ...props
-                       }: React.ComponentProps<"li">) => {
+  className,
+  children = <>&hellip;</>,
+  ...props
+}: React.ComponentProps<"li">) => {
   return (
     <li
       data-slot="pagination-gap"
