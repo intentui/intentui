@@ -96,12 +96,31 @@ Then in `app/root.tsx` or your main layout file you can use the `RouteProvider` 
         'app/root.tsx': 'csr/remix/root.tsx',
     }} />
 
-## Tanstack router
-Use these providers if you are using Tanstack Router in your project.
-<CodeBlock
-    source={{
-        'app/index.tsx': 'csr/tanstack/index.tsx',
-    }} />
+## TanStack Router
+
+When using TanStack Router, you need to wrap your link component with `createLink` from TanStack Router. This enables the `Link` component to work correctly with TanStack Router’s navigation system.
+
+```tsx
+...
+import { createLink } from '@tanstack/react-router'
+
+const InternalLink = ({ className, ref, ...props }: LinkProps) => {...}
+
+export const Link = createLink(InternalLink)
+```
+
+Because the link can also be used with `MenuItem`, you also need to update `MenuItem` in `ui/menu.tsx`.
+
+```tsx
+...
+import { createLink } from '@tanstack/react-router'
+
+const InternalMenuItem = ({ className, intent, children, ...props }: MenuItemProps) => {...}
+
+export const MenuItem = createLink(InternalMenuItem)
+```
+
+For more information, refer to the [TanStack Router documentation](https://tanstack.com/router/latest/docs/guide/custom-link#react-aria-components-example) for guidance on creating links with TanStack Router and React Aria Components.
 
 ## Others
 If you are using a different framework or router provider not mentioned above, refer to the [React Aria Components Docs](https://react-aria.adobe.com/routing.html) for additional information on integrating React Aria components with various routers and frameworks.
