@@ -80,45 +80,58 @@ const PaginationFirst = ({
   children,
   size = "sq-sm",
   intent = "outline",
-  isCircle,
+  isCircle = false,
   ...props
 }: PaginationAttributesProps) => {
+  const itemClassName = buttonStyles({
+    size: children ? "sm" : size,
+    isCircle,
+    intent,
+    className: twMerge("shrink-0", className),
+  })
+
+  const content = (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={16}
+        height={16}
+        fill="none"
+        viewBox="0 0 25 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="m17.5 18-6-6 6-6m-10 0v12"
+        />
+      </svg>
+      {children}
+    </>
+  )
+
   return (
     <li>
-      <Link
-        data-slot="pagination-item"
-        aria-label="First page"
-        className={buttonStyles({
-          size: children ? "sm" : size,
-          isCircle,
-          intent,
-          className: twMerge("shrink-0", className),
-        })}
-        {...props}
-      >
-        <>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={16}
-            height={16}
-            fill="none"
-            viewBox="0 0 25 24"
-            aria-hidden="true"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="m17.5 18-6-6 6-6m-10 0v12"
-            />
-          </svg>
-          {children}
-        </>
-      </Link>
+      {props.href ? (
+        <Link
+          data-slot="pagination-item"
+          aria-label="First page"
+          className={itemClassName}
+          {...props}
+        >
+          {content}
+        </Link>
+      ) : (
+        <span data-slot="pagination-item" className={itemClassName}>
+          {content}
+        </span>
+      )}
     </li>
   )
 }
+
 const PaginationPrevious = ({
   className,
   children,
@@ -127,38 +140,52 @@ const PaginationPrevious = ({
   isCircle = false,
   ...props
 }: PaginationAttributesProps) => {
+  const itemClassName = buttonStyles({
+    size: children ? "sm" : size,
+    isCircle,
+    intent,
+    className: twMerge("shrink-0", className),
+  })
+
+  const content = (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true"
+        data-slot="icon"
+      >
+        <path
+          fillRule="evenodd"
+          d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+          clipRule="evenodd"
+        />
+      </svg>
+      {children}
+    </>
+  )
+
   return (
     <li>
-      <Link
-        data-slot="pagination-item"
-        aria-label="Previous page"
-        className={buttonStyles({
-          size: children ? "sm" : size,
-          isCircle,
-          intent,
-          className: twMerge("shrink-0", className),
-        })}
-        {...props}
-      >
-        <>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
-              clipRule="evenodd"
-            />
-          </svg>
-          {children}
-        </>
-      </Link>
+      {props.href ? (
+        <Link
+          data-slot="pagination-item"
+          aria-label="Previous page"
+          className={itemClassName}
+          {...props}
+        >
+          {content}
+        </Link>
+      ) : (
+        <span data-slot="pagination-item" className={itemClassName}>
+          {content}
+        </span>
+      )}
     </li>
   )
 }
+
 const PaginationNext = ({
   className,
   children,
@@ -167,38 +194,51 @@ const PaginationNext = ({
   isCircle = false,
   ...props
 }: PaginationAttributesProps) => {
+  const itemClassName = buttonStyles({
+    size: children ? "sm" : size,
+    isCircle,
+    intent,
+    className: twMerge("shrink-0", className),
+  })
+
+  const content = (
+    <>
+      {children}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          fillRule="evenodd"
+          d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </>
+  )
+
   return (
     <li>
-      <Link
-        data-slot="pagination-item"
-        aria-label="Next page"
-        className={buttonStyles({
-          size: children ? "sm" : size,
-          isCircle,
-          intent,
-          className: twMerge("shrink-0", className),
-        })}
-        {...props}
-      >
-        <>
-          {children}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </>
-      </Link>
+      {props.href ? (
+        <Link
+          data-slot="pagination-item"
+          aria-label="Next page"
+          className={itemClassName}
+          {...props}
+        >
+          {content}
+        </Link>
+      ) : (
+        <span data-slot="pagination-item" className={itemClassName}>
+          {content}
+        </span>
+      )}
     </li>
   )
 }
+
 const PaginationLast = ({
   className,
   children,
@@ -207,40 +247,52 @@ const PaginationLast = ({
   isCircle = false,
   ...props
 }: PaginationAttributesProps) => {
+  const itemClassName = buttonStyles({
+    size: children ? "sm" : size,
+    isCircle,
+    intent,
+    className: twMerge("shrink-0", className),
+  })
+
+  const content = (
+    <>
+      {children}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={16}
+        height={16}
+        fill="none"
+        viewBox="0 0 25 24"
+        className="intentui-icons size-4"
+        aria-hidden="true"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="m7.5 18 6-6-6-6m10 0v12"
+        />
+      </svg>
+    </>
+  )
+
   return (
     <li>
-      <Link
-        data-slot="pagination-item"
-        aria-label="Last page"
-        className={buttonStyles({
-          size: children ? "sm" : size,
-          isCircle,
-          intent,
-          className: twMerge("shrink-0", className),
-        })}
-        {...props}
-      >
-        <>
-          {children}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={16}
-            height={16}
-            fill="none"
-            viewBox="0 0 25 24"
-            className="intentui-icons size-4"
-            aria-hidden="true"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="m7.5 18 6-6-6-6m10 0v12"
-            />
-          </svg>
-        </>
-      </Link>
+      {props.href ? (
+        <Link
+          data-slot="pagination-item"
+          aria-label="Last page"
+          className={itemClassName}
+          {...props}
+        >
+          {content}
+        </Link>
+      ) : (
+        <span data-slot="pagination-item" className={itemClassName}>
+          {content}
+        </span>
+      )}
     </li>
   )
 }
