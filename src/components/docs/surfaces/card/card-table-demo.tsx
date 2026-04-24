@@ -1,11 +1,7 @@
 "use client"
 
-import {
-  EllipsisVerticalIcon,
-  EyeIcon,
-  PencilSquareIcon,
-  TrashIcon,
-} from "@heroicons/react/24/outline"
+import { EllipsisVerticalIcon } from "@heroicons/react/16/solid"
+import { EyeIcon, PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline"
 import {
   Card,
   CardContent,

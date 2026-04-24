@@ -1,5 +1,5 @@
 "use client"
-import { EllipsisVerticalIcon } from "@heroicons/react/24/outline"
+import { EllipsisVerticalIcon } from "@heroicons/react/16/solid"
 import { use, useMemo } from "react"
 import {
   Autocomplete,

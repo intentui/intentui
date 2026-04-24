@@ -1,5 +1,5 @@
 "use client"
-import { EllipsisVerticalIcon } from "@heroicons/react/24/outline"
+import { EllipsisVerticalIcon } from "@heroicons/react/16/solid"
 import { NumberFormatter } from "@internationalized/number"
 import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
 import {

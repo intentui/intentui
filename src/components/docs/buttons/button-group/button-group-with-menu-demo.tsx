@@ -1,11 +1,11 @@
 "use client"
 
+import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
 import {
   ArrowPathIcon,
   ArrowUturnLeftIcon,
   Cog6ToothIcon,
   DocumentTextIcon,
-  EllipsisHorizontalIcon,
   RocketLaunchIcon,
 } from "@heroicons/react/24/outline"
 import { Button } from "@/components/ui/button"

@@ -31,35 +31,49 @@ Use this approach if you prefer to install and wire up the component yourself in
 ```
 import {
   Pagination,
+  PaginationFirst,
+  PaginationGap,
   PaginationItem,
+  PaginationLabel,
+  PaginationLast,
   PaginationList,
+  PaginationNext,
+  PaginationPrevious,
   PaginationSection,
 } from "@/components/ui/pagination"
 ```
 
 ```
 <Pagination>
-  <PaginationList>
-    <PaginationItem segment="first" href="#" />
-    <PaginationItem segment="previous" href="#" />
-    <PaginationSection
-      aria-label="Pagination Segment"
-      className="rounded-lg border lg:hidden"
-    >
-      <PaginationItem segment="label">1</PaginationItem>
-      <PaginationItem segment="separator" />
-      <PaginationItem className="text-muted-fg" segment="label">
-        10
-      </PaginationItem>
-    </PaginationSection>
-    <PaginationSection
-      aria-label="Pagination Segment"
-      className="hidden lg:flex"
-    >
+  <PaginationList className="hidden md:flex">
+    <PaginationFirst href="#" />
+    <PaginationPrevious href="#" />
+    <PaginationSection>
       <PaginationItem href="#">1</PaginationItem>
+      <PaginationItem href="#">2</PaginationItem>
+      <PaginationItem href="#">3</PaginationItem>
+      <PaginationGap />
+      <PaginationItem href="#">23</PaginationItem>
+      <PaginationItem href="#" isCurrent>
+        24
+      </PaginationItem>
+      <PaginationItem href="#">25</PaginationItem>
     </PaginationSection>
-    <PaginationItem segment="next" href="#" />
-    <PaginationItem segment="last" href="#" />
+
+    <PaginationNext href="#" />
+    <PaginationLast href="#" />
+  </PaginationList>
+
+  <PaginationList className="md:hidden">
+    <PaginationFirst href="#" />
+    <PaginationPrevious href="#" />
+    <PaginationSection className="rounded-(--section-radius) border px-3 *:min-w-4">
+      <PaginationLabel>3</PaginationLabel>
+      <PaginationLabel className="text-muted-fg">/</PaginationLabel>
+      <PaginationLabel>10</PaginationLabel>
+    </PaginationSection>
+    <PaginationNext href="#" />
+    <PaginationLast href="#" />
   </PaginationList>
 </Pagination>
 ```

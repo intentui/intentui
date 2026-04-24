@@ -1,10 +1,7 @@
 "use client"
 
-import {
-  Bars3BottomLeftIcon,
-  EllipsisHorizontalIcon,
-  WindowIcon,
-} from "@heroicons/react/24/outline"
+import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
+import { Bars3BottomLeftIcon, WindowIcon } from "@heroicons/react/24/outline"
 import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
