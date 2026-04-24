@@ -1,8 +1,8 @@
 "use client"
 import { ChevronDownIcon, MagnifyingGlassIcon, ShoppingBagIcon } from "@heroicons/react/24/outline"
+import { Link } from "@/components/link"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 import {
   Navbar,

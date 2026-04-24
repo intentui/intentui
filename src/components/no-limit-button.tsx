@@ -2,8 +2,8 @@
 
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 import { twMerge } from "tailwind-merge"
+import { Link } from "@/components/link"
 import { buttonStyles } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
 
 export function NoLimitButton({ className }: { className?: string }) {
   return (

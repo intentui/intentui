@@ -2,8 +2,8 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
 import { findNeighbour, type Root as PageTreeRoot } from "fumadocs-core/page-tree"
 import { twMerge } from "tailwind-merge"
+import { Link } from "@/components/link"
 import { buttonStyles } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
 
 interface PageProps {
   tree: PageTreeRoot

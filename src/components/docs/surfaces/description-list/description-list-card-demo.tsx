@@ -1,5 +1,6 @@
 "use client"
 
+import { Link } from "@/components/link"
 import { buttonStyles } from "@/components/ui/button"
 import {
   Card,
@@ -14,7 +15,6 @@ import {
   DescriptionList,
   DescriptionTerm,
 } from "@/components/ui/description-list"
-import { Link } from "@/components/ui/link"
 
 export default function DescriptionListCardDemo() {
   return (

@@ -1,5 +1,6 @@
 "use client"
 
+import NextLink from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
 import type { LinkProps } from "react-aria-components/Link"
@@ -142,6 +143,9 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
       {...props}
       href={href}
       ref={ref}
+      render={(domProps) =>
+        "href" in domProps ? <NextLink {...domProps} /> : <span {...domProps} />
+      }
       className={twMerge(
         "group mb-0.5 -ml-3 flex items-center justify-between rounded-lg px-3 py-1 text-base text-fg sm:text-sm/6",
         "focus:outline-hidden",
