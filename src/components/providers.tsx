@@ -12,7 +12,6 @@ declare module "react-aria-components" {
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const router = useRouter()
-
   return (
     <RouterProvider navigate={router.push}>
       <ThemeProvider enableSystem disableTransitionOnChange attribute="class">
