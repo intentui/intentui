@@ -3237,10 +3237,10 @@
       "dependencies": [
         "@heroicons/react",
         "motion",
-        "react-aria-components",
         "tailwind-merge"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/use-mobile",
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button",
@@ -5025,10 +5025,10 @@
       "title": "Description List Card",
       "description": "description-list-card-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/card",
-        "http://localhost:3000/r/description-list",
-        "http://localhost:3000/r/link"
+        "http://localhost:3000/r/description-list"
       ],
       "files": [
         {
@@ -5128,12 +5128,12 @@
         "react-aria-components"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/checkbox",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/text-field"
       ],
       "files": [
@@ -6671,12 +6671,12 @@
         "react-aria-components"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
         "http://localhost:3000/r/dialog",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/popover",
         "http://localhost:3000/r/text-field"
       ],
@@ -12656,8 +12656,8 @@
       "title": "Button Link",
       "description": "button-link-demo",
       "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link"
+        "http://localhost:3000/r/link",
+        "http://localhost:3000/r/button"
       ],
       "files": [
         {
@@ -13282,9 +13282,9 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
         "http://localhost:3000/r/separator"
@@ -13315,9 +13315,9 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
         "http://localhost:3000/r/separator"
@@ -13347,9 +13347,9 @@
       "description": "navbar-03",
       "registryDependencies": [
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
         "http://localhost:3000/r/separator"
@@ -13380,9 +13380,9 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
         "http://localhost:3000/r/separator"
@@ -13413,9 +13413,9 @@
       "registryDependencies": [
         "http://localhost:3000/r/container",
         "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/navbar",
         "http://localhost:3000/r/separator"
@@ -13507,12 +13507,12 @@
         "react-aria-components"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/text",
         "http://localhost:3000/r/text-field"
       ],
@@ -13535,11 +13535,11 @@
         "react-aria-components"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/text",
         "http://localhost:3000/r/text-field"
       ],
@@ -13562,12 +13562,12 @@
         "react-aria-components"
       ],
       "registryDependencies": [
+        "http://localhost:3000/r/link",
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/text",
         "http://localhost:3000/r/text-field"
       ],

@@ -22,8 +22,8 @@ import {
   ShoppingBagIcon,
   TicketIcon,
 } from "@heroicons/react/24/solid"
-import { Link } from "@/components/ui/link"
 import { Avatar } from "@/components/ui/avatar"
+import { Link } from "@/components/ui/link"
 import {
   Menu,
   MenuContent,
