@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Form } from "react-aria-components/Form"
-import { Link } from "@/components/link"
+import { Link } from "@/components/ui/link"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"

@@ -2,7 +2,7 @@
 
 import { parseDate } from "@internationalized/date"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
-import { Link } from "@/components/link"
+import { Link } from "@/components/ui/link"
 import { RangeCalendar } from "@/components/ui/range-calendar"
 import { SearchField, SearchInput } from "@/components/ui/search-field"
 import {

@@ -10,7 +10,7 @@ import {
   RectangleStackIcon,
   UsersIcon,
 } from "@heroicons/react/24/solid"
-import { Link } from "@/components/link"
+import { Link } from "@/components/ui/link"
 import { Avatar } from "@/components/ui/avatar"
 import {
   Sidebar,

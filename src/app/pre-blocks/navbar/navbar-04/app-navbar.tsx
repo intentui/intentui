@@ -1,7 +1,7 @@
 "use client"
 
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
-import { Link } from "@/components/link"
+import { Link } from "@/components/ui/link"
 import { Avatar } from "@/components/ui/avatar"
 import {
   Navbar,

@@ -1,7 +1,7 @@
 "use client"
 
 import { Form } from "react-aria-components/Form"
-import { Link } from "@/components/link"
+import { Link } from "@/components/ui/link"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Dialog } from "@/components/ui/dialog"
