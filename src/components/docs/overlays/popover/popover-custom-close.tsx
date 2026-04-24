@@ -6,7 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Dialog } from "@/components/ui/dialog"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { Link } from "@/components/ui/link"
+import { Link } from "@/components/link"
 import {
   Popover,
   PopoverBody,

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
 import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { Link } from "@/components/ui/link"
+import { Link } from "@/components/link"
 import { Text, TextLink } from "@/components/ui/text"
 import { TextField } from "@/components/ui/text-field"
 

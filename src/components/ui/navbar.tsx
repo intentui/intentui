@@ -3,7 +3,7 @@
 import { Bars2Icon } from "@heroicons/react/20/solid"
 import { LayoutGroup, motion } from "motion/react"
 import { createContext, use, useCallback, useId, useMemo, useState } from "react"
-import { Link, type LinkProps } from "react-aria-components/Link"
+import { Link, type LinkProps } from "@/components/ui/link"
 import { twJoin, twMerge } from "tailwind-merge"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cx } from "@/lib/primitive"

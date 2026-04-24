@@ -1,7 +1,6 @@
 import { AppBootstrap } from "@/components/app-bootstrap"
 import { DeferredAnalytics } from "@/components/deferred-analytics"
 import { JsonLd } from "@/components/json-ld"
-import { Providers } from "@/components/providers"
 import { app, META_THEME_COLORS } from "@/config/app"
 import "@/styles/app.css"
 import type { Metadata, Viewport } from "next"
@@ -9,6 +8,7 @@ import localFont from "next/font/local"
 import { Suspense } from "react"
 import { AurelieAnalytics } from "@/components/aurelie-analytics"
 import { Toast } from "@/components/ui/toast"
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(app.url),
@@ -152,11 +152,11 @@ export default function RootLayout({ children }: Readonly<Props>) {
         <meta name="theme-color" content={META_THEME_COLORS.light} />
       </head>
       <body className="min-h-svh font-sans antialiased">
-        <Providers>
+      <ThemeProvider enableSystem disableTransitionOnChange attribute="class">
           <AppBootstrap />
           <Toast />
           <main>{children}</main>
-        </Providers>
+        </ThemeProvider>
         <Suspense>
           <AurelieAnalytics />
         </Suspense>

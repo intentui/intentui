@@ -17,7 +17,7 @@ import {
   Squares2X2Icon as Squares2X2Solid,
 } from "@heroicons/react/24/solid"
 import { Avatar } from "@/components/ui/avatar"
-import { Link } from "@/components/ui/link"
+import { Link } from "@/components/link"
 import {
   Menu,
   MenuContent,

@@ -6,121 +6,170 @@ published: true
 ---
 
 ## Introduction
-React Aria components such as [Link](/docs/components/navigation/link), [Menu](/docs/components/collections/menu), [Tabs](/docs/components/navigation/tabs), and [Table](/docs/components/collections/table) transform elements into clickable links that navigate when clicked. These components utilize the `href` prop to render as an `<a>` tag, supporting attributes like `target` and `download`.
 
-User interactions with these links vary by component. For instance, one might use arrow keys to navigate tabs or press Enter to open a link within a ComboBox. With the href prop, React Aria facilitates seamless navigation for each component.
+React Aria Components such as [Link](/docs/components/navigation/link), [Menu](/docs/components/collections/menu), [Tabs](/docs/components/navigation/tabs), and [Table](/docs/components/collections/table) can render items as links when an `href` prop is provided. This allows them to behave like native anchor elements and support standard attributes such as `target` and `download`.
 
-Typically, links perform the default browser action when clicked. However, many applications employ client-side routers to prevent full page reloads. The RouterProvider configures React Aria components to integrate with your client-side router. Simply set it up at the root, and any React Aria component with an href will automatically utilize your router.
+By default, links are rendered as an `<a>` element. To integrate with a framework-specific routing component, use the `render` prop.
 
-Note that links to external sites will default to the browser's native navigation, and links not targeting "_self", using the download attribute, or modified with keys like Command or Alt, will also follow the browser's native behavior.
-
-## Router provider
-The `RouterProvider` component accepts two properties: `navigate`. Assign `navigate` to a function from your routing framework that handles client-side navigation. Below are setup examples for various frameworks.
 ```tsx
-import { RouterProvider } from 'react-aria-components';
-import { useNavigate } from 'your-router';
+<Link
+  {...props}
+  render={(domProps) =>
+    "href" in domProps ? <RouterLink {...domProps} /> : <span {...domProps} />
+  }
+/>
+```
 
-export default function Layout() {
-  let navigate = useNavigate();
+The same pattern can also be used with `MenuItem`.
 
+```tsx
+<MenuItem
+  {...props}
+  render={(domProps) =>
+    "href" in domProps ? <RouterLink {...domProps} /> : <span {...domProps} />
+  }
+/>
+```
+
+## Laravel and Inertia.js
+
+When using Laravel with Inertia.js, you can render the `Link` component as an Inertia `Link`.
+
+```tsx
+import {
+  Link as LinkPrimitive,
+  type LinkProps as LinkPrimitiveProps,
+} from "react-aria-components/Link"
+import { type InertiaLinkProps, Link as InertiaLink } from "@inertiajs/react"
+import { cx } from "@/lib/primitive"
+
+export interface LinkProps extends LinkPrimitiveProps {
+  ref?: React.RefObject<HTMLAnchorElement>
+}
+
+export function Link({ className, ref, ...props }: LinkProps) {
   return (
-    <RouterProvider navigate={navigate}>
-      {/* ... */}
-    </RouterProvider>
-  );
+    <LinkPrimitive
+      ref={ref}
+      className={cx(
+        [
+          "font-medium text-(--text)",
+          "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
+          "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
+          "href" in props && "cursor-pointer",
+        ],
+        className,
+      )}
+      {...props}
+      render={(domProps) =>
+        "href" in domProps ? (
+          <InertiaLink {...(domProps as InertiaLinkProps)} />
+        ) : (
+          <span {...domProps} />
+        )
+      }
+    />
+  )
 }
 ```
 
-## Inertia.js
-The Ziggy JS library, when running Laravel, is located in the `vendor` folder. To use it, we need to configure it by updating your `tsconfig` and `vite.config` files as follows:
-<CodeBlock
-    source={{
-        'vite.config.ts': 'csr/inertia/vite.config.ts',
-        'tsconfig.json': 'csr/inertia/tsconfig.json',
-    }} />
-
-### Set up Ziggy
-I’ll assume you already have [Ziggy](https://github.com/tighten/ziggy) installed, as this setup is intended for Inertia.js with Ziggy. Once it’s installed, generate the Ziggy routes by running:
-
-```
-php artisan ziggy:generate
-```
-
-
-### Global declaration
-To integrate with Inertia.js, you must first declare it in your `.d.ts` file, such as in `global.d.ts`.
-<CodeBlock
-    source={{
-        'types/global.d.ts': 'csr/inertia/global.d.ts',
-    }} />
-
-### App.tsx
-Once the global declaration is set up, create a `use-theme.ts` file in your hooks folder to handle theme preferences, and initialize it in your `app.tsx` file.
-
-<CodeBlock
-    source={{
-        'use-theme.ts': 'csr/inertia/use-theme.ts',
-        'app.tsx': 'csr/inertia/app.tsx',
-    }} />
-
 ## Next.js
-### Providers
-Let's create a providers folder in your root folder, and create two files called `index.tsx` and `theme-provider.tsx` inside it.
-<CodeBlock
-    source={{
-        'providers/theme-provider.tsx': 'dark-mode/nextjs/theme-provider.tsx',
-        'providers/index.tsx': 'csr/nextjs/index.tsx',
-    }} />
-### Usage
-After you create the provider files, you can use them in your `app/layout.tsx` file like this:
 
-<CodeBlock
-    source={{
-        'app/layout.tsx': 'csr/nextjs/layout.tsx',
-    }} />
+When using Next.js, you can render the `Link` component as `NextLink` from `next/link`.
 
+```tsx
+"use client"
 
-## Remix
-For Remix, we can use the `useNavigate` hook. First, let's create a file `route-provider.tsx` in the `app/components` folder.
+import {
+  Link as LinkPrimitive,
+  type LinkProps as LinkPrimitiveProps,
+} from "react-aria-components/Link"
+import NextLink from "next/link"
+import { cx } from "@/lib/primitive"
 
-For comprehensive details, consult the [Remix documentation](https://remix.run/docs/en/main/file-conventions/root).
-<CodeBlock
-    source={{
-        'app/router-provider.tsx': 'csr/remix/router-provider.tsx',
-    }} />
+export interface LinkProps extends LinkPrimitiveProps {
+  ref?: React.RefObject<HTMLAnchorElement>
+}
 
-### Usage
-Then in `app/root.tsx` or your main layout file you can use the `RouteProvider` component to encompass all pages.
-<CodeBlock
-    source={{
-        'app/root.tsx': 'csr/remix/root.tsx',
-    }} />
+export function Link({ className, ref, ...props }: LinkProps) {
+  return (
+    <LinkPrimitive
+      ref={ref}
+      className={cx(
+        [
+          "font-medium text-(--text)",
+          "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
+          "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
+          "href" in props && "cursor-pointer",
+        ],
+        className,
+      )}
+      {...props}
+      render={(domProps) =>
+        "href" in domProps ? <NextLink {...domProps} /> : <span {...domProps} />
+      }
+    />
+  )
+}
+```
 
 ## TanStack Router
 
-When using TanStack Router, you need to wrap your link component with `createLink` from TanStack Router. This enables the `Link` component to work correctly with TanStack Router’s navigation system.
+When using TanStack Router, wrap your link component with `createLink`. This allows the component to integrate with TanStack Router’s navigation system while still preserving React Aria behavior.
 
 ```tsx
-...
-import { createLink } from '@tanstack/react-router'
+import { createLink } from "@tanstack/react-router"
 
-const InternalLink = ({ className, ref, ...props }: LinkProps) => {...}
+const InternalLink = ({ className, ref, ...props }: LinkProps) => {
+  return (
+    <LinkPrimitive
+      ref={ref}
+      className={cx(
+        [
+          "font-medium text-(--text)",
+          "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
+          "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
+          "href" in props && "cursor-pointer",
+        ],
+        className,
+      )}
+      {...props}
+    />
+  )
+}
 
 export const Link = createLink(InternalLink)
 ```
 
-Because the link can also be used with `MenuItem`, you also need to update `MenuItem` in `ui/menu.tsx`.
+If the link is also used through `MenuItem`, update `MenuItem` in `ui/menu.tsx` using the same pattern.
 
 ```tsx
-...
-import { createLink } from '@tanstack/react-router'
+import { createLink } from "@tanstack/react-router"
 
-const InternalMenuItem = ({ className, intent, children, ...props }: MenuItemProps) => {...}
+const InternalMenuItem = ({
+  className,
+  intent,
+  children,
+  ...props
+}: MenuItemProps) => {
+  return (
+    <MenuItemPrimitive
+      className={cx(
+        [
+          "group flex cursor-default items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-hidden",
+          "focus:bg-accent focus:text-accent-fg",
+          "disabled:pointer-events-none disabled:opacity-50",
+        ],
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </MenuItemPrimitive>
+  )
+}
 
 export const MenuItem = createLink(InternalMenuItem)
 ```
 
-For more information, refer to the [TanStack Router documentation](https://tanstack.com/router/latest/docs/guide/custom-link#react-aria-components-example) for guidance on creating links with TanStack Router and React Aria Components.
-
-## Others
-If you are using a different framework or router provider not mentioned above, refer to the [React Aria Components Docs](https://react-aria.adobe.com/routing.html) for additional information on integrating React Aria components with various routers and frameworks.
+For more details, refer to the [TanStack Router documentation](https://tanstack.com/router/latest/docs/guide/custom-link#react-aria-components-example) on creating custom links with TanStack Router and React Aria Components.

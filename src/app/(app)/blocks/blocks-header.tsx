@@ -5,7 +5,7 @@ import { twJoin } from "tailwind-merge"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
-import { Link, type LinkProps } from "@/components/ui/link"
+import { Link, type LinkProps } from "@/components/link"
 
 export function BlocksHeader() {
   return (

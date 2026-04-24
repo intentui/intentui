@@ -14,7 +14,7 @@ import {
   DescriptionList,
   DescriptionTerm,
 } from "@/components/ui/description-list"
-import { Link } from "@/components/ui/link"
+import { Link } from "@/components/link"
 
 export default function DescriptionListCardDemo() {
   return (

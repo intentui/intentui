@@ -11,7 +11,7 @@ import TooltipDemo from "@/components/docs/overlays/tooltip/tooltip-demo"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
-import { Link } from "@/components/ui/link"
+import { Link } from "@/components/link"
 
 export function Blocks() {
   return (

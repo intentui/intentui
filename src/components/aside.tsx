@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import menus from "@/components-search.json"
 import type { Component } from "@/types/search"
+import NextLink from "next/link";
 
 export type SidebarItem = {
   section: string
@@ -142,6 +143,11 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
       {...props}
       href={href}
       ref={ref}
+      render={domProps =>
+        'href' in domProps
+          ? <NextLink {...domProps} />
+          : <span {...domProps} />
+      }
       className={twMerge(
         "group mb-0.5 -ml-3 flex items-center justify-between rounded-lg px-3 py-1 text-base text-fg sm:text-sm/6",
         "focus:outline-hidden",

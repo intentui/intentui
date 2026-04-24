@@ -27,6 +27,7 @@ import { SearchField, SearchInput } from "@/components/ui/search-field"
 import { Separator } from "@/components/ui/separator"
 import { app } from "@/config/app"
 import { cx } from "@/lib/primitive"
+import NextLink from "next/link";
 
 interface ResponsiveNavigationProps {
   className?: string
@@ -237,6 +238,11 @@ function NavLink({ href, ...props }: NavLinkProps) {
       {...props}
       href={href}
       ref={ref}
+      render={domProps =>
+        'href' in domProps
+          ? <NextLink {...domProps} />
+          : <div {...domProps} />
+      }
       className={twMerge(
         "mb-0.5 flex items-center justify-between rounded-lg px-2 py-2.5 font-medium text-xl/6",
         "focus:outline-hidden",

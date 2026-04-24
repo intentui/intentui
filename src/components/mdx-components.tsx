@@ -13,7 +13,7 @@ import { DocComposed } from "@/components/doc-composed"
 import { DocNote } from "@/components/doc-note"
 import { FrameworkGuides } from "@/components/framework-guides"
 import { ReleaseNotes } from "@/components/release-notes"
-import { Link } from "@/components/ui/link"
+import { Link } from "@/components/link"
 import { DocHow } from "./code/doc-how"
 
 export const mdxComponents = {
