@@ -1,8 +1,8 @@
 "use client"
+import { Link } from "@/components/link"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
-import { Link } from "@/components/link"
 import menus from "@/components-search.json"
 import type { Component } from "@/types/search"
 

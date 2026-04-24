@@ -1,9 +1,9 @@
 "use client"
 
 import { BookOpenIcon, CubeIcon } from "@heroicons/react/24/outline"
+import { Link } from "@/components/link"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
-import { Link } from "@/components/link"
 import { app } from "@/config/app"
 
 export function Hero() {

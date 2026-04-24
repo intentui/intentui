@@ -1,12 +1,12 @@
 "use client"
 
 import { Form } from "react-aria-components/Form"
+import { Link } from "@/components/link"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Dialog } from "@/components/ui/dialog"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { Link } from "@/components/link"
 import {
   Popover,
   PopoverBody,

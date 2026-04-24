@@ -16,8 +16,8 @@ import {
   ShieldCheckIcon as ShieldCheckSolid,
   Squares2X2Icon as Squares2X2Solid,
 } from "@heroicons/react/24/solid"
-import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/link"
+import { Avatar } from "@/components/ui/avatar"
 import {
   Menu,
   MenuContent,

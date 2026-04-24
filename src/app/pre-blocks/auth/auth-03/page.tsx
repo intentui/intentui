@@ -1,12 +1,12 @@
 "use client"
 
 import { Form } from "react-aria-components/Form"
+import { Link } from "@/components/link"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { Link } from "@/components/link"
 import { Text, TextLink } from "@/components/ui/text"
 import { TextField } from "@/components/ui/text-field"
 

@@ -8,10 +8,10 @@ import ModalDemo from "@/components/docs/overlays/modal/modal-demo"
 import PopoverDemo from "@/components/docs/overlays/popover/popover-demo"
 import SheetDemo from "@/components/docs/overlays/sheet/sheet-demo"
 import TooltipDemo from "@/components/docs/overlays/tooltip/tooltip-demo"
+import { Link } from "@/components/link"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
-import { Link } from "@/components/link"
 
 export function Blocks() {
   return (

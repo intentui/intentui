@@ -1,10 +1,10 @@
 "use client"
 
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
+import { Link } from "@/components/link"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
-import { Link } from "@/components/link"
 import { app } from "@/config/app"
 export function OpenSource() {
   return (

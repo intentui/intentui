@@ -1,9 +1,9 @@
 "use client"
 import { starterKits } from "@/app/(home)/partials/starter-kit"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
+import { Link } from "@/components/link"
 import { LogoType } from "@/components/logo-type"
 import { PageContainer } from "@/components/page-container"
-import { Link } from "@/components/link"
 import { Text, TextLink } from "@/components/ui/text"
 import { app } from "@/config/app"
 

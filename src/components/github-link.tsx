@@ -1,6 +1,6 @@
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
-import { buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/link"
+import { buttonStyles } from "@/components/ui/button"
 import { app } from "@/config/app"
 
 export function GithubLink() {

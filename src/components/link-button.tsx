@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
-import { buttonStyles } from "@/components/ui/button"
 import { Link, type LinkProps } from "@/components/link"
+import { buttonStyles } from "@/components/ui/button"
 
 interface LinkButtonProps extends Omit<LinkProps, "className">, VariantProps<typeof buttonStyles> {
   className?: string

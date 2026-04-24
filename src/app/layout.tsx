@@ -7,8 +7,8 @@ import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
 import { Suspense } from "react"
 import { AurelieAnalytics } from "@/components/aurelie-analytics"
+import { ThemeProvider } from "@/components/theme-provider"
 import { Toast } from "@/components/ui/toast"
-import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(app.url),
@@ -152,7 +152,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
         <meta name="theme-color" content={META_THEME_COLORS.light} />
       </head>
       <body className="min-h-svh font-sans antialiased">
-      <ThemeProvider enableSystem disableTransitionOnChange attribute="class">
+        <ThemeProvider enableSystem disableTransitionOnChange attribute="class">
           <AppBootstrap />
           <Toast />
           <main>{children}</main>

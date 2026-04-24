@@ -1,10 +1,10 @@
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
+import NextLink from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
 import { Header } from "react-aria-components/Header"
 import { Link } from "react-aria-components/Link"
-
 import {
   Menu,
   MenuItem,
@@ -14,7 +14,6 @@ import {
   Popover,
   type PopoverProps,
 } from "react-aria-components/Menu"
-
 import { twJoin, twMerge } from "tailwind-merge"
 import { menus } from "@/app/(home)/partials/navbar"
 import { components, dm, gs, prologue, sortedGsChildren } from "@/components/aside"
@@ -27,7 +26,6 @@ import { SearchField, SearchInput } from "@/components/ui/search-field"
 import { Separator } from "@/components/ui/separator"
 import { app } from "@/config/app"
 import { cx } from "@/lib/primitive"
-import NextLink from "next/link";
 
 interface ResponsiveNavigationProps {
   className?: string
@@ -238,10 +236,8 @@ function NavLink({ href, ...props }: NavLinkProps) {
       {...props}
       href={href}
       ref={ref}
-      render={domProps =>
-        'href' in domProps
-          ? <NextLink {...domProps} />
-          : <div {...domProps} />
+      render={(domProps) =>
+        "href" in domProps ? <NextLink {...domProps} /> : <div {...domProps} />
       }
       className={twMerge(
         "mb-0.5 flex items-center justify-between rounded-lg px-2 py-2.5 font-medium text-xl/6",
