@@ -1,10 +1,8 @@
 "use client"
 
 import { createContext, use } from "react"
-import { composeRenderProps } from "react-aria-components/composeRenderProps"
-import type { GridListItemProps, GridListProps } from "react-aria-components/GridList"
-import { GridList, GridListItem } from "react-aria-components/GridList"
-import { Text, type TextProps } from "react-aria-components/Text"
+import type { GridListItemProps, GridListProps, TextProps } from "react-aria-components"
+import { composeRenderProps, GridList, GridListItem, Text } from "react-aria-components"
 import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"
@@ -60,13 +58,13 @@ interface ChoiceBoxProps<T extends object>
 }
 
 const ChoiceBox = <T extends object>({
-  columns = 1,
-  gap = 0,
-  className,
-  selectionMode = "single",
-  isReadOnly,
-  ...props
-}: ChoiceBoxProps<T>) => {
+                                       columns = 1,
+                                       gap = 0,
+                                       className,
+                                       selectionMode = "single",
+                                       isReadOnly,
+                                       ...props
+                                     }: ChoiceBoxProps<T>) => {
   return (
     <ChoiceBoxContext value={{ columns, gap, isReadOnly }}>
       <GridList
@@ -93,8 +91,8 @@ const choiceBoxItemStyles = tv({
     "[--choice-box-selected-hovered:var(--color-primary-subtle)]/90",
     "inset-ring inset-ring-border rounded-lg p-(--gutter) **:data-[slot=label]:font-medium",
     "**:data-[slot=avatar]:row-span-2 **:data-[slot=avatar]:mt-0.5 **:data-[slot=avatar]:shrink-0",
-    "has-[svg:not([data-slot='check-indicator'])]:grid-cols-[auto_1fr_auto] **:[svg:not([data-slot='check-indicator'])]:row-span-2 **:[svg]:h-[1.1lh] **:[svg]:w-5 **:[svg]:shrink-0",
-    "has-data-[slot=avatar]:grid-cols-[auto_1fr_auto]",
+    "**:[svg]:row-span-2 **:[svg]:h-[1.1lh] **:[svg]:w-5 **:[svg]:shrink-0",
+    "has-data-[slot=avatar]:grid-cols-[auto_1fr_auto] has-data-[slot=icon]:grid-cols-[auto_1fr_auto]",
     "grid grid-cols-[1fr_auto] content-start items-start gap-x-[calc(var(--gutter)-(--spacing(1)))] gap-y-1",
     "[--choice-box-active-ring:var(--color-ring)]/70 [--choice-box-ring:var(--color-ring)]/20",
     "has-[[slot=description]]:**:data-[slot=label]:font-medium",
@@ -134,12 +132,12 @@ interface ChoiceBoxItemProps extends GridListItemProps, VariantProps<typeof choi
 }
 
 const ChoiceBoxItem = ({
-  className,
-  label,
-  description,
-  children,
-  ...props
-}: ChoiceBoxItemProps) => {
+                         className,
+                         label,
+                         description,
+                         children,
+                         ...props
+                       }: ChoiceBoxItemProps) => {
   const textValue = typeof children === "string" ? children : undefined
   const { columns, isReadOnly } = useChoiceBoxContext()
   return (
@@ -182,7 +180,7 @@ const ChoiceBoxItem = ({
             {content}
             {selectionMode === "multiple" && (
               <Checkbox
-                className="col-start-2 self-start group-has-[svg]:col-start-3 group-has-data-[slot=avatar]:col-start-3"
+                className="col-start-2 self-start group-has-data-[slot=avatar]:col-start-3 group-has-data-[slot=icon]:col-start-3"
                 slot="selection"
               />
             )}
@@ -205,7 +203,7 @@ const ChoiceBoxLabel = ({ className, ref, ...props }: ChoiceBoxLabelProps) => {
       className={twMerge(
         "select-none text-base/6 text-fg group-disabled:opacity-50 sm:text-sm/6",
         "col-start-1 row-start-1",
-        "group-has-[svg]:col-start-2",
+        "group-has-data-[slot=icon]:col-start-2",
         "group-has-data-[slot=avatar]:col-start-2",
         className,
       )}
@@ -223,7 +221,7 @@ const ChoiceBoxDescription = ({ className, ref, ...props }: ChoiceBoxDescription
       ref={ref}
       className={twMerge(
         "col-start-1 row-start-2",
-        "group-has-[svg]:col-start-2",
+        "group-has-data-[slot=icon]:col-start-2",
         "group-has-data-[slot=avatar]:col-start-2",
         "text-base/6 text-muted-fg sm:text-sm/6",
         "group-disabled:opacity-50",
