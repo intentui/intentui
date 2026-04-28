@@ -49,7 +49,7 @@ export function SponsorPlan() {
                 <UserCircleIcon /> Individual
               </Badge>
               <h3 className="mt-4 mb-2 font-semibold text-2xl text-fg tracking-tight">
-                Back the project you rely on
+                Fund Intent UI
               </h3>
               <Text className="text-pretty">
                 Your sponsorship directly funds development time. Every new component, every bug
