@@ -1,5 +1,17 @@
 [
   {
+    "name": "Pagination",
+    "component": "pagination.tsx",
+    "url": "/pagination",
+    "type": "component",
+    "category": "navigation",
+    "kind": "improvement",
+    "description": null,
+    "additions": 42,
+    "deletions": 42,
+    "date": "2026-04-28"
+  },
+  {
     "name": "Auth 01",
     "component": "auth-01/page.tsx",
     "url": null,
