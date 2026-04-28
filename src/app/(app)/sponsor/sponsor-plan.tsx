@@ -65,9 +65,11 @@ export function SponsorPlan() {
                   <div className="font-medium text-fg text-sm">{plan.name}</div>
 
                   <div className="font-semibold text-3xl tabular-nums tracking-tight">
-                    ${plan.price.amount}
-                    <span className="ml-1 font-normal text-base text-muted-fg">/ month</span>
-                  </div>
+  ${plan.price.amount}
+  <span className="ml-1 font-normal text-base text-muted-fg">
+    {plan.id === 'o-sponsor' ? 'one time' : '/ month'}
+  </span>
+</div>
 
                   <Text className="text-pretty">{plan.description}</Text>
                   <a href={plan.checkout_url} className={sponsorButton}>
