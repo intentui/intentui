@@ -7,9 +7,28 @@
       "currency": "USD",
       "interval": "month"
     },
-    "description": "Monthly sponsorship for individuals who want to keep development moving, support long term sustainability, and optionally get a public shoutout with your profile photo plus links to your X or GitHub account.",
-    "benefits": [],
+    "description": "Monthly support to keep Intent UI growing, with optional public profile links.",
+    "benefits": [
+      "Link to your profile or website"
+    ],
     "checkout_url": "https://buy.polar.sh/polar_cl_NpCavu2shVKkSq8638ZU89h0Jx5bYDRWSNEB03H0syx",
+    "type": "individual"
+  },
+  {
+    "id": "gold-sponsor",
+    "name": "Gold sponsor",
+    "price": {
+      "amount": 250,
+      "currency": "USD",
+      "interval": "month"
+    },
+    "description": "Monthly support to keep Intent UI growing, with a personal license for Design.",
+    "benefits": [
+      "Logo displayed on the sponsors page",
+      "Link to your profile or website",
+      "Personal license for Intent UI Design"
+    ],
+    "checkout_url": "https://buy.polar.sh/polar_cl_DM2E2Brz3WL2FWiZ95AKEFI3j8qG8UPSym1xZ1oaEIH",
     "type": "individual"
   },
   {
@@ -20,8 +39,10 @@
       "currency": "USD",
       "interval": "month"
     },
-    "description": "One time sponsorship for individuals who want to keep development moving, support long term sustainability, and optionally get a public shoutout with your profile photo plus links to your X or GitHub account for 3 months.",
-    "benefits": [],
+    "description": "One-time support to keep Intent UI growing, with optional public profile links for 3 months.",
+    "benefits": [
+      "Link to your profile or website for 3 months"
+    ],
     "checkout_url": "https://buy.polar.sh/polar_cl_ykUxq1qfcntnSVruv3fXfmy1dKCVBWP6iDSLd4KyYcw",
     "type": "individual"
   },
@@ -72,7 +93,8 @@
       "Logo on the sponsors page",
       "Your site in the showcase page",
       "Logo on the Intent UI homepage",
-      "Team license Intent UI Design",
+      "Logo on the Intent UI Design homepage",
+      "Growing team license Intent UI Design",
       "Logo on the Intent UI Repo"
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_8wL5pKsf2b9Z54ZE7Pb2kTe6afTFbjLqSn9gZ29i97G"
