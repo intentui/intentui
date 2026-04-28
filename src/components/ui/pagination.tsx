@@ -114,7 +114,7 @@ const PaginationFirst = ({
 
   return (
     <li>
-      {props.href ? (
+      {props.href || props.onPress ? (
         <Link
           data-slot="pagination-item"
           aria-label="First page"
@@ -168,7 +168,7 @@ const PaginationPrevious = ({
 
   return (
     <li>
-      {props.href ? (
+      {props.href || props.onPress ? (
         <Link
           data-slot="pagination-item"
           aria-label="Previous page"
@@ -221,7 +221,7 @@ const PaginationNext = ({
 
   return (
     <li>
-      {props.href ? (
+      {props.href || props.onPress ? (
         <Link
           data-slot="pagination-item"
           aria-label="Next page"
@@ -279,7 +279,7 @@ const PaginationLast = ({
 
   return (
     <li>
-      {props.href ? (
+      {props.href || props.onPress ? (
         <Link
           data-slot="pagination-item"
           aria-label="Last page"
