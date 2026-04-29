@@ -74,10 +74,12 @@ export function Navigation() {
                   Components
                 </NavLink>
 
-                <NavLink isActive={pathname.startsWith("/blocks")} href="/blocks">
+                <NavLink isNextLink isActive={pathname.startsWith("/blocks")} href="/blocks">
                   Blocks
                 </NavLink>
-                <NavLink href="/colors">Colors</NavLink>
+                <NavLink isNextLink href="/colors">
+                  Colors
+                </NavLink>
 
                 <NavLink target="_blank" href="https://design.intentui.com/themes">
                   Themes

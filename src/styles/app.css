@@ -166,7 +166,7 @@
 }
 
 .dark {
-  --bg: oklch(0.1508 0.0044 285.82);
+  --bg: var(--color-zinc-950);
   --fg: oklch(0.985 0 0);
 
   --shiki-bg: #111114;

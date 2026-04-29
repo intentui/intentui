@@ -31,7 +31,7 @@ export const metadata = createMetadata({
 export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">
-      <div className="relative isolate mb-6 overflow-hidden border-b">
+      <div className="relative isolate mb-6 overflow-hidden border-border/50 border-b">
         <Navbar />
         <Hero />
       </div>
