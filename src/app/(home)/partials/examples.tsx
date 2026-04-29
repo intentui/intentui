@@ -64,8 +64,8 @@ export function Examples() {
         <BlocksCard className="w-full lg:w-2/3">
           <div className="flex w-full flex-col gap-y-6">
             <CardHeader
-              title="Products"
-              description="Manage product details, pricing, and availability."
+              title="Projects"
+              description="Track, manage, and update all your projects in one place."
             />
             <TableExpandableDemo />
           </div>
