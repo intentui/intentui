@@ -1,9 +1,10 @@
 "use client"
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
+import NextLink from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
-import { GridList, GridListItem } from "react-aria-components/GridList"
+import { ListBox, ListBoxItem } from "react-aria-components/ListBox"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
 import { useTheme } from "@/components/theme-provider"
@@ -71,7 +72,7 @@ export function ListComponents() {
 
       <div className="border-t bg-muted/50 py-6 sm:py-12">
         <PageContainer>
-          <GridList
+          <ListBox
             aria-label="Components"
             layout="grid"
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4"
@@ -85,7 +86,10 @@ export function ListComponents() {
               const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""
               const suffix = mounted && resolvedTheme === "dark" ? "-dark" : ""
               return (
-                <GridListItem
+                <ListBoxItem
+                  render={(domProps) =>
+                    "href" in domProps ? <NextLink {...domProps} /> : <span {...domProps} />
+                  }
                   textValue={`${item.slug} ${item.title}`}
                   key={item.slug}
                   className="group flex cursor-pointer flex-col gap-y-2 outline-hidden hover:opacity-80"
@@ -99,10 +103,10 @@ export function ListComponents() {
                     alt={item.title}
                   />
                   <span className="font-medium text-sm/6">{item.title}</span>
-                </GridListItem>
+                </ListBoxItem>
               )
             })}
-          </GridList>
+          </ListBox>
         </PageContainer>
       </div>
     </Autocomplete>
