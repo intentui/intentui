@@ -9,7 +9,10 @@
     },
     "description": "Monthly support to keep Intent UI growing, with optional public profile links.",
     "benefits": [
-      "Link to your profile or website"
+      {
+        "title": "Sponsor page logo",
+        "description": "Your logo shown on the sponsors page."
+      }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_NpCavu2shVKkSq8638ZU89h0Jx5bYDRWSNEB03H0syx",
     "type": "individual"
@@ -24,9 +27,18 @@
     },
     "description": "Monthly support to keep Intent UI growing, with a personal license for Design.",
     "benefits": [
-      "Logo displayed on the sponsors page",
-      "Link to your profile or website",
-      "Personal license for Intent UI Design"
+      {
+        "title": "Sponsor page logo",
+        "description": "Your logo shown on the sponsors page."
+      },
+      {
+        "title": "Profile link",
+        "description": "Add your profile or website link."
+      },
+      {
+        "title": "Personal design license",
+        "description": "Access to Intent UI Design."
+      }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_DM2E2Brz3WL2FWiZ95AKEFI3j8qG8UPSym1xZ1oaEIH",
     "type": "individual"
@@ -41,7 +53,10 @@
     },
     "description": "One-time support to keep Intent UI growing, with optional public profile links for 3 months.",
     "benefits": [
-      "Link to your profile or website for 3 months"
+      {
+        "title": "Profile link",
+        "description": "Your profile link shown for 3 months."
+      }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_ykUxq1qfcntnSVruv3fXfmy1dKCVBWP6iDSLd4KyYcw",
     "type": "individual"
@@ -56,9 +71,18 @@
     },
     "description": "A monthly sponsorship for companies who want to fund ongoing development, keep the project sustainable, and get optional public recognition.",
     "benefits": [
-      "Logo on the sponsors page",
-      "Your site in the showcase page",
-      "Logo on the Intent UI Repo"
+      {
+        "title": "Sponsor page logo",
+        "description": "Your logo shown on the sponsors page."
+      },
+      {
+        "title": "Showcase listing",
+        "description": "Your site featured in showcase."
+      },
+      {
+        "title": "Repo logo",
+        "description": "Your logo shown on GitHub repo."
+      }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_oQBCG5deVZxqfG6VPeodcNK24wtfDwuVOvZuN458ciy"
   },
@@ -72,11 +96,26 @@
     },
     "description": "A monthly sponsorship for companies who want to fund ongoing development, keep the project sustainable, and get optional public recognition.",
     "benefits": [
-      "Logo on the sponsors page",
-      "Your site in the showcase page",
-      "Logo on the Intent UI homepage",
-      "Small team license Intent UI Design",
-      "Logo on the Intent UI Repo"
+      {
+        "title": "Sponsor page logo",
+        "description": "Your logo shown on the sponsors page."
+      },
+      {
+        "title": "Showcase listing",
+        "description": "Your site featured in showcase."
+      },
+      {
+        "title": "Homepage logo",
+        "description": "Your logo shown on homepage."
+      },
+      {
+        "title": "Small team license",
+        "description": "Access for small teams."
+      },
+      {
+        "title": "Repo logo",
+        "description": "Your logo shown on GitHub repo."
+      }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_w61FC0fYmIr1X6oYoV5r5jNOZ65dve4InWZsX4OdCz8"
   },
@@ -90,12 +129,34 @@
     },
     "description": "A monthly sponsorship for companies who want to fund ongoing development, keep the project sustainable, and get optional public recognition.",
     "benefits": [
-      "Logo on the sponsors page",
-      "Your site in the showcase page",
-      "Logo on the Intent UI homepage",
-      "Logo on the Intent UI Design homepage",
-      "Growing team license Intent UI Design",
-      "Logo on the Intent UI Repo"
+      {
+        "title": "Sponsor page logo",
+        "description": "Your logo shown on the sponsors page."
+      },
+      {
+        "title": "Featured logo placement",
+        "description": "Your logo displayed at the top of the sponsors page."
+      },
+      {
+        "title": "Showcase listing",
+        "description": "Your site featured in showcase."
+      },
+      {
+        "title": "Intent UI homepage logo",
+        "description": "Your logo featured on the main homepage."
+      },
+      {
+        "title": "Design homepage logo",
+        "description": "Your logo featured on the design homepage."
+      },
+      {
+        "title": "Growing team license",
+        "description": "Access for growing teams."
+      },
+      {
+        "title": "Repo logo",
+        "description": "Your logo shown on GitHub repo."
+      }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_8wL5pKsf2b9Z54ZE7Pb2kTe6afTFbjLqSn9gZ29i97G"
   }

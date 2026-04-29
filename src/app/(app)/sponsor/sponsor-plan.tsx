@@ -3,7 +3,7 @@
 import { BuildingOffice2Icon, CheckIcon, UserCircleIcon } from "@heroicons/react/24/outline"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
-import { Text } from "@/components/ui/text"
+import { Strong, Text } from "@/components/ui/text"
 import json from "@/json/sponsors.json"
 
 interface SponsorPlanPrice {
@@ -17,7 +17,10 @@ interface SponsorPlanItem {
   name: string
   price: SponsorPlanPrice
   description: string
-  benefits: string[]
+  benefits: {
+    title: string
+    description: string
+  }[]
   checkout_url: string
   type: "individual" | "company"
 }
@@ -65,11 +68,11 @@ export function SponsorPlan() {
                   <div className="font-medium text-fg text-sm">{plan.name}</div>
 
                   <div className="font-semibold text-3xl tabular-nums tracking-tight">
-  ${plan.price.amount}
-  <span className="ml-1 font-normal text-base text-muted-fg">
-    {plan.id === 'o-sponsor' ? 'one time' : '/ month'}
-  </span>
-</div>
+                    ${plan.price.amount}
+                    <span className="ml-1 font-normal text-base text-muted-fg">
+                      {plan.id === "o-sponsor" ? "one time" : "/ month"}
+                    </span>
+                  </div>
 
                   <Text className="text-pretty">{plan.description}</Text>
                   <a href={plan.checkout_url} className={sponsorButton}>
@@ -78,9 +81,12 @@ export function SponsorPlan() {
                   {plan.benefits.length ? (
                     <ul className="space-y-4 text-sm/6">
                       {plan.benefits.map((benefit) => (
-                        <li key={benefit} className="flex gap-x-3">
+                        <li key={benefit.title} className="flex gap-x-3">
                           <CheckIcon className="h-lh w-4 shrink-0 text-primary-subtle-fg" />
-                          <span>{benefit}</span>
+                          <p className="text-pretty">
+                            <Strong>{benefit.title}</Strong>{" "}
+                            <span className="text-muted-fg">{benefit.description}</span>
+                          </p>
                         </li>
                       ))}
                     </ul>
@@ -130,9 +136,12 @@ export function SponsorPlan() {
                   {plan.benefits.length ? (
                     <ul className="space-y-4 text-sm/6">
                       {plan.benefits.map((benefit) => (
-                        <li key={benefit} className="flex gap-x-3">
+                        <li key={benefit.title} className="flex gap-x-3">
                           <CheckIcon className="h-lh w-4 shrink-0 text-primary-subtle-fg" />
-                          <span>{benefit}</span>
+                          <p className="text-pretty">
+                            <Strong>{benefit.title}</Strong>{" "}
+                            <span className="text-muted-fg">{benefit.description}</span>
+                          </p>
                         </li>
                       ))}
                     </ul>
