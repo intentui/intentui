@@ -27,6 +27,7 @@ import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
 import { Separator } from "@/components/ui/separator"
 import { app } from "@/config/app"
 import { useMediaQuery } from "@/hooks/use-media-query"
+import { NoLimitButton } from "@/components/no-limit-button";
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
