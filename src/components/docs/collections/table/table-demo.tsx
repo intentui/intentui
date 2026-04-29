@@ -1,7 +1,8 @@
 "use client"
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid"
 import { NumberFormatter } from "@internationalized/number"
-import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
+import { Button } from "@/components/ui/button"
+import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu"
 import {
   Table,
   TableBody,
@@ -36,20 +37,18 @@ export default function TableDemo() {
                 }).format(item.price)}
               </TableCell>
               <TableCell>{item.stock}</TableCell>
-              <TableCell>
-                <div className="flex justify-end">
-                  <Menu>
-                    <MenuTrigger className="size-6" aria-label="Options">
-                      <EllipsisVerticalIcon />
-                    </MenuTrigger>
-                    <MenuContent aria-label="Actions" placement="left top">
-                      <MenuItem>View</MenuItem>
-                      <MenuItem>Edit</MenuItem>
-                      <MenuSeparator />
-                      <MenuItem intent="danger">Delete</MenuItem>
-                    </MenuContent>
-                  </Menu>
-                </div>
+              <TableCell className="flex justify-end">
+                <Menu>
+                  <Button intent="plain" size="sq-sm" aria-label="Options">
+                    <EllipsisVerticalIcon />
+                  </Button>
+                  <MenuContent aria-label="Actions" placement="left top">
+                    <MenuItem>View</MenuItem>
+                    <MenuItem>Edit</MenuItem>
+                    <MenuSeparator />
+                    <MenuItem intent="danger">Delete</MenuItem>
+                  </MenuContent>
+                </Menu>
               </TableCell>
             </TableRow>
           )}
