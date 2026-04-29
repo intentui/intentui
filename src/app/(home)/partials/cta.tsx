@@ -26,19 +26,27 @@ export function Cta() {
           gap={2}
           columns={4}
         >
-          <ChoiceBoxItem href="/docs/getting-started/installation" textValue="install">
+          <ChoiceBoxItem
+            className="shadow-xs hover:shadow-none"
+            href="/docs/getting-started/installation"
+            textValue="install"
+          >
             <ChoiceBoxLabel>Setup</ChoiceBoxLabel>
             <ChoiceBoxDescription>
               Follow a simple step-by-step guide to install and start building with Intent UI.
             </ChoiceBoxDescription>
           </ChoiceBoxItem>
-          <ChoiceBoxItem href="/components" textValue="components">
+          <ChoiceBoxItem
+            className="shadow-xs hover:shadow-none"
+            href="/components"
+            textValue="components"
+          >
             <ChoiceBoxLabel>View components</ChoiceBoxLabel>
             <ChoiceBoxDescription>
               Browse all available UI components with detailed examples and usage guidance.
             </ChoiceBoxDescription>
           </ChoiceBoxItem>
-          <ChoiceBoxItem href="/blocks" textValue="blocks">
+          <ChoiceBoxItem className="shadow-xs hover:shadow-none" href="/blocks" textValue="blocks">
             <ChoiceBoxLabel>View blocks</ChoiceBoxLabel>
             <ChoiceBoxDescription>
               Pre-built application blocks with sidebars, navigation, authentication layouts and
@@ -46,7 +54,7 @@ export function Cta() {
             </ChoiceBoxDescription>
           </ChoiceBoxItem>
           <ChoiceBoxItem
-            className="relative"
+            className="relative shadow-xs hover:shadow-none"
             href="https://design.intentui.com/themes"
             target="_blank"
             textValue="themes"

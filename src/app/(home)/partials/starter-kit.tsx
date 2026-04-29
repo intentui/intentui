@@ -59,7 +59,7 @@ export function StarterKit() {
       >
         {(item) => (
           <ChoiceBoxItem
-            className="hover:bg-muted"
+            className="bg-bg shadow-xs hover:bg-muted hover:shadow-none"
             href={item.url}
             textValue={item.name}
             id={item.name}
