@@ -46,13 +46,13 @@ export function Navbar() {
             ))}
           </div>
         </div>
-        <div className="flex items-center gap-x-0.5 **:data-[slot=icon]:size-5">
+        <div className="flex items-center gap-x-2 **:[svg]:size-5">
           <Button
             onPress={() => setOpen(true)}
             aria-label="Search docs"
             className={buttonStyles({ intent: "plain", size: "sq-sm" })}
           >
-            <MagnifyingGlassIcon className="size-5" />
+            <MagnifyingGlassIcon />
           </Button>
           <Link
             className={buttonStyles({ intent: "plain", size: "sq-sm" })}

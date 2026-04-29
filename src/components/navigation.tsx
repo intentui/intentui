@@ -12,6 +12,7 @@ import { Link } from "@/components/link"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
 import { SponsorButton } from "@/components/sponsor-button"
+import { Badge } from "@/components/ui/badge"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 import { app } from "@/config/app"
@@ -132,9 +133,9 @@ export function Navigation() {
                       className="group"
                     >
                       3.x{" "}
-                      <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
+                      <Badge intent="primary" isCircle={false} className="ml-auto">
                         latest
-                      </span>
+                      </Badge>
                     </MenuItem>
                     <MenuItem href="https://2x.intentui.com/docs/getting-started/introduction">
                       2.x
@@ -144,9 +145,9 @@ export function Navigation() {
                       className="group"
                     >
                       1.x{" "}
-                      <span className="-mr-1 ml-auto rounded-[calc(var(--radius-lg)-2px)] border border-fg/10 bg-fg/5 px-2 font-medium text-xs/5 tracking-tight group-focus:border-white/20 group-focus:bg-white/15 dark:bg-fg/10">
+                      <Badge intent="warning" className="ml-2" isCircle={false}>
                         deprecated
-                      </span>
+                      </Badge>
                     </MenuItem>
                   </MenuContent>
                 </Menu>
