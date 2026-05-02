@@ -1,5 +1,17 @@
 [
   {
+    "name": "Table expandable demo",
+    "component": "table-expandable-demo.tsx",
+    "url": "/table",
+    "type": "demo",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 98,
+    "deletions": 63,
+    "date": "2026-04-29"
+  },
+  {
     "name": "Pagination",
     "component": "pagination.tsx",
     "url": "/pagination",
