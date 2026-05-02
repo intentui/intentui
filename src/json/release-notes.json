@@ -1,5 +1,29 @@
 [
   {
+    "name": "Calendar",
+    "component": "calendar.tsx",
+    "url": "/calendar",
+    "type": "component",
+    "category": "date-and-time",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 2,
+    "date": "2026-05-02"
+  },
+  {
+    "name": "Range calendar",
+    "component": "range-calendar.tsx",
+    "url": "/range-calendar",
+    "type": "component",
+    "category": "date-and-time",
+    "kind": "improvement",
+    "description": null,
+    "additions": 14,
+    "deletions": 14,
+    "date": "2026-05-02"
+  },
+  {
     "name": "Table expandable demo",
     "component": "table-expandable-demo.tsx",
     "url": "/table",

@@ -144,7 +144,7 @@ const SelectMonth = () => {
       <SelectTrigger className="w-22 text-sm/5 **:data-[slot=select-value]:inline-block **:data-[slot=select-value]:truncate sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
       <SelectContent className="min-w-0" items={months}>
         {(item) => (
-          <SelectItem>
+          <SelectItem textValue={item.formatted}>
             <SelectLabel>{item.formatted}</SelectLabel>
           </SelectItem>
         )}
@@ -184,7 +184,7 @@ const SelectYear = () => {
       <SelectTrigger className="text-sm/5 sm:px-2.5 sm:py-1.5 sm:*:text-sm/5" />
       <SelectContent items={years}>
         {(item) => (
-          <SelectItem>
+          <SelectItem textValue={item.formatted}>
             <SelectLabel>{item.formatted}</SelectLabel>
           </SelectItem>
         )}
