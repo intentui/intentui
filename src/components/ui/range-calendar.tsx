@@ -1,13 +1,12 @@
 "use client"
 
-import { getLocalTimeZone, today } from "@internationalized/date"
 import { CalendarCell, CalendarGrid, CalendarGridBody } from "react-aria-components/Calendar"
 import type { DateValue } from "react-aria-components/DateField"
 import {
   RangeCalendar as RangeCalendarPrimitive,
   type RangeCalendarProps,
 } from "react-aria-components/RangeCalendar"
-import { twMerge } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 import { CalendarGridHeader, CalendarHeader } from "./calendar"
 
 export function RangeCalendar<T extends DateValue>({
@@ -15,7 +14,6 @@ export function RangeCalendar<T extends DateValue>({
   visibleDuration = { months: 1 },
   ...props
 }: RangeCalendarProps<T>) {
-  const now = today(getLocalTimeZone())
   return (
     <RangeCalendarPrimitive data-slot="calendar" visibleDuration={visibleDuration} {...props}>
       <CalendarHeader isRange />
@@ -33,17 +31,19 @@ export function RangeCalendar<T extends DateValue>({
                 {(date) => (
                   <CalendarCell
                     date={date}
-                    className={twMerge([
-                      "shrink-0 [--cell-fg:var(--color-primary-subtle-fg)] [--cell:var(--color-primary-subtle)]",
-                      "group/calendar-cell relative size-11 cursor-default leading-[2.286rem] outline-hidden selection-start:rounded-s-lg data-selection-end:rounded-e-lg data-outside-month:text-muted-fg sm:size-9 sm:text-sm",
-                      "selected:bg-(--cell) selected:text-(--cell-fg)",
-                      "selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
-                      "invalid:selected:bg-danger-subtle",
-                      "[td:first-child_&]:rounded-s-lg [td:last-child_&]:rounded-e-lg",
-                      "forced-colors:selected:bg-[Highlight] forced-colors:selected:text-[HighlightText] forced-colors:invalid:selected:bg-[Mark]",
-                      date.compare(now) === 0 &&
-                        "after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-0.75 after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg",
-                    ])}
+                    className={({ isToday }) =>
+                      twJoin(
+                        "shrink-0 [--cell-fg:var(--color-primary-subtle-fg)] [--cell:var(--color-primary-subtle)]",
+                        "group/calendar-cell relative size-11 cursor-default leading-[2.286rem] outline-hidden selection-start:rounded-s-lg data-selection-end:rounded-e-lg data-outside-month:text-muted-fg sm:size-9 sm:text-sm",
+                        "selected:bg-(--cell) selected:text-(--cell-fg)",
+                        "selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
+                        "invalid:selected:bg-danger-subtle",
+                        "[td:first-child_&]:rounded-s-lg [td:last-child_&]:rounded-e-lg",
+                        "forced-colors:selected:bg-[Highlight] forced-colors:selected:text-[HighlightText] forced-colors:invalid:selected:bg-[Mark]",
+                        isToday &&
+                          "after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-0.75 after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg",
+                      )
+                    }
                   >
                     {({
                       formattedDate,
