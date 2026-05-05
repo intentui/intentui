@@ -1,5 +1,41 @@
 [
   {
+    "name": "Date picker",
+    "component": "date-picker.tsx",
+    "url": "/date-picker",
+    "type": "component",
+    "category": "date-and-time",
+    "kind": "improvement",
+    "description": null,
+    "additions": 6,
+    "deletions": 6,
+    "date": "2026-05-05"
+  },
+  {
+    "name": "Date range picker",
+    "component": "date-range-picker.tsx",
+    "url": "/date-range-picker",
+    "type": "component",
+    "category": "date-and-time",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 3,
+    "date": "2026-05-05"
+  },
+  {
+    "name": "Dialog",
+    "component": "dialog.tsx",
+    "url": "/dialog",
+    "type": "component",
+    "category": "overlays",
+    "kind": "improvement",
+    "description": null,
+    "additions": 0,
+    "deletions": 1,
+    "date": "2026-05-05"
+  },
+  {
     "name": "Calendar",
     "component": "calendar.tsx",
     "url": "/calendar",
