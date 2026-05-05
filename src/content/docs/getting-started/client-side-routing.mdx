@@ -11,7 +11,7 @@ React Aria Components such as [Link](/docs/components/navigation/link), [Menu](/
 
 By default, links are rendered as an `<a>` element. To integrate with a framework-specific routing component, use the `render` prop.
 
-```tsx
+```
 <Link
   {...props}
   render={(domProps) =>
@@ -22,11 +22,11 @@ By default, links are rendered as an `<a>` element. To integrate with a framewor
 
 The same pattern can also be used with `MenuItem`.
 
-```tsx
+```
 <MenuItem
   {...props}
   render={(domProps) =>
-    "href" in domProps ? <RouterLink {...domProps} /> : <span {...domProps} />
+    "href" in domProps ? <RouterLink {...domProps} /> : <div {...domProps} />
   }
 />
 ```
@@ -35,7 +35,7 @@ The same pattern can also be used with `MenuItem`.
 
 When using Laravel with Inertia.js, you can render the `Link` component as an Inertia `Link`.
 
-```tsx
+```
 import { Link as InertiaLink, type InertiaLinkProps } from "@inertiajs/react"
 import {
   Link as LinkPrimitive,
@@ -64,7 +64,7 @@ export function Link({ className, ref, ...props }: LinkProps) {
         "href" in domProps ? (
           <InertiaLink {...(props as InertiaLinkProps)} {...(domProps as InertiaLinkProps)} />
         ) : (
-          <span {...domProps} />
+          <div {...domProps} />
         )
       }
       {...(props as LinkPrimitiveProps)}
@@ -77,7 +77,7 @@ export function Link({ className, ref, ...props }: LinkProps) {
 
 When using Next.js, you can render the `Link` component as `NextLink` from `next/link`.
 
-```tsx
+```
 "use client"
 
 import {
@@ -106,7 +106,7 @@ export function Link({ className, ref, ...props }: LinkProps) {
       )}
       {...props}
       render={(domProps) =>
-        "href" in domProps ? <NextLink {...domProps} /> : <span {...domProps} />
+        "href" in domProps && domProps.href ? <NextLink {...domProps} /> : <div {...domProps} />
       }
     />
   )
@@ -117,10 +117,10 @@ export function Link({ className, ref, ...props }: LinkProps) {
 
 When using TanStack Router, wrap your link component with `createLink`. This allows the component to integrate with TanStack Router’s navigation system while still preserving React Aria behavior.
 
-```tsx
+```
 import { createLink } from "@tanstack/react-router"
 
-const InternalLink = ({ className, ref, ...props }: LinkProps) => {
+const Link = ({ className, ref, ...props }: LinkProps) => {
   return (
     <LinkPrimitive
       ref={ref}
@@ -143,10 +143,10 @@ export const Link = createLink(InternalLink)
 
 If the link is also used through `MenuItem`, update `MenuItem` in `ui/menu.tsx` using the same pattern.
 
-```tsx
+```
 import { createLink } from "@tanstack/react-router"
 
-const InternalMenuItem = ({
+const MenuItem = ({
   className,
   intent,
   children,
