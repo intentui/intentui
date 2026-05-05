@@ -5,7 +5,7 @@ import { Radio, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupDescriptionDemo() {
   return (
-    <RadioGroup defaultValue="sms">
+    <RadioGroup name="prefs" defaultValue="sms">
       <Label>Notification Preference</Label>
       <Description>Choose how you'd like to receive notifications.</Description>
 

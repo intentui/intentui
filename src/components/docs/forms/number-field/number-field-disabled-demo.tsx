@@ -5,7 +5,7 @@ import { NumberField, NumberInput } from "@/components/ui/number-field"
 
 export default function NumberFieldDisabledDemo() {
   return (
-    <NumberField isDisabled>
+    <NumberField isDisabled name="cookies">
       <Label>Cookies</Label>
       <NumberInput />
     </NumberField>

@@ -10,7 +10,7 @@ export default function TextFieldControlledDemo() {
   const [value, setValue] = useState("")
   return (
     <div className="fle flex-col">
-      <TextField value={value} onChange={setValue}>
+      <TextField value={value} onChange={setValue} name="name">
         <Label>Name</Label>
         <Input />
         <Description>

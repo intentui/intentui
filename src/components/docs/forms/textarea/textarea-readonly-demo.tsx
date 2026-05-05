@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function TextareaReadonlyDemo() {
   return (
-    <TextField isReadOnly>
+    <TextField isReadOnly name="address">
       <Label>Address</Label>
       <Textarea />
     </TextField>

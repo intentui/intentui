@@ -9,7 +9,7 @@ export default function NumberFieldControlledDemo() {
   const [number, setNumber] = useState(1280)
   return (
     <div>
-      <NumberField value={number} onChange={setNumber}>
+      <NumberField value={number} onChange={setNumber} name="width">
         <Label>Width</Label>
         <NumberInput />
       </NumberField>

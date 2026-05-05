@@ -5,7 +5,7 @@ import { Switch, SwitchLabel } from "@/components/ui/switch"
 
 export default function SwitchUncontrolledDemo() {
   return (
-    <Switch defaultSelected>
+    <Switch defaultSelected name="d">
       {({ isSelected }) => (
         <>
           <SwitchLabel>Dark mode</SwitchLabel>

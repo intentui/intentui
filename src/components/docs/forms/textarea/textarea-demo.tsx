@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function TextareaDemo() {
   return (
-    <TextField>
+    <TextField name="bio">
       <Label>Bio</Label>
       <Textarea />
     </TextField>

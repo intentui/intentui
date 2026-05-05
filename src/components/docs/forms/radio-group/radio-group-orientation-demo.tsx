@@ -5,7 +5,7 @@ import { Radio, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupOrientationDemo() {
   return (
-    <RadioGroup orientation="horizontal">
+    <RadioGroup name="pm" orientation="horizontal">
       <Label>Payment method</Label>
       <Radio value="credit-card">Credit Card</Radio>
       <Radio value="paypal">PayPal</Radio>

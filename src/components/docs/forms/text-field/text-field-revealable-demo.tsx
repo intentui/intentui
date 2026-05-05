@@ -12,7 +12,7 @@ export default function TextFieldRevealableDemo() {
 
   const toggleVisibility = () => setIsVisible((prevState) => !prevState)
   return (
-    <TextField>
+    <TextField name="password">
       <Label>Password</Label>
       <InputGroup className="[--input-gutter-end:--spacing(12)]">
         <Input placeholder="Your password" type={isVisible ? "text" : "password"} />

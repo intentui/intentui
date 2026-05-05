@@ -9,7 +9,7 @@ export default function RadioGroupControlledDemo() {
   const [selected, setSelected] = useState("")
   return (
     <>
-      <RadioGroup value={selected} onChange={setSelected}>
+      <RadioGroup name="features" value={selected} onChange={setSelected}>
         <Label>Features</Label>
         <Radio value="theme">Theme</Radio>
         <Radio value="language">Language</Radio>

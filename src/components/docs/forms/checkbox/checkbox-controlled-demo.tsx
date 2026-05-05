@@ -9,7 +9,7 @@ export default function CheckboxControlledDemo() {
   const [selected, setSelection] = useState(false)
   return (
     <>
-      <Checkbox isSelected={selected} onChange={setSelection} value="updates">
+      <Checkbox isSelected={selected} onChange={setSelection} value="updates" name="ru">
         Receive Updates
       </Checkbox>
       <Description className="mt-2 block [&>strong]:text-fg">

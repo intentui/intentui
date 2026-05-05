@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/field"
 
 export default function CheckboxGroupUncontrolledDemo() {
   return (
-    <CheckboxGroup defaultValue={["sound", "wifi"]}>
+    <CheckboxGroup defaultValue={["sound", "wifi"]} name="options">
       <Label>Options</Label>
       <Checkbox value="sound">Sound</Checkbox>
       <Checkbox value="wifi">Wi-Fi</Checkbox>

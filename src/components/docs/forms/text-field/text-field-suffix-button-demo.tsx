@@ -27,11 +27,11 @@ export default function TextFieldSuffixButtonDemo() {
           <ModalDescription>Create a new user account</ModalDescription>
         </ModalHeader>
         <ModalBody className="flex flex-col gap-4">
-          <TextField>
+          <TextField name="username">
             <Label>Username</Label>
             <Input placeholder="Username" />
           </TextField>
-          <TextField>
+          <TextField name="email">
             <Label>Email</Label>
             <Input type="email" placeholder="Email" />
           </TextField>

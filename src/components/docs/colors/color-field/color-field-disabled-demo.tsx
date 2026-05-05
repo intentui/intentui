@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 
 export default function ColorFieldDisabledDemo() {
   return (
-    <ColorField isDisabled>
+    <ColorField isDisabled name="color">
       <Label>Color</Label>
       <Input placeholder="#155DFC" />
     </ColorField>

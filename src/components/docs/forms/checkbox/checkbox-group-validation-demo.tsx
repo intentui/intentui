@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/field"
 export default function CheckboxValidationDemo() {
   return (
     <Form onSubmit={() => {}} className="space-y-6">
-      <CheckboxGroup isRequired>
+      <CheckboxGroup isRequired name="settings">
         <Label>Settings</Label>
         <Checkbox value="notifications">Enable notifications</Checkbox>
         <Checkbox value="auto_update">Auto-update applications</Checkbox>

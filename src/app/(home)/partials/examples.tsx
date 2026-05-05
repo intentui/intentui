@@ -10,7 +10,7 @@ import LineChartDemo from "@/components/docs/visualizations/line-chart/line-char
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
 import { Description, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { TextField } from "@/components/ui/text-field"
@@ -30,16 +30,16 @@ export function Examples() {
         <BlocksCard className="w-full lg:w-1/3">
           <div className="flex flex-col gap-y-6">
             <CardHeader title="Sign in" description="Enter your email and password to sign in." />
-            <TextField>
+            <TextField name="email" autoComplete="email">
               <Label>Email</Label>
               <Input type="email" placeholder="you@domain.com" />
             </TextField>
-            <TextField>
+            <TextField name="password">
               <Label>Password</Label>
               <Input type="password" placeholder="Shhh..." />
             </TextField>
-            <Checkbox>
-              <Label>Remember me</Label>
+            <Checkbox name="remember">
+              <CheckboxLabel>Remember me</CheckboxLabel>
               <Description>
                 Keep me signed in on this device. This will set a cookie to remember your
                 preferences.

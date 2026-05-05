@@ -8,7 +8,7 @@ import { SearchField, SearchInput } from "@/components/ui/search-field"
 export default function SearchFieldValidationDemo() {
   return (
     <Form className="space-y-4">
-      <SearchField isRequired>
+      <SearchField isRequired name="search">
         <Label>Name</Label>
         <SearchInput />
         <FieldError />

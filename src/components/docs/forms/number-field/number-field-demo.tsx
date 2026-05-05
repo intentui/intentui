@@ -5,7 +5,7 @@ import { NumberField, NumberInput } from "@/components/ui/number-field"
 
 export default function NumberFieldDemo() {
   return (
-    <NumberField>
+    <NumberField name="cookies">
       <Label>Cookies</Label>
       <NumberInput />
     </NumberField>

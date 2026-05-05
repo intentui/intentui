@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function TextareaUncontrolledDemo() {
   return (
-    <TextField defaultValue="Brooklyn New York, USA">
+    <TextField defaultValue="Brooklyn New York, USA" name="address">
       <Label>Address</Label>
       <Textarea />
     </TextField>
