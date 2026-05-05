@@ -1,4 +1,5 @@
 "use client"
+
 import type {
   ColorSwatchPickerItemProps,
   ColorSwatchPickerProps,
@@ -14,10 +15,10 @@ export function ColorSwatchPicker({ className, ...props }: ColorSwatchPickerProp
 }
 
 export function ColorSwatchPickerItem({
-  children,
-  className,
-  ...props
-}: ColorSwatchPickerItemProps) {
+                                        children,
+                                        className,
+                                        ...props
+                                      }: ColorSwatchPickerItemProps) {
   return (
     <PrimitiveColorSwatchPickerItem
       style={({ defaultStyle }) => ({
@@ -27,7 +28,7 @@ export function ColorSwatchPickerItem({
           : undefined,
       })}
       className={cx(
-        "relative rounded-lg outline-hidden *:rounded-[calc(var(--radius-lg)-1px)]",
+        "relative size-(--default-item-size,--spacing(8)) rounded-lg outline-hidden *:rounded-[calc(var(--radius-lg)-1px)] *:data-[slot=color-swatch]:size-(--default-item-size,--spacing(8))",
         "selected:ring-3 selected:ring-ring/20 selected:*:inset-ring-current/40",
         "focus-visible:opacity-80 focus-visible:ring-ring/20 focus-visible:*:inset-ring-current/40",
         "hover:opacity-90",
