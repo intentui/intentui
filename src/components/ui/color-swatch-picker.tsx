@@ -15,10 +15,10 @@ export function ColorSwatchPicker({ className, ...props }: ColorSwatchPickerProp
 }
 
 export function ColorSwatchPickerItem({
-                                        children,
-                                        className,
-                                        ...props
-                                      }: ColorSwatchPickerItemProps) {
+  children,
+  className,
+  ...props
+}: ColorSwatchPickerItemProps) {
   return (
     <PrimitiveColorSwatchPickerItem
       style={({ defaultStyle }) => ({
