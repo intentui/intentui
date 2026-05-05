@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 
 export default function ColorFieldDemo() {
   return (
-    <ColorField>
+    <ColorField name="color">
       <Label>Color</Label>
       <Input placeholder="#155DFC" />
     </ColorField>

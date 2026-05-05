@@ -10,8 +10,8 @@ export default function TextareaValidationDemo() {
   const [value, setValue] = useState("")
   return (
     <Form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-      <TextField value={value} onChange={setValue} isRequired>
-        <Label>Adresss</Label>
+      <TextField value={value} onChange={setValue} isRequired name="address">
+        <Label>Address</Label>
         <Textarea />
         <FieldError />
       </TextField>

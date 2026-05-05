@@ -13,7 +13,7 @@ export default function ColorFieldValidationDemo() {
 
   return (
     <Form onSubmit={submit} className="space-y-4">
-      <ColorField isRequired>
+      <ColorField isRequired name="color">
         <Label>Color</Label>
         <Input placeholder="#155DFC" />
         <FieldError />

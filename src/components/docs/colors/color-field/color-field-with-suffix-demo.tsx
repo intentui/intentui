@@ -7,7 +7,7 @@ import { Input, InputGroup } from "@/components/ui/input"
 
 export default function ColorFieldWithSuffixDemo() {
   return (
-    <ColorField>
+    <ColorField name="color">
       <Label>Color</Label>
       <InputGroup>
         <Input placeholder="#155DFC" />

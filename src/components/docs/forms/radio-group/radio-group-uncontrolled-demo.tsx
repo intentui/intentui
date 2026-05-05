@@ -5,7 +5,7 @@ import { Radio, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupUncontrolledDemo() {
   return (
-    <RadioGroup defaultValue="theme">
+    <RadioGroup name="feat" defaultValue="theme">
       <Label>Features</Label>
       <Radio value="language">Language</Radio>
       <Radio value="timezone">Timezone</Radio>

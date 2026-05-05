@@ -12,6 +12,7 @@ export default function ColorFieldControlledDemo() {
   return (
     <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
       <ColorField
+        name="color"
         className="min-w-56"
         value={color}
         onChange={(newColor: Color | null) => newColor && setColor(newColor)}

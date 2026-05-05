@@ -9,7 +9,7 @@ import { TextField } from "@/components/ui/text-field"
 export default function TextFieldValidationDemo() {
   return (
     <Form className="space-y-4">
-      <TextField isRequired>
+      <TextField isRequired name="name">
         <Label>Name</Label>
         <Input />
         <FieldError />

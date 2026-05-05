@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function TextareaDisabledDemo() {
   return (
-    <TextField isDisabled>
+    <TextField isDisabled name="address">
       <Label>Address</Label>
       <Textarea />
     </TextField>

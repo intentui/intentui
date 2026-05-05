@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/field"
 
 export default function CheckboxGroupDemo() {
   return (
-    <CheckboxGroup>
+    <CheckboxGroup name="settings">
       <Label>Settings</Label>
       <Checkbox value="notifications">Enable notifications</Checkbox>
       <Checkbox value="auto_update">Auto-update applications</Checkbox>

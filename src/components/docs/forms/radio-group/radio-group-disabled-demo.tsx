@@ -5,7 +5,7 @@ import { Radio, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupDisabledDemo() {
   return (
-    <RadioGroup isDisabled>
+    <RadioGroup name="features" isDisabled>
       <Label>Features</Label>
       <Radio value="fs">Font size: Small, Medium, Large</Radio>
       <Radio value="dr">Display resolution: 1080p, 1440p, 4K</Radio>

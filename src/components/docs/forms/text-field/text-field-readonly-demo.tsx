@@ -6,7 +6,7 @@ import { TextField } from "@/components/ui/text-field"
 
 export default function TextFieldReadonlyDemo() {
   return (
-    <TextField isReadOnly>
+    <TextField isReadOnly name="name">
       <Label>Name</Label>
       <Input />
     </TextField>

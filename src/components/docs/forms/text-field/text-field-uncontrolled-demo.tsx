@@ -6,7 +6,7 @@ import { TextField } from "@/components/ui/text-field"
 
 export default function TextFieldUncontrolledDemo() {
   return (
-    <TextField defaultValue="Irsyad">
+    <TextField defaultValue="Irsyad" name="name">
       <Label>Name</Label>
       <Input />
     </TextField>

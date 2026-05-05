@@ -3,5 +3,5 @@
 import { Switch } from "@/components/ui/switch"
 
 export default function SwitchDemo() {
-  return <Switch>Switch Theme</Switch>
+  return <Switch name="theme">Switch Theme</Switch>
 }

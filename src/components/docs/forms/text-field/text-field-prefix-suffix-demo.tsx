@@ -9,7 +9,7 @@ import { TextField } from "@/components/ui/text-field"
 export default function TextFieldPrefixSuffixDemo() {
   return (
     <div className="flex flex-col gap-4">
-      <TextField>
+      <TextField name="twitter">
         <Label>Twitter</Label>
         <InputGroup>
           <AtSymbolIcon />
@@ -17,7 +17,7 @@ export default function TextFieldPrefixSuffixDemo() {
           <BrandXIcon />
         </InputGroup>
       </TextField>
-      <TextField>
+      <TextField name="sites">
         <Label>Sites</Label>
         <InputGroup className="[--input-gutter-end:--spacing(12)] [--input-gutter-start:--spacing(16)]">
           <Text>https://</Text>

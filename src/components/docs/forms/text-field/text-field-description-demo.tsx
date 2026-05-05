@@ -6,7 +6,7 @@ import { TextField } from "@/components/ui/text-field"
 
 export default function TextFieldDescriptionDemo() {
   return (
-    <TextField>
+    <TextField name="name">
       <Label>Name</Label>
       <Input />
       <Description>Please enter your legal name.</Description>

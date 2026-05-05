@@ -4,7 +4,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 export default function CheckboxUncontrolledDemo() {
   return (
-    <Checkbox defaultSelected value="updates">
+    <Checkbox defaultSelected value="updates" name="ru">
       Receive Updates
     </Checkbox>
   )

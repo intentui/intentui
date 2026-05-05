@@ -9,7 +9,7 @@ export default function CheckboxGroupControlledDemo() {
   const [values, setValues] = useState<string[]>([])
   return (
     <>
-      <CheckboxGroup value={values} onChange={setValues}>
+      <CheckboxGroup value={values} onChange={setValues} name="options">
         <Label>Options</Label>
         <Checkbox value="sound">Sound</Checkbox>
         <Checkbox value="wifi">Wi-Fi</Checkbox>
