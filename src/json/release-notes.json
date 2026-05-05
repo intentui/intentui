@@ -1,5 +1,17 @@
 [
   {
+    "name": "Color swatch picker",
+    "component": "color-swatch-picker.tsx",
+    "url": "/color-swatch-picker",
+    "type": "component",
+    "category": "colors",
+    "kind": "improvement",
+    "description": null,
+    "additions": 6,
+    "deletions": 5,
+    "date": "2026-05-05"
+  },
+  {
     "name": "Color field controlled demo",
     "component": "color-field-controlled-demo.tsx",
     "url": "/color-field",

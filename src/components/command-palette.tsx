@@ -142,11 +142,11 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
           </CommandMenuItem>
           <CommandMenuItem textValue="premium block" href="https://dub.sh/designiui">
             <CommandMenuLabel>Premium blocks</CommandMenuLabel>
-            <ArrowTopRightOnSquareIcon className="-mt-2" />
+            <ArrowTopRightOnSquareIcon />
           </CommandMenuItem>
           <CommandMenuItem textValue="themes" href="https://design.intentui.com/themes">
             <CommandMenuLabel>Themes</CommandMenuLabel>
-            <ArrowTopRightOnSquareIcon className="-mt-2" />
+            <ArrowTopRightOnSquareIcon />
           </CommandMenuItem>
         </CommandMenuSection>
 
