@@ -11,12 +11,12 @@ import {
 import type { GroupProps } from "react-aria-components/Group"
 import type { PopoverProps } from "react-aria-components/Popover"
 import { twJoin } from "tailwind-merge"
-import { DateInput } from "@/components/ui/date-field"
-import { fieldStyles } from "@/components/ui/field"
-import { InputGroup } from "@/components/ui/input"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cx } from "@/lib/primitive"
 import { Calendar } from "./calendar"
+import { DateInput } from "./date-field"
+import { fieldStyles } from "./field"
+import { InputGroup } from "./input"
 import { ModalContent } from "./modal"
 import { PopoverContent } from "./popover"
 import { RangeCalendar } from "./range-calendar"
@@ -63,7 +63,7 @@ export function DatePickerOverlay({
   const isMobile = useIsMobile()
 
   return isMobile ? (
-    <ModalContent aria-label="Date picker" closeButton={false}>
+    <ModalContent closeButton={false}>
       <div className="flex justify-center p-6">
         {range ? (
           <RangeCalendar pageBehavior={pageBehavior} visibleDuration={visibleDuration} />

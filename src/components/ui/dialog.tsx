@@ -122,7 +122,6 @@ interface CloseButtonIndicatorProps extends Omit<ButtonProps, "children"> {
 const DialogCloseIcon = ({ className, ...props }: CloseButtonIndicatorProps) => {
   return props.isDismissable ? (
     <PrimitiveButton
-      aria-label="Close"
       slot="close"
       className={cx(
         "close absolute end-1 top-1 z-50 grid size-8 place-content-center rounded-xl hover:bg-secondary focus:bg-secondary focus:outline-hidden focus-visible:ring-1 focus-visible:ring-primary sm:end-2 sm:top-2 sm:size-7 sm:rounded-md",
