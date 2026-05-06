@@ -1,5 +1,17 @@
 [
   {
+    "name": "Toggle",
+    "component": "toggle.tsx",
+    "url": "/toggle",
+    "type": "component",
+    "category": "buttons",
+    "kind": "improvement",
+    "description": null,
+    "additions": 13,
+    "deletions": 13,
+    "date": "2026-05-06"
+  },
+  {
     "name": "Color swatch picker",
     "component": "color-swatch-picker.tsx",
     "url": "/color-swatch-picker",
