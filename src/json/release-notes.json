@@ -1,5 +1,29 @@
 [
   {
+    "name": "Card",
+    "component": "card.tsx",
+    "url": "/card",
+    "type": "component",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-08"
+  },
+  {
+    "name": "Heading",
+    "component": "heading.tsx",
+    "url": "/heading",
+    "type": "component",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-08"
+  },
+  {
     "name": "Toggle",
     "component": "toggle.tsx",
     "url": "/toggle",
