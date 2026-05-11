@@ -14,7 +14,7 @@ export const toggleStyles = tv({
     "focus-visible:*:[svg]:text-(--toggle-icon-active)",
     "selected:*:[svg]:text-(--toggle-icon-active)",
     "hover:*:[svg]:text-(--toggle-icon-active)",
-    "*:[svg]:-mx-0.5 *:[svg]:shrink-0 *:[svg]:self-center *:[svg]:text-(--toggle-icon) pressed:*:[svg]:text-(--toggle-icon-active) focus-visible:*:[svg]:text-(--toggle-icon-active)/80 hover:*:[svg]:text-(--toggle-icon-active)/90 forced-colors:[--toggle-icon:ButtonText] forced-colors:hover:[--toggle-icon:ButtonText]",
+    "forced-colors:[--toggle-icon:ButtonText] forced-colors:hover:[--toggle-icon:ButtonText] *:[svg]:-mx-0.5 *:[svg]:shrink-0 *:[svg]:self-center *:[svg]:text-(--toggle-icon) pressed:*:[svg]:text-(--toggle-icon-active) hover:*:[svg]:text-(--toggle-icon-active)/90 focus-visible:*:[svg]:text-(--toggle-icon-active)/80",
     "forced-colors:[--toggle-icon:ButtonText] forced-colors:hover:[--toggle-icon:ButtonText]",
   ],
   variants: {
@@ -43,22 +43,10 @@ export const toggleStyles = tv({
         "min-h-10 gap-x-2 px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(3)-1px)] sm:min-h-9 sm:px-3 sm:py-[calc(--spacing(1.5)-1px)] sm:text-sm/7",
         "*:[svg]:size-5 sm:*:[svg]:size-4.5",
       ],
-      "sq-xs": [
-        "touch-target size-8 shrink-0 sm:size-7",
-        "*:[svg]:size-3.5 sm:*:[svg]:size-3",
-      ],
-      "sq-sm": [
-        "touch-target size-10 shrink-0 sm:size-8",
-        "*:[svg]:size-4.5 sm:*:[svg]:size-4",
-      ],
-      "sq-md": [
-        "touch-target size-11 shrink-0 sm:size-9",
-        "*:[svg]:size-5 sm:*:[svg]:size-4.5",
-      ],
-      "sq-lg": [
-        "touch-target size-12 shrink-0 sm:size-10",
-        "*:[svg]:size-6 sm:*:[svg]:size-5",
-      ],
+      "sq-xs": ["touch-target size-8 shrink-0 sm:size-7", "*:[svg]:size-3.5 sm:*:[svg]:size-3"],
+      "sq-sm": ["touch-target size-10 shrink-0 sm:size-8", "*:[svg]:size-4.5 sm:*:[svg]:size-4"],
+      "sq-md": ["touch-target size-11 shrink-0 sm:size-9", "*:[svg]:size-5 sm:*:[svg]:size-4.5"],
+      "sq-lg": ["touch-target size-12 shrink-0 sm:size-10", "*:[svg]:size-6 sm:*:[svg]:size-5"],
     },
     isCircle: {
       true: "rounded-full",
