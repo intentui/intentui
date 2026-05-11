@@ -13589,6 +13589,509 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "editor-x",
+      "extends": "none",
+      "type": "registry:block",
+      "title": "Editor X",
+      "description": "A rich text editor built on Lexical with plugins, nodes, extensions, and toolbar support.",
+      "dependencies": [
+        "@lexical/code",
+        "@lexical/code-shiki",
+        "@lexical/code-prism",
+        "@lexical/extension",
+        "@lexical/file",
+        "@lexical/hashtag",
+        "@lexical/link",
+        "@lexical/list",
+        "@lexical/markdown",
+        "@lexical/overflow",
+        "@lexical/react",
+        "@lexical/rich-text",
+        "@lexical/selection",
+        "@lexical/table",
+        "@lexical/text",
+        "@lexical/utils",
+        "lexical",
+        "lodash"
+      ],
+      "devDependencies": [
+        "@types/lodash"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/button-group",
+        "http://localhost:3000/r/color-area",
+        "http://localhost:3000/r/color-field",
+        "http://localhost:3000/r/color-picker",
+        "http://localhost:3000/r/color-slider",
+        "http://localhost:3000/r/color-swatch",
+        "http://localhost:3000/r/color-thumb",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/input",
+        "http://localhost:3000/r/menu",
+        "http://localhost:3000/r/modal",
+        "http://localhost:3000/r/popover",
+        "http://localhost:3000/r/scroll-area",
+        "http://localhost:3000/r/select",
+        "http://localhost:3000/r/separator",
+        "http://localhost:3000/r/tabs",
+        "http://localhost:3000/r/toggle",
+        "http://localhost:3000/r/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/editor/context/toolbar-context.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/editor-hooks/use-debounce.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/editor-hooks/use-modal.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/editor-hooks/use-report.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/editor-hooks/use-update-toolbar.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/editor-ui/code-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/editor-ui/content-editable.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/editor-ui/date-time-component.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/editor-ui/image-component.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/extensions/date-time-extension.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/extensions/drag-drop-paste-extension.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/extensions/emojis-extension.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/extensions/images-extension.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/extensions/keywords-extension.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/extensions/markdown-shortcuts-extension.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/extensions/max-length-extension.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/autocomplete-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/date-time-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/embeds/tweet-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/embeds/youtube-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/emoji-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/image-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/keyword-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/layout-container-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/layout-item-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/mention-node.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/nodes/special-text-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/actions-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/clear-editor-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/counter-character-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/edit-mode-toggle-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/import-export-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/markdown-toggle-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/share-content-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/speech-to-text-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/actions/tree-view-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/auto-complete-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/code-action-menu-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/code-highlight-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/component-picker-menu-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/context-menu-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/draggable-block-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/embeds/auto-embed-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/embeds/twitter-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/embeds/youtube-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/emoji-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/floating-link-editor-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/floating-text-format-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/layout-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/mentions-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/alignment-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/bulleted-list-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/check-list-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/code-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/columns-layout-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/component-picker-option.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/date-time-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/divider-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/embeds-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/heading-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/image-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/numbered-list-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/paragraph-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/quote-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/picker/table-picker-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/special-text-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/tab-focus-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/table-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format/block-format-data.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format/format-bulleted-list.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format/format-check-list.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format/format-code-block.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format/format-heading.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format/format-numbered-list.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format/format-paragraph.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format/format-quote.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-format-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-insert/insert-columns-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-insert/insert-embeds.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-insert/insert-horizontal-rule.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-insert/insert-image.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-insert/insert-table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/block-insert-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/clear-formatting-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/code-language-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/element-format-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/font-background-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/font-color-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/font-family-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/font-format-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/font-size-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/history-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/link-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/subsuper-toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/toolbar/toolbar-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/plugins/typing-pref-plugin.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/shared/can-use-dom.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/themes/editor-theme.css",
+          "type": "registry:file",
+          "target": "src/components/editor/themes/editor-theme.css"
+        },
+        {
+          "path": "src/components/editor/themes/editor-theme.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/transformers/markdown-emoji-transformer.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/transformers/markdown-hr-transformer.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/transformers/markdown-image-transformer.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/transformers/markdown-table-transformer.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/transformers/markdown-tweet-transformer.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/utils/doc-serialization.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/utils/emoji-list.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/utils/get-dom-range-rect.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/utils/get-selected-node.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/utils/set-floating-elem-position-for-link-editor.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/utils/set-floating-elem-position.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/utils/swipe.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/editor/utils/url.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
       "name": "all",
       "title": "All UI components",
