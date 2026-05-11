@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
-import { Link } from "@/components/link"
+import { Link } from "@/components/ui/link"
 
 export function BrandLogoLink({ className }: { className?: string }) {
   return (
