@@ -1,5 +1,29 @@
 [
   {
+    "name": "Link",
+    "component": "link.tsx",
+    "url": "/link",
+    "type": "component",
+    "category": "navigation",
+    "kind": "improvement",
+    "description": null,
+    "additions": 4,
+    "deletions": 6,
+    "date": "2026-05-11"
+  },
+  {
+    "name": "Toggle",
+    "component": "toggle.tsx",
+    "url": "/toggle",
+    "type": "component",
+    "category": "buttons",
+    "kind": "improvement",
+    "description": null,
+    "additions": 5,
+    "deletions": 17,
+    "date": "2026-05-11"
+  },
+  {
     "name": "Card",
     "component": "card.tsx",
     "url": "/card",

@@ -1,8 +1,8 @@
 "use client"
 
 import { twMerge } from "tailwind-merge"
-import { Link } from "@/components/link"
 import { buttonStyles } from "@/components/ui/button"
+import { Link } from "@/components/ui/link"
 
 export function SponsorButton({ className }: { className?: string }) {
   return (

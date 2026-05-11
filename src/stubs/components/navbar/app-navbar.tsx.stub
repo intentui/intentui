@@ -1,6 +1,6 @@
 import { IconBrandIntentui, IconSearch, IconShoppingBag } from "@intentui/icons"
 import { Button } from "@/components/ui/button"
-import { Link } from "@/components/link"
+import { Link } from "@/components/ui/link"
 import {
   Navbar,
   NavbarGap,
