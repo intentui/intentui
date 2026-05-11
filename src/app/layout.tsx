@@ -5,9 +5,10 @@ import { app, META_THEME_COLORS } from "@/config/app"
 import "@/styles/app.css"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
+import { headers } from "next/headers"
 import { Suspense } from "react"
 import { AurelieAnalytics } from "@/components/aurelie-analytics"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Providers } from "@/components/providers"
 import { Toast } from "@/components/ui/toast"
 
 export const metadata: Metadata = {
@@ -105,7 +106,10 @@ interface Props {
   children: React.ReactNode
 }
 
-export default function RootLayout({ children }: Readonly<Props>) {
+export default async function RootLayout({ children }: Readonly<Props>) {
+  const acceptLanguage = (await headers()).get("accept-language")
+  const lang = acceptLanguage?.split(/[,;]/)[0] || "en-US"
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -152,11 +156,11 @@ export default function RootLayout({ children }: Readonly<Props>) {
         <meta name="theme-color" content={META_THEME_COLORS.light} />
       </head>
       <body className="min-h-svh font-sans antialiased">
-        <ThemeProvider enableSystem disableTransitionOnChange attribute="class">
+        <Providers lang={lang}>
           <AppBootstrap />
           <Toast />
           <main>{children}</main>
-        </ThemeProvider>
+        </Providers>
         <Suspense>
           <AurelieAnalytics />
         </Suspense>
