@@ -12,7 +12,7 @@ import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 
 export function SliderGroup({ className, ...props }: React.ComponentProps<"div">) {
-  return <div className="flex items-center gap-x-3 *:data-[slot=icon]:size-5" {...props} />
+  return <div className={twMerge("flex items-center gap-x-3 *:data-[slot=icon]:size-5", className)} {...props} />
 }
 
 export function Slider({ className, ...props }: React.ComponentProps<typeof PrimitiveSlider>) {

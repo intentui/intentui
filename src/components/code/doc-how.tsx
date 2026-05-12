@@ -33,8 +33,8 @@ export const DocHow = ({
   minW60 = false,
   isCenter = true,
   withNoPadding = false,
-  copyButton = true,
-  src,
+  copyButton: _copyButton = true,
+  src: _src,
   ...props
 }: HowProps) => {
   const [currentTab, setCurrentTab] = useState<"tab_preview" | "tab_code">("tab_preview")

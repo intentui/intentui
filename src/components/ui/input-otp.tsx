@@ -7,7 +7,6 @@ import { twMerge } from "tailwind-merge"
 import { fieldStyles, Label } from "@/components/ui/field"
 
 export function InputOTP({
-  className,
   containerClassName,
   ...props
 }: React.ComponentPropsWithoutRef<typeof OTPInput>) {

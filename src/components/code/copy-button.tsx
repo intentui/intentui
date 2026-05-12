@@ -18,7 +18,7 @@ interface CopyButtonProps extends React.ComponentProps<typeof Button> {
 
 export function CopyButton({
   text,
-  alwaysVisible = false,
+  alwaysVisible: _alwaysVisible = false,
   isCopied: isCopiedProp,
   setIsCopied: setIsCopiedProp,
   className,

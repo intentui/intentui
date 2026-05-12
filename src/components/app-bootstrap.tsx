@@ -11,7 +11,7 @@ export function AppBootstrap() {
     const root = document.documentElement
     const savedLayout = localStorage.getItem("layout")
 
-    for (const className of [...root.classList]) {
+    for (const className of Array.from(root.classList)) {
       if (className.startsWith("layout-")) {
         root.classList.remove(className)
       }

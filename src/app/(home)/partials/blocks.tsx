@@ -92,5 +92,5 @@ export function BlocksCard({ className, ...props }: React.ComponentProps<"div">)
 }
 
 function Center({ className, ...props }: React.ComponentProps<"div">) {
-  return <div className="flex size-full items-center justify-center" {...props} />
+  return <div className={twMerge("flex size-full items-center justify-center", className)} {...props} />
 }

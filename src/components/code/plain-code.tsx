@@ -27,7 +27,6 @@ export interface PreProps extends React.HTMLAttributes<HTMLElement> {
    *
    * @defaultValue false
    */
-  keepBackground?: boolean
 }
 
 export const Pre = ({ className, ref, ...props }: React.ComponentProps<"pre">) => {
@@ -46,7 +45,6 @@ export const PlainCode = ({
   className,
   title,
   allowCopy = true,
-  keepBackground = true,
   icon,
   ref,
   ...props
@@ -74,7 +72,6 @@ export const PlainCode = ({
       className={twMerge(
         "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6 shadow-sm",
         "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
-        // keepBackground && "bg-white dark:bg-zinc-950!",
         className,
       )}
     >
