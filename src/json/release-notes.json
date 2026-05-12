@@ -1,5 +1,29 @@
 [
   {
+    "name": "List box",
+    "component": "list-box.tsx",
+    "url": "/list-box",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-12"
+  },
+  {
+    "name": "Toolbar",
+    "component": "toolbar.tsx",
+    "url": "/toolbar",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 2,
+    "date": "2026-05-12"
+  },
+  {
     "name": "Link",
     "component": "link.tsx",
     "url": "/link",
