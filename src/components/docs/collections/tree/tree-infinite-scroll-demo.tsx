@@ -81,7 +81,7 @@ function TreeItem({ id, title, children }: TreeItemProps) {
 
 const TreeLoader = ({ className, ...props }: TreeLoadMoreItemProps) => {
   return (
-    <TreeLoadMoreItem {...props}>
+    <TreeLoadMoreItem className={className} {...props}>
       {({ level }) => {
         return (
           <ProgressCircle

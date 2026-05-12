@@ -23,7 +23,7 @@ export default function DropZoneAndFileTriggerDemo() {
 
   const onSelectHandler = async (e: any) => {
     if (e) {
-      const files = Array.from([...e])
+      const files = Array.from(e)
       const item = files[0]
 
       if (item) {

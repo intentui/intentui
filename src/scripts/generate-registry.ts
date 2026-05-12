@@ -156,7 +156,7 @@ const listFiles = async (dir: string) => {
     for (const e of entries) {
       const full = path.join(d, e.name)
       if (e.isDirectory()) stack.push(full)
-      else if (/\.(tsx|ts)$/.test(e.name) && !/\.d\.ts$/.test(e.name)) out.push(full)
+      else if (/\.(tsx|ts)$/.test(e.name) && !e.name.endsWith('.d.ts')) out.push(full)
     }
   }
   return out
@@ -205,7 +205,7 @@ const aliasToFs = async (spec: string): Promise<string | null> => {
 }
 
 async function fsToNs(fsPath: string) {
-  const make = (root: string, type: "ui" | "lib" | "hooks") => {
+  const make = (root: string) => {
     const rel = path.relative(root, fsPath)
     if (!rel.startsWith("..")) {
       const noExt = stripExt(toPosix(rel))
@@ -214,7 +214,7 @@ async function fsToNs(fsPath: string) {
     }
     return null
   }
-  return make(UI_DIR, "ui") ?? make(LIB_DIR, "lib") ?? make(HOOKS_DIR, "hooks")
+  return make(UI_DIR) ?? make(LIB_DIR) ?? make(HOOKS_DIR)
 }
 
 const DEP_EXCLUDE = new Set([
@@ -269,7 +269,7 @@ const demoSlugFromFile = (file: string) => stripExt(path.basename(file))
 
 const collectBlocks = async (pagePath: string, code: string) => {
   const groupRoot = path.dirname(path.dirname(pagePath))
-  const isTsLike = (n: string) => /\.(tsx|ts)$/.test(n) && !/\.d\.ts$/.test(n)
+  const isTsLike = (n: string) => /\.(tsx|ts)$/.test(n) && !n.endsWith('.d.ts')
   const seen = new Set<string>()
   const queue: string[] = [pagePath]
   const rootEntries = await fs.readdir(groupRoot, { withFileTypes: true })

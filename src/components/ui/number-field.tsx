@@ -40,14 +40,12 @@ function NumberInput({ className, ...props }: InputProps) {
 
 interface StepperButtonProps extends ButtonProps {
   slot: "increment" | "decrement"
-  emblemType?: "chevron" | "default"
   className?: string
 }
 
 const StepperButton = ({
   slot,
   className,
-  emblemType = "default",
   ...props
 }: StepperButtonProps) => {
   return (

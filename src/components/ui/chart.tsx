@@ -319,7 +319,6 @@ const XAxis = ({
   className,
   intervalType = "preserveStartEnd",
   minTickGap = 5,
-  domain = ["auto", "auto"],
   ...props
 }: XAxisProps) => {
   const { dataKey, data, layout } = useChart()

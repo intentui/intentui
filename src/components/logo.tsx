@@ -1,6 +1,7 @@
 export const Logo = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
+      className={className}
       data-slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       height="24"
