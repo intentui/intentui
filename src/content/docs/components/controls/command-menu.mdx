@@ -144,9 +144,9 @@ Enhance command items with descriptions using the `CommandDescription` component
 <How toUse="controls/command-menu/command-menu-description-demo" />
 
 ## Hide scrollbar
-To hide the scrollbar, set `className` to `scrollbar-hidden`. But before you do that, make sure to add this snippet into your css file.
+To hide the scrollbar, set `className` to `scrollbar-none`. But before you do that, make sure to add this snippet into your css file.
 ```css
-@utility scrollbar-hidden {
+@utility scrollbar-none {
   -ms-overflow-style: none; /* Internet Explorer and Edge */
   scrollbar-width: none; /* Firefox */
   &::-webkit-scrollbar {
@@ -156,7 +156,7 @@ To hide the scrollbar, set `className` to `scrollbar-hidden`. But before you do 
 ```
 
 ```
-<CommandMenuList className="scrollbar-hidden">
+<CommandMenuList className="scrollbar-none">
 ```
 
 ## Navigating

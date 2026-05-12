@@ -44,7 +44,7 @@ export function Toc({ className, items }: Props) {
       ref={tocRef}
       className={twMerge(
         "not-prose forced-color-adjust-none",
-        "scrollbar-hidden xl:sticky xl:top-14 xl:-mr-6 xl:h-[calc(100vh-16rem)] xl:flex-none xl:overflow-y-auto xl:pt-14 xl:pr-12 xl:pb-20",
+        "scrollbar-none xl:sticky xl:top-14 xl:-mr-6 xl:h-[calc(100vh-16rem)] xl:flex-none xl:overflow-y-auto xl:pt-14 xl:pr-12 xl:pb-20",
         "top-10",
         className,
       )}

@@ -306,15 +306,6 @@
 
 @variant dark (&:is(.dark *));
 
-.scrollbar-hidden {
-  -ms-overflow-style: none; /* Internet Explorer and Edge */
-  scrollbar-width: none; /* Firefox */
-
-  &::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
-}
-
 html.dark .shiki,
 html.dark .shiki span {
   color: var(--shiki-dark) !important;
