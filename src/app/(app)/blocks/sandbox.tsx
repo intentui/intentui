@@ -60,7 +60,7 @@ function SourceTabs({ files }: { files: RegistryFile[] }) {
   }, [items, fileKey])
   return (
     <Tabs selectedKey={fileKey} onSelectionChange={setFileKey} className="flex flex-col gap-3">
-      <TabList className="scrollbar-hidden flex flex-nowrap gap-x-2 overflow-x-auto font-medium text-xs/5">
+      <TabList className="scrollbar-none flex flex-nowrap gap-x-2 overflow-x-auto font-medium text-xs/5">
         {items.map((it) => (
           <Tab
             className="group flex cursor-pointer items-center gap-x-1 whitespace-nowrap rounded-sm selected:bg-secondary px-2 py-1 selected:text-fg text-muted-fg"

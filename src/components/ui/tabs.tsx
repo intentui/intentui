@@ -88,7 +88,7 @@ const TabList = <T extends object>({
 export function TabScrollArea({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div className="relative">
-      <div className={twMerge("scrollbar-hidden overflow-x-auto sm:overflow-x-visible", className)}>
+      <div className={twMerge("scrollbar-none overflow-x-auto sm:overflow-x-visible", className)}>
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 h-px w-full bg-border"
           aria-hidden
