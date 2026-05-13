@@ -26,7 +26,7 @@ const ListBox = <T extends object>({ className, ...props }: ListBoxProps<T>) => 
     {...props}
     data-slot="list-box"
     className={cx(
-      "grid max-h-96 w-full min-w-56 scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-auto overscroll-contain rounded-xl border bg-bg p-1 outline-hidden scrollbar-thin has-data-[slot=drag-icon]:grid-cols-[auto_auto_1fr] *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
+      "scrollbar-thin grid max-h-96 w-full min-w-56 scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-auto overscroll-contain rounded-xl border bg-bg p-1 outline-hidden has-data-[slot=drag-icon]:grid-cols-[auto_auto_1fr] *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
       className,
     )}
   />
