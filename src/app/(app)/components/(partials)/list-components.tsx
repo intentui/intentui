@@ -13,6 +13,7 @@ import { Keyboard } from "@/components/ui/keyboard"
 import { SearchField } from "@/components/ui/search-field"
 import { Text } from "@/components/ui/text"
 import menus from "@/components-search.json"
+import { GridList, GridListItem } from "react-aria-components/GridList"
 
 const components = menus[3]
 const allChildren = (components?.children ?? []).flatMap((s: any) => s?.children ?? [])
@@ -72,7 +73,7 @@ export function ListComponents() {
 
       <div className="border-t bg-muted/50 py-6 sm:py-12">
         <PageContainer>
-          <ListBox
+          <GridList
             aria-label="Components"
             layout="grid"
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4"
@@ -86,10 +87,7 @@ export function ListComponents() {
               const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""
               const suffix = mounted && resolvedTheme === "dark" ? "-dark" : ""
               return (
-                <ListBoxItem
-                  render={(domProps) =>
-                    "href" in domProps ? <NextLink {...domProps} /> : <span {...domProps} />
-                  }
+                <GridListItem
                   textValue={`${item.slug} ${item.title}`}
                   key={item.slug}
                   className="group flex cursor-pointer flex-col gap-y-2 outline-hidden hover:opacity-80"
@@ -103,10 +101,10 @@ export function ListComponents() {
                     alt={item.title}
                   />
                   <span className="font-medium text-sm/6">{item.title}</span>
-                </ListBoxItem>
+                </GridListItem>
               )
             })}
-          </ListBox>
+          </GridList>
         </PageContainer>
       </div>
     </Autocomplete>
