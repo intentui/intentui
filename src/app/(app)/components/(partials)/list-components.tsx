@@ -1,10 +1,9 @@
 "use client"
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
-import NextLink from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
-import { ListBox, ListBoxItem } from "react-aria-components/ListBox"
+import { GridList, GridListItem } from "react-aria-components/GridList"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { PageContainer } from "@/components/page-container"
 import { useTheme } from "@/components/theme-provider"
@@ -13,7 +12,6 @@ import { Keyboard } from "@/components/ui/keyboard"
 import { SearchField } from "@/components/ui/search-field"
 import { Text } from "@/components/ui/text"
 import menus from "@/components-search.json"
-import { GridList, GridListItem } from "react-aria-components/GridList"
 
 const components = menus[3]
 const allChildren = (components?.children ?? []).flatMap((s: any) => s?.children ?? [])

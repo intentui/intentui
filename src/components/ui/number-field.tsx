@@ -43,11 +43,7 @@ interface StepperButtonProps extends ButtonProps {
   className?: string
 }
 
-const StepperButton = ({
-  slot,
-  className,
-  ...props
-}: StepperButtonProps) => {
+const StepperButton = ({ slot, className, ...props }: StepperButtonProps) => {
   return (
     <Button
       className={cx(
