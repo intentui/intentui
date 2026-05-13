@@ -124,12 +124,10 @@ export default async function RootLayout({
     <html
       lang={lang}
       suppressHydrationWarning
-      className={`${fontSans.variable} ${fontMono.variable}`}
       data-scroll-behavior="smooth"
     >
       <body className="h-full antialiased">
         <Providers lang={lang}>
-          <Toast />
           {children}
         </Providers>
       </body>
