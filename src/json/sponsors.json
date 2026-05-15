@@ -10,8 +10,8 @@
     "description": "Monthly support to keep Intent UI growing, with optional public profile links.",
     "benefits": [
       {
-        "title": "Sponsor page logo",
-        "description": "Your logo shown on the sponsors page."
+        "title": "Profile link",
+        "description": "Add your profile link or social media link."
       }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_NpCavu2shVKkSq8638ZU89h0Jx5bYDRWSNEB03H0syx",
@@ -21,19 +21,15 @@
     "id": "gold-sponsor",
     "name": "Gold sponsor",
     "price": {
-      "amount": 350,
+      "amount": 300,
       "currency": "USD",
       "interval": "month"
     },
     "description": "Monthly support to keep Intent UI growing, with a personal license for Design.",
     "benefits": [
       {
-        "title": "Sponsor page logo",
-        "description": "Your logo shown on the sponsors page."
-      },
-      {
         "title": "Profile link",
-        "description": "Add your profile or website link."
+        "description": "Add your profile link or social media link."
       },
       {
         "title": "Personal design license",
@@ -51,11 +47,11 @@
       "currency": "USD",
       "interval": "month"
     },
-    "description": "One-time support to keep Intent UI growing, with optional public profile links for 3 months.",
+    "description": "One-time support to keep Intent UI growing, with optional public profile links for 2 months.",
     "benefits": [
       {
         "title": "Profile link",
-        "description": "Your profile link shown for 3 months."
+        "description": "Your profile link shown for 2 months."
       }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_ykUxq1qfcntnSVruv3fXfmy1dKCVBWP6iDSLd4KyYcw",
