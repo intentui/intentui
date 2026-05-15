@@ -21,7 +21,7 @@
     "id": "gold-sponsor",
     "name": "Gold sponsor",
     "price": {
-      "amount": 250,
+      "amount": 350,
       "currency": "USD",
       "interval": "month"
     },
