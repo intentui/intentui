@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Menu#api"]
 ---
 
-## Basic
-A menu presents a variety of actions or options from which you can choose.
 <How toUse="collections/menu/menu-basic-demo" />
 
 ## Installation
@@ -105,48 +103,52 @@ import {
 </Menu>
 ```
 
-## Links
+## Examples
+
+### Links
 Integrating `MenuItem` with your framework’s link component is straightforward. Learn more in [Client Side Routing](/docs/getting-started/client-side-routing).
 
 
-## Sub menu
+
+
+### Sub menu
 Menu can be nested to display submenus.
 <How toUse="collections/menu/menu-sub-demo" />
 
-## Danger
+### Danger
 Designate a menu item as dangerous.
 <How toUse="collections/menu/menu-danger-demo" />
 
-## With icon
+### With icon
 Enhance menu items by adding icons.
 <How toUse="collections/menu/menu-with-icon-demo" />
 
-## Dynamic
+### Dynamic
 Generate menu items dynamically.
 <How toUse="collections/menu/menu-dynamic-demo" />
 
-## Multiple
+### Multiple
 Display a selection of actions or options.
 <How toUse="collections/menu/multiple-menu-demo" />
 
 
-## Single menu
+### Single menu
 Present a single list of options.
 <How toUse="collections/menu/single-menu-demo" />
 
-## Section menu
+### Section menu
 Organize menu items into grouped sections.
 <How toUse="collections/menu/menu-section-demo" />
 
-## Section-level selection
+### Section-level selection
 Organize menu items into grouped sections with level selection.
 <How toUse="collections/menu/menu-section-level-selection" />
 
-## Arrow
+### Arrow
 Incorporate an arrow into the menu using the `arrow` from `popover` in the `MenuContent` component.
 <How toUse="collections/menu/menu-with-arrow-demo" />
 
-## Disabled
+### Disabled
 Disable specific menu items.
 <How toUse="collections/menu/menu-disabled-demo" />
 
@@ -155,14 +157,60 @@ Also, you can disable items directly in `MenuContent` by using the `disabledKeys
 <MenuContent disabledKeys={['gsu']} />
 ```
 
-## Menu label
+### Menu label
 In the examples above, you might notice that the `MenuLabel` component is used inconsistently. This is because it is not mandatory, but it is considered a best practice. Using `MenuLabel` ensures proper alignment between icons and text, especially when dealing with items that vary. For instance, one item might have an icon while another does not. Adding `MenuLabel` helps create a polished and consistent appearance.
 
 
-## Description
+### Description
 You can add details to menu items by using the `MenuDescription` component.
 <How toUse="collections/menu/menu-item-description-demo" />
 
 
-## Open modal
+### Open modal
 Trigger a modal from a menu item. Refer to the [modal demo](/docs/components/overlays/modal#triggered-by-menu) for further information.
+
+## API
+
+### MenuContent
+
+The `MenuContent` component renders menu items inside a popover.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `popover` | `Pick< PopoverContentProps, \| "arrow" \| "className" \| "placement" \| "offset" \| "crossOffset" \| "arrowBoundaryOffset" \| "triggerRef" \| "isOpen" \| "onOpenChange" \| "shouldFlip" >` | - |
+
+### MenuHeader
+
+The `MenuHeader` component renders header content inside a menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `separator` | `boolean` | `false` |
+
+### MenuItem
+
+The `MenuItem` component represents one menu option or action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### MenuSection
+
+The `MenuSection` component groups related menu items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `label` | `string` | - |
+
+### MenuTrigger
+
+The `MenuTrigger` component opens the menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

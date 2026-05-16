@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Popover#api"]
 ---
 
-## Basic
-Popovers are small overlays that display additional information about an element when the user clicks on it.
 <How toUse="overlays/popover/popover-demo" />
 
 ## Installation
@@ -61,15 +59,17 @@ import { Dialog } from "@/components/ui/dialog"
 </Popover>
 ```
 
-## Controlled
+## Examples
+
+### Controlled
 You can control the popover programmatically.
 <How toUse="overlays/popover/popover-controlled-demo" />
 
-## Overlay arrow
+### Overlay arrow
 Popovers come with an arrow that points to the trigger element, but it’s hidden by default. To display it, pass the `arrow` prop.
 <How toUse="overlays/popover/popover-arrow-demo" />
 
-## Placement
+### Placement
 You can change the placement of the popover by passing the `placement` prop.
 <How toUse="overlays/popover/popover-placement-demo" />
 
@@ -85,10 +85,21 @@ The list above shows the primary directions, but you can also use specific place
 | `end`             | `end`, `end top`, `end bottom`                                        |
 
 
-## Custom close
+### Custom close
 You can easily close the popover by clicking outside of it, or add a custom close button inside using Popover.Close. Just make sure everything is wrapped inside a `Dialog`.
 <How toUse="overlays/popover/popover-custom-close" />
 
-## Popover trigger
+### Popover trigger
 All the examples above use `<Button/>` as the trigger, but what if you wanna switch it up, like using `<Avatar/>` instead? No sweat, just roll with PopoverTrigger like this:
 <How toUse="overlays/popover/popover-trigger-demo" />
+
+## API
+
+### PopoverContent
+
+The `PopoverContent` component renders floating popover content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `arrow` | `boolean` | `false` |
+| `className` | `string` | - |

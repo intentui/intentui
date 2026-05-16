@@ -1,21 +1,18 @@
 "use client"
 
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
-import { motion, useReducedMotion } from "motion/react"
 import { twMerge } from "tailwind-merge"
 import { Logo } from "@/components/logo"
 import { buttonStyles } from "@/components/ui/button"
 import { Text } from "@/components/ui/text"
 
 export function Ads({ className }: { className?: string }) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
     <a
       target="_blank"
       href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=docs_intentui"
       className={twMerge(
-        "not-prose group relative inset-ring inset-ring-border block w-full overflow-hidden rounded-md p-4 bg-zinc-50 sm:w-60 dark:bg-zinc-900",
+        "not-prose group relative inset-ring inset-ring-border block w-full overflow-hidden rounded-md bg-zinc-50 p-4 sm:w-60 dark:bg-zinc-900",
         "gradient-border gradient-border-to-br gradient-border-from-muted-fg/50 gradient-border-via-fg/20 gradient-border-to-border",
         className,
       )}

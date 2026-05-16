@@ -5,10 +5,6 @@ description: A native select component for choosing a single option from a prede
 published: true
 ---
 
-## Basic
-
-Use NativeSelect to let users choose one option from a list.
-
 <How minW60 toUse="pickers/native-select/native-select-demo" />
 
 ## Installation
@@ -45,36 +41,57 @@ import { NativeSelect, NativeSelectContent } from "@/components/ui/native-select
 </NativeSelect>
 ```
 
-## Label
+## Examples
+
+### Label
 
 Use a label to describe what the selection controls.
 
 <How toUse="pickers/native-select/native-select-label-demo" />
 
-## Description
+### Description
 
 Use a description to provide guidance or context for the selection.
 
 <How toUse="pickers/native-select/native-select-description-demo" />
 
-## Controlled
+### Controlled
 
 Control the value via state when you need to react to changes, sync with other inputs, or set the value programmatically.
 
 <How toUse="pickers/native-select/native-select-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 
 Use the uncontrolled pattern when you do not need to read or update the value from outside the component.
 
 <How toUse="pickers/native-select/native-select-uncontrolled-demo" />
 
-## Invalid
+### Invalid
 Indicate an error state with the `aria-invalid` prop. This will display an error message and apply error styles to the select.
 <How toUse="pickers/native-select/native-select-invalid-demo" />
 
-## Disabled
+### Disabled
 
 Disable the select to prevent interaction and communicate that the field is currently unavailable.
 
 <How toUse="pickers/native-select/native-select-disabled-demo" />
+
+## API
+
+### NativeSelect
+
+The `NativeSelect` component wraps a native select control.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NativeSelectContent
+
+The `NativeSelectContent` component renders the native select element.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `isInvalid` | `boolean` | - |

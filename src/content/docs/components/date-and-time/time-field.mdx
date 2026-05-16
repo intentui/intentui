@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/TimeField#api"]
 ---
 
-## Basic
-
-A time field allows users to input and adjust time values using a keyboard, with each segment of the time shown as its own editable unit.
 <How toUse="date-and-time/time-field/time-field-demo" />
 
 ## Installation
@@ -26,22 +23,34 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow='time-field'/>
 
-## Hour cycles
+## Examples
+
+### Hour cycles
 Change the hour format in the time field by using the `hourCycle` prop.
 <How toUse="date-and-time/time-field/time-field-hc-demo" />
 
-## Validation
+### Validation
 To ensure the time field is properly filled out, use the `isRequired` prop.
 <How toUse="date-and-time/time-field/time-field-validation-demo" />
 
-## Controlled
+### Controlled
 In a controlled time field, the value is provided as a prop, and the field is not editable by the user.
 <How toUse="date-and-time/time-field/time-field-controlled-demo" />
 
-## Readonly
+### Readonly
 In a readonly time field, the value is provided as a prop, and the field is not editable by the user.
 <How toUse="date-and-time/time-field/time-field-readonly-demo" />
 
-## Disabled
+### Disabled
 A disabled time field cannot be interacted with and is visually represented as being inactive.
 <How toUse="date-and-time/time-field/time-field-disabled-demo" />
+
+## API
+
+### TimeField
+
+The `TimeField` component lets users enter time values.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

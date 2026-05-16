@@ -42,15 +42,17 @@ export function useIsMobile() {
 }
 ```
 
-## Area
+## Examples
+
+### Area
 Area charts are great for showing trends, comparisons, and patterns over time. They keep your data clean and easy to read.
 <How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-demo" />
 
-## Bar
+### Bar
 Bar charts help visualize data comparisons across categories. They are effective for highlighting differences and trends using vertical or horizontal bars.
 <How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-demo" />
 
-## Pie
+### Pie
 Pie charts are useful for showing how parts contribute to a whole. They are best for displaying proportions and percentages in a visually appealing way.
 <How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-demo" />
 
@@ -69,3 +71,69 @@ export default function App() {
 ```
 
 If you do not set a height, the chart defaults to 370 on desktop and 200 on mobile.
+
+## API
+
+### CartesianGrid
+
+The `CartesianGrid` component renders chart grid lines.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### Chart
+
+The `Chart` component provides shared chart context and layout.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `config` | `ChartConfig` | - |
+| `containerHeight` | `number` | - |
+| `data` | `Record<string, any>[]` | - |
+| `dataKey` | `string` | - |
+| `layout` | `ChartLayout` | `horizontal` |
+
+### ChartLegendContent
+
+The `ChartLegendContent` component renders the chart legend items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `hideIcon` | `boolean` | `false` |
+| `nameKey` | `string` | - |
+| `payload` | `ReadonlyArray<LegendPayload>` | - |
+
+### ChartTooltipContent
+
+The `ChartTooltipContent` component renders chart tooltip content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `hideIndicator` | `boolean` | `false` |
+| `hideLabel` | `boolean` | `false` |
+| `indicator` | `"line" \| "dot" \| "dashed"` | `dot` |
+| `labelKey` | `string` | - |
+| `labelSeparator` | `boolean` | `true` |
+| `nameKey` | `string` | - |
+
+### XAxis
+
+The `XAxis` component renders the chart x-axis.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `displayEdgeLabelsOnly` | `boolean` | - |
+| `intervalType` | `IntervalType` | `preserveStartEnd` |
+
+### YAxis
+
+The `YAxis` component renders the chart y-axis.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

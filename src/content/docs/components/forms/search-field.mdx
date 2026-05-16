@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/SearchField#api"]
 ---
 
-## Basic
-
-A search field is a box where you can type in keywords to search for something, like finding content on a website.
 <How toUse="forms/search-field/search-field-demo" />
 
 ## Installation
@@ -35,30 +32,42 @@ import { SearchField, SearchInput } from "@/components/ui/search-field"
 </SearchField>
 ```
 
-## With label
+## Examples
+
+### With label
 You can add a label to the search field by using the `label` prop.
 <How toUse="forms/search-field/search-field-with-label-demo" />
 
-## Validation
+### Validation
 Add a validation message to the search field by setting the `validationMessage` prop.
 <How toUse="forms/search-field/search-field-validation-demo" />
 
-## Description
+### Description
 You can add a description to the search field by using the `description` prop.
 <How toUse="forms/search-field/search-field-description-demo" />
 
-## Controlled
+### Controlled
 Like other fields, the search field can be controlled by managing its value through the `value` prop.
 <How toUse="forms/search-field/search-field-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 Like other fields, the search field can be controlled by managing its value through the `defaultValue` prop.
 <How toUse="forms/search-field/search-field-uncontrolled-demo" />
 
-## Readonly
+### Readonly
 When the search field is set to readonly, it cannot be edited.
 <How toUse="forms/search-field/search-field-readonly-demo" />
 
-## Disabled
+### Disabled
 Disable the search field by using the `isDisabled` prop.
 <How toUse="forms/search-field/search-field-disabled-demo" />
+
+## API
+
+### SearchField
+
+The `SearchField` component renders a search input.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

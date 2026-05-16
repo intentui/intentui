@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Toolbar#api"]
 ---
 
-
-## Basic
-This basic example highlights the most common use cases for a toolbar.
 <How toUse="controls/toolbar/toolbar-demo" />
 
 ## Installation
@@ -44,10 +41,47 @@ import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from "@/componen
 </Toolbar>
 ```
 
-## Orientation
+## Examples
+
+### Orientation
 By default, the toolbar is displayed horizontally. You can change it to vertical using the `orientation` prop.
 <How toUse="controls/toolbar/toolbar-orientation-demo" />
 
-## Disabled
+### Disabled
 You can disable a toolbar either as a group or individually by using the `isDisabled` prop.
 <How toUse="controls/toolbar/toolbar-disabled-demo" />
+
+## API
+
+### Toolbar
+
+The `Toolbar` component groups related controls.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `isCircle` | `boolean` | - |
+
+### ToolbarGroup
+
+The `ToolbarGroup` component groups toolbar items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ToolbarItem
+
+The `ToolbarItem` component represents one toolbar toggle item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ToolbarSeparator
+
+The `ToolbarSeparator` component separates toolbar groups.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

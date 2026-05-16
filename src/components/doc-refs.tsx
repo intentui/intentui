@@ -1,6 +1,6 @@
 "use client"
 
-import { BellIcon, ChartBarIcon, ChartPieIcon } from "@heroicons/react/24/outline"
+import { BellIcon, ChartPieIcon } from "@heroicons/react/24/outline"
 import { twJoin } from "tailwind-merge"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
@@ -8,7 +8,7 @@ import { BrandReactAriaIcon } from "@/components/icons/brand-react-aria-icon"
 import { MotionBrandIcon } from "@/components/icons/motion-brand-icon"
 import { LinkButton } from "@/components/link-button"
 import { Logo } from "@/components/logo"
-import { ButtonGroup } from "@/components/ui/button-group";
+import { ButtonGroup } from "@/components/ui/button-group"
 
 function getComponentName(url: string): string {
   const lastSegment = url.split("/").pop()
@@ -77,10 +77,12 @@ export function DocRefs({ references }: { references: string[] }) {
                 />
               )}
 
-              {item.url.includes("react-aria") ? <span>RAC API</span> : item.title === "Props Reference" ? (
+              {item.url.includes("react-aria") ? (
+                <span>RAC API</span>
+              ) : item.title === "Props Reference" ? (
                 <span>
-                Props <span className="hidden sm:inline">Reference</span>
-              </span>
+                  Props <span className="hidden sm:inline">Reference</span>
+                </span>
               ) : (
                 <span className="block truncate">{item.title}</span>
               )}

@@ -5,9 +5,6 @@ order: 6
 published: true
 ---
 
-## Basic
-This is the basic loader component, used to indicate that a process or action is currently taking place.
-
 <How toUse="statuses/loader/loader-demo" />
 
 ## Installation
@@ -35,10 +32,25 @@ import { Loader } from "@/components/ui/loader"
 </>
 ```
 
-## Variants
+## Examples
+
+### Variants
 There are four different variants of the loader. The default variant is the `ring-3`.
 <How toUse="statuses/loader/loader-variant-demo" />
 
-## Size
+### Size
 The loader defaults to a small size, but you can also select medium, large, or extra-large.
 <How toUse="statuses/loader/loader-size-demo" />
+
+## API
+
+### Loader
+
+The `Loader` component displays loading feedback.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `formatOptions` | `Intl.NumberFormatOptions` | - |
+| `isIndeterminate` | `boolean` | `true` |
+| `percentage` | `number` | - |
+| `variant` | `keyof typeof LOADERS` | - |

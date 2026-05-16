@@ -5,8 +5,6 @@ order: 1
 published: true
 ---
 
-## Basic
-It ain't just a pic with curved corners, for real. It's the whole vibe, whispering secrets without a peep. A cheeky sneak into the deep, snatching more than your eyes can peep.
 <How toUse="media/avatar/avatar-basic-demo" />
 
 ## Installation
@@ -29,21 +27,38 @@ import { Avatar } from "@/components/ui/avatar"
 />
 ```
 
-## Fallback
+## Examples
+
+### Fallback
 If the image fails to load, the avatar will fallback to the initials.
 <How toUse="media/avatar/avatar-initials-demo" />
 
-## Shape
+### Shape
 By default, the avatar is a `circle`. You can change it to a square by using the `isSquare` props.
 
 <How toUse="media/avatar/avatar-shape-demo" />
 
-## Size
+### Size
 By default, the avatar is medium. You can change it to small, large or extra-large by using the `size` prop.
 
 <How toUse="media/avatar/avatar-size-demo" />
 
-## Avatar group
+### Avatar group
 You can use the `AvatarGroup` component to display a group of avatars.
 
 <How toUse="media/avatar/avatar-group-demo" />
+
+## API
+
+### Avatar
+
+The `Avatar` component displays a user image, initials, or fallback identity.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `alt` | `string` | - |
+| `className` | `string` | - |
+| `initials` | `string` | - |
+| `isSquare` | `boolean` | `false` |
+| `size` | `\| "xs" \| "sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl" \| "7xl" \| "8xl" \| "9xl"` | `md` |
+| `src` | `string \| null` | `null` |

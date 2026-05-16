@@ -37,14 +37,9 @@ export const mdxComponents = {
     </div>
   ),
   th: (props: React.ComponentProps<"th">) => (
-    <th
-      className="p-3 text-left font-medium text-fg text-sm/6"
-      {...props}
-    />
+    <th className="p-3 text-left font-medium text-fg text-sm/6" {...props} />
   ),
-  td: (props: React.ComponentProps<"td">) => (
-    <td className="border-t p-3 text-sm" {...props} />
-  ),
+  td: (props: React.ComponentProps<"td">) => <td className="border-t p-3 text-sm" {...props} />,
   NewTab: (props: React.ComponentProps<typeof Link>) => (
     <Link
       className="not-prose xd2432 text-blue-600 outline-hidden hover:underline focus-visible:ring-1 dark:text-blue-400"

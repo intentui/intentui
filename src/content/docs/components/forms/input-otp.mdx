@@ -6,13 +6,10 @@ published: true
 references: ["https://github.com/guilhermerodz/input-otp"]
 ---
 
+<How toUse="forms/input-otp/input-otp-demo"/>
+
 ## Introduction
 The **Input OTP** component is a versatile and customizable component that allows you to easily create an OTP input field. It offers a range of features, including customizable separators, validation, and more. Shoutout to [Guilherme Rodz](https://github.com/guilhermerodz) for creating this amazing component.
-
-## Basic
-Here’s the basic usage of the Input OTP component.
-
-<How toUse="forms/input-otp/input-otp-demo"/>
 
 ## Installation
 
@@ -52,12 +49,41 @@ import {
 </InputOTP>
 ```
 
-## Separator
+## Examples
+
+### Separator
 To include a separator between the OTP input groups, use the `InputOTPSeparator` component.
 
 <How toUse="forms/input-otp/input-otp-separator-demo"/>
 
-## Controlled
+### Controlled
 To control the Input OTP component, utilize the `value` and `onChange` props.
 
 <How toUse="forms/input-otp/input-otp-controlled-demo"/>
+
+## API
+
+### InputOTPControl
+
+The `InputOTPControl` component wraps OTP input slots.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### InputOTPGroup
+
+The `InputOTPGroup` component groups OTP slots.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### InputOTPSlot
+
+The `InputOTPSlot` component renders one OTP input slot.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `index` | `number` | - |

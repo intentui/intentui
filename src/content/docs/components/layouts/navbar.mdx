@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Link#api"]
 ---
 
-## Basic
-A navbar provides a variety of actions or options for users to select.
-
 <Sandbox
   registries={[
     "navbar-01",
@@ -104,18 +101,20 @@ import {
 </NavbarProvider>
 ```
 
-## Intent
+## Examples
+
+### Intent
 There are three types of intents: `navbar`, `floating`, and `inset`, each with distinct behaviors.
 
-## Default
+### Default
 
 The default intent for the `Navbar` is `"default"`. You can customize the appearance by setting the `intent` prop to `"float"` or `"inset"`.
 
 ```tsx
 <Navbar />
-````
+```
 
-## Float
+### Float
 
 The `"float"` intent places a border inside the navbar and adds padding around the container. It’s useful when you want the navbar to appear visually distinct from the page layout. Live example can be found here at [Navbar 02](/pre-blocks/navbar/navbar-02).
 
@@ -123,7 +122,7 @@ The `"float"` intent places a border inside the navbar and adds padding around t
 <Navbar intent="float" />
 ```
 
-## Inset
+### Inset
 
 The `"inset"` intent adds horizontal padding to align the navbar with your main content. You can see it in action in the demo, or [view a live example here](/pre-blocks/navbar/navbar-03).
 
@@ -131,7 +130,7 @@ The `"inset"` intent adds horizontal padding to align the navbar with your main 
 <Navbar intent="inset" />
 ```
 
-## Logo
+### Logo
 The logo is typically the first item in the navbar, usually representing the brand or company.
 ```
 <NavbarProvider>
@@ -146,21 +145,21 @@ The logo is typically the first item in the navbar, usually representing the bra
 ```
 
 
-## Current
+### Current
 Highlight the active page by setting `isCurrent` to `true` on the relevant `NavbarItem`.
 
 ```tsx
 <NavbarItem isCurrent href="#" />
 ```
 
-## Sticky
+### Sticky
 Make the navbar stick to the top of the page by enabling the `isSticky` prop.
 
 ```tsx
 <Navbar isSticky />
 ```
 
-## Using icons
+### Using icons
 
 When using icons inside `NavbarItem`, include `NavbarLabel` to keep everything aligned and accessible.
 
@@ -169,9 +168,9 @@ When using icons inside `NavbarItem`, include `NavbarLabel` to keep everything a
   <IconHashtag />
   <NavbarLabel>Categories</NavbarLabel>
 </NavbarItem>
-````
+```
 
-## Dropdown
+### Dropdown
 
 To use a dropdown inside the navbar, use the `Menu` component. If you want a chevron icon on the right, set the correct column start.
 
@@ -209,7 +208,7 @@ When using an icon on the left, wrap the text in `NavbarLabel` and place the che
 </NavbarItem>
 ```
 
-## Spacer
+### Spacer
 
 Use `NavbarSpacer` to push items apart. This is especially useful for layouts where you want content (like a logo) on the left and actions (like buttons) on the right.
 
@@ -223,7 +222,7 @@ Use `NavbarSpacer` to push items apart. This is especially useful for layouts wh
 </Navbar>
 ```
 
-## Gap
+### Gap
 
 Use `NavbarGap` to control the spacing between navigation items. This gives you precise control over layout density.
 
@@ -239,7 +238,7 @@ Use `NavbarGap` to control the spacing between navigation items. This gives you 
 </Navbar>
 ```
 
-## Separator
+### Separator
 `NavbarSeparator` adds a vertical divider between items. It’s useful for grouping or visually separating actions in the navbar.
 
 ```tsx
@@ -252,7 +251,7 @@ Use `NavbarGap` to control the spacing between navigation items. This gives you 
 <UserMenu />
 ```
 
-## Responsive
+### Responsive
 
 Use `NavbarMobile` to create a responsive navbar experience. It works inside a `Sheet` and is perfect for mobile-friendly navigation.
 
@@ -306,3 +305,109 @@ app/
 ├── layout.tsx
 └── page.tsx
 ```
+
+## API
+
+### Navbar
+
+The `Navbar` component renders the main navigation bar.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `Intent` | `default` |
+| `isSticky` | `true` | - |
+| `placement` | `Placement` | `top` |
+| `side` | `Side` | `left` |
+
+### NavbarGap
+
+The `NavbarGap` component adds spacing between navbar sections.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NavbarInset
+
+The `NavbarInset` component aligns page content with the navbar.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NavbarItem
+
+The `NavbarItem` component represents one navbar link or action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `isCurrent` | `boolean` | - |
+
+### NavbarLabel
+
+The `NavbarLabel` component renders text inside a navbar item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NavbarMobile
+
+The `NavbarMobile` component renders mobile navbar content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NavbarProvider
+
+The `NavbarProvider` component manages navbar open state.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `defaultOpen` | `boolean` | `false` |
+| `isOpen` | `boolean` | - |
+| `onOpenChange` | `(open: boolean) => void` | - |
+
+### NavbarSection
+
+The `NavbarSection` component groups navbar items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NavbarSeparator
+
+The `NavbarSeparator` component separates navbar sections.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NavbarSpacer
+
+The `NavbarSpacer` component pushes navbar content apart.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NavbarStart
+
+The `NavbarStart` component renders leading navbar content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NavbarTrigger
+
+The `NavbarTrigger` component toggles mobile navbar content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Slider#api"]
 ---
 
-## Slider
-A slider is a horizontal bar that you can drag left or right to select a value within a range, similar to adjusting volume.
 <How minW60 toUse="controls/slider/slider-demo" />
 
 ## Installation
@@ -25,30 +23,82 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow='slider'/>
 
-## Step
+## Examples
+
+### Step
 Set a step value on the slider, and it will increment or decrement by that fixed amount each time you adjust it.
 <How minW60 toUse="controls/slider/slider-step-demo" />
 
-## Range
+### Range
 By passing an array to the `defaultValue` or `value` props, you can create a range slider.
 <How minW60 toUse="controls/slider/slider-range-demo" />
 
-## Orientation
+### Orientation
 You can change the orientation of the slider to vertical.
 <How minW60 toUse="controls/slider/slider-orientation-demo" />
 
-## Suffix and prefix
+### Suffix and prefix
 Sometimes you need to add a prefix or suffix to the slider, like a volume icon.
 <How minW60 toUse="controls/slider/slider-prefix-suffix-demo" />
 
-## Description
+### Description
 Add a description to the slider.
 <How minW60 toUse="controls/slider/slider-description-demo" />
 
-## Controlled
+### Controlled
 You can control the slider's value by using the `value` prop.
 <How minW60 toUse="controls/slider/slider-controlled-demo" />
 
-## Disabled
+### Disabled
 When the slider is disabled, it appears grayed out and becomes non-interactive.
 <How minW60 toUse="controls/slider/slider-disabled-demo" />
+
+## API
+
+### Slider
+
+The `Slider` component lets users select values from a range.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderFill
+
+The `SliderFill` component renders the filled portion of the slider track.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderGroup
+
+The `SliderGroup` component groups slider controls.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderOutput
+
+The `SliderOutput` component displays the current slider value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderThumb
+
+The `SliderThumb` component renders a draggable slider handle.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderTrack
+
+The `SliderTrack` component renders the slider track.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

@@ -7,8 +7,6 @@ references: ["https://react-aria.adobe.com/Modal#api"]
 published: true
 ---
 
-## Basic
-A sheet is a modal component that slides in from the side of the screen. It's used to display a small amount of content that is related to the main content.
 <How toUse="overlays/sheet/sheet-demo" />
 
 ## Installation
@@ -61,29 +59,45 @@ import {
 ```
 
 
-## Like github
+## Examples
+
+### Like github
 This example is like Github's profile page. You can see the sheet component is used to display the profile information.
 
 <How toUse="overlays/sheet/sheet-menu-demo" />
 
-## Controlled
+### Controlled
 You can control the open state of the sheet by using the `isOpen` prop. You can also use the `onOpenChange` prop to listen to the open state change.
 <How toUse="overlays/sheet/sheet-controlled-demo" />
 
-## Positioning
+### Positioning
 You can position the modal component in different ways. You can use the `side` prop to position the modal component in the different directions.
 
 <How toUse="overlays/sheet/sheet-position-demo" />
 
-## Custom close
+### Custom close
 You can customize the close button by using the `SheetClose` component. This example demonstrates how to use the `SheetClose` component to create a custom close button.
 
 <How toUse="overlays/sheet/sheet-custom-close-demo" />
 
-## Float
+### Float
 By default, the sheet will stack, but you can change this behavior by using the `isFloat` prop. This example demonstrates how to use the `isFloat` prop to create a sheet that does not stack.
 <How toUse="overlays/sheet/sheet-float-demo" />
 
-## Sticky
+### Sticky
 You can use the `SheetBody` component to make the sheet sticky.
 <How toUse="overlays/sheet/sheet-sticky-demo" />
+
+## API
+
+### SheetContent
+
+The `SheetContent` component renders sheet panel content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `closeButton` | `boolean` | `true` |
+| `isFloat` | `boolean` | `true` |
+| `overlay` | `Omit<ModalOverlayProps, "children">` | - |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `right` |

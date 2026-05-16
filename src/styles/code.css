@@ -156,3 +156,15 @@ span[data-rehype-pretty-code-figure] > code > span {
 .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::after {
   display: none;
 }
+
+.prose :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  @apply text-2xl;
+}
+
+.prose :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  @apply text-xl;
+}
+
+.prose :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  @apply text-lg;
+}

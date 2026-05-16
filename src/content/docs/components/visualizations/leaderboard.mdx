@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/ProgressBar#api"]
 ---
 
-## Basic
-
-A simple leaderboard displaying ranked items with values.
 <How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-demo" />
 
 ## Installation
@@ -24,22 +21,91 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow={'leaderboard'} />
 
-## Currency
+## Examples
+
+### Currency
 Format values as monetary amounts.
 <How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-currency-demo" />
 
-## Percentage
+### Percentage
 Display values as percentages for progress tracking.
 <How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-percentage-demo" />
 
-## With header
+### With header
 Add a header to provide context and structure.
 <How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-header-demo" />
 
-## With icon
+### With icon
 Include icons alongside entries for visual clarity.
 <How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-icon-demo" />
 
-## Controlled
+### Controlled
 Manage leaderboard data programmatically for dynamic updates.
 <How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-controlled-demo" />
+
+## API
+
+### Leaderboard
+
+The `Leaderboard` component displays ranked items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardAction
+
+The `LeaderboardAction` component places actions in the leaderboard header.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardContent
+
+The `LeaderboardContent` component contains leaderboard rows.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardEnd
+
+The `LeaderboardEnd` component renders trailing content for a leaderboard row.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardHeader
+
+The `LeaderboardHeader` component groups the leaderboard title and actions.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardItem
+
+The `LeaderboardItem` component represents one ranked leaderboard row.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `onAction` | `() => void` | - |
+
+### LeaderboardStart
+
+The `LeaderboardStart` component renders leading content for a leaderboard row.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardTitle
+
+The `LeaderboardTitle` component renders the leaderboard heading.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

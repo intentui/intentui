@@ -6,13 +6,6 @@ published: true
 status: primitive
 ---
 
-## Basic
-There’s not much to see here directly, but you can check out related components like [Menu](/docs/components/collections/menu), [Combo Box](/docs/components/pickers/combo-box), and others.
-
-<Note>
-  Heads up: when you incorporate components such as **menu**, **select**, or **combo-box**, the dropdown functionality is included automatically. No separate installation required.
-</Note>
-
 ## Installation
 
 Install the component via the CLI in one command.
@@ -27,3 +20,55 @@ Use this approach if you prefer to install and wire up the component yourself in
 <InstallCommand command="npm i react-aria-components @heroicons/react"/>
 
 <SourceCode toShow='dropdown' />
+
+## API
+
+### DropdownDescription
+
+The `DropdownDescription` component renders secondary text for a dropdown item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DropdownItem
+
+The `DropdownItem` component represents one dropdown option or action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### DropdownKeyboard
+
+The `DropdownKeyboard` component displays a keyboard shortcut in a dropdown item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DropdownLabel
+
+The `DropdownLabel` component renders dropdown item label text.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DropdownSection
+
+The `DropdownSection` component groups related dropdown items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `title` | `string` | - |
+
+### DropdownSeparator
+
+The `DropdownSeparator` component separates dropdown groups.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

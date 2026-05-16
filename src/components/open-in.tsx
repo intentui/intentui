@@ -7,12 +7,12 @@ import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { MobilePager } from "@/components/mobile-pager"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { ButtonGroup } from "@/components/ui/button-group"
 import { Loader } from "@/components/ui/loader"
 import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu"
 import { app } from "@/config/app"
 import { useClipboard } from "@/hooks/use-clipboard"
 import { DuplicateIcon } from "./icons/duplicate-icon"
-import { ButtonGroup } from "@/components/ui/button-group";
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
@@ -52,11 +52,14 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
           Copy page
         </Button>
         <Menu>
-          <Button className="h-10 rounded-sm sm:h-auto pressed:bg-secondary pressed:*:text-fg" intent="outline" size="sm">
+          <Button
+            className="h-10 rounded-sm pressed:bg-secondary pressed:*:text-fg sm:h-auto"
+            intent="outline"
+            size="sm"
+          >
             <ChevronDownIcon className="rotate-180 sm:rotate-0" />
           </Button>
           <MenuContent className="min-w-40" placement="bottom end">
-
             <MenuItem href={`${url}.md`} target="_blank" rel="noopener noreferrer">
               <svg data-slot="icon" strokeLinejoin="round" viewBox="0 0 22 16">
                 <path
@@ -135,7 +138,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
         </Menu>
       </ButtonGroup>
 
-        <MobilePager tree={tree} url={url} />
+      <MobilePager tree={tree} url={url} />
     </div>
   )
 }

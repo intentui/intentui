@@ -6,8 +6,6 @@ order: 8
 references: ["https://react-aria.adobe.com/ListBox#api", "https://www.embla-carousel.com/docs/v8/api"]
 ---
 
-## Basic
-
 <How minW60 toUse="media/carousel/carousel-demo" />
 
 ## Installation
@@ -51,27 +49,72 @@ import {
 </Carousel>
 ```
 
-## Orientation
+## Examples
+
+### Orientation
 You can change the orientation of the carousel by using the `orientation` prop. The default is horizontal, but you can switch it to vertical.
 <How minW60 toUse="media/carousel/carousel-orientation-demo" />
 
-## Options
+### Options
 You want to loop, or align the carouse, don't worry, you can do it with the `opts` prop.
 <How withNoPadding={false} toUse="media/carousel/carousel-options-demo" />
 
-## Autoplay
+### Autoplay
 This a plugin by the embla-carousel it self, it's not included in the package, but you can install it to make sure the carousel autoplay.
 <InstallCommand command="npm i embla-carousel-autoplay"/>
 
 Once you install it, you can use it with the `plugins` prop.
 <How minW60 toUse="media/carousel/carousel-autoplay-demo" />
 
-## Link
+### Link
 If you need a link in carousel item, it simple, add href to the CarouselItem.
 ```
 <CarouselItem href="/path/to/page"/>
 ```
 
 ## API
-You can use the carousel api to control the carousel.
-<How withNoPadding toUse="media/carousel/carousel-api-demo" />
+
+### Carousel
+
+The `Carousel` component is the root container for carousel state and layout.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `opts` | `CarouselOptions` | - |
+| `orientation` | `"horizontal" \| "vertical"` | `horizontal` |
+| `plugins` | `CarouselPlugin` | - |
+| `setApi` | `(api: CarouselApi) => void` | - |
+
+### CarouselButton
+
+The `CarouselButton` component navigates to the previous or next carousel item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `segment` | `"previous" \| "next"` | - |
+
+### CarouselContent
+
+The `CarouselContent` component wraps the scrollable carousel track.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CarouselHandler
+
+The `CarouselHandler` component renders the carousel control area.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CarouselItem
+
+The `CarouselItem` component wraps one carousel slide.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

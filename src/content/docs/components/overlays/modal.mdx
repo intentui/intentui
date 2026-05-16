@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Modal#api"]
 ---
 
-
-## Basic
-A modal is a pop-up window that demands your attention. You have to deal with it before doing anything else on the page.
 <How toUse="overlays/modal/modal-demo" />
 
 ## Installation
@@ -58,7 +55,9 @@ import {
 </Modal>
 ```
 
-## Alert dialog
+## Examples
+
+### Alert dialog
 Alert dialogs are meant to interrupt the user with a critical message, so use 'em only when it's absolutely necessary. The fix? Set the role to `alertdialog`, and you're golden.
 <How toUse="overlays/modal/alert-dialog-demo" />
 Notice how the modal is dismissible and the close button is hidden? That's 'cause the role is set to `alertdialog`.
@@ -67,15 +66,15 @@ Notice how the modal is dismissible and the close button is hidden? That's 'caus
 <ModalOverlay isDismissable={false}/>
 ```
 
-## Controlled
+### Controlled
 You can control the modal programmatically.
 <How toUse="overlays/modal/modal-controlled-demo" />
 
-## Sizes
+### Sizes
 The modal is set to `lg` by default. You can adjust it to any size from the available options.
 <How toUse="overlays/modal/modal-size-demo" />
 
-## Modal overlay styles
+### Modal overlay styles
 
 The overlay uses a subtle 1px blur by default. You can increase it or disable it entirely.
 
@@ -100,15 +99,15 @@ Or, you can override it per instance from the component usage:
   <ModalContent overlay={{ className: "backdrop-blur-none" }}>
 ```
 
-## Sticky
+### Sticky
 You can use the `ModalBody` component to make the modal sticky.
 <How toUse="overlays/modal/modal-sticky-demo" />
 
-## Nested
+### Nested
 You can also nest modals. Try open it and confirm!
 <How toUse="overlays/modal/modal-nested-demo" />
 
-## Header
+### Header
 This setup’s super flexible. If you skip adding `ModalTitle` and just drop a string as its child, it'll auto-render as the title. Like this:
 ```
 <ModalHeader>
@@ -120,7 +119,7 @@ Wanna customize more? Throw in props like `title` and `description` for a tailor
 <ModalHeader title='Title' description='Description' />
 ```
 
-## Triggered by menu
+### Triggered by menu
 You can also trigger the modal by clicking on a menu item.
 <How toUse="overlays/modal/modal-triggered-by-menu-demo" />
 It might be a good idea to extract the modal into a separate component for better organization.
@@ -185,3 +184,16 @@ const actionType = (t: string | null) => {
   }
 }
 ```
+
+## API
+
+### ModalContent
+
+The `ModalContent` component renders modal dialog content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `closeButton` | `boolean` | `true` |
+| `overlay` | `Pick<ModalOverlayProps, "className">` | - |
+| `size` | `keyof typeof sizes` | `md` |

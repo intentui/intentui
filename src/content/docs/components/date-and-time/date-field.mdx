@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/DateField#api"]
 ---
 
-## Basic
-
-A date field allows users to enter and adjust date and time values using a keyboard. Each part of the date is shown in its own editable segment.
 <How toUse="date-and-time/date-field/date-field-demo" />
 
 ## Installation
@@ -27,26 +24,46 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow='date-field'/>
 
-## Date time field
+## Examples
+
+### Date time field
 You can also use the date field to select both date and time.
 <How toUse="date-and-time/date-field/date-time-field-demo" />
 
-## Validation
+### Validation
 When validation is applied, the date field will show a validation message if the entered value is invalid.
 <How toUse="date-and-time/date-field/date-field-validation-demo" />
 
-## Controlled
+### Controlled
 In a controlled date field, the value must be passed as a prop, and the field is not directly editable by the user.
 <How toUse="date-and-time/date-field/date-field-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 In a controlled date field, the value must be passed as a prop, and the field is not directly editable by the user.
 <How toUse="date-and-time/date-field/date-field-uncontrolled-demo" />
 
-## Readonly
+### Readonly
 In a readonly date field, the value is provided as a prop, and the field is not editable by the user.
 <How toUse="date-and-time/date-field/date-field-readonly-demo" />
 
-## Disabled
+### Disabled
 A disabled date field is non-interactive and visually represented in a disabled state.
 <How toUse="date-and-time/date-field/date-field-disabled-demo" />
+
+## API
+
+### DateField
+
+The `DateField` component lets users enter a date with segmented fields.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DateInput
+
+The `DateInput` component renders the segmented date input.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

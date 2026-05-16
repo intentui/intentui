@@ -6,11 +6,10 @@ published: true
 references: ["https://sonner.emilkowal.ski/toast"]
 ---
 
+<How toUse="statuses/toast/toast-demo" />
+
 ## Introduction
 The toast components are built on top of the [Sonner](https://sonner.emilkowalski.ski/) library. Shoutout to [Emil Kowalski](https://github.com/emilkowalski) for creating this amazing library.
-
-
-<How toUse="statuses/toast/toast-demo" />
 
 ## Installation
 
@@ -44,12 +43,6 @@ And next, just use the `toast()` function to show a toast.
 </Button>
 ```
 
-## Manual installation
-
-Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i sonner"/>
-
-
 ## Next.js
 If you're slapping this toast into your Next.js gig, you're gonna wanna roll with the `next-themes` package to flip the theme on that toast. Peep how you hook it up:
 
@@ -61,37 +54,39 @@ Don't forget to include a theme provider component. Check out the setup [here](/
 
 When using this toast with Inertia.js, everything will work smoothly if your theme provider is correctly set up. If not, you can find the setup guide [here](/docs/dark-mode/inertia-js).
 
-## Description
+## Examples
+
+### Description
 
 To display a toast with a title and a description, the styling is automatically handled. The title will be bold and prominent if a description is included.
 
 <How toUse="statuses/toast/toast-description-demo" />
 
-## Positions
+### Positions
 
 The toast can be positioned in four different locations.
 
 <How toUse="statuses/toast/toast-positions-demo" />
 
-## Status
+### Status
 
 To show a warning or error toast, use the following approach.
 
 <How toUse="statuses/toast/toast-status-demo" />
 
-## Action
+### Action
 
 To display a toast with an action, use the following method.
 
 <How toUse="statuses/toast/toast-action-demo" />
 
-## Expand
+### Expand
 Toast can be expanded to show more content.
 ```tsx
 <Toast expand />
 ```
 
-## Hide icon
+### Hide icon
 When this toast has status like `success`, `warning` etc, the icon is shown by default. But if you want to disable the icon for a specific toast, you can do it like this.
 ```tsx {2-5}
 toast.success(`Copied ${text} to clipboard`, {
@@ -104,7 +99,7 @@ toast.success(`Copied ${text} to clipboard`, {
 
 You can turn it off directly from the component to remove it completely. However, this approach may appear unusual when handling toast promises or loading states.
 
-## Don't close automatically
+### Don't close automatically
 
 Sometimes, you may not want the toast to close automatically. For example, if you have a toast that waits for a user to click a button, you would not want it to close automatically when the button is clicked.
 

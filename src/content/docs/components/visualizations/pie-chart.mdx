@@ -6,8 +6,6 @@ published: true
 references: ["https://recharts.org/en-US/api/PieChart"]
 ---
 
-## Basic
-Present data in a simple and visually appealing way using a basic pie chart.
 <How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-demo"/>
 
 ## Installation
@@ -22,19 +20,36 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow={'pie-chart'} />
 
-## Donut
+## Examples
+
+### Donut
 Visualize data with a donut chart for a modern and clean look.
 <How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-donut-demo"/>
 
-## Label inside
+### Label inside
 Enhance your donut chart by adding descriptive text for better understanding.
 <How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-donut-label-demo"/>
 
 
-## Controlled
+### Controlled
 Sometimes you might want to control the chart data dynamically.
 <How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-interactive-demo"/>
 
-## Gap
+### Gap
 Add spacing between pie slices for better visibility and aesthetics.
 <How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-gap-demo"/>
+
+## API
+
+### PieChart
+
+The `PieChart` component renders proportional data as pie or donut charts.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `chartProps` | `Omit<ComponentProps<typeof PieChartPrimitive>, "data" \| "stackOffset">` | - |
+| `label` | `string` | - |
+| `nameKey` | `string` | - |
+| `pieProps` | `Omit<ComponentProps<typeof Pie>, "data" \| "dataKey" \| "name">` | - |
+| `showLabel` | `boolean` | - |
+| `variant` | `"pie" \| "donut"` | `pie` |

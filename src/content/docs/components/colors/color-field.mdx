@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/ColorField.html"]
 ---
 
-## Basic
-A color field allows users to adjust a hex color or manipulate individual color channels.
 <How toUse="colors/color-field/color-field-demo" />
 
 ## Installation
@@ -38,23 +36,35 @@ import { Input } from "@/components/ui/input"
 </ColorField>
 ```
 
-## Prefix
+## Examples
+
+### Prefix
 A color field can include a prefix to provide context or functionality.
 <How toUse="colors/color-field/color-field-with-prefix-demo" />
 
-## Suffix
+### Suffix
 A color field can also have a suffix.
 <How toUse="colors/color-field/color-field-with-suffix-demo" />
 
-## Controlled
+### Controlled
 Manage the color field in a controlled manner to automatically update the [ColorSwatch](/docs/components/colors/color-swatch) and display the current color.
 <How toUse="colors/color-field/color-field-controlled-demo" />
 
 
-## Disabled
+### Disabled
 You can disable the color field, making it non-interactive.
 <How toUse="colors/color-field/color-field-disabled-demo" />
 
-## Validation
+### Validation
 In this example, we’ll ensure it’s treated as a strict requirement.
 <How toUse="colors/color-field/color-field-validation-demo" />
+
+## API
+
+### ColorField
+
+The `ColorField` component lets users enter a color value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

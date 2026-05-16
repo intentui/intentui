@@ -6,10 +6,6 @@ published: true
 references: [https://react-aria.adobe.com/ToggleButton#api]
 ---
 
-## Basic
-
-A toggle button allows users to switch between two states, such as enabling or disabling a feature.
-
 <How toUse="buttons/toggle/toggle-demo" />
 
 ## Installation
@@ -23,25 +19,27 @@ Use this approach if you prefer to install and wire up the component yourself in
 <InstallCommand command="npm i react-aria-components tailwind-variants"/>
 <SourceCode toShow='toggle'/>
 
-## Intent
+## Examples
+
+### Intent
 
 Customize the look of the toggle button using the `intent` prop.
 
 <How toUse="buttons/toggle/toggle-intent-demo" />
 
-## Size
+### Size
 
 Adjust the toggle button's size using the `size` prop.
 
 <How toUse="buttons/toggle/toggle-size-demo" />
 
-## Controlled
+### Controlled
 
 Manage the toggle button's state with the `isSelected` prop.
 
 <How toUse="buttons/toggle/toggle-controlled-demo" />
 
-## Disabled
+### Disabled
 
 Disable a toggle button by setting the `disabled` prop.
 
@@ -67,3 +65,16 @@ Sometimes you may want to use this button with only an icon. In that case, you c
   }
 }
 ```
+
+## API
+
+### Toggle
+
+The `Toggle` component is a pressable control that can stay selected.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"outline" \| "plain"` | `plain` |
+| `isCircle` | `true \| false` | `false` |
+| `size` | `"xs" \| "sm" \| "md" \| "lg" \| "sq-xs" \| "sq-sm" \| "sq-md" \| "sq-lg"` | `md` |

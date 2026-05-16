@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/CheckboxGroup#api"]
 ---
 
-## Basic
-A group of checkboxes that lets you select multiple options at once.
 <How toUse="forms/checkbox/checkbox-group-demo" />
 
 ## Installation
@@ -62,32 +60,52 @@ import { Description, Label } from "@/components/ui/field"
 </CheckboxGroup>
 ```
 
-## Description
+## Examples
+
+### Description
 Add a description to the checkbox group using the `description` prop.
 <How minW60 toUse="forms/checkbox/checkbox-group-description-demo" />
 
-## Validation
+### Validation
 The checkbox group is in an error state.
 <How toUse="forms/checkbox/checkbox-group-validation-demo" />
 
-## Indeterminate
+### Indeterminate
 The checkbox group is in an indeterminate state.
 <How toUse="forms/checkbox/checkbox-group-indeterminate-demo" />
 
-## Controlled
+### Controlled
 Control the checkbox group value with the `value` prop.
 <How minW60 toUse="forms/checkbox/checkbox-group-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 Control the checkbox group value with the `defaultValue` prop.
 <How minW60 toUse="forms/checkbox/checkbox-group-uncontrolled-demo" />
 
-## Disabled
+### Disabled
 Disable the entire checkbox group by passing the `isDisabled` prop.
 <How minW60 toUse="forms/checkbox/checkbox-group-disabled-demo" />
 
-## Read only
+### Read only
 When you need just a read-only checkbox group, pass the `isReadOnly` prop.
 ```
 <CheckboxGroup isReadOnly/>
 ```
+
+## API
+
+### Checkbox
+
+The `Checkbox` component is used for a single selectable option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CheckboxGroup
+
+The `CheckboxGroup` component groups related checkbox options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

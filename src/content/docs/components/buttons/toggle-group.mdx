@@ -6,10 +6,6 @@ published: true
 references: [https://react-aria.adobe.com/ToggleButtonGroup#api]
 ---
 
-## Basic
-
-A toggle button group allows users to switch between multiple options, enabling one or more selections at a time.
-
 <How toUse="buttons/toggle-group/toggle-group-demo" />
 
 ## Installation
@@ -37,30 +33,32 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 </ToggleGroup>
 ```
 
-## Orientation
+## Examples
+
+### Orientation
 
 By default, the toggle button group is arranged horizontally. Use the `orientation` prop to switch to a vertical layout.
 
 <How toUse="buttons/toggle-group/toggle-group-orientation-demo" />
 
-## Selection mode
+### Selection mode
 By default, the toggle button group allows only a single selection. You can change this by setting the `selectionMode` prop to `"multiple"`. When in multiple selection mode, individual buttons will no longer have rounded corners.
 
 <How toUse="buttons/toggle-group/toggle-group-selection-demo" />
 
-## Size
+### Size
 By default, the toggle button group has a medium size. You can change the size by using the `size` prop.
 <How toUse="buttons/toggle-group/toggle-group-size-demo" />
 
-## Square size
+### Square size
 The size option also includes a square variant, which is useful when you only want to display an icon on the toggle button.
 <How toUse="buttons/toggle-group/toggle-group-square-size-demo" />
 
-## Controlled
+### Controlled
 You can control the state of the toggle button group by using the `selectedKeys` prop.
 <How toUse="buttons/toggle-group/toggle-group-controlled-demo" />
 
-## Disabled
+### Disabled
 You can disable an entire toggle group by setting the `isDisabled` prop on the `ToggleGroup` component, which disables all toggles in the group. Alternatively, you can disable specific toggle buttons individually by setting the `isDisabled` prop on the `Toggle` component.
 <How toUse="buttons/toggle-group/toggle-group-disabled-demo" />
 
@@ -84,3 +82,24 @@ Sometimes you may want to use this button with only an icon. In that case, you c
   }
 }
 ```
+
+## API
+
+### ToggleGroup
+
+The `ToggleGroup` component groups related toggle buttons.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `isCircle` | `boolean` | - |
+| `size` | `ToggleSize` | `md` |
+
+### ToggleGroupItem
+
+The `ToggleGroupItem` component represents one toggle option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `size` | `ToggleSize` | - |

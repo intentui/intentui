@@ -6,9 +6,6 @@ published: true
 references: ["https://recharts.org/en-US/api/AreaChart"]
 ---
 
-## Basic
-
-Area charts are great for showing trends, comparisons, and patterns over time. They keep your data clean and easy to read.
 <How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-demo" />
 
 ## Installation
@@ -27,30 +24,45 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow={'area-chart'} />
 
-## Monotone
+## Examples
+
+### Monotone
 
 Monotone charts use a smooth curve for a cleaner look. Good when you only need to show one metric clearly without visual clutter.
 <How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-monotone-demo" />
 
-## Custom format
+### Custom format
 
 Customize the look of your chart to match your design system. You can change colors, styles, and anything else that matters for your UI.
 <How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-custom-format-demo" />
 
-## Custom tooltip
+### Custom tooltip
 
 Add context when users hover. Custom tooltips let you show extra info like icons, units, or anything else that makes your data easier to read.
 <How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-custom-tooltip-demo" />
 
-## Custom legend
+### Custom legend
 
 Replace the default legend with something more useful. Add icons, labels, or even interactions to better explain what’s on the chart.
 <How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-custom-legend-demo" />
 
-## Custom colors
+### Custom colors
 Customize the colors of your area chart to match your brand or design system. This helps maintain visual consistency across your application.
 
-## Controlled
+### Controlled
 
 Manage the chart fully with state. Use this to sync with other UI, switch datasets, or respond to user interactions programmatically.
 <How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-controlled-demo" />
+
+## API
+
+### AreaChart
+
+The `AreaChart` component renders continuous data trends with filled areas.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `areaProps` | `Partial<ComponentProps<typeof Area>>` | - |
+| `chartProps` | `Omit<ComponentProps<typeof AreaChartPrimitive>, "data" \| "stackOffset">` | - |
+| `connectNulls` | `boolean` | `false` |
+| `fillType` | `"gradient" \| "solid" \| "none"` | `gradient` |
