@@ -105,7 +105,7 @@ By default, the combo box only allows selecting from the provided options. Howev
 When the combo box is disabled, it becomes non-interactive and cannot be edited.
 <How minW60 toUse="pickers/combo-box/combo-box-disabled-demo" />
 
-## API
+## Component API
 
 ### ComboBox
 
@@ -123,3 +123,55 @@ The `ComboBoxContent` component renders the combo box option list.
 | --- | --- | --- |
 | `className` | `string` | - |
 | `popover` | `Omit<PopoverProps, "children">` | - |
+
+### ComboBoxInput
+
+The `ComboBoxInput` component renders the searchable combo box input.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxValue
+
+The `ComboBoxValue` component renders the selected combo box value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxItem
+
+The `ComboBoxItem` component represents one combo box option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### ComboBoxLabel
+
+The `ComboBoxLabel` component renders the primary text for an option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxDescription
+
+The `ComboBoxDescription` component renders supporting text for an option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxSection
+
+The `ComboBoxSection` component groups related combo box options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `title` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ComboBoxhtml#props) for the full API reference.

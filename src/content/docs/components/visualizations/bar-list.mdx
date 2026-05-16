@@ -5,11 +5,12 @@ order: 1
 published: true
 ---
 
-<How className="w-full max-w-xl" toUse="visualizations/bar-list/bar-list-demo" />
-
 <Note intent="warning" className="*:max-w-xl **:[a]:text-warning-subtle-fg **:[a]:font-medium **:[a]:underline">
   This component has been deprecated. We recommend using the [Leaderboard](/docs/components/visualizations/leaderboard) component instead.
 </Note>
+
+<How isCenter={false} withNoPadding toUse="visualizations/bar-list/bar-list-demo" />
+
 
 ## Installation
 
@@ -26,11 +27,9 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 ### Controlled
 Controlled bar lists allow you to manage the data and interactions dynamically, making it easier to update or change the displayed information based on user actions or other events.
-<How className="w-full max-w-xl" toUse="visualizations/bar-list/bar-list-controlled-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-list/bar-list-controlled-demo" />
 
-## API
-
-### BarList
+## Component API
 
 The `BarList` component displays ranked values as horizontal bars.
 

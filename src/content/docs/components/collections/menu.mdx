@@ -169,7 +169,19 @@ You can add details to menu items by using the `MenuDescription` component.
 ### Open modal
 Trigger a modal from a menu item. Refer to the [modal demo](/docs/components/overlays/modal#triggered-by-menu) for further information.
 
-## API
+## Component API
+
+### Menu
+
+The `Menu` component controls the menu trigger and content.
+
+### MenuTrigger
+
+The `MenuTrigger` component opens the menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### MenuContent
 
@@ -179,6 +191,14 @@ The `MenuContent` component renders menu items inside a popover.
 | --- | --- | --- |
 | `className` | `string` | - |
 | `popover` | `Pick< PopoverContentProps, \| "arrow" \| "className" \| "placement" \| "offset" \| "crossOffset" \| "arrowBoundaryOffset" \| "triggerRef" \| "isOpen" \| "onOpenChange" \| "shouldFlip" >` | - |
+
+### MenuSubMenu
+
+The `MenuSubMenu` component opens a nested menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `delay` | `number` | `0` |
 
 ### MenuHeader
 
@@ -198,6 +218,22 @@ The `MenuItem` component represents one menu option or action.
 | `className` | `string` | - |
 | `intent` | `"danger" \| "warning"` | - |
 
+### MenuLabel
+
+The `MenuLabel` component renders the primary text for a menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### MenuDescription
+
+The `MenuDescription` component renders supporting text for a menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
 ### MenuSection
 
 The `MenuSection` component groups related menu items.
@@ -207,10 +243,20 @@ The `MenuSection` component groups related menu items.
 | `className` | `string` | - |
 | `label` | `string` | - |
 
-### MenuTrigger
+### MenuSeparator
 
-The `MenuTrigger` component opens the menu.
+The `MenuSeparator` component separates menu groups.
 
 | Prop | Type | Default |
 | --- | --- | --- |
 | `className` | `string` | - |
+
+### MenuShortcut
+
+The `MenuShortcut` component displays a keyboard shortcut for a menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Menu#api) for the full API reference.

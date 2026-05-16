@@ -24,7 +24,7 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <InstallCommand command="npm i recharts'"/>
 
-<SourceCode toShow={'line-chart'} />
+<SourceCode toShow={'line-chart react-aria-components'} />
 
 ## Examples
 
@@ -62,7 +62,7 @@ Customize the colors of your line chart to match your brand or design system. Th
 Manage the chart fully with state. Use this to sync with other UI, switch datasets, or respond to user interactions programmatically.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-controlled-demo" />
 
-## API
+## Component API
 
 ### LineChart
 
@@ -70,6 +70,30 @@ The `LineChart` component renders data trends with lines.
 
 | Prop | Type | Default |
 | --- | --- | --- |
+| `cartesianGridProps` | `CartesianGridProps` | - |
 | `chartProps` | `Omit<React.ComponentProps<typeof LineChartPrimitive>, "data" \| "stackOffset">` | - |
+| `children` | `React.ReactNode` | - |
+| `className` | `string` | - |
+| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
+| `config` | `ChartConfig` | - |
 | `connectNulls` | `boolean` | `false` |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | - |
+| `displayEdgeLabelsOnly` | `boolean` | `false` |
+| `hideGridLines` | `boolean` | `false` |
+| `hideXAxis` | `boolean` | `false` |
+| `hideYAxis` | `boolean` | `false` |
+| `intervalType` | `IntervalType` | `equidistantPreserveStart` |
+| `layout` | `ChartLayout` | `horizontal` |
+| `legend` | `LegendContentType \| boolean` | `true` |
+| `legendProps` | `Omit<ComponentProps<typeof LegendPrimitive>, "content" \| "ref">` | - |
 | `lineProps` | `LineProps` | - |
+| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
+| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
+| `type` | `ChartType` | `default` |
+| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
+| `xAxisProps` | `XAxisPropsPrimitive` | - |
+| `yAxisProps` | `YAxisPrimitiveProps` | - |
+
+See the [Recharts LineChart API reference](https://recharts.org/en-US/api/LineChart) for the full API reference.

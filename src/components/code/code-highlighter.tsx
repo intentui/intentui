@@ -55,7 +55,7 @@ export const CodeHighlighter = ({
     <div
       {...props}
       className={twMerge(
-        "not-prose overflow-auto font-mono text-sm leading-8 **:[pre]:outline-hidden",
+        "not-prose overflow-auto font-mono text-sm **:[pre]:outline-hidden **:[pre]:*:[code]:text-sm/9",
         max96 && "max-h-96",
         !plain && "rounded-lg bg-shiki-bg px-4 py-2.5 ring-1 ring-border",
         removeLastLine &&

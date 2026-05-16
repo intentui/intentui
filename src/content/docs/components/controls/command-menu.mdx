@@ -3,7 +3,7 @@ title: "Command Menu"
 description: A command menu is an enhanced button that opens a menu of options, making it a powerful alternative to a combobox, perfect for command palettes, menus, and more.
 order: 4
 published: true
-references: ["https://react-aria.adobe.com/Autocomplete#api", "https://react-aria.adobe.com/Modal#api"]
+references: ["https://react-aria.adobe.com/Autocomplete#api"]
 ---
 
 <How toUse="controls/command-menu/command-menu-demo" />
@@ -201,7 +201,7 @@ To close the command palette when an action is performed, use the `onAction` pro
 />
 ```
 
-## API
+## Component API
 
 ### CommandMenu
 
@@ -235,6 +235,14 @@ The `CommandMenuFooter` component renders footer content inside the command menu
 ### CommandMenuItem
 
 The `CommandMenuItem` component represents one command menu action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CommandMenuLabel
+
+The `CommandMenuLabel` component renders the primary text for a command item.
 
 | Prop | Type | Default |
 | --- | --- | --- |
@@ -280,3 +288,5 @@ The `CommandMenuShortcut` component displays a keyboard shortcut for a command i
 | Prop | Type | Default |
 | --- | --- | --- |
 | `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Autocomplete#api) for the full API reference.

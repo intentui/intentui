@@ -1,3 +1,4 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tracker } from "@/components/ui/tracker"
 
 const deployments = [
@@ -57,5 +58,15 @@ const data = deployments.map((d) => ({
 }))
 
 export default function TrackerWithoutTooltipDemo() {
-  return <Tracker disabledTooltip data={data} />
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Recent deployments</CardTitle>
+        <CardDescription>Visual timeline of deployment outcomes by hour</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Tracker disabledTooltip data={data} />
+      </CardContent>
+    </Card>
+  )
 }

@@ -1,5 +1,4 @@
 "use client"
-import { ListBulletIcon } from "@heroicons/react/24/outline"
 import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
 import { Suspense, useEffect, useRef, useState } from "react"
 import { Heading } from "react-aria-components/Heading"
@@ -58,11 +57,8 @@ export function Toc({ className, items }: Props) {
         <Suspense>
           {items.length > 0 && (
             <>
-              <Heading
-                level={2}
-                className="mb-6 flex items-center gap-x-2 font-medium text-base text-fg leading-7 lg:text-sm"
-              >
-                <ListBulletIcon className="size-4 text-muted-fg" /> On this page
+              <Heading level={2} className="mb-3 font-medium text-fg text-sm/6">
+                On this page
               </Heading>
 
               <ul className="flex flex-col gap-y-2.5">

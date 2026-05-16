@@ -122,7 +122,7 @@ export default function InstallCommand({ command, mode = "auto" }: InstallComman
 
   return (
     <Snippet selectedKey={selectedPM} onSelectionChange={handleSelectionChange}>
-      <SnippetTabsList items={items}>
+      <SnippetTabsList className="bg-shiki-bg" items={items}>
         {(cmd) => (
           <SnippetTab id={cmd.id} key={cmd.id}>
             {cmd.id}
@@ -130,7 +130,11 @@ export default function InstallCommand({ command, mode = "auto" }: InstallComman
         )}
       </SnippetTabsList>
       <SnippetTabPanels items={items}>
-        {(cmd) => <SnippetTabPanel id={cmd.id}>{cmd.command}</SnippetTabPanel>}
+        {(cmd) => (
+          <SnippetTabPanel className="dark:bg-shiki-bg" id={cmd.id}>
+            {cmd.command}
+          </SnippetTabPanel>
+        )}
       </SnippetTabPanels>
     </Snippet>
   )

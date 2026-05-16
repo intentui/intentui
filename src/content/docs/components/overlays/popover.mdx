@@ -93,7 +93,19 @@ You can easily close the popover by clicking outside of it, or add a custom clos
 All the examples above use `<Button/>` as the trigger, but what if you wanna switch it up, like using `<Avatar/>` instead? No sweat, just roll with PopoverTrigger like this:
 <How toUse="overlays/popover/popover-trigger-demo" />
 
-## API
+## Component API
+
+### Popover
+
+The `Popover` component controls the popover trigger and content.
+
+### PopoverTrigger
+
+The `PopoverTrigger` component defines the element that opens a popover.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### PopoverContent
 
@@ -103,3 +115,56 @@ The `PopoverContent` component renders floating popover content.
 | --- | --- | --- |
 | `arrow` | `boolean` | `false` |
 | `className` | `string` | - |
+
+### PopoverHeader
+
+The `PopoverHeader` component groups the popover title and description.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `description` | `string` | - |
+| `title` | `string` | - |
+
+### PopoverTitle
+
+The `PopoverTitle` component renders the popover heading.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### PopoverDescription
+
+The `PopoverDescription` component renders supporting text inside a popover.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### PopoverBody
+
+The `PopoverBody` component wraps the main popover content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### PopoverFooter
+
+The `PopoverFooter` component groups popover actions.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### PopoverClose
+
+The `PopoverClose` component renders a button that closes the popover.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+
+See the [React Aria](https://react-aria.adobe.com/Popover#api) for the full API reference.

@@ -6,7 +6,7 @@ published: true
 references: ["https://recharts.org/en-US/api/PieChart"]
 ---
 
-<How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-demo"/>
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-demo"/>
 
 ## Installation
 
@@ -16,7 +16,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i recharts"/>
+<InstallCommand command="npm i recharts react-aria-components"/>
 
 <SourceCode toShow={'pie-chart'} />
 
@@ -24,32 +24,42 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 ### Donut
 Visualize data with a donut chart for a modern and clean look.
-<How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-donut-demo"/>
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-donut-demo"/>
 
 ### Label inside
 Enhance your donut chart by adding descriptive text for better understanding.
-<How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-donut-label-demo"/>
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-donut-label-demo"/>
 
 
 ### Controlled
 Sometimes you might want to control the chart data dynamically.
-<How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-interactive-demo"/>
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-interactive-demo"/>
 
 ### Gap
 Add spacing between pie slices for better visibility and aesthetics.
-<How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-gap-demo"/>
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-gap-demo"/>
 
-## API
-
-### PieChart
+## Component API
 
 The `PieChart` component renders proportional data as pie or donut charts.
 
 | Prop | Type | Default |
 | --- | --- | --- |
 | `chartProps` | `Omit<ComponentProps<typeof PieChartPrimitive>, "data" \| "stackOffset">` | - |
+| `children` | `React.ReactNode` | - |
+| `className` | `string` | - |
+| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
+| `config` | `ChartConfig` | - |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | - |
 | `label` | `string` | - |
 | `nameKey` | `string` | - |
 | `pieProps` | `Omit<ComponentProps<typeof Pie>, "data" \| "dataKey" \| "name">` | - |
 | `showLabel` | `boolean` | - |
+| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
+| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
+| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
 | `variant` | `"pie" \| "donut"` | `pie` |
+
+See the [Recharts](https://recharts.org/en-US/api/PieChart) for the full API reference.

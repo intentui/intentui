@@ -22,9 +22,9 @@ export function SnippetTabsList<T extends object>({ className, ...props }: TabLi
   return (
     <TabList
       className={cx(
+        "bg-muted",
         orientation === "horizontal" &&
           "flex-row gap-x-(--tab-list-gutter) rounded-(--tab-list-rounded) border-b px-4 py-(--tab-list-gutter)",
-        "bg-muted",
         className,
       )}
       {...props}

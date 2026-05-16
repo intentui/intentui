@@ -33,7 +33,7 @@ export const Pre = ({ className, ref, ...props }: React.ComponentProps<"pre">) =
   return (
     <pre
       ref={ref}
-      className={twMerge("w-full p-4 leading-relaxed focus-visible:outline-hidden", className)}
+      className={twMerge("w-full p-4 text-sm/9 focus-visible:outline-hidden", className)}
       {...props}
     >
       {props.children}
@@ -70,8 +70,7 @@ export const PlainCode = ({
       ref={ref}
       {...props}
       className={twMerge(
-        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6 shadow-sm",
-        "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
+        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6",
         className,
       )}
     >
@@ -103,7 +102,7 @@ export const PlainCode = ({
       ) : (
         allowCopy && (
           <CopyButton
-            className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
+            className="vto-shiki-bg absolute top-1 right-1 z-2 grid size-10 place-content-center bg-linear-to-r from-20% from-transparent to-shiki-bg"
             onPress={onCopy}
             isCopied={copied}
           />

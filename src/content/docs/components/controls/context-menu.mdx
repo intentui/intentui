@@ -53,11 +53,82 @@ Also, you can disable items directly in `MenuContent` by using the `disabledKeys
 <ContextMenuContent disabledKeys={['gsu']} />
 ```
 
-## API
+## Component API
+
+### ContextMenu
+
+The `ContextMenu` component provides context menu state for its trigger and content.
 
 ### ContextMenuTrigger
 
 The `ContextMenuTrigger` component defines the element that opens a context menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuContent
+
+The `ContextMenuContent` component renders menu items at the pointer position.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuHeader
+
+The `ContextMenuHeader` component renders header content inside a context menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `separator` | `boolean` | `false` |
+
+### ContextMenuItem
+
+The `ContextMenuItem` component represents one context menu action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### ContextMenuLabel
+
+The `ContextMenuLabel` component renders the primary text for a context menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuDescription
+
+The `ContextMenuDescription` component renders supporting text for a context menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuSection
+
+The `ContextMenuSection` component groups related context menu items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `label` | `string` | - |
+
+### ContextMenuSeparator
+
+The `ContextMenuSeparator` component separates context menu groups.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuShortcut
+
+The `ContextMenuShortcut` component displays a keyboard shortcut for a context menu item.
 
 | Prop | Type | Default |
 | --- | --- | --- |

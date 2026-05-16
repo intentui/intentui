@@ -72,7 +72,7 @@ export default function App() {
 
 If you do not set a height, the chart defaults to 370 on desktop and 200 on mobile.
 
-## API
+## Component API
 
 ### CartesianGrid
 
@@ -88,11 +88,13 @@ The `Chart` component provides shared chart context and layout.
 
 | Prop | Type | Default |
 | --- | --- | --- |
+| `children` | `ReactElement \| ((props: ChartContextProps) => ReactElement)` | - |
 | `className` | `string` | - |
 | `config` | `ChartConfig` | - |
-| `containerHeight` | `number` | - |
-| `data` | `Record<string, any>[]` | - |
-| `dataKey` | `string` | - |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | `value` |
+| `id` | `string` | generated |
 | `layout` | `ChartLayout` | `horizontal` |
 
 ### ChartLegendContent
@@ -101,10 +103,20 @@ The `ChartLegendContent` component renders the chart legend items.
 
 | Prop | Type | Default |
 | --- | --- | --- |
+| `align` | `LegendProps["align"]` | `right` |
 | `className` | `string` | - |
 | `hideIcon` | `boolean` | `false` |
 | `nameKey` | `string` | - |
 | `payload` | `ReadonlyArray<LegendPayload>` | - |
+| `verticalAlign` | `LegendProps["verticalAlign"]` | `bottom` |
+
+### ChartLegend
+
+The `ChartLegend` component renders the chart legend container.
+
+### ChartTooltip
+
+The `ChartTooltip` component renders the chart tooltip container.
 
 ### ChartTooltipContent
 
@@ -113,9 +125,13 @@ The `ChartTooltipContent` component renders chart tooltip content.
 | Prop | Type | Default |
 | --- | --- | --- |
 | `className` | `string` | - |
+| `color` | `string` | - |
+| `formatter` | `TooltipContentProps["formatter"]` | - |
 | `hideIndicator` | `boolean` | `false` |
 | `hideLabel` | `boolean` | `false` |
 | `indicator` | `"line" \| "dot" \| "dashed"` | `dot` |
+| `labelClassName` | `string` | - |
+| `labelFormatter` | `TooltipContentProps["labelFormatter"]` | - |
 | `labelKey` | `string` | - |
 | `labelSeparator` | `boolean` | `true` |
 | `nameKey` | `string` | - |
@@ -129,6 +145,7 @@ The `XAxis` component renders the chart x-axis.
 | `className` | `string` | - |
 | `displayEdgeLabelsOnly` | `boolean` | - |
 | `intervalType` | `IntervalType` | `preserveStartEnd` |
+| `minTickGap` | `number` | `5` |
 
 ### YAxis
 
@@ -137,3 +154,8 @@ The `YAxis` component renders the chart y-axis.
 | Prop | Type | Default |
 | --- | --- | --- |
 | `className` | `string` | - |
+| `domain` | `YAxisPrimitiveProps["domain"]` | `["auto", "auto"]` |
+| `type` | `YAxisPrimitiveProps["type"]` | layout-based |
+| `width` | `number` | layout-based |
+
+See the [Recharts](https://recharts.org) for the full API reference.

@@ -4,7 +4,7 @@ description: A flexible dropdown input that enables users to select multiple opt
 order: 3
 status: alpha
 published: true
-references: ["https://react-aria.adobe.com/ComboBoxhtml#props", "https://react-aria.adobe.com/TagGroup#api"]
+references: ["https://react-aria.adobe.com/TagGroup#api"]
 ---
 
 <How toUse="pickers/multiple-select/multiple-select-demo" />
@@ -61,7 +61,7 @@ When the component is invalid, it displays an error message.
 When the component is disabled, it prevents the user from adding or removing tags.
 <How toUse="pickers/multiple-select/multiple-select-disabled-demo" />
 
-## API
+## Component API
 
 ### MultipleSelect
 
@@ -83,3 +83,13 @@ The `MultipleSelectContent` component renders multiple select options.
 | Prop | Type | Default |
 | --- | --- | --- |
 | `items` | `Iterable<T>` | - |
+
+### MultipleSelectItem
+
+The `MultipleSelectItem` component represents one multiple select option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.

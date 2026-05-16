@@ -88,11 +88,23 @@ By default, the sheet will stack, but you can change this behavior by using the 
 You can use the `SheetBody` component to make the sheet sticky.
 <How toUse="overlays/sheet/sheet-sticky-demo" />
 
-## API
+## Component API
+
+### Sheet
+
+The `Sheet` component controls the sheet trigger and content.
+
+### SheetTrigger
+
+The `SheetTrigger` component defines the element that opens a sheet.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### SheetContent
 
-The `SheetContent` component renders sheet panel content.
+The `SheetContent` component renders the slide-in sheet panel.
 
 | Prop | Type | Default |
 | --- | --- | --- |
@@ -101,3 +113,56 @@ The `SheetContent` component renders sheet panel content.
 | `isFloat` | `boolean` | `true` |
 | `overlay` | `Omit<ModalOverlayProps, "children">` | - |
 | `side` | `"top" \| "bottom" \| "left" \| "right"` | `right` |
+
+### SheetHeader
+
+The `SheetHeader` component groups the sheet title and description.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `description` | `string` | - |
+| `title` | `string` | - |
+
+### SheetTitle
+
+The `SheetTitle` component renders the sheet heading.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetDescription
+
+The `SheetDescription` component renders supporting text inside a sheet.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetBody
+
+The `SheetBody` component wraps the main sheet content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetFooter
+
+The `SheetFooter` component groups sheet actions.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetClose
+
+The `SheetClose` component renders a button that closes the sheet.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+
+See the [React Aria](https://react-aria.adobe.com/Modal#api) for the full API reference.

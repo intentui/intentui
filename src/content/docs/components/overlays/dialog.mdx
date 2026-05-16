@@ -21,7 +21,7 @@ Use this approach if you prefer to install and wire up the component yourself in
 <InstallCommand command="npm i react-aria-components"/>
 <SourceCode toShow='dialog' />
 
-## API
+## Component API
 
 ### Dialog
 
@@ -47,6 +47,15 @@ The `DialogCloseIcon` component renders the dialog close icon button.
 | --- | --- | --- |
 | `className` | `string` | - |
 | `isDismissable` | `boolean \| undefined` | - |
+
+### DialogClose
+
+The `DialogClose` component renders a button that closes the dialog.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
 
 ### DialogDescription
 
@@ -89,3 +98,5 @@ The `DialogTrigger` component defines the element that opens a dialog.
 | Prop | Type | Default |
 | --- | --- | --- |
 | `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Dialog#api) for the full API reference.

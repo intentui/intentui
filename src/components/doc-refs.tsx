@@ -10,11 +10,6 @@ import { LinkButton } from "@/components/link-button"
 import { Logo } from "@/components/logo"
 import { ButtonGroup } from "@/components/ui/button-group"
 
-function getComponentName(url: string): string {
-  const lastSegment = url.split("/").pop()
-  return lastSegment?.split("#")[0]!.replace(".html", "") || ""
-}
-
 export function DocRefs({ references }: { references: string[] }) {
   const urls = references.map((url: string) => {
     let title = ""
@@ -22,7 +17,7 @@ export function DocRefs({ references }: { references: string[] }) {
 
     switch (true) {
       case url.includes("react-aria"):
-        title = getComponentName(url)
+        title = "RAC"
         icon = BrandReactAriaIcon
         break
       case url.includes("icons"):
@@ -50,7 +45,7 @@ export function DocRefs({ references }: { references: string[] }) {
         icon = BrandGithubIcon
         break
       case url.includes("embla-carousel"):
-        title = "Props"
+        title = "API"
         icon = IconEmblaCarousel
         break
       default:
@@ -69,7 +64,14 @@ export function DocRefs({ references }: { references: string[] }) {
       <ButtonGroup>
         {urls.map(
           (item: { url: string; title: string; icon: React.FC<React.SVGProps<SVGSVGElement>> }) => (
-            <LinkButton key={item.url} target="_blank" size="sm" intent="outline" href={item.url}>
+            <LinkButton
+              className="dark:bg-secondary/50 dark:hover:bg-secondary"
+              key={item.url}
+              target="_blank"
+              size="sm"
+              intent="outline"
+              href={item.url}
+            >
               {item.icon && (
                 <item.icon
                   className={twJoin(item.url.includes("react-aria") ? "size-3!" : "")}
@@ -77,15 +79,7 @@ export function DocRefs({ references }: { references: string[] }) {
                 />
               )}
 
-              {item.url.includes("react-aria") ? (
-                <span>RAC API</span>
-              ) : item.title === "Props Reference" ? (
-                <span>
-                  Props <span className="hidden sm:inline">Reference</span>
-                </span>
-              ) : (
-                <span className="block truncate">{item.title}</span>
-              )}
+              {item.title}
             </LinkButton>
           ),
         )}

@@ -185,11 +185,23 @@ const actionType = (t: string | null) => {
 }
 ```
 
-## API
+## Component API
+
+### Modal
+
+The `Modal` component controls the modal trigger and content.
+
+### ModalTrigger
+
+The `ModalTrigger` component defines the element that opens a modal.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### ModalContent
 
-The `ModalContent` component renders modal dialog content.
+The `ModalContent` component renders the modal panel.
 
 | Prop | Type | Default |
 | --- | --- | --- |
@@ -197,3 +209,56 @@ The `ModalContent` component renders modal dialog content.
 | `closeButton` | `boolean` | `true` |
 | `overlay` | `Pick<ModalOverlayProps, "className">` | - |
 | `size` | `keyof typeof sizes` | `md` |
+
+### ModalHeader
+
+The `ModalHeader` component groups the modal title and description.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `description` | `string` | - |
+| `title` | `string` | - |
+
+### ModalTitle
+
+The `ModalTitle` component renders the modal heading.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ModalDescription
+
+The `ModalDescription` component renders supporting text inside a modal.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ModalBody
+
+The `ModalBody` component wraps the main modal content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ModalFooter
+
+The `ModalFooter` component groups modal actions.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ModalClose
+
+The `ModalClose` component renders a button that closes the modal.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+
+See the [React Aria](https://react-aria.adobe.com/Modal#api) for the full API reference.

@@ -70,7 +70,15 @@ The list above shows the primary directions, but you can also use more specific 
 Tooltip rolls out the welcome mat after you hover for 1.5 secs. Wanna speed it up or slow it down? Just slide in a `delay` prop. Peep these [guidelines](https://spectrum.adobe.com/page/tooltip/#Immediate-or-delayed-appearance) for the scoop.
 <How toUse="overlays/tooltip/tooltip-delay-demo" />
 
-## API
+## Component API
+
+### Tooltip
+
+The `Tooltip` component controls when tooltip content is shown.
+
+### TooltipTrigger
+
+The `TooltipTrigger` component defines the element that opens a tooltip.
 
 ### TooltipContent
 
@@ -79,4 +87,7 @@ The `TooltipContent` component renders tooltip content.
 | Prop | Type | Default |
 | --- | --- | --- |
 | `arrow` | `boolean` | `true` |
+| `className` | `string` | - |
 | `inverse` | `true \| false` | `false` |
+
+See the [React Aria](https://react-aria.adobe.com/Tooltip#api) for the full API reference.
