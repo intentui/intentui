@@ -3,9 +3,14 @@ title: "Sidebar"
 description: A collapsible side panel for navigation or extra content, with multiple intents, behaviors, and customization options to match your layout on any screen size
 order: 1
 published: true
+references: ["https://react-aria.adobe.com/Link#api"]
 ---
 
 <Sandbox
+  imgSrc={{
+    light: "/images/sidebar/sidebar-light.png",
+    dark: "/images/sidebar/sidebar-dark.png",
+  }}
   registries={[
     "sidebar-01",
   ]}
@@ -66,38 +71,43 @@ Not sure if it's your style, but it's a great starting point. If you’d like to
 ## Examples
 
 ### Intent
-The sidebar comes in three variations: `"sidebar"`, `"float"`, and `"inset"`. By default, the variation is set to `"sidebar"`.
+The sidebar comes in three variations: `sidebar`, `float`, and `inset`. By default, the variation is set to `"sidebar"`.
 
 #### Default
 The default variation is a traditional sidebar often used for navigation. <NewTab href='/pre-blocks/sidebar/sidebar-02'/>.
-```
+```tsx
+{/* [!code word:default:1] */}
 <Sidebar intent="default" />
 ```
 
 #### Inset
 The inset variation adds padding to the main content for a visually distinct layout. Explore the demo to see it in action, or switch to full-screen mode for a better view. <NewTab href='/pre-blocks/sidebar/sidebar-03'/>.
 ```
+{/* [!code word:inset:1] */}
 <Sidebar intent="inset" />
 ```
 
 #### Float
 The `float` variation introduces an inner border within the sidebar, while the wrapper includes padding around the content. <NewTab href='/pre-blocks/sidebar/sidebar-04'/>
 ```
+{/* [!code word:float:1] */}
 <Sidebar intent="float" />
 ```
 
 ### Collapsible
-The sidebar can be made collapsible by using the `collapsible` prop in the `SidebarProvider`. The default collapsible behavior is `"hidden"`.
+The sidebar can be made collapsible by using the `collapsible` prop in the `SidebarProvider`. The default collapsible behavior is `hidden`.
 
 #### Hidden
 When toggled, the sidebar hides completely from view. <NewTab href='/pre-blocks/sidebar/sidebar-05'/>
 ```
+{/* [!code word:hidden:1] */}
 <Sidebar collapsible="hidden" />
 ```
 
 #### Dock
 When toggled, the sidebar docks to a minimal state, showing only icons. Hovering over an icon reveals a tooltip with additional information. <NewTab href='/pre-blocks/sidebar/sidebar-06'/>
 ```
+{/* [!code word:dock:1] */}
 <Sidebar intent="dock" />
 ```
 
@@ -178,7 +188,7 @@ const sections = [
 
 
 ### Menu actions
-The sidebar supports menus for displaying additional actions or options. When using a menu, be sure to include `data-slot="menu-action-trigger"`.
+The sidebar supports menus for displaying additional actions or options.
 ```
 <SidebarItem tooltip="Orders">
   {({ isCollapsed, isFocused }) => (
@@ -219,10 +229,15 @@ The sidebar supports menus for displaying additional actions or options. When us
   registries={[
     "sidebar-08",
   ]}
+  imgSrc={{
+    light: "/images/sidebar/sidebar-light.png",
+    dark: "/images/sidebar/sidebar-dark.png",
+  }}
 />
 
 By default, the sidebar menu trigger will be visible when you hover over the sidebar item. If you want to always show the menu trigger, you can use the `alwaysVisible` prop.
 ```
+{/* [!code word:alwaysVisible:1] */}
 <SidebarMenuTrigger alwaysVisible aria-label="Manage">
   <EllipsisHorizontalIcon />
 </SidebarMenuTrigger>
@@ -277,6 +292,10 @@ The sidebar supports tooltips, which can be used to display additional informati
   registries={[
     "sidebar-12",
   ]}
+  imgSrc={{
+    light: "/images/sidebar/sidebar-light.png",
+    dark: "/images/sidebar/sidebar-dark.png",
+  }}
 />
 
 ### Header

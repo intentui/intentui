@@ -36,7 +36,7 @@ html.dark .shiki span {
 }
 
 [data-rehype-pretty-code-fragment] .line {
-  @apply inline-block min-h-[1rem] w-full px-4 py-0.5;
+  @apply inline-block min-h-4 w-full px-4 py-0.5;
 }
 
 [data-rehype-pretty-code-fragment] [data-line-numbers] .line {
@@ -65,6 +65,14 @@ html.dark .shiki span {
   @apply rounded-md border bg-muted p-1;
 }
 
+.shiki .highlighted {
+  @apply -ml-4 border-l border-blue-400 bg-linear-to-r from-blue-600/10 via-shiki-bg to-shiki-bg pl-4;
+}
+
+html .shiki span.highlighted-word {
+  @apply rounded-sm bg-secondary! py-0.5 px-1.5 text-sm/6 text-secondary-fg! border;
+}
+
 [data-rehype-pretty-code-title] {
   @apply text-fg mt-2 px-4 pt-6 text-sm font-medium;
 }
@@ -82,16 +90,6 @@ html.dark .shiki span {
 .prose h4 {
   @apply font-medium tracking-tight;
 }
-.prose h2 {
-  @apply text-[1.4rem];
-}
-.prose h3 {
-  @apply text-[1.3rem];
-}
-.prose h4 {
-  @apply text-[1.2rem];
-}
-
 [data-rehype-pretty-code-title] {
   @apply text-muted-fg p-2 text-sm font-medium;
 }
@@ -116,7 +114,7 @@ span[data-rehype-pretty-code-figure] > code > span {
 [data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
-  @apply mr-4 inline-block w-4 text-right text-gray-500;
+  @apply mr-4 inline-block w-4 text-right text-zinc-500;
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-line] {
@@ -153,13 +151,13 @@ span[data-rehype-pretty-code-figure] > code > span {
 }
 
 .prose :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  @apply text-2xl;
-}
-
-.prose :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   @apply text-xl;
 }
 
-.prose :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+.prose :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   @apply text-lg;
+}
+
+.prose :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  @apply text-base;
 }

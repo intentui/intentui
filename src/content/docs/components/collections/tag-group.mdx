@@ -50,9 +50,15 @@ Tags within the group can include a removal button.
 Manage the values of the tag group through the `value` prop.
 <How toUse="collections/tag-group/tag-group-controlled-demo" />
 
-### Href
+### Links
 Incorporate a hyperlink within the tag group using the `href` prop.
 <How toUse="collections/tag-group/tag-group-href-demo" />
+
+
+<Note intent="warning">
+  For client-side routing, React Aria recommends using the <code className="font-semibold">onAction</code> event to handle navigation programmatically instead of passing an href prop.
+  This is because some collection items cannot be rendered as native elements due to HTML specification limitations.
+</Note>
 
 ### Disabled
 Disable tags either by setting the `isDisabled` prop or using `disabledKeys` on the `TagGroup`.

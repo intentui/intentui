@@ -6,7 +6,7 @@ published: true
 references: ["https://react-aria.adobe.com/Table#api"]
 ---
 
-<How isCenter={false} toUse="collections/table/table-demo" />
+<How isCenter={false} withNoPadding toUse="collections/table/table-demo" />
 
 ## Installation
 
@@ -60,39 +60,43 @@ import {
 In the latest React Aria release, tables can now be made searchable since Autocomplete supports all collection types, including Table This allows users to filter table rows directly with their input.
 
 This example comes from a tweet by Devon [here](https://x.com/devongovett/status/1960184396801015971).
-<How isCenter={false} toUse="collections/table/table-with-autocomplete-demo" />
+<How isCenter={false} withNoPadding toUse="collections/table/table-with-autocomplete-demo" />
 
 ### Expandable rows
 Tables can have expandable rows to show additional details. This is useful for displaying more information without clutter
 ing the main table view.
-<How isCenter={false} toUse="collections/table/table-expandable-demo" />
+<How isCenter={false} withNoPadding toUse="collections/table/table-expandable-demo" />
 
 ### Bulk actions
 Tables may require bulk actions for handling multiple entries at once.
-<How isCenter={false} toUse="collections/table/table-bulk-demo" />
+<How isCenter={false} withNoPadding toUse="collections/table/table-bulk-demo" />
 
 ### Drag and drop
 Similar to [GridList](/docs/components/collections/grid-list), tables can also support drag and drop functionality.
-<How isCenter={false} toUse="collections/table/table-drag-demo" />
+<How isCenter={false} withNoPadding toUse="collections/table/table-drag-demo" />
 
 ### Sorting
 Tables can be made sortable. Activate sorting by clicking on a column header.
-<How isCenter={false} toUse="collections/table/table-sorting-demo" />
+<How isCenter={false} withNoPadding toUse="collections/table/table-sorting-demo" />
 
 ### Resizable
 Tables can be made resizable. To enable resizing, set the `allowResize` prop to `true`. And to make a column resizable, set the `isResizable` prop to `true` on the column.
-<How isCenter={false} toUse="collections/table/table-resize-demo" />
+<How isCenter={false} withNoPadding toUse="collections/table/table-resize-demo" />
 
 ### Infinite scrolling
 Tables can handle large datasets efficiently with infinite scrolling. This allows for loading more data as the user scrolls down, improving performance and user experience.
-<How isCenter={false} toUse="collections/table/table-infinite-scroll-demo" />
+<How isCenter={false} withNoPadding toUse="collections/table/table-infinite-scroll-demo" />
 
-### Href
+### Links
 To create a clickable link within a table row, use the `href` prop.
 
 ```jsx
 <TableRow href='/collections/table-demo'/>
 ```
+<Note intent="warning">
+  For client-side routing, React Aria recommends using the <code className="font-semibold">onAction</code> event to handle navigation programmatically instead of passing an href prop.
+  This is because some collection items cannot be rendered as native elements due to HTML specification limitations.
+</Note>
 
 ### Bleed
 Use the `bleed` prop to make the table stretch to the edges of its container. This is especially useful in layouts like sidebars, where you want the table to align with the container's outer padding.
@@ -103,7 +107,7 @@ Use the `bleed` prop to make the table stretch to the edges of its container. Th
 
 ### With card
 When placing a table inside a card, you can use bleed and adjust the `--spacing` variable to align with the card’s padding, allowing the table to span the full width.
-<How isCenter={false} toUse="surfaces/card/card-table-demo"/>
+<How isCenter={false} withNoPadding toUse="surfaces/card/card-table-demo"/>
 
 
 See the full demo at [Sidebar 15](/pre-blocks/sidebar/sidebar-15).

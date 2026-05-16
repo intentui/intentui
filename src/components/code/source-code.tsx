@@ -29,7 +29,7 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
   if (processedSourceCode) {
     return (
       <section {...props} className="group not-prose relative my-6">
-        <p className="mb-3 text-sm/6">
+        <p className="mb-3 text-base/6">
           {props.message
             ? props.message
             : "You can copy the code below and paste it into your component folder."}

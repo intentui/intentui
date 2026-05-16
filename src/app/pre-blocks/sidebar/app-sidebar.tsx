@@ -1,8 +1,7 @@
 "use client"
 
 import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
-import { PlusIcon } from "@heroicons/react/20/solid"
-import { ChevronUpDownIcon, CubeIcon, HashtagIcon } from "@heroicons/react/24/outline"
+import { ChevronUpDownIcon, PlusIcon } from "@heroicons/react/20/solid"
 import {
   ArchiveBoxIcon,
   ArrowDownTrayIcon,
@@ -14,7 +13,9 @@ import {
   ClockIcon,
   Cog6ToothIcon,
   CreditCardIcon,
+  CubeIcon,
   DocumentTextIcon,
+  HashtagIcon,
   HomeIcon,
   LifebuoyIcon,
   ListBulletIcon,
@@ -22,7 +23,7 @@ import {
   ShieldCheckIcon,
   ShoppingBagIcon,
   TicketIcon,
-} from "@heroicons/react/24/solid"
+} from "@heroicons/react/24/outline"
 import { Avatar } from "@/components/ui/avatar"
 import { Link } from "@/components/ui/link"
 import {

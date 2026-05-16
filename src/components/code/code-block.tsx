@@ -3,7 +3,7 @@
 import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
 import { Tab } from "react-aria-components/Tabs"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twMerge } from "tailwind-merge"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
 import { BrandCssIcon } from "@/components/icons/brand-css-icon"
@@ -54,12 +54,12 @@ export function CodeBlock({ source }: Props) {
       {contents && Object.keys(contents).length > 0 ? (
         <Tabs className="relative gap-0">
           <div className="flex items-center justify-between gap-x-2">
-            <TabList className="gap-0 border-0">
+            <TabList className="gap-x-4 gap-y-0 border-0">
               {Object.keys(contents).map((key) => (
                 <Tab
                   className={(values) =>
                     twMerge(
-                      "flex min-w-0 cursor-default items-center gap-x-1 truncate px-1 py-2 font-medium text-sm/6 *:data-[slot=icon]:hidden sm:p-2 sm:*:data-[slot=icon]:block",
+                      "flex min-w-0 cursor-default items-center gap-x-1 truncate py-2 text-sm/6 *:data-[slot=icon]:hidden sm:*:data-[slot=icon]:block",
                       values.isSelected || values.isFocused || values.isFocusVisible
                         ? "text-fg"
                         : "text-muted-fg hover:text-fg",
@@ -87,12 +87,7 @@ export function CodeBlock({ source }: Props) {
           </div>
           {Object.entries(contents).map(([key, value]) => (
             <TabPanel key={key} id={key}>
-              <div
-                className={twJoin(
-                  "relative overflow-hidden rounded-lg border bg-shiki-bg",
-                  "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
-                )}
-              >
+              <div className="relative overflow-hidden rounded-lg border bg-shiki-bg">
                 <CopyButton
                   className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
                   onPress={() => handleCopy(key, value)}
