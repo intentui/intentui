@@ -4,8 +4,7 @@ description: A flexible UI container that groups related content, actions, and m
 published: true
 order: 1
 ---
-## Basic
-Top spots to hit in 2025, no cap!
+
 <How toUse="surfaces/card/card-demo"/>
 
 ## Installation
@@ -44,15 +43,17 @@ import {
 </Card>
 ```
 
-## With form
+## Examples
+
+### With form
 Sometimes, you may need a card with a form inside.
 <How toUse="surfaces/card/card-login-form-demo"/>
 
-## Action
+### Action
 You can add actions to your card, which will be aligned to the right. This example demonstrates using the menu component, but you can use any component you prefer.
 <How toUse="surfaces/card/card-action-demo"/>
 
-## With table
+### With table
 When you place a table inside a card, The table gutter inherits the padding from its parent card to ensure visual consistency.
 <How isCenter={false} className="px-6" toUse="surfaces/card/card-table-demo"/>
 
@@ -66,3 +67,60 @@ Sometimes, you may only need a card header without wrapping container itself. Of
   description="List of daemons to use in your sites."
 />
 ```
+
+## API
+
+### Card
+
+The `Card` component is the root container for card content.
+
+| Prop        | Type                | Default     |
+| ----------- | ------------------- | ----------- |
+| `className` | `string`            | -           |
+
+### CardHeader
+
+The `CardHeader` component is used for a title, description, and optional action.
+
+| Prop        | Type     | Default |
+|-------------|----------|---------|
+| `className` | `string` | -       |
+
+### CardTitle
+The `CardTitle` component is used for the card title.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
+
+### CardDescription
+
+The `CardDescription` component is used for helper text under the title.
+
+| Prop        | Type     | Default |
+|-------------|----------|---------|
+| `className` | `string` | -       |
+
+### CardAction
+
+The `CardAction` component places content in the top-right of the header (for example, a button or a badge).
+
+| Prop        | Type     | Default |
+|-------------|----------|---------|
+| `className` | `string` | -       |
+
+### CardContent
+
+The `CardContent` component is used for the main card body.
+
+| Prop        | Type     | Default |
+|-------------|----------|---------|
+| `className` | `string` | -       |
+
+### CardFooter
+
+The `CardFooter` component is used for actions and secondary content at the bottom of the card.
+
+| Prop        | Type     | Default |
+|-------------|----------|---------|
+| `className` | `string` | -       |

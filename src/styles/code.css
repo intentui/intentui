@@ -156,28 +156,3 @@ span[data-rehype-pretty-code-figure] > code > span {
 .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::after {
   display: none;
 }
-
-.prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  @apply w-full overflow-hidden border-t;
-}
-
-.prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) tr {
-  @apply border-border border-b;
-}
-
-.prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) th {
-  @apply border-r px-4 py-2.5 text-left text-sm font-medium sm:whitespace-nowrap;
-}
-
-.prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) thead {
-  @apply bg-secondary/40;
-}
-
-.prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) td {
-  @apply border-r px-4 py-2.5;
-}
-
-.prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) td:first-child,
-.prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) th:first-child {
-  @apply border-l;
-}

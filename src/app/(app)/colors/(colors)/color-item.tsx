@@ -1,4 +1,5 @@
-import { CheckIcon, ChevronDownIcon, Square2StackIcon } from "@heroicons/react/24/outline"
+import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid"
+import { Square2StackIcon } from "@heroicons/react/24/outline"
 import { formatHex, formatHsl, formatRgb, oklch, parse } from "culori"
 import { useEffect, useState } from "react"
 import type { Selection } from "react-aria-components/GridList"

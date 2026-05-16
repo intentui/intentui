@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDownIcon } from "@heroicons/react/16/solid"
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { ArrowTopRightOnSquareIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { motion } from "motion/react"
 import { usePathname } from "next/navigation"

@@ -1,11 +1,10 @@
 "use client"
 
-import { ChevronRightIcon } from "@heroicons/react/20/solid"
+import { CheckIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
 import {
   ArchiveBoxIcon,
   ArrowTrendingUpIcon,
   CheckCircleIcon,
-  CheckIcon,
   ComputerDesktopIcon,
   CpuChipIcon,
   CreditCardIcon,

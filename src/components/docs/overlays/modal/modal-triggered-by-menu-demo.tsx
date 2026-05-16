@@ -1,6 +1,7 @@
 "use client"
 
-import { ChevronDownIcon, NoSymbolIcon, TrashIcon } from "@heroicons/react/24/outline"
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
+import { NoSymbolIcon, TrashIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"

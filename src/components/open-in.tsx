@@ -1,7 +1,6 @@
 "use client"
 
-import { CheckIcon } from "@heroicons/react/24/outline"
-import { ChevronDownIcon } from "@heroicons/react/24/solid"
+import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid"
 import type { Root as PageTreeRoot } from "fumadocs-core/page-tree"
 import { useState } from "react"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
@@ -13,6 +12,7 @@ import { Menu, MenuContent, MenuItem, MenuSeparator } from "@/components/ui/menu
 import { app } from "@/config/app"
 import { useClipboard } from "@/hooks/use-clipboard"
 import { DuplicateIcon } from "./icons/duplicate-icon"
+import { ButtonGroup } from "@/components/ui/button-group";
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
@@ -39,24 +39,36 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
   }
 
   return (
-    <div className="not-prose fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
-      <Button
-        className="h-10 rounded-sm sm:h-auto"
-        intent="outline"
-        size="sm"
-        onPress={() => void getMarkdown()}
-        isPending={pending}
-      >
-        {pending ? <Loader /> : copied ? <CheckIcon /> : <DuplicateIcon />}
-        Copy page
-      </Button>
-      <div className="flex items-center gap-x-1.5">
+    <div className="not-prose fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-x-1.5 border-t bg-bg p-4 sm:p-0 md:static md:z-auto md:ml-auto md:border-transparent md:border-t">
+      <ButtonGroup>
+        <Button
+          className="h-10 rounded-sm sm:h-auto"
+          intent="outline"
+          size="sm"
+          onPress={() => void getMarkdown()}
+          isPending={pending}
+        >
+          {pending ? <Loader /> : copied ? <CheckIcon /> : <DuplicateIcon />}
+          Copy page
+        </Button>
         <Menu>
-          <Button className="h-10 rounded-sm sm:h-auto" intent="outline" size="sm">
-            Open in
+          <Button className="h-10 rounded-sm sm:h-auto pressed:bg-secondary pressed:*:text-fg" intent="outline" size="sm">
             <ChevronDownIcon className="rotate-180 sm:rotate-0" />
           </Button>
           <MenuContent className="min-w-40" placement="bottom end">
+
+            <MenuItem href={`${url}.md`} target="_blank" rel="noopener noreferrer">
+              <svg data-slot="icon" strokeLinejoin="round" viewBox="0 0 22 16">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M19.5 2.25H2.5C1.80964 2.25 1.25 2.80964 1.25 3.5V12.5C1.25 13.1904 1.80964 13.75 2.5 13.75H19.5C20.1904 13.75 20.75 13.1904 20.75 12.5V3.5C20.75 2.80964 20.1904 2.25 19.5 2.25ZM2.5 1C1.11929 1 0 2.11929 0 3.5V12.5C0 13.8807 1.11929 15 2.5 15H19.5C20.8807 15 22 13.8807 22 12.5V3.5C22 2.11929 20.8807 1 19.5 1H2.5ZM3 4.5H4H4.25H4.6899L4.98715 4.82428L7 7.02011L9.01285 4.82428L9.3101 4.5H9.75H10H11V5.5V11.5H9V7.79807L7.73715 9.17572L7 9.97989L6.26285 9.17572L5 7.79807V11.5H3V5.5V4.5ZM15 8V4.5H17V8H19.5L17 10.5L16 11.5L15 10.5L12.5 8H15Z"
+                  fill="currentColor"
+                />
+              </svg>
+              View as Markdown
+            </MenuItem>
+            <MenuSeparator />
             <MenuItem
               href={getPromptUrl("https://grok.com", fullUrl)}
               target="_blank"
@@ -72,7 +84,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
                 <title>Grok</title>
                 <path d="M9.27 15.29l7.978-5.897c.391-.29.95-.177 1.137.272.98 2.369.542 5.215-1.41 7.169-1.951 1.954-4.667 2.382-7.149 1.406l-2.711 1.257c3.889 2.661 8.611 2.003 11.562-.953 2.341-2.344 3.066-5.539 2.388-8.42l.006.007c-.983-4.232.242-5.924 2.75-9.383.06-.082.12-.164.179-.248l-3.301 3.305v-.01L9.267 15.292M7.623 16.723c-2.792-2.67-2.31-6.801.071-9.184 1.761-1.763 4.647-2.483 7.166-1.425l2.705-1.25a7.808 7.808 0 00-1.829-1A8.975 8.975 0 005.984 5.83c-2.533 2.536-3.33 6.436-1.962 9.764 1.022 2.487-.653 4.246-2.34 6.022-.599.63-1.199 1.259-1.682 1.925l7.62-6.815" />
               </svg>
-              <span className="sr-only">Open in</span> Grok
+              Open in Grok
             </MenuItem>
             <MenuItem
               href={getPromptUrl("https://chatgpt.com", fullUrl)}
@@ -85,7 +97,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
                   fill="currentColor"
                 />
               </svg>
-              <span className="sr-only">Open in</span> ChatGPT
+              Open in ChatGPT
             </MenuItem>
             <MenuItem
               href={getPromptUrl("https://t3.chat/new", fullUrl)}
@@ -96,7 +108,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
                 className="-ml-0.5 [--avatar-size:--spacing(4.2)]!"
                 src="https://t3.chat/favicon.ico?favicon.71cdc391.ico"
               />
-              <span className="sr-only">Open in</span> T3 chat
+              Open in T3 chat
             </MenuItem>
             <MenuItem
               href={getPromptUrl("https://claude.ai/new", fullUrl)}
@@ -109,19 +121,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
                   fill="#d97757"
                 />
               </svg>
-              <span className="sr-only">Open in</span> Claude
-            </MenuItem>
-            <MenuSeparator />
-            <MenuItem href={`${url}.md`} target="_blank" rel="noopener noreferrer">
-              <svg data-slot="icon" strokeLinejoin="round" viewBox="0 0 22 16">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M19.5 2.25H2.5C1.80964 2.25 1.25 2.80964 1.25 3.5V12.5C1.25 13.1904 1.80964 13.75 2.5 13.75H19.5C20.1904 13.75 20.75 13.1904 20.75 12.5V3.5C20.75 2.80964 20.1904 2.25 19.5 2.25ZM2.5 1C1.11929 1 0 2.11929 0 3.5V12.5C0 13.8807 1.11929 15 2.5 15H19.5C20.8807 15 22 13.8807 22 12.5V3.5C22 2.11929 20.8807 1 19.5 1H2.5ZM3 4.5H4H4.25H4.6899L4.98715 4.82428L7 7.02011L9.01285 4.82428L9.3101 4.5H9.75H10H11V5.5V11.5H9V7.79807L7.73715 9.17572L7 9.97989L6.26285 9.17572L5 7.79807V11.5H3V5.5V4.5ZM15 8V4.5H17V8H19.5L17 10.5L16 11.5L15 10.5L12.5 8H15Z"
-                  fill="currentColor"
-                />
-              </svg>
-              <span className="sr-only">Open in</span> Markdown
+              Open in Claude
             </MenuItem>
             <MenuItem
               href={`${app.repo.url}/blob/${app.repo.currentVersion}/src/content${url}.mdx`}
@@ -129,13 +129,13 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
               rel="noopener noreferrer"
             >
               <BrandGithubIcon />
-              <span className="sr-only">Open in</span> Github
+              Open in Github
             </MenuItem>
           </MenuContent>
         </Menu>
+      </ButtonGroup>
 
         <MobilePager tree={tree} url={url} />
-      </div>
     </div>
   )
 }

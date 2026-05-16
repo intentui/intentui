@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDownIcon } from "@heroicons/react/24/outline"
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { Button } from "@/components/ui/button"
 import { Card, CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"

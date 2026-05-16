@@ -7,13 +7,6 @@ import { Logo } from "@/components/logo"
 import { buttonStyles } from "@/components/ui/button"
 import { Text } from "@/components/ui/text"
 
-const border = {
-  duration: 10,
-  gradient:
-    "conic-gradient(from var(--border-angle), transparent 0deg, transparent 235deg, rgb(var(--ads-border-color) / 0.18) 275deg, rgb(var(--ads-border-color) / 1) 310deg, rgb(var(--ads-border-color) / 0.18) 345deg, transparent 360deg)",
-  mask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-}
-
 export function Ads({ className }: { className?: string }) {
   const shouldReduceMotion = useReducedMotion()
 
@@ -22,39 +15,12 @@ export function Ads({ className }: { className?: string }) {
       target="_blank"
       href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=docs_intentui"
       className={twMerge(
-        "not-prose group relative inset-ring inset-ring-border block w-full overflow-hidden rounded-md bg-zinc-50 p-4 [--ads-border-color:0_0_0] sm:w-60 dark:bg-zinc-800 dark:[--ads-border-color:255_255_255]",
+        "not-prose group relative inset-ring inset-ring-border block w-full overflow-hidden rounded-md p-4 bg-zinc-50 sm:w-60 dark:bg-zinc-900",
+        "gradient-border gradient-border-to-br gradient-border-from-muted-fg/50 gradient-border-via-fg/20 gradient-border-to-border",
         className,
       )}
       rel="noopener"
     >
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-md ring-1 ring-black/10 dark:ring-white/10"
-      />
-      <motion.span
-        aria-hidden="true"
-        animate={shouldReduceMotion ? undefined : { "--border-angle": "360deg" }}
-        className="pointer-events-none absolute inset-0 rounded-md p-px"
-        style={
-          {
-            "--border-angle": "0deg",
-            background: border.gradient,
-            mask: border.mask,
-            maskComposite: "exclude",
-            WebkitMask: border.mask,
-            WebkitMaskComposite: "xor",
-          } as React.CSSProperties
-        }
-        transition={
-          shouldReduceMotion
-            ? undefined
-            : {
-                duration: border.duration,
-                ease: "linear",
-                repeat: Number.POSITIVE_INFINITY,
-              }
-        }
-      />
       <span className="block font-medium text-base/6">
         Unlock the full power of <br /> Intent UI Design
       </span>

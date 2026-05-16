@@ -1,5 +1,6 @@
 "use client"
 
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import {
   AdjustmentsHorizontalIcon as AdjustmentsHorizontalOutline,
   ArrowUturnLeftIcon,
@@ -8,7 +9,6 @@ import {
   Bars3BottomRightIcon,
   Bars3Icon,
   BoltIcon as BoltOutline,
-  ChevronDownIcon,
   CursorArrowRaysIcon as CursorArrowRaysOutline,
   LinkIcon,
   NoSymbolIcon as NoSymbolOutline,
