@@ -33,7 +33,7 @@ export const Pre = ({ className, ref, ...props }: React.ComponentProps<"pre">) =
   return (
     <pre
       ref={ref}
-      className={twMerge("w-full p-4 text-sm/9 focus-visible:outline-hidden", className)}
+      className={twMerge("w-full p-4 text-sm/8 focus-visible:outline-hidden", className)}
       {...props}
     >
       {props.children}

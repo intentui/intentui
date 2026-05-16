@@ -116,7 +116,7 @@ export function Aside() {
                     {item.title}
                     {item.status && (
                       <Badge
-                        className="-mr-1.5"
+                        className="-mr-2 ml-auto"
                         isCircle={false}
                         intent={
                           item.status === "new"
@@ -196,7 +196,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
 function AsideHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={twMerge("relative mb-2 block font-medium text-muted-fg text-xs/6", className)}
+      className={twMerge("relative mb-2 block font-medium text-muted-fg text-sm/6", className)}
       {...props}
     />
   )

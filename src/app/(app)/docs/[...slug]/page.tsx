@@ -150,7 +150,7 @@ export default async function Page(props: DocPageProps) {
       <div className="min-w-0 max-w-3xl flex-auto px-4 py-8 sm:py-14 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-14">
         <div className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
           <div className="mx-auto max-w-2xl">
-            <div className="not-prose mb-6 space-y-3 sm:space-y-6">
+            <div className="not-prose mb-6 space-y-4 sm:space-y-6">
               <div className="font-mono text-primary-subtle-fg text-xs uppercase">
                 {extractSegment(page.url)}
               </div>
