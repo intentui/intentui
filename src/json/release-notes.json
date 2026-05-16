@@ -1,5 +1,29 @@
 [
   {
+    "name": "List box virtualizer demo",
+    "component": "list-box-virtualizer-demo.tsx",
+    "url": "/list-box",
+    "type": "demo",
+    "category": "collections",
+    "kind": "new",
+    "description": null,
+    "additions": 25,
+    "deletions": 0,
+    "date": "2026-05-16"
+  },
+  {
+    "name": "Tree",
+    "component": "tree.tsx",
+    "url": "/tree",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 6,
+    "deletions": 5,
+    "date": "2026-05-16"
+  },
+  {
     "name": "Multiple select demo",
     "component": "multiple-select-demo.tsx",
     "url": "/multiple-select",

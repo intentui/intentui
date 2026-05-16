@@ -87,12 +87,16 @@ Tables can be made resizable. To enable resizing, set the `allowResize` prop to 
 Tables can handle large datasets efficiently with infinite scrolling. This allows for loading more data as the user scrolls down, improving performance and user experience.
 <How isCenter={false} withNoPadding toUse="collections/table/table-infinite-scroll-demo" />
 
-### Href
+### Links
 To create a clickable link within a table row, use the `href` prop.
 
 ```jsx
 <TableRow href='/collections/table-demo'/>
 ```
+<Note intent="warning">
+  For client-side routing, React Aria recommends using the <code className="font-semibold">onAction</code> event to handle navigation programmatically instead of passing an href prop.
+  This is because some collection items cannot be rendered as native elements due to HTML specification limitations.
+</Note>
 
 ### Bleed
 Use the `bleed` prop to make the table stretch to the edges of its container. This is especially useful in layouts like sidebars, where you want the table to align with the container's outer padding.

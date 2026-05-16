@@ -48,9 +48,6 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  p: (props: React.ComponentProps<"p">) => (
-    <p className="text-zinc-700 dark:text-zinc-300" {...props} />
-  ),
   NewTab: (props: React.ComponentProps<typeof Link>) => (
     <Link
       className="not-prose xd2432 text-primary-subtle-fg outline-hidden hover:underline focus-visible:ring-1"
