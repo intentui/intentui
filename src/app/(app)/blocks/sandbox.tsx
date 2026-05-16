@@ -20,6 +20,13 @@ interface RegistryFile {
   target?: string
 }
 
+type SandboxImageSrc =
+  | string
+  | {
+      light: string
+      dark: string
+    }
+
 interface RegistryItem {
   name: string
   type: string
@@ -27,6 +34,7 @@ interface RegistryItem {
   description?: string
   registryDependencies?: string[]
   files: RegistryFile[]
+  imgSrc?: SandboxImageSrc
 }
 
 const REGISTRY_ORIGIN = process.env.NEXT_PUBLIC_APP_URL
@@ -81,14 +89,48 @@ function SourceTabs({ files }: { files: RegistryFile[] }) {
   )
 }
 
-function RegistryItemViewer({ item }: { item: RegistryItem }) {
+function SandboxPreviewImage({ alt, imgSrc }: { alt: string; imgSrc: SandboxImageSrc }) {
+  if (typeof imgSrc === "string") {
+    return (
+      <img
+        alt={alt}
+        className="block ring ring-border aspect-video rounded-lg"
+        decoding="async"
+        loading="lazy"
+        src={imgSrc}
+      />
+    )
+  }
+
+  return (
+    <div className="rounded-lg ring ring-border">
+      <img
+        alt={alt}
+        className="block h-auto w-full rounded-lg dark:hidden"
+        decoding="async"
+        loading="lazy"
+        src={imgSrc.light}
+      />
+      <img
+        alt={alt}
+        className="hidden h-auto w-full rounded-lg dark:block"
+        decoding="async"
+        loading="lazy"
+        src={imgSrc.dark}
+      />
+    </div>
+  )
+}
+
+function RegistryItemViewer({ imgSrc, item }: { imgSrc?: SandboxImageSrc; item: RegistryItem }) {
   const [tab, setTab] = useState<Key>("preview")
   const b = item.name.split("-")[0]
   const c = item.name
   const src = `${REGISTRY_ORIGIN}/pre-blocks/${b}/${encodeURIComponent(c)}`
   const { copied, copy } = useClipboard()
+  const previewImgSrc = imgSrc ?? item.imgSrc
   return (
-    <section className="space-y-4">
+    <section className="space-y-4 not-prose">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
         <div className="not-prose flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <header className="space-y-1">
@@ -122,13 +164,17 @@ function RegistryItemViewer({ item }: { item: RegistryItem }) {
             </SourceTab>
           </TabList>
         </div>
-        <TabPanel id="preview" className="rounded-lg border">
-          <iframe
-            title={c}
-            src={src}
-            className="aspect-video h-96 w-full rounded-lg md:h-auto"
-            loading="lazy"
-          />
+        <TabPanel id="preview">
+          {previewImgSrc ? (
+            <SandboxPreviewImage alt={`Example ${c}`} imgSrc={previewImgSrc} />
+          ) : (
+            <iframe
+              title={c}
+              src={src}
+              className="aspect-video h-96 w-full rounded-lg md:h-auto border"
+              loading="lazy"
+            />
+          )}
         </TabPanel>
         <TabPanel id="source">
           <SourceTabs files={item.files} />
@@ -150,7 +196,7 @@ function SourceTab({ className, ...props }: React.ComponentProps<typeof Tab>) {
   )
 }
 
-function LazyRegistryItem({ name }: { name: string }) {
+function LazyRegistryItem({ imgSrc, name }: { imgSrc?: SandboxImageSrc; name: string }) {
   const ref = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(ref, { margin: "100px 0px 100px 0px", once: true })
   const [item, setItem] = useState<RegistryItem | null>(null)
@@ -166,11 +212,11 @@ function LazyRegistryItem({ name }: { name: string }) {
     return () => ac.abort()
   }, [isInView, name, item, error])
   return (
-    <div ref={ref} className="min-h-90">
+    <div ref={ref} className="not-prose min-h-90">
       {error ? (
         <div className="rounded-lg border p-4 text-red-600 text-sm">{error}</div>
       ) : item ? (
-        <RegistryItemViewer item={item} />
+        <RegistryItemViewer imgSrc={imgSrc} item={item} />
       ) : (
         <div className="animate-pulse space-y-3 rounded-lg border p-4">
           <Skeleton className="h-5 w-48" />
@@ -182,11 +228,17 @@ function LazyRegistryItem({ name }: { name: string }) {
   )
 }
 
-export function Sandbox({ registries }: { registries: string[] }) {
+export function Sandbox({
+  imgSrc,
+  registries,
+}: {
+  imgSrc?: SandboxImageSrc
+  registries: string[]
+}) {
   return (
     <>
       {registries.map((name) => (
-        <LazyRegistryItem key={name} name={name} />
+        <LazyRegistryItem imgSrc={imgSrc} key={name} name={name} />
       ))}
     </>
   )

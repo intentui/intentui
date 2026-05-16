@@ -1,7 +1,6 @@
 "use client"
 
 import {
-  ArrowTopRightOnSquareIcon,
   Bars3Icon,
   BookOpenIcon,
   CubeIcon,
@@ -41,7 +40,6 @@ export function Navbar() {
             {menus.map((menu) => (
               <NavLink key={menu.href} href={menu.href}>
                 {menu.label}
-                {menu.on && <menu.icon className="size-4" />}
               </NavLink>
             ))}
           </div>
@@ -122,7 +120,6 @@ export const menus = [
   {
     href: "https://design.intentui.com/themes",
     label: "Themes",
-    icon: ArrowTopRightOnSquareIcon,
     on: true,
   },
 ]

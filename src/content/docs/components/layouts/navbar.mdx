@@ -7,6 +7,10 @@ references: ["https://react-aria.adobe.com/Link#api"]
 ---
 
 <Sandbox
+  imgSrc={{
+    light: "/images/navbar/navbar-light.png",
+    dark: "/images/navbar/navbar-dark.png",
+  }}
   registries={[
     "navbar-01",
   ]}
@@ -108,7 +112,7 @@ There are three types of intents: `navbar`, `floating`, and `inset`, each with d
 
 ### Default
 
-The default intent for the `Navbar` is `"default"`. You can customize the appearance by setting the `intent` prop to `"float"` or `"inset"`.
+The default intent for the `Navbar` is `default`. You can customize the appearance by setting the `intent` prop to `float` or `inset`.
 
 ```tsx
 <Navbar />
@@ -119,14 +123,16 @@ The default intent for the `Navbar` is `"default"`. You can customize the appear
 The `"float"` intent places a border inside the navbar and adds padding around the container. It’s useful when you want the navbar to appear visually distinct from the page layout. Live example can be found here at [Navbar 02](/pre-blocks/navbar/navbar-02).
 
 ```tsx
+{/* [!code word:float:1] */}
 <Navbar intent="float" />
 ```
 
 ### Inset
 
-The `"inset"` intent adds horizontal padding to align the navbar with your main content. You can see it in action in the demo, or [view a live example here](/pre-blocks/navbar/navbar-03).
+The `inset` intent adds horizontal padding to align the navbar with your main content. You can see it in action in the demo, or [view a live example here](/pre-blocks/navbar/navbar-03).
 
 ```tsx
+{/* [!code word:inset:1] */}
 <Navbar intent="inset" />
 ```
 
@@ -149,6 +155,7 @@ The logo is typically the first item in the navbar, usually representing the bra
 Highlight the active page by setting `isCurrent` to `true` on the relevant `NavbarItem`.
 
 ```tsx
+{/* [!code word:isCurrent:1] */}
 <NavbarItem isCurrent href="#" />
 ```
 
@@ -156,6 +163,7 @@ Highlight the active page by setting `isCurrent` to `true` on the relevant `Navb
 Make the navbar stick to the top of the page by enabling the `isSticky` prop.
 
 ```tsx
+{/* [!code word:isSticky:1] */}
 <Navbar isSticky />
 ```
 
@@ -178,6 +186,7 @@ If there’s an icon on the left, use `col-start-3`.
 If there’s no icon, use `col-start-2`.
 
 ```tsx
+{/* [!code word:col-start-2:8] */}
 <NavbarSection>
   <NavbarItem href="#">
     Home
@@ -201,6 +210,7 @@ If there’s no icon, use `col-start-2`.
 When using an icon on the left, wrap the text in `NavbarLabel` and place the chevron using `col-start-3`.
 
 ```tsx
+{/* [!code word:col-start-3:4] */}
 <NavbarItem>
   <IconHashtag />
   <NavbarLabel>Categories</NavbarLabel>

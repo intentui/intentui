@@ -93,7 +93,7 @@ const fontSans = localFont({
 })
 
 const fontMono = JetBrains_Mono({
-  weight: "400",
+  weight: ["400", "500"],
   subsets: ["latin"],
   variable: "--font-docs-mono",
 })

@@ -1,5 +1,5 @@
 "use client"
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
+import { ArrowUpRightIcon } from "@heroicons/react/20/solid"
 import { usePathname } from "next/navigation"
 import { twJoin } from "tailwind-merge"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
@@ -23,7 +23,7 @@ export function BlocksHeader() {
             className={buttonStyles({ intent: "secondary" })}
           >
             Explore premium blocks
-            <ArrowTopRightOnSquareIcon />
+            <ArrowUpRightIcon />
           </Link>
         </HeaderInner>
       </Header>

@@ -1,11 +1,16 @@
 "use client"
 
-import NextLink from "next/link"
+import { ArrowUpRightIcon } from "@heroicons/react/20/solid"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
 import type { LinkProps } from "react-aria-components/Link"
 import { Link } from "react-aria-components/Link"
 import { twMerge } from "tailwind-merge"
+import { ColorsIcon } from "@/components/icons/colors-icon"
+import { Package3DIcon } from "@/components/icons/package-3d-icon"
+import { PackageIcon } from "@/components/icons/package-icon"
+import { WindowIcon } from "@/components/icons/window-icon"
+import { WindowVisitIcon } from "@/components/icons/window-visit-icon"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import menus from "@/components-search.json"
@@ -32,6 +37,47 @@ export function Aside() {
     <div className="sticky -ml-3 h-screen w-full pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-14 xl:w-60">
       <ScrollArea scrollFade orientation="vertical">
         <div className="flex flex-col gap-y-(--gap) px-4 pb-10 [--gap:--spacing(6)]">
+          <div className="sm:*:text-sm/7">
+            <AsideLink href="/components">
+              <PackageIcon />
+              Components
+            </AsideLink>
+            <AsideLink
+              target="_blank"
+              href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
+            >
+              <WindowIcon />
+              Blocks
+            </AsideLink>
+            <AsideLink
+              target="_blank"
+              href="https://design.intentui.com/patterns?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
+            >
+              <Package3DIcon />
+              Patterns
+            </AsideLink>
+            <AsideLink
+              target="_blank"
+              href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
+            >
+              <WindowVisitIcon />
+              Templates
+            </AsideLink>
+            <AsideLink
+              target="_blank"
+              href="https://design.intentui.com/starter-kits?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
+            >
+              <WindowIcon />
+              Starter kits
+            </AsideLink>
+            <AsideLink
+              target="_blank"
+              href="https://design.intentui.com/themes?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
+            >
+              <ColorsIcon />
+              Themes
+            </AsideLink>
+          </div>
           <div>
             <AsideHeader>{prologue?.section}</AsideHeader>
             {prologue?.children?.map((item) => (
@@ -40,33 +86,7 @@ export function Aside() {
               </AsideLink>
             ))}
           </div>
-          <div>
-            <AsideHeader>Products</AsideHeader>
-            <AsideLink href="/components">
-              Components{" "}
-              <Badge className="-mr-1.5 rounded-sm" intent="info">
-                Free
-              </Badge>
-            </AsideLink>
-            <AsideLink
-              target="_blank"
-              href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
-            >
-              Blocks & Patterns{" "}
-              <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
-                Pro
-              </Badge>
-            </AsideLink>
-            <AsideLink
-              target="_blank"
-              href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=sidebar"
-            >
-              Templates & Starter kits{" "}
-              <Badge className="-mr-1.5 rounded-sm bg-teal-500/15 text-teal-700 group-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-hover:bg-teal-500/20">
-                Pro
-              </Badge>
-            </AsideLink>
-          </div>
+
           <div>
             <AsideHeader>{gs?.section}</AsideHeader>
             {sortedGsChildren.map((item) => (
@@ -143,21 +163,33 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
       {...props}
       href={href}
       ref={ref}
-      render={(domProps) =>
-        "href" in domProps ? <NextLink {...domProps} /> : <span {...domProps} />
-      }
       className={twMerge(
-        "group mb-0.5 -ml-3 flex items-center justify-between rounded-lg px-3 py-1 text-base text-fg sm:text-sm/6",
+        "group relative mb-0.5 -ml-3 flex items-center gap-x-2 rounded-lg px-3 py-1 text-base text-fg sm:text-sm/6",
         "focus:outline-hidden",
         "hover:bg-muted hover:text-secondary-fg",
         "focus:bg-muted focus:text-secondary-fg",
+        "*:[svg]:size-5 *:[svg]:text-muted-fg hover:*:[svg]:text-fg",
         isActive && [
           "font-medium",
           "bg-blue-100 text-blue-600 hover:bg-blue-100 hover:text-blue-600",
           "dark:bg-blue-400/10 dark:text-blue-400 dark:hover:bg-blue-400/10 dark:hover:text-blue-400",
         ],
       )}
-    />
+    >
+      <>
+        {props.children}
+
+        {props.target === "_blank" && (
+          <ArrowUpRightIcon
+            style={{
+              width: "16px",
+              height: "16px",
+            }}
+            className="-mr-1 ml-auto hidden text-muted-fg group-hover:block"
+          />
+        )}
+      </>
+    </Link>
   )
 }
 

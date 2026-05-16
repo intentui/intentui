@@ -44,7 +44,7 @@ export const mdxComponents = {
   ),
   td: (props: React.ComponentProps<"td">) => (
     <td
-      className="px-6 py-2.5 text-muted-fg text-sm first:px-0 *:[code]:font-medium *:[code]:text-fg"
+      className="px-6 py-2.5 text-muted-fg text-sm first:px-0 *:[code]:font-medium *:[code]:text-fg border-t border-border/70"
       {...props}
     />
   ),
@@ -53,7 +53,7 @@ export const mdxComponents = {
   ),
   NewTab: (props: React.ComponentProps<typeof Link>) => (
     <Link
-      className="not-prose xd2432 text-blue-600 outline-hidden hover:underline focus-visible:ring-1 dark:text-blue-400"
+      className="not-prose xd2432 text-primary-subtle-fg outline-hidden hover:underline focus-visible:ring-1"
       target="_blank"
       {...props}
     >
@@ -67,7 +67,7 @@ export const mdxComponents = {
   a: (props: React.ComponentProps<"a">) => (
     <a
       {...props}
-      className="not-prose xd2432 text-blue-600 outline-hidden hover:underline focus-visible:ring-1 dark:text-blue-400"
+      className="not-prose xd2432 text-primary-subtle-fg outline-hidden hover:underline focus-visible:ring-1"
     />
   ),
   SourceCode: SourceCode,
