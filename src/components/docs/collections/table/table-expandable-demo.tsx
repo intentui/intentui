@@ -143,7 +143,7 @@ const rows = [
 
 export default function TableExpandableDemo() {
   return (
-    <>
+    <div className="rounded-lg border p-4">
       <Autocomplete>
         <Table aria-label="Projects" treeColumn="project" selectionMode="multiple">
           <TableHeader>
@@ -223,7 +223,7 @@ export default function TableExpandableDemo() {
           </TableBody>
         </Table>
       </Autocomplete>
-    </>
+    </div>
   )
 }
 
