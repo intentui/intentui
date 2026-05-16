@@ -94,7 +94,7 @@ function SandboxPreviewImage({ alt, imgSrc }: { alt: string; imgSrc: SandboxImag
     return (
       <img
         alt={alt}
-        className="block ring ring-border aspect-video rounded-lg"
+        className="block aspect-video rounded-lg ring ring-border"
         decoding="async"
         loading="lazy"
         src={imgSrc}
@@ -130,7 +130,7 @@ function RegistryItemViewer({ imgSrc, item }: { imgSrc?: SandboxImageSrc; item: 
   const { copied, copy } = useClipboard()
   const previewImgSrc = imgSrc ?? item.imgSrc
   return (
-    <section className="space-y-4 not-prose">
+    <section className="not-prose space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
         <div className="not-prose flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <header className="space-y-1">
@@ -171,7 +171,7 @@ function RegistryItemViewer({ imgSrc, item }: { imgSrc?: SandboxImageSrc; item: 
             <iframe
               title={c}
               src={src}
-              className="aspect-video h-96 w-full rounded-lg md:h-auto border"
+              className="aspect-video h-96 w-full rounded-lg border md:h-auto"
               loading="lazy"
             />
           )}

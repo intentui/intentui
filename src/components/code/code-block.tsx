@@ -3,7 +3,7 @@
 import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
 import { Tab } from "react-aria-components/Tabs"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twMerge } from "tailwind-merge"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
 import { BrandCssIcon } from "@/components/icons/brand-css-icon"
@@ -87,9 +87,7 @@ export function CodeBlock({ source }: Props) {
           </div>
           {Object.entries(contents).map(([key, value]) => (
             <TabPanel key={key} id={key}>
-              <div
-                className="relative overflow-hidden rounded-lg border bg-shiki-bg"
-              >
+              <div className="relative overflow-hidden rounded-lg border bg-shiki-bg">
                 <CopyButton
                   className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
                   onPress={() => handleCopy(key, value)}

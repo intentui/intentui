@@ -44,7 +44,7 @@ export const mdxComponents = {
   ),
   td: (props: React.ComponentProps<"td">) => (
     <td
-      className="px-6 py-2.5 text-muted-fg text-sm first:px-0 *:[code]:font-medium *:[code]:text-fg border-t border-border/70"
+      className="border-border/70 border-t px-6 py-2.5 text-muted-fg text-sm first:px-0 *:[code]:font-medium *:[code]:text-fg"
       {...props}
     />
   ),
