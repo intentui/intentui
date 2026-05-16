@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Tabs#api"]
 ---
 
-
-## Basic
-Tabs divide content into sections, allowing users to easily switch between them.
 <How toUse="navigation/tabs/tabs-demo" />
 
 ## Installation
@@ -44,15 +41,17 @@ import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
 </Tabs>
 ```
 
-## With icons
+## Examples
+
+### With icons
 If you want to include icons in your tabs, it's simple to do. This tab setup handles icons smoothly, maintaining a clean design.
 <How toUse="navigation/tabs/tabs-icons-demo" />
 
-## Orientation
+### Orientation
 You can set the orientation of the tabs to either `horizontal` or `vertical`.
 <How toUse="navigation/tabs/tabs-orientation-demo" />
 
-## Links
+### Links
 Tabs can also be used as navigational links. Add the `href` prop to a `Tab` to render it as a link and navigate to the provided URL when selected.
 
 When using a framework-specific link component, integrate it through your client-side routing setup. Learn more in [Client Side Routing](/docs/getting-started/client-side-routing).
@@ -61,7 +60,7 @@ Adding `href` also applies the pointer cursor automatically, making the tab beha
 
 <How toUse="navigation/tabs/tabs-link-demo" />
 
-## Disabled
+### Disabled
 You can disable all tabs by setting the `isDisabled` prop to `true`.
 <How toUse="navigation/tabs/tabs-disabled-demo" />
 
@@ -70,3 +69,55 @@ You can also disable individual tabs by setting the `isDisabled` prop for each o
 <Tab isDisabled id="c">Contact</Tab>
 <Tab isDisabled id="a">About Us</Tab>
 ```
+
+## Component API
+
+### Tab
+
+The `Tab` component represents one tab option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TabList
+
+The `TabList` component groups tabs.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TabPanel
+
+The `TabPanel` component renders tab content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TabPanels
+
+The `TabPanels` component groups tab panels.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### Tabs
+
+The `Tabs` component organizes content into panels.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TabScrollArea
+
+The `TabScrollArea` component makes overflowing tabs scrollable.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Tabs#api) for the full API reference.

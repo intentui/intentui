@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
+import { buttonStyles } from "@/components/ui/button"
 
 export function DocComposed({
   components,
@@ -16,22 +19,18 @@ export function DocComposed({
             When you install this component via the CLI, it automatically loads all composed
             components, so you don’t need to add them individually.
           </p>
-          <p className="mb-6">
-            This component comes packed with several components to enhance functionality and provide
-            a seamless experience.
-          </p>
         </>
       ) : (
         <p className="mb-4">{text}</p>
       )}
-      <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="flex flex-wrap gap-1.5">
         {components.map((item, i) => (
           <Link
             key={i}
             href={`/${item}`}
-            className="flex items-center gap-x-1.5 rounded-md border bg-muted px-3 py-1.5 font-medium text-fg text-sm/6 capitalize hover:bg-secondary"
+            className={buttonStyles({ intent: "outline", className: "capitalize" })}
           >
-            <BrandReactjsIcon className="size-4 text-cyan-500 dark:text-cyan-400" />
+            <BrandReactjsIcon className="text-cyan-500 dark:text-cyan-400" />
             {item.replaceAll("-", " ")}
           </Link>
         ))}

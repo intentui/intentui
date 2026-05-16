@@ -5,8 +5,6 @@ order: 1
 published: true
 ---
 
-## Basic
-A button allows users to perform actions through clicks, presses, taps, or keystrokes.
 <How toUse="buttons/button-group/button-group-demo" />
 
 ## Installation
@@ -35,15 +33,36 @@ import { Button } from "@/components/ui/button";
 ```
 
 
-## Orientation
+## Examples
+
+### Orientation
 You can arrange buttons either horizontally or vertically using the `orientation` prop.
 
 <How toUse="buttons/button-group/button-group-orientation-demo" />
 
-## Group with menu
+### Group with menu
 You can combine button groups with menus to create a more complex and interactive UI.
 <How toUse="buttons/button-group/button-group-with-menu-demo" />
 
-## Group with text
+### Group with text
 You can also combine button groups with text to provide context or instructions.
 <How toUse="buttons/button-group/button-group-with-text-demo" />
+
+## Component API
+
+### ButtonGroup
+
+The `ButtonGroup` component arranges related buttons as a single control.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `orientation` | `"horizontal" \| "vertical"` | `horizontal` |
+
+### ButtonGroupText
+
+The `ButtonGroupText` component renders text inside a button group.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

@@ -114,13 +114,10 @@ export const DocHow = ({
         {currentTab === "tab_preview" ? (
           <div
             className={twMerge(
-              "overflow-y-auto p-4 sm:p-8",
+              "w-full overflow-y-auto",
               !withNoPadding
-                ? [
-                    "relative gap-4 rounded-lg border dark:bg-muted/30",
-                    "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
-                  ]
-                : "sm:py-24",
+                ? "relative gap-4 rounded-lg border px-4 py-8 *:w-full sm:p-8 dark:bg-muted/30"
+                : "",
             )}
           >
             <div className={twMerge(isCenter && "flex items-center justify-center")}>
@@ -141,12 +138,7 @@ export const DocHow = ({
         ) : (
           <div>
             {processedSourceCode ? (
-              <div
-                className={twJoin(
-                  "group relative rounded-lg border",
-                  "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
-                )}
-              >
+              <div className={twJoin("group relative rounded-lg border")}>
                 <CodeHighlighter
                   className="h-full rounded-[calc(var(--radius-lg)-1px)]"
                   removeLastLine

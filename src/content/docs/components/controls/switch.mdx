@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Switch#api"]
 ---
 
-## Basic
-A switch is a toggle that flips between on and off, similar to a light switch.
 <How toUse="controls/switch/switch-demo" />
 
 ## Installation
@@ -56,143 +54,41 @@ import { Switch, SwitchLabel } from "@/components/ui/switch"
 ```
 
 
-## Description
+## Examples
+
+### Description
 You can add a description to the switch by passing the `description` prop or using the `Description` component.
 <How toUse="controls/switch/switch-description-demo" />
 
 
-## Controlled
+### Controlled
 You can manage the switch's state by setting the `isSelected` prop.
 <How toUse="controls/switch/switch-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 You can also use the uncontrolled version of the switch.
 <How toUse="controls/switch/switch-uncontrolled-demo" />
 
-## Disabled
+### Disabled
 A disabled switch cannot be toggled and is non-interactive.
 <How toUse="controls/switch/switch-disabled-demo" />
 
-## Installation
+## Component API
 
-Install the component via the CLI in one command.
-To use the Switch component, you need to install the `@/components/ui/switch` package. You can do this using npm or yarn:
+### Switch
 
-<InstallCommand command="npm i @/components/ui/switch"/>
+The `Switch` component toggles a setting on or off.
 
-or
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
-<InstallCommand command="yarn add @/components/ui/switch"/>
+### SwitchLabel
 
-Additionally, the Switch component requires the `react-aria-components` package. If you haven't installed it yet, you can do so with the following command:
+The `SwitchLabel` component renders the switch label.
 
-<InstallCommand command="npm i react-aria-components"/>
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
-## Composed components
-The Switch component is composed of the following sub-components:
-
-- `Switch`: The main toggle switch component.
-- `SwitchLabel`: The label of the switch component.
-- `Description`: A component to display a description or helper text for the switch.
-
-## Manual installation
-If you prefer to install the components manually, you can do so by installing the `react-aria-components` package. This package includes all the necessary components and hooks to use the Switch component.
-
-To install the package, run the following command:
-
-<InstallCommand command="npm i react-aria-components"/>
-
-## Anatomy
-```
-<Switch>
-  <SwitchLabel>Switch Label</Label>
-  <Description>Switch Description</Description>
-</Switch>
-```
-
-## Description
-The Switch component supports an optional description that can be used to provide additional information about the switch's purpose or functionality.
-
-To add a description to the switch, you can use the `description` prop or include a `Description` component as a child of the `Switch` component.
-
-Here's an example of using the `description` prop:
-
-```jsx
-<Switch value="notifications">
-  <SwitchLabel>Notifications</SwitchLabel>
-  <Description>Enable or disable notifications.</Description>
-</Switch>
-```
-
-And here's an example of using the `Description` component:
-
-```jsx
-<Switch value="notifications">
-  <SwitchLabel>Notifications</SwitchLabel>
-  <Description>Enable or disable notifications.</Description>
-</Switch>
-```
-
-## Controlled
-The Switch component can be used in a controlled manner, where the on/off state of the switch is controlled by a parent component.
-
-To use the switch in a controlled manner, you need to manage the `isSelected` state in the parent component and pass it as a prop to the `Switch` component.
-
-Here's an example:
-
-```jsx
-import { useState } from 'react';
-import { Switch, SwitchLabel } from '@/components/ui/switch';
-
-function ControlledSwitch() {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleToggle = () => {
-    setIsSelected((prev) => !prev);
-  };
-
-  return (
-    <Switch isSelected={isSelected} onChange={handleToggle}>
-      <SwitchLabel>Toggle Me</SwitchLabel>
-    </Switch>
-  );
-}
-```
-
-## Uncontrolled
-The Switch component can also be used in an uncontrolled manner, where the on/off state is managed internally by the component.
-
-To use the switch in an uncontrolled manner, simply render the `Switch` component without managing the `isSelected` state in the parent component.
-
-Here's an example:
-
-```jsx
-import { Switch, SwitchLabel } from '@/components/ui/switch';
-
-function UncontrolledSwitch() {
-  return (
-    <Switch defaultSelected>
-      <SwitchLabel>Toggle Me</SwitchLabel>
-    </Switch>
-  );
-}
-```
-
-## Disabled
-The Switch component supports a disabled state, where the switch is visually indicated as disabled and cannot be toggled.
-
-To disable the switch, you can set the `isDisabled` prop to `true`.
-
-Here's an example:
-
-```jsx
-import { Switch, SwitchLabel } from '@/components/ui/switch';
-
-function DisabledSwitch() {
-  return (
-    <Switch isDisabled>
-      <SwitchLabel>Can't Touch This</SwitchLabel>
-    </Switch>
-  );
-}
-```
+See the [React Aria](https://react-aria.adobe.com/Switch#api) for the full API reference.

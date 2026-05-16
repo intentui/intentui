@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
 import { type CalendarDate, getLocalTimeZone, today } from "@internationalized/date"
 import { useDateFormatter } from "@react-aria/i18n"
 import { use } from "react"

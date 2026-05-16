@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/DisclosureGroup#api"]
 ---
 
-## Basic
-A disclosure group, also known as an accordion, is a set of collapsible sections that help organize content in a structured, easy-to-navigate format. Users can expand or collapse each section as needed, improving readability and making it easier to browse large amounts of information.
 <How className="w-full max-w-sm" toUse="navigation/disclosure-group/disclosure-group-demo" />
 
 ## Installation
@@ -49,16 +47,18 @@ import {
 </DisclosureGroup>
 ```
 
-## Default expanded
+## Examples
+
+### Default expanded
 Set the initially expanded sections by providing an array of keys to the `defaultExpandedKeys` prop. These keys can be either numbers or strings.
 <How className="w-full max-w-sm" toUse="navigation/disclosure-group/disclosure-group-default-expand-demo" />
 
-## Allow multiple expanded
+### Allow multiple expanded
 Allow multiple sections to be expanded at once by using the `allowsMultipleExpanded` prop.
 <How className="w-full max-w-sm" toUse="navigation/disclosure-group/disclosure-group-allow-multiple-expand-demo" />
 
 
-## Nested
+### Nested
 Disclosure Groups can be nested to create a hierarchy of sections. Use the DisclosurePanel component to add content to each nested group. To ensure a polished appearance, make sure the trigger within the nested group includes a span, as shown below:
 ```tsx {6}
 <DisclosurePanel className="bg-muted">
@@ -71,10 +71,55 @@ Disclosure Groups can be nested to create a hierarchy of sections. Use the Discl
 Check out the example below to see it in action.
 <How className="w-full max-w-sm" toUse="navigation/disclosure-group/disclosure-group-nested-demo" />
 
-## With icon
+### With icon
 You can add icons to the disclosure group to make it more visually appealing.
 <How className="w-full max-w-sm" toUse="navigation/disclosure-group/disclosure-group-with-icon-demo" />
 
-## Disabled
+### Disabled
 Disable specific sections by adding the `isDisabled` prop to the corresponding item.
 <How className="w-full max-w-sm" toUse="navigation/disclosure-group/disclosure-group-disabled-demo" />
+
+## Component API
+
+### Disclosure
+
+The `Disclosure` component wraps a collapsible content item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DisclosureGroup
+
+The `DisclosureGroup` component groups related disclosure items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DisclosureIndicator
+
+The `DisclosureIndicator` component renders the disclosure expand icon.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DisclosurePanel
+
+The `DisclosurePanel` component contains collapsible disclosure content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DisclosureTrigger
+
+The `DisclosureTrigger` component toggles a disclosure item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `triggerIndicator` | `boolean` | `true` |
+
+See the [React Aria](https://react-aria.adobe.com/DisclosureGroup#api) for the full API reference.

@@ -6,10 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/TagGroup#api"]
 ---
 
-## Basic
-
-The basic tag field lets you add tags to your content.
-
 <How toUse="forms/tag-field/tag-field-demo" />
 
 ## Installation
@@ -50,3 +46,24 @@ import { TagField } from "@/components/ui/tag-field"
   <Input/>
 </TagField>
 ```
+
+## Component API
+
+### TagField
+
+The `TagField` component lets users enter and remove tags.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `defaultValue` | `string[]` | `[]` |
+| `inputValue` | `string` | - |
+| `isRequired` | `boolean` | - |
+| `name` | `string` | `tags` |
+| `onChange` | `(next: Selection) => void` | - |
+| `onInputValueChange` | `(v: string) => void` | - |
+| `requiredMessage` | `string` | - |
+| `splitPattern` | `RegExp` | `/[,;]/` |
+| `value` | `Selection` | - |
+
+See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.

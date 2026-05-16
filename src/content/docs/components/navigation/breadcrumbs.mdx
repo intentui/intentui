@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Breadcrumbs#api"]
 ---
 
-## Basic
-
-Breadcrumbs display a trail of links that guide users to the current page or resource in an app, helping them understand their location and navigation path.
 <How toUse="navigation/breadcrumbs/breadcrumbs-demo" />
 
 ## Installation
@@ -39,7 +36,9 @@ import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
 </Breadcrumbs>
 ```
 
-## Separator
+## Examples
+
+### Separator
 The separator appears when the breadcrumb changes. By default, it uses a chevron. You can disable it with `separator="false"` or switch to a slash with `separator="slash"`.
 <How toUse="navigation/breadcrumbs/breadcrumbs-separator-demo" />
 
@@ -49,15 +48,15 @@ If you need a unique separator for each item (not recommended), set the `separat
 <BreadcrumbsItem href="#" separator="slash"/>
 ```
 
-## Menu
+### Menu
 You can also combine breadcrumbs with menus to create a more complex navigation structure.
 <How toUse="navigation/breadcrumbs/breadcrumbs-menu-demo" />
 
-## Collections
+### Collections
 You can also use breadcrumbs to navigate between collections.
 <How toUse="navigation/breadcrumbs/breadcrumbs-collections-demo" />
 
-## Current
+### Current
 The current breadcrumb indicates the active page in the breadcrumb navigation. It is automatically added as the last item and its color is updated accordingly. But you can also control the color of the current breadcrumb by passing a `className` prop to the `BreadcrumbsItem` component.
 <How toUse="navigation/breadcrumbs/breadcrumbs-current-demo" />
 
@@ -72,3 +71,25 @@ if you think you want to render an element inside that current breadcrumb, you c
   )}
 </BreadcrumbsItem>
 ```
+
+## Component API
+
+### Breadcrumbs
+
+The `Breadcrumbs` component groups breadcrumb navigation items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `separator` | `"chevron" \| "slash" \| boolean` | - |
+
+### BreadcrumbsItem
+
+The `BreadcrumbsItem` component represents one step in a breadcrumb trail.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `href` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Breadcrumbs#api) for the full API reference.

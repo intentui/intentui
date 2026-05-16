@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckIcon } from "@heroicons/react/24/outline"
+import { CheckIcon } from "@heroicons/react/20/solid"
 import { Text, TextLink } from "@/components/ui/text"
 import releaseNotes from "@/json/release-notes.json"
 

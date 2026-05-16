@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Checkbox#api"]
 ---
 
-## Basic
-
-A checkbox is a small box you can tick to select an option. It’s either on or off.
 <How toUse="forms/checkbox/checkbox-demo" />
 
 ## Installation
@@ -39,22 +36,52 @@ import { Description, Label } from "@/components/ui/field"
 </Checkbox>
 ```
 
-## Invalid
+## Examples
+
+### Invalid
 The checkbox is in an error state.
 <How toUse="forms/checkbox/checkbox-invalid-demo" />
 
-## Indeterminate
+### Indeterminate
 The checkbox is in an indeterminate state.
 <How toUse="forms/checkbox/checkbox-indeterminate-demo" />
 
-## Controlled
+### Controlled
 You can control the checkbox value by using the `value` prop.
 <How minW60 toUse="forms/checkbox/checkbox-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 You can control the checkbox value by using the `defaultValue` prop.
 <How toUse="forms/checkbox/checkbox-uncontrolled-demo" />
 
-## Disabled
+### Disabled
 The checkbox is disabled.
 <How toUse="forms/checkbox/checkbox-disabled-demo" />
+
+## Component API
+
+### Checkbox
+
+The `Checkbox` component is used for a single selectable option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CheckboxGroup
+
+The `CheckboxGroup` component groups related checkbox options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CheckboxLabel
+
+The `CheckboxLabel` component renders the checkbox label.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Checkbox#api) for the full API reference.

@@ -7,13 +7,6 @@ status: primitive
 references: ["https://react-aria.adobe.com/Dialog#api"]
 ---
 
-## Basic
-There’s not much to see here, but you can check out the [Modal](/docs/components/overlays/modal) and [Color Picker](/docs/components/colors/color-picker) documentation for more details.
-
-<Note>
-  When you use related components like `modal` or `sheet`, the dialog component is automatically included, so there's no need for a separate installation.
-</Note>
-
 ## Installation
 
 Install the component via the CLI in one command.
@@ -27,3 +20,83 @@ Install the component via the CLI in one command.
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 <InstallCommand command="npm i react-aria-components"/>
 <SourceCode toShow='dialog' />
+
+## Component API
+
+### Dialog
+
+The `Dialog` component is the accessible dialog container.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DialogBody
+
+The `DialogBody` component wraps the main dialog content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DialogCloseIcon
+
+The `DialogCloseIcon` component renders the dialog close icon button.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `isDismissable` | `boolean \| undefined` | - |
+
+### DialogClose
+
+The `DialogClose` component renders a button that closes the dialog.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+
+### DialogDescription
+
+The `DialogDescription` component renders supporting text inside a dialog.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DialogFooter
+
+The `DialogFooter` component groups dialog actions.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DialogHeader
+
+The `DialogHeader` component groups the dialog title and description.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `description` | `string` | - |
+| `title` | `string` | - |
+
+### DialogTitle
+
+The `DialogTitle` component renders the dialog heading.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DialogTrigger
+
+The `DialogTrigger` component defines the element that opens a dialog.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Dialog#api) for the full API reference.

@@ -6,9 +6,6 @@ published: true
 references: ["https://recharts.org/en-US/api/LineChart"]
 ---
 
-## Basic
-
-Line charts are great for showing trends, comparisons, and patterns over time. They keep your data clean and easy to read.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-demo" />
 
 ## Installation
@@ -27,38 +24,76 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <InstallCommand command="npm i recharts'"/>
 
-<SourceCode toShow={'line-chart'} />
+<SourceCode toShow={'line-chart react-aria-components'} />
 
-## Stacked
+## Examples
+
+### Stacked
 
 Stacked line charts show how parts make up a whole. Ideal when you want to compare multiple categories and still keep track of the total.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-stacked-demo" />
 
-## Monotone
+### Monotone
 
 Monotone charts use a smooth curve for a cleaner look. Good when you only need to show one metric clearly without visual clutter.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-monotone-demo" />
 
-## Custom format
+### Custom format
 
 Customize the look of your chart to match your design system. You can change colors, styles, and anything else that matters for your UI.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-custom-format-demo" />
 
-## Custom tooltip
+### Custom tooltip
 
 Add context when users hover. Custom tooltips let you show extra info like icons, units, or anything else that makes your data easier to read.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-custom-tooltip-demo" />
 
-## Custom legend
+### Custom legend
 
 Replace the default legend with something more useful. Add icons, labels, or even interactions to better explain what’s on the chart.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-custom-legend-demo" />
 
-## Custom colors
+### Custom colors
 Customize the colors of your line chart to match your brand or design system. This helps maintain visual consistency across your application.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-custom-colors-demo" />
 
-## Controlled
+### Controlled
 
 Manage the chart fully with state. Use this to sync with other UI, switch datasets, or respond to user interactions programmatically.
 <How className="w-full max-w-xl" toUse="visualizations/line-chart/line-chart-controlled-demo" />
+
+## Component API
+
+### LineChart
+
+The `LineChart` component renders data trends with lines.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `cartesianGridProps` | `CartesianGridProps` | - |
+| `chartProps` | `Omit<React.ComponentProps<typeof LineChartPrimitive>, "data" \| "stackOffset">` | - |
+| `children` | `React.ReactNode` | - |
+| `className` | `string` | - |
+| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
+| `config` | `ChartConfig` | - |
+| `connectNulls` | `boolean` | `false` |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | - |
+| `displayEdgeLabelsOnly` | `boolean` | `false` |
+| `hideGridLines` | `boolean` | `false` |
+| `hideXAxis` | `boolean` | `false` |
+| `hideYAxis` | `boolean` | `false` |
+| `intervalType` | `IntervalType` | `equidistantPreserveStart` |
+| `layout` | `ChartLayout` | `horizontal` |
+| `legend` | `LegendContentType \| boolean` | `true` |
+| `legendProps` | `Omit<ComponentProps<typeof LegendPrimitive>, "content" \| "ref">` | - |
+| `lineProps` | `LineProps` | - |
+| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
+| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
+| `type` | `ChartType` | `default` |
+| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
+| `xAxisProps` | `XAxisPropsPrimitive` | - |
+| `yAxisProps` | `YAxisPrimitiveProps` | - |
+
+See the [Recharts LineChart API reference](https://recharts.org/en-US/api/LineChart) for the full API reference.

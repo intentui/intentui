@@ -32,7 +32,7 @@ const fruits = [
 
 export default function MultipleSelectDemo() {
   return (
-    <MultipleSelect className="mx-auto w-full max-w-2xs">
+    <MultipleSelect className="mx-auto w-full min-w-2xs max-w-min">
       <Label>Select fruits</Label>
       <MultipleSelectContent items={fruits}>
         {(item) => {

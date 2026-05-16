@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/ColorPicker.html"]
 ---
 
-## Basic
-The basic color picker allows users to select a color.
 <How className='min-w-40' toUse="colors/color-picker/color-picker-demo" />
 
 ## Installation
@@ -79,10 +77,28 @@ import { Input } from "@/components/ui/input";
 </ColorPicker>
 ```
 
-## Controlled
+## Examples
+
+### Controlled
 Control the selected color with the `value` prop to sync it with your application's state.
 <How className='min-w-40' toUse="colors/color-picker/color-picker-controlled-demo" />
 
-## Disabled
+### Disabled
 Disable the color picker by setting the `isDisabled` prop, making it non-interactive.
 <How className='min-w-40' toUse="colors/color-picker/color-picker-disabled-demo" />
+
+## Component API
+
+### ColorPicker
+
+The `ColorPicker` component coordinates color input controls.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### EyeDropper
+
+The `EyeDropper` component lets users pick a color from the screen when the browser supports it.
+
+See the [React Aria](https://react-aria.adobe.com/ColorPicker.html) for the full API reference.

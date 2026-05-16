@@ -5,10 +5,12 @@ order: 1
 published: true
 ---
 
-## Basic
+<Note intent="warning" className="*:max-w-xl **:[a]:text-warning-subtle-fg **:[a]:font-medium **:[a]:underline">
+  This component has been deprecated. We recommend using the [Leaderboard](/docs/components/visualizations/leaderboard) component instead.
+</Note>
 
-Line charts are great for showing trends, comparisons, and patterns over time. They keep your data clean and easy to read.
-<How className="w-full max-w-xl" toUse="visualizations/bar-list/bar-list-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-list/bar-list-demo" />
+
 
 ## Installation
 
@@ -21,6 +23,20 @@ Install the component via the CLI in one command.
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 <SourceCode toShow={'bar-list'} />
 
-## Controlled
+## Examples
+
+### Controlled
 Controlled bar lists allow you to manage the data and interactions dynamically, making it easier to update or change the displayed information based on user actions or other events.
-<How className="w-full max-w-xl" toUse="visualizations/bar-list/bar-list-controlled-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-list/bar-list-controlled-demo" />
+
+## Component API
+
+The `BarList` component displays ranked values as horizontal bars.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `data` | `Bar<T>[]` | `[]` |
+| `onValueChange` | `(payload: Bar<T>) => void` | - |
+| `sortOrder` | `"ascending" \| "descending" \| "none"` | `descending` |
+| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |

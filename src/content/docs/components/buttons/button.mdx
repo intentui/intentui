@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Button#api"]
 ---
 
-## Basic
-A button allows users to perform actions through clicks, presses, taps, or keystrokes.
 <How toUse="buttons/button/button-basic-demo" />
 
 ## Installation
@@ -51,46 +49,48 @@ import { IconSettings } from "@heroicons/react"
 ```
 
 
-## Intent
+## Examples
+
+### Intent
 Buttons come in different intents, each with its own color scheme.
 
 <How toUse="buttons/button/button-intent-demo" />
 
-## Shape
+### Shape
 Buttons support various shapes to fit different design needs.
 
 <How toUse="buttons/button/button-shape-demo" />
 
-## Size
+### Size
 Buttons are available in multiple sizes.
 
 <How toUse="buttons/button/button-size-demo" />
 
-## With icon
+### With icon
 You can add icons to buttons, and their color will match the button's color.
 
 <How toUse="buttons/button/button-icon-demo" />
 
-## Disabled
+### Disabled
 A disabled button cannot be interacted with and is visually styled to reflect its state.
 
 <How toUse="buttons/button/button-disabled-demo" />
 
-## Pending
+### Pending
 A button can indicate a pending state using the `isPending` prop. This provides feedback for actions that take time, communicates the status to assistive technologies, and disables interactions except for focus.
 
 <How toUse="buttons/button/button-pending-demo" />
 
-## With loader
+### With loader
 You can add a loader to indicate ongoing processes.
 
 <How toUse="buttons/button/button-loader-demo" />
 
-## Link
+### Link
 Sometimes, you need to use styles from buttons for links. Just use the link and use the `buttonStyles` to the className prop.
 <How toUse="buttons/button/button-link-demo" />
 
-## Render
+### Render
 You can render a [Motion](https://motion.dev/) button and drive the animation with component state.
 <How toUse="buttons/button/button-render-demo" />
 
@@ -114,3 +114,18 @@ Sometimes you may want to use this button with only an icon. In that case, you c
   }
 }
 ```
+
+## Component API
+
+### Button
+
+The `Button` component triggers an action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `primary` |
+| `isCircle` | `true \| false` | `false` |
+| `size` | `"xs" \| "sm" \| "md" \| "lg" \| "sq-xs" \| "sq-sm" \| "sq-md" \| "sq-lg"` | `md` |
+
+See the [React Aria](https://react-aria.adobe.com/Button#api) for the full API reference.

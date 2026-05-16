@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/ColorSwatchPicker#api"]
 ---
 
-## Basic
-A color swatch picker allows users to choose a color from a predefined set.
 <How toUse="colors/color-swatch/color-swatch-picker-demo" />
 
 ## Installation
@@ -40,10 +38,32 @@ import {
 </ColorSwatchPicker>
 ```
 
-## Controlled
+## Examples
+
+### Controlled
 The color swatch can be managed in a controlled manner.
 <How toUse="colors/color-swatch/color-swatch-controlled-demo" />
 
-## Disabled
+### Disabled
 While you can disable individual picker items, disabling the entire picker is possible but generally not recommended.
 <How toUse="colors/color-swatch/color-swatch-picker-item-disabled-demo" />
+
+## Component API
+
+### ColorSwatchPicker
+
+The `ColorSwatchPicker` component groups selectable color swatches.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ColorSwatchPickerItem
+
+The `ColorSwatchPickerItem` component represents one selectable swatch.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ColorSwatchPicker#api) for the full API reference.

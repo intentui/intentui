@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import { twJoin } from "tailwind-merge"
 import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { CopyButton } from "@/components/code/copy-button"
 import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
@@ -35,12 +34,7 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
             ? props.message
             : "You can copy the code below and paste it into your component folder."}
         </p>
-        <div
-          className={twJoin(
-            "overflow-hidden rounded-lg border bg-shiki-bg",
-            "ring ring-border ring-offset-2 ring-offset-white dark:ring-offset-black",
-          )}
-        >
+        <div className="overflow-hidden rounded-lg border bg-shiki-bg">
           {props.title && <figcaption data-rehype-pretty-code-title="">{props.title}</figcaption>}
           <div className="flex items-center justify-between border-b">
             <div className="flex cursor-default items-center gap-x-1 px-3 py-2 font-medium text-sm/6">

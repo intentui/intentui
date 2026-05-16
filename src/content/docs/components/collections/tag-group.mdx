@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/TagGroup#api"]
 ---
 
-## Basic
-A tag group is a focusable collection of labels, categories, keywords, filters, or other elements, equipped with keyboard navigation, selection, and removal functionalities.
 <How toUse="collections/tag-group/tag-group-demo" />
 
 ## Installation
@@ -42,18 +40,48 @@ import { Label } from "@/components/ui/field"
 </TagGroup>
 ```
 
-## With remove button
+## Examples
+
+### With remove button
 Tags within the group can include a removal button.
 <How toUse="collections/tag-group/tag-group-with-remove-demo" />
 
-## Controlled
+### Controlled
 Manage the values of the tag group through the `value` prop.
 <How toUse="collections/tag-group/tag-group-controlled-demo" />
 
-## Href
+### Href
 Incorporate a hyperlink within the tag group using the `href` prop.
 <How toUse="collections/tag-group/tag-group-href-demo" />
 
-## Disabled
+### Disabled
 Disable tags either by setting the `isDisabled` prop or using `disabledKeys` on the `TagGroup`.
 <How toUse="collections/tag-group/tag-group-disabled-demo" />
+
+## Component API
+
+### Tag
+
+The `Tag` component renders one tag item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TagGroup
+
+The `TagGroup` component groups related tags.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TagList
+
+The `TagList` component contains tag items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.

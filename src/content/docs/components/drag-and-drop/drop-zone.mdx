@@ -6,10 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/DropZone#api"]
 ---
 
-## Basic
-
-DropZone provides support for mouse, keyboard, and touch interactions. Simply connect the `onDrop` prop to handle all the drop actions. Additionally, you’ll receive real-time updates through `onDropEnter`, `onDropMove`, and `onDropExit` events as users interact with the drop zone.
-
 <How toUse="drag-and-drop/drag/drop-zone-demo" />
 
 ## Installation
@@ -37,7 +33,21 @@ import { Label } from "@/components/ui/field"
 </DropZone>
 ```
 
-## Using FileTrigger
+## Examples
+
+### Using FileTrigger
 The `FileTrigger` component can be used to select files from the file system, making it an excellent tool for managing files that have been dragged and dropped into the browser.
 
 <How toUse="drag-and-drop/drag/drop-zone-and-file-trigger-demo" />
+
+## Component API
+
+### DropZone
+
+The `DropZone` component accepts dragged files or items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/DropZone#api) for the full API reference.

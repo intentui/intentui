@@ -1,14 +1,15 @@
 import type { TextProps } from "react-aria-components/Text"
+import { twMerge } from "tailwind-merge"
 import { Note, type NoteProps } from "@/components/ui/note"
 
 interface DocsNoteProps extends NoteProps {
   children: TextProps["children"]
 }
 
-export function DocNote({ intent = "info", children }: DocsNoteProps) {
+export function DocNote({ className, intent = "info", children }: DocsNoteProps) {
   return (
-    <div className="not-prose mt-4">
-      <Note intent={intent}>{children}</Note>
-    </div>
+    <Note indicator={false} intent={intent} className={twMerge("not-prose mt-4", className)}>
+      {children}
+    </Note>
   )
 }

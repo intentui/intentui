@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Tree#api"]
 ---
 
-## Basic
-A tree is a hierarchical list of items, allowing users to navigate through nested structures effortlessly.
 <How toUse="collections/tree/tree-demo" />
 
 ## Installation
@@ -80,18 +78,56 @@ import { Tree, TreeContent, TreeItem } from "@/components/ui/tree"
 </Tree>
 ```
 
-## Multiple selection
+## Examples
+
+### Multiple selection
 To enable multiple selections, set the `selectionMode` prop to `multiple`. This prop has no default value, so it must be explicitly defined.
 <How toUse="collections/tree/tree-multiple-demo" />
 
-## Like a folder tree
+### Like a folder tree
 A tree can be used to represent a folder structure, allowing users to expand and collapse folders to view their contents.
 <How toUse="collections/tree/tree-folder-demo" />
 
-## Infinite scrolling
+### Infinite scrolling
 The tree can handle large datasets efficiently with infinite scrolling. This allows for loading more data as the user navigates through the tree, improving performance and user experience.
 <How toUse="collections/tree/tree-infinite-scroll-demo" />
 
-## Drag and drop
+### Drag and drop
 The tree supports drag and drop functionalities if you use the `dragAndDropHooks` prop along with the `useDragAndDrop` hook. You can drop data on the entire tree, individual items, add new items between existing ones, or rearrange items.
 <How toUse="collections/tree/tree-drag-demo" />
+
+## Component API
+
+### Tree
+
+The `Tree` component displays hierarchical items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TreeContent
+
+The `TreeContent` component renders content inside a tree item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TreeIndicator
+
+The `TreeIndicator` component renders the tree expand icon.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `values` | `Pick<TreeItemContentRenderProps, "isDisabled" \| "isExpanded">` | - |
+
+### TreeItem
+
+The `TreeItem` component represents one tree node.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Tree#api) for the full API reference.

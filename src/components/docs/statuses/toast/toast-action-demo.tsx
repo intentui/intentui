@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export default function ToastActionDemo() {
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-1.5">
       <Button
         intent="outline"
         size="sm"

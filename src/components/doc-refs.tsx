@@ -1,6 +1,6 @@
 "use client"
 
-import { BellIcon, ChartBarIcon } from "@heroicons/react/24/outline"
+import { BellIcon, ChartPieIcon } from "@heroicons/react/24/outline"
 import { twJoin } from "tailwind-merge"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
@@ -8,11 +8,7 @@ import { BrandReactAriaIcon } from "@/components/icons/brand-react-aria-icon"
 import { MotionBrandIcon } from "@/components/icons/motion-brand-icon"
 import { LinkButton } from "@/components/link-button"
 import { Logo } from "@/components/logo"
-
-function getComponentName(url: string): string {
-  const lastSegment = url.split("/").pop()
-  return lastSegment?.split("#")[0]!.replace(".html", "") || ""
-}
+import { ButtonGroup } from "@/components/ui/button-group"
 
 export function DocRefs({ references }: { references: string[] }) {
   const urls = references.map((url: string) => {
@@ -21,7 +17,7 @@ export function DocRefs({ references }: { references: string[] }) {
 
     switch (true) {
       case url.includes("react-aria"):
-        title = getComponentName(url)
+        title = "RAC"
         icon = BrandReactAriaIcon
         break
       case url.includes("icons"):
@@ -29,8 +25,8 @@ export function DocRefs({ references }: { references: string[] }) {
         icon = BrandIntentuiIcon
         break
       case url.includes("recharts"):
-        title = "Props"
-        icon = ChartBarIcon
+        title = "Recharts"
+        icon = ChartPieIcon
         break
       case url.includes("motion"):
         title = "Motion"
@@ -49,7 +45,7 @@ export function DocRefs({ references }: { references: string[] }) {
         icon = BrandGithubIcon
         break
       case url.includes("embla-carousel"):
-        title = "Props"
+        title = "API"
         icon = IconEmblaCarousel
         break
       default:
@@ -64,28 +60,31 @@ export function DocRefs({ references }: { references: string[] }) {
   })
 
   return (
-    <div className="not-prose flex items-center gap-x-1.5">
-      {urls.map(
-        (item: { url: string; title: string; icon: React.FC<React.SVGProps<SVGSVGElement>> }) => (
-          <LinkButton key={item.url} target="_blank" size="sm" intent="outline" href={item.url}>
-            {item.icon && (
-              <item.icon
-                className={twJoin(item.url.includes("react-aria") ? "size-3!" : "")}
-                data-slot="icon"
-              />
-            )}
+    <>
+      <ButtonGroup>
+        {urls.map(
+          (item: { url: string; title: string; icon: React.FC<React.SVGProps<SVGSVGElement>> }) => (
+            <LinkButton
+              className="h-10 sm:h-auto dark:bg-secondary/50 dark:hover:bg-secondary"
+              key={item.url}
+              target="_blank"
+              size="sm"
+              intent="outline"
+              href={item.url}
+            >
+              {item.icon && (
+                <item.icon
+                  className={twJoin(item.url.includes("react-aria") ? "size-3!" : "")}
+                  data-slot="icon"
+                />
+              )}
 
-            {item.title === "Props Reference" ? (
-              <span>
-                Props <span className="hidden sm:inline">Reference</span>
-              </span>
-            ) : (
-              <span className="block truncate">{item.title}</span>
-            )}
-          </LinkButton>
-        ),
-      )}
-    </div>
+              {item.title}
+            </LinkButton>
+          ),
+        )}
+      </ButtonGroup>
+    </>
   )
 }
 

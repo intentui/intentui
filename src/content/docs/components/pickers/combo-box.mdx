@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/ComboBoxhtml#props"]
 ---
 
-## Basic
-
-A combo box combines a text input with a listbox, allowing users to filter options to match what they're looking for.
 <How minW60 toUse="pickers/combo-box/combo-box-demo" />
 
 ## Installation
@@ -50,19 +47,21 @@ import {
 </ComboBox>
 ```
 
-## Using avatars
+## Examples
+
+### Using avatars
 The combo box can be configured to display avatars instead of just regular text.
 <How minW60 toUse="pickers/combo-box/combo-box-avatar-demo" />
 
-## Section
+### Section
 A combo box can display items grouped together in sections.
 <How minW60 toUse="pickers/combo-box/combo-box-section-demo" />
 
-## Readonly
+### Readonly
 When the combo box is in a readonly state, it cannot be edited.
 <How minW60 toUse="pickers/combo-box/combo-box-readonly-demo" />
 
-## Label
+### Label
 If the `children` of a `ComboBoxItem` is a string, the `ComboBoxLabel` will automatically wrap it. However, if you're including additional elements like an icon or avatar, you'll need to manually wrap the label, as shown below:
 
 ```
@@ -72,36 +71,107 @@ If the `children` of a `ComboBoxItem` is a string, the `ComboBoxLabel` will auto
 </ComboBoxItem>
 ```
 
-## Details description
+### Details description
 If you need to provide more information about an option, use the `ComboBoxDescription` component to display additional details.
 <How minW60 toUse="pickers/combo-box/combo-box-detail-description-demo" />
 
-## Validation
+### Validation
 If a user submits the form without selecting an item, an error message will appear.
 <How minW60 toUse="pickers/combo-box/combo-box-validation-demo" />
 
-## Controlled
+### Controlled
 There are two ways to control the combo box: using the `onInputChange` prop or the `onSelectionChange` prop. These methods serve different purposes, as illustrated in the examples below. Both examples follow the same approach, defining `id` and `textValue` for the options.
 
 When you only need the `textValue` of the selected option, use the `onInputChange` prop. However, if you need to obtain the actual `id` of the selected option, the `onSelectionChange` prop is the appropriate choice.
 
-### Input
+#### Input
 This combo box is controlled by the `onInputChange` prop.
 <How minW60 toUse="pickers/combo-box/combo-box-controlled-demo" />
 
-### Selection
+#### Selection
 This combo box is controlled by the `onSelectionChange` prop.
 <How minW60 toUse="pickers/combo-box/combo-box-controlled-selection-demo" />
 
-## Multiple select
+### Multiple select
 Set `selectionMode="multiple"` to allow multi-select, and use [TagGroup](/docs/components/collections/tag-group) to display the selected items.
 
 <How minW60 toUse="pickers/combo-box/combo-box-multi-select-demo" />
 
-## Custom value
+### Custom value
 By default, the combo box only allows selecting from the provided options. However, you can enable users to enter custom values by setting `allowsCustomValue` to `true`. This allows users to input values that are not part of the predefined options.
 <How minW60 toUse="pickers/combo-box/combo-box-custom-value-demo" />
 
-## Disabled
+### Disabled
 When the combo box is disabled, it becomes non-interactive and cannot be edited.
 <How minW60 toUse="pickers/combo-box/combo-box-disabled-demo" />
+
+## Component API
+
+### ComboBox
+
+The `ComboBox` component combines an input with selectable options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxContent
+
+The `ComboBoxContent` component renders the combo box option list.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `popover` | `Omit<PopoverProps, "children">` | - |
+
+### ComboBoxInput
+
+The `ComboBoxInput` component renders the searchable combo box input.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxValue
+
+The `ComboBoxValue` component renders the selected combo box value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxItem
+
+The `ComboBoxItem` component represents one combo box option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### ComboBoxLabel
+
+The `ComboBoxLabel` component renders the primary text for an option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxDescription
+
+The `ComboBoxDescription` component renders supporting text for an option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ComboBoxSection
+
+The `ComboBoxSection` component groups related combo box options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `title` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ComboBoxhtml#props) for the full API reference.

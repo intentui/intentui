@@ -5,8 +5,6 @@ order: 6
 published: true
 ---
 
-## Basic
-A description list is typically used to display pairs of terms and details, like in invoices or product specifications, enhancing clarity and organization of information.
 <How className="px-4" isCenter={false} toUse="surfaces/description-list/description-list-demo" />
 
 ## Installation
@@ -33,10 +31,38 @@ import { DescriptionDetails, DescriptionList, DescriptionTerm } from "@/componen
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 <SourceCode toShow='description-list'/>
 
-## With heading
+## Examples
+
+### With heading
 This example shows with heading.
 <How className="px-4" isCenter={false} toUse="surfaces/description-list/description-list-heading-demo" />
 
-## With card
+### With card
 Sometimes, you may want to use a card to display the description list. This example shows how to do it.
 <How className="px-4" isCenter={false} toUse="surfaces/description-list/description-list-card-demo" />
+
+## Component API
+
+### DescriptionDetails
+
+The `DescriptionDetails` component renders the value in a description list.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DescriptionList
+
+The `DescriptionList` component displays terms and details in a structured list.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### DescriptionTerm
+
+The `DescriptionTerm` component renders the label in a description list.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

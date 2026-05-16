@@ -5,8 +5,6 @@ order: 5
 published: true
 ---
 
-## Basic
-Bar lists are used to display a series of bars in a list format, making it easy to compare values across different categories.
 <How  toUse="visualizations/tracker/tracker-demo" />
 
 ## Installation
@@ -21,6 +19,17 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow='tracker' />
 
-## Without tooltip
+## Examples
+
+### Without tooltip
 Sometimes you might want to display the tracker without tooltips for a cleaner look.
-<How withNoPadding={true} isCenter={false} toUse="visualizations/tracker/tracker-without-tooltip-demo" />
+<How toUse="visualizations/tracker/tracker-without-tooltip-demo" />
+
+## Component API
+The `Tracker` component visualizes segmented progress or distribution data.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `data` | `TrackerBlockProps[]` | `[]` |
+| `defaultBackgroundColor` | `string` | - |

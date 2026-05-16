@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/NumberField#api"]
 ---
 
-## Basic
-
-A field specifically designed for entering numeric values.
 <How minW60 toUse="forms/number-field/number-field-demo" />
 
 ## Installation
@@ -41,18 +38,40 @@ import { Label, Description, FieldError } from "@/components/ui/field"
 </NumberField>
 ```
 
-## Controlled
+## Examples
+
+### Controlled
 You can use the number field as a controlled component by managing its state externally.
 <How minW60 toUse="forms/number-field/number-field-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 Like other fields, the search field can be controlled by managing its value through the `defaultValue` prop.
 <How toUse="forms/number-field/number-field-uncontrolled-demo" />
 
-## Validation
+### Validation
 The field is in an error state, usually caused by invalid input. Try submitting the form without filling it out to see the error state in action.
 <How minW60 toUse="forms/number-field/number-field-invalid-demo" />
 
-## Disabled
+### Disabled
 The field is disabled and cannot be interacted with.
 <How minW60 toUse="forms/number-field/number-field-disabled-demo" />
+
+## Component API
+
+### NumberField
+
+The `NumberField` component lets users enter numeric values.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NumberInput
+
+The `NumberInput` component renders the number field input.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/NumberField#api) for the full API reference.

@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/ColorSlider#api"]
 ---
 
-## Basic
-Glide through gradients to select the perfect intensity or shade, as effortlessly as slipping into your favorite jeans.
 <How minW60 toUse="colors/color-slider/color-slider-demo" />
 
 ## Installation
@@ -31,18 +29,48 @@ import { ColorSlider } from "@/components/ui/color-slider"
 <ColorSlider channel="hue" />
 ```
 
-## With label
+## Examples
+
+### With label
 Enhance the color slider by adding a label for clarity and accessibility.
 <How minW60 toUse="colors/color-slider/color-slider-with-label-demo" />
 
-## Orientation
+### Orientation
 By default, the color slider is horizontal. You can change it to vertical by setting the `orientation` prop to `vertical`.
 <How minW60 toUse="colors/color-slider/color-slider-vertical-demo" />
 
-## Controlled
+### Controlled
 Take direct control over the color slider's value.
 <How minW60 toUse="colors/color-slider/color-slider-controlled-demo" />
 
-## Disabled
+### Disabled
 Disable interaction with the color slider using the `isDisabled` prop.
 <How minW60 toUse="colors/color-slider/color-slider-disabled-demo" />
+
+## Component API
+
+### ColorSlider
+
+The `ColorSlider` component lets users adjust one color channel.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ColorSliderOutput
+
+The `ColorSliderOutput` component displays the current color slider value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ColorSliderTrack
+
+The `ColorSliderTrack` component renders the color slider track.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ColorSlider#api) for the full API reference.

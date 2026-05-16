@@ -6,12 +6,6 @@ published: true
 status: beta
 ---
 
-## Basic
-This component excels in desktop applications but has significant limitations. Its lack of accessibility and mobile compatibility are notable drawbacks. **React Aria** hasn't released an official version of this component yet, possibly due to these issues.
-
-Unless it's absolutely necessary for your project, I'd advise against using it. For most scenarios requiring accessible, rich interfaces, consider alternatives like [Menus](/docs/components/collections/menu) or [Popovers](/docs/components/overlays/popover) instead. These components typically offer better cross-platform support and accessibility features.
-
-The initial release will be an alpha version due to ongoing issues with cursor positioning accuracy. If you're able to contribute, I'd appreciate your help in submitting a [pull request](https://github.com/intentui/intentui) to address this component's limitations.
 <How toUse="controls/context-menu/context-menu-demo" />
 
 ## Installation
@@ -29,30 +23,113 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow='context-menu' />
 
-## Description
+## Examples
+
+### Description
 You can add details to menu items by using the `ContextMenuDescription` component.
 <How toUse="controls/context-menu/context-menu-detail-description-demo" />
 
-## Danger
+### Danger
 Designate a menu item as dangerous.
 <How toUse="controls/context-menu/context-menu-danger-demo" />
 
-## With icon
+### With icon
 Enhance context menu item by adding icons.
 <How toUse="controls/context-menu/context-menu-with-icon-demo" />
 
-## Separator
+### Separator
 Separate context menu items with a separator.
 <How toUse="controls/context-menu/context-menu-separator-demo" />
 
 
-## Context sub menu
+### Context sub menu
 Sorry, this component doesn't exist yet. It's on our roadmap.
 
-## Disabled
+### Disabled
 Disable specific menu items.
 <How toUse="controls/context-menu/context-menu-disabled-demo" />
 Also, you can disable items directly in `MenuContent` by using the `disabledKeys` prop.
 ```tsx
 <ContextMenuContent disabledKeys={['gsu']} />
 ```
+
+## Component API
+
+### ContextMenu
+
+The `ContextMenu` component provides context menu state for its trigger and content.
+
+### ContextMenuTrigger
+
+The `ContextMenuTrigger` component defines the element that opens a context menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuContent
+
+The `ContextMenuContent` component renders menu items at the pointer position.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuHeader
+
+The `ContextMenuHeader` component renders header content inside a context menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `separator` | `boolean` | `false` |
+
+### ContextMenuItem
+
+The `ContextMenuItem` component represents one context menu action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### ContextMenuLabel
+
+The `ContextMenuLabel` component renders the primary text for a context menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuDescription
+
+The `ContextMenuDescription` component renders supporting text for a context menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuSection
+
+The `ContextMenuSection` component groups related context menu items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `label` | `string` | - |
+
+### ContextMenuSeparator
+
+The `ContextMenuSeparator` component separates context menu groups.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuShortcut
+
+The `ContextMenuShortcut` component displays a keyboard shortcut for a context menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

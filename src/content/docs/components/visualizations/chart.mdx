@@ -42,15 +42,17 @@ export function useIsMobile() {
 }
 ```
 
-## Area
+## Examples
+
+### Area
 Area charts are great for showing trends, comparisons, and patterns over time. They keep your data clean and easy to read.
 <How className="w-full max-w-xl" toUse="visualizations/area-chart/area-chart-demo" />
 
-## Bar
+### Bar
 Bar charts help visualize data comparisons across categories. They are effective for highlighting differences and trends using vertical or horizontal bars.
 <How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-demo" />
 
-## Pie
+### Pie
 Pie charts are useful for showing how parts contribute to a whole. They are best for displaying proportions and percentages in a visually appealing way.
 <How className="w-full max-w-xl" toUse="visualizations/pie-chart/pie-chart-demo" />
 
@@ -69,3 +71,91 @@ export default function App() {
 ```
 
 If you do not set a height, the chart defaults to 370 on desktop and 200 on mobile.
+
+## Component API
+
+### CartesianGrid
+
+The `CartesianGrid` component renders chart grid lines.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### Chart
+
+The `Chart` component provides shared chart context and layout.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `children` | `ReactElement \| ((props: ChartContextProps) => ReactElement)` | - |
+| `className` | `string` | - |
+| `config` | `ChartConfig` | - |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | `value` |
+| `id` | `string` | generated |
+| `layout` | `ChartLayout` | `horizontal` |
+
+### ChartLegendContent
+
+The `ChartLegendContent` component renders the chart legend items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `align` | `LegendProps["align"]` | `right` |
+| `className` | `string` | - |
+| `hideIcon` | `boolean` | `false` |
+| `nameKey` | `string` | - |
+| `payload` | `ReadonlyArray<LegendPayload>` | - |
+| `verticalAlign` | `LegendProps["verticalAlign"]` | `bottom` |
+
+### ChartLegend
+
+The `ChartLegend` component renders the chart legend container.
+
+### ChartTooltip
+
+The `ChartTooltip` component renders the chart tooltip container.
+
+### ChartTooltipContent
+
+The `ChartTooltipContent` component renders chart tooltip content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `color` | `string` | - |
+| `formatter` | `TooltipContentProps["formatter"]` | - |
+| `hideIndicator` | `boolean` | `false` |
+| `hideLabel` | `boolean` | `false` |
+| `indicator` | `"line" \| "dot" \| "dashed"` | `dot` |
+| `labelClassName` | `string` | - |
+| `labelFormatter` | `TooltipContentProps["labelFormatter"]` | - |
+| `labelKey` | `string` | - |
+| `labelSeparator` | `boolean` | `true` |
+| `nameKey` | `string` | - |
+
+### XAxis
+
+The `XAxis` component renders the chart x-axis.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `displayEdgeLabelsOnly` | `boolean` | - |
+| `intervalType` | `IntervalType` | `preserveStartEnd` |
+| `minTickGap` | `number` | `5` |
+
+### YAxis
+
+The `YAxis` component renders the chart y-axis.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `domain` | `YAxisPrimitiveProps["domain"]` | `["auto", "auto"]` |
+| `type` | `YAxisPrimitiveProps["type"]` | layout-based |
+| `width` | `number` | layout-based |
+
+See the [Recharts](https://recharts.org) for the full API reference.

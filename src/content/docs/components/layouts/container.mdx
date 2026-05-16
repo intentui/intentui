@@ -14,8 +14,21 @@ Install the component via the CLI in one command.
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 <SourceCode toShow='container'/>
 
-## Constrained
+## Examples
+
+### Constrained
 The Container component has constrained props, which means it won't have padding on mobile devices. By default, it will be false.
 ```
 <Container constrained />
 ```
+
+## Component API
+
+### Container
+
+The `Container` component constrains page content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `constrained` | `boolean` | `false` |

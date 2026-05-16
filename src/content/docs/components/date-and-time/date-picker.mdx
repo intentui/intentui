@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/DatePicker#api"]
 ---
 
-## Basic
-
-A date picker combines a DateField with a Calendar popover, allowing users to either type in or select a date and time.
 <How minW60 toUse="date-and-time/date-picker/date-picker-demo" />
 
 ## Installation
@@ -34,22 +31,55 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow='date-picker'/>
 
-## Date and time
+## Examples
+
+### Date and time
 While not a full-fledged date-time picker, this setup lets you edit both date and time in a segmented field.
 <How minW60 toUse="date-and-time/date-picker/date-time-demo" />
 
-## Validation
+### Validation
 To ensure that the date picker is filled out, use the `isRequired` prop.
 <How minW60 toUse="date-and-time/date-picker/date-picker-required-demo" />
 
-## Custom validation
+### Custom validation
 The `validate` function is your go-to for custom validation rules. It checks the current date value and returns an error message string or strings if the value doesn't meet your criteria.
 <How minW60 toUse="date-and-time/date-picker/date-picker-custom-validation-demo" />
 
-## Controlled
+### Controlled
 Take control of your date picker by passing a `value` prop, which allows you to manage the selected date.
 <How minW60 toUse="date-and-time/date-picker/date-picker-controlled-demo" />
 
-## Disabled
+### Disabled
 When the date picker is disabled, it becomes non-interactive and visually represents a disabled state.
 <How minW60 toUse="date-and-time/date-picker/date-picker-disabled-demo" />
+
+## Component API
+
+### DatePicker
+
+The `DatePicker` component combines a date field with a calendar popover.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `popover` | `Omit<PopoverProps, "children">` | - |
+
+### DatePickerOverlay
+
+The `DatePickerOverlay` component renders the calendar popover for a date picker.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `pageBehavior` | `"visible" \| "single"` | `visible` |
+| `range` | `boolean` | - |
+| `visibleDuration` | `DateDuration` | `{ months: 1 }` |
+
+### DatePickerTrigger
+
+The `DatePickerTrigger` component wraps the date picker trigger controls.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/DatePicker#api) for the full API reference.

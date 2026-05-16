@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Tooltip#api"]
 ---
 
-
-## Basic
-Tooltips are small overlays that display information about an element when the user hovers over or interacts with it.
 <How toUse="overlays/tooltip/tooltip-demo" />
 
 ## Installation
@@ -42,19 +39,21 @@ import {
 ```
 
 
-## Placement
+## Examples
+
+### Placement
 By default, the tooltip appears at the top, but you can change its position by using the `placement` prop.
 <How isCenter={false} toUse="overlays/tooltip/tooltip-placement-demo" />
 
-## Intent
+### Intent
 Tooltip has two intents: `default` and `inverse`. You can change the intent by using the `intent` prop.
 <How toUse="overlays/tooltip/tooltip-intent-demo" />
 
-## Without arrow
+### Without arrow
 You can remove the arrow from the tooltip by setting the `arrow` prop to `false`.
 <How toUse="overlays/tooltip/tooltip-without-arrow-demo" />
 
-## Directions
+### Directions
 
 The list above shows the primary directions, but you can also use more specific placements like `bottom left` or `top right`. Here are all the available placement options:
 
@@ -67,6 +66,28 @@ The list above shows the primary directions, but you can also use more specific 
 | `right`           | `right`, `right top`, `right bottom`                                  |
 | `end`             | `end`, `end top`, `end bottom`                                        |
 
-## Delay
+### Delay
 Tooltip rolls out the welcome mat after you hover for 1.5 secs. Wanna speed it up or slow it down? Just slide in a `delay` prop. Peep these [guidelines](https://spectrum.adobe.com/page/tooltip/#Immediate-or-delayed-appearance) for the scoop.
 <How toUse="overlays/tooltip/tooltip-delay-demo" />
+
+## Component API
+
+### Tooltip
+
+The `Tooltip` component controls when tooltip content is shown.
+
+### TooltipTrigger
+
+The `TooltipTrigger` component defines the element that opens a tooltip.
+
+### TooltipContent
+
+The `TooltipContent` component renders tooltip content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `arrow` | `boolean` | `true` |
+| `className` | `string` | - |
+| `inverse` | `true \| false` | `false` |
+
+See the [React Aria](https://react-aria.adobe.com/Tooltip#api) for the full API reference.

@@ -588,7 +588,7 @@ const ChartLegendContent = ({
               "selected:bg-secondary/70 selected:text-secondary-fg",
               "hover:bg-secondary/70 hover:text-secondary-fg",
             )}
-            aria-label={"Legend Item"}
+            aria-label="Legend Item"
           >
             {itemConfig?.icon && !hideIcon ? (
               <itemConfig.icon />

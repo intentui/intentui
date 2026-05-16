@@ -6,8 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/RangeCalendar#api"]
 ---
 
-## Basic
-A range calendar displays one or more date grids and allows users to select a range of dates.
 <How toUse="date-and-time/calendar/range-calendar-demo" />
 
 ## Installation
@@ -25,13 +23,28 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 <SourceCode toShow='range-calendar'/>
 
-## Controlled
+## Examples
+
+### Controlled
 The range calender can be controlled by passing the `value` prop.
 <How toUse="date-and-time/calendar/range-calendar-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 The range calendar can be uncontrolled by passing the `defaultValue` prop.
 <How toUse="date-and-time/calendar/range-calendar-uncontrolled-demo" />
 
-## Examples
+
 You can see the calendar in action within the [Date Picker](/docs/components/date-and-time/date-picker) and [Date Range Picker](/docs/components/date-and-time/date-range-picker) documentation.
+
+## Component API
+
+### RangeCalendar
+
+The `RangeCalendar` component lets users select a date range.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `visibleDuration` | `RangeCalendarProps<T>["visibleDuration"]` | `{ months: 1 }` |
+
+See the [React Aria](https://react-aria.adobe.com/RangeCalendar#api) for the full API reference.

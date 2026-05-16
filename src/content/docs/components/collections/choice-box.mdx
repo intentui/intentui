@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/GridList#api"]
 ---
 
-## Basic
-The Choicebox is an enhanced version of a GridList, offering users a larger tap target and additional details.
-
 <How toUse="collections/choicebox/choicebox-demo" />
 
 ## Installation
@@ -65,24 +62,26 @@ import {
 </Choicebox>
 ```
 
-## Multiple selection
+## Examples
+
+### Multiple selection
 By default, it uses single selection mode. To allow multiple selections, set the selectionMode prop to 'multiple'. This enables users to select more than one item at a time.
 
 <How toUse="collections/choicebox/choicebox-multiple-selection-demo" />
 
-## Columns and gap
+### Columns and gap
 By default, the gap between items is set to `0`, and the `columns` prop is also `0`. You can customize both by providing your own `gap` and `columns` values.
 <How isCenter={false} withNoPadding={true} toUse="collections/choicebox/choicebox-columns-demo" />
 
-## Icons
+### Icons
 You can add icons to the Choicebox items by providing the `icon` prop.
 <How toUse="collections/choicebox/choicebox-icon-demo" />
 
-## Controlled
+### Controlled
 This component can `function` as either controlled or uncontrolled. For controlled use, provide the `selectedKeys` prop and manage updates with the `onSelectionChange` event handler.
 <How toUse="collections/choicebox/choicebox-controlled-demo" />
 
-## Disabled
+### Disabled
 Disable the entire Choicebox by applying the `isDisabled` prop.
 <How withNoPadding={true} toUse="collections/choicebox/choicebox-disabled-demo" />
 
@@ -91,3 +90,44 @@ Individual items can also be disabled by specifying their keys in the `disabledK
 ```tsx
 <Choicebox disabledKeys={['sm', 'lg']} />
 ```
+
+## Component API
+
+### ChoiceBox
+
+The `ChoiceBox` component displays selectable options in a boxed layout.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `columns` | `"1" \| "2" \| "3" \| "4" \| "5" \| "6"` | `1` |
+| `gap` | `"0" \| "1" \| "2" \| "3" \| "4" \| "5" \| "6" \| "8" \| "10" \| "12"` | `0` |
+| `isReadOnly` | `boolean` | - |
+
+### ChoiceBoxDescription
+
+The `ChoiceBoxDescription` component renders supporting text for a choice item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ChoiceBoxItem
+
+The `ChoiceBoxItem` component represents one selectable choice.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `description` | `string` | - |
+| `label` | `string` | - |
+
+### ChoiceBoxLabel
+
+The `ChoiceBoxLabel` component renders the label for a choice item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/GridList#api) for the full API reference.

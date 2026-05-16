@@ -74,10 +74,7 @@ export function BarChart({
     [configKeys, colors],
   )
 
-  const configEntries = useMemo(
-    () => configKeys.map((category) => [category, config[category]] as const),
-    [config, configKeys],
-  )
+  const configEntries = useMemo(() => Object.entries(config), [config])
 
   const stacked = type === "stacked" || type === "percent"
   const defaultBarRadius = stacked ? undefined : 4

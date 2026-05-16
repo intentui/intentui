@@ -6,11 +6,7 @@ published: true
 references: ["https://recharts.org/en-US/api/BarChart"]
 ---
 
-## Basic
-
-Bar charts help visualize data comparisons across categories. They are effective for highlighting differences and trends using vertical or horizontal bars.
-
-<How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-demo" />
 
 ## Installation
 
@@ -24,41 +20,80 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i recharts"/>
+<InstallCommand command="npm i recharts react-aria-components"/>
 
 <SourceCode toShow={'bar-chart'} />
 
-## Stacked
+## Examples
+
+### Stacked
 
 Stacked bar charts let you compare parts of a whole across categories. Each bar stacks its values to show how they build up.
 
-<How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-stacked-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-stacked-demo" />
 
 
-## Custom format
+### Custom format
 
 Custom format bar charts let you style the appearance, including bar radius, spacing, and color, for visual alignment with your product.
 
-<How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-custom-format-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-custom-format-demo" />
 
-## Custom tooltip
+### Custom tooltip
 
 Custom tooltips let you enrich the bar hover experience with icons, values, and additional context. Ideal for readable data at a glance.
 
-<How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-custom-tooltip-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-custom-tooltip-demo" />
 
-## Custom legend
+### Custom legend
 
 Custom legends help identify bar categories with icons, colors, or labels tailored to your dataset.
 
-<How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-custom-legend-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-custom-legend-demo" />
 
-## Custom colors
+### Custom colors
 Custom colors allow you to set specific colors for each bar, enhancing visual distinction and brand alignment.
-<How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-custom-colors-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-custom-colors-demo" />
 
-## Controlled
+### Controlled
 
 Controlled bar charts let you dynamically manage state. You can filter datasets, toggle views, or update the display based on user interaction.
 
-<How className="w-full max-w-xl" toUse="visualizations/bar-chart/bar-chart-controlled-demo" />
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-controlled-demo" />
+
+## Component API
+
+The `BarChart` component renders categorical data with vertical or horizontal bars.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `barCategoryGap` | `number` | `5` |
+| `barGap` | `number` | - |
+| `barProps` | `Partial<React.ComponentProps<typeof Bar>>` | - |
+| `barRadius` | `number` | - |
+| `barSize` | `number` | - |
+| `cartesianGridProps` | `CartesianGridProps` | - |
+| `chartProps` | `Omit<ComponentProps<typeof BarChartPrimitive>, "data" \| "stackOffset">` | - |
+| `children` | `React.ReactNode` | - |
+| `className` | `string` | - |
+| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
+| `config` | `ChartConfig` | - |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | - |
+| `displayEdgeLabelsOnly` | `boolean` | `false` |
+| `hideGridLines` | `boolean` | `false` |
+| `hideXAxis` | `boolean` | `false` |
+| `hideYAxis` | `boolean` | `false` |
+| `intervalType` | `IntervalType` | `equidistantPreserveStart` |
+| `layout` | `ChartLayout` | `horizontal` |
+| `legend` | `LegendContentType \| boolean` | `true` |
+| `legendProps` | `Omit<ComponentProps<typeof LegendPrimitive>, "content" \| "ref">` | - |
+| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
+| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
+| `type` | `ChartType` | `default` |
+| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
+| `xAxisProps` | `XAxisPropsPrimitive` | - |
+| `yAxisProps` | `YAxisPrimitiveProps` | - |
+
+See the [Recharts](https://recharts.org/en-US/api/BarChart) for the full API reference.

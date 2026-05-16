@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/FileTrigger#api"]
 ---
 
-## Basic
-Basic usage of a FileTrigger.
-
 <How toUse="buttons/file-trigger/file-trigger-demo" />
 
 ## Installation
@@ -32,22 +29,24 @@ import { FileTrigger } from "@/components/ui/file-trigger"
 <FileTrigger />
 ```
 
-## Folder
+## Examples
+
+### Folder
 A FileTrigger that allows users to select a folder from the file system.
 
 <How toUse="buttons/file-trigger/file-trigger-folder-demo" />
 
-## Multiple
+### Multiple
 A FileTrigger that enables users to select multiple files.
 
 <How toUse="buttons/file-trigger/file-trigger-multiple-demo" />
 
-## Camera
+### Camera
 A FileTrigger that lets users capture images using their device's camera.
 
 <How toUse="buttons/file-trigger/file-trigger-camera-demo" />
 
-## Avatar
+### Avatar
 A FileTrigger that allows users to select an avatar from their file system. It integrates components like `avatar` and `drop-zone`, enabling users to either drag and drop or manually select a file.
 
 <Composed components={['avatar', 'drop-zone']}/>
@@ -55,18 +54,35 @@ A FileTrigger that allows users to select an avatar from their file system. It i
 This how you can use the FileTrigger combined with an Avatar component.
 <How toUse="buttons/file-trigger/file-trigger-avatar-demo" />
 
-## Pending
+### Pending
 A FileTrigger can indicate a pending state using the `isPending` prop. This provides feedback for actions that take time, communicates the status to assistive technologies, and disables interactions except for focus.
 <How toUse="buttons/file-trigger/file-trigger-pending-demo" />
 
-## Circle
+### Circle
 A FileTrigger that is styled as a circle, providing a unique visual appearance.
 <How toUse="buttons/file-trigger/file-trigger-circle-demo" />
 
-## Controlled
+### Controlled
 You can use the `onSelect` prop to snag the selected files.
 <How toUse="buttons/file-trigger/file-trigger-controlled-demo" />
 
-## Disabled
+### Disabled
 A FileTrigger that is disabled.
 <How toUse="buttons/file-trigger/file-trigger-disabled-demo" />
+
+## Component API
+
+### FileTrigger
+
+The `FileTrigger` component opens the system file picker from a styled trigger.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `outline` |
+| `isCircle` | `true \| false` | `false` |
+| `isDisabled` | `boolean` | - |
+| `isPending` | `boolean` | - |
+| `size` | `"xs" \| "sm" \| "md" \| "lg" \| "sq-xs" \| "sq-sm" \| "sq-md" \| "sq-lg"` | `md` |
+
+See the [React Aria](https://react-aria.adobe.com/FileTrigger#api) for the full API reference.

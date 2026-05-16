@@ -4025,6 +4025,7 @@
       "title": "Tracker Without Tooltip",
       "description": "tracker-without-tooltip-demo",
       "registryDependencies": [
+        "http://localhost:3000/r/card",
         "http://localhost:3000/r/tracker"
       ],
       "files": [

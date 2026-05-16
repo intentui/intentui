@@ -1,5 +1,5 @@
 "use client"
-import { CheckIcon } from "@heroicons/react/24/outline"
+import { CheckIcon } from "@heroicons/react/20/solid"
 import { useInView } from "motion/react"
 import { useEffect, useMemo, useRef, useState } from "react"
 import { Button } from "react-aria-components/Button"

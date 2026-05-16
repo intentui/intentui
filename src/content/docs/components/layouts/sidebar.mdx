@@ -3,11 +3,8 @@ title: "Sidebar"
 description: A collapsible side panel for navigation or extra content, with multiple intents, behaviors, and customization options to match your layout on any screen size
 order: 1
 published: true
-references: ["https://react-aria.adobe.com/Link#api", "https://react-aria.adobe.com/Disclosure#api"]
 ---
 
-## Basic
-The sidebar is a versatile component designed to organize your site's content and navigation. It offers a structured overview of your site's layout, making it easier for users to explore and locate information.
 <Sandbox
   registries={[
     "sidebar-01",
@@ -66,50 +63,52 @@ The sidebar just needs one base color to work; the accent is generated from the 
 
 Not sure if it's your style, but it's a great starting point. If you’d like to tweak the colors, check out the [theme customization](/themes) page for more options.
 
-## Intent
+## Examples
+
+### Intent
 The sidebar comes in three variations: `"sidebar"`, `"float"`, and `"inset"`. By default, the variation is set to `"sidebar"`.
 
-### Default
+#### Default
 The default variation is a traditional sidebar often used for navigation. <NewTab href='/pre-blocks/sidebar/sidebar-02'/>.
 ```
 <Sidebar intent="default" />
 ```
 
-### Inset
+#### Inset
 The inset variation adds padding to the main content for a visually distinct layout. Explore the demo to see it in action, or switch to full-screen mode for a better view. <NewTab href='/pre-blocks/sidebar/sidebar-03'/>.
 ```
 <Sidebar intent="inset" />
 ```
 
-### Float
+#### Float
 The `float` variation introduces an inner border within the sidebar, while the wrapper includes padding around the content. <NewTab href='/pre-blocks/sidebar/sidebar-04'/>
 ```
 <Sidebar intent="float" />
 ```
 
-## Collapsible
+### Collapsible
 The sidebar can be made collapsible by using the `collapsible` prop in the `SidebarProvider`. The default collapsible behavior is `"hidden"`.
 
-### Hidden
+#### Hidden
 When toggled, the sidebar hides completely from view. <NewTab href='/pre-blocks/sidebar/sidebar-05'/>
 ```
 <Sidebar collapsible="hidden" />
 ```
 
-### Dock
+#### Dock
 When toggled, the sidebar docks to a minimal state, showing only icons. Hovering over an icon reveals a tooltip with additional information. <NewTab href='/pre-blocks/sidebar/sidebar-06'/>
 ```
 <Sidebar intent="dock" />
 ```
 
-## Default open
+### Default open
 The sidebar’s initial state can be controlled using the `defaultOpen` prop. For example, you can set `defaultOpen` to `false` and keep the sidebar docked.
 ```
 <SidebarProvider defaultOpen={false}>
   <Sidebar collapsible="dock" />
 ```
 
-## Sidebar section
+### Sidebar section
 The sidebar section is a container for sidebar items. It accepts a `label` prop, which will be displayed as a heading.
 ```
 <SidebarSection>
@@ -124,7 +123,7 @@ The sidebar section is a container for sidebar items. It accepts a `label` prop,
 </SidebarSection>
 ```
 
-## Sidebar disclosure group
+### Sidebar disclosure group
 If you need to collapse multiple items, you can use the `SidebarDisclosureGroup` component. <NewTab href='/pre-blocks/sidebar/sidebar-15'/>
 ```
 {sections.map((section, sectionIndex) => (
@@ -176,7 +175,9 @@ const sections = [
 ]
 ```
 
-## Menu actions
+
+
+### Menu actions
 The sidebar supports menus for displaying additional actions or options. When using a menu, be sure to include `data-slot="menu-action-trigger"`.
 ```
 <SidebarItem tooltip="Orders">
@@ -228,7 +229,7 @@ By default, the sidebar menu trigger will be visible when you hover over the sid
 ```
 
 
-## Badge
+### Badge
 The sidebar supports badges, which can be used to indicate the number of unread messages, tasks, or other items. <NewTab href='/pre-blocks/sidebar/sidebar-09'/>
 ```
 <SidebarSection>
@@ -246,7 +247,7 @@ const navigation = [
 ]
 ```
 
-## Separator
+### Separator
 The sidebar supports separators, which can be used to separate sections or groups of items. <NewTab href='/pre-blocks/sidebar/sidebar-19'/>
 ```tsx {3,6, 9}
 <SidebarContent>
@@ -270,7 +271,7 @@ The example previews will appear similar to the ones in the YouTube sidebar.
     'page.tsx': 'pre-blocks/sidebar/sidebar-19/page',
   }} />
 
-## Tooltip
+### Tooltip
 The sidebar supports tooltips, which can be used to display additional information when you're on docked mode.
 <Sandbox
   registries={[
@@ -278,7 +279,7 @@ The sidebar supports tooltips, which can be used to display additional informati
   ]}
 />
 
-## Header
+### Header
 The sidebar supports headers, which can be used to display additional actions or options.
 ```
 <Sidebar {...props}>
@@ -294,7 +295,7 @@ The sidebar supports headers, which can be used to display additional actions or
 </Sidebar>
 ```
 
-## Footer
+### Footer
 The sidebar supports footers, which can be used to display additional actions or options.
 ```
 <Sidebar {...props}>
@@ -316,7 +317,7 @@ The sidebar supports footers, which can be used to display additional actions or
   </SidebarFooter>
 </Sidebar>
 ```
-## Side
+### Side
 The sidebar has two sides, left and right. You can set the side of the sidebar by using the `side` prop. <NewTab href='/pre-blocks/sidebar/sidebar-16'/>
 ```
 <Sidebar side='left | right'/>
@@ -329,7 +330,7 @@ The sidebar has two sides, left and right. You can set the side of the sidebar b
     'page.tsx': 'pre-blocks/sidebar/sidebar-16/page',
   }} />
 
-## Put anything
+### Put anything
 You can put anything you want in it. You can use the `SidebarContent` component to wrap your content. Let's try to add a range-calendar and search-field to the sidebar. <NewTab href='/pre-blocks/sidebar/sidebar-17'/>
 <EditorText
   source={{
@@ -337,7 +338,7 @@ You can put anything you want in it. You can use the `SidebarContent` component 
     'layout.tsx': 'pre-blocks/sidebar/sidebar-17/layout',
   }} />
 
-## Remember state
+### Remember state
 To persist the sidebar’s state across sessions, wrap your layout with the SidebarProvider component. It stores the sidebar’s state in a cookie and restores it when the user revisits the page.
 ```
 import { cookies } from "next/headers"
@@ -354,33 +355,203 @@ export default async function Layout({ children }: Readonly<{ children: React.Re
     <SidebarProvider defaultOpen={defaultOpen}>
 ```
 
-## Props
-The sidebar supports the following props:
+## Component API
+
 ### Sidebar
-| **Property**  | **Type**                          | **Default** |
-|---------------|-----------------------------------|-------------|
-| `intent`      | `"default" \| "float" \| "inset"` | `"default"` |
-| `collapsible` | `"hidden" \| "dock" \| "none"`    | `"hidden"`  |
-| `side`        | `"left" \| "right"`               | `"left"`    |
-| `closeButton` | `boolean`                         | `"true"`    |
 
-### SidebarContextProps
+The `Sidebar` component renders an application side navigation panel.
 
-| **Property**        | **Type**                    |
-|---------------------|-----------------------------|
-| `state`             | `"expanded" \| "collapsed"` |
-| `open`              | `boolean`                   |
-| `setOpen`           | `(open: boolean) => void`   |
-| `isOpenOnMobile`    | `boolean`                   |
-| `setIsOpenOnMobile` | `(open: boolean) => void`   |
-| `isMobile`          | `boolean`                   |
-| `toggleSidebar`     | `() => void`                |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `closeButton` | `boolean` | `true` |
+| `collapsible` | `"hidden" \| "dock" \| "none"` | `hidden` |
+| `intent` | `"default" \| "float" \| "inset"` | `default` |
+| `side` | `"left" \| "right"` | `left` |
 
-### SidebarProviderProps
+### SidebarContent
 
-| **Property**   | **Type**                  | **Default** |
-|----------------|---------------------------|-------------|
-| `defaultOpen`  | `boolean`                 | `true`      |
-| `isOpen`       | `boolean`                 | `undefined` |
-| `onOpenChange` | `(open: boolean) => void` | `undefined` |
-| `shortcut`     | string                    | `"b"`       |
+The `SidebarContent` component wraps the main sidebar content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarDisclosure
+
+The `SidebarDisclosure` component wraps a collapsible sidebar item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarDisclosureGroup
+
+The `SidebarDisclosureGroup` component groups collapsible sidebar items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarDisclosurePanel
+
+The `SidebarDisclosurePanel` component contains collapsible sidebar content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarDisclosureTrigger
+
+The `SidebarDisclosureTrigger` component toggles sidebar disclosure content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarFooter
+
+The `SidebarFooter` component renders footer content in the sidebar.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarHeader
+
+The `SidebarHeader` component renders header content in the sidebar.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarInset
+
+The `SidebarInset` component aligns page content next to the sidebar.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarItem
+
+The `SidebarItem` component represents one sidebar link or action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `badge` | `string \| number \| undefined` | - |
+| `className` | `string` | - |
+| `isCurrent` | `boolean` | - |
+| `tooltip` | `string \| React.ComponentProps<typeof TooltipContent>` | - |
+
+### SidebarLabel
+
+The `SidebarLabel` component renders text inside a sidebar item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarLink
+
+The `SidebarLink` component renders a sidebar link.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarMenuTrigger
+
+The `SidebarMenuTrigger` component renders a sidebar menu trigger.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `alwaysVisible` | `boolean` | `false` |
+| `className` | `string` | - |
+
+### SidebarNav
+
+The `SidebarNav` component wraps sidebar navigation content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `isSticky` | `boolean` | `false` |
+
+### SidebarProvider
+
+The `SidebarProvider` component manages sidebar open state.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `defaultOpen` | `boolean` | `true` |
+| `isOpen` | `boolean` | - |
+| `onOpenChange` | `(open: boolean) => void` | - |
+| `shortcut` | `string` | `b` |
+
+### SidebarRail
+
+The `SidebarRail` component renders the collapsed sidebar rail.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarSection
+
+The `SidebarSection` component groups sidebar items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `label` | `string` | - |
+
+### SidebarSectionGroup
+
+The `SidebarSectionGroup` component groups sidebar sections.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarSeparator
+
+The `SidebarSeparator` component separates sidebar content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarTree
+
+The `SidebarTree` component renders nested sidebar navigation.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarTreeContent
+
+The `SidebarTreeContent` component renders content inside a sidebar tree item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `isCurrent` | `boolean` | - |
+
+### SidebarTreeItem
+
+The `SidebarTreeItem` component represents one sidebar tree item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SidebarTrigger
+
+The `SidebarTrigger` component toggles the sidebar.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

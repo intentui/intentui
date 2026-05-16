@@ -1,6 +1,7 @@
 "use client"
 
-import { BuildingOffice2Icon, CheckIcon, UserCircleIcon } from "@heroicons/react/24/outline"
+import { CheckIcon } from "@heroicons/react/20/solid"
+import { BuildingOffice2Icon, UserCircleIcon } from "@heroicons/react/24/outline"
 import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
 import { Strong, Text } from "@/components/ui/text"

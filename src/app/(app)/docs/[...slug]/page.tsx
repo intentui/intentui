@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { twJoin } from "tailwind-merge"
 import { Ads } from "@/components/ads"
 import { DocRefs } from "@/components/doc-refs"
 import { JsonLd } from "@/components/json-ld"
@@ -8,6 +7,7 @@ import { mdxComponents } from "@/components/mdx-components"
 import { OpenIn } from "@/components/open-in"
 import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
+import { Text } from "@/components/ui/text"
 import { app } from "@/config/app"
 import { ogImage } from "@/lib/og"
 import { source } from "@/lib/source"
@@ -149,33 +149,24 @@ export default async function Page(props: DocPageProps) {
       <JsonLd data={jsonLd} />
       <div className="min-w-0 max-w-3xl flex-auto px-4 py-8 sm:py-14 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-14">
         <div className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
-          <div className="pb-6 sm:border-b">
-            <div className="font-mono text-blue-600 text-xs uppercase dark:text-blue-400">
+          <div className="not-prose mb-6 space-y-3 sm:space-y-6">
+            <div className="font-mono text-primary-subtle-fg text-xs uppercase">
               {extractSegment(page.url)}
             </div>
-            <div className="flex items-center justify-between gap-x-2">
-              <h1 className="mt-2 font-semibold text-xl tracking-tight sm:text-3xl">{doc.title}</h1>
+            <div className="flex w-full items-center justify-between">
+              <h1 className="flex-1 font-semibold text-3xl tracking-tight">{doc.title}</h1>
             </div>
             {doc.description ? (
-              <p className="mt-2.5 text-pretty text-base text-fg/60 leading-relaxed">
-                {doc.description}
-              </p>
+              <Text className="max-w-2xl sm:text-base/6">{doc.description}</Text>
             ) : null}
 
-            <div
-              className={twJoin(
-                "flex items-center",
-                ((doc.references && doc.references?.length > 0) || doc.status) && "mt-6",
-              )}
-            >
+            <div className="flex items-center gap-x-1.5">
               {doc.references && doc.references?.length > 0 && (
                 <DocRefs references={doc.references} />
               )}
               <OpenIn page={pageText} tree={source.pageTree} url={page.url} />
             </div>
           </div>
-
-          <Toc className="mt-4 block sm:mt-8 xl:hidden" items={doc.toc} />
 
           <MDX components={mdxComponents} />
 

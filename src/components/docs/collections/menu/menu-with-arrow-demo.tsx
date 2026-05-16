@@ -1,11 +1,11 @@
 "use client"
 
+import { PlusIcon } from "@heroicons/react/20/solid"
 import {
   ArrowLeftStartOnRectangleIcon,
   Cog6ToothIcon,
   HashtagIcon,
   LifebuoyIcon,
-  PlusIcon,
 } from "@heroicons/react/24/outline"
 import { Avatar } from "@/components/ui/avatar"
 import {

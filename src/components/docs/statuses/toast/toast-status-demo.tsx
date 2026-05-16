@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export default function ToastStatusDemo() {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-1.5">
       <Button intent="outline" onPress={() => toast.error("The registration failed")}>
         Error
       </Button>

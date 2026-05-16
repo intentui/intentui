@@ -5,8 +5,6 @@ order: 4
 published: true
 ---
 
-## Basic
-The Note component displays a note with a title and description, providing an easy way to highlight important information.
 <How toUse="statuses/note/note-demo" />
 
 ## Installation
@@ -35,6 +33,18 @@ import { Note } from "@/components/ui/note"
 </>
 ```
 
-## Intent
+## Examples
+
+### Intent
 By default, the note is displayed with a primary intent. You can change the intent by passing the `intent` prop. This example demonstrates different intents.
 <How toUse="statuses/note/note-intent-demo" />
+
+## Component API
+
+The `Note` component highlights contextual information.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `indicator` | `boolean` | `true` |
+| `intent` | `"default" \| "info" \| "warning" \| "danger" \| "success"` | `default` |

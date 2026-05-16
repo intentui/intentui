@@ -32,9 +32,24 @@ export const mdxComponents = {
   FrameworkGuides,
   Image,
   table: (props: React.ComponentProps<"table">) => (
-    <div className="overflow-x-auto">
-      <table className="w-full" {...props} />
+    <div className="not-prose overflow-hidden overflow-x-auto">
+      <table className="not-prose w-full" {...props} />
     </div>
+  ),
+  thead: (props: React.ComponentProps<"thead">) => (
+    <thead className="border-border border-b-2" {...props} />
+  ),
+  th: (props: React.ComponentProps<"th">) => (
+    <th className="px-6 py-2.5 text-left font-medium text-fg text-sm/6 first:px-0" {...props} />
+  ),
+  td: (props: React.ComponentProps<"td">) => (
+    <td
+      className="px-6 py-2.5 text-muted-fg text-sm first:px-0 *:[code]:font-medium *:[code]:text-fg"
+      {...props}
+    />
+  ),
+  p: (props: React.ComponentProps<"p">) => (
+    <p className="text-zinc-700 dark:text-zinc-300" {...props} />
   ),
   NewTab: (props: React.ComponentProps<typeof Link>) => (
     <Link

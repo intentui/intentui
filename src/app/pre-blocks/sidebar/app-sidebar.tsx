@@ -1,7 +1,8 @@
 "use client"
 
 import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
-import { ChevronUpDownIcon, CubeIcon, HashtagIcon, PlusIcon } from "@heroicons/react/24/outline"
+import { PlusIcon } from "@heroicons/react/20/solid"
+import { ChevronUpDownIcon, CubeIcon, HashtagIcon } from "@heroicons/react/24/outline"
 import {
   ArchiveBoxIcon,
   ArrowDownTrayIcon,

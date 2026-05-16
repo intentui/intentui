@@ -6,9 +6,6 @@ published: true
 references: ["https://react-aria.adobe.com/Select#api"]
 ---
 
-## Basic
-
-A select component displays a dropdown list of options, allowing users to pick one from the list.
 <How minW60 toUse="pickers/select/select-demo" />
 
 ## Installation
@@ -57,31 +54,33 @@ const software = [
 </Select>
 ```
 
-## Section
+## Examples
+
+### Section
 A select component can display items grouped together in sections.
 <How minW60 toUse="pickers/select/select-section-demo" />
 
-## Searchable select
+### Searchable select
 Sometimes, you may need to search for an item in a select component. Here's how you can do it.
 <How minW60 toUse="pickers/select/select-searchable-demo" />
 
-## With icon
+### With icon
 
 <How minW60 toUse="pickers/select/select-with-icon-demo" />
 
-## With avatar
+### With avatar
 <How minW60 toUse="pickers/select/select-with-avatar-demo" />
 
-## Multiple select
+### Multiple select
 Enable selecting more than one option by setting `selectionMode` to `multiple`.
 <How minW60 toUse="pickers/select/select-multiple-demo" />
 
 
-## Validation
+### Validation
 If a user submits the form without selecting an item, an error message will appear.
 <How minW60 toUse="pickers/select/select-validation-demo" />
 
-## Label
+### Label
 When the `children` option is a string, `Select.Label` will automatically wrap it. However, if the option includes an icon or avatar, you'll need to manually define the wrapper like this:
 
 ```
@@ -91,19 +90,93 @@ When the `children` option is a string, `Select.Label` will automatically wrap i
 </SelectItem>
 ```
 
-## Details description
+### Details description
 If you need to provide more information about an option, use the `Description` component to display additional details.
 <How minW60 toUse="pickers/select/select-details-description-demo" />
 
-## Controlled
+### Controlled
 You can control the select component by passing the `selectedKey` prop.
 <How minW60 toUse="pickers/select/select-controlled-demo" />
 
-## Uncontrolled
+### Uncontrolled
 You can uncontrolled the select component by passing the `defaultSelectedKey` prop.
 <How minW60 toUse="pickers/select/select-uncontrolled-demo" />
 
 
-## Disabled
+### Disabled
 When the select component is disabled, it cannot be interacted with.
 <How minW60 toUse="pickers/select/select-disabled-demo" />
+
+## Component API
+
+### Select
+
+The `Select` component lets users choose from a list of options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `items` | `Iterable<T, M>` | - |
+
+### SelectContent
+
+The `SelectContent` component renders select options inside a popover.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `items` | `Iterable<T>` | - |
+| `popover` | `Omit<PopoverProps, "children">` | - |
+
+### SelectItem
+
+The `SelectItem` component represents one select option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### SelectLabel
+
+The `SelectLabel` component renders the primary text for a select option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SelectDescription
+
+The `SelectDescription` component renders supporting text for a select option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SelectSection
+
+The `SelectSection` component groups related select options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `title` | `string` | - |
+
+### SelectSeparator
+
+The `SelectSeparator` component separates select option groups.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SelectTrigger
+
+The `SelectTrigger` component opens the select popover and displays the selected value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `prefix` | `ReactNode` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Select#api) for the full API reference.
