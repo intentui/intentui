@@ -14,7 +14,7 @@ const positions: ToastT["position"][] = [
 
 export default function ToastPositionsDemo() {
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+    <div className="flex flex-wrap gap-1.5">
       {positions.map((position) => (
         <Button
           intent="outline"

@@ -33,7 +33,7 @@ export default function ToastPromiseDemo() {
   }
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-1.5">
       <Button intent="outline" size="sm" onPress={handleSuccess}>
         Promise Toast
       </Button>

@@ -1,7 +1,6 @@
 "use client"
 import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
 import { Suspense, useEffect, useRef, useState } from "react"
-import { Heading } from "react-aria-components/Heading"
 import scrollIntoView from "scroll-into-view-if-needed"
 import { twMerge } from "tailwind-merge"
 import { useMediaQuery } from "@/hooks/use-media-query"
@@ -53,13 +52,11 @@ export function Toc({ className, items }: Props) {
           : undefined,
       }}
     >
-      <nav aria-labelledby="on-this-page-title" className="w-56">
+      <nav aria-labelledby="on-this-page-title" className="not-prose w-56">
         <Suspense>
           {items.length > 0 && (
             <>
-              <Heading level={2} className="mb-3 font-medium text-fg text-sm/6">
-                On this page
-              </Heading>
+              <h2 className="mb-3 font-medium text-fg text-sm/6">On this page</h2>
 
               <ul className="flex flex-col gap-y-2.5">
                 {items.map((item) => (
@@ -74,20 +71,18 @@ export function Toc({ className, items }: Props) {
   )
 }
 
-function TocLink({
-  item,
-  activeId,
-  minDepth,
-}: {
+interface TocLinkProps {
   item: TOCItemType
   activeId: string | null
   minDepth: number
-}) {
+}
+
+function TocLink({ item, activeId, minDepth }: TocLinkProps) {
   return (
     <li key={item.url}>
       <a
         className={twMerge(
-          "block font-medium tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden lg:text-[0.885rem]",
+          "block font-medium text-sm/6 tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden",
           item.url.split("#")[1] === activeId
             ? "text-fg forced-colors:text-[Highlight]"
             : "text-muted-fg/90 forced-colors:text-[GrayText]",

@@ -65,7 +65,7 @@ export function DocRefs({ references }: { references: string[] }) {
         {urls.map(
           (item: { url: string; title: string; icon: React.FC<React.SVGProps<SVGSVGElement>> }) => (
             <LinkButton
-              className="dark:bg-secondary/50 dark:hover:bg-secondary"
+              className="h-10 sm:h-auto dark:bg-secondary/50 dark:hover:bg-secondary"
               key={item.url}
               target="_blank"
               size="sm"
