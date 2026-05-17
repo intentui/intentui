@@ -37,7 +37,7 @@ export function Aside() {
     <div className="sticky -ml-3 h-screen w-full pr-0 pl-0.5 sm:top-12 sm:w-64 sm:py-12 xl:w-60">
       <ScrollArea scrollFade orientation="vertical">
         <div className="flex flex-col gap-y-(--gap) px-4 pb-10 [--gap:--spacing(6)]">
-          <div className="sm:*:text-sm/7 pt-1">
+          <div className="pt-1 sm:*:text-sm/7">
             <AsideLink href="/components">
               <PackageIcon />
               Components
