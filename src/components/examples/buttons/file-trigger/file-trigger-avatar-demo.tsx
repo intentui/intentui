@@ -29,13 +29,12 @@ export default function FileTriggerAvatarDemo() {
     }
   }
 
-  async function onSelectHandler(e: any) {
-    if (e) {
-      const files = Array.from(e)
-      const item = files[0]
+  async function onSelectHandler(files: FileList | null) {
+    if (files) {
+      const file = files.item(0)
 
-      if (item) {
-        setDroppedImage(URL.createObjectURL(item))
+      if (file) {
+        setDroppedImage(URL.createObjectURL(file))
       }
     }
   }

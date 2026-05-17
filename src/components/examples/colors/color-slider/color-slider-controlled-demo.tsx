@@ -2,7 +2,7 @@
 
 import { parseColor } from "@react-stately/color"
 import { useState } from "react"
-import { ControlledValues } from "@/components/docs/colors/controlled-values"
+import { ControlledValues } from "@/components/examples/colors/controlled-values"
 import { ColorSlider, ColorSliderOutput, ColorSliderTrack } from "@/components/ui/color-slider"
 import { ColorThumb } from "@/components/ui/color-thumb"
 

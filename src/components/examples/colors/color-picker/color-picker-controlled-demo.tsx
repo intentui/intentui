@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { parseColor } from "react-aria-components/ColorArea"
-import { ControlledValues } from "@/components/docs/colors/controlled-values"
+import { ControlledValues } from "@/components/examples/colors/controlled-values"
 import { Button } from "@/components/ui/button"
 import { ColorArea } from "@/components/ui/color-area"
 import { ColorField } from "@/components/ui/color-field"

@@ -1,7 +1,7 @@
 import fs from "node:fs"
 import path from "node:path"
 
-const directoryPath = "./src/components/docs"
+const directoryPath = "./src/components/examples"
 
 function findFilesWithoutUseClient(dirPath: string): void {
   fs.readdir(dirPath, { withFileTypes: true }, (err, files) => {

@@ -39,7 +39,7 @@ const PAGE_TARGET_ROOT = process.env.PAGE_TARGET_ROOT || "app"
 
 const ROOT = process.cwd()
 const UI_DIR = path.resolve(ROOT, "src/components/ui")
-const DEMO_DIR = path.resolve(ROOT, "src/components/docs")
+const DEMO_DIR = path.resolve(ROOT, "src/components/examples")
 const LIB_DIR = path.resolve(ROOT, "src/lib")
 const HOOKS_DIR = path.resolve(ROOT, "src/hooks")
 const BLOCKS_DIR = path.resolve(ROOT, "src/app/pre-blocks")
@@ -199,7 +199,7 @@ const aliasToFs = async (spec: string): Promise<string | null> => {
   if (spec.startsWith("@/components/ui/")) return resolveWithin(UI_DIR, spec.slice("@/components/ui/".length))
   if (spec.startsWith("@/lib/")) return resolveWithin(LIB_DIR, spec.slice("@/lib/".length))
   if (spec.startsWith("@/hooks/")) return resolveWithin(HOOKS_DIR, spec.slice("@/hooks/".length))
-  if (spec.startsWith("@/components/docs/")) return resolveWithin(DEMO_DIR, spec.slice("@/components/docs/".length))
+  if (spec.startsWith("@/components/examples/")) return resolveWithin(DEMO_DIR, spec.slice("@/components/examples/".length))
 
   return null
 }

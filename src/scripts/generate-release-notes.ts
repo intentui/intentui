@@ -3,7 +3,7 @@ import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs"
 import { basename, join, resolve } from "node:path"
 
 const UI_COMPONENTS_PATH = "src/components/ui"
-const DOCS_COMPONENTS_PATH = "src/components/docs"
+const EXAMPLES_COMPONENTS_PATH = "src/components/examples"
 const PRE_BLOCKS_PATH = "src/app/pre-blocks"
 const MDX_DOCS_PATH = "src/content/docs/components"
 const OUTPUT_PATH = resolve(process.cwd(), "src/json/release-notes.json")
@@ -53,7 +53,7 @@ function getUiComponentNames(): Set<string> {
 }
 
 function findUrlAndCategoryForDemo(demoFile: string): { url: string; category: string; uiComponentName: string } {
-  const relativePath = demoFile.replace(`${DOCS_COMPONENTS_PATH}/`, "").replace(".tsx", "")
+  const relativePath = demoFile.replace(`${EXAMPLES_COMPONENTS_PATH}/`, "").replace(".tsx", "")
   const parts = relativePath.split("/")
   const docsCategory = parts[0]
   const demoName = parts[parts.length - 1]
@@ -121,10 +121,10 @@ function getChangedComponents(): ReleaseNote[] {
   const uiComponentNames = getUiComponentNames()
 
   try {
-    const status = execSync(`git status --porcelain ${UI_COMPONENTS_PATH} ${DOCS_COMPONENTS_PATH} ${PRE_BLOCKS_PATH}`, { encoding: "utf-8" })
+    const status = execSync(`git status --porcelain ${UI_COMPONENTS_PATH} ${EXAMPLES_COMPONENTS_PATH} ${PRE_BLOCKS_PATH}`, { encoding: "utf-8" })
 
     if (!status.trim()) {
-      console.log("No changes detected in src/components/ui/, src/components/docs/, or src/app/pre-blocks/")
+      console.log("No changes detected in src/components/ui/, src/components/examples/, or src/app/pre-blocks/")
       return []
     }
 
@@ -152,8 +152,8 @@ function getChangedComponents(): ReleaseNote[] {
         type = "component"
         category = findCategoryForComponent(component.replace(".tsx", ""))
         displayName = toName(component)
-      } else if (file.startsWith(DOCS_COMPONENTS_PATH)) {
-        const parts = file.replace(`${DOCS_COMPONENTS_PATH}/`, "").split("/")
+      } else if (file.startsWith(EXAMPLES_COMPONENTS_PATH)) {
+        const parts = file.replace(`${EXAMPLES_COMPONENTS_PATH}/`, "").split("/")
         component = parts[parts.length - 1]
         const result = findUrlAndCategoryForDemo(file)
         url = uiComponentNames.has(result.uiComponentName) ? result.url : null
