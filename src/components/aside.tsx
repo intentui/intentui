@@ -34,10 +34,10 @@ export const sortedGsChildren =
 
 export function Aside() {
   return (
-    <div className="sticky -ml-3 h-screen w-full pr-0 pl-0.5 sm:top-14 sm:w-64 sm:py-14 xl:w-60">
+    <div className="sticky -ml-3 h-screen w-full pr-0 pl-0.5 sm:top-12 sm:w-64 sm:py-12 xl:w-60">
       <ScrollArea scrollFade orientation="vertical">
         <div className="flex flex-col gap-y-(--gap) px-4 pb-10 [--gap:--spacing(6)]">
-          <div className="sm:*:text-sm/7">
+          <div className="sm:*:text-sm/7 pt-1">
             <AsideLink href="/components">
               <PackageIcon />
               Components
