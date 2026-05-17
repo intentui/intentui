@@ -2,7 +2,7 @@
 
 import { parseColor } from "@react-stately/color"
 import { useState } from "react"
-import { ControlledValues } from "@/components/docs/colors/controlled-values"
+import { ControlledValues } from "@/components/examples/colors/controlled-values"
 import { ColorArea } from "@/components/ui/color-area"
 import { ColorThumb } from "@/components/ui/color-thumb"
 

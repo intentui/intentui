@@ -4011,7 +4011,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/tracker/tracker-demo.tsx",
+          "path": "src/components/examples/visualizations/tracker/tracker-demo.tsx",
           "type": "registry:page",
           "target": "app/tracker-demo/page.tsx"
         }
@@ -4030,7 +4030,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/tracker/tracker-without-tooltip-demo.tsx",
+          "path": "src/components/examples/visualizations/tracker/tracker-without-tooltip-demo.tsx",
           "type": "registry:page",
           "target": "app/tracker-without-tooltip-demo/page.tsx"
         }
@@ -4049,7 +4049,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/pie-chart/pie-chart-custom-colors-demo.tsx",
+          "path": "src/components/examples/visualizations/pie-chart/pie-chart-custom-colors-demo.tsx",
           "type": "registry:page",
           "target": "app/pie-chart-custom-colors-demo/page.tsx"
         }
@@ -4068,7 +4068,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/pie-chart/pie-chart-demo.tsx",
+          "path": "src/components/examples/visualizations/pie-chart/pie-chart-demo.tsx",
           "type": "registry:page",
           "target": "app/pie-chart-demo/page.tsx"
         }
@@ -4087,7 +4087,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/pie-chart/pie-chart-donut-custom-label-demo.tsx",
+          "path": "src/components/examples/visualizations/pie-chart/pie-chart-donut-custom-label-demo.tsx",
           "type": "registry:page",
           "target": "app/pie-chart-donut-custom-label-demo/page.tsx"
         }
@@ -4106,7 +4106,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/pie-chart/pie-chart-donut-demo.tsx",
+          "path": "src/components/examples/visualizations/pie-chart/pie-chart-donut-demo.tsx",
           "type": "registry:page",
           "target": "app/pie-chart-donut-demo/page.tsx"
         }
@@ -4125,7 +4125,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/pie-chart/pie-chart-gap-demo.tsx",
+          "path": "src/components/examples/visualizations/pie-chart/pie-chart-gap-demo.tsx",
           "type": "registry:page",
           "target": "app/pie-chart-gap-demo/page.tsx"
         }
@@ -4148,7 +4148,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/pie-chart/pie-chart-interactive-demo.tsx",
+          "path": "src/components/examples/visualizations/pie-chart/pie-chart-interactive-demo.tsx",
           "type": "registry:page",
           "target": "app/pie-chart-interactive-demo/page.tsx"
         }
@@ -4172,7 +4172,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/line-chart/line-chart-controlled-demo.tsx",
+          "path": "src/components/examples/visualizations/line-chart/line-chart-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-controlled-demo/page.tsx"
         }
@@ -4192,7 +4192,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/line-chart/line-chart-custom-colors-demo.tsx",
+          "path": "src/components/examples/visualizations/line-chart/line-chart-custom-colors-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-custom-colors-demo/page.tsx"
         }
@@ -4212,7 +4212,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/line-chart/line-chart-custom-format-demo.tsx",
+          "path": "src/components/examples/visualizations/line-chart/line-chart-custom-format-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-custom-format-demo/page.tsx"
         }
@@ -4236,7 +4236,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/line-chart/line-chart-custom-legend-demo.tsx",
+          "path": "src/components/examples/visualizations/line-chart/line-chart-custom-legend-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-custom-legend-demo/page.tsx"
         }
@@ -4260,7 +4260,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/line-chart/line-chart-custom-tooltip-demo.tsx",
+          "path": "src/components/examples/visualizations/line-chart/line-chart-custom-tooltip-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-custom-tooltip-demo/page.tsx"
         }
@@ -4280,7 +4280,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/line-chart/line-chart-demo.tsx",
+          "path": "src/components/examples/visualizations/line-chart/line-chart-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-demo/page.tsx"
         }
@@ -4300,7 +4300,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/line-chart/line-chart-monotone-demo.tsx",
+          "path": "src/components/examples/visualizations/line-chart/line-chart-monotone-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-monotone-demo/page.tsx"
         }
@@ -4320,7 +4320,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/line-chart/line-chart-stacked-demo.tsx",
+          "path": "src/components/examples/visualizations/line-chart/line-chart-stacked-demo.tsx",
           "type": "registry:page",
           "target": "app/line-chart-stacked-demo/page.tsx"
         }
@@ -4338,7 +4338,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/leaderboard/leaderboard-controlled-demo.tsx",
+          "path": "src/components/examples/visualizations/leaderboard/leaderboard-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/leaderboard-controlled-demo/page.tsx"
         }
@@ -4356,7 +4356,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/leaderboard/leaderboard-currency-demo.tsx",
+          "path": "src/components/examples/visualizations/leaderboard/leaderboard-currency-demo.tsx",
           "type": "registry:page",
           "target": "app/leaderboard-currency-demo/page.tsx"
         }
@@ -4374,7 +4374,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/leaderboard/leaderboard-demo.tsx",
+          "path": "src/components/examples/visualizations/leaderboard/leaderboard-demo.tsx",
           "type": "registry:page",
           "target": "app/leaderboard-demo/page.tsx"
         }
@@ -4397,7 +4397,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/leaderboard/leaderboard-header-demo.tsx",
+          "path": "src/components/examples/visualizations/leaderboard/leaderboard-header-demo.tsx",
           "type": "registry:page",
           "target": "app/leaderboard-header-demo/page.tsx"
         }
@@ -4418,7 +4418,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/leaderboard/leaderboard-icon-demo.tsx",
+          "path": "src/components/examples/visualizations/leaderboard/leaderboard-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/leaderboard-icon-demo/page.tsx"
         }
@@ -4436,7 +4436,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/leaderboard/leaderboard-percentage-demo.tsx",
+          "path": "src/components/examples/visualizations/leaderboard/leaderboard-percentage-demo.tsx",
           "type": "registry:page",
           "target": "app/leaderboard-percentage-demo/page.tsx"
         }
@@ -4455,7 +4455,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-list/bar-list-controlled-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-list/bar-list-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-list-controlled-demo/page.tsx"
         }
@@ -4474,7 +4474,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-list/bar-list-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-list/bar-list-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-list-demo/page.tsx"
         }
@@ -4498,7 +4498,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-chart/bar-chart-controlled-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-chart/bar-chart-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-chart-controlled-demo/page.tsx"
         }
@@ -4518,7 +4518,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-chart/bar-chart-custom-colors-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-chart/bar-chart-custom-colors-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-chart-custom-colors-demo/page.tsx"
         }
@@ -4541,7 +4541,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-chart/bar-chart-custom-format-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-chart/bar-chart-custom-format-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-chart-custom-format-demo/page.tsx"
         }
@@ -4565,7 +4565,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-chart/bar-chart-custom-legend-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-chart/bar-chart-custom-legend-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-chart-custom-legend-demo/page.tsx"
         }
@@ -4589,7 +4589,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-chart/bar-chart-custom-tooltip-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-chart/bar-chart-custom-tooltip-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-chart-custom-tooltip-demo/page.tsx"
         }
@@ -4609,7 +4609,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-chart/bar-chart-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-chart/bar-chart-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-chart-demo/page.tsx"
         }
@@ -4629,7 +4629,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-chart/bar-chart-monotone-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-chart/bar-chart-monotone-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-chart-monotone-demo/page.tsx"
         }
@@ -4649,7 +4649,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/bar-chart/bar-chart-stacked-demo.tsx",
+          "path": "src/components/examples/visualizations/bar-chart/bar-chart-stacked-demo.tsx",
           "type": "registry:page",
           "target": "app/bar-chart-stacked-demo/page.tsx"
         }
@@ -4673,7 +4673,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/area-chart/area-chart-controlled-demo.tsx",
+          "path": "src/components/examples/visualizations/area-chart/area-chart-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/area-chart-controlled-demo/page.tsx"
         }
@@ -4693,7 +4693,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/area-chart/area-chart-custom-colors-demo.tsx",
+          "path": "src/components/examples/visualizations/area-chart/area-chart-custom-colors-demo.tsx",
           "type": "registry:page",
           "target": "app/area-chart-custom-colors-demo/page.tsx"
         }
@@ -4716,7 +4716,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/area-chart/area-chart-custom-format-demo.tsx",
+          "path": "src/components/examples/visualizations/area-chart/area-chart-custom-format-demo.tsx",
           "type": "registry:page",
           "target": "app/area-chart-custom-format-demo/page.tsx"
         }
@@ -4740,7 +4740,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/area-chart/area-chart-custom-legend-demo.tsx",
+          "path": "src/components/examples/visualizations/area-chart/area-chart-custom-legend-demo.tsx",
           "type": "registry:page",
           "target": "app/area-chart-custom-legend-demo/page.tsx"
         }
@@ -4764,7 +4764,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/area-chart/area-chart-custom-tooltip-demo.tsx",
+          "path": "src/components/examples/visualizations/area-chart/area-chart-custom-tooltip-demo.tsx",
           "type": "registry:page",
           "target": "app/area-chart-custom-tooltip-demo/page.tsx"
         }
@@ -4784,7 +4784,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/area-chart/area-chart-demo.tsx",
+          "path": "src/components/examples/visualizations/area-chart/area-chart-demo.tsx",
           "type": "registry:page",
           "target": "app/area-chart-demo/page.tsx"
         }
@@ -4804,7 +4804,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/area-chart/area-chart-monotone-demo.tsx",
+          "path": "src/components/examples/visualizations/area-chart/area-chart-monotone-demo.tsx",
           "type": "registry:page",
           "target": "app/area-chart-monotone-demo/page.tsx"
         }
@@ -4824,7 +4824,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/visualizations/area-chart/area-chart-stacked-demo.tsx",
+          "path": "src/components/examples/visualizations/area-chart/area-chart-stacked-demo.tsx",
           "type": "registry:page",
           "target": "app/area-chart-stacked-demo/page.tsx"
         }
@@ -4842,7 +4842,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/text/text-basic-demo.tsx",
+          "path": "src/components/examples/surfaces/text/text-basic-demo.tsx",
           "type": "registry:page",
           "target": "app/text-basic-demo/page.tsx"
         }
@@ -4860,7 +4860,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/text/text-link-demo.tsx",
+          "path": "src/components/examples/surfaces/text/text-link-demo.tsx",
           "type": "registry:page",
           "target": "app/text-link-demo/page.tsx"
         }
@@ -4878,7 +4878,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/show-more/show-more-as-text-demo.tsx",
+          "path": "src/components/examples/surfaces/show-more/show-more-as-text-demo.tsx",
           "type": "registry:page",
           "target": "app/show-more-as-text-demo/page.tsx"
         }
@@ -4899,7 +4899,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/show-more/show-more-controlled-demo.tsx",
+          "path": "src/components/examples/surfaces/show-more/show-more-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/show-more-controlled-demo/page.tsx"
         }
@@ -4921,7 +4921,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/show-more/show-more-demo.tsx",
+          "path": "src/components/examples/surfaces/show-more/show-more-demo.tsx",
           "type": "registry:page",
           "target": "app/show-more-demo/page.tsx"
         }
@@ -4939,7 +4939,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/show-more/show-more-orientation-demo.tsx",
+          "path": "src/components/examples/surfaces/show-more/show-more-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/show-more-orientation-demo/page.tsx"
         }
@@ -4957,7 +4957,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/separator/separator-demo.tsx",
+          "path": "src/components/examples/surfaces/separator/separator-demo.tsx",
           "type": "registry:page",
           "target": "app/separator-demo/page.tsx"
         }
@@ -4975,7 +4975,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/separator/separator-orientation-demo.tsx",
+          "path": "src/components/examples/surfaces/separator/separator-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/separator-orientation-demo/page.tsx"
         }
@@ -4993,7 +4993,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/heading/heading-demo.tsx",
+          "path": "src/components/examples/surfaces/heading/heading-demo.tsx",
           "type": "registry:page",
           "target": "app/heading-demo/page.tsx"
         }
@@ -5011,7 +5011,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/heading/heading-level-demo.tsx",
+          "path": "src/components/examples/surfaces/heading/heading-level-demo.tsx",
           "type": "registry:page",
           "target": "app/heading-level-demo/page.tsx"
         }
@@ -5032,7 +5032,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/description-list/description-list-card-demo.tsx",
+          "path": "src/components/examples/surfaces/description-list/description-list-card-demo.tsx",
           "type": "registry:page",
           "target": "app/description-list-card-demo/page.tsx"
         }
@@ -5050,7 +5050,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/description-list/description-list-demo.tsx",
+          "path": "src/components/examples/surfaces/description-list/description-list-demo.tsx",
           "type": "registry:page",
           "target": "app/description-list-demo/page.tsx"
         }
@@ -5069,7 +5069,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/description-list/description-list-heading-demo.tsx",
+          "path": "src/components/examples/surfaces/description-list/description-list-heading-demo.tsx",
           "type": "registry:page",
           "target": "app/description-list-heading-demo/page.tsx"
         }
@@ -5092,7 +5092,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/card/card-action-demo.tsx",
+          "path": "src/components/examples/surfaces/card/card-action-demo.tsx",
           "type": "registry:page",
           "target": "app/card-action-demo/page.tsx"
         }
@@ -5111,7 +5111,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/card/card-demo.tsx",
+          "path": "src/components/examples/surfaces/card/card-demo.tsx",
           "type": "registry:page",
           "target": "app/card-demo/page.tsx"
         }
@@ -5138,7 +5138,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/card/card-login-form-demo.tsx",
+          "path": "src/components/examples/surfaces/card/card-login-form-demo.tsx",
           "type": "registry:page",
           "target": "app/card-login-form-demo/page.tsx"
         }
@@ -5162,7 +5162,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/surfaces/card/card-table-demo.tsx",
+          "path": "src/components/examples/surfaces/card/card-table-demo.tsx",
           "type": "registry:page",
           "target": "app/card-table-demo/page.tsx"
         }
@@ -5183,7 +5183,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/toast/toast-action-demo.tsx",
+          "path": "src/components/examples/statuses/toast/toast-action-demo.tsx",
           "type": "registry:page",
           "target": "app/toast-action-demo/page.tsx"
         }
@@ -5204,7 +5204,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/toast/toast-demo.tsx",
+          "path": "src/components/examples/statuses/toast/toast-demo.tsx",
           "type": "registry:page",
           "target": "app/toast-demo/page.tsx"
         }
@@ -5225,7 +5225,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/toast/toast-description-demo.tsx",
+          "path": "src/components/examples/statuses/toast/toast-description-demo.tsx",
           "type": "registry:page",
           "target": "app/toast-description-demo/page.tsx"
         }
@@ -5246,7 +5246,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/toast/toast-positions-demo.tsx",
+          "path": "src/components/examples/statuses/toast/toast-positions-demo.tsx",
           "type": "registry:page",
           "target": "app/toast-positions-demo/page.tsx"
         }
@@ -5267,7 +5267,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/toast/toast-promise-demo.tsx",
+          "path": "src/components/examples/statuses/toast/toast-promise-demo.tsx",
           "type": "registry:page",
           "target": "app/toast-promise-demo/page.tsx"
         }
@@ -5288,7 +5288,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/toast/toast-status-demo.tsx",
+          "path": "src/components/examples/statuses/toast/toast-status-demo.tsx",
           "type": "registry:page",
           "target": "app/toast-status-demo/page.tsx"
         }
@@ -5307,7 +5307,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/skeleton/skeleton-demo.tsx",
+          "path": "src/components/examples/statuses/skeleton/skeleton-demo.tsx",
           "type": "registry:page",
           "target": "app/skeleton-demo/page.tsx"
         }
@@ -5326,7 +5326,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/skeleton/skeleton-shape-demo.tsx",
+          "path": "src/components/examples/statuses/skeleton/skeleton-shape-demo.tsx",
           "type": "registry:page",
           "target": "app/skeleton-shape-demo/page.tsx"
         }
@@ -5345,7 +5345,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/skeleton/skeleton-soft-demo.tsx",
+          "path": "src/components/examples/statuses/skeleton/skeleton-soft-demo.tsx",
           "type": "registry:page",
           "target": "app/skeleton-soft-demo/page.tsx"
         }
@@ -5363,7 +5363,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/progress-circle/progress-circle-color-demo.tsx",
+          "path": "src/components/examples/statuses/progress-circle/progress-circle-color-demo.tsx",
           "type": "registry:page",
           "target": "app/progress-circle-color-demo/page.tsx"
         }
@@ -5383,7 +5383,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/progress-circle/progress-circle-controlled-demo.tsx",
+          "path": "src/components/examples/statuses/progress-circle/progress-circle-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/progress-circle-controlled-demo/page.tsx"
         }
@@ -5401,7 +5401,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/progress-circle/progress-circle-custom-size-demo.tsx",
+          "path": "src/components/examples/statuses/progress-circle/progress-circle-custom-size-demo.tsx",
           "type": "registry:page",
           "target": "app/progress-circle-custom-size-demo/page.tsx"
         }
@@ -5419,7 +5419,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/progress-circle/progress-circle-demo.tsx",
+          "path": "src/components/examples/statuses/progress-circle/progress-circle-demo.tsx",
           "type": "registry:page",
           "target": "app/progress-circle-demo/page.tsx"
         }
@@ -5437,7 +5437,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/progress-circle/progress-circle-indeterminate-demo.tsx",
+          "path": "src/components/examples/statuses/progress-circle/progress-circle-indeterminate-demo.tsx",
           "type": "registry:page",
           "target": "app/progress-circle-indeterminate-demo/page.tsx"
         }
@@ -5456,7 +5456,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/progress-bar/indeterminate-progress-bar-demo.tsx",
+          "path": "src/components/examples/statuses/progress-bar/indeterminate-progress-bar-demo.tsx",
           "type": "registry:page",
           "target": "app/indeterminate-progress-bar-demo/page.tsx"
         }
@@ -5475,7 +5475,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/progress-bar/progress-bar-demo.tsx",
+          "path": "src/components/examples/statuses/progress-bar/progress-bar-demo.tsx",
           "type": "registry:page",
           "target": "app/progress-bar-demo/page.tsx"
         }
@@ -5493,7 +5493,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/note/note-demo.tsx",
+          "path": "src/components/examples/statuses/note/note-demo.tsx",
           "type": "registry:page",
           "target": "app/note-demo/page.tsx"
         }
@@ -5511,7 +5511,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/note/note-intent-demo.tsx",
+          "path": "src/components/examples/statuses/note/note-intent-demo.tsx",
           "type": "registry:page",
           "target": "app/note-intent-demo/page.tsx"
         }
@@ -5530,7 +5530,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/meter/meter-currency-format-demo.tsx",
+          "path": "src/components/examples/statuses/meter/meter-currency-format-demo.tsx",
           "type": "registry:page",
           "target": "app/meter-currency-format-demo/page.tsx"
         }
@@ -5549,7 +5549,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/meter/meter-decimal-format-demo.tsx",
+          "path": "src/components/examples/statuses/meter/meter-decimal-format-demo.tsx",
           "type": "registry:page",
           "target": "app/meter-decimal-format-demo/page.tsx"
         }
@@ -5568,7 +5568,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/meter/meter-demo.tsx",
+          "path": "src/components/examples/statuses/meter/meter-demo.tsx",
           "type": "registry:page",
           "target": "app/meter-demo/page.tsx"
         }
@@ -5586,7 +5586,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/loader/loader-demo.tsx",
+          "path": "src/components/examples/statuses/loader/loader-demo.tsx",
           "type": "registry:page",
           "target": "app/loader-demo/page.tsx"
         }
@@ -5604,7 +5604,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/loader/loader-size-demo.tsx",
+          "path": "src/components/examples/statuses/loader/loader-size-demo.tsx",
           "type": "registry:page",
           "target": "app/loader-size-demo/page.tsx"
         }
@@ -5622,7 +5622,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/loader/loader-variant-demo.tsx",
+          "path": "src/components/examples/statuses/loader/loader-variant-demo.tsx",
           "type": "registry:page",
           "target": "app/loader-variant-demo/page.tsx"
         }
@@ -5640,7 +5640,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/badge/badge-demo.tsx",
+          "path": "src/components/examples/statuses/badge/badge-demo.tsx",
           "type": "registry:page",
           "target": "app/badge-demo/page.tsx"
         }
@@ -5658,7 +5658,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/badge/badge-intent-demo.tsx",
+          "path": "src/components/examples/statuses/badge/badge-intent-demo.tsx",
           "type": "registry:page",
           "target": "app/badge-intent-demo/page.tsx"
         }
@@ -5676,7 +5676,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/statuses/badge/badge-shape-demo.tsx",
+          "path": "src/components/examples/statuses/badge/badge-shape-demo.tsx",
           "type": "registry:page",
           "target": "app/badge-shape-demo/page.tsx"
         }
@@ -5698,7 +5698,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-controlled-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/select-controlled-demo/page.tsx"
         }
@@ -5716,7 +5716,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-demo.tsx",
           "type": "registry:page",
           "target": "app/select-demo/page.tsx"
         }
@@ -5735,7 +5735,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-details-description-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-details-description-demo.tsx",
           "type": "registry:page",
           "target": "app/select-details-description-demo/page.tsx"
         }
@@ -5754,7 +5754,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-disabled-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/select-disabled-demo/page.tsx"
         }
@@ -5775,7 +5775,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-multiple-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-multiple-demo.tsx",
           "type": "registry:page",
           "target": "app/select-multiple-demo/page.tsx"
         }
@@ -5800,7 +5800,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-searchable-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-searchable-demo.tsx",
           "type": "registry:page",
           "target": "app/select-searchable-demo/page.tsx"
         }
@@ -5818,7 +5818,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-section-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-section-demo.tsx",
           "type": "registry:page",
           "target": "app/select-section-demo/page.tsx"
         }
@@ -5837,7 +5837,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-uncontrolled-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/select-uncontrolled-demo/page.tsx"
         }
@@ -5860,7 +5860,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-validation-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/select-validation-demo/page.tsx"
         }
@@ -5879,7 +5879,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-with-avatar-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-with-avatar-demo.tsx",
           "type": "registry:page",
           "target": "app/select-with-avatar-demo/page.tsx"
         }
@@ -5897,7 +5897,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/select/select-with-icon-demo.tsx",
+          "path": "src/components/examples/pickers/select/select-with-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/select-with-icon-demo/page.tsx"
         }
@@ -5916,7 +5916,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/native-select/native-select-controlled-demo.tsx",
+          "path": "src/components/examples/pickers/native-select/native-select-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/native-select-controlled-demo/page.tsx"
         }
@@ -5934,7 +5934,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/native-select/native-select-demo.tsx",
+          "path": "src/components/examples/pickers/native-select/native-select-demo.tsx",
           "type": "registry:page",
           "target": "app/native-select-demo/page.tsx"
         }
@@ -5953,7 +5953,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/native-select/native-select-description-demo.tsx",
+          "path": "src/components/examples/pickers/native-select/native-select-description-demo.tsx",
           "type": "registry:page",
           "target": "app/native-select-description-demo/page.tsx"
         }
@@ -5972,7 +5972,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/native-select/native-select-disabled-demo.tsx",
+          "path": "src/components/examples/pickers/native-select/native-select-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/native-select-disabled-demo/page.tsx"
         }
@@ -5991,7 +5991,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/native-select/native-select-invalid-demo.tsx",
+          "path": "src/components/examples/pickers/native-select/native-select-invalid-demo.tsx",
           "type": "registry:page",
           "target": "app/native-select-invalid-demo/page.tsx"
         }
@@ -6010,7 +6010,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/native-select/native-select-label-demo.tsx",
+          "path": "src/components/examples/pickers/native-select/native-select-label-demo.tsx",
           "type": "registry:page",
           "target": "app/native-select-label-demo/page.tsx"
         }
@@ -6029,7 +6029,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/native-select/native-select-uncontrolled-demo.tsx",
+          "path": "src/components/examples/pickers/native-select/native-select-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/native-select-uncontrolled-demo/page.tsx"
         }
@@ -6051,7 +6051,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/multiple-select/multiple-select-controlled-demo.tsx",
+          "path": "src/components/examples/pickers/multiple-select/multiple-select-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/multiple-select-controlled-demo/page.tsx"
         }
@@ -6070,7 +6070,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/multiple-select/multiple-select-demo.tsx",
+          "path": "src/components/examples/pickers/multiple-select/multiple-select-demo.tsx",
           "type": "registry:page",
           "target": "app/multiple-select-demo/page.tsx"
         }
@@ -6089,7 +6089,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/multiple-select/multiple-select-disabled-demo.tsx",
+          "path": "src/components/examples/pickers/multiple-select/multiple-select-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/multiple-select-disabled-demo/page.tsx"
         }
@@ -6112,7 +6112,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/multiple-select/multiple-select-invalid-demo.tsx",
+          "path": "src/components/examples/pickers/multiple-select/multiple-select-invalid-demo.tsx",
           "type": "registry:page",
           "target": "app/multiple-select-invalid-demo/page.tsx"
         }
@@ -6131,7 +6131,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-avatar-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-avatar-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-avatar-demo/page.tsx"
         }
@@ -6150,7 +6150,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-controlled-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-controlled-demo/page.tsx"
         }
@@ -6172,7 +6172,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-controlled-selection-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-controlled-selection-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-controlled-selection-demo/page.tsx"
         }
@@ -6191,7 +6191,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-custom-value-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-custom-value-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-custom-value-demo/page.tsx"
         }
@@ -6209,7 +6209,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-demo/page.tsx"
         }
@@ -6227,7 +6227,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-detail-description-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-detail-description-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-detail-description-demo/page.tsx"
         }
@@ -6247,7 +6247,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-disabled-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-disabled-demo/page.tsx"
         }
@@ -6267,7 +6267,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-invalid-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-invalid-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-invalid-demo/page.tsx"
         }
@@ -6288,7 +6288,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-multi-select-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-multi-select-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-multi-select-demo/page.tsx"
         }
@@ -6308,7 +6308,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-readonly-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-readonly-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-readonly-demo/page.tsx"
         }
@@ -6327,7 +6327,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-section-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-section-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-section-demo/page.tsx"
         }
@@ -6351,7 +6351,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/pickers/combo-box/combo-box-validation-demo.tsx",
+          "path": "src/components/examples/pickers/combo-box/combo-box-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/combo-box-validation-demo/page.tsx"
         }
@@ -6370,7 +6370,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/tooltip/tooltip-delay-demo.tsx",
+          "path": "src/components/examples/overlays/tooltip/tooltip-delay-demo.tsx",
           "type": "registry:page",
           "target": "app/tooltip-delay-demo/page.tsx"
         }
@@ -6389,7 +6389,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/tooltip/tooltip-demo.tsx",
+          "path": "src/components/examples/overlays/tooltip/tooltip-demo.tsx",
           "type": "registry:page",
           "target": "app/tooltip-demo/page.tsx"
         }
@@ -6411,7 +6411,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/tooltip/tooltip-intent-demo.tsx",
+          "path": "src/components/examples/overlays/tooltip/tooltip-intent-demo.tsx",
           "type": "registry:page",
           "target": "app/tooltip-intent-demo/page.tsx"
         }
@@ -6433,7 +6433,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/tooltip/tooltip-placement-demo.tsx",
+          "path": "src/components/examples/overlays/tooltip/tooltip-placement-demo.tsx",
           "type": "registry:page",
           "target": "app/tooltip-placement-demo/page.tsx"
         }
@@ -6453,7 +6453,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/tooltip/tooltip-without-arrow-demo.tsx",
+          "path": "src/components/examples/overlays/tooltip/tooltip-without-arrow-demo.tsx",
           "type": "registry:page",
           "target": "app/tooltip-without-arrow-demo/page.tsx"
         }
@@ -6475,7 +6475,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/sheet/sheet-controlled-demo.tsx",
+          "path": "src/components/examples/overlays/sheet/sheet-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/sheet-controlled-demo/page.tsx"
         }
@@ -6496,7 +6496,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/sheet/sheet-custom-close-demo.tsx",
+          "path": "src/components/examples/overlays/sheet/sheet-custom-close-demo.tsx",
           "type": "registry:page",
           "target": "app/sheet-custom-close-demo/page.tsx"
         }
@@ -6519,7 +6519,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/sheet/sheet-demo.tsx",
+          "path": "src/components/examples/overlays/sheet/sheet-demo.tsx",
           "type": "registry:page",
           "target": "app/sheet-demo/page.tsx"
         }
@@ -6538,7 +6538,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/sheet/sheet-float-demo.tsx",
+          "path": "src/components/examples/overlays/sheet/sheet-float-demo.tsx",
           "type": "registry:page",
           "target": "app/sheet-float-demo/page.tsx"
         }
@@ -6569,7 +6569,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/sheet/sheet-menu-demo.tsx",
+          "path": "src/components/examples/overlays/sheet/sheet-menu-demo.tsx",
           "type": "registry:page",
           "target": "app/sheet-menu-demo/page.tsx"
         }
@@ -6589,7 +6589,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/sheet/sheet-position-demo.tsx",
+          "path": "src/components/examples/overlays/sheet/sheet-position-demo.tsx",
           "type": "registry:page",
           "target": "app/sheet-position-demo/page.tsx"
         }
@@ -6608,7 +6608,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/sheet/sheet-sticky-demo.tsx",
+          "path": "src/components/examples/overlays/sheet/sheet-sticky-demo.tsx",
           "type": "registry:page",
           "target": "app/sheet-sticky-demo/page.tsx"
         }
@@ -6630,7 +6630,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/popover/popover-arrow-demo.tsx",
+          "path": "src/components/examples/overlays/popover/popover-arrow-demo.tsx",
           "type": "registry:page",
           "target": "app/popover-arrow-demo/page.tsx"
         }
@@ -6654,7 +6654,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/popover/popover-controlled-demo.tsx",
+          "path": "src/components/examples/overlays/popover/popover-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/popover-controlled-demo/page.tsx"
         }
@@ -6682,7 +6682,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/popover/popover-custom-close.tsx",
+          "path": "src/components/examples/overlays/popover/popover-custom-close.tsx",
           "type": "registry:page",
           "target": "app/popover-custom-close/page.tsx"
         }
@@ -6701,7 +6701,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/popover/popover-demo.tsx",
+          "path": "src/components/examples/overlays/popover/popover-demo.tsx",
           "type": "registry:page",
           "target": "app/popover-demo/page.tsx"
         }
@@ -6723,7 +6723,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/popover/popover-placement-demo.tsx",
+          "path": "src/components/examples/overlays/popover/popover-placement-demo.tsx",
           "type": "registry:page",
           "target": "app/popover-placement-demo/page.tsx"
         }
@@ -6743,7 +6743,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/popover/popover-trigger-demo.tsx",
+          "path": "src/components/examples/overlays/popover/popover-trigger-demo.tsx",
           "type": "registry:page",
           "target": "app/popover-trigger-demo/page.tsx"
         }
@@ -6762,7 +6762,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/modal/alert-dialog-demo.tsx",
+          "path": "src/components/examples/overlays/modal/alert-dialog-demo.tsx",
           "type": "registry:page",
           "target": "app/alert-dialog-demo/page.tsx"
         }
@@ -6781,7 +6781,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/modal/modal-controlled-demo.tsx",
+          "path": "src/components/examples/overlays/modal/modal-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/modal-controlled-demo/page.tsx"
         }
@@ -6802,7 +6802,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/modal/modal-demo.tsx",
+          "path": "src/components/examples/overlays/modal/modal-demo.tsx",
           "type": "registry:page",
           "target": "app/modal-demo/page.tsx"
         }
@@ -6828,7 +6828,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/modal/modal-nested-demo.tsx",
+          "path": "src/components/examples/overlays/modal/modal-nested-demo.tsx",
           "type": "registry:page",
           "target": "app/modal-nested-demo/page.tsx"
         }
@@ -6848,7 +6848,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/modal/modal-size-demo.tsx",
+          "path": "src/components/examples/overlays/modal/modal-size-demo.tsx",
           "type": "registry:page",
           "target": "app/modal-size-demo/page.tsx"
         }
@@ -6867,7 +6867,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/modal/modal-sticky-demo.tsx",
+          "path": "src/components/examples/overlays/modal/modal-sticky-demo.tsx",
           "type": "registry:page",
           "target": "app/modal-sticky-demo/page.tsx"
         }
@@ -6893,7 +6893,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/modal/modal-triggered-by-menu-demo.tsx",
+          "path": "src/components/examples/overlays/modal/modal-triggered-by-menu-demo.tsx",
           "type": "registry:page",
           "target": "app/modal-triggered-by-menu-demo/page.tsx"
         }
@@ -6915,7 +6915,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/drawer/drawer-basic-demo.tsx",
+          "path": "src/components/examples/overlays/drawer/drawer-basic-demo.tsx",
           "type": "registry:page",
           "target": "app/drawer-basic-demo/page.tsx"
         }
@@ -6937,7 +6937,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/drawer/drawer-controlled-demo.tsx",
+          "path": "src/components/examples/overlays/drawer/drawer-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/drawer-controlled-demo/page.tsx"
         }
@@ -6958,7 +6958,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/drawer/drawer-float-demo.tsx",
+          "path": "src/components/examples/overlays/drawer/drawer-float-demo.tsx",
           "type": "registry:page",
           "target": "app/drawer-float-demo/page.tsx"
         }
@@ -6984,7 +6984,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/drawer/drawer-nested-demo.tsx",
+          "path": "src/components/examples/overlays/drawer/drawer-nested-demo.tsx",
           "type": "registry:page",
           "target": "app/drawer-nested-demo/page.tsx"
         }
@@ -7005,7 +7005,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/drawer/drawer-side-demo.tsx",
+          "path": "src/components/examples/overlays/drawer/drawer-side-demo.tsx",
           "type": "registry:page",
           "target": "app/drawer-side-demo/page.tsx"
         }
@@ -7024,7 +7024,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/drawer/drawer-sticky-demo.tsx",
+          "path": "src/components/examples/overlays/drawer/drawer-sticky-demo.tsx",
           "type": "registry:page",
           "target": "app/drawer-sticky-demo/page.tsx"
         }
@@ -7043,7 +7043,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/overlays/drawer/drawer-without-notch-demo.tsx",
+          "path": "src/components/examples/overlays/drawer/drawer-without-notch-demo.tsx",
           "type": "registry:page",
           "target": "app/drawer-without-notch-demo/page.tsx"
         }
@@ -7061,7 +7061,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/outside/option-preview.tsx",
+          "path": "src/components/examples/outside/option-preview.tsx",
           "type": "registry:page",
           "target": "app/option-preview/page.tsx"
         }
@@ -7079,7 +7079,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/tabs/tabs-demo.tsx",
+          "path": "src/components/examples/navigation/tabs/tabs-demo.tsx",
           "type": "registry:page",
           "target": "app/tabs-demo/page.tsx"
         }
@@ -7097,7 +7097,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/tabs/tabs-disabled-demo.tsx",
+          "path": "src/components/examples/navigation/tabs/tabs-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/tabs-disabled-demo/page.tsx"
         }
@@ -7118,7 +7118,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/tabs/tabs-icons-demo.tsx",
+          "path": "src/components/examples/navigation/tabs/tabs-icons-demo.tsx",
           "type": "registry:page",
           "target": "app/tabs-icons-demo/page.tsx"
         }
@@ -7136,7 +7136,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/tabs/tabs-link-demo.tsx",
+          "path": "src/components/examples/navigation/tabs/tabs-link-demo.tsx",
           "type": "registry:page",
           "target": "app/tabs-link-demo/page.tsx"
         }
@@ -7154,7 +7154,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/tabs/tabs-orientation-demo.tsx",
+          "path": "src/components/examples/navigation/tabs/tabs-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/tabs-orientation-demo/page.tsx"
         }
@@ -7172,7 +7172,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/snippet/snippet-demo.tsx",
+          "path": "src/components/examples/navigation/snippet/snippet-demo.tsx",
           "type": "registry:page",
           "target": "app/snippet-demo/page.tsx"
         }
@@ -7191,7 +7191,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/pagination/pagination-demo.tsx",
+          "path": "src/components/examples/navigation/pagination/pagination-demo.tsx",
           "type": "registry:page",
           "target": "app/pagination-demo/page.tsx"
         }
@@ -7209,7 +7209,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/pagination/simple-pagination-demo.tsx",
+          "path": "src/components/examples/navigation/pagination/simple-pagination-demo.tsx",
           "type": "registry:page",
           "target": "app/simple-pagination-demo/page.tsx"
         }
@@ -7228,7 +7228,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/link/link-button-demo.tsx",
+          "path": "src/components/examples/navigation/link/link-button-demo.tsx",
           "type": "registry:page",
           "target": "app/link-button-demo/page.tsx"
         }
@@ -7246,7 +7246,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/link/link-demo.tsx",
+          "path": "src/components/examples/navigation/link/link-demo.tsx",
           "type": "registry:page",
           "target": "app/link-demo/page.tsx"
         }
@@ -7264,7 +7264,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/link/link-disabled-demo.tsx",
+          "path": "src/components/examples/navigation/link/link-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/link-disabled-demo/page.tsx"
         }
@@ -7282,7 +7282,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/link/link-unstyled-demo.tsx",
+          "path": "src/components/examples/navigation/link/link-unstyled-demo.tsx",
           "type": "registry:page",
           "target": "app/link-unstyled-demo/page.tsx"
         }
@@ -7300,7 +7300,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-controlled-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-controlled-demo/page.tsx"
         }
@@ -7318,7 +7318,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-demo/page.tsx"
         }
@@ -7336,7 +7336,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-disabled-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-disabled-demo/page.tsx"
         }
@@ -7354,7 +7354,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-allow-multiple-expand-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-group-allow-multiple-expand-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-allow-multiple-expand-demo/page.tsx"
         }
@@ -7372,7 +7372,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-default-expand-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-group-default-expand-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-default-expand-demo/page.tsx"
         }
@@ -7390,7 +7390,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-group-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-demo/page.tsx"
         }
@@ -7408,7 +7408,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-disabled-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-group-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-disabled-demo/page.tsx"
         }
@@ -7429,7 +7429,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-nested-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-group-nested-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-nested-demo/page.tsx"
         }
@@ -7450,7 +7450,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/disclosure-group/disclosure-group-with-icon-demo.tsx",
+          "path": "src/components/examples/navigation/disclosure-group/disclosure-group-with-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/disclosure-group-with-icon-demo/page.tsx"
         }
@@ -7471,7 +7471,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-collections-demo.tsx",
+          "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-collections-demo.tsx",
           "type": "registry:page",
           "target": "app/breadcrumbs-collections-demo/page.tsx"
         }
@@ -7489,7 +7489,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-current-demo.tsx",
+          "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-current-demo.tsx",
           "type": "registry:page",
           "target": "app/breadcrumbs-current-demo/page.tsx"
         }
@@ -7507,7 +7507,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-demo.tsx",
+          "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-demo.tsx",
           "type": "registry:page",
           "target": "app/breadcrumbs-demo/page.tsx"
         }
@@ -7530,7 +7530,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-menu-demo.tsx",
+          "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-menu-demo.tsx",
           "type": "registry:page",
           "target": "app/breadcrumbs-menu-demo/page.tsx"
         }
@@ -7548,7 +7548,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/navigation/breadcrumbs/breadcrumbs-separator-demo.tsx",
+          "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-separator-demo.tsx",
           "type": "registry:page",
           "target": "app/breadcrumbs-separator-demo/page.tsx"
         }
@@ -7571,7 +7571,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/carousel/carousel-api-demo.tsx",
+          "path": "src/components/examples/media/carousel/carousel-api-demo.tsx",
           "type": "registry:page",
           "target": "app/carousel-api-demo/page.tsx"
         }
@@ -7593,7 +7593,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/carousel/carousel-autoplay-demo.tsx",
+          "path": "src/components/examples/media/carousel/carousel-autoplay-demo.tsx",
           "type": "registry:page",
           "target": "app/carousel-autoplay-demo/page.tsx"
         }
@@ -7611,7 +7611,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/carousel/carousel-demo.tsx",
+          "path": "src/components/examples/media/carousel/carousel-demo.tsx",
           "type": "registry:page",
           "target": "app/carousel-demo/page.tsx"
         }
@@ -7630,7 +7630,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/carousel/carousel-options-demo.tsx",
+          "path": "src/components/examples/media/carousel/carousel-options-demo.tsx",
           "type": "registry:page",
           "target": "app/carousel-options-demo/page.tsx"
         }
@@ -7649,7 +7649,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/carousel/carousel-orientation-demo.tsx",
+          "path": "src/components/examples/media/carousel/carousel-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/carousel-orientation-demo/page.tsx"
         }
@@ -7667,7 +7667,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/avatar/avatar-basic-demo.tsx",
+          "path": "src/components/examples/media/avatar/avatar-basic-demo.tsx",
           "type": "registry:page",
           "target": "app/avatar-basic-demo/page.tsx"
         }
@@ -7685,7 +7685,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/avatar/avatar-group-demo.tsx",
+          "path": "src/components/examples/media/avatar/avatar-group-demo.tsx",
           "type": "registry:page",
           "target": "app/avatar-group-demo/page.tsx"
         }
@@ -7703,7 +7703,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/avatar/avatar-initials-demo.tsx",
+          "path": "src/components/examples/media/avatar/avatar-initials-demo.tsx",
           "type": "registry:page",
           "target": "app/avatar-initials-demo/page.tsx"
         }
@@ -7721,7 +7721,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/avatar/avatar-shape-demo.tsx",
+          "path": "src/components/examples/media/avatar/avatar-shape-demo.tsx",
           "type": "registry:page",
           "target": "app/avatar-shape-demo/page.tsx"
         }
@@ -7739,7 +7739,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/media/avatar/avatar-size-demo.tsx",
+          "path": "src/components/examples/media/avatar/avatar-size-demo.tsx",
           "type": "registry:page",
           "target": "app/avatar-size-demo/page.tsx"
         }
@@ -7759,7 +7759,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/textarea/textarea-controlled-demo.tsx",
+          "path": "src/components/examples/forms/textarea/textarea-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/textarea-controlled-demo/page.tsx"
         }
@@ -7779,7 +7779,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/textarea/textarea-demo.tsx",
+          "path": "src/components/examples/forms/textarea/textarea-demo.tsx",
           "type": "registry:page",
           "target": "app/textarea-demo/page.tsx"
         }
@@ -7799,7 +7799,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/textarea/textarea-description-demo.tsx",
+          "path": "src/components/examples/forms/textarea/textarea-description-demo.tsx",
           "type": "registry:page",
           "target": "app/textarea-description-demo/page.tsx"
         }
@@ -7819,7 +7819,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/textarea/textarea-disabled-demo.tsx",
+          "path": "src/components/examples/forms/textarea/textarea-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/textarea-disabled-demo/page.tsx"
         }
@@ -7839,7 +7839,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/textarea/textarea-readonly-demo.tsx",
+          "path": "src/components/examples/forms/textarea/textarea-readonly-demo.tsx",
           "type": "registry:page",
           "target": "app/textarea-readonly-demo/page.tsx"
         }
@@ -7859,7 +7859,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/textarea/textarea-uncontrolled-demo.tsx",
+          "path": "src/components/examples/forms/textarea/textarea-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/textarea-uncontrolled-demo/page.tsx"
         }
@@ -7883,7 +7883,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/textarea/textarea-validation-demo.tsx",
+          "path": "src/components/examples/forms/textarea/textarea-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/textarea-validation-demo/page.tsx"
         }
@@ -7903,7 +7903,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-controlled-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-controlled-demo/page.tsx"
         }
@@ -7922,7 +7922,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-demo/page.tsx"
         }
@@ -7942,7 +7942,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-description-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-description-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-description-demo/page.tsx"
         }
@@ -7962,7 +7962,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-disabled-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-disabled-demo/page.tsx"
         }
@@ -7986,7 +7986,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-prefix-suffix-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-prefix-suffix-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-prefix-suffix-demo/page.tsx"
         }
@@ -8006,7 +8006,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-readonly-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-readonly-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-readonly-demo/page.tsx"
         }
@@ -8030,7 +8030,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-revealable-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-revealable-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-revealable-demo/page.tsx"
         }
@@ -8055,7 +8055,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-suffix-button-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-suffix-button-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-suffix-button-demo/page.tsx"
         }
@@ -8075,7 +8075,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-uncontrolled-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-uncontrolled-demo/page.tsx"
         }
@@ -8099,7 +8099,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/text-field/text-field-validation-demo.tsx",
+          "path": "src/components/examples/forms/text-field/text-field-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/text-field-validation-demo/page.tsx"
         }
@@ -8123,7 +8123,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/tag-field/tag-field-controlled-demo.tsx",
+          "path": "src/components/examples/forms/tag-field/tag-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-field-controlled-demo/page.tsx"
         }
@@ -8143,7 +8143,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/tag-field/tag-field-demo.tsx",
+          "path": "src/components/examples/forms/tag-field/tag-field-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-field-demo/page.tsx"
         }
@@ -8163,7 +8163,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/tag-field/tag-field-disabled-demo.tsx",
+          "path": "src/components/examples/forms/tag-field/tag-field-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-field-disabled-demo/page.tsx"
         }
@@ -8182,7 +8182,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/search-field/search-field-controlled-demo.tsx",
+          "path": "src/components/examples/forms/search-field/search-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-controlled-demo/page.tsx"
         }
@@ -8200,7 +8200,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/search-field/search-field-demo.tsx",
+          "path": "src/components/examples/forms/search-field/search-field-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-demo/page.tsx"
         }
@@ -8219,7 +8219,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/search-field/search-field-description-demo.tsx",
+          "path": "src/components/examples/forms/search-field/search-field-description-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-description-demo/page.tsx"
         }
@@ -8237,7 +8237,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/search-field/search-field-disabled-demo.tsx",
+          "path": "src/components/examples/forms/search-field/search-field-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-disabled-demo/page.tsx"
         }
@@ -8255,7 +8255,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/search-field/search-field-readonly-demo.tsx",
+          "path": "src/components/examples/forms/search-field/search-field-readonly-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-readonly-demo/page.tsx"
         }
@@ -8273,7 +8273,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/search-field/search-field-uncontrolled-demo.tsx",
+          "path": "src/components/examples/forms/search-field/search-field-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-uncontrolled-demo/page.tsx"
         }
@@ -8296,7 +8296,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/search-field/search-field-validation-demo.tsx",
+          "path": "src/components/examples/forms/search-field/search-field-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-validation-demo/page.tsx"
         }
@@ -8315,7 +8315,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/search-field/search-field-with-label-demo.tsx",
+          "path": "src/components/examples/forms/search-field/search-field-with-label-demo.tsx",
           "type": "registry:page",
           "target": "app/search-field-with-label-demo/page.tsx"
         }
@@ -8334,7 +8334,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/radio-group/radio-group-controlled-demo.tsx",
+          "path": "src/components/examples/forms/radio-group/radio-group-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/radio-group-controlled-demo/page.tsx"
         }
@@ -8353,7 +8353,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/radio-group/radio-group-demo.tsx",
+          "path": "src/components/examples/forms/radio-group/radio-group-demo.tsx",
           "type": "registry:page",
           "target": "app/radio-group-demo/page.tsx"
         }
@@ -8372,7 +8372,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/radio-group/radio-group-description-demo.tsx",
+          "path": "src/components/examples/forms/radio-group/radio-group-description-demo.tsx",
           "type": "registry:page",
           "target": "app/radio-group-description-demo/page.tsx"
         }
@@ -8391,7 +8391,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/radio-group/radio-group-disabled-demo.tsx",
+          "path": "src/components/examples/forms/radio-group/radio-group-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/radio-group-disabled-demo/page.tsx"
         }
@@ -8410,7 +8410,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/radio-group/radio-group-orientation-demo.tsx",
+          "path": "src/components/examples/forms/radio-group/radio-group-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/radio-group-orientation-demo/page.tsx"
         }
@@ -8429,7 +8429,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/radio-group/radio-group-uncontrolled-demo.tsx",
+          "path": "src/components/examples/forms/radio-group/radio-group-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/radio-group-uncontrolled-demo/page.tsx"
         }
@@ -8452,7 +8452,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/radio-group/radio-group-validation-demo.tsx",
+          "path": "src/components/examples/forms/radio-group/radio-group-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/radio-group-validation-demo/page.tsx"
         }
@@ -8471,7 +8471,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/number-field/number-field-controlled-demo.tsx",
+          "path": "src/components/examples/forms/number-field/number-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/number-field-controlled-demo/page.tsx"
         }
@@ -8490,7 +8490,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/number-field/number-field-demo.tsx",
+          "path": "src/components/examples/forms/number-field/number-field-demo.tsx",
           "type": "registry:page",
           "target": "app/number-field-demo/page.tsx"
         }
@@ -8509,7 +8509,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/number-field/number-field-disabled-demo.tsx",
+          "path": "src/components/examples/forms/number-field/number-field-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/number-field-disabled-demo/page.tsx"
         }
@@ -8532,7 +8532,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/number-field/number-field-invalid-demo.tsx",
+          "path": "src/components/examples/forms/number-field/number-field-invalid-demo.tsx",
           "type": "registry:page",
           "target": "app/number-field-invalid-demo/page.tsx"
         }
@@ -8551,7 +8551,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/number-field/number-field-uncontrolled-demo.tsx",
+          "path": "src/components/examples/forms/number-field/number-field-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/number-field-uncontrolled-demo/page.tsx"
         }
@@ -8570,7 +8570,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/input-otp/input-otp-controlled-demo.tsx",
+          "path": "src/components/examples/forms/input-otp/input-otp-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/input-otp-controlled-demo/page.tsx"
         }
@@ -8589,7 +8589,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/input-otp/input-otp-demo.tsx",
+          "path": "src/components/examples/forms/input-otp/input-otp-demo.tsx",
           "type": "registry:page",
           "target": "app/input-otp-demo/page.tsx"
         }
@@ -8607,7 +8607,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/input-otp/input-otp-separator-demo.tsx",
+          "path": "src/components/examples/forms/input-otp/input-otp-separator-demo.tsx",
           "type": "registry:page",
           "target": "app/input-otp-separator-demo/page.tsx"
         }
@@ -8625,7 +8625,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/input/input-basic-demo.tsx",
+          "path": "src/components/examples/forms/input/input-basic-demo.tsx",
           "type": "registry:page",
           "target": "app/input-basic-demo/page.tsx"
         }
@@ -8644,7 +8644,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/input/input-controlled-demo.tsx",
+          "path": "src/components/examples/forms/input/input-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/input-controlled-demo/page.tsx"
         }
@@ -8666,7 +8666,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/input/input-group-demo.tsx",
+          "path": "src/components/examples/forms/input/input-group-demo.tsx",
           "type": "registry:page",
           "target": "app/input-group-demo/page.tsx"
         }
@@ -8685,7 +8685,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/input/input-label-description-demo.tsx",
+          "path": "src/components/examples/forms/input/input-label-description-demo.tsx",
           "type": "registry:page",
           "target": "app/input-label-description-demo/page.tsx"
         }
@@ -8705,7 +8705,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/input/input-text-field-demo.tsx",
+          "path": "src/components/examples/forms/input/input-text-field-demo.tsx",
           "type": "registry:page",
           "target": "app/input-text-field-demo/page.tsx"
         }
@@ -8730,7 +8730,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/field/field-demo.tsx",
+          "path": "src/components/examples/forms/field/field-demo.tsx",
           "type": "registry:page",
           "target": "app/field-demo/page.tsx"
         }
@@ -8749,7 +8749,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-controlled-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-controlled-demo/page.tsx"
         }
@@ -8767,7 +8767,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-demo/page.tsx"
         }
@@ -8785,7 +8785,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-disabled-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-disabled-demo/page.tsx"
         }
@@ -8804,7 +8804,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-group-controlled-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-group-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-group-controlled-demo/page.tsx"
         }
@@ -8823,7 +8823,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-group-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-group-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-group-demo/page.tsx"
         }
@@ -8842,7 +8842,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-group-description-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-group-description-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-group-description-demo/page.tsx"
         }
@@ -8861,7 +8861,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-group-disabled-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-group-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-group-disabled-demo/page.tsx"
         }
@@ -8880,7 +8880,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-group-indeterminate-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-group-indeterminate-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-group-indeterminate-demo/page.tsx"
         }
@@ -8899,7 +8899,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-group-uncontrolled-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-group-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-group-uncontrolled-demo/page.tsx"
         }
@@ -8922,7 +8922,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-group-validation-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-group-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-group-validation-demo/page.tsx"
         }
@@ -8940,7 +8940,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-indeterminate-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-indeterminate-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-indeterminate-demo/page.tsx"
         }
@@ -8958,7 +8958,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-invalid-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-invalid-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-invalid-demo/page.tsx"
         }
@@ -8976,7 +8976,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/forms/checkbox/checkbox-uncontrolled-demo.tsx",
+          "path": "src/components/examples/forms/checkbox/checkbox-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/checkbox-uncontrolled-demo/page.tsx"
         }
@@ -9001,7 +9001,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/drag-and-drop/drag/drop-zone-and-file-trigger-demo.tsx",
+          "path": "src/components/examples/drag-and-drop/drag/drop-zone-and-file-trigger-demo.tsx",
           "type": "registry:page",
           "target": "app/drop-zone-and-file-trigger-demo/page.tsx"
         }
@@ -9020,7 +9020,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/drag-and-drop/drag/drop-zone-demo.tsx",
+          "path": "src/components/examples/drag-and-drop/drag/drop-zone-demo.tsx",
           "type": "registry:page",
           "target": "app/drop-zone-demo/page.tsx"
         }
@@ -9043,7 +9043,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/time-field/time-field-controlled-demo.tsx",
+          "path": "src/components/examples/date-and-time/time-field/time-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/time-field-controlled-demo/page.tsx"
         }
@@ -9066,7 +9066,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/time-field/time-field-demo.tsx",
+          "path": "src/components/examples/date-and-time/time-field/time-field-demo.tsx",
           "type": "registry:page",
           "target": "app/time-field-demo/page.tsx"
         }
@@ -9086,7 +9086,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/time-field/time-field-disabled-demo.tsx",
+          "path": "src/components/examples/date-and-time/time-field/time-field-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/time-field-disabled-demo/page.tsx"
         }
@@ -9110,7 +9110,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/time-field/time-field-hc-demo.tsx",
+          "path": "src/components/examples/date-and-time/time-field/time-field-hc-demo.tsx",
           "type": "registry:page",
           "target": "app/time-field-hc-demo/page.tsx"
         }
@@ -9133,7 +9133,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/time-field/time-field-readonly-demo.tsx",
+          "path": "src/components/examples/date-and-time/time-field/time-field-readonly-demo.tsx",
           "type": "registry:page",
           "target": "app/time-field-readonly-demo/page.tsx"
         }
@@ -9157,7 +9157,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/time-field/time-field-validation-demo.tsx",
+          "path": "src/components/examples/date-and-time/time-field/time-field-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/time-field-validation-demo/page.tsx"
         }
@@ -9181,7 +9181,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-controlled-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-range-picker/date-range-picker-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/date-range-picker-controlled-demo/page.tsx"
         }
@@ -9205,7 +9205,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-custom-validation-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-range-picker/date-range-picker-custom-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/date-range-picker-custom-validation-demo/page.tsx"
         }
@@ -9224,7 +9224,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-range-picker/date-range-picker-demo.tsx",
           "type": "registry:page",
           "target": "app/date-range-picker-demo/page.tsx"
         }
@@ -9243,7 +9243,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-disabled-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-range-picker/date-range-picker-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/date-range-picker-disabled-demo/page.tsx"
         }
@@ -9265,7 +9265,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-time-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-range-picker/date-range-picker-time-demo.tsx",
           "type": "registry:page",
           "target": "app/date-range-picker-time-demo/page.tsx"
         }
@@ -9288,7 +9288,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-validation-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-range-picker/date-range-picker-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/date-range-picker-validation-demo/page.tsx"
         }
@@ -9307,7 +9307,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-range-picker/date-range-picker-visible-duration-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-range-picker/date-range-picker-visible-duration-demo.tsx",
           "type": "registry:page",
           "target": "app/date-range-picker-visible-duration-demo/page.tsx"
         }
@@ -9330,7 +9330,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-picker/date-picker-controlled-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-picker/date-picker-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/date-picker-controlled-demo/page.tsx"
         }
@@ -9354,7 +9354,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-picker/date-picker-custom-validation-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-picker/date-picker-custom-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/date-picker-custom-validation-demo/page.tsx"
         }
@@ -9373,7 +9373,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-picker/date-picker-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-picker/date-picker-demo.tsx",
           "type": "registry:page",
           "target": "app/date-picker-demo/page.tsx"
         }
@@ -9392,7 +9392,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-picker/date-picker-disabled-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-picker/date-picker-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/date-picker-disabled-demo/page.tsx"
         }
@@ -9415,7 +9415,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-picker/date-picker-required-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-picker/date-picker-required-demo.tsx",
           "type": "registry:page",
           "target": "app/date-picker-required-demo/page.tsx"
         }
@@ -9437,7 +9437,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-picker/date-time-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-picker/date-time-demo.tsx",
           "type": "registry:page",
           "target": "app/date-time-demo/page.tsx"
         }
@@ -9460,7 +9460,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-field/date-field-controlled-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-field/date-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/date-field-controlled-demo/page.tsx"
         }
@@ -9479,7 +9479,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-field/date-field-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-field/date-field-demo.tsx",
           "type": "registry:page",
           "target": "app/date-field-demo/page.tsx"
         }
@@ -9498,7 +9498,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-field/date-field-disabled-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-field/date-field-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/date-field-disabled-demo/page.tsx"
         }
@@ -9517,7 +9517,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-field/date-field-readonly-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-field/date-field-readonly-demo.tsx",
           "type": "registry:page",
           "target": "app/date-field-readonly-demo/page.tsx"
         }
@@ -9539,7 +9539,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-field/date-field-uncontrolled-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-field/date-field-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/date-field-uncontrolled-demo/page.tsx"
         }
@@ -9562,7 +9562,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-field/date-field-validation-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-field/date-field-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/date-field-validation-demo/page.tsx"
         }
@@ -9584,7 +9584,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/date-field/date-time-field-demo.tsx",
+          "path": "src/components/examples/date-and-time/date-field/date-time-field-demo.tsx",
           "type": "registry:page",
           "target": "app/date-time-field-demo/page.tsx"
         }
@@ -9602,7 +9602,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/calendar/calendar-demo.tsx",
+          "path": "src/components/examples/date-and-time/calendar/calendar-demo.tsx",
           "type": "registry:page",
           "target": "app/calendar-demo/page.tsx"
         }
@@ -9623,7 +9623,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/calendar/range-calendar-controlled-demo.tsx",
+          "path": "src/components/examples/date-and-time/calendar/range-calendar-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/range-calendar-controlled-demo/page.tsx"
         }
@@ -9641,7 +9641,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/calendar/range-calendar-demo.tsx",
+          "path": "src/components/examples/date-and-time/calendar/range-calendar-demo.tsx",
           "type": "registry:page",
           "target": "app/range-calendar-demo/page.tsx"
         }
@@ -9662,7 +9662,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/date-and-time/calendar/range-calendar-uncontrolled-demo.tsx",
+          "path": "src/components/examples/date-and-time/calendar/range-calendar-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/range-calendar-uncontrolled-demo/page.tsx"
         }
@@ -9686,7 +9686,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/toolbar/toolbar-demo.tsx",
+          "path": "src/components/examples/controls/toolbar/toolbar-demo.tsx",
           "type": "registry:page",
           "target": "app/toolbar-demo/page.tsx"
         }
@@ -9707,7 +9707,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/toolbar/toolbar-disabled-demo.tsx",
+          "path": "src/components/examples/controls/toolbar/toolbar-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/toolbar-disabled-demo/page.tsx"
         }
@@ -9728,7 +9728,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/toolbar/toolbar-orientation-demo.tsx",
+          "path": "src/components/examples/controls/toolbar/toolbar-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/toolbar-orientation-demo/page.tsx"
         }
@@ -9747,7 +9747,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/switch/switch-controlled-demo.tsx",
+          "path": "src/components/examples/controls/switch/switch-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/switch-controlled-demo/page.tsx"
         }
@@ -9765,7 +9765,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/switch/switch-demo.tsx",
+          "path": "src/components/examples/controls/switch/switch-demo.tsx",
           "type": "registry:page",
           "target": "app/switch-demo/page.tsx"
         }
@@ -9785,7 +9785,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/switch/switch-description-demo.tsx",
+          "path": "src/components/examples/controls/switch/switch-description-demo.tsx",
           "type": "registry:page",
           "target": "app/switch-description-demo/page.tsx"
         }
@@ -9803,7 +9803,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/switch/switch-disabled-demo.tsx",
+          "path": "src/components/examples/controls/switch/switch-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/switch-disabled-demo/page.tsx"
         }
@@ -9822,7 +9822,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/switch/switch-uncontrolled-demo.tsx",
+          "path": "src/components/examples/controls/switch/switch-uncontrolled-demo.tsx",
           "type": "registry:page",
           "target": "app/switch-uncontrolled-demo/page.tsx"
         }
@@ -9841,7 +9841,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/slider/slider-controlled-demo.tsx",
+          "path": "src/components/examples/controls/slider/slider-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/slider-controlled-demo/page.tsx"
         }
@@ -9860,7 +9860,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/slider/slider-demo.tsx",
+          "path": "src/components/examples/controls/slider/slider-demo.tsx",
           "type": "registry:page",
           "target": "app/slider-demo/page.tsx"
         }
@@ -9879,7 +9879,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/slider/slider-description-demo.tsx",
+          "path": "src/components/examples/controls/slider/slider-description-demo.tsx",
           "type": "registry:page",
           "target": "app/slider-description-demo/page.tsx"
         }
@@ -9898,7 +9898,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/slider/slider-disabled-demo.tsx",
+          "path": "src/components/examples/controls/slider/slider-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/slider-disabled-demo/page.tsx"
         }
@@ -9917,7 +9917,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/slider/slider-orientation-demo.tsx",
+          "path": "src/components/examples/controls/slider/slider-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/slider-orientation-demo/page.tsx"
         }
@@ -9939,7 +9939,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/slider/slider-prefix-suffix-demo.tsx",
+          "path": "src/components/examples/controls/slider/slider-prefix-suffix-demo.tsx",
           "type": "registry:page",
           "target": "app/slider-prefix-suffix-demo/page.tsx"
         }
@@ -9958,7 +9958,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/slider/slider-range-demo.tsx",
+          "path": "src/components/examples/controls/slider/slider-range-demo.tsx",
           "type": "registry:page",
           "target": "app/slider-range-demo/page.tsx"
         }
@@ -9977,7 +9977,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/slider/slider-step-demo.tsx",
+          "path": "src/components/examples/controls/slider/slider-step-demo.tsx",
           "type": "registry:page",
           "target": "app/slider-step-demo/page.tsx"
         }
@@ -9995,7 +9995,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/scroll-area/scroll-area-demo.tsx",
+          "path": "src/components/examples/controls/scroll-area/scroll-area-demo.tsx",
           "type": "registry:page",
           "target": "app/scroll-area-demo/page.tsx"
         }
@@ -10013,7 +10013,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/scroll-area/scroll-area-fade-demo.tsx",
+          "path": "src/components/examples/controls/scroll-area/scroll-area-fade-demo.tsx",
           "type": "registry:page",
           "target": "app/scroll-area-fade-demo/page.tsx"
         }
@@ -10031,7 +10031,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/scroll-area/scroll-area-horizontal-demo.tsx",
+          "path": "src/components/examples/controls/scroll-area/scroll-area-horizontal-demo.tsx",
           "type": "registry:page",
           "target": "app/scroll-area-horizontal-demo/page.tsx"
         }
@@ -10049,7 +10049,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/scroll-area/scroll-area-vertical-demo.tsx",
+          "path": "src/components/examples/controls/scroll-area/scroll-area-vertical-demo.tsx",
           "type": "registry:page",
           "target": "app/scroll-area-vertical-demo/page.tsx"
         }
@@ -10067,7 +10067,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/context-menu/context-menu-danger-demo.tsx",
+          "path": "src/components/examples/controls/context-menu/context-menu-danger-demo.tsx",
           "type": "registry:page",
           "target": "app/context-menu-danger-demo/page.tsx"
         }
@@ -10085,7 +10085,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/context-menu/context-menu-demo.tsx",
+          "path": "src/components/examples/controls/context-menu/context-menu-demo.tsx",
           "type": "registry:page",
           "target": "app/context-menu-demo/page.tsx"
         }
@@ -10103,7 +10103,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/context-menu/context-menu-detail-description-demo.tsx",
+          "path": "src/components/examples/controls/context-menu/context-menu-detail-description-demo.tsx",
           "type": "registry:page",
           "target": "app/context-menu-detail-description-demo/page.tsx"
         }
@@ -10121,7 +10121,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/context-menu/context-menu-disabled-demo.tsx",
+          "path": "src/components/examples/controls/context-menu/context-menu-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/context-menu-disabled-demo/page.tsx"
         }
@@ -10139,7 +10139,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/context-menu/context-menu-separator-demo.tsx",
+          "path": "src/components/examples/controls/context-menu/context-menu-separator-demo.tsx",
           "type": "registry:page",
           "target": "app/context-menu-separator-demo/page.tsx"
         }
@@ -10160,7 +10160,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/context-menu/context-menu-with-icon-demo.tsx",
+          "path": "src/components/examples/controls/context-menu/context-menu-with-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/context-menu-with-icon-demo/page.tsx"
         }
@@ -10180,7 +10180,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-controlled-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-controlled-demo/page.tsx"
         }
@@ -10199,7 +10199,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-danger-item-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-danger-item-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-danger-item-demo/page.tsx"
         }
@@ -10222,7 +10222,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-demo/page.tsx"
         }
@@ -10241,7 +10241,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-description-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-description-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-description-demo/page.tsx"
         }
@@ -10260,7 +10260,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-disabled-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-disabled-demo/page.tsx"
         }
@@ -10280,7 +10280,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-dynamic-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-dynamic-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-dynamic-demo/page.tsx"
         }
@@ -10299,7 +10299,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-keyboard-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-keyboard-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-keyboard-demo/page.tsx"
         }
@@ -10319,7 +10319,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-pending-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-pending-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-pending-demo/page.tsx"
         }
@@ -10338,7 +10338,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-separator-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-separator-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-separator-demo/page.tsx"
         }
@@ -10359,7 +10359,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/controls/command-menu/command-menu-trigger-by-keyboard-demo.tsx",
+          "path": "src/components/examples/controls/command-menu/command-menu-trigger-by-keyboard-demo.tsx",
           "type": "registry:page",
           "target": "app/command-menu-trigger-by-keyboard-demo/page.tsx"
         }
@@ -10381,7 +10381,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/controlled-values.tsx",
+          "path": "src/components/examples/colors/controlled-values.tsx",
           "type": "registry:page",
           "target": "app/controlled-values/page.tsx"
         }
@@ -10402,7 +10402,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-wheel/color-wheel-controlled-demo.tsx",
+          "path": "src/components/examples/colors/color-wheel/color-wheel-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-wheel-controlled-demo/page.tsx"
         }
@@ -10420,7 +10420,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-wheel/color-wheel-demo.tsx",
+          "path": "src/components/examples/colors/color-wheel/color-wheel-demo.tsx",
           "type": "registry:page",
           "target": "app/color-wheel-demo/page.tsx"
         }
@@ -10438,7 +10438,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-wheel/color-wheel-disabled-demo.tsx",
+          "path": "src/components/examples/colors/color-wheel/color-wheel-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-wheel-disabled-demo/page.tsx"
         }
@@ -10460,7 +10460,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-swatch/color-swatch-controlled-demo.tsx",
+          "path": "src/components/examples/colors/color-swatch/color-swatch-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-swatch-controlled-demo/page.tsx"
         }
@@ -10478,7 +10478,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-swatch/color-swatch-demo.tsx",
+          "path": "src/components/examples/colors/color-swatch/color-swatch-demo.tsx",
           "type": "registry:page",
           "target": "app/color-swatch-demo/page.tsx"
         }
@@ -10500,7 +10500,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-swatch/color-swatch-picker-demo.tsx",
+          "path": "src/components/examples/colors/color-swatch/color-swatch-picker-demo.tsx",
           "type": "registry:page",
           "target": "app/color-swatch-picker-demo/page.tsx"
         }
@@ -10522,7 +10522,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-swatch/color-swatch-picker-item-disabled-demo.tsx",
+          "path": "src/components/examples/colors/color-swatch/color-swatch-picker-item-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-swatch-picker-item-disabled-demo/page.tsx"
         }
@@ -10540,7 +10540,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-swatch/color-swatch-size-demo.tsx",
+          "path": "src/components/examples/colors/color-swatch/color-swatch-size-demo.tsx",
           "type": "registry:page",
           "target": "app/color-swatch-size-demo/page.tsx"
         }
@@ -10562,7 +10562,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-slider/color-slider-controlled-demo.tsx",
+          "path": "src/components/examples/colors/color-slider/color-slider-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-slider-controlled-demo/page.tsx"
         }
@@ -10582,7 +10582,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-slider/color-slider-demo.tsx",
+          "path": "src/components/examples/colors/color-slider/color-slider-demo.tsx",
           "type": "registry:page",
           "target": "app/color-slider-demo/page.tsx"
         }
@@ -10601,7 +10601,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-slider/color-slider-disabled-demo.tsx",
+          "path": "src/components/examples/colors/color-slider/color-slider-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-slider-disabled-demo/page.tsx"
         }
@@ -10620,7 +10620,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-slider/color-slider-vertical-demo.tsx",
+          "path": "src/components/examples/colors/color-slider/color-slider-vertical-demo.tsx",
           "type": "registry:page",
           "target": "app/color-slider-vertical-demo/page.tsx"
         }
@@ -10640,7 +10640,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-slider/color-slider-with-label-demo.tsx",
+          "path": "src/components/examples/colors/color-slider/color-slider-with-label-demo.tsx",
           "type": "registry:page",
           "target": "app/color-slider-with-label-demo/page.tsx"
         }
@@ -10669,7 +10669,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-picker/color-picker-controlled-demo.tsx",
+          "path": "src/components/examples/colors/color-picker/color-picker-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-picker-controlled-demo/page.tsx"
         }
@@ -10698,7 +10698,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-picker/color-picker-demo.tsx",
+          "path": "src/components/examples/colors/color-picker/color-picker-demo.tsx",
           "type": "registry:page",
           "target": "app/color-picker-demo/page.tsx"
         }
@@ -10727,7 +10727,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-picker/color-picker-disabled-demo.tsx",
+          "path": "src/components/examples/colors/color-picker/color-picker-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-picker-disabled-demo/page.tsx"
         }
@@ -10750,7 +10750,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-field/color-field-controlled-demo.tsx",
+          "path": "src/components/examples/colors/color-field/color-field-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-field-controlled-demo/page.tsx"
         }
@@ -10770,7 +10770,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-field/color-field-demo.tsx",
+          "path": "src/components/examples/colors/color-field/color-field-demo.tsx",
           "type": "registry:page",
           "target": "app/color-field-demo/page.tsx"
         }
@@ -10790,7 +10790,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-field/color-field-disabled-demo.tsx",
+          "path": "src/components/examples/colors/color-field/color-field-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-field-disabled-demo/page.tsx"
         }
@@ -10814,7 +10814,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-field/color-field-validation-demo.tsx",
+          "path": "src/components/examples/colors/color-field/color-field-validation-demo.tsx",
           "type": "registry:page",
           "target": "app/color-field-validation-demo/page.tsx"
         }
@@ -10837,7 +10837,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-field/color-field-with-prefix-demo.tsx",
+          "path": "src/components/examples/colors/color-field/color-field-with-prefix-demo.tsx",
           "type": "registry:page",
           "target": "app/color-field-with-prefix-demo/page.tsx"
         }
@@ -10860,7 +10860,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-field/color-field-with-suffix-demo.tsx",
+          "path": "src/components/examples/colors/color-field/color-field-with-suffix-demo.tsx",
           "type": "registry:page",
           "target": "app/color-field-with-suffix-demo/page.tsx"
         }
@@ -10878,7 +10878,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-area/color-area-channel-demo.tsx",
+          "path": "src/components/examples/colors/color-area/color-area-channel-demo.tsx",
           "type": "registry:page",
           "target": "app/color-area-channel-demo/page.tsx"
         }
@@ -10900,7 +10900,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-area/color-area-controlled-demo.tsx",
+          "path": "src/components/examples/colors/color-area/color-area-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-area-controlled-demo/page.tsx"
         }
@@ -10918,7 +10918,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-area/color-area-demo.tsx",
+          "path": "src/components/examples/colors/color-area/color-area-demo.tsx",
           "type": "registry:page",
           "target": "app/color-area-demo/page.tsx"
         }
@@ -10937,7 +10937,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-area/color-area-disabled-demo.tsx",
+          "path": "src/components/examples/colors/color-area/color-area-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/color-area-disabled-demo/page.tsx"
         }
@@ -10956,7 +10956,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-area/color-area-space-demo.tsx",
+          "path": "src/components/examples/colors/color-area/color-area-space-demo.tsx",
           "type": "registry:page",
           "target": "app/color-area-space-demo/page.tsx"
         }
@@ -10982,7 +10982,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/colors/color-area/color-area-with-slider-demo.tsx",
+          "path": "src/components/examples/colors/color-area/color-area-with-slider-demo.tsx",
           "type": "registry:page",
           "target": "app/color-area-with-slider-demo/page.tsx"
         }
@@ -11000,7 +11000,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tree/tree-demo.tsx",
+          "path": "src/components/examples/collections/tree/tree-demo.tsx",
           "type": "registry:page",
           "target": "app/tree-demo/page.tsx"
         }
@@ -11023,7 +11023,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tree/tree-drag-demo.tsx",
+          "path": "src/components/examples/collections/tree/tree-drag-demo.tsx",
           "type": "registry:page",
           "target": "app/tree-drag-demo/page.tsx"
         }
@@ -11044,7 +11044,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tree/tree-folder-demo.tsx",
+          "path": "src/components/examples/collections/tree/tree-folder-demo.tsx",
           "type": "registry:page",
           "target": "app/tree-folder-demo/page.tsx"
         }
@@ -11067,7 +11067,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tree/tree-infinite-scroll-demo.tsx",
+          "path": "src/components/examples/collections/tree/tree-infinite-scroll-demo.tsx",
           "type": "registry:page",
           "target": "app/tree-infinite-scroll-demo/page.tsx"
         }
@@ -11085,7 +11085,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tree/tree-multiple-demo.tsx",
+          "path": "src/components/examples/collections/tree/tree-multiple-demo.tsx",
           "type": "registry:page",
           "target": "app/tree-multiple-demo/page.tsx"
         }
@@ -11107,7 +11107,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tag-group/tag-group-controlled-demo.tsx",
+          "path": "src/components/examples/collections/tag-group/tag-group-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-group-controlled-demo/page.tsx"
         }
@@ -11126,7 +11126,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tag-group/tag-group-demo.tsx",
+          "path": "src/components/examples/collections/tag-group/tag-group-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-group-demo/page.tsx"
         }
@@ -11145,7 +11145,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tag-group/tag-group-disabled-demo.tsx",
+          "path": "src/components/examples/collections/tag-group/tag-group-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-group-disabled-demo/page.tsx"
         }
@@ -11163,7 +11163,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tag-group/tag-group-href-demo.tsx",
+          "path": "src/components/examples/collections/tag-group/tag-group-href-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-group-href-demo/page.tsx"
         }
@@ -11184,7 +11184,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/tag-group/tag-group-with-remove-demo.tsx",
+          "path": "src/components/examples/collections/tag-group/tag-group-with-remove-demo.tsx",
           "type": "registry:page",
           "target": "app/tag-group-with-remove-demo/page.tsx"
         }
@@ -11206,7 +11206,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/table/table-bulk-demo.tsx",
+          "path": "src/components/examples/collections/table/table-bulk-demo.tsx",
           "type": "registry:page",
           "target": "app/table-bulk-demo/page.tsx"
         }
@@ -11230,7 +11230,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/table/table-demo.tsx",
+          "path": "src/components/examples/collections/table/table-demo.tsx",
           "type": "registry:page",
           "target": "app/table-demo/page.tsx"
         }
@@ -11253,7 +11253,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/table/table-drag-demo.tsx",
+          "path": "src/components/examples/collections/table/table-drag-demo.tsx",
           "type": "registry:page",
           "target": "app/table-drag-demo/page.tsx"
         }
@@ -11278,7 +11278,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/table/table-expandable-demo.tsx",
+          "path": "src/components/examples/collections/table/table-expandable-demo.tsx",
           "type": "registry:page",
           "target": "app/table-expandable-demo/page.tsx"
         }
@@ -11301,7 +11301,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/table/table-infinite-scroll-demo.tsx",
+          "path": "src/components/examples/collections/table/table-infinite-scroll-demo.tsx",
           "type": "registry:page",
           "target": "app/table-infinite-scroll-demo/page.tsx"
         }
@@ -11319,7 +11319,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/table/table-resize-demo.tsx",
+          "path": "src/components/examples/collections/table/table-resize-demo.tsx",
           "type": "registry:page",
           "target": "app/table-resize-demo/page.tsx"
         }
@@ -11341,7 +11341,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/table/table-sorting-demo.tsx",
+          "path": "src/components/examples/collections/table/table-sorting-demo.tsx",
           "type": "registry:page",
           "target": "app/table-sorting-demo/page.tsx"
         }
@@ -11366,7 +11366,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/table/table-with-autocomplete-demo.tsx",
+          "path": "src/components/examples/collections/table/table-with-autocomplete-demo.tsx",
           "type": "registry:page",
           "target": "app/table-with-autocomplete-demo/page.tsx"
         }
@@ -11384,7 +11384,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-basic-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-basic-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-basic-demo/page.tsx"
         }
@@ -11405,7 +11405,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-danger-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-danger-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-danger-demo/page.tsx"
         }
@@ -11423,7 +11423,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-disabled-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-disabled-demo/page.tsx"
         }
@@ -11442,7 +11442,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-dynamic-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-dynamic-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-dynamic-demo/page.tsx"
         }
@@ -11464,7 +11464,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-item-description-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-item-description-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-item-description-demo/page.tsx"
         }
@@ -11482,7 +11482,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-section-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-section-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-section-demo/page.tsx"
         }
@@ -11504,7 +11504,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-section-level-selection.tsx",
+          "path": "src/components/examples/collections/menu/menu-section-level-selection.tsx",
           "type": "registry:page",
           "target": "app/menu-section-level-selection/page.tsx"
         }
@@ -11523,7 +11523,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-sub-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-sub-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-sub-demo/page.tsx"
         }
@@ -11545,7 +11545,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-with-arrow-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-with-arrow-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-with-arrow-demo/page.tsx"
         }
@@ -11567,7 +11567,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/menu-with-icon-demo.tsx",
+          "path": "src/components/examples/collections/menu/menu-with-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/menu-with-icon-demo/page.tsx"
         }
@@ -11589,7 +11589,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/multiple-menu-demo.tsx",
+          "path": "src/components/examples/collections/menu/multiple-menu-demo.tsx",
           "type": "registry:page",
           "target": "app/multiple-menu-demo/page.tsx"
         }
@@ -11611,7 +11611,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/menu/single-menu-demo.tsx",
+          "path": "src/components/examples/collections/menu/single-menu-demo.tsx",
           "type": "registry:page",
           "target": "app/single-menu-demo/page.tsx"
         }
@@ -11633,7 +11633,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/list-box/list-box-controlled-demo.tsx",
+          "path": "src/components/examples/collections/list-box/list-box-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/list-box-controlled-demo/page.tsx"
         }
@@ -11651,7 +11651,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/list-box/list-box-demo.tsx",
+          "path": "src/components/examples/collections/list-box/list-box-demo.tsx",
           "type": "registry:page",
           "target": "app/list-box-demo/page.tsx"
         }
@@ -11672,7 +11672,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/list-box/list-box-description-demo.tsx",
+          "path": "src/components/examples/collections/list-box/list-box-description-demo.tsx",
           "type": "registry:page",
           "target": "app/list-box-description-demo/page.tsx"
         }
@@ -11690,7 +11690,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/list-box/list-box-disabled-demo.tsx",
+          "path": "src/components/examples/collections/list-box/list-box-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/list-box-disabled-demo/page.tsx"
         }
@@ -11713,7 +11713,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/list-box/list-box-infinite-scroll-demo.tsx",
+          "path": "src/components/examples/collections/list-box/list-box-infinite-scroll-demo.tsx",
           "type": "registry:page",
           "target": "app/list-box-infinite-scroll-demo/page.tsx"
         }
@@ -11735,7 +11735,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/list-box/list-box-multiple-demo.tsx",
+          "path": "src/components/examples/collections/list-box/list-box-multiple-demo.tsx",
           "type": "registry:page",
           "target": "app/list-box-multiple-demo/page.tsx"
         }
@@ -11757,7 +11757,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/list-box/list-box-rearrange-demo.tsx",
+          "path": "src/components/examples/collections/list-box/list-box-rearrange-demo.tsx",
           "type": "registry:page",
           "target": "app/list-box-rearrange-demo/page.tsx"
         }
@@ -11775,7 +11775,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/list-box/list-box-section-demo.tsx",
+          "path": "src/components/examples/collections/list-box/list-box-section-demo.tsx",
           "type": "registry:page",
           "target": "app/list-box-section-demo/page.tsx"
         }
@@ -11797,7 +11797,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-controlled-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-controlled-demo/page.tsx"
         }
@@ -11815,7 +11815,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-demo/page.tsx"
         }
@@ -11833,7 +11833,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-disabled-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-disabled-demo/page.tsx"
         }
@@ -11855,7 +11855,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-drag-between-item-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-drag-between-item-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-drag-between-item-demo/page.tsx"
         }
@@ -11877,7 +11877,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-drag-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-drag-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-drag-demo/page.tsx"
         }
@@ -11900,7 +11900,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-infinite-scroll-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-infinite-scroll-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-infinite-scroll-demo/page.tsx"
         }
@@ -11918,7 +11918,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-multiple-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-multiple-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-multiple-demo/page.tsx"
         }
@@ -11936,7 +11936,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-render-empty-state-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-render-empty-state-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-render-empty-state-demo/page.tsx"
         }
@@ -11957,7 +11957,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/grid-list/grid-list-section-demo.tsx",
+          "path": "src/components/examples/collections/grid-list/grid-list-section-demo.tsx",
           "type": "registry:page",
           "target": "app/grid-list-section-demo/page.tsx"
         }
@@ -11975,7 +11975,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/choicebox/choicebox-columns-demo.tsx",
+          "path": "src/components/examples/collections/choicebox/choicebox-columns-demo.tsx",
           "type": "registry:page",
           "target": "app/choicebox-columns-demo/page.tsx"
         }
@@ -11997,7 +11997,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/choicebox/choicebox-controlled-demo.tsx",
+          "path": "src/components/examples/collections/choicebox/choicebox-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/choicebox-controlled-demo/page.tsx"
         }
@@ -12015,7 +12015,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/choicebox/choicebox-demo.tsx",
+          "path": "src/components/examples/collections/choicebox/choicebox-demo.tsx",
           "type": "registry:page",
           "target": "app/choicebox-demo/page.tsx"
         }
@@ -12033,7 +12033,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/choicebox/choicebox-disabled-demo.tsx",
+          "path": "src/components/examples/collections/choicebox/choicebox-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/choicebox-disabled-demo/page.tsx"
         }
@@ -12051,7 +12051,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/choicebox/choicebox-icon-demo.tsx",
+          "path": "src/components/examples/collections/choicebox/choicebox-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/choicebox-icon-demo/page.tsx"
         }
@@ -12069,7 +12069,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/collections/choicebox/choicebox-multiple-selection-demo.tsx",
+          "path": "src/components/examples/collections/choicebox/choicebox-multiple-selection-demo.tsx",
           "type": "registry:page",
           "target": "app/choicebox-multiple-selection-demo/page.tsx"
         }
@@ -12090,7 +12090,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle-group/toggle-group-controlled-demo.tsx",
+          "path": "src/components/examples/buttons/toggle-group/toggle-group-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-group-controlled-demo/page.tsx"
         }
@@ -12108,7 +12108,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle-group/toggle-group-demo.tsx",
+          "path": "src/components/examples/buttons/toggle-group/toggle-group-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-group-demo/page.tsx"
         }
@@ -12126,7 +12126,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle-group/toggle-group-disabled-demo.tsx",
+          "path": "src/components/examples/buttons/toggle-group/toggle-group-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-group-disabled-demo/page.tsx"
         }
@@ -12147,7 +12147,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle-group/toggle-group-orientation-demo.tsx",
+          "path": "src/components/examples/buttons/toggle-group/toggle-group-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-group-orientation-demo/page.tsx"
         }
@@ -12165,7 +12165,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle-group/toggle-group-selection-demo.tsx",
+          "path": "src/components/examples/buttons/toggle-group/toggle-group-selection-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-group-selection-demo/page.tsx"
         }
@@ -12183,7 +12183,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle-group/toggle-group-size-demo.tsx",
+          "path": "src/components/examples/buttons/toggle-group/toggle-group-size-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-group-size-demo/page.tsx"
         }
@@ -12204,7 +12204,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle-group/toggle-group-square-size-demo.tsx",
+          "path": "src/components/examples/buttons/toggle-group/toggle-group-square-size-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-group-square-size-demo/page.tsx"
         }
@@ -12222,7 +12222,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle/toggle-controlled-demo.tsx",
+          "path": "src/components/examples/buttons/toggle/toggle-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-controlled-demo/page.tsx"
         }
@@ -12240,7 +12240,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle/toggle-demo.tsx",
+          "path": "src/components/examples/buttons/toggle/toggle-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-demo/page.tsx"
         }
@@ -12258,7 +12258,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle/toggle-disabled-demo.tsx",
+          "path": "src/components/examples/buttons/toggle/toggle-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-disabled-demo/page.tsx"
         }
@@ -12276,7 +12276,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle/toggle-intent-demo.tsx",
+          "path": "src/components/examples/buttons/toggle/toggle-intent-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-intent-demo/page.tsx"
         }
@@ -12294,7 +12294,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle/toggle-shape-demo.tsx",
+          "path": "src/components/examples/buttons/toggle/toggle-shape-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-shape-demo/page.tsx"
         }
@@ -12316,7 +12316,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/toggle/toggle-size-demo.tsx",
+          "path": "src/components/examples/buttons/toggle/toggle-size-demo.tsx",
           "type": "registry:page",
           "target": "app/toggle-size-demo/page.tsx"
         }
@@ -12341,7 +12341,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-avatar-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-avatar-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-avatar-demo/page.tsx"
         }
@@ -12359,7 +12359,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-camera-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-camera-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-camera-demo/page.tsx"
         }
@@ -12377,7 +12377,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-circle-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-circle-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-circle-demo/page.tsx"
         }
@@ -12396,7 +12396,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-controlled-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-controlled-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-controlled-demo/page.tsx"
         }
@@ -12414,7 +12414,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-demo/page.tsx"
         }
@@ -12432,7 +12432,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-disabled-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-disabled-demo/page.tsx"
         }
@@ -12450,7 +12450,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-folder-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-folder-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-folder-demo/page.tsx"
         }
@@ -12468,7 +12468,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-multiple-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-multiple-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-multiple-demo/page.tsx"
         }
@@ -12486,7 +12486,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/file-trigger/file-trigger-pending-demo.tsx",
+          "path": "src/components/examples/buttons/file-trigger/file-trigger-pending-demo.tsx",
           "type": "registry:page",
           "target": "app/file-trigger-pending-demo/page.tsx"
         }
@@ -12505,7 +12505,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button-group/button-group-demo.tsx",
+          "path": "src/components/examples/buttons/button-group/button-group-demo.tsx",
           "type": "registry:page",
           "target": "app/button-group-demo/page.tsx"
         }
@@ -12527,7 +12527,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button-group/button-group-orientation-demo.tsx",
+          "path": "src/components/examples/buttons/button-group/button-group-orientation-demo.tsx",
           "type": "registry:page",
           "target": "app/button-group-orientation-demo/page.tsx"
         }
@@ -12550,7 +12550,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button-group/button-group-with-menu-demo.tsx",
+          "path": "src/components/examples/buttons/button-group/button-group-with-menu-demo.tsx",
           "type": "registry:page",
           "target": "app/button-group-with-menu-demo/page.tsx"
         }
@@ -12572,7 +12572,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button-group/button-group-with-text-demo.tsx",
+          "path": "src/components/examples/buttons/button-group/button-group-with-text-demo.tsx",
           "type": "registry:page",
           "target": "app/button-group-with-text-demo/page.tsx"
         }
@@ -12590,7 +12590,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-basic-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-basic-demo.tsx",
           "type": "registry:page",
           "target": "app/button-basic-demo/page.tsx"
         }
@@ -12608,7 +12608,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-disabled-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-disabled-demo.tsx",
           "type": "registry:page",
           "target": "app/button-disabled-demo/page.tsx"
         }
@@ -12629,7 +12629,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-icon-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-icon-demo.tsx",
           "type": "registry:page",
           "target": "app/button-icon-demo/page.tsx"
         }
@@ -12650,7 +12650,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-intent-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-intent-demo.tsx",
           "type": "registry:page",
           "target": "app/button-intent-demo/page.tsx"
         }
@@ -12669,7 +12669,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-link-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-link-demo.tsx",
           "type": "registry:page",
           "target": "app/button-link-demo/page.tsx"
         }
@@ -12691,7 +12691,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-loader-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-loader-demo.tsx",
           "type": "registry:page",
           "target": "app/button-loader-demo/page.tsx"
         }
@@ -12713,7 +12713,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-pending-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-pending-demo.tsx",
           "type": "registry:page",
           "target": "app/button-pending-demo/page.tsx"
         }
@@ -12734,7 +12734,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-render-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-render-demo.tsx",
           "type": "registry:page",
           "target": "app/button-render-demo/page.tsx"
         }
@@ -12752,7 +12752,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-shape-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-shape-demo.tsx",
           "type": "registry:page",
           "target": "app/button-shape-demo/page.tsx"
         }
@@ -12771,7 +12771,7 @@
       ],
       "files": [
         {
-          "path": "src/components/docs/buttons/button/button-size-demo.tsx",
+          "path": "src/components/examples/buttons/button/button-size-demo.tsx",
           "type": "registry:page",
           "target": "app/button-size-demo/page.tsx"
         }
