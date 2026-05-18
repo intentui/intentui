@@ -1,6 +1,6 @@
 "use client"
 
-import { androidBrands } from "@/components/examples/collections/tag-group/tag-group-demo"
+import { androidBrands } from "@/components/examples/collections/tag-group/tag-group-example"
 import { Label } from "@/components/ui/field"
 import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
 

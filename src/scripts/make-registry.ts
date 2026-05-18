@@ -18,7 +18,7 @@ export const makeRegistry = () => {
 
   const sources = [
     { type: "ui", path: "src/components/ui" },
-    { type: "demo", path: "src/components/examples" },
+    { type: "examples", path: "src/components/examples" },
     { type: "pre-blocks", path: "src/app/pre-blocks" },
   ]
 
@@ -53,7 +53,7 @@ export const makeRegistry = () => {
     const files = getAllFiles(resolvedPath)
 
     const filteredFiles =
-      type === "demo" ? files.filter((file) => !file.includes("/anatomies/")) : files
+      type === "examples" ? files.filter((file) => !file.includes("/anatomies/")) : files
 
     for (const filePath of filteredFiles) {
       const componentName = path.basename(filePath, ".tsx")
@@ -76,7 +76,7 @@ export const makeRegistry = () => {
         componentPath: relativePath,
       }
 
-      if (!["demo", "ui"].includes(type)) {
+      if (!["examples", "ui"].includes(type)) {
         const jsonOutputPath = path.join(outputBaseDir, `${key}.json`)
         const jsonDir = path.dirname(jsonOutputPath)
         if (!fs.existsSync(jsonDir)) {

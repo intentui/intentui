@@ -52,12 +52,12 @@ function getUiComponentNames(): Set<string> {
   return names
 }
 
-function findUrlAndCategoryForDemo(demoFile: string): { url: string; category: string; uiComponentName: string } {
-  const relativePath = demoFile.replace(`${EXAMPLES_COMPONENTS_PATH}/`, "").replace(".tsx", "")
+function findUrlAndCategoryForExample(exampleFile: string): { url: string; category: string; uiComponentName: string } {
+  const relativePath = exampleFile.replace(`${EXAMPLES_COMPONENTS_PATH}/`, "").replace(".tsx", "")
   const parts = relativePath.split("/")
   const docsCategory = parts[0]
-  const demoName = parts[parts.length - 1]
-  const fallbackComponentName = demoName.replace(/-demo$/, "")
+  const exampleName = parts[parts.length - 1]
+  const fallbackComponentName = exampleName.replace(/-example$/, "")
 
   const mdxFiles = walkMdxFiles(resolve(process.cwd(), MDX_DOCS_PATH))
 
@@ -65,7 +65,7 @@ function findUrlAndCategoryForDemo(demoFile: string): { url: string; category: s
     const content = readFileSync(mdxFile, "utf-8")
     const searchPattern = `toUse="${docsCategory}/`
 
-    if (content.includes(searchPattern) && content.includes(demoName)) {
+    if (content.includes(searchPattern) && content.includes(exampleName)) {
       const mdxName = basename(mdxFile, ".mdx")
       const mdxRelative = mdxFile.replace(resolve(process.cwd(), MDX_DOCS_PATH) + "/", "")
       const category = mdxRelative.split("/")[0]
@@ -142,7 +142,7 @@ function getChangedComponents(): ReleaseNote[] {
     for (const { statusFlag, filePath: file } of files) {
       let component: string
       let url: string | null
-      let type: "component" | "demo" | "block"
+      let type: "component" | "example" | "block"
       let category: string
       let displayName: string
 
@@ -155,10 +155,10 @@ function getChangedComponents(): ReleaseNote[] {
       } else if (file.startsWith(EXAMPLES_COMPONENTS_PATH)) {
         const parts = file.replace(`${EXAMPLES_COMPONENTS_PATH}/`, "").split("/")
         component = parts[parts.length - 1]
-        const result = findUrlAndCategoryForDemo(file)
+        const result = findUrlAndCategoryForExample(file)
         url = uiComponentNames.has(result.uiComponentName) ? result.url : null
         category = result.category
-        type = "demo"
+        type = "example"
         displayName = toName(component)
       } else if (file.startsWith(PRE_BLOCKS_PATH)) {
         // Handle pre-blocks: src/app/pre-blocks/{category}/{block-name}/page.tsx
@@ -250,7 +250,7 @@ function main() {
   }
   console.log(`Total entries: ${merged.length}`)
 
-  // Only update search script for components, not demos or blocks
+  // Only update search script for components, not examples or blocks
   const componentChanges = changes.filter((c) => c.type === "component")
   if (componentChanges.length > 0) {
     const componentNames = [...new Set(componentChanges.filter((c) => c.url).map((c) => c.url!.replace("/", "")))]

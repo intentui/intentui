@@ -39,11 +39,7 @@ export const DocHow = ({
 }: HowProps) => {
   const [currentTab, setCurrentTab] = useState<"tab_preview" | "tab_code">("tab_preview")
   const [rawSourceCode, setRawSourceCode] = useState<string | null>(null)
-  /*
-   * Prepend the `demo/` prefix to the provided `toUse` prop
-   * to construct the registry key dynamically.
-   */
-  const registryKey = `demo/${toUse}`
+  const registryKey = `examples/${toUse}`
 
   /*
    * Retrieve the component from the registry using the dynamic key.
@@ -51,7 +47,7 @@ export const DocHow = ({
    */
   const Component = registry[registryKey]?.component
 
-  const blockDemo = toUse.split("/").pop() ?? ""
+  const blockExample = toUse.split("/").pop() ?? ""
 
   const processedSourceCode = useMemo(() => {
     if (!rawSourceCode) return null
@@ -105,7 +101,7 @@ export const DocHow = ({
           <PullRegistry
             readMore={props.readMore}
             processedSourceCode={processedSourceCode}
-            blockDemo={blockDemo}
+            blockExample={blockExample}
           />
         </Group>
       </Toolbar>

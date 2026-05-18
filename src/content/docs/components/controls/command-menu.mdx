@@ -6,7 +6,7 @@ published: true
 references: ["https://react-aria.adobe.com/Autocomplete#api"]
 ---
 
-<How toUse="controls/command-menu/command-menu-demo" />
+<How toUse="controls/command-menu/command-menu-example" />
 
 ## Installation
 
@@ -99,23 +99,23 @@ export function CommandPalette() {
 
 ### Separator
 Creating a separator is super simple, just use `CommandMenuSeparator`. However, make sure to place it within a `CommandMenuSection` for proper structure.
-<How toUse="controls/command-menu/command-menu-separator-demo" />
+<How toUse="controls/command-menu/command-menu-separator-example" />
 
 ### Keyboard
 Integrate keyboard interaction with the command menu. Note that keyboard functionality may be limited on smaller screens.
-<How toUse="controls/command-menu/command-menu-keyboard-demo" />
+<How toUse="controls/command-menu/command-menu-keyboard-example" />
 
 ### Trigger by keyboard
 Activate the command menu via keyboard commands, ideal for initiating command palettes.
-<How toUse="controls/command-menu/command-menu-trigger-by-keyboard-demo" />
+<How toUse="controls/command-menu/command-menu-trigger-by-keyboard-example" />
 
 ### Danger
 Highlight a command item as dangerous by changing its color to red, indicating a warning.
-<How toUse="controls/command-menu/command-menu-danger-item-demo" />
+<How toUse="controls/command-menu/command-menu-danger-item-example" />
 
 ### Controlled
 Dynamically manage the command palette with the `inputValue` and `onInputChange` props, ensuring it stays responsive to updates from the parent component. Additionally, ensure each `CommandMenuItem` includes a `textValue` prop, enabling seamless item filtering through the search input.
-<How toUse="controls/command-menu/command-menu-controlled-demo" />
+<How toUse="controls/command-menu/command-menu-controlled-example" />
 Additionally, control the execution of an action upon selecting an item:
 ```
 <CommandItem onAction={() => console.log('share intentui.com/d/command')} />
@@ -123,11 +123,11 @@ Additionally, control the execution of an action upon selecting an item:
 
 ### Pending
 The `isPending` prop can be used to indicate that the command menu is loading data. This can be useful when you need to display a loading indicator while the data is being fetched.
-<How toUse="controls/command-menu/command-menu-pending-demo" />
+<How toUse="controls/command-menu/command-menu-pending-example" />
 
 ### Disabled
 Disable items in the command menu to make them non-interactive, appearing grayed out.
-<How toUse="controls/command-menu/command-menu-disabled-demo" />
+<How toUse="controls/command-menu/command-menu-disabled-example" />
 
 ### Hide escape button
 To hide the escape button, set `escapeButton` to `false`. View this setup in the [Command Description](#description) section.
@@ -141,7 +141,7 @@ To hide the escape button, set `escapeButton` to `false`. View this setup in the
 
 ### Description
 Enhance command items with descriptions using the `CommandDescription` component. Be aware that keyboard accessibility might be limited on smaller screens.
-<How toUse="controls/command-menu/command-menu-description-demo" />
+<How toUse="controls/command-menu/command-menu-description-example" />
 
 ### Hide scrollbar
 To hide the scrollbar, set `className` to `scrollbar-none`. But before you do that, make sure to add this snippet into your css file.
