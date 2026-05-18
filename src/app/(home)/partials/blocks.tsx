@@ -82,7 +82,7 @@ export function BlocksCard({ className, ...props }: React.ComponentProps<"div">)
     <div
       {...props}
       className={twMerge(
-        "inset-ring inset-ring-fg/10 flex min-h-32 items-center justify-center rounded-2xl bg-zinc-50/30 p-6 *:min-w-56 sm:min-h-48 sm:p-10 dark:inset-ring-fg/5 dark:inset-shadow-2xs dark:inset-shadow-fg/5 dark:bg-zinc-900/50",
+        "flex min-h-32 items-center justify-center rounded-2xl border p-6 *:min-w-56 sm:min-h-48 sm:p-10 dark:bg-muted/30",
         className,
       )}
     >

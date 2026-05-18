@@ -5,7 +5,7 @@ import ChoiceboxDemo from "@/components/examples/collections/choicebox/choicebox
 import TableExpandableDemo from "@/components/examples/collections/table/table-expandable-example"
 import AreaChartDemo from "@/components/examples/visualizations/area-chart/area-chart-example"
 import BarChartDemo from "@/components/examples/visualizations/bar-chart/bar-chart-example"
-import BarListDemo from "@/components/examples/visualizations/bar-list/bar-list-example"
+import LeaderboardDemo from "@/components/examples/visualizations/leaderboard/leaderboard-example"
 import LineChartDemo from "@/components/examples/visualizations/line-chart/line-chart-example"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
@@ -14,7 +14,6 @@ import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
 import { Description, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { TextField } from "@/components/ui/text-field"
-import { Textarea } from "@/components/ui/textarea"
 
 export function Examples() {
   return (
@@ -67,27 +66,6 @@ export function Examples() {
             <ChoiceboxDemo />
           </div>
         </BlocksCard>
-        <BlocksCard className="w-full lg:w-2/5">
-          <div className="flex w-full flex-col gap-y-6">
-            <CardHeader
-              title="Settings"
-              description="Update your profile information and preferences."
-            />
-            <TextField>
-              <Label>Name</Label>
-              <Input placeholder="Irsyad A. Panjaitan" />
-            </TextField>
-            <TextField>
-              <Label>Email</Label>
-              <Input type="email" placeholder="you@domain.com" />
-            </TextField>
-            <TextField>
-              <Label>About me</Label>
-              <Textarea placeholder="Introduce your self." />
-            </TextField>
-            <Button className="self-end">Save changes</Button>
-          </div>
-        </BlocksCard>
       </PageContainer>
       <PageContainer className="mt-6">
         <CardHeader
@@ -96,18 +74,18 @@ export function Examples() {
           description="Explore various data visualizations to represent information effectively."
         />
       </PageContainer>
-      <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto pb-6 *:shrink-0 *:snap-center **:data-[slot=card]:border-transparent **:data-[slot=card]:bg-transparent **:data-[slot=card]:shadow-none sm:pb-12 **:data-[slot=card]:[--card-spacing:--spacing(4)] sm:**:data-[slot=card]:[--card-spacing:--spacing(6)]">
-        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-secondary/50">
+      <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto overflow-y-hidden pb-6 *:shrink-0 *:snap-center **:data-[slot=card]:border-transparent **:data-[slot=card]:bg-transparent **:data-[slot=card]:shadow-none sm:pb-12 **:data-[slot=card]:[--card-spacing:--spacing(4)] sm:**:data-[slot=card]:[--card-spacing:--spacing(6)]">
+        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-muted/30">
           <AreaChartDemo />
         </div>
-        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-secondary/50">
+        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-muted/30">
           <LineChartDemo />
         </div>
-        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-secondary/50">
+        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-muted/30">
           <BarChartDemo />
         </div>
-        <div className="w-full rounded-lg border lg:w-1/3 dark:bg-secondary/50">
-          <BarListDemo />
+        <div className="w-full rounded-lg border lg:w-1/3 dark:bg-muted/30">
+          <LeaderboardDemo />
         </div>
       </PageContainer>
     </div>
