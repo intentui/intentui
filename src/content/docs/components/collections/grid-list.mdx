@@ -6,7 +6,7 @@ order: 7
 references: ["https://react-aria.adobe.com/GridList#api"]
 ---
 
-<How minW60 toUse="collections/grid-list/grid-list-demo" />
+<How minW60 toUse="collections/grid-list/grid-list-example" />
 
 ## Installation
 
@@ -46,7 +46,7 @@ const items = [
 
 ### Multiple selection
 To enable multiple selections, set the `selectionMode` prop to `multiple`. Since this prop has no default value, you must define it explicitly.
-<How minW60 toUse="collections/grid-list/grid-list-multiple-demo" />
+<How minW60 toUse="collections/grid-list/grid-list-multiple-example" />
 Note that I haven't set an `id` for the grid list item as the items already have default IDs. However, you should specify the `id` prop for each grid list item like this:
 ```
 {(item) => <GridListItem id={item.name}>{item.name}</GridListItem>}
@@ -54,31 +54,31 @@ Note that I haven't set an `id` for the grid list item as the items already have
 
 ### Drag and drop
 The grid list supports drag and drop functionalities if you use the `dragAndDropHooks` prop along with the `useDragAndDrop` hook. You can drop data on the entire list, individual items, add new items between existing ones, or rearrange items.
-<How minW60 toUse="collections/grid-list/grid-list-drag-demo" />
+<How minW60 toUse="collections/grid-list/grid-list-drag-example" />
 
 ### Dragging between items
 You can move items between positions within the grid list.
-<How isCenter={false} withNoPadding toUse="collections/grid-list/grid-list-drag-between-item-demo" />
+<How isCenter={false} withNoPadding toUse="collections/grid-list/grid-list-drag-between-item-example" />
 
 ### Render empty state
 The grid list can display an empty state when no items are available using the `renderEmptyState` prop.
-<How minW60 toUse="collections/grid-list/grid-list-render-empty-state-demo" />
+<How minW60 toUse="collections/grid-list/grid-list-render-empty-state-example" />
 
 ### Infinite scrolling
 The grid list can handle large datasets efficiently with infinite scrolling. This allows for loading more data as the user scrolls down, improving performance and user experience.
-<How minW60 toUse="collections/grid-list/grid-list-infinite-scroll-demo" />
+<How minW60 toUse="collections/grid-list/grid-list-infinite-scroll-example" />
 
 ### Section
 The grid list supports sections, allowing you to group items under different headings.
-<How minW60 toUse="collections/grid-list/grid-list-section-demo" />
+<How minW60 toUse="collections/grid-list/grid-list-section-example" />
 
 ### Controlled
 The grid list can be controlled, which means the parent component manages the selection state of each item.
-<How minW60 toUse="collections/grid-list/grid-list-controlled-demo" />
+<How minW60 toUse="collections/grid-list/grid-list-controlled-example" />
 
 ### Disabled
 Similar to how the [Tag Group](/docs/components/collections/tag-group) component can be disabled using `isDisabled` for children and `disabledKeys` for the parent, the Grid List supports similar functionality. For example, items "Led Zeppelin" and "The Rolling Stones" are disabled.
-<How minW60 toUse="collections/grid-list/grid-list-disabled-demo" />
+<How minW60 toUse="collections/grid-list/grid-list-disabled-example" />
 
 To disable items via the parent component, you can use the `disabledKeys` prop like this:
 ```tsx {5}

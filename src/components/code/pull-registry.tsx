@@ -11,7 +11,7 @@ import { useClipboard } from "@/hooks/use-clipboard"
 interface PullRegistryProps {
   readMore?: string
   processedSourceCode: string | null
-  blockDemo: string
+  blockExample: string
 }
 
 interface CopyButtonProps {
@@ -57,7 +57,7 @@ export function CopyButton({
   )
 }
 
-export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullRegistryProps) {
+export function PullRegistry({ readMore, processedSourceCode, blockExample }: PullRegistryProps) {
   const [copy, setCopy] = useState({ code: false, command: false })
   const { copy: copyToClipboard } = useClipboard()
 
@@ -75,7 +75,7 @@ export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullR
         className="hidden sm:inline"
         copiedLabel="Copied"
         isCopied={copy.command}
-        onCopy={() => handleCopy("command", `${app.shadcn} add @intentui/${blockDemo}`)}
+        onCopy={() => handleCopy("command", `${app.shadcn} add @intentui/${blockExample}`)}
       />
       <CopyButton
         label="Copy"
@@ -100,7 +100,7 @@ export function PullRegistry({ readMore, processedSourceCode, blockDemo }: PullR
       )}
       {/*<Link*/}
       {/*  className="hidden p-2 pressed:text-fg text-muted-fg text-sm/6 hover:text-fg"*/}
-      {/*  href={openInV0Url(blockDemo)}*/}
+      {/*  href={openInV0Url(blockExample)}*/}
       {/*  target="_blank"*/}
       {/*>*/}
       {/*  Open in V0*/}

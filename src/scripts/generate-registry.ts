@@ -39,7 +39,7 @@ const PAGE_TARGET_ROOT = process.env.PAGE_TARGET_ROOT || "app"
 
 const ROOT = process.cwd()
 const UI_DIR = path.resolve(ROOT, "src/components/ui")
-const DEMO_DIR = path.resolve(ROOT, "src/components/docs")
+const EXAMPLES_DIR = path.resolve(ROOT, "src/components/examples")
 const LIB_DIR = path.resolve(ROOT, "src/lib")
 const HOOKS_DIR = path.resolve(ROOT, "src/hooks")
 const BLOCKS_DIR = path.resolve(ROOT, "src/app/pre-blocks")
@@ -199,7 +199,7 @@ const aliasToFs = async (spec: string): Promise<string | null> => {
   if (spec.startsWith("@/components/ui/")) return resolveWithin(UI_DIR, spec.slice("@/components/ui/".length))
   if (spec.startsWith("@/lib/")) return resolveWithin(LIB_DIR, spec.slice("@/lib/".length))
   if (spec.startsWith("@/hooks/")) return resolveWithin(HOOKS_DIR, spec.slice("@/hooks/".length))
-  if (spec.startsWith("@/components/docs/")) return resolveWithin(DEMO_DIR, spec.slice("@/components/docs/".length))
+  if (spec.startsWith("@/components/examples/")) return resolveWithin(EXAMPLES_DIR, spec.slice("@/components/examples/".length))
 
   return null
 }
@@ -264,7 +264,7 @@ const blockSlugFromPage = (pagePath: string) => {
 }
 
 
-const demoSlugFromFile = (file: string) => stripExt(path.basename(file))
+const exampleSlugFromFile = (file: string) => stripExt(path.basename(file))
 
 
 const collectBlocks = async (pagePath: string, code: string) => {
@@ -417,8 +417,8 @@ const buildHookItem = async (absPath: string) => {
   return registryItemSchema.parse(raw)
 }
 
-const buildDemoItem = async (file: string) => {
-  const slug = demoSlugFromFile(file)
+const buildExampleItem = async (file: string) => {
+  const slug = exampleSlugFromFile(file)
   const code = await read(file)
   const specs = importSpecifiers(code)
   const deps = topLevelPackages(specs)
@@ -429,7 +429,7 @@ const buildDemoItem = async (file: string) => {
     extends: "none",
     name: slug,
     type: "registry:page",
-    title: titleCase(slug.replace(/-demo$/, "").replace(/-/g, " ")),
+    title: titleCase(slug.replace(/-example$/, "").replace(/-/g, " ")),
     description: slug,
     dependencies: deps.length ? deps : undefined,
     registryDependencies: regDeps.length ? regDeps : undefined,
@@ -530,7 +530,7 @@ const buildAllItems = (items: any[]) => {
 const buildAll = async () => {
   const items: any[] = [...themeItems]
   for (const f of await listFiles(UI_DIR)) items.push(await buildComponentItem(f))
-  for (const f of await listFiles(DEMO_DIR)) items.push(await buildDemoItem(f))
+  for (const f of await listFiles(EXAMPLES_DIR)) items.push(await buildExampleItem(f))
   for (const f of (await listFiles(LIB_DIR)).filter((f) => LIB_ALLOW.includes(path.basename(f, path.extname(f))))) {
     items.push(await buildLibItem(f))
   }
