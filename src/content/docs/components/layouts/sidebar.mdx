@@ -136,53 +136,50 @@ The sidebar section is a container for sidebar items. It accepts a `label` prop,
 ### Sidebar disclosure group
 If you need to collapse multiple items, you can use the `SidebarDisclosureGroup` component. <NewTab href='/pre-blocks/sidebar/sidebar-15'/>
 ```
-{sections.map((section, sectionIndex) => (
-  <SidebarDisclosureGroup defaultExpandedKeys={[1, 2]} key={sectionIndex}>
-    <SidebarDisclosure id={sectionIndex + 1}>
-      <SidebarDisclosureTrigger>
-        <section.icon />
-        <SidebarLabel> {section.label}</SidebarLabel>
-      </SidebarDisclosureTrigger>
-      <SidebarDisclosurePanel>
-        {section.items.map((item, itemIndex) => (
-          <SidebarItem key={itemIndex} href="#">
-            {({ isHovered }) => (
-              <>
-                <i aria-hidden className="content-center size-4">
-                  <IconBullet className={`${isHovered ? "fill-sky-500 text-sky-500" : ""} size-2 m-auto`} />
-                </i>
-                <SidebarLabel>{item}</SidebarLabel>
-              </>
-            )}
-          </SidebarItem>
-        ))}
-      </SidebarDisclosurePanel>
-    </SidebarDisclosure>
-  </SidebarDisclosureGroup>
-))}
-
-const sections = [
-  {
-    icon: IconNotes,
-    label: "Blog",
-    items: ["Articles", "Categories", "Tags", "Comments", "Authors"]
-  },
-  {
-    icon: IconStore,
-    label: "Commerce",
-    items: ["Orders", "Products", "Customers", "Coupons", "Discounts"]
-  },
-  {
-    icon: IconWhiteboard,
-    label: "Analytics",
-    items: ["Reports", "Traffic", "Conversions", "Audience", "Engagement"]
-  },
-  {
-    icon: IconSettings,
-    label: "Settings",
-    items: ["General", "Profile", "Billing", "Notifications", "Integrations"]
-  }
-]
+<SidebarDisclosureGroup defaultExpandedKeys={[1]}>
+  <SidebarDisclosure id={1}>
+    <SidebarDisclosureTrigger>
+      <EllipsisHorizontalIcon />
+      <SidebarLabel>Support</SidebarLabel>
+    </SidebarDisclosureTrigger>
+    <SidebarDisclosurePanel>
+      <SidebarItem href="#" tooltip="Tickets">
+        <TicketIcon />
+        <SidebarLabel>Tickets</SidebarLabel>
+      </SidebarItem>
+      <SidebarItem href="#" tooltip="Chat Support">
+        <ChatBubbleLeftRightIcon />
+        <SidebarLabel>Chat Support</SidebarLabel>
+      </SidebarItem>
+      <SidebarItem href="#" tooltip="FAQ">
+        <QuestionMarkCircleIcon />
+        <SidebarLabel>FAQ</SidebarLabel>
+      </SidebarItem>
+      <SidebarItem href="#" tooltip="Documentation">
+        <DocumentTextIcon />
+        <SidebarLabel>Documentation</SidebarLabel>
+      </SidebarItem>
+    </SidebarDisclosurePanel>
+  </SidebarDisclosure>
+  <SidebarDisclosure id={2}>
+    <SidebarDisclosureTrigger>
+      <ArchiveBoxIcon />
+      <SidebarLabel>Inventory</SidebarLabel>
+    </SidebarDisclosureTrigger>
+    <SidebarDisclosurePanel>
+      <SidebarItem href="#" tooltip="Warehouse">
+        <BuildingOfficeIcon />
+        <SidebarLabel>Warehouse</SidebarLabel>
+      </SidebarItem>
+      <SidebarItem href="#" tooltip="Stock Levels">
+        <SidebarLabel>Stock Levels</SidebarLabel>
+      </SidebarItem>
+      <SidebarItem href="#" tooltip="Shipping">
+        <SidebarLabel>Shipping</SidebarLabel>
+      </SidebarItem>
+    </SidebarDisclosurePanel>
+  </SidebarDisclosure>
+</SidebarDisclosureGroup>
 ```
 
 
@@ -264,16 +261,16 @@ const navigation = [
 
 ### Separator
 The sidebar supports separators, which can be used to separate sections or groups of items. <NewTab href='/pre-blocks/sidebar/sidebar-19'/>
-```tsx {3,6, 9}
+```
 <SidebarContent>
   <SidebarSection/>
-  <SidebarSeparator />
+    <SidebarSeparator />
   <SidebarSection/>
   <SidebarSection/>
-  <SidebarSeparator />
+    <SidebarSeparator />
   <SidebarSectionGroup/>
   <SidebarSectionGroup/>
-  <SidebarSeparator />
+    <SidebarSeparator />
   <SidebarSectionGroup/>
 </SidebarContent>
 ```
