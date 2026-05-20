@@ -1,7 +1,9 @@
 import { remarkHeading, remarkImage } from "fumadocs-core/mdx-plugins"
 import { defineCollections, defineConfig, defineDocs, frontmatterSchema } from "fumadocs-mdx/config"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeSlug from "rehype-slug"
 import { z } from "zod"
-import { app } from "@/config/app";
+import { app } from "@/config/app"
 
 export const { docs, meta } = defineDocs({
   dir: "src/content/docs",
@@ -36,5 +38,15 @@ export default defineConfig({
       defaultLanguage: "tsx",
     },
     remarkPlugins: [[remarkHeading, { generateToc: true }], remarkImage],
+    rehypePlugins: (plugins) => [
+      ...plugins.slice(0, -1),
+      rehypeSlug,
+      ...plugins.slice(-1),
+      // Keep Fumadocs' TOC export before autolinking so TOC titles stay plain.
+      [
+        rehypeAutolinkHeadings,
+        { behavior: "wrap", properties: { className: ["heading-anchor"] } },
+      ],
+    ],
   },
 })

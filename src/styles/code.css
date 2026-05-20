@@ -73,6 +73,7 @@ html .shiki span.highlighted-word {
   @apply rounded-sm bg-secondary! py-0.5 px-1.5 text-sm/6 text-secondary-fg! border;
 }
 
+
 [data-rehype-pretty-code-title] {
   @apply text-fg mt-2 px-4 pt-6 text-sm font-medium;
 }
@@ -140,6 +141,13 @@ span[data-rehype-pretty-code-figure] > code > span {
   position: absolute;
   left: 0;
   color: var(--color-emerald-600);
+}
+.prose
+  :where(h1, h2, h3, h4, h5, h6):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )
+  > a {
+  @apply text-fg no-underline hover:no-underline;
 }
 
 .prose-headings\:scroll-mt-24:is(

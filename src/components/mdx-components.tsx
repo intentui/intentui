@@ -1,6 +1,7 @@
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import type React from "react"
+import { twMerge } from "tailwind-merge"
 import { Sandbox } from "@/app/(app)/blocks/sandbox"
 import { CodeBlock } from "@/components/code/code-block"
 import { EditorText } from "@/components/code/editor-text"
@@ -61,11 +62,21 @@ export const mdxComponents = {
   InstallCommand,
   McpTabs,
   How: DocHow,
-  a: (props: React.ComponentProps<"a">) => (
-    <a
-      {...props}
-      className="not-prose xd2432 text-primary-subtle-fg outline-hidden hover:underline focus-visible:ring-1"
-    />
-  ),
+  a: ({ className, ...props }: React.ComponentProps<"a">) => {
+    const isHeadingAnchor =
+      typeof className === "string" && className.split(" ").includes("heading-anchor")
+
+    return (
+      <a
+        {...props}
+        className={twMerge(
+          isHeadingAnchor
+            ? "text-inherit no-underline outline-hidden hover:no-underline focus-visible:ring-1"
+            : "not-prose xd2432 text-primary-subtle-fg outline-hidden hover:underline focus-visible:ring-1",
+          className,
+        )}
+      />
+    )
+  },
   SourceCode: SourceCode,
 }
