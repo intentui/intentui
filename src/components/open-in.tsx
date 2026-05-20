@@ -2,6 +2,7 @@
 
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid"
 import type { Root as PageTreeRoot } from "fumadocs-core/page-tree"
+import type { TableOfContents } from "fumadocs-core/toc"
 import { useState } from "react"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
 import { MobilePager } from "@/components/mobile-pager"
@@ -30,7 +31,17 @@ function getPerplexityUrl(url: string) {
   )}`
 }
 
-export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; page: string }) {
+export function OpenIn({
+  tree,
+  url,
+  page,
+  toc,
+}: {
+  tree: PageTreeRoot
+  url: string
+  page: string
+  toc: TableOfContents
+}) {
   const fullUrl = `${app.url}${url}`
   const [pending, setPending] = useState(false)
   const llmUrl = `${fullUrl}.md`
@@ -163,7 +174,7 @@ export function OpenIn({ tree, url, page }: { tree: PageTreeRoot; url: string; p
         </Menu>
       </ButtonGroup>
 
-      <MobilePager tree={tree} url={url} />
+      <MobilePager tree={tree} url={url} toc={toc} />
     </div>
   )
 }
