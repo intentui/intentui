@@ -165,7 +165,7 @@ export default async function Page(props: DocPageProps) {
                 {doc.references && doc.references?.length > 0 && (
                   <DocRefs references={doc.references} />
                 )}
-                <OpenIn page={pageText} tree={source.pageTree} url={page.url} />
+                <OpenIn page={pageText} tree={source.pageTree} url={page.url} toc={page.data.toc} />
               </div>
             </div>
             <MDX components={mdxComponents} />

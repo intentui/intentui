@@ -4370,6 +4370,7 @@
       "title": "Leaderboard",
       "description": "leaderboard-example",
       "registryDependencies": [
+        "http://localhost:3000/r/card",
         "http://localhost:3000/r/leaderboard"
       ],
       "files": [
