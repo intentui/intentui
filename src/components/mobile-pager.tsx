@@ -1,5 +1,6 @@
 "use client"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
+import { ListBulletIcon } from "@heroicons/react/24/outline"
 import { findNeighbour, type Root as PageTreeRoot } from "fumadocs-core/page-tree"
 import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
 import { twMerge } from "tailwind-merge"
@@ -48,6 +49,7 @@ export const MobilePager = ({ tree, url, toc = [], className }: MobilePagerProps
             size="sm"
             className="h-10 rounded-sm sm:hidden dark:bg-secondary/50 dark:hover:bg-secondary"
           >
+            <ListBulletIcon />
             TOC
           </Button>
           <MenuContent
