@@ -20,31 +20,17 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 ## Anatomy
 ```
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, CardAction } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 
-<Card className="p-4">
-  <div className="flex gap-2">
-    <Skeleton className="size-8" />
-    <div className="space-y-1">
-      <Skeleton className="h-4 w-56" />
-      <Skeleton className="h-4 w-16" />
-      <Skeleton className="h-4 w-24" />
-      <Skeleton className="h-4 w-32" />
-    </div>
-  </div>
-</Card>
+<Skeleton isLoading>
+  <div />
+</Skeleton>
 ```
 
 ## Examples
-
-### Soft
-The `soft` prop makes the skeleton slightly darker. By default, it is set to `false`.
-<How toUse="statuses/skeleton/skeleton-soft-example" />
-
-### Shape
-Sometimes, you may need a skeleton with a specific shape. For example, if you want all skeletons to be circular, you can simply add `rounded-full` to the skeleton component. This example demonstrates how to achieve that by styling the skeleton from its parent.
-<How toUse="statuses/skeleton/skeleton-shape-example" />
+### Dynamic content
+The `Skeleton` component can be used to display a placeholder while content loads dynamically, improving perceived performance and reducing loading anxiety.
+<How toUse="statuses/skeleton/skeleton-dynamic-content-example" />
 
 ## Component API
 
@@ -53,4 +39,4 @@ The `Skeleton` component displays a placeholder while content loads.
 | Prop | Type | Default |
 | --- | --- | --- |
 | `className` | `string` | - |
-| `soft` | `boolean` | `false` |
+| `isLoading` | `boolean` | `-` |

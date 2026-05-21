@@ -5299,11 +5299,30 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "skeleton-dynamic-content-example",
+      "title": "Skeleton Dynamic Content",
+      "description": "skeleton-dynamic-content-example",
+      "registryDependencies": [
+        "http://localhost:3000/r/skeleton",
+        "http://localhost:3000/r/text"
+      ],
+      "files": [
+        {
+          "path": "src/components/examples/statuses/skeleton/skeleton-dynamic-content-example.tsx",
+          "type": "registry:page",
+          "target": "app/skeleton-dynamic-content-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "skeleton-example",
       "title": "Skeleton",
       "description": "skeleton-example",
       "registryDependencies": [
-        "http://localhost:3000/r/card",
+        "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/skeleton"
       ],
       "files": [
@@ -5311,44 +5330,6 @@
           "path": "src/components/examples/statuses/skeleton/skeleton-example.tsx",
           "type": "registry:page",
           "target": "app/skeleton-example/page.tsx"
-        }
-      ],
-      "type": "registry:page"
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "skeleton-shape-example",
-      "title": "Skeleton Shape",
-      "description": "skeleton-shape-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/skeleton"
-      ],
-      "files": [
-        {
-          "path": "src/components/examples/statuses/skeleton/skeleton-shape-example.tsx",
-          "type": "registry:page",
-          "target": "app/skeleton-shape-example/page.tsx"
-        }
-      ],
-      "type": "registry:page"
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "extends": "none",
-      "name": "skeleton-soft-example",
-      "title": "Skeleton Soft",
-      "description": "skeleton-soft-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/skeleton"
-      ],
-      "files": [
-        {
-          "path": "src/components/examples/statuses/skeleton/skeleton-soft-example.tsx",
-          "type": "registry:page",
-          "target": "app/skeleton-soft-example/page.tsx"
         }
       ],
       "type": "registry:page"
