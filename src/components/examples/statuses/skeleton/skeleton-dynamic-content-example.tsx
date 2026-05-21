@@ -5,7 +5,7 @@ import { Strong, Text } from "@/components/ui/text"
 
 export default function SkeletonDynamicContentExample() {
   return (
-    <Skeleton isLoading={true}>
+    <Skeleton isLoading>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {Array.from({ length: 6 }, (_, index) => (
           <a href="#" key={index}>
