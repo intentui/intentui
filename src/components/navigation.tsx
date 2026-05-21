@@ -6,6 +6,7 @@ import { motion } from "motion/react"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { BrandLogoLink } from "@/components/brand-logo-link"
+import { Discount } from "@/components/discount"
 import { GithubLink } from "@/components/github-link"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
@@ -32,6 +33,7 @@ export function Navigation() {
   const isScrolled = scrollPosition > 280
   return (
     <>
+      <Discount />
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden lg:block">
         <motion.nav

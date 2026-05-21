@@ -4,6 +4,7 @@ import { Cta } from "@/app/(home)/partials/cta"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
+import { Discount } from "@/components/discount"
 import { Footer } from "@/components/footer"
 import { createMetadata } from "@/lib/metadata"
 import { Hero } from "./partials/hero"
@@ -32,6 +33,7 @@ export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">
       <div className="relative isolate mb-6 overflow-hidden border-border/50 border-b">
+        <Discount />
         <Navbar />
         <Hero />
       </div>
