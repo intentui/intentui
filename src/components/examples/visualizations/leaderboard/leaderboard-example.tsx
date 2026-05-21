@@ -44,12 +44,7 @@ export default function LeaderboardDemo() {
         <Leaderboard>
           <LeaderboardContent>
             {data.map((item) => (
-              <LeaderboardItem
-                key={item.name}
-                maxValue={maxValue}
-                value={item.value}
-                href={item.href}
-              >
+              <LeaderboardItem key={item.name} maxValue={maxValue} value={item.value}>
                 <LeaderboardStart>{item.name}</LeaderboardStart>
                 <LeaderboardEnd>{item.value.toLocaleString()} visits</LeaderboardEnd>
               </LeaderboardItem>
