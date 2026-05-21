@@ -44,7 +44,7 @@ export const MobilePager = ({ tree, url, toc = [], className }: MobilePagerProps
       {toc.length > 0 && (
         <Menu>
           <Button
-            intent="secondary"
+            intent="outline"
             size="sm"
             className="h-10 rounded-sm sm:hidden dark:bg-secondary/50 dark:hover:bg-secondary"
           >
