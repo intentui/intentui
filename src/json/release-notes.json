@@ -1,5 +1,17 @@
 [
   {
+    "name": "Skeleton",
+    "component": "skeleton.tsx",
+    "url": "/skeleton",
+    "type": "component",
+    "category": "statuses",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 3,
+    "date": "2026-05-23"
+  },
+  {
     "name": "List box virtualizer demo",
     "component": "list-box-virtualizer-example.tsx",
     "url": "/list-box",
