@@ -1,5 +1,9 @@
-"use client"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function Page() {
-  return <div />
+  return (
+    <Skeleton isLoading>
+      <div />
+    </Skeleton>
+  )
 }

@@ -1,18 +1,18 @@
 "use client"
 
-import { Card } from "@/components/ui/card"
+import { Avatar } from "@/components/ui/avatar"
 import { Skeleton } from "@/components/ui/skeleton"
 
 export default function SkeletonDemo() {
   return (
-    <Card className="p-4">
+    <Skeleton isLoading>
       <div className="flex gap-2">
-        <Skeleton className="size-6" />
+        <Avatar src="https://design.intentui.com/" alt="" />
         <div className="space-y-1">
-          <Skeleton className="h-3 w-56" />
-          <Skeleton className="h-3 w-10" />
+          <div>Alex</div>
+          <div>Lorem ipsum dolor sit.</div>
         </div>
       </div>
-    </Card>
+    </Skeleton>
   )
 }
