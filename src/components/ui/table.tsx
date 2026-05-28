@@ -22,6 +22,7 @@ import {
   ResizableTableContainer,
   Row,
   TableBody as TableBodyPrimitive,
+  TableFooter as TableFooterPrimitive,
   TableHeader as TableHeaderPrimitive,
   Table as TablePrimitive,
   useTableOptions,
@@ -522,5 +523,7 @@ const TableCell = ({ className, ref, ...props }: TableCellProps) => {
   )
 }
 
+const TableFooter = TableFooterPrimitive
+
 export type { TableColumnProps, TableProps, TableRowProps }
-export { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow }
+export { Table, TableBody, TableCell, TableColumn, TableFooter, TableHeader, TableRow }
