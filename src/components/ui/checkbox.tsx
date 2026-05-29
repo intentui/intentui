@@ -49,8 +49,7 @@ export function Checkbox({ className, children, ...props }: CheckboxFieldProps) 
           return (
             <div
               className={twMerge(
-                "grid grid-cols-[1.125rem_1fr] gap-y-1 has-data-[slot=control-label]:gap-x-3 sm:grid-cols-[1rem_1fr]",
-                "items-center has-[[slot=description]]:items-start",
+                "grid grid-cols-[1.125rem_1fr] items-center gap-y-1 has-data-[slot=control-label]:gap-x-3 sm:grid-cols-[1rem_1fr]",
                 "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1",
                 "*:data-[slot=control-label]:col-start-2 *:data-[slot=control-label]:row-start-1",
                 "*:[[slot=description]]:col-start-2 *:[[slot=description]]:row-start-2",
