@@ -1,7 +1,7 @@
 "use client"
 
 import { Description, Label } from "@/components/ui/field"
-import { Radio, RadioGroup } from "@/components/ui/radio"
+import { Radio, RadioGroup, RadioLabel } from "@/components/ui/radio"
 
 export default function RadioGroupDescriptionDemo() {
   return (
@@ -10,19 +10,19 @@ export default function RadioGroupDescriptionDemo() {
       <Description>Choose how you'd like to receive notifications.</Description>
 
       <Radio value="email">
-        <Label>Email</Label>
+        <RadioLabel>Email</RadioLabel>
         <Description>Get updates via email instantly.</Description>
       </Radio>
       <Radio value="sms">
-        <Label>SMS</Label>
+        <RadioLabel>SMS</RadioLabel>
         <Description>Receive alerts through text messages.</Description>
       </Radio>
       <Radio value="push">
-        <Label>Push Notification</Label>
+        <RadioLabel>Push Notification</RadioLabel>
         <Description>Get notified on your device.</Description>
       </Radio>
       <Radio value="none">
-        <Label>Do not disturb</Label>
+        <RadioLabel>Do not disturb</RadioLabel>
         <Description>Turn off all notifications.</Description>
       </Radio>
     </RadioGroup>
