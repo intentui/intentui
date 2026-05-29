@@ -1,12 +1,13 @@
 "use client"
 
-import { use } from "react"
+import type { ComponentProps } from "react"
 import {
   Slider as PrimitiveSlider,
+  SliderFill as PrimitiveSliderFill,
   SliderOutput as PrimitiveSliderOutput,
   SliderThumb as PrimitiveSliderThumb,
   SliderTrack as PrimitiveSliderTrack,
-  SliderStateContext,
+  type SliderFillProps,
 } from "react-aria-components/Slider"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
@@ -20,7 +21,7 @@ export function SliderGroup({ className, ...props }: React.ComponentProps<"div">
   )
 }
 
-export function Slider({ className, ...props }: React.ComponentProps<typeof PrimitiveSlider>) {
+export function Slider({ className, ...props }: ComponentProps<typeof PrimitiveSlider>) {
   return (
     <PrimitiveSlider
       data-slot="control"
@@ -38,7 +39,7 @@ export function Slider({ className, ...props }: React.ComponentProps<typeof Prim
 export function SliderOutput({
   className,
   ...props
-}: React.ComponentProps<typeof PrimitiveSliderOutput>) {
+}: ComponentProps<typeof PrimitiveSliderOutput>) {
   return (
     <PrimitiveSliderOutput
       className={cx("font-medium text-base/6 sm:text-sm/6", className)}
@@ -47,14 +48,11 @@ export function SliderOutput({
   )
 }
 
-export function SliderThumb({
-  className,
-  ...props
-}: React.ComponentProps<typeof PrimitiveSliderThumb>) {
+export function SliderThumb({ className, ...props }: ComponentProps<typeof PrimitiveSliderThumb>) {
   return (
     <PrimitiveSliderThumb
       className={cx(
-        "top-[50%] left-[50%] size-5 rounded-full border border-fg/10 bg-white outline-hidden ring-black transition-[width,height]",
+        "top-[50%] left-[50%] size-5 rounded-full bg-white outline-hidden ring ring-muted-fg/30 transition-[width,height] dark:ring-white",
         className,
       )}
       {...props}
@@ -66,7 +64,7 @@ export function SliderTrack({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof PrimitiveSliderTrack>) {
+}: ComponentProps<typeof PrimitiveSliderTrack>) {
   return (
     <PrimitiveSliderTrack
       className={cx(
@@ -94,37 +92,11 @@ export function SliderTrack({
   )
 }
 
-export function SliderFill({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  const state = use(SliderStateContext)
-  const { orientation, getThumbPercent, values } = state || {}
-
-  const getStyle = () => {
-    const percent0 = getThumbPercent ? getThumbPercent(0) * 100 : 0
-    const percent1 = getThumbPercent ? getThumbPercent(1) * 100 : 0
-
-    if (values?.length === 1) {
-      return orientation === "horizontal" ? { width: `${percent0}%` } : { height: `${percent0}%` }
-    }
-
-    return orientation === "horizontal"
-      ? {
-          left: `${percent0}%`,
-          width: `${Math.abs(percent0 - percent1)}%`,
-        }
-      : {
-          bottom: `${percent0}%`,
-          height: `${Math.abs(percent0 - percent1)}%`,
-        }
-  }
-
+export function SliderFill({ className, ...props }: SliderFillProps) {
   return (
-    <div
+    <PrimitiveSliderFill
+      className={cx("pointer-events-none rounded-full bg-primary disabled:opacity-60", className)}
       {...props}
-      style={getStyle()}
-      className={twMerge(
-        "group-orientation-horizontal/top-0 pointer-events-none absolute rounded-full bg-primary group-disabled/track:opacity-60 group-orientation-vertical/track:bottom-0 group-orientation-horizontal/track:h-full group-orientation-vertical/track:w-full",
-        className,
-      )}
     />
   )
 }
