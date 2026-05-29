@@ -370,9 +370,7 @@ const TableHeader = <T extends object>({
             !bleed && "sm:last:pe-1 sm:first:ps-1",
           )}
         >
-          {selectionMode === "multiple" && (
-            <Checkbox className="[--indicator-mt:0] sm:[--indicator-mt:0]" slot="selection" />
-          )}
+          {selectionMode === "multiple" && <Checkbox slot="selection" />}
         </Column>
       )}
       <Collection items={columns}>{children}</Collection>
@@ -460,7 +458,7 @@ const TableRow = <T extends object>({
       )}
       {selectionBehavior === "toggle" && (
         <TableCell className="px-0">
-          <Checkbox className="[--indicator-mt:0] sm:[--indicator-mt:0]" slot="selection" />
+          <Checkbox slot="selection" />
         </TableCell>
       )}
       <Collection items={columns}>{children}</Collection>

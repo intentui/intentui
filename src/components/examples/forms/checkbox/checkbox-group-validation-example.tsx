@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/field"
 
-export default function CheckboxValidationDemo() {
+export default function CheckboxGroupValidationExample() {
   return (
     <Form onSubmit={() => {}} className="space-y-6">
       <CheckboxGroup isRequired name="settings">

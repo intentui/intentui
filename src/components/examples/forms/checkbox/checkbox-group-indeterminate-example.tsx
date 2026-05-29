@@ -3,9 +3,9 @@
 import { Checkbox, CheckboxGroup, CheckboxLabel } from "@/components/ui/checkbox"
 import { Description } from "@/components/ui/field"
 
-export default function CheckboxGroupIndeterminateDemo() {
+export default function CheckboxGroupIndeterminateExample() {
   return (
-    <CheckboxGroup defaultValue={["encryption"]} className="ml-6" name="sets">
+    <CheckboxGroup aria-label="Settings" defaultValue={["encryption"]} className="ml-6" name="sets">
       <Checkbox isIndeterminate value="encryption" isReadOnly>
         <CheckboxLabel>Encryption</CheckboxLabel>
         <Description>Enable encryption.</Description>

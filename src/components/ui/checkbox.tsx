@@ -33,10 +33,7 @@ export function Checkbox({ className, children, ...props }: CheckboxFieldProps) 
     <CheckboxField
       data-slot="control"
       {...props}
-      className={cx(
-        "group block [--indicator-mt:--spacing(0.75)] disabled:opacity-50 sm:[--indicator-mt:--spacing(1)]",
-        className,
-      )}
+      className={cx("group block disabled:opacity-50", className)}
     >
       <CheckboxButton>
         {composeRenderProps(children, (children, { isSelected, isIndeterminate, isInvalid }) => {
@@ -53,7 +50,8 @@ export function Checkbox({ className, children, ...props }: CheckboxFieldProps) 
             <div
               className={twMerge(
                 "grid grid-cols-[1.125rem_1fr] gap-y-1 has-data-[slot=control-label]:gap-x-3 sm:grid-cols-[1rem_1fr]",
-                "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1 *:data-[slot=indicator]:mt-(--indicator-mt)",
+                "items-center has-[[slot=description]]:items-start",
+                "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1",
                 "*:data-[slot=control-label]:col-start-2 *:data-[slot=control-label]:row-start-1",
                 "*:[[slot=description]]:col-start-2 *:[[slot=description]]:row-start-2",
                 "has-[[slot=description]]:**:data-[slot=control-label]:font-medium",
@@ -63,8 +61,7 @@ export function Checkbox({ className, children, ...props }: CheckboxFieldProps) 
                 data-slot="indicator"
                 className={twMerge([
                   "relative inset-ring inset-ring-input isolate flex shrink-0 items-center justify-center rounded bg-(--control-bg,transparent) text-bg transition group-hover:inset-ring-muted-fg/30",
-                  "sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
-                  "size-4.5 *:data-[slot=check-indicator]:size-4",
+                  "size-4.5 *:data-[slot=check-indicator]:size-4 sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
                   "in-disabled:bg-muted",
                   (isSelected || isIndeterminate) && [
                     "inset-ring-(--checkbox-ring,var(--color-ring)) bg-(--checkbox-bg,var(--color-primary)) text-(--checkbox-fg,var(--color-primary-fg))",

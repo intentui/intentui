@@ -1,9 +1,9 @@
-import { Skeleton } from "@/components/ui/skeleton"
+import CheckboxGroupExample from "@/components/examples/forms/checkbox/checkbox-group-example"
 
 export default function Page() {
   return (
-    <Skeleton isLoading>
-      <div />
-    </Skeleton>
+    <div className="p-6">
+      <CheckboxGroupExample />
+    </div>
   )
 }

@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
 import { Description, Label } from "@/components/ui/field"
 
-export default function CheckboxGroupControlledDemo() {
+export default function CheckboxGroupControlledExample() {
   const [values, setValues] = useState<string[]>([])
   return (
     <>
