@@ -1,7 +1,7 @@
 "use client"
 
 import { Description, Label } from "@/components/ui/field"
-import { Radio, RadioGroup } from "@/components/ui/radio"
+import { Radio, RadioGroup, RadioLabel } from "@/components/ui/radio"
 
 export default function RadioGroupDemo() {
   return (
@@ -10,15 +10,15 @@ export default function RadioGroupDemo() {
       <Description>Select how often you'd like to be billed</Description>
 
       <Radio value="monthly">
-        <Label>Monthly</Label>
+        <RadioLabel>Monthly</RadioLabel>
         <Description>Billed every month</Description>
       </Radio>
       <Radio value="quarterly">
-        <Label>Quarterly</Label>
+        <RadioLabel>Quarterly</RadioLabel>
         <Description>Billed every 3 months</Description>
       </Radio>
       <Radio value="yearly">
-        <Label>Yearly</Label>
+        <RadioLabel>Yearly</RadioLabel>
         <Description>Billed once per year with a discount</Description>
       </Radio>
     </RadioGroup>
