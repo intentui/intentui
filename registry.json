@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "intentui",
   "homepage": "http://localhost:3000",
   "items": [
@@ -2375,8 +2376,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -3408,8 +3408,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {
@@ -3667,8 +3666,7 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/field"
+        "http://localhost:3000/r/primitive"
       ],
       "files": [
         {

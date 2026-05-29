@@ -3,7 +3,7 @@
 import { Form } from "react-aria-components/Form"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
 import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Link } from "@/components/ui/link"
@@ -41,7 +41,7 @@ export default function Component() {
               <FieldError />
             </TextField>
             <Checkbox isRequired>
-              <Label>Terms and conditions</Label>
+              <CheckboxLabel>Terms and conditions</CheckboxLabel>
               <Description>
                 By signing up, you agree to our <TextLink href="#">Terms of Service</TextLink> and{" "}
                 <TextLink href="#">Privacy Policy</TextLink>.

@@ -78,18 +78,18 @@ The `Toggle` component has been updated to use the new size values and the `isCi
 ```
 
 ## CheckBox and Radio
-We’ve improved the user experience on `Checkbox`, `CheckboxGroup`, and `RadioGroup` by allowing direct use of `Label` and `Description` components inside them. This gives you more flexibility to customize content. If you prefer using the `label` and `description` props, they’re still fully supported.
+We’ve improved the user experience on `Checkbox`, `CheckboxGroup`, and `RadioGroup` by allowing direct use of labels and descriptions inside them. Use `Label` for group labels, and `CheckboxLabel` or `RadioLabel` for item labels.
 
 ```
 <CheckboxGroup>
   <Label>User Permissions</Label>
   <Description>Select the permissions you want to grant to the user.</Description>
   <Checkbox value="read">
-    <Label>Read</Label>
+    <CheckboxLabel>Read</CheckboxLabel>
     <Description>Can view content but cannot make changes.</Description>
   </Checkbox>
   <Checkbox value="write">
-    <Label>Write</Label>
+    <CheckboxLabel>Write</CheckboxLabel>
     <Description>Can create and modify existing content.</Description>
   </Checkbox>
 </CheckboxGroup>
@@ -101,15 +101,15 @@ We’ve improved the user experience on `Checkbox`, `CheckboxGroup`, and `RadioG
   <Description>Select how often you'd like to be billed</Description>
 
   <Radio value="monthly">
-    <Label>Monthly</Label>
+    <RadioLabel>Monthly</RadioLabel>
     <Description>Billed every month</Description>
   </Radio>
   <Radio value="quarterly">
-    <Label>Quarterly</Label>
+    <RadioLabel>Quarterly</RadioLabel>
     <Description>Billed every 3 months</Description>
   </Radio>
   <Radio value="yearly">
-    <Label>Yearly</Label>
+    <RadioLabel>Yearly</RadioLabel>
     <Description>Billed once per year with a discount</Description>
   </Radio>
 </RadioGroup>

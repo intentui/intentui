@@ -7,7 +7,7 @@ export default function SkeletonDynamicContentExample() {
   return (
     <Skeleton isLoading>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {Array.from({ length: 6 }, (_, index) => (
+        {Array.from({ length: 4 }, (_, index) => (
           <a href="#" key={index}>
             <img
               className="aspect-video w-full rounded-lg"
