@@ -7,11 +7,12 @@ import {
   SliderOutput as PrimitiveSliderOutput,
   SliderThumb as PrimitiveSliderThumb,
   SliderTrack as PrimitiveSliderTrack,
+  type SliderFillProps,
 } from "react-aria-components/Slider"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 
-export function SliderGroup({ className, ...props }: ComponentProps<"div">) {
+export function SliderGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       className={twMerge("flex items-center gap-x-3 *:data-[slot=icon]:size-5", className)}
@@ -91,11 +92,11 @@ export function SliderTrack({
   )
 }
 
-export function SliderFill({ className, ...props }: ComponentProps<typeof PrimitiveSliderFill>) {
+export function SliderFill({ className, ...props }: SliderFillProps) {
   return (
     <PrimitiveSliderFill
-      {...props}
       className={cx("pointer-events-none rounded-full bg-primary disabled:opacity-60", className)}
+      {...props}
     />
   )
 }
