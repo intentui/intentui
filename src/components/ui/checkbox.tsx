@@ -1,7 +1,12 @@
 "use client"
 
 import { CheckIcon, MinusIcon } from "@heroicons/react/20/solid"
-import { Checkbox as CheckboxPrimitive, type CheckboxProps } from "react-aria-components/Checkbox"
+import {
+  CheckboxButton,
+  type CheckboxButtonProps,
+  CheckboxField,
+  type CheckboxFieldProps,
+} from "react-aria-components/Checkbox"
 import {
   CheckboxGroup as CheckboxGroupPrimitive,
   type CheckboxGroupProps,
@@ -9,7 +14,6 @@ import {
 import { composeRenderProps } from "react-aria-components/composeRenderProps"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
-import { Label } from "./field"
 
 export function CheckboxGroup({ className, ...props }: CheckboxGroupProps) {
   return (
@@ -24,19 +28,18 @@ export function CheckboxGroup({ className, ...props }: CheckboxGroupProps) {
   )
 }
 
-export function Checkbox({ className, children, ...props }: CheckboxProps) {
+export function Checkbox({ className, children, ...props }: CheckboxFieldProps) {
   return (
-    <CheckboxPrimitive
+    <CheckboxField
       data-slot="control"
+      {...props}
       className={cx(
         "group block [--indicator-mt:--spacing(0.75)] disabled:opacity-50 sm:[--indicator-mt:--spacing(1)]",
         className,
       )}
-      {...props}
     >
-      {composeRenderProps(
-        children,
-        (children, { isSelected, isIndeterminate, isFocusVisible, isInvalid }) => {
+      <CheckboxButton>
+        {composeRenderProps(children, (children, { isSelected, isIndeterminate, isInvalid }) => {
           const isStringChild = typeof children === "string"
           const indicator = isIndeterminate ? (
             <MinusIcon data-slot="check-indicator" />
@@ -49,11 +52,11 @@ export function Checkbox({ className, children, ...props }: CheckboxProps) {
           return (
             <div
               className={twMerge(
-                "grid grid-cols-[1.125rem_1fr] gap-y-1 has-data-[slot=label]:gap-x-3 sm:grid-cols-[1rem_1fr]",
+                "grid grid-cols-[1.125rem_1fr] gap-y-1 has-data-[slot=control-label]:gap-x-3 sm:grid-cols-[1rem_1fr]",
                 "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1 *:data-[slot=indicator]:mt-(--indicator-mt)",
-                "*:data-[slot=label]:col-start-2 *:data-[slot=label]:row-start-1",
+                "*:data-[slot=control-label]:col-start-2 *:data-[slot=control-label]:row-start-1",
                 "*:[[slot=description]]:col-start-2 *:[[slot=description]]:row-start-2",
-                "has-[[slot=description]]:**:data-[slot=label]:font-medium",
+                "has-[[slot=description]]:**:data-[slot=control-label]:font-medium",
               )}
             >
               <span
@@ -67,10 +70,6 @@ export function Checkbox({ className, children, ...props }: CheckboxProps) {
                     "inset-ring-(--checkbox-ring,var(--color-ring)) bg-(--checkbox-bg,var(--color-primary)) text-(--checkbox-fg,var(--color-primary-fg))",
                     "group-invalid:inset-ring/70 group-invalid:bg-danger group-invalid:text-danger-fg dark:group-invalid:inset-ring-danger-subtle-fg/70",
                   ],
-                  isFocusVisible && [
-                    "inset-ring-(--checkbox-ring,var(--color-ring)) ring-(--checkbox-ring,var(--color-ring))/20 ring-3",
-                    "group-invalid:inset-ring-danger-subtle-fg/70 group-invalid:text-danger-fg group-invalid:ring-danger-subtle-fg/20",
-                  ],
                   isInvalid &&
                     "inset-ring-danger-subtle-fg/70 bg-danger-subtle/5 text-danger-fg ring-danger-subtle-fg/20 group-hover:inset-ring-danger-subtle-fg/70",
                 ])}
@@ -80,12 +79,12 @@ export function Checkbox({ className, children, ...props }: CheckboxProps) {
               {content}
             </div>
           )
-        },
-      )}
-    </CheckboxPrimitive>
+        })}
+      </CheckboxButton>
+    </CheckboxField>
   )
 }
 
-export function CheckboxLabel(props: React.ComponentProps<typeof Label>) {
-  return <Label elementType="span" className="control-label" {...props} />
+export function CheckboxLabel(props: CheckboxButtonProps) {
+  return <CheckboxButton data-slot="control-label" {...props} />
 }

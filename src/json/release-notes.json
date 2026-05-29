@@ -1,5 +1,77 @@
 [
   {
+    "name": "Calendar",
+    "component": "calendar.tsx",
+    "url": "/calendar",
+    "type": "component",
+    "category": "date-and-time",
+    "kind": "improvement",
+    "description": null,
+    "additions": 32,
+    "deletions": 101,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Slider",
+    "component": "slider.tsx",
+    "url": "/slider",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 11,
+    "deletions": 40,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox",
+    "component": "checkbox.tsx",
+    "url": "/checkbox",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 19,
+    "deletions": 20,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Radio",
+    "component": "radio.tsx",
+    "url": "/radio",
+    "type": "component",
+    "category": "unknown",
+    "kind": "improvement",
+    "description": null,
+    "additions": 44,
+    "deletions": 44,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Switch",
+    "component": "switch.tsx",
+    "url": "/switch",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 56,
+    "deletions": 51,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Table",
+    "component": "table.tsx",
+    "url": "/table",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 4,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
     "name": "Skeleton",
     "component": "skeleton.tsx",
     "url": "/skeleton",
