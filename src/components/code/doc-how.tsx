@@ -116,7 +116,7 @@ export const DocHow = ({
                 : "",
             )}
           >
-            <div className={twMerge(isCenter && "flex items-center justify-center")}>
+            <div className={isCenter ? "flex items-center justify-center" : ""}>
               <Suspense
                 fallback={
                   <div className="flex items-center justify-center py-6 text-muted-fg text-sm">

@@ -3,7 +3,7 @@
 import { Checkbox, CheckboxGroup, CheckboxLabel } from "@/components/ui/checkbox"
 import { Description, Label } from "@/components/ui/field"
 
-export default function CheckboxGroupDescriptionDemo() {
+export default function CheckboxGroupDescriptionExample() {
   return (
     <CheckboxGroup defaultValue={["delete"]} name="up">
       <Label>User Permissions</Label>

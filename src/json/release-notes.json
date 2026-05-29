@@ -1,5 +1,149 @@
 [
   {
+    "name": "Checkbox example",
+    "component": "checkbox-example.tsx",
+    "url": "/checkbox",
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox group controlled example",
+    "component": "checkbox-group-controlled-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox group description example",
+    "component": "checkbox-group-description-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox group disabled example",
+    "component": "checkbox-group-disabled-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox group example",
+    "component": "checkbox-group-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox group indeterminate example",
+    "component": "checkbox-group-indeterminate-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox group uncontrolled example",
+    "component": "checkbox-group-uncontrolled-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox group validation example",
+    "component": "checkbox-group-validation-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Checkbox",
+    "component": "checkbox.tsx",
+    "url": "/checkbox",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 4,
+    "deletions": 7,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Grid list",
+    "component": "grid-list.tsx",
+    "url": "/grid-list",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 4,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Table",
+    "component": "table.tsx",
+    "url": "/table",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 4,
+    "date": "2026-05-29"
+  },
+  {
+    "name": "Tree",
+    "component": "tree.tsx",
+    "url": "/tree",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 2,
+    "date": "2026-05-29"
+  },
+  {
     "name": "Calendar",
     "component": "calendar.tsx",
     "url": "/calendar",
@@ -24,18 +168,6 @@
     "date": "2026-05-29"
   },
   {
-    "name": "Checkbox",
-    "component": "checkbox.tsx",
-    "url": "/checkbox",
-    "type": "component",
-    "category": "forms",
-    "kind": "improvement",
-    "description": null,
-    "additions": 19,
-    "deletions": 20,
-    "date": "2026-05-29"
-  },
-  {
     "name": "Radio",
     "component": "radio.tsx",
     "url": "/radio",
@@ -57,18 +189,6 @@
     "description": null,
     "additions": 56,
     "deletions": 51,
-    "date": "2026-05-29"
-  },
-  {
-    "name": "Table",
-    "component": "table.tsx",
-    "url": "/table",
-    "type": "component",
-    "category": "collections",
-    "kind": "improvement",
-    "description": null,
-    "additions": 4,
-    "deletions": 1,
     "date": "2026-05-29"
   },
   {

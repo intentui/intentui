@@ -41,7 +41,8 @@ const TreeItem = <T extends object>({ className, ...props }: TreeItemProps<T>) =
           "group/tree-item relative flex select-none rounded-lg focus:outline-hidden",
           "focus:bg-(--tree-active-bg) focus:text-(--tree-active-fg) focus:**:[.text-muted-fg]:text-(--tree-active-fg)",
           "**:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
-          "**:[svg]:me-1 **:[svg]:size-5 **:[svg]:shrink-0 sm:**:[svg]:size-4",
+          "**:[svg]:size-5 **:[svg]:shrink-0 sm:**:[svg]:size-4",
+          "**:[svg:not([data-slot=check-indicator]):not([data-slot=chevron])]:me-1",
           "disabled:opacity-50 forced-colors:[",
           "href" in props ? "cursor-pointer" : "cursor-default",
         ],
@@ -68,7 +69,7 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
         >
           {values.allowsDragging && <Button className="sr-only" slot="drag" />}
           {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <Checkbox className="[--indicator-mt:0] sm:[--indicator-mt:0]" slot="selection" />
+            <Checkbox slot="selection" />
           )}
           <div
             className={twJoin(

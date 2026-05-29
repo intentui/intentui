@@ -3,7 +3,7 @@
 import { Checkbox, CheckboxGroup } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/field"
 
-export default function CheckboxGroupDemo() {
+export default function CheckboxGroupExample() {
   return (
     <CheckboxGroup name="settings">
       <Label>Settings</Label>
