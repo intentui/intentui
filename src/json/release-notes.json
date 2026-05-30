@@ -1,5 +1,41 @@
 [
   {
+    "name": "Checkbox",
+    "component": "checkbox.tsx",
+    "url": "/checkbox",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 9,
+    "deletions": 3,
+    "date": "2026-05-30"
+  },
+  {
+    "name": "Radio",
+    "component": "radio.tsx",
+    "url": "/radio",
+    "type": "component",
+    "category": "unknown",
+    "kind": "improvement",
+    "description": null,
+    "additions": 9,
+    "deletions": 3,
+    "date": "2026-05-30"
+  },
+  {
+    "name": "Switch",
+    "component": "switch.tsx",
+    "url": "/switch",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 12,
+    "deletions": 6,
+    "date": "2026-05-30"
+  },
+  {
     "name": "Calendar",
     "component": "calendar.tsx",
     "url": "/calendar",
