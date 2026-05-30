@@ -1,5 +1,17 @@
 [
   {
+    "name": "Calendar",
+    "component": "calendar.tsx",
+    "url": "/calendar",
+    "type": "component",
+    "category": "date-and-time",
+    "kind": "improvement",
+    "description": null,
+    "additions": 31,
+    "deletions": 30,
+    "date": "2026-05-30"
+  },
+  {
     "name": "Checkbox example",
     "component": "checkbox-example.tsx",
     "url": "/checkbox",
