@@ -67,7 +67,7 @@ export function Checkbox({ className, children, ...props }: CheckboxFieldProps) 
                     "group-invalid:inset-ring/70 group-invalid:bg-danger group-invalid:text-danger-fg dark:group-invalid:inset-ring-danger-subtle-fg/70",
                   ],
                   isInvalid &&
-                    "inset-ring-danger-subtle-fg/70 bg-danger-subtle/5 text-danger-fg ring-danger-subtle-fg/20 group-hover:inset-ring-danger-subtle-fg/70",
+                  "inset-ring-danger-subtle-fg/70 bg-danger-subtle/5 text-danger-fg ring-danger-subtle-fg/20 group-hover:inset-ring-danger-subtle-fg/70",
                 ])}
               >
                 {indicator}
@@ -81,6 +81,12 @@ export function Checkbox({ className, children, ...props }: CheckboxFieldProps) 
   )
 }
 
-export function CheckboxLabel(props: CheckboxButtonProps) {
-  return <CheckboxButton data-slot="control-label" {...props} />
+export function CheckboxLabel({ className, ...props }: CheckboxButtonProps) {
+  return (
+    <CheckboxButton
+      className={cx("text-base/6 sm:text-sm/6", className)}
+      data-slot="control-label"
+      {...props}
+    />
+  )
 }
