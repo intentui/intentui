@@ -40,10 +40,10 @@ const Calendar = <T extends DateValue>({ className, ...props }: CalendarProps<T>
                   twMerge(
                     "relative flex size-11 cursor-default items-center justify-center rounded-lg text-fg tabular-nums outline-hidden hover:bg-secondary-fg/15 sm:size-9 sm:text-sm/6 forced-colors:text-[ButtonText] forced-colors:outline-0",
                     isSelected &&
-                    "bg-primary pressed:bg-primary text-primary-fg hover:bg-primary/90 data-invalid:bg-danger data-invalid:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[Highlight] forced-colors:data-invalid:bg-[Mark]",
+                      "bg-primary pressed:bg-primary text-primary-fg hover:bg-primary/90 data-invalid:bg-danger data-invalid:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[Highlight] forced-colors:data-invalid:bg-[Mark]",
                     isDisabled && "text-muted-fg forced-colors:text-[GrayText]",
                     isToday &&
-                    "after:pointer-events-none after:absolute after:bottom-1 after:left-1/2 after:z-10 after:size-0.75 after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
+                      "after:pointer-events-none after:absolute after:bottom-1 after:left-1/2 after:z-10 after:size-0.75 after:-translate-x-1/2 after:rounded-full after:bg-primary selected:after:bg-primary-fg focus-visible:after:bg-primary-fg",
                     className,
                   ),
               )}
@@ -134,4 +134,4 @@ const CalendarGridHeader = () => {
 }
 
 export type { CalendarProps }
-export { Calendar, CalendarGridHeader, CalendarHeader}
+export { Calendar, CalendarGridHeader, CalendarHeader }
