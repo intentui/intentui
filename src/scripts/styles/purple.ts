@@ -45,14 +45,7 @@ export const purpleLight = {
   "--chart-3": "oklch(0.714 0.203 305.504)",
   "--chart-4": "oklch(0.827 0.119 306.383)",
   "--chart-5": "oklch(0.902 0.063 306.703)",
-  "--radius-lg": "0.5rem",
-  "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-  "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-  "--radius-md": "calc(var(--radius-lg) * 0.75)",
-  "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-  "--radius-2xl": "calc(var(--radius-lg) * 2)",
-  "--radius-3xl": "calc(var(--radius-lg) * 3)",
-  "--radius-4xl": "calc(var(--radius-lg) * 4)"
+  "--radius": "0.5rem"
 }
 export const purpleDark = {
   "--bg": "oklch(0.181 0.005 285.823)",

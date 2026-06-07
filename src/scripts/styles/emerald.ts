@@ -45,14 +45,7 @@ export const emeraldLight = {
   "--chart-3": "oklch(0.765 0.177 163.223)",
   "--chart-4": "oklch(0.845 0.143 164.978)",
   "--chart-5": "oklch(0.905 0.093 164.15)",
-  "--radius-lg": "0.5rem",
-  "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-  "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-  "--radius-md": "calc(var(--radius-lg) * 0.75)",
-  "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-  "--radius-2xl": "calc(var(--radius-lg) * 2)",
-  "--radius-3xl": "calc(var(--radius-lg) * 3)",
-  "--radius-4xl": "calc(var(--radius-lg) * 4)"
+  "--radius": "0.5rem"
 }
 export const emeraldDark = {
   "--bg": "oklch(0.185 0 0)",

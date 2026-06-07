@@ -45,14 +45,7 @@ export const skyLight = {
   "--chart-3": "oklch(0.746 0.16 232.661)",
   "--chart-4": "oklch(0.828 0.111 230.318)",
   "--chart-5": "oklch(0.901 0.058 230.902)",
-  "--radius-lg": "0.5rem",
-  "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-  "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-  "--radius-md": "calc(var(--radius-lg) * 0.75)",
-  "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-  "--radius-2xl": "calc(var(--radius-lg) * 2)",
-  "--radius-3xl": "calc(var(--radius-lg) * 3)",
-  "--radius-4xl": "calc(var(--radius-lg) * 4)"
+  "--radius": "0.5rem"
 }
 
 export const skyDark = {

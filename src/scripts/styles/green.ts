@@ -45,14 +45,7 @@
     "--chart-3": "oklch(0.792 0.209 151.711)",
     "--chart-4": "oklch(0.871 0.15 154.449)",
     "--chart-5": "oklch(0.925 0.084 155.995)",
-    "--radius-lg": "0.5rem",
-    "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-    "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-    "--radius-md": "calc(var(--radius-lg) * 0.75)",
-    "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-    "--radius-2xl": "calc(var(--radius-lg) * 2)",
-    "--radius-3xl": "calc(var(--radius-lg) * 3)",
-    "--radius-4xl": "calc(var(--radius-lg) * 4)"
+    "--radius": "0.5rem"
   }
   export const greenDark = {
     "--bg": "oklch(0.187 0.004 49.25)",

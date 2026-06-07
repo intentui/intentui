@@ -45,14 +45,7 @@ export const pinkLight = {
     "--chart-3": "oklch(0.718 0.202 349.761)",
     "--chart-4": "oklch(0.823 0.12 346.018)",
     "--chart-5": "oklch(0.899 0.061 343.231)",
-    "--radius-lg": "0.5rem",
-    "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-    "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-    "--radius-md": "calc(var(--radius-lg) * 0.75)",
-    "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-    "--radius-2xl": "calc(var(--radius-lg) * 2)",
-    "--radius-3xl": "calc(var(--radius-lg) * 3)",
-    "--radius-4xl": "calc(var(--radius-lg) * 4)"
+    "--radius": "0.5rem"
   }
 export const pinkDark = {
     "--bg": "oklch(0.181 0.005 285.823)",
