@@ -45,14 +45,7 @@ export const defaultLight = {
   "--chart-3": "oklch(0.707 0.165 254.624)",
   "--chart-4": "oklch(0.809 0.105 251.813)",
   "--chart-5": "oklch(0.882 0.059 254.128)",
-  "--radius-lg": "0.5rem",
-  "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-  "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-  "--radius-md": "calc(var(--radius-lg) * 0.75)",
-  "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-  "--radius-2xl": "calc(var(--radius-lg) * 2)",
-  "--radius-3xl": "calc(var(--radius-lg) * 3)",
-  "--radius-4xl": "calc(var(--radius-lg) * 4)"
+  "--radius": "0.5rem"
 }
 export const defaultDark = {
   "--bg": "oklch(0.181 0.005 285.823)",
