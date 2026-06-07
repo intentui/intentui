@@ -196,3 +196,48 @@ export const MenuItem = createLink(InternalMenuItem)
 ```
 
 For more details, refer to the [TanStack Router documentation](https://tanstack.com/router/latest/docs/guide/custom-link#react-aria-components-example) on creating custom links with TanStack Router and React Aria Components.
+
+## React Router
+
+When using React Router, render the React Aria `Link` through React Router’s `Link` component. React Aria still controls the accessible behavior and styling, while React Router handles client-side navigation through the `to` prop.
+
+```tsx
+"use client"
+
+import { Link as ReactRouterLink } from "react-router"
+import {
+  Link as LinkPrimitive,
+  type LinkProps as LinkPrimitiveProps,
+} from "react-aria-components/Link"
+
+import { cx } from "~/lib/primitive"
+
+export interface LinkProps extends LinkPrimitiveProps {
+  ref?: React.RefObject<HTMLAnchorElement>
+}
+
+export function Link({ className, ref, ...props }: LinkProps) {
+  return (
+    <LinkPrimitive
+      ref={ref}
+      className={cx(
+        "font-medium text-(--text)",
+        "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
+        "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
+        "href" in props && "cursor-pointer",
+        className,
+      )}
+      render={(domProps) =>
+        "href" in domProps ? (
+          <ReactRouterLink {...domProps} to={domProps.href} />
+        ) : (
+          <span {...domProps} />
+        )
+      }
+      {...props}
+    />
+  )
+}
+```
+
+This lets you keep using the same `href` API across React Aria components, while React Router receives the value as `to` and performs client-side navigation.
