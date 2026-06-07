@@ -2284,8 +2284,6 @@
       "description": "calendar",
       "dependencies": [
         "@heroicons/react",
-        "@internationalized/date",
-        "@react-aria/i18n",
         "react-aria-components",
         "tailwind-merge"
       ],
