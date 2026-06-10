@@ -25,9 +25,7 @@ const Breadcrumbs = <T extends object>({
   )
 }
 
-interface BreadcrumbsItemProps extends BreadcrumbProps, BreadcrumbsContextProps {
-  href?: string
-}
+interface BreadcrumbsItemProps extends BreadcrumbProps, BreadcrumbsContextProps {}
 
 const BreadcrumbsItem = ({
   separator = true,
