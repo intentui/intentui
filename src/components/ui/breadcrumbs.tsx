@@ -30,7 +30,6 @@ interface BreadcrumbsItemProps extends BreadcrumbProps, BreadcrumbsContextProps 
 }
 
 const BreadcrumbsItem = ({
-  href,
   separator = true,
   className,
   ...props
@@ -53,7 +52,6 @@ const BreadcrumbsItem = ({
               "*:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:size-4",
               "*:data-[slot=icon]:text-muted-fg hover:*:data-[slot=icon]:text-fg",
             )}
-            href={href}
             {...props}
           />
           {!isCurrent && separator !== false && <Separator separator={separatorValue} />}

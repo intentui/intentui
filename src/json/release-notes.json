@@ -1,5 +1,17 @@
 [
   {
+    "name": "Breadcrumbs",
+    "component": "breadcrumbs.tsx",
+    "url": "/breadcrumbs",
+    "type": "component",
+    "category": "navigation",
+    "kind": "improvement",
+    "description": null,
+    "additions": 0,
+    "deletions": 2,
+    "date": "2026-06-10"
+  },
+  {
     "name": "Checkbox",
     "component": "checkbox.tsx",
     "url": "/checkbox",
