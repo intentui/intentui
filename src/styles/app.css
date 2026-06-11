@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import 'gradient-border-plugin';
 @import "./code.css";
 
 @plugin '@tailwindcss/typography';
