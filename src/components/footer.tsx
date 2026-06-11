@@ -85,7 +85,7 @@ export function Footer({ currentYear }: { currentYear: number }) {
         Footer
       </h2>
       <PageContainer className="relative z-20">
-        <div className="border-transparent border-x pt-16 pb-6 lg:border-page lg:px-6">
+        <div className="border-page pt-16 pb-6 sm:border-x lg:px-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-[20rem_auto] lg:grid-cols-[18rem_auto] lg:gap-10 xl:grid-cols-[20rem_auto] xl:gap-24">
             <div>
               <Link href="/" className="flex items-center font-semibold text-fg text-lg">

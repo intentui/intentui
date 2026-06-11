@@ -90,9 +90,9 @@ export function ColorGenerator() {
 
   return (
     <div>
-      <div className="items-center gap-6 border-b">
+      <div className="items-center gap-6 border-page border-b">
         <div className="grid lg:grid-cols-2">
-          <div className="border-r p-6">
+          <div className="border-page border-r p-6">
             <div className="mb-7">
               <Heading level={2}>Generate</Heading>
               <p className="text-muted-fg text-sm">

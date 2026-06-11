@@ -2,6 +2,7 @@ import { ColorPalette } from "@/app/(app)/colors/(colors)/color-palette"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
 import { JsonLd } from "@/components/json-ld"
+import { PageContainer } from "@/components/page-container"
 import { app } from "@/config/app"
 import { createMetadata } from "@/lib/metadata"
 
@@ -35,7 +36,7 @@ export default async function Page() {
   return (
     <>
       <JsonLd data={jsonLd} />
-      <Header className="border-b">
+      <Header className="border-page border-b">
         <HeaderInner>
           <HeaderTitle>Colors</HeaderTitle>
           <HeaderDescription>
@@ -44,7 +45,11 @@ export default async function Page() {
           </HeaderDescription>
         </HeaderInner>
       </Header>
-      <ColorPalette />
+      <PageContainer>
+        <div className="border-page sm:border-x sm:px-6">
+          <ColorPalette />
+        </div>
+      </PageContainer>
       <DesignIntentui />
     </>
   )

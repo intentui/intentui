@@ -11,7 +11,7 @@ export function Components() {
     <>
       <div className="border-page border-b">
         <PageContainer>
-          <div className="border-page border-x p-6">
+          <div className="border-page py-6 sm:border-x sm:p-6">
             <CardHeader
               className="max-w-lg"
               title="Components"
@@ -21,8 +21,8 @@ export function Components() {
         </PageContainer>
       </div>
       <PageContainer>
-        <div className="border-page border-x p-6">
-          <div className="mask-b-from-80% sm:mask-b-from-80% max-h-120 p-6 sm:max-h-140">
+        <div className="border-page py-6 sm:border-x sm:p-6">
+          <div className="mask-b-from-80% sm:mask-b-from-80% max-h-120 sm:max-h-140">
             <div className="columns-2 gap-6 md:columns-3 lg:columns-4">
               {components?.children?.slice(1, 20).map((item) => (
                 <div

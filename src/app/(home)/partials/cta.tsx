@@ -11,7 +11,7 @@ export function Cta() {
     <>
       <div className="border-page border-y">
         <PageContainer>
-          <div className="border-page border-x p-6">
+          <div className="border-page py-6 sm:border-x sm:p-6">
             <CardHeader
               className="max-w-lg"
               title="Ready to get started?"
