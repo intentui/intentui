@@ -16,9 +16,9 @@ export function ControlledValues({ color }: { color: any }) {
               className="rounded [--color-swatch-size:--spacing(5)]"
               color={color.toString(format as ColorFormat | "css" | undefined)}
             />
-            <span className="text-xs uppercase">{format}</span>
+            <span className="text-xs uppercase tabular-nums">{format}</span>
           </span>
-          <span className="text-xs sm:text-sm">
+          <span className="text-xs tabular-nums sm:text-sm">
             {color.toString(format as ColorFormat | "css" | undefined)}
           </span>
         </span>

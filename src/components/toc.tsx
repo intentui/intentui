@@ -3,8 +3,7 @@ import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
 import { Suspense, useEffect, useRef, useState } from "react"
 import scrollIntoView from "scroll-into-view-if-needed"
 import { twMerge } from "tailwind-merge"
-import { useMediaQuery } from "@/hooks/use-media-query"
-import { useScrollPosition } from "@/hooks/use-scroll-position"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface Props {
   className?: string
@@ -13,7 +12,6 @@ interface Props {
 
 export function Toc({ className, items }: Props) {
   const tocRef = useRef<HTMLDivElement>(null)
-  const scrollPosition = useScrollPosition(tocRef)
   const ids = items.map((item) => item.url.split("#")[1])
   const activeId = useActiveItem(ids as string[])
   const activeIndex = activeId?.length || 0
@@ -35,38 +33,25 @@ export function Toc({ className, items }: Props) {
     }
   }, [activeId, activeIndex])
 
-  const isLargeScreen = useMediaQuery("(min-width: 1024px)")
-
   return (
-    <aside
-      ref={tocRef}
-      className={twMerge(
-        "not-prose forced-color-adjust-none",
-        "scrollbar-none xl:sticky xl:top-14 xl:-mr-6 xl:h-[calc(100vh-16rem)] xl:flex-none xl:overflow-y-auto xl:pt-14 xl:pr-12 xl:pb-20",
-        "top-10",
-        className,
-      )}
-      style={{
-        WebkitMaskImage: isLargeScreen
-          ? `linear-gradient(to top, transparent 0%, #000 100px, #000 ${scrollPosition > 30 ? "90%" : "100%"}, transparent 100%)`
-          : undefined,
-      }}
-    >
-      <nav aria-labelledby="on-this-page-title" className="not-prose w-56">
-        <Suspense>
-          {items.length > 0 && (
-            <>
-              <h2 className="mb-3 font-medium text-fg text-sm/6">On this page</h2>
+    <aside ref={tocRef} className={twMerge("not-prose w-72 forced-color-adjust-none", className)}>
+      <ScrollArea scrollFade orientation="vertical" className="xl:h-[calc(100vh-19.5rem)]">
+        <nav aria-labelledby="on-this-page-title" className="not-prose w-56 p-6">
+          <Suspense>
+            {items.length > 0 && (
+              <>
+                <h2 className="mb-3 font-medium text-fg text-sm/6">On this page</h2>
 
-              <ul className="flex flex-col gap-y-2.5">
-                {items.map((item) => (
-                  <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
-                ))}
-              </ul>
-            </>
-          )}
-        </Suspense>
-      </nav>
+                <ul className="flex flex-col gap-y-2.5">
+                  {items.map((item) => (
+                    <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
+                  ))}
+                </ul>
+              </>
+            )}
+          </Suspense>
+        </nav>
+      </ScrollArea>
     </aside>
   )
 }

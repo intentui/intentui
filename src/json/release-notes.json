@@ -1,5 +1,29 @@
 [
   {
+    "name": "Radio",
+    "component": "radio.tsx",
+    "url": "/radio",
+    "type": "component",
+    "category": "unknown",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 3,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "Table",
+    "component": "table.tsx",
+    "url": "/table",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-06-11"
+  },
+  {
     "name": "Breadcrumbs",
     "component": "breadcrumbs.tsx",
     "url": "/breadcrumbs",

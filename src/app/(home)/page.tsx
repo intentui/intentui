@@ -2,13 +2,13 @@ import { Blocks } from "@/app/(home)/partials/blocks"
 import { Components } from "@/app/(home)/partials/components"
 import { Cta } from "@/app/(home)/partials/cta"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
-import { Examples } from "@/app/(home)/partials/examples"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
 import { Discount } from "@/components/discount"
 import { Footer } from "@/components/footer"
+import { Navigation } from "@/components/navigation"
+import { PageContainer } from "@/components/page-container"
 import { createMetadata } from "@/lib/metadata"
 import { Hero } from "./partials/hero"
-import { Navbar } from "./partials/navbar"
 import { OpenSource } from "./partials/open-source"
 
 export const metadata = createMetadata({
@@ -32,23 +32,33 @@ export const metadata = createMetadata({
 export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">
-      <div className="relative isolate mb-6 overflow-hidden border-border/50 border-b">
+      <div className="relative isolate overflow-hidden border-page border-b">
         <Discount />
-        <Navbar />
+        <Navigation />
         <Hero />
       </div>
-      <Examples />
-      <div className="border-b pb-6 sm:pb-12">
+      {/*<Examples />*/}
+      <div className="border-page border-b">
         <Blocks />
       </div>
 
-      <div className="bg-linear-to-b from-secondary/10 to-secondary/20 **:data-[slot=choicebox-item]:shadow-xs **:data-[slot=choicebox-item]:hover:shadow-none">
-        <StarterKit />
-      </div>
+      <StarterKit />
       <DesignIntentui />
-      <Components />
-      <Cta />
-      <OpenSource />
+      <div className="border-page border-t">
+        <>
+          <div className="border-page border-x">
+            <Components />
+            <Cta />
+            <div className="border-page border-t">
+              <PageContainer>
+                <div className="border-page border-x">
+                  <OpenSource />
+                </div>
+              </PageContainer>
+            </div>
+          </div>
+        </>
+      </div>
       <Footer currentYear={new Date().getUTCFullYear()} />
     </div>
   )
