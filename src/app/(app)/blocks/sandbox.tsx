@@ -8,7 +8,6 @@ import { CodeHighlighter } from "@/components/code/code-highlighter"
 import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
 import { ShadcnuiLogo } from "@/components/icons/shadcn-logo"
 import { Heading } from "@/components/ui/heading"
-import { Skeleton } from "@/components/ui/skeleton"
 import { Tooltip, TooltipContent } from "@/components/ui/tooltip"
 import { useClipboard } from "@/hooks/use-clipboard"
 import { cx } from "@/lib/primitive"
@@ -217,24 +216,17 @@ function LazyRegistryItem({ imgSrc, name }: { imgSrc?: SandboxImageSrc; name: st
         <div className="rounded-lg border p-4 text-red-600 text-sm">{error}</div>
       ) : item ? (
         <RegistryItemViewer imgSrc={imgSrc} item={item} />
-      ) : (
-        <div className="animate-pulse space-y-3 rounded-lg border p-4">
-          <Skeleton className="h-5 w-48" />
-          <Skeleton className="h-4 w-80" />
-          <Skeleton className="aspect-video w-full" />
-        </div>
-      )}
+      ) : null}
     </div>
   )
 }
 
-export function Sandbox({
-  imgSrc,
-  registries,
-}: {
+interface SandboxProps {
   imgSrc?: SandboxImageSrc
   registries: string[]
-}) {
+}
+
+export function Sandbox({ imgSrc, registries }: SandboxProps) {
   return (
     <>
       {registries.map((name) => (

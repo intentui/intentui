@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { ListComponents } from "@/app/(app)/components/(partials)/list-components"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { JsonLd } from "@/components/json-ld"
@@ -5,7 +6,7 @@ import menus from "@/components-search.json"
 import { app } from "@/config/app"
 import { createMetadata } from "@/lib/metadata"
 
-export const metadata = createMetadata({
+export const metadata: Metadata = createMetadata({
   title: "Components",
   description:
     "Explore 80+ accessible UI components built on React Aria, fully customizable and production ready, with consistent patterns for fast, polished interfaces.",

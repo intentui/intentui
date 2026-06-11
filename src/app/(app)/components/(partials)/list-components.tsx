@@ -69,40 +69,42 @@ export function ListComponents() {
         </HeaderInner>
       </Header>
 
-      <div className="border-t bg-muted/50 py-6 sm:py-12">
+      <div className="border-page border-t bg-muted/50">
         <PageContainer>
-          <GridList
-            aria-label="Components"
-            layout="grid"
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4"
-            renderEmptyState={() => (
-              <div className="flex items-center justify-center">
-                <Text>No results found. Try searching for something else!</Text>
-              </div>
-            )}
-          >
-            {allChildren.map((item: any) => {
-              const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""
-              const suffix = mounted && resolvedTheme === "dark" ? "-dark" : ""
-              return (
-                <GridListItem
-                  textValue={`${item.slug} ${item.title}`}
-                  key={item.slug}
-                  className="group flex cursor-pointer flex-col gap-y-2 outline-hidden hover:opacity-80"
-                  href={item.slug}
-                >
-                  <Image
-                    className="rounded-xl ring ring-fg/10 group-focus:ring-muted-fg/50"
-                    width={708}
-                    height={480}
-                    src={`/images/thumbnails/${name}${suffix}.png`}
-                    alt={item.title}
-                  />
-                  <span className="font-medium text-sm/6">{item.title}</span>
-                </GridListItem>
-              )
-            })}
-          </GridList>
+          <div className="border-page sm:border-x">
+            <GridList
+              aria-label="Components"
+              layout="grid"
+              className="grid grid-cols-1 gap-6 py-6 sm:grid-cols-2 sm:gap-px sm:bg-border/50 sm:py-0 lg:grid-cols-4"
+              renderEmptyState={() => (
+                <div className="flex items-center justify-center">
+                  <Text>No results found. Try searching for something else!</Text>
+                </div>
+              )}
+            >
+              {allChildren.map((item: any) => {
+                const name = item.slug.match(/([^/]+)\/?$/)?.[1] ?? ""
+                const suffix = mounted && resolvedTheme === "dark" ? "-dark" : ""
+                return (
+                  <GridListItem
+                    textValue={`${item.slug} ${item.title}`}
+                    key={item.slug}
+                    className="group flex cursor-pointer flex-col outline-hidden hover:opacity-80 sm:bg-bg/60 sm:p-0"
+                    href={item.slug}
+                  >
+                    <Image
+                      width={708}
+                      className="mb-3 rounded-xl border-page ring ring-page sm:mb-0 sm:rounded-none sm:border-b sm:ring-0"
+                      height={480}
+                      src={`/images/thumbnails/${name}${suffix}.png`}
+                      alt={item.title}
+                    />
+                    <span className="font-medium text-sm sm:p-4">{item.title}</span>
+                  </GridListItem>
+                )
+              })}
+            </GridList>
+          </div>
         </PageContainer>
       </div>
     </Autocomplete>

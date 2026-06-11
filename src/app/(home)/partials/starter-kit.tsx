@@ -42,7 +42,7 @@ export function StarterKit() {
     <>
       <div className="border-page border-b">
         <PageContainer>
-          <div className="border-page border-x p-6">
+          <div className="border-page py-6 sm:border-x sm:px-6">
             <CardHeader
               className="max-w-lg"
               title="Starter kit"

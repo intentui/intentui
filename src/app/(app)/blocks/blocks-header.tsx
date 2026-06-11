@@ -27,16 +27,14 @@ export function BlocksHeader() {
           </Link>
         </HeaderInner>
       </Header>
-      <div className="border-y bg-overlay">
+      <div className="border-page border-y bg-overlay">
         <PageContainer>
-          <div className="sm:-mx-2">
-            <div className="flex items-center justify-center gap-x-2 sm:justify-start">
-              <NavLink href="/blocks">Featured</NavLink>
-              <NavLink href="/blocks/sidebar">Sidebar</NavLink>
-              <NavLink href="/blocks/navbar">Navbar</NavLink>
-              <NavLink href="/blocks/auth">Auth</NavLink>
-              <NavLink href="/blocks/chart">Charts</NavLink>
-            </div>
+          <div className="flex items-center justify-center gap-x-2 first:-ml-4 sm:justify-start sm:border-x sm:px-4 sm:first:ml-0">
+            <NavLink href="/blocks">Featured</NavLink>
+            <NavLink href="/blocks/sidebar">Sidebar</NavLink>
+            <NavLink href="/blocks/navbar">Navbar</NavLink>
+            <NavLink href="/blocks/auth">Auth</NavLink>
+            <NavLink href="/blocks/chart">Charts</NavLink>
           </div>
         </PageContainer>
       </div>

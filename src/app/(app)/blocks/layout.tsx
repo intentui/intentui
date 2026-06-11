@@ -71,7 +71,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <BlocksHeader />
-      <PageContainer className="space-y-12 py-6 sm:py-12">{children}</PageContainer>
+      <PageContainer>
+        <div className="space-y-12 border-page py-6 sm:border-x sm:px-6">{children}</div>
+      </PageContainer>
 
       <DesignIntentui />
     </div>

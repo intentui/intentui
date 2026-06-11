@@ -2,45 +2,47 @@
 
 import { Link } from "react-aria-components/Link"
 import { twMerge } from "tailwind-merge"
+import { PageContainer } from "@/components/page-container"
 import { buttonStyles } from "@/components/ui/button"
-import { Container } from "@/components/ui/container"
 
 export function DesignIntentui() {
   return (
-    <div className="border-t bg-overlay py-6 text-fg sm:py-20">
-      <Container>
-        <div className="relative mx-auto max-w-3xl text-center">
-          <Link href="https://design.intentui.com">
-            <MarkLogo />
-          </Link>
-          <div className="mt-4 mb-4 text-3xl sm:text-5xl/14">
-            Launch faster with ready-made blocks and templates
-          </div>
-          <p className="mx-auto max-w-xl text-pretty text-center text-lg/8 text-muted-fg leading-relaxed sm:text-xl">
-            Build modern web apps faster with 1000+ resources across components, blocks, patterns,
-            templates, and starter kits.
-          </p>
-          <div className="mt-6 flex flex-col justify-center gap-2 sm:mt-10 sm:flex-row sm:items-center">
-            <Link
-              className={buttonStyles({
-                size: "lg",
-              })}
-              href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=cta"
-            >
-              Browse blocks
+    <div className="border-page border-t bg-overlay text-fg">
+      <PageContainer>
+        <div className="border-page sm:border-x sm:p-6">
+          <div className="relative mx-auto max-w-3xl py-12 text-center">
+            <Link href="https://design.intentui.com">
+              <MarkLogo />
             </Link>
-            <Link
-              className={buttonStyles({
-                size: "lg",
-                intent: "secondary",
-              })}
-              href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=cta"
-            >
-              Get templates
-            </Link>
+            <div className="mt-4 mb-4 text-3xl sm:text-5xl/14">
+              Launch faster with ready-made blocks and templates
+            </div>
+            <p className="mx-auto max-w-xl text-pretty text-center text-lg/8 text-muted-fg leading-relaxed sm:text-xl">
+              Build modern web apps faster with 1000+ resources across components, blocks, patterns,
+              templates, and starter kits.
+            </p>
+            <div className="mt-6 flex flex-col justify-center gap-2 sm:mt-10 sm:flex-row sm:items-center">
+              <Link
+                className={buttonStyles({
+                  size: "lg",
+                })}
+                href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=cta"
+              >
+                Browse blocks
+              </Link>
+              <Link
+                className={buttonStyles({
+                  size: "lg",
+                  intent: "secondary",
+                })}
+                href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=cta"
+              >
+                Get templates
+              </Link>
+            </div>
           </div>
         </div>
-      </Container>
+      </PageContainer>
     </div>
   )
 }

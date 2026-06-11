@@ -62,7 +62,7 @@ export function ColorItem({ color }: { color: keyof typeof colors }) {
     <div
       className={twJoin(
         "p-6",
-        "border-b last:border-b-0 lg:border-r lg:nth-last-2:border-b-0 lg:last:border-r-0",
+        "border-page border-b last:border-b-0 lg:border-r lg:nth-last-2:border-b-0 lg:last:border-r-0",
         "pb-6 even:pl-6 even:lg:border-r-0",
       )}
     >

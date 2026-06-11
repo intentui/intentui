@@ -46,7 +46,7 @@ export default function Page() {
       <DesignIntentui />
       <div className="border-page border-t">
         <>
-          <div className="border-page border-x">
+          <div className="border-page sm:border-x">
             <Components />
             <Cta />
             <div className="border-page border-t">

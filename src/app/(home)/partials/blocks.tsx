@@ -16,7 +16,7 @@ export function Blocks() {
     <>
       <div className="border-page border-b">
         <PageContainer>
-          <div className="border-page border-x p-6">
+          <div className="border-page py-6 sm:border-x sm:p-6">
             <CardHeader
               className="max-w-lg"
               title="Overlays"
@@ -52,7 +52,7 @@ export function Blocks() {
 
       <div className="-mx-px border-page border-x border-y">
         <PageContainer>
-          <div className="border-page border-x p-6">
+          <div className="border-page py-6 sm:border-x sm:p-6">
             <CardHeader
               className="max-w-lg"
               title="Control"
@@ -62,8 +62,8 @@ export function Blocks() {
         </PageContainer>
       </div>
       <PageContainer>
-        <div className="border-page border-x">
-          <div className="grid grid-cols-1 gap-px bg-border/50 *:bg-bg *:p-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="border-page sm:border-x">
+          <div className="grid grid-cols-1 gap-px bg-border/50 *:bg-bg *:py-6 sm:*:p-6 md:grid-cols-2 lg:grid-cols-3">
             <div>
               <CheckboxGroupDescriptionDemo />
             </div>
