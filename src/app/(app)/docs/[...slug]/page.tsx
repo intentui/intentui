@@ -7,7 +7,6 @@ import { mdxComponents } from "@/components/mdx-components"
 import { OpenIn } from "@/components/open-in"
 import { Pager } from "@/components/pager"
 import { Toc } from "@/components/toc"
-import { Text } from "@/components/ui/text"
 import { app } from "@/config/app"
 import { ogImage } from "@/lib/og"
 import { source } from "@/lib/source"
@@ -25,11 +24,6 @@ export const dynamicParams = false
 
 export function generateStaticParams() {
   return source.generateParams()
-}
-
-function extractSegment(str: string): string | null {
-  const segments = str.split("/")
-  return segments.length === 4 ? title(segments[2]!) : title(segments[3]!)
 }
 
 export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
@@ -151,24 +145,30 @@ export default async function Page(props: DocPageProps) {
       <div className="w-full min-w-0 border-transparent border-x py-16 lg:border-page">
         <div className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
           {/* center */}
-          <div className="mx-auto max-w-2xl">
-            <div className="not-prose mb-6 space-y-4">
-              <div className="font-mono text-primary-subtle-fg text-xs uppercase">
-                {extractSegment(page.url)}
-              </div>
-              <div className="flex w-full items-center justify-between">
-                <h1 className="flex-1 font-semibold text-4xl tracking-tight">{doc.title}</h1>
-              </div>
-              {doc.description ? (
-                <Text className="max-w-2xl sm:text-base/6">{doc.description}</Text>
-              ) : null}
-
-              <div className="flex items-center gap-x-1.5">
-                {doc.references && doc.references?.length > 0 && (
-                  <DocRefs references={doc.references} />
+          <div className="mx-auto max-w-3xl sm:px-6">
+            <div className="not-prose mb-3 sm:mb-6">
+              <div className="flex flex-col justify-between gap-y-6 sm:flex-row sm:items-center sm:gap-y-0">
+                <h1 className="flex-1 font-normal text-4xl tracking-tight">{doc.title}</h1>
+                {!doc.references && (
+                  <OpenIn
+                    page={pageText}
+                    tree={source.pageTree}
+                    url={page.url}
+                    toc={page.data.toc}
+                  />
                 )}
-                <OpenIn page={pageText} tree={source.pageTree} url={page.url} toc={page.data.toc} />
               </div>
+              {doc.references && doc.references?.length > 0 && (
+                <div className="mt-6 flex items-center gap-x-1.5">
+                  <DocRefs references={doc.references} />
+                  <OpenIn
+                    page={pageText}
+                    tree={source.pageTree}
+                    url={page.url}
+                    toc={page.data.toc}
+                  />
+                </div>
+              )}
             </div>
             <MDX components={mdxComponents} />
 
