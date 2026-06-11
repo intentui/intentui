@@ -34,10 +34,10 @@ export const sortedGsChildren =
 
 export function Aside() {
   return (
-    <div className="sticky h-screen w-full sm:top-12 sm:w-64">
+    <div className="sticky h-screen w-full [--gap:--spacing(6)] sm:top-12 sm:w-64 sm:[--gap:--spacing(8)]">
       <ScrollArea scrollFade orientation="vertical">
-        <div className="flex flex-col gap-y-(--gap) px-6 py-6 [--gap:--spacing(6)]">
-          <div className="pt-1 sm:*:text-sm/7">
+        <div className="flex flex-col gap-y-(--gap) py-6">
+          <div className="px-2 sm:*:text-sm/7">
             <AsideLink href="/components">
               <PackageIcon />
               Components
@@ -80,57 +80,66 @@ export function Aside() {
           </div>
           <div>
             <AsideHeader>{prologue?.section}</AsideHeader>
-            {prologue?.children?.map((item) => (
-              <AsideLink key={item.slug} href={item.slug}>
-                {item.title}
-              </AsideLink>
-            ))}
+            <div className="px-2">
+              {prologue?.children?.map((item) => (
+                <AsideLink key={item.slug} href={item.slug}>
+                  {item.title}
+                </AsideLink>
+              ))}
+            </div>
           </div>
 
           <div>
             <AsideHeader>{gs?.section}</AsideHeader>
-            {sortedGsChildren.map((item) => (
-              <AsideLink key={item.slug} href={item.slug}>
-                {item.title}
+            <div className="px-2">
+              {sortedGsChildren.map((item) => (
+                <AsideLink key={item.slug} href={item.slug}>
+                  {item.title}
+                </AsideLink>
+              ))}
+
+              <AsideLink href="/docs/getting-started/ai">Working with AI</AsideLink>
+              <AsideLink target="_blank" href="/llms.txt">
+                llms.txt
               </AsideLink>
-            ))}
-            <AsideLink href="/docs/getting-started/ai">Working with AI</AsideLink>
-            <AsideLink target="_blank" href="/llms.txt">
-              llms.txt
-            </AsideLink>
+            </div>
           </div>
           <div>
             <AsideHeader>{dm?.section}</AsideHeader>
-            {dm?.children?.map((item) => (
-              <AsideLink key={item.slug} href={item.slug}>
-                {item.title}
-              </AsideLink>
-            ))}
+            <div className="px-2">
+              {dm?.children?.map((item) => (
+                <AsideLink key={item.slug} href={item.slug}>
+                  {item.title}
+                </AsideLink>
+              ))}
+            </div>
           </div>
           <div className="flex flex-col gap-y-(--gap)">
             {components?.children?.map((item) => (
               <div key={item.subsection}>
                 <AsideHeader>{item?.subsection}</AsideHeader>
-                {item?.children?.map((item) => (
-                  <AsideLink key={item.slug} href={item.slug}>
-                    {item.title}
-                    {item.status && (
-                      <Badge
-                        className="-mr-2 ml-auto"
-                        isCircle={false}
-                        intent={
-                          item.status === "new"
-                            ? "success"
-                            : item.status === "beta" || item.status === "alpha"
-                              ? "warning"
-                              : "primary"
-                        }
-                      >
-                        {item.status}
-                      </Badge>
-                    )}
-                  </AsideLink>
-                ))}
+                <div className="px-2">
+                  {item?.children?.map((item) => (
+                    <AsideLink key={item.slug} href={item.slug}>
+                      {item.title}
+                      {item.status && (
+                        <Badge
+                          className="-mr-2 ml-auto"
+                          isCircle={false}
+                          intent={
+                            item.status === "new"
+                              ? "success"
+                              : item.status === "beta" || item.status === "alpha"
+                                ? "warning"
+                                : "primary"
+                          }
+                        >
+                          {item.status}
+                        </Badge>
+                      )}
+                    </AsideLink>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -164,7 +173,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
       href={href}
       ref={ref}
       className={twMerge(
-        "group relative mb-0.5 -ml-3 flex items-center gap-x-2 rounded-lg px-3 py-1 text-base text-fg sm:text-sm/6",
+        "group relative mb-0.5 flex items-center gap-x-2 rounded-lg px-2 py-1 text-base text-fg sm:text-sm/6",
         "focus:outline-hidden",
         "hover:bg-muted hover:text-secondary-fg",
         "focus:bg-muted focus:text-secondary-fg",
@@ -196,7 +205,10 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
 function AsideHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={twMerge("relative mb-2 block font-medium text-muted-fg text-sm/6", className)}
+      className={twMerge(
+        "relative mb-2 block px-4 font-mono text-[11px] text-muted-fg uppercase",
+        className,
+      )}
       {...props}
     />
   )
