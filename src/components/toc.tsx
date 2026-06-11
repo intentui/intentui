@@ -35,7 +35,7 @@ export function Toc({ className, items }: Props) {
 
   return (
     <aside ref={tocRef} className={twMerge("not-prose w-72 forced-color-adjust-none", className)}>
-      <ScrollArea scrollFade orientation="vertical" className="xl:h-[calc(100vh-19.5rem)]">
+      <ScrollArea scrollFade orientation="vertical" className="xl:h-[calc(100vh-22rem)]">
         <nav aria-labelledby="on-this-page-title" className="not-prose w-56 p-6">
           <Suspense>
             {items.length > 0 && (
