@@ -114,7 +114,7 @@ const TableBody = <T extends object>({ renderEmptyState, ...props }: TableBodyPr
           <div aria-hidden className="relative flex h-72 items-center justify-center md:h-100">
             <div
               aria-hidden
-              className="absolute top-1/2 m-auto grid size-15 -translate-y-1/2 place-content-center rounded-full border border-border/50 md:size-20"
+              className="absolute top-1/2 m-auto grid size-15 -translate-y-1/2 place-content-center rounded-full border border-page md:size-20"
             >
               <svg
                 aria-hidden

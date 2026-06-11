@@ -19,6 +19,7 @@
   --color-shiki-border: var(--input);
 
   --color-border: var(--border);
+  --color-page: var(--page);
   --color-input: var(--input);
 
   --color-ring: var(--ring);
@@ -106,7 +107,7 @@
   color-scheme: light dark;
   interpolate-size: allow-keywords;
 
-  --radius: 0.5rem;
+  --radius: 0.35rem;
   --bg: oklch(1 0 0);
   --fg: oklch(0.21 0.006 285.885);
 
@@ -153,6 +154,7 @@
   --danger-subtle-fg: oklch(0.505 0.213 27.518);
 
   --border: var(--color-zinc-300);
+  --page: var(--color-zinc-300);
   --input: oklch(0.871 0.006 286.286);
   --ring: oklch(0.546 0.245 262.881);
 
@@ -223,6 +225,7 @@
   --danger-subtle-fg: oklch(0.704 0.191 22.216);
 
   --border: oklch(0.342 0.017 285.786);
+  --page: theme('colors.zinc.700/50%');
   --input: oklch(0.320 0.013 285.805);
   --ring: oklch(0.546 0.245 262.881);
 

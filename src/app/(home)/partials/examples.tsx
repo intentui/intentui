@@ -5,7 +5,6 @@ import ChoiceboxDemo from "@/components/examples/collections/choicebox/choicebox
 import TableExpandableDemo from "@/components/examples/collections/table/table-expandable-example"
 import AreaChartDemo from "@/components/examples/visualizations/area-chart/area-chart-example"
 import BarChartDemo from "@/components/examples/visualizations/bar-chart/bar-chart-example"
-import LeaderboardDemo from "@/components/examples/visualizations/leaderboard/leaderboard-example"
 import LineChartDemo from "@/components/examples/visualizations/line-chart/line-chart-example"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
@@ -25,7 +24,7 @@ export function Examples() {
           description="Explore foundational components commonly used across web applications."
         />
       </PageContainer>
-      <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto pb-6 *:shrink-0 *:snap-center sm:pb-12">
+      <PageContainer className="mt-6 sm:pb-12">
         <BlocksCard className="w-full lg:w-1/3">
           <div className="flex flex-col gap-y-6">
             <CardHeader title="Sign in" description="Enter your email and password to sign in." />
@@ -47,7 +46,6 @@ export function Examples() {
             <Button>Sign in</Button>
           </div>
         </BlocksCard>
-
         <BlocksCard className="w-full lg:w-2/3">
           <div className="flex w-full flex-col gap-y-6">
             <CardHeader
@@ -74,20 +72,21 @@ export function Examples() {
           description="Explore various data visualizations to represent information effectively."
         />
       </PageContainer>
-      <PageContainer className="mt-6 flex snap-x gap-4 overflow-x-auto overflow-y-hidden pb-6 *:shrink-0 *:snap-center **:data-[slot=card]:border-transparent **:data-[slot=card]:bg-transparent **:data-[slot=card]:shadow-none sm:pb-12 **:data-[slot=card]:[--card-spacing:--spacing(4)] sm:**:data-[slot=card]:[--card-spacing:--spacing(6)]">
-        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-muted/30">
-          <AreaChartDemo />
-        </div>
-        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-muted/30">
-          <LineChartDemo />
-        </div>
-        <div className="w-full rounded-lg border lg:w-1/2 dark:bg-muted/30">
-          <BarChartDemo />
-        </div>
-        <div className="w-full rounded-lg border lg:w-1/3 dark:bg-muted/30">
-          <LeaderboardDemo />
-        </div>
-      </PageContainer>
+      <div className="mt-6 border-page border-y">
+        <PageContainer>
+          <div className="grid grid-cols-1 gap-px border-page border-x bg-border/50 *:bg-bg **:data-[slot=card]:border-none **:data-[slot=card]:shadow-none lg:grid-cols-3">
+            <div>
+              <AreaChartDemo />
+            </div>
+            <div>
+              <LineChartDemo />
+            </div>
+            <div>
+              <BarChartDemo />
+            </div>
+          </div>
+        </PageContainer>
+      </div>
     </div>
   )
 }

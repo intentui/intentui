@@ -9,7 +9,7 @@ import {
   RadioGroup as RadioGroupPrimitive,
   type RadioGroupProps,
 } from "react-aria-components/RadioGroup"
-import { twMerge } from "tailwind-merge"
+import { twJoin, twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
 
 export function RadioGroup({ className, ...props }: RadioGroupProps) {
@@ -19,7 +19,7 @@ export function RadioGroup({ className, ...props }: RadioGroupProps) {
       data-slot="control"
       className={cx(
         "space-y-3",
-        "has-[slot=description]:space-y-6 *:data-[slot=label]:font-medium",
+        "has-[[slot=description]]:space-y-6 *:data-[slot=label]:font-medium",
         className,
       )}
     />
@@ -36,7 +36,7 @@ export function Radio({ className, children, ...props }: RadioFieldProps) {
 
           return (
             <div
-              className={twMerge(
+              className={twJoin(
                 "grid grid-cols-[1.125rem_1fr] gap-x-3 gap-y-1 sm:grid-cols-[1rem_1fr]",
                 "*:data-[slot=indicator]:col-start-1 *:data-[slot=indicator]:row-start-1 *:data-[slot=indicator]:mt-0.75 sm:*:data-[slot=indicator]:mt-1",
                 "*:data-[slot=control-label]:col-start-2 *:data-[slot=control-label]:row-start-1",

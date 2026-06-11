@@ -11,11 +11,7 @@ export function Ads({ className }: { className?: string }) {
     <a
       target="_blank"
       href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=docs_intentui"
-      className={twMerge(
-        "not-prose group relative inset-ring inset-ring-border block w-full overflow-hidden rounded-md bg-zinc-50 p-4 sm:w-60 dark:bg-zinc-900",
-        "gradient-border gradient-border-to-br gradient-border-from-muted-fg/50 gradient-border-via-fg/20 gradient-border-to-border",
-        className,
-      )}
+      className={twMerge("block border-page border-t bg-muted/50 p-6", className)}
       rel="noopener"
     >
       <span className="block font-medium text-base/6">

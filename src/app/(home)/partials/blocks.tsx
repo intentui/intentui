@@ -1,5 +1,4 @@
 "use client"
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import { twMerge } from "tailwind-merge"
 import SwitchDescriptionDemo from "@/components/examples/controls/switch/switch-description-example"
 import CheckboxGroupDescriptionDemo from "@/components/examples/forms/checkbox/checkbox-group-description-example"
@@ -9,71 +8,87 @@ import PopoverDemo from "@/components/examples/overlays/popover/popover-example"
 import SheetDemo from "@/components/examples/overlays/sheet/sheet-example"
 import TooltipDemo from "@/components/examples/overlays/tooltip/tooltip-example"
 import { PageContainer } from "@/components/page-container"
-import { buttonStyles } from "@/components/ui/button"
 import { CardHeader } from "@/components/ui/card"
 import { Link } from "@/components/ui/link"
 
 export function Blocks() {
   return (
-    <PageContainer className="mt-6">
-      <div className="mask-b-from-90% md:mask-b-from-60% lg:mask-b-from-85% space-y-10 sm:space-y-16">
-        <div>
-          <CardHeader
-            className="max-w-lg"
-            title="Overlays"
-            description="Used to display actions, details, or prompts without navigating away from the current page."
-          />
-          <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <BlocksCard>
-              <Center>
-                <ModalDemo />
-              </Center>
-            </BlocksCard>
-            <BlocksCard>
-              <Center>
-                <PopoverDemo />
-              </Center>
-            </BlocksCard>
-            <BlocksCard>
-              <Center>
-                <SheetDemo />
-              </Center>
-            </BlocksCard>
-            <BlocksCard>
-              <Center>
-                <TooltipDemo />
-              </Center>
-            </BlocksCard>
+    <>
+      <div className="border-page border-b">
+        <PageContainer>
+          <div className="border-page border-x p-6">
+            <CardHeader
+              className="max-w-lg"
+              title="Overlays"
+              description="Used to display actions, details, or prompts without navigating away from the current page."
+            />
           </div>
-        </div>
-
-        <div>
-          <CardHeader
-            className="max-w-lg"
-            title="Control"
-            description="Explore how users can select one, many, or toggle options using checkboxes, radios, and switches."
-          />
-          <div className="mt-6 grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-4 lg:grid-cols-3">
-            <CheckboxGroupDescriptionDemo />
-            <RadioGroupDescriptionDemo />
-            <SwitchDescriptionDemo />
-          </div>
-        </div>
+        </PageContainer>
       </div>
+      <PageContainer>
+        <div className="grid grid-cols-2 gap-px border-page border-x bg-border/50 *:bg-bg *:p-6 sm:*:min-h-40 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <Center>
+              <ModalDemo />
+            </Center>
+          </div>
+          <div>
+            <Center>
+              <PopoverDemo />
+            </Center>
+          </div>
+          <div>
+            <Center>
+              <SheetDemo />
+            </Center>
+          </div>
+          <div>
+            <Center>
+              <TooltipDemo />
+            </Center>
+          </div>
+        </div>
+      </PageContainer>
 
-      <div className="relative z-30 mt-10 flex items-center justify-center md:-mt-10">
+      <div className="-mx-px border-page border-x border-y">
+        <PageContainer>
+          <div className="border-page border-x p-6">
+            <CardHeader
+              className="max-w-lg"
+              title="Control"
+              description="Explore how users can select one, many, or toggle options using checkboxes, radios, and switches."
+            />
+          </div>
+        </PageContainer>
+      </div>
+      <PageContainer>
+        <div className="border-page border-x">
+          <div className="grid grid-cols-1 gap-px bg-border/50 *:bg-bg *:p-6 md:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <CheckboxGroupDescriptionDemo />
+            </div>
+            <div>
+              <RadioGroupDescriptionDemo />
+            </div>
+            <div>
+              <SwitchDescriptionDemo />
+            </div>
+          </div>
+        </div>
+      </PageContainer>
+      <>
         <Link
-          className={buttonStyles({
-            intent: "outline",
-            className: "backdrop-blur-2xl",
-          })}
           href="/docs/components/buttons/button"
+          className="group flex items-center justify-center border-page border-t text-xl"
         >
-          Show More
-          <ArrowUpRightIcon />
+          <PageContainer className="w-full">
+            <div className="border-page border-x p-6 text-center group-hover:bg-muted/50">
+              Show More
+            </div>
+          </PageContainer>
         </Link>
-      </div>
-    </PageContainer>
+      </>
+    </>
   )
 }
 
