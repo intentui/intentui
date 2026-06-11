@@ -63,14 +63,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -119,14 +118,7 @@
           "--chart-3": "oklch(0.707 0.165 254.624)",
           "--chart-4": "oklch(0.809 0.105 251.813)",
           "--chart-5": "oklch(0.882 0.059 254.128)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.181 0.005 285.823)",
@@ -283,14 +275,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -339,14 +330,7 @@
           "--chart-3": "oklch(0.707 0.165 254.624)",
           "--chart-4": "oklch(0.809 0.105 251.813)",
           "--chart-5": "oklch(0.882 0.059 254.128)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.169 0.042 264.695)",
@@ -455,14 +439,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -511,14 +494,7 @@
           "--chart-3": "oklch(0.746 0.16 232.661)",
           "--chart-4": "oklch(0.828 0.111 230.318)",
           "--chart-5": "oklch(0.901 0.058 230.902)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.169 0.042 264.695)",
@@ -627,14 +603,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -683,14 +658,7 @@
           "--chart-3": "oklch(0.673 0.182 276.935)",
           "--chart-4": "oklch(0.785 0.115 274.713)",
           "--chart-5": "oklch(0.87 0.065 274.039)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.169 0.042 264.695)",
@@ -799,14 +767,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -855,14 +822,7 @@
           "--chart-3": "oklch(0.765 0.177 163.223)",
           "--chart-4": "oklch(0.845 0.143 164.978)",
           "--chart-5": "oklch(0.905 0.093 164.15)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.185 0 0)",
@@ -971,14 +931,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -1027,14 +986,7 @@
           "--chart-3": "oklch(0.777 0.152 181.912)",
           "--chart-4": "oklch(0.855 0.138 181.071)",
           "--chart-5": "oklch(0.91 0.096 180.426)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.169 0.042 264.695)",
@@ -1143,14 +1095,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -1199,14 +1150,7 @@
           "--chart-3": "oklch(0.714 0.203 305.504)",
           "--chart-4": "oklch(0.827 0.119 306.383)",
           "--chart-5": "oklch(0.902 0.063 306.703)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.181 0.005 285.823)",
@@ -1315,14 +1259,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -1371,14 +1314,7 @@
           "--chart-3": "oklch(0.718 0.202 349.761)",
           "--chart-4": "oklch(0.823 0.12 346.018)",
           "--chart-5": "oklch(0.899 0.061 343.231)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.181 0.005 285.823)",
@@ -1487,14 +1423,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -1543,14 +1478,7 @@
           "--chart-3": "oklch(0.712 0.194 13.428)",
           "--chart-4": "oklch(0.81 0.117 11.638)",
           "--chart-5": "oklch(0.892 0.058 10.001)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.187 0.004 49.25)",
@@ -1659,14 +1587,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -1715,14 +1642,7 @@
           "--chart-3": "oklch(0.792 0.209 151.711)",
           "--chart-4": "oklch(0.871 0.15 154.449)",
           "--chart-5": "oklch(0.925 0.084 155.995)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.187 0.004 49.25)",
@@ -1831,14 +1751,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -1887,14 +1806,7 @@
           "--chart-3": "oklch(0.841 0.238 128.85)",
           "--chart-4": "oklch(0.897 0.196 126.665)",
           "--chart-5": "oklch(0.938 0.127 124.321)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.187 0.004 49.25)",
@@ -2003,14 +1915,13 @@
           "color-chart-3": "var(--chart-3)",
           "color-chart-4": "var(--chart-4)",
           "color-chart-5": "var(--chart-5)",
-          "radius-xs": "var(--radius-xs)",
-          "radius-sm": "var(--radius-sm)",
-          "radius-md": "var(--radius-md)",
-          "radius-lg": "var(--radius-lg)",
-          "radius-xl": "var(--radius-xl)",
-          "radius-2xl": "var(--radius-2xl)",
-          "radius-3xl": "var(--radius-3xl)",
-          "radius-4xl": "var(--radius-4xl)"
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
         },
         "light": {
           "--bg": "oklch(1 0 0)",
@@ -2059,14 +1970,7 @@
           "--chart-3": "oklch(0.789 0.154 211.53)",
           "--chart-4": "oklch(0.865 0.127 207.078)",
           "--chart-5": "oklch(0.917 0.08 205.041)",
-          "--radius-lg": "0.5rem",
-          "--radius-xs": "calc(var(--radius-lg) * 0.25)",
-          "--radius-sm": "calc(var(--radius-lg) * 0.5)",
-          "--radius-md": "calc(var(--radius-lg) * 0.75)",
-          "--radius-xl": "calc(var(--radius-lg) * 1.5)",
-          "--radius-2xl": "calc(var(--radius-lg) * 2)",
-          "--radius-3xl": "calc(var(--radius-lg) * 3)",
-          "--radius-4xl": "calc(var(--radius-lg) * 4)"
+          "--radius": "0.5rem"
         },
         "dark": {
           "--bg": "oklch(0.169 0.042 264.695)",
