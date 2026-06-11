@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { Ads } from "@/components/ads"
+import { AdsMobile } from "@/components/ads-mobile"
 import { DocRefs } from "@/components/doc-refs"
 import { JsonLd } from "@/components/json-ld"
 import { mdxComponents } from "@/components/mdx-components"
@@ -142,7 +143,7 @@ export default async function Page(props: DocPageProps) {
     <div className="flex w-full items-start">
       <JsonLd data={jsonLd} />
       {/* Center */}
-      <div className="w-full min-w-0 border-transparent border-x py-16 lg:border-page">
+      <div className="w-full min-w-0 border-transparent border-x py-8 sm:py-16 lg:border-page">
         <div className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
           {/* center */}
           <div className="mx-auto max-w-3xl sm:px-6">
@@ -172,7 +173,7 @@ export default async function Page(props: DocPageProps) {
             </div>
             <MDX components={mdxComponents} />
 
-            <Ads className="mt-4 md:hidden" />
+            <AdsMobile />
 
             <Pager tree={source.pageTree} url={page.url} />
           </div>

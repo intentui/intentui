@@ -1,4 +1,5 @@
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
+import { BookOpenIcon, CubeIcon, Squares2X2Icon, SwatchIcon } from "@heroicons/react/24/outline"
 import NextLink from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
@@ -15,7 +16,6 @@ import {
   type PopoverProps,
 } from "react-aria-components/Menu"
 import { twJoin, twMerge } from "tailwind-merge"
-import { menus } from "@/app/(home)/partials/navbar"
 import { components, dm, gs, prologue, sortedGsChildren } from "@/components/aside"
 import { BrandDiscordIcon } from "@/components/icons/brand-discord-icon"
 import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
@@ -26,6 +26,22 @@ import { SearchField, SearchInput } from "@/components/ui/search-field"
 import { Separator } from "@/components/ui/separator"
 import { app } from "@/config/app"
 import { cx } from "@/lib/primitive"
+
+export const menus = [
+  {
+    href: "/docs/getting-started/introduction",
+    label: "Docs",
+    icon: BookOpenIcon,
+  },
+  { href: "/components", label: "Components", icon: CubeIcon },
+  { href: "/colors", label: "Colors", icon: SwatchIcon },
+  { href: "/blocks", label: "Blocks", icon: Squares2X2Icon },
+  {
+    href: "https://design.intentui.com/themes",
+    label: "Themes",
+    on: true,
+  },
+]
 
 interface ResponsiveNavigationProps {
   className?: string
