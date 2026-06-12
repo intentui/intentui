@@ -72,7 +72,5 @@ const Separator = ({
   )
 }
 
-Breadcrumbs.Item = BreadcrumbsItem
-
 export type { BreadcrumbsItemProps, BreadcrumbsProps }
 export { Breadcrumbs, BreadcrumbsItem }

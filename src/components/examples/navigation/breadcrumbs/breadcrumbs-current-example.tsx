@@ -7,7 +7,7 @@ export default function BreadcrumbsCurrentDemo() {
       <BreadcrumbsItem href="#">Home</BreadcrumbsItem>
       <BreadcrumbsItem href="#">Components</BreadcrumbsItem>
 
-      <BreadcrumbsItem className="data-current:text-primary">Navbar</BreadcrumbsItem>
+      <BreadcrumbsItem className="current:text-primary">Navbar</BreadcrumbsItem>
     </Breadcrumbs>
   )
 }
