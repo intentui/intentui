@@ -62,14 +62,7 @@ The current breadcrumb indicates the active page in the breadcrumb navigation. I
 
 if you think you want to render an element inside that current breadcrumb, you can do it like this:
 ```
-<BreadcrumbsItem className="data-current:text-primary">
-  {({ isCurrent }: { isCurrent: boolean }) => (
-    <span className="flex items-center gap-x-2">
-      Navbar
-      {isCurrent && <ChevronDownIcon />}
-    </span>
-  )}
-</BreadcrumbsItem>
+<BreadcrumbsItem className="current:text-primary"/>
 ```
 
 ## Component API

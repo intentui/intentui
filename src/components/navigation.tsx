@@ -33,7 +33,7 @@ export function Navigation() {
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden border-page border-b bg-navbar/50 backdrop-blur-3xl lg:block">
         <PageContainer>
-          <div className="relative flex items-center justify-between border-page border-x px-4 py-2">
+          <div className="relative flex items-center justify-between border-page border-x px-3 py-1">
             <div className="flex items-center gap-x-1.5">
               <div className="mx-auto flex items-center">
                 <BrandLogoLink />

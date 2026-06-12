@@ -11,7 +11,7 @@ export default function BreadcrumbsMenuDemo() {
     <Breadcrumbs>
       <BreadcrumbsItem href="#">Home</BreadcrumbsItem>
 
-      <BreadcrumbsItem separator>
+      <BreadcrumbsItem>
         <Menu>
           <Button intent="plain" size="sq-sm" className="-mx-1 h-6">
             <EllipsisHorizontalIcon />
