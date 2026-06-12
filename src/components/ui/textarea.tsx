@@ -8,7 +8,6 @@ export function Textarea({ className, ...props }: TextAreaProps) {
   return (
     <span data-slot="control" className="relative block w-full">
       <TextArea
-        {...props}
         className={cx(
           twJoin([
             "field-sizing-content relative block min-h-16 w-full appearance-none rounded-lg bg-(--control-bg,transparent) px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(3)-1px)] sm:py-[calc(--spacing(1.5)-1px)]",
@@ -22,6 +21,7 @@ export function Textarea({ className, ...props }: TextAreaProps) {
           ]),
           className,
         )}
+        {...props}
       />
     </span>
   )
