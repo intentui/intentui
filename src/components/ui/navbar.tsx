@@ -137,7 +137,7 @@ const Navbar = ({
             aria-label="Mobile Navbar"
             className="entering:blur-in exiting:blur-out [&>button]:hidden"
           >
-            <SheetBody className="p-[calc(var(--gutter)---spacing(2))] sm:p-[calc(var(--gutter)---spacing(4))]">
+            <SheetBody className="p-[calc(var(--gutter)-(--spacing(2)))] sm:p-[calc(var(--gutter)-(--spacing(4)))]">
               {children}
             </SheetBody>
           </SheetContent>
