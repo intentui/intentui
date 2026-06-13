@@ -5,7 +5,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
   return (
     <div>
       <PageContainer>
-        <div className="relative flex w-full flex-auto justify-center border-transparent border-x lg:border-page">
+        <div className="relative flex w-full flex-auto justify-center border-page xl:border-x">
           <div className="hidden lg:relative lg:block lg:flex-none">
             <Aside />
           </div>

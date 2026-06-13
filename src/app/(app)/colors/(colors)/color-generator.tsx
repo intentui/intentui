@@ -91,8 +91,8 @@ export function ColorGenerator() {
   return (
     <div>
       <div className="items-center gap-6 border-page border-b">
-        <div className="grid lg:grid-cols-2">
-          <div className="border-page border-r p-6">
+        <div className="grid divide-y lg:grid-cols-2 lg:divide-y-0">
+          <div className="border-page py-6 xl:border-r xl:px-6">
             <div className="mb-7">
               <Heading level={2}>Generate</Heading>
               <p className="text-muted-fg text-sm">
@@ -111,9 +111,9 @@ export function ColorGenerator() {
 
           <div
             className={twJoin(
-              "p-6",
+              "py-6 xl:px-6",
               "border-b last:border-b-0 lg:border-r lg:nth-last-2:border-b-0 lg:last:border-r-0",
-              "pb-6 even:pl-6 even:lg:border-r-0",
+              "pb-6 even:lg:border-r-0 xl:even:pl-6",
             )}
           >
             <div className="mb-4 flex items-center justify-between">

@@ -178,7 +178,7 @@ export function Footer({ currentYear }: { currentYear: number }) {
             </div>
           </div>
 
-          <div className="hidden lg:block lg:h-60">
+          <div className="hidden xl:block xl:h-60">
             <LogoType className="absolute -bottom-16 left-1/2 h-18 -translate-x-1/2 sm:bottom-0 sm:h-40 lg:h-60" />
           </div>
         </div>

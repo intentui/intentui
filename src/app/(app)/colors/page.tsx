@@ -46,7 +46,7 @@ export default async function Page() {
         </HeaderInner>
       </Header>
       <PageContainer>
-        <div className="border-page sm:border-x sm:px-6">
+        <div className="border-page bg-muted/50 sm:border-x sm:px-6">
           <ColorPalette />
         </div>
       </PageContainer>

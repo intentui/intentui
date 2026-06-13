@@ -1,6 +1,7 @@
 "use client"
 import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
-import { Suspense, useEffect, useRef, useState } from "react"
+import { LayoutGroup, motion } from "motion/react"
+import { Suspense, useEffect, useId, useRef, useState } from "react"
 import scrollIntoView from "scroll-into-view-if-needed"
 import { twMerge } from "tailwind-merge"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -15,7 +16,7 @@ export function Toc({ className, items }: Props) {
   const ids = items.map((item) => item.url.split("#")[1])
   const activeId = useActiveItem(ids as string[])
   const activeIndex = activeId?.length || 0
-
+  const id = useId()
   const minDepth = items.reduce((acc, item) => Math.min(acc, item.depth), 1000)
 
   useEffect(() => {
@@ -34,25 +35,27 @@ export function Toc({ className, items }: Props) {
   }, [activeId, activeIndex])
 
   return (
-    <aside ref={tocRef} className={twMerge("not-prose w-72 forced-color-adjust-none", className)}>
-      <ScrollArea scrollFade orientation="vertical" className="xl:h-[calc(100vh-22rem)]">
-        <nav aria-labelledby="on-this-page-title" className="not-prose w-56 p-6">
-          <Suspense>
-            {items.length > 0 && (
-              <>
-                <h2 className="mb-3 font-medium text-fg text-sm/6">On this page</h2>
+    <LayoutGroup id={id}>
+      <aside ref={tocRef} className={twMerge("not-prose w-72 forced-color-adjust-none", className)}>
+        <ScrollArea scrollFade orientation="vertical" className="xl:h-[calc(100vh-22rem)]">
+          <nav aria-labelledby="on-this-page-title" className="not-prose relative w-56 p-6">
+            <Suspense>
+              {items.length > 0 && (
+                <>
+                  <h2 className="mb-3 font-medium text-fg text-sm/6">On this page</h2>
 
-                <ul className="flex flex-col gap-y-2.5">
-                  {items.map((item) => (
-                    <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
-                  ))}
-                </ul>
-              </>
-            )}
-          </Suspense>
-        </nav>
-      </ScrollArea>
-    </aside>
+                  <ul className="flex flex-col gap-y-2.5">
+                    {items.map((item) => (
+                      <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
+                    ))}
+                  </ul>
+                </>
+              )}
+            </Suspense>
+          </nav>
+        </ScrollArea>
+      </aside>
+    </LayoutGroup>
   )
 }
 
@@ -64,10 +67,22 @@ interface TocLinkProps {
 
 function TocLink({ item, activeId, minDepth }: TocLinkProps) {
   return (
-    <li key={item.url}>
+    <li key={item.url} className="relative">
+      {item.url.split("#")[1] === activeId && (
+        <motion.span
+          transition={{
+            type: "spring",
+            stiffness: 450,
+            damping: 35,
+            mass: 0.8,
+          }}
+          layoutId="currentIndicator"
+          className="absolute top-1/2 -left-6 hidden h-6 w-0.5 -translate-y-1/2 rounded-full bg-primary md:block dark:bg-primary-subtle-fg"
+        />
+      )}
       <a
         className={twMerge(
-          "block font-medium text-sm/6 tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden",
+          "block text-sm/6 tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden",
           item.url.split("#")[1] === activeId
             ? "text-fg forced-colors:text-[Highlight]"
             : "text-muted-fg/90 forced-colors:text-[GrayText]",
