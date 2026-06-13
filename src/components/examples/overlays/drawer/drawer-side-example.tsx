@@ -10,7 +10,7 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer"
-import { Radio, RadioGroup } from "@/components/ui/radio"
+import { Radio, RadioField, RadioGroup } from "@/components/ui/radio"
 import { Separator } from "@/components/ui/separator"
 
 export default function DrawerSideDemo() {
@@ -19,9 +19,9 @@ export default function DrawerSideDemo() {
     <>
       <RadioGroup orientation="horizontal" aria-label="Side" value={side} onChange={setSide}>
         {["top", "bottom", "left", "right"].map((side) => (
-          <Radio key={side} className="capitalize" value={side}>
-            {side}
-          </Radio>
+          <RadioField key={side} value={side}>
+            <Radio className="capitalize">{side}</Radio>
+          </RadioField>
         ))}
       </RadioGroup>
       <Separator className="my-6 h-px w-full" />

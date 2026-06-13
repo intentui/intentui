@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Description, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import {
@@ -36,10 +36,10 @@ export default function SheetDemo() {
                 <Label>Email</Label>
                 <Input type="email" placeholder="Enter your email address" />
               </TextField>
-              <Checkbox>
-                <CheckboxLabel>Enable notifications</CheckboxLabel>
+              <CheckboxField>
+                <Checkbox>Enable notifications</Checkbox>
                 <Description>Receive updates and alerts via email.</Description>
-              </Checkbox>
+              </CheckboxField>
             </SheetBody>
             <SheetFooter>
               <SheetClose>Cancel</SheetClose>

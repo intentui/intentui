@@ -1,11 +1,13 @@
 "use client"
 
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 
 export default function CheckboxInvalidDemo() {
   return (
-    <Checkbox isInvalid name="n">
-      Enable notifications
-    </Checkbox>
+    <CheckboxField isInvalid name="n">
+      <Checkbox>
+        Enable notifications
+      </Checkbox>
+    </CheckboxField>
   )
 }

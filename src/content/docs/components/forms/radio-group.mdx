@@ -26,7 +26,7 @@ Use this approach if you prefer to install and wire up the component yourself in
 ## Anatomy
 ```
 import { Description, Label } from "@/components/ui/field"
-import { Radio, RadioGroup, RadioLabel } from "@/components/ui/radio"
+import { RadioField, RadioGroup, Radio } from "@/components/ui/radio"
 ```
 
 ```
@@ -36,16 +36,16 @@ import { Radio, RadioGroup, RadioLabel } from "@/components/ui/radio"
     Select how often you'd like to be billed
   </Description>
 
-  <Radio value="monthly">
-    <RadioLabel>Monthly</RadioLabel>
+  <RadioField value="monthly">
+    <Radio>Monthly</Radio>
     <Description>Billed every month</Description>
   </Radio>
-  <Radio value="quarterly">
-    <RadioLabel>Quarterly</RadioLabel>
+  <RadioField value="quarterly">
+    <Radio>Quarterly</Radio>
     <Description>Billed every 3 months</Description>
   </Radio>
-  <Radio value="yearly">
-    <RadioLabel>Yearly</RadioLabel>
+  <RadioField value="yearly">
+    <Radio>Yearly</Radio>
     <Description>
       Billed once per year with a discount
     </Description>
@@ -83,6 +83,14 @@ When the radio group is disabled, it cannot be interacted with.
 <How toUse="forms/radio-group/radio-group-disabled-example" />
 
 ## Component API
+
+### RadioField
+
+The `RadioField` component represents one radio option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### Radio
 

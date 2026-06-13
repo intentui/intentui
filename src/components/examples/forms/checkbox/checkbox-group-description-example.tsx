@@ -1,6 +1,6 @@
 "use client"
 
-import { Checkbox, CheckboxGroup, CheckboxLabel } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField, CheckboxGroup } from "@/components/ui/checkbox"
 import { Description, Label } from "@/components/ui/field"
 
 export default function CheckboxGroupDescriptionExample() {
@@ -8,22 +8,22 @@ export default function CheckboxGroupDescriptionExample() {
     <CheckboxGroup defaultValue={["delete"]} name="up">
       <Label>User Permissions</Label>
       <Description>Select the permissions you want to grant to the user.</Description>
-      <Checkbox value="read">
-        <CheckboxLabel>Read</CheckboxLabel>
+      <CheckboxField value="read">
+        <Checkbox>Read</Checkbox>
         <Description>Can view content but cannot make changes.</Description>
-      </Checkbox>
-      <Checkbox value="write">
-        <CheckboxLabel>Write</CheckboxLabel>
+      </CheckboxField>
+      <CheckboxField value="write">
+        <Checkbox>Write</Checkbox>
         <Description>Can create and modify existing content.</Description>
-      </Checkbox>
-      <Checkbox value="delete">
-        <CheckboxLabel>Delete</CheckboxLabel>
+      </CheckboxField>
+      <CheckboxField value="delete">
+        <Checkbox>Delete</Checkbox>
         <Description>Can permanently remove content.</Description>
-      </Checkbox>
-      <Checkbox value="admin">
-        <CheckboxLabel>Admin</CheckboxLabel>
+      </CheckboxField>
+      <CheckboxField value="admin">
+        <Checkbox>Admin</Checkbox>
         <Description>Full access to all actions and settings.</Description>
-      </Checkbox>
+      </CheckboxField>
     </CheckboxGroup>
   )
 }

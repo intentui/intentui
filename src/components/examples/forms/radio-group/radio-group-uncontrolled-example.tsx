@@ -1,16 +1,24 @@
 "use client"
 
 import { Label } from "@/components/ui/field"
-import { Radio, RadioGroup } from "@/components/ui/radio"
+import { Radio, RadioField, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupUncontrolledDemo() {
   return (
     <RadioGroup name="feat" defaultValue="theme">
       <Label>Features</Label>
-      <Radio value="language">Language</Radio>
-      <Radio value="timezone">Timezone</Radio>
-      <Radio value="notifications">Notifications</Radio>
-      <Radio value="privacy">Privacy</Radio>
+      <RadioField value="language">
+        <Radio>Language</Radio>
+      </RadioField>
+      <RadioField value="timezone">
+        <Radio>Timezone</Radio>
+      </RadioField>
+      <RadioField value="notifications">
+        <Radio>Notifications</Radio>
+      </RadioField>
+      <RadioField value="privacy">
+        <Radio>Privacy</Radio>
+      </RadioField>
     </RadioGroup>
   )
 }

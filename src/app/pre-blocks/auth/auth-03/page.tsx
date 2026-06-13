@@ -3,7 +3,7 @@
 import { Form } from "react-aria-components/Form"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Link } from "@/components/ui/link"
@@ -40,13 +40,13 @@ export default function Component() {
               <Input type="password" />
               <FieldError />
             </TextField>
-            <Checkbox isRequired>
-              <CheckboxLabel>Terms and conditions</CheckboxLabel>
+            <CheckboxField isRequired>
+              <Checkbox>Terms and conditions</Checkbox>
               <Description>
                 By signing up, you agree to our <TextLink href="#">Terms of Service</TextLink> and{" "}
                 <TextLink href="#">Privacy Policy</TextLink>.
               </Description>
-            </Checkbox>
+            </CheckboxField>
           </Fieldset>
           <Button type="submit" className="mt-6 w-full">
             Sign up

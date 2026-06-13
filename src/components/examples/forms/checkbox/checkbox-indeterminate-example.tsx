@@ -1,11 +1,11 @@
 "use client"
 
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 
 export default function CheckboxIndeterminateDemo() {
   return (
-    <Checkbox value="read" isIndeterminate name="read">
-      Read
-    </Checkbox>
+    <CheckboxField value="read" isIndeterminate name="read">
+      <Checkbox>Read</Checkbox>
+    </CheckboxField>
   )
 }

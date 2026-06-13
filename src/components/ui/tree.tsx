@@ -15,7 +15,7 @@ import {
 } from "react-aria-components/Tree"
 import { twJoin, twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
-import { Checkbox } from "./checkbox"
+import { Checkbox, CheckboxField } from "./checkbox"
 
 const Tree = <T extends object>({ className, ...props }: TreeProps<T>) => {
   return (
@@ -69,7 +69,9 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
         >
           {values.allowsDragging && <Button className="sr-only" slot="drag" />}
           {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <Checkbox slot="selection" />
+            <CheckboxField className="gap-x-0" slot="selection">
+              <Checkbox className="col-span-1" />
+            </CheckboxField>
           )}
           <div
             className={twJoin(
@@ -95,8 +97,8 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
 }
 
 const TreeIndicator = ({
-  values,
-}: {
+                         values,
+                       }: {
   values: Pick<TreeItemContentRenderProps, "isDisabled" | "isExpanded">
 }) => {
   return (
@@ -111,7 +113,7 @@ const TreeIndicator = ({
       <ChevronRightIcon
         data-slot="chevron"
         className={twJoin(
-          "-mx-0.5 size-5 transition-transform duration-200 ease-in-out sm:size-4",
+          "size-5 transition-transform duration-200 ease-in-out sm:size-4",
           values.isExpanded && "rotate-90",
         )}
       />

@@ -11,7 +11,7 @@ import {
 import { Text, type TextProps } from "react-aria-components/Text"
 import { twMerge } from "tailwind-merge"
 import { cx } from "@/lib/primitive"
-import { Checkbox } from "./checkbox"
+import { Checkbox, CheckboxField } from "./checkbox"
 
 const GridList = <T extends object>({ className, ...props }: GridListProps<T>) => (
   <GridListPrimitive
@@ -25,9 +25,9 @@ const GridList = <T extends object>({ className, ...props }: GridListProps<T>) =
 )
 
 const GridListSection = <T extends object>({
-  className,
-  ...props
-}: React.ComponentProps<typeof GridListSectionPrimitive<T>>) => {
+                                             className,
+                                             ...props
+                                           }: React.ComponentProps<typeof GridListSectionPrimitive<T>>) => {
   return (
     <GridListSectionPrimitive
       data-slot="grid-list-section"
@@ -38,9 +38,9 @@ const GridListSection = <T extends object>({
 }
 
 const GridListHeader = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof GridListHeaderPrimitive>) => {
+                          className,
+                          ...props
+                        }: React.ComponentProps<typeof GridListHeaderPrimitive>) => {
   return (
     <GridListHeaderPrimitive
       data-slot="grid-list-header"
@@ -106,7 +106,9 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
           )}
 
           {values.selectionMode === "multiple" && values.selectionBehavior === "toggle" && (
-            <Checkbox slot="selection" />
+            <CheckboxField className="gap-x-0" slot="selection">
+              <Checkbox className="col-span-1" />
+            </CheckboxField>
           )}
           {typeof children === "function" ? children(values) : children}
         </>

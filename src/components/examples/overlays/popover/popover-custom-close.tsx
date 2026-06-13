@@ -2,7 +2,7 @@
 
 import { Form } from "react-aria-components/Form"
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Dialog } from "@/components/ui/dialog"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
@@ -42,7 +42,9 @@ export default function PopoverCustomClose() {
                   <FieldError />
                 </TextField>
                 <div className="flex items-center justify-between">
-                  <Checkbox name="remember-me">Remember me</Checkbox>
+                  <CheckboxField name="remember-me">
+                    <Checkbox>Remember me</Checkbox>
+                  </CheckboxField>
                   <Link
                     className="text-base/6 text-primary-subtle-fg hover:underline sm:text-sm/6"
                     href="#"

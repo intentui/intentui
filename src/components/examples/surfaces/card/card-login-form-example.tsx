@@ -3,7 +3,7 @@
 import { Form } from "react-aria-components/Form"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Link } from "@/components/ui/link"
@@ -27,7 +27,9 @@ export default function CardLoginFormDemo() {
             <Input type="password" placeholder="Enter your password" />
           </TextField>
           <div className="flex items-center justify-between">
-            <Checkbox>Remember me</Checkbox>
+            <CheckboxField>
+              <Checkbox>Remember me</Checkbox>
+            </CheckboxField>
             <Link
               className="text-base/6 text-primary-subtle-fg hover:underline sm:text-sm/6"
               href="#"

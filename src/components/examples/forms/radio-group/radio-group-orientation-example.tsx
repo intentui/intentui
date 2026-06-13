@@ -1,17 +1,27 @@
 "use client"
 
 import { Label } from "@/components/ui/field"
-import { Radio, RadioGroup } from "@/components/ui/radio"
+import { Radio, RadioField, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupOrientationDemo() {
   return (
     <RadioGroup name="pm" orientation="horizontal">
       <Label>Payment method</Label>
-      <Radio value="credit-card">Credit Card</Radio>
-      <Radio value="paypal">PayPal</Radio>
-      <Radio value="apple-pay">Apple Pay</Radio>
-      <Radio value="google-pay">Google Pay</Radio>
-      <Radio value="bank-transfer">Bank Transfer</Radio>
+      <RadioField value="credit-card">
+        <Radio>Credit Card</Radio>
+      </RadioField>
+      <RadioField value="paypal">
+        <Radio>PayPal</Radio>
+      </RadioField>
+      <RadioField value="apple-pay">
+        <Radio>Apple Pay</Radio>
+      </RadioField>
+      <RadioField value="google-pay">
+        <Radio>Google Pay</Radio>
+      </RadioField>
+      <RadioField value="bank-transfer">
+        <Radio>Bank Transfer</Radio>
+      </RadioField>
     </RadioGroup>
   )
 }

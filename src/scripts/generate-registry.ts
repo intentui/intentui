@@ -166,7 +166,6 @@ const importSpecifiers = (code: string) => {
   const re = /(?:import|export)\s+(?:[^'"]*from\s*)?["']([^"']+)["']|import\(\s*["']([^"']+)["']\s*\)/g
   const set = new Set<string>()
   let m
-  // @ts-expect-error
   while ((m = re.exec(code))) set.add((m[1] || m[2]).trim())
   return [...set]
 }

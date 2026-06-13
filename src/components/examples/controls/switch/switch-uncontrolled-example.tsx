@@ -1,17 +1,13 @@
 "use client"
 
 import { Description } from "@/components/ui/field"
-import { Switch, SwitchLabel } from "@/components/ui/switch"
+import { Switch, SwitchField } from "@/components/ui/switch"
 
 export default function SwitchUncontrolledDemo() {
   return (
-    <Switch defaultSelected name="d">
-      {({ isSelected }) => (
-        <>
-          <SwitchLabel>Dark mode</SwitchLabel>
-          <Description>Dark mode is {isSelected ? "enabled" : "disabled"}.</Description>
-        </>
-      )}
-    </Switch>
+    <SwitchField defaultSelected name="d">
+      <Switch>Dark mode</Switch>
+      <Description>Toggle dark mode for this site.</Description>
+    </SwitchField>
   )
 }
