@@ -143,7 +143,7 @@ export default async function Page(props: DocPageProps) {
     <div className="flex w-full items-start">
       <JsonLd data={jsonLd} />
       {/* Center */}
-      <div className="w-full min-w-0 border-transparent border-x py-8 sm:py-16 lg:border-page">
+      <div className="w-full min-w-0 border-page py-8 sm:py-16 xl:border-x">
         <div className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
           {/* center */}
           <div className="mx-auto max-w-3xl sm:px-6">

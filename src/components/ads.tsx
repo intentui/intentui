@@ -9,10 +9,7 @@ export function Ads({ className }: { className?: string }) {
       <a
         target="_blank"
         href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=docs_intentui"
-        className={twMerge(
-          "not-prose block border-page border-t border-b bg-blue-600/20 sm:border-b-0",
-          className,
-        )}
+        className={twMerge("not-prose block border-page border-t bg-blue-600/20", className)}
         rel="noopener"
       >
         <Image

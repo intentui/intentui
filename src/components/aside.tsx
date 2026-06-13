@@ -37,7 +37,7 @@ export function Aside() {
     <div className="sticky h-screen w-full [--gap:--spacing(6)] sm:top-12 sm:w-64 sm:[--gap:--spacing(8)]">
       <ScrollArea scrollFade orientation="vertical">
         <div className="flex flex-col gap-y-(--gap) py-6">
-          <div className="px-2 sm:*:text-sm/7">
+          <ul className="px-2 sm:*:text-sm/7">
             <AsideLink href="/components">
               <PackageIcon />
               Components
@@ -77,21 +77,21 @@ export function Aside() {
               <ColorsIcon />
               Themes
             </AsideLink>
-          </div>
+          </ul>
           <div>
             <AsideHeader>{prologue?.section}</AsideHeader>
-            <div className="px-2">
+            <ul className="px-2">
               {prologue?.children?.map((item) => (
                 <AsideLink key={item.slug} href={item.slug}>
                   {item.title}
                 </AsideLink>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div>
             <AsideHeader>{gs?.section}</AsideHeader>
-            <div className="px-2">
+            <ul className="px-2">
               {sortedGsChildren.map((item) => (
                 <AsideLink key={item.slug} href={item.slug}>
                   {item.title}
@@ -102,23 +102,23 @@ export function Aside() {
               <AsideLink target="_blank" href="/llms.txt">
                 llms.txt
               </AsideLink>
-            </div>
+            </ul>
           </div>
           <div>
             <AsideHeader>{dm?.section}</AsideHeader>
-            <div className="px-2">
+            <ul className="px-2">
               {dm?.children?.map((item) => (
                 <AsideLink key={item.slug} href={item.slug}>
                   {item.title}
                 </AsideLink>
               ))}
-            </div>
+            </ul>
           </div>
           <div className="flex flex-col gap-y-(--gap)">
             {components?.children?.map((item) => (
               <div key={item.subsection}>
                 <AsideHeader>{item?.subsection}</AsideHeader>
-                <div className="px-2">
+                <ul className="px-2">
                   {item?.children?.map((item) => (
                     <AsideLink key={item.slug} href={item.slug}>
                       {item.title}
@@ -139,7 +139,7 @@ export function Aside() {
                       )}
                     </AsideLink>
                   ))}
-                </div>
+                </ul>
               </div>
             ))}
           </div>
@@ -168,37 +168,43 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
   }, [isActive])
 
   return (
-    <Link
-      {...props}
-      href={href}
-      ref={ref}
-      className={twMerge(
-        "group relative mb-0.5 flex items-center gap-x-2 rounded-lg px-2 py-1 text-base text-fg sm:text-sm/6",
-        "focus:outline-hidden",
-        "hover:bg-muted hover:text-secondary-fg",
-        "focus:bg-muted focus:text-secondary-fg",
-        "*:[svg]:size-5 *:[svg]:text-muted-fg hover:*:[svg]:text-fg",
-        isActive && [
-          "font-medium",
-          "bg-blue-100 text-blue-600 hover:bg-blue-100 hover:text-blue-600",
-          "dark:bg-blue-400/10 dark:text-blue-400 dark:hover:bg-blue-400/10 dark:hover:text-blue-400",
-        ],
+    <li className="relative">
+      {isActive && (
+        <span
+          aria-hidden
+          className="absolute top-1/2 -left-2 hidden h-6 w-0.5 -translate-y-1/2 rounded-full bg-primary md:block dark:bg-primary-subtle-fg"
+        />
       )}
-    >
-      <>
-        {props.children}
-
-        {props.target === "_blank" && (
-          <ArrowUpRightIcon
-            style={{
-              width: "16px",
-              height: "16px",
-            }}
-            className="-mr-1 ml-auto hidden text-muted-fg group-hover:block"
-          />
+      <Link
+        {...props}
+        href={href}
+        ref={ref}
+        className={twMerge(
+          "group relative mb-0.5 flex items-center gap-x-2 rounded-lg px-2 py-1 text-base text-fg/70 sm:text-sm/6",
+          "hover:text-fg focus:text-fg focus:outline-hidden",
+          "*:[svg]:size-5 *:[svg]:text-muted-fg hover:*:[svg]:text-fg",
+          isActive && [
+            "font-medium text-fg",
+            // "bg-blue-100 text-blue-600 hover:bg-blue-100 hover:text-blue-600",
+            // "dark:bg-blue-400/10 dark:text-blue-400 dark:hover:bg-blue-400/10 dark:hover:text-blue-400",
+          ],
         )}
-      </>
-    </Link>
+      >
+        <>
+          {props.children}
+
+          {props.target === "_blank" && (
+            <ArrowUpRightIcon
+              style={{
+                width: "16px",
+                height: "16px",
+              }}
+              className="-mr-1 ml-auto hidden text-muted-fg group-hover:block"
+            />
+          )}
+        </>
+      </Link>
+    </li>
   )
 }
 
