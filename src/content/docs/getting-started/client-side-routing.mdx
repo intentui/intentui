@@ -14,19 +14,17 @@ By default, links are rendered as an `<a>` element. To integrate with a framewor
 ```
 <Link
   {...props}
-  render={(domProps) =>
-    "href" in domProps ? <RouterLink {...domProps} /> : <span {...domProps} />
-  }
+  render={props => <YourRouterLink {...props} />}
 />
 ```
 
-The same pattern can also be used with `MenuItem`.
+And for `MenuItem`.
 
 ```
 <MenuItem
   {...props}
   render={(domProps) =>
-    "href" in domProps ? <RouterLink {...domProps} /> : <div {...domProps} />
+    "href" in domProps ? <YourRouterLink {...domProps} /> : <div {...domProps} />
   }
 />
 ```

@@ -25,7 +25,7 @@ async function build() {
 
     const firstChild = group.children[0]
 
-    // @ts-ignore
+    // @ts-expect-error
     if ("subsection" in firstChild) {
       for (const sub of group.children as SubSection[]) {
         lines.push(`\n### ${sub.subsection}`)

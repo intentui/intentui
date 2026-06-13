@@ -4,10 +4,8 @@
   "version": "3.0.0",
   "private": true,
   "scripts": {
-    "oxlint": "oxlint",
-    "oxlint:fix": "oxlint --fix",
     "first-time": "npm install && npm run build && next dev",
-    "lint": "biome check",
+    "lint": "oxlint",
     "build:stubs": "rm -rf public/stubs && node --import tsx src/scripts/build-stubs.ts",
     "build:llms": "node --import tsx src/scripts/generate-llms.ts",
     "build:search": "node --import tsx src/scripts/generate-search.ts",
@@ -20,15 +18,14 @@
     "gr": "node --import tsx src/scripts/generate-release-notes.ts",
     "dev": "next dev --turbopack",
     "build": "_FUMADOCS_MDX=1 next build --webpack",
-    "format": "biome lint --fix && biome check --write",
-    "format:unsafe": "biome check --unsafe --write",
+    "format": "oxlint --fix",
     "start": "next start",
     "preview": "npm run build && next start",
     "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
     "./**/*.{ts,tsx}": [
-      "biome lint --fix && biome check --write"
+      "oxlint --fix"
     ]
   },
   "dependencies": {
@@ -70,7 +67,6 @@
     "use-debounce": "^10.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.15",
     "@tailwindcss/postcss": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/culori": "^4.0.1",
