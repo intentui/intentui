@@ -79,7 +79,7 @@ export function ListComponents() {
             <GridList
               aria-label="Components"
               layout="grid"
-              className="grid grid-cols-1 gap-6 py-6 sm:grid-cols-2 sm:gap-px sm:bg-border/50 sm:py-0 lg:grid-cols-4"
+              className="grid grid-cols-1 gap-8 py-6 sm:grid-cols-2 sm:gap-px sm:bg-page sm:py-0 lg:grid-cols-4"
               renderEmptyState={() => (
                 <div className="flex items-center justify-center">
                   <Text>No results found. Try searching for something else!</Text>
@@ -93,17 +93,21 @@ export function ListComponents() {
                   <GridListItem
                     textValue={`${item.slug} ${item.title}`}
                     key={item.slug}
-                    className="group flex cursor-pointer flex-col outline-hidden hover:opacity-80 sm:bg-bg/60 sm:p-0"
+                    className="group flex cursor-pointer flex-col outline-hidden hover:opacity-80 sm:bg-bg/60"
                     href={item.slug}
                   >
-                    <Image
-                      width={708}
-                      className="mb-3 rounded-xl border-page ring ring-page sm:mb-0 sm:rounded-none sm:border-b sm:ring-0"
-                      height={480}
-                      src={`/images/thumbnails/${name}${suffix}.png`}
-                      alt={item.title}
-                    />
-                    <span className="font-medium text-sm sm:p-4">{item.title}</span>
+                    <div className="mb-3 lg:mb-0 lg:p-2">
+                      <Image
+                        width={708}
+                        className="rounded-lg border border-page shadow-xs"
+                        height={480}
+                        src={`/images/thumbnails/${name}${suffix}.png`}
+                        alt={item.title}
+                      />
+                    </div>
+                    <span className="border-page font-medium sm:p-4 sm:text-sm lg:border-t lg:bg-bg">
+                      {item.title}
+                    </span>
                   </GridListItem>
                 )
               })}

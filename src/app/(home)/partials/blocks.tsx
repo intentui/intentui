@@ -26,7 +26,7 @@ export function Blocks() {
         </PageContainer>
       </div>
       <PageContainer>
-        <div className="grid grid-cols-2 gap-px border-page border-x bg-border/50 *:bg-bg *:p-6 sm:*:min-h-40 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-px border-page border-x bg-page *:bg-bg *:p-6 sm:*:min-h-40 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Center>
               <ModalDemo />
@@ -63,7 +63,7 @@ export function Blocks() {
       </div>
       <PageContainer>
         <div className="border-page sm:border-x">
-          <div className="grid grid-cols-1 gap-px bg-border/50 *:bg-bg *:py-6 sm:*:p-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px bg-page *:bg-bg *:py-6 sm:*:p-6 md:grid-cols-2 lg:grid-cols-3">
             <div>
               <CheckboxGroupDescriptionDemo />
             </div>

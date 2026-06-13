@@ -21,7 +21,7 @@ export function Cta() {
         </PageContainer>
       </div>
       <PageContainer>
-        <div className="grid grid-cols-1 gap-px border-page border-x bg-border/50 *:flex *:flex-col *:gap-y-1 *:bg-bg *:p-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px border-page border-x bg-page *:flex *:flex-col *:gap-y-1 *:bg-bg *:p-6 sm:grid-cols-2 lg:grid-cols-4">
           <Link
             className="shadow-xs hover:bg-muted/50 hover:shadow-none"
             href="/docs/getting-started/installation"
