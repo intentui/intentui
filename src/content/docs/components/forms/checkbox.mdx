@@ -25,13 +25,13 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 ## Anatomy
 ```
-import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Description } from "@/components/ui/field"
 ```
 
 ```
-<Checkbox>
-  <CheckboxLabel>Remember me</CheckboxLabel>
+<CheckboxField>
+  <Checkbox>Remember me</CheckboxLabel>
   <Description>Keep me logged in on this device</Description>
 </Checkbox>
 ```
@@ -60,14 +60,6 @@ The checkbox is disabled.
 
 ## Component API
 
-### Checkbox
-
-The `Checkbox` component is used for a single selectable option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
 ### CheckboxGroup
 
 The `CheckboxGroup` component groups related checkbox options.
@@ -76,9 +68,17 @@ The `CheckboxGroup` component groups related checkbox options.
 | --- | --- | --- |
 | `className` | `string` | - |
 
-### CheckboxLabel
+### CheckboxField
 
-The `CheckboxLabel` component renders the checkbox label.
+The `CheckboxField` component renders the checkbox label.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### Checkbox
+
+The `Checkbox` component renders the checkbox label.
 
 | Prop | Type | Default |
 | --- | --- | --- |

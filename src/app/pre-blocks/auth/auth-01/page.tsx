@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Form } from "react-aria-components/Form"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Link } from "@/components/ui/link"
@@ -43,12 +43,12 @@ export default function Page() {
               <Input placeholder="Ssshtt, it's a secret" type="password" />
               <FieldError />
             </TextField>
-            <Checkbox>
-              <CheckboxLabel>Remember me</CheckboxLabel>
+            <CheckboxField>
+              <Checkbox>Remember me</Checkbox>
               <Description>
                 Keep me signed in on this device for faster access next time.
               </Description>
-            </Checkbox>
+            </CheckboxField>
           </Fieldset>
           <Button type="submit" className="mt-6 w-full">
             Sign in

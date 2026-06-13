@@ -1,11 +1,11 @@
 "use client"
 
-import { Switch } from "@/components/ui/switch"
+import { Switch, SwitchField } from "@/components/ui/switch"
 
 export default function SwitchDisabledDemo() {
   return (
-    <Switch name="d" isDisabled>
-      Dark Mode
-    </Switch>
+    <SwitchField name="d" isDisabled>
+      <Switch>Dark Mode</Switch>
+    </SwitchField>
   )
 }

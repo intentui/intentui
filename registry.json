@@ -2278,7 +2278,8 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive"
+        "http://localhost:3000/r/primitive",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -3310,7 +3311,8 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive"
+        "http://localhost:3000/r/primitive",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {
@@ -3568,7 +3570,8 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "http://localhost:3000/r/primitive"
+        "http://localhost:3000/r/primitive",
+        "http://localhost:3000/r/field"
       ],
       "files": [
         {

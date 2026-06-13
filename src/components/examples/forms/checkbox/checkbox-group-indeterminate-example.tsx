@@ -1,27 +1,27 @@
 "use client"
 
-import { Checkbox, CheckboxGroup, CheckboxLabel } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField, CheckboxGroup } from "@/components/ui/checkbox"
 import { Description } from "@/components/ui/field"
 
 export default function CheckboxGroupIndeterminateExample() {
   return (
     <CheckboxGroup aria-label="Settings" defaultValue={["encryption"]} className="ml-6" name="sets">
-      <Checkbox isIndeterminate value="encryption" isReadOnly>
-        <CheckboxLabel>Encryption</CheckboxLabel>
+      <CheckboxField value="encryption" isIndeterminate isReadOnly>
+        <Checkbox>Encryption</Checkbox>
         <Description>Enable encryption.</Description>
-      </Checkbox>
-      <Checkbox value="firewall">
-        <CheckboxLabel>Firewall</CheckboxLabel>
+      </CheckboxField>
+      <CheckboxField value="firewall">
+        <Checkbox>Firewall</Checkbox>
         <Description>Enable firewall protection.</Description>
-      </Checkbox>
-      <Checkbox value="backup">
-        <CheckboxLabel>Backup</CheckboxLabel>
+      </CheckboxField>
+      <CheckboxField value="backup">
+        <Checkbox>Backup</Checkbox>
         <Description>Enable automatic backups.</Description>
-      </Checkbox>
-      <Checkbox isIndeterminate value="anomalyDetection">
-        <CheckboxLabel>Anomaly Detection</CheckboxLabel>
+      </CheckboxField>
+      <CheckboxField value="anomalyDetection" isIndeterminate>
+        <Checkbox>Anomaly Detection</Checkbox>
         <Description>Enable anomaly detection.</Description>
-      </Checkbox>
+      </CheckboxField>
     </CheckboxGroup>
   )
 }

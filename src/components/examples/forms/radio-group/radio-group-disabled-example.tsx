@@ -1,17 +1,27 @@
 "use client"
 
 import { Label } from "@/components/ui/field"
-import { Radio, RadioGroup } from "@/components/ui/radio"
+import { Radio, RadioField, RadioGroup } from "@/components/ui/radio"
 
 export default function RadioGroupDisabledDemo() {
   return (
     <RadioGroup name="features" isDisabled>
       <Label>Features</Label>
-      <Radio value="fs">Font size: Small, Medium, Large</Radio>
-      <Radio value="dr">Display resolution: 1080p, 1440p, 4K</Radio>
-      <Radio value="ss">Sound settings: Mute, Low, Medium, High</Radio>
-      <Radio value="bi">Background image: Default, Custom</Radio>
-      <Radio value="ks">Keyboard shortcuts: Enabled, Disabled</Radio>
+      <RadioField value="fs">
+        <Radio>Font size: Small, Medium, Large</Radio>
+      </RadioField>
+      <RadioField value="dr">
+        <Radio>Display resolution: 1080p, 1440p, 4K</Radio>
+      </RadioField>
+      <RadioField value="ss">
+        <Radio>Sound settings: Mute, Low, Medium, High</Radio>
+      </RadioField>
+      <RadioField value="bi">
+        <Radio>Background image: Default, Custom</Radio>
+      </RadioField>
+      <RadioField value="ks">
+        <Radio>Keyboard shortcuts: Enabled, Disabled</Radio>
+      </RadioField>
     </RadioGroup>
   )
 }

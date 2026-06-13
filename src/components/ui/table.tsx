@@ -12,6 +12,7 @@ import type {
   TableHeaderProps as HeaderProps,
   RowProps,
   TableBodyProps,
+  TableFooterProps,
   TableProps as TablePrimitiveProps,
 } from "react-aria-components/Table"
 import {
@@ -30,7 +31,7 @@ import {
 import { twJoin, twMerge } from "tailwind-merge"
 import { CardDescription, CardTitle } from "@/components/ui/card"
 import { cx } from "@/lib/primitive"
-import { Checkbox } from "./checkbox"
+import { Checkbox, CheckboxField } from "./checkbox"
 
 interface TableProps extends Omit<TablePrimitiveProps, "className"> {
   allowResize?: boolean
@@ -57,14 +58,14 @@ const Root = (props: TableProps) => {
 }
 
 const Table = ({
-  allowResize,
-  className,
-  bleed = false,
-  grid = false,
-  striped = false,
-  ref,
-  ...props
-}: TableProps) => {
+                 allowResize,
+                 className,
+                 bleed = false,
+                 grid = false,
+                 striped = false,
+                 ref,
+                 ...props
+               }: TableProps) => {
   return (
     <TableContext.Provider value={{ allowResize, bleed, grid, striped }}>
       <div className="flow-root">
@@ -114,7 +115,7 @@ const TableBody = <T extends object>({ renderEmptyState, ...props }: TableBodyPr
           <div aria-hidden className="relative flex h-72 items-center justify-center md:h-100">
             <div
               aria-hidden
-              className="absolute top-1/2 m-auto grid size-15 -translate-y-1/2 place-content-center rounded-full border border-page md:size-20"
+              className="absolute top-1/2 m-auto grid size-15 -translate-y-1/2 place-content-center rounded-full border border-border/50 md:size-20"
             >
               <svg
                 aria-hidden
@@ -338,12 +339,12 @@ interface TableHeaderProps<T extends object> extends HeaderProps<T> {
 }
 
 const TableHeader = <T extends object>({
-  children,
-  ref,
-  columns,
-  className,
-  ...props
-}: TableHeaderProps<T>) => {
+                                         children,
+                                         ref,
+                                         columns,
+                                         className,
+                                         ...props
+                                       }: TableHeaderProps<T>) => {
   const { bleed } = useTableContext()
   const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions()
   return (
@@ -370,7 +371,11 @@ const TableHeader = <T extends object>({
             !bleed && "sm:last:pe-1 sm:first:ps-1",
           )}
         >
-          {selectionMode === "multiple" && <Checkbox slot="selection" />}
+          {selectionMode === "multiple" && (
+            <CheckboxField className="gap-x-0" slot="selection">
+              <Checkbox className="col-span-1" />
+            </CheckboxField>
+          )}
         </Column>
       )}
       <Collection items={columns}>{children}</Collection>
@@ -383,13 +388,13 @@ interface TableRowProps<T extends object> extends RowProps<T> {
 }
 
 const TableRow = <T extends object>({
-  children,
-  className,
-  columns,
-  id,
-  ref,
-  ...props
-}: TableRowProps<T>) => {
+                                      children,
+                                      className,
+                                      columns,
+                                      id,
+                                      ref,
+                                      ...props
+                                    }: TableRowProps<T>) => {
   const { selectionBehavior, allowsDragging } = useTableOptions()
   const { striped } = useTableContext()
   return (
@@ -414,15 +419,15 @@ const TableRow = <T extends object>({
           twMerge(
             "group relative cursor-default outline outline-transparent",
             isFocusVisible &&
-              "bg-primary/5 outline-primary ring-3 ring-ring/20 hover:bg-primary/10",
+            "bg-primary/5 outline-primary ring-3 ring-ring/20 hover:bg-primary/10",
             isDragging && "cursor-grabbing bg-primary/10 text-fg outline-primary",
             isSelected && "bg-(--table-selected-bg) text-fg hover:bg-(--table-selected-bg)/50",
             striped && "even:bg-muted",
             (props.href || props.onAction || selectionMode === "multiple") &&
-              "hover:bg-(--table-selected-bg) hover:text-fg",
+            "hover:bg-(--table-selected-bg) hover:text-fg",
             (props.href || props.onAction || selectionMode === "multiple") &&
-              isFocusVisibleWithin &&
-              "bg-(--table-selected-bg)/50 selected:bg-(--table-selected-bg)/50 text-fg",
+            isFocusVisibleWithin &&
+            "bg-(--table-selected-bg)/50 selected:bg-(--table-selected-bg)/50 text-fg",
             isDisabled && "opacity-50",
             className,
           ),
@@ -458,7 +463,9 @@ const TableRow = <T extends object>({
       )}
       {selectionBehavior === "toggle" && (
         <TableCell className="px-0">
-          <Checkbox slot="selection" />
+          <CheckboxField className="gap-x-0" slot="selection">
+            <Checkbox className="col-span-1" />
+          </CheckboxField>
         </TableCell>
       )}
       <Collection items={columns}>{children}</Collection>
@@ -521,7 +528,9 @@ const TableCell = ({ className, ref, ...props }: TableCellProps) => {
   )
 }
 
-const TableFooter = TableFooterPrimitive
+const TableFooter = <T extends object>({ className, ...props }: TableFooterProps<T>) => {
+  return <TableFooterPrimitive className={twMerge("**:font-semibold", className)} {...props} />
+}
 
 export type { TableColumnProps, TableProps, TableRowProps }
 export { Table, TableBody, TableCell, TableColumn, TableFooter, TableHeader, TableRow }

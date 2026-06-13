@@ -28,7 +28,7 @@ import {
 } from "@heroicons/react/24/solid"
 
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
 import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from "@/components/ui/toolbar"
 
@@ -74,7 +74,9 @@ export default function ToolbarDemo() {
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarSeparator />
-        <Checkbox>Spell Check</Checkbox>
+        <CheckboxField>
+          <Checkbox>Spell Check</Checkbox>
+        </CheckboxField>
         <ToolbarGroup className="ml-auto">
           <Menu>
             <Button aria-label="Other options" size="sm" intent="outline">

@@ -15,7 +15,7 @@ import { useState } from "react"
 import { Menu as MenuPrimitive } from "react-aria-components/Menu"
 import { Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxLabel } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Description, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { MenuItem, MenuLabel, MenuSection } from "@/components/ui/menu"
@@ -80,13 +80,13 @@ export default function SheetMenuDemo() {
                 <SelectItem>Public</SelectItem>
               </SelectContent>
             </Select>
-            <Checkbox>
-              <CheckboxLabel>Busy</CheckboxLabel>
+            <CheckboxField>
+              <Checkbox>Busy</Checkbox>
               <Description>
                 When others mention you, assign you, or request your review, GitHub will let them
                 know that you have limited availability.
               </Description>
-            </Checkbox>
+            </CheckboxField>
           </div>
         </ModalBody>
         <ModalFooter>

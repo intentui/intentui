@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge"
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"
 import { cx } from "@/lib/primitive"
-import { Checkbox } from "./checkbox"
+import { Checkbox, CheckboxField } from "./checkbox"
 
 const choiceBoxStyles = tv({
   base: "grid [--gutter:--spacing(4)]",
@@ -52,19 +52,18 @@ const ChoiceBoxContext = createContext<{ columns?: number; gap?: number; isReadO
 const useChoiceBoxContext = () => use(ChoiceBoxContext)
 
 interface ChoiceBoxProps<T extends object>
-  extends GridListProps<T>,
-    VariantProps<typeof choiceBoxStyles> {
+  extends GridListProps<T>, VariantProps<typeof choiceBoxStyles> {
   isReadOnly?: boolean
 }
 
 const ChoiceBox = <T extends object>({
-  columns = 1,
-  gap = 0,
-  className,
-  selectionMode = "single",
-  isReadOnly,
-  ...props
-}: ChoiceBoxProps<T>) => {
+                                       columns = 1,
+                                       gap = 0,
+                                       className,
+                                       selectionMode = "single",
+                                       isReadOnly,
+                                       ...props
+                                     }: ChoiceBoxProps<T>) => {
   return (
     <ChoiceBoxContext value={{ columns, gap, isReadOnly }}>
       <GridList
@@ -132,12 +131,12 @@ interface ChoiceBoxItemProps extends GridListItemProps, VariantProps<typeof choi
 }
 
 const ChoiceBoxItem = ({
-  className,
-  label,
-  description,
-  children,
-  ...props
-}: ChoiceBoxItemProps) => {
+                         className,
+                         label,
+                         description,
+                         children,
+                         ...props
+                       }: ChoiceBoxItemProps) => {
   const textValue = typeof children === "string" ? children : undefined
   const { columns, isReadOnly } = useChoiceBoxContext()
   return (
@@ -179,10 +178,12 @@ const ChoiceBoxItem = ({
           <>
             {content}
             {selectionMode === "multiple" && (
-              <Checkbox
-                className="col-start-2 self-start group-has-[svg:not([data-slot=check-indicator])]:col-start-3 group-has-data-[slot=avatar]:col-start-3"
+              <CheckboxField
                 slot="selection"
-              />
+                className="gap-x-0 col-start-2 self-start group-has-[svg:not([data-slot=check-indicator])]:col-start-3 group-has-data-[slot=avatar]:col-start-3"
+              >
+                <Checkbox className="col-span-1" />
+              </CheckboxField>
             )}
           </>
         )

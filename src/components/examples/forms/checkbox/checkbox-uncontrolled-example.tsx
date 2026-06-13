@@ -1,11 +1,11 @@
 "use client"
 
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 
 export default function CheckboxUncontrolledDemo() {
   return (
-    <Checkbox defaultSelected value="updates" name="ru">
-      Receive Updates
-    </Checkbox>
+    <CheckboxField defaultSelected value="updates" name="ru">
+      <Checkbox>Receive Updates</Checkbox>
+    </CheckboxField>
   )
 }

@@ -25,29 +25,29 @@ Use this approach if you prefer to install and wire up the component yourself in
 ## Anatomy
 ```
 import { Description } from "@/components/ui/field"
-import { Switch, SwitchLabel } from "@/components/ui/switch"
+import { SwitchField, Switch } from "@/components/ui/switch"
 ```
 
 ```
 <>
-  <Switch value="profileVisible">
-    <SwitchLabel>Public profile</SwitchLabel>
+  <SwitchField value="profileVisible">
+    <Switch>Public profile</Switch>
     <Description>Allow others to see your profile.</Description>
   </Switch>
-  <Switch value="searchEngineIndexing">
-    <SwitchLabel>Search engine indexing</SwitchLabel>
+  <SwitchField value="searchEngineIndexing">
+    <Switch>Search engine indexing</Switch>
     <Description>
       Allow search engines to index your profile.
     </Description>
   </Switch>
   <Switch defaultSelected value="twoFactor">
-    <SwitchLabel>Two-factor authentication</SwitchLabel>
+    <Switch>Two-factor authentication</Switch>
     <Description>
       Add an extra layer of security to your account.
     </Description>
   </Switch>
-  <Switch value="activityStatus">
-    <SwitchLabel>Show activity status</SwitchLabel>
+  <SwitchField value="activityStatus">
+    <Switch>Show activity status</Switch>
     <Description>Let others see when you're online.</Description>
   </Switch>
 </>
@@ -75,17 +75,17 @@ A disabled switch cannot be toggled and is non-interactive.
 
 ## Component API
 
-### Switch
+### SwitchField
 
-The `Switch` component toggles a setting on or off.
+The `SwitchField` component toggles a setting on or off.
 
 | Prop | Type | Default |
 | --- | --- | --- |
 | `className` | `string` | - |
 
-### SwitchLabel
+### Switch
 
-The `SwitchLabel` component renders the switch label.
+The `Switch` component renders the switch label.
 
 | Prop | Type | Default |
 | --- | --- | --- |
