@@ -51,7 +51,6 @@ const find = (content: string): { tag: string; duplicateClasses: string[] }[] =>
     }
 
     if (tagDuplicates.length > 0) {
-      // @ts-expect-error
       duplicates.push({ tag, duplicateClasses: tagDuplicates })
     }
 
