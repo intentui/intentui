@@ -1,5 +1,17 @@
 [
   {
+    "name": "Checkbox",
+    "component": "checkbox.tsx",
+    "url": "/checkbox",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 0,
+    "deletions": 10,
+    "date": "2026-06-14"
+  },
+  {
     "name": "Auth 01",
     "component": "auth-01/page.tsx",
     "url": null,
