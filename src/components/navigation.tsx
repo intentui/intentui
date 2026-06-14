@@ -10,7 +10,6 @@ import { GithubLink } from "@/components/github-link"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
 import { ResponsiveNavigation } from "@/components/responsive-navigation"
-import { SponsorButton } from "@/components/sponsor-button"
 import { Badge } from "@/components/ui/badge"
 import { Button, buttonStyles } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
@@ -20,7 +19,6 @@ import { useMediaQuery } from "@/hooks/use-media-query"
 import { CommandPalette } from "./command-palette"
 import { BrandDiscordIcon } from "./icons/brand-discord-icon"
 import { NavLink } from "./nav-item"
-import { NoLimitButton } from "./no-limit-button"
 import { ThemeSwitcher } from "./theme-switcher"
 
 export function Navigation() {
@@ -121,8 +119,6 @@ export function Navigation() {
                   </MenuItem>
                 </MenuContent>
               </Menu>
-              <SponsorButton />
-              <NoLimitButton />
             </div>
           </div>
         </PageContainer>
