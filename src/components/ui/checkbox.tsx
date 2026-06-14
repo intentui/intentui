@@ -97,13 +97,3 @@ export function Checkbox({ className, ...props }: CheckboxButtonProps) {
     </CheckboxButton>
   )
 }
-
-export function CheckboxLabel({ className, ...props }: CheckboxButtonProps) {
-  return (
-    <CheckboxButton
-      className={cx("text-base/6 sm:text-sm/6", className)}
-      data-slot="control-label"
-      {...props}
-    />
-  )
-}
