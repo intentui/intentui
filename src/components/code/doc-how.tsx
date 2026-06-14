@@ -15,13 +15,11 @@ const registry = generated as Record<string, RegistryItem>
 
 type HowProps = {
   toUse: string
-  copyButton?: boolean
   minW60?: boolean
   description?: string
   isCenter?: boolean
   className?: string
   withNoPadding?: boolean
-  src?: string
   readMore?: string
 }
 
@@ -33,8 +31,6 @@ export const DocHow = ({
   minW60 = false,
   isCenter = true,
   withNoPadding = false,
-  copyButton: _copyButton = true,
-  src: _src,
   ...props
 }: HowProps) => {
   const [currentTab, setCurrentTab] = useState<"tab_preview" | "tab_code">("tab_preview")
