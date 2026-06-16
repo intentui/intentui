@@ -5,7 +5,6 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { BrandLogoLink } from "@/components/brand-logo-link"
-import { Discount } from "@/components/discount"
 import { GithubLink } from "@/components/github-link"
 import { BrandXIcon } from "@/components/icons/brand-x-icon"
 import { PageContainer } from "@/components/page-container"
@@ -27,7 +26,6 @@ export function Navigation() {
   const isDesktop = useMediaQuery("(min-width: 1024px)")
   return (
     <>
-      <Discount />
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden border-page border-b bg-navbar/50 backdrop-blur-3xl lg:block">
         <PageContainer>

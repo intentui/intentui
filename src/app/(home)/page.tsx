@@ -3,7 +3,6 @@ import { Components } from "@/app/(home)/partials/components"
 import { Cta } from "@/app/(home)/partials/cta"
 import { DesignIntentui } from "@/app/(home)/partials/design-intentui"
 import { StarterKit } from "@/app/(home)/partials/starter-kit"
-import { Discount } from "@/components/discount"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 import { PageContainer } from "@/components/page-container"
@@ -33,7 +32,6 @@ export default function Page() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden">
       <div className="relative isolate overflow-hidden border-page border-b">
-        <Discount />
         <Navigation />
         <Hero />
       </div>
