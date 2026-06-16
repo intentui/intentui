@@ -1,5 +1,29 @@
 [
   {
+    "name": "Checkbox description example",
+    "component": "checkbox-description-example.tsx",
+    "url": "/checkbox",
+    "type": "example",
+    "category": "forms",
+    "kind": "new",
+    "description": null,
+    "additions": 6,
+    "deletions": 8,
+    "date": "2026-06-16"
+  },
+  {
+    "name": "Checkbox invalid example",
+    "component": "checkbox-invalid-example.tsx",
+    "url": "/checkbox",
+    "type": "example",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 14,
+    "deletions": 5,
+    "date": "2026-06-16"
+  },
+  {
     "name": "Checkbox",
     "component": "checkbox.tsx",
     "url": "/checkbox",

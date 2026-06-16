@@ -8644,6 +8644,28 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "checkbox-description-example",
+      "title": "Checkbox Description",
+      "description": "checkbox-description-example",
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field"
+      ],
+      "files": [
+        {
+          "path": "src/components/examples/forms/checkbox/checkbox-description-example.tsx",
+          "type": "registry:page",
+          "target": "app/checkbox-description-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "checkbox-disabled-example",
       "title": "Checkbox Disabled",
       "description": "checkbox-disabled-example",
@@ -8838,8 +8860,13 @@
       "name": "checkbox-invalid-example",
       "title": "Checkbox Invalid",
       "description": "checkbox-invalid-example",
+      "dependencies": [
+        "react-aria-components"
+      ],
       "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
+        "http://localhost:3000/r/checkbox",
+        "http://localhost:3000/r/field",
+        "http://localhost:3000/r/button"
       ],
       "files": [
         {
