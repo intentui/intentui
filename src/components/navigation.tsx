@@ -57,6 +57,9 @@ export function Navigation() {
               <NavLink isNextLink href="/colors">
                 Colors
               </NavLink>
+              <NavLink isNextLink href="/sponsor">
+                Sponsor
+              </NavLink>
 
               <NavLink target="_blank" href="https://design.intentui.com/themes">
                 Themes
