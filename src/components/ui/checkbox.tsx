@@ -22,7 +22,7 @@ export function CheckboxGroup({ className, ...props }: CheckboxGroupProps) {
       {...props}
       data-slot="control"
       className={cx(
-        "space-y-3 has-[[slot=description]]:space-y-6 has-[[slot=description]]:**:data-[slot=label]:font-medium **:[[slot=description]]:block",
+        "space-y-3 has-[[slot=description]]:not-has-[[slot=errorMessage]]:space-y-6 has-[[slot=description]]:**:data-[slot=label]:font-medium **:[[slot=description]]:block",
         className,
       )}
     />
@@ -37,6 +37,7 @@ export function CheckboxField({ className, ...props }: CheckboxFieldProps) {
       className={cx(
         "grid grid-cols-[1.125rem_1fr] gap-x-3 gap-y-1 sm:grid-cols-[1rem_1fr]",
         "*:data-[slot=control]:col-start-1 *:data-[slot=control]:row-start-1 *:data-[slot=control]:mt-0.75 sm:*:data-[slot=control]:mt-1",
+        "*:[[slot=errorMessage]]:col-span-full",
         "**:data-[slot=control-label]:col-start-2 **:data-[slot=control-label]:row-start-1",
         "*:[[slot=description]]:col-start-2 *:[[slot=description]]:row-start-2",
         "has-[[slot=description]]:**:data-[slot=control-label]:font-medium",
@@ -70,7 +71,7 @@ export function Checkbox({ className, ...props }: CheckboxButtonProps) {
               <span
                 data-slot="indicator"
                 className={twMerge([
-                  "col-start-1 row-start-1 relative inset-ring inset-ring-input isolate flex shrink-0 items-center justify-center rounded bg-(--control-bg,transparent) text-bg transition group-hover:inset-ring-muted-fg/30",
+                  "col-start-1 row-start-1 relative inset-ring inset-ring-input isolate flex shrink-0 items-center justify-center rounded bg-(--control-bg,transparent) text-bg transition group-hover:inset-ring-muted-fg/30 group-focus-visible:inset-ring-ring",
                   "size-4.5 *:data-[slot=check-indicator]:size-4 sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
                   "in-disabled:bg-muted",
                   (isSelected || isIndeterminate) && [
