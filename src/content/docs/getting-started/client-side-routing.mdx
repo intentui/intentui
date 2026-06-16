@@ -141,7 +141,7 @@ When using TanStack Router, wrap your link component with `createLink`. This all
 ```
 import { createLink } from "@tanstack/react-router"
 
-const Link = ({ className, ref, ...props }: LinkProps) => {
+const InternalLink = ({ className, ref, ...props }: LinkProps) => {
   return (
     <LinkPrimitive
       ref={ref}
@@ -167,7 +167,7 @@ If the link is also used through `MenuItem`, update `MenuItem` in `ui/menu.tsx` 
 ```
 import { createLink } from "@tanstack/react-router"
 
-const MenuItem = ({
+const InternalMenuItem = ({
   className,
   intent,
   children,
