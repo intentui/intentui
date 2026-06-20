@@ -6,13 +6,10 @@ author: irsyadadl
 ---
 
 ## Checkbox Icon
-
 The checkbox icon now uses `size-3.5` instead of `size-4`, and includes a new `data-slot="checkbox-indicator"` attribute to clearly identify the indicator element.
 
 ## Choicebox Revamp
-
 Previously, you might have defined your items like this:
-
 ```tsx
 <Choicebox.Item title="Basic" description="Just the essentials to get started." />
 ```
@@ -43,7 +40,6 @@ You can still use `label` and `description` directly like before. But with this 
   <Choicebox.Description>{item.description}</Choicebox.Description>
 </Choicebox.Item>
 ```
-
 Another design improvement is that Choicebox now uses `grid-cols-subgrid` to ensure content alignment when `columns={1}` is set.
 
 ## Dropdown Description
@@ -116,13 +112,11 @@ with a more customizable structure using `DropdownLabel` and `DropdownDescriptio
 This new approach makes it easier to add icons, avatars, or any other custom content directly inside your dropdown items.
 
 ## Refactor Table
-
 The table component has been significantly refactored and now supports a new `bleed` prop, which is `false` by default. Check out an example in [Sidebar 15](/pre-blocks/sidebar/sidebar-15), and as always, refer to the table documentation [here](/docs/components/collections/table).
 
-## Small change to sidebar
 
+## Small change to sidebar
 When your table has a large number of columns, the layout usually breaks. But now, you can add as many columns as you want and it’ll still look great. [Sidebar 15](/pre-blocks/sidebar/sidebar-15).
 
 ## Navbar
-
 The intent value `floating` is now renamed to `float` to stay consistent with other values.

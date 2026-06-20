@@ -1,20 +1,17 @@
 ---
-title: 'Upgrade Guide'
-description: 'This guide walks you through a seamless upgrade from Intent UI v2 to Intent UI v3, covering key changes, migration steps, and common pitfalls to avoid.'
+title: "Upgrade Guide"
+description: "This guide walks you through a seamless upgrade from Intent UI v2 to Intent UI v3, covering key changes, migration steps, and common pitfalls to avoid."
 order: 2
 published: true
 ---
 
 ## 2026 Upgrade Guide
-
 There's nothing to upgrade for 2026. Enjoy using Intent UI! If you're looking for the latest features, check out the [2026 Release Notes](/docs/prologue/release-notes).
 
 ## 2025 Upgrade Guide
-
 Not sure what's new or what has changed? Don’t worry! You can find all the updates in [Release v3](/blog/release-v3).
 
 ## Upgrade steps
-
 - Change any of `square-petite`, `extra-small`, `small`, `medium`, `large` to `xs`, `sm`, `md`, `lg`, and `sq-[xs, sm, md, lg]` in the `size` prop.
 - Remove the `shape` prop from `Button`, `Badge`, `Tag`, and `Toggle`. Use the `isCircle` prop instead.
 - Remove `focusRing` and `focusStyles` from `primitive.ts`—they are no longer used.

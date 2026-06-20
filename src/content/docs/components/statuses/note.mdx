@@ -10,18 +10,15 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-
-<InstallCommand command="npx shadcn@latest add @intentui/note" />
+<InstallCommand command="npx shadcn@latest add @intentui/note"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
-<SourceCode toShow="note" />
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<SourceCode toShow='note'/>
 
 ## Anatomy
-
 ```
 import { Note } from "@/components/ui/note"
 ```
@@ -39,17 +36,15 @@ import { Note } from "@/components/ui/note"
 ## Examples
 
 ### Intent
-
 By default, the note is displayed with a primary intent. You can change the intent by passing the `intent` prop. This example demonstrates different intents.
-
 <How toUse="statuses/note/note-intent-example" />
 
 ## Component API
 
 The `Note` component highlights contextual information.
 
-| Prop        | Type                                                        | Default   |
-| ----------- | ----------------------------------------------------------- | --------- |
-| `className` | `string`                                                    | -         |
-| `indicator` | `boolean`                                                   | `true`    |
-| `intent`    | `"default" \| "info" \| "warning" \| "danger" \| "success"` | `default` |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `indicator` | `boolean` | `true` |
+| `intent` | `"default" \| "info" \| "warning" \| "danger" \| "success"` | `default` |

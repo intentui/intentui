@@ -1,3 +1,8 @@
 {
-  "pages": ["chart", "area-chart", "bar-chart", "pie-chart"]
+  "pages": [
+    "chart",
+    "area-chart",
+    "bar-chart",
+    "pie-chart"
+  ]
 }

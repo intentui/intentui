@@ -1,9 +1,9 @@
 ---
-title: 'Range Calendar'
+title: "Range Calendar"
 description: A dual-date selection component that allows users to pick a date range, commonly used for booking and scheduling. It supports selecting start and end dates.
 order: 2
 published: true
-references: ['https://react-aria.adobe.com/RangeCalendar#api']
+references: ["https://react-aria.adobe.com/RangeCalendar#api"]
 ---
 
 <How toUse="date-and-time/calendar/range-calendar-example" />
@@ -11,34 +11,28 @@ references: ['https://react-aria.adobe.com/RangeCalendar#api']
 ## Installation
 
 Install the component via the CLI in one command.
-
-<InstallCommand command="npx shadcn@latest add @intentui/range-calendar" />
+<InstallCommand command="npx shadcn@latest add @intentui/range-calendar"/>
 
 ## Composed components
-
-<Composed components={['button']} />
+<Composed components={['button']}/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
-
-<SourceCode toShow="range-calendar" />
+<SourceCode toShow='range-calendar'/>
 
 ## Examples
 
 ### Controlled
-
 The range calender can be controlled by passing the `value` prop.
-
 <How toUse="date-and-time/calendar/range-calendar-controlled-example" />
 
 ### Uncontrolled
-
 The range calendar can be uncontrolled by passing the `defaultValue` prop.
-
 <How toUse="date-and-time/calendar/range-calendar-uncontrolled-example" />
+
 
 You can see the calendar in action within the [Date Picker](/docs/components/date-and-time/date-picker) and [Date Range Picker](/docs/components/date-and-time/date-range-picker) documentation.
 
@@ -48,9 +42,9 @@ You can see the calendar in action within the [Date Picker](/docs/components/dat
 
 The `RangeCalendar` component lets users select a date range.
 
-| Prop              | Type                                       | Default         |
-| ----------------- | ------------------------------------------ | --------------- |
-| `className`       | `string`                                   | -               |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 | `visibleDuration` | `RangeCalendarProps<T>["visibleDuration"]` | `{ months: 1 }` |
 
 See the [React Aria](https://react-aria.adobe.com/RangeCalendar#api) for the full API reference.

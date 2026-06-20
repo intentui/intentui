@@ -1,9 +1,9 @@
 ---
-title: 'Color Wheel'
+title: "Color Wheel"
 description: A circular color selection tool that visualizes the full color spectrum for intuitive and precise color picking, supporting controlled values and disabled states.
 order: 7
 published: true
-references: ['https://react-aria.adobe.com/ColorWheel#api']
+references: ["https://react-aria.adobe.com/ColorWheel#api"]
 ---
 
 <How toUse="colors/color-wheel/color-wheel-example" />
@@ -11,22 +11,18 @@ references: ['https://react-aria.adobe.com/ColorWheel#api']
 ## Installation
 
 Install the component via the CLI in one command.
-
-<InstallCommand command="npx shadcn@latest add @intentui/color-wheel" />
+<InstallCommand command="npx shadcn@latest add @intentui/color-wheel"/>
 
 ## Composed components
-
-<Composed components={['color-thumb']} />
+<Composed components={['color-thumb']}/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-
-<InstallCommand command="npm i react-aria-components" />
-<SourceCode toShow="color-wheel" />
+<InstallCommand command="npm i react-aria-components"/>
+<SourceCode toShow='color-wheel'/>
 
 ## Anatomy
-
 ```
 import { ColorWheel } from "@/components/ui/color-wheel"
 <ColorWheel aria-label="Background color" />
@@ -35,15 +31,11 @@ import { ColorWheel } from "@/components/ui/color-wheel"
 ## Examples
 
 ### Controlled
-
 Manage the color wheel in a controlled manner, adjusting the color value as needed.
-
 <How toUse="colors/color-wheel/color-wheel-controlled-example" />
 
 ### Disabled
-
 Disable the color wheel to prevent interaction.
-
 <How toUse="colors/color-wheel/color-wheel-disabled-example" />
 
 ## Component API
@@ -52,8 +44,8 @@ Disable the color wheel to prevent interaction.
 
 The `ColorWheel` component renders a circular hue selector.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 See the [React Aria](https://react-aria.adobe.com/ColorWheel#api) for the full API reference.

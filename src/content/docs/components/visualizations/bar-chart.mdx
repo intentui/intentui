@@ -1,9 +1,9 @@
 ---
-title: 'Bar Chart'
+title: "Bar Chart"
 description: Bar charts are commonly used to compare categorical data by representing each category with bars of varying lengths. They support stacking and formatting.
 order: 3
 published: true
-references: ['https://recharts.org/en-US/api/BarChart']
+references: ["https://recharts.org/en-US/api/BarChart"]
 ---
 
 <How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-example" />
@@ -12,17 +12,15 @@ references: ['https://recharts.org/en-US/api/BarChart']
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/bar-chart" />
+<InstallCommand command="npx shadcn@latest add @intentui/bar-chart"/>
 
 ## Composed components
-
-<Composed components={['chart']} />
+<Composed components={['chart']}/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-
-<InstallCommand command="npm i recharts react-aria-components" />
+<InstallCommand command="npm i recharts react-aria-components"/>
 
 <SourceCode toShow={'bar-chart'} />
 
@@ -34,45 +32,28 @@ Stacked bar charts let you compare parts of a whole across categories. Each bar 
 
 <How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-stacked-example" />
 
+
 ### Custom format
 
 Custom format bar charts let you style the appearance, including bar radius, spacing, and color, for visual alignment with your product.
 
-<How
-  isCenter={false}
-  withNoPadding
-  toUse="visualizations/bar-chart/bar-chart-custom-format-example"
-/>
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-custom-format-example" />
 
 ### Custom tooltip
 
 Custom tooltips let you enrich the bar hover experience with icons, values, and additional context. Ideal for readable data at a glance.
 
-<How
-  isCenter={false}
-  withNoPadding
-  toUse="visualizations/bar-chart/bar-chart-custom-tooltip-example"
-/>
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-custom-tooltip-example" />
 
 ### Custom legend
 
 Custom legends help identify bar categories with icons, colors, or labels tailored to your dataset.
 
-<How
-  isCenter={false}
-  withNoPadding
-  toUse="visualizations/bar-chart/bar-chart-custom-legend-example"
-/>
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-custom-legend-example" />
 
 ### Custom colors
-
 Custom colors allow you to set specific colors for each bar, enhancing visual distinction and brand alignment.
-
-<How
-  isCenter={false}
-  withNoPadding
-  toUse="visualizations/bar-chart/bar-chart-custom-colors-example"
-/>
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-custom-colors-example" />
 
 ### Controlled
 
@@ -84,35 +65,35 @@ Controlled bar charts let you dynamically manage state. You can filter datasets,
 
 The `BarChart` component renders categorical data with vertical or horizontal bars.
 
-| Prop                    | Type                                                                      | Default                       |
-| ----------------------- | ------------------------------------------------------------------------- | ----------------------------- |
-| `barCategoryGap`        | `number`                                                                  | `5`                           |
-| `barGap`                | `number`                                                                  | -                             |
-| `barProps`              | `Partial<React.ComponentProps<typeof Bar>>`                               | -                             |
-| `barRadius`             | `number`                                                                  | -                             |
-| `barSize`               | `number`                                                                  | -                             |
-| `cartesianGridProps`    | `CartesianGridProps`                                                      | -                             |
-| `chartProps`            | `Omit<ComponentProps<typeof BarChartPrimitive>, "data" \| "stackOffset">` | -                             |
-| `children`              | `React.ReactNode`                                                         | -                             |
-| `className`             | `string`                                                                  | -                             |
-| `colors`                | `readonly (ChartColorKeys \| string)[]`                                   | `DEFAULT_COLORS`              |
-| `config`                | `ChartConfig`                                                             | -                             |
-| `containerHeight`       | `number`                                                                  | `370 desktop / 200 mobile`    |
-| `data`                  | `Record<string, any>[]`                                                   | `[]`                          |
-| `dataKey`               | `string`                                                                  | -                             |
-| `displayEdgeLabelsOnly` | `boolean`                                                                 | `false`                       |
-| `hideGridLines`         | `boolean`                                                                 | `false`                       |
-| `hideXAxis`             | `boolean`                                                                 | `false`                       |
-| `hideYAxis`             | `boolean`                                                                 | `false`                       |
-| `intervalType`          | `IntervalType`                                                            | `equidistantPreserveStart`    |
-| `layout`                | `ChartLayout`                                                             | `horizontal`                  |
-| `legend`                | `LegendContentType \| boolean`                                            | `true`                        |
-| `legendProps`           | `Omit<ComponentProps<typeof LegendPrimitive>, "content" \| "ref">`        | -                             |
-| `tooltip`               | `TooltipContentType<ValueType, NameType> \| boolean`                      | `true`                        |
-| `tooltipProps`          | `BaseChartProps["tooltipProps"]`                                          | -                             |
-| `type`                  | `ChartType`                                                               | `default`                     |
-| `valueFormatter`        | `(value: number) => string`                                               | `(value) => value.toString()` |
-| `xAxisProps`            | `XAxisPropsPrimitive`                                                     | -                             |
-| `yAxisProps`            | `YAxisPrimitiveProps`                                                     | -                             |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `barCategoryGap` | `number` | `5` |
+| `barGap` | `number` | - |
+| `barProps` | `Partial<React.ComponentProps<typeof Bar>>` | - |
+| `barRadius` | `number` | - |
+| `barSize` | `number` | - |
+| `cartesianGridProps` | `CartesianGridProps` | - |
+| `chartProps` | `Omit<ComponentProps<typeof BarChartPrimitive>, "data" \| "stackOffset">` | - |
+| `children` | `React.ReactNode` | - |
+| `className` | `string` | - |
+| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
+| `config` | `ChartConfig` | - |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | - |
+| `displayEdgeLabelsOnly` | `boolean` | `false` |
+| `hideGridLines` | `boolean` | `false` |
+| `hideXAxis` | `boolean` | `false` |
+| `hideYAxis` | `boolean` | `false` |
+| `intervalType` | `IntervalType` | `equidistantPreserveStart` |
+| `layout` | `ChartLayout` | `horizontal` |
+| `legend` | `LegendContentType \| boolean` | `true` |
+| `legendProps` | `Omit<ComponentProps<typeof LegendPrimitive>, "content" \| "ref">` | - |
+| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
+| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
+| `type` | `ChartType` | `default` |
+| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
+| `xAxisProps` | `XAxisPropsPrimitive` | - |
+| `yAxisProps` | `YAxisPrimitiveProps` | - |
 
 See the [Recharts](https://recharts.org/en-US/api/BarChart) for the full API reference.
