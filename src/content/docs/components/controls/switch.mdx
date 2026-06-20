@@ -1,9 +1,9 @@
 ---
-title: 'Switch'
+title: "Switch"
 description: A toggle component that allows users to enable or disable a setting with a smooth transition effect. It provides clear visual feedback for on/off states.
 order: 2
 published: true
-references: ['https://react-aria.adobe.com/Switch#api']
+references: ["https://react-aria.adobe.com/Switch#api"]
 ---
 
 <How toUse="controls/switch/switch-example" />
@@ -11,23 +11,18 @@ references: ['https://react-aria.adobe.com/Switch#api']
 ## Installation
 
 Install the component via the CLI in one command.
-
-<InstallCommand command="npx shadcn@latest add @intentui/switch" />
+<InstallCommand command="npx shadcn@latest add @intentui/switch"/>
 
 ## Composed components
-
-<Composed components={['field']} />
+<Composed components={['field']}/>
 
 ## Manual installation
-
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components tailwind-merge"/>
 
-<InstallCommand command="npm i react-aria-components tailwind-merge" />
-
-<SourceCode toShow="switch" />
+<SourceCode toShow='switch'/>
 
 ## Anatomy
-
 ```
 import { Description } from "@/components/ui/field"
 import { SwitchField, Switch } from "@/components/ui/switch"
@@ -48,30 +43,24 @@ import { SwitchField, Switch } from "@/components/ui/switch"
 </>
 ```
 
+
 ## Examples
 
 ### Description
-
 You can add a description to the switch by passing the `description` prop or using the `Description` component.
-
 <How toUse="controls/switch/switch-description-example" />
 
+
 ### Controlled
-
 You can manage the switch's state by setting the `isSelected` prop.
-
 <How toUse="controls/switch/switch-controlled-example" />
 
 ### Uncontrolled
-
 You can also use the uncontrolled version of the switch.
-
 <How toUse="controls/switch/switch-uncontrolled-example" />
 
 ### Disabled
-
 A disabled switch cannot be toggled and is non-interactive.
-
 <How toUse="controls/switch/switch-disabled-example" />
 
 ## Component API
@@ -80,16 +69,16 @@ A disabled switch cannot be toggled and is non-interactive.
 
 The `SwitchField` component toggles a setting on or off.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### Switch
 
 The `Switch` component renders the switch label.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 See the [React Aria](https://react-aria.adobe.com/Switch#api) for the full API reference.

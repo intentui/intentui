@@ -1,9 +1,9 @@
 ---
-title: 'Input'
-description: 'The Input component provides a consistent, accessible, customizable way to capture user data across forms, with labels, validation, and seamless UI integration.'
+title: "Input"
+description: "The Input component provides a consistent, accessible, customizable way to capture user data across forms, with labels, validation, and seamless UI integration."
 order: 2
 published: true
-references: ['https://react-aria.adobe.com/TextField#api']
+references: ["https://react-aria.adobe.com/TextField#api"]
 ---
 
 <How minW60 toUse="forms/input/input-basic-example" />
@@ -11,19 +11,16 @@ references: ['https://react-aria.adobe.com/TextField#api']
 ## Installation
 
 Install the component via the CLI in one command.
-
-<InstallCommand command="npx shadcn@latest add @intentui/input" />
+<InstallCommand command="npx shadcn@latest add @intentui/input"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components"/>
 
-<InstallCommand command="npm i react-aria-components" />
-
-<SourceCode toShow="input" />
+<SourceCode toShow='input'/>
 
 ## Anatomy
-
 ```
 import { Input } from "@/components/ui/input";
 
@@ -33,19 +30,16 @@ import { Input } from "@/components/ui/input";
 ## Examples
 
 ### Input group
-
 Sometimes you may want to add a prefix or suffix to an input, and the `InputGroup` makes this easy. If you place an icon inside the group, it works automatically. However, when using a Text component, you need to set the gutter depending on whether the text is on the left or the right. This step is important because otherwise the input will have incorrect padding and appear misaligned.
 
 <How minW60 toUse="forms/input/input-group-example" />
 
 ### Label and description
-
 Improve the usability of your input fields by adding labels and descriptions. Labels clearly indicate what type of input is expected, while descriptions provide extra guidance or context to help users complete the field accurately.
 
 <How minW60 toUse="forms/input/input-label-description-example" />
 
 ### Text field
-
 In the example above, a label is used, and you need to set the `id` to specify which input the label is associated with. When using a TextField, this is handled automatically for you. There is no need to add extra classes either, since the styling and accessibility setup are already built in.
 
 <How minW60 toUse="forms/input/input-text-field-example" />
@@ -53,9 +47,7 @@ In the example above, a label is used, and you need to set the `id` to specify w
 You can learn more in the [TextField documentation](/docs/components/forms/text-field).
 
 ### Controlled
-
 You can use the input as a controlled component by managing its state externally.
-
 <How minW60 toUse="forms/input/input-controlled-example" />
 
 ## Component API
@@ -64,16 +56,16 @@ You can use the input as a controlled component by managing its state externally
 
 The `Input` component renders a styled text input.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### InputGroup
 
 The `InputGroup` component groups an input with adjacent controls.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 See the [React Aria](https://react-aria.adobe.com/TextField#api) for the full API reference.

@@ -1,10 +1,9 @@
 ---
-title: 'Carousel'
+title: "Carousel"
 description: A carousel is a sleek, rotating display for images or videos, showcasing one at a time and highlighting multiple pieces of content seamlessly and interactively.
 published: true
 order: 8
-references:
-  ['https://react-aria.adobe.com/ListBox#api', 'https://www.embla-carousel.com/docs/v8/api']
+references: ["https://react-aria.adobe.com/ListBox#api", "https://www.embla-carousel.com/docs/v8/api"]
 ---
 
 <How minW60 toUse="media/carousel/carousel-example" />
@@ -12,23 +11,19 @@ references:
 ## Installation
 
 Install the component via the CLI in one command.
-
-<InstallCommand command="npx shadcn@latest add @intentui/carousel" />
+<InstallCommand command="npx shadcn@latest add @intentui/carousel"/>
 
 ## Composed components
-
-<Composed components={['button']} />
+<Composed components={['button']}/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components embla-carousel-react @heroicons/react tailwind-merge"/>
 
-<InstallCommand command="npm i react-aria-components embla-carousel-react @heroicons/react tailwind-merge" />
-
-<SourceCode toShow="carousel" />
+<SourceCode toShow='carousel'/>
 
 ## Anatomy
-
 ```
 import {
   Carousel,
@@ -57,31 +52,22 @@ import {
 ## Examples
 
 ### Orientation
-
 You can change the orientation of the carousel by using the `orientation` prop. The default is horizontal, but you can switch it to vertical.
-
 <How minW60 toUse="media/carousel/carousel-orientation-example" />
 
 ### Options
-
 You want to loop, or align the carouse, don't worry, you can do it with the `opts` prop.
-
 <How withNoPadding={false} toUse="media/carousel/carousel-options-example" />
 
 ### Autoplay
-
 This a plugin by the embla-carousel it self, it's not included in the package, but you can install it to make sure the carousel autoplay.
-
-<InstallCommand command="npm i embla-carousel-autoplay" />
+<InstallCommand command="npm i embla-carousel-autoplay"/>
 
 Once you install it, you can use it with the `plugins` prop.
-
 <How minW60 toUse="media/carousel/carousel-autoplay-example" />
 
 ### Link
-
 If you need a link in carousel item, it simple, add href to the CarouselItem.
-
 ```
 <CarouselItem href="/path/to/page"/>
 ```
@@ -92,45 +78,45 @@ If you need a link in carousel item, it simple, add href to the CarouselItem.
 
 The `Carousel` component is the root container for carousel state and layout.
 
-| Prop          | Type                         | Default      |
-| ------------- | ---------------------------- | ------------ |
-| `className`   | `string`                     | -            |
-| `opts`        | `CarouselOptions`            | -            |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `opts` | `CarouselOptions` | - |
 | `orientation` | `"horizontal" \| "vertical"` | `horizontal` |
-| `plugins`     | `CarouselPlugin`             | -            |
-| `setApi`      | `(api: CarouselApi) => void` | -            |
+| `plugins` | `CarouselPlugin` | - |
+| `setApi` | `(api: CarouselApi) => void` | - |
 
 ### CarouselButton
 
 The `CarouselButton` component navigates to the previous or next carousel item.
 
-| Prop        | Type                   | Default |
-| ----------- | ---------------------- | ------- |
-| `className` | `string`               | -       |
-| `segment`   | `"previous" \| "next"` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `segment` | `"previous" \| "next"` | - |
 
 ### CarouselContent
 
 The `CarouselContent` component wraps the scrollable carousel track.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### CarouselHandler
 
 The `CarouselHandler` component renders the carousel control area.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### CarouselItem
 
 The `CarouselItem` component wraps one carousel slide.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 See the [React Aria](https://react-aria.adobe.com/ListBox#api) and [Embla Carousel API reference](https://www.embla-carousel.com/docs/v8/api) for the full API reference.

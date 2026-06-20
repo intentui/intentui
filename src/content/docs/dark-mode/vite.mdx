@@ -6,26 +6,20 @@ published: true
 ---
 
 ## Starter kit
-
 If you want, you always use the starter kit to get started. You can find it <NewTab href='https://github.com/intentui/vite'>Here</NewTab>.
 
 ## Provider and switcher
-
 First of all, you need to install the `@heroicons/react` package.
-
-<InstallCommand command="npm i @heroicons/react" />
+<InstallCommand command="npm i @heroicons/react"/>
 
 After that, we need two files: `theme-provider.tsx` and `theme-switcher.tsx`.
-
 <CodeBlock
-  source={{
-    'theme-provider.tsx': 'dark-mode/vite/theme-provider.tsx',
-    'theme-switcher.tsx': 'dark-mode/vite/theme-switcher.tsx',
-  }}
-/>
+    source={{
+        'theme-provider.tsx': 'dark-mode/vite/theme-provider.tsx',
+        'theme-switcher.tsx': 'dark-mode/vite/theme-switcher.tsx',
+    }} />
 
 ## Usage
-
 Then you can wrap your app with the provider. For example if you are using Laravel with Inertia.js, you can put it inside your `app.tsx` like so:
 
 ```tsx {5} {9-11}
@@ -40,6 +34,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider>
       <App />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 )
 ```

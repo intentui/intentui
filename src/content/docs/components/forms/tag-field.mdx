@@ -1,9 +1,9 @@
 ---
-title: 'Tag Field'
+title: "Tag Field"
 description: An input component that allows users to enter, display, and manage multiple tags or keywords dynamically. It supports adding, removing, and editing tags.
 order: 9
 published: true
-references: ['https://react-aria.adobe.com/TagGroup#api']
+references: ["https://react-aria.adobe.com/TagGroup#api"]
 ---
 
 <How toUse="forms/tag-field/tag-field-example" />
@@ -14,7 +14,7 @@ Install the component via the CLI in one command.
 
 To install, run the following command:
 
-<InstallCommand command="npx shadcn@latest add @intentui/tag-field" />
+<InstallCommand command="npx shadcn@latest add @intentui/tag-field"/>
 
 ## Composed components
 
@@ -28,14 +28,12 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 For manual installation, use:
 
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
-<SourceCode toShow="tag-field" />
+<SourceCode toShow='tag-field' />
 
 ## Anatomy
-
 Import the components and use them as shown below, adapting the structure to fit each component.
-
 ```
 import { Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
@@ -55,17 +53,17 @@ import { TagField } from "@/components/ui/tag-field"
 
 The `TagField` component lets users enter and remove tags.
 
-| Prop                 | Type                        | Default  |
-| -------------------- | --------------------------- | -------- |
-| `className`          | `string`                    | -        |
-| `defaultValue`       | `string[]`                  | `[]`     |
-| `inputValue`         | `string`                    | -        |
-| `isRequired`         | `boolean`                   | -        |
-| `name`               | `string`                    | `tags`   |
-| `onChange`           | `(next: Selection) => void` | -        |
-| `onInputValueChange` | `(v: string) => void`       | -        |
-| `requiredMessage`    | `string`                    | -        |
-| `splitPattern`       | `RegExp`                    | `/[,;]/` |
-| `value`              | `Selection`                 | -        |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `defaultValue` | `string[]` | `[]` |
+| `inputValue` | `string` | - |
+| `isRequired` | `boolean` | - |
+| `name` | `string` | `tags` |
+| `onChange` | `(next: Selection) => void` | - |
+| `onInputValueChange` | `(v: string) => void` | - |
+| `requiredMessage` | `string` | - |
+| `splitPattern` | `RegExp` | `/[,;]/` |
+| `value` | `Selection` | - |
 
 See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.

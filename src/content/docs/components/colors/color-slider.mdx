@@ -1,9 +1,9 @@
 ---
-title: 'Color Slider'
+title: "Color Slider"
 description: A horizontal or vertical slider used to adjust individual color properties like hue, saturation, or brightness, including labels, orientations, and controlled modes.
 order: 4
 published: true
-references: ['https://react-aria.adobe.com/ColorSlider#api']
+references: ["https://react-aria.adobe.com/ColorSlider#api"]
 ---
 
 <How minW60 toUse="colors/color-slider/color-slider-example" />
@@ -11,22 +11,18 @@ references: ['https://react-aria.adobe.com/ColorSlider#api']
 ## Installation
 
 Install the component via the CLI in one command.
-
-<InstallCommand command="npx shadcn@latest add @intentui/color-slider" />
+<InstallCommand command="npx shadcn@latest add @intentui/color-slider"/>
 
 ## Composed components
-
-<Composed components={['color-thumb', 'field']} />
+<Composed components={['color-thumb', 'field']}/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-
-<InstallCommand command="npm i react-aria-components" />
-<SourceCode toShow="color-slider" />
+<InstallCommand command="npm i react-aria-components"/>
+<SourceCode toShow='color-slider'/>
 
 ## Anatomy
-
 ```
 import { ColorSlider } from "@/components/ui/color-slider"
 
@@ -36,27 +32,19 @@ import { ColorSlider } from "@/components/ui/color-slider"
 ## Examples
 
 ### With label
-
 Enhance the color slider by adding a label for clarity and accessibility.
-
 <How minW60 toUse="colors/color-slider/color-slider-with-label-example" />
 
 ### Orientation
-
 By default, the color slider is horizontal. You can change it to vertical by setting the `orientation` prop to `vertical`.
-
 <How minW60 toUse="colors/color-slider/color-slider-vertical-example" />
 
 ### Controlled
-
 Take direct control over the color slider's value.
-
 <How minW60 toUse="colors/color-slider/color-slider-controlled-example" />
 
 ### Disabled
-
 Disable interaction with the color slider using the `isDisabled` prop.
-
 <How minW60 toUse="colors/color-slider/color-slider-disabled-example" />
 
 ## Component API
@@ -65,24 +53,24 @@ Disable interaction with the color slider using the `isDisabled` prop.
 
 The `ColorSlider` component lets users adjust one color channel.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### ColorSliderOutput
 
 The `ColorSliderOutput` component displays the current color slider value.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 ### ColorSliderTrack
 
 The `ColorSliderTrack` component renders the color slider track.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
 
 See the [React Aria](https://react-aria.adobe.com/ColorSlider#api) for the full API reference.
