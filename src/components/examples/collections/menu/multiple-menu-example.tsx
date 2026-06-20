@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import type { Selection } from "react-aria-components/GridList"
-import { Button } from "@/components/ui/button"
-import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
+import { useState } from 'react'
+import type { Selection } from 'react-aria-components/GridList'
+import { Button } from '@/components/ui/button'
+import { Menu, MenuContent, MenuItem, MenuLabel } from '@/components/ui/menu'
 
 export default function MultipleMenuDemo() {
-  const [selected, setSelected] = useState<Selection>(new Set(["autoPlay"]))
+  const [selected, setSelected] = useState<Selection>(new Set(['autoPlay']))
   return (
     <Menu>
       <Button intent="outline">Open</Button>
       <MenuContent
-        popover={{ placement: "bottom" }}
+        popover={{ placement: 'bottom' }}
         selectionMode="multiple"
         selectedKeys={selected}
         onSelectionChange={setSelected}
@@ -29,31 +29,31 @@ export default function MultipleMenuDemo() {
 
 const items = [
   {
-    name: "Auto-Play Videos",
-    slug: "autoPlay",
+    name: 'Auto-Play Videos',
+    slug: 'autoPlay',
   },
   {
-    name: "High-Quality Streaming",
-    slug: "highQuality",
+    name: 'High-Quality Streaming',
+    slug: 'highQuality',
   },
   {
-    name: "Exclusive Releases",
-    slug: "exclusiveContent",
+    name: 'Exclusive Releases',
+    slug: 'exclusiveContent',
   },
   {
-    name: "Default Subtitles",
-    slug: "subtitles",
+    name: 'Default Subtitles',
+    slug: 'subtitles',
   },
   {
-    name: "Personalized Recommendations",
-    slug: "recommendations",
+    name: 'Personalized Recommendations',
+    slug: 'recommendations',
   },
   {
-    name: "Background Play",
-    slug: "backgroundPlay",
+    name: 'Background Play',
+    slug: 'backgroundPlay',
   },
   {
-    name: "Allow Downloads",
-    slug: "download",
+    name: 'Allow Downloads',
+    slug: 'download',
   },
 ]

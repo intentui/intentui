@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   Cog6ToothIcon,
@@ -7,8 +7,8 @@ import {
   DocumentTextIcon,
   HomeIcon,
   ShieldCheckIcon,
-} from "@heroicons/react/24/outline"
-import { useState } from "react"
+} from '@heroicons/react/24/outline'
+import { useState } from 'react'
 
 import {
   CommandMenu,
@@ -17,7 +17,7 @@ import {
   CommandMenuSearch,
   CommandMenuSection,
   CommandMenuShortcut,
-} from "@/components/ui/command-menu"
+} from '@/components/ui/command-menu'
 
 export default function CommandMenuTriggerByKeyboardDemo() {
   const [isOpen, setIsOpen] = useState(false)

@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useEffect, useMemo, useState } from "react"
-import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { CopyButton } from "@/components/code/copy-button"
-import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
-import { createFetchRegistryFile } from "@/lib/fetch-registry"
+import { useEffect, useMemo, useState } from 'react'
+import { CodeHighlighter } from '@/components/code/code-highlighter'
+import { CopyButton } from '@/components/code/copy-button'
+import { BrandReactjsIcon } from '@/components/icons/brand-reactjs-icon'
+import { createFetchRegistryFile } from '@/lib/fetch-registry'
 
 type SourceCodeProps = {
   toShow: string
@@ -13,7 +13,7 @@ type SourceCodeProps = {
   ext?: string
 }
 
-const fetchRegistryFile = createFetchRegistryFile("/r")
+const fetchRegistryFile = createFetchRegistryFile('/r')
 
 export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
   const [rawSourceCode, setRawSourceCode] = useState<string | null>(null)
@@ -32,7 +32,7 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
         <p className="mb-3 text-base/6">
           {props.message
             ? props.message
-            : "You can copy the code below and paste it into your component folder."}
+            : 'You can copy the code below and paste it into your component folder.'}
         </p>
         <div className="overflow-hidden rounded-lg border bg-shiki-bg">
           {props.title && <figcaption data-rehype-pretty-code-title="">{props.title}</figcaption>}

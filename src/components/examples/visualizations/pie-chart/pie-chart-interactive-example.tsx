@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useMemo, useState } from "react"
-import type { Key } from "react-aria-components/Breadcrumbs"
+import { useMemo, useState } from 'react'
+import type { Key } from 'react-aria-components/Breadcrumbs'
 import {
   Card,
   CardAction,
@@ -9,19 +9,19 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { PieChart } from "@/components/ui/pie-chart"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+} from '@/components/ui/card'
+import { PieChart } from '@/components/ui/pie-chart'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 export default function PieChartAudienceSegmentDemo() {
   const data = useMemo(
     () => [
-      { name: "Unique visitors", code: "UV", value: 2400 },
-      { name: "Page views", code: "PV", value: 5600 },
-      { name: "Bounce rate", code: "BR", value: 700 },
-      { name: "Conversion rate", code: "CR", value: 480 },
+      { name: 'Unique visitors', code: 'UV', value: 2400 },
+      { name: 'Page views', code: 'PV', value: 5600 },
+      { name: 'Bounce rate', code: 'BR', value: 700 },
+      { name: 'Conversion rate', code: 'CR', value: 480 },
     ],
-    [],
+    []
   )
 
   const defaultCode = data[0]?.code
@@ -57,15 +57,15 @@ export default function PieChartAudienceSegmentDemo() {
           variant="donut"
           showLabel
           pieProps={{
-            innerRadius: "50%",
+            innerRadius: '50%',
             outerRadius: (dp: { code: string }) => (dp.code === selectedCode ? 110 : 90),
           }}
           valueFormatter={(value: number) => `${value.toLocaleString()} units`}
           config={{
-            UV: { label: "UV" },
-            PV: { label: "PV" },
-            BR: { label: "BR" },
-            CR: { label: "CR" },
+            UV: { label: 'UV' },
+            PV: { label: 'PV' },
+            BR: { label: 'BR' },
+            CR: { label: 'CR' },
           }}
         />
       </CardContent>

@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { buttonStyles } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
+import { buttonStyles } from '@/components/ui/button'
+import { Link } from '@/components/ui/link'
 
 export default function LinkButtonDemo() {
   return (
@@ -9,10 +9,10 @@ export default function LinkButtonDemo() {
       <Link className={buttonStyles()} href="#use-as-button">
         Link
       </Link>
-      <Link className={buttonStyles({ intent: "outline" })} href="#use-as-button">
+      <Link className={buttonStyles({ intent: 'outline' })} href="#use-as-button">
         Link
       </Link>
-      <Link className={buttonStyles({ intent: "plain", isCircle: true })} href="#use-as-button">
+      <Link className={buttonStyles({ intent: 'plain', isCircle: true })} href="#use-as-button">
         Link
       </Link>
     </div>

@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Description, Label } from "@/components/ui/field"
-import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from "@/components/ui/slider"
+import { Description, Label } from '@/components/ui/field'
+import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from '@/components/ui/slider'
 
 export default function SliderDescriptionDemo() {
   return (

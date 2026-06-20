@@ -1,10 +1,10 @@
-"use client"
-import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
-import { LayoutGroup, motion } from "motion/react"
-import { Suspense, useEffect, useId, useRef, useState } from "react"
-import scrollIntoView from "scroll-into-view-if-needed"
-import { twMerge } from "tailwind-merge"
-import { ScrollArea } from "@/components/ui/scroll-area"
+'use client'
+import type { TableOfContents, TOCItemType } from 'fumadocs-core/toc'
+import { LayoutGroup, motion } from 'motion/react'
+import { Suspense, useEffect, useId, useRef, useState } from 'react'
+import scrollIntoView from 'scroll-into-view-if-needed'
+import { twMerge } from 'tailwind-merge'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 interface Props {
   className?: string
@@ -13,7 +13,7 @@ interface Props {
 
 export function Toc({ className, items }: Props) {
   const tocRef = useRef<HTMLDivElement>(null)
-  const ids = items.map((item) => item.url.split("#")[1])
+  const ids = items.map((item) => item.url.split('#')[1])
   const activeId = useActiveItem(ids as string[])
   const activeIndex = activeId?.length || 0
   const id = useId()
@@ -25,10 +25,10 @@ export function Toc({ className, items }: Props) {
 
     if (anchor) {
       scrollIntoView(anchor, {
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
-        scrollMode: "always",
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center',
+        scrollMode: 'always',
         boundary: tocRef.current,
       })
     }
@@ -36,7 +36,7 @@ export function Toc({ className, items }: Props) {
 
   return (
     <LayoutGroup id={id}>
-      <aside ref={tocRef} className={twMerge("not-prose w-72 forced-color-adjust-none", className)}>
+      <aside ref={tocRef} className={twMerge('not-prose w-72 forced-color-adjust-none', className)}>
         <ScrollArea scrollFade orientation="vertical" className="xl:h-[calc(100vh-22rem)]">
           <nav aria-labelledby="on-this-page-title" className="not-prose relative w-56 p-6">
             <Suspense>
@@ -68,10 +68,10 @@ interface TocLinkProps {
 function TocLink({ item, activeId, minDepth }: TocLinkProps) {
   return (
     <li key={item.url} className="relative">
-      {item.url.split("#")[1] === activeId && (
+      {item.url.split('#')[1] === activeId && (
         <motion.span
           transition={{
-            type: "spring",
+            type: 'spring',
             stiffness: 450,
             damping: 35,
             mass: 0.8,
@@ -82,10 +82,10 @@ function TocLink({ item, activeId, minDepth }: TocLinkProps) {
       )}
       <a
         className={twMerge(
-          "block text-sm/6 tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden",
-          item.url.split("#")[1] === activeId
-            ? "text-fg forced-colors:text-[Highlight]"
-            : "text-muted-fg/90 forced-colors:text-[GrayText]",
+          'block text-sm/6 tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden',
+          item.url.split('#')[1] === activeId
+            ? 'text-fg forced-colors:text-[Highlight]'
+            : 'text-muted-fg/90 forced-colors:text-[GrayText]'
         )}
         style={{
           marginLeft: (item.depth - minDepth) * 16,
@@ -118,7 +118,7 @@ function useActiveItem(itemIds: string[]) {
           setActiveId(bestCandidate.target.id)
         }
       },
-      { rootMargin: "0% 0% -25% 0%", threshold: 0.1 },
+      { rootMargin: '0% 0% -25% 0%', threshold: 0.1 }
     )
 
     for (const id of itemIds) {

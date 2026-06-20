@@ -1,130 +1,129 @@
-import dotenv from "dotenv"
-import { promises as fs } from "fs"
-import { existsSync } from "node:fs"
-import path from "path"
-import { registryItemSchema, registrySchema } from "shadcn/schema"
-import { builtinModules } from "node:module"
-import { title as titleCase } from "@/lib/utils";
-import * as process from "node:process";
-import { baseTheme } from "@/scripts/styles/base-theme";
-import { defaultDark, defaultLight } from "@/scripts/styles/default";
-import { blueDark, blueLight } from "@/scripts/styles/blue";
-import { skyDark, skyLight } from "@/scripts/styles/sky";
-import { tealDark, tealLight } from "@/scripts/styles/teal";
-import { purpleDark, purpleLight } from "@/scripts/styles/purple";
-import { pinkDark, pinkLight } from "@/scripts/styles/pink";
-import { roseDark, roseLight } from "@/scripts/styles/rose";
-import { greenDark, greenLight } from "@/scripts/styles/green";
-import { limeDark, limeLight } from "@/scripts/styles/lime";
-import { cyanDark, cyanLight } from "@/scripts/styles/cyan";
-import { indigoDark, indigoLight } from "@/scripts/styles/indigo";
-import { emeraldDark, emeraldLight } from "@/scripts/styles/emerald";
-import { makeRegistry } from "@/scripts/make-registry";
+import dotenv from 'dotenv'
+import { promises as fs } from 'fs'
+import { existsSync } from 'node:fs'
+import path from 'path'
+import { registryItemSchema, registrySchema } from 'shadcn/schema'
+import { builtinModules } from 'node:module'
+import { title as titleCase } from '@/lib/utils'
+import * as process from 'node:process'
+import { baseTheme } from '@/scripts/styles/base-theme'
+import { defaultDark, defaultLight } from '@/scripts/styles/default'
+import { blueDark, blueLight } from '@/scripts/styles/blue'
+import { skyDark, skyLight } from '@/scripts/styles/sky'
+import { tealDark, tealLight } from '@/scripts/styles/teal'
+import { purpleDark, purpleLight } from '@/scripts/styles/purple'
+import { pinkDark, pinkLight } from '@/scripts/styles/pink'
+import { roseDark, roseLight } from '@/scripts/styles/rose'
+import { greenDark, greenLight } from '@/scripts/styles/green'
+import { limeDark, limeLight } from '@/scripts/styles/lime'
+import { cyanDark, cyanLight } from '@/scripts/styles/cyan'
+import { indigoDark, indigoLight } from '@/scripts/styles/indigo'
+import { emeraldDark, emeraldLight } from '@/scripts/styles/emerald'
+import { makeRegistry } from '@/scripts/make-registry'
 
 dotenv.config()
-const envLocalPath = path.resolve(process.cwd(), ".env.local")
+const envLocalPath = path.resolve(process.cwd(), '.env.local')
 if (existsSync(envLocalPath)) {
   dotenv.config({ path: envLocalPath })
 }
 
 makeRegistry()
 
-const LIB_ALLOW = ["number", "date", "primitive"]
-const HOOKS_ALLOW = ["use-media-query", "use-clipboard", "use-theme", "use-mobile"]
-const REGISTRY_NAME = process.env.REGISTRY_NAME || "intentui"
+const LIB_ALLOW = ['number', 'date', 'primitive']
+const HOOKS_ALLOW = ['use-media-query', 'use-clipboard', 'use-theme', 'use-mobile']
+const REGISTRY_NAME = process.env.REGISTRY_NAME || 'intentui'
 const REGISTRY_HOMEPAGE = process.env.NEXT_PUBLIC_APP_URL
-const REGISTRY_STYLE = process.env.REGISTRY_STYLE || "blocks"
-const REGISTRY_IMPORT_PREFIX = process.env.REGISTRY_IMPORT_PREFIX || "@/registry"
-const PAGE_TARGET_ROOT = process.env.PAGE_TARGET_ROOT || "app"
+const REGISTRY_STYLE = process.env.REGISTRY_STYLE || 'blocks'
+const REGISTRY_IMPORT_PREFIX = process.env.REGISTRY_IMPORT_PREFIX || '@/registry'
+const PAGE_TARGET_ROOT = process.env.PAGE_TARGET_ROOT || 'app'
 
 const ROOT = process.cwd()
-const UI_DIR = path.resolve(ROOT, "src/components/ui")
-const EXAMPLES_DIR = path.resolve(ROOT, "src/components/examples")
-const LIB_DIR = path.resolve(ROOT, "src/lib")
-const HOOKS_DIR = path.resolve(ROOT, "src/hooks")
-const BLOCKS_DIR = path.resolve(ROOT, "src/app/pre-blocks")
-const STAGE_DIR = path.resolve(ROOT, "registry")
-
+const UI_DIR = path.resolve(ROOT, 'src/components/ui')
+const EXAMPLES_DIR = path.resolve(ROOT, 'src/components/examples')
+const LIB_DIR = path.resolve(ROOT, 'src/lib')
+const HOOKS_DIR = path.resolve(ROOT, 'src/hooks')
+const BLOCKS_DIR = path.resolve(ROOT, 'src/app/pre-blocks')
+const STAGE_DIR = path.resolve(ROOT, 'registry')
 
 const customCSS = {
-  "@import \"tw-animate-css\"": {},
-  "@plugin tailwindcss-react-aria-components": {},
+  '@import "tw-animate-css"': {},
+  '@plugin tailwindcss-react-aria-components': {},
 
-  "@layer base": {
-    "*, ::after, ::before, ::backdrop, ::file-selector-button": {
-      "border-color": "var(--border, currentColor)",
+  '@layer base': {
+    '*, ::after, ::before, ::backdrop, ::file-selector-button': {
+      'border-color': 'var(--border, currentColor)',
     },
-    "*": {
-      "scrollbar-width": "thin",
-      "scrollbar-color": "var(--border) transparent",
+    '*': {
+      'scrollbar-width': 'thin',
+      'scrollbar-color': 'var(--border) transparent',
     },
     html: {
-      "-webkit-font-smoothing": "antialiased",
-      "-moz-osx-font-smoothing": "grayscale",
-      "-webkit-tap-highlight-color": "transparent",
+      '-webkit-font-smoothing': 'antialiased',
+      '-moz-osx-font-smoothing': 'grayscale',
+      '-webkit-tap-highlight-color': 'transparent',
     },
-    body: { "background-color": "var(--bg)", color: "var(--fg)" },
-    "::-webkit-scrollbar": { width: "4px" },
-    "::-webkit-scrollbar-track": { background: "transparent" },
-    "::-webkit-scrollbar-thumb": {
-      background: "var(--border)",
-      "border-radius": "4px",
+    body: { 'background-color': 'var(--bg)', color: 'var(--fg)' },
+    '::-webkit-scrollbar': { width: '4px' },
+    '::-webkit-scrollbar-track': { background: 'transparent' },
+    '::-webkit-scrollbar-thumb': {
+      background: 'var(--border)',
+      'border-radius': '4px',
     },
   },
 
-  "@utility touch-target": {
-      "position": "relative",
-      "&::before": {
-        "content": "\"\"",
-        "position": "absolute",
-        "display": "block",
-        "top": "50%",
-        "left": "50%",
-        "transform": "translate(-50%, -50%)",
-        "width": "100%",
-        "height": "100%",
-        "min-height": "44px",
-        "min-width": "44px",
-        "z-index": "9999"
-      }
+  '@utility touch-target': {
+    position: 'relative',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      display: 'block',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '100%',
+      height: '100%',
+      'min-height': '44px',
+      'min-width': '44px',
+      'z-index': '9999',
+    },
   },
 }
 
 const themeDefs = [
-  ["theme-default", defaultLight, defaultDark],
-  ["theme-blue", blueLight, blueDark],
-  ["theme-sky", skyLight, skyDark],
-  ["theme-indigo", indigoLight, indigoDark],
-  ["theme-emerald", emeraldLight, emeraldDark],
-  ["theme-teal", tealLight, tealDark],
-  ["theme-purple", purpleLight, purpleDark],
-  ["theme-pink", pinkLight, pinkDark],
-  ["theme-rose", roseLight, roseDark],
-  ["theme-green", greenLight, greenDark],
-  ["theme-lime", limeLight, limeDark],
-  ["theme-cyan", cyanLight, cyanDark],
+  ['theme-default', defaultLight, defaultDark],
+  ['theme-blue', blueLight, blueDark],
+  ['theme-sky', skyLight, skyDark],
+  ['theme-indigo', indigoLight, indigoDark],
+  ['theme-emerald', emeraldLight, emeraldDark],
+  ['theme-teal', tealLight, tealDark],
+  ['theme-purple', purpleLight, purpleDark],
+  ['theme-pink', pinkLight, pinkDark],
+  ['theme-rose', roseLight, roseDark],
+  ['theme-green', greenLight, greenDark],
+  ['theme-lime', limeLight, limeDark],
+  ['theme-cyan', cyanLight, cyanDark],
 ]
 
 type Token = Record<string, string>
 
 const makeThemeItem = (name: string, light: Token, dark: Token) => {
   const base = {
-    $schema: "https://ui.shadcn.com/schema/registry-item.json",
+    $schema: 'https://ui.shadcn.com/schema/registry-item.json',
     name,
-    extends: "none",
-    type: "registry:style",
+    extends: 'none',
+    type: 'registry:style',
     cssVars: {
       theme: baseTheme,
       light,
-      dark
-    }
+      dark,
+    },
   }
-  if (name === "theme-default") {
+  if (name === 'theme-default') {
     return registryItemSchema.parse({
       ...base,
-      extends: "none",
-      dependencies: ["tailwindcss-react-aria-components", "tw-animate-css"],
-      css: customCSS
+      extends: 'none',
+      dependencies: ['tailwindcss-react-aria-components', 'tw-animate-css'],
+      css: customCSS,
     })
   }
   return registryItemSchema.parse(base)
@@ -134,17 +133,16 @@ const themeItems = themeDefs.map(([name, light, dark]) =>
   makeThemeItem(name as string, light as Token, dark as Token)
 )
 
-
-const read = async (p: string) => fs.readFile(p, "utf8")
+const read = async (p: string) => fs.readFile(p, 'utf8')
 const write = async (p: string, c: string) => {
   await fs.mkdir(path.dirname(p), { recursive: true })
-  await fs.writeFile(p, c, "utf8")
+  await fs.writeFile(p, c, 'utf8')
 }
 const exists = async (p: string) => !!(await fs.stat(p).catch(() => false))
-const toPosix = (p: string) => p.split(path.sep).join("/")
-const stripExt = (p: string) => p.replace(/\.[^.]+$/, "")
-const stripTrailingIndex = (p: string) => p.replace(/\/index$/, "")
-const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+const toPosix = (p: string) => p.split(path.sep).join('/')
+const stripExt = (p: string) => p.replace(/\.[^.]+$/, '')
+const stripTrailingIndex = (p: string) => p.replace(/\/index$/, '')
+const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
 const listFiles = async (dir: string) => {
   const out: string[] = []
@@ -163,7 +161,8 @@ const listFiles = async (dir: string) => {
 }
 
 const importSpecifiers = (code: string) => {
-  const re = /(?:import|export)\s+(?:[^'"]*from\s*)?["']([^"']+)["']|import\(\s*["']([^"']+)["']\s*\)/g
+  const re =
+    /(?:import|export)\s+(?:[^'"]*from\s*)?["']([^"']+)["']|import\(\s*["']([^"']+)["']\s*\)/g
   const set = new Set<string>()
   let m
   while ((m = re.exec(code))) set.add((m[1] || m[2]).trim())
@@ -183,22 +182,24 @@ const resolveLocalPath = async (fromFile: string, spec: string) => {
 }
 
 const resolveWithin = async (baseDir: string, rel: string) => {
-  const clean = rel.replace(/^\/+/, "")
+  const clean = rel.replace(/^\/+/, '')
   const candidates = [
     path.join(baseDir, `${clean}.tsx`),
     path.join(baseDir, `${clean}.ts`),
-    path.join(baseDir, clean, "index.tsx"),
-    path.join(baseDir, clean, "index.ts"),
+    path.join(baseDir, clean, 'index.tsx'),
+    path.join(baseDir, clean, 'index.ts'),
   ]
   for (const c of candidates) if (await exists(c)) return c
   return null
 }
 
 const aliasToFs = async (spec: string): Promise<string | null> => {
-  if (spec.startsWith("@/components/ui/")) return resolveWithin(UI_DIR, spec.slice("@/components/ui/".length))
-  if (spec.startsWith("@/lib/")) return resolveWithin(LIB_DIR, spec.slice("@/lib/".length))
-  if (spec.startsWith("@/hooks/")) return resolveWithin(HOOKS_DIR, spec.slice("@/hooks/".length))
-  if (spec.startsWith("@/components/examples/")) return resolveWithin(EXAMPLES_DIR, spec.slice("@/components/examples/".length))
+  if (spec.startsWith('@/components/ui/'))
+    return resolveWithin(UI_DIR, spec.slice('@/components/ui/'.length))
+  if (spec.startsWith('@/lib/')) return resolveWithin(LIB_DIR, spec.slice('@/lib/'.length))
+  if (spec.startsWith('@/hooks/')) return resolveWithin(HOOKS_DIR, spec.slice('@/hooks/'.length))
+  if (spec.startsWith('@/components/examples/'))
+    return resolveWithin(EXAMPLES_DIR, spec.slice('@/components/examples/'.length))
 
   return null
 }
@@ -206,7 +207,7 @@ const aliasToFs = async (spec: string): Promise<string | null> => {
 async function fsToNs(fsPath: string) {
   const make = (root: string) => {
     const rel = path.relative(root, fsPath)
-    if (!rel.startsWith("..")) {
+    if (!rel.startsWith('..')) {
       const noExt = stripExt(toPosix(rel))
       const clean = stripTrailingIndex(noExt)
       return `${REGISTRY_HOMEPAGE}/r/${clean}`
@@ -217,36 +218,42 @@ async function fsToNs(fsPath: string) {
 }
 
 const DEP_EXCLUDE = new Set([
-  "react",
-  "react-dom",
-  "next",
-  "server-only",
-  "client-only",
+  'react',
+  'react-dom',
+  'next',
+  'server-only',
+  'client-only',
   ...builtinModules,
-  ...builtinModules.map((m) => m.replace(/^node:/, "")),
+  ...builtinModules.map((m) => m.replace(/^node:/, '')),
 ])
 
 const pkgName = (specifier: string) => {
-  if (specifier.startsWith("@")) {
-    const [scope, name] = specifier.split("/")
-    return `${scope}/${name || ""}`
+  if (specifier.startsWith('@')) {
+    const [scope, name] = specifier.split('/')
+    return `${scope}/${name || ''}`
   }
-  return specifier.split("/")[0]
+  return specifier.split('/')[0]
 }
 
-const topLevelPackages = (specs: string[]) =>
-  [...new Set(specs.filter((s) => !s.startsWith(".") && !s.startsWith("@/")).map(pkgName).filter((p) => !DEP_EXCLUDE.has(p)))]
+const topLevelPackages = (specs: string[]) => [
+  ...new Set(
+    specs
+      .filter((s) => !s.startsWith('.') && !s.startsWith('@/'))
+      .map(pkgName)
+      .filter((p) => !DEP_EXCLUDE.has(p))
+  ),
+]
 
 async function findInternalDepsForFile(file: string, specs: string[]) {
   const urls: string[] = []
   for (const s of specs) {
-    if (s.startsWith("./") || s.startsWith("../")) {
+    if (s.startsWith('./') || s.startsWith('../')) {
       const p = await resolveLocalPath(file, s)
       if (p) {
         const u = await fsToNs(p)
         if (u) urls.push(u)
       }
-    } else if (s.startsWith("@/")) {
+    } else if (s.startsWith('@/')) {
       const p = await aliasToFs(s)
       if (p) {
         const u = await fsToNs(p)
@@ -259,12 +266,10 @@ async function findInternalDepsForFile(file: string, specs: string[]) {
 
 const blockSlugFromPage = (pagePath: string) => {
   const rel = toPosix(path.relative(BLOCKS_DIR, path.dirname(pagePath)))
-  return rel.split("/").filter(Boolean).pop() || ""
+  return rel.split('/').filter(Boolean).pop() || ''
 }
 
-
 const exampleSlugFromFile = (file: string) => stripExt(path.basename(file))
-
 
 const collectBlocks = async (pagePath: string, code: string) => {
   const groupRoot = path.dirname(path.dirname(pagePath))
@@ -286,7 +291,7 @@ const collectBlocks = async (pagePath: string, code: string) => {
     const src = file === pagePath ? code : await read(file)
     const specs = importSpecifiers(src)
     for (const s of specs) {
-      if (s.startsWith("./") || s.startsWith("../")) {
+      if (s.startsWith('./') || s.startsWith('../')) {
         const p = await resolveLocalPath(file, s)
         if (p && p.startsWith(groupRoot) && !seen.has(p)) {
           seen.add(p)
@@ -299,17 +304,22 @@ const collectBlocks = async (pagePath: string, code: string) => {
   return [...seen]
 }
 
-async function rewritePrivatesToRegistry(fromFile: string, code: string, allPrivates: Set<string>, slug: string) {
+async function rewritePrivatesToRegistry(
+  fromFile: string,
+  code: string,
+  allPrivates: Set<string>,
+  slug: string
+) {
   const specs = importSpecifiers(code)
   let out = code
   for (const s of specs) {
-    if (!(s.startsWith("./") || s.startsWith("../"))) continue
+    if (!(s.startsWith('./') || s.startsWith('../'))) continue
     const p = await resolveLocalPath(fromFile, s)
     if (!p) continue
     if (!allPrivates.has(p) && p !== fromFile) continue
-    const base = path.basename(p).replace(/\.[^.]+$/, "")
+    const base = path.basename(p).replace(/\.[^.]+$/, '')
     const next = `${REGISTRY_IMPORT_PREFIX}/${REGISTRY_STYLE}/${slug}/${base}`
-    const re = new RegExp(`(["'\`])${escapeRegExp(s)}\\1`, "g")
+    const re = new RegExp(`(["'\`])${escapeRegExp(s)}\\1`, 'g')
     out = out.replace(re, (m, q) => `${q}${next}${q}`)
   }
   return out
@@ -320,32 +330,36 @@ const stagedPathFor = (slug: string, fileAbs: string) => {
   return path.join(STAGE_DIR, REGISTRY_STYLE, slug, base)
 }
 
-type FilePage = { type: "registry:page"; path: string; target: string; content?: string }
+type FilePage = { type: 'registry:page'; path: string; target: string; content?: string }
 type FileOther = {
   type:
-    | "registry:lib"
-    | "registry:block"
-    | "registry:component"
-    | "registry:ui"
-    | "registry:hook"
-    | "registry:style"
-    | "registry:theme"
-    | "registry:item"
-    | "registry:internal"
+    | 'registry:lib'
+    | 'registry:block'
+    | 'registry:component'
+    | 'registry:ui'
+    | 'registry:hook'
+    | 'registry:style'
+    | 'registry:theme'
+    | 'registry:item'
+    | 'registry:internal'
   path: string
   content?: string
   target?: string
 }
 type FileOut = FilePage | FileOther
 
-const fileEntryPage = async (absPath: string, target: string, content?: string): Promise<FilePage> => {
+const fileEntryPage = async (
+  absPath: string,
+  target: string,
+  content?: string
+): Promise<FilePage> => {
   const rel = toPosix(path.relative(ROOT, absPath))
-  return { path: rel, type: "registry:page", target, content }
+  return { path: rel, type: 'registry:page', target, content }
 }
 
 const fileEntryOther = async (
   absPath: string,
-  type: FileOther["type"],
+  type: FileOther['type'],
   content?: string,
   target?: string
 ): Promise<FileOther> => {
@@ -359,12 +373,12 @@ const buildComponentItem = async (absPath: string) => {
   const specs = importSpecifiers(code)
   const deps = topLevelPackages(specs)
   const regDeps = await findInternalDepsForFile(absPath, specs)
-  const files: FileOut[] = [await fileEntryOther(absPath, "registry:ui")]
+  const files: FileOut[] = [await fileEntryOther(absPath, 'registry:ui')]
   const raw = {
-    $schema: "https://ui.shadcn.com/schema/registry-item.json",
-    extends: "none",
+    $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+    extends: 'none',
     name,
-    type: "registry:ui",
+    type: 'registry:ui',
     title: name,
     description: name,
     dependencies: deps.length ? deps : undefined,
@@ -380,12 +394,12 @@ const buildLibItem = async (absPath: string) => {
   const specs = importSpecifiers(code)
   const deps = topLevelPackages(specs)
   const regDeps = await findInternalDepsForFile(absPath, specs)
-  const files: FileOut[] = [await fileEntryOther(absPath, "registry:lib")]
+  const files: FileOut[] = [await fileEntryOther(absPath, 'registry:lib')]
   const raw = {
-    $schema: "https://ui.shadcn.com/schema/registry-item.json",
-    extends: "none",
+    $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+    extends: 'none',
     name,
-    type: "registry:lib",
+    type: 'registry:lib',
     title: name,
     description: name,
     dependencies: deps.length ? deps : undefined,
@@ -401,12 +415,12 @@ const buildHookItem = async (absPath: string) => {
   const specs = importSpecifiers(code)
   const deps = topLevelPackages(specs)
   const regDeps = await findInternalDepsForFile(absPath, specs)
-  const files: FileOut[] = [await fileEntryOther(absPath, "registry:hook")]
+  const files: FileOut[] = [await fileEntryOther(absPath, 'registry:hook')]
   const raw = {
-    $schema: "https://ui.shadcn.com/schema/registry-item.json",
-    extends: "none",
+    $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+    extends: 'none',
     name,
-    type: "registry:hook",
+    type: 'registry:hook',
     title: name,
     description: name,
     dependencies: deps.length ? deps : undefined,
@@ -424,11 +438,11 @@ const buildExampleItem = async (file: string) => {
   const regDeps = await findInternalDepsForFile(file, specs)
   const files: FileOut[] = [await fileEntryPage(file, `${PAGE_TARGET_ROOT}/${slug}/page.tsx`)]
   const raw = {
-    $schema: "https://ui.shadcn.com/schema/registry-item.json",
-    extends: "none",
+    $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+    extends: 'none',
     name: slug,
-    type: "registry:page",
-    title: titleCase(slug.replace(/-example$/, "").replace(/-/g, " ")),
+    type: 'registry:page',
+    title: titleCase(slug.replace(/-example$/, '').replace(/-/g, ' ')),
     description: slug,
     dependencies: deps.length ? deps : undefined,
     registryDependencies: regDeps.length ? regDeps : undefined,
@@ -458,11 +472,11 @@ const buildBlockItem = async (pagePath: string) => {
   const urlDeps = await registryDepsForBlock(pagePath, code)
   const specs = importSpecifiers(code)
   const deps = topLevelPackages(specs)
-  const metaPath = path.join(path.dirname(pagePath), "meta.json")
+  const metaPath = path.join(path.dirname(pagePath), 'meta.json')
   let title: string | undefined
   let description: string | undefined
   if (await exists(metaPath)) {
-    const metaRaw = await read(metaPath).catch(() => "{}")
+    const metaRaw = await read(metaPath).catch(() => '{}')
     try {
       const meta = JSON.parse(metaRaw)
       title = meta.title || slug
@@ -475,30 +489,34 @@ const buildBlockItem = async (pagePath: string) => {
     title = slug
     description = slug
   }
-  const staged: { abs: string; type: FileOut["type"]; target?: string }[] = []
+  const staged: { abs: string; type: FileOut['type']; target?: string }[] = []
   const pageStaged = stagedPathFor(slug, pagePath)
   const pageTransformed = await rewritePrivatesToRegistry(pagePath, code, privSet, slug)
   await write(pageStaged, pageTransformed)
-  staged.push({ abs: pageStaged, type: "registry:page", target: `${PAGE_TARGET_ROOT}/${slug}/page.tsx` })
+  staged.push({
+    abs: pageStaged,
+    type: 'registry:page',
+    target: `${PAGE_TARGET_ROOT}/${slug}/page.tsx`,
+  })
   for (const p of privates) {
     const transformed = await rewritePrivatesToRegistry(p, await read(p), privSet, slug)
     const dest = stagedPathFor(slug, p)
     await write(dest, transformed)
-    staged.push({ abs: dest, type: "registry:component" })
+    staged.push({ abs: dest, type: 'registry:component' })
   }
   const files: FileOut[] = []
   for (const f of staged) {
-    if (f.type === "registry:page") {
+    if (f.type === 'registry:page') {
       files.push(await fileEntryPage(f.abs, f.target!, undefined))
     } else {
       files.push(await fileEntryOther(f.abs, f.type, undefined, f.target))
     }
   }
   const raw = {
-    $schema: "https://ui.shadcn.com/schema/registry-item.json",
-    extends: "none",
-    name: slug.split("/").join("-"),
-    type: "registry:block",
+    $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+    extends: 'none',
+    name: slug.split('/').join('-'),
+    type: 'registry:block',
     title,
     description,
     dependencies: deps.length ? deps : undefined,
@@ -509,19 +527,19 @@ const buildBlockItem = async (pagePath: string) => {
 }
 
 const buildAllItems = (items: any[]) => {
-  const base = (REGISTRY_HOMEPAGE || "http://localhost:3000").replace(/\/+$/, "")
+  const base = (REGISTRY_HOMEPAGE || 'http://localhost:3000').replace(/\/+$/, '')
   const urls = items
-    .filter((it: any) => it.type === "registry:ui")
+    .filter((it: any) => it.type === 'registry:ui')
     .map((it: any) => `${base}/r/ui/${it.name}`)
     .sort()
 
   return registryItemSchema.parse({
-    $schema: "https://ui.shadcn.com/schema/registry-item.json",
-    extends: "none",
-    name: "all",
-    type: "registry:item",
-    title: "All UI components",
-    description: "Installs all UI components from this registry.",
+    $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+    extends: 'none',
+    name: 'all',
+    type: 'registry:item',
+    title: 'All UI components',
+    description: 'Installs all UI components from this registry.',
     registryDependencies: urls,
   })
 }
@@ -530,10 +548,14 @@ const buildAll = async () => {
   const items: any[] = [...themeItems]
   for (const f of await listFiles(UI_DIR)) items.push(await buildComponentItem(f))
   for (const f of await listFiles(EXAMPLES_DIR)) items.push(await buildExampleItem(f))
-  for (const f of (await listFiles(LIB_DIR)).filter((f) => LIB_ALLOW.includes(path.basename(f, path.extname(f))))) {
+  for (const f of (await listFiles(LIB_DIR)).filter((f) =>
+    LIB_ALLOW.includes(path.basename(f, path.extname(f)))
+  )) {
     items.push(await buildLibItem(f))
   }
-  for (const f of (await listFiles(HOOKS_DIR)).filter((f) => HOOKS_ALLOW.includes(path.basename(f, path.extname(f))))) {
+  for (const f of (await listFiles(HOOKS_DIR)).filter((f) =>
+    HOOKS_ALLOW.includes(path.basename(f, path.extname(f)))
+  )) {
     items.push(await buildHookItem(f))
   }
 
@@ -546,7 +568,7 @@ const buildAll = async () => {
     for (const e of entries) {
       const full = path.join(d, e.name)
       if (e.isDirectory()) stack.push(full)
-      else if (e.name === "page.tsx") blockPages.push(full)
+      else if (e.name === 'page.tsx') blockPages.push(full)
     }
   }
   for (const p of blockPages) items.push(await buildBlockItem(p))
@@ -556,10 +578,12 @@ const buildAll = async () => {
     homepage: REGISTRY_HOMEPAGE,
     items,
   }
-  const registry = registrySchema.parse({ $schema: "https://ui.shadcn.com/schema/registry.json", ...rawRegistry })
-  const outPath = path.resolve(ROOT, "registry.json")
-  await fs.writeFile(outPath, JSON.stringify(registry, null, 2), "utf8")
+  const registry = registrySchema.parse({
+    $schema: 'https://ui.shadcn.com/schema/registry.json',
+    ...rawRegistry,
+  })
+  const outPath = path.resolve(ROOT, 'registry.json')
+  await fs.writeFile(outPath, JSON.stringify(registry, null, 2), 'utf8')
 }
-
 
 buildAll()

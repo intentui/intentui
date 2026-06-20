@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import {
   Modal,
   ModalBody,
@@ -11,8 +11,8 @@ import {
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
-import { TextField } from "@/components/ui/text-field"
+} from '@/components/ui/modal'
+import { TextField } from '@/components/ui/text-field'
 
 export default function ModalDemo() {
   return (

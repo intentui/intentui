@@ -1,11 +1,12 @@
-"use client"
+'use client'
 
-import { AtSymbolIcon } from "@heroicons/react/24/outline"
-import { BrandXIcon } from "@/components/icons/brand-x-icon"
-import { Label } from "@/components/ui/field"
-import { Input, InputGroup } from "@/components/ui/input"
-import { Text } from "@/components/ui/text"
-import { TextField } from "@/components/ui/text-field"
+import { AtSymbolIcon } from '@heroicons/react/24/outline'
+import { BrandXIcon } from '@/components/icons/brand-x-icon'
+import { Label } from '@/components/ui/field'
+import { Input, InputGroup } from '@/components/ui/input'
+import { Text } from '@/components/ui/text'
+import { TextField } from '@/components/ui/text-field'
+
 export default function TextFieldPrefixSuffixDemo() {
   return (
     <div className="flex flex-col gap-4">

@@ -1,28 +1,31 @@
 ---
-title: "Chart"
+title: 'Chart'
 description: Chart components for visualizing data using area and bar styles with support for custom tooltips, legends, and dynamic control. They are responsive.
 order: 1
 published: true
-references: ["https://recharts.org"]
+references: ['https://recharts.org']
 ---
 
 ## Installation
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/chart"/>
+<InstallCommand command="npx shadcn@latest add @intentui/chart" />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i recharts tailwind-merge"/>
+
+<InstallCommand command="npm i recharts tailwind-merge" />
 
 <SourceCode toShow={'chart'} />
 
 ## Hooks
+
 For responsive charts, you can use this hook (`hooks/use-mobile.ts`):
+
 ```tsx
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 const MOBILE_BREAKPOINT = 768
 export function useIsMobile() {
@@ -33,9 +36,9 @@ export function useIsMobile() {
     const onChange = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
     }
-    mql.addEventListener("change", onChange)
+    mql.addEventListener('change', onChange)
     setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    return () => mql.removeEventListener("change", onChange)
+    return () => mql.removeEventListener('change', onChange)
   }, [])
 
   return !!isMobile
@@ -45,15 +48,21 @@ export function useIsMobile() {
 ## Examples
 
 ### Area
+
 Area charts are great for showing trends, comparisons, and patterns over time. They keep your data clean and easy to read.
+
 <How isCenter={false} withNoPadding toUse="visualizations/area-chart/area-chart-example" />
 
 ### Bar
+
 Bar charts help visualize data comparisons across categories. They are effective for highlighting differences and trends using vertical or horizontal bars.
+
 <How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-example" />
 
 ### Pie
+
 Pie charts are useful for showing how parts contribute to a whole. They are best for displaying proportions and percentages in a visually appealing way.
+
 <How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-example" />
 
 ## Container height
@@ -78,36 +87,36 @@ If you do not set a height, the chart defaults to 370 on desktop and 200 on mobi
 
 The `CartesianGrid` component renders chart grid lines.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### Chart
 
 The `Chart` component provides shared chart context and layout.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `children` | `ReactElement \| ((props: ChartContextProps) => ReactElement)` | - |
-| `className` | `string` | - |
-| `config` | `ChartConfig` | - |
-| `containerHeight` | `number` | `370 desktop / 200 mobile` |
-| `data` | `Record<string, any>[]` | `[]` |
-| `dataKey` | `string` | `value` |
-| `id` | `string` | generated |
-| `layout` | `ChartLayout` | `horizontal` |
+| Prop              | Type                                                           | Default                    |
+| ----------------- | -------------------------------------------------------------- | -------------------------- |
+| `children`        | `ReactElement \| ((props: ChartContextProps) => ReactElement)` | -                          |
+| `className`       | `string`                                                       | -                          |
+| `config`          | `ChartConfig`                                                  | -                          |
+| `containerHeight` | `number`                                                       | `370 desktop / 200 mobile` |
+| `data`            | `Record<string, any>[]`                                        | `[]`                       |
+| `dataKey`         | `string`                                                       | `value`                    |
+| `id`              | `string`                                                       | generated                  |
+| `layout`          | `ChartLayout`                                                  | `horizontal`               |
 
 ### ChartLegendContent
 
 The `ChartLegendContent` component renders the chart legend items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `align` | `LegendProps["align"]` | `right` |
-| `className` | `string` | - |
-| `hideIcon` | `boolean` | `false` |
-| `nameKey` | `string` | - |
-| `payload` | `ReadonlyArray<LegendPayload>` | - |
+| Prop            | Type                           | Default  |
+| --------------- | ------------------------------ | -------- |
+| `align`         | `LegendProps["align"]`         | `right`  |
+| `className`     | `string`                       | -        |
+| `hideIcon`      | `boolean`                      | `false`  |
+| `nameKey`       | `string`                       | -        |
+| `payload`       | `ReadonlyArray<LegendPayload>` | -        |
 | `verticalAlign` | `LegendProps["verticalAlign"]` | `bottom` |
 
 ### ChartLegend
@@ -122,40 +131,40 @@ The `ChartTooltip` component renders the chart tooltip container.
 
 The `ChartTooltipContent` component renders chart tooltip content.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `color` | `string` | - |
-| `formatter` | `TooltipContentProps["formatter"]` | - |
-| `hideIndicator` | `boolean` | `false` |
-| `hideLabel` | `boolean` | `false` |
-| `indicator` | `"line" \| "dot" \| "dashed"` | `dot` |
-| `labelClassName` | `string` | - |
-| `labelFormatter` | `TooltipContentProps["labelFormatter"]` | - |
-| `labelKey` | `string` | - |
-| `labelSeparator` | `boolean` | `true` |
-| `nameKey` | `string` | - |
+| Prop             | Type                                    | Default |
+| ---------------- | --------------------------------------- | ------- |
+| `className`      | `string`                                | -       |
+| `color`          | `string`                                | -       |
+| `formatter`      | `TooltipContentProps["formatter"]`      | -       |
+| `hideIndicator`  | `boolean`                               | `false` |
+| `hideLabel`      | `boolean`                               | `false` |
+| `indicator`      | `"line" \| "dot" \| "dashed"`           | `dot`   |
+| `labelClassName` | `string`                                | -       |
+| `labelFormatter` | `TooltipContentProps["labelFormatter"]` | -       |
+| `labelKey`       | `string`                                | -       |
+| `labelSeparator` | `boolean`                               | `true`  |
+| `nameKey`        | `string`                                | -       |
 
 ### XAxis
 
 The `XAxis` component renders the chart x-axis.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `displayEdgeLabelsOnly` | `boolean` | - |
-| `intervalType` | `IntervalType` | `preserveStartEnd` |
-| `minTickGap` | `number` | `5` |
+| Prop                    | Type           | Default            |
+| ----------------------- | -------------- | ------------------ |
+| `className`             | `string`       | -                  |
+| `displayEdgeLabelsOnly` | `boolean`      | -                  |
+| `intervalType`          | `IntervalType` | `preserveStartEnd` |
+| `minTickGap`            | `number`       | `5`                |
 
 ### YAxis
 
 The `YAxis` component renders the chart y-axis.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `domain` | `YAxisPrimitiveProps["domain"]` | `["auto", "auto"]` |
-| `type` | `YAxisPrimitiveProps["type"]` | layout-based |
-| `width` | `number` | layout-based |
+| Prop        | Type                            | Default            |
+| ----------- | ------------------------------- | ------------------ |
+| `className` | `string`                        | -                  |
+| `domain`    | `YAxisPrimitiveProps["domain"]` | `["auto", "auto"]` |
+| `type`      | `YAxisPrimitiveProps["type"]`   | layout-based       |
+| `width`     | `number`                        | layout-based       |
 
 See the [Recharts](https://recharts.org) for the full API reference.

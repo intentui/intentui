@@ -1,6 +1,6 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { Tooltip, TooltipContent } from "@/components/ui/tooltip"
+'use client'
+import { Button } from '@/components/ui/button'
+import { Tooltip, TooltipContent } from '@/components/ui/tooltip'
 
 export default function TooltipDemo() {
   return (

@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { Menu, MenuContent, MenuItem, MenuLabel, MenuTrigger } from "@/components/ui/menu"
+import { Menu, MenuContent, MenuItem, MenuLabel, MenuTrigger } from '@/components/ui/menu'
 
 export default function MenuDisabledDemo() {
   return (
     <Menu>
       <MenuTrigger>Open</MenuTrigger>
-      <MenuContent popover={{ placement: "bottom" }}>
+      <MenuContent popover={{ placement: 'bottom' }}>
         <MenuItem id="view">
           <MenuLabel>View</MenuLabel>
         </MenuItem>

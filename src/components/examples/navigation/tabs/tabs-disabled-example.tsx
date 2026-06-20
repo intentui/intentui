@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
+import { Tab, TabList, TabPanel, Tabs } from '@/components/ui/tabs'
 
 export default function TabsDisabledDemo() {
   return (
-    <Tabs disabledKeys={["c", "a"]} aria-label="Services">
+    <Tabs disabledKeys={['c', 'a']} aria-label="Services">
       <TabList>
         <Tab id="o">Overview</Tab>
         <Tab id="c">Contact</Tab>

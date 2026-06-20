@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   Leaderboard,
@@ -6,14 +6,14 @@ import {
   LeaderboardEnd,
   LeaderboardItem,
   LeaderboardStart,
-} from "@/components/ui/leaderboard"
+} from '@/components/ui/leaderboard'
 
 const topRevenueSources = [
-  { label: "United States", amount: 30000 },
-  { label: "Europe", amount: 24500 },
-  { label: "Asia Pacific", amount: 19800 },
-  { label: "Canada", amount: 12400 },
-  { label: "Latin America", amount: 7600 },
+  { label: 'United States', amount: 30000 },
+  { label: 'Europe', amount: 24500 },
+  { label: 'Asia Pacific', amount: 19800 },
+  { label: 'Canada', amount: 12400 },
+  { label: 'Latin America', amount: 7600 },
 ]
 
 const maxAmount = Math.max(...topRevenueSources.map((item) => item.amount))
@@ -28,8 +28,8 @@ export default function LeaderboardCurrencyDemo() {
             maxValue={maxAmount}
             value={item.amount}
             formatOptions={{
-              style: "currency",
-              currency: "USD",
+              style: 'currency',
+              currency: 'USD',
               maximumFractionDigits: 0,
             }}
           >

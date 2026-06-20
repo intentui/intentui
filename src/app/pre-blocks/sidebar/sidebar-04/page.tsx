@@ -1,7 +1,7 @@
-import AppSidebar from "@/app/pre-blocks/sidebar/app-sidebar"
-import AppSidebarNav from "@/app/pre-blocks/sidebar/app-sidebar-nav"
-import { Heading } from "@/components/ui/heading"
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
+import AppSidebar from '@/app/pre-blocks/sidebar/app-sidebar'
+import AppSidebarNav from '@/app/pre-blocks/sidebar/app-sidebar-nav'
+import { Heading } from '@/components/ui/heading'
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 
 export default function Page() {
   return (

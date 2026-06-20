@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { PlusIcon } from "@heroicons/react/20/solid"
+import { PlusIcon } from '@heroicons/react/20/solid'
 import {
   ArrowLeftStartOnRectangleIcon,
   Cog6ToothIcon,
   HashtagIcon,
   LifebuoyIcon,
-} from "@heroicons/react/24/outline"
-import { Avatar } from "@/components/ui/avatar"
+} from '@heroicons/react/24/outline'
+import { Avatar } from '@/components/ui/avatar'
 import {
   Menu,
   MenuContent,
@@ -18,7 +18,7 @@ import {
   MenuSeparator,
   MenuShortcut,
   MenuTrigger,
-} from "@/components/ui/menu"
+} from '@/components/ui/menu'
 
 export default function MenuWithArrowDemo() {
   return (
@@ -26,7 +26,7 @@ export default function MenuWithArrowDemo() {
       <MenuTrigger aria-label="Open Menu">
         <Avatar src="https://intentui.com/images/avatar/cobain.jpg" />
       </MenuTrigger>
-      <MenuContent popover={{ arrow: true, placement: "top" }} className="min-w-54">
+      <MenuContent popover={{ arrow: true, placement: 'top' }} className="min-w-54">
         <MenuSection>
           <MenuHeader separator>
             <span className="block">Irsyad A. Panjaitan</span>

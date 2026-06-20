@@ -1,12 +1,12 @@
-import { Heading } from "@/components/ui/heading"
-import { Text } from "@/components/ui/text"
-import { createMetadata } from "@/lib/metadata"
+import { Heading } from '@/components/ui/heading'
+import { Text } from '@/components/ui/text'
+import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
-  title: "Page Not Found",
+  title: 'Page Not Found',
   description:
     "The page you're looking for doesn't exist. Return to Intent UI to explore accessible React components and design patterns.",
-  path: "/404",
+  path: '/404',
   noindex: true,
 })
 

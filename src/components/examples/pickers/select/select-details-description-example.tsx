@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Description, Label } from "@/components/ui/field"
+import { Description, Label } from '@/components/ui/field'
 import {
   Select,
   SelectContent,
@@ -8,7 +8,7 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-} from "@/components/ui/select"
+} from '@/components/ui/select'
 
 export default function SelectDetailsDescriptionDemo() {
   return (
@@ -31,27 +31,27 @@ export default function SelectDetailsDescriptionDemo() {
 export const roles = [
   {
     id: 1,
-    name: "Admin",
-    description: "Has full access to all resources",
+    name: 'Admin',
+    description: 'Has full access to all resources',
   },
   {
     id: 2,
-    name: "Editor",
-    description: "Can edit content but has limited access to settings",
+    name: 'Editor',
+    description: 'Can edit content but has limited access to settings',
   },
   {
     id: 3,
-    name: "Viewer",
-    description: "Can view content but cannot make changes",
+    name: 'Viewer',
+    description: 'Can view content but cannot make changes',
   },
   {
     id: 4,
-    name: "Contributor",
-    description: "Can contribute content for review",
+    name: 'Contributor',
+    description: 'Can contribute content for review',
   },
   {
     id: 5,
-    name: "Guest",
-    description: "Limited access, mostly for viewing purposes",
+    name: 'Guest',
+    description: 'Limited access, mostly for viewing purposes',
   },
 ]

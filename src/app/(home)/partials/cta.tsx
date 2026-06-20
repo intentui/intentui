@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
-import { PageContainer } from "@/components/page-container"
-import { CardHeader } from "@/components/ui/card"
-import { Link } from "@/components/ui/link"
-import { Strong, Text } from "@/components/ui/text"
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+import { PageContainer } from '@/components/page-container'
+import { CardHeader } from '@/components/ui/card'
+import { Link } from '@/components/ui/link'
+import { Strong, Text } from '@/components/ui/text'
 
 export function Cta() {
   return (

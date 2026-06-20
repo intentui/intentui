@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   Menu,
@@ -7,13 +7,13 @@ import {
   MenuLabel,
   MenuSection,
   MenuTrigger,
-} from "@/components/ui/menu"
+} from '@/components/ui/menu'
 
 export default function MenuSectionDemo() {
   return (
     <Menu>
       <MenuTrigger>Open</MenuTrigger>
-      <MenuContent className="sm:min-w-64" items={cities} popover={{ placement: "bottom" }}>
+      <MenuContent className="sm:min-w-64" items={cities} popover={{ placement: 'bottom' }}>
         {(city) => (
           <MenuSection label={city.name} items={city.landmarks}>
             {(landmark) => (
@@ -31,177 +31,177 @@ export default function MenuSectionDemo() {
 const cities = [
   {
     id: 1,
-    name: "New York City",
+    name: 'New York City',
     landmarks: [
       {
         id: 101,
-        name: "Statue of Liberty",
+        name: 'Statue of Liberty',
       },
       {
         id: 102,
-        name: "Central Park",
+        name: 'Central Park',
       },
       {
         id: 103,
-        name: "Empire State Building",
+        name: 'Empire State Building',
       },
       {
         id: 104,
-        name: "Times Square",
+        name: 'Times Square',
       },
     ],
   },
   {
     id: 2,
-    name: "Paris",
+    name: 'Paris',
     landmarks: [
       {
         id: 201,
-        name: "Eiffel Tower",
+        name: 'Eiffel Tower',
       },
       {
         id: 202,
-        name: "Louvre Museum",
+        name: 'Louvre Museum',
       },
       {
         id: 203,
-        name: "Notre-Dame Cathedral",
+        name: 'Notre-Dame Cathedral',
       },
       {
         id: 204,
-        name: "Champs-Élysées",
+        name: 'Champs-Élysées',
       },
     ],
   },
   {
     id: 3,
-    name: "Tokyo",
+    name: 'Tokyo',
     landmarks: [
       {
         id: 301,
-        name: "Tokyo Tower",
+        name: 'Tokyo Tower',
       },
       {
         id: 302,
-        name: "Shibuya Crossing",
+        name: 'Shibuya Crossing',
       },
       {
         id: 303,
-        name: "Senso-ji Temple",
+        name: 'Senso-ji Temple',
       },
       {
         id: 304,
-        name: "Meiji Shrine",
+        name: 'Meiji Shrine',
       },
       {
         id: 305,
-        name: "Tokyo Skytree",
+        name: 'Tokyo Skytree',
       },
     ],
   },
   {
     id: 4,
-    name: "London",
+    name: 'London',
     landmarks: [
       {
         id: 401,
-        name: "Big Ben",
+        name: 'Big Ben',
       },
       {
         id: 402,
-        name: "Tower of London",
+        name: 'Tower of London',
       },
       {
         id: 403,
-        name: "Buckingham Palace",
+        name: 'Buckingham Palace',
       },
       {
         id: 404,
-        name: "London Eye",
+        name: 'London Eye',
       },
       {
         id: 405,
-        name: "Westminster Abbey",
+        name: 'Westminster Abbey',
       },
     ],
   },
   {
     id: 5,
-    name: "Rome",
+    name: 'Rome',
     landmarks: [
       {
         id: 501,
-        name: "Colosseum",
+        name: 'Colosseum',
       },
       {
         id: 502,
-        name: "Vatican City",
+        name: 'Vatican City',
       },
       {
         id: 503,
-        name: "Trevi Fountain",
+        name: 'Trevi Fountain',
       },
       {
         id: 504,
-        name: "Pantheon",
+        name: 'Pantheon',
       },
     ],
   },
   {
     id: 6,
-    name: "Sydney",
+    name: 'Sydney',
     landmarks: [
       {
         id: 601,
-        name: "Sydney Opera House",
+        name: 'Sydney Opera House',
       },
       {
         id: 602,
-        name: "Sydney Harbour Bridge",
+        name: 'Sydney Harbour Bridge',
       },
       {
         id: 603,
-        name: "Bondi Beach",
+        name: 'Bondi Beach',
       },
       {
         id: 604,
-        name: "Royal Botanic Garden",
+        name: 'Royal Botanic Garden',
       },
     ],
   },
   {
     id: 7,
-    name: "Dubai",
+    name: 'Dubai',
     landmarks: [
       {
         id: 701,
-        name: "Burj Khalifa",
+        name: 'Burj Khalifa',
       },
       {
         id: 702,
-        name: "Palm Jumeirah",
+        name: 'Palm Jumeirah',
       },
       {
         id: 703,
-        name: "Dubai Mall",
+        name: 'Dubai Mall',
       },
       {
         id: 704,
-        name: "Burj Al Arab",
+        name: 'Burj Al Arab',
       },
     ],
   },
   {
     id: 8,
-    name: "Moscow",
+    name: 'Moscow',
     landmarks: [
       {
         id: 801,
-        name: "Red Square",
+        name: 'Red Square',
       },
       {
         id: 802,
-        name: "Kremlin",
+        name: 'Kremlin',
       },
       {
         id: 803,
@@ -209,47 +209,47 @@ const cities = [
       },
       {
         id: 804,
-        name: "Bolshoi Theatre",
+        name: 'Bolshoi Theatre',
       },
     ],
   },
   {
     id: 9,
-    name: "Cairo",
+    name: 'Cairo',
     landmarks: [
       {
         id: 901,
-        name: "Pyramids of Giza",
+        name: 'Pyramids of Giza',
       },
       {
         id: 902,
-        name: "Great Sphinx of Giza",
+        name: 'Great Sphinx of Giza',
       },
       {
         id: 903,
-        name: "Egyptian Museum",
+        name: 'Egyptian Museum',
       },
     ],
   },
   {
     id: 10,
-    name: "Rio de Janeiro",
+    name: 'Rio de Janeiro',
     landmarks: [
       {
         id: 1001,
-        name: "Christ the Redeemer",
+        name: 'Christ the Redeemer',
       },
       {
         id: 1002,
-        name: "Sugarloaf Mountain",
+        name: 'Sugarloaf Mountain',
       },
       {
         id: 1003,
-        name: "Copacabana Beach",
+        name: 'Copacabana Beach',
       },
       {
         id: 1004,
-        name: "Maracanã Stadium",
+        name: 'Maracanã Stadium',
       },
     ],
   },

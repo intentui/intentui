@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Avatar } from "@/components/ui/avatar"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Avatar } from '@/components/ui/avatar'
+import { Skeleton } from '@/components/ui/skeleton'
 
 export default function SkeletonDemo() {
   return (

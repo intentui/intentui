@@ -1,9 +1,9 @@
-import { twMerge } from "tailwind-merge"
+import { twMerge } from 'tailwind-merge'
 
 export function IconBrandV0({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      className={twMerge("size-4", className)}
+      className={twMerge('size-4', className)}
       {...props}
       data-slot="icon"
       height={16}

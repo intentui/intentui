@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   Snippet,
@@ -6,13 +6,13 @@ import {
   SnippetTabPanel,
   SnippetTabPanels,
   SnippetTabsList,
-} from "@/components/ui/snippet"
+} from '@/components/ui/snippet'
 
 const commands = [
-  { id: "npm", label: "NPM", command: "npm install react-aria-components" },
-  { id: "pnpm", label: "PNPM", command: "pnpm add react-aria-components" },
-  { id: "yarn", label: "Yarn", command: "yarn add react-aria-components" },
-  { id: "bun", label: "Bun", command: "bun add react-aria-components" },
+  { id: 'npm', label: 'NPM', command: 'npm install react-aria-components' },
+  { id: 'pnpm', label: 'PNPM', command: 'pnpm add react-aria-components' },
+  { id: 'yarn', label: 'Yarn', command: 'yarn add react-aria-components' },
+  { id: 'bun', label: 'Bun', command: 'bun add react-aria-components' },
 ]
 
 export default function SnippetDemo() {

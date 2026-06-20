@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Form } from "react-aria-components/Form"
-import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
+import { useState } from 'react'
+import { Form } from 'react-aria-components/Form'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
 import {
   Drawer,
   DrawerBody,
@@ -13,10 +13,10 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-} from "@/components/ui/drawer"
-import { FieldError, Label } from "@/components/ui/field"
-import { TextField } from "@/components/ui/text-field"
-import { Textarea } from "@/components/ui/textarea"
+} from '@/components/ui/drawer'
+import { FieldError, Label } from '@/components/ui/field'
+import { TextField } from '@/components/ui/text-field'
+import { Textarea } from '@/components/ui/textarea'
 
 export default function DrawerNestedDemo() {
   const [isRegistrationDrawerOpen, setIsRegistrationDrawerOpen] = useState(false)
@@ -55,8 +55,8 @@ export default function DrawerNestedDemo() {
         isOpen={isProfileSetupDrawerOpen}
         onOpenChange={(isOpen) => {
           if (!isOpen && isTyping)
-            toast("Profile setup incomplete", {
-              position: "top-center",
+            toast('Profile setup incomplete', {
+              position: 'top-center',
             })
           setIsProfileSetupDrawerOpen(isOpen)
         }}
@@ -71,8 +71,8 @@ export default function DrawerNestedDemo() {
           <Form
             onSubmit={(e) => {
               e.preventDefault()
-              toast.success("Profile setup complete", {
-                position: "top-center",
+              toast.success('Profile setup complete', {
+                position: 'top-center',
               })
               setIsProfileSetupDrawerOpen(false)
               setIsRegistrationDrawerOpen(false)

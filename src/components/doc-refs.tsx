@@ -1,51 +1,51 @@
-"use client"
+'use client'
 
-import { BellIcon, ChartPieIcon } from "@heroicons/react/24/outline"
-import { twJoin } from "tailwind-merge"
-import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
-import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
-import { BrandReactAriaIcon } from "@/components/icons/brand-react-aria-icon"
-import { MotionBrandIcon } from "@/components/icons/motion-brand-icon"
-import { LinkButton } from "@/components/link-button"
-import { Logo } from "@/components/logo"
-import { ButtonGroup } from "@/components/ui/button-group"
+import { BellIcon, ChartPieIcon } from '@heroicons/react/24/outline'
+import { twJoin } from 'tailwind-merge'
+import { BrandGithubIcon } from '@/components/icons/brand-github-icon'
+import { BrandIntentuiIcon } from '@/components/icons/brand-intentui-icon'
+import { BrandReactAriaIcon } from '@/components/icons/brand-react-aria-icon'
+import { MotionBrandIcon } from '@/components/icons/motion-brand-icon'
+import { LinkButton } from '@/components/link-button'
+import { Logo } from '@/components/logo'
+import { ButtonGroup } from '@/components/ui/button-group'
 
 export function DocRefs({ references }: { references: string[] }) {
   const urls = references.map((url: string) => {
-    let title = ""
+    let title = ''
     let icon: React.FC<React.SVGProps<SVGSVGElement>>
 
     switch (true) {
-      case url.includes("react-aria"):
-        title = "RAC"
+      case url.includes('react-aria'):
+        title = 'RAC'
         icon = BrandReactAriaIcon
         break
-      case url.includes("icons"):
-        title = "Explore"
+      case url.includes('icons'):
+        title = 'Explore'
         icon = BrandIntentuiIcon
         break
-      case url.includes("recharts"):
-        title = "Recharts"
+      case url.includes('recharts'):
+        title = 'Recharts'
         icon = ChartPieIcon
         break
-      case url.includes("motion"):
-        title = "Motion"
+      case url.includes('motion'):
+        title = 'Motion'
         icon = MotionBrandIcon
         break
-      case url.includes("docs/components"):
-        title = "Internal"
+      case url.includes('docs/components'):
+        title = 'Internal'
         icon = Logo
         break
-      case url.includes("sonner"):
-        title = "Sonner"
+      case url.includes('sonner'):
+        title = 'Sonner'
         icon = BellIcon
         break
-      case url.includes("github"):
-        title = "Github"
+      case url.includes('github'):
+        title = 'Github'
         icon = BrandGithubIcon
         break
-      case url.includes("embla-carousel"):
-        title = "API"
+      case url.includes('embla-carousel'):
+        title = 'API'
         icon = IconEmblaCarousel
         break
       default:
@@ -74,14 +74,14 @@ export function DocRefs({ references }: { references: string[] }) {
             >
               {item.icon && (
                 <item.icon
-                  className={twJoin(item.url.includes("react-aria") ? "size-3!" : "")}
+                  className={twJoin(item.url.includes('react-aria') ? 'size-3!' : '')}
                   data-slot="icon"
                 />
               )}
 
               {item.title}
             </LinkButton>
-          ),
+          )
         )}
       </ButtonGroup>
     </>

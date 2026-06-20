@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { buttonStyles } from "@/components/ui/button"
+import { buttonStyles } from '@/components/ui/button'
 import {
   Drawer,
   DrawerBody,
@@ -9,12 +9,12 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTrigger,
-} from "@/components/ui/drawer"
+} from '@/components/ui/drawer'
 
 export default function DrawerStickyDemo() {
   return (
     <Drawer>
-      <DrawerTrigger className={buttonStyles({ intent: "outline" })}>Open</DrawerTrigger>
+      <DrawerTrigger className={buttonStyles({ intent: 'outline' })}>Open</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>The Beatles</DrawerHeader>
         <DrawerBody>
@@ -29,7 +29,7 @@ export default function DrawerStickyDemo() {
             <p>
               When you create an account with us, you are responsible for maintaining the
               confidentiality of your account and password.
-            </p>{" "}
+            </p>{' '}
             <p>
               You agree to accept responsibility for all activities that occur under your account.
               You must notify us immediately of any breach of security or unauthorized use of your

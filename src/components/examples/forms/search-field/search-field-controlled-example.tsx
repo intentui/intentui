@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Description } from "@/components/ui/field"
-import { SearchField, SearchInput } from "@/components/ui/search-field"
+import { Description } from '@/components/ui/field'
+import { SearchField, SearchInput } from '@/components/ui/search-field'
 
 export default function SearchFieldControlledDemo() {
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState('')
   return (
     <>
       <SearchField
@@ -19,7 +19,7 @@ export default function SearchFieldControlledDemo() {
         <SearchInput />
       </SearchField>
       <Description className="mt-2 block [&>strong]:text-fg">
-        You have typed: <strong>{value ?? "-"}</strong>
+        You have typed: <strong>{value ?? '-'}</strong>
       </Description>
     </>
   )

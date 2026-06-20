@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { getLocalTimeZone, parseDate, startOfYear, today } from "@internationalized/date"
-import { useState } from "react"
-import { Form } from "react-aria-components/Form"
-import { Button } from "@/components/ui/button"
-import { DatePicker, DatePickerTrigger } from "@/components/ui/date-picker"
-import { FieldError, Label } from "@/components/ui/field"
+import { getLocalTimeZone, parseDate, startOfYear, today } from '@internationalized/date'
+import { useState } from 'react'
+import { Form } from 'react-aria-components/Form'
+import { Button } from '@/components/ui/button'
+import { DatePicker, DatePickerTrigger } from '@/components/ui/date-picker'
+import { FieldError, Label } from '@/components/ui/field'
 
 export default function DatePickerInvalidDemo() {
   const ly = startOfYear(today(getLocalTimeZone()))
@@ -14,7 +14,7 @@ export default function DatePickerInvalidDemo() {
   return (
     <Form onSubmit={(e) => e.preventDefault()} className="space-y-2">
       <DatePicker
-        validate={(date) => (date < now ? "Select a future date, please." : null)}
+        validate={(date) => (date < now ? 'Select a future date, please.' : null)}
         value={value}
         onChange={(newValue) => setValue(newValue!)}
       >

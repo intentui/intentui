@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { ShowMore } from "@/components/ui/show-more"
+import { ShowMore } from '@/components/ui/show-more'
 
 export default function ShowMoreAsTextDemo() {
   return (

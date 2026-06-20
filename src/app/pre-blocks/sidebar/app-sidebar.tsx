@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
-import { ChevronUpDownIcon, PlusIcon } from "@heroicons/react/20/solid"
+import { EllipsisHorizontalIcon } from '@heroicons/react/16/solid'
+import { ChevronUpDownIcon, PlusIcon } from '@heroicons/react/20/solid'
 import {
   ArchiveBoxIcon,
   ArrowDownTrayIcon,
@@ -23,9 +23,9 @@ import {
   ShieldCheckIcon,
   ShoppingBagIcon,
   TicketIcon,
-} from "@heroicons/react/24/outline"
-import { Avatar } from "@/components/ui/avatar"
-import { Link } from "@/components/ui/link"
+} from '@heroicons/react/24/outline'
+import { Avatar } from '@/components/ui/avatar'
+import { Link } from '@/components/ui/link'
 import {
   Menu,
   MenuContent,
@@ -34,7 +34,7 @@ import {
   MenuSection,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu"
+} from '@/components/ui/menu'
 import {
   Sidebar,
   SidebarContent,
@@ -51,7 +51,7 @@ import {
   SidebarRail,
   SidebarSection,
   SidebarSectionGroup,
-} from "@/components/ui/sidebar"
+} from '@/components/ui/sidebar'
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -92,7 +92,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                       <MenuContent
                         popover={{
                           offset: 0,
-                          placement: "right top",
+                          placement: 'right top',
                         }}
                       >
                         <MenuItem href="#new-order">
@@ -137,7 +137,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                       <MenuContent
                         popover={{
                           offset: 0,
-                          placement: "right top",
+                          placement: 'right top',
                         }}
                       >
                         <MenuItem href="#new-product">

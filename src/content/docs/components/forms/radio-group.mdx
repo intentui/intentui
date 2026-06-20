@@ -1,9 +1,9 @@
 ---
-title: "Radio Group"
+title: 'Radio Group'
 description: A set of radio buttons that allows users to select only one option from a predefined list. It provides clear visual feedback and supports keyboard navigation.
 order: 9
 published: true
-references: ["https://react-aria.adobe.com/RadioGroup#api"]
+references: ['https://react-aria.adobe.com/RadioGroup#api']
 ---
 
 <How toUse="forms/radio-group/radio-group-example" />
@@ -11,19 +11,23 @@ references: ["https://react-aria.adobe.com/RadioGroup#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/radio"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/radio" />
 
 ## Composed components
-<Composed components={['field']}/>
+
+<Composed components={['field']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
 
-<SourceCode toShow='radio'/>
+<InstallCommand command="npm i react-aria-components tailwind-merge" />
+
+<SourceCode toShow="radio" />
 
 ## Anatomy
+
 ```
 import { Description, Label } from "@/components/ui/field"
 import { RadioField, RadioGroup, Radio } from "@/components/ui/radio"
@@ -56,30 +60,43 @@ import { RadioField, RadioGroup, Radio } from "@/components/ui/radio"
 ## Examples
 
 ### Orientation
+
 By default, the radio group is vertically oriented. You can change it to a horizontal orientation by using the `orientation` prop.
+
 <How minW60 toUse="forms/radio-group/radio-group-orientation-example" />
 
 ### Without label
+
 The label is optional. You can omit it if not needed.
 
 ### Description
+
 Add a description to the radio group by passing the `description` prop.
+
 <How minW60 toUse="forms/radio-group/radio-group-description-example" />
 
 ### Validation
+
 Try submit the form without selecting any radio option to see the validation error.
+
 <How toUse="forms/radio-group/radio-group-validation-example" />
 
 ### Controlled
+
 You can control the radio group value using the `value` prop.
+
 <How minW60 toUse="forms/radio-group/radio-group-controlled-example" />
 
 ### Uncontrolled
+
 You can control the radio group value using the `defaultValue` prop.
+
 <How minW60 toUse="forms/radio-group/radio-group-uncontrolled-example" />
 
 ### Disabled
+
 When the radio group is disabled, it cannot be interacted with.
+
 <How toUse="forms/radio-group/radio-group-disabled-example" />
 
 ## Component API
@@ -88,24 +105,24 @@ When the radio group is disabled, it cannot be interacted with.
 
 The `RadioField` component represents one radio option.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### Radio
 
 The `Radio` component represents one radio option.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### RadioGroup
 
 The `RadioGroup` component groups mutually exclusive radio options.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/RadioGroup#api) for the full API reference.

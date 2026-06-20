@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import { parseColor } from "@react-stately/color"
-import { useState } from "react"
+import { parseColor } from '@react-stately/color'
+import { useState } from 'react'
 
-import { ColorArea } from "@/components/ui/color-area"
-import { ColorField } from "@/components/ui/color-field"
-import { ColorSlider } from "@/components/ui/color-slider"
-import { Label } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { SliderOutput } from "@/components/ui/slider"
+import { ColorArea } from '@/components/ui/color-area'
+import { ColorField } from '@/components/ui/color-field'
+import { ColorSlider } from '@/components/ui/color-slider'
+import { Label } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { SliderOutput } from '@/components/ui/slider'
 
 export default function ColorAreaWithSliderDemo() {
-  const [color, setColor] = useState(parseColor("hsl(50, 100%, 50%)"))
+  const [color, setColor] = useState(parseColor('hsl(50, 100%, 50%)'))
   return (
     <div className="flex min-w-56 flex-col gap-y-2">
       <ColorArea
@@ -31,7 +31,7 @@ export default function ColorAreaWithSliderDemo() {
         <SliderOutput />
       </ColorSlider>
 
-      <ColorField value={color.toString("hex")}>
+      <ColorField value={color.toString('hex')}>
         <Label>CurrentColor</Label>
         <Input />
       </ColorField>

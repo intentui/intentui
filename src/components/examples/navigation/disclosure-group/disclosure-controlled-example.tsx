@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Disclosure, DisclosurePanel, DisclosureTrigger } from "@/components/ui/disclosure-group"
+import { useState } from 'react'
+import { Disclosure, DisclosurePanel, DisclosureTrigger } from '@/components/ui/disclosure-group'
 
 export default function DisclosureControlledDemo() {
   const [expanded, setExpanded] = useState(false)

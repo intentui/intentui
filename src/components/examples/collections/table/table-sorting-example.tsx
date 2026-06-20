@@ -1,6 +1,6 @@
-"use client"
-import { useAsyncList } from "@react-stately/data"
-import { Loader } from "@/components/ui/loader"
+'use client'
+import { useAsyncList } from '@react-stately/data'
+import { Loader } from '@/components/ui/loader'
 import {
   Table,
   TableBody,
@@ -8,7 +8,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from '@/components/ui/table'
 
 interface Character {
   title: string
@@ -20,7 +20,7 @@ interface Character {
 export default function TableSortingDemo() {
   const list = useAsyncList<Character>({
     async load({ signal }) {
-      const res = await fetch("https://swapi.py4e.com/api/films", {
+      const res = await fetch('https://swapi.py4e.com/api/films', {
         signal,
       })
       const json = await res.json()
@@ -36,7 +36,7 @@ export default function TableSortingDemo() {
           // @ts-expect-error
           const second = b[sortDescriptor.column]
           let cmp = (Number.parseInt(first) || first) < (Number.parseInt(second) || second) ? -1 : 1
-          if (sortDescriptor.direction === "descending") {
+          if (sortDescriptor.direction === 'descending') {
             cmp *= -1
           }
           return cmp

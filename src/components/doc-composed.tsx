@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
-import { buttonStyles } from "@/components/ui/button"
+import Link from 'next/link'
+import { BrandReactjsIcon } from '@/components/icons/brand-reactjs-icon'
+import { buttonStyles } from '@/components/ui/button'
 
 export function DocComposed({
   components,
@@ -28,10 +28,10 @@ export function DocComposed({
           <Link
             key={i}
             href={`/${item}`}
-            className={buttonStyles({ intent: "outline", className: "capitalize" })}
+            className={buttonStyles({ intent: 'outline', className: 'capitalize' })}
           >
             <BrandReactjsIcon className="text-cyan-500 dark:text-cyan-400" />
-            {item.replaceAll("-", " ")}
+            {item.replaceAll('-', ' ')}
           </Link>
         ))}
       </div>

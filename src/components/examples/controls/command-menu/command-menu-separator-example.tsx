@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   CommandMenu,
   CommandMenuItem,
@@ -10,7 +10,7 @@ import {
   CommandMenuSearch,
   CommandMenuSection,
   CommandMenuSeparator,
-} from "@/components/ui/command-menu"
+} from '@/components/ui/command-menu'
 
 export default function CommandMenuSeparatorDemo() {
   const [isOpen, setIsOpen] = useState(false)

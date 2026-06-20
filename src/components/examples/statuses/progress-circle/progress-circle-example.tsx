@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
-import { ProgressCircle } from "@/components/ui/progress-circle"
+import { ProgressCircle } from '@/components/ui/progress-circle'
 
 export default function ProgressCircleDemo() {
   const [value, setValue] = useState(1)

@@ -1,4 +1,4 @@
-import type { LazyExoticComponent } from "react"
+import type { LazyExoticComponent } from 'react'
 
 export type RegistryItem = {
   component: LazyExoticComponent<any>

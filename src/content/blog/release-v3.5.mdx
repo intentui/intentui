@@ -11,18 +11,18 @@ Intent UI v3.5.0 is here. This release adds new components, refines form pattern
 
 ### New components
 
-* [Input](/docs/components/forms/input)
-* [Button group](/docs/components/buttons/button-group)
-* [Text](/docs/components/surfaces/text)
-* [Fieldset](/docs/components/forms/field)
-* [Legend](/docs/components/forms/field)
+- [Input](/docs/components/forms/input)
+- [Button group](/docs/components/buttons/button-group)
+- [Text](/docs/components/surfaces/text)
+- [Fieldset](/docs/components/forms/field)
+- [Legend](/docs/components/forms/field)
 
 ### Highlights
 
-* Updated to the latest React Aria Components and Tailwind CSS.
-* `Input` provides a consistent, accessible primitive for form fields.
-* `ButtonGroup` lets you group related actions with a compact layout.
-* `Text` standardizes typography so content looks consistent across your app.
+- Updated to the latest React Aria Components and Tailwind CSS.
+- `Input` provides a consistent, accessible primitive for form fields.
+- `ButtonGroup` lets you group related actions with a compact layout.
+- `Text` standardizes typography so content looks consistent across your app.
 
 ## Breaking changes
 
@@ -33,11 +33,7 @@ Form components now use explicit child elements for labels, descriptions, and er
 **Before**
 
 ```tsx
-<TextField
-  label="Username"
-  description="Enter your username"
-  errorMessage="Username is required"
-/>
+<TextField label="Username" description="Enter your username" errorMessage="Username is required" />
 ```
 
 **After**
@@ -45,7 +41,7 @@ Form components now use explicit child elements for labels, descriptions, and er
 ```tsx
 <TextField>
   <Label>Username</Label>
-  <Input/>
+  <Input />
   <Description>Enter your username</Description>
   <FieldError>Username is required</FieldError>
 </TextField>
@@ -56,11 +52,7 @@ Form components now use explicit child elements for labels, descriptions, and er
 **Before**
 
 ```tsx
-<Textarea
-  label="Bio"
-  description="Tell us about yourself"
-  errorMessage="Bio is required"
-/>
+<Textarea label="Bio" description="Tell us about yourself" errorMessage="Bio is required" />
 ```
 
 **After**
@@ -69,7 +61,7 @@ Form components now use explicit child elements for labels, descriptions, and er
 <TextField>
   <Label>Bio</Label>
   <Description>Tell us about yourself</Description>
-  <Textarea/>
+  <Textarea />
   <FieldError>Bio is required</FieldError>
 </TextField>
 ```
@@ -111,11 +103,7 @@ Props for `label`, `description`, and `errorMessage` are removed in favor of chi
 **Before**
 
 ```tsx
-<Select
-  label="Country"
-  description="Select your country"
-  errorMessage="Country is required"
->
+<Select label="Country" description="Select your country" errorMessage="Country is required">
   <SelectContent />
 </Select>
 ```
@@ -139,11 +127,7 @@ Same pattern as Select and TextField.
 **Before**
 
 ```tsx
-<ComboBox
-  label="City"
-  description="Select your city"
-  errorMessage="City is required"
->
+<ComboBox label="City" description="Select your city" errorMessage="City is required">
   <ComboBoxContent />
 </ComboBox>
 ```
@@ -161,17 +145,18 @@ Same pattern as Select and TextField.
 ```
 
 ## Additional changes
-Components that used dot notation like `Card.Header` and `Modal.Footer` are now flattened; use `CardHeader` and `ModalFooter` instead.
 
+Components that used dot notation like `Card.Header` and `Modal.Footer` are now flattened; use `CardHeader` and `ModalFooter` instead.
 
 ## Migration notes
 
-* Replace removed props with `<Label>`, `<Description>`, and `<FieldError>` children.
-* Use `CheckboxLabel` and `SwitchLabel` for their respective components.
-
+- Replace removed props with `<Label>`, `<Description>`, and `<FieldError>` children.
+- Use `CheckboxLabel` and `SwitchLabel` for their respective components.
 
 ## Intent UI Design
+
 Intent UI Design has been updated to match the latest components and patterns in this release. Enjoy **[35% off](https://design.intentui.com/pricing)** all templates and design assets for a limited time. One-time purchase, no subscription.
 
 ## Support
+
 If you find this work useful, you can sponsor me on [GitHub](/sponsor).

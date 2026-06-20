@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import { ArrowUpRightIcon } from "@heroicons/react/20/solid"
-import { usePathname } from "next/navigation"
-import { useEffect, useRef } from "react"
-import type { LinkProps } from "react-aria-components/Link"
-import { Link } from "react-aria-components/Link"
-import { twMerge } from "tailwind-merge"
-import { ColorsIcon } from "@/components/icons/colors-icon"
-import { Package3DIcon } from "@/components/icons/package-3d-icon"
-import { PackageIcon } from "@/components/icons/package-icon"
-import { WindowIcon } from "@/components/icons/window-icon"
-import { WindowVisitIcon } from "@/components/icons/window-visit-icon"
-import { Badge } from "@/components/ui/badge"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import menus from "@/components-search.json"
-import type { Component } from "@/types/search"
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
+import { usePathname } from 'next/navigation'
+import { useEffect, useRef } from 'react'
+import type { LinkProps } from 'react-aria-components/Link'
+import { Link } from 'react-aria-components/Link'
+import { twMerge } from 'tailwind-merge'
+import { ColorsIcon } from '@/components/icons/colors-icon'
+import { Package3DIcon } from '@/components/icons/package-3d-icon'
+import { PackageIcon } from '@/components/icons/package-icon'
+import { WindowIcon } from '@/components/icons/window-icon'
+import { WindowVisitIcon } from '@/components/icons/window-visit-icon'
+import { Badge } from '@/components/ui/badge'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import menus from '@/components-search.json'
+import type { Component } from '@/types/search'
 
 export type SidebarItem = {
   section: string
@@ -26,7 +26,7 @@ export const gs = menus[1] as SidebarItem
 export const dm = menus[2] as SidebarItem
 export const components = menus[3] as Component
 
-export const orderGs = ["Introduction", "Installation", "Client Side Routing", "MCP"]
+export const orderGs = ['Introduction', 'Installation', 'Client Side Routing', 'MCP']
 export const sortedGsChildren =
   gs?.children
     ?.filter((item) => orderGs.includes(item.title))
@@ -127,11 +127,11 @@ export function Aside() {
                           className="-mr-2 ml-auto"
                           isCircle={false}
                           intent={
-                            item.status === "new"
-                              ? "success"
-                              : item.status === "beta" || item.status === "alpha"
-                                ? "warning"
-                                : "primary"
+                            item.status === 'new'
+                              ? 'success'
+                              : item.status === 'beta' || item.status === 'alpha'
+                                ? 'warning'
+                                : 'primary'
                           }
                         >
                           {item.status}
@@ -161,8 +161,8 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
   useEffect(() => {
     if (isActive && ref.current) {
       ref.current.scrollIntoView({
-        behavior: "instant",
-        block: "center",
+        behavior: 'instant',
+        block: 'center',
       })
     }
   }, [isActive])
@@ -180,24 +180,24 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
         href={href}
         ref={ref}
         className={twMerge(
-          "group relative mb-0.5 flex items-center gap-x-2 rounded-lg px-2 py-1 text-base text-fg/70 sm:text-sm/6",
-          "hover:text-fg focus:text-fg focus:outline-hidden",
-          "*:[svg]:size-5 *:[svg]:text-muted-fg hover:*:[svg]:text-fg",
+          'group relative mb-0.5 flex items-center gap-x-2 rounded-lg px-2 py-1 text-base text-fg/70 sm:text-sm/6',
+          'hover:text-fg focus:text-fg focus:outline-hidden',
+          '*:[svg]:size-5 *:[svg]:text-muted-fg hover:*:[svg]:text-fg',
           isActive && [
-            "font-medium text-fg",
+            'font-medium text-fg',
             // "bg-blue-100 text-blue-600 hover:bg-blue-100 hover:text-blue-600",
             // "dark:bg-blue-400/10 dark:text-blue-400 dark:hover:bg-blue-400/10 dark:hover:text-blue-400",
-          ],
+          ]
         )}
       >
         <>
           {props.children}
 
-          {props.target === "_blank" && (
+          {props.target === '_blank' && (
             <ArrowUpRightIcon
               style={{
-                width: "16px",
-                height: "16px",
+                width: '16px',
+                height: '16px',
               }}
               className="-mr-1 ml-auto hidden text-muted-fg group-hover:block"
             />
@@ -208,12 +208,12 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
   )
 }
 
-function AsideHeader({ className, ...props }: React.ComponentProps<"div">) {
+function AsideHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       className={twMerge(
-        "relative mb-2 block px-4 font-mono text-[11px] text-muted-fg uppercase",
-        className,
+        'relative mb-2 block px-4 font-mono text-[11px] text-muted-fg uppercase',
+        className
       )}
       {...props}
     />

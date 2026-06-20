@@ -4,15 +4,17 @@
 * Then replace var(--font-inter) to Inter
 */
 
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 @plugin 'tailwindcss-react-aria-components';
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "Geist Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
-    '"Liberation Mono"', '"Courier New"', "monospace";
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    'Geist Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+    '"Liberation Mono"', '"Courier New"', 'monospace';
 
   --color-border: var(--border);
   --color-input: var(--input);
@@ -190,7 +192,7 @@
 @utility touch-target {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     top: 50%;
@@ -220,7 +222,7 @@
   }
 
   html {
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     font-variation-settings: normal;
     scroll-behavior: smooth;
     height: 100%;

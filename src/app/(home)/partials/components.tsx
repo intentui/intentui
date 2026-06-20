@@ -1,9 +1,9 @@
-"use client"
-import { PageContainer } from "@/components/page-container"
-import { CardHeader } from "@/components/ui/card"
-import { Link } from "@/components/ui/link"
-import menus from "@/components-search.json"
-import type { Component } from "@/types/search"
+'use client'
+import { PageContainer } from '@/components/page-container'
+import { CardHeader } from '@/components/ui/card'
+import { Link } from '@/components/ui/link'
+import menus from '@/components-search.json'
+import type { Component } from '@/types/search'
 
 const components = menus[3] as Component
 export function Components() {

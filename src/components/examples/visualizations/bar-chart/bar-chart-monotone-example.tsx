@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { BarChart } from "@/components/ui/bar-chart"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useMemo } from 'react'
+import { BarChart } from '@/components/ui/bar-chart'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 export default function BarChartMonotoneDemo() {
   const isMobile = useIsMobile()
@@ -14,7 +14,7 @@ export default function BarChartMonotoneDemo() {
         visits: Math.floor(500 + Math.random() * 400),
         signups: Math.floor(50 + Math.random() * 80),
       })),
-    [],
+    []
   )
 
   return (
@@ -29,12 +29,12 @@ export default function BarChartMonotoneDemo() {
           data={data}
           dataKey="day"
           barProps={{
-            type: "monotone",
+            type: 'monotone',
           }}
           xAxisProps={{ interval: 0 }}
           config={{
-            visits: { label: "Visits" },
-            signups: { label: "Sign-ups" },
+            visits: { label: 'Visits' },
+            signups: { label: 'Sign-ups' },
           }}
         />
       </CardContent>

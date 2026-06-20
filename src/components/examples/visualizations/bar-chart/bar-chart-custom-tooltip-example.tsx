@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { ArrowUpTrayIcon, ChatBubbleLeftRightIcon, HeartIcon } from "@heroicons/react/24/outline"
-import { useMemo } from "react"
-import type { TooltipProps as RechartsTooltipProps } from "recharts"
-import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
-import { BarChart } from "@/components/ui/bar-chart"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { ArrowUpTrayIcon, ChatBubbleLeftRightIcon, HeartIcon } from '@heroicons/react/24/outline'
+import { useMemo } from 'react'
+import type { TooltipProps as RechartsTooltipProps } from 'recharts'
+import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
+import { BarChart } from '@/components/ui/bar-chart'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 interface CustomTooltipProps extends Partial<RechartsTooltipProps<ValueType, NameType>> {
   active?: boolean
@@ -29,11 +29,11 @@ function CustomTooltip({ active, payload, label }: CustomTooltipProps) {
         {payload.map((entry) => (
           <div key={entry.dataKey} className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-muted-fg capitalize">
-              {entry.dataKey === "likes" && <HeartIcon style={{ color: entry.color }} />}
-              {entry.dataKey === "comments" && (
+              {entry.dataKey === 'likes' && <HeartIcon style={{ color: entry.color }} />}
+              {entry.dataKey === 'comments' && (
                 <ChatBubbleLeftRightIcon style={{ color: entry.color }} />
               )}
-              {entry.dataKey === "shares" && <ArrowUpTrayIcon style={{ color: entry.color }} />}
+              {entry.dataKey === 'shares' && <ArrowUpTrayIcon style={{ color: entry.color }} />}
               <span>{entry.name}</span>
             </div>
             <span className="font-mono text-fg tabular-nums">{entry.value}</span>
@@ -54,7 +54,7 @@ export default function BarChartCustomTooltipDemo() {
         comments: Math.floor(20 + Math.random() * 80),
         shares: Math.floor(10 + Math.random() * 50),
       })),
-    [],
+    []
   )
 
   return (
@@ -71,9 +71,9 @@ export default function BarChartCustomTooltipDemo() {
           xAxisProps={{ interval: 0 }}
           tooltip={<CustomTooltip />}
           config={{
-            likes: { label: "Likes" },
-            comments: { label: "Comments" },
-            shares: { label: "Shares" },
+            likes: { label: 'Likes' },
+            comments: { label: 'Comments' },
+            shares: { label: 'Shares' },
           }}
         />
       </CardContent>

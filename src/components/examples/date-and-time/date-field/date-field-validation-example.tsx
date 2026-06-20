@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { Form } from "react-aria-components/Form"
-import { Button } from "@/components/ui/button"
-import { DateField, DateInput } from "@/components/ui/date-field"
-import { FieldError, Label } from "@/components/ui/field"
+import { Form } from 'react-aria-components/Form'
+import { Button } from '@/components/ui/button'
+import { DateField, DateInput } from '@/components/ui/date-field'
+import { FieldError, Label } from '@/components/ui/field'
 
 export default function DateFieldValidationDemo() {
   return (

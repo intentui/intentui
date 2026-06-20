@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArchiveBoxIcon,
@@ -7,7 +7,7 @@ import {
   PencilSquareIcon,
   Square2StackIcon,
   TrashIcon,
-} from "@heroicons/react/24/outline"
+} from '@heroicons/react/24/outline'
 
 import {
   ContextMenu,
@@ -17,7 +17,7 @@ import {
   ContextMenuSeparator,
   ContextMenuShortcut,
   ContextMenuTrigger,
-} from "@/components/ui/context-menu"
+} from '@/components/ui/context-menu'
 
 export default function ContextMenuWithIconDemo() {
   return (

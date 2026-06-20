@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Description, Label } from "@/components/ui/field"
-import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from "@/components/ui/slider"
+import { useState } from 'react'
+import { Description, Label } from '@/components/ui/field'
+import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from '@/components/ui/slider'
 
 export default function SliderControlledDemo() {
   const [temperature, setTemperature] = useState<number>(31)
@@ -19,7 +19,7 @@ export default function SliderControlledDemo() {
             <SliderFill />
             <SliderThumb />
           </SliderTrack>
-          <Description>Current temperature: {temperature ?? "-"}</Description>
+          <Description>Current temperature: {temperature ?? '-'}</Description>
         </Slider>
       </div>
       <div>
@@ -27,7 +27,7 @@ export default function SliderControlledDemo() {
           <div className="flex items-center justify-between">
             <Label>Saturation</Label>
             <SliderOutput className="text-muted-fg text-sm tabular-nums data-[orientation=vertical]:mx-auto data-[orientation=horizontal]:ml-auto">
-              {({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(" – ")}
+              {({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(' – ')}
             </SliderOutput>
           </div>
           <SliderTrack>
@@ -40,7 +40,7 @@ export default function SliderControlledDemo() {
               </>
             )}
           </SliderTrack>
-          <Description>Current saturation: {saturation ?? "-"}</Description>
+          <Description>Current saturation: {saturation ?? '-'}</Description>
         </Slider>
       </div>
     </div>

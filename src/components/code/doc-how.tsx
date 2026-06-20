@@ -1,15 +1,15 @@
-"use client"
-import { Suspense, useEffect, useMemo, useState } from "react"
-import { Group } from "react-aria-components/Group"
-import { ToggleButton } from "react-aria-components/ToggleButton"
-import { Toolbar } from "react-aria-components/Toolbar"
-import { twJoin, twMerge } from "tailwind-merge"
-import generated from "@/../__registry__/generated"
-import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { PullRegistry } from "@/components/code/pull-registry"
-import { Loader } from "@/components/ui/loader"
-import { createFetchRegistryFile } from "@/lib/fetch-registry"
-import type { RegistryItem } from "@/types"
+'use client'
+import { Suspense, useEffect, useMemo, useState } from 'react'
+import { Group } from 'react-aria-components/Group'
+import { ToggleButton } from 'react-aria-components/ToggleButton'
+import { Toolbar } from 'react-aria-components/Toolbar'
+import { twJoin, twMerge } from 'tailwind-merge'
+import generated from '@/../__registry__/generated'
+import { CodeHighlighter } from '@/components/code/code-highlighter'
+import { PullRegistry } from '@/components/code/pull-registry'
+import { Loader } from '@/components/ui/loader'
+import { createFetchRegistryFile } from '@/lib/fetch-registry'
+import type { RegistryItem } from '@/types'
 
 const registry = generated as Record<string, RegistryItem>
 
@@ -23,7 +23,7 @@ type HowProps = {
   readMore?: string
 }
 
-const fetchRegistryFile = createFetchRegistryFile("/r")
+const fetchRegistryFile = createFetchRegistryFile('/r')
 
 export const DocHow = ({
   toUse,
@@ -33,7 +33,7 @@ export const DocHow = ({
   withNoPadding = false,
   ...props
 }: HowProps) => {
-  const [currentTab, setCurrentTab] = useState<"tab_preview" | "tab_code">("tab_preview")
+  const [currentTab, setCurrentTab] = useState<'tab_preview' | 'tab_code'>('tab_preview')
   const [rawSourceCode, setRawSourceCode] = useState<string | null>(null)
   const registryKey = `examples/${toUse}`
 
@@ -43,7 +43,7 @@ export const DocHow = ({
    */
   const Component = registry[registryKey]?.component
 
-  const blockExample = toUse.split("/").pop() ?? ""
+  const blockExample = toUse.split('/').pop() ?? ''
 
   const processedSourceCode = useMemo(() => {
     if (!rawSourceCode) return null
@@ -54,11 +54,11 @@ export const DocHow = ({
      * Replace with `export function Component()`
      */
     const defaultExportRegex = /export\s+default\s+function\s+([a-zA-Z0-9_$]+)\s*\(/
-    return rawSourceCode.replace(defaultExportRegex, "export function Component(")
+    return rawSourceCode.replace(defaultExportRegex, 'export function Component(')
   }, [rawSourceCode])
 
   useEffect(() => {
-    const name = `${toUse?.split("/").pop()}`
+    const name = `${toUse?.split('/').pop()}`
     fetchRegistryFile(name).then(setRawSourceCode)
   }, [toUse])
 
@@ -74,21 +74,19 @@ export const DocHow = ({
         <Group>
           <ToggleButton
             className={twJoin(
-              "p-2 font-medium text-sm/6 outline-hidden focus-visible:text-blue-500 dark:focus-visible:text-blue-300",
-              currentTab === "tab_preview"
-                ? "text-fg focus:text-fg"
-                : "text-muted-fg hover:text-fg",
+              'p-2 font-medium text-sm/6 outline-hidden focus-visible:text-blue-500 dark:focus-visible:text-blue-300',
+              currentTab === 'tab_preview' ? 'text-fg focus:text-fg' : 'text-muted-fg hover:text-fg'
             )}
-            onPress={() => setCurrentTab("tab_preview")}
+            onPress={() => setCurrentTab('tab_preview')}
           >
             Preview
           </ToggleButton>
           <ToggleButton
             className={twJoin(
-              "p-2 font-medium text-sm/6 outline-hidden focus:text-fg",
-              currentTab === "tab_code" ? "text-fg focus:text-fg" : "text-muted-fg hover:text-fg",
+              'p-2 font-medium text-sm/6 outline-hidden focus:text-fg',
+              currentTab === 'tab_code' ? 'text-fg focus:text-fg' : 'text-muted-fg hover:text-fg'
             )}
-            onPress={() => setCurrentTab("tab_code")}
+            onPress={() => setCurrentTab('tab_code')}
           >
             Code
           </ToggleButton>
@@ -103,16 +101,16 @@ export const DocHow = ({
       </Toolbar>
 
       <div className="h-fit w-full">
-        {currentTab === "tab_preview" ? (
+        {currentTab === 'tab_preview' ? (
           <div
             className={twMerge(
-              "w-full overflow-y-auto",
+              'w-full overflow-y-auto',
               !withNoPadding
-                ? "relative gap-4 rounded-lg border px-4 py-8 *:w-full sm:p-8 dark:bg-muted/30"
-                : "",
+                ? 'relative gap-4 rounded-lg border px-4 py-8 *:w-full sm:p-8 dark:bg-muted/30'
+                : ''
             )}
           >
-            <div className={isCenter ? "flex items-center justify-center" : ""}>
+            <div className={isCenter ? 'flex items-center justify-center' : ''}>
               <Suspense
                 fallback={
                   <div className="flex items-center justify-center py-6 text-muted-fg text-sm">
@@ -121,7 +119,7 @@ export const DocHow = ({
                   </div>
                 }
               >
-                <div className={twMerge(minW60 && "min-w-60", "not-prose", className)}>
+                <div className={twMerge(minW60 && 'min-w-60', 'not-prose', className)}>
                   <Component />
                 </div>
               </Suspense>
@@ -130,7 +128,7 @@ export const DocHow = ({
         ) : (
           <div>
             {processedSourceCode ? (
-              <div className={twJoin("group relative rounded-lg border")}>
+              <div className={twJoin('group relative rounded-lg border')}>
                 <CodeHighlighter
                   className="h-full rounded-[calc(var(--radius-lg)-1px)]"
                   removeLastLine

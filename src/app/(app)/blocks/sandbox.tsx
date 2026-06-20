@@ -1,16 +1,16 @@
-"use client"
-import { CheckIcon } from "@heroicons/react/20/solid"
-import { useInView } from "motion/react"
-import { useEffect, useMemo, useRef, useState } from "react"
-import { Button } from "react-aria-components/Button"
-import { type Key, Tab, TabList, TabPanel, Tabs } from "react-aria-components/Tabs"
-import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
-import { ShadcnuiLogo } from "@/components/icons/shadcn-logo"
-import { Heading } from "@/components/ui/heading"
-import { Tooltip, TooltipContent } from "@/components/ui/tooltip"
-import { useClipboard } from "@/hooks/use-clipboard"
-import { cx } from "@/lib/primitive"
+'use client'
+import { CheckIcon } from '@heroicons/react/20/solid'
+import { useInView } from 'motion/react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { Button } from 'react-aria-components/Button'
+import { type Key, Tab, TabList, TabPanel, Tabs } from 'react-aria-components/Tabs'
+import { CodeHighlighter } from '@/components/code/code-highlighter'
+import { BrandReactjsIcon } from '@/components/icons/brand-reactjs-icon'
+import { ShadcnuiLogo } from '@/components/icons/shadcn-logo'
+import { Heading } from '@/components/ui/heading'
+import { Tooltip, TooltipContent } from '@/components/ui/tooltip'
+import { useClipboard } from '@/hooks/use-clipboard'
+import { cx } from '@/lib/primitive'
 
 interface RegistryFile {
   path: string
@@ -39,14 +39,14 @@ interface RegistryItem {
 const REGISTRY_ORIGIN = process.env.NEXT_PUBLIC_APP_URL
 
 function filename(p: string) {
-  const segs = p.split("/")
+  const segs = p.split('/')
   return segs[segs.length - 1] || p
 }
 
 async function loadRegistryItem(name: string, signal?: AbortSignal): Promise<RegistryItem> {
   const urls = [`${REGISTRY_ORIGIN}/r/${name}`, `${REGISTRY_ORIGIN}/r/${name}.json`]
   for (const url of urls) {
-    const r = await fetch(url, { cache: "no-store", signal })
+    const r = await fetch(url, { cache: 'no-store', signal })
     if (r.ok) return r.json()
   }
   throw new Error(`Failed to load ${name}`)
@@ -59,9 +59,9 @@ function SourceTabs({ files }: { files: RegistryFile[] }) {
         id: filename(f.path),
         content: f.content,
       })),
-    [files],
+    [files]
   )
-  const [fileKey, setFileKey] = useState<Key>(items[0]?.id ?? "")
+  const [fileKey, setFileKey] = useState<Key>(items[0]?.id ?? '')
   useEffect(() => {
     if (!items.find((i) => i.id === fileKey) && items[0]) setFileKey(items[0].id)
   }, [items, fileKey])
@@ -89,7 +89,7 @@ function SourceTabs({ files }: { files: RegistryFile[] }) {
 }
 
 function SandboxPreviewImage({ alt, imgSrc }: { alt: string; imgSrc: SandboxImageSrc }) {
-  if (typeof imgSrc === "string") {
+  if (typeof imgSrc === 'string') {
     return (
       <img
         alt={alt}
@@ -122,8 +122,8 @@ function SandboxPreviewImage({ alt, imgSrc }: { alt: string; imgSrc: SandboxImag
 }
 
 function RegistryItemViewer({ imgSrc, item }: { imgSrc?: SandboxImageSrc; item: RegistryItem }) {
-  const [tab, setTab] = useState<Key>("preview")
-  const b = item.name.split("-")[0]
+  const [tab, setTab] = useState<Key>('preview')
+  const b = item.name.split('-')[0]
   const c = item.name
   const src = `${REGISTRY_ORIGIN}/pre-blocks/${b}/${encodeURIComponent(c)}`
   const { copied, copy } = useClipboard()
@@ -134,7 +134,7 @@ function RegistryItemViewer({ imgSrc, item }: { imgSrc?: SandboxImageSrc; item: 
         <div className="not-prose flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <header className="space-y-1">
             <Heading className="font-medium capitalize sm:text-base" level={2}>
-              {item.title.replaceAll("-", " ")}
+              {item.title.replaceAll('-', ' ')}
             </Heading>
 
             <Tooltip delay={0}>
@@ -187,8 +187,8 @@ function SourceTab({ className, ...props }: React.ComponentProps<typeof Tab>) {
   return (
     <Tab
       className={cx(
-        "group inline-flex cursor-default items-center gap-x-2 rounded-sm selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary",
-        className,
+        'group inline-flex cursor-default items-center gap-x-2 rounded-sm selected:bg-secondary px-2 py-1 font-medium text-sm/6 hover:bg-secondary',
+        className
       )}
       {...props}
     />
@@ -197,16 +197,16 @@ function SourceTab({ className, ...props }: React.ComponentProps<typeof Tab>) {
 
 function LazyRegistryItem({ imgSrc, name }: { imgSrc?: SandboxImageSrc; name: string }) {
   const ref = useRef<HTMLDivElement | null>(null)
-  const isInView = useInView(ref, { margin: "100px 0px 100px 0px", once: true })
+  const isInView = useInView(ref, { margin: '100px 0px 100px 0px', once: true })
   const [item, setItem] = useState<RegistryItem | null>(null)
-  const [error, setError] = useState<string>("")
+  const [error, setError] = useState<string>('')
   useEffect(() => {
     if (!isInView || item || error) return
     const ac = new AbortController()
     loadRegistryItem(name, ac.signal)
       .then((res) => setItem(res))
       .catch((e) => {
-        if (e?.name !== "AbortError") setError(String(e?.message || e))
+        if (e?.name !== 'AbortError') setError(String(e?.message || e))
       })
     return () => ac.abort()
   }, [isInView, name, item, error])

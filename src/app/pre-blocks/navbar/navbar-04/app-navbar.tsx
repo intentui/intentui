@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
-import { Avatar } from "@/components/ui/avatar"
-import { Link } from "@/components/ui/link"
+import { BrandIntentuiIcon } from '@/components/icons/brand-intentui-icon'
+import { Avatar } from '@/components/ui/avatar'
+import { Link } from '@/components/ui/link'
 import {
   Navbar,
   NavbarGap,
@@ -13,7 +13,7 @@ import {
   NavbarSpacer,
   NavbarStart,
   NavbarTrigger,
-} from "@/components/ui/navbar"
+} from '@/components/ui/navbar'
 
 export default function AppNavbar(props: NavbarProps) {
   return (

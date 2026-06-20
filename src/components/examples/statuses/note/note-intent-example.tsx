@@ -1,6 +1,6 @@
-import { Note } from "@/components/ui/note"
+import { Note } from '@/components/ui/note'
 
-const notes = ["info", "default", "warning", "danger", "success"] as const
+const notes = ['info', 'default', 'warning', 'danger', 'success'] as const
 
 export default function NoteIntentDemo() {
   return (

@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { PhotoIcon } from "@heroicons/react/24/outline"
-import type { DropEvent } from "@react-types/shared"
-import { useState } from "react"
-import { isFileDropItem } from "react-aria-components/useDragAndDrop"
-import { DropZone } from "@/components/ui/drop-zone"
-import { Description } from "@/components/ui/field"
-import { FileTrigger } from "@/components/ui/file-trigger"
+import { PhotoIcon } from '@heroicons/react/24/outline'
+import type { DropEvent } from '@react-types/shared'
+import { useState } from 'react'
+import { isFileDropItem } from 'react-aria-components/useDragAndDrop'
+import { DropZone } from '@/components/ui/drop-zone'
+import { Description } from '@/components/ui/field'
+import { FileTrigger } from '@/components/ui/file-trigger'
 
 export default function DropZoneAndFileTriggerDemo() {
   const [droppedImage, setDroppedImage] = useState<string | undefined>(undefined)
@@ -14,7 +14,7 @@ export default function DropZoneAndFileTriggerDemo() {
   const onDropHandler = async (e: DropEvent) => {
     const item = e.items
       .filter(isFileDropItem)
-      .find((item) => item.type === "image/jpeg" || item.type === "image/png")
+      .find((item) => item.type === 'image/jpeg' || item.type === 'image/png')
     if (item) {
       const file = await item.getFile()
       setDroppedImage(URL.createObjectURL(file))
@@ -33,7 +33,7 @@ export default function DropZoneAndFileTriggerDemo() {
   return (
     <DropZone
       getDropOperation={(types) =>
-        types.has("image/jpeg") || types.has("image/png") ? "copy" : "cancel"
+        types.has('image/jpeg') || types.has('image/png') ? 'copy' : 'cancel'
       }
       onDrop={onDropHandler}
     >
@@ -46,7 +46,7 @@ export default function DropZoneAndFileTriggerDemo() {
           </div>
           <div className="flex justify-center">
             <FileTrigger
-              acceptedFileTypes={["image/png", "image/jpeg"]}
+              acceptedFileTypes={['image/png', 'image/jpeg']}
               allowsMultiple={false}
               onSelect={onSelectHandler}
             >

@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { buttonStyles } from "@/components/ui/button"
+import { buttonStyles } from '@/components/ui/button'
 import {
   Drawer,
   DrawerBody,
@@ -11,15 +11,15 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-import { Label } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { TextField } from "@/components/ui/text-field"
+} from '@/components/ui/drawer'
+import { Label } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { TextField } from '@/components/ui/text-field'
 
 export default function DrawerBasicDemo() {
   return (
     <Drawer>
-      <DrawerTrigger className={buttonStyles({ intent: "outline" })}>Login</DrawerTrigger>
+      <DrawerTrigger className={buttonStyles({ intent: 'outline' })}>Login</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Login</DrawerTitle>

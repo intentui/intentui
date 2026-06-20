@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { Description, Label } from "@/components/ui/field"
-import { Meter, MeterHeader, MeterTrack, MeterValue } from "@/components/ui/meter"
+import { useEffect, useState } from 'react'
+import { Description, Label } from '@/components/ui/field'
+import { Meter, MeterHeader, MeterTrack, MeterValue } from '@/components/ui/meter'
 
 export default function MeterDemo() {
   const [value, setValue] = useState(1)

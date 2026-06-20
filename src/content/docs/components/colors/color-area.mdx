@@ -1,28 +1,32 @@
 ---
-title: "Color Area"
+title: 'Color Area'
 description: An interactive color selection tool that enables users to pick a color by adjusting both hue and saturation within a 2D space. It supports different color models.
 order: 3
 published: true
-references: ["https://react-aria.adobe.com/ColorArea#api"]
+references: ['https://react-aria.adobe.com/ColorArea#api']
 ---
 
 <How toUse="colors/color-area/color-area-example" />
 
 ## Composed components
-<Composed components={['color-thumb']}/>
+
+<Composed components={['color-thumb']} />
 
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/color-area"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/color-area" />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
-<SourceCode toShow='color-area'/>
+
+<InstallCommand command="npm i react-aria-components" />
+<SourceCode toShow="color-area" />
 
 ## Anatomy
+
 ```
 import { ColorArea } from "@/components/ui/color-area"
 
@@ -32,23 +36,33 @@ import { ColorArea } from "@/components/ui/color-area"
 ## Examples
 
 ### Channel
+
 Specify the color channels for the horizontal and vertical axes using the `xChannel` and `yChannel` properties.
+
 <How toUse="colors/color-area/color-area-channel-example" />
 
 ### Space
+
 Define the color space for operation, which must align with the xChannel and yChannel. The default is set based on the `color` or `defaultColor` value. Valid types include `rgb`, `hsl`, and `hsb`.
+
 <How toUse="colors/color-area/color-area-space-example" />
 
 ### Controlled
+
 Control the color area by specifying channels for the horizontal (`xChannel`) and vertical (`yChannel`) axes.
+
 <How toUse="colors/color-area/color-area-controlled-example" />
 
 ### Disabled
+
 Disable the color area component. While it's possible to disable the thumb component, it's generally not advisable.
+
 <How toUse="colors/color-area/color-area-disabled-example" />
 
 ### Color area with slider
+
 You can use the color area with the slider to control the color.
+
 <How toUse="colors/color-area/color-area-with-slider-example" />
 
 ## Component API
@@ -57,8 +71,8 @@ You can use the color area with the slider to control the color.
 
 The `ColorArea` component lets users adjust two color channels.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/ColorArea#api) for the full API reference.

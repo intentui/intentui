@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { Checkbox, CheckboxField, CheckboxGroup } from "@/components/ui/checkbox"
-import { Description, Label } from "@/components/ui/field"
+import { Checkbox, CheckboxField, CheckboxGroup } from '@/components/ui/checkbox'
+import { Description, Label } from '@/components/ui/field'
 
 export default function CheckboxGroupDescriptionExample() {
   return (
-    <CheckboxGroup defaultValue={["delete"]} name="up">
+    <CheckboxGroup defaultValue={['delete']} name="up">
       <Label>User Permissions</Label>
       <Description>Select the permissions you want to grant to the user.</Description>
       <CheckboxField value="read">

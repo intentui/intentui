@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ContextMenu,
@@ -6,7 +6,7 @@ import {
   ContextMenuItem,
   ContextMenuSeparator,
   ContextMenuTrigger,
-} from "@/components/ui/context-menu"
+} from '@/components/ui/context-menu'
 
 export default function ContextMenuDangerDemo() {
   return (

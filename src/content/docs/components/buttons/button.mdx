@@ -1,9 +1,9 @@
 ---
-title: "Button"
+title: 'Button'
 description: Buttons play a crucial role in functionality, whether for submitting a form or navigating to another page. They come in various styles and states.
 order: 1
 published: true
-references: ["https://react-aria.adobe.com/Button#api"]
+references: ['https://react-aria.adobe.com/Button#api']
 ---
 
 <How toUse="buttons/button/button-basic-example" />
@@ -11,17 +11,19 @@ references: ["https://react-aria.adobe.com/Button#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/button"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/button" />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 
-<InstallCommand command="npm i react-aria-components tailwind-variants"/>
+<InstallCommand command="npm i react-aria-components tailwind-variants" />
 
-<SourceCode toShow='button'/>
+<SourceCode toShow="button" />
 
 ## Anatomy
+
 ```
 import { Button } from "@/components/ui/button"
 import { IconSettings } from "@heroicons/react"
@@ -48,59 +50,71 @@ import { IconSettings } from "@heroicons/react"
 </>
 ```
 
-
 ## Examples
 
 ### Intent
+
 Buttons come in different intents, each with its own color scheme.
 
 <How toUse="buttons/button/button-intent-example" />
 
 ### Shape
+
 Buttons support various shapes to fit different design needs.
 
 <How toUse="buttons/button/button-shape-example" />
 
 ### Size
+
 Buttons are available in multiple sizes.
 
 <How toUse="buttons/button/button-size-example" />
 
 ### With icon
+
 You can add icons to buttons, and their color will match the button's color.
 
 <How toUse="buttons/button/button-icon-example" />
 
 ### Disabled
+
 A disabled button cannot be interacted with and is visually styled to reflect its state.
 
 <How toUse="buttons/button/button-disabled-example" />
 
 ### Pending
+
 A button can indicate a pending state using the `isPending` prop. This provides feedback for actions that take time, communicates the status to assistive technologies, and disables interactions except for focus.
 
 <How toUse="buttons/button/button-pending-example" />
 
 ### With loader
+
 You can add a loader to indicate ongoing processes.
 
 <How toUse="buttons/button/button-loader-example" />
 
 ### Link
+
 Sometimes, you need to use styles from buttons for links. Just use the link and use the `buttonStyles` to the className prop.
+
 <How toUse="buttons/button/button-link-example" />
 
 ### Render
+
 You can render a [Motion](https://motion.dev/) button and drive the animation with component state.
+
 <How toUse="buttons/button/button-render-example" />
 
 ## Touch hitbox
+
 Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-target` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
+
 ```css
 @utility touch-target {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     top: 50%;
@@ -121,11 +135,11 @@ Sometimes you may want to use this button with only an icon. In that case, you c
 
 The `Button` component triggers an action.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `primary` |
-| `isCircle` | `true \| false` | `false` |
-| `size` | `"xs" \| "sm" \| "md" \| "lg" \| "sq-xs" \| "sq-sm" \| "sq-md" \| "sq-lg"` | `md` |
+| Prop        | Type                                                                                     | Default   |
+| ----------- | ---------------------------------------------------------------------------------------- | --------- |
+| `className` | `string`                                                                                 | -         |
+| `intent`    | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `primary` |
+| `isCircle`  | `true \| false`                                                                          | `false`   |
+| `size`      | `"xs" \| "sm" \| "md" \| "lg" \| "sq-xs" \| "sq-sm" \| "sq-md" \| "sq-lg"`               | `md`      |
 
 See the [React Aria](https://react-aria.adobe.com/Button#api) for the full API reference.

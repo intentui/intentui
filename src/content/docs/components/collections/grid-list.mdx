@@ -1,9 +1,9 @@
 ---
-title: "Grid List"
+title: 'Grid List'
 description: A structured list format that arranges items in a grid layout, ideal for displaying media, products, or cards. It enhances visual organization and responsiveness.
 published: true
 order: 7
-references: ["https://react-aria.adobe.com/GridList#api"]
+references: ['https://react-aria.adobe.com/GridList#api']
 ---
 
 <How minW60 toUse="collections/grid-list/grid-list-example" />
@@ -11,21 +11,27 @@ references: ["https://react-aria.adobe.com/GridList#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/grid-list"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/grid-list" />
 
 ## Composed components
-<Composed components={['checkbox']}/>
+
+<Composed components={['checkbox']} />
 
 ## Manual installation
-Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
 
-<SourceCode toShow='grid-list'/>
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+
+<InstallCommand command="npm i react-aria-components tailwind-merge" />
+
+<SourceCode toShow="grid-list" />
 
 ## Anatomy
+
 ```
 import { GridList, GridListItem } from "@/components/ui/grid-list"
 ```
+
 ```
 const items = [
   { id: "1", name: "The Beatles" },
@@ -45,48 +51,69 @@ const items = [
 ## Examples
 
 ### Multiple selection
+
 To enable multiple selections, set the `selectionMode` prop to `multiple`. Since this prop has no default value, you must define it explicitly.
+
 <How minW60 toUse="collections/grid-list/grid-list-multiple-example" />
-Note that I haven't set an `id` for the grid list item as the items already have default IDs. However, you should specify the `id` prop for each grid list item like this:
-```
+Note that I haven't set an `id` for the grid list item as the items already have default IDs.
+However, you should specify the `id` prop for each grid list item like this: ```
 {(item) => <GridListItem id={item.name}>{item.name}</GridListItem>}
 ```
 
 ### Drag and drop
+
 The grid list supports drag and drop functionalities if you use the `dragAndDropHooks` prop along with the `useDragAndDrop` hook. You can drop data on the entire list, individual items, add new items between existing ones, or rearrange items.
+
 <How minW60 toUse="collections/grid-list/grid-list-drag-example" />
 
 ### Dragging between items
+
 You can move items between positions within the grid list.
-<How isCenter={false} withNoPadding toUse="collections/grid-list/grid-list-drag-between-item-example" />
+
+<How
+  isCenter={false}
+  withNoPadding
+  toUse="collections/grid-list/grid-list-drag-between-item-example"
+/>
 
 ### Render empty state
+
 The grid list can display an empty state when no items are available using the `renderEmptyState` prop.
+
 <How minW60 toUse="collections/grid-list/grid-list-render-empty-state-example" />
 
 ### Infinite scrolling
+
 The grid list can handle large datasets efficiently with infinite scrolling. This allows for loading more data as the user scrolls down, improving performance and user experience.
+
 <How minW60 toUse="collections/grid-list/grid-list-infinite-scroll-example" />
 
 ### Section
+
 The grid list supports sections, allowing you to group items under different headings.
+
 <How minW60 toUse="collections/grid-list/grid-list-section-example" />
 
 ### Controlled
+
 The grid list can be controlled, which means the parent component manages the selection state of each item.
+
 <How minW60 toUse="collections/grid-list/grid-list-controlled-example" />
 
 ### Disabled
+
 Similar to how the [Tag Group](/docs/components/collections/tag-group) component can be disabled using `isDisabled` for children and `disabledKeys` for the parent, the Grid List supports similar functionality. For example, items "Led Zeppelin" and "The Rolling Stones" are disabled.
+
 <How minW60 toUse="collections/grid-list/grid-list-disabled-example" />
 
 To disable items via the parent component, you can use the `disabledKeys` prop like this:
+
 ```tsx {5}
 <GridList
   items={items}
   aria-label="Select your favorite bands"
   selectionMode="multiple"
-  disabledKeys={[2,5]}
+  disabledKeys={[2, 5]}
   className="min-w-64"
 >
   {(item) => <GridListItem id={item.id}>{item.name}</GridListItem>}
@@ -99,72 +126,72 @@ To disable items via the parent component, you can use the `disabledKeys` prop l
 
 The `GridList` component displays selectable items in a grid or list.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### GridListDescription
 
 The `GridListDescription` component renders secondary text for a grid list item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### GridListEmptyState
 
 The `GridListEmptyState` component renders content when a grid list is empty.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### GridListHeader
 
 The `GridListHeader` component renders header content for a grid list item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### GridListItem
 
 The `GridListItem` component represents one grid list item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### GridListLabel
 
 The `GridListLabel` component renders label text for a grid list item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### GridListSection
 
 The `GridListSection` component groups related grid list items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### GridListSpacer
 
 The `GridListSpacer` component adds layout spacing inside grid list items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### GridListStart
 
 The `GridListStart` component renders leading content in a grid list item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/GridList#api) for the full API reference.

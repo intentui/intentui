@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { ChevronDownIcon } from "@heroicons/react/20/solid"
-import { MagnifyingGlassIcon, ShoppingBagIcon } from "@heroicons/react/24/outline"
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
-import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Link } from '@/components/ui/link'
+import { Menu, MenuContent, MenuItem } from '@/components/ui/menu'
 import {
   Navbar,
   NavbarGap,
@@ -18,21 +18,21 @@ import {
   NavbarSpacer,
   NavbarStart,
   NavbarTrigger,
-} from "@/components/ui/navbar"
-import { Separator } from "@/components/ui/separator"
-import { UserMenu } from "./user-menu"
+} from '@/components/ui/navbar'
+import { Separator } from '@/components/ui/separator'
+import { UserMenu } from './user-menu'
 
 const categories = [
-  { id: 1, label: "Electronics", url: "#" },
-  { id: 2, label: "Fashion", url: "#" },
-  { id: 3, label: "Home & Kitchen", url: "#" },
-  { id: 4, label: "Sports", url: "#" },
-  { id: 5, label: "Books", url: "#" },
-  { id: 6, label: "Beauty & Personal Care", url: "#" },
-  { id: 7, label: "Grocery", url: "#" },
-  { id: 8, label: "Toys & Games", url: "#" },
-  { id: 9, label: "Automotive", url: "#" },
-  { id: 10, label: "Health & Wellness", url: "#" },
+  { id: 1, label: 'Electronics', url: '#' },
+  { id: 2, label: 'Fashion', url: '#' },
+  { id: 3, label: 'Home & Kitchen', url: '#' },
+  { id: 4, label: 'Sports', url: '#' },
+  { id: 5, label: 'Books', url: '#' },
+  { id: 6, label: 'Beauty & Personal Care', url: '#' },
+  { id: 7, label: 'Grocery', url: '#' },
+  { id: 8, label: 'Toys & Games', url: '#' },
+  { id: 9, label: 'Automotive', url: '#' },
+  { id: 10, label: 'Health & Wellness', url: '#' },
 ]
 
 export default function AppNavbar(props: NavbarProps) {

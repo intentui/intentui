@@ -1,5 +1,5 @@
-import fs from "node:fs"
-import path from "node:path"
+import fs from 'node:fs'
+import path from 'node:path'
 
 /**
  * Function to get all .tsx files in a directory and its subdirectories and return an array of file paths
@@ -15,7 +15,7 @@ const get = (dir: string, fileList: string[] = []): string[] => {
 
     if (stat.isDirectory()) {
       get(filePath, fileList)
-    } else if (filePath.endsWith(".tsx")) {
+    } else if (filePath.endsWith('.tsx')) {
       fileList.push(filePath)
     }
   }
@@ -71,7 +71,7 @@ const detect = (directories: string[]) => {
     const files = get(dir)
 
     for (const file of files) {
-      const content = fs.readFileSync(file, "utf-8")
+      const content = fs.readFileSync(file, 'utf-8')
       const duplicates = find(content)
 
       for (const { tag, duplicateClasses } of duplicates) {
@@ -91,19 +91,19 @@ const detect = (directories: string[]) => {
       results.map(({ file, tag, duplicates }) => ({
         File: file,
         Tag: tag,
-        "Duplicate Classes": duplicates.join(", "),
-      })),
+        'Duplicate Classes': duplicates.join(', '),
+      }))
     )
   } else {
-    console.info("————————————————————————————————")
-    console.info("👌 No duplicate classes found.")
-    console.info("————————————————————————————————")
+    console.info('————————————————————————————————')
+    console.info('👌 No duplicate classes found.')
+    console.info('————————————————————————————————')
   }
 }
 
 /**
  * Directory to scan for duplicate classes
  */
-const directoriesToScan = ["src/app", "src/components"]
+const directoriesToScan = ['src/app', 'src/components']
 
 detect(directoriesToScan)

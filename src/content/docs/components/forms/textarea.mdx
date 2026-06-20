@@ -1,9 +1,9 @@
 ---
-title: "Textarea"
+title: 'Textarea'
 description: A multi-line text input field for entering longer content, such as comments, descriptions, or messages. It provides a resizable input area with validation.
 order: 4
 published: true
-references: ["https://react-aria.adobe.com/TextField.html#textarea-1"]
+references: ['https://react-aria.adobe.com/TextField.html#textarea-1']
 ---
 
 <How minW60 toUse="forms/textarea/textarea-example" />
@@ -11,19 +11,23 @@ references: ["https://react-aria.adobe.com/TextField.html#textarea-1"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/textarea"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/textarea" />
 
 ## Composed components
-<Composed components={['field']}/>
+
+<Composed components={['field']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
 
-<SourceCode toShow='textarea'/>
+<InstallCommand command="npm i react-aria-components tailwind-merge" />
+
+<SourceCode toShow="textarea" />
 
 ## Anatomy
+
 ```
 import { Textarea } from "@/components/ui/textarea"
 
@@ -36,28 +40,45 @@ import { Textarea } from "@/components/ui/textarea"
 ## Examples
 
 ### Description
+
 You can add a description to the textarea by using the `description` prop.
+
 <How minW60 toUse="forms/textarea/textarea-description-example" />
 
-
 ### Controlled
+
 You can control the textarea value by using the `value` prop.
+
 <How minW60 toUse="forms/textarea/textarea-controlled-example" />
 
 ### Uncontrolled
+
 You can control the textarea value by using the `defaultValue` prop.
+
 <How minW60 toUse="forms/textarea/textarea-uncontrolled-example" />
 
 ### Validation
+
 Try submitting the form without filling it out to see the error state in action.
+
 <How minW60 toUse="forms/textarea/textarea-validation-example" />
 
+### With autocomplete
+
+You can add autocomplete to a textarea by wrapping it with the `Autocomplete` component. This is useful for tags, mentions, or similar input patterns.
+
+<How minW60 toUse="forms/textarea/textarea-autocomplete-example" />
+
 ### Readonly
+
 When the textarea is set to readonly, it cannot be edited.
+
 <How minW60 toUse="forms/textarea/textarea-readonly-example" />
 
 ### Disabled
+
 When the textarea is disabled, it becomes non-editable and appears inactive.
+
 <How minW60 toUse="forms/textarea/textarea-disabled-example" />
 
 ## Component API
@@ -66,8 +87,8 @@ When the textarea is disabled, it becomes non-editable and appears inactive.
 
 The `Textarea` component renders a multi-line text input.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/TextField.html#textarea-1) for the full API reference.

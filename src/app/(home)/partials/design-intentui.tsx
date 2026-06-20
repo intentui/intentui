@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { Link } from "react-aria-components/Link"
-import { twMerge } from "tailwind-merge"
-import { PageContainer } from "@/components/page-container"
-import { buttonStyles } from "@/components/ui/button"
+import { Link } from 'react-aria-components/Link'
+import { twMerge } from 'tailwind-merge'
+import { PageContainer } from '@/components/page-container'
+import { buttonStyles } from '@/components/ui/button'
 
 export function DesignIntentui() {
   return (
@@ -24,7 +24,7 @@ export function DesignIntentui() {
             <div className="mt-6 flex flex-col justify-center gap-2 sm:mt-10 sm:flex-row sm:items-center">
               <Link
                 className={buttonStyles({
-                  size: "lg",
+                  size: 'lg',
                 })}
                 href="https://design.intentui.com/blocks?utm_source=intentui.com&utm_medium=referral&utm_campaign=cta"
               >
@@ -32,8 +32,8 @@ export function DesignIntentui() {
               </Link>
               <Link
                 className={buttonStyles({
-                  size: "lg",
-                  intent: "secondary",
+                  size: 'lg',
+                  intent: 'secondary',
                 })}
                 href="https://design.intentui.com/templates?utm_source=intentui.com&utm_medium=referral&utm_campaign=cta"
               >
@@ -50,7 +50,7 @@ export function DesignIntentui() {
 export const MarkLogo = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      className={twMerge("mx-auto inline h-6", className)}
+      className={twMerge('mx-auto inline h-6', className)}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 21 7"

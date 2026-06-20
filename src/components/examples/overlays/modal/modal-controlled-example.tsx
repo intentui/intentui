@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   ModalContent,
   ModalDescription,
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
+} from '@/components/ui/modal'
 
 export default function ModalControlledDemo() {
   const [open, setOpen] = useState(false)

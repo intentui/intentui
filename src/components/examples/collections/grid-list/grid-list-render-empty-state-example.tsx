@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { GridList, GridListEmptyState } from "@/components/ui/grid-list"
+import { GridList, GridListEmptyState } from '@/components/ui/grid-list'
 
 export default function GridListRenderEmptyStateDemo() {
   return (

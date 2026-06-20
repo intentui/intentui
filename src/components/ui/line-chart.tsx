@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { Line, LineChart as LineChartPrimitive, type LineProps } from "recharts"
+import { useMemo } from 'react'
+import { Line, LineChart as LineChartPrimitive, type LineProps } from 'recharts'
 import {
   type BaseChartProps,
   CartesianGrid,
@@ -16,12 +16,12 @@ import {
   valueToPercent,
   XAxis,
   YAxis,
-} from "./chart"
+} from './chart'
 
 export interface LineChartProps extends BaseChartProps {
   connectNulls?: boolean
   lineProps?: LineProps
-  chartProps?: Omit<React.ComponentProps<typeof LineChartPrimitive>, "data" | "stackOffset">
+  chartProps?: Omit<React.ComponentProps<typeof LineChartPrimitive>, 'data' | 'stackOffset'>
 }
 
 export function LineChart({
@@ -29,7 +29,7 @@ export function LineChart({
   dataKey,
   colors = DEFAULT_COLORS,
   connectNulls = false,
-  type = "default",
+  type = 'default',
   config,
   children,
 
@@ -40,7 +40,7 @@ export function LineChart({
   legend = true,
   legendProps,
 
-  intervalType = "equidistantPreserveStart",
+  intervalType = 'equidistantPreserveStart',
 
   valueFormatter = (value: number) => value.toString(),
 
@@ -61,7 +61,7 @@ export function LineChart({
   const configKeys = useMemo(() => Object.keys(config), [config])
   const categoryColors = useMemo(
     () => constructCategoryColors(configKeys, colors),
-    [configKeys, colors],
+    [configKeys, colors]
   )
 
   const configEntries = useMemo(() => Object.entries(config), [config])
@@ -80,7 +80,7 @@ export function LineChart({
             right: 0,
             top: 5,
           }}
-          stackOffset={type === "percent" ? "expand" : undefined}
+          stackOffset={type === 'percent' ? 'expand' : undefined}
           {...chartProps}
         >
           {!hideGridLines && <CartesianGrid strokeDasharray="4 4" />}
@@ -92,13 +92,13 @@ export function LineChart({
           />
           <YAxis
             hide={hideYAxis}
-            tickFormatter={type === "percent" ? valueToPercent : valueFormatter}
+            tickFormatter={type === 'percent' ? valueToPercent : valueFormatter}
             {...yAxisProps}
           />
 
           {legend && (
             <ChartLegend
-              content={typeof legend === "boolean" ? <ChartLegendContent /> : legend}
+              content={typeof legend === 'boolean' ? <ChartLegendContent /> : legend}
               {...legendProps}
             />
           )}
@@ -106,7 +106,7 @@ export function LineChart({
           {tooltip && (
             <ChartTooltip
               content={
-                typeof tooltip === "boolean" ? <ChartTooltipContent accessibilityLayer /> : tooltip
+                typeof tooltip === 'boolean' ? <ChartTooltipContent accessibilityLayer /> : tooltip
               }
               {...tooltipProps}
             />
@@ -129,7 +129,7 @@ export function LineChart({
                       {
                         strokeOpacity,
                         strokeWidth: 2,
-                        "--line-color": color,
+                        '--line-color': color,
                       } as React.CSSProperties
                     }
                     strokeLinejoin="round"

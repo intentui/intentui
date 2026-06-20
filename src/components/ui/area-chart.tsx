@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { type ComponentProps, Fragment, useId, useMemo } from "react"
-import { Area, AreaChart as AreaChartPrimitive } from "recharts"
+import { type ComponentProps, Fragment, useId, useMemo } from 'react'
+import { Area, AreaChart as AreaChartPrimitive } from 'recharts'
 import {
   type BaseChartProps,
   CartesianGrid,
@@ -16,7 +16,7 @@ import {
   valueToPercent,
   XAxis,
   YAxis,
-} from "./chart"
+} from './chart'
 
 const slugRegExp = /[^a-zA-Z0-9]/g
 
@@ -28,13 +28,13 @@ function getFillContent({
   fillType,
   stopOpacity,
 }: {
-  fillType: AreaChartProps["fillType"]
+  fillType: AreaChartProps['fillType']
   stopOpacity: number
 }): React.ReactNode {
   switch (fillType) {
-    case "none":
+    case 'none':
       return fillNone
-    case "gradient":
+    case 'gradient':
       return (
         <>
           <stop offset="5%" stopColor="currentColor" stopOpacity={stopOpacity} />
@@ -47,10 +47,10 @@ function getFillContent({
 }
 
 export interface AreaChartProps extends BaseChartProps {
-  chartProps?: Omit<ComponentProps<typeof AreaChartPrimitive>, "data" | "stackOffset">
+  chartProps?: Omit<ComponentProps<typeof AreaChartPrimitive>, 'data' | 'stackOffset'>
   areaProps?: Partial<ComponentProps<typeof Area>>
   connectNulls?: boolean
-  fillType?: "gradient" | "solid" | "none"
+  fillType?: 'gradient' | 'solid' | 'none'
 }
 
 export function AreaChart({
@@ -58,9 +58,9 @@ export function AreaChart({
   dataKey,
   colors = DEFAULT_COLORS,
   connectNulls = false,
-  type = "default",
+  type = 'default',
 
-  fillType = "gradient",
+  fillType = 'gradient',
   config,
   children,
 
@@ -75,7 +75,7 @@ export function AreaChart({
   legend = true,
   legendProps,
 
-  intervalType = "equidistantPreserveStart",
+  intervalType = 'equidistantPreserveStart',
 
   valueFormatter = (value: number) => value.toString(),
 
@@ -95,9 +95,9 @@ export function AreaChart({
   const configKeys = useMemo(() => Object.keys(config), [config])
   const categoryColors = useMemo(
     () => constructCategoryColors(configKeys, colors),
-    [configKeys, colors],
+    [configKeys, colors]
   )
-  const stacked = type === "stacked" || type === "percent"
+  const stacked = type === 'stacked' || type === 'percent'
   const areaId = useId()
 
   const configEntries = useMemo(() => Object.entries(config), [config])
@@ -116,7 +116,7 @@ export function AreaChart({
             right: 0,
             top: 5,
           }}
-          stackOffset={type === "percent" ? "expand" : undefined}
+          stackOffset={type === 'percent' ? 'expand' : undefined}
           {...chartProps}
         >
           {!hideGridLines && <CartesianGrid {...cartesianGridProps} strokeDasharray="3 3" />}
@@ -130,13 +130,13 @@ export function AreaChart({
           <YAxis
             className="**:[text]:fill-muted-fg"
             hide={hideYAxis}
-            tickFormatter={type === "percent" ? valueToPercent : valueFormatter}
+            tickFormatter={type === 'percent' ? valueToPercent : valueFormatter}
             {...yAxisProps}
           />
 
           {legend && (
             <ChartLegend
-              content={typeof legend === "boolean" ? <ChartLegendContent /> : legend}
+              content={typeof legend === 'boolean' ? <ChartLegendContent /> : legend}
               {...legendProps}
             />
           )}
@@ -144,7 +144,7 @@ export function AreaChart({
           {tooltip && (
             <ChartTooltip
               content={
-                typeof tooltip === "boolean" ? (
+                typeof tooltip === 'boolean' ? (
                   <ChartTooltipContent
                     {...{
                       hideIndicator: tooltipProps?.hideIndicator,
@@ -167,7 +167,7 @@ export function AreaChart({
 
           {!children
             ? configEntries.map(([category, values]) => {
-                const categoryId = `${areaId}-${category.replace(slugRegExp, "")}`
+                const categoryId = `${areaId}-${category.replace(slugRegExp, '')}`
                 const strokeOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 1
                 const stopOpacity = selectedLegend && selectedLegend !== category ? 0.1 : 0.5
                 const color = getColorValue(values.color || categoryColors.get(category))
@@ -192,7 +192,7 @@ export function AreaChart({
                       strokeLinecap="round"
                       isAnimationActive={true}
                       connectNulls={connectNulls}
-                      stackId={stacked ? "stack" : undefined}
+                      stackId={stacked ? 'stack' : undefined}
                       fill={`url(#${categoryId})`}
                       {...areaProps}
                     />

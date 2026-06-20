@@ -44,8 +44,11 @@ Please follow these guidelines when submitting pull requests:
 ## Folder Structure
 
 The folder structure is as follows:
+
 ### Components
+
 The components folder is the core of this project, it contains `ui`, `docs` and `blocks` folders.
+
 ```
 components
 ├── blocks
@@ -70,10 +73,13 @@ components
 ├── experimental
 └── ui
 ```
+
 The core ui is inside `components/ui`, and the demo you see on the docs is inside `components/examples`.
 
 ### Registry
+
 The registry is a file that contains all the components and their files. It is used to generate the `demo`, `ui`, `blocks` and `anatomies` on the docs.
+
 ```
 public/registry
 ├── anatomies
@@ -111,7 +117,6 @@ The Intent UI code of conduct is inspired by the Laravel and Ruby code of conduc
 - Participants must ensure that their language and actions remain professional and free of personal attacks or disparaging remarks.
 - When interpreting the words and actions of others, participants should always assume good intentions.
 - Behavior that can reasonably be considered harassment or discrimination will not be tolerated.
-
 
 ## License
 

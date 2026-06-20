@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline"
+import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline'
 import {
   Menu,
   MenuContent,
@@ -8,13 +8,13 @@ import {
   MenuLabel,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu"
+} from '@/components/ui/menu'
 
 export default function MenuDangerDemo() {
   return (
     <Menu>
       <MenuTrigger>Open</MenuTrigger>
-      <MenuContent popover={{ placement: "bottom" }}>
+      <MenuContent popover={{ placement: 'bottom' }}>
         <MenuItem>
           <MenuLabel>View</MenuLabel>
         </MenuItem>

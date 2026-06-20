@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from 'react'
 
 export function useClipboard() {
   const [copied, setCopied] = useState(false)

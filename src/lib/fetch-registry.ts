@@ -1,4 +1,4 @@
-import { cache } from "react"
+import { cache } from 'react'
 
 export const createFetchRegistryFile = (basePath: string) =>
   cache(async (key: string): Promise<string | null> => {

@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { ColorField } from "@/components/ui/color-field"
-import { Label } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+import { ColorField } from '@/components/ui/color-field'
+import { Label } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
 
 export default function ColorFieldDemo() {
   return (

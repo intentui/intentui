@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
-import { SidebarNav, SidebarTrigger } from "@/components/ui/sidebar"
+import { Breadcrumbs, BreadcrumbsItem } from '@/components/ui/breadcrumbs'
+import { SidebarNav, SidebarTrigger } from '@/components/ui/sidebar'
 
 export default function AppSidebarNav() {
   return (

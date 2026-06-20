@@ -1,13 +1,13 @@
-"use client"
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
-import { ListBulletIcon } from "@heroicons/react/24/outline"
-import { findNeighbour, type Root as PageTreeRoot } from "fumadocs-core/page-tree"
-import type { TableOfContents, TOCItemType } from "fumadocs-core/toc"
-import { twMerge } from "tailwind-merge"
-import { LinkButton } from "@/components/link-button"
-import { Button } from "@/components/ui/button"
-import { ButtonGroup } from "@/components/ui/button-group"
-import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
+'use client'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { ListBulletIcon } from '@heroicons/react/24/outline'
+import { findNeighbour, type Root as PageTreeRoot } from 'fumadocs-core/page-tree'
+import type { TableOfContents, TOCItemType } from 'fumadocs-core/toc'
+import { twMerge } from 'tailwind-merge'
+import { LinkButton } from '@/components/link-button'
+import { Button } from '@/components/ui/button'
+import { ButtonGroup } from '@/components/ui/button-group'
+import { Menu, MenuContent, MenuItem, MenuLabel } from '@/components/ui/menu'
 
 interface MobilePagerProps {
   tree: PageTreeRoot
@@ -17,17 +17,17 @@ interface MobilePagerProps {
 }
 
 function getTocTextValue(item: TOCItemType) {
-  return typeof item.title === "string" ? item.title : (item.url.split("#").pop() ?? item.url)
+  return typeof item.title === 'string' ? item.title : (item.url.split('#').pop() ?? item.url)
 }
 
 function scrollToTocItem(item: TOCItemType) {
-  const id = item.url.split("#")[1]
+  const id = item.url.split('#')[1]
   if (!id) return
 
   window.requestAnimationFrame(() => {
     document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+      behavior: 'smooth',
+      block: 'start',
     })
   })
 }
@@ -41,7 +41,7 @@ export const MobilePager = ({ tree, url, toc = [], className }: MobilePagerProps
   }
 
   return (
-    <div className={twMerge("not-prose flex items-center gap-x-1.5", className)}>
+    <div className={twMerge('not-prose flex items-center gap-x-1.5', className)}>
       {toc.length > 0 && (
         <Menu>
           <Button

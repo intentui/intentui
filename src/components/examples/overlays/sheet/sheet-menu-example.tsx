@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArrowLeftStartOnRectangleIcon,
@@ -10,15 +10,15 @@ import {
   SparklesIcon,
   StarIcon,
   UserIcon,
-} from "@heroicons/react/24/outline"
-import { useState } from "react"
-import { Menu as MenuPrimitive } from "react-aria-components/Menu"
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
-import { Description, Label } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { MenuItem, MenuLabel, MenuSection } from "@/components/ui/menu"
+} from '@heroicons/react/24/outline'
+import { useState } from 'react'
+import { Menu as MenuPrimitive } from 'react-aria-components/Menu'
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Checkbox, CheckboxField } from '@/components/ui/checkbox'
+import { Description, Label } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { MenuItem, MenuLabel, MenuSection } from '@/components/ui/menu'
 import {
   ModalBody,
   ModalClose,
@@ -26,8 +26,8 @@ import {
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
-import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
+} from '@/components/ui/modal'
+import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 import {
   Sheet,
   SheetBody,
@@ -37,8 +37,8 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
-import { TextField } from "@/components/ui/text-field"
+} from '@/components/ui/sheet'
+import { TextField } from '@/components/ui/text-field'
 
 export default function SheetMenuDemo() {
   const [isOpen, setIsOpen] = useState(false)

@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
 import {
   TextField as TextFieldPrimitive,
   type TextFieldProps as TextFieldPrimitiveProps,
-} from "react-aria-components/TextField"
-import { cx } from "@/lib/primitive"
-import { fieldStyles } from "./field"
+} from 'react-aria-components/TextField'
+import { cx } from '@/lib/primitive'
+import { fieldStyles } from './field'
 
 interface TextFieldProps extends TextFieldPrimitiveProps {
   ref?: React.RefObject<HTMLInputElement | null>

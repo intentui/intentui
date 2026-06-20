@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Switch, SwitchField } from "@/components/ui/switch"
+import { Switch, SwitchField } from '@/components/ui/switch'
 
 export default function SwitchDisabledDemo() {
   return (

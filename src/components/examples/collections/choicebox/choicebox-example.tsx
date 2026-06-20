@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
 import {
   ChoiceBox,
   ChoiceBoxDescription,
   ChoiceBoxItem,
   ChoiceBoxLabel,
-} from "@/components/ui/choice-box"
+} from '@/components/ui/choice-box'
 
 export default function ChoiceboxDemo() {
   return (

@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   CommandMenu,
   CommandMenuDescription,
@@ -10,7 +10,7 @@ import {
   CommandMenuList,
   CommandMenuSearch,
   CommandMenuSection,
-} from "@/components/ui/command-menu"
+} from '@/components/ui/command-menu'
 
 export default function CommandMenuDescriptionDemo() {
   const [isOpen, setIsOpen] = useState(false)

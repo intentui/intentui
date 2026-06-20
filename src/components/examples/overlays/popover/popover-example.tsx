@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   Popover,
   PopoverBody,
@@ -9,7 +9,7 @@ import {
   PopoverFooter,
   PopoverHeader,
   PopoverTitle,
-} from "@/components/ui/popover"
+} from '@/components/ui/popover'
 
 export default function PopoverDemo() {
   return (

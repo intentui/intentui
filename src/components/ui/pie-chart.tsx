@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import type { ComponentProps } from "react"
-import { Cell, Pie, PieChart as PieChartPrimitive } from "recharts"
+import type { ComponentProps } from 'react'
+import { Cell, Pie, PieChart as PieChartPrimitive } from 'recharts'
 import {
   type BaseChartProps,
   Chart,
@@ -9,52 +9,51 @@ import {
   ChartTooltipContent,
   DEFAULT_COLORS,
   getColorValue,
-} from "./chart"
+} from './chart'
 
-type PieChartDatum = BaseChartProps["data"][number]
+type PieChartDatum = BaseChartProps['data'][number]
 
 function sumNumericArray(arr: number[]): number {
   return arr.reduce((sum, num) => sum + num, 0)
 }
 
-function calculateDefaultLabel(data: BaseChartProps["data"], valueKey: string): number {
+function calculateDefaultLabel(data: BaseChartProps['data'], valueKey: string): number {
   return sumNumericArray(
     data.map((dataPoint) => {
       const value = dataPoint[valueKey]
-      return typeof value === "number" ? value : 0
-    }),
+      return typeof value === 'number' ? value : 0
+    })
   )
 }
 
 function parseLabelInput(
   labelInput: string | undefined,
   valueFormatter: (value: number) => string,
-  data: BaseChartProps["data"],
-  valueKey: string,
+  data: BaseChartProps['data'],
+  valueKey: string
 ): string {
   return labelInput || valueFormatter(calculateDefaultLabel(data, valueKey))
 }
 
-interface PieChartProps
-  extends Omit<
-    BaseChartProps,
-    | "hideGridLines"
-    | "hideXAxis"
-    | "hideYAxis"
-    | "xAxisProps"
-    | "yAxisProps"
-    | "displayEdgeLabelsOnly"
-    | "legend"
-    | "legendProps"
-  > {
-  variant?: "pie" | "donut"
+interface PieChartProps extends Omit<
+  BaseChartProps,
+  | 'hideGridLines'
+  | 'hideXAxis'
+  | 'hideYAxis'
+  | 'xAxisProps'
+  | 'yAxisProps'
+  | 'displayEdgeLabelsOnly'
+  | 'legend'
+  | 'legendProps'
+> {
+  variant?: 'pie' | 'donut'
   nameKey?: string
 
-  chartProps?: Omit<ComponentProps<typeof PieChartPrimitive>, "data" | "stackOffset">
+  chartProps?: Omit<ComponentProps<typeof PieChartPrimitive>, 'data' | 'stackOffset'>
 
   label?: string
   showLabel?: boolean
-  pieProps?: Omit<ComponentProps<typeof Pie>, "data" | "dataKey" | "name">
+  pieProps?: Omit<ComponentProps<typeof Pie>, 'data' | 'dataKey' | 'name'>
 }
 
 const PieChart = ({
@@ -70,7 +69,7 @@ const PieChart = ({
   tooltip = true,
   tooltipProps,
 
-  variant = "pie",
+  variant = 'pie',
   nameKey,
 
   chartProps,
@@ -97,7 +96,7 @@ const PieChart = ({
           }}
           {...chartProps}
         >
-          {showLabel && variant === "donut" && (
+          {showLabel && variant === 'donut' && (
             <text
               className="fill-fg font-semibold"
               x="50%"
@@ -115,20 +114,20 @@ const PieChart = ({
               name={nameKey}
               dataKey={dataKey}
               data={data}
-              cx={pieProps?.cx ?? "50%"}
-              cy={pieProps?.cy ?? "50%"}
+              cx={pieProps?.cx ?? '50%'}
+              cy={pieProps?.cy ?? '50%'}
               startAngle={pieProps?.startAngle ?? 90}
               endAngle={pieProps?.endAngle ?? -270}
               strokeLinejoin="round"
-              innerRadius={variant === "donut" ? "50%" : "0%"}
+              innerRadius={variant === 'donut' ? '50%' : '0%'}
               isAnimationActive
               {...pieProps}
             >
               {data.map((datum: PieChartDatum, index: number) => {
                 const configKey =
-                  typeof datum.code === "string"
+                  typeof datum.code === 'string'
                     ? datum.code
-                    : typeof datum.name === "string"
+                    : typeof datum.name === 'string'
                       ? datum.name
                       : undefined
 
@@ -136,7 +135,7 @@ const PieChart = ({
                   <Cell
                     key={`cell-${index}`}
                     fill={getColorValue(
-                      config?.[configKey ?? ""]?.color ?? colors[index % colors.length],
+                      config?.[configKey ?? '']?.color ?? colors[index % colors.length]
                     )}
                   />
                 )
@@ -149,7 +148,7 @@ const PieChart = ({
           {tooltip && (
             <ChartTooltip
               content={
-                typeof tooltip === "boolean" ? (
+                typeof tooltip === 'boolean' ? (
                   <ChartTooltipContent hideLabel labelSeparator={false} accessibilityLayer />
                 ) : (
                   tooltip

@@ -1,5 +1,5 @@
-"use client"
-import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
+'use client'
+import { Breadcrumbs, BreadcrumbsItem } from '@/components/ui/breadcrumbs'
 
 export default function BreadcrumbsCurrentDemo() {
   return (

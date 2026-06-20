@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
 import {
   BoltIcon as BoltOutline,
   CursorArrowRaysIcon as CursorArrowRaysOutline,
   NoSymbolIcon as NoSymbolOutline,
   PencilIcon as PencilOutline,
-} from "@heroicons/react/24/outline"
+} from '@heroicons/react/24/outline'
 import {
   BoltIcon as BoltSolid,
   CursorArrowRaysIcon as CursorArrowRaysSolid,
   NoSymbolIcon as NoSymbolSolid,
   PencilIcon as PencilSolid,
-} from "@heroicons/react/24/solid"
+} from '@heroicons/react/24/solid'
 
-import { Toolbar, ToolbarGroup, ToolbarItem } from "@/components/ui/toolbar"
+import { Toolbar, ToolbarGroup, ToolbarItem } from '@/components/ui/toolbar'
 
 export default function ToolbarDemo() {
   return (

@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import type { ColorFormat } from "react-aria-components/ColorSwatch"
-import { Card } from "@/components/ui/card"
-import { ColorSwatch } from "@/components/ui/color-swatch"
+import type { ColorFormat } from 'react-aria-components/ColorSwatch'
+import { Card } from '@/components/ui/card'
+import { ColorSwatch } from '@/components/ui/color-swatch'
 
-const formats: string[] = ["hex", "hexa", "rgb", "rgba", "hsl", "hsla", "hsb", "hsba"]
+const formats: string[] = ['hex', 'hexa', 'rgb', 'rgba', 'hsl', 'hsla', 'hsb', 'hsba']
 export function ControlledValues({ color }: { color: any }) {
   return (
     <Card className="flex min-w-62 flex-col gap-y-2 bg-transparent p-3 text-center sm:min-w-72 [&>span]:flex [&>span]:justify-between [&>span]:gap-x-6">
@@ -14,12 +14,12 @@ export function ControlledValues({ color }: { color: any }) {
             <ColorSwatch
               aria-label="color picked"
               className="rounded [--color-swatch-size:--spacing(5)]"
-              color={color.toString(format as ColorFormat | "css" | undefined)}
+              color={color.toString(format as ColorFormat | 'css' | undefined)}
             />
             <span className="text-xs uppercase tabular-nums">{format}</span>
           </span>
           <span className="text-xs tabular-nums sm:text-sm">
-            {color.toString(format as ColorFormat | "css" | undefined)}
+            {color.toString(format as ColorFormat | 'css' | undefined)}
           </span>
         </span>
       ))}

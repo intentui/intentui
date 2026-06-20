@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { Form } from "react-aria-components/Form"
-import { Button } from "@/components/ui/button"
-import { ColorField } from "@/components/ui/color-field"
-import { FieldError, Label } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+import { Form } from 'react-aria-components/Form'
+import { Button } from '@/components/ui/button'
+import { ColorField } from '@/components/ui/color-field'
+import { FieldError, Label } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
 
 export default function ColorFieldValidationDemo() {
   function submit(e: React.FormEvent) {

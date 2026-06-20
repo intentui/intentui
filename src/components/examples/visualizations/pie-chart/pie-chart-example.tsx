@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { PieChart } from "@/components/ui/pie-chart"
+import { useMemo } from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { PieChart } from '@/components/ui/pie-chart'
 
 export default function PieChartTrafficSourceDemo() {
   const data = useMemo(
     () => [
-      { name: "Organic", amount: 1240 },
-      { name: "Paid", amount: 880 },
-      { name: "Referral", amount: 360 },
-      { name: "Social", amount: 220 },
+      { name: 'Organic', amount: 1240 },
+      { name: 'Paid', amount: 880 },
+      { name: 'Referral', amount: 360 },
+      { name: 'Social', amount: 220 },
     ],
-    [],
+    []
   )
 
   return (
@@ -28,10 +28,10 @@ export default function PieChartTrafficSourceDemo() {
           dataKey="amount"
           nameKey="name"
           config={{
-            Organic: { label: "Organic" },
-            Paid: { label: "Paid" },
-            Referral: { label: "Referral" },
-            Social: { label: "Social" },
+            Organic: { label: 'Organic' },
+            Paid: { label: 'Paid' },
+            Referral: { label: 'Referral' },
+            Social: { label: 'Social' },
           }}
         />
       </CardContent>

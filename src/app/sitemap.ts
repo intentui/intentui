@@ -1,6 +1,6 @@
-import type { MetadataRoute } from "next"
-import { app } from "@/config/app"
-import { source } from "@/lib/source"
+import type { MetadataRoute } from 'next'
+import { app } from '@/config/app'
+import { source } from '@/lib/source'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const docs = source.pageTree
@@ -9,80 +9,80 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: app.url,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${app.url}/components`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${app.url}/icons`,
       lastModified,
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${app.url}/colors`,
       lastModified,
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${app.url}/blocks`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${app.url}/blocks/navbar`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${app.url}/blocks/sidebar`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${app.url}/blocks/auth`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${app.url}/blocks/chart`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${app.url}/blog`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${app.url}/showcase`,
       lastModified,
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${app.url}/sponsor`,
       lastModified,
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.5,
     },
     // @ts-expect-error
     ...extractUrls(docs.children).map((i) => ({
       ...i,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.8,
     })),
   ]
@@ -101,7 +101,7 @@ function extractUrls(data: DocNode[]): { url: string }[] {
   const urls: { url: string }[] = []
 
   const traverse = (node: DocNode): void => {
-    if (node.type === "page" && node.url) {
+    if (node.type === 'page' && node.url) {
       urls.push({
         url: `${app.url}${node.url}`,
       })

@@ -1,5 +1,5 @@
 ---
-title: "Description List"
+title: 'Description List'
 description: A semantic HTML component for displaying key-value pairs, perfect for structured data like product details or definitions. It can be used with headings and cards.
 order: 6
 published: true
@@ -10,13 +10,16 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/description-list"/>
-<SourceCode toShow='description-list' />
+
+<InstallCommand command="npx shadcn@latest add @intentui/description-list" />
+<SourceCode toShow="description-list" />
 
 ## Anatomy
+
 ```
 import { DescriptionDetails, DescriptionList, DescriptionTerm } from "@/components/ui/description-list"
 ```
+
 ```
 <DescriptionList>
   <DescriptionTerm>Invoice Number</DescriptionTerm>
@@ -29,18 +32,31 @@ import { DescriptionDetails, DescriptionList, DescriptionTerm } from "@/componen
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
-<SourceCode toShow='description-list'/>
+
+<InstallCommand command="npm i tailwind-merge" />
+<SourceCode toShow="description-list" />
 
 ## Examples
 
 ### With heading
+
 This example shows with heading.
-<How className="px-4" isCenter={false} toUse="surfaces/description-list/description-list-heading-example" />
+
+<How
+  className="px-4"
+  isCenter={false}
+  toUse="surfaces/description-list/description-list-heading-example"
+/>
 
 ### With card
+
 Sometimes, you may want to use a card to display the description list. This example shows how to do it.
-<How withNoPadding isCenter={false} toUse="surfaces/description-list/description-list-card-example" />
+
+<How
+  withNoPadding
+  isCenter={false}
+  toUse="surfaces/description-list/description-list-card-example"
+/>
 
 ## Component API
 
@@ -48,22 +64,22 @@ Sometimes, you may want to use a card to display the description list. This exam
 
 The `DescriptionDetails` component renders the value in a description list.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DescriptionList
 
 The `DescriptionList` component displays terms and details in a structured list.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DescriptionTerm
 
 The `DescriptionTerm` component renders the label in a description list.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |

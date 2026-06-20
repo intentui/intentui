@@ -1,10 +1,10 @@
-import * as fs from "node:fs"
-import path from "node:path"
+import * as fs from 'node:fs'
+import path from 'node:path'
 
-const inputDir = path.join(__dirname, "../stubs")
-const outputDir = "public/stubs"
+const inputDir = path.join(__dirname, '../stubs')
+const outputDir = 'public/stubs'
 
-function getAllFiles(dir: string, basePath = ""): string[] {
+function getAllFiles(dir: string, basePath = ''): string[] {
   let files: string[] = []
   for (const file of fs.readdirSync(dir)) {
     const fullPath = path.join(dir, file)
@@ -23,7 +23,7 @@ function buildStubs() {
   const files = getAllFiles(inputDir)
   for (const file of files) {
     const filePath = path.join(inputDir, file)
-    const content = fs.readFileSync(filePath, "utf-8")
+    const content = fs.readFileSync(filePath, 'utf-8')
 
     const stubJson = {
       name: file,
@@ -35,7 +35,7 @@ function buildStubs() {
       ],
     }
 
-    const outputFilePath = path.join(outputDir, file.replace(/\.stub$/, ".json"))
+    const outputFilePath = path.join(outputDir, file.replace(/\.stub$/, '.json'))
 
     const outputDirPath = path.dirname(outputFilePath)
     if (!fs.existsSync(outputDirPath)) {

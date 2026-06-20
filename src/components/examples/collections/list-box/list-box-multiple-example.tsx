@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import type { Selection } from "react-aria-components/GridList"
-import { Description } from "@/components/ui/field"
-import { ListBox, ListBoxItem } from "@/components/ui/list-box"
+import { useState } from 'react'
+import type { Selection } from 'react-aria-components/GridList'
+import { Description } from '@/components/ui/field'
+import { ListBox, ListBoxItem } from '@/components/ui/list-box'
 
 export default function ListBoxMultipleDemo() {
   const [selected, setSelected] = useState<Selection>(new Set([3]))
@@ -21,7 +21,7 @@ export default function ListBoxMultipleDemo() {
 
       {[...selected].length > 0 && (
         <Description className="mt-4 block">
-          Selected: {selected === "all" ? "All selected" : [...selected].join(", ")}
+          Selected: {selected === 'all' ? 'All selected' : [...selected].join(', ')}
         </Description>
       )}
     </div>
@@ -31,30 +31,30 @@ export default function ListBoxMultipleDemo() {
 const fruits = [
   {
     id: 1,
-    name: "Apple",
+    name: 'Apple',
   },
   {
     id: 2,
-    name: "Banana",
+    name: 'Banana',
   },
   {
     id: 3,
-    name: "Orange",
+    name: 'Orange',
   },
   {
     id: 4,
-    name: "Strawberry",
+    name: 'Strawberry',
   },
   {
     id: 5,
-    name: "Grapes",
+    name: 'Grapes',
   },
   {
     id: 6,
-    name: "Mango",
+    name: 'Mango',
   },
   {
     id: 7,
-    name: "Pineapple",
+    name: 'Pineapple',
   },
 ]

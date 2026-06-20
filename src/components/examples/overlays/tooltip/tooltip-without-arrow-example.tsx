@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { Badge } from "@/components/ui/badge"
-import { Description } from "@/components/ui/field"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { Badge } from '@/components/ui/badge'
+import { Description } from '@/components/ui/field'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 export default function TooltipWithoutArrowDemo() {
   return (

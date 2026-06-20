@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { PlusIcon } from "@heroicons/react/20/solid"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/field"
-import { Input, InputGroup } from "@/components/ui/input"
+import { PlusIcon } from '@heroicons/react/20/solid'
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/field'
+import { Input, InputGroup } from '@/components/ui/input'
 import {
   ModalBody,
   ModalClose,
@@ -13,8 +13,8 @@ import {
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
-import { TextField } from "@/components/ui/text-field"
+} from '@/components/ui/modal'
+import { TextField } from '@/components/ui/text-field'
 
 export default function TextFieldSuffixButtonDemo() {
   const [open, setOpen] = useState(false)

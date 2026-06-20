@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Form } from "react-aria-components/Form"
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
-import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Link } from "@/components/ui/link"
-import { Text, TextLink } from "@/components/ui/text"
-import { TextField } from "@/components/ui/text-field"
+import { useState } from 'react'
+import { Form } from 'react-aria-components/Form'
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Checkbox, CheckboxField } from '@/components/ui/checkbox'
+import { Description, FieldError, Fieldset, Label, Legend } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { Link } from '@/components/ui/link'
+import { Text, TextLink } from '@/components/ui/text'
+import { TextField } from '@/components/ui/text-field'
 
 export default function Page() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   return (
     <main className="flex min-h-dvh items-center justify-center p-6">
       <div className="w-full max-w-sm">

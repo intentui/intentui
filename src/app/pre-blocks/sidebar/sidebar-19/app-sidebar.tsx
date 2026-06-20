@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArrowUturnLeftIcon,
@@ -9,9 +9,9 @@ import {
   PlayIcon,
   RectangleStackIcon,
   UsersIcon,
-} from "@heroicons/react/24/solid"
-import { Avatar } from "@/components/ui/avatar"
-import { Link } from "@/components/ui/link"
+} from '@heroicons/react/24/solid'
+import { Avatar } from '@/components/ui/avatar'
+import { Link } from '@/components/ui/link'
 import {
   Sidebar,
   SidebarContent,
@@ -24,7 +24,7 @@ import {
   SidebarRail,
   SidebarSection,
   SidebarSeparator,
-} from "@/components/ui/sidebar"
+} from '@/components/ui/sidebar'
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -99,13 +99,13 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 }
 
 export const users = [
-  { id: 1, name: "Robert Plant", image_url: "/images/avatar/robert.jpg" },
-  { id: 2, name: "Jimmy Page", image_url: "/images/avatar/page.jpg" },
-  { id: 5, name: "Irsyad", image_url: "/images/avatar/irsyad.jpg" },
-  { id: 3, name: "Slash", image_url: "/images/avatar/slash.jpg" },
+  { id: 1, name: 'Robert Plant', image_url: '/images/avatar/robert.jpg' },
+  { id: 2, name: 'Jimmy Page', image_url: '/images/avatar/page.jpg' },
+  { id: 5, name: 'Irsyad', image_url: '/images/avatar/irsyad.jpg' },
+  { id: 3, name: 'Slash', image_url: '/images/avatar/slash.jpg' },
   {
     id: 4,
-    name: "Kurt Cobain",
-    image_url: "https://intentui.com/images/avatar/cobain.jpg",
+    name: 'Kurt Cobain',
+    image_url: 'https://intentui.com/images/avatar/cobain.jpg',
   },
 ]

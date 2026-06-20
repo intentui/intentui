@@ -1,11 +1,11 @@
-import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
-import { BookOpenIcon, CubeIcon, Squares2X2Icon, SwatchIcon } from "@heroicons/react/24/outline"
-import NextLink from "next/link"
-import { usePathname } from "next/navigation"
-import { useEffect, useRef, useState } from "react"
-import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
-import { Header } from "react-aria-components/Header"
-import { Link } from "react-aria-components/Link"
+import { ArrowUpRightIcon } from '@heroicons/react/16/solid'
+import { BookOpenIcon, CubeIcon, Squares2X2Icon, SwatchIcon } from '@heroicons/react/24/outline'
+import NextLink from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useEffect, useRef, useState } from 'react'
+import { Autocomplete, useFilter } from 'react-aria-components/Autocomplete'
+import { Header } from 'react-aria-components/Header'
+import { Link } from 'react-aria-components/Link'
 import {
   Menu,
   MenuItem,
@@ -14,41 +14,41 @@ import {
   MenuTrigger,
   Popover,
   type PopoverProps,
-} from "react-aria-components/Menu"
-import { twJoin, twMerge } from "tailwind-merge"
-import { components, dm, gs, prologue, sortedGsChildren } from "@/components/aside"
-import { BrandDiscordIcon } from "@/components/icons/brand-discord-icon"
-import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
-import { BrandXIcon } from "@/components/icons/brand-x-icon"
-import { ThemeSwitcher } from "@/components/theme-switcher"
-import { Button, buttonStyles } from "@/components/ui/button"
-import { SearchField, SearchInput } from "@/components/ui/search-field"
-import { Separator } from "@/components/ui/separator"
-import { app } from "@/config/app"
-import { cx } from "@/lib/primitive"
+} from 'react-aria-components/Menu'
+import { twJoin, twMerge } from 'tailwind-merge'
+import { components, dm, gs, prologue, sortedGsChildren } from '@/components/aside'
+import { BrandDiscordIcon } from '@/components/icons/brand-discord-icon'
+import { BrandGithubIcon } from '@/components/icons/brand-github-icon'
+import { BrandXIcon } from '@/components/icons/brand-x-icon'
+import { ThemeSwitcher } from '@/components/theme-switcher'
+import { Button, buttonStyles } from '@/components/ui/button'
+import { SearchField, SearchInput } from '@/components/ui/search-field'
+import { Separator } from '@/components/ui/separator'
+import { app } from '@/config/app'
+import { cx } from '@/lib/primitive'
 
 export const menus = [
   {
-    href: "/docs/getting-started/introduction",
-    label: "Docs",
+    href: '/docs/getting-started/introduction',
+    label: 'Docs',
     icon: BookOpenIcon,
   },
-  { href: "/components", label: "Components", icon: CubeIcon },
-  { href: "/colors", label: "Colors", icon: SwatchIcon },
-  { href: "/blocks", label: "Blocks", icon: Squares2X2Icon },
+  { href: '/components', label: 'Components', icon: CubeIcon },
+  { href: '/colors', label: 'Colors', icon: SwatchIcon },
+  { href: '/blocks', label: 'Blocks', icon: Squares2X2Icon },
   {
-    href: "https://design.intentui.com/themes",
-    label: "Themes",
+    href: 'https://design.intentui.com/themes',
+    label: 'Themes',
     on: true,
   },
 ]
 
 interface ResponsiveNavigationProps {
   className?: string
-  popover?: Pick<PopoverProps, "className">
+  popover?: Pick<PopoverProps, 'className'>
 }
 export function ResponsiveNavigation({ className, popover }: ResponsiveNavigationProps) {
-  const { contains } = useFilter({ sensitivity: "base" })
+  const { contains } = useFilter({ sensitivity: 'base' })
 
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
@@ -59,9 +59,9 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
   return (
     <nav
       className={twMerge(
-        "sticky top-0 z-40 flex items-center bg-bg px-2 py-2 lg:hidden",
-        pathname === "/" && "bg-transparent",
-        className,
+        'sticky top-0 z-40 flex items-center bg-bg px-2 py-2 lg:hidden',
+        pathname === '/' && 'bg-transparent',
+        className
       )}
     >
       <div className="flex items-center gap-x-2">
@@ -76,14 +76,14 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
               <span className="relative size-(--width)">
                 <span
                   className={twJoin(
-                    "absolute left-0 block h-0.5 w-(--width) bg-fg transition-all duration-100",
-                    open ? "top-[0.4rem] -rotate-45" : "top-1",
+                    'absolute left-0 block h-0.5 w-(--width) bg-fg transition-all duration-100',
+                    open ? 'top-[0.4rem] -rotate-45' : 'top-1'
                   )}
                 />
                 <span
                   className={twJoin(
-                    "absolute left-0 block h-0.5 w-(--width) bg-fg transition-all duration-100",
-                    open ? "top-[0.4rem] rotate-45" : "top-[--spacing(2.6)]",
+                    'absolute left-0 block h-0.5 w-(--width) bg-fg transition-all duration-100',
+                    open ? 'top-[0.4rem] rotate-45' : 'top-[--spacing(2.6)]'
                   )}
                 />
               </span>
@@ -96,19 +96,19 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
             onOpenChange={setOpen}
             isOpen={open}
             className={cx(
-              "placement-bottom:entering:slide-in-from-top-1 -mt-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]",
-              "entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out",
-              "slide-out-to-top-1 slide-in-from-top-1",
-              pathname === "/" && "from-blue-50 dark:from-[#151518]",
-              popover?.className,
+              'placement-bottom:entering:slide-in-from-top-1 -mt-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]',
+              'entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out',
+              'slide-out-to-top-1 slide-in-from-top-1',
+              pathname === '/' && 'from-blue-50 dark:from-[#151518]',
+              popover?.className
             )}
             containerPadding={0}
           >
             <Autocomplete filter={contains}>
               <div
                 className={twJoin(
-                  "sticky top-0 h-16 bg-linear-to-b via-bg pt-2",
-                  pathname === "/" ? "from-blue-50 dark:from-[#151518]" : "from-bg",
+                  'sticky top-0 h-16 bg-linear-to-b via-bg pt-2',
+                  pathname === '/' ? 'from-blue-50 dark:from-[#151518]' : 'from-bg'
                 )}
               >
                 <SearchField autoFocus aria-label="Search...">
@@ -123,7 +123,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                   <NavHeading>Pages</NavHeading>
                   <NavLink href="/">Home</NavLink>
                   {menus
-                    .filter((i) => i.label !== "Themes")
+                    .filter((i) => i.label !== 'Themes')
                     .map((menu) => (
                       <NavLink key={menu.href} href={menu.href}>
                         {menu.label}
@@ -153,7 +153,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                   <NavHeading>{gs?.section}</NavHeading>
                   {sortedGsChildren.map((item) => (
                     <NavLink
-                      textValue={`${gs?.section} ${item.title} ${item.slug.replaceAll("-", "")} ${item.slug}`}
+                      textValue={`${gs?.section} ${item.title} ${item.slug.replaceAll('-', '')} ${item.slug}`}
                       key={item.slug}
                       href={item.slug}
                     >
@@ -165,7 +165,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                   <NavHeading>{dm?.section}</NavHeading>
                   {dm?.children?.map((item) => (
                     <NavLink
-                      textValue={`${dm?.section} ${item.title} ${item.slug.replaceAll("-", "")} ${item.slug}`}
+                      textValue={`${dm?.section} ${item.title} ${item.slug.replaceAll('-', '')} ${item.slug}`}
                       key={item.slug}
                       href={item.slug}
                     >
@@ -181,7 +181,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                   >
                     {item?.children?.map((child) => (
                       <NavLink
-                        textValue={`${item?.subsection} ${child.title} ${child.slug.replaceAll("-", "")} ${child.slug}`}
+                        textValue={`${item?.subsection} ${child.title} ${child.slug.replaceAll('-', '')} ${child.slug}`}
                         key={child.slug}
                         href={child.slug}
                       >
@@ -202,21 +202,21 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
       <div className="flex-1" aria-hidden />
       <div className="flex items-center gap-x-0.5">
         <Link
-          className={buttonStyles({ intent: "plain", size: "sq-sm" })}
+          className={buttonStyles({ intent: 'plain', size: 'sq-sm' })}
           href={app.links.twitter}
           target="_blank"
         >
           <BrandXIcon className="size-5" />
         </Link>
         <Link
-          className={buttonStyles({ intent: "plain", size: "sq-sm" })}
+          className={buttonStyles({ intent: 'plain', size: 'sq-sm' })}
           href={app.links.discord}
           target="_blank"
         >
           <BrandDiscordIcon className="size-5" />
         </Link>
         <Link
-          className={buttonStyles({ intent: "plain", size: "sq-sm" })}
+          className={buttonStyles({ intent: 'plain', size: 'sq-sm' })}
           href={app.repo.url}
           target="_blank"
         >
@@ -241,8 +241,8 @@ function NavLink({ href, ...props }: NavLinkProps) {
   useEffect(() => {
     if (isActive && ref.current) {
       ref.current.scrollIntoView({
-        behavior: "instant",
-        block: "center",
+        behavior: 'instant',
+        block: 'center',
       })
     }
   }, [isActive])
@@ -253,19 +253,19 @@ function NavLink({ href, ...props }: NavLinkProps) {
       href={href}
       ref={ref}
       render={(domProps) =>
-        "href" in domProps ? <NextLink {...domProps} /> : <div {...domProps} />
+        'href' in domProps ? <NextLink {...domProps} /> : <div {...domProps} />
       }
       className={twMerge(
-        "mb-0.5 flex items-center justify-between rounded-lg px-2 py-2.5 font-medium text-xl/6",
-        "focus:outline-hidden",
-        "hover:bg-fg/10 hover:text-secondary-fg",
-        "focus:bg-fg/10 focus:text-secondary-fg",
-        "pressed:bg-fg/10 pressed:text-secondary-fg",
+        'mb-0.5 flex items-center justify-between rounded-lg px-2 py-2.5 font-medium text-xl/6',
+        'focus:outline-hidden',
+        'hover:bg-fg/10 hover:text-secondary-fg',
+        'focus:bg-fg/10 focus:text-secondary-fg',
+        'pressed:bg-fg/10 pressed:text-secondary-fg',
         isActive && [
-          "font-medium",
-          "text-blue-600 hover:bg-blue-100 hover:text-blue-600",
-          "dark:text-blue-400 dark:hover:bg-blue-400/10 dark:hover:text-blue-400",
-        ],
+          'font-medium',
+          'text-blue-600 hover:bg-blue-100 hover:text-blue-600',
+          'dark:text-blue-400 dark:hover:bg-blue-400/10 dark:hover:text-blue-400',
+        ]
       )}
     />
   )

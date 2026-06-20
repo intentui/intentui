@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { type ToastT, toast } from "sonner"
-import { Button } from "@/components/ui/button"
+import { toast, type ToastT } from 'sonner'
+import { Button } from '@/components/ui/button'
 
-const positions: ToastT["position"][] = [
-  "top-left",
-  "top-right",
-  "bottom-left",
-  "bottom-right",
-  "top-center",
-  "bottom-center",
+const positions: ToastT['position'][] = [
+  'top-left',
+  'top-right',
+  'bottom-left',
+  'bottom-right',
+  'top-center',
+  'bottom-center',
 ]
 
 export default function ToastPositionsDemo() {
@@ -21,7 +21,7 @@ export default function ToastPositionsDemo() {
           size="sm"
           key={position}
           onPress={() =>
-            toast("The registration is successful, click here to continue.", { position })
+            toast('The registration is successful, click here to continue.', { position })
           }
         >
           {position}

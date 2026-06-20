@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { PieChart } from "@/components/ui/pie-chart"
+import { useMemo } from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { PieChart } from '@/components/ui/pie-chart'
 
 export default function PieChartTrafficSourceDemo() {
   const data = useMemo(
     () => [
-      { name: "Organic", amount: 1240 },
-      { name: "Paid", amount: 880 },
-      { name: "Referral", amount: 360 },
-      { name: "Social", amount: 220 },
+      { name: 'Organic', amount: 1240 },
+      { name: 'Paid', amount: 880 },
+      { name: 'Referral', amount: 360 },
+      { name: 'Social', amount: 220 },
     ],
-    [],
+    []
   )
 
   return (
@@ -29,17 +29,17 @@ export default function PieChartTrafficSourceDemo() {
           nameKey="name"
           config={{
             Organic: {
-              label: "Organic",
-              color: "var(--color-emerald-500)",
+              label: 'Organic',
+              color: 'var(--color-emerald-500)',
             },
-            Paid: { label: "Paid", color: "var(--color-rose-500)" },
+            Paid: { label: 'Paid', color: 'var(--color-rose-500)' },
             Referral: {
-              label: "Referral",
-              color: "var(--color-sky-500)",
+              label: 'Referral',
+              color: 'var(--color-sky-500)',
             },
             Social: {
-              label: "Social",
-              color: "var(--color-indigo-500)",
+              label: 'Social',
+              color: 'var(--color-indigo-500)',
             },
           }}
         />

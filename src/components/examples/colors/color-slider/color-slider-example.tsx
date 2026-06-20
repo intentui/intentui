@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { ColorSlider, ColorSliderOutput, ColorSliderTrack } from "@/components/ui/color-slider"
-import { ColorThumb } from "@/components/ui/color-thumb"
-import { Description } from "@/components/ui/field"
+import { ColorSlider, ColorSliderOutput, ColorSliderTrack } from '@/components/ui/color-slider'
+import { ColorThumb } from '@/components/ui/color-thumb'
+import { Description } from '@/components/ui/field'
 
 export default function ColorSliderDemo() {
   return (

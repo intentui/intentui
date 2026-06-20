@@ -4,15 +4,17 @@
 * Then replace var(--font-inter) to Inter
 */
 
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 @plugin 'tailwindcss-react-aria-components';
 
 @theme inline {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "Geist Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
-    '"Liberation Mono"', '"Courier New"', "monospace";
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    'Geist Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+    '"Liberation Mono"', '"Courier New"', 'monospace';
 
   --color-border: var(--border);
   --color-input: var(--input);
@@ -150,7 +152,7 @@
   --muted: oklch(0.21 0.006 285.885);
   --muted-fg: oklch(0.705 0.015 286.067);
 
-  --overlay: oklch(0.180 0.006 285.885);
+  --overlay: oklch(0.18 0.006 285.885);
   --overlay-fg: oklch(0.985 0 0);
 
   --success: oklch(0.596 0.145 163.225);
@@ -162,11 +164,11 @@
   --danger: oklch(0.577 0.245 27.325);
   --danger-fg: oklch(0.971 0.013 17.38);
 
-  --border: oklch(0.270 0.013 285.805);
-  --input: oklch(0.320 0.013 285.805);
+  --border: oklch(0.27 0.013 285.805);
+  --input: oklch(0.32 0.013 285.805);
   --ring: oklch(0.546 0.245 262.881);
 
-  --navbar: oklch(0.190 0.006 285.885);
+  --navbar: oklch(0.19 0.006 285.885);
   --navbar-fg: oklch(0.985 0 0);
 
   --sidebar: var(--color-zinc-900);
@@ -190,7 +192,7 @@
 @utility touch-target {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     top: 50%;
@@ -220,7 +222,7 @@
   }
 
   html {
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     font-variation-settings: normal;
     scroll-behavior: smooth;
     height: 100%;

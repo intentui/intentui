@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { BellIcon, LanguageIcon, SunIcon } from "@heroicons/react/24/outline"
+import { BellIcon, LanguageIcon, SunIcon } from '@heroicons/react/24/outline'
 import {
   BellIcon as BellIconFill,
   LanguageIcon as LanguageIconFill,
   MoonIcon as MoonIconFill,
-} from "@heroicons/react/24/solid"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+} from '@heroicons/react/24/solid'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 export default function ToggleGroupOrientationDemo() {
   return (
@@ -16,7 +16,7 @@ export default function ToggleGroupOrientationDemo() {
           {({ isSelected }) => (
             <>
               {isSelected ? <MoonIconFill /> : <SunIcon />}
-              {isSelected ? "Dark" : "Light"} Mode
+              {isSelected ? 'Dark' : 'Light'} Mode
             </>
           )}
         </ToggleGroupItem>
@@ -24,7 +24,7 @@ export default function ToggleGroupOrientationDemo() {
           {({ isSelected }) => (
             <>
               {isSelected ? <BellIconFill /> : <BellIcon />}
-              Notifications {isSelected ? "On" : "Off"}
+              Notifications {isSelected ? 'On' : 'Off'}
             </>
           )}
         </ToggleGroupItem>

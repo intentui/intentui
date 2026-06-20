@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { BrandDiscordIcon } from "@/components/icons/brand-discord-icon"
-import { BrandGithubIcon } from "@/components/icons/brand-github-icon"
+import { BrandDiscordIcon } from '@/components/icons/brand-discord-icon'
+import { BrandGithubIcon } from '@/components/icons/brand-github-icon'
 import {
   Select,
   SelectContent,
@@ -9,7 +9,7 @@ import {
   SelectLabel,
   SelectSeparator,
   SelectTrigger,
-} from "@/components/ui/select"
+} from '@/components/ui/select'
 
 export default function SelectWithIconDemo() {
   return (

@@ -1,9 +1,9 @@
 ---
-title: "Time Field"
+title: 'Time Field'
 description: A time-specific input that lets users enter and adjust time values, supporting 12-hour or 24-hour formats. It ensures accurate time selection with validation.
 order: 4
 published: true
-references: ["https://react-aria.adobe.com/TimeField#api"]
+references: ['https://react-aria.adobe.com/TimeField#api']
 ---
 
 <How toUse="date-and-time/time-field/time-field-example" />
@@ -11,38 +11,51 @@ references: ["https://react-aria.adobe.com/TimeField#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/time-field"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/time-field" />
 
 ## Composed components
-<Composed components={['field', 'date-field']}/>
+
+<Composed components={['field', 'date-field']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
 
-<SourceCode toShow='time-field'/>
+<InstallCommand command="npm i react-aria-components" />
+
+<SourceCode toShow="time-field" />
 
 ## Examples
 
 ### Hour cycles
+
 Change the hour format in the time field by using the `hourCycle` prop.
+
 <How toUse="date-and-time/time-field/time-field-hc-example" />
 
 ### Validation
+
 To ensure the time field is properly filled out, use the `isRequired` prop.
+
 <How toUse="date-and-time/time-field/time-field-validation-example" />
 
 ### Controlled
+
 In a controlled time field, the value is provided as a prop, and the field is not editable by the user.
+
 <How toUse="date-and-time/time-field/time-field-controlled-example" />
 
 ### Readonly
+
 In a readonly time field, the value is provided as a prop, and the field is not editable by the user.
+
 <How toUse="date-and-time/time-field/time-field-readonly-example" />
 
 ### Disabled
+
 A disabled time field cannot be interacted with and is visually represented as being inactive.
+
 <How toUse="date-and-time/time-field/time-field-disabled-example" />
 
 ## Component API
@@ -51,16 +64,16 @@ A disabled time field cannot be interacted with and is visually represented as b
 
 The `TimeField` component lets users enter time values.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### TimeInput
 
 The `TimeInput` component renders the segmented time input.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/TimeField#api) for the full API reference.

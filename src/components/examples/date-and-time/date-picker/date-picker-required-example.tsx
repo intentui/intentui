@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { Form } from "react-aria-components/Form"
-import { Button } from "@/components/ui/button"
-import { DatePicker, DatePickerTrigger } from "@/components/ui/date-picker"
-import { FieldError, Label } from "@/components/ui/field"
+import { Form } from 'react-aria-components/Form'
+import { Button } from '@/components/ui/button'
+import { DatePicker, DatePickerTrigger } from '@/components/ui/date-picker'
+import { FieldError, Label } from '@/components/ui/field'
 
 export default function DatePickerRequiredDemo() {
   return (

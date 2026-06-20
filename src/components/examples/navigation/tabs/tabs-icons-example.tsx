@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { CheckIcon } from "@heroicons/react/20/solid"
-import { FaceSmileIcon, ScissorsIcon } from "@heroicons/react/24/outline"
-import { Tab, TabList, TabPanel, Tabs } from "@/components/ui/tabs"
+import { CheckIcon } from '@heroicons/react/20/solid'
+import { FaceSmileIcon, ScissorsIcon } from '@heroicons/react/24/outline'
+import { Tab, TabList, TabPanel, Tabs } from '@/components/ui/tabs'
 
 export default function TabsIconsDemo() {
   return (

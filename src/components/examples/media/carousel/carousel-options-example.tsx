@@ -1,17 +1,17 @@
-import { Card, CardTitle } from "@/components/ui/card"
+import { Card, CardTitle } from '@/components/ui/card'
 import {
   Carousel,
   CarouselButton,
   CarouselContent,
   CarouselHandler,
   CarouselItem,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel'
 
 export default function CarouselOptionsDemo() {
   return (
     <Carousel
       opts={{
-        align: "center",
+        align: 'center',
         loop: true,
       }}
       className="w-full max-w-2xl"

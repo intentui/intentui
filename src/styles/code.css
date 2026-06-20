@@ -73,7 +73,6 @@ html .shiki span.highlighted-word {
   @apply rounded-sm bg-secondary! py-0.5 px-1.5 text-sm/6 text-secondary-fg! border;
 }
 
-
 [data-rehype-pretty-code-title] {
   @apply text-fg mt-2 px-4 pt-6 text-sm font-medium;
 }
@@ -131,41 +130,38 @@ span[data-rehype-pretty-code-figure] > code > span {
   @apply bg-red-500/10;
 }
 .has-diff .diff.remove:before {
-  content: "-";
+  content: '-';
   color: var(--color-red-600);
 }
 
-
 .has-diff .diff.add:before {
-  content: "+";
+  content: '+';
   position: absolute;
   left: 0;
   color: var(--color-emerald-600);
 }
 .prose
-  :where(h1, h2, h3, h4, h5, h6):not(
-    :where([class~="not-prose"], [class~="not-prose"] *)
-  )
+  :where(h1, h2, h3, h4, h5, h6):not(:where([class~='not-prose'], [class~='not-prose'] *))
   > a {
   @apply text-fg no-underline hover:no-underline;
 }
 
 .prose-headings\:scroll-mt-24:is(
-    :where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"], [class~="not-prose"] *))
-  ) {
+  :where(h1, h2, h3, h4, h5, h6, th):not(:where([class~='not-prose'], [class~='not-prose'] *))
+) {
   @apply tracking-tight;
   text-decoration: none !important;
   color: var(--fg) !important;
 }
 
-.prose :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+.prose :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   @apply text-xl;
 }
 
-.prose :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+.prose :where(h3):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   @apply text-lg;
 }
 
-.prose :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+.prose :where(h4):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   @apply text-base;
 }

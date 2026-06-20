@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Form } from "react-aria-components/Form"
-import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/field"
+import { useState } from 'react'
+import { Form } from 'react-aria-components/Form'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/field'
 import {
   ModalBody,
   ModalClose,
@@ -13,9 +13,9 @@ import {
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
-import { TextField } from "@/components/ui/text-field"
-import { Textarea } from "@/components/ui/textarea"
+} from '@/components/ui/modal'
+import { TextField } from '@/components/ui/text-field'
+import { Textarea } from '@/components/ui/textarea'
 
 export default function ModalNestedDemo() {
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false)
@@ -51,7 +51,7 @@ export default function ModalNestedDemo() {
         isOpen={isProfileSetupModalOpen}
         onOpenChange={(isOpen) => {
           if (!isOpen && isTyping) {
-            toast("Profile setup incomplete")
+            toast('Profile setup incomplete')
           }
           setIsProfileSetupModalOpen(isOpen)
         }}
@@ -66,7 +66,7 @@ export default function ModalNestedDemo() {
         <Form
           onSubmit={(e) => {
             e.preventDefault()
-            toast.success("Profile setup complete")
+            toast.success('Profile setup complete')
             setIsProfileSetupModalOpen(false)
             setIsRegistrationModalOpen(false)
           }}

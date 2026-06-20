@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { PieChart } from "@/components/ui/pie-chart"
+import { useMemo } from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { PieChart } from '@/components/ui/pie-chart'
 
 export default function PieChartDonutCustomLabelDemo() {
   const data = useMemo(
     () => [
-      { name: "Rent", amount: 1200 },
-      { name: "Groceries", amount: 450 },
-      { name: "Utilities", amount: 200 },
-      { name: "Entertainment", amount: 150 },
+      { name: 'Rent', amount: 1200 },
+      { name: 'Groceries', amount: 450 },
+      { name: 'Utilities', amount: 200 },
+      { name: 'Entertainment', amount: 150 },
     ],
-    [],
+    []
   )
 
   const total = useMemo(() => data.reduce((sum, item) => sum + item.amount, 0), [data])
@@ -32,12 +32,12 @@ export default function PieChartDonutCustomLabelDemo() {
           variant="donut"
           showLabel
           label=""
-          valueFormatter={() => ""}
+          valueFormatter={() => ''}
           config={{
-            Rent: { label: "Rent" },
-            Groceries: { label: "Groceries" },
-            Utilities: { label: "Utilities" },
-            Entertainment: { label: "Entertainment" },
+            Rent: { label: 'Rent' },
+            Groceries: { label: 'Groceries' },
+            Utilities: { label: 'Utilities' },
+            Entertainment: { label: 'Entertainment' },
           }}
         >
           <text

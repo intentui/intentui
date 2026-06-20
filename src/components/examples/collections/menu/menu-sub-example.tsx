@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   Menu,
   MenuContent,
@@ -8,13 +8,13 @@ import {
   MenuLabel,
   MenuSeparator,
   MenuSubMenu,
-} from "@/components/ui/menu"
+} from '@/components/ui/menu'
 
 export default function MenuSubDemo() {
   return (
     <Menu>
       <Button intent="outline">Open</Button>
-      <MenuContent popover={{ placement: "bottom" }}>
+      <MenuContent popover={{ placement: 'bottom' }}>
         <MenuItem>
           <MenuLabel>Dashboard</MenuLabel>
         </MenuItem>

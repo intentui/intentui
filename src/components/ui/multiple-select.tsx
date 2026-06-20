@@ -1,24 +1,26 @@
-"use client"
+'use client'
 
-import { Children, isValidElement, useMemo, useRef } from "react"
-import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
-import { ListBox } from "react-aria-components/ListBox"
-import { Select, type SelectProps, SelectValue } from "react-aria-components/Select"
-import { cx } from "@/lib/primitive"
-import { Button } from "./button"
-import { fieldStyles } from "./field"
-import { ListBoxItem } from "./list-box"
-import { PopoverContent } from "./popover"
-import { SearchField, SearchInput } from "./search-field"
-import { Tag, TagGroup, TagList } from "./tag-group"
+import { Children, isValidElement, useMemo, useRef } from 'react'
+import { Autocomplete, useFilter } from 'react-aria-components/Autocomplete'
+import { ListBox } from 'react-aria-components/ListBox'
+import { Select, type SelectProps, SelectValue } from 'react-aria-components/Select'
+import { cx } from '@/lib/primitive'
+import { Button } from './button'
+import { fieldStyles } from './field'
+import { ListBoxItem } from './list-box'
+import { PopoverContent } from './popover'
+import { SearchField, SearchInput } from './search-field'
+import { Tag, TagGroup, TagList } from './tag-group'
 
 interface OptionBase {
   id: string | number
   name: string
 }
 
-interface MultipleSelectProps<T extends OptionBase>
-  extends Omit<SelectProps<T, "multiple">, "selectionMode" | "children"> {
+interface MultipleSelectProps<T extends OptionBase> extends Omit<
+  SelectProps<T, 'multiple'>,
+  'selectionMode' | 'children'
+> {
   placeholder?: string
   className?: string
   children?: React.ReactNode
@@ -36,10 +38,10 @@ interface MultipleSelectContentProps<T extends OptionBase> {
 function MultipleSelectContent<T extends OptionBase>(_props: MultipleSelectContentProps<T>) {
   return null
 }
-;(MultipleSelectContent as any).displayName = "MultipleSelectContent"
+;(MultipleSelectContent as any).displayName = 'MultipleSelectContent'
 
 function MultipleSelect<T extends OptionBase>({
-  placeholder = "No selected items",
+  placeholder = 'No selected items',
   className,
   children,
   name,
@@ -49,12 +51,12 @@ function MultipleSelect<T extends OptionBase>({
   ...props
 }: MultipleSelectProps<T>) {
   const triggerRef = useRef<HTMLDivElement | null>(null)
-  const { contains } = useFilter({ sensitivity: "base" })
+  const { contains } = useFilter({ sensitivity: 'base' })
 
   const { before, after, list } = useMemo(() => {
     const arr = Children.toArray(children)
     const idx = arr.findIndex(
-      (c) => isValidElement(c) && (c.type as any)?.displayName === "MultipleSelectContent",
+      (c) => isValidElement(c) && (c.type as any)?.displayName === 'MultipleSelectContent'
     )
     if (idx === -1) {
       return { before: arr, after: [], list: null as null | MultipleSelectContentProps<T> }

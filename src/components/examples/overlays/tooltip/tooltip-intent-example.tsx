@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { InformationCircleIcon } from "@heroicons/react/24/outline"
-import { buttonStyles } from "@/components/ui/button"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { InformationCircleIcon } from '@heroicons/react/24/outline'
+import { buttonStyles } from '@/components/ui/button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 export default function TooltipIntentDemo() {
   return (
@@ -10,8 +10,8 @@ export default function TooltipIntentDemo() {
       <TooltipTrigger
         aria-label="Follow My Twitter"
         className={buttonStyles({
-          intent: "outline",
-          size: "sq-sm",
+          intent: 'outline',
+          size: 'sq-sm',
         })}
       >
         <InformationCircleIcon />

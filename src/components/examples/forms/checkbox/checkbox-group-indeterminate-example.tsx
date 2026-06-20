@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { Checkbox, CheckboxField, CheckboxGroup } from "@/components/ui/checkbox"
-import { Description } from "@/components/ui/field"
+import { Checkbox, CheckboxField, CheckboxGroup } from '@/components/ui/checkbox'
+import { Description } from '@/components/ui/field'
 
 export default function CheckboxGroupIndeterminateExample() {
   return (
-    <CheckboxGroup aria-label="Settings" defaultValue={["encryption"]} className="ml-6" name="sets">
+    <CheckboxGroup aria-label="Settings" defaultValue={['encryption']} className="ml-6" name="sets">
       <CheckboxField value="encryption" isIndeterminate isReadOnly>
         <Checkbox>Encryption</Checkbox>
         <Description>Enable encryption.</Description>

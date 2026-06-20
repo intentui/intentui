@@ -1,38 +1,44 @@
 ---
-title: "Color Picker"
+title: 'Color Picker'
 description: A versatile UI component that provides multiple ways to choose colors, including sliders, swatches, and manual input, for comprehensive color selection.
 order: 1
 published: true
-references: ["https://react-aria.adobe.com/ColorPicker.html"]
+references: ['https://react-aria.adobe.com/ColorPicker.html']
 ---
 
-<How className='min-w-40' toUse="colors/color-picker/color-picker-example" />
+<How className="min-w-40" toUse="colors/color-picker/color-picker-example" />
 
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/color-picker"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/color-picker" />
 
 ## Composed components
-<Composed components={[
-  'color-picker',
-  'popover',
-  'button',
-  'color-swatch',
-  'color-area',
-  'color-slider',
-  'color-thumb',
-  'color-field',
-  'input',
-]}/>
+
+<Composed
+  components={[
+    'color-picker',
+    'popover',
+    'button',
+    'color-swatch',
+    'color-area',
+    'color-slider',
+    'color-thumb',
+    'color-field',
+    'input',
+  ]}
+/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
-<SourceCode toShow='color-picker'/>
+
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
+<SourceCode toShow="color-picker" />
 
 ## Anatomy
+
 ```
 import { ColorPicker } from "@/components/ui/color-picker";
 import { Popover, PopoverBody, PopoverContent } from "@/components/ui/popover";
@@ -44,6 +50,7 @@ import { ColorThumb } from "@/components/ui/color-thumb";
 import { ColorField } from "@/components/ui/color-field";
 import { Input } from "@/components/ui/input";
 ```
+
 ```
 <ColorPicker defaultValue="rgb(120,140,200)">
   <Popover>
@@ -80,12 +87,16 @@ import { Input } from "@/components/ui/input";
 ## Examples
 
 ### Controlled
+
 Control the selected color with the `value` prop to sync it with your application's state.
-<How className='min-w-40' toUse="colors/color-picker/color-picker-controlled-example" />
+
+<How className="min-w-40" toUse="colors/color-picker/color-picker-controlled-example" />
 
 ### Disabled
+
 Disable the color picker by setting the `isDisabled` prop, making it non-interactive.
-<How className='min-w-40' toUse="colors/color-picker/color-picker-disabled-example" />
+
+<How className="min-w-40" toUse="colors/color-picker/color-picker-disabled-example" />
 
 ## Component API
 
@@ -93,9 +104,9 @@ Disable the color picker by setting the `isDisabled` prop, making it non-interac
 
 The `ColorPicker` component coordinates color input controls.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### EyeDropper
 

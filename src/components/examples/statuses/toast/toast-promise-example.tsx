@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
 
 function simulateApiCall(): Promise<string> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() > 0.3) {
-        resolve("Data successfully saved!")
+        resolve('Data successfully saved!')
       } else {
-        reject(new Error("Failed to save data"))
+        reject(new Error('Failed to save data'))
       }
     }, 2000)
   })
@@ -18,7 +18,7 @@ function simulateApiCall(): Promise<string> {
 export default function ToastPromiseDemo() {
   const handleSuccess = () => {
     toast.promise(simulateApiCall(), {
-      loading: "Saving your data...",
+      loading: 'Saving your data...',
       success: (data) => data,
       error: (error) => error.message,
     })
@@ -26,9 +26,9 @@ export default function ToastPromiseDemo() {
 
   const handleCustomSuccess = () => {
     toast.promise(simulateApiCall(), {
-      loading: "Uploading file...",
+      loading: 'Uploading file...',
       success: (data) => `${data} File uploaded successfully!`,
-      error: "Upload failed. Please try again.",
+      error: 'Upload failed. Please try again.',
     })
   }
 

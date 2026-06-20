@@ -1,11 +1,11 @@
-import { twMerge } from "tailwind-merge"
-import { PageContainer } from "@/components/page-container"
-import { Heading, type HeadingProps } from "@/components/ui/heading"
-import { Text } from "@/components/ui/text"
+import { twMerge } from 'tailwind-merge'
+import { PageContainer } from '@/components/page-container'
+import { Heading, type HeadingProps } from '@/components/ui/heading'
+import { Text } from '@/components/ui/text'
 
-export function Header({ className, ...props }: React.ComponentProps<"div">) {
+export function Header({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <div className={twMerge("", className)}>
+    <div className={twMerge('', className)}>
       <PageContainer>
         <div className="border-page pt-14 pb-6 lg:border-x lg:p-6 lg:pt-32">{props.children}</div>
       </PageContainer>
@@ -13,25 +13,25 @@ export function Header({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-export function HeaderInner({ className, ...props }: React.ComponentProps<"div">) {
+export function HeaderInner({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={twMerge("mx-auto max-w-2xl text-center sm:mx-0 sm:text-left", className)}
+      className={twMerge('mx-auto max-w-2xl text-center sm:mx-0 sm:text-left', className)}
       {...props}
     />
   )
 }
 
-export function HeaderTitle({ className, ...props }: Omit<HeadingProps, "level">) {
+export function HeaderTitle({ className, ...props }: Omit<HeadingProps, 'level'>) {
   return (
     <Heading
       level={1}
-      className={twMerge("mb-4 font-medium text-3xl sm:text-4xl", className)}
+      className={twMerge('mb-4 font-medium text-3xl sm:text-4xl', className)}
       {...props}
     />
   )
 }
 
-export function HeaderDescription({ className, ...props }: React.ComponentProps<"p">) {
-  return <Text className={twMerge("text-pretty text-base/7 sm:text-lg/8", className)} {...props} />
+export function HeaderDescription({ className, ...props }: React.ComponentProps<'p'>) {
+  return <Text className={twMerge('text-pretty text-base/7 sm:text-lg/8', className)} {...props} />
 }

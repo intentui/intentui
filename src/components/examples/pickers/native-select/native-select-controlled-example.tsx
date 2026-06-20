@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Label } from "@/components/ui/field"
-import { NativeSelect, NativeSelectContent } from "@/components/ui/native-select"
+import { useState } from 'react'
+import { Label } from '@/components/ui/field'
+import { NativeSelect, NativeSelectContent } from '@/components/ui/native-select'
 
 export default function NativeSelectControlledDemo() {
-  const [value, setValue] = useState("member")
+  const [value, setValue] = useState('member')
   return (
     <NativeSelect>
       <Label>Role</Label>

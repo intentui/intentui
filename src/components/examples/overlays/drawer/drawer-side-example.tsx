@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 import {
   Drawer,
   DrawerContent,
@@ -9,16 +9,16 @@ import {
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
-} from "@/components/ui/drawer"
-import { Radio, RadioField, RadioGroup } from "@/components/ui/radio"
-import { Separator } from "@/components/ui/separator"
+} from '@/components/ui/drawer'
+import { Radio, RadioField, RadioGroup } from '@/components/ui/radio'
+import { Separator } from '@/components/ui/separator'
 
 export default function DrawerSideDemo() {
-  const [side, setSide] = useState("bottom")
+  const [side, setSide] = useState('bottom')
   return (
     <>
       <RadioGroup orientation="horizontal" aria-label="Side" value={side} onChange={setSide}>
-        {["top", "bottom", "left", "right"].map((side) => (
+        {['top', 'bottom', 'left', 'right'].map((side) => (
           <RadioField key={side} value={side}>
             <Radio className="capitalize">{side}</Radio>
           </RadioField>
@@ -29,7 +29,7 @@ export default function DrawerSideDemo() {
         <Button intent="outline" className="capitalize">
           {side}
         </Button>
-        <DrawerContent side={side as DrawerContentProps["side"]}>
+        <DrawerContent side={side as DrawerContentProps['side']}>
           <DrawerHeader>
             <DrawerTitle className="capitalize">{side}</DrawerTitle>
             <DrawerDescription>

@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import { useSlottedContext } from "react-aria-components/slots"
-import { type TabPanelProps, TabsContext, type TabsProps } from "react-aria-components/Tabs"
-import { Button } from "@/components/ui/button"
-import { Tab, TabList, type TabListProps, TabPanel, TabPanels, Tabs } from "@/components/ui/tabs"
-import { useClipboard } from "@/hooks/use-clipboard"
-import { cx } from "@/lib/primitive"
+import { useSlottedContext } from 'react-aria-components/slots'
+import { type TabPanelProps, TabsContext, type TabsProps } from 'react-aria-components/Tabs'
+import { Button } from '@/components/ui/button'
+import { Tab, TabList, type TabListProps, TabPanel, TabPanels, Tabs } from '@/components/ui/tabs'
+import { useClipboard } from '@/hooks/use-clipboard'
+import { cx } from '@/lib/primitive'
 
 export const Snippet = ({ className, ...props }: TabsProps) => (
   <Tabs
     className={cx(
-      "not-prose group w-full gap-0 overflow-hidden rounded-md border bg-bg",
-      className,
+      'not-prose group w-full gap-0 overflow-hidden rounded-md border bg-bg',
+      className
     )}
     {...props}
   />
@@ -22,10 +22,10 @@ export function SnippetTabsList<T extends object>({ className, ...props }: TabLi
   return (
     <TabList
       className={cx(
-        "bg-muted",
-        orientation === "horizontal" &&
-          "flex-row gap-x-(--tab-list-gutter) rounded-(--tab-list-rounded) border-b px-4 py-(--tab-list-gutter)",
-        className,
+        'bg-muted',
+        orientation === 'horizontal' &&
+          'flex-row gap-x-(--tab-list-gutter) rounded-(--tab-list-rounded) border-b px-4 py-(--tab-list-gutter)',
+        className
       )}
       {...props}
     />
@@ -33,7 +33,7 @@ export function SnippetTabsList<T extends object>({ className, ...props }: TabLi
 }
 
 export const SnippetTab = ({ className, ...props }: React.ComponentProps<typeof Tab>) => (
-  <Tab className={cx("gap-1.5", className)} {...props} />
+  <Tab className={cx('gap-1.5', className)} {...props} />
 )
 
 export const SnippetTabPanels = TabPanels
@@ -41,10 +41,10 @@ export const SnippetTabPanels = TabPanels
 export function SnippetTabPanel({ className, children, ...props }: TabPanelProps) {
   const { copy, copied } = useClipboard()
   return (
-    <TabPanel className={cx("mt-0 px-4 py-2 text-sm dark:bg-secondary/70", className)} {...props}>
+    <TabPanel className={cx('mt-0 px-4 py-2 text-sm dark:bg-secondary/70', className)} {...props}>
       {(values) => (
         <>
-          {typeof children === "function" ? (
+          {typeof children === 'function' ? (
             <pre className="truncate">{children(values)}</pre>
           ) : (
             <div className="flex items-center justify-between">

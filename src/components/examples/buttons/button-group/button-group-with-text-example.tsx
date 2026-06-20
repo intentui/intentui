@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { ChevronDownIcon } from "@heroicons/react/20/solid"
-import { Button } from "@/components/ui/button"
-import { ButtonGroup, ButtonGroupText } from "@/components/ui/button-group"
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Button } from '@/components/ui/button'
+import { ButtonGroup, ButtonGroupText } from '@/components/ui/button-group'
 
 export default function ButtonGroupWithTextDemo() {
   return (

@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Disclosure, DisclosurePanel, DisclosureTrigger } from "@/components/ui/disclosure-group"
+import { Disclosure, DisclosurePanel, DisclosureTrigger } from '@/components/ui/disclosure-group'
 
 export default function DisclosureDemo() {
   return (

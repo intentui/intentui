@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { ChevronDownIcon } from "@heroicons/react/20/solid"
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import {
   AdjustmentsHorizontalIcon as AdjustmentsHorizontalOutline,
   ArrowUturnLeftIcon,
@@ -15,7 +15,7 @@ import {
   PencilIcon as PencilOutline,
   PhotoIcon,
   Squares2X2Icon,
-} from "@heroicons/react/24/outline"
+} from '@heroicons/react/24/outline'
 import {
   AdjustmentsHorizontalIcon as AdjustmentsHorizontalSolid,
   Bars3BottomLeftIcon as Bars3BottomLeftSolid,
@@ -25,12 +25,12 @@ import {
   CursorArrowRaysIcon as CursorArrowRaysSolid,
   NoSymbolIcon as NoSymbolSolid,
   PencilIcon as PencilSolid,
-} from "@heroicons/react/24/solid"
+} from '@heroicons/react/24/solid'
 
-import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
-import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
-import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from "@/components/ui/toolbar"
+import { Button } from '@/components/ui/button'
+import { Checkbox, CheckboxField } from '@/components/ui/checkbox'
+import { Menu, MenuContent, MenuItem } from '@/components/ui/menu'
+import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from '@/components/ui/toolbar'
 
 export default function ToolbarDemo() {
   return (

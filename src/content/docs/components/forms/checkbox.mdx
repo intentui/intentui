@@ -1,9 +1,9 @@
 ---
-title: "Checkbox"
+title: 'Checkbox'
 description: An interactive input that allows users to toggle a selection on or off, often used for settings or multiple-choice selections. It supports indeterminate states.
 order: 8
 published: true
-references: ["https://react-aria.adobe.com/Checkbox#api"]
+references: ['https://react-aria.adobe.com/Checkbox#api']
 ---
 
 <How toUse="forms/checkbox/checkbox-example" />
@@ -11,19 +11,23 @@ references: ["https://react-aria.adobe.com/Checkbox#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/checkbox"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/checkbox" />
 
 ## Composed components
-<Composed components={['field']}/>
+
+<Composed components={['field']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
-<SourceCode toShow='checkbox'/>
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
+
+<SourceCode toShow="checkbox" />
 
 ## Anatomy
+
 ```
 import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
 import { Description } from "@/components/ui/field"
@@ -39,27 +43,39 @@ import { Description } from "@/components/ui/field"
 ## Examples
 
 ### Invalid
+
 The checkbox is in an error state.
+
 <How toUse="forms/checkbox/checkbox-invalid-example" />
 
 ### Description
+
 You can add a description to checkbox by adding `Description` component as a child of `CheckboxField`.
+
 <How toUse="forms/checkbox/checkbox-description-example" />
 
 ### Indeterminate
+
 The checkbox is in an indeterminate state.
+
 <How toUse="forms/checkbox/checkbox-indeterminate-example" />
 
 ### Controlled
+
 You can control the checkbox value by using the `value` prop.
+
 <How minW60 toUse="forms/checkbox/checkbox-controlled-example" />
 
 ### Uncontrolled
+
 You can control the checkbox value by using the `defaultValue` prop.
+
 <How toUse="forms/checkbox/checkbox-uncontrolled-example" />
 
 ### Disabled
+
 The checkbox is disabled.
+
 <How toUse="forms/checkbox/checkbox-disabled-example" />
 
 ## Component API
@@ -68,24 +84,24 @@ The checkbox is disabled.
 
 The `CheckboxGroup` component groups related checkbox options.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### CheckboxField
 
 The `CheckboxField` component renders the checkbox label.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### Checkbox
 
 The `Checkbox` component renders the checkbox label.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/Checkbox#api) for the full API reference.

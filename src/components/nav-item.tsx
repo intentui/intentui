@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import NextLink from "next/link"
-import { usePathname } from "next/navigation"
-import type React from "react"
-import { Link } from "react-aria-components/Link"
-import { twMerge } from "tailwind-merge"
+import NextLink from 'next/link'
+import { usePathname } from 'next/navigation'
+import type React from 'react'
+import { Link } from 'react-aria-components/Link'
+import { twMerge } from 'tailwind-merge'
 
 interface NavLinkProps {
   href: string
@@ -23,9 +23,9 @@ const NavLink = ({ href, isActive, className, isNextLink, ...props }: NavLinkPro
     <El
       href={href}
       className={twMerge(
-        "relative flex items-center gap-x-2 p-2 text-sm tracking-tight outline-hidden transition-colors focus:outline-hidden focus-visible:text-fg sm:py-3 **:[svg]:-mx-0.5",
-        isCurrent ? "font-medium text-fg" : "text-muted-fg hover:text-fg",
-        className,
+        'relative flex items-center gap-x-2 p-2 text-sm tracking-tight outline-hidden transition-colors focus:outline-hidden focus-visible:text-fg sm:py-3 **:[svg]:-mx-0.5',
+        isCurrent ? 'font-medium text-fg' : 'text-muted-fg hover:text-fg',
+        className
       )}
       {...props}
     />

@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
-import { SidebarNav, SidebarTrigger, useSidebar } from "@/components/ui/sidebar"
+import { Breadcrumbs, BreadcrumbsItem } from '@/components/ui/breadcrumbs'
+import { SidebarNav, SidebarTrigger, useSidebar } from '@/components/ui/sidebar'
 
 export default function AppSidebarNav() {
   const { state } = useSidebar()
@@ -17,7 +17,7 @@ export default function AppSidebarNav() {
       <SidebarTrigger className="-mr-2 ml-auto">
         <svg
           data-slot="icon"
-          className={state !== "collapsed" ? "rotate-180" : "rotate-0"}
+          className={state !== 'collapsed' ? 'rotate-180' : 'rotate-0'}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"

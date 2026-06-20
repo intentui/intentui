@@ -1,47 +1,47 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import type { Key } from "react-aria-components/Breadcrumbs"
-import { CodeHighlighter } from "@/components/code/code-highlighter"
+import { useState } from 'react'
+import type { Key } from 'react-aria-components/Breadcrumbs'
+import { CodeHighlighter } from '@/components/code/code-highlighter'
 import {
   Snippet,
   SnippetTab,
   SnippetTabPanel,
   SnippetTabPanels,
   SnippetTabsList,
-} from "@/components/ui/snippet"
-import { Code } from "@/components/ui/text"
+} from '@/components/ui/snippet'
+import { Code } from '@/components/ui/text'
 
 const commands = [
   {
-    label: "Codex",
-    id: "codex",
-    code: "codex mcp add react-aria -- npx @react-aria/mcp@latest",
+    label: 'Codex',
+    id: 'codex',
+    code: 'codex mcp add react-aria -- npx @react-aria/mcp@latest',
   },
   {
-    label: "Claude",
-    id: "claude",
-    code: "claude mcp add react-aria -- npx @react-aria/mcp@latest",
+    label: 'Claude',
+    id: 'claude',
+    code: 'claude mcp add react-aria -- npx @react-aria/mcp@latest',
   },
   {
-    label: "Cursor",
-    id: "cursor",
-    code: "cursor mcp add react-aria -- npx @react-aria/mcp@latest",
+    label: 'Cursor',
+    id: 'cursor',
+    code: 'cursor mcp add react-aria -- npx @react-aria/mcp@latest',
   },
   {
-    label: "Gemini",
-    id: "gemini",
-    code: "gemini mcp add react-aria -- npx @react-aria/mcp@latest",
+    label: 'Gemini',
+    id: 'gemini',
+    code: 'gemini mcp add react-aria -- npx @react-aria/mcp@latest',
   },
   {
-    label: "VS Code",
-    id: "vscode",
+    label: 'VS Code',
+    id: 'vscode',
     code: 'code --add-mcp \'{"name":"React Aria","command":"npx","args":["@react-aria/mcp@latest"]}\'',
   },
 ]
 
 export function McpRac() {
-  const [tab, setTab] = useState<Key>("codex")
+  const [tab, setTab] = useState<Key>('codex')
   return (
     <div>
       <Snippet onSelectionChange={setTab} selectedKey={tab}>
@@ -54,7 +54,7 @@ export function McpRac() {
         </SnippetTabPanels>
       </Snippet>
       <>
-        {tab === "codex" && (
+        {tab === 'codex' && (
           <div className="mt-6">
             <p>
               Add the following to <Code>~/.codex/config.toml</Code>:

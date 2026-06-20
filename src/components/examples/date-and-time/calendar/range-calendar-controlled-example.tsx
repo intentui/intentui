@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { getLocalTimeZone, today } from "@internationalized/date"
-import { useState } from "react"
+import { getLocalTimeZone, today } from '@internationalized/date'
+import { useState } from 'react'
 
-import { RangeCalendar } from "@/components/ui/range-calendar"
+import { RangeCalendar } from '@/components/ui/range-calendar'
 
 export default function RangeCalendarControlledDemo() {
   const now = today(getLocalTimeZone())

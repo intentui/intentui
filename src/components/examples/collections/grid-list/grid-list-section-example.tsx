@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Collection } from "react-aria-components/Collection"
+import { Collection } from 'react-aria-components/Collection'
 import {
   GridList,
   GridListDescription,
@@ -10,7 +10,7 @@ import {
   GridListSection,
   GridListSpacer,
   GridListStart,
-} from "@/components/ui/grid-list"
+} from '@/components/ui/grid-list'
 
 export default function GridListSectionDemo() {
   return (
@@ -36,17 +36,17 @@ export default function GridListSectionDemo() {
                 </GridListStart>
                 <GridListSpacer />
                 <span className="flex items-center gap-x-2 *:block *:size-1.5 *:rounded-full">
-                  {item.status === "online" ? (
+                  {item.status === 'online' ? (
                     <i className="bg-primary-subtle-fg" />
-                  ) : item.status === "deploying" ? (
+                  ) : item.status === 'deploying' ? (
                     <i className="bg-info-subtle-fg" />
-                  ) : item.status === "maintenance" ? (
+                  ) : item.status === 'maintenance' ? (
                     <i className="bg-warning-subtle-fg" />
-                  ) : item.status === "error" ? (
+                  ) : item.status === 'error' ? (
                     <i className="bg-danger-subtle-fg" />
-                  ) : item.status === "paused" ? (
+                  ) : item.status === 'paused' ? (
                     <i className="bg-secondary-fg" />
-                  ) : item.status === "degraded" ? (
+                  ) : item.status === 'degraded' ? (
                     <i className="bg-warning-subtle-fg" />
                   ) : (
                     <i className="bg-secondary-fg" />
@@ -64,60 +64,60 @@ export default function GridListSectionDemo() {
 
 const servers = [
   {
-    id: "srv_nyc_1",
-    name: "NYC-1",
-    avatar: "https://avatar.vercel.sh/nyc.svg?text=NY",
-    ipaddress: "192.168.10.21",
-    status: "online",
+    id: 'srv_nyc_1',
+    name: 'NYC-1',
+    avatar: 'https://avatar.vercel.sh/nyc.svg?text=NY',
+    ipaddress: '192.168.10.21',
+    status: 'online',
     sites: [
       {
-        id: "site_001",
-        name: "Atlas blog",
-        domain: "atlasblog.com",
-        repo: "github.com/atlas/blog",
-        avatar: "https://avatar.vercel.sh/atlas.svg?text=AB",
-        status: "online",
+        id: 'site_001',
+        name: 'Atlas blog',
+        domain: 'atlasblog.com',
+        repo: 'github.com/atlas/blog',
+        avatar: 'https://avatar.vercel.sh/atlas.svg?text=AB',
+        status: 'online',
       },
       {
-        id: "site_002",
-        name: "Northwind shop",
-        domain: "northwind.shop",
-        repo: "github.com/northwind/shop",
-        avatar: "https://avatar.vercel.sh/northwind.svg?text=NS",
-        status: "deploying",
+        id: 'site_002',
+        name: 'Northwind shop',
+        domain: 'northwind.shop',
+        repo: 'github.com/northwind/shop',
+        avatar: 'https://avatar.vercel.sh/northwind.svg?text=NS',
+        status: 'deploying',
       },
       {
-        id: "site_003",
-        name: "Beacon docs",
-        domain: "docs.beacon.io",
-        repo: "github.com/beacon/docs",
-        avatar: "https://avatar.vercel.sh/beacon.svg?text=BD",
-        status: "maintenance",
+        id: 'site_003',
+        name: 'Beacon docs',
+        domain: 'docs.beacon.io',
+        repo: 'github.com/beacon/docs',
+        avatar: 'https://avatar.vercel.sh/beacon.svg?text=BD',
+        status: 'maintenance',
       },
     ],
   },
   {
-    id: "srv_lon_1",
-    name: "LON-1",
-    avatar: "https://avatar.vercel.sh/lon.svg?text=LO",
-    ipaddress: "10.0.3.44",
-    status: "degraded",
+    id: 'srv_lon_1',
+    name: 'LON-1',
+    avatar: 'https://avatar.vercel.sh/lon.svg?text=LO',
+    ipaddress: '10.0.3.44',
+    status: 'degraded',
     sites: [
       {
-        id: "site_007",
-        name: "Evergreen health",
-        domain: "evergreen.health",
-        repo: "github.com/evergreen/health",
-        avatar: "https://avatar.vercel.sh/evergreen.svg?text=EH",
-        status: "online",
+        id: 'site_007',
+        name: 'Evergreen health',
+        domain: 'evergreen.health',
+        repo: 'github.com/evergreen/health',
+        avatar: 'https://avatar.vercel.sh/evergreen.svg?text=EH',
+        status: 'online',
       },
       {
-        id: "site_008",
-        name: "Glacier analytics",
-        domain: "glacier.ai",
-        repo: "github.com/glacier/analytics",
-        avatar: "https://avatar.vercel.sh/glacier.svg?text=GA",
-        status: "deploying",
+        id: 'site_008',
+        name: 'Glacier analytics',
+        domain: 'glacier.ai',
+        repo: 'github.com/glacier/analytics',
+        avatar: 'https://avatar.vercel.sh/glacier.svg?text=GA',
+        status: 'deploying',
       },
     ],
   },

@@ -1,10 +1,10 @@
 ---
-title: "Pagination"
+title: 'Pagination'
 description: A structured navigation system that divides content into multiple pages, improving load performance and user experience. It supports customizable page sizes.
 order: 3
 published: true
 status: beta
-references: ["https://react-aria.adobe.com/ListBox#api"]
+references: ['https://react-aria.adobe.com/ListBox#api']
 ---
 
 <How isCenter={false} toUse="navigation/pagination/pagination-example" />
@@ -12,19 +12,23 @@ references: ["https://react-aria.adobe.com/ListBox#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/pagination"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/pagination" />
 
 ## Composed components
-<Composed components={['button']}/>
+
+<Composed components={['button']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
-<SourceCode toShow='pagination'/>
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
+
+<SourceCode toShow="pagination" />
 
 ## Anatomy
+
 ```
 import {
   Pagination,
@@ -78,7 +82,9 @@ import {
 ## Examples
 
 ### Simple
+
 The simple pagination setup doesn’t display page numbers, using only basic arrow navigation.
+
 <How isCenter={false} toUse="navigation/pagination/simple-pagination-example" />
 
 ## Component API
@@ -87,97 +93,97 @@ The simple pagination setup doesn’t display page numbers, using only basic arr
 
 The `Pagination` component wraps pagination controls.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationFirst
 
 The `PaginationFirst` component links to the first page.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationGap
 
 The `PaginationGap` component represents skipped pages.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationInfo
 
 The `PaginationInfo` component displays pagination status text.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationItem
 
 The `PaginationItem` component represents one pagination link.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isCurrent` | `boolean` | - |
+| Prop        | Type      | Default |
+| ----------- | --------- | ------- |
+| `className` | `string`  | -       |
+| `isCurrent` | `boolean` | -       |
 
 ### PaginationLabel
 
 The `PaginationLabel` component renders pagination label text.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationLast
 
 The `PaginationLast` component links to the last page.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationList
 
 The `PaginationList` component groups pagination items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationNext
 
 The `PaginationNext` component links to the next page.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationPrevious
 
 The `PaginationPrevious` component links to the previous page.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationSection
 
 The `PaginationSection` component groups pagination content.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PaginationSpacer
 
 The `PaginationSpacer` component pushes pagination content apart.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/ListBox#api) for the full API reference.

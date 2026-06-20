@@ -1,8 +1,8 @@
-import { Collection } from "react-aria-components/Collection"
-import { TreeLoadMoreItem, type TreeLoadMoreItemProps } from "react-aria-components/Tree"
-import { useAsyncList } from "react-stately/useAsyncList"
-import { ProgressCircle } from "@/components/ui/progress-circle"
-import { TreeItem as PrimitiveItem, Tree, TreeContent } from "@/components/ui/tree"
+import { Collection } from 'react-aria-components/Collection'
+import { TreeLoadMoreItem, type TreeLoadMoreItemProps } from 'react-aria-components/Tree'
+import { useAsyncList } from 'react-stately/useAsyncList'
+import { ProgressCircle } from '@/components/ui/progress-circle'
+import { Tree, TreeContent, TreeItem as PrimitiveItem } from '@/components/ui/tree'
 
 interface StarWarsCharacter {
   name: string
@@ -19,10 +19,10 @@ export default function TreeInfiniteScrollDemo() {
   const starWarsList = useAsyncList<StarWarsCharacter>({
     async load({ signal, cursor }) {
       if (cursor) {
-        cursor = cursor.replace(/^http:\/\//i, "https://")
+        cursor = cursor.replace(/^http:\/\//i, 'https://')
       }
 
-      const res = await fetch(cursor || "https://swapi.py4e.com/api/people/?search=", {
+      const res = await fetch(cursor || 'https://swapi.py4e.com/api/people/?search=', {
         signal,
       })
       const json = await res.json()
@@ -87,8 +87,8 @@ const TreeLoader = ({ className, ...props }: TreeLoadMoreItemProps) => {
           <ProgressCircle
             style={{
               marginLeft: `${level * 16}px`,
-              marginBottom: "8px",
-              marginTop: "8px",
+              marginBottom: '8px',
+              marginTop: '8px',
             }}
             aria-label="Loading more..."
             isIndeterminate

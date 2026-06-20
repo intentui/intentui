@@ -1,9 +1,9 @@
 ---
-title: "Modal"
+title: 'Modal'
 description: Centered overlay that blocks the interface until dismissed, focusing attention on key info or actions, ideal for confirmations, alerts, and quick approvals
 order: 1
 published: true
-references: ["https://react-aria.adobe.com/Modal#api"]
+references: ['https://react-aria.adobe.com/Modal#api']
 ---
 
 <How toUse="overlays/modal/modal-example" />
@@ -11,18 +11,23 @@ references: ["https://react-aria.adobe.com/Modal#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/modal"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/modal" />
 
 ## Composed components
-<Composed components={['button', 'dialog']}/>
+
+<Composed components={['button', 'dialog']} />
 
 ## Manual installation
-Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
 
-<SourceCode toShow='modal'/>
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+
+<InstallCommand command="npm i react-aria-components" />
+
+<SourceCode toShow="modal" />
 
 ## Anatomy
+
 ```
 import { Button } from "@/components/ui/button"
 import {
@@ -58,20 +63,27 @@ import {
 ## Examples
 
 ### Alert dialog
+
 Alert dialogs are meant to interrupt the user with a critical message, so use 'em only when it's absolutely necessary. The fix? Set the role to `alertdialog`, and you're golden.
+
 <How toUse="overlays/modal/alert-dialog-example" />
-Notice how the modal is dismissible and the close button is hidden? That's 'cause the role is set to `alertdialog`.
+Notice how the modal is dismissible and the close button is hidden? That's 'cause the role is set to
+`alertdialog`.
 
 ```tsx
-<ModalOverlay isDismissable={false}/>
+<ModalOverlay isDismissable={false} />
 ```
 
 ### Controlled
+
 You can control the modal programmatically.
+
 <How toUse="overlays/modal/modal-controlled-example" />
 
 ### Sizes
+
 The modal is set to `lg` by default. You can adjust it to any size from the available options.
+
 <How toUse="overlays/modal/modal-size-example" />
 
 ### Modal overlay styles
@@ -100,27 +112,37 @@ Or, you can override it per instance from the component usage:
 ```
 
 ### Sticky
+
 You can use the `ModalBody` component to make the modal sticky.
+
 <How toUse="overlays/modal/modal-sticky-example" />
 
 ### Nested
+
 You can also nest modals. Try open it and confirm!
+
 <How toUse="overlays/modal/modal-nested-example" />
 
 ### Header
+
 This setup’s super flexible. If you skip adding `ModalTitle` and just drop a string as its child, it'll auto-render as the title. Like this:
+
 ```
 <ModalHeader>
   Title
 </ModalHeader>
 ```
+
 Wanna customize more? Throw in props like `title` and `description` for a tailored header:
+
 ```
 <ModalHeader title='Title' description='Description' />
 ```
 
 ### Triggered by menu
+
 You can also trigger the modal by clicking on a menu item.
+
 <How toUse="overlays/modal/modal-triggered-by-menu-example" />
 It might be a good idea to extract the modal into a separate component for better organization.
 
@@ -195,70 +217,70 @@ The `Modal` component controls the modal trigger and content.
 
 The `ModalTrigger` component defines the element that opens a modal.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### ModalContent
 
 The `ModalContent` component renders the modal panel.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `closeButton` | `boolean` | `true` |
-| `overlay` | `Pick<ModalOverlayProps, "className">` | - |
-| `size` | `keyof typeof sizes` | `md` |
+| Prop          | Type                                   | Default |
+| ------------- | -------------------------------------- | ------- |
+| `className`   | `string`                               | -       |
+| `closeButton` | `boolean`                              | `true`  |
+| `overlay`     | `Pick<ModalOverlayProps, "className">` | -       |
+| `size`        | `keyof typeof sizes`                   | `md`    |
 
 ### ModalHeader
 
 The `ModalHeader` component groups the modal title and description.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `title` | `string` | - |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `className`   | `string` | -       |
+| `description` | `string` | -       |
+| `title`       | `string` | -       |
 
 ### ModalTitle
 
 The `ModalTitle` component renders the modal heading.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### ModalDescription
 
 The `ModalDescription` component renders supporting text inside a modal.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### ModalBody
 
 The `ModalBody` component wraps the main modal content.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### ModalFooter
 
 The `ModalFooter` component groups modal actions.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### ModalClose
 
 The `ModalClose` component renders a button that closes the modal.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+| Prop        | Type                                                                                     | Default |
+| ----------- | ---------------------------------------------------------------------------------------- | ------- |
+| `className` | `string`                                                                                 | -       |
+| `intent`    | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
 
 See the [React Aria](https://react-aria.adobe.com/Modal#api) for the full API reference.
