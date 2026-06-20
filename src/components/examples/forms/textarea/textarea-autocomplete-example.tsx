@@ -73,7 +73,7 @@ export default function TextareaAutocompleteExample() {
         onBlur={updateFilter}
       >
         <Label>Reply</Label>
-        <Textarea inputRef={inputRef} placeholder="Type @ for mention" />
+        <Textarea ref={inputRef} placeholder="Type @ for mention" />
       </TextField>
       <Menu>
         <MenuContent
