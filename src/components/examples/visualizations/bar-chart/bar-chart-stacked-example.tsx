@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { BarChart } from "@/components/ui/bar-chart"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useMemo } from 'react'
+import { BarChart } from '@/components/ui/bar-chart'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 export default function BarChartStackedDemo() {
   const isMobile = useIsMobile()
@@ -15,7 +15,7 @@ export default function BarChartStackedDemo() {
         comments: Math.floor(20 + Math.random() * 80),
         shares: Math.floor(10 + Math.random() * 50),
       })),
-    [],
+    []
   )
 
   return (
@@ -33,13 +33,13 @@ export default function BarChartStackedDemo() {
           dataKey="day"
           type="stacked"
           barProps={{
-            type: "basis",
+            type: 'basis',
           }}
           xAxisProps={{ interval: 0 }}
           config={{
-            likes: { label: "Likes" },
-            comments: { label: "Comments" },
-            shares: { label: "Shares" },
+            likes: { label: 'Likes' },
+            comments: { label: 'Comments' },
+            shares: { label: 'Shares' },
           }}
         />
       </CardContent>

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArrowLeftEndOnRectangleIcon,
@@ -8,10 +8,10 @@ import {
   MagnifyingGlassIcon,
   MicrophoneIcon,
   Squares2X2Icon,
-} from "@heroicons/react/24/outline"
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Input, InputGroup } from "@/components/ui/input"
+} from '@heroicons/react/24/outline'
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Input, InputGroup } from '@/components/ui/input'
 import {
   Menu,
   MenuContent,
@@ -20,9 +20,9 @@ import {
   MenuSection,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu"
-import { SearchField } from "@/components/ui/search-field"
-import { SidebarNav, SidebarTrigger } from "@/components/ui/sidebar"
+} from '@/components/ui/menu'
+import { SearchField } from '@/components/ui/search-field'
+import { SidebarNav, SidebarTrigger } from '@/components/ui/sidebar'
 
 export default function AppSidebarNav() {
   return (

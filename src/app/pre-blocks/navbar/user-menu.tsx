@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArrowRightOnRectangleIcon,
@@ -7,8 +7,8 @@ import {
   LifebuoyIcon,
   ShieldCheckIcon,
   Squares2X2Icon,
-} from "@heroicons/react/24/outline"
-import { Avatar } from "@/components/ui/avatar"
+} from '@heroicons/react/24/outline'
+import { Avatar } from '@/components/ui/avatar'
 import {
   Menu,
   MenuContent,
@@ -17,7 +17,7 @@ import {
   MenuSection,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu"
+} from '@/components/ui/menu'
 
 export function UserMenu() {
   return (

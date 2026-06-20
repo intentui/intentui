@@ -1,4 +1,4 @@
-import { NativeSelectContent } from "@/components/ui/native-select"
+import { NativeSelectContent } from '@/components/ui/native-select'
 
 export default function NativeSelectDemo() {
   return (

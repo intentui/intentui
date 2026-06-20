@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { ChevronDownIcon } from "@heroicons/react/20/solid"
-import { NoSymbolIcon, TrashIcon } from "@heroicons/react/24/outline"
-import { useState } from "react"
-import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
-import { Loader } from "@/components/ui/loader"
-import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { NoSymbolIcon, TrashIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
+import { Loader } from '@/components/ui/loader'
+import { Menu, MenuContent, MenuItem, MenuLabel } from '@/components/ui/menu'
 import {
   ModalClose,
   ModalContent,
@@ -14,8 +14,8 @@ import {
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
-import { wait } from "@/lib/utils"
+} from '@/components/ui/modal'
+import { wait } from '@/lib/utils'
 
 export default function ModalTriggeredByMenuDemo() {
   const [state, setState] = useState<string | null>(null)
@@ -35,25 +35,25 @@ export default function ModalTriggeredByMenuDemo() {
 
   const actionType = (t: string | null) => {
     switch (t) {
-      case "delete":
+      case 'delete':
         return {
-          title: "Delete user",
-          description: "Are you sure you want to delete this item?",
-          confirmText: "Delete",
+          title: 'Delete user',
+          description: 'Are you sure you want to delete this item?',
+          confirmText: 'Delete',
           action: () => executeAction(t),
         }
-      case "ban":
+      case 'ban':
         return {
-          title: "Ban user",
-          description: "Are you sure you want to ban this user?",
-          confirmText: "Ban",
+          title: 'Ban user',
+          description: 'Are you sure you want to ban this user?',
+          confirmText: 'Ban',
           action: () => executeAction(t),
         }
-      case "restore":
+      case 'restore':
         return {
-          title: "Restore user",
-          description: "Are you sure you want to restore this user?",
-          confirmText: "Restore",
+          title: 'Restore user',
+          description: 'Are you sure you want to restore this user?',
+          confirmText: 'Restore',
           action: () => executeAction(t),
         }
       default:
@@ -68,15 +68,15 @@ export default function ModalTriggeredByMenuDemo() {
           Actions...
           <ChevronDownIcon className="decoration-200 transition-transform group-pressed:rotate-180" />
         </Button>
-        <MenuContent popover={{ placement: "bottom" }}>
-          <MenuItem onAction={() => setState("delete")}>
+        <MenuContent popover={{ placement: 'bottom' }}>
+          <MenuItem onAction={() => setState('delete')}>
             <TrashIcon /> <MenuLabel>Delete</MenuLabel>
           </MenuItem>
-          <MenuItem intent="danger" onAction={() => setState("ban")}>
+          <MenuItem intent="danger" onAction={() => setState('ban')}>
             <NoSymbolIcon />
             <MenuLabel>Ban</MenuLabel>
           </MenuItem>
-          <MenuItem onAction={() => setState("restore")}>
+          <MenuItem onAction={() => setState('restore')}>
             <MenuLabel>Restore</MenuLabel>
           </MenuItem>
         </MenuContent>
@@ -91,7 +91,7 @@ export default function ModalTriggeredByMenuDemo() {
           <ModalClose>Cancel</ModalClose>
           <Button
             autoFocus
-            intent={state === "ban" ? "danger" : "primary"}
+            intent={state === 'ban' ? 'danger' : 'primary'}
             className="min-w-24"
             isDisabled={loading}
             onPress={actionType(state)?.action}

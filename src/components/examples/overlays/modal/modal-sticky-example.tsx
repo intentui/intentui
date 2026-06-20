@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   Modal,
   ModalBody,
@@ -10,7 +10,7 @@ import {
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
+} from '@/components/ui/modal'
 
 export default function ModalStickyDemo() {
   return (

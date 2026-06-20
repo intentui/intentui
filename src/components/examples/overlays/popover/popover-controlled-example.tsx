@@ -1,31 +1,31 @@
-"use client"
+'use client'
 
-import { TrashIcon } from "@heroicons/react/24/outline"
-import { CheckCircleIcon } from "@heroicons/react/24/solid"
-import { useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Loader } from "@/components/ui/loader"
+import { TrashIcon } from '@heroicons/react/24/outline'
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { useRef, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Loader } from '@/components/ui/loader'
 import {
   PopoverContent,
   PopoverDescription,
   PopoverFooter,
   PopoverHeader,
   PopoverTitle,
-} from "@/components/ui/popover"
-import { wait } from "@/lib/utils"
+} from '@/components/ui/popover'
+import { wait } from '@/lib/utils'
 
 export default function PopoverControlledDemo() {
   const [isOpen, setIsOpen] = useState(false)
-  const [loading, setLoading] = useState<"idle" | "loading" | "success">("idle")
+  const [loading, setLoading] = useState<'idle' | 'loading' | 'success'>('idle')
   const triggerRef = useRef(null)
 
   const deleteAccount = async () => {
-    setLoading("loading")
+    setLoading('loading')
     await wait(3000)
-    setLoading("success")
+    setLoading('success')
 
     await wait(2000)
-    setLoading("idle")
+    setLoading('idle')
     setIsOpen(false)
   }
   return (
@@ -50,16 +50,16 @@ export default function PopoverControlledDemo() {
             Cancel
           </Button>
           <Button
-            isDisabled={loading === "loading"}
+            isDisabled={loading === 'loading'}
             onPress={deleteAccount}
-            intent={["loading", "idle"].includes(loading) ? "danger" : "primary"}
+            intent={['loading', 'idle'].includes(loading) ? 'danger' : 'primary'}
           >
-            {loading === "loading" ? (
+            {loading === 'loading' ? (
               <>
                 <Loader variant="spin" />
                 Deleting...
               </>
-            ) : loading === "success" ? (
+            ) : loading === 'success' ? (
               <>
                 <CheckCircleIcon />
                 Deleted

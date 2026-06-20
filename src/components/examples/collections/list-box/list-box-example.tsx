@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { ListBox, ListBoxItem } from "@/components/ui/list-box"
+import { ListBox, ListBoxItem } from '@/components/ui/list-box'
 
 export default function ListBoxDemo() {
   return (
@@ -15,9 +15,9 @@ export default function ListBoxDemo() {
 }
 
 const rockPopBands = [
-  { id: "1", name: "Nirvana" },
-  { id: "2", name: "Radiohead" },
-  { id: "3", name: "Foo Fighters" },
-  { id: "4", name: "Arctic Monkeys" },
-  { id: "5", name: "The Strokes" },
+  { id: '1', name: 'Nirvana' },
+  { id: '2', name: 'Radiohead' },
+  { id: '3', name: 'Foo Fighters' },
+  { id: '4', name: 'Arctic Monkeys' },
+  { id: '5', name: 'The Strokes' },
 ]

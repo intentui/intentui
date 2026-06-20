@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
+import { Tag, TagGroup, TagList } from '@/components/ui/tag-group'
 
 const articles = [
-  { name: "React Tutorial", url: "#" },
-  { name: "TypeScript Handbook", url: "#" },
-  { name: "JavaScript Guide", url: "#" },
+  { name: 'React Tutorial', url: '#' },
+  { name: 'TypeScript Handbook', url: '#' },
+  { name: 'JavaScript Guide', url: '#' },
 ]
 
 export default function TagGroupHrefDemo() {

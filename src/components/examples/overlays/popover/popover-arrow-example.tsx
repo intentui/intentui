@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { BellIcon } from "@heroicons/react/24/outline"
-import { Button } from "@/components/ui/button"
-import { Popover, PopoverContent } from "@/components/ui/popover"
+import { BellIcon } from '@heroicons/react/24/outline'
+import { Button } from '@/components/ui/button'
+import { Popover, PopoverContent } from '@/components/ui/popover'
 
 export default function PopoverArrowDemo() {
   return (

@@ -1,6 +1,6 @@
-import type { Metadata } from "next"
-import { app } from "@/config/app"
-import { ogImage } from "@/lib/og"
+import type { Metadata } from 'next'
+import { app } from '@/config/app'
+import { ogImage } from '@/lib/og'
 
 export interface CreateMetadataOptions {
   title: string
@@ -9,17 +9,17 @@ export interface CreateMetadataOptions {
   image?: string | null
   keywords?: string[]
   noindex?: boolean
-  type?: "website" | "article"
+  type?: 'website' | 'article'
 }
 
 export function createMetadata({
   title,
   description,
-  path = "",
+  path = '',
   image,
   keywords = [],
   noindex = false,
-  type = "website",
+  type = 'website',
 }: CreateMetadataOptions): Metadata {
   const url = `${app.url}${path}`
   const isHomePage = title === app.name
@@ -40,16 +40,16 @@ export function createMetadata({
       description,
       url,
       siteName: app.name,
-      locale: "en_US",
+      locale: 'en_US',
       ...(shouldIncludeImage && ogImageUrl && { images: [{ url: ogImageUrl }] }),
       type,
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: fullTitle,
       description,
       ...(shouldIncludeImage && ogImageUrl && { images: [ogImageUrl] }),
-      site: "@intentui",
+      site: '@intentui',
       creator: `@${app.author.username}`,
     },
     ...(noindex && { robots: { index: false, follow: false } }),

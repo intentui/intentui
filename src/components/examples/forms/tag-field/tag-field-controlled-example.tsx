@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import type { Selection } from "react-aria-components/GridList"
+import { useState } from 'react'
+import type { Selection } from 'react-aria-components/GridList'
 import {
   Card,
   CardAction,
@@ -9,18 +9,18 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Label } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { TagField } from "@/components/ui/tag-field"
+} from '@/components/ui/card'
+import { Label } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { TagField } from '@/components/ui/tag-field'
 
 export default function TagFieldControlledDemo() {
-  const [codes, setCodes] = useState<Selection>(new Set(["WELCOME10", "FREESHIP"]))
-  const [text, setText] = useState("")
+  const [codes, setCodes] = useState<Selection>(new Set(['WELCOME10', 'FREESHIP']))
+  const [text, setText] = useState('')
 
   const handleText = (v: string) => {
     const cleaned = v
-      .replace(/[^A-Z0-9]/gi, "")
+      .replace(/[^A-Z0-9]/gi, '')
       .toUpperCase()
       .slice(0, 10)
     setText(cleaned)

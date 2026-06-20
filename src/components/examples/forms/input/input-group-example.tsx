@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { EnvelopeIcon } from "@heroicons/react/24/outline"
-import { Input, InputGroup } from "@/components/ui/input"
-import { Text } from "@/components/ui/text"
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
+import { Input, InputGroup } from '@/components/ui/input'
+import { Text } from '@/components/ui/text'
 
 export default function InputGroupDemo() {
   return (

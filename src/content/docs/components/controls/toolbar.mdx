@@ -1,9 +1,9 @@
 ---
-title: "Toolbar"
+title: 'Toolbar'
 description: A compact UI container that groups multiple actions, controls, or tools for quick access, improved workflow efficiency, and streamlined user interactions.
 order: 3
 published: true
-references: ["https://react-aria.adobe.com/Toolbar#api"]
+references: ['https://react-aria.adobe.com/Toolbar#api']
 ---
 
 <How toUse="controls/toolbar/toolbar-example" />
@@ -11,22 +11,27 @@ references: ["https://react-aria.adobe.com/Toolbar#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/toolbar"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/toolbar" />
 
 ## Composed components
-<Composed components={['toggle', 'separator']}/>
+
+<Composed components={['toggle', 'separator']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
 
-<SourceCode toShow='toolbar'/>
+<InstallCommand command="npm i react-aria-components tailwind-merge" />
+
+<SourceCode toShow="toolbar" />
 
 ## Anatomy
+
 ```
 import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from "@/components/ui/toolbar"
 ```
+
 ```
 <Toolbar>
   <ToolbarGroup>
@@ -44,11 +49,15 @@ import { Toolbar, ToolbarGroup, ToolbarItem, ToolbarSeparator } from "@/componen
 ## Examples
 
 ### Orientation
+
 By default, the toolbar is displayed horizontally. You can change it to vertical using the `orientation` prop.
+
 <How toUse="controls/toolbar/toolbar-orientation-example" />
 
 ### Disabled
+
 You can disable a toolbar either as a group or individually by using the `isDisabled` prop.
+
 <How toUse="controls/toolbar/toolbar-disabled-example" />
 
 ## Component API
@@ -57,33 +66,33 @@ You can disable a toolbar either as a group or individually by using the `isDisa
 
 The `Toolbar` component groups related controls.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isCircle` | `boolean` | - |
+| Prop        | Type      | Default |
+| ----------- | --------- | ------- |
+| `className` | `string`  | -       |
+| `isCircle`  | `boolean` | -       |
 
 ### ToolbarGroup
 
 The `ToolbarGroup` component groups toolbar items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### ToolbarItem
 
 The `ToolbarItem` component represents one toolbar toggle item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### ToolbarSeparator
 
 The `ToolbarSeparator` component separates toolbar groups.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/Toolbar#api) for the full API reference.

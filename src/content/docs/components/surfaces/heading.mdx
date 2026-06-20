@@ -1,5 +1,5 @@
 ---
-title: "Heading"
+title: 'Heading'
 description: A typographic element that enhances readability and SEO by defining section titles with hierarchical importance, improving content structure and user experience.
 order: 4
 published: true
@@ -10,9 +10,11 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/heading"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/heading" />
 
 ## Anatomy
+
 ```
 import { Heading } from "@/components/ui/heading"
 ```
@@ -29,19 +31,23 @@ import { Heading } from "@/components/ui/heading"
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
-<SourceCode toShow='heading'/>
+
+<InstallCommand command="npm i tailwind-merge" />
+<SourceCode toShow="heading" />
 
 ## Examples
 
 ### Heading levels
+
 By default, when a heading is used on a [card component](/docs/components/surfaces/card), it will default to level `3`. Titles range from levels `1` to `4`. Each level determines the title type and font size.
+
 <How toUse="surfaces/heading/heading-level-example" />
 
 ## Component API
+
 The `Heading` component renders a styled heading.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `level` | `1 \| 2 \| 3 \| 4` | `1` |
+| Prop        | Type               | Default |
+| ----------- | ------------------ | ------- |
+| `className` | `string`           | -       |
+| `level`     | `1 \| 2 \| 3 \| 4` | `1`     |

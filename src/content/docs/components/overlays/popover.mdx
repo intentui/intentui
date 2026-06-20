@@ -3,7 +3,7 @@ title: Popover
 description: A small, floating UI element that appears near a trigger to show contextual information or actions. It enhances user experience with non-intrusive overlays.
 order: 4
 published: true
-references: ["https://react-aria.adobe.com/Popover#api"]
+references: ['https://react-aria.adobe.com/Popover#api']
 ---
 
 <How toUse="overlays/popover/popover-example" />
@@ -11,20 +11,23 @@ references: ["https://react-aria.adobe.com/Popover#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/popover"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/popover" />
 
 ## Composed components
-<Composed components={['button', 'dialog']}/>
+
+<Composed components={['button', 'dialog']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 
-<InstallCommand command="npm i react-aria-components"/>
+<InstallCommand command="npm i react-aria-components" />
 
-<SourceCode toShow='popover'/>
+<SourceCode toShow="popover" />
 
 ## Anatomy
+
 ```
 import {
   Popover,
@@ -62,21 +65,27 @@ import { Dialog } from "@/components/ui/dialog"
 ## Examples
 
 ### Controlled
+
 You can control the popover programmatically.
+
 <How toUse="overlays/popover/popover-controlled-example" />
 
 ### Overlay arrow
+
 Popovers come with an arrow that points to the trigger element, but it’s hidden by default. To display it, pass the `arrow` prop.
+
 <How toUse="overlays/popover/popover-arrow-example" />
 
 ### Placement
+
 You can change the placement of the popover by passing the `placement` prop.
+
 <How toUse="overlays/popover/popover-placement-example" />
 
 The list above shows the primary directions, but you can also use specific placements like `bottom left` or `top right`. Here are all the available placement options:
 
 | Primary Direction | Placement                                                             |
-|-------------------|-----------------------------------------------------------------------|
+| ----------------- | --------------------------------------------------------------------- |
 | `bottom`          | `bottom`, `bottom left`, `bottom right`, `bottom start`, `bottom end` |
 | `top`             | `top`, `top left`, `top right`, `top start`, `top end`                |
 | `left`            | `left`, `left top`, `left bottom`                                     |
@@ -84,13 +93,16 @@ The list above shows the primary directions, but you can also use specific place
 | `right`           | `right`, `right top`, `right bottom`                                  |
 | `end`             | `end`, `end top`, `end bottom`                                        |
 
-
 ### Custom close
+
 You can easily close the popover by clicking outside of it, or add a custom close button inside using Popover.Close. Just make sure everything is wrapped inside a `Dialog`.
+
 <How toUse="overlays/popover/popover-custom-close" />
 
 ### Popover trigger
+
 All the examples above use `<Button/>` as the trigger, but what if you wanna switch it up, like using `<Avatar/>` instead? No sweat, just roll with PopoverTrigger like this:
+
 <How toUse="overlays/popover/popover-trigger-example" />
 
 ## Component API
@@ -103,68 +115,68 @@ The `Popover` component controls the popover trigger and content.
 
 The `PopoverTrigger` component defines the element that opens a popover.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PopoverContent
 
 The `PopoverContent` component renders floating popover content.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `arrow` | `boolean` | `false` |
-| `className` | `string` | - |
+| Prop        | Type      | Default |
+| ----------- | --------- | ------- |
+| `arrow`     | `boolean` | `false` |
+| `className` | `string`  | -       |
 
 ### PopoverHeader
 
 The `PopoverHeader` component groups the popover title and description.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `title` | `string` | - |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `className`   | `string` | -       |
+| `description` | `string` | -       |
+| `title`       | `string` | -       |
 
 ### PopoverTitle
 
 The `PopoverTitle` component renders the popover heading.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PopoverDescription
 
 The `PopoverDescription` component renders supporting text inside a popover.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PopoverBody
 
 The `PopoverBody` component wraps the main popover content.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PopoverFooter
 
 The `PopoverFooter` component groups popover actions.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### PopoverClose
 
 The `PopoverClose` component renders a button that closes the popover.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+| Prop        | Type                                                                                     | Default |
+| ----------- | ---------------------------------------------------------------------------------------- | ------- |
+| `className` | `string`                                                                                 | -       |
+| `intent`    | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
 
 See the [React Aria](https://react-aria.adobe.com/Popover#api) for the full API reference.

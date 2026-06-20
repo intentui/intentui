@@ -1,9 +1,9 @@
 ---
-title: "Choice Box"
+title: 'Choice Box'
 description: A larger, more descriptive version of a radio or checkbox, with a generous tap target and room for supporting details, enhancing usability and clarity.
 order: 8
 published: true
-references: ["https://react-aria.adobe.com/GridList#api"]
+references: ['https://react-aria.adobe.com/GridList#api']
 ---
 
 <How toUse="collections/choicebox/choicebox-example" />
@@ -11,19 +11,23 @@ references: ["https://react-aria.adobe.com/GridList#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/choice-box"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/choice-box" />
 
 ## Composed components
-<Composed components={['checkbox']}/>
+
+<Composed components={['checkbox']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants"/>
 
-<SourceCode toShow='choice-box' />
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants" />
+
+<SourceCode toShow="choice-box" />
 
 ## Anatomy
+
 ```
 import {
   Choicebox,
@@ -65,24 +69,37 @@ import {
 ## Examples
 
 ### Multiple selection
+
 By default, it uses single selection mode. To allow multiple selections, set the selectionMode prop to 'multiple'. This enables users to select more than one item at a time.
 
 <How toUse="collections/choicebox/choicebox-multiple-selection-example" />
 
 ### Columns and gap
+
 By default, the gap between items is set to `0`, and the `columns` prop is also `0`. You can customize both by providing your own `gap` and `columns` values.
-<How isCenter={false} withNoPadding={true} toUse="collections/choicebox/choicebox-columns-example" />
+
+<How
+  isCenter={false}
+  withNoPadding={true}
+  toUse="collections/choicebox/choicebox-columns-example"
+/>
 
 ### Icons
+
 You can add icons to the Choicebox items by providing the `icon` prop.
+
 <How toUse="collections/choicebox/choicebox-icon-example" />
 
 ### Controlled
+
 This component can `function` as either controlled or uncontrolled. For controlled use, provide the `selectedKeys` prop and manage updates with the `onSelectionChange` event handler.
+
 <How toUse="collections/choicebox/choicebox-controlled-example" />
 
 ### Disabled
+
 Disable the entire Choicebox by applying the `isDisabled` prop.
+
 <How withNoPadding={true} toUse="collections/choicebox/choicebox-disabled-example" />
 
 Individual items can also be disabled by specifying their keys in the `disabledKeys` prop.
@@ -97,37 +114,37 @@ Individual items can also be disabled by specifying their keys in the `disabledK
 
 The `ChoiceBox` component displays selectable options in a boxed layout.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `columns` | `"1" \| "2" \| "3" \| "4" \| "5" \| "6"` | `1` |
-| `gap` | `"0" \| "1" \| "2" \| "3" \| "4" \| "5" \| "6" \| "8" \| "10" \| "12"` | `0` |
-| `isReadOnly` | `boolean` | - |
+| Prop         | Type                                                                   | Default |
+| ------------ | ---------------------------------------------------------------------- | ------- |
+| `className`  | `string`                                                               | -       |
+| `columns`    | `"1" \| "2" \| "3" \| "4" \| "5" \| "6"`                               | `1`     |
+| `gap`        | `"0" \| "1" \| "2" \| "3" \| "4" \| "5" \| "6" \| "8" \| "10" \| "12"` | `0`     |
+| `isReadOnly` | `boolean`                                                              | -       |
 
 ### ChoiceBoxDescription
 
 The `ChoiceBoxDescription` component renders supporting text for a choice item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### ChoiceBoxItem
 
 The `ChoiceBoxItem` component represents one selectable choice.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `label` | `string` | - |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `className`   | `string` | -       |
+| `description` | `string` | -       |
+| `label`       | `string` | -       |
 
 ### ChoiceBoxLabel
 
 The `ChoiceBoxLabel` component renders the label for a choice item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/GridList#api) for the full API reference.

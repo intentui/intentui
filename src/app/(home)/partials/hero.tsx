@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { BookOpenIcon, CubeIcon } from "@heroicons/react/24/outline"
-import { PageContainer } from "@/components/page-container"
-import { buttonStyles } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
-import { app } from "@/config/app"
+import { BookOpenIcon, CubeIcon } from '@heroicons/react/24/outline'
+import { PageContainer } from '@/components/page-container'
+import { buttonStyles } from '@/components/ui/button'
+import { Link } from '@/components/ui/link'
+import { app } from '@/config/app'
 
 export function Hero() {
   return (
@@ -18,7 +18,7 @@ export function Hero() {
             <p className="block max-w-2xl text-base text-muted-fg leading-relaxed md:leading-relaxed lg:text-xl [&_strong]:font-normal [&_strong]:text-fg">
               <strong className="text-white">{app.name}</strong> is a set of accessible React
               components built with <strong className="text-fg">React aria components</strong>,
-              designed for fast copy and paste customization, and styled with{" "}
+              designed for fast copy and paste customization, and styled with{' '}
               <strong className="text-fg">Tailwind CSS</strong>.
             </p>
           </div>
@@ -26,8 +26,8 @@ export function Hero() {
           <div className="mt-6 flex items-center gap-x-2">
             <Link
               className={buttonStyles({
-                size: "lg",
-                className: "inset-ring-white/10 shadow-none",
+                size: 'lg',
+                className: 'inset-ring-white/10 shadow-none',
               })}
               href="/docs/getting-started/installation"
             >
@@ -36,9 +36,9 @@ export function Hero() {
             </Link>
             <Link
               className={buttonStyles({
-                size: "lg",
-                intent: "secondary",
-                className: "shadow-none",
+                size: 'lg',
+                intent: 'secondary',
+                className: 'shadow-none',
               })}
               href="/components"
             >

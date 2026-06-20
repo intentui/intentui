@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { FieldError, Label } from "@/components/ui/field"
+import { FieldError, Label } from '@/components/ui/field'
 import {
   MultipleSelect,
   MultipleSelectContent,
   MultipleSelectItem,
-} from "@/components/ui/multiple-select"
+} from '@/components/ui/multiple-select'
 
 export default function MultipleSelectDisabledDemo() {
   return (
@@ -25,4 +25,4 @@ export default function MultipleSelectDisabledDemo() {
   )
 }
 
-const fruits = [{ id: 1, name: "Apple" }]
+const fruits = [{ id: 1, name: 'Apple' }]

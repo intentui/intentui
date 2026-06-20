@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { createContext, use, useRef, useState } from "react"
-import { twMerge } from "tailwind-merge"
+import { createContext, use, useRef, useState } from 'react'
+import { twMerge } from 'tailwind-merge'
 import {
   MenuContent,
   type MenuContentProps,
@@ -12,7 +12,7 @@ import {
   MenuSection,
   MenuSeparator,
   MenuShortcut,
-} from "./menu"
+} from './menu'
 
 interface ContextMenuTriggerContextType {
   buttonRef: React.RefObject<HTMLButtonElement | null>
@@ -23,13 +23,13 @@ interface ContextMenuTriggerContextType {
 }
 
 const ContextMenuTriggerContext = createContext<ContextMenuTriggerContextType | undefined>(
-  undefined,
+  undefined
 )
 
 const useContextMenuTrigger = () => {
   const context = use(ContextMenuTriggerContext)
   if (!context) {
-    throw new Error("useContextMenuTrigger must be used within a ContextMenuTrigger")
+    throw new Error('useContextMenuTrigger must be used within a ContextMenuTrigger')
   }
   return context
 }
@@ -69,8 +69,8 @@ const ContextMenuTrigger = ({ className, ...props }: ContextMenuTriggerProps) =>
   return (
     <button
       className={twMerge(
-        "cursor-default focus:outline-hidden disabled:opacity-60 disabled:forced-colors:disabled:text-[GrayText]",
-        className,
+        'cursor-default focus:outline-hidden disabled:opacity-60 disabled:forced-colors:disabled:text-[GrayText]',
+        className
       )}
       ref={buttonRef}
       aria-haspopup="menu"
@@ -82,7 +82,7 @@ const ContextMenuTrigger = ({ className, ...props }: ContextMenuTriggerProps) =>
 
 type ContextMenuContentProps<T> = Omit<
   MenuContentProps<T>,
-  "arrow" | "isOpen" | "onOpenChange" | "triggerRef" | "placement" | "shouldFlip"
+  'arrow' | 'isOpen' | 'onOpenChange' | 'triggerRef' | 'placement' | 'shouldFlip'
 >
 
 const ContextMenuContent = <T extends object>(props: ContextMenuContentProps<T>) => {
@@ -94,7 +94,7 @@ const ContextMenuContent = <T extends object>(props: ContextMenuContentProps<T>)
         shouldFlip: false,
         triggerRef: buttonRef,
         onOpenChange: () => setContextMenuOffset(null),
-        placement: "bottom left",
+        placement: 'bottom left',
         offset: contextMenuOffset.offset,
         crossOffset: contextMenuOffset.crossOffset,
       }}

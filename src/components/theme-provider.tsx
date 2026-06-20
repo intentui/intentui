@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react"
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
-type Theme = "light" | "dark" | "system"
+type Theme = 'light' | 'dark' | 'system'
 
 export interface ThemeProviderProps {
-  attribute?: "class" | string
+  attribute?: 'class' | string
   children: React.ReactNode
   defaultTheme?: Theme
   disableTransitionOnChange?: boolean
@@ -14,27 +14,27 @@ export interface ThemeProviderProps {
 }
 
 interface ThemeContextValue {
-  resolvedTheme: "light" | "dark"
+  resolvedTheme: 'light' | 'dark'
   setTheme: (theme: Theme) => void
   theme: Theme
 }
 
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
-const MEDIA_QUERY = "(prefers-color-scheme: dark)"
+const MEDIA_QUERY = '(prefers-color-scheme: dark)'
 
 function getSystemTheme() {
-  if (typeof window === "undefined") {
-    return "light" as const
+  if (typeof window === 'undefined') {
+    return 'light' as const
   }
 
-  return window.matchMedia(MEDIA_QUERY).matches ? ("dark" as const) : ("light" as const)
+  return window.matchMedia(MEDIA_QUERY).matches ? ('dark' as const) : ('light' as const)
 }
 
 function disableTransitionsTemporarily() {
-  const style = document.createElement("style")
+  const style = document.createElement('style')
   style.appendChild(
-    document.createTextNode("*{-webkit-transition:none!important;transition:none!important}"),
+    document.createTextNode('*{-webkit-transition:none!important;transition:none!important}')
   )
   document.head.appendChild(style)
 
@@ -46,38 +46,38 @@ function disableTransitionsTemporarily() {
   }
 }
 
-function applyTheme(theme: Theme, resolvedTheme: "light" | "dark", attribute: string) {
+function applyTheme(theme: Theme, resolvedTheme: 'light' | 'dark', attribute: string) {
   const root = document.documentElement
 
-  if (attribute === "class") {
-    root.classList.remove("light", "dark")
+  if (attribute === 'class') {
+    root.classList.remove('light', 'dark')
     root.classList.add(resolvedTheme)
     return
   }
 
-  root.setAttribute(attribute, theme === "system" ? resolvedTheme : theme)
+  root.setAttribute(attribute, theme === 'system' ? resolvedTheme : theme)
 }
 
 export function ThemeProvider({
-  attribute = "class",
+  attribute = 'class',
   children,
-  defaultTheme = "system",
+  defaultTheme = 'system',
   disableTransitionOnChange = false,
   enableSystem = true,
-  storageKey = "intentui-theme",
+  storageKey = 'intentui-theme',
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(defaultTheme)
-  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light")
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
     const savedTheme = localStorage.getItem(storageKey) as Theme | null
     const nextTheme = savedTheme ?? defaultTheme
     const nextResolvedTheme =
-      nextTheme === "system" && enableSystem
+      nextTheme === 'system' && enableSystem
         ? getSystemTheme()
-        : nextTheme === "dark"
-          ? "dark"
-          : "light"
+        : nextTheme === 'dark'
+          ? 'dark'
+          : 'light'
 
     setThemeState(nextTheme)
     setResolvedTheme(nextResolvedTheme)
@@ -85,7 +85,7 @@ export function ThemeProvider({
   }, [attribute, defaultTheme, enableSystem, storageKey])
 
   useEffect(() => {
-    if (!enableSystem || typeof window === "undefined") {
+    if (!enableSystem || typeof window === 'undefined') {
       return
     }
 
@@ -95,26 +95,26 @@ export function ThemeProvider({
         const nextResolvedTheme = getSystemTheme()
         const storedTheme = (localStorage.getItem(storageKey) as Theme | null) ?? defaultTheme
 
-        if (storedTheme === "system") {
-          applyTheme("system", nextResolvedTheme, attribute)
+        if (storedTheme === 'system') {
+          applyTheme('system', nextResolvedTheme, attribute)
         }
 
         return currentResolvedTheme === nextResolvedTheme ? currentResolvedTheme : nextResolvedTheme
       })
     }
 
-    mediaQuery.addEventListener("change", onChange)
-    return () => mediaQuery.removeEventListener("change", onChange)
+    mediaQuery.addEventListener('change', onChange)
+    return () => mediaQuery.removeEventListener('change', onChange)
   }, [attribute, defaultTheme, enableSystem, storageKey])
 
   const setTheme = (nextTheme: Theme) => {
-    const normalizedTheme = nextTheme === "system" && !enableSystem ? "light" : nextTheme
+    const normalizedTheme = nextTheme === 'system' && !enableSystem ? 'light' : nextTheme
     const nextResolvedTheme =
-      normalizedTheme === "system"
+      normalizedTheme === 'system'
         ? getSystemTheme()
-        : normalizedTheme === "dark"
-          ? "dark"
-          : "light"
+        : normalizedTheme === 'dark'
+          ? 'dark'
+          : 'light'
 
     const restoreTransitions = disableTransitionOnChange ? disableTransitionsTemporarily() : null
 
@@ -132,7 +132,7 @@ export function ThemeProvider({
       setTheme,
       theme,
     }),
-    [resolvedTheme, theme],
+    [resolvedTheme, theme]
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
@@ -142,7 +142,7 @@ export function useTheme() {
   const context = useContext(ThemeContext)
 
   if (!context) {
-    throw new Error("useTheme must be used within a ThemeProvider")
+    throw new Error('useTheme must be used within a ThemeProvider')
   }
 
   return context

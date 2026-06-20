@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { AreaChart } from "@/components/ui/area-chart"
-import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useMemo } from 'react'
+import { AreaChart } from '@/components/ui/area-chart'
+import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 type EngagementPoint = {
   day: string
@@ -22,7 +22,7 @@ export default function Page() {
         comments: Math.floor(20 + Math.random() * 80),
         shares: Math.floor(10 + Math.random() * 50),
       })),
-    [],
+    []
   )
 
   return (
@@ -39,9 +39,9 @@ export default function Page() {
         dataKey="day"
         xAxisProps={{ interval: 0 }}
         config={{
-          likes: { label: "Likes" },
-          comments: { label: "Comments" },
-          shares: { label: "Shares" },
+          likes: { label: 'Likes' },
+          comments: { label: 'Comments' },
+          shares: { label: 'Shares' },
         }}
       />
     </div>

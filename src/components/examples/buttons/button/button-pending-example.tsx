@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { PlusIcon } from "@heroicons/react/20/solid"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ProgressCircle } from "@/components/ui/progress-circle"
+import { PlusIcon } from '@heroicons/react/20/solid'
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { ProgressCircle } from '@/components/ui/progress-circle'
 
 export default function ButtonPendingDemo() {
   const [isLoading, setLoading] = useState(false)
@@ -19,7 +19,7 @@ export default function ButtonPendingDemo() {
       {({ isPending }) => (
         <>
           {isPending ? <ProgressCircle isIndeterminate aria-label="Creating..." /> : <PlusIcon />}
-          {isLoading ? "Creating..." : "Create"}
+          {isLoading ? 'Creating...' : 'Create'}
         </>
       )}
     </Button>

@@ -1,16 +1,16 @@
-import { AppBootstrap } from "@/components/app-bootstrap"
-import { DeferredAnalytics } from "@/components/deferred-analytics"
-import { JsonLd } from "@/components/json-ld"
-import { app, META_THEME_COLORS } from "@/config/app"
-import "@/styles/app.css"
-import type { Metadata, Viewport } from "next"
-import { JetBrains_Mono } from "next/font/google"
-import localFont from "next/font/local"
-import { headers } from "next/headers"
-import { Suspense } from "react"
-import { AurelieAnalytics } from "@/components/aurelie-analytics"
-import { Providers } from "@/components/providers"
-import { Toast } from "@/components/ui/toast"
+import { AppBootstrap } from '@/components/app-bootstrap'
+import { DeferredAnalytics } from '@/components/deferred-analytics'
+import { JsonLd } from '@/components/json-ld'
+import { app, META_THEME_COLORS } from '@/config/app'
+import '@/styles/app.css'
+import type { Metadata, Viewport } from 'next'
+import { JetBrains_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
+import { headers } from 'next/headers'
+import { Suspense } from 'react'
+import { AurelieAnalytics } from '@/components/aurelie-analytics'
+import { Providers } from '@/components/providers'
+import { Toast } from '@/components/ui/toast'
 
 export const metadata: Metadata = {
   metadataBase: new URL(app.url),
@@ -19,44 +19,44 @@ export const metadata: Metadata = {
     template: `%s / ${app.name}`,
   },
   alternates: {
-    canonical: "./",
+    canonical: './',
   },
   keywords: [
-    "React",
-    "Next.js",
-    "Inertia.js",
-    "Tailwind CSS",
-    "UI Components",
-    "UI Kit",
-    "UI Library",
-    "UI Framework",
-    "Intent UI",
-    "React Aria",
-    "React Aria Components",
-    "Server Components",
-    "React Components",
-    "Next UI Components",
-    "UI Design System",
-    "UI for Laravel Inertia",
-    "Laravel Inertia UI",
-    "Laravel Inertia Components",
-    "Laravel Inertia UI Components",
-    "Laravel Inertia UI Kit",
-    "Laravel Inertia UI Library",
-    "Laravel Inertia UI Framework",
-    "Laravel Inertia Intent",
-    "Laravel Intent",
-    "Intent Components",
-    "Intent UI Components",
-    "Intent UI Kit",
-    "Intent UI Library",
-    "Intent UI Framework",
-    "Intent Laravel Inertia",
-    "intent ui laravel",
-    "Intent UI Inertia",
-    "Intent UI",
+    'React',
+    'Next.js',
+    'Inertia.js',
+    'Tailwind CSS',
+    'UI Components',
+    'UI Kit',
+    'UI Library',
+    'UI Framework',
+    'Intent UI',
+    'React Aria',
+    'React Aria Components',
+    'Server Components',
+    'React Components',
+    'Next UI Components',
+    'UI Design System',
+    'UI for Laravel Inertia',
+    'Laravel Inertia UI',
+    'Laravel Inertia Components',
+    'Laravel Inertia UI Components',
+    'Laravel Inertia UI Kit',
+    'Laravel Inertia UI Library',
+    'Laravel Inertia UI Framework',
+    'Laravel Inertia Intent',
+    'Laravel Intent',
+    'Intent Components',
+    'Intent UI Components',
+    'Intent UI Kit',
+    'Intent UI Library',
+    'Intent UI Framework',
+    'Intent Laravel Inertia',
+    'intent ui laravel',
+    'Intent UI Inertia',
+    'Intent UI',
   ],
-  manifest: "/manifest.json",
+  manifest: '/manifest.json',
   authors: [
     {
       name: app.author.name,
@@ -68,34 +68,34 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
-  viewportFit: "cover",
-  width: "device-width",
+  viewportFit: 'cover',
+  width: 'device-width',
   initialScale: 1,
 }
 
 const fontSans = localFont({
   src: [
     {
-      path: "./fonts/InterVariable.woff2",
-      weight: "100 900",
-      style: "normal",
+      path: './fonts/InterVariable.woff2',
+      weight: '100 900',
+      style: 'normal',
     },
     {
-      path: "./fonts/InterVariable-Italic.woff2",
-      weight: "100 900",
-      style: "italic",
+      path: './fonts/InterVariable-Italic.woff2',
+      weight: '100 900',
+      style: 'italic',
     },
   ],
-  variable: "--font-inter",
+  variable: '--font-inter',
 })
 
 const fontMono = JetBrains_Mono({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--font-docs-mono",
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  variable: '--font-docs-mono',
 })
 
 interface Props {
@@ -103,39 +103,39 @@ interface Props {
 }
 
 export default async function RootLayout({ children }: Readonly<Props>) {
-  const acceptLanguage = (await headers()).get("accept-language")
-  const lang = acceptLanguage?.split(/[,;]/)[0] || "en-US"
+  const acceptLanguage = (await headers()).get('accept-language')
+  const lang = acceptLanguage?.split(/[,;]/)[0] || 'en-US'
 
   const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": `${app.url}/#organization`,
+        '@type': 'Organization',
+        '@id': `${app.url}/#organization`,
         name: app.name,
         url: app.url,
         logo: {
-          "@type": "ImageObject",
+          '@type': 'ImageObject',
           url: `${app.url}/icon.svg`,
         },
         description: app.description,
         sameAs: [app.links.twitter, app.links.github, app.links.discord],
       },
       {
-        "@type": "WebSite",
-        "@id": `${app.url}/#website`,
+        '@type': 'WebSite',
+        '@id': `${app.url}/#website`,
         url: app.url,
         name: app.name,
-        publisher: { "@id": `${app.url}/#organization` },
+        publisher: { '@id': `${app.url}/#organization` },
       },
       {
-        "@type": "SoftwareSourceCode",
+        '@type': 'SoftwareSourceCode',
         name: app.name,
         description: app.description,
         codeRepository: app.repo.url,
-        programmingLanguage: ["TypeScript", "React"],
-        runtimePlatform: "Node.js",
-        license: "https://opensource.org/licenses/MIT",
+        programmingLanguage: ['TypeScript', 'React'],
+        runtimePlatform: 'Node.js',
+        license: 'https://opensource.org/licenses/MIT',
       },
     ],
   }

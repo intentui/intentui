@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { Form } from "react-aria-components/Form"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/field"
-import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
+import { Form } from 'react-aria-components/Form'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/field'
+import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 
 const software = [
-  { id: 1, name: "Adobe Photoshop" },
+  { id: 1, name: 'Adobe Photoshop' },
   //...
 ]
 

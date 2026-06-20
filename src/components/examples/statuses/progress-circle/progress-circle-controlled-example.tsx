@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Label } from "@/components/ui/field"
-import { ProgressCircle } from "@/components/ui/progress-circle"
-import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from "@/components/ui/slider"
+import { useState } from 'react'
+import { Label } from '@/components/ui/field'
+import { ProgressCircle } from '@/components/ui/progress-circle'
+import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from '@/components/ui/slider'
 
 export default function ProgressCircleControlledDemo() {
   const [value, setValue] = useState(10)

@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
+import { EllipsisHorizontalIcon } from '@heroicons/react/16/solid'
 import {
   ArchiveBoxIcon,
   ArrowUpTrayIcon,
@@ -10,15 +10,15 @@ import {
   HomeIcon as HomeOutline,
   PencilSquareIcon,
   TrashIcon,
-} from "@heroicons/react/24/outline"
+} from '@heroicons/react/24/outline'
 import {
   Cog6ToothIcon as Cog6ToothSolid,
   HomeIcon as HomeSolid,
   LifebuoyIcon as LifebuoySolid,
   ShieldCheckIcon as ShieldCheckSolid,
-} from "@heroicons/react/24/solid"
-import { Avatar } from "@/components/ui/avatar"
-import { Link } from "@/components/ui/link"
+} from '@heroicons/react/24/solid'
+import { Avatar } from '@/components/ui/avatar'
+import { Link } from '@/components/ui/link'
 import {
   Menu,
   MenuContent,
@@ -27,7 +27,7 @@ import {
   MenuSection,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu"
+} from '@/components/ui/menu'
 import {
   Sidebar,
   SidebarContent,
@@ -39,7 +39,7 @@ import {
   SidebarMenuTrigger,
   SidebarSection,
   SidebarSectionGroup,
-} from "@/components/ui/sidebar"
+} from '@/components/ui/sidebar'
 
 export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -87,7 +87,7 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                         <SidebarMenuTrigger aria-label="Manage">
                           <EllipsisHorizontalIcon />
                         </SidebarMenuTrigger>
-                        <MenuContent popover={{ offset: 0, placement: "right top" }}>
+                        <MenuContent popover={{ offset: 0, placement: 'right top' }}>
                           <MenuItem href="#edit">
                             <PencilSquareIcon />
                             Edit
@@ -174,9 +174,9 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
 }
 
 const articles = [
-  { href: "#article-1", label: "How to" },
-  { href: "#article-2", label: "The future of remote work The future of remote work" },
-  { href: "#article-3", label: "Top 10 design tips" },
-  { href: "#article-4", label: "Guide to mental health" },
-  { href: "#article-5", label: "Ai in everyday life" },
+  { href: '#article-1', label: 'How to' },
+  { href: '#article-2', label: 'The future of remote work The future of remote work' },
+  { href: '#article-3', label: 'Top 10 design tips' },
+  { href: '#article-4', label: 'Guide to mental health' },
+  { href: '#article-5', label: 'Ai in everyday life' },
 ]

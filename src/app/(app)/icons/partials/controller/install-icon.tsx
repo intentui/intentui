@@ -1,23 +1,23 @@
-import { CheckIcon } from "@heroicons/react/20/solid"
-import { useState } from "react"
-import { DuplicateIcon } from "@/components/icons/duplicate-icon"
-import { Button } from "@/components/ui/button"
-import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
-import { useClipboard } from "@/hooks/use-clipboard"
+import { CheckIcon } from '@heroicons/react/20/solid'
+import { useState } from 'react'
+import { DuplicateIcon } from '@/components/icons/duplicate-icon'
+import { Button } from '@/components/ui/button'
+import { Menu, MenuContent, MenuItem } from '@/components/ui/menu'
+import { useClipboard } from '@/hooks/use-clipboard'
 
-const npms = ["bun", "yarn", "pnpm", "npm"] as const
+const npms = ['bun', 'yarn', 'pnpm', 'npm'] as const
 type Tool = (typeof npms)[number]
 
-export function InstallIcon({ pkg = "@intentui/icons" }: { pkg?: string }) {
+export function InstallIcon({ pkg = '@intentui/icons' }: { pkg?: string }) {
   const [isCopied, setIsCopied] = useState(false)
-  const [command, setCommand] = useState("")
+  const [command, setCommand] = useState('')
   const { copy } = useClipboard()
 
   const installMap: Record<Tool, string> = {
-    bun: "bun add",
-    yarn: "yarn add",
-    pnpm: "pnpm add",
-    npm: "npm i",
+    bun: 'bun add',
+    yarn: 'yarn add',
+    pnpm: 'pnpm add',
+    npm: 'npm i',
   }
 
   const handleCopy = async (tool: Tool) => {

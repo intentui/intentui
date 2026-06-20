@@ -1,5 +1,5 @@
-import { Description, Label } from "@/components/ui/field"
-import { NativeSelect, NativeSelectContent } from "@/components/ui/native-select"
+import { Description, Label } from '@/components/ui/field'
+import { NativeSelect, NativeSelectContent } from '@/components/ui/native-select'
 
 export default function NativeSelectDescriptionDemo() {
   return (

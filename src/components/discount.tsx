@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { useEffect } from "react"
-import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
-import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Note } from "@/components/ui/note"
-import { Code, Strong } from "@/components/ui/text"
+import { useEffect } from 'react'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
+import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Note } from '@/components/ui/note'
+import { Code, Strong } from '@/components/ui/text'
 
 const DISCOUNT_TOAST_DELAY_MS = 3_000
 const DISCOUNT_DISMISS_DURATION_MS = 5 * 24 * 60 * 60 * 1000
-const DISCOUNT_DISMISSED_UNTIL_KEY = "discount-toast-dismissed-until:v1"
+const DISCOUNT_DISMISSED_UNTIL_KEY = 'discount-toast-dismissed-until:v1'
 
 function hasActiveDiscountDismissal() {
   try {
@@ -27,7 +27,7 @@ function dismissDiscountToast() {
   try {
     window.localStorage.setItem(
       DISCOUNT_DISMISSED_UNTIL_KEY,
-      String(Date.now() + DISCOUNT_DISMISS_DURATION_MS),
+      String(Date.now() + DISCOUNT_DISMISS_DURATION_MS)
     )
   } catch {}
 }
@@ -64,7 +64,7 @@ export function Discount() {
                 onPress={() => {
                   toast.dismiss(toastId)
                   window.location.href =
-                    "https://design.intentui.com/pricing?utm_source=intentui&utm_medium=toast&utm_campaign=limited_time_discount&utm_content=pricing_cta"
+                    'https://design.intentui.com/pricing?utm_source=intentui&utm_medium=toast&utm_campaign=limited_time_discount&utm_content=pricing_cta'
                 }}
               >
                 Get the deal
@@ -73,10 +73,10 @@ export function Discount() {
           </Note>
         ),
         {
-          className: "bg-transparent",
-          id: "intentui-design-discount",
+          className: 'bg-transparent',
+          id: 'intentui-design-discount',
           duration: Infinity,
-        },
+        }
       )
     }, DISCOUNT_TOAST_DELAY_MS)
 

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { ChevronDownIcon } from "@heroicons/react/20/solid"
-import { Button } from "@/components/ui/button"
-import { Card, CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Button } from '@/components/ui/button'
+import { Card, CardAction, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Menu, MenuContent, MenuItem } from '@/components/ui/menu'
 
 export default function CardActionDemo() {
   return (

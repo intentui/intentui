@@ -1,17 +1,17 @@
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { blog } from "#site/content"
-import type { DocPageProps } from "@/app/(app)/docs/[...slug]/page"
-import { JsonLd } from "@/components/json-ld"
-import { mdxComponents } from "@/components/mdx-components"
-import { Toc } from "@/components/toc"
-import { app } from "@/config/app"
-import { formatDate } from "@/lib/date"
-import { ogImage } from "@/lib/og"
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { blog } from '#site/content'
+import type { DocPageProps } from '@/app/(app)/docs/[...slug]/page'
+import { JsonLd } from '@/components/json-ld'
+import { mdxComponents } from '@/components/mdx-components'
+import { Toc } from '@/components/toc'
+import { app } from '@/config/app'
+import { formatDate } from '@/lib/date'
+import { ogImage } from '@/lib/og'
 
 export default async function Page(props: DocPageProps) {
   const { slug } = await props.params
-  const article = blog.find((i) => i.info.path.replace(".mdx", "") === slug[0])
+  const article = blog.find((i) => i.info.path.replace('.mdx', '') === slug[0])
 
   if (!article) {
     notFound()
@@ -21,38 +21,38 @@ export default async function Page(props: DocPageProps) {
   const articleUrl = `${app.url}/blog/${slug[0]}`
 
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Article",
+        '@type': 'Article',
         headline: article.title,
         description: article.description,
         url: articleUrl,
         datePublished: article.published,
         author: {
-          "@type": "Person",
+          '@type': 'Person',
           name: article.author,
         },
         publisher: {
-          "@type": "Organization",
+          '@type': 'Organization',
           name: app.name,
           url: app.url,
           logo: {
-            "@type": "ImageObject",
+            '@type': 'ImageObject',
             url: `${app.url}/icon.svg`,
           },
         },
         mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": articleUrl,
+          '@type': 'WebPage',
+          '@id': articleUrl,
         },
       },
       {
-        "@type": "BreadcrumbList",
+        '@type': 'BreadcrumbList',
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: app.url },
-          { "@type": "ListItem", position: 2, name: "Blog", item: `${app.url}/blog` },
-          { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: app.url },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${app.url}/blog` },
+          { '@type': 'ListItem', position: 3, name: article.title, item: articleUrl },
         ],
       },
     ],
@@ -93,7 +93,7 @@ export default async function Page(props: DocPageProps) {
 
 export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
   const { slug } = await props.params
-  const article = blog.find((i) => i.info.path.replace(".mdx", "") === slug[0])
+  const article = blog.find((i) => i.info.path.replace('.mdx', '') === slug[0])
 
   if (!article) {
     return {}
@@ -106,38 +106,38 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
     title: article.title,
     description: article.description,
     applicationName: app.name,
-    category: "Blog",
+    category: 'Blog',
     alternates: {
       canonical: articleUrl,
     },
     openGraph: {
       title: `${article.title} / Intent UI`,
       description: article.description,
-      type: "article",
+      type: 'article',
       url: articleUrl,
       siteName: app.name,
-      locale: "en_US",
+      locale: 'en_US',
       publishedTime:
         article.published instanceof Date ? article.published.toISOString() : article.published,
       ...(article.author && { authors: [article.author] }),
       images: [{ url: ogImageUrl }],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: `${article.title} / Intent UI`,
       description: article.description,
       images: [ogImageUrl],
-      site: "@intentui",
+      site: '@intentui',
       creator: `@${app.author.username}`,
     },
     keywords: [
       article.title,
-      "react",
-      "next.js",
-      "tailwind css",
-      "ui components",
-      "intent ui",
-      "intentui",
+      'react',
+      'next.js',
+      'tailwind css',
+      'ui components',
+      'intent ui',
+      'intentui',
     ],
   }
 }

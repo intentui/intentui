@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Description, Label } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+import { Description, Label } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
 
 export default function InputLabelDescriptionDemo() {
   return (

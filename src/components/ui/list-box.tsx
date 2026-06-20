@@ -1,25 +1,25 @@
-"use client"
+'use client'
 
-import { CheckIcon } from "@heroicons/react/20/solid"
-import { composeRenderProps } from "react-aria-components/composeRenderProps"
+import { CheckIcon } from '@heroicons/react/20/solid'
+import { composeRenderProps } from 'react-aria-components/composeRenderProps'
 import type {
   ListBoxItemProps,
   ListBoxProps,
   ListBoxSectionProps,
-} from "react-aria-components/ListBox"
+} from 'react-aria-components/ListBox'
 import {
-  ListBoxItem as ListBoxItemPrimitive,
   ListBox as ListBoxPrimitive,
-} from "react-aria-components/ListBox"
-import { twJoin, twMerge } from "tailwind-merge"
-import { cx } from "@/lib/primitive"
+  ListBoxItem as ListBoxItemPrimitive,
+} from 'react-aria-components/ListBox'
+import { twJoin, twMerge } from 'tailwind-merge'
+import { cx } from '@/lib/primitive'
 import {
   DropdownDescription,
+  dropdownItemStyles,
   DropdownLabel,
   DropdownSection,
   type DropdownSectionProps,
-  dropdownItemStyles,
-} from "./dropdown"
+} from './dropdown'
 
 const ListBox = <T extends object>({ className, ...props }: ListBoxProps<T>) => (
   <ListBoxPrimitive
@@ -27,13 +27,13 @@ const ListBox = <T extends object>({ className, ...props }: ListBoxProps<T>) => 
     data-slot="list-box"
     className={cx(
       "scrollbar-thin grid max-h-96 w-full min-w-56 scroll-py-1 grid-cols-[auto_1fr] flex-col gap-y-1 overflow-y-auto overscroll-contain rounded-xl border bg-bg p-1 outline-hidden has-data-[slot=drag-icon]:grid-cols-[auto_auto_1fr] *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
-      className,
+      className
     )}
   />
 )
 
 const ListBoxItem = <T extends object>({ children, className, ...props }: ListBoxItemProps<T>) => {
-  const textValue = typeof children === "string" ? children : undefined
+  const textValue = typeof children === 'string' ? children : undefined
   return (
     <ListBoxItemPrimitive
       textValue={textValue}
@@ -41,13 +41,13 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
         dropdownItemStyles({
           ...renderProps,
           className: twJoin(
-            "group not-has-[[slot=description]]:items-start",
-            "has-data-[slot=drag-icon]:*:[[slot=label]]:col-start-3",
-            "has-data-[slot=drag-icon]:*:[svg]:col-start-2",
-            "href" in props ? "cursor-pointer" : "cursor-default",
-            className,
+            'group not-has-[[slot=description]]:items-start',
+            'has-data-[slot=drag-icon]:*:[[slot=label]]:col-start-3',
+            'has-data-[slot=drag-icon]:*:[svg]:col-start-2',
+            'href' in props ? 'cursor-pointer' : 'cursor-default',
+            className
           ),
-        }),
+        })
       )}
       data-slot="list-box-item"
       {...props}
@@ -97,9 +97,9 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
                 data-slot="check-indicator"
               />
             )}
-            {typeof children === "function" ? (
+            {typeof children === 'function' ? (
               children(renderProps)
-            ) : typeof children === "string" ? (
+            ) : typeof children === 'string' ? (
               <DropdownLabel>{children}</DropdownLabel>
             ) : (
               children
@@ -114,7 +114,7 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
 const ListBoxSection = <T extends object>({ className, ...props }: DropdownSectionProps<T>) => {
   return (
     <DropdownSection
-      className={twMerge("gap-y-1 *:data-[slot=list-box-item]:last:-mb-1.5", className)}
+      className={twMerge('gap-y-1 *:data-[slot=list-box-item]:last:-mb-1.5', className)}
       {...props}
     />
   )

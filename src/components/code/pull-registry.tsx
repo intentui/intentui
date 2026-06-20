@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { track } from "@vercel/analytics"
-import { useState } from "react"
-import { Button } from "react-aria-components/Button"
-import { twJoin, twMerge } from "tailwind-merge"
-import { Link } from "@/components/ui/link"
-import { app } from "@/config/app"
-import { useClipboard } from "@/hooks/use-clipboard"
+import { track } from '@vercel/analytics'
+import { useState } from 'react'
+import { Button } from 'react-aria-components/Button'
+import { twJoin, twMerge } from 'tailwind-merge'
+import { Link } from '@/components/ui/link'
+import { app } from '@/config/app'
+import { useClipboard } from '@/hooks/use-clipboard'
 
 interface PullRegistryProps {
   readMore?: string
@@ -23,8 +23,8 @@ interface CopyButtonProps {
 }
 
 export function CopyButton({
-  label = "Copy",
-  copiedLabel = "Copied",
+  label = 'Copy',
+  copiedLabel = 'Copied',
   className,
   isCopied,
   onCopy,
@@ -32,23 +32,23 @@ export function CopyButton({
   return (
     <Button
       className={twMerge(
-        "relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg",
-        className,
+        'relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg',
+        className
       )}
       onPress={onCopy}
     >
       <span
         className={twJoin(
-          "absolute inset-0 flex items-center justify-center transition duration-300",
-          isCopied ? "-translate-y-1.5 text-fg opacity-0" : "translate-y-0 opacity-100",
+          'absolute inset-0 flex items-center justify-center transition duration-300',
+          isCopied ? '-translate-y-1.5 text-fg opacity-0' : 'translate-y-0 opacity-100'
         )}
       >
         {label}
       </span>
       <span
         className={twJoin(
-          "absolute inset-0 flex items-center justify-center transition duration-300",
-          isCopied ? "translate-y-0 text-fg opacity-100" : "translate-y-1.5 opacity-0",
+          'absolute inset-0 flex items-center justify-center transition duration-300',
+          isCopied ? 'translate-y-0 text-fg opacity-100' : 'translate-y-1.5 opacity-0'
         )}
       >
         {copiedLabel}
@@ -61,7 +61,7 @@ export function PullRegistry({ readMore, processedSourceCode, blockExample }: Pu
   const [copy, setCopy] = useState({ code: false, command: false })
   const { copy: copyToClipboard } = useClipboard()
 
-  const handleCopy = async (key: "code" | "command", value: string) => {
+  const handleCopy = async (key: 'code' | 'command', value: string) => {
     const didCopy = await copyToClipboard(value)
     if (!didCopy) return
     setCopy((prev) => ({ ...prev, [key]: true }))
@@ -75,7 +75,7 @@ export function PullRegistry({ readMore, processedSourceCode, blockExample }: Pu
         className="hidden sm:inline"
         copiedLabel="Copied"
         isCopied={copy.command}
-        onCopy={() => handleCopy("command", `${app.shadcn} add @intentui/${blockExample}`)}
+        onCopy={() => handleCopy('command', `${app.shadcn} add @intentui/${blockExample}`)}
       />
       <CopyButton
         label="Copy"
@@ -83,8 +83,8 @@ export function PullRegistry({ readMore, processedSourceCode, blockExample }: Pu
         isCopied={copy.code}
         onCopy={() => {
           const text = processedSourceCode as string
-          handleCopy("code", text)
-          track("copy to clipboard", {
+          handleCopy('code', text)
+          track('copy to clipboard', {
             text: text,
           })
         }}

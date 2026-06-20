@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { ColorSwatch } from "@/components/ui/color-swatch"
+import { ColorSwatch } from '@/components/ui/color-swatch'
 
 export default function ColorSwatchSizeDemo() {
   return (

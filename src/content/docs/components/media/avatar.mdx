@@ -10,14 +10,18 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/avatar"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/avatar" />
 
 ## Manual installation
+
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
-<SourceCode toShow='avatar'/>
+
+<InstallCommand command="npm i tailwind-merge" />
+<SourceCode toShow="avatar" />
 
 ## Anatomy
+
 ```
 import { Avatar } from "@/components/ui/avatar"
 
@@ -31,32 +35,38 @@ import { Avatar } from "@/components/ui/avatar"
 ## Examples
 
 ### Fallback
+
 If the image fails to load, the avatar will fallback to the initials.
+
 <How toUse="media/avatar/avatar-initials-example" />
 
 ### Shape
+
 By default, the avatar is a `circle`. You can change it to a square by using the `isSquare` props.
 
 <How toUse="media/avatar/avatar-shape-example" />
 
 ### Size
+
 By default, the avatar is medium. You can change it to small, large or extra-large by using the `size` prop.
 
 <How toUse="media/avatar/avatar-size-example" />
 
 ### Avatar group
+
 You can use the `AvatarGroup` component to display a group of avatars.
 
 <How toUse="media/avatar/avatar-group-example" />
 
 ## Component API
+
 The `Avatar` component displays a user image, initials, or fallback identity.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `alt` | `string` | - |
-| `className` | `string` | - |
-| `initials` | `string` | - |
-| `isSquare` | `boolean` | `false` |
-| `size` | `\| "xs" \| "sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl" \| "7xl" \| "8xl" \| "9xl"` | `md` |
-| `src` | `string \| null` | `null` |
+| Prop        | Type                                                                                                              | Default |
+| ----------- | ----------------------------------------------------------------------------------------------------------------- | ------- |
+| `alt`       | `string`                                                                                                          | -       |
+| `className` | `string`                                                                                                          | -       |
+| `initials`  | `string`                                                                                                          | -       |
+| `isSquare`  | `boolean`                                                                                                         | `false` |
+| `size`      | `\| "xs" \| "sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl" \| "7xl" \| "8xl" \| "9xl"` | `md`    |
+| `src`       | `string \| null`                                                                                                  | `null`  |

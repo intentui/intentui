@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { ColorGenerator } from "@/app/(app)/colors/(colors)/color-generator"
-import { ColorItem } from "@/app/(app)/colors/(colors)/color-item"
-import { Container } from "@/components/ui/container"
-import colors from "@/json/colors.json"
+import { ColorGenerator } from '@/app/(app)/colors/(colors)/color-generator'
+import { ColorItem } from '@/app/(app)/colors/(colors)/color-item'
+import { Container } from '@/components/ui/container'
+import colors from '@/json/colors.json'
 
 export function ColorPalette() {
   return (

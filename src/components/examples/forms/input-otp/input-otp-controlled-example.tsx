@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Description } from "@/components/ui/field"
-import { InputOTP, InputOTPControl, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp"
+import { useState } from 'react'
+import { Description } from '@/components/ui/field'
+import { InputOTP, InputOTPControl, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp'
 
 export default function InputOtpControlledDemo() {
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState('')
   return (
     <InputOTP maxLength={6} value={value} onChange={setValue}>
       <InputOTPControl>
@@ -16,7 +16,7 @@ export default function InputOtpControlledDemo() {
         </InputOTPGroup>
       </InputOTPControl>
       <Description>
-        {value === "" ? "Enter your one-time password." : `Your one-time password is: ${value}`}
+        {value === '' ? 'Enter your one-time password.' : `Your one-time password is: ${value}`}
       </Description>
     </InputOTP>
   )

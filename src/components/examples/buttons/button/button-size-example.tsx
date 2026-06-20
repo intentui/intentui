@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { BrandXIcon } from "@/components/icons/brand-x-icon"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+import { BrandXIcon } from '@/components/icons/brand-x-icon'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 
 export default function ButtonSizeDemo() {
   return (

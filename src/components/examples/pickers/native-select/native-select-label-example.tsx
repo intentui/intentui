@@ -1,5 +1,5 @@
-import { Label } from "@/components/ui/field"
-import { NativeSelect, NativeSelectContent } from "@/components/ui/native-select"
+import { Label } from '@/components/ui/field'
+import { NativeSelect, NativeSelectContent } from '@/components/ui/native-select'
 
 export default function NativeSelectLabelDemo() {
   return (

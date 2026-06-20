@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { Description } from "@/components/ui/field"
+import { Description } from '@/components/ui/field'
 import {
   InputOTP,
   InputOTPControl,
   InputOTPGroup,
   InputOTPLabel,
   InputOTPSlot,
-} from "@/components/ui/input-otp"
+} from '@/components/ui/input-otp'
 
 export default function InputOtpDemo() {
   return (

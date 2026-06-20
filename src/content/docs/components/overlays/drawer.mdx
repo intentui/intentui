@@ -1,9 +1,9 @@
 ---
-title: "Drawer"
+title: 'Drawer'
 description: A slide-in panel that provides additional navigation or content without disrupting the main interface, ideal for side menus, overlays, and supplementary information.
 order: 3
 published: true
-references: ["https://react-aria.adobe.com/Modal#api", "https://motion.dev/animate-presence"]
+references: ['https://react-aria.adobe.com/Modal#api', 'https://motion.dev/animate-presence']
 ---
 
 <How toUse="overlays/drawer/drawer-basic-example" />
@@ -12,7 +12,7 @@ references: ["https://react-aria.adobe.com/Modal#api", "https://motion.dev/anima
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/drawer"/>
+<InstallCommand command="npx shadcn@latest add @intentui/drawer" />
 
 ## Composed components
 
@@ -22,10 +22,11 @@ Install the component via the CLI in one command.
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 
-<InstallCommand command="npm i react-aria-components motion tailwind-merge"/>
+<InstallCommand command="npm i react-aria-components motion tailwind-merge" />
 <SourceCode toShow="drawer" />
 
 ## Anatomy
+
 ```
 import { Button } from "@/components/ui/button"
 import {
@@ -61,27 +62,39 @@ import {
 ## Examples
 
 ### Side
+
 Use the `side` prop to change where the drawer appears. The default is `left`, but you can also use `right`, `top`, or `bottom`.
+
 <How toUse="overlays/drawer/drawer-side-example" />
 
 ### Float
+
 To make the drawer float with spacing around it, set the `isFloat` prop to `true`. The default value is `false`.
+
 <How toUse="overlays/drawer/drawer-float-example" />
 
 ### Controlled
+
 Manage the drawer’s open and close state programmatically.
+
 <How toUse="overlays/drawer/drawer-controlled-example" />
 
 ### Without notch
+
 Remove the default notch styling by setting the `notch` prop to `false`.
+
 <How toUse="overlays/drawer/drawer-without-notch-example" />
 
 ### Sticky
+
 The drawer handles long content gracefully. Try scrolling within it.
+
 <How toUse="overlays/drawer/drawer-sticky-example" />
 
 ### Nested
+
 Drawers can be nested inside each other for advanced layouts.
+
 <How toUse="overlays/drawer/drawer-nested-example" />
 
 ## Component API
@@ -94,68 +107,68 @@ The `Drawer` component controls the drawer trigger and content.
 
 The `DrawerTrigger` component defines the element that opens a drawer.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DrawerBody
 
 The `DrawerBody` component wraps the main drawer content.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DrawerClose
 
 The `DrawerClose` component renders a button that closes the drawer.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DrawerContent
 
 The `DrawerContent` component renders the drawer panel.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isFloat` | `boolean` | `false` |
-| `notch` | `boolean` | `true` |
-| `overlay` | `Pick<ModalOverlayProps, "className">` | - |
-| `side` | `"top" \| "bottom" \| "left" \| "right"` | `bottom` |
+| Prop        | Type                                     | Default  |
+| ----------- | ---------------------------------------- | -------- |
+| `className` | `string`                                 | -        |
+| `isFloat`   | `boolean`                                | `false`  |
+| `notch`     | `boolean`                                | `true`   |
+| `overlay`   | `Pick<ModalOverlayProps, "className">`   | -        |
+| `side`      | `"top" \| "bottom" \| "left" \| "right"` | `bottom` |
 
 ### DrawerDescription
 
 The `DrawerDescription` component renders supporting text inside a drawer.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DrawerFooter
 
 The `DrawerFooter` component groups drawer actions.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DrawerHeader
 
 The `DrawerHeader` component groups the drawer title and description.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DrawerTitle
 
 The `DrawerTitle` component renders the drawer heading.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/Modal#api) and [Motion](https://motion.dev/animate-presence) for the full API reference.

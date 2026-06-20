@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
-import { Description } from "@/components/ui/field"
+import { Checkbox, CheckboxField } from '@/components/ui/checkbox'
+import { Description } from '@/components/ui/field'
 
 export default function CheckboxControlledDemo() {
   const [selected, setSelection] = useState(false)
@@ -13,7 +13,7 @@ export default function CheckboxControlledDemo() {
         <Checkbox>Receive Updates</Checkbox>
       </CheckboxField>
       <Description className="mt-2 block [&>strong]:text-fg">
-        You have <strong>{selected ? "enabled" : "disabled"}</strong> the option.
+        You have <strong>{selected ? 'enabled' : 'disabled'}</strong> the option.
       </Description>
     </>
   )

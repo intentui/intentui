@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { ArrowUpRightIcon } from "@heroicons/react/20/solid"
-import { PageContainer } from "@/components/page-container"
-import { Button } from "@/components/ui/button"
-import { Heading } from "@/components/ui/heading"
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
+import { PageContainer } from '@/components/page-container'
+import { Button } from '@/components/ui/button'
+import { Heading } from '@/components/ui/heading'
 
 export function Hero() {
   function go() {
-    window.aurelie?.track?.("press")
-    window.open("https://dub.sh/designiui", "_blank", "noopener")
+    window.aurelie?.track?.('press')
+    window.open('https://dub.sh/designiui', '_blank', 'noopener')
   }
   return (
     <div className="border-b bg-bg py-6 sm:py-12">

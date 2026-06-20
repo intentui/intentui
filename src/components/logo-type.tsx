@@ -1,9 +1,9 @@
-import { twMerge } from "tailwind-merge"
+import { twMerge } from 'tailwind-merge'
 
 export const LogoType = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      className={twMerge("stroke-1.5 text-primary", className)}
+      className={twMerge('stroke-1.5 text-primary', className)}
       {...props}
       viewBox="0 0 1075 238"
       fill="none"

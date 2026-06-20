@@ -1,7 +1,7 @@
 export interface CollectionComponent {
   title: string
   slug: string
-  status?: "new" | "updated" | "beta" | "alpha"
+  status?: 'new' | 'updated' | 'beta' | 'alpha'
 }
 
 export interface Component {

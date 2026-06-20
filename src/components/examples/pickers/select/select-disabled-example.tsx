@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { Label } from "@/components/ui/field"
-import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
+import { Label } from '@/components/ui/field'
+import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 
 const software = [
-  { id: 1, name: "Adobe Photoshop" },
+  { id: 1, name: 'Adobe Photoshop' },
   //...
 ]
 

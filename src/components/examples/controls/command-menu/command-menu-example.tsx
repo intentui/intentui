@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   Cog6ToothIcon,
@@ -7,10 +7,10 @@ import {
   DocumentTextIcon,
   HomeIcon,
   ShieldCheckIcon,
-} from "@heroicons/react/24/outline"
-import { useState } from "react"
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+} from '@heroicons/react/24/outline'
+import { useState } from 'react'
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   CommandMenu,
   CommandMenuItem,
@@ -19,7 +19,7 @@ import {
   CommandMenuSearch,
   CommandMenuSection,
   CommandMenuShortcut,
-} from "@/components/ui/command-menu"
+} from '@/components/ui/command-menu'
 
 export default function CommandMenuDemo() {
   const [isOpen, setIsOpen] = useState(false)
@@ -78,27 +78,27 @@ export default function CommandMenuDemo() {
 const users = [
   {
     id: 1,
-    name: "Barbara Kirlin Sr.",
-    image_url: "https://i.pravatar.cc/150?img=1",
+    name: 'Barbara Kirlin Sr.',
+    image_url: 'https://i.pravatar.cc/150?img=1',
   },
   {
     id: 2,
-    name: "Rosemarie Koch",
-    image_url: "https://i.pravatar.cc/150?img=2",
+    name: 'Rosemarie Koch',
+    image_url: 'https://i.pravatar.cc/150?img=2',
   },
   {
     id: 3,
-    name: "Mrs. Reva Heaney Jr.",
-    image_url: "https://i.pravatar.cc/150?img=3",
+    name: 'Mrs. Reva Heaney Jr.',
+    image_url: 'https://i.pravatar.cc/150?img=3',
   },
   {
     id: 5,
-    name: "Bria Ziemann",
-    image_url: "https://i.pravatar.cc/150?img=5",
+    name: 'Bria Ziemann',
+    image_url: 'https://i.pravatar.cc/150?img=5',
   },
   {
     id: 6,
-    name: "Heloise Borer Sr.",
-    image_url: "https://i.pravatar.cc/150?img=6",
+    name: 'Heloise Borer Sr.',
+    image_url: 'https://i.pravatar.cc/150?img=6',
   },
 ]

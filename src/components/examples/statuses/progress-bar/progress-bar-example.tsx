@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { Description, Label } from "@/components/ui/field"
+import { useEffect, useState } from 'react'
+import { Description, Label } from '@/components/ui/field'
 import {
   ProgressBar,
   ProgressBarHeader,
   ProgressBarTrack,
   ProgressBarValue,
-} from "@/components/ui/progress-bar"
+} from '@/components/ui/progress-bar'
 
 export default function ProgressBarDemo() {
   const [value, setValue] = useState(1)

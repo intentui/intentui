@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { fieldErrorStyles, Label } from "@/components/ui/field"
-import { NativeSelect, NativeSelectContent } from "@/components/ui/native-select"
+import { fieldErrorStyles, Label } from '@/components/ui/field'
+import { NativeSelect, NativeSelectContent } from '@/components/ui/native-select'
 
 export default function NativeSelectDescriptionDemo() {
   return (

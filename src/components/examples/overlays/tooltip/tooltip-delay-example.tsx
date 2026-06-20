@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { BrandXIcon } from "@/components/icons/brand-x-icon"
-import { buttonStyles } from "@/components/ui/button"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { BrandXIcon } from '@/components/icons/brand-x-icon'
+import { buttonStyles } from '@/components/ui/button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 export default function TooltipDelayDemo() {
   return (
@@ -11,8 +11,8 @@ export default function TooltipDelayDemo() {
         <TooltipTrigger
           aria-label="Follow me"
           className={buttonStyles({
-            intent: "outline",
-            size: "sq-sm",
+            intent: 'outline',
+            size: 'sq-sm',
           })}
         >
           <BrandXIcon />

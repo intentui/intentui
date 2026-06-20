@@ -1,4 +1,4 @@
-import { Container } from "@/components/ui/container"
+import { Container } from '@/components/ui/container'
 import {
   Pagination,
   PaginationFirst,
@@ -10,7 +10,7 @@ import {
   PaginationNext,
   PaginationPrevious,
   PaginationSection,
-} from "@/components/ui/pagination"
+} from '@/components/ui/pagination'
 
 export default function PaginationDemo() {
   return (

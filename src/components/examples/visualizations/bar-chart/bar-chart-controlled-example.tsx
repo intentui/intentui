@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useMemo, useState } from "react"
-import type { Key } from "react-aria-components/Breadcrumbs"
-import { BarChart } from "@/components/ui/bar-chart"
+import { useMemo, useState } from 'react'
+import type { Key } from 'react-aria-components/Breadcrumbs'
+import { BarChart } from '@/components/ui/bar-chart'
 import {
   Card,
   CardAction,
@@ -10,17 +10,17 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { useIsMobile } from "@/hooks/use-mobile"
+} from '@/components/ui/card'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 export default function BarChartControlledSmart() {
   const isMobile = useIsMobile()
-  const [selected, setSelected] = useState<Set<Key>>(new Set(["7d"]))
+  const [selected, setSelected] = useState<Set<Key>>(new Set(['7d']))
   const selectedKey = Array.from(selected)[0] as string | undefined
 
   const engagementData = useMemo(() => {
-    if (selectedKey === "1m") {
+    if (selectedKey === '1m') {
       return Array.from({ length: 4 }, (_, i) => ({
         label: `Week ${i + 1}`,
         likes: Math.floor(400 + Math.random() * 300),
@@ -29,7 +29,7 @@ export default function BarChartControlledSmart() {
       }))
     }
 
-    if (selectedKey === "2w") {
+    if (selectedKey === '2w') {
       return Array.from({ length: 2 }, (_, i) => ({
         label: `Week ${i + 1}`,
         likes: Math.floor(800 + Math.random() * 400),
@@ -38,8 +38,8 @@ export default function BarChartControlledSmart() {
       }))
     }
 
-    const lengthMap: Record<string, number> = { "3d": 3, "7d": 7 }
-    const length = lengthMap[selectedKey ?? "7d"] ?? 7
+    const lengthMap: Record<string, number> = { '3d': 3, '7d': 7 }
+    const length = lengthMap[selectedKey ?? '7d'] ?? 7
 
     return Array.from({ length }, (_, i) => ({
       label: `Day ${i + 1}`,
@@ -49,7 +49,7 @@ export default function BarChartControlledSmart() {
     }))
   }, [selectedKey])
 
-  const showAllTicks = selectedKey === "3d" || selectedKey === "7d"
+  const showAllTicks = selectedKey === '3d' || selectedKey === '7d'
 
   return (
     <Card>
@@ -77,9 +77,9 @@ export default function BarChartControlledSmart() {
           dataKey="label"
           xAxisProps={{ interval: showAllTicks ? 0 : undefined }}
           config={{
-            likes: { label: "Likes" },
-            comments: { label: "Comments" },
-            shares: { label: "Shares" },
+            likes: { label: 'Likes' },
+            comments: { label: 'Comments' },
+            shares: { label: 'Shares' },
           }}
         />
       </CardContent>

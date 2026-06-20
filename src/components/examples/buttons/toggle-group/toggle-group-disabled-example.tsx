@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 export default function ToggleGroupDisabledDemo() {
   return (

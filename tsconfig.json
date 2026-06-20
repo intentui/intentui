@@ -19,15 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "content-collections": [
-        "./.content-collections/generated"
-      ],
-      "#site/content": [
-        "./.source/server"
-      ]
+      "@/*": ["./src/*"],
+      "content-collections": ["./.content-collections/generated"],
+      "#site/content": ["./.source/server"]
     }
   },
   "include": [

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   InputOTP,
@@ -6,7 +6,7 @@ import {
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp"
+} from '@/components/ui/input-otp'
 
 export default function InputOtpSeparatorDemo() {
   return (

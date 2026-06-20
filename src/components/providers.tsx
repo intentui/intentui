@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { useRouter } from "next/navigation"
+import { useRouter } from 'next/navigation'
 
-import { RouterProvider } from "react-aria-components"
-import { I18nProvider } from "react-aria-components/I18nProvider"
-import { ThemeProvider } from "@/components/theme-provider"
+import { RouterProvider } from 'react-aria-components'
+import { I18nProvider } from 'react-aria-components/I18nProvider'
+import { ThemeProvider } from '@/components/theme-provider'
 
-declare module "react-aria-components" {
+declare module 'react-aria-components' {
   interface RouterConfig {
-    routerOptions: NonNullable<Parameters<ReturnType<typeof useRouter>["push"]>[1]>
+    routerOptions: NonNullable<Parameters<ReturnType<typeof useRouter>['push']>[1]>
   }
 }
 

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { Form } from "react-aria-components/Form"
-import { Button } from "@/components/ui/button"
-import { FieldError, Label } from "@/components/ui/field"
-import { NumberField, NumberInput } from "@/components/ui/number-field"
+import { Form } from 'react-aria-components/Form'
+import { Button } from '@/components/ui/button'
+import { FieldError, Label } from '@/components/ui/field'
+import { NumberField, NumberInput } from '@/components/ui/number-field'
 
 export default function NumberFieldInvalidDemo() {
   return (

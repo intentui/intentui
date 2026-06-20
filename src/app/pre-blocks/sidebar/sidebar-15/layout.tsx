@@ -1,7 +1,7 @@
-import { twJoin } from "tailwind-merge"
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
-import AppSidebar from "../app-sidebar"
-import AppSidebarNav from "../app-sidebar-nav"
+import { twJoin } from 'tailwind-merge'
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
+import AppSidebar from '../app-sidebar'
+import AppSidebarNav from '../app-sidebar-nav'
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -11,8 +11,8 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
         <AppSidebarNav />
         <div
           className={twJoin(
-            "[--layout-padding:--spacing(4)] sm:[--layout-padding:--spacing(6)]",
-            "flex flex-col gap-y-(--layout-padding) p-(--layout-padding) lg:p-(--layout-padding)",
+            '[--layout-padding:--spacing(4)] sm:[--layout-padding:--spacing(6)]',
+            'flex flex-col gap-y-(--layout-padding) p-(--layout-padding) lg:p-(--layout-padding)'
           )}
         >
           {children}

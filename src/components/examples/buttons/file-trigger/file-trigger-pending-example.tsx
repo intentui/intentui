@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { FileTrigger } from "@/components/ui/file-trigger"
+import { useState } from 'react'
+import { FileTrigger } from '@/components/ui/file-trigger'
 
 export default function FileTriggerPendingDemo() {
   const [isLoading, setLoading] = useState(false)
@@ -16,7 +16,7 @@ export default function FileTriggerPendingDemo() {
 
   return (
     <FileTrigger onSelect={handleSelect} isPending={isLoading}>
-      {isLoading ? "Uploading..." : "Upload a file"}
+      {isLoading ? 'Uploading...' : 'Upload a file'}
     </FileTrigger>
   )
 }

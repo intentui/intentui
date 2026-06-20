@@ -1,4 +1,4 @@
-import { Tree, TreeContent, TreeItem } from "@/components/ui/tree"
+import { Tree, TreeContent, TreeItem } from '@/components/ui/tree'
 
 export default function TreeDemo() {
   return (

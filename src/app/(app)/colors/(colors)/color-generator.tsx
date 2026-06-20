@@ -1,35 +1,35 @@
-import { CheckIcon } from "@heroicons/react/20/solid"
-import { Square2StackIcon } from "@heroicons/react/24/outline"
-import { parseColor, type Color as RacColor } from "@react-stately/color"
-import type { Color } from "culori"
-import { formatHex, formatHsl, formatRgb, interpolate, parse } from "culori"
-import { useEffect, useState } from "react"
-import { ListBox, ListBoxItem, type Selection } from "react-aria-components/ListBox"
-import { toast } from "sonner"
-import { twJoin } from "tailwind-merge"
-import { isOklch, SelectFormat, toOklchString } from "@/app/(app)/colors/(colors)/color-item"
-import { ColorField } from "@/components/ui/color-field"
-import { Heading } from "@/components/ui/heading"
-import { Input } from "@/components/ui/input"
-import { useClipboard } from "@/hooks/use-clipboard"
-import { getColorName, getTextColor } from "@/lib/colors"
+import { CheckIcon } from '@heroicons/react/20/solid'
+import { Square2StackIcon } from '@heroicons/react/24/outline'
+import { parseColor, type Color as RacColor } from '@react-stately/color'
+import type { Color } from 'culori'
+import { formatHex, formatHsl, formatRgb, interpolate, parse } from 'culori'
+import { useEffect, useState } from 'react'
+import { ListBox, ListBoxItem, type Selection } from 'react-aria-components/ListBox'
+import { toast } from 'sonner'
+import { twJoin } from 'tailwind-merge'
+import { isOklch, SelectFormat, toOklchString } from '@/app/(app)/colors/(colors)/color-item'
+import { ColorField } from '@/components/ui/color-field'
+import { Heading } from '@/components/ui/heading'
+import { Input } from '@/components/ui/input'
+import { useClipboard } from '@/hooks/use-clipboard'
+import { getColorName, getTextColor } from '@/lib/colors'
 
 export function ColorGenerator() {
-  const [value, setValue] = useState(parseColor("#0D6DFD"))
-  const [selectedFormat, setSelectedFormat] = useState<Selection>(new Set(["oklch"]))
+  const [value, setValue] = useState(parseColor('#0D6DFD'))
+  const [selectedFormat, setSelectedFormat] = useState<Selection>(new Set(['oklch']))
   const [copiedShade, setCopiedShade] = useState<string | null>(null)
   const { copy } = useClipboard()
   const generateShades = (baseColor: string) => {
     const parsedBase = parse(baseColor.toString())
     if (!parsedBase) {
-      throw new Error("Invalid color format. Please use a valid color (e.g., HEX, RGB, or HSL).")
+      throw new Error('Invalid color format. Please use a valid color (e.g., HEX, RGB, or HSL).')
     }
 
     const lightToDarkScale = interpolate([
-      parse(formatHex(interpolate([parse("white") as Color, parsedBase])(0.1))) as Color,
+      parse(formatHex(interpolate([parse('white') as Color, parsedBase])(0.1))) as Color,
       parsedBase,
     ])
-    const darkerScale = interpolate([parsedBase, parse("black") as Color])
+    const darkerScale = interpolate([parsedBase, parse('black') as Color])
 
     const scale = [
       ...Array.from({ length: 9 }, (_, i) => formatHex(lightToDarkScale(i / 8))),
@@ -55,17 +55,17 @@ export function ColorGenerator() {
   const tailwindShades = generateShades(value.toString())
 
   const handleCopy = async (color: string, shade: string) => {
-    const _selectedFormat = [...selectedFormat].join(", ")
+    const _selectedFormat = [...selectedFormat].join(', ')
 
     let formattedColor: string = color
     switch (_selectedFormat) {
-      case "rgb":
+      case 'rgb':
         formattedColor = formatRgb(parse(color)) || color
         break
-      case "hsl":
+      case 'hsl':
         formattedColor = formatHsl(parse(color)) || color
         break
-      case "hex":
+      case 'hex':
         formattedColor = formatHex(parse(color)) || color
         break
       default:
@@ -111,14 +111,14 @@ export function ColorGenerator() {
 
           <div
             className={twJoin(
-              "py-6 xl:px-6",
-              "border-b last:border-b-0 lg:border-r lg:nth-last-2:border-b-0 lg:last:border-r-0",
-              "pb-6 even:lg:border-r-0 xl:even:pl-6",
+              'py-6 xl:px-6',
+              'border-b last:border-b-0 lg:border-r lg:nth-last-2:border-b-0 lg:last:border-r-0',
+              'pb-6 even:lg:border-r-0 xl:even:pl-6'
             )}
           >
             <div className="mb-4 flex items-center justify-between">
               <div className="font-mono text-sm uppercase">
-                {getColorName(value.toString("hex"))}
+                {getColorName(value.toString('hex'))}
               </div>
               <div>
                 <SelectFormat selected={selectedFormat} setSelected={setSelectedFormat} />

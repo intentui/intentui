@@ -1,11 +1,11 @@
-import Image from "next/image"
+import Image from 'next/image'
 import {
   Carousel,
   CarouselButton,
   CarouselContent,
   CarouselHandler,
   CarouselItem,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel'
 
 export default function CarouselDemo() {
   return (

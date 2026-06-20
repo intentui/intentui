@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { useDragAndDrop } from "react-aria-components/useDragAndDrop"
-import { useListData } from "react-stately/useListData"
-import GridListDragDemo from "@/components/examples/collections/grid-list/grid-list-drag-example"
-import { GridList, GridListEmptyState, GridListItem } from "@/components/ui/grid-list"
+import { useDragAndDrop } from 'react-aria-components/useDragAndDrop'
+import { useListData } from 'react-stately/useListData'
+import GridListDragDemo from '@/components/examples/collections/grid-list/grid-list-drag-example'
+import { GridList, GridListEmptyState, GridListItem } from '@/components/ui/grid-list'
 
 export default function GridListDragBetweenItemDemo() {
   const list = useListData({
     initialItems: [
-      { id: 6, name: "The Byrds" },
-      { id: 7, name: "The Yardbirds" },
+      { id: 6, name: 'The Byrds' },
+      { id: 7, name: 'The Yardbirds' },
     ],
   })
 
@@ -17,14 +17,14 @@ export default function GridListDragBetweenItemDemo() {
     async onInsert(e) {
       const items = await Promise.all(
         e.items.map(async (item) => {
-          const name = item.kind === "text" ? await item.getText("text/plain") : item.name
+          const name = item.kind === 'text' ? await item.getText('text/plain') : item.name
           return { id: Math.random(), name }
-        }),
+        })
       )
 
-      if (e.target.dropPosition === "before") {
+      if (e.target.dropPosition === 'before') {
         list.insertBefore(e.target.key, ...items)
-      } else if (e.target.dropPosition === "after") {
+      } else if (e.target.dropPosition === 'after') {
         list.insertAfter(e.target.key, ...items)
       }
     },
@@ -43,21 +43,21 @@ export default function GridListDragBetweenItemDemo() {
 
 export function OtherEmptyList() {
   const list = useListData({
-    initialItems: [{ id: 7, name: "The Who" }],
+    initialItems: [{ id: 7, name: 'The Who' }],
   })
 
   const { dragAndDropHooks } = useDragAndDrop({
     async onInsert(e) {
       const items = await Promise.all(
         e.items.map(async (item) => {
-          const name = item.kind === "text" ? await item.getText("text/plain") : item.name
+          const name = item.kind === 'text' ? await item.getText('text/plain') : item.name
           return { id: Math.random(), name }
-        }),
+        })
       )
 
-      if (e.target.dropPosition === "before") {
+      if (e.target.dropPosition === 'before') {
         list.insertBefore(e.target.key, ...items)
-      } else if (e.target.dropPosition === "after") {
+      } else if (e.target.dropPosition === 'after') {
         list.insertAfter(e.target.key, ...items)
       }
     },

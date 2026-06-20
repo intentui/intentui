@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
-import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
+import { Button } from '@/components/ui/button'
+import { Menu, MenuContent, MenuItem, MenuLabel } from '@/components/ui/menu'
 
 export default function MenuDynamicDemo() {
   return (
     <Menu>
       <Button intent="outline">Open</Button>
-      <MenuContent popover={{ placement: "bottom" }} items={categories}>
+      <MenuContent popover={{ placement: 'bottom' }} items={categories}>
         {(item) => (
           <MenuItem id={item.slug}>
             <MenuLabel>{item.name}</MenuLabel>
@@ -20,43 +20,43 @@ export default function MenuDynamicDemo() {
 
 const categories = [
   {
-    name: "Technology",
-    slug: "technology",
+    name: 'Technology',
+    slug: 'technology',
   },
   {
-    name: "Health",
-    slug: "health",
+    name: 'Health',
+    slug: 'health',
   },
   {
-    name: "Business",
-    slug: "business",
+    name: 'Business',
+    slug: 'business',
   },
   {
-    name: "Travel",
-    slug: "travel",
+    name: 'Travel',
+    slug: 'travel',
   },
   {
-    name: "Education",
-    slug: "education",
+    name: 'Education',
+    slug: 'education',
   },
   {
-    name: "Entertainment",
-    slug: "entertainment",
+    name: 'Entertainment',
+    slug: 'entertainment',
   },
   {
-    name: "Sports",
-    slug: "sports",
+    name: 'Sports',
+    slug: 'sports',
   },
   {
-    name: "Fashion",
-    slug: "fashion",
+    name: 'Fashion',
+    slug: 'fashion',
   },
   {
-    name: "Food",
-    slug: "food",
+    name: 'Food',
+    slug: 'food',
   },
   {
-    name: "Science",
-    slug: "science",
+    name: 'Science',
+    slug: 'science',
   },
 ]

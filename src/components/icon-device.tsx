@@ -1,4 +1,4 @@
-export function IconDevicePhone(props: React.ComponentProps<"svg">) {
+export function IconDevicePhone(props: React.ComponentProps<'svg'>) {
   return (
     <svg
       data-slot="icon"
@@ -22,7 +22,7 @@ export function IconDevicePhone(props: React.ComponentProps<"svg">) {
   )
 }
 
-export function IconDeviceIpad(props: React.ComponentProps<"svg">) {
+export function IconDeviceIpad(props: React.ComponentProps<'svg'>) {
   return (
     <svg
       data-slot="icon"
@@ -45,7 +45,7 @@ export function IconDeviceIpad(props: React.ComponentProps<"svg">) {
   )
 }
 
-export function IconDeviceDesktop(props: React.ComponentProps<"svg">) {
+export function IconDeviceDesktop(props: React.ComponentProps<'svg'>) {
   return (
     <svg
       data-slot="icon"

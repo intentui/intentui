@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { Button } from "react-aria-components/Button"
-import { twJoin } from "tailwind-merge"
-import { Card, CardContent } from "@/components/ui/card"
+import { useEffect, useState } from 'react'
+import { Button } from 'react-aria-components/Button'
+import { twJoin } from 'tailwind-merge'
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
   type CarouselApi,
   CarouselButton,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel'
 
 export default function CarouselDApiDemo() {
   const [api, setApi] = useState<CarouselApi>()
@@ -24,7 +24,7 @@ export default function CarouselDApiDemo() {
 
     setCount(api.scrollSnapList().length)
     setCurrent(api.selectedScrollSnap() + 1)
-    api.on("select", () => {
+    api.on('select', () => {
       setCurrent(api.selectedScrollSnap() + 1)
     })
   }, [api])
@@ -54,10 +54,10 @@ export default function CarouselDApiDemo() {
           {Array.from({ length: 10 }).map((_, index) => (
             <Button
               className={twJoin(
-                "rounded-xl transition focus:outline-hidden",
+                'rounded-xl transition focus:outline-hidden',
                 current === index + 1
-                  ? "h-3 w-5 bg-primary transition-all hover:bg-primary/80"
-                  : "h-3 w-3 bg-fg/10 hover:bg-fg/15",
+                  ? 'h-3 w-5 bg-primary transition-all hover:bg-primary/80'
+                  : 'h-3 w-3 bg-fg/10 hover:bg-fg/15'
               )}
               aria-label={`Slide ${current} of ${count}`}
               onPress={() => handleSelect(index)}

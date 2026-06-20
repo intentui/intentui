@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
+import { Breadcrumbs, BreadcrumbsItem } from '@/components/ui/breadcrumbs'
 
 export default function BreadcrumbsSeparatorDemo() {
   return (

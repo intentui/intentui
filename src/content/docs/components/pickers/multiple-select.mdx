@@ -4,7 +4,7 @@ description: A flexible dropdown input that enables users to select multiple opt
 order: 3
 status: alpha
 published: true
-references: ["https://react-aria.adobe.com/TagGroup#api"]
+references: ['https://react-aria.adobe.com/TagGroup#api']
 ---
 
 <How toUse="pickers/multiple-select/multiple-select-example" />
@@ -12,19 +12,23 @@ references: ["https://react-aria.adobe.com/TagGroup#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/multiple-select"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/multiple-select" />
 
 ## Composed components
+
 <Composed components={['field', 'list-box', 'popover', 'tag-group', 'search-field']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components react-aria @heroicons/react"/>
 
-<SourceCode toShow='multiple-select' />
+<InstallCommand command="npm i react-aria-components react-aria @heroicons/react" />
+
+<SourceCode toShow="multiple-select" />
 
 ## Anatomy
+
 ```
 import { MultipleSelect, MultipleSelectItem, MultipleSelectLabel, MultipleSelectSection } from "@/components/ui/multiple-select"
 ```
@@ -50,15 +54,21 @@ import { MultipleSelect, MultipleSelectItem, MultipleSelectLabel, MultipleSelect
 ## Examples
 
 ### Controlled
+
 This component lets you select tags dynamically, updating the list with callbacks on add and remove. It displays selected tags with Tag components and logs each action.
+
 <How toUse="pickers/multiple-select/multiple-select-controlled-example" />
 
 ### Invalid
+
 When the component is invalid, it displays an error message.
+
 <How toUse="pickers/multiple-select/multiple-select-invalid-example" />
 
 ### Disabled
+
 When the component is disabled, it prevents the user from adding or removing tags.
+
 <How toUse="pickers/multiple-select/multiple-select-disabled-example" />
 
 ## Component API
@@ -67,29 +77,29 @@ When the component is disabled, it prevents the user from adding or removing tag
 
 The `MultipleSelect` component lets users select multiple options.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `name` | `string` | - |
-| `onSearchChange` | `(value: string) => void` | - |
-| `placeholder` | `string` | `No selected items` |
-| `searchPlaceholder` | `string` | - |
-| `searchValue` | `string` | - |
+| Prop                | Type                      | Default             |
+| ------------------- | ------------------------- | ------------------- |
+| `className`         | `string`                  | -                   |
+| `name`              | `string`                  | -                   |
+| `onSearchChange`    | `(value: string) => void` | -                   |
+| `placeholder`       | `string`                  | `No selected items` |
+| `searchPlaceholder` | `string`                  | -                   |
+| `searchValue`       | `string`                  | -                   |
 
 ### MultipleSelectContent
 
 The `MultipleSelectContent` component renders multiple select options.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `items` | `Iterable<T>` | - |
+| Prop    | Type          | Default |
+| ------- | ------------- | ------- |
+| `items` | `Iterable<T>` | -       |
 
 ### MultipleSelectItem
 
 The `MultipleSelectItem` component represents one multiple select option.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.

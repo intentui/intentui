@@ -1,10 +1,10 @@
-import "rehype-pretty-code"
-
-declare module "react-syntax-highlighter/dist/esm/styles/prism"
+import 'rehype-pretty-code'
+declare module 'textarea-caret'
+declare module 'react-syntax-highlighter/dist/esm/styles/prism'
 
 // declare module "tailwindcss-motion"
 
-declare module "rehype-pretty-code" {
+declare module 'rehype-pretty-code' {
   interface Options {
     theme?: string
     onVisitLine?: (node: any) => void

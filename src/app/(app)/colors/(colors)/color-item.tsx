@@ -1,18 +1,18 @@
-import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid"
-import { Square2StackIcon } from "@heroicons/react/24/outline"
-import { formatHex, formatHsl, formatRgb, oklch, parse } from "culori"
-import { useEffect, useState } from "react"
-import type { Selection } from "react-aria-components/GridList"
-import { ListBox, ListBoxItem } from "react-aria-components/ListBox"
-import { toast } from "sonner"
-import { twJoin } from "tailwind-merge"
-import { Button } from "@/components/ui/button"
-import { Menu, MenuContent, MenuItem, MenuLabel } from "@/components/ui/menu"
-import { useClipboard } from "@/hooks/use-clipboard"
-import colors from "@/json/colors.json"
-import { getTextColor } from "@/lib/colors"
+import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Square2StackIcon } from '@heroicons/react/24/outline'
+import { formatHex, formatHsl, formatRgb, oklch, parse } from 'culori'
+import { useEffect, useState } from 'react'
+import type { Selection } from 'react-aria-components/GridList'
+import { ListBox, ListBoxItem } from 'react-aria-components/ListBox'
+import { toast } from 'sonner'
+import { twJoin } from 'tailwind-merge'
+import { Button } from '@/components/ui/button'
+import { Menu, MenuContent, MenuItem, MenuLabel } from '@/components/ui/menu'
+import { useClipboard } from '@/hooks/use-clipboard'
+import colors from '@/json/colors.json'
+import { getTextColor } from '@/lib/colors'
 
-export const isOklch = (color: string | undefined): boolean => color?.startsWith("oklch(") ?? false
+export const isOklch = (color: string | undefined): boolean => color?.startsWith('oklch(') ?? false
 
 export const toOklchString = (color: string): string => {
   const { l, c, h } = oklch(parse(color)) || {}
@@ -20,22 +20,22 @@ export const toOklchString = (color: string): string => {
 }
 
 export function ColorItem({ color }: { color: keyof typeof colors }) {
-  const [selectedFormat, setSelectedFormat] = useState<Selection>(new Set(["oklch"]))
+  const [selectedFormat, setSelectedFormat] = useState<Selection>(new Set(['oklch']))
   const [copiedShade, setCopiedShade] = useState<string | null>(null)
   const { copy } = useClipboard()
 
   const handleCopy = async (color: string, shade: string) => {
-    const _selectedFormat = [...selectedFormat].join(", ")
+    const _selectedFormat = [...selectedFormat].join(', ')
 
     let formattedColor: string = color
     switch (_selectedFormat) {
-      case "rgb":
+      case 'rgb':
         formattedColor = formatRgb(parse(color)) || color
         break
-      case "hsl":
+      case 'hsl':
         formattedColor = formatHsl(parse(color)) || color
         break
-      case "hex":
+      case 'hex':
         formattedColor = formatHex(parse(color)) || color
         break
       default:
@@ -61,9 +61,9 @@ export function ColorItem({ color }: { color: keyof typeof colors }) {
   return (
     <div
       className={twJoin(
-        "py-6 xl:px-6",
-        "border-page border-b last:border-b-0 lg:border-r lg:nth-last-2:border-b-0 lg:last:border-r-0",
-        "pb-6 xl:even:pl-6 xl:even:lg:border-r-0",
+        'py-6 xl:px-6',
+        'border-page border-b last:border-b-0 lg:border-r lg:nth-last-2:border-b-0 lg:last:border-r-0',
+        'pb-6 xl:even:pl-6 xl:even:lg:border-r-0'
       )}
     >
       <div className="mb-4 flex items-center justify-between">
@@ -106,7 +106,7 @@ export function SelectFormat({ selected, setSelected }: SelectedFormatProps) {
   return (
     <Menu>
       <Button intent="outline" className="w-32 justify-between font-mono uppercase">
-        {[...selected].join(", ")}
+        {[...selected].join(', ')}
         <ChevronDownIcon className="ml-1" />
       </Button>
       <MenuContent

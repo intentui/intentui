@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { MagnifyingGlassIcon, ShoppingBagIcon } from "@heroicons/react/24/outline"
+import { MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
 import {
   HomeIcon as HomeSolid,
   ShoppingBagIcon as ShoppingBagSolid,
   TagIcon as TagSolid,
   TruckIcon as TruckSolid,
-} from "@heroicons/react/24/solid"
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
+} from '@heroicons/react/24/solid'
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Link } from '@/components/ui/link'
 import {
   Navbar,
   NavbarGap,
@@ -22,9 +22,9 @@ import {
   NavbarSpacer,
   NavbarStart,
   NavbarTrigger,
-} from "@/components/ui/navbar"
-import { Separator } from "@/components/ui/separator"
-import { UserMenu } from "../user-menu"
+} from '@/components/ui/navbar'
+import { Separator } from '@/components/ui/separator'
+import { UserMenu } from '../user-menu'
 
 export default function AppNavbar(props: NavbarProps) {
   return (

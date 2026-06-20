@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { LineChart } from "@/components/ui/line-chart"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useMemo } from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { LineChart } from '@/components/ui/line-chart'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 export default function LineChartMonotoneDemo() {
   const isMobile = useIsMobile()
@@ -14,7 +14,7 @@ export default function LineChartMonotoneDemo() {
         visits: Math.floor(500 + Math.random() * 400),
         signups: Math.floor(50 + Math.random() * 80),
       })),
-    [],
+    []
   )
 
   return (
@@ -29,12 +29,12 @@ export default function LineChartMonotoneDemo() {
           data={data}
           dataKey="day"
           lineProps={{
-            type: "natural",
+            type: 'natural',
           }}
           xAxisProps={{ interval: 0 }}
           config={{
-            visits: { label: "Visits" },
-            signups: { label: "Sign-ups" },
+            visits: { label: 'Visits' },
+            signups: { label: 'Sign-ups' },
           }}
         />
       </CardContent>

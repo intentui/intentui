@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
 import {
   ComputerDesktopIcon,
   DevicePhoneMobileIcon,
   DeviceTabletIcon,
   TvIcon,
-} from "@heroicons/react/24/outline"
+} from '@heroicons/react/24/outline'
 import {
   Leaderboard,
   LeaderboardContent,
@@ -14,13 +14,13 @@ import {
   LeaderboardItem,
   LeaderboardStart,
   LeaderboardTitle,
-} from "@/components/ui/leaderboard"
+} from '@/components/ui/leaderboard'
 
 const devices = [
-  { label: "Desktop", sessions: 48200, icon: ComputerDesktopIcon },
-  { label: "Mobile", sessions: 36500, icon: DevicePhoneMobileIcon },
-  { label: "Tablet", sessions: 12800, icon: DeviceTabletIcon },
-  { label: "TV", sessions: 4100, icon: TvIcon },
+  { label: 'Desktop', sessions: 48200, icon: ComputerDesktopIcon },
+  { label: 'Mobile', sessions: 36500, icon: DevicePhoneMobileIcon },
+  { label: 'Tablet', sessions: 12800, icon: DeviceTabletIcon },
+  { label: 'TV', sessions: 4100, icon: TvIcon },
 ]
 
 const maxSessions = Math.max(...devices.map((item) => item.sessions))
@@ -41,7 +41,7 @@ export default function LeaderboardDevicesDemo() {
               maxValue={maxSessions}
               value={item.sessions}
               formatOptions={{
-                notation: "compact",
+                notation: 'compact',
               }}
             >
               {({ valueText }) => (

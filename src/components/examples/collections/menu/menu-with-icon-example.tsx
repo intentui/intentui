@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArrowLeftOnRectangleIcon,
@@ -8,9 +8,9 @@ import {
   MoonIcon,
   Squares2X2Icon,
   SunIcon,
-} from "@heroicons/react/24/outline"
-import { useTheme } from "@/components/theme-provider"
-import { Avatar } from "@/components/ui/avatar"
+} from '@heroicons/react/24/outline'
+import { useTheme } from '@/components/theme-provider'
+import { Avatar } from '@/components/ui/avatar'
 import {
   Menu,
   MenuContent,
@@ -21,7 +21,7 @@ import {
   MenuSeparator,
   MenuSubMenu,
   MenuTrigger,
-} from "@/components/ui/menu"
+} from '@/components/ui/menu'
 
 export default function MenuWithIconDemo() {
   const { resolvedTheme, setTheme } = useTheme()
@@ -30,7 +30,7 @@ export default function MenuWithIconDemo() {
       <MenuTrigger aria-label="Open Menu">
         <Avatar alt="kurt cobain" size="lg" src="https://intentui.com/images/avatar/cobain.jpg" />
       </MenuTrigger>
-      <MenuContent popover={{ placement: "bottom" }} className="min-w-48">
+      <MenuContent popover={{ placement: 'bottom' }} className="min-w-48">
         <MenuHeader separator>
           <span className="block">Kurt Cobain</span>
           <span className="font-normal text-muted-fg">@cobain</span>
@@ -53,9 +53,9 @@ export default function MenuWithIconDemo() {
         </MenuItem>
         <MenuSubMenu>
           <MenuItem>
-            {resolvedTheme === "light" ? (
+            {resolvedTheme === 'light' ? (
               <SunIcon className="size-6" aria-hidden="true" />
-            ) : resolvedTheme === "dark" ? (
+            ) : resolvedTheme === 'dark' ? (
               <MoonIcon className="size-6" aria-hidden="true" />
             ) : (
               <ComputerDesktopIcon className="size-6" aria-hidden="true" />
@@ -63,13 +63,13 @@ export default function MenuWithIconDemo() {
             <MenuLabel>Switch theme</MenuLabel>
           </MenuItem>
           <MenuContent>
-            <MenuItem onAction={() => setTheme("system")}>
+            <MenuItem onAction={() => setTheme('system')}>
               <ComputerDesktopIcon className="size-6" aria-hidden="true" /> System
             </MenuItem>
-            <MenuItem onAction={() => setTheme("dark")}>
+            <MenuItem onAction={() => setTheme('dark')}>
               <MoonIcon className="size-6" aria-hidden="true" /> Dark
             </MenuItem>
-            <MenuItem onAction={() => setTheme("light")}>
+            <MenuItem onAction={() => setTheme('light')}>
               <SunIcon className="size-6" aria-hidden="true" /> Light
             </MenuItem>
           </MenuContent>

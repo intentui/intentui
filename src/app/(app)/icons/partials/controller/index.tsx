@@ -1,26 +1,26 @@
-import { IconBullet, IconBulletFill } from "@intentui/icons"
-import { usePathname, useRouter } from "next/navigation"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { IconBullet, IconBulletFill } from '@intentui/icons'
+import { usePathname, useRouter } from 'next/navigation'
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 
-import { useQueryString } from "@/hooks/use-query-string"
-import type { SearchParamsProps } from "../icons-list"
-import { InstallIcon } from "./install-icon"
-import { Search } from "./search"
-import { SelectSize } from "./select-size"
+import { useQueryString } from '@/hooks/use-query-string'
+import type { SearchParamsProps } from '../icons-list'
+import { InstallIcon } from './install-icon'
+import { Search } from './search'
+import { SelectSize } from './select-size'
 
 export function Controller({ searchParams }: SearchParamsProps) {
   const router = useRouter()
   const pathname = usePathname()
   const { t } = searchParams
-  const [isSelected, setSelected] = useState<"solid" | "regular">(
-    (t as "solid" | "regular") || "regular",
+  const [isSelected, setSelected] = useState<'solid' | 'regular'>(
+    (t as 'solid' | 'regular') || 'regular'
   )
 
   const { createQueryString } = useQueryString()
 
-  const onFilter = (type: "solid" | "regular") => {
-    router.push(`${pathname}?${createQueryString("t", type)}`, {
+  const onFilter = (type: 'solid' | 'regular') => {
+    router.push(`${pathname}?${createQueryString('t', type)}`, {
       scroll: false,
     })
     setSelected(type)
@@ -34,13 +34,13 @@ export function Controller({ searchParams }: SearchParamsProps) {
           <div className="flex items-center gap-1.5">
             <Search />
             <Button
-              aria-label={`Change filter to ${isSelected === "solid" ? "regular" : "solid"}`}
+              aria-label={`Change filter to ${isSelected === 'solid' ? 'regular' : 'solid'}`}
               intent="outline"
               size="sq-md"
               className="shrink-0"
-              onPress={() => onFilter(isSelected === "solid" ? "regular" : "solid")}
+              onPress={() => onFilter(isSelected === 'solid' ? 'regular' : 'solid')}
             >
-              {isSelected === "solid" ? <IconBulletFill /> : <IconBullet />}
+              {isSelected === 'solid' ? <IconBulletFill /> : <IconBullet />}
             </Button>
             <SelectSize />
           </div>

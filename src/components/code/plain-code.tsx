@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useCallback, useRef } from "react"
-import { twMerge } from "tailwind-merge"
-import { CopyButton } from "@/components/code/copy-button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { useClipboard } from "@/hooks/use-clipboard"
+import { useCallback, useRef } from 'react'
+import { twMerge } from 'tailwind-merge'
+import { CopyButton } from '@/components/code/copy-button'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { useClipboard } from '@/hooks/use-clipboard'
 
 export interface PreProps extends React.HTMLAttributes<HTMLElement> {
   ref?: React.Ref<HTMLElement>
@@ -29,11 +29,11 @@ export interface PreProps extends React.HTMLAttributes<HTMLElement> {
    */
 }
 
-export const Pre = ({ className, ref, ...props }: React.ComponentProps<"pre">) => {
+export const Pre = ({ className, ref, ...props }: React.ComponentProps<'pre'>) => {
   return (
     <pre
       ref={ref}
-      className={twMerge("w-full p-4 text-sm/8 focus-visible:outline-hidden", className)}
+      className={twMerge('w-full p-4 text-sm/8 focus-visible:outline-hidden', className)}
       {...props}
     >
       {props.children}
@@ -52,26 +52,26 @@ export const PlainCode = ({
   const areaRef = useRef<HTMLDivElement>(null)
   const { copy, copied } = useClipboard()
   const onCopy = useCallback(async () => {
-    const pre = areaRef.current?.getElementsByTagName("pre").item(0)
+    const pre = areaRef.current?.getElementsByTagName('pre').item(0)
 
     if (!pre) return
 
     const clone = pre.cloneNode(true) as HTMLElement
-    for (const node of clone.querySelectorAll(".nd-copy-ignore")) {
+    for (const node of clone.querySelectorAll('.nd-copy-ignore')) {
       node.remove()
     }
-    window.aurelie?.track?.("copy", {
+    window.aurelie?.track?.('copy', {
       name: clone.textContent,
     })
-    await copy(clone.textContent ?? "")
+    await copy(clone.textContent ?? '')
   }, [copy])
   return (
     <figure
       ref={ref}
       {...props}
       className={twMerge(
-        "not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6",
-        className,
+        'not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6',
+        className
       )}
     >
       {title ? (
@@ -80,14 +80,14 @@ export const PlainCode = ({
             <div
               className="text-muted-fg [&_svg]:size-3.5"
               dangerouslySetInnerHTML={
-                typeof icon === "string"
+                typeof icon === 'string'
                   ? {
                       __html: icon,
                     }
                   : undefined
               }
             >
-              {typeof icon !== "string" ? icon : null}
+              {typeof icon !== 'string' ? icon : null}
             </div>
           ) : null}
           <figcaption className="flex-1 truncate text-muted-fg">{title}</figcaption>

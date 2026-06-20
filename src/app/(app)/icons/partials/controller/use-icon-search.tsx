@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { createContext, type ReactNode, useContext, useState } from "react"
+import { createContext, type ReactNode, useContext, useState } from 'react'
 
 interface IconSearchContextValue {
   searchQuery: string
@@ -11,7 +11,7 @@ const IconSearchContext = createContext<IconSearchContextValue | null>(null)
 
 export function IconSearchProvider({
   children,
-  initialQuery = "",
+  initialQuery = '',
 }: {
   children: ReactNode
   initialQuery?: string
@@ -28,7 +28,7 @@ export function IconSearchProvider({
 export function useIconSearch() {
   const context = useContext(IconSearchContext)
   if (!context) {
-    throw new Error("useIconSearch must be used within IconSearchProvider")
+    throw new Error('useIconSearch must be used within IconSearchProvider')
   }
   return context
 }

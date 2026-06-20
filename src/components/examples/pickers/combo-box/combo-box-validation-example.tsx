@@ -1,22 +1,22 @@
-"use client"
+'use client'
 
-import { Form } from "react-aria-components/Form"
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+import { Form } from 'react-aria-components/Form'
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   ComboBox,
   ComboBoxContent,
   ComboBoxInput,
   ComboBoxItem,
   ComboBoxLabel,
-} from "@/components/ui/combo-box"
-import { FieldError, Label } from "@/components/ui/field"
+} from '@/components/ui/combo-box'
+import { FieldError, Label } from '@/components/ui/field'
 
 const users = [
   {
     id: 1,
-    name: "Barbara Kirlin Sr.",
-    image_url: "https://i.pravatar.cc/150?img=1",
+    name: 'Barbara Kirlin Sr.',
+    image_url: 'https://i.pravatar.cc/150?img=1',
   },
   //...
 ]

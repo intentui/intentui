@@ -1,5 +1,5 @@
-import fs from "node:fs"
-import path from "node:path"
+import fs from 'node:fs'
+import path from 'node:path'
 
 type RegistryItem = {
   name: string
@@ -13,13 +13,13 @@ type RegistryItem = {
 }
 
 export const makeRegistry = () => {
-  const outputBaseDir = "public/registry"
-  const generatedFilePath = "__registry__/generated.ts"
+  const outputBaseDir = 'public/registry'
+  const generatedFilePath = '__registry__/generated.ts'
 
   const sources = [
-    { type: "ui", path: "src/components/ui" },
-    { type: "examples", path: "src/components/examples" },
-    { type: "pre-blocks", path: "src/app/pre-blocks" },
+    { type: 'ui', path: 'src/components/ui' },
+    { type: 'examples', path: 'src/components/examples' },
+    { type: 'pre-blocks', path: 'src/app/pre-blocks' },
   ]
 
   const getAllFiles = (dirPath: string, arrayOfFiles: string[] = []): string[] => {
@@ -32,7 +32,7 @@ export const makeRegistry = () => {
       const fullPath = path.join(dirPath, file)
       if (fs.statSync(fullPath).isDirectory()) {
         getAllFiles(fullPath, arrayOfFiles)
-      } else if ([".tsx", ".css", ".json", ".ts"].some((ext) => file.endsWith(ext))) {
+      } else if (['.tsx', '.css', '.json', '.ts'].some((ext) => file.endsWith(ext))) {
         arrayOfFiles.push(fullPath)
       }
     }
@@ -53,15 +53,15 @@ export const makeRegistry = () => {
     const files = getAllFiles(resolvedPath)
 
     const filteredFiles =
-      type === "examples" ? files.filter((file) => !file.includes("/anatomies/")) : files
+      type === 'examples' ? files.filter((file) => !file.includes('/anatomies/')) : files
 
     for (const filePath of filteredFiles) {
-      const componentName = path.basename(filePath, ".tsx")
-      const fileContent = fs.readFileSync(filePath, "utf-8")
+      const componentName = path.basename(filePath, '.tsx')
+      const fileContent = fs.readFileSync(filePath, 'utf-8')
 
-      const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, "/")
-      const relativeKey = path.relative(sourcePath, filePath).replace(/\\/g, "/")
-      const key = `${type}/${relativeKey.replace(".tsx", "")}`
+      const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/')
+      const relativeKey = path.relative(sourcePath, filePath).replace(/\\/g, '/')
+      const key = `${type}/${relativeKey.replace('.tsx', '')}`
 
       const registryItem: RegistryItem = {
         name: componentName,
@@ -76,7 +76,7 @@ export const makeRegistry = () => {
         componentPath: relativePath,
       }
 
-      if (!["examples", "ui"].includes(type)) {
+      if (!['examples', 'ui'].includes(type)) {
         const jsonOutputPath = path.join(outputBaseDir, `${key}.json`)
         const jsonDir = path.dirname(jsonOutputPath)
         if (!fs.existsSync(jsonDir)) {
@@ -85,14 +85,14 @@ export const makeRegistry = () => {
         fs.writeFileSync(jsonOutputPath, JSON.stringify(registryItem, null, 2))
       }
 
-      if (type !== "anatomies") {
+      if (type !== 'anatomies') {
         registryEntries.push(`
         "${key}": {
           name: "${componentName}",
           type: "registry:${type}",
           registryDependencies: undefined,
           files: ["${relativePath}"],
-          component: React.lazy(() => import("@${relativePath.replace("src", "")}")),
+          component: React.lazy(() => import("@${relativePath.replace('src', '')}")),
           source: "",
           category: "undefined",
           subcategory: "undefined",
@@ -111,16 +111,16 @@ export const makeRegistry = () => {
 import React from "react";
 
 const registry = {
-  ${registryEntries.join(",\n")}
+  ${registryEntries.join(',\n')}
 };
 
 export default registry;
   `
 
-  console.info("Generating registry files...")
+  console.info('Generating registry files...')
 
   const loadingInterval = setInterval(() => {
-    process.stdout.write(".")
+    process.stdout.write('.')
   }, 500)
 
   const generatedDir = path.dirname(generatedFilePath)
@@ -131,5 +131,5 @@ export default registry;
 
   clearInterval(loadingInterval)
 
-  console.info("Registry generation complete.")
+  console.info('Registry generation complete.')
 }

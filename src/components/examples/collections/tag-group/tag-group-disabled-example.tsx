@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { androidBrands } from "@/components/examples/collections/tag-group/tag-group-example"
-import { Label } from "@/components/ui/field"
-import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
+import { androidBrands } from '@/components/examples/collections/tag-group/tag-group-example'
+import { Label } from '@/components/ui/field'
+import { Tag, TagGroup, TagList } from '@/components/ui/tag-group'
 
 export default function TagGroupDisabledDemo() {
   return (

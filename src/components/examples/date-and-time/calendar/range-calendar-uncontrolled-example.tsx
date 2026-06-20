@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { getLocalTimeZone, today } from "@internationalized/date"
+import { getLocalTimeZone, today } from '@internationalized/date'
 
-import { RangeCalendar } from "@/components/ui/range-calendar"
+import { RangeCalendar } from '@/components/ui/range-calendar'
 
 export default function RangeCalendarUncontrolledDemo() {
   return (

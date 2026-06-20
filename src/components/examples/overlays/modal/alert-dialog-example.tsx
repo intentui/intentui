@@ -1,5 +1,5 @@
-"use client"
-import { Button } from "@/components/ui/button"
+'use client'
+import { Button } from '@/components/ui/button'
 import {
   Modal,
   ModalClose,
@@ -8,7 +8,7 @@ import {
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
+} from '@/components/ui/modal'
 
 export default function AlertDialogDemo() {
   return (

@@ -1,8 +1,8 @@
-"use client"
-import { Collection } from "react-aria-components/Collection"
-import { TableLoadMoreItem } from "react-aria-components/Table"
-import { useAsyncList } from "react-stately/useAsyncList"
-import { ProgressCircle } from "@/components/ui/progress-circle"
+'use client'
+import { Collection } from 'react-aria-components/Collection'
+import { TableLoadMoreItem } from 'react-aria-components/Table'
+import { useAsyncList } from 'react-stately/useAsyncList'
+import { ProgressCircle } from '@/components/ui/progress-circle'
 import {
   Table,
   TableBody,
@@ -10,7 +10,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from '@/components/ui/table'
 
 interface Character {
   name: string
@@ -27,10 +27,10 @@ export default function TableInfiniteScrollDemo() {
   const list = useAsyncList<Character>({
     async load({ signal, cursor }) {
       if (cursor) {
-        cursor = cursor.replace(/^http:\/\//i, "https://")
+        cursor = cursor.replace(/^http:\/\//i, 'https://')
       }
 
-      const res = await fetch(cursor || "https://swapi.py4e.com/api/people", { signal })
+      const res = await fetch(cursor || 'https://swapi.py4e.com/api/people', { signal })
       const json = await res.json()
 
       return {
@@ -78,7 +78,7 @@ export default function TableInfiniteScrollDemo() {
           <TableLoadMoreItem
             className="sticky inset-x-0 bottom-0 h-16"
             onLoadMore={list.loadMore}
-            isLoading={list.loadingState === "loadingMore"}
+            isLoading={list.loadingState === 'loadingMore'}
           >
             <ProgressCircle className="mx-auto" isIndeterminate aria-label="Loading more..." />
           </TableLoadMoreItem>

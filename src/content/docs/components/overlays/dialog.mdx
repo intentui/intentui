@@ -1,25 +1,28 @@
 ---
-title: "Dialog"
+title: 'Dialog'
 description: A small, interactive UI element that overlays content to display important information or actions. It appears over the main interface for user interaction.
 order: 2
 published: true
 status: primitive
-references: ["https://react-aria.adobe.com/Dialog#api"]
+references: ['https://react-aria.adobe.com/Dialog#api']
 ---
 
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/dialog"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/dialog" />
 
 ## Composed components
-<Composed components={['button']}/>
+
+<Composed components={['button']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
-<SourceCode toShow='dialog' />
+
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
+<SourceCode toShow="dialog" />
 
 ## Component API
 
@@ -27,76 +30,76 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 The `Dialog` component is the accessible dialog container.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DialogBody
 
 The `DialogBody` component wraps the main dialog content.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DialogCloseIcon
 
 The `DialogCloseIcon` component renders the dialog close icon button.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isDismissable` | `boolean \| undefined` | - |
+| Prop            | Type                   | Default |
+| --------------- | ---------------------- | ------- |
+| `className`     | `string`               | -       |
+| `isDismissable` | `boolean \| undefined` | -       |
 
 ### DialogClose
 
 The `DialogClose` component renders a button that closes the dialog.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+| Prop        | Type                                                                                     | Default |
+| ----------- | ---------------------------------------------------------------------------------------- | ------- |
+| `className` | `string`                                                                                 | -       |
+| `intent`    | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
 
 ### DialogDescription
 
 The `DialogDescription` component renders supporting text inside a dialog.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DialogFooter
 
 The `DialogFooter` component groups dialog actions.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DialogHeader
 
 The `DialogHeader` component groups the dialog title and description.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `title` | `string` | - |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `className`   | `string` | -       |
+| `description` | `string` | -       |
+| `title`       | `string` | -       |
 
 ### DialogTitle
 
 The `DialogTitle` component renders the dialog heading.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### DialogTrigger
 
 The `DialogTrigger` component defines the element that opens a dialog.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/Dialog#api) for the full API reference.

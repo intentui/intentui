@@ -1,18 +1,20 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "./code.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import './code.css';
 
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-react-aria-components';
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: var(--font-docs-mono), "ui-monospace", "SFMono-Regular", "Menlo", "Monaco",
-  "Consolas", '"Liberation Mono"', '"Courier New"', "monospace";
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    var(--font-docs-mono), 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+    '"Liberation Mono"', '"Courier New"', 'monospace';
 
-  --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11", "cv13";
-  --font-mono--font-feature-settings: "ss02", "zero";
+  --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'cv13';
+  --font-mono--font-feature-settings: 'ss02', 'zero';
 
   --color-shiki-bg: var(--shiki-bg);
   --color-shiki-border: var(--input);
@@ -183,7 +185,6 @@
   --shiki-bg: #111114;
   --shiki-da--bg: oklch(0.091 0.005 285.823);
 
-
   --primary: oklch(0.546 0.245 262.881);
   --primary-fg: oklch(1 0 0);
 
@@ -193,7 +194,7 @@
   --secondary: oklch(0.244 0.006 286.033);
   --secondary-fg: oklch(0.985 0 0);
 
-  --overlay: oklch(0.210 0.006 285.885);
+  --overlay: oklch(0.21 0.006 285.885);
   --overlay-fg: oklch(0.985 0 0);
 
   --accent: oklch(0.274 0.006 286.033);
@@ -225,10 +226,10 @@
 
   --border: oklch(0.342 0.017 285.786);
   --page: theme('colors.zinc.700/50%');
-  --input: oklch(0.320 0.013 285.805);
+  --input: oklch(0.32 0.013 285.805);
   --ring: oklch(0.546 0.245 262.881);
 
-  --navbar: oklch(0.190 0.006 285.885);
+  --navbar: oklch(0.19 0.006 285.885);
   --navbar-fg: oklch(0.985 0 0);
 
   --sidebar: oklch(0.21 0.006 285.885);
@@ -250,7 +251,7 @@
 @utility touch-target {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     top: 50%;
@@ -308,7 +309,6 @@
 }
 
 @variant dark (&:is(.dark *));
-
 
 .react-aria-DropIndicator[data-drop-target] {
   outline: 1px solid var(--primary);

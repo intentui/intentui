@@ -1,39 +1,39 @@
-"use client"
+'use client'
 
-import { twMerge } from "tailwind-merge"
-import { IconBrandTanstack, IconBrandVite } from "@/components/framework-guides"
-import { BrandLaravelIcon } from "@/components/icons/brand-laravel-icon"
-import { BrandNextjsIcon } from "@/components/icons/brand-nextjs-icon"
-import { PageContainer } from "@/components/page-container"
-import { CardHeader } from "@/components/ui/card"
-import { Link } from "@/components/ui/link"
-import { Text } from "@/components/ui/text"
+import { twMerge } from 'tailwind-merge'
+import { IconBrandTanstack, IconBrandVite } from '@/components/framework-guides'
+import { BrandLaravelIcon } from '@/components/icons/brand-laravel-icon'
+import { BrandNextjsIcon } from '@/components/icons/brand-nextjs-icon'
+import { PageContainer } from '@/components/page-container'
+import { CardHeader } from '@/components/ui/card'
+import { Link } from '@/components/ui/link'
+import { Text } from '@/components/ui/text'
 
 export const starterKits = [
   {
     icon: BrandNextjsIcon,
-    name: "Next.js",
+    name: 'Next.js',
     url: `/docs/getting-started/nextjs`,
-    description: "A full-featured starter with routing, layouts, and authentication built in.",
+    description: 'A full-featured starter with routing, layouts, and authentication built in.',
   },
   {
     icon: BrandLaravelIcon,
-    name: "Laravel",
+    name: 'Laravel',
     url: `/docs/getting-started/laravel`,
-    description: "Server-driven starter with routing, auth, and front-end integration ready to go.",
+    description: 'Server-driven starter with routing, auth, and front-end integration ready to go.',
   },
   {
     icon: IconBrandTanstack,
-    name: "Tanstack Router",
+    name: 'Tanstack Router',
     url: `/docs/getting-started/tanstack-router`,
-    description: "Opinionated setup with routing, layouts, and auth, ready for modern apps.",
+    description: 'Opinionated setup with routing, layouts, and auth, ready for modern apps.',
   },
   {
     icon: IconBrandVite,
-    name: "Vite",
+    name: 'Vite',
     url: `/docs/getting-started/vite`,
-    description: "The simple way to start Vite with Intent UI installed.",
-    label: "Starter Kit",
+    description: 'The simple way to start Vite with Intent UI installed.',
+    label: 'Starter Kit',
   },
 ]
 
@@ -75,16 +75,16 @@ export function StarterKit() {
 }
 
 export function Wrapper({
-  slot = "wrapper-card",
+  slot = 'wrapper-card',
   className,
   ...props
-}: React.ComponentProps<"div"> & { slot?: string }) {
+}: React.ComponentProps<'div'> & { slot?: string }) {
   return (
     <div
       data-slot={slot}
       className={twMerge(
-        "relative rounded-md border bg-overlay px-4 py-10 sm:px-6 sm:py-8",
-        className,
+        'relative rounded-md border bg-overlay px-4 py-10 sm:px-6 sm:py-8',
+        className
       )}
       {...props}
     />

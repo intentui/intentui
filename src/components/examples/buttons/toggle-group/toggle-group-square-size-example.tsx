@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArchiveBoxIcon,
@@ -17,8 +17,8 @@ import {
   MusicalNoteIcon,
   PhotoIcon,
   VideoCameraIcon,
-} from "@heroicons/react/24/outline"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+} from '@heroicons/react/24/outline'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 export default function ToggleGroupSquareSizeDemo() {
   return (

@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Description, Label } from "@/components/ui/field"
-import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from "@/components/ui/slider"
+import { useState } from 'react'
+import { Description, Label } from '@/components/ui/field'
+import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from '@/components/ui/slider'
 
 const bands = [
-  "32 Hz",
-  "64 Hz",
-  "125 Hz",
-  "250 Hz",
-  "500 Hz",
-  "1 kHz",
-  "2 kHz",
-  "4 kHz",
-  "8 kHz",
-  "16 kHz",
+  '32 Hz',
+  '64 Hz',
+  '125 Hz',
+  '250 Hz',
+  '500 Hz',
+  '1 kHz',
+  '2 kHz',
+  '4 kHz',
+  '8 kHz',
+  '16 kHz',
 ]
 
 export default function SliderOrientationDemo() {

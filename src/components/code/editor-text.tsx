@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { CodeBracketIcon, DocumentTextIcon } from "@heroicons/react/24/outline"
-import { useEffect, useState } from "react"
-import { Tab } from "react-aria-components/Tabs"
-import { twMerge } from "tailwind-merge"
-import generated from "@/../__registry__/generated"
-import { CodeHighlighter } from "@/components/code/code-highlighter"
-import { CopyButton } from "@/components/code/copy-button"
-import { BrandCssIcon } from "@/components/icons/brand-css-icon"
-import { BrandReactjsIcon } from "@/components/icons/brand-reactjs-icon"
-import { BrandTypescriptIcon } from "@/components/icons/brand-typescript-icon"
-import { TabList, TabPanel, Tabs } from "@/components/ui/tabs"
-import { useClipboard } from "@/hooks/use-clipboard"
-import type { RegistryItem } from "@/types"
+import { CodeBracketIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
+import { useEffect, useState } from 'react'
+import { Tab } from 'react-aria-components/Tabs'
+import { twMerge } from 'tailwind-merge'
+import generated from '@/../__registry__/generated'
+import { CodeHighlighter } from '@/components/code/code-highlighter'
+import { CopyButton } from '@/components/code/copy-button'
+import { BrandCssIcon } from '@/components/icons/brand-css-icon'
+import { BrandReactjsIcon } from '@/components/icons/brand-reactjs-icon'
+import { BrandTypescriptIcon } from '@/components/icons/brand-typescript-icon'
+import { TabList, TabPanel, Tabs } from '@/components/ui/tabs'
+import { useClipboard } from '@/hooks/use-clipboard'
+import type { RegistryItem } from '@/types'
 
 interface Props {
   source: Record<string, string>
@@ -42,7 +42,7 @@ export function EditorText({ source }: Props) {
       const fetchedSourceCode: Record<string, string | null> = {}
       await Promise.all(
         Object.entries(source)
-          .filter(([key]) => key !== "preview")
+          .filter(([key]) => key !== 'preview')
 
           .map(async ([key, path]) => {
             const registryKey = `${path}`
@@ -54,20 +54,20 @@ export function EditorText({ source }: Props) {
                 if (response.ok) {
                   const registryEntry = await response.json()
                   fetchedSourceCode[key] =
-                    registryEntry.files?.[0]?.content || "No content available"
+                    registryEntry.files?.[0]?.content || 'No content available'
                 } else {
                   console.error(`Failed to fetch source code for ${path}:`, response.status)
-                  fetchedSourceCode[key] = "Error loading source code."
+                  fetchedSourceCode[key] = 'Error loading source code.'
                 }
               } catch (error) {
                 console.error(`Error fetching source code for ${path}:`, error)
-                fetchedSourceCode[key] = "Error loading source code."
+                fetchedSourceCode[key] = 'Error loading source code.'
               }
             } else {
               console.error(`Registry item for ${registryKey} not found.`)
-              fetchedSourceCode[key] = "Registry item not found."
+              fetchedSourceCode[key] = 'Registry item not found.'
             }
-          }),
+          })
       )
       setRawSourceCode(fetchedSourceCode)
     }
@@ -85,23 +85,23 @@ export function EditorText({ source }: Props) {
                 <Tab
                   className={(values) =>
                     twMerge(
-                      "flex cursor-default items-center gap-x-1.5 whitespace-nowrap px-2 py-2.5 font-mono text-muted-fg text-xs tracking-tight first:pl-3",
-                      "border-transparent border-x outline-hidden first:border-l-0 **:data-[slot=icon]:-ml-0.5 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0",
+                      'flex cursor-default items-center gap-x-1.5 whitespace-nowrap px-2 py-2.5 font-mono text-muted-fg text-xs tracking-tight first:pl-3',
+                      'border-transparent border-x outline-hidden first:border-l-0 **:data-[slot=icon]:-ml-0.5 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0',
                       (values.isSelected || values.isFocused || values.isFocusVisible) &&
-                        "border-input bg-secondary/50 text-secondary-fg dark:bg-muted",
-                      values.isHovered && "bg-secondary/70 text-secondary-fg dark:bg-muted",
+                        'border-input bg-secondary/50 text-secondary-fg dark:bg-muted',
+                      values.isHovered && 'bg-secondary/70 text-secondary-fg dark:bg-muted'
                     )
                   }
                   key={key}
                   id={key}
                 >
-                  {key.includes("css") ? (
+                  {key.includes('css') ? (
                     <BrandCssIcon className="size-4 text-blue-500" />
-                  ) : key.includes(".tsx") ? (
+                  ) : key.includes('.tsx') ? (
                     <BrandReactjsIcon className="size-4 text-sky-500" />
-                  ) : key.includes(".ts") ? (
+                  ) : key.includes('.ts') ? (
                     <BrandTypescriptIcon className="size-4 text-sky-500" />
-                  ) : key.includes(".json") ? (
+                  ) : key.includes('.json') ? (
                     <CodeBracketIcon className="size-4 text-purple-400" />
                   ) : (
                     <DocumentTextIcon />
@@ -127,7 +127,7 @@ export function EditorText({ source }: Props) {
                 plain
                 removeLastLine
                 className="p-4"
-                code={value || "No source code available"}
+                code={value || 'No source code available'}
               />
             </TabPanel>
           ))}

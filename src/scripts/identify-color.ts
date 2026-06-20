@@ -1,24 +1,24 @@
-import fs from "node:fs"
-import path from "node:path"
+import fs from 'node:fs'
+import path from 'node:path'
 
-const PATH = path.resolve(__dirname, "../../components/ui")
+const PATH = path.resolve(__dirname, '../../components/ui')
 
 // Define the target directory and classes to search for
 const TARGET_DIR = PATH
 const TARGET_CLASSES = [
-  "bg-primary",
-  "bg-accent",
-  "bg-overlay",
-  "bg-secondary",
-  "bg-muted",
-  "bg-warning",
-  "bg-success",
+  'bg-primary',
+  'bg-accent',
+  'bg-overlay',
+  'bg-secondary',
+  'bg-muted',
+  'bg-warning',
+  'bg-success',
 ]
 
 // Function to read files recursively and find matches
 const findComponentsUsingClasses = (
   dir: string,
-  targetClasses: string[],
+  targetClasses: string[]
 ): Record<string, string[]> => {
   const result: Record<string, string[]> = {}
 
@@ -37,11 +37,11 @@ const findComponentsUsingClasses = (
       for (const cls of targetClasses) {
         result[cls] = result[cls]!.concat(subResults[cls]!)
       }
-    } else if (stat.isFile() && file.endsWith(".tsx")) {
-      const content = fs.readFileSync(fullPath, "utf8")
+    } else if (stat.isFile() && file.endsWith('.tsx')) {
+      const content = fs.readFileSync(fullPath, 'utf8')
       for (const cls of targetClasses) {
         if (content.includes(cls)) {
-          const componentName = path.basename(file, ".tsx")
+          const componentName = path.basename(file, '.tsx')
           if (!result[cls]!.includes(componentName)) {
             result[cls]!.push(componentName)
           }

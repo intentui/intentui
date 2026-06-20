@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArrowTopRightOnSquareIcon,
@@ -8,13 +8,13 @@ import {
   HashtagIcon,
   HomeIcon,
   SwatchIcon,
-} from "@heroicons/react/24/outline"
-import { formatHex, parse } from "culori"
-import { useRouter } from "next/navigation"
-import { useMemo, useState } from "react"
-import { twJoin } from "tailwind-merge"
-import { useDebounce } from "use-debounce"
-import { ColorSwatch } from "@/components/ui/color-swatch"
+} from '@heroicons/react/24/outline'
+import { formatHex, parse } from 'culori'
+import { useRouter } from 'next/navigation'
+import { useMemo, useState } from 'react'
+import { twJoin } from 'tailwind-merge'
+import { useDebounce } from 'use-debounce'
+import { ColorSwatch } from '@/components/ui/color-swatch'
 import {
   CommandMenu,
   CommandMenuDescription,
@@ -25,11 +25,11 @@ import {
   CommandMenuSearch,
   CommandMenuSection,
   CommandMenuSeparator,
-} from "@/components/ui/command-menu"
-import results from "@/components-search.json"
-import { useClipboard } from "@/hooks/use-clipboard"
-import colors from "@/json/colors.json"
-import type { CollectionComponent, Grouped, SubSection } from "@/types/search"
+} from '@/components/ui/command-menu'
+import results from '@/components-search.json'
+import { useClipboard } from '@/hooks/use-clipboard'
+import colors from '@/json/colors.json'
+import type { CollectionComponent, Grouped, SubSection } from '@/types/search'
 
 const docs = [results[0], results[1], results[2]] as Grouped[]
 const components = results[3] as any
@@ -40,15 +40,15 @@ export interface OpenCloseProps {
 }
 
 function isComponentArray(
-  items: CollectionComponent[] | SubSection[],
+  items: CollectionComponent[] | SubSection[]
 ): items is CollectionComponent[] {
   const first = items[0]
-  return !!first && typeof first === "object" && "slug" in first && "title" in first
+  return !!first && typeof first === 'object' && 'slug' in first && 'title' in first
 }
 
 export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
   const router = useRouter()
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState('')
   const [debouncedInput] = useDebounce(input, 300)
   const inputLower = debouncedInput.trim().toLowerCase()
   const isLoading = input.length >= 2 && input !== debouncedInput
@@ -62,7 +62,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
         const children = group.children.filter(
           (item) =>
             item.title.toLowerCase().includes(inputLower) ||
-            item.slug.toLowerCase().includes(inputLower),
+            item.slug.toLowerCase().includes(inputLower)
         )
         if (sectionMatch) return group
         if (children.length) return { ...group, children }
@@ -81,7 +81,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
         const children = component.children.filter(
           (item: CollectionComponent) =>
             item.title.toLowerCase().includes(inputLower) ||
-            item.slug.toLowerCase().includes(inputLower),
+            item.slug.toLowerCase().includes(inputLower)
         )
         return children.length ? { ...component, children } : null
       })
@@ -120,7 +120,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
             <HomeIcon />
             <CommandMenuLabel>Home</CommandMenuLabel>
           </CommandMenuItem>
-          <CommandMenuItem textValue="Docs" href={"/docs/getting-started/installation"}>
+          <CommandMenuItem textValue="Docs" href={'/docs/getting-started/installation'}>
             <BookOpenIcon />
             <CommandMenuLabel>Docs</CommandMenuLabel>
           </CommandMenuItem>
@@ -159,7 +159,7 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
             {(item: CollectionComponent) => (
               <CommandMenuItem
                 key={item.slug}
-                id={item.slug.split("/").pop()}
+                id={item.slug.split('/').pop()}
                 textValue={`${result.section} ${item.title}`}
                 onAction={() => {
                   router.push(item.slug, { scroll: false })
@@ -183,8 +183,8 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
             {(item: CollectionComponent) => (
               <CommandMenuItem
                 key={item.slug}
-                id={item.slug.split("/").pop()}
-                textValue={`${component.subsection} ${item.title} ${item.slug.split("/").pop()}`}
+                id={item.slug.split('/').pop()}
+                textValue={`${component.subsection} ${item.title} ${item.slug.split('/').pop()}`}
                 onAction={() => {
                   router.push(item.slug, { scroll: false })
                   setOpen?.(false)
@@ -214,10 +214,10 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
         ))}
       </CommandMenuList>
       <CommandMenuFooter className="text-xs">
-        Use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate, <kbd>↵</kbd> to{" "}
+        Use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate, <kbd>↵</kbd> to{' '}
         {filteredColors.length > 0 && filteredDocs.length === 0 && filteredComponents.length === 0
-          ? "copy"
-          : "select"}
+          ? 'copy'
+          : 'select'}
         .
       </CommandMenuFooter>
     </CommandMenu>
@@ -244,16 +244,16 @@ function ColorItem({ label, value, colorName = label, textValue }: ColorItemProp
       <CommandMenuDescription className="text-xs tracking-tight">
         <span
           className={twJoin(
-            "absolute inset-y-0 right-2 left-0 self-center justify-self-end font-mono focus:transition focus:duration-300",
-            copied ? "-translate-y-1.5 opacity-0" : "translate-y-0 opacity-100",
+            'absolute inset-y-0 right-2 left-0 self-center justify-self-end font-mono focus:transition focus:duration-300',
+            copied ? '-translate-y-1.5 opacity-0' : 'translate-y-0 opacity-100'
           )}
         >
           {value}
         </span>
         <span
           className={twJoin(
-            "absolute inset-y-0 right-2 left-0 gap-x-1 self-center justify-self-end transition duration-300",
-            copied ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
+            'absolute inset-y-0 right-2 left-0 gap-x-1 self-center justify-self-end transition duration-300',
+            copied ? 'translate-y-0 opacity-100' : 'translate-y-1.5 opacity-0'
           )}
         >
           Copied

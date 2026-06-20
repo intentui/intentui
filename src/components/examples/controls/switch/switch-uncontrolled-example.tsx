@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Description } from "@/components/ui/field"
-import { Switch, SwitchField } from "@/components/ui/switch"
+import { Description } from '@/components/ui/field'
+import { Switch, SwitchField } from '@/components/ui/switch'
 
 export default function SwitchUncontrolledDemo() {
   return (

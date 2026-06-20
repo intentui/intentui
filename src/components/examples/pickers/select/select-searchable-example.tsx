@@ -1,36 +1,36 @@
-"use client"
-import { Autocomplete, useFilter } from "react-aria-components/Autocomplete"
-import { Popover } from "react-aria-components/Popover"
-import { Dialog } from "@/components/ui/dialog"
-import { Label } from "@/components/ui/field"
-import { ListBox } from "@/components/ui/list-box"
-import { SearchField, SearchInput } from "@/components/ui/search-field"
-import { Select, SelectItem, SelectTrigger } from "@/components/ui/select"
+'use client'
+import { Autocomplete, useFilter } from 'react-aria-components/Autocomplete'
+import { Popover } from 'react-aria-components/Popover'
+import { Dialog } from '@/components/ui/dialog'
+import { Label } from '@/components/ui/field'
+import { ListBox } from '@/components/ui/list-box'
+import { SearchField, SearchInput } from '@/components/ui/search-field'
+import { Select, SelectItem, SelectTrigger } from '@/components/ui/select'
 
 const languages = [
-  { id: "en", name: "English" },
-  { id: "es", name: "Spanish" },
-  { id: "fr", name: "French" },
-  { id: "de", name: "German" },
-  { id: "it", name: "Italian" },
-  { id: "pt", name: "Portuguese" },
-  { id: "ru", name: "Russian" },
-  { id: "ja", name: "Japanese" },
-  { id: "zh", name: "Chinese" },
-  { id: "ar", name: "Arabic" },
-  { id: "hi", name: "Hindi" },
-  { id: "ko", name: "Korean" },
-  { id: "sv", name: "Swedish" },
-  { id: "nl", name: "Dutch" },
-  { id: "tr", name: "Turkish" },
-  { id: "pl", name: "Polish" },
-  { id: "cs", name: "Czech" },
-  { id: "el", name: "Greek" },
-  { id: "he", name: "Hebrew" },
+  { id: 'en', name: 'English' },
+  { id: 'es', name: 'Spanish' },
+  { id: 'fr', name: 'French' },
+  { id: 'de', name: 'German' },
+  { id: 'it', name: 'Italian' },
+  { id: 'pt', name: 'Portuguese' },
+  { id: 'ru', name: 'Russian' },
+  { id: 'ja', name: 'Japanese' },
+  { id: 'zh', name: 'Chinese' },
+  { id: 'ar', name: 'Arabic' },
+  { id: 'hi', name: 'Hindi' },
+  { id: 'ko', name: 'Korean' },
+  { id: 'sv', name: 'Swedish' },
+  { id: 'nl', name: 'Dutch' },
+  { id: 'tr', name: 'Turkish' },
+  { id: 'pl', name: 'Polish' },
+  { id: 'cs', name: 'Czech' },
+  { id: 'el', name: 'Greek' },
+  { id: 'he', name: 'Hebrew' },
 ]
 
 export default function SelectSearchableDemo() {
-  const { contains } = useFilter({ sensitivity: "base" })
+  const { contains } = useFilter({ sensitivity: 'base' })
   return (
     <Select>
       <Label>Select a language</Label>

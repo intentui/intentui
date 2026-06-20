@@ -1,9 +1,9 @@
-"use client"
-import { Collection } from "react-aria-components/Collection"
-import { ListBoxLoadMoreItem } from "react-aria-components/ListBox"
-import { useAsyncList } from "react-stately/useAsyncList"
-import { ListBox, ListBoxItem } from "@/components/ui/list-box"
-import { ProgressCircle } from "@/components/ui/progress-circle"
+'use client'
+import { Collection } from 'react-aria-components/Collection'
+import { ListBoxLoadMoreItem } from 'react-aria-components/ListBox'
+import { useAsyncList } from 'react-stately/useAsyncList'
+import { ListBox, ListBoxItem } from '@/components/ui/list-box'
+import { ProgressCircle } from '@/components/ui/progress-circle'
 
 interface Character {
   name: string
@@ -32,7 +32,7 @@ export default function ListBoxInfiniteScrollDemo() {
       </Collection>
       <ListBoxLoadMoreItem
         onLoadMore={list.loadMore}
-        isLoading={list.loadingState === "loadingMore"}
+        isLoading={list.loadingState === 'loadingMore'}
       >
         <ProgressCircle className="mx-auto mb-4" isIndeterminate aria-label="Loading more..." />
       </ListBoxLoadMoreItem>

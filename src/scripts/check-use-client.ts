@@ -1,7 +1,7 @@
-import fs from "node:fs"
-import path from "node:path"
+import fs from 'node:fs'
+import path from 'node:path'
 
-const directoryPath = "./src/components/examples"
+const directoryPath = './src/components/examples'
 
 function findFilesWithoutUseClient(dirPath: string): void {
   fs.readdir(dirPath, { withFileTypes: true }, (err, files) => {
@@ -15,14 +15,14 @@ function findFilesWithoutUseClient(dirPath: string): void {
 
       if (file.isDirectory()) {
         findFilesWithoutUseClient(fullPath)
-      } else if (file.name.endsWith(".tsx") || file.name.endsWith(".ts")) {
-        fs.readFile(fullPath, "utf8", (err, content) => {
+      } else if (file.name.endsWith('.tsx') || file.name.endsWith('.ts')) {
+        fs.readFile(fullPath, 'utf8', (err, content) => {
           if (err) {
             console.error(`Unable to read file: ${err}`)
             return
           }
 
-          if (!content.includes('"use client"') && !content.includes("use client")) {
+          if (!content.includes('"use client"') && !content.includes('use client')) {
             console.info(`Component does not contain 'use client': ${fullPath}`)
           }
         })

@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import type { Key } from "react-aria-components/Breadcrumbs"
-import { Description, Label } from "@/components/ui/field"
-import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
+import { useState } from 'react'
+import type { Key } from 'react-aria-components/Breadcrumbs'
+import { Description, Label } from '@/components/ui/field'
+import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 
 export const movies = [
-  { id: 1, title: "Inception" },
-  { id: 2, title: "The Dark Knight" },
-  { id: 3, title: "Interstellar" },
-  { id: 4, title: "The Matrix" },
-  { id: 5, title: "Pulp Fiction" },
+  { id: 1, title: 'Inception' },
+  { id: 2, title: 'The Dark Knight' },
+  { id: 3, title: 'Interstellar' },
+  { id: 4, title: 'The Matrix' },
+  { id: 5, title: 'Pulp Fiction' },
 ]
 
 export default function SelectControlledDemo() {
-  const [movie, setMovie] = useState<Key | null>("")
+  const [movie, setMovie] = useState<Key | null>('')
   return (
     <>
       <Select name="movie" value={movie} onChange={setMovie} placeholder="Select a movie">

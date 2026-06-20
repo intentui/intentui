@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { parseColor } from "@react-stately/color"
-import { useState } from "react"
-import { ControlledValues } from "@/components/examples/colors/controlled-values"
-import { ColorSwatch } from "@/components/ui/color-swatch"
-import { ColorSwatchPicker, ColorSwatchPickerItem } from "@/components/ui/color-swatch-picker"
+import { parseColor } from '@react-stately/color'
+import { useState } from 'react'
+import { ControlledValues } from '@/components/examples/colors/controlled-values'
+import { ColorSwatch } from '@/components/ui/color-swatch'
+import { ColorSwatchPicker, ColorSwatchPickerItem } from '@/components/ui/color-swatch-picker'
 
 export default function ColorSwatchPickerDemo() {
-  const [value, setValue] = useState(parseColor("#0d6efd"))
+  const [value, setValue] = useState(parseColor('#0d6efd'))
   return (
     <div className="flex flex-col gap-4">
       <ColorSwatchPicker

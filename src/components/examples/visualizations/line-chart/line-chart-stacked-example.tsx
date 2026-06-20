@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { LineChart } from "@/components/ui/line-chart"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useMemo } from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { LineChart } from '@/components/ui/line-chart'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 export default function LineChartStackedDemo() {
   const isMobile = useIsMobile()
@@ -15,7 +15,7 @@ export default function LineChartStackedDemo() {
         comments: Math.floor(20 + Math.random() * 80),
         shares: Math.floor(10 + Math.random() * 50),
       })),
-    [],
+    []
   )
 
   return (
@@ -33,13 +33,13 @@ export default function LineChartStackedDemo() {
           dataKey="day"
           type="stacked"
           lineProps={{
-            type: "basis",
+            type: 'basis',
           }}
           xAxisProps={{ interval: 0 }}
           config={{
-            likes: { label: "Likes" },
-            comments: { label: "Comments" },
-            shares: { label: "Shares" },
+            likes: { label: 'Likes' },
+            comments: { label: 'Comments' },
+            shares: { label: 'Shares' },
           }}
         />
       </CardContent>

@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
-import { codeToHtml } from "shiki"
-import { twMerge } from "tailwind-merge"
-import { app } from "@/config/app"
+import { codeToHtml } from 'shiki'
+import { twMerge } from 'tailwind-merge'
+import { app } from '@/config/app'
 
 export interface CodeHighlighterProps {
   plain?: boolean
@@ -19,14 +19,14 @@ export const CodeHighlighter = ({
   max96 = true,
   removeLastLine = false,
   plain = false,
-  lang = "tsx",
+  lang = 'tsx',
   code,
   className,
   ...props
 }: CodeHighlighterProps) => {
   const [loading, setLoading] = useState(false)
-  const [formattedCode, setFormattedCode] = useState("")
-  const [error, setError] = useState("")
+  const [formattedCode, setFormattedCode] = useState('')
+  const [error, setError] = useState('')
 
   useEffect(() => {
     setLoading(true)
@@ -38,7 +38,7 @@ export const CodeHighlighter = ({
         })
         setFormattedCode(String(file))
       } catch (err) {
-        setError("Failed to process code. Please check the configuration.")
+        setError('Failed to process code. Please check the configuration.')
         console.error(err)
       }
     }
@@ -55,12 +55,12 @@ export const CodeHighlighter = ({
     <div
       {...props}
       className={twMerge(
-        "not-prose scrollbar-thin overflow-auto font-mono text-sm **:[pre]:outline-hidden **:[pre]:*:[code]:text-sm/8",
-        max96 && "max-h-96",
-        !plain && "rounded-lg bg-shiki-bg px-4 py-2.5 ring-1 ring-border",
+        'not-prose scrollbar-thin overflow-auto font-mono text-sm **:[pre]:outline-hidden **:[pre]:*:[code]:text-sm/8',
+        max96 && 'max-h-96',
+        !plain && 'rounded-lg bg-shiki-bg px-4 py-2.5 ring-1 ring-border',
         removeLastLine &&
-          "**:data-rehype-pretty-code-figure:*:[pre]:*:[code]:*:data-line:last:hidden",
-        className,
+          '**:data-rehype-pretty-code-figure:*:[pre]:*:[code]:*:data-line:last:hidden',
+        className
       )}
       dangerouslySetInnerHTML={{ __html: formattedCode }}
     />

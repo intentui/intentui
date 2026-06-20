@@ -1,9 +1,9 @@
 ---
-title: "Date Range Picker"
+title: 'Date Range Picker'
 description: Date range pickers make date based data easier to read and explore, letting users select precise start and end dates for accurate filtering and reporting.
 order: 6
 published: true
-references: ["https://react-aria.adobe.com/DateRangePicker#api"]
+references: ['https://react-aria.adobe.com/DateRangePicker#api']
 ---
 
 <How className="min-w-[17rem]" toUse="date-and-time/date-range-picker/date-range-picker-example" />
@@ -11,51 +11,74 @@ references: ["https://react-aria.adobe.com/DateRangePicker#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/date-range-picker"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/date-range-picker" />
 
 ## Composed components
-<Composed components={[
-  'date-field',
-  'input',
-  'date-picker',
-  'field',
-]}/>
+
+<Composed components={['date-field', 'input', 'date-picker', 'field']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
-<SourceCode toShow='date-range-picker'/>
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
+
+<SourceCode toShow="date-range-picker" />
 
 ## Examples
 
 ### Validation
+
 Ensure that the date range picker is properly filled out by using the `isRequired` prop.
-<How className="min-w-[17rem]" toUse="date-and-time/date-range-picker/date-range-picker-validation-example" />
+
+<How
+  className="min-w-[17rem]"
+  toUse="date-and-time/date-range-picker/date-range-picker-validation-example"
+/>
 
 ### Custom validation
+
 Use the `validate` function to implement custom validation rules. It evaluates the current date range and returns error messages if the value doesn't meet your criteria.
-<How className="min-w-[17rem]" toUse="date-and-time/date-range-picker/date-range-picker-custom-validation-example" />
+
+<How
+  className="min-w-[17rem]"
+  toUse="date-and-time/date-range-picker/date-range-picker-custom-validation-example"
+/>
 
 ### Visible duration
+
 You can control the duration of the visible date range by using the `visibleDuration` prop. It accepts an object with the following properties:
-* `years`: The number of years to add or subtract.
-* `months`: The number of months to add or subtract.
-* `weeks`: The number of weeks to add or subtract.
-* `days`: The number of days to add or subtract.
+
+- `years`: The number of years to add or subtract.
+- `months`: The number of months to add or subtract.
+- `weeks`: The number of weeks to add or subtract.
+- `days`: The number of days to add or subtract.
 
 Learn more about the <NewTab href='https://react-aria.adobe.com/RangeCalendar.html#multi-month'>visible duration</NewTab> in the rac documentation.
 
-<How className="min-w-[17rem]" toUse="date-and-time/date-range-picker/date-range-picker-visible-duration-example" />
+<How
+  className="min-w-[17rem]"
+  toUse="date-and-time/date-range-picker/date-range-picker-visible-duration-example"
+/>
 
 ### Controlled
+
 Take control of your date range picker by passing a `value` prop to manage the selected date range.
-<How className="min-w-[17rem]" toUse="date-and-time/date-range-picker/date-range-picker-controlled-example" />
+
+<How
+  className="min-w-[17rem]"
+  toUse="date-and-time/date-range-picker/date-range-picker-controlled-example"
+/>
 
 ### Disabled
+
 When the date range picker is disabled, it becomes non-interactive and is visually represented in a disabled state.
-<How className="min-w-[17rem]" toUse="date-and-time/date-range-picker/date-range-picker-disabled-example" />
+
+<How
+  className="min-w-[17rem]"
+  toUse="date-and-time/date-range-picker/date-range-picker-disabled-example"
+/>
 
 ## Component API
 
@@ -63,19 +86,19 @@ When the date range picker is disabled, it becomes non-interactive and is visual
 
 The `DateRangePicker` component lets users select a date range.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `pageBehavior` | `"visible" \| "single"` | - |
-| `popover` | `Omit<PopoverProps, "children">` | - |
-| `visibleDuration` | `DateDuration` | `{ months: 1 }` |
+| Prop              | Type                             | Default         |
+| ----------------- | -------------------------------- | --------------- |
+| `className`       | `string`                         | -               |
+| `pageBehavior`    | `"visible" \| "single"`          | -               |
+| `popover`         | `Omit<PopoverProps, "children">` | -               |
+| `visibleDuration` | `DateDuration`                   | `{ months: 1 }` |
 
 ### DateRangePickerTrigger
 
 The `DateRangePickerTrigger` component wraps the date range picker trigger controls.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/DateRangePicker#api) for the full API reference.

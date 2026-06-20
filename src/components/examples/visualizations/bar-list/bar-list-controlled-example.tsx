@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { BarList } from "@/components/ui/bar-list"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from 'react'
+import { BarList } from '@/components/ui/bar-list'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function BarListControlledDemo() {
-  const [selectedItem, setSelectedItem] = useState("")
+  const [selectedItem, setSelectedItem] = useState('')
   return (
     <Card>
       <CardHeader>
@@ -15,11 +15,11 @@ export default function BarListControlledDemo() {
       <CardContent>
         <BarList
           data={[
-            { name: "Marketing", value: 45000 },
-            { name: "Research & Development", value: 38000 },
-            { name: "Operations", value: 29000 },
-            { name: "Customer Support", value: 17500 },
-            { name: "IT & Infrastructure", value: 13200 },
+            { name: 'Marketing', value: 45000 },
+            { name: 'Research & Development', value: 38000 },
+            { name: 'Operations', value: 29000 },
+            { name: 'Customer Support', value: 17500 },
+            { name: 'IT & Infrastructure', value: 13200 },
           ]}
           onValueChange={(item) => setSelectedItem(JSON.stringify(item, null, 2))}
           valueFormatter={(value) => `$${value.toLocaleString()}`}

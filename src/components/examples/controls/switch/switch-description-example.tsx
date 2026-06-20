@@ -1,6 +1,6 @@
-import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Description } from "@/components/ui/field"
-import { Switch, SwitchField } from "@/components/ui/switch"
+import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Description } from '@/components/ui/field'
+import { Switch, SwitchField } from '@/components/ui/switch'
 
 export default function SwitchDescriptionDemo() {
   return (

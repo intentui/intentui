@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
 
 export default function ToastActionDemo() {
   return (
@@ -10,10 +10,10 @@ export default function ToastActionDemo() {
         intent="outline"
         size="sm"
         onPress={() =>
-          toast("New comment on your post!", {
+          toast('New comment on your post!', {
             action: {
-              label: "View",
-              onClick: () => alert("Viewed"),
+              label: 'View',
+              onClick: () => alert('Viewed'),
             },
           })
         }
@@ -24,14 +24,14 @@ export default function ToastActionDemo() {
         intent="outline"
         size="sm"
         onPress={() =>
-          toast("New comment on your post!", {
+          toast('New comment on your post!', {
             action: {
-              label: "View",
-              onClick: () => alert("Viewed"),
+              label: 'View',
+              onClick: () => alert('Viewed'),
             },
             cancel: {
-              label: "Cancel",
-              onClick: () => alert("Cancelled"),
+              label: 'Cancel',
+              onClick: () => alert('Cancelled'),
             },
           })
         }
@@ -42,10 +42,10 @@ export default function ToastActionDemo() {
         intent="outline"
         size="sm"
         onPress={() =>
-          toast("New comment on your post!", {
+          toast('New comment on your post!', {
             cancel: {
-              label: "Cancel",
-              onClick: () => alert("Cancelled"),
+              label: 'Cancel',
+              onClick: () => alert('Cancelled'),
             },
           })
         }

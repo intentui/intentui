@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
 import {
   DescriptionDetails,
   DescriptionList,
   DescriptionTerm,
-} from "@/components/ui/description-list"
-import { Heading } from "@/components/ui/heading"
+} from '@/components/ui/description-list'
+import { Heading } from '@/components/ui/heading'
 
 export default function DescriptionListHeadingDemo() {
   return (

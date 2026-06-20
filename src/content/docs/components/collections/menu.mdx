@@ -1,9 +1,9 @@
 ---
-title: "Menu"
+title: 'Menu'
 description: A collapsible menu that reveals actions or navigation options when triggered, not a form input like a select, and designed for quick, contextual choices.
 order: 1
 published: true
-references: ["https://react-aria.adobe.com/Menu#api"]
+references: ['https://react-aria.adobe.com/Menu#api']
 ---
 
 <How toUse="collections/menu/menu-basic-example" />
@@ -11,19 +11,23 @@ references: ["https://react-aria.adobe.com/Menu#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/menu"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/menu" />
 
 ## Composed components
-<Composed components={['dropdown', 'popover']}/>
+
+<Composed components={['dropdown', 'popover']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants"/>
 
-<SourceCode toShow='menu' />
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants" />
+
+<SourceCode toShow="menu" />
 
 ## Anatomy
+
 ```
 import {
   IconCommandRegular,
@@ -46,6 +50,7 @@ import {
   MenuTrigger,
 } from "@/components/ui/menu"
 ```
+
 ```
 <Menu>
   <MenuTrigger>Open</MenuTrigger>
@@ -106,67 +111,87 @@ import {
 ## Examples
 
 ### Links
+
 Integrating `MenuItem` with your framework’s link component is straightforward. Learn more in [Client Side Routing](/docs/getting-started/client-side-routing).
 
-
-
-
 ### Sub menu
+
 Menu can be nested to display submenus.
+
 <How toUse="collections/menu/menu-sub-example" />
 
 ### Danger
+
 Designate a menu item as dangerous.
+
 <How toUse="collections/menu/menu-danger-example" />
 
 ### With icon
+
 Enhance menu items by adding icons.
+
 <How toUse="collections/menu/menu-with-icon-example" />
 
 ### Dynamic
+
 Generate menu items dynamically.
+
 <How toUse="collections/menu/menu-dynamic-example" />
 
 ### Multiple
+
 Display a selection of actions or options.
+
 <How toUse="collections/menu/multiple-menu-example" />
 
-
 ### Single menu
+
 Present a single list of options.
+
 <How toUse="collections/menu/single-menu-example" />
 
 ### Section menu
+
 Organize menu items into grouped sections.
+
 <How toUse="collections/menu/menu-section-example" />
 
 ### Section-level selection
+
 Organize menu items into grouped sections with level selection.
+
 <How toUse="collections/menu/menu-section-level-selection" />
 
 ### Arrow
+
 Incorporate an arrow into the menu using the `arrow` from `popover` in the `MenuContent` component.
+
 <How toUse="collections/menu/menu-with-arrow-example" />
 
 ### Disabled
+
 Disable specific menu items.
+
 <How toUse="collections/menu/menu-disabled-example" />
 
 Also, you can disable items directly in `MenuContent` by using the `disabledKeys` prop.
+
 ```tsx
 <MenuContent disabledKeys={['gsu']} />
 ```
 
 ### Menu label
+
 In the examples above, you might notice that the `MenuLabel` component is used inconsistently. This is because it is not mandatory, but it is considered a best practice. Using `MenuLabel` ensures proper alignment between icons and text, especially when dealing with items that vary. For instance, one item might have an icon while another does not. Adding `MenuLabel` helps create a polished and consistent appearance.
 
-
 ### Description
+
 You can add details to menu items by using the `MenuDescription` component.
+
 <How toUse="collections/menu/menu-item-description-example" />
 
-
 ### Open modal
+
 Trigger a modal from a menu item. Refer to the [modal demo](/docs/components/overlays/modal#triggered-by-menu) for further information.
 
 ## Component API
@@ -179,84 +204,84 @@ The `Menu` component controls the menu trigger and content.
 
 The `MenuTrigger` component opens the menu.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### MenuContent
 
 The `MenuContent` component renders menu items inside a popover.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `popover` | `Pick< PopoverContentProps, \| "arrow" \| "className" \| "placement" \| "offset" \| "crossOffset" \| "arrowBoundaryOffset" \| "triggerRef" \| "isOpen" \| "onOpenChange" \| "shouldFlip" >` | - |
+| Prop        | Type                                                                                                                                                                                        | Default |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `className` | `string`                                                                                                                                                                                    | -       |
+| `popover`   | `Pick< PopoverContentProps, \| "arrow" \| "className" \| "placement" \| "offset" \| "crossOffset" \| "arrowBoundaryOffset" \| "triggerRef" \| "isOpen" \| "onOpenChange" \| "shouldFlip" >` | -       |
 
 ### MenuSubMenu
 
 The `MenuSubMenu` component opens a nested menu.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `delay` | `number` | `0` |
+| Prop    | Type     | Default |
+| ------- | -------- | ------- |
+| `delay` | `number` | `0`     |
 
 ### MenuHeader
 
 The `MenuHeader` component renders header content inside a menu.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type      | Default |
+| ----------- | --------- | ------- |
+| `className` | `string`  | -       |
 | `separator` | `boolean` | `false` |
 
 ### MenuItem
 
 The `MenuItem` component represents one menu option or action.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"danger" \| "warning"` | - |
+| Prop        | Type                    | Default |
+| ----------- | ----------------------- | ------- |
+| `className` | `string`                | -       |
+| `intent`    | `"danger" \| "warning"` | -       |
 
 ### MenuLabel
 
 The `MenuLabel` component renders the primary text for a menu item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### MenuDescription
 
 The `MenuDescription` component renders supporting text for a menu item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### MenuSection
 
 The `MenuSection` component groups related menu items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `label` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
+| `label`     | `string` | -       |
 
 ### MenuSeparator
 
 The `MenuSeparator` component separates menu groups.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### MenuShortcut
 
 The `MenuShortcut` component displays a keyboard shortcut for a menu item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/Menu#api) for the full API reference.

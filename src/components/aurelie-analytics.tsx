@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { usePathname, useSearchParams } from "next/navigation"
-import { useEffect, useMemo, useRef } from "react"
+import { usePathname, useSearchParams } from 'next/navigation'
+import { useEffect, useMemo, useRef } from 'react'
 
 export function AurelieAnalytics() {
   const pathname = usePathname()
@@ -16,15 +16,15 @@ export function AurelieAnalytics() {
   }, [pathname, searchParams])
 
   useEffect(() => {
-    if (scriptLoadedRef.current || typeof window === "undefined") {
+    if (scriptLoadedRef.current || typeof window === 'undefined') {
       return
     }
 
     scriptLoadedRef.current = true
 
-    const script = document.createElement("script")
+    const script = document.createElement('script')
     script.async = true
-    script.src = process.env.NEXT_PUBLIC_AURELIE_URL ?? "https://app.useaurelie.com/florin.js?v1"
+    script.src = process.env.NEXT_PUBLIC_AURELIE_URL ?? 'https://app.useaurelie.com/florin.js?v1'
 
     const siteKey = process.env.NEXT_PUBLIC_AURELIE_PUBLIC_KEY
     if (siteKey) {

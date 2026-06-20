@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid"
+import { EllipsisHorizontalIcon } from '@heroicons/react/16/solid'
 import {
   ArrowPathIcon,
   ArrowUturnLeftIcon,
   Cog6ToothIcon,
   DocumentTextIcon,
   RocketLaunchIcon,
-} from "@heroicons/react/24/outline"
-import { Button } from "@/components/ui/button"
-import { ButtonGroup } from "@/components/ui/button-group"
-import { Menu, MenuContent, MenuItem } from "@/components/ui/menu"
+} from '@heroicons/react/24/outline'
+import { Button } from '@/components/ui/button'
+import { ButtonGroup } from '@/components/ui/button-group'
+import { Menu, MenuContent, MenuItem } from '@/components/ui/menu'
 
 export default function ButtonGroupWithMenuDemo() {
   return (

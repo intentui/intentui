@@ -1,6 +1,5 @@
 ---
-
-title: "Native select"
+title: 'Native select'
 description: A native select component for choosing a single option from a predefined list. Built on the browser select element for accessibility, performance, and broad compatibility.
 published: true
 ---
@@ -19,14 +18,14 @@ Add the component with the CLI.
 
 ## Manual installation
 
-<InstallCommand command="npm i @heroicons/react tailwind-merge"/>
+<InstallCommand command="npm i @heroicons/react tailwind-merge" />
 <SourceCode toShow="native-select" />
 
 ## Anatomy
 
 ```ts
-import { Description, Label } from "@/components/ui/field"
-import { NativeSelect, NativeSelectContent } from "@/components/ui/native-select"
+import { Description, Label } from '@/components/ui/field'
+import { NativeSelect, NativeSelectContent } from '@/components/ui/native-select'
 ```
 
 ```tsx
@@ -69,7 +68,9 @@ Use the uncontrolled pattern when you do not need to read or update the value fr
 <How toUse="pickers/native-select/native-select-uncontrolled-example" />
 
 ### Invalid
+
 Indicate an error state with the `aria-invalid` prop. This will display an error message and apply error styles to the select.
+
 <How toUse="pickers/native-select/native-select-invalid-example" />
 
 ### Disabled
@@ -84,15 +85,15 @@ Disable the select to prevent interaction and communicate that the field is curr
 
 The `NativeSelect` component wraps a native select control.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### NativeSelectContent
 
 The `NativeSelectContent` component renders the native select element.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isInvalid` | `boolean` | - |
+| Prop        | Type      | Default |
+| ----------- | --------- | ------- |
+| `className` | `string`  | -       |
+| `isInvalid` | `boolean` | -       |

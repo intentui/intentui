@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { Form } from "react-aria-components/Form"
-import { Button } from "@/components/ui/button"
-import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Text } from "@/components/ui/text"
-import { TextField } from "@/components/ui/text-field"
+import { Form } from 'react-aria-components/Form'
+import { Button } from '@/components/ui/button'
+import { Description, FieldError, Fieldset, Label, Legend } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { Text } from '@/components/ui/text'
+import { TextField } from '@/components/ui/text-field'
 
 export default function FieldDemo() {
   return (

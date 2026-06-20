@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Link } from "@/components/ui/link"
+import { Link } from '@/components/ui/link'
 
 export default function LinkDisabledDemo() {
   return (

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   Pagination,
@@ -9,7 +9,7 @@ import {
   PaginationNext,
   PaginationPrevious,
   PaginationSection,
-} from "@/components/ui/pagination"
+} from '@/components/ui/pagination'
 
 export default function SimplePaginationDemo() {
   return (

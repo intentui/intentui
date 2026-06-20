@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { EllipsisVerticalIcon } from "@heroicons/react/16/solid"
-import { EyeIcon, PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline"
+import { EllipsisVerticalIcon } from '@heroicons/react/16/solid'
+import { EyeIcon, PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline'
 import {
   Card,
   CardContent,
@@ -9,8 +9,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@/components/ui/menu"
+} from '@/components/ui/card'
+import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from '@/components/ui/menu'
 import {
   Pagination,
   PaginationFirst,
@@ -22,7 +22,7 @@ import {
   PaginationNext,
   PaginationPrevious,
   PaginationSection,
-} from "@/components/ui/pagination"
+} from '@/components/ui/pagination'
 import {
   Table,
   TableBody,
@@ -30,7 +30,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from '@/components/ui/table'
 
 export default function CardTableDemo() {
   return (
@@ -126,72 +126,72 @@ export default function CardTableDemo() {
 const users = [
   {
     id: 1,
-    name: "John Doe",
-    gender: "Male",
+    name: 'John Doe',
+    gender: 'Male',
     age: 30,
-    occupation: "Software Engineer",
+    occupation: 'Software Engineer',
   },
   {
     id: 2,
-    name: "Jane Smith",
-    gender: "Female",
+    name: 'Jane Smith',
+    gender: 'Female',
     age: 25,
-    occupation: "Marketing Manager",
+    occupation: 'Marketing Manager',
   },
   {
     id: 3,
-    name: "Bob Johnson",
-    gender: "Male",
+    name: 'Bob Johnson',
+    gender: 'Male',
     age: 40,
-    occupation: "Doctor",
+    occupation: 'Doctor',
   },
   {
     id: 4,
-    name: "Emily Chen",
-    gender: "Female",
+    name: 'Emily Chen',
+    gender: 'Female',
     age: 28,
-    occupation: "Teacher",
+    occupation: 'Teacher',
   },
   {
     id: 5,
-    name: "Michael Brown",
-    gender: "Male",
+    name: 'Michael Brown',
+    gender: 'Male',
     age: 35,
-    occupation: "Lawyer",
+    occupation: 'Lawyer',
   },
   {
     id: 6,
-    name: "Sarah Lee",
-    gender: "Female",
+    name: 'Sarah Lee',
+    gender: 'Female',
     age: 32,
-    occupation: "Designer",
+    occupation: 'Designer',
   },
   {
     id: 7,
-    name: "Kevin White",
-    gender: "Male",
+    name: 'Kevin White',
+    gender: 'Male',
     age: 45,
-    occupation: "CEO",
+    occupation: 'CEO',
   },
   {
     id: 8,
-    name: "Lisa Nguyen",
-    gender: "Female",
+    name: 'Lisa Nguyen',
+    gender: 'Female',
     age: 29,
-    occupation: "Engineer",
+    occupation: 'Engineer',
   },
   {
     id: 9,
-    name: "David Kim",
-    gender: "Male",
+    name: 'David Kim',
+    gender: 'Male',
     age: 38,
-    occupation: "Consultant",
+    occupation: 'Consultant',
   },
   {
     id: 10,
-    name: "Hannah Patel",
-    gender: "Female",
+    name: 'Hannah Patel',
+    gender: 'Female',
     age: 26,
-    occupation: "Writer",
+    occupation: 'Writer',
   },
 ]

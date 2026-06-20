@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { parseDate } from "@internationalized/date"
-import { BrandIntentuiIcon } from "@/components/icons/brand-intentui-icon"
-import { Link } from "@/components/ui/link"
-import { RangeCalendar } from "@/components/ui/range-calendar"
-import { SearchField, SearchInput } from "@/components/ui/search-field"
+import { parseDate } from '@internationalized/date'
+import { BrandIntentuiIcon } from '@/components/icons/brand-intentui-icon'
+import { Link } from '@/components/ui/link'
+import { RangeCalendar } from '@/components/ui/range-calendar'
+import { SearchField, SearchInput } from '@/components/ui/search-field'
 import {
   Sidebar,
   SidebarContent,
@@ -14,7 +14,7 @@ import {
   SidebarSection,
   SidebarSectionGroup,
   useSidebar,
-} from "@/components/ui/sidebar"
+} from '@/components/ui/sidebar'
 
 export default function AppSidebar() {
   const { state } = useSidebar()
@@ -33,7 +33,7 @@ export default function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarSectionGroup>
-          {state !== "collapsed" && (
+          {state !== 'collapsed' && (
             <SidebarSection className="pt-1">
               <SearchField className="col-span-full mb-6">
                 <SearchInput placeholder="Search" />

@@ -1,9 +1,9 @@
 ---
-title: "Command Menu"
+title: 'Command Menu'
 description: A command menu is an enhanced button that opens a menu of options, making it a powerful alternative to a combobox, perfect for command palettes, menus, and more.
 order: 4
 published: true
-references: ["https://react-aria.adobe.com/Autocomplete#api"]
+references: ['https://react-aria.adobe.com/Autocomplete#api']
 ---
 
 <How toUse="controls/command-menu/command-menu-example" />
@@ -11,18 +11,22 @@ references: ["https://react-aria.adobe.com/Autocomplete#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/command-menu"/>
+
+<InstallCommand command="npx shadcn@latest add @intentui/command-menu" />
 
 ## Composed components
+
 <Composed components={['modal', 'menu', 'keyboard']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
-<SourceCode toShow='command-menu' />
+
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge" />
+<SourceCode toShow="command-menu" />
 
 ## Anatomy
+
 ```
 "use client"
 
@@ -98,39 +102,54 @@ export function CommandPalette() {
 ## Examples
 
 ### Separator
+
 Creating a separator is super simple, just use `CommandMenuSeparator`. However, make sure to place it within a `CommandMenuSection` for proper structure.
+
 <How toUse="controls/command-menu/command-menu-separator-example" />
 
 ### Keyboard
+
 Integrate keyboard interaction with the command menu. Note that keyboard functionality may be limited on smaller screens.
+
 <How toUse="controls/command-menu/command-menu-keyboard-example" />
 
 ### Trigger by keyboard
+
 Activate the command menu via keyboard commands, ideal for initiating command palettes.
+
 <How toUse="controls/command-menu/command-menu-trigger-by-keyboard-example" />
 
 ### Danger
+
 Highlight a command item as dangerous by changing its color to red, indicating a warning.
+
 <How toUse="controls/command-menu/command-menu-danger-item-example" />
 
 ### Controlled
+
 Dynamically manage the command palette with the `inputValue` and `onInputChange` props, ensuring it stays responsive to updates from the parent component. Additionally, ensure each `CommandMenuItem` includes a `textValue` prop, enabling seamless item filtering through the search input.
+
 <How toUse="controls/command-menu/command-menu-controlled-example" />
-Additionally, control the execution of an action upon selecting an item:
-```
+Additionally, control the execution of an action upon selecting an item: ```
 <CommandItem onAction={() => console.log('share intentui.com/d/command')} />
 ```
 
 ### Pending
+
 The `isPending` prop can be used to indicate that the command menu is loading data. This can be useful when you need to display a loading indicator while the data is being fetched.
+
 <How toUse="controls/command-menu/command-menu-pending-example" />
 
 ### Disabled
+
 Disable items in the command menu to make them non-interactive, appearing grayed out.
+
 <How toUse="controls/command-menu/command-menu-disabled-example" />
 
 ### Hide escape button
+
 To hide the escape button, set `escapeButton` to `false`. View this setup in the [Command Description](#description) section.
+
 ```
 <CommandMenu
   escapeButton={false}
@@ -140,11 +159,15 @@ To hide the escape button, set `escapeButton` to `false`. View this setup in the
 ```
 
 ### Description
+
 Enhance command items with descriptions using the `CommandDescription` component. Be aware that keyboard accessibility might be limited on smaller screens.
+
 <How toUse="controls/command-menu/command-menu-description-example" />
 
 ### Hide scrollbar
+
 To hide the scrollbar, set `className` to `scrollbar-none`. But before you do that, make sure to add this snippet into your css file.
+
 ```css
 @utility scrollbar-none {
   -ms-overflow-style: none; /* Internet Explorer and Edge */
@@ -160,9 +183,11 @@ To hide the scrollbar, set `className` to `scrollbar-none`. But before you do th
 ```
 
 ## Navigating
+
 Indeed, when using this command palette within client-side frameworks like Next.js or Inertia.js, it’s practical to automatically close the palette upon navigating via a link. Here’s how you can manage that:
 
 ### Inertia.js
+
 In Inertia.js, utilize the `router.on('navigate')` event to automatically close the command palette when navigation occurs. Here’s an example:
 This setup ensures that the command palette closes seamlessly when the user navigates to a new page, maintaining a clean and distraction-free user interface.
 
@@ -175,6 +200,7 @@ export function CommandPalette({ open, setOpen }: Props) {
 ```
 
 ### Next.js
+
 When using Next.js, you can use the `usePathname` hook to close the command palette when you navigate to a new page.
 
 ```
@@ -207,86 +233,86 @@ To close the command palette when an action is performed, use the `onAction` pro
 
 The `CommandMenu` component displays a searchable command palette.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `aria-label` | `string` | - |
-| `className` | `string` | - |
-| `isDismissable` | `boolean` | `true` |
-| `overlay` | `Pick<ModalOverlayProps, "className">` | - |
-| `shortcut` | `string` | - |
-| `size` | `keyof typeof sizes` | `lg` |
+| Prop            | Type                                   | Default |
+| --------------- | -------------------------------------- | ------- |
+| `aria-label`    | `string`                               | -       |
+| `className`     | `string`                               | -       |
+| `isDismissable` | `boolean`                              | `true`  |
+| `overlay`       | `Pick<ModalOverlayProps, "className">` | -       |
+| `shortcut`      | `string`                               | -       |
+| `size`          | `keyof typeof sizes`                   | `lg`    |
 
 ### CommandMenuDescription
 
 The `CommandMenuDescription` component renders secondary text for a command item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### CommandMenuFooter
 
 The `CommandMenuFooter` component renders footer content inside the command menu.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### CommandMenuItem
 
 The `CommandMenuItem` component represents one command menu action.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### CommandMenuLabel
 
 The `CommandMenuLabel` component renders the primary text for a command item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### CommandMenuList
 
 The `CommandMenuList` component contains command menu items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### CommandMenuSearch
 
 The `CommandMenuSearch` component renders the command menu search input.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `placeholder` | `string` | - |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `className`   | `string` | -       |
+| `placeholder` | `string` | -       |
 
 ### CommandMenuSection
 
 The `CommandMenuSection` component groups related command menu items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### CommandMenuSeparator
 
 The `CommandMenuSeparator` component separates command menu groups.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### CommandMenuShortcut
 
 The `CommandMenuShortcut` component displays a keyboard shortcut for a command item.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/Autocomplete#api) for the full API reference.

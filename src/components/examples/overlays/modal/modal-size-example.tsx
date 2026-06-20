@@ -1,22 +1,22 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Button } from "@/components/ui/button"
-import { DialogClose } from "@/components/ui/dialog"
+import { Button } from '@/components/ui/button'
+import { DialogClose } from '@/components/ui/dialog'
 import {
   ModalContent,
   ModalDescription,
   ModalFooter,
   ModalHeader,
   ModalTitle,
-} from "@/components/ui/modal"
+} from '@/components/ui/modal'
 
-type Size = Pick<React.ComponentProps<typeof ModalContent>, "size">["size"]
-const sizes: Size[] = ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl"]
+type Size = Pick<React.ComponentProps<typeof ModalContent>, 'size'>['size']
+const sizes: Size[] = ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl']
 export default function ModalSizeDemo() {
   const [isOpen, setIsOpen] = useState(false)
-  const [modalSize, setModalSize] = useState<Size>("md")
+  const [modalSize, setModalSize] = useState<Size>('md')
 
   const handlePress = (size: Size, open: boolean) => {
     setModalSize(size)

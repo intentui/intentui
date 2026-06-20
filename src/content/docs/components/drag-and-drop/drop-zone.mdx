@@ -1,9 +1,9 @@
 ---
-title: "Drop Zone"
+title: 'Drop Zone'
 description: The Drop Zone lets users drag and drop files or select them manually, delivering a smooth, intuitive upload flow with clear feedback and progress states.
 order: 1
 published: true
-references: ["https://react-aria.adobe.com/DropZone#api"]
+references: ['https://react-aria.adobe.com/DropZone#api']
 ---
 
 <How toUse="drag-and-drop/drag/drop-zone-example" />
@@ -11,17 +11,19 @@ references: ["https://react-aria.adobe.com/DropZone#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/drop-zone"/>
 
+<InstallCommand command="npx shadcn@latest add @intentui/drop-zone" />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
 
-<SourceCode toShow='drop-zone'/>
+<InstallCommand command="npm i react-aria-components tailwind-merge" />
+
+<SourceCode toShow="drop-zone" />
 
 ## Anatomy
+
 ```
 import { DropZone } from "@/components/ui/drop-zone"
 import { Label } from "@/components/ui/field"
@@ -36,6 +38,7 @@ import { Label } from "@/components/ui/field"
 ## Examples
 
 ### Using FileTrigger
+
 The `FileTrigger` component can be used to select files from the file system, making it an excellent tool for managing files that have been dragged and dropped into the browser.
 
 <How toUse="drag-and-drop/drag/drop-zone-and-file-trigger-example" />
@@ -46,8 +49,8 @@ The `FileTrigger` component can be used to select files from the file system, ma
 
 The `DropZone` component accepts dragged files or items.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/DropZone#api) for the full API reference.

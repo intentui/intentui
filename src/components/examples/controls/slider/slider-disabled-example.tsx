@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Label } from "@/components/ui/field"
-import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from "@/components/ui/slider"
+import { Label } from '@/components/ui/field'
+import { Slider, SliderFill, SliderOutput, SliderThumb, SliderTrack } from '@/components/ui/slider'
 
 export default function SliderDisabledDemo() {
   return (

@@ -1,11 +1,11 @@
-"use client"
-import { ArrowUpRightIcon } from "@heroicons/react/20/solid"
-import { usePathname } from "next/navigation"
-import { twJoin } from "tailwind-merge"
-import { Header, HeaderDescription, HeaderInner, HeaderTitle } from "@/components/header"
-import { PageContainer } from "@/components/page-container"
-import { buttonStyles } from "@/components/ui/button"
-import { Link, type LinkProps } from "@/components/ui/link"
+'use client'
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
+import { usePathname } from 'next/navigation'
+import { twJoin } from 'tailwind-merge'
+import { Header, HeaderDescription, HeaderInner, HeaderTitle } from '@/components/header'
+import { PageContainer } from '@/components/page-container'
+import { buttonStyles } from '@/components/ui/button'
+import { Link, type LinkProps } from '@/components/ui/link'
 
 export function BlocksHeader() {
   return (
@@ -20,7 +20,7 @@ export function BlocksHeader() {
 
           <Link
             href="https://design.intentui.com?utm_source=intentui.com&utm_medium=referral&utm_campaign=blocks"
-            className={buttonStyles({ intent: "secondary" })}
+            className={buttonStyles({ intent: 'secondary' })}
           >
             Explore premium blocks
             <ArrowUpRightIcon />
@@ -47,9 +47,9 @@ function NavLink(props: LinkProps) {
   return (
     <Link
       className={twJoin(
-        "inline-flex items-center gap-x-2.5 px-2 py-3 text-sm/6 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0",
-        "text-muted-fg hover:text-fg",
-        pathname === props.href ? "text-fg" : "text-muted-fg",
+        'inline-flex items-center gap-x-2.5 px-2 py-3 text-sm/6 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0',
+        'text-muted-fg hover:text-fg',
+        pathname === props.href ? 'text-fg' : 'text-muted-fg'
       )}
       {...props}
     />

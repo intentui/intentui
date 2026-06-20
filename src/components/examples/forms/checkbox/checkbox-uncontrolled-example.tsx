@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
+import { Checkbox, CheckboxField } from '@/components/ui/checkbox'
 
 export default function CheckboxUncontrolledDemo() {
   return (

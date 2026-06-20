@@ -1,15 +1,15 @@
-"use client"
-import { twMerge } from "tailwind-merge"
-import SwitchDescriptionDemo from "@/components/examples/controls/switch/switch-description-example"
-import CheckboxGroupDescriptionDemo from "@/components/examples/forms/checkbox/checkbox-group-description-example"
-import RadioGroupDescriptionDemo from "@/components/examples/forms/radio-group/radio-group-description-example"
-import ModalDemo from "@/components/examples/overlays/modal/modal-example"
-import PopoverDemo from "@/components/examples/overlays/popover/popover-example"
-import SheetDemo from "@/components/examples/overlays/sheet/sheet-example"
-import TooltipDemo from "@/components/examples/overlays/tooltip/tooltip-example"
-import { PageContainer } from "@/components/page-container"
-import { CardHeader } from "@/components/ui/card"
-import { Link } from "@/components/ui/link"
+'use client'
+import { twMerge } from 'tailwind-merge'
+import SwitchDescriptionDemo from '@/components/examples/controls/switch/switch-description-example'
+import CheckboxGroupDescriptionDemo from '@/components/examples/forms/checkbox/checkbox-group-description-example'
+import RadioGroupDescriptionDemo from '@/components/examples/forms/radio-group/radio-group-description-example'
+import ModalDemo from '@/components/examples/overlays/modal/modal-example'
+import PopoverDemo from '@/components/examples/overlays/popover/popover-example'
+import SheetDemo from '@/components/examples/overlays/sheet/sheet-example'
+import TooltipDemo from '@/components/examples/overlays/tooltip/tooltip-example'
+import { PageContainer } from '@/components/page-container'
+import { CardHeader } from '@/components/ui/card'
+import { Link } from '@/components/ui/link'
 
 export function Blocks() {
   return (
@@ -92,13 +92,13 @@ export function Blocks() {
   )
 }
 
-export function BlocksCard({ className, ...props }: React.ComponentProps<"div">) {
+export function BlocksCard({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       {...props}
       className={twMerge(
-        "flex min-h-32 items-center justify-center rounded-2xl border p-6 *:min-w-56 sm:min-h-48 sm:p-10 dark:bg-muted/30",
-        className,
+        'flex min-h-32 items-center justify-center rounded-2xl border p-6 *:min-w-56 sm:min-h-48 sm:p-10 dark:bg-muted/30',
+        className
       )}
     >
       {props.children}
@@ -106,8 +106,8 @@ export function BlocksCard({ className, ...props }: React.ComponentProps<"div">)
   )
 }
 
-function Center({ className, ...props }: React.ComponentProps<"div">) {
+function Center({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <div className={twMerge("flex size-full items-center justify-center", className)} {...props} />
+    <div className={twMerge('flex size-full items-center justify-center', className)} {...props} />
   )
 }

@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useEffect } from "react"
-import { useTheme } from "@/components/theme-provider"
-import { META_THEME_COLORS } from "@/config/app"
+import { useEffect } from 'react'
+import { useTheme } from '@/components/theme-provider'
+import { META_THEME_COLORS } from '@/config/app'
 
 export function AppBootstrap() {
   const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     const root = document.documentElement
-    const savedLayout = localStorage.getItem("layout")
+    const savedLayout = localStorage.getItem('layout')
 
     for (const className of Array.from(root.classList)) {
-      if (className.startsWith("layout-")) {
+      if (className.startsWith('layout-')) {
         root.classList.remove(className)
       }
     }
@@ -27,8 +27,8 @@ export function AppBootstrap() {
     if (!themeColor) return
 
     themeColor.setAttribute(
-      "content",
-      resolvedTheme === "dark" ? META_THEME_COLORS.dark : META_THEME_COLORS.light,
+      'content',
+      resolvedTheme === 'dark' ? META_THEME_COLORS.dark : META_THEME_COLORS.light
     )
   }, [resolvedTheme])
   return null

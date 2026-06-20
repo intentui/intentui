@@ -1,9 +1,9 @@
 ---
-title: "Meter"
+title: 'Meter'
 description: A graphical representation of a measured value within a fixed range, perfect for showing scores, ratings, or resource usage. It provides clear visual feedback.
 order: 4
 published: true
-references: ["https://react-aria.adobe.com/Meter#api"]
+references: ['https://react-aria.adobe.com/Meter#api']
 ---
 
 <How minW60 toUse="statuses/meter/meter-example" />
@@ -11,20 +11,23 @@ references: ["https://react-aria.adobe.com/Meter#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/meter"/>
 
+<InstallCommand command="npx shadcn@latest add @intentui/meter" />
 
 ## Composed components
-<Composed components={['field']}/>
+
+<Composed components={['field']} />
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
 
-<SourceCode toShow='meter'/>
+<InstallCommand command="npm i react-aria-components tailwind-merge" />
+
+<SourceCode toShow="meter" />
 
 ## Anatomy
+
 ```
 import { Meter } from "@/components/ui/meter"
 
@@ -34,11 +37,13 @@ import { Meter } from "@/components/ui/meter"
 ## Examples
 
 ### Decimal format
+
 By default, the meter will display the value as a percentage. You can change the format of the value by passing a `formatOptions` prop. This example is shown decimal format.
 
 <How minW60 toUse="statuses/meter/meter-decimal-format-example" />
 
 ### Currency format
+
 You can also change the currency format of the value by passing a `formatOptions` prop. This example is shown currency format.
 
 <How minW60 toUse="statuses/meter/meter-currency-format-example" />
@@ -49,32 +54,32 @@ You can also change the currency format of the value by passing a `formatOptions
 
 The `Meter` component displays a value within a known range.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### MeterHeader
 
 The `MeterHeader` component groups meter label and value content.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### MeterTrack
 
 The `MeterTrack` component renders the meter track.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 ### MeterValue
 
 The `MeterValue` component displays the formatted meter value.
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | -       |
 
 See the [React Aria](https://react-aria.adobe.com/Meter#api) for the full API reference.

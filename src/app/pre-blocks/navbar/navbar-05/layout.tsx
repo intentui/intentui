@@ -1,5 +1,5 @@
-import { NavbarProvider } from "@/components/ui/navbar"
-import AppNavbar from "./app-navbar"
+import { NavbarProvider } from '@/components/ui/navbar'
+import AppNavbar from './app-navbar'
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (

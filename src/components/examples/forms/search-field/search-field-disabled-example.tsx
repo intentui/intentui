@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { SearchField, SearchInput } from "@/components/ui/search-field"
+import { SearchField, SearchInput } from '@/components/ui/search-field'
 
 export default function SearchFieldDisabledDemo() {
   return (

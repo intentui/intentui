@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { ChoiceBox, ChoiceBoxItem } from "@/components/ui/choice-box"
+import { ChoiceBox, ChoiceBoxItem } from '@/components/ui/choice-box'
 
 export default function ChoiceboxMultipleSelectionDemo() {
   return (
@@ -12,23 +12,23 @@ export default function ChoiceboxMultipleSelectionDemo() {
 
 const packages = [
   {
-    id: "sm",
-    label: "Small",
-    description: "Perfect for beginners. Basic resources for light projects.",
+    id: 'sm',
+    label: 'Small',
+    description: 'Perfect for beginners. Basic resources for light projects.',
   },
   {
-    id: "md",
-    label: "Medium",
-    description: "Great for growing sites. More power and storage.",
+    id: 'md',
+    label: 'Medium',
+    description: 'Great for growing sites. More power and storage.',
   },
   {
-    id: "lg",
-    label: "Large",
-    description: "Ideal for busy sites. Lots of resources and support.",
+    id: 'lg',
+    label: 'Large',
+    description: 'Ideal for busy sites. Lots of resources and support.',
   },
   {
-    id: "xl",
-    label: "Extra Large",
-    description: "Max power for demanding applications. Top-tier performance.",
+    id: 'xl',
+    label: 'Extra Large',
+    description: 'Max power for demanding applications. Top-tier performance.',
   },
 ]

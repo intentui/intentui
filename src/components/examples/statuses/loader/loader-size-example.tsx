@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { Loader } from "@/components/ui/loader"
+import { Loader } from '@/components/ui/loader'
 
 export default function LoaderSizeDemo() {
   return (

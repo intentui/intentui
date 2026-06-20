@@ -2,7 +2,7 @@ import {
   DescriptionDetails,
   DescriptionList,
   DescriptionTerm,
-} from "@/components/ui/description-list"
+} from '@/components/ui/description-list'
 
 export default function DescriptionListDemo() {
   return (

@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
 import {
   Disclosure,
   DisclosureGroup,
   DisclosurePanel,
   DisclosureTrigger,
-} from "@/components/ui/disclosure-group"
+} from '@/components/ui/disclosure-group'
 
 export default function DisclosureGroupDemo() {
   return (

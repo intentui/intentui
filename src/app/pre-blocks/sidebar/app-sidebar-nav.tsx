@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
 import {
   ArrowRightOnRectangleIcon,
   Cog6ToothIcon,
   CommandLineIcon,
   Squares2X2Icon,
-} from "@heroicons/react/24/outline"
-import { Avatar } from "@/components/ui/avatar"
-import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
+} from '@heroicons/react/24/outline'
+import { Avatar } from '@/components/ui/avatar'
+import { Breadcrumbs, BreadcrumbsItem } from '@/components/ui/breadcrumbs'
 import {
   Menu,
   MenuContent,
@@ -17,8 +17,8 @@ import {
   MenuSection,
   MenuSeparator,
   MenuTrigger,
-} from "@/components/ui/menu"
-import { SidebarNav, SidebarTrigger } from "@/components/ui/sidebar"
+} from '@/components/ui/menu'
+import { SidebarNav, SidebarTrigger } from '@/components/ui/sidebar'
 
 export default function AppSidebarNav() {
   return (
@@ -41,7 +41,7 @@ function UserMenu() {
       <MenuTrigger className="ml-auto md:hidden" aria-label="Open Menu">
         <Avatar isSquare alt="kurt cobain" src="https://intentui.com/images/avatar/cobain.jpg" />
       </MenuTrigger>
-      <MenuContent popover={{ placement: "bottom end" }} className="min-w-64">
+      <MenuContent popover={{ placement: 'bottom end' }} className="min-w-64">
         <MenuSection>
           <MenuHeader separator>
             <span className="block">Kurt Cobain</span>

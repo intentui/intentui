@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { DateRangePicker, DateRangePickerTrigger } from "@/components/ui/date-range-picker"
-import { Description, Label } from "@/components/ui/field"
+import { DateRangePicker, DateRangePickerTrigger } from '@/components/ui/date-range-picker'
+import { Description, Label } from '@/components/ui/field'
 
 export default function DateRangePickerDisabledDemo() {
   return (

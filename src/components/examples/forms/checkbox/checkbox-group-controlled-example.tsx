@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Checkbox, CheckboxField, CheckboxGroup } from "@/components/ui/checkbox"
-import { Description, Label } from "@/components/ui/field"
+import { Checkbox, CheckboxField, CheckboxGroup } from '@/components/ui/checkbox'
+import { Description, Label } from '@/components/ui/field'
 
 export default function CheckboxGroupControlledExample() {
   const [values, setValues] = useState<string[]>([])
@@ -25,10 +25,10 @@ export default function CheckboxGroupControlledExample() {
       <Description className="mt-2 flex h-10 flex-col gap-y-1 [&>strong]:font-medium [&>strong]:text-fg">
         {values.length > 0 ? (
           <>
-            Selected values <strong className="font-medium">{values.join(", ")}</strong>
+            Selected values <strong className="font-medium">{values.join(', ')}</strong>
           </>
         ) : (
-          "No values selected"
+          'No values selected'
         )}
       </Description>
     </>

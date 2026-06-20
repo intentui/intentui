@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxField, CheckboxGroup } from "@/components/ui/checkbox"
-import { Description } from "@/components/ui/field"
+import { Button } from '@/components/ui/button'
+import { Checkbox, CheckboxField, CheckboxGroup } from '@/components/ui/checkbox'
+import { Description } from '@/components/ui/field'
 import {
   Sheet,
   SheetBody,
@@ -12,7 +12,7 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet"
+} from '@/components/ui/sheet'
 
 export default function SheetControlledDemo() {
   return (

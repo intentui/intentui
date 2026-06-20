@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import type { Key } from "react-aria-components/Breadcrumbs"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { useState } from 'react'
+import type { Key } from 'react-aria-components/Breadcrumbs'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 export default function ToggleGroupControlledDemo() {
-  const [selected, setSelected] = useState(new Set<Key>(["bold"]))
+  const [selected, setSelected] = useState(new Set<Key>(['bold']))
 
   return (
     <div className="space-y-6">
@@ -16,7 +16,7 @@ export default function ToggleGroupControlledDemo() {
       </ToggleGroup>
       {[...selected].length > 0 && (
         <p className="text-muted-fg">
-          Selected: <strong className="font-semibold text-fg">{[...selected].join(", ")}</strong>
+          Selected: <strong className="font-semibold text-fg">{[...selected].join(', ')}</strong>
         </p>
       )}
     </div>

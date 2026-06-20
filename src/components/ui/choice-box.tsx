@@ -1,36 +1,36 @@
-"use client"
+'use client'
 
-import { createContext, use } from "react"
-import type { GridListItemProps, GridListProps, TextProps } from "react-aria-components"
-import { composeRenderProps, GridList, GridListItem, Text } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
-import type { VariantProps } from "tailwind-variants"
-import { tv } from "tailwind-variants"
-import { cx } from "@/lib/primitive"
-import { Checkbox, CheckboxField } from "./checkbox"
+import { createContext, use } from 'react'
+import type { GridListItemProps, GridListProps, TextProps } from 'react-aria-components'
+import { composeRenderProps, GridList, GridListItem, Text } from 'react-aria-components'
+import { twMerge } from 'tailwind-merge'
+import type { VariantProps } from 'tailwind-variants'
+import { tv } from 'tailwind-variants'
+import { cx } from '@/lib/primitive'
+import { Checkbox, CheckboxField } from './checkbox'
 
 const choiceBoxStyles = tv({
-  base: "grid [--gutter:--spacing(4)]",
+  base: 'grid [--gutter:--spacing(4)]',
   variants: {
     columns: {
-      1: "col-span-full grid-cols-[auto_1fr]",
-      2: "sm:grid-cols-2",
-      3: "sm:grid-cols-3",
-      4: "sm:grid-cols-4",
-      5: "sm:grid-cols-5",
-      6: "sm:grid-cols-6",
+      1: 'col-span-full grid-cols-[auto_1fr]',
+      2: 'sm:grid-cols-2',
+      3: 'sm:grid-cols-3',
+      4: 'sm:grid-cols-4',
+      5: 'sm:grid-cols-5',
+      6: 'sm:grid-cols-6',
     },
     gap: {
-      0: "gap-0",
-      1: "gap-1",
-      2: "gap-2",
-      3: "gap-3",
-      4: "gap-4",
-      5: "gap-5",
-      6: "gap-6",
-      8: "gap-8",
-      10: "gap-10",
-      12: "gap-12",
+      0: 'gap-0',
+      1: 'gap-1',
+      2: 'gap-2',
+      3: 'gap-3',
+      4: 'gap-4',
+      5: 'gap-5',
+      6: 'gap-6',
+      8: 'gap-8',
+      10: 'gap-10',
+      12: 'gap-12',
     },
   },
   defaultVariants: {
@@ -42,7 +42,7 @@ const choiceBoxStyles = tv({
       gap: 0,
       columns: 1,
       className:
-        "rounded-lg *:data-[slot=choice-box-item]:inset-ring *:data-[slot=choice-box-item]:-mt-px *:data-[slot=choice-box-item]:rounded-none *:data-[slot=choice-box-item]:last:rounded-b-[calc(var(--radius-lg)-1px)] *:data-[slot=choice-box-item]:first:rounded-t-[calc(var(--radius-lg)-1px)]",
+        'rounded-lg *:data-[slot=choice-box-item]:inset-ring *:data-[slot=choice-box-item]:-mt-px *:data-[slot=choice-box-item]:rounded-none *:data-[slot=choice-box-item]:last:rounded-b-[calc(var(--radius-lg)-1px)] *:data-[slot=choice-box-item]:first:rounded-t-[calc(var(--radius-lg)-1px)]',
     },
   ],
 })
@@ -57,25 +57,25 @@ interface ChoiceBoxProps<T extends object>
 }
 
 const ChoiceBox = <T extends object>({
-                                       columns = 1,
-                                       gap = 0,
-                                       className,
-                                       selectionMode = "single",
-                                       isReadOnly,
-                                       ...props
-                                     }: ChoiceBoxProps<T>) => {
+  columns = 1,
+  gap = 0,
+  className,
+  selectionMode = 'single',
+  isReadOnly,
+  ...props
+}: ChoiceBoxProps<T>) => {
   return (
     <ChoiceBoxContext value={{ columns, gap, isReadOnly }}>
       <GridList
         data-slot="choice-box"
-        layout={columns === 1 ? "stack" : "grid"}
+        layout={columns === 1 ? 'stack' : 'grid'}
         selectionMode={selectionMode}
         className={cx(
           choiceBoxStyles({
             columns,
             gap,
           }),
-          className,
+          className
         )}
         {...props}
       />
@@ -85,42 +85,42 @@ const ChoiceBox = <T extends object>({
 
 const choiceBoxItemStyles = tv({
   base: [
-    "group outline-hidden",
-    "[--choice-box-fg:var(--color-primary-subtle-fg)] [--choice-box:var(--color-primary-subtle)]",
-    "[--choice-box-selected-hovered:var(--color-primary-subtle)]/90",
-    "inset-ring inset-ring-border rounded-lg p-(--gutter) **:data-[slot=label]:font-medium",
-    "**:data-[slot=avatar]:row-span-2 **:data-[slot=avatar]:mt-0.5 **:data-[slot=avatar]:shrink-0",
-    "**:[svg]:row-span-2 **:[svg]:h-[1.1lh] **:[svg]:w-5 **:[svg]:shrink-0",
-    "has-[svg:not([data-slot=check-indicator])]:grid-cols-[auto_1fr_auto] has-data-[slot=avatar]:grid-cols-[auto_1fr_auto]",
-    "grid grid-cols-[1fr_auto] content-start items-start gap-x-[calc(var(--gutter)-(--spacing(1)))] gap-y-1",
-    "[--choice-box-active-ring:var(--color-ring)]/70 [--choice-box-ring:var(--color-ring)]/20",
-    "has-[[slot=description]]:**:data-[slot=label]:font-medium",
+    'group outline-hidden',
+    '[--choice-box-fg:var(--color-primary-subtle-fg)] [--choice-box:var(--color-primary-subtle)]',
+    '[--choice-box-selected-hovered:var(--color-primary-subtle)]/90',
+    'inset-ring inset-ring-border rounded-lg p-(--gutter) **:data-[slot=label]:font-medium',
+    '**:data-[slot=avatar]:row-span-2 **:data-[slot=avatar]:mt-0.5 **:data-[slot=avatar]:shrink-0',
+    '**:[svg]:row-span-2 **:[svg]:h-[1.1lh] **:[svg]:w-5 **:[svg]:shrink-0',
+    'has-[svg:not([data-slot=check-indicator])]:grid-cols-[auto_1fr_auto] has-data-[slot=avatar]:grid-cols-[auto_1fr_auto]',
+    'grid grid-cols-[1fr_auto] content-start items-start gap-x-[calc(var(--gutter)-(--spacing(1)))] gap-y-1',
+    '[--choice-box-active-ring:var(--color-ring)]/70 [--choice-box-ring:var(--color-ring)]/20',
+    'has-[[slot=description]]:**:data-[slot=label]:font-medium',
   ],
   variants: {
     isLink: {
-      true: "cursor-pointer",
-      false: "cursor-default",
+      true: 'cursor-pointer',
+      false: 'cursor-default',
     },
     isHovered: {
-      true: "not-data-readonly:not-data-focus-visible:not-selected:inset-ring-muted-fg/30",
+      true: 'not-data-readonly:not-data-focus-visible:not-selected:inset-ring-muted-fg/30',
     },
     isFocused: {
-      true: "inset-ring-(--choice-box-active-ring) ring-(--choice-box-ring) ring-3 invalid:ring-danger-subtle-fg/20",
+      true: 'inset-ring-(--choice-box-active-ring) ring-(--choice-box-ring) ring-3 invalid:ring-danger-subtle-fg/20',
     },
-    isInvalid: { true: "ring-3 ring-danger-subtle-fg/20" },
+    isInvalid: { true: 'ring-3 ring-danger-subtle-fg/20' },
     isOneColumn: {
-      true: "col-span-full",
+      true: 'col-span-full',
     },
     isActive: {
       true: [
-        "bg-(--choice-box) text-(--choice-box-fg)",
-        "inset-ring-(--choice-box-active-ring) z-20 hover:bg-(--choice-box-selected-hovered)",
-        "**:data-[slot=label]:text-(--choice-box-fg)",
-        "**:[[slot=description]]:text-(--choice-box-fg)",
+        'bg-(--choice-box) text-(--choice-box-fg)',
+        'inset-ring-(--choice-box-active-ring) z-20 hover:bg-(--choice-box-selected-hovered)',
+        '**:data-[slot=label]:text-(--choice-box-fg)',
+        '**:[[slot=description]]:text-(--choice-box-fg)',
       ],
     },
     isDisabled: {
-      true: "z-10 opacity-50 **:data-[slot=label]:text-muted-fg forced-colors:text-[GrayText] **:[[slot=description]]:text-muted-fg/70",
+      true: 'z-10 opacity-50 **:data-[slot=label]:text-muted-fg forced-colors:text-[GrayText] **:[[slot=description]]:text-muted-fg/70',
     },
   },
 })
@@ -131,13 +131,13 @@ interface ChoiceBoxItemProps extends GridListItemProps, VariantProps<typeof choi
 }
 
 const ChoiceBoxItem = ({
-                         className,
-                         label,
-                         description,
-                         children,
-                         ...props
-                       }: ChoiceBoxItemProps) => {
-  const textValue = typeof children === "string" ? children : undefined
+  className,
+  label,
+  description,
+  children,
+  ...props
+}: ChoiceBoxItemProps) => {
+  const textValue = typeof children === 'string' ? children : undefined
   const { columns, isReadOnly } = useChoiceBoxContext()
   return (
     <GridListItem
@@ -151,16 +151,16 @@ const ChoiceBoxItem = ({
           choiceBoxItemStyles({
             ...renderProps,
             isOneColumn: columns === 1,
-            isLink: "href" in props,
+            isLink: 'href' in props,
             isFocused: !isReadOnly && renderProps.isFocused,
             isActive: (!isReadOnly && isSelected) || isFocusVisible,
             className,
-          }),
+          })
       )}
     >
       {composeRenderProps(children, (children, { selectionMode }) => {
-        const isStringChild = typeof children === "string"
-        const hasCustomChildren = typeof children !== "undefined"
+        const isStringChild = typeof children === 'string'
+        const hasCustomChildren = typeof children !== 'undefined'
 
         const content = hasCustomChildren ? (
           isStringChild ? (
@@ -177,7 +177,7 @@ const ChoiceBoxItem = ({
         return (
           <>
             {content}
-            {selectionMode === "multiple" && (
+            {selectionMode === 'multiple' && (
               <CheckboxField
                 slot="selection"
                 className="gap-x-0 col-start-2 self-start group-has-[svg:not([data-slot=check-indicator])]:col-start-3 group-has-data-[slot=avatar]:col-start-3"
@@ -202,11 +202,11 @@ const ChoiceBoxLabel = ({ className, ref, ...props }: ChoiceBoxLabelProps) => {
       data-slot="label"
       ref={ref}
       className={twMerge(
-        "select-none text-base/6 text-fg group-disabled:opacity-50 sm:text-sm/6",
-        "col-start-1 row-start-1",
-        "group-has-[svg:not([data-slot=check-indicator])]:col-start-2",
-        "group-has-data-[slot=avatar]:col-start-2",
-        className,
+        'select-none text-base/6 text-fg group-disabled:opacity-50 sm:text-sm/6',
+        'col-start-1 row-start-1',
+        'group-has-[svg:not([data-slot=check-indicator])]:col-start-2',
+        'group-has-data-[slot=avatar]:col-start-2',
+        className
       )}
       {...props}
     />
@@ -221,12 +221,12 @@ const ChoiceBoxDescription = ({ className, ref, ...props }: ChoiceBoxDescription
       slot="description"
       ref={ref}
       className={twMerge(
-        "col-start-1 row-start-2",
-        "group-has-[svg:not([data-slot=check-indicator])]:col-start-2",
-        "group-has-data-[slot=avatar]:col-start-2",
-        "text-base/6 text-muted-fg sm:text-sm/6",
-        "group-disabled:opacity-50",
-        className,
+        'col-start-1 row-start-2',
+        'group-has-[svg:not([data-slot=check-indicator])]:col-start-2',
+        'group-has-data-[slot=avatar]:col-start-2',
+        'text-base/6 text-muted-fg sm:text-sm/6',
+        'group-disabled:opacity-50',
+        className
       )}
       {...props}
     />

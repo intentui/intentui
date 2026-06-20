@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import type { Key } from "react-aria-components/Breadcrumbs"
-import { Description, FieldError, Label } from "@/components/ui/field"
+import { useState } from 'react'
+import type { Key } from 'react-aria-components/Breadcrumbs'
+import { Description, FieldError, Label } from '@/components/ui/field'
 import {
   MultipleSelect,
   MultipleSelectContent,
   MultipleSelectItem,
-} from "@/components/ui/multiple-select"
+} from '@/components/ui/multiple-select'
 
 const tags = [
-  { id: 1, name: "Travel" },
-  { id: 2, name: "Food" },
-  { id: 3, name: "Fashion" },
-  { id: 4, name: "Music" },
-  { id: 5, name: "Photography" },
+  { id: 1, name: 'Travel' },
+  { id: 2, name: 'Food' },
+  { id: 3, name: 'Fashion' },
+  { id: 4, name: 'Music' },
+  { id: 5, name: 'Photography' },
 ]
 
 export default function MultipleSelectControlledDemo() {

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import { BarChart } from "@/components/ui/bar-chart"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useMemo } from 'react'
+import { BarChart } from '@/components/ui/bar-chart'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 type EngagementPoint = {
   day: string
@@ -22,7 +22,7 @@ export default function BarChartCustomColorsDemo() {
         comments: Math.floor(20 + Math.random() * 80),
         shares: Math.floor(10 + Math.random() * 50),
       })),
-    [],
+    []
   )
 
   return (
@@ -40,14 +40,14 @@ export default function BarChartCustomColorsDemo() {
           dataKey="day"
           xAxisProps={{ interval: 0 }}
           config={{
-            likes: { label: "Likes", color: "var(--color-pink-500)" },
+            likes: { label: 'Likes', color: 'var(--color-pink-500)' },
             comments: {
-              label: "Comments",
-              color: "var(--color-blue-500)",
+              label: 'Comments',
+              color: 'var(--color-blue-500)',
             },
             shares: {
-              label: "Shares",
-              color: "var(--color-emerald-500)",
+              label: 'Shares',
+              color: 'var(--color-emerald-500)',
             },
           }}
         />

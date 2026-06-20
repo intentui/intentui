@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Skeleton } from "@/components/ui/skeleton"
-import { Strong, Text } from "@/components/ui/text"
+import { Skeleton } from '@/components/ui/skeleton'
+import { Strong, Text } from '@/components/ui/text'
 
 export default function SkeletonDynamicContentExample() {
   return (

@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Avatar } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   Popover,
   PopoverContent,
@@ -10,7 +10,7 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from '@/components/ui/popover'
 
 export default function PopoverTriggerDemo() {
   return (

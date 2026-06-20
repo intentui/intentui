@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { Form } from "react-aria-components/Form"
-import { Button } from "@/components/ui/button"
-import { Checkbox, CheckboxField } from "@/components/ui/checkbox"
-import { Dialog } from "@/components/ui/dialog"
-import { FieldError, Label } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Link } from "@/components/ui/link"
+import { Form } from 'react-aria-components/Form'
+import { Button } from '@/components/ui/button'
+import { Checkbox, CheckboxField } from '@/components/ui/checkbox'
+import { Dialog } from '@/components/ui/dialog'
+import { FieldError, Label } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { Link } from '@/components/ui/link'
 import {
   Popover,
   PopoverBody,
@@ -16,8 +16,8 @@ import {
   PopoverFooter,
   PopoverHeader,
   PopoverTitle,
-} from "@/components/ui/popover"
-import { TextField } from "@/components/ui/text-field"
+} from '@/components/ui/popover'
+import { TextField } from '@/components/ui/text-field'
 
 export default function PopoverCustomClose() {
   return (

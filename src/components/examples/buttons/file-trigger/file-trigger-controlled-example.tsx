@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { Description } from "@/components/ui/field"
-import { FileTrigger } from "@/components/ui/file-trigger"
+import { Description } from '@/components/ui/field'
+import { FileTrigger } from '@/components/ui/file-trigger'
 
 export default function FileTriggerDemo() {
   const [file, setFile] = useState<string[] | null>(null)
