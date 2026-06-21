@@ -77,20 +77,18 @@ const DrawerContent = ({
                 'fixed max-h-full touch-none overflow-hidden bg-bg align-middle text-fg ring ring-input will-change-transform',
                 side === 'top' &&
                   (isFloat ? 'inset-x-2 top-2 rounded-lg' : 'inset-x-0 top-0 rounded-b-2xl'),
-                side === 'right' &&
-                  [
-                    'w-full max-w-xs overflow-y-auto',
-                    '**:[[slot=header]]:text-start',
-                    isFloat ? 'inset-y-2 right-2 rounded-lg' : 'inset-y-0 right-0 h-auto',
-                  ].join(' '),
+                side === 'right' && [
+                  'w-full max-w-xs overflow-y-auto',
+                  '**:[[slot=header]]:text-start',
+                  isFloat ? 'inset-y-2 right-2 rounded-lg' : 'inset-y-0 right-0 h-auto',
+                ],
                 side === 'bottom' &&
                   (isFloat ? 'inset-x-2 bottom-2 rounded-lg' : 'inset-x-0 bottom-0 rounded-t-2xl'),
-                side === 'left' &&
-                  [
-                    'w-full max-w-xs overflow-y-auto',
-                    '**:[[slot=header]]:text-start',
-                    isFloat ? 'inset-y-2 left-2 rounded-lg' : 'inset-y-0 left-0 h-auto',
-                  ].join(' '),
+                side === 'left' && [
+                  'w-full max-w-xs overflow-y-auto',
+                  '**:[[slot=header]]:text-start',
+                  isFloat ? 'inset-y-2 left-2 rounded-lg' : 'inset-y-0 left-0 h-auto',
+                ],
                 className
               )}
               animate={{ x: 0, y: 0 }}
