@@ -1,0 +1,31 @@
+---
+title: "Autocomplete"
+description: Autocomplete helps users quickly search, filter, and choose from a list of suggestions as they type, reducing effort and guiding them to the right option.
+order: 8
+published: true
+references: ["https://react-aria.adobe.com/Autocomplete#api"]
+---
+
+Autocomplete is not a dedicated component. It is a behavior that can be added to collections like menus, selects, textareas, tables, and more.
+
+This page shows examples of how autocomplete can be used across different components to help users search, filter, and choose items faster.
+
+## Examples
+
+Autocomplete is composable and can be used with any collection-based component. These examples show how it works across menu, select, textarea, and table patterns.
+
+### Menu
+Wrap a menu with `Autocomplete` to let users filter available menu actions.
+<How toUse="collections/menu/autocomplete-menu-example" />
+
+### Select
+Wrap a select with `Autocomplete` to make long option lists easier to search.
+<How minW60 toUse="pickers/select/select-searchable-example" />
+
+### Textarea
+Use `Autocomplete` with a textarea for mention, tag, or inline suggestion patterns.
+<How minW60 toUse="forms/textarea/textarea-autocomplete-example" />
+
+### Table
+Since `Autocomplete` works with collection components, it can also be used to filter table rows.
+<How isCenter={false} withNoPadding toUse="collections/table/table-with-autocomplete-example" />

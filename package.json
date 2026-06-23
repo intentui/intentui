@@ -22,7 +22,7 @@
     "gr": "node --import tsx src/scripts/generate-release-notes.ts",
     "dev": "next dev --turbopack",
     "build": "_FUMADOCS_MDX=1 next build --webpack",
-    "format": "oxfmt . && oxlint --fix",
+    "format": "oxlint --fix && oxfmt .",
     "start": "next start",
     "preview": "npm run build && next start",
     "typecheck": "tsc --noEmit"

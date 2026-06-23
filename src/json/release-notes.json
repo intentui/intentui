@@ -1,5 +1,77 @@
 [
   {
+    "name": "Autocomplete menu example",
+    "component": "autocomplete-menu-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "collections",
+    "kind": "new",
+    "description": null,
+    "additions": 46,
+    "deletions": 90,
+    "date": "2026-06-23"
+  },
+  {
+    "name": "Input",
+    "component": "input.tsx",
+    "url": "/input",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 6,
+    "deletions": 2,
+    "date": "2026-06-23"
+  },
+  {
+    "name": "Menu",
+    "component": "menu.tsx",
+    "url": "/menu",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-06-23"
+  },
+  {
+    "name": "Popover",
+    "component": "popover.tsx",
+    "url": "/popover",
+    "type": "component",
+    "category": "overlays",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 1,
+    "date": "2026-06-23"
+  },
+  {
+    "name": "Search field",
+    "component": "search-field.tsx",
+    "url": "/search-field",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 7,
+    "date": "2026-06-23"
+  },
+  {
+    "name": "Text field",
+    "component": "text-field.tsx",
+    "url": "/text-field",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 7,
+    "date": "2026-06-23"
+  },
+  {
     "name": "Auth 01",
     "component": "auth-01/page.tsx",
     "url": null,
