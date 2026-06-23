@@ -3434,7 +3434,7 @@
       "name": "textarea",
       "title": "textarea",
       "description": "textarea",
-      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
@@ -10288,6 +10288,28 @@
           "path": "src/components/examples/collections/table/table-with-autocomplete-example.tsx",
           "type": "registry:page",
           "target": "app/table-with-autocomplete-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "autocomplete-menu-example",
+      "title": "Autocomplete Menu",
+      "description": "autocomplete-menu-example",
+      "dependencies": ["@heroicons/react", "react-aria-components"],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/menu",
+        "http://localhost:3000/r/popover",
+        "http://localhost:3000/r/search-field"
+      ],
+      "files": [
+        {
+          "path": "src/components/examples/collections/menu/autocomplete-menu-example.tsx",
+          "type": "registry:page",
+          "target": "app/autocomplete-menu-example/page.tsx"
         }
       ],
       "type": "registry:page"

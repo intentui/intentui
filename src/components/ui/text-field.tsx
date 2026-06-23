@@ -2,22 +2,13 @@
 
 import {
   TextField as TextFieldPrimitive,
-  type TextFieldProps as TextFieldPrimitiveProps,
+  type TextFieldProps,
 } from 'react-aria-components/TextField'
 import { cx } from '@/lib/primitive'
 import { fieldStyles } from './field'
 
-interface TextFieldProps extends TextFieldPrimitiveProps {
-  ref?: React.RefObject<HTMLInputElement | null>
-}
-
-export function TextField({ className, ref, ...props }: TextFieldProps) {
+export function TextField({ className, ...props }: TextFieldProps) {
   return (
-    <TextFieldPrimitive
-      ref={ref}
-      data-slot="control"
-      className={cx(fieldStyles(), className)}
-      {...props}
-    />
+    <TextFieldPrimitive data-slot="control" className={cx(fieldStyles(), className)} {...props} />
   )
 }

@@ -1,10 +1,16 @@
 'use client'
 
 import { Group, type GroupProps } from 'react-aria-components/Group'
-import { Input as InputPrimitive, type InputProps } from 'react-aria-components/Input'
+import {
+  Input as InputPrimitive,
+  type InputProps as InputPrimitiveProps,
+} from 'react-aria-components/Input'
 import { cx } from '@/lib/primitive'
 
-export function Input({ className, ...props }: InputProps) {
+interface InputProps extends InputPrimitiveProps {
+  ref?: React.RefObject<HTMLInputElement | null>
+}
+export function Input({ className, ref, ...props }: InputProps) {
   return (
     <span data-slot="control" className="relative block w-full">
       <InputPrimitive
@@ -20,6 +26,7 @@ export function Input({ className, ...props }: InputProps) {
           'dark:scheme-dark',
           className
         )}
+        ref={ref}
         {...props}
       />
     </span>

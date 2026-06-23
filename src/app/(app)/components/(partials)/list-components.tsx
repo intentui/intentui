@@ -59,14 +59,10 @@ export function ListComponents() {
             Explore 80+ accessible UI components powered by react aria components, easy to customize
             and ready for production.
           </HeaderDescription>
-          <SearchField
-            ref={inputRef}
-            className="mt-6 font-normal sm:max-w-2xs"
-            aria-label="Search components"
-          >
+          <SearchField className="mt-6 font-normal sm:max-w-2xs" aria-label="Search components">
             <InputGroup>
               <MagnifyingGlassIcon />
-              <Input className="bg-overlay" placeholder="Search components" />
+              <Input ref={inputRef} className="bg-overlay" placeholder="Search components" />
               <Keyboard>f</Keyboard>
             </InputGroup>
           </SearchField>
