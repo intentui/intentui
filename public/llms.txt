@@ -28,6 +28,7 @@
 - [Toggle](https://intentui.com/docs/components/buttons/toggle.md)
 
 ### Collections
+- [Autocomplete](https://intentui.com/docs/components/collections/autocomplete.md)
 - [Choice Box](https://intentui.com/docs/components/collections/choice-box.md)
 - [Dropdown](https://intentui.com/docs/components/collections/dropdown.md)
 - [Grid List](https://intentui.com/docs/components/collections/grid-list.md)
