@@ -1,5 +1,17 @@
 [
   {
+    "name": "Switch custom layout example",
+    "component": "switch-custom-layout-example.tsx",
+    "url": "/switch",
+    "type": "example",
+    "category": "controls",
+    "kind": "new",
+    "description": null,
+    "additions": 5,
+    "deletions": 8,
+    "date": "2026-06-24"
+  },
+  {
     "name": "Autocomplete menu example",
     "component": "autocomplete-menu-example.tsx",
     "url": null,

@@ -8836,6 +8836,22 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "switch-custom-layout-example",
+      "title": "Switch Custom Layout",
+      "description": "switch-custom-layout-example",
+      "registryDependencies": ["http://localhost:3000/r/switch"],
+      "files": [
+        {
+          "path": "src/components/examples/controls/switch/switch-custom-layout-example.tsx",
+          "type": "registry:page",
+          "target": "app/switch-custom-layout-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "switch-description-example",
       "title": "Switch Description",
       "description": "switch-description-example",
