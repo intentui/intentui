@@ -1,5 +1,3 @@
-'use client'
-
 import {
   SwitchButton,
   type SwitchButtonProps,
@@ -7,14 +5,15 @@ import {
   type SwitchFieldProps,
 } from 'react-aria-components/Switch'
 import { twJoin, twMerge } from 'tailwind-merge'
-import { cx } from '@/lib/primitive'
 import { Label } from '@/components/ui/field'
+import { cx } from '@/lib/primitive'
 
-export function SwitchField(props: SwitchFieldProps) {
+export function SwitchField({ className, ...props }: SwitchFieldProps) {
   return (
     <SwitchFieldPrimitive
       {...props}
       data-slot="control"
+      className={cx('has-[[slot=description]]:**:data-[slot=control-label]:font-medium', className)}
       style={({ defaultStyle }) => ({
         ...defaultStyle,
         WebkitTapHighlightColor: 'transparent',
@@ -30,7 +29,7 @@ export function Switch({ children, className, ...props }: SwitchButtonProps) {
         '[--switch-bg-ring:var(--color-blue-700)]/90 [--switch-bg:var(--color-blue-600)] dark:[--switch-bg-ring:transparent]',
         '[--switch-ring:var(--color-blue-700)]/90 [--switch-shadow:var(--color-blue-900)]/20 [--switch:white]',
         'group relative grid cursor-default gap-x-6 gap-y-1 ltr:grid-cols-[1fr_auto] rtl:grid-cols-[auto_1fr]',
-        '*:data-[slot=control-label]:row-start-1 has-[[slot=description]]:**:data-[slot=control-label]:font-medium ltr:*:data-[slot=control-label]:col-start-1 rtl:*:data-[slot=control-label]:col-start-2',
+        '*:data-[slot=control-label]:row-start-1 ltr:*:data-[slot=control-label]:col-start-1 rtl:*:data-[slot=control-label]:col-start-2',
         '*:[[slot=description]]:row-start-2 ltr:*:[[slot=description]]:col-start-1 rtl:*:[[slot=description]]:col-start-2',
         'disabled:opacity-50',
         className
@@ -42,7 +41,7 @@ export function Switch({ children, className, ...props }: SwitchButtonProps) {
           <span
             data-slot="indicator"
             className={twMerge(
-              'self-start sm:mt-0.5 ltr:col-start-2 rtl:col-start-1 relative isolate inline-flex h-6 w-10 cursor-default rounded-full p-0.75 sm:h-5 sm:w-8',
+              'relative isolate inline-flex h-6 w-10 cursor-default self-start rounded-full p-0.75 sm:mt-0.5 sm:h-5 sm:w-8 ltr:col-start-2 rtl:col-start-1',
               'transition duration-200 ease-in-out',
               'inset-ring inset-ring-input bg-input/30',
               'forced-colors:outline forced-colors:[--switch-bg:Highlight]',
