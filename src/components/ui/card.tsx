@@ -1,11 +1,11 @@
 import { twMerge } from 'tailwind-merge'
 
-const Card = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       data-slot="card"
       className={twMerge(
-        'group/card flex flex-col gap-(--gutter) rounded-lg border py-(--gutter) text-fg shadow-xs [--gutter:--spacing(6)] has-[table]:overflow-hidden has-[table]:not-has-data-[slot=card-footer]:pb-0 **:data-[slot=table-header]:bg-muted/50 has-[table]:**:data-[slot=card-footer]:border-t **:[table]:overflow-hidden',
+        'group/card flex flex-col gap-(--gutter) rounded-lg bg-card text-card-fg border py-(--gutter) shadow-xs [--gutter:--spacing(6)] has-[table]:overflow-hidden has-[table]:not-has-data-[slot=card-footer]:pb-0 **:data-[slot=table-header]:bg-muted/50 has-[table]:**:data-[slot=card-footer]:border-t **:[table]:overflow-hidden',
         className
       )}
       {...props}
@@ -13,27 +13,29 @@ const Card = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => 
   )
 }
 
-interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string
   description?: string
 }
 
-const CardHeader = ({ className, title, description, children, ...props }: HeaderProps) => (
-  <div
-    data-slot="card-header"
-    className={twMerge(
-      'grid auto-rows-min grid-rows-[auto_auto] items-start gap-1 px-(--gutter) has-data-[slot=card-action]:grid-cols-[1fr_auto]',
-      className
-    )}
-    {...props}
-  >
-    {title && <CardTitle>{title}</CardTitle>}
-    {description && <CardDescription>{description}</CardDescription>}
-    {!title && typeof children === 'string' ? <CardTitle>{children}</CardTitle> : children}
-  </div>
-)
+export function CardHeader({ className, title, description, children, ...props }: HeaderProps) {
+  return (
+    <div
+      data-slot="card-header"
+      className={twMerge(
+        'grid auto-rows-min grid-rows-[auto_auto] items-start gap-1 px-(--gutter) has-data-[slot=card-action]:grid-cols-[1fr_auto]',
+        className
+      )}
+      {...props}
+    >
+      {title && <CardTitle>{title}</CardTitle>}
+      {description && <CardDescription>{description}</CardDescription>}
+      {!title && typeof children === 'string' ? <CardTitle>{children}</CardTitle> : children}
+    </div>
+  )
+}
 
-const CardTitle = ({ className, ...props }: React.ComponentProps<'div'>) => {
+export function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="card-title"
@@ -43,7 +45,7 @@ const CardTitle = ({ className, ...props }: React.ComponentProps<'div'>) => {
   )
 }
 
-const CardDescription = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+export function CardDescription({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       {...props}
@@ -54,7 +56,7 @@ const CardDescription = ({ className, ...props }: React.HTMLAttributes<HTMLDivEl
   )
 }
 
-const CardAction = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+export function CardAction({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       data-slot="card-action"
@@ -67,7 +69,7 @@ const CardAction = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement
   )
 }
 
-const CardContent = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+export function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       data-slot="card-content"
@@ -77,7 +79,7 @@ const CardContent = ({ className, ...props }: React.HTMLAttributes<HTMLDivElemen
   )
 }
 
-const CardFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+export function CardFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       data-slot="card-footer"
@@ -89,5 +91,3 @@ const CardFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement
     />
   )
 }
-
-export { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }

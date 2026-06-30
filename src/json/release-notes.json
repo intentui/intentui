@@ -1,5 +1,41 @@
 [
   {
+    "name": "Card login form example",
+    "component": "card-login-form-example.tsx",
+    "url": "/card",
+    "type": "example",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-06-30"
+  },
+  {
+    "name": "Card table example",
+    "component": "card-table-example.tsx",
+    "url": "/table",
+    "type": "example",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-06-30"
+  },
+  {
+    "name": "Card",
+    "component": "card.tsx",
+    "url": "/card",
+    "type": "component",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 24,
+    "deletions": 24,
+    "date": "2026-06-30"
+  },
+  {
     "name": "Switch custom layout example",
     "component": "switch-custom-layout-example.tsx",
     "url": "/switch",

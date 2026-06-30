@@ -11,7 +11,7 @@ import { TextField } from '@/components/ui/text-field'
 
 export default function CardLoginFormDemo() {
   return (
-    <Card className="mx-auto w-full max-w-md">
+    <Card className="mx-auto w-full sm:min-w-sm max-w-sm">
       <CardHeader>
         <CardTitle>Login</CardTitle>
         <CardDescription>Don't loose the level, just keep on going.</CardDescription>
