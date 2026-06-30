@@ -28,6 +28,9 @@
   --color-bg: var(--bg);
   --color-fg: var(--fg);
 
+  --color-card: var(--card);
+  --color-card-fg: var(--card-fg);
+
   --color-primary: var(--primary);
   --color-primary-fg: var(--primary-fg);
   --color-primary-subtle: var(--primary-subtle);
@@ -112,6 +115,9 @@
   --bg: oklch(1 0 0);
   --fg: oklch(0.21 0.006 285.885);
 
+  --card: oklch(1 0 0);
+  --card-fg: oklch(0.21 0.006 285.885);
+
   --shiki-bg: var(--bg);
   --shiki-light: var(--shiki-bg);
 
@@ -179,11 +185,14 @@
 }
 
 .dark {
+  --shiki-bg: #111114;
+  --shiki-da--bg: oklch(0.091 0.005 285.823);
+
   --bg: var(--color-zinc-950);
   --fg: oklch(0.985 0 0);
 
-  --shiki-bg: #111114;
-  --shiki-da--bg: oklch(0.091 0.005 285.823);
+  --card: oklch(0.21 0.006 285.885);
+  --card-fg: oklch(0.985 0 0);
 
   --primary: oklch(0.546 0.245 262.881);
   --primary-fg: oklch(1 0 0);
