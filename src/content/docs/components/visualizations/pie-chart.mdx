@@ -1,0 +1,65 @@
+---
+title: "Pie Chart"
+description: Pie charts are used to represent proportions or percentages of a whole, making them ideal for showing part-to-whole relationships. They include donut variants.
+order: 5
+published: true
+references: ["https://recharts.org/en-US/api/PieChart"]
+---
+
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-example"/>
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/pie-chart"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i recharts react-aria-components"/>
+
+<SourceCode toShow={'pie-chart'} />
+
+## Examples
+
+### Donut
+Visualize data with a donut chart for a modern and clean look.
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-donut-example"/>
+
+### Label inside
+Enhance your donut chart by adding descriptive text for better understanding.
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-donut-label-example"/>
+
+
+### Controlled
+Sometimes you might want to control the chart data dynamically.
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-interactive-example"/>
+
+### Gap
+Add spacing between pie slices for better visibility and aesthetics.
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-gap-example"/>
+
+## Component API
+
+The `PieChart` component renders proportional data as pie or donut charts.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `chartProps` | `Omit<ComponentProps<typeof PieChartPrimitive>, "data" \| "stackOffset">` | - |
+| `children` | `React.ReactNode` | - |
+| `className` | `string` | - |
+| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
+| `config` | `ChartConfig` | - |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | - |
+| `label` | `string` | - |
+| `nameKey` | `string` | - |
+| `pieProps` | `Omit<ComponentProps<typeof Pie>, "data" \| "dataKey" \| "name">` | - |
+| `showLabel` | `boolean` | - |
+| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
+| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
+| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
+| `variant` | `"pie" \| "donut"` | `pie` |
+
+See the [Recharts](https://recharts.org/en-US/api/PieChart) for the full API reference.

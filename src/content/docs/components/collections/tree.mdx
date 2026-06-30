@@ -1,0 +1,133 @@
+---
+title: "Tree"
+description: A hierarchical UI component that organizes nested items, commonly used for file structures, menus, or category navigation, such as organizational charts.
+order: 6
+published: true
+references: ["https://react-aria.adobe.com/Tree#api"]
+---
+
+<How toUse="collections/tree/tree-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/tree"/>
+
+## Composed components
+<Composed components={['checkbox']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+
+<SourceCode toShow='tree' />
+
+## Anatomy
+```
+import { Tree, TreeContent, TreeItem } from "@/components/ui/tree"
+```
+
+```
+<Tree aria-label="Tree anatomy example">
+  <TreeItem id="a" textValue="Departments">
+    <TreeContent />
+    <TreeItem id="b" textValue="Sales">
+      <TreeContent>Sales</TreeContent>
+      <TreeItem id="c" textValue="Reports">
+        <TreeContent>Reports</TreeContent>
+        <TreeItem id="d1" textValue="Q1.pdf">
+          <TreeContent>Q1.pdf</TreeContent>
+        </TreeItem>
+        <TreeItem id="d2" textValue="Q2.pdf">
+          <TreeContent>Q2.pdf</TreeContent>
+        </TreeItem>
+        <TreeItem id="q3" textValue="Q3.pdf">
+          <TreeContent>Q3.pdf</TreeContent>
+        </TreeItem>
+      </TreeItem>
+      <TreeItem id="contacts" textValue="Client Contacts">
+        <TreeContent>Client Contacts</TreeContent>
+        <TreeItem id="europe" textValue="Europe.xlsx">
+          <TreeContent>Europe.xlsx</TreeContent>
+        </TreeItem>
+        <TreeItem id="asia" textValue="Asia.xlsx">
+          <TreeContent>Asia.xlsx</TreeContent>
+        </TreeItem>
+      </TreeItem>
+    </TreeItem>
+  </TreeItem>
+  <TreeItem id="projects" textValue="Projects">
+    <TreeContent>Projects</TreeContent>
+    <TreeItem id="revamp" textValue="Website revamp">
+      <TreeContent>Website revamp</TreeContent>
+      <TreeItem id="wireframes" textValue="Wireframes">
+        <TreeContent>Wireframes</TreeContent>
+        <TreeItem id="home" textValue="Home.fig">
+          <TreeContent>Home.fig</TreeContent>
+        </TreeItem>
+        <TreeItem id="pricing" textValue="Pricing.fig">
+          <TreeContent>Pricing.fig</TreeContent>
+        </TreeItem>
+      </TreeItem>
+    </TreeItem>
+    <TreeItem id="mobileapp" textValue="Mobile app">
+      <TreeContent>Mobile app</TreeContent>
+    </TreeItem>
+  </TreeItem>
+</Tree>
+```
+
+## Examples
+
+### Multiple selection
+To enable multiple selections, set the `selectionMode` prop to `multiple`. This prop has no default value, so it must be explicitly defined.
+<How toUse="collections/tree/tree-multiple-example" />
+
+### Like a folder tree
+A tree can be used to represent a folder structure, allowing users to expand and collapse folders to view their contents.
+<How toUse="collections/tree/tree-folder-example" />
+
+### Infinite scrolling
+The tree can handle large datasets efficiently with infinite scrolling. This allows for loading more data as the user navigates through the tree, improving performance and user experience.
+<How toUse="collections/tree/tree-infinite-scroll-example" />
+
+### Drag and drop
+The tree supports drag and drop functionalities if you use the `dragAndDropHooks` prop along with the `useDragAndDrop` hook. You can drop data on the entire tree, individual items, add new items between existing ones, or rearrange items.
+<How toUse="collections/tree/tree-drag-example" />
+
+## Component API
+
+### Tree
+
+The `Tree` component displays hierarchical items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TreeContent
+
+The `TreeContent` component renders content inside a tree item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TreeIndicator
+
+The `TreeIndicator` component renders the tree expand icon.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `values` | `Pick<TreeItemContentRenderProps, "isDisabled" \| "isExpanded">` | - |
+
+### TreeItem
+
+The `TreeItem` component represents one tree node.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Tree#api) for the full API reference.

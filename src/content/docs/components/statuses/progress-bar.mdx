@@ -1,0 +1,83 @@
+---
+title: "Progress Bar"
+description: A sleek and responsive bar that visually tracks task completion, loading states, or step-based processes in real time. It provides clear progress indication.
+order: 1
+published: true
+references: ["https://react-aria.adobe.com/ProgressBar#api"]
+---
+
+<How toUse="statuses/progress-bar/progress-bar-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/progress-bar"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i tailwind-merge"/>
+<SourceCode toShow='progress-bar'/>
+
+## Anatomy
+```
+import { Description, Label } from "@/components/ui/field"
+import {
+  ProgressBar,
+  ProgressBarHeader,
+  ProgressBarTrack,
+  ProgressBarValue,
+} from "@/components/ui/progress-bar"
+```
+```
+<ProgressBar value={value}>
+  <ProgressBarHeader>
+    <Label>Loading…</Label>
+    <ProgressBarValue />
+  </ProgressBarHeader>
+  <ProgressBarTrack />
+  <Description>This is an example of a progress bar indicating 50% completion.</Description>
+</ProgressBar>
+```
+
+## Examples
+
+### Indeterminate
+An indeterminate progress bar is a type of progress indicator that does not show a specific amount of progress or percentage complete.
+<How toUse="statuses/progress-bar/indeterminate-progress-bar-example" />
+
+## Component API
+
+### ProgressBar
+
+The `ProgressBar` component displays determinate or indeterminate progress.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ProgressBarHeader
+
+The `ProgressBarHeader` component groups progress label and value content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ProgressBarTrack
+
+The `ProgressBarTrack` component renders the progress track.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ProgressBarValue
+
+The `ProgressBarValue` component displays the formatted progress value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.

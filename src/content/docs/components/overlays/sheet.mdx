@@ -1,0 +1,168 @@
+---
+title: Sheet
+description: A slide-in panel for presenting additional content without disrupting the main screen. It slides in from the side to show related information or options.
+order: 2
+references: ["https://react-aria.adobe.com/Modal#api"]
+
+published: true
+---
+
+<How toUse="overlays/sheet/sheet-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/sheet"/>
+
+## Composed components
+<Composed components={['dialog']} />
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+
+<InstallCommand command="npm i react-aria-components tailwind-merge tailwind-variants"/>
+
+<SourceCode toShow='sheet' />
+
+## Anatomy
+```
+import { Button } from "@/components/ui/button"
+import {
+  Sheet,
+  SheetBody,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+```
+
+```
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Sheet Title</SheetTitle>
+      <SheetDescription>Sheet Description</SheetDescription>
+    </SheetHeader>
+    <SheetBody>Sheet Body</SheetBody>
+    <SheetFooter>
+      <SheetClose>Cancel</SheetClose>
+      <Button>Save</Button>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>
+```
+
+
+## Examples
+
+### Like github
+This example is like Github's profile page. You can see the sheet component is used to display the profile information.
+
+<How toUse="overlays/sheet/sheet-menu-example" />
+
+### Controlled
+You can control the open state of the sheet by using the `isOpen` prop. You can also use the `onOpenChange` prop to listen to the open state change.
+<How toUse="overlays/sheet/sheet-controlled-example" />
+
+### Positioning
+You can position the modal component in different ways. You can use the `side` prop to position the modal component in the different directions.
+
+<How toUse="overlays/sheet/sheet-position-example" />
+
+### Custom close
+You can customize the close button by using the `SheetClose` component. This example demonstrates how to use the `SheetClose` component to create a custom close button.
+
+<How toUse="overlays/sheet/sheet-custom-close-example" />
+
+### Float
+By default, the sheet will stack, but you can change this behavior by using the `isFloat` prop. This example demonstrates how to use the `isFloat` prop to create a sheet that does not stack.
+<How toUse="overlays/sheet/sheet-float-example" />
+
+### Sticky
+You can use the `SheetBody` component to make the sheet sticky.
+<How toUse="overlays/sheet/sheet-sticky-example" />
+
+## Component API
+
+### Sheet
+
+The `Sheet` component controls the sheet trigger and content.
+
+### SheetTrigger
+
+The `SheetTrigger` component defines the element that opens a sheet.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetContent
+
+The `SheetContent` component renders the slide-in sheet panel.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `closeButton` | `boolean` | `true` |
+| `isFloat` | `boolean` | `true` |
+| `overlay` | `Omit<ModalOverlayProps, "children">` | - |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `right` |
+
+### SheetHeader
+
+The `SheetHeader` component groups the sheet title and description.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `description` | `string` | - |
+| `title` | `string` | - |
+
+### SheetTitle
+
+The `SheetTitle` component renders the sheet heading.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetDescription
+
+The `SheetDescription` component renders supporting text inside a sheet.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetBody
+
+The `SheetBody` component wraps the main sheet content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetFooter
+
+The `SheetFooter` component groups sheet actions.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SheetClose
+
+The `SheetClose` component renders a button that closes the sheet.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+
+See the [React Aria](https://react-aria.adobe.com/Modal#api) for the full API reference.

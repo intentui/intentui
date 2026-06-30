@@ -1,0 +1,251 @@
+/*
+* Uncomment the following line to use the Inter font when not working on a Next.js project.
+* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* Then replace var(--font-inter) to Inter
+*/
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin 'tailwindcss-react-aria-components';
+
+@theme inline {
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    'Geist Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+    '"Liberation Mono"', '"Courier New"', 'monospace';
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+
+  --color-ring: var(--ring);
+
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-fg: var(--secondary-fg);
+
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+
+  --color-success: var(--success);
+  --color-success-fg: var(--success-fg);
+
+  --color-danger: var(--danger);
+  --color-danger-fg: var(--danger-fg);
+
+  --color-warning: var(--warning);
+  --color-warning-fg: var(--warning-fg);
+
+  --color-muted: var(--muted);
+  --color-muted-fg: var(--muted-fg);
+
+  --color-overlay: var(--overlay);
+  --color-overlay-fg: var(--overlay-fg);
+
+  --color-navbar: var(--navbar);
+  --color-navbar-fg: var(--navbar-fg);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-fg: var(--sidebar-fg);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-fg: var(--sidebar-primary-fg);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-fg: var(--sidebar-accent-fg);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --radius: 0.5rem;
+  --bg: oklch(1 0 0);
+  --fg: oklch(0.145 0 0);
+
+  --primary: oklch(0.546 0.245 262.881);
+  --primary-fg: oklch(1 0 0);
+
+  --secondary: oklch(0.922 0 0);
+  --secondary-fg: oklch(0.145 0 0);
+
+  --overlay: oklch(1 0 0);
+  --overlay-fg: oklch(0.145 0 0);
+
+  --accent: oklch(0.922 0 0);
+  --accent-fg: oklch(0.145 0 0);
+
+  --muted: oklch(0.97 0 0);
+  --muted-fg: oklch(0.556 0 0);
+
+  --success: oklch(0.596 0.145 163.225);
+  --success-fg: oklch(1 0 0);
+
+  --warning: oklch(0.828 0.189 84.429);
+  --warning-fg: oklch(0.279 0.077 45.635);
+
+  --danger: oklch(0.577 0.245 27.325);
+  --danger-fg: oklch(0.971 0.013 17.38);
+
+  --border: oklch(0.91 0 0);
+  --input: oklch(0.87 0 0);
+  --ring: oklch(0.546 0.245 262.881);
+
+  --navbar: oklch(0.995 0 0);
+  --navbar-fg: oklch(0.145 0 0);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-fg: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.546 0.245 262.881);
+  --sidebar-primary-fg: oklch(1 0 0);
+  --sidebar-accent: oklch(0.922 0 0);
+  --sidebar-accent-fg: oklch(0.145 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.546 0.245 262.881);
+
+  --chart-1: oklch(0.546 0.245 262.881);
+  --chart-2: oklch(0.707 0.165 254.624);
+  --chart-3: oklch(0.809 0.105 251.813);
+  --chart-4: oklch(0.882 0.059 254.128);
+  --chart-5: oklch(0.932 0.032 255.585);
+
+  --radius-lg: 0.5rem;
+  --radius-xs: calc(var(--radius-lg) * 0.5);
+  --radius-sm: calc(var(--radius-lg) * 0.75);
+  --radius-md: calc(var(--radius-lg) * 0.9);
+  --radius-xl: calc(var(--radius-lg) * 1.25);
+  --radius-2xl: calc(var(--radius-lg) * 1.5);
+  --radius-3xl: calc(var(--radius-lg) * 2);
+  --radius-4xl: calc(var(--radius-lg) * 3);
+}
+
+.dark {
+  --bg: oklch(0.095 0 0);
+  --fg: oklch(0.985 0 0);
+
+  --primary: oklch(0.546 0.245 262.881);
+  --primary-fg: oklch(1 0 0);
+
+  --secondary: oklch(0.239 0 0);
+  --secondary-fg: oklch(0.985 0 0);
+
+  --accent: oklch(0.269 0 0);
+  --accent-fg: oklch(0.985 0 0);
+
+  --muted: oklch(0.205 0 0);
+  --muted-fg: oklch(0.708 0 0);
+
+  --overlay: oklch(0.175 0 0);
+  --overlay-fg: oklch(0.985 0 0);
+
+  --success: oklch(0.596 0.145 163.225);
+  --success-fg: oklch(1 0 0);
+
+  --warning: oklch(0.828 0.189 84.429);
+  --warning-fg: oklch(0.279 0.077 45.635);
+
+  --danger: oklch(0.577 0.245 27.325);
+  --danger-fg: oklch(0.971 0.013 17.38);
+
+  --border: oklch(0.271 0 0);
+  --input: oklch(0.321 0 0);
+  --ring: oklch(0.546 0.245 262.881);
+
+  --navbar: oklch(0.185 0 0);
+  --navbar-fg: oklch(0.985 0 0);
+
+  --sidebar: var(--color-neutral-900);
+  --sidebar-fg: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.546 0.245 262.881);
+  --sidebar-primary-fg: oklch(1 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-fg: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.546 0.245 262.881);
+
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.707 0.165 254.624);
+  --chart-4: oklch(0.809 0.105 251.813);
+  --chart-5: oklch(0.882 0.059 254.128);
+}
+
+@variant dark (&:is(.dark *));
+
+@utility touch-target {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    min-height: 44px;
+    min-width: 44px;
+    z-index: 9999;
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--border, currentColor);
+  }
+
+  * {
+    text-rendering: optimizeLegibility;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  html {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-variation-settings: normal;
+    scroll-behavior: smooth;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+}

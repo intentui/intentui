@@ -1,0 +1,1 @@
+export { type Theme, useTheme, PreventFlashOnWrongTheme } from 'remix-themes'

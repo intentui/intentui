@@ -1,0 +1,39 @@
+---
+title: "Badge"
+description: A small, attention-grabbing UI element used to display notifications, status indicators, or counts in a compact format. It draws attention to key details.
+order: 1
+published: true
+---
+
+<How toUse="statuses/badge/badge-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/badge"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i tailwind-variants"/>
+<SourceCode toShow='badge'/>
+
+## Examples
+
+### Intent
+Badges come in a variety of colors: primary, secondary, success, info, warning, danger, light, dark, and light/dark. You can even use custom colors if you want.
+<How  toUse="statuses/badge/badge-intent-example" />
+
+### Shape
+By default, badges are square, but you can switch to a circular shape if desired.
+<How toUse="statuses/badge/badge-shape-example" />
+
+## Component API
+
+The `Badge` component displays compact status or category text.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"primary" \| "secondary" \| "success" \| "info" \| "warning" \| "danger" \| "outline"` | - |
+| `isCircle` | `boolean` | - |

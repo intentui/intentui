@@ -1,0 +1,129 @@
+---
+title: Toast
+description: A non-intrusive, auto-dismissible notification component used to display brief status updates, alerts, or confirmation messages. It improves user awareness.
+order: 5
+published: true
+references: ["https://sonner.emilkowal.ski/toast"]
+---
+
+<How toUse="statuses/toast/toast-example" />
+
+## Introduction
+The toast components are built on top of the [Sonner](https://sonner.emilkowalski.ski/) library. Shoutout to [Emil Kowalski](https://github.com/emilkowalski) for creating this amazing library.
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/toast"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i sonner tailwind-merge"/>
+
+<SourceCode toShow='toast'/>
+
+## Getting started
+Put the `Toast` somewhere in your app layout to make it visible to all your components or pages.
+```
+import { Toast } from '@/components/ui/toast';
+export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <>
+      <Toast />
+      {children}
+    </>
+  );
+}
+```
+And next, just use the `toast()` function to show a toast.
+```
+<Button onPress={() => toast('Someone requested to delete this product')}>
+  Delete
+</Button>
+```
+
+## Next.js
+If you're slapping this toast into your Next.js gig, you're gonna wanna roll with the `next-themes` package to flip the theme on that toast. Peep how you hook it up:
+
+<InstallCommand command="npm i next-themes"/>
+
+Don't forget to include a theme provider component. Check out the setup [here](/docs/dark-mode/next-js).
+
+## Inertia.js
+
+When using this toast with Inertia.js, everything will work smoothly if your theme provider is correctly set up. If not, you can find the setup guide [here](/docs/dark-mode/inertia-js).
+
+## Examples
+
+### Description
+
+To display a toast with a title and a description, the styling is automatically handled. The title will be bold and prominent if a description is included.
+
+<How toUse="statuses/toast/toast-description-example" />
+
+### Positions
+
+The toast can be positioned in four different locations.
+
+<How toUse="statuses/toast/toast-positions-example" />
+
+### Status
+
+To show a warning or error toast, use the following approach.
+
+<How toUse="statuses/toast/toast-status-example" />
+
+### Action
+
+To display a toast with an action, use the following method.
+
+<How toUse="statuses/toast/toast-action-example" />
+
+### Expand
+Toast can be expanded to show more content.
+```tsx
+<Toast expand />
+```
+
+### Hide icon
+When this toast has status like `success`, `warning` etc, the icon is shown by default. But if you want to disable the icon for a specific toast, you can do it like this.
+```tsx {2-5}
+toast.success(`Copied ${text} to clipboard`, {
+  classNames: {
+    toast: '[&:has([data-icon])_[data-content]]:ml-0',
+    icon: 'hidden'
+  }
+})
+```
+
+You can turn it off directly from the component to remove it completely. However, this approach may appear unusual when handling toast promises or loading states.
+
+### Don't close automatically
+
+Sometimes, you may not want the toast to close automatically. For example, if you have a toast that waits for a user to click a button, you would not want it to close automatically when the button is clicked.
+
+You can do it like this.
+
+```tsx {2}
+toast('Someone requested to delete this product', {
+    duration: Infinity,
+    cancel: {
+        label: 'Cancel',
+        onClick: () => alert('Cancelled')
+    },
+    action: {
+        label: 'Delete',
+        onClick: () => alert('Deleted')
+    },
+})
+```
+
+## Component API
+The `Toast` component renders the app-level toast container.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [Sonner toast API reference](https://sonner.emilkowal.ski/toast) for the full API reference.

@@ -1,0 +1,72 @@
+---
+title: "Working with AI"
+description: "Learn how Intent UI works with AI, from skills and MCP to LLMs and tool calling, so you can connect models, automate tasks, and build smarter interfaces faster."
+---
+
+## Registry
+
+To use the Intent UI registry, add the following entry to your `components.json`:
+
+```json
+{
+  "registries": {
+    "@intentui": "https://intentui.com/r/{name}"
+  }
+}
+```
+
+### Initialize
+
+Choose a client and run one of the following commands:
+
+<McpTabs/>
+
+## React aria MCP
+If you work with AI and use Intent UI, you should consider using the React Aria MCP server. The reason is simple. Intent UI provides a complete set of components, but there are cases where you may need to build a custom component with a different visual style without modifying Intent UI itself. In those situations, the MCP server becomes extremely helpful.
+<McpRac/>
+
+## Skills
+
+We provide a dedicated skill for Intent UI. To install it, run the command below.
+
+<InstallCommand command="npx skills add intentui/skills" />
+
+This skill enforces [Intent UI](https://intentui.com) conventions when writing or reviewing React and TSX code. You can see a preview of it in action [here](https://x.com/irsyad/status/2030649800560083204).
+
+### What it does
+
+The **intentui** skill helps keep your code aligned with Intent UI best practices by:
+
+* using components from `src/components/ui/` instead of raw HTML elements
+* using semantic design tokens like `text-muted-fg` and `bg-primary` instead of raw Tailwind utility colors like `text-blue-500` or `bg-red-600`
+* applying Heroicons correctly without redundant `data-slot="icon"` attributes or manual icon sizing inside UI components
+* following the proper form structure with `Fieldset`, `Legend`, `FieldError`, and `Description`
+* installing missing components from the registry through the shadcn CLI
+
+
+### Structure
+
+```
+intentui/
+├── SKILL.md              # Main skill definition
+└── rules/
+    ├── styling.md        # Semantic colors, cx/twMerge, size-* shorthand, intent prop
+    ├── icons.md          # Heroicons rules, 25 components that control icon sizing
+    ├── forms.md          # Fieldset, Legend, TextField, FieldError, Description patterns
+    ├── components.md     # HTML → Intent UI component mapping, Text/TextLink/Strong/Code
+    └── cli.md            # Search & install missing components from the registry
+```
+
+## Markdown files
+
+Every page in the docs is also published as a standalone Markdown file.
+
+To view it, add `.md` to the end of the page URL. You can also use the **Copy page** button on each page to copy the full content to your clipboard as Markdown.
+
+## llms.txt
+
+The [llms.txt](/llms.txt) file provides an index of all Markdown pages available across the React Aria documentation.
+
+## References
+- [React Aria](https://react-aria.adobe.com/ai?utm_source=intentui.com/ai&utm_medium=referral&utm_campaign=docs&utm_content=%2Fdocs%2Fmcp)
+- [Shadcn MCP](https://ui.shadcn.com/docs/mcp?utm_source=intentui.com/ai&utm_medium=referral&utm_campaign=docs&utm_content=%2Fdocs%2Fmcp)

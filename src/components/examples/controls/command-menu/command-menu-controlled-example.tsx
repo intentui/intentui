@@ -1,0 +1,102 @@
+'use client'
+
+import { useState } from 'react'
+import { Avatar } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import {
+  CommandMenu,
+  CommandMenuItem,
+  CommandMenuList,
+  CommandMenuSearch,
+} from '@/components/ui/command-menu'
+
+export default function CommandMenuControlledDemo() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [search, setSearch] = useState('')
+  const [results, setResults] = useState(users)
+
+  const handleSearch = (value: string) => {
+    setSearch(value)
+    const filteredResults = users.filter((user) =>
+      user.name.toLowerCase().includes(value.toLowerCase())
+    )
+    setResults(filteredResults)
+  }
+
+  return (
+    <>
+      <Button intent="outline" onPress={() => setIsOpen(true)}>
+        Open
+      </Button>
+      <CommandMenu
+        onInputChange={handleSearch}
+        inputValue={search}
+        isOpen={isOpen}
+        onOpenChange={setIsOpen}
+      >
+        <CommandMenuSearch placeholder="Quick search..." />
+        <CommandMenuList items={results}>
+          {(user) => (
+            <CommandMenuItem textValue={user.name} key={user.name}>
+              <Avatar src={user.image_url} />
+              {user.name}
+            </CommandMenuItem>
+          )}
+        </CommandMenuList>
+      </CommandMenu>
+    </>
+  )
+}
+
+const users = [
+  {
+    id: 1,
+    name: 'Barbara Kirlin Sr.',
+    image_url: 'https://i.pravatar.cc/150?img=1',
+  },
+  {
+    id: 2,
+    name: 'Rosemarie Koch',
+    image_url: 'https://i.pravatar.cc/150?img=2',
+  },
+  {
+    id: 3,
+    name: 'Mrs. Reva Heaney Jr.',
+    image_url: 'https://i.pravatar.cc/150?img=3',
+  },
+  {
+    id: 4,
+    name: 'Ms. Ettie Abshire DVM',
+    image_url: 'https://i.pravatar.cc/150?img=4',
+  },
+  {
+    id: 5,
+    name: 'Bria Ziemann',
+    image_url: 'https://i.pravatar.cc/150?img=5',
+  },
+  {
+    id: 6,
+    name: 'Heloise Borer Sr.',
+    image_url: 'https://i.pravatar.cc/150?img=6',
+  },
+  {
+    id: 7,
+    name: 'Miss Jacinthe Gerlach DVM',
+    image_url: 'https://i.pravatar.cc/150?img=7',
+  },
+  {
+    id: 8,
+    name: 'Miss Stephania Schaefer Sr.',
+    image_url: 'https://i.pravatar.cc/150?img=8',
+  },
+  {
+    id: 9,
+    name: 'Kevon Hackett MD',
+    image_url: 'https://i.pravatar.cc/150?img=9',
+  },
+  {
+    id: 10,
+    name: 'Tom Ledner',
+    image_url: 'https://i.pravatar.cc/150?img=10',
+  },
+]

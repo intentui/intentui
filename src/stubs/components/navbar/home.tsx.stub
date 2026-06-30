@@ -1,0 +1,13 @@
+import { Container } from "@/components/ui/container"
+import { Heading } from "@/components/ui/heading"
+import { AppLayout } from "./app-layout.tsx"
+
+export default function Home() {
+  return (
+    <Container>
+      <Heading>Home</Heading>
+    </Container>
+  )
+}
+
+Home.layout = (page: React.ReactNode) => <AppLayout children={page} />

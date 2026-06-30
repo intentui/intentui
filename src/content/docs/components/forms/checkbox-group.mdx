@@ -1,0 +1,113 @@
+---
+title: "Checkbox Group"
+description: A collection of checkboxes that enables users to select multiple options from a predefined list. It allows for flexible multi-selection in forms and interfaces.
+order: 7
+published: true
+references: ["https://react-aria.adobe.com/CheckboxGroup#api"]
+---
+
+<How toUse="forms/checkbox/checkbox-group-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/checkbox"/>
+
+## Composed components
+<Composed components={['field']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+
+<SourceCode toShow='checkbox'/>
+
+## Anatomy
+```
+import { CheckboxField, CheckboxGroup, Checkbox } from "@/components/ui/checkbox"
+import { Description, Label } from "@/components/ui/field"
+```
+
+```
+<CheckboxGroup defaultValue={["delete"]}>
+  <Label>User Permissions</Label>
+  <Description>
+    Select the permissions you want to grant to the user.
+  </Description>
+  <CheckboxField value="read">
+    <Checkbox>Read</Checkbox>
+    <Description>
+      Can view content but cannot make changes.
+    </Description>
+  </CheckboxField>
+  <CheckboxField value="write">
+    <Checkbox>Write</Checkbox>
+    <Description>
+      Can create and modify existing content.
+    </Description>
+  </CheckboxField>
+  <CheckboxField value="delete">
+    <Checkbox>Delete</Checkbox>
+    <Description>Can permanently remove content.</Description>
+  </CheckboxField>
+  <CheckboxField value="admin">
+    <Checkbox>Admin</Checkbox>
+    <Description>
+      Full access to all actions and settings.
+    </Description>
+  </CheckboxField>
+</CheckboxGroup>
+```
+
+## Examples
+
+### Description
+Add a description to the checkbox group using the `description` prop.
+<How minW60 toUse="forms/checkbox/checkbox-group-description-example" />
+
+### Validation
+The checkbox group is in an error state.
+<How toUse="forms/checkbox/checkbox-group-validation-example" />
+
+### Indeterminate
+The checkbox group is in an indeterminate state.
+<How toUse="forms/checkbox/checkbox-group-indeterminate-example" />
+
+### Controlled
+Control the checkbox group value with the `value` prop.
+<How minW60 toUse="forms/checkbox/checkbox-group-controlled-example" />
+
+### Uncontrolled
+Control the checkbox group value with the `defaultValue` prop.
+<How minW60 toUse="forms/checkbox/checkbox-group-uncontrolled-example" />
+
+### Disabled
+Disable the entire checkbox group by passing the `isDisabled` prop.
+<How minW60 toUse="forms/checkbox/checkbox-group-disabled-example" />
+
+### Read only
+When you need just a read-only checkbox group, pass the `isReadOnly` prop.
+```
+<CheckboxGroup isReadOnly/>
+```
+
+## Component API
+
+### Checkbox
+
+The `Checkbox` component is used for a single selectable option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CheckboxGroup
+
+The `CheckboxGroup` component groups related checkbox options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/CheckboxGroup#api) for the full API reference.

@@ -1,0 +1,182 @@
+---
+title: "Select"
+description: A customizable dropdown menu that lets users choose a single option from a predefined list, optimized for accessibility and seamless user interaction.
+order: 2
+published: true
+references: ["https://react-aria.adobe.com/Select#api"]
+---
+
+<How minW60 toUse="pickers/select/select-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/select"/>
+
+## Composed components
+<Composed components={['field', 'dropdown', 'popover']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+
+<SourceCode toShow='select'/>
+
+## Anatomy
+```
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+} from "@/components/ui/select"
+```
+
+```
+const software = [
+  { id: 1, name: "Adobe Photoshop" },
+  { id: 2, name: "Sketch" },
+  { id: 3, name: "Figma" },
+  { id: 4, name: "Adobe XD" },
+  { id: 5, name: "InVision" },
+]
+
+<Select aria-label="Design software" placeholder="Select a software">
+  <SelectTrigger />
+  <SelectContent items={software}>
+    {(item) => (
+      <SelectItem id={item.id} textValue={item.name}>
+        {item.name}
+      </SelectItem>
+    )}
+  </SelectContent>
+</Select>
+```
+
+## Examples
+
+### Section
+A select component can display items grouped together in sections.
+<How minW60 toUse="pickers/select/select-section-example" />
+
+### Searchable select
+Sometimes, you may need to search for an item in a select component. Here's how you can do it.
+<How minW60 toUse="pickers/select/select-searchable-example" />
+
+### With icon
+
+<How minW60 toUse="pickers/select/select-with-icon-example" />
+
+### With avatar
+<How minW60 toUse="pickers/select/select-with-avatar-example" />
+
+### Multiple select
+Enable selecting more than one option by setting `selectionMode` to `multiple`.
+<How minW60 toUse="pickers/select/select-multiple-example" />
+
+
+### Validation
+If a user submits the form without selecting an item, an error message will appear.
+<How minW60 toUse="pickers/select/select-validation-example" />
+
+### Label
+When the `children` option is a string, `Select.Label` will automatically wrap it. However, if the option includes an icon or avatar, you'll need to manually define the wrapper like this:
+
+```
+<SelectItem id="discord" textValue="Discord">
+  <BrandDiscordIcon />
+  <SelectLabel>Discord</SelectLabel>
+</SelectItem>
+```
+
+### Details description
+If you need to provide more information about an option, use the `Description` component to display additional details.
+<How minW60 toUse="pickers/select/select-details-description-example" />
+
+### Controlled
+You can control the select component by passing the `selectedKey` prop.
+<How minW60 toUse="pickers/select/select-controlled-example" />
+
+### Uncontrolled
+You can uncontrolled the select component by passing the `defaultSelectedKey` prop.
+<How minW60 toUse="pickers/select/select-uncontrolled-example" />
+
+
+### Disabled
+When the select component is disabled, it cannot be interacted with.
+<How minW60 toUse="pickers/select/select-disabled-example" />
+
+## Component API
+
+### Select
+
+The `Select` component lets users choose from a list of options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `items` | `Iterable<T, M>` | - |
+
+### SelectContent
+
+The `SelectContent` component renders select options inside a popover.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `items` | `Iterable<T>` | - |
+| `popover` | `Omit<PopoverProps, "children">` | - |
+
+### SelectItem
+
+The `SelectItem` component represents one select option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### SelectLabel
+
+The `SelectLabel` component renders the primary text for a select option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SelectDescription
+
+The `SelectDescription` component renders supporting text for a select option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SelectSection
+
+The `SelectSection` component groups related select options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `title` | `string` | - |
+
+### SelectSeparator
+
+The `SelectSeparator` component separates select option groups.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SelectTrigger
+
+The `SelectTrigger` component opens the select popover and displays the selected value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `prefix` | `ReactNode` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Select#api) for the full API reference.

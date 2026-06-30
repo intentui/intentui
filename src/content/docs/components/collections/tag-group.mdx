@@ -1,0 +1,93 @@
+---
+title: "Tag Group"
+description: A collection of tags displayed together, allowing users to categorize, filter, or manage multiple labels efficiently. It supports dynamic tag management.
+order: 4
+published: true
+references: ["https://react-aria.adobe.com/TagGroup#api"]
+---
+
+<How toUse="collections/tag-group/tag-group-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/tag-group"/>
+
+## Composed components
+<Composed components={['field', 'badge']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+
+<SourceCode toShow='tag-group'/>
+
+## Anatomy
+```
+import { Tag, TagGroup, TagList } from "@/components/ui/tag-group"
+import { Label } from "@/components/ui/field"
+```
+
+```
+<TagGroup selectionMode="multiple">
+  <Label>Serverless</Label>
+  <TagList>
+    <Tag>AWS Lambda</Tag>
+    <Tag>Google Cloud Functions</Tag>
+    <Tag>Azure Functions</Tag>
+  </TagList>
+</TagGroup>
+```
+
+## Examples
+
+### With remove button
+Tags within the group can include a removal button.
+<How toUse="collections/tag-group/tag-group-with-remove-example" />
+
+### Controlled
+Manage the values of the tag group through the `value` prop.
+<How toUse="collections/tag-group/tag-group-controlled-example" />
+
+### Links
+Incorporate a hyperlink within the tag group using the `href` prop.
+<How toUse="collections/tag-group/tag-group-href-example" />
+
+
+<Note intent="warning">
+  For client-side routing, React Aria recommends using the <code className="font-semibold">onAction</code> event to handle navigation programmatically instead of passing an href prop.
+  This is because some collection items cannot be rendered as native elements due to HTML specification limitations.
+</Note>
+
+### Disabled
+Disable tags either by setting the `isDisabled` prop or using `disabledKeys` on the `TagGroup`.
+<How toUse="collections/tag-group/tag-group-disabled-example" />
+
+## Component API
+
+### Tag
+
+The `Tag` component renders one tag item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TagGroup
+
+The `TagGroup` component groups related tags.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### TagList
+
+The `TagList` component contains tag items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.

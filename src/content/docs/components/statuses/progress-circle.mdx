@@ -1,0 +1,59 @@
+---
+title: "Progress Circle"
+description: A modern circular progress indicator designed for visually representing task completion, downloads, or loading animations. It offers clear progress visualization.
+order: 3
+published: true
+references: ["https://react-aria.adobe.com/ProgressBar#api"]
+---
+
+<How toUse="statuses/progress-circle/progress-circle-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/progress-circle"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<SourceCode toShow='progress-circle'/>
+
+## Anatomy
+```
+import { ProgressCircle } from "@/components/ui/progress-circle"
+
+<ProgressCircle aria-label="Loading…" value={25} />
+```
+
+## Examples
+
+### Indeterminate
+You can also make the progress circle indeterminate by setting the `isIndeterminate` prop.
+<How toUse="statuses/progress-circle/progress-circle-indeterminate-example" />
+
+### Custom size
+You can customize the size of the progress circle by using className with tailwind classes or style props.
+<How toUse="statuses/progress-circle/progress-circle-custom-size-example" />
+
+### Controlled
+You can control the progress circle by using the `value` prop.
+<How toUse="statuses/progress-circle/progress-circle-controlled-example" />
+
+### Combine with button
+The button includes an isPending prop to indicate a pending state, allowing for seamless integration with the progress circle.
+<How toUse="buttons/button/button-pending-example" />
+
+### Custom color
+The progress circle can be customized with the `color` prop.
+<How toUse="statuses/progress-circle/progress-circle-color-example" />
+
+## Component API
+
+The `ProgressCircle` component displays circular progress feedback.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.

@@ -1,0 +1,60 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+/.idea
+/__registry__
+/public/registry
+/public/stubs
+ignore
+/.vercel
+/.source
+/note.md
+/CLAUDE.md
+/.claude
+/.agents
+/.ai
+skills-lock.json
+/.github/skills
+/.codex
+/.opencode
+delete-me.txt
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+
+/public/r
+
+# testing
+/coverage
+
+src/components-search.json
+src/generated
+# next.js
+/.next/
+/out/
+# production
+/build
+.tmp
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# velite files
+.velite

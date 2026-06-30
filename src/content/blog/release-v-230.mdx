@@ -1,0 +1,122 @@
+---
+title: Release 2.3.0
+description: The 2.3.0 update introduces customizable dropdown descriptions, removes DropdownItemDetails, and adds better support across Menu, Select, and ComboBox components.
+published: 2025-05-10
+author: irsyadadl
+---
+
+## Checkbox Icon
+The checkbox icon now uses `size-3.5` instead of `size-4`, and includes a new `data-slot="checkbox-indicator"` attribute to clearly identify the indicator element.
+
+## Choicebox Revamp
+Previously, you might have defined your items like this:
+```tsx
+<Choicebox.Item title="Basic" description="Just the essentials to get started." />
+```
+
+We’ve now updated the API and renamed the `title` prop to `label`.
+This change helps avoid conflicts with the default `title` attribute in HTML, which can trigger unwanted browser tooltips. By using `label` instead, the behavior is more predictable and easier to control.
+Here’s the new syntax:
+
+```tsx
+<Choicebox.Item label="Basic" description="Just the essentials to get started." /> // ✅
+```
+
+If you want to include an icon or avatar, it’s now much easier. You can use the new children structure: `Choicebox.Label` and `Choicebox.Description`.
+
+```tsx
+<Choicebox.Item textValue={item.id}>
+  <Choicebox.Label>{item.label}</Choicebox.Label>
+  <Choicebox.Description>{item.description}</Choicebox.Description>
+</Choicebox.Item>
+```
+
+You can still use `label` and `description` directly like before. But with this new structure, you can also include avatars or icons alongside them.
+
+```tsx
+<Choicebox.Item textValue={item.id}>
+  <Avatar src={item.image_url} />
+  <Choicebox.Label>{item.label}</Choicebox.Label>
+  <Choicebox.Description>{item.description}</Choicebox.Description>
+</Choicebox.Item>
+```
+Another design improvement is that Choicebox now uses `grid-cols-subgrid` to ensure content alignment when `columns={1}` is set.
+
+## Dropdown Description
+
+A new child component has been added to `Dropdown` called `DropdownDescription`.
+
+We introduced this to make it easier to customize the dropdown content. For example, you can now include icons or any other elements alongside the description.
+
+```
+import { IconMinus } from "@intentui/icons"
+
+<DropdownItem>
+  <IconMinus />
+  <DropdownLabel>Item</DropdownLabel>
+  <DropdownDescription>Item description</DropdownDescription>
+</DropdownItem>
+```
+
+## Removing `DropdownItemDetails`
+
+The old `DropdownItemDetails` component was useful but hard to customize. That's why it has been removed. Instead, every component now supports a `Description` element, which provides more flexibility.
+
+Here are examples of other components that now support descriptions inside dropdown items:
+
+```tsx
+// Menu
+<MenuItem textValue="Admin">
+  <MenuLabel>Admin</MenuLabel>
+  <MenuDescription>Has full access to all resources</MenuDescription>
+</MenuItem>
+
+// Select
+<Select.Item textValue="Admin">
+  <Select.Label>Admin</Select.Label>
+  <Select.Description>Has full access to all resources</Select.Description>
+</Select.Item>
+```
+
+## ComboBox Description
+
+With `DropdownDescription` now available, `ComboBox` items can also include descriptions in the same way.
+
+```tsx
+<ComboBoxItem textValue="Admin">
+  <ComboBoxLabel>Admin</ComboBoxLabel>
+  <ComboBoxDescription>Has full access to all resources</ComboBoxDescription>
+</ComboBoxItem>
+```
+
+## Migration Note for `DropdownItemDetails` Users
+
+If you previously used `DropdownItemDetails`, you’ll need to update your code. This component has been removed to allow more flexibility and better customization.
+
+Replace any usage of:
+
+```tsx
+<Dropdown.ItemDetails />
+```
+
+with a more customizable structure using `DropdownLabel` and `DropdownDescription`:
+
+```tsx
+<DropdownItem>
+  <IconMinus />
+  <DropdownLabel>Item</DropdownLabel>
+  <DropdownDescription>Item description</DropdownDescription>
+</DropdownItem>
+```
+
+This new approach makes it easier to add icons, avatars, or any other custom content directly inside your dropdown items.
+
+## Refactor Table
+The table component has been significantly refactored and now supports a new `bleed` prop, which is `false` by default. Check out an example in [Sidebar 15](/pre-blocks/sidebar/sidebar-15), and as always, refer to the table documentation [here](/docs/components/collections/table).
+
+
+## Small change to sidebar
+When your table has a large number of columns, the layout usually breaks. But now, you can add as many columns as you want and it’ll still look great. [Sidebar 15](/pre-blocks/sidebar/sidebar-15).
+
+## Navbar
+The intent value `floating` is now renamed to `float` to stay consistent with other values.

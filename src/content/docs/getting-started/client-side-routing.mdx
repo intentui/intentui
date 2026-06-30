@@ -1,0 +1,241 @@
+---
+title: "Client Side Routing"
+description: React Aria components like Link, Menu, and Tabs can behave as real navigation links via `href`, while also supporting attributes like target and download.
+order: 3
+published: true
+---
+
+## Introduction
+
+React Aria Components such as [Link](/docs/components/navigation/link), [Menu](/docs/components/collections/menu), and [Tabs](/docs/components/navigation/tabs) can render items as links when an `href` prop is provided. This allows them to behave like native anchor elements and support standard attributes such as `target` and `download`.
+
+By default, links are rendered as an `<a>` element. To integrate with a framework-specific routing component, use the `render` prop.
+
+```
+<Link
+  {...props}
+  render={props => <YourRouterLink {...props} />}
+/>
+```
+
+And for `MenuItem`.
+
+```
+<MenuItem
+  {...props}
+  render={(domProps) =>
+    "href" in domProps ? <YourRouterLink {...domProps} /> : <div {...domProps} />
+  }
+/>
+```
+
+## Laravel and Inertia.js
+
+When using Laravel with Inertia.js, you can render the `Link` component as an Inertia `Link`.
+
+```
+import { Link as InertiaLink, type InertiaLinkProps } from "@inertiajs/react"
+import {
+  Link as LinkPrimitive,
+  type LinkProps as LinkPrimitiveProps,
+} from "react-aria-components/Link"
+import { cx } from "@/lib/primitive"
+
+export interface LinkProps extends LinkPrimitiveProps, Omit<InertiaLinkProps, keyof LinkPrimitiveProps> {
+  ref?: React.RefObject<HTMLAnchorElement>
+}
+
+export function Link({ className, ref, ...props }: LinkProps) {
+  return (
+    <LinkPrimitive
+      ref={ref}
+      className={cx(
+        [
+          "font-medium text-(--text)",
+          "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
+          "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
+          "href" in props && "cursor-pointer",
+        ],
+        className,
+      )}
+      render={(domProps) =>
+        "href" in domProps ? (
+          <InertiaLink {...(props as InertiaLinkProps)} {...(domProps as InertiaLinkProps)} />
+        ) : (
+          <div {...domProps} />
+        )
+      }
+      {...(props as LinkPrimitiveProps)}
+    />
+  )
+}
+```
+
+## Next.js
+When using Next.js, you can still use `RouteProvider`. For now, this remains the best option at the time of writing, May 13, 2026.
+
+```
+"use client"
+
+import { useRouter } from "next/navigation"
+
+import { RouterProvider } from "react-aria-components"
+import { I18nProvider } from "react-aria-components/I18nProvider"
+
+declare module "react-aria-components" {
+  interface RouterConfig {
+    routerOptions: NonNullable<Parameters<ReturnType<typeof useRouter>["push"]>[1]>
+  }
+}
+
+interface ProvidersProps {
+  children: React.ReactNode
+  lang?: string
+}
+
+export function Providers ({ children, lang }: ProvidersProps) {
+  const router = useRouter()
+  return (
+    <RouterProvider navigate={router.push}>
+      <I18nProvider locale={lang}>
+        {children}
+      </I18nProvider>
+    </RouterProvider>
+  )
+}
+```
+
+Then, in your main layout file, such as `app/layout.tsx`, wrap your application with the `Providers` component.
+
+```
+import { headers } from "next/headers"
+import { Providers } from "@/components/providers"
+
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  const acceptLanguage = (await headers()).get("accept-language")
+  const lang = acceptLanguage?.split(/[,;]/)[0] || "en-US"
+  return (
+    <html
+      lang={lang}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
+      <body className="h-full antialiased">
+        <Providers lang={lang}>
+          {children}
+        </Providers>
+      </body>
+    </html>
+  )
+}
+```
+
+## TanStack Router
+
+When using TanStack Router, wrap your link component with `createLink`. This allows the component to integrate with TanStack Router’s navigation system while still preserving React Aria behavior.
+
+```
+import { createLink } from "@tanstack/react-router"
+
+const InternalLink = ({ className, ref, ...props }: LinkProps) => {
+  return (
+    <LinkPrimitive
+      ref={ref}
+      className={cx(
+        [
+          "font-medium text-(--text)",
+          "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
+          "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
+          "href" in props && "cursor-pointer",
+        ],
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
+export const Link = createLink(InternalLink)
+```
+
+If the link is also used through `MenuItem`, update `MenuItem` in `ui/menu.tsx` using the same pattern.
+
+```
+import { createLink } from "@tanstack/react-router"
+
+const InternalMenuItem = ({
+  className,
+  intent,
+  children,
+  ...props
+}: MenuItemProps) => {
+  return (
+    <MenuItemPrimitive
+      className={cx(
+        [
+          "group flex cursor-default items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-hidden",
+          "focus:bg-accent focus:text-accent-fg",
+          "disabled:pointer-events-none disabled:opacity-50",
+        ],
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </MenuItemPrimitive>
+  )
+}
+
+export const MenuItem = createLink(InternalMenuItem)
+```
+
+For more details, refer to the [TanStack Router documentation](https://tanstack.com/router/latest/docs/guide/custom-link#react-aria-components-example) on creating custom links with TanStack Router and React Aria Components.
+
+## React Router
+
+When using React Router, render the React Aria `Link` through React Router’s `Link` component. React Aria still controls the accessible behavior and styling, while React Router handles client-side navigation through the `to` prop.
+
+```tsx
+"use client"
+
+import { Link as ReactRouterLink } from "react-router"
+import {
+  Link as LinkPrimitive,
+  type LinkProps as LinkPrimitiveProps,
+} from "react-aria-components/Link"
+
+import { cx } from "~/lib/primitive"
+
+export interface LinkProps extends LinkPrimitiveProps {
+  ref?: React.RefObject<HTMLAnchorElement>
+}
+
+export function Link({ className, ref, ...props }: LinkProps) {
+  return (
+    <LinkPrimitive
+      ref={ref}
+      className={cx(
+        "font-medium text-(--text)",
+        "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
+        "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
+        "href" in props && "cursor-pointer",
+        className,
+      )}
+      render={(domProps) =>
+        "href" in domProps ? (
+          <ReactRouterLink {...domProps} to={domProps.href} />
+        ) : (
+          <span {...domProps} />
+        )
+      }
+      {...props}
+    />
+  )
+}
+```
+
+This lets you keep using the same `href` API across React Aria components, while React Router receives the value as `to` and performs client-side navigation.

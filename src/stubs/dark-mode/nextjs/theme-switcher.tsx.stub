@@ -1,0 +1,31 @@
+"use client"
+
+import { ComputerDesktopIcon, MoonIcon, SunIcon } from "@intentui/icons"
+import { useTheme } from "next-themes"
+import { Button } from "@/components/ui/button"
+
+export function ThemeSwitcher({
+  shape = "square",
+  appearance = "outline",
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  const { theme, setTheme } = useTheme()
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "light" ? "dark" : theme === "dark" ? "system" : "light"
+    setTheme(nextTheme)
+  }
+
+  return (
+    <Button
+      shape={shape}
+      intent={appearance}
+      size="sq-sm"
+      aria-label="Switch theme"
+      onPress={toggleTheme}
+      {...props}
+    >
+      {theme === "light" ? <SunIcon /> : theme === "dark" ? <MoonIcon /> : <ComputerDesktopIcon />}
+    </Button>
+  )
+}

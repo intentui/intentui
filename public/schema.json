@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "ui": {
+      "type": "string",
+      "description": "Path to the UI components directory"
+    },
+    "lib": {
+      "type": "string",
+      "description": "Path to the utilities directory"
+    },
+    "hooks": {
+      "type": "string",
+      "description": "Path to the utilities directory"
+    },
+    "gray": {
+      "type": "string",
+      "description": "Alias or mapping for a specific color"
+    },
+    "css": {
+      "type": "string",
+      "description": "Path to the global CSS file"
+    },
+    "alias": {
+      "type": "string",
+      "description": "Alias used in the project"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["javascript", "typescript"],
+      "description": "Programming language of the project"
+    }
+  },
+  "required": ["ui", "lib", "css", "alias", "language"]
+}

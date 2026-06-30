@@ -1,0 +1,135 @@
+---
+title: "Context Menu"
+description: Opens a menu at your cursor on right click, giving fast access to relevant actions based on the current context, boosting productivity and usability.
+order: 6
+published: true
+status: beta
+---
+
+<How toUse="controls/context-menu/context-menu-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/context-menu"/>
+
+## Composed components
+<Composed components={['menu']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+
+<SourceCode toShow='context-menu' />
+
+## Examples
+
+### Description
+You can add details to menu items by using the `ContextMenuDescription` component.
+<How toUse="controls/context-menu/context-menu-detail-description-example" />
+
+### Danger
+Designate a menu item as dangerous.
+<How toUse="controls/context-menu/context-menu-danger-example" />
+
+### With icon
+Enhance context menu item by adding icons.
+<How toUse="controls/context-menu/context-menu-with-icon-example" />
+
+### Separator
+Separate context menu items with a separator.
+<How toUse="controls/context-menu/context-menu-separator-example" />
+
+
+### Context sub menu
+Sorry, this component doesn't exist yet. It's on our roadmap.
+
+### Disabled
+Disable specific menu items.
+<How toUse="controls/context-menu/context-menu-disabled-example" />
+Also, you can disable items directly in `MenuContent` by using the `disabledKeys` prop.
+```tsx
+<ContextMenuContent disabledKeys={['gsu']} />
+```
+
+## Component API
+
+### ContextMenu
+
+The `ContextMenu` component provides context menu state for its trigger and content.
+
+### ContextMenuTrigger
+
+The `ContextMenuTrigger` component defines the element that opens a context menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuContent
+
+The `ContextMenuContent` component renders menu items at the pointer position.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuHeader
+
+The `ContextMenuHeader` component renders header content inside a context menu.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `separator` | `boolean` | `false` |
+
+### ContextMenuItem
+
+The `ContextMenuItem` component represents one context menu action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"danger" \| "warning"` | - |
+
+### ContextMenuLabel
+
+The `ContextMenuLabel` component renders the primary text for a context menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuDescription
+
+The `ContextMenuDescription` component renders supporting text for a context menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuSection
+
+The `ContextMenuSection` component groups related context menu items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `label` | `string` | - |
+
+### ContextMenuSeparator
+
+The `ContextMenuSeparator` component separates context menu groups.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ContextMenuShortcut
+
+The `ContextMenuShortcut` component displays a keyboard shortcut for a context menu item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

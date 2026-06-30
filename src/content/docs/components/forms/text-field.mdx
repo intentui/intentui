@@ -1,0 +1,94 @@
+---
+title: "Text Field"
+description: A basic input field for entering short text, commonly used for forms, user input, and data entry. It supports validation, prefixes, suffixes, and various states.
+order: 2
+published: true
+references: ["https://react-aria.adobe.com/TextField#api"]
+---
+
+<How minW60 toUse="forms/text-field/text-field-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+
+<InstallCommand command="npx shadcn@latest add @intentui/text-field"/>
+
+## Composed components
+<Composed components={['field']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react"/>
+
+<SourceCode toShow='text-field'/>
+
+## Anatomy
+```
+import { TextField } from "@/components/ui/text-field"
+
+<TextField
+  name="name"
+  type="text"
+  label="Name"
+  description="Enter your name"
+  placeholder="John Doe"
+  errorMessage="This field is required"
+  prefix="..."
+  suffix="..."
+/>
+```
+
+## Examples
+
+### Prefix and suffix
+
+Wrap `Input` with `InputGroup` to add prefix and suffix content.
+<How minW60 toUse="forms/text-field/text-field-prefix-suffix-example" />
+
+### Suffix button
+
+Wrap `Input` with `InputGroup` to add a button as the suffix.
+<How minW60 toUse="forms/text-field/text-field-suffix-button-example" />
+
+
+### Revealable
+When using a text field as a password input, you may want the option to reveal the password.
+<How minW60 toUse="forms/text-field/text-field-revealable-example" />
+
+### Validation
+In this example, we’ll ensure it’s treated as a strict requirement.
+<How minW60 toUse="forms/text-field/text-field-validation-example" />
+
+### Controlled
+Manage the TextField value through the `value` prop for controlled usage.
+<How minW60 toUse="forms/text-field/text-field-controlled-example" />
+
+### Uncontrolled
+Manage the TextField value through the `defaultValue` prop for uncontrolled usage.
+<How minW60 toUse="forms/text-field/text-field-uncontrolled-example" />
+
+### Description
+You can add a description to the text field by using the `description` prop.
+<How minW60 toUse="forms/text-field/text-field-description-example" />
+
+### Readonly
+Set the TextField to readonly, preventing any edits.
+<How minW60 toUse="forms/text-field/text-field-readonly-example" />
+
+### Disabled
+When the TextField is disabled, it becomes non-editable and appears inactive.
+<How minW60 toUse="forms/text-field/text-field-disabled-example" />
+
+## Component API
+
+### TextField
+
+The `TextField` component renders a labeled text input.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/TextField#api) for the full API reference.

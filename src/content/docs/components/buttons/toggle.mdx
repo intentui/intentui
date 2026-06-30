@@ -1,0 +1,82 @@
+---
+title: "Toggle"
+description: Toggle is like light switches for your digital digs. Flip 'em on, and they light stuff up; flip 'em off, and it's lights out. Perfect for quick on/off controls.
+order: 3
+published: true
+references: [https://react-aria.adobe.com/ToggleButton#api]
+---
+
+<How toUse="buttons/toggle/toggle-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/toggle"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components tailwind-variants tailwind-merge"/>
+<SourceCode toShow='toggle'/>
+
+## Examples
+
+### Intent
+
+Customize the look of the toggle button using the `intent` prop.
+
+<How toUse="buttons/toggle/toggle-intent-example" />
+
+### Size
+
+Adjust the toggle button's size using the `size` prop.
+
+<How toUse="buttons/toggle/toggle-size-example" />
+
+### Controlled
+
+Manage the toggle button's state with the `isSelected` prop.
+
+<How toUse="buttons/toggle/toggle-controlled-example" />
+
+### Disabled
+
+Disable a toggle button by setting the `disabled` prop.
+
+<How toUse="buttons/toggle/toggle-disabled-example" />
+
+## Touch hitbox
+Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-target` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
+```css
+@utility touch-target {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    min-height: 44px;
+    min-width: 44px;
+    z-index: 9999;
+  }
+}
+```
+
+## Component API
+
+### Toggle
+
+The `Toggle` component is a pressable control that can stay selected.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `intent` | `"outline" \| "plain"` | `plain` |
+| `isCircle` | `true \| false` | `false` |
+| `size` | `"xs" \| "sm" \| "md" \| "lg" \| "sq-xs" \| "sq-sm" \| "sq-md" \| "sq-lg"` | `md` |
+
+See the [React Aria](https://react-aria.adobe.com/ToggleButton#api) for the full API reference.

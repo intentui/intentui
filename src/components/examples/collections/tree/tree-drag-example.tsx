@@ -1,0 +1,251 @@
+'use client'
+import {
+  DocumentIcon,
+  DocumentTextIcon,
+  FolderIcon,
+  FolderOpenIcon,
+  PlayCircleIcon,
+  Squares2X2Icon,
+} from '@heroicons/react/24/outline'
+import { useTreeData } from '@react-stately/data'
+import { Collection } from 'react-aria-components/Collection'
+import type { TreeItemProps as TreeItemPrimitiveProps } from 'react-aria-components/Tree'
+import { useDragAndDrop } from 'react-aria-components/useDragAndDrop'
+import { Tree, TreeContent, TreeItem as PrimitiveItem } from '@/components/ui/tree'
+
+const fileStructure = [
+  {
+    id: 'departments',
+    name: 'departments',
+    children: [
+      {
+        id: 'sales',
+        name: 'sales',
+        children: [
+          {
+            id: 'reports',
+            name: 'reports',
+            children: [
+              { id: 'q1', name: 'Q1.pdf' },
+              { id: 'q2', name: 'Q2.pdf' },
+              { id: 'q3', name: 'Q3.pdf' },
+            ],
+          },
+          {
+            id: 's-clients',
+            name: 's-clients',
+            children: [
+              { id: 'europe', name: 'europe.xlsx' },
+              { id: 'asia', name: 'asia.xlsx' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hr',
+        name: 'hr',
+        children: [
+          {
+            id: 'd-docs',
+            name: 'd-docs',
+            children: [
+              { id: 'policy', name: 'leave-policy.pdf' },
+              { id: 'handbook', name: 'handbook.pdf' },
+              { id: 'benefits', name: 'benefits.pdf' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'projects',
+    name: 'projects',
+    children: [
+      {
+        id: 'revamp',
+        name: 'website-revamp',
+        children: [
+          {
+            id: 'designs',
+            name: 'designs',
+            children: [
+              { id: 'home', name: 'home.fig' },
+              { id: 'about', name: 'about.fig' },
+              { id: 'pricing', name: 'pricing.fig' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mobile',
+        name: 'mobile-app',
+        children: [
+          {
+            id: 'ios',
+            name: 'ios',
+            children: [
+              { id: 'v1', name: 'v1.0.ipa' },
+              { id: 'v2', name: 'v2.0.ipa' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'clients',
+    name: 'clients',
+    children: [
+      {
+        id: 'acme',
+        name: 'acme-corp',
+        children: [
+          {
+            id: 'contracts',
+            name: 'contracts',
+            children: [
+              { id: 'c-2024', name: '2024.pdf' },
+              { id: 'c-2025', name: '2025.pdf' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'initech',
+        name: 'initech',
+        children: [
+          {
+            id: 'invoices',
+            name: 'invoices',
+            children: [
+              { id: 'inv1', name: 'inv-001.pdf' },
+              { id: 'inv2', name: 'inv-002.pdf' },
+              { id: 'inv3', name: 'inv-003.pdf' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'legal',
+    name: 'legal',
+    children: [
+      {
+        id: 'nda',
+        name: 'nda',
+        children: [
+          { id: 'partner-a', name: 'partner-a.pdf' },
+          { id: 'partner-b', name: 'partner-b.pdf' },
+        ],
+      },
+      {
+        id: 'terms',
+        name: 'terms',
+        children: [
+          { id: 't-2024', name: '2024.pdf' },
+          { id: 't-2025', name: '2025.pdf' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'resources',
+    name: 'resources',
+    children: [
+      {
+        id: 'docs',
+        name: 'docs',
+        children: [
+          { id: 'api', name: 'api.md' },
+          { id: 'auth', name: 'auth.md' },
+          { id: 'sdk', name: 'sdk.md' },
+        ],
+      },
+      {
+        id: 'videos',
+        name: 'videos',
+        children: [
+          { id: 'intro', name: 'intro.mp4' },
+          { id: 'setup', name: 'setup.mp4' },
+        ],
+      },
+    ],
+  },
+]
+
+interface TreeItemProps extends Partial<TreeItemPrimitiveProps> {
+  title: string
+}
+
+function TreeItem({ title, children, ...props }: TreeItemProps) {
+  return (
+    <PrimitiveItem textValue={title} {...props}>
+      <TreeContent>
+        {({ isExpanded, hasChildItems }) => (
+          <>
+            {hasChildItems ? (
+              isExpanded ? (
+                <FolderOpenIcon />
+              ) : (
+                <FolderIcon />
+              )
+            ) : title.endsWith('.fig') ? (
+              <Squares2X2Icon />
+            ) : title.endsWith('.mp4') ? (
+              <PlayCircleIcon />
+            ) : title.endsWith('.pdf') ? (
+              <DocumentIcon />
+            ) : (
+              <DocumentTextIcon />
+            )}
+            {title}
+          </>
+        )}
+      </TreeContent>
+      {children}
+    </PrimitiveItem>
+  )
+}
+
+export default function TreeDragDemo() {
+  const tree = useTreeData({
+    initialItems: fileStructure,
+  })
+
+  const { dragAndDropHooks } = useDragAndDrop({
+    getItems: (keys) =>
+      [...keys].map((key) => ({
+        'text/plain': (tree.getItem(key) as any).value.name,
+      })),
+    onMove(e) {
+      if (e.target.dropPosition === 'before') {
+        tree.moveBefore(e.target.key, e.keys)
+      } else if (e.target.dropPosition === 'after') {
+        tree.moveAfter(e.target.key, e.keys)
+      } else if (e.target.dropPosition === 'on') {
+        const targetNode = tree.getItem(e.target.key)
+        if (targetNode) {
+          const targetIndex = targetNode.children ? targetNode.children.length : 0
+          const keyArray = Array.from(e.keys)
+          for (let i = 0; i < keyArray.length; i++) {
+            tree.move(keyArray[i], e.target.key, targetIndex + i)
+          }
+        }
+      }
+    },
+  })
+
+  return (
+    <Tree aria-label="File system" items={tree.items} dragAndDropHooks={dragAndDropHooks}>
+      {function renderItem(item) {
+        return (
+          <TreeItem title={(item as any).value.name}>
+            <Collection items={(item as any).children ?? []}>{renderItem}</Collection>
+          </TreeItem>
+        )
+      }}
+    </Tree>
+  )
+}

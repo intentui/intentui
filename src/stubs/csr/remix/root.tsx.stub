@@ -1,0 +1,10 @@
+import { RouterProvider } from "@/components/router-provider"
+
+export default function AppWithProviders() {
+  const data = useLoaderData<typeof loader>()
+  return (
+    <RouterProvider>
+      <App />
+    </RouterProvider>
+  )
+}

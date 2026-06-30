@@ -1,0 +1,77 @@
+---
+title: "Number Field"
+description: A numeric input field that allows users to enter and edit numbers, with features like validation, step controls, and range limits. It supports min/max values.
+order: 6
+published: true
+references: ["https://react-aria.adobe.com/NumberField#api"]
+---
+
+<How minW60 toUse="forms/number-field/number-field-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+
+<InstallCommand command="npx shadcn@latest add @intentui/number-field"/>
+
+## Composed components
+<Composed components={['field']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+
+<InstallCommand command="npm i react-aria-components @heroicons/react"/>
+
+<SourceCode toShow='number-field'/>
+
+## Anatomy
+```
+import { NumberField, NumberInput } from "@/components/ui/number-field"
+import { Label, Description, FieldError } from "@/components/ui/field"
+
+<NumberField>
+  <Label/>
+  <NumberInput />
+  <Description />
+  <FieldError />
+</NumberField>
+```
+
+## Examples
+
+### Controlled
+You can use the number field as a controlled component by managing its state externally.
+<How minW60 toUse="forms/number-field/number-field-controlled-example" />
+
+### Uncontrolled
+Like other fields, the search field can be controlled by managing its value through the `defaultValue` prop.
+<How toUse="forms/number-field/number-field-uncontrolled-example" />
+
+### Validation
+The field is in an error state, usually caused by invalid input. Try submitting the form without filling it out to see the error state in action.
+<How minW60 toUse="forms/number-field/number-field-invalid-example" />
+
+### Disabled
+The field is disabled and cannot be interacted with.
+<How minW60 toUse="forms/number-field/number-field-disabled-example" />
+
+## Component API
+
+### NumberField
+
+The `NumberField` component lets users enter numeric values.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### NumberInput
+
+The `NumberInput` component renders the number field input.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/NumberField#api) for the full API reference.

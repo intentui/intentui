@@ -1,0 +1,119 @@
+---
+title: "List Box"
+description: ListBox are designed to present and manage lists of options or data entries, allowing users to view and select from multiple choices efficiently and effectively.
+order: 2
+published: true
+references: ["https://react-aria.adobe.com/ListBox#api"]
+---
+
+<How toUse="collections/list-box/list-box-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/list-box"/>
+
+## Composed components
+<Composed components={['dropdown']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+
+<SourceCode toShow='list-box'/>
+
+## Anatomy
+```
+import { ListBox, ListBoxItem } from "@/components/ui/list-box"
+```
+
+```
+<ListBox aria-label="Bands">
+  <ListBoxItem>Nirvana</ListBoxItem>
+  <ListBoxItem>Radiohead</ListBoxItem>
+  <ListBoxItem>Foo Fighters</ListBoxItem>
+  <ListBoxItem>Arctic Monkeys</ListBoxItem>
+  <ListBoxItem>The Strokes</ListBoxItem>
+</ListBox>
+```
+
+## Examples
+
+### Multiple selection
+To enable multiple selections, set the `selectionMode` prop to `multiple`. This prop has no default value, so it must be explicitly defined.
+<How toUse="collections/list-box/list-box-multiple-example" />
+
+### Description
+You can enhance list items by providing additional details using the `Listbox.Description` component.
+<How toUse="collections/list-box/list-box-description-example" />
+
+### Section
+Group items in a ListBox using sections for better organization.
+<How toUse="collections/list-box/list-box-section-example" />
+
+### Drag and drop
+Enable drag-and-drop functionality in the ListBox by using the `dragAndDropHooks` prop with the `useDragAndDrop` hook. This allows users to rearrange items, insert new entries, or manage data across the list.
+<How toUse="collections/list-box/list-box-rearrange-example" />
+
+### Infinite scrolling
+ListBox can handle large datasets efficiently with infinite scrolling. This allows for loading more data as the user scrolls down, improving performance and user experience.
+<How toUse="collections/list-box/list-box-infinite-scroll-example" />
+
+### Controlled
+To enable controlled mode, set the `selectionMode` prop to `single`. This allows you to manage the ListBox selection using the `selectedKey` prop.
+<How toUse="collections/list-box/list-box-controlled-example" />
+
+### Disabled
+Disable specific ListBox items to restrict user interaction.
+<How toUse="collections/list-box/list-box-disabled-example" />
+
+You can also disable an item directly by passing the `isDisabled` prop to `ListBoxItem`.
+
+```tsx
+<ListBoxItem isDisabled>Disabled</ListBoxItem>
+```
+
+## Component API
+
+### ListBox
+
+The `ListBox` component displays selectable options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ListBoxItem
+
+The `ListBoxItem` component represents one list box option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ListBoxLabel
+
+The `ListBoxLabel` component renders the primary text for a list box item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ListBoxDescription
+
+The `ListBoxDescription` component renders supporting text for a list box item.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### ListBoxSection
+
+The `ListBoxSection` component groups related list box options.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ListBox#api) for the full API reference.

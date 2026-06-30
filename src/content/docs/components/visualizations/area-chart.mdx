@@ -1,0 +1,91 @@
+---
+title: "Area Chart"
+description: Sorting in area charts is usually based on the x-axis, such as time or categories. Sorting helps ensure that the areas are plotted in a logical progression.
+order: 2
+published: true
+references: ["https://recharts.org/en-US/api/AreaChart"]
+---
+
+<How withNoPadding isCenter={false}  toUse="visualizations/area-chart/area-chart-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+
+<InstallCommand command="npx shadcn@latest add @intentui/area-chart"/>
+
+## Composed components
+<Composed components={['chart']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i recharts react-aria-components"/>
+
+<SourceCode toShow={'area-chart'} />
+
+## Examples
+
+### Monotone
+
+Monotone charts use a smooth curve for a cleaner look. Good when you only need to show one metric clearly without visual clutter.
+<How withNoPadding isCenter={false} toUse="visualizations/area-chart/area-chart-monotone-example" />
+
+### Custom format
+
+Customize the look of your chart to match your design system. You can change colors, styles, and anything else that matters for your UI.
+<How withNoPadding isCenter={false} toUse="visualizations/area-chart/area-chart-custom-format-example" />
+
+### Custom tooltip
+
+Add context when users hover. Custom tooltips let you show extra info like icons, units, or anything else that makes your data easier to read.
+<How withNoPadding isCenter={false}  toUse="visualizations/area-chart/area-chart-custom-tooltip-example" />
+
+### Custom legend
+
+Replace the default legend with something more useful. Add icons, labels, or even interactions to better explain what’s on the chart.
+<How withNoPadding isCenter={false} toUse="visualizations/area-chart/area-chart-custom-legend-example" />
+
+### Custom colors
+Customize the colors of your area chart to match your brand or design system. This helps maintain visual consistency across your application.
+<How withNoPadding isCenter={false} toUse="visualizations/area-chart/area-chart-custom-colors-example" />
+
+### Controlled
+
+Manage the chart fully with state. Use this to sync with other UI, switch datasets, or respond to user interactions programmatically.
+<How withNoPadding isCenter={false} toUse="visualizations/area-chart/area-chart-controlled-example" />
+
+## Component API
+
+The `AreaChart` component renders continuous data trends with filled areas.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `areaProps` | `Partial<ComponentProps<typeof Area>>` | - |
+| `cartesianGridProps` | `CartesianGridProps` | - |
+| `chartProps` | `Omit<ComponentProps<typeof AreaChartPrimitive>, "data" \| "stackOffset">` | - |
+| `children` | `React.ReactNode` | - |
+| `className` | `string` | - |
+| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
+| `config` | `ChartConfig` | - |
+| `connectNulls` | `boolean` | `false` |
+| `containerHeight` | `number` | `370 desktop / 200 mobile` |
+| `data` | `Record<string, any>[]` | `[]` |
+| `dataKey` | `string` | - |
+| `displayEdgeLabelsOnly` | `boolean` | `false` |
+| `fillType` | `"gradient" \| "solid" \| "none"` | `gradient` |
+| `hideGridLines` | `boolean` | `false` |
+| `hideXAxis` | `boolean` | `false` |
+| `hideYAxis` | `boolean` | `false` |
+| `intervalType` | `IntervalType` | `equidistantPreserveStart` |
+| `layout` | `ChartLayout` | `horizontal` |
+| `legend` | `LegendContentType \| boolean` | `true` |
+| `legendProps` | `Omit<ComponentProps<typeof LegendPrimitive>, "content" \| "ref">` | - |
+| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
+| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
+| `type` | `ChartType` | `default` |
+| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
+| `xAxisProps` | `XAxisPropsPrimitive` | - |
+| `yAxisProps` | `YAxisPrimitiveProps` | - |
+
+See the [Recharts](https://recharts.org/en-US/api/AreaChart) for the full API reference.

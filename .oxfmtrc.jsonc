@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 100,
+  "semi": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "ignorePatterns": [
+    "src/content/**",
+    "public/**",
+    ".claude/**",
+    ".codex/**",
+    ".opencode/**",
+    ".ai/**",
+    "__registry__/**",
+    ".agents/**",
+    "src/generated/**",
+  ],
+}

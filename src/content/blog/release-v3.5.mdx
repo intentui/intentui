@@ -1,0 +1,177 @@
+---
+title: Release 3.5.0
+description: Intent UI v3.5.0 adds new components, upgrades core dependencies, and introduces clearer, more consistent form APIs.
+published: 2025-10-24
+author: irsyadadl
+---
+
+## Introduction
+
+Intent UI v3.5.0 is here. This release adds new components, refines form patterns, and upgrades key dependencies to improve speed, consistency, and accessibility.
+
+### New components
+
+* [Input](/docs/components/forms/input)
+* [Button group](/docs/components/buttons/button-group)
+* [Text](/docs/components/surfaces/text)
+* [Fieldset](/docs/components/forms/field)
+* [Legend](/docs/components/forms/field)
+
+### Highlights
+
+* Updated to the latest React Aria Components and Tailwind CSS.
+* `Input` provides a consistent, accessible primitive for form fields.
+* `ButtonGroup` lets you group related actions with a compact layout.
+* `Text` standardizes typography so content looks consistent across your app.
+
+## Breaking changes
+
+Form components now use explicit child elements for labels, descriptions, and errors. This improves flexibility and composition.
+
+### TextField
+
+**Before**
+
+```tsx
+<TextField
+  label="Username"
+  description="Enter your username"
+  errorMessage="Username is required"
+/>
+```
+
+**After**
+
+```tsx
+<TextField>
+  <Label>Username</Label>
+  <Input/>
+  <Description>Enter your username</Description>
+  <FieldError>Username is required</FieldError>
+</TextField>
+```
+
+### Textarea
+
+**Before**
+
+```tsx
+<Textarea
+  label="Bio"
+  description="Tell us about yourself"
+  errorMessage="Bio is required"
+/>
+```
+
+**After**
+
+```tsx
+<TextField>
+  <Label>Bio</Label>
+  <Description>Tell us about yourself</Description>
+  <Textarea/>
+  <FieldError>Bio is required</FieldError>
+</TextField>
+```
+
+### Checkbox
+
+`CheckboxLabel` replaces using `Label` inside `Checkbox`.
+
+```tsx
+<Checkbox>
+  <CheckboxLabel>Accept terms and conditions</CheckboxLabel>
+</Checkbox>
+```
+
+### Switch
+
+`SwitchLabel` replaces using `Label` inside `Switch`.
+
+**Before**
+
+```tsx
+<Switch>
+  <Label>Enable notifications</Label>
+</Switch>
+```
+
+**After**
+
+```tsx
+<Switch>
+  <SwitchLabel>Enable notifications</SwitchLabel>
+</Switch>
+```
+
+### Select
+
+Props for `label`, `description`, and `errorMessage` are removed in favor of child elements.
+
+**Before**
+
+```tsx
+<Select
+  label="Country"
+  description="Select your country"
+  errorMessage="Country is required"
+>
+  <SelectContent />
+</Select>
+```
+
+**After**
+
+```tsx
+<Select>
+  <Label>Country</Label>
+  <SelectTrigger />
+  <SelectContent />
+  <Description>Select your country</Description>
+  <FieldError>Country is required</FieldError>
+</Select>
+```
+
+### ComboBox
+
+Same pattern as Select and TextField.
+
+**Before**
+
+```tsx
+<ComboBox
+  label="City"
+  description="Select your city"
+  errorMessage="City is required"
+>
+  <ComboBoxContent />
+</ComboBox>
+```
+
+**After**
+
+```tsx
+<ComboBox>
+  <Label>City</Label>
+  <ComboBoxInput />
+  <ComboBoxContent />
+  <Description>Select your city</Description>
+  <FieldError>City is required</FieldError>
+</ComboBox>
+```
+
+## Additional changes
+Components that used dot notation like `Card.Header` and `Modal.Footer` are now flattened; use `CardHeader` and `ModalFooter` instead.
+
+
+## Migration notes
+
+* Replace removed props with `<Label>`, `<Description>`, and `<FieldError>` children.
+* Use `CheckboxLabel` and `SwitchLabel` for their respective components.
+
+
+## Intent UI Design
+Intent UI Design has been updated to match the latest components and patterns in this release. Enjoy **[35% off](https://design.intentui.com/pricing)** all templates and design assets for a limited time. One-time purchase, no subscription.
+
+## Support
+If you find this work useful, you can sponsor me on [GitHub](/sponsor).

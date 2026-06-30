@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "calendar",
+    "range-calendar",
+    "time-field",
+    "date-field",
+    "date-picker",
+    "date-range-picker"
+  ]
+}

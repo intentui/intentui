@@ -1,0 +1,104 @@
+---
+title: "Color Picker"
+description: A versatile UI component that provides multiple ways to choose colors, including sliders, swatches, and manual input, for comprehensive color selection.
+order: 1
+published: true
+references: ["https://react-aria.adobe.com/ColorPicker.html"]
+---
+
+<How className='min-w-40' toUse="colors/color-picker/color-picker-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/color-picker"/>
+
+## Composed components
+<Composed components={[
+  'color-picker',
+  'popover',
+  'button',
+  'color-swatch',
+  'color-area',
+  'color-slider',
+  'color-thumb',
+  'color-field',
+  'input',
+]}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<SourceCode toShow='color-picker'/>
+
+## Anatomy
+```
+import { ColorPicker } from "@/components/ui/color-picker";
+import { Popover, PopoverBody, PopoverContent } from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { ColorSwatch } from "@/components/ui/color-swatch";
+import { ColorArea } from "@/components/ui/color-area";
+import { ColorSlider, ColorSliderTrack } from "@/components/ui/color-slider";
+import { ColorThumb } from "@/components/ui/color-thumb";
+import { ColorField } from "@/components/ui/color-field";
+import { Input } from "@/components/ui/input";
+```
+```
+<ColorPicker defaultValue="rgb(120,140,200)">
+  <Popover>
+    <Button intent="plain" data-slot="control">
+      <ColorSwatch />
+      Select color
+    </Button>
+    <PopoverContent className="[--gutter:--spacing(1)]">
+      <PopoverBody>
+        <div className="space-y-(--gutter)">
+          <ColorArea
+            colorSpace="rgb"
+            defaultValue="rgb(120,140,200)"
+            xChannel="red"
+            yChannel="green"
+            xName="red"
+            yName="green"
+          />
+          <ColorSlider colorSpace="hsb" channel="hue">
+            <ColorSliderTrack>
+              <ColorThumb />
+            </ColorSliderTrack>
+          </ColorSlider>
+          <ColorField aria-label="Color">
+            <Input />
+          </ColorField>
+        </div>
+      </PopoverBody>
+    </PopoverContent>
+  </Popover>
+</ColorPicker>
+```
+
+## Examples
+
+### Controlled
+Control the selected color with the `value` prop to sync it with your application's state.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-controlled-example" />
+
+### Disabled
+Disable the color picker by setting the `isDisabled` prop, making it non-interactive.
+<How className='min-w-40' toUse="colors/color-picker/color-picker-disabled-example" />
+
+## Component API
+
+### ColorPicker
+
+The `ColorPicker` component coordinates color input controls.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### EyeDropper
+
+The `EyeDropper` component lets users pick a color from the screen when the browser supports it.
+
+See the [React Aria](https://react-aria.adobe.com/ColorPicker.html) for the full API reference.

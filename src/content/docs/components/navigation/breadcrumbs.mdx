@@ -1,0 +1,88 @@
+---
+title: "Breadcrumbs"
+description: A navigational aid that displays a hierarchical path, helping users track their location and easily navigate back within a website. It improves user orientation.
+order: 2
+published: true
+references: ["https://react-aria.adobe.com/Breadcrumbs#api"]
+---
+
+<How toUse="navigation/breadcrumbs/breadcrumbs-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/breadcrumbs"/>
+
+## Composed components
+<Composed components={['link']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+
+<SourceCode toShow={'breadcrumbs'}/>
+
+## Anatomy
+```
+import { Breadcrumbs, BreadcrumbsItem } from "@/components/ui/breadcrumbs"
+```
+
+```
+<Breadcrumbs>
+  <BreadcrumbsItem href="#">Home</BreadcrumbsItem>
+  <BreadcrumbsItem href="#">Design System</BreadcrumbsItem>
+  <BreadcrumbsItem>Collections</BreadcrumbsItem>
+</Breadcrumbs>
+```
+
+## Examples
+
+### Separator
+The separator appears when the breadcrumb changes. By default, it uses a chevron. You can disable it with `separator="false"` or switch to a slash with `separator="slash"`.
+<How toUse="navigation/breadcrumbs/breadcrumbs-separator-example" />
+
+If you need a unique separator for each item (not recommended), set the `separator` prop directly:
+
+```
+<BreadcrumbsItem href="#" separator="slash"/>
+```
+
+### Menu
+You can also combine breadcrumbs with menus to create a more complex navigation structure.
+<How toUse="navigation/breadcrumbs/breadcrumbs-menu-example" />
+
+### Collections
+You can also use breadcrumbs to navigate between collections.
+<How toUse="navigation/breadcrumbs/breadcrumbs-collections-example" />
+
+### Current
+The current breadcrumb indicates the active page in the breadcrumb navigation. It is automatically added as the last item and its color is updated accordingly. But you can also control the color of the current breadcrumb by passing a `className` prop to the `BreadcrumbsItem` component.
+<How toUse="navigation/breadcrumbs/breadcrumbs-current-example" />
+
+if you think you want to render an element inside that current breadcrumb, you can do it like this:
+```
+<BreadcrumbsItem className="current:text-primary"/>
+```
+
+## Component API
+
+### Breadcrumbs
+
+The `Breadcrumbs` component groups breadcrumb navigation items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `separator` | `"chevron" \| "slash" \| boolean` | - |
+
+### BreadcrumbsItem
+
+The `BreadcrumbsItem` component represents one step in a breadcrumb trail.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `href` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Breadcrumbs#api) for the full API reference.

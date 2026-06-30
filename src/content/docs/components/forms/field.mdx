@@ -1,0 +1,102 @@
+---
+title: "Field"
+description: Field's a core piece every other component uses. It flexes reusable styles, showing up in inputs, labels, descriptions, and more.
+order: 2
+published: true
+status: primitive
+---
+
+<How toUse="forms/field/field-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/field"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components tailwind-merge tailwind-variants"/>
+
+<SourceCode toShow='field'/>
+
+
+## Anatomy
+```
+import { Form } from "react-aria-components"
+import { Button } from "@/components/ui/button"
+import { Description, FieldError, Fieldset, Label, Legend } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+import { Text } from "@/components/ui/text"
+import { TextField } from "@/components/ui/text-field"
+```
+
+```
+<Form>
+  <Fieldset>
+    <Legend/>
+    <Text/>
+
+    <TextField isRequired name="name">
+      <Label/>
+      <Input />
+      <FieldError />
+      <Description/>
+    </TextField>
+
+    <div data-slot="control">
+      <Button type="submit">Register</Button>
+    </div>
+  </Fieldset>
+</Form>
+```
+
+## Component API
+
+### Description
+
+The `Description` component renders helper text for a field.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### FieldError
+
+The `FieldError` component renders validation error text.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### FieldGroup
+
+The `FieldGroup` component groups field controls.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### Fieldset
+
+The `Fieldset` component groups related form fields.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### Label
+
+The `Label` component renders a field label.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### Legend
+
+The `Legend` component renders a fieldset legend.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

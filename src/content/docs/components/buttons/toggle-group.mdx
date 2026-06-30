@@ -1,0 +1,107 @@
+---
+title: "Toggle Group"
+description: A toggle button group provides an intuitive way for users to switch between multiple options, supporting both single and multi-selection modes, enhancing UI flexibility.
+order: 3
+published: true
+references: [https://react-aria.adobe.com/ToggleButtonGroup#api]
+---
+
+<How toUse="buttons/toggle-group/toggle-group-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/toggle-group"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components tailwind-variants tailwind-merge"/>
+<SourceCode toShow='toggle-group'/>
+
+## Anatomy
+```
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+```
+
+```
+<ToggleGroup>
+  <ToggleGroupItem id="1d">1d</ToggleGroupItem>
+  <ToggleGroupItem id="3d">3d</ToggleGroupItem>
+  <ToggleGroupItem id="7d">7d</ToggleGroupItem>
+  <ToggleGroupItem id="2w">2w</ToggleGroupItem>
+</ToggleGroup>
+```
+
+## Examples
+
+### Orientation
+
+By default, the toggle button group is arranged horizontally. Use the `orientation` prop to switch to a vertical layout.
+
+<How toUse="buttons/toggle-group/toggle-group-orientation-example" />
+
+### Selection mode
+By default, the toggle button group allows only a single selection. You can change this by setting the `selectionMode` prop to `"multiple"`. When in multiple selection mode, individual buttons will no longer have rounded corners.
+
+<How toUse="buttons/toggle-group/toggle-group-selection-example" />
+
+### Size
+By default, the toggle button group has a medium size. You can change the size by using the `size` prop.
+<How toUse="buttons/toggle-group/toggle-group-size-example" />
+
+### Square size
+The size option also includes a square variant, which is useful when you only want to display an icon on the toggle button.
+<How toUse="buttons/toggle-group/toggle-group-square-size-example" />
+
+### Controlled
+You can control the state of the toggle button group by using the `selectedKeys` prop.
+<How toUse="buttons/toggle-group/toggle-group-controlled-example" />
+
+### Disabled
+You can disable an entire toggle group by setting the `isDisabled` prop on the `ToggleGroup` component, which disables all toggles in the group. Alternatively, you can disable specific toggle buttons individually by setting the `isDisabled` prop on the `Toggle` component.
+<How toUse="buttons/toggle-group/toggle-group-disabled-example" />
+
+## Touch hitbox
+Sometimes you may want to use this button with only an icon. In that case, you can apply the `touch-target` utility class on the `sq-*` size to increase the button’s hitbox for improved accessibility.
+```css
+@utility touch-target {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    min-height: 44px;
+    min-width: 44px;
+    z-index: 9999;
+  }
+}
+```
+
+## Component API
+
+### ToggleGroup
+
+The `ToggleGroup` component groups related toggle buttons.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `isCircle` | `boolean` | - |
+| `size` | `ToggleSize` | `md` |
+
+### ToggleGroupItem
+
+The `ToggleGroupItem` component represents one toggle option.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `size` | `ToggleSize` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ToggleButtonGroup#api) for the full API reference.

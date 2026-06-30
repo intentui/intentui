@@ -1,0 +1,154 @@
+---
+title: "Installation"
+description: Install the necessary packages and set up your project. This tool automates the process, streamlining your setup and ensuring a smooth development experience.
+order: 2
+published: true
+---
+
+## Framework guides
+You can choose from a list of frameworks to get started with Intent.
+<FrameworkGuides/>
+
+## Installation via CLI
+Before executing the command, ensure that **tailwind** is installed. If not, follow the instructions [here](https://tailwindcss.com/docs/installation) for installation.
+
+### Initial setup
+Begin by executing this command:
+
+<InstallCommand command="npx shadcn@latest init @intentui/theme-default"/>
+
+If you see this output:
+
+```
+✖ Preflight checks.
+
+A components.json file already exists at /Users/irsyad/code/acmes.
+To start over, remove the components.json file and run init again
+```
+
+No problem: just run `npx shadcn@latest init @intentui/theme-default` again and it should complete successfully. See the related issue: [https://github.com/intentui/intentui/issues/518](https://github.com/intentui/intentui/issues/518).
+
+Here are more theme options you can choose from:
+```bash
+npx shadcn@latest add @intentui/theme-blue
+npx shadcn@latest add @intentui/theme-sky
+npx shadcn@latest add @intentui/theme-indigo
+npx shadcn@latest add @intentui/theme-emerald
+npx shadcn@latest add @intentui/theme-teal
+npx shadcn@latest add @intentui/theme-purple
+npx shadcn@latest add @intentui/theme-pink
+npx shadcn@latest add @intentui/theme-rose
+npx shadcn@latest add @intentui/theme-green
+npx shadcn@latest add @intentui/theme-lime
+npx shadcn@latest add @intentui/theme-cyan
+```
+
+We use [shadcn CLI](https://ui.shadcn.com/docs/cli) to manage the installation of Intent UI components.
+
+<InstallCommand command="npx shadcn@latest add @intentui/combo-box"/>
+
+Sometimes, you may want to add components individually, such as `select` and `text-field`. You can easily do this by using the following command:
+<InstallCommand command="npx shadcn@latest add @intentui/select @intentui/text-field"/>
+
+### Add all components
+To add all components at once, use `@intentui/all`. This will install every available component in Intent UI in a single step.
+<InstallCommand command="npx shadcn@latest add @intentui/all"/>
+
+### Overwrite
+You can override the existing components by using the `-o` flag. This will overwrite the existing files with the new ones.
+
+<InstallCommand command="npx shadcn@latest add @intentui/text-field -o"/>
+
+
+## Formatter
+Intent UI utilizes the <NewTab href='https://biomejs.dev/'>Biome</NewTab> formatter for code formatting. To use the Biome formatter with Intent components, we recommend the following configuration:
+
+<CodeBlock
+  source={{
+      'biome.json': 'installation/biome.json',
+  }} />
+
+## Manual installation
+To begin setting up the design system, start by installing these packages:
+
+<InstallCommand command="npm i react-aria-components tailwindcss-react-aria-components"/>
+
+Next, add **Tailwind Variant**, **Tailwind Merge**, and for utility functions:
+
+<InstallCommand command="npm i tailwind-variants tailwind-merge"/>
+
+Following that, include the **Tailwind Animate** for managing animations and **Intent Icons** for icons:
+
+<InstallCommand command="npm i @heroicons/react tw-animate-css"/>
+
+### Style and primitive
+After installing the required packages, you can copy the CSS below into your global CSS file and move the primitives to your UI folder. Primitives serve as utilities for managing states, including `focusRing`, `focusStyles`, and `focusButtonStyles`.
+
+<CodeBlock
+    source={{
+        'app/globals.css': 'installation/main.css',
+        'lib/primitive.ts': 'installation/primitive.ts',
+    }} />
+
+### Hooks
+
+Hooks are only used in specific components like the **Navbar**, **Sidebar**, **Popover**, and **Command Menu**. If you're using the **Intent CLI**, it will handle this automatically; otherwise, download the file below.
+
+<CodeBlock
+    source={{
+        'hooks/use-media-query.ts': 'hooks/use-media-query.ts',
+    }} />
+
+### Fonts
+This is currently using the [Inter font](https://rsms.me/inter/). If you want to use a different font, you can define your font-family in your JS or CSS file.
+
+### Stylesheet
+When you're working with a stylesheet, you can define your `@font-face` in your css file.
+
+```
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("InterVariable.woff2") format("woff2");
+}
+```
+
+### Next.js
+If you're using Next.js, you don't even need CSS files. Just define your font in your layout file.
+
+```
+import localFont from 'next/font/local'
+
+const fontSans = localFont({
+  src: [{path: './fonts/Inter.woff2'}],
+  variable: '--font-sans'
+})
+```
+
+Then, apply the `fontSans` to the `body` tag like this:
+
+```tsx
+<body
+  className={`font-sans antialiased ${fontSans.variable}`}
+/>
+```
+
+Then, you can use the variable in your main css file like this:
+
+```css
+@theme {
+  --font-sans: var(--font-inter-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-geist-mono), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji";
+
+  // Your other variables
+}
+```
+
+For more information, refer to the [Tailwind documentation](https://tailwindcss.com/docs/font-family#customizing-the-default-font) and [Next.js documentation](https://nextjs.org/docs/app/building-your-application/optimizing/fonts).
+
+## IntelliSense
+If you want your development environment to be more intelligent, you can follow instructions here at [Tailwind Variants](https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional).

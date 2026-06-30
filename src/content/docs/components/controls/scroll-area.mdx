@@ -1,0 +1,43 @@
+---
+title: "Scroll area"
+description: "Navigate content that exceeds the viewport with scrollbars. Provides smooth scrolling for better content accessibility."
+order: 1
+published: true
+---
+
+<How minW60 toUse="controls/scroll-area/scroll-area-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/scroll-area"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i tailwind-merge"/>
+<SourceCode toShow='scroll-area'/>
+
+## Examples
+By default, the orientation is set to `both`, but you can change it to `horizontal` or `vertical`.
+### Vertical
+<How minW60 toUse="controls/scroll-area/scroll-area-vertical-example" />
+### Horizontal
+<How minW60 toUse="controls/scroll-area/scroll-area-horizontal-example" />
+
+### Fade
+Add fade effects to the edges of the scroll area for visual cues.
+<How minW60 toUse="controls/scroll-area/scroll-area-fade-example" />
+
+## Component API
+
+### ScrollArea
+
+The `ScrollArea` component renders custom scrollable content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `orientation` | `ScrollAreaOrientation` | `both` |
+| `scrollbarGutter` | `boolean` | `false` |
+| `scrollFade` | `boolean` | `false` |

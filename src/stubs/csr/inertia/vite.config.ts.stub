@@ -1,0 +1,11 @@
+...
+import { resolve } from 'path';
+
+export default defineConfig({
+  plugins: [...],
+  resolve: {
+    alias: {
+      'ziggy-js': resolve('vendor/tightenco/ziggy')
+    }
+  }
+});

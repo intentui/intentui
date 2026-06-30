@@ -1,0 +1,175 @@
+---
+title: Release 3.0.0
+description: The forth release of Intent UI. It includes all the components and utilities that you need to build your next project.
+published: 2025-05-30
+author: irsyadadl
+---
+
+## Introduction
+Almost every component has been rewritten. This release improves the developer experience and introduces a more consistent API across components.
+You may also notice that v3 is slightly more compact than v2, with improved usability on mobile devices.
+
+## New component
+* [Toggle Group](/docs/components/buttons/toggle-group)
+* [Area chart](/docs/components/visualizations/area-chart)
+* [Bar chart](/docs/components/visualizations/bar-chart)
+* [Line chart](/docs/components/visualizations/line-chart)
+* [Pie chart](/docs/components/visualizations/pie-chart)
+* [Tracker](/docs/components/visualizations/tracker)
+* [Bar list](/docs/components/visualizations/bar-list)
+
+
+## What's change
+* Upgraded to the latest versions of React Aria Components and Tailwind CSS.
+* Removed legacy size values (`square-petite`, `extra-small`, `small`, `medium`, `large`) from the `size` prop in `Button` and `Toggle`. Now using `xs`, `sm`, `md`, `lg`, and `sq-[xs, sm, md, lg]`.
+* Removed legacy size values (`small`, `medium`, `large`, `extra-large` from the `size` prop in `Avatar`. Now using `xs`, `sm`, `md`, `lg`, `xl`.
+* Removed the `shape` prop from `Button`, `Badge`, `Tag`, and `Toggle`. Use the `isCircle` prop instead.
+* Removed `focusRing` and `focusStyles` from `primitive.ts`—they are no longer used.
+* `classNames` remove for both `Sheet` and `Modal` components. Now, you can use the `className` prop to customize the styles on the `Modal.Content` and `Sheet.Content` components.
+* We make default `gap=0` and `columns=1` for `Choicebox` component.
+* Add `Loader` to `FileTrigger` when the pending state is true.
+* We no longer use Compound Pattern in `Tabs` component. Instead, we use a more straightforward approach with `Tabs`, `TabList`, `Tab`, and `TabPanel` components.
+* We also remove `motion` from `Tabs` component, so you can use any animation library you prefer or leave it unanimated.
+* The `Chart` component has been completely rewritten to use the latest version of Recharts (v3).
+
+## Toggle Group
+The `ToggleGroup` component has been introduced to provide a more intuitive way for users to switch between multiple options, supporting both single and multi-selection modes.
+<How
+  readMore='/toggle-group'
+  toUse="buttons/toggle-group/toggle-group-example" />
+
+## Button
+The `Button` component has undergone significant changes, including the removal of the `shape` prop and the introduction of the `isCircle` prop. The size values have also been updated to be more concise.
+```
+// Before
+<Button size="small" shape="circle">Press me</Button>
+
+// After
+<Button size="sm" isCircle>Press me</Button>
+
+// ---
+
+// Before
+<Button size="square-petite">Press me</Button>
+
+// After
+<Button size="sq-sm">Press me</Button>
+```
+<How
+  readMore='/button'
+  toUse="buttons/button/button-intent-example" />
+
+## Toggle
+The `Toggle` component has been updated to use the new size values and the `isCircle` prop. The `shape` prop has been removed.
+```
+// Before
+<Toggle size="small" shape="circle">Toggle me</Toggle>
+
+// After
+<Toggle size="sm" isCircle>Toggle me</Toggle>
+
+// ---
+
+// Before
+<Toggle size="square-petite" shape="circle">Toggle me</Toggle>
+
+// After
+<Toggle size="sq-sm" isCircle>Toggle me</Toggle>
+```
+
+## CheckBox and Radio
+We’ve improved the user experience on `Checkbox`, `CheckboxGroup`, and `RadioGroup` by allowing direct use of labels and descriptions inside them. Use `Label` for group labels, and `CheckboxLabel` or `RadioLabel` for item labels.
+
+```
+<CheckboxGroup>
+  <Label>User Permissions</Label>
+  <Description>Select the permissions you want to grant to the user.</Description>
+  <Checkbox value="read">
+    <CheckboxLabel>Read</CheckboxLabel>
+    <Description>Can view content but cannot make changes.</Description>
+  </Checkbox>
+  <Checkbox value="write">
+    <CheckboxLabel>Write</CheckboxLabel>
+    <Description>Can create and modify existing content.</Description>
+  </Checkbox>
+</CheckboxGroup>
+```
+
+```
+<RadioGroup name="billing">
+  <Label>Billing Cycle</Label>
+  <Description>Select how often you'd like to be billed</Description>
+
+  <Radio value="monthly">
+    <RadioLabel>Monthly</RadioLabel>
+    <Description>Billed every month</Description>
+  </Radio>
+  <Radio value="quarterly">
+    <RadioLabel>Quarterly</RadioLabel>
+    <Description>Billed every 3 months</Description>
+  </Radio>
+  <Radio value="yearly">
+    <RadioLabel>Yearly</RadioLabel>
+    <Description>Billed once per year with a discount</Description>
+  </Radio>
+</RadioGroup>
+```
+
+<How
+  readMore='/checkbox-group'
+  toUse="controls/checkbox-group/switch-description-example" />
+
+
+## Switch
+The `Switch` component now supports descriptions. You can use the `label` and `description` props, or use the `Label` and `Description` components directly—both approaches work.
+
+```tsx
+<Switch
+  label="Enable Notifications"
+  description="Receive updates and alerts via email"
+/>
+
+<Switch>
+  <Label>Enable Notifications</Label>
+  <Description>Receive updates and alerts via email</Description>
+</Switch>
+```
+
+<How
+  readMore='/switch'
+  toUse="controls/switch/switch-description-example" />
+
+
+
+## Charts
+We've completely rewritten the charts to use `recharts` v3. We're also introducing dedicated components for common chart types: `AreaChart`, `BarChart`, `LineChart`, and `PieChart`.
+
+### Area Chart
+<How isCenter={false} withNoPadding toUse="visualizations/area-chart/area-chart-example" />
+
+### Bar Chart
+<How isCenter={false} withNoPadding toUse="visualizations/bar-chart/bar-chart-example" />
+
+### Line Chart
+<How isCenter={false} withNoPadding toUse="visualizations/line-chart/line-chart-example" />
+
+### Pie Chart
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-example" />
+
+## Primitive
+We also now changes the `composeTailwindRenderProps` to accept `ClassNameValue`, so you might want to update it manually if you already have one.
+```
+"use client"
+
+import { composeRenderProps } from "react-aria-components"
+import { type ClassNameValue, twMerge } from "tailwind-merge"
+
+function composeTailwindRenderProps<T>(
+  className: string | ((v: T) => string) | undefined,
+  tailwind: ClassNameValue,
+): string | ((v: T) => string) {
+  return composeRenderProps(className, (className) => twMerge(tailwind, className))
+}
+
+export { composeTailwindRenderProps }
+```

@@ -1,0 +1,167 @@
+.shiki {
+  background-color: var(--shiki-light-bg);
+}
+
+.shiki span {
+  color: var(--shiki-light);
+}
+
+html.dark .shiki,
+html.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--color-shiki-bg) !important;
+}
+
+[data-rehype-pretty-code-figure] {
+  @apply outline-hidden;
+}
+[data-rehype-pretty-code-figure] pre {
+  @apply overflow-auto font-mono leading-relaxed outline-hidden;
+}
+
+[data-rehype-pretty-code-fragment] {
+  @apply relative text-white;
+}
+
+[data-rehype-pretty-code-fragment] code {
+  border-width: 0;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  overflow-wrap: break-word;
+  min-width: 100%;
+  display: grid;
+  counter-reset: line;
+  box-decoration-break: clone;
+}
+
+[data-rehype-pretty-code-fragment] .line {
+  @apply inline-block min-h-4 w-full px-4 py-0.5;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] .line {
+  @apply px-2;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+  @apply text-xs text-muted-fg/40;
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1.8rem;
+  margin-right: 1.4rem;
+  text-align: right;
+}
+
+[data-rehype-pretty-code-fragment] .line--highlighted {
+  @apply bg-muted;
+}
+
+[data-rehype-pretty-code-fragment] .line-highlighted span {
+  @apply relative;
+}
+
+[data-rehype-pretty-code-fragment] .word--highlighted {
+  @apply rounded-md border bg-muted p-1;
+}
+
+.shiki .highlighted {
+  @apply -ml-4 border-l border-blue-400 bg-linear-to-r from-blue-600/10 via-shiki-bg to-shiki-bg pl-4;
+}
+
+html .shiki span.highlighted-word {
+  @apply rounded-sm bg-secondary! py-0.5 px-1.5 text-sm/6 text-secondary-fg! border;
+}
+
+[data-rehype-pretty-code-title] {
+  @apply text-fg mt-2 px-4 pt-6 text-sm font-medium;
+}
+
+[data-rehype-pretty-code-title] + pre {
+  @apply mt-2;
+}
+
+.mdx > .steps:first-child > h3:first-child {
+  @apply mt-0;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply font-medium tracking-tight;
+}
+[data-rehype-pretty-code-title] {
+  @apply text-muted-fg p-2 text-sm font-medium;
+}
+
+[data-rehype-pretty-code-figure] code {
+  @apply border-0 p-0 text-sm! leading-loose! md:text-base;
+}
+
+span[data-rehype-pretty-code-figure] > code {
+  background: transparent !important;
+}
+
+span[data-rehype-pretty-code-figure] > code > span {
+  @apply bg-secondary text-secondary-fg inline-block rounded text-xs font-normal drop-shadow-none;
+  padding: 0.2rem 0.3rem !important;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] {
+  counter-reset: line;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  @apply mr-4 inline-block w-4 text-right text-zinc-500;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+  @apply -ml-4 border-l border-blue-400 bg-gradient-to-r from-blue-600/10 via-(--shiki-bg) to-(--shiki-bg) pl-4;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-chars] {
+  @apply rounded bg-zinc-600/50;
+  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+}
+
+.has-diff .diff.remove {
+  @apply bg-red-500/10;
+}
+.has-diff .diff.remove:before {
+  content: '-';
+  color: var(--color-red-600);
+}
+
+.has-diff .diff.add:before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--color-emerald-600);
+}
+.prose
+  :where(h1, h2, h3, h4, h5, h6):not(:where([class~='not-prose'], [class~='not-prose'] *))
+  > a {
+  @apply text-fg no-underline hover:no-underline;
+}
+
+.prose-headings\:scroll-mt-24:is(
+  :where(h1, h2, h3, h4, h5, h6, th):not(:where([class~='not-prose'], [class~='not-prose'] *))
+) {
+  @apply tracking-tight;
+  text-decoration: none !important;
+  color: var(--fg) !important;
+}
+
+.prose :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  @apply text-xl;
+}
+
+.prose :where(h3):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  @apply text-lg;
+}
+
+.prose :where(h4):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  @apply text-base;
+}

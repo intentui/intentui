@@ -1,0 +1,113 @@
+---
+title: Leaderboard
+description: "Display ranked data in a clean vertical layout ideal for presenting metrics scores and performance indicators clearly and consistently at a glance across dashboards"
+order: 1
+published: true
+references: ["https://react-aria.adobe.com/ProgressBar#api"]
+---
+
+<How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+
+<InstallCommand command="npx shadcn@latest add @intentui/leaderboard"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+
+<SourceCode toShow={'leaderboard'} />
+
+## Examples
+
+### Currency
+Format values as monetary amounts.
+<How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-currency-example" />
+
+### Percentage
+Display values as percentages for progress tracking.
+<How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-percentage-example" />
+
+### With header
+Add a header to provide context and structure.
+<How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-header-example" />
+
+### With icon
+Include icons alongside entries for visual clarity.
+<How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-icon-example" />
+
+### Controlled
+Manage leaderboard data programmatically for dynamic updates.
+<How className="w-full max-w-xl" toUse="visualizations/leaderboard/leaderboard-controlled-example" />
+
+## Component API
+
+### Leaderboard
+
+The `Leaderboard` component displays ranked items.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardAction
+
+The `LeaderboardAction` component places actions in the leaderboard header.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardContent
+
+The `LeaderboardContent` component contains leaderboard rows.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardEnd
+
+The `LeaderboardEnd` component renders trailing content for a leaderboard row.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardHeader
+
+The `LeaderboardHeader` component groups the leaderboard title and actions.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardItem
+
+The `LeaderboardItem` component represents one ranked leaderboard row.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `onAction` | `() => void` | - |
+
+### LeaderboardStart
+
+The `LeaderboardStart` component renders leading content for a leaderboard row.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### LeaderboardTitle
+
+The `LeaderboardTitle` component renders the leaderboard heading.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.

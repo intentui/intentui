@@ -1,0 +1,59 @@
+---
+title: "Calendar"
+description: A date-based UI component that enables users to view and select dates, supporting scheduling and event tracking. It provides an intuitive calendar interface.
+order: 1
+published: true
+references: ["https://react-aria.adobe.com/Calendar#api"]
+---
+
+<How toUse="date-and-time/calendar/calendar-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/calendar"/>
+
+## Composed components
+<Composed components={['button']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+
+<SourceCode toShow='calendar'/>
+
+## Examples
+Check out the calendar in action in the [Date Picker](/docs/components/date-and-time/date-picker) and [Date Range Picker](/docs/components/date-and-time/date-range-picker) documentation.
+
+## Component API
+
+### Calendar
+
+The `Calendar` component displays a single-date calendar.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CalendarHeader
+
+The `CalendarHeader` component contains calendar navigation controls.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CalendarGridHeader
+
+The `CalendarGridHeader` component renders the weekday row.
+
+### SelectMonth
+
+The `SelectMonth` component renders the month selector in the calendar header.
+
+### SelectYear
+
+The `SelectYear` component renders the year selector in the calendar header.
+
+See the [React Aria](https://react-aria.adobe.com/Calendar#api) for the full API reference.

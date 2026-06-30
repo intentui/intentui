@@ -1,0 +1,129 @@
+---
+title: "Card"
+description: A flexible UI container that groups related content, actions, and media in a structured and visually appealing layout, enhancing information presentation.
+published: true
+order: 1
+---
+
+<How toUse="surfaces/card/card-example"/>
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/card"/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i tailwind-merge"/>
+<SourceCode toShow='card'/>
+
+## Anatomy
+```
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+```
+
+```
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card Description</CardDescription>
+    <CardAction>Card Action</CardAction>
+  </CardHeader>
+  <CardContent>Card Content</CardContent>
+  <CardFooter>Card Footer Button</CardFooter>
+</Card>
+```
+
+## Examples
+
+### With form
+Sometimes, you may need a card with a form inside.
+<How toUse="surfaces/card/card-login-form-example"/>
+
+### Action
+You can add actions to your card, which will be aligned to the right. This example demonstrates using the menu component, but you can use any component you prefer.
+<How toUse="surfaces/card/card-action-example"/>
+
+### With table
+When you place a table inside a card, The table gutter inherits the padding from its parent card to ensure visual consistency.
+<How isCenter={false} className="px-6" toUse="surfaces/card/card-table-example"/>
+
+For table docs, check out the [Table](/docs/components/collections/table) docs.
+
+## Section title
+Sometimes, you may only need a card header without wrapping container itself. Of course, you need don't want the default padding, right? So I have prop called `withoutPadding` to help you out.
+```
+<CardHeader
+  title="List Daemons"
+  description="List of daemons to use in your sites."
+/>
+```
+
+## Component API
+
+### Card
+
+The `Card` component is the root container for card content.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CardAction
+
+The `CardAction` component places content in the top-right of the card header.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CardContent
+
+The `CardContent` component is used for the main card body.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CardDescription
+
+The `CardDescription` component is used for helper text under the card title.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CardFooter
+
+The `CardFooter` component is used for actions or summary content at the bottom of a card.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### CardHeader
+
+The `CardHeader` component groups the card title, description, and optional action.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+| `description` | `string` | - |
+| `title` | `string` | - |
+
+### CardTitle
+
+The `CardTitle` component is used for the card title.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |

@@ -1,0 +1,106 @@
+---
+title: "Slider"
+description: An interactive control that lets users select a value from a range by dragging a handle horizontally or vertically. It supports precise adjustments for settings.
+order: 1
+published: true
+references: ["https://react-aria.adobe.com/Slider#api"]
+---
+
+<How minW60 toUse="controls/slider/slider-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<InstallCommand command="npx shadcn@latest add @intentui/slider"/>
+
+## Composed components
+<Composed components={['field']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+
+<SourceCode toShow='slider'/>
+
+## Examples
+
+### Step
+Set a step value on the slider, and it will increment or decrement by that fixed amount each time you adjust it.
+<How minW60 toUse="controls/slider/slider-step-example" />
+
+### Range
+By passing an array to the `defaultValue` or `value` props, you can create a range slider.
+<How minW60 toUse="controls/slider/slider-range-example" />
+
+### Orientation
+You can change the orientation of the slider to vertical.
+<How minW60 toUse="controls/slider/slider-orientation-example" />
+
+### Suffix and prefix
+Sometimes you need to add a prefix or suffix to the slider, like a volume icon.
+<How minW60 toUse="controls/slider/slider-prefix-suffix-example" />
+
+### Description
+Add a description to the slider.
+<How minW60 toUse="controls/slider/slider-description-example" />
+
+### Controlled
+You can control the slider's value by using the `value` prop.
+<How minW60 toUse="controls/slider/slider-controlled-example" />
+
+### Disabled
+When the slider is disabled, it appears grayed out and becomes non-interactive.
+<How minW60 toUse="controls/slider/slider-disabled-example" />
+
+## Component API
+
+### Slider
+
+The `Slider` component lets users select values from a range.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderFill
+
+The `SliderFill` component renders the filled portion of the slider track.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderGroup
+
+The `SliderGroup` component groups slider controls.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderOutput
+
+The `SliderOutput` component displays the current slider value.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderThumb
+
+The `SliderThumb` component renders a draggable slider handle.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+### SliderTrack
+
+The `SliderTrack` component renders the slider track.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+See the [React Aria](https://react-aria.adobe.com/Slider#api) for the full API reference.
