@@ -129,6 +129,9 @@ const toggleGroupItemStyles = tv({
     isFocused: {
       true: 'not-selected:bg-(--toggle-focused-bg) not-selected:text-(--toggle-focused-fg) not-selected:[--toggle-icon:var(--toggle-focused-fg)]',
     },
+    isFocusVisible: {
+      true: 'inset-ring inset-ring-muted-fg/20',
+    },
     isHovered: {
       true: 'enabled:not-selected:bg-(--toggle-hover-bg) enabled:not-selected:text-(--toggle-hover-fg) enabled:not-selected:[--toggle-icon:var(--toggle-hover-fg)]',
     },
@@ -140,6 +143,11 @@ const toggleGroupItemStyles = tv({
     size: 'md',
   },
   compoundVariants: [
+    {
+      isSelected: true,
+      isFocusVisible: true,
+      className: 'inset-ring-(--toggle-selected-fg)/50',
+    },
     {
       selectionMode: 'multiple',
       orientation: 'horizontal',
