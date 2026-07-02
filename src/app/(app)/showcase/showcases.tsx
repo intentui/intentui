@@ -5,7 +5,7 @@ import { useRef } from 'react'
 
 export function Showcases() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5 xl:grid-cols-4 gap-px bg-page border-x">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5 xl:grid-cols-4 sm:gap-px bg-page border-x">
       {showcases.map(({ url, name, description, slug }) => (
         <ShowcaseCard
           {...{ name, description }}
@@ -39,7 +39,7 @@ export function ShowcaseCard({
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
-    <a className="group/link bg-bg p-2 outline-hidden" href={url} target={target}>
+    <a className="group/link bg-bg p-0 sm:p-6 outline-hidden" href={url} target={target}>
       {videoUrl ? (
         <div
           className="group relative"
@@ -54,7 +54,7 @@ export function ShowcaseCard({
             width={400}
             height={225}
             alt=""
-            className="aspect-431/270 ring ring-page/50 w-full rounded-lg bg-secondary object-cover group-hover:hidden group-focus/link:hidden group-pressed/link:hidden sm:group-focus/link:block"
+            className="aspect-431/270 ring ring-page/50 w-full rounded-none sm:rounded-lg bg-secondary object-cover group-hover:hidden group-focus/link:hidden group-pressed/link:hidden sm:group-focus/link:block"
           />
           <video
             ref={videoRef}
@@ -64,7 +64,7 @@ export function ShowcaseCard({
             playsInline
             autoPlay
             preload="auto"
-            className="hidden aspect-431/270 ring ring-page/50 w-full rounded-lg bg-secondary object-cover group-hover:block group-focus/link:block group-pressed/link:block sm:group-focus/link:hidden"
+            className="hidden aspect-431/270 ring ring-page/50 w-full rounded-none sm:rounded-lg bg-secondary object-cover group-hover:block group-focus/link:block group-pressed/link:block sm:group-focus/link:hidden"
           />
         </div>
       ) : (
@@ -74,12 +74,14 @@ export function ShowcaseCard({
             width={400}
             height={225}
             alt=""
-            className="aspect-431/270 w-full rounded-lg bg-mist-950 object-cover group-hover:hidden dark:bg-mist-900"
+            className="aspect-431/270 w-full rounded-none sm:rounded-lg bg-mist-950 object-cover group-hover:hidden dark:bg-mist-900"
           />
         </div>
       )}
-      <p className="mt-4 font-semibold text-fg text-sm/6">{name}</p>
-      <p className="text-muted-fg text-sm/6">{description}</p>
+      <div className="p-4 sm:p-0 mt-0 sm:mt-4">
+        <p className="font-semibold text-fg text-sm/6">{name}</p>
+        <p className="text-muted-fg text-sm">{description}</p>
+      </div>
     </a>
   )
 }

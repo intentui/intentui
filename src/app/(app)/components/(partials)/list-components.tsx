@@ -77,8 +77,10 @@ export function ListComponents() {
               layout="grid"
               className="grid grid-cols-1 gap-8 py-6 sm:grid-cols-2 sm:gap-px sm:bg-page sm:py-0 lg:grid-cols-4"
               renderEmptyState={() => (
-                <div className="flex items-center justify-center">
-                  <Text>No results found. Try searching for something else!</Text>
+                <div className="p-6 bg-bg col-span-full">
+                  <Text className="text-fg">
+                    No results found. Try searching for something else!
+                  </Text>
                 </div>
               )}
             >

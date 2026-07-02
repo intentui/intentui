@@ -7,8 +7,6 @@ import type { Metadata, Viewport } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 import { headers } from 'next/headers'
-import { Suspense } from 'react'
-import { AurelieAnalytics } from '@/components/aurelie-analytics'
 import { Providers } from '@/components/providers'
 import { Toast } from '@/components/ui/toast'
 
@@ -157,9 +155,6 @@ export default async function RootLayout({ children }: Readonly<Props>) {
           <Toast />
           <main>{children}</main>
         </Providers>
-        <Suspense>
-          <AurelieAnalytics />
-        </Suspense>
         <DeferredAnalytics />
       </body>
     </html>

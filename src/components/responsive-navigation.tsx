@@ -60,7 +60,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
     <nav
       className={twMerge(
         'sticky top-0 z-40 flex items-center bg-bg px-2 py-2 lg:hidden',
-        pathname === '/' && 'bg-transparent',
+        pathname === '/' && 'bg-bg',
         className
       )}
     >
@@ -99,7 +99,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
               'placement-bottom:entering:slide-in-from-top-1 -mt-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]',
               'entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out',
               'slide-out-to-top-1 slide-in-from-top-1',
-              pathname === '/' && 'from-blue-50 dark:from-[#151518]',
+              pathname === '/' && 'from-blue-50 dark:from-bg',
               popover?.className
             )}
             containerPadding={0}
@@ -107,8 +107,8 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
             <Autocomplete filter={contains}>
               <div
                 className={twJoin(
-                  'sticky top-0 h-16 bg-linear-to-b via-bg pt-2',
-                  pathname === '/' ? 'from-blue-50 dark:from-[#151518]' : 'from-bg'
+                  'sticky top-0 h-16 bg-linear-to-b -mt-px via-bg pt-2',
+                  pathname === '/' ? 'from-blue-50 dark:from-bg' : 'from-bg'
                 )}
               >
                 <SearchField autoFocus aria-label="Search...">
@@ -118,7 +118,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                   />
                 </SearchField>
               </div>
-              <Menu className="-mt-4 outline-hidden">
+              <Menu className="outline-hidden">
                 <MenuSection>
                   <NavHeading>Pages</NavHeading>
                   <NavLink href="/">Home</NavLink>
