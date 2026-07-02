@@ -1,8 +1,9 @@
 import { JsonLd } from '@/components/json-ld'
 import { PageContainer } from '@/components/page-container'
-import { Heading } from '@/components/ui/heading'
 import { app } from '@/config/app'
 import { createMetadata } from '@/lib/metadata'
+import { Showcases } from '@/app/(app)/showcase/showcases'
+import { Header, HeaderDescription, HeaderInner, HeaderTitle } from '@/components/header'
 
 export const metadata = createMetadata({
   title: 'Showcase',
@@ -34,15 +35,17 @@ export default async function Page() {
   return (
     <>
       <JsonLd data={jsonLd} />
-      <div className="border-b bg-muted/50 py-6 sm:py-12">
-        <PageContainer>
-          <div className="flex items-center justify-between">
-            <Heading>Showcase</Heading>
-          </div>
-        </PageContainer>
-      </div>
-
-      <PageContainer className="py-4 sm:py-16">Coming soon</PageContainer>
+      <Header className="border-page border-b">
+        <HeaderInner>
+          <HeaderTitle>Intent UI in the Wild</HeaderTitle>
+          <HeaderDescription>
+            Real websites, apps, and products built with Intent UI.
+          </HeaderDescription>
+        </HeaderInner>
+      </Header>
+      <PageContainer>
+        <Showcases />
+      </PageContainer>
     </>
   )
 }
