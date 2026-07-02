@@ -7,10 +7,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
       "name": "theme-default",
-      "dependencies": [
-        "tailwindcss-react-aria-components",
-        "tw-animate-css"
-      ],
+      "dependencies": ["tailwindcss-react-aria-components", "tw-animate-css"],
       "cssVars": {
         "theme": {
           "font-sans": "\"Inter\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
@@ -2029,12 +2026,8 @@
       "name": "area-chart",
       "title": "area-chart",
       "description": "area-chart",
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/chart"
-      ],
+      "dependencies": ["recharts"],
+      "registryDependencies": ["http://localhost:3000/r/chart"],
       "files": [
         {
           "path": "src/components/ui/area-chart.tsx",
@@ -2049,9 +2042,7 @@
       "name": "avatar",
       "title": "avatar",
       "description": "avatar",
-      "dependencies": [
-        "tailwind-merge"
-      ],
+      "dependencies": ["tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/avatar.tsx",
@@ -2066,9 +2057,7 @@
       "name": "badge",
       "title": "badge",
       "description": "badge",
-      "dependencies": [
-        "tailwind-variants"
-      ],
+      "dependencies": ["tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/badge.tsx",
@@ -2083,12 +2072,8 @@
       "name": "bar-chart",
       "title": "bar-chart",
       "description": "bar-chart",
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/chart"
-      ],
+      "dependencies": ["recharts"],
+      "registryDependencies": ["http://localhost:3000/r/chart"],
       "files": [
         {
           "path": "src/components/ui/bar-chart.tsx",
@@ -2103,13 +2088,8 @@
       "name": "bar-list",
       "title": "bar-list",
       "description": "bar-list",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/link"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/ui/bar-list.tsx",
@@ -2124,15 +2104,8 @@
       "name": "breadcrumbs",
       "title": "breadcrumbs",
       "description": "breadcrumbs",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/link"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/primitive", "http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/ui/breadcrumbs.tsx",
@@ -2147,10 +2120,7 @@
       "name": "button-group",
       "title": "button-group",
       "description": "button-group",
-      "dependencies": [
-        "tailwind-merge",
-        "tailwind-variants"
-      ],
+      "dependencies": ["tailwind-merge", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/button-group.tsx",
@@ -2165,13 +2135,8 @@
       "name": "button",
       "title": "button",
       "description": "button",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-variants"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-variants"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/button.tsx",
@@ -2186,15 +2151,8 @@
       "name": "calendar",
       "title": "calendar",
       "description": "calendar",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/select"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/ui/calendar.tsx",
@@ -2209,9 +2167,7 @@
       "name": "card",
       "title": "card",
       "description": "card",
-      "dependencies": [
-        "tailwind-merge"
-      ],
+      "dependencies": ["tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/card.tsx",
@@ -2226,11 +2182,7 @@
       "name": "carousel",
       "title": "carousel",
       "description": "carousel",
-      "dependencies": [
-        "@heroicons/react",
-        "embla-carousel-react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "embla-carousel-react", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button"
@@ -2249,11 +2201,7 @@
       "name": "chart",
       "title": "chart",
       "description": "chart",
-      "dependencies": [
-        "react-aria-components",
-        "recharts",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "recharts", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/use-mobile",
         "http://localhost:3000/r/primitive"
@@ -2272,11 +2220,7 @@
       "name": "checkbox",
       "title": "checkbox",
       "description": "checkbox",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/field"
@@ -2295,11 +2239,7 @@
       "name": "choice-box",
       "title": "choice-box",
       "description": "choice-box",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge", "tailwind-variants"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/checkbox"
@@ -2318,9 +2258,7 @@
       "name": "color-area",
       "title": "color-area",
       "description": "color-area",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/color-thumb"
@@ -2339,9 +2277,7 @@
       "name": "color-field",
       "title": "color-field",
       "description": "color-field",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/field"
@@ -2366,10 +2302,7 @@
         "react-aria-components",
         "tailwind-merge"
       ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/ui/color-picker.tsx",
@@ -2384,9 +2317,7 @@
       "name": "color-slider",
       "title": "color-slider",
       "description": "color-slider",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/primitive"
@@ -2405,12 +2336,8 @@
       "name": "color-swatch-picker",
       "title": "color-swatch-picker",
       "description": "color-swatch-picker",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/color-swatch-picker.tsx",
@@ -2425,12 +2352,8 @@
       "name": "color-swatch",
       "title": "color-swatch",
       "description": "color-swatch",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/color-swatch.tsx",
@@ -2445,12 +2368,8 @@
       "name": "color-thumb",
       "title": "color-thumb",
       "description": "color-thumb",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/color-thumb.tsx",
@@ -2465,12 +2384,8 @@
       "name": "color-wheel",
       "title": "color-wheel",
       "description": "color-wheel",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/color-thumb"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/color-thumb"],
       "files": [
         {
           "path": "src/components/ui/color-wheel.tsx",
@@ -2485,10 +2400,7 @@
       "name": "combo-box",
       "title": "combo-box",
       "description": "combo-box",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
@@ -2510,11 +2422,7 @@
       "name": "command-menu",
       "title": "command-menu",
       "description": "command-menu",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/dropdown",
@@ -2535,9 +2443,7 @@
       "name": "container",
       "title": "container",
       "description": "container",
-      "dependencies": [
-        "tailwind-merge"
-      ],
+      "dependencies": ["tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/container.tsx",
@@ -2552,12 +2458,8 @@
       "name": "context-menu",
       "title": "context-menu",
       "description": "context-menu",
-      "dependencies": [
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/menu"
-      ],
+      "dependencies": ["tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/ui/context-menu.tsx",
@@ -2572,10 +2474,7 @@
       "name": "date-field",
       "title": "date-field",
       "description": "date-field",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/field"
@@ -2652,9 +2551,7 @@
       "name": "description-list",
       "title": "description-list",
       "description": "description-list",
-      "dependencies": [
-        "tailwind-merge"
-      ],
+      "dependencies": ["tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/description-list.tsx",
@@ -2669,11 +2566,7 @@
       "name": "dialog",
       "title": "dialog",
       "description": "dialog",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button"
@@ -2692,13 +2585,8 @@
       "name": "disclosure-group",
       "title": "disclosure-group",
       "description": "disclosure-group",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/disclosure-group.tsx",
@@ -2713,11 +2601,7 @@
       "name": "drawer",
       "title": "drawer",
       "description": "drawer",
-      "dependencies": [
-        "motion",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["motion", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button"
@@ -2736,10 +2620,7 @@
       "name": "drop-zone",
       "title": "drop-zone",
       "description": "drop-zone",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/drop-zone.tsx",
@@ -2760,9 +2641,7 @@
         "tailwind-merge",
         "tailwind-variants"
       ],
-      "registryDependencies": [
-        "http://localhost:3000/r/keyboard"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/keyboard"],
       "files": [
         {
           "path": "src/components/ui/dropdown.tsx",
@@ -2777,14 +2656,8 @@
       "name": "field",
       "title": "field",
       "description": "field",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge", "tailwind-variants"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/field.tsx",
@@ -2799,15 +2672,8 @@
       "name": "file-trigger",
       "title": "file-trigger",
       "description": "file-trigger",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-variants"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/loader"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-variants"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/loader"],
       "files": [
         {
           "path": "src/components/ui/file-trigger.tsx",
@@ -2822,10 +2688,7 @@
       "name": "grid-list",
       "title": "grid-list",
       "description": "grid-list",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/checkbox"
@@ -2844,9 +2707,7 @@
       "name": "heading",
       "title": "heading",
       "description": "heading",
-      "dependencies": [
-        "tailwind-merge"
-      ],
+      "dependencies": ["tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/heading.tsx",
@@ -2861,14 +2722,8 @@
       "name": "input-otp",
       "title": "input-otp",
       "description": "input-otp",
-      "dependencies": [
-        "@heroicons/react",
-        "input-otp",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/field"
-      ],
+      "dependencies": ["@heroicons/react", "input-otp", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/ui/input-otp.tsx",
@@ -2883,12 +2738,8 @@
       "name": "input",
       "title": "input",
       "description": "input",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/input.tsx",
@@ -2903,10 +2754,7 @@
       "name": "keyboard",
       "title": "keyboard",
       "description": "keyboard",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/keyboard.tsx",
@@ -2921,13 +2769,8 @@
       "name": "leaderboard",
       "title": "leaderboard",
       "description": "leaderboard",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/leaderboard.tsx",
@@ -2942,12 +2785,8 @@
       "name": "line-chart",
       "title": "line-chart",
       "description": "line-chart",
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/chart"
-      ],
+      "dependencies": ["recharts"],
+      "registryDependencies": ["http://localhost:3000/r/chart"],
       "files": [
         {
           "path": "src/components/ui/line-chart.tsx",
@@ -2962,12 +2801,8 @@
       "name": "link",
       "title": "link",
       "description": "link",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/link.tsx",
@@ -2982,11 +2817,7 @@
       "name": "list-box",
       "title": "list-box",
       "description": "list-box",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/dropdown"
@@ -3005,10 +2836,7 @@
       "name": "loader",
       "title": "loader",
       "description": "loader",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/loader.tsx",
@@ -3048,13 +2876,8 @@
       "name": "meter",
       "title": "meter",
       "description": "meter",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/meter.tsx",
@@ -3069,9 +2892,7 @@
       "name": "modal",
       "title": "modal",
       "description": "modal",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/dialog"
@@ -3090,9 +2911,7 @@
       "name": "multiple-select",
       "title": "multiple-select",
       "description": "multiple-select",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/button",
@@ -3116,13 +2935,8 @@
       "name": "native-select",
       "title": "native-select",
       "description": "native-select",
-      "dependencies": [
-        "@heroicons/react",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/field"
-      ],
+      "dependencies": ["@heroicons/react", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/ui/native-select.tsx",
@@ -3137,11 +2951,7 @@
       "name": "navbar",
       "title": "navbar",
       "description": "navbar",
-      "dependencies": [
-        "@heroicons/react",
-        "motion",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "motion", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/link",
         "http://localhost:3000/r/use-mobile",
@@ -3164,10 +2974,7 @@
       "name": "note",
       "title": "note",
       "description": "note",
-      "dependencies": [
-        "@heroicons/react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/note.tsx",
@@ -3182,10 +2989,7 @@
       "name": "number-field",
       "title": "number-field",
       "description": "number-field",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/input",
         "http://localhost:3000/r/primitive",
@@ -3205,13 +3009,8 @@
       "name": "pagination",
       "title": "pagination",
       "description": "pagination",
-      "dependencies": [
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link"
-      ],
+      "dependencies": ["tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/ui/pagination.tsx",
@@ -3226,12 +3025,8 @@
       "name": "pie-chart",
       "title": "pie-chart",
       "description": "pie-chart",
-      "dependencies": [
-        "recharts"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/chart"
-      ],
+      "dependencies": ["recharts"],
+      "registryDependencies": ["http://localhost:3000/r/chart"],
       "files": [
         {
           "path": "src/components/ui/pie-chart.tsx",
@@ -3246,9 +3041,7 @@
       "name": "popover",
       "title": "popover",
       "description": "popover",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/dialog"
@@ -3267,13 +3060,8 @@
       "name": "progress-bar",
       "title": "progress-bar",
       "description": "progress-bar",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/progress-bar.tsx",
@@ -3288,10 +3076,7 @@
       "name": "progress-circle",
       "title": "progress-circle",
       "description": "progress-circle",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/progress-circle.tsx",
@@ -3306,10 +3091,7 @@
       "name": "radio",
       "title": "radio",
       "description": "radio",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/field"
@@ -3328,13 +3110,8 @@
       "name": "range-calendar",
       "title": "range-calendar",
       "description": "range-calendar",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/calendar"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/calendar"],
       "files": [
         {
           "path": "src/components/ui/range-calendar.tsx",
@@ -3349,9 +3126,7 @@
       "name": "scroll-area",
       "title": "scroll-area",
       "description": "scroll-area",
-      "dependencies": [
-        "tailwind-merge"
-      ],
+      "dependencies": ["tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/scroll-area.tsx",
@@ -3366,11 +3141,7 @@
       "name": "search-field",
       "title": "search-field",
       "description": "search-field",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/primitive",
@@ -3390,11 +3161,7 @@
       "name": "select",
       "title": "select",
       "description": "select",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/dropdown",
@@ -3415,10 +3182,7 @@
       "name": "separator",
       "title": "separator",
       "description": "separator",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/separator.tsx",
@@ -3433,9 +3197,7 @@
       "name": "sheet",
       "title": "sheet",
       "description": "sheet",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/dialog"
@@ -3454,14 +3216,8 @@
       "name": "show-more",
       "title": "show-more",
       "description": "show-more",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-variants"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/text"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-variants"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/text"],
       "files": [
         {
           "path": "src/components/ui/show-more.tsx",
@@ -3476,11 +3232,7 @@
       "name": "sidebar",
       "title": "sidebar",
       "description": "sidebar",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/sheet",
         "http://localhost:3000/r/tree",
@@ -3504,9 +3256,7 @@
       "name": "skeleton",
       "title": "skeleton",
       "description": "skeleton",
-      "dependencies": [
-        "tailwind-merge"
-      ],
+      "dependencies": ["tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/skeleton.tsx",
@@ -3521,13 +3271,8 @@
       "name": "slider",
       "title": "slider",
       "description": "slider",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/slider.tsx",
@@ -3542,9 +3287,7 @@
       "name": "snippet",
       "title": "snippet",
       "description": "snippet",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/tabs",
@@ -3565,10 +3308,7 @@
       "name": "switch",
       "title": "switch",
       "description": "switch",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/primitive"
@@ -3587,11 +3327,7 @@
       "name": "table",
       "title": "table",
       "description": "table",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/primitive",
@@ -3611,13 +3347,8 @@
       "name": "tabs",
       "title": "tabs",
       "description": "tabs",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/tabs.tsx",
@@ -3632,10 +3363,7 @@
       "name": "tag-field",
       "title": "tag-field",
       "description": "tag-field",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/tag-group",
@@ -3655,14 +3383,8 @@
       "name": "tag-group",
       "title": "tag-group",
       "description": "tag-group",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/tag-group.tsx",
@@ -3677,9 +3399,7 @@
       "name": "text-field",
       "title": "text-field",
       "description": "text-field",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/field"
@@ -3698,14 +3418,8 @@
       "name": "text",
       "title": "text",
       "description": "text",
-      "dependencies": [
-        "tailwind-merge",
-        "tailwind-variants"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive",
-        "http://localhost:3000/r/link"
-      ],
+      "dependencies": ["tailwind-merge", "tailwind-variants"],
+      "registryDependencies": ["http://localhost:3000/r/primitive", "http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/ui/text.tsx",
@@ -3720,12 +3434,8 @@
       "name": "textarea",
       "title": "textarea",
       "description": "textarea",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/textarea.tsx",
@@ -3740,9 +3450,7 @@
       "name": "time-field",
       "title": "time-field",
       "description": "time-field",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/primitive",
@@ -3762,10 +3470,7 @@
       "name": "toast",
       "title": "toast",
       "description": "toast",
-      "dependencies": [
-        "sonner",
-        "tailwind-merge"
-      ],
+      "dependencies": ["sonner", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/toast.tsx",
@@ -3780,14 +3485,8 @@
       "name": "toggle-group",
       "title": "toggle-group",
       "description": "toggle-group",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/primitive"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge", "tailwind-variants"],
+      "registryDependencies": ["http://localhost:3000/r/primitive"],
       "files": [
         {
           "path": "src/components/ui/toggle-group.tsx",
@@ -3802,11 +3501,7 @@
       "name": "toggle",
       "title": "toggle",
       "description": "toggle",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/toggle.tsx",
@@ -3821,10 +3516,7 @@
       "name": "toolbar",
       "title": "toolbar",
       "description": "toolbar",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/separator",
@@ -3844,11 +3536,7 @@
       "name": "tooltip",
       "title": "tooltip",
       "description": "tooltip",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge",
-        "tailwind-variants"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/tooltip.tsx",
@@ -3863,13 +3551,8 @@
       "name": "tracker",
       "title": "tracker",
       "description": "tracker",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/tooltip"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/tooltip"],
       "files": [
         {
           "path": "src/components/ui/tracker.tsx",
@@ -3884,11 +3567,7 @@
       "name": "tree",
       "title": "tree",
       "description": "tree",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/primitive",
         "http://localhost:3000/r/checkbox"
@@ -3907,10 +3586,7 @@
       "name": "tracker-example",
       "title": "Tracker",
       "description": "tracker-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/tracker"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/tracker"],
       "files": [
         {
           "path": "src/components/examples/visualizations/tracker/tracker-example.tsx",
@@ -3926,10 +3602,7 @@
       "name": "tracker-without-tooltip-example",
       "title": "Tracker Without Tooltip",
       "description": "tracker-without-tooltip-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/tracker"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/tracker"],
       "files": [
         {
           "path": "src/components/examples/visualizations/tracker/tracker-without-tooltip-example.tsx",
@@ -3945,10 +3618,7 @@
       "name": "pie-chart-custom-colors-example",
       "title": "Pie Chart Custom Colors",
       "description": "pie-chart-custom-colors-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/pie-chart"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/pie-chart"],
       "files": [
         {
           "path": "src/components/examples/visualizations/pie-chart/pie-chart-custom-colors-example.tsx",
@@ -3964,10 +3634,7 @@
       "name": "pie-chart-donut-custom-label-example",
       "title": "Pie Chart Donut Custom Label",
       "description": "pie-chart-donut-custom-label-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/pie-chart"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/pie-chart"],
       "files": [
         {
           "path": "src/components/examples/visualizations/pie-chart/pie-chart-donut-custom-label-example.tsx",
@@ -3983,10 +3650,7 @@
       "name": "pie-chart-donut-example",
       "title": "Pie Chart Donut",
       "description": "pie-chart-donut-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/pie-chart"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/pie-chart"],
       "files": [
         {
           "path": "src/components/examples/visualizations/pie-chart/pie-chart-donut-example.tsx",
@@ -4002,10 +3666,7 @@
       "name": "pie-chart-example",
       "title": "Pie Chart",
       "description": "pie-chart-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/pie-chart"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/pie-chart"],
       "files": [
         {
           "path": "src/components/examples/visualizations/pie-chart/pie-chart-example.tsx",
@@ -4021,10 +3682,7 @@
       "name": "pie-chart-gap-example",
       "title": "Pie Chart Gap",
       "description": "pie-chart-gap-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/pie-chart"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/pie-chart"],
       "files": [
         {
           "path": "src/components/examples/visualizations/pie-chart/pie-chart-gap-example.tsx",
@@ -4040,9 +3698,7 @@
       "name": "pie-chart-interactive-example",
       "title": "Pie Chart Interactive",
       "description": "pie-chart-interactive-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/pie-chart",
@@ -4063,9 +3719,7 @@
       "name": "line-chart-controlled-example",
       "title": "Line Chart Controlled",
       "description": "line-chart-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/line-chart",
@@ -4127,10 +3781,7 @@
       "name": "line-chart-custom-legend-example",
       "title": "Line Chart Custom Legend",
       "description": "line-chart-custom-legend-example",
-      "dependencies": [
-        "@heroicons/react",
-        "recharts"
-      ],
+      "dependencies": ["@heroicons/react", "recharts"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/line-chart",
@@ -4151,10 +3802,7 @@
       "name": "line-chart-custom-tooltip-example",
       "title": "Line Chart Custom Tooltip",
       "description": "line-chart-custom-tooltip-example",
-      "dependencies": [
-        "@heroicons/react",
-        "recharts"
-      ],
+      "dependencies": ["@heroicons/react", "recharts"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/line-chart",
@@ -4235,9 +3883,7 @@
       "name": "leaderboard-controlled-example",
       "title": "Leaderboard Controlled",
       "description": "leaderboard-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/leaderboard"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/leaderboard"],
       "files": [
         {
           "path": "src/components/examples/visualizations/leaderboard/leaderboard-controlled-example.tsx",
@@ -4253,9 +3899,7 @@
       "name": "leaderboard-currency-example",
       "title": "Leaderboard Currency",
       "description": "leaderboard-currency-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/leaderboard"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/leaderboard"],
       "files": [
         {
           "path": "src/components/examples/visualizations/leaderboard/leaderboard-currency-example.tsx",
@@ -4290,9 +3934,7 @@
       "name": "leaderboard-header-example",
       "title": "Leaderboard Header",
       "description": "leaderboard-header-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/leaderboard",
@@ -4313,12 +3955,8 @@
       "name": "leaderboard-icon-example",
       "title": "Leaderboard Icon",
       "description": "leaderboard-icon-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/leaderboard"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/leaderboard"],
       "files": [
         {
           "path": "src/components/examples/visualizations/leaderboard/leaderboard-icon-example.tsx",
@@ -4334,9 +3972,7 @@
       "name": "leaderboard-percentage-example",
       "title": "Leaderboard Percentage",
       "description": "leaderboard-percentage-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/leaderboard"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/leaderboard"],
       "files": [
         {
           "path": "src/components/examples/visualizations/leaderboard/leaderboard-percentage-example.tsx",
@@ -4352,10 +3988,7 @@
       "name": "bar-list-controlled-example",
       "title": "Bar List Controlled",
       "description": "bar-list-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/bar-list",
-        "http://localhost:3000/r/card"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/bar-list", "http://localhost:3000/r/card"],
       "files": [
         {
           "path": "src/components/examples/visualizations/bar-list/bar-list-controlled-example.tsx",
@@ -4371,10 +4004,7 @@
       "name": "bar-list-example",
       "title": "Bar List",
       "description": "bar-list-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/bar-list",
-        "http://localhost:3000/r/card"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/bar-list", "http://localhost:3000/r/card"],
       "files": [
         {
           "path": "src/components/examples/visualizations/bar-list/bar-list-example.tsx",
@@ -4390,9 +4020,7 @@
       "name": "bar-chart-controlled-example",
       "title": "Bar Chart Controlled",
       "description": "bar-chart-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
         "http://localhost:3000/r/card",
@@ -4434,9 +4062,7 @@
       "name": "bar-chart-custom-format-example",
       "title": "Bar Chart Custom Format",
       "description": "bar-chart-custom-format-example",
-      "dependencies": [
-        "recharts"
-      ],
+      "dependencies": ["recharts"],
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
         "http://localhost:3000/r/card",
@@ -4457,10 +4083,7 @@
       "name": "bar-chart-custom-legend-example",
       "title": "Bar Chart Custom Legend",
       "description": "bar-chart-custom-legend-example",
-      "dependencies": [
-        "@heroicons/react",
-        "recharts"
-      ],
+      "dependencies": ["@heroicons/react", "recharts"],
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
         "http://localhost:3000/r/card",
@@ -4481,10 +4104,7 @@
       "name": "bar-chart-custom-tooltip-example",
       "title": "Bar Chart Custom Tooltip",
       "description": "bar-chart-custom-tooltip-example",
-      "dependencies": [
-        "@heroicons/react",
-        "recharts"
-      ],
+      "dependencies": ["@heroicons/react", "recharts"],
       "registryDependencies": [
         "http://localhost:3000/r/bar-chart",
         "http://localhost:3000/r/card",
@@ -4565,9 +4185,7 @@
       "name": "area-chart-controlled-example",
       "title": "Area Chart Controlled",
       "description": "area-chart-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
         "http://localhost:3000/r/card",
@@ -4609,9 +4227,7 @@
       "name": "area-chart-custom-format-example",
       "title": "Area Chart Custom Format",
       "description": "area-chart-custom-format-example",
-      "dependencies": [
-        "recharts"
-      ],
+      "dependencies": ["recharts"],
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
         "http://localhost:3000/r/card",
@@ -4632,10 +4248,7 @@
       "name": "area-chart-custom-legend-example",
       "title": "Area Chart Custom Legend",
       "description": "area-chart-custom-legend-example",
-      "dependencies": [
-        "@heroicons/react",
-        "recharts"
-      ],
+      "dependencies": ["@heroicons/react", "recharts"],
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
         "http://localhost:3000/r/card",
@@ -4656,10 +4269,7 @@
       "name": "area-chart-custom-tooltip-example",
       "title": "Area Chart Custom Tooltip",
       "description": "area-chart-custom-tooltip-example",
-      "dependencies": [
-        "@heroicons/react",
-        "recharts"
-      ],
+      "dependencies": ["@heroicons/react", "recharts"],
       "registryDependencies": [
         "http://localhost:3000/r/area-chart",
         "http://localhost:3000/r/card",
@@ -4740,9 +4350,7 @@
       "name": "text-basic-example",
       "title": "Text Basic",
       "description": "text-basic-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/text"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/text"],
       "files": [
         {
           "path": "src/components/examples/surfaces/text/text-basic-example.tsx",
@@ -4758,9 +4366,7 @@
       "name": "text-link-example",
       "title": "Text Link",
       "description": "text-link-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/text"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/text"],
       "files": [
         {
           "path": "src/components/examples/surfaces/text/text-link-example.tsx",
@@ -4776,9 +4382,7 @@
       "name": "show-more-as-text-example",
       "title": "Show More as Text",
       "description": "show-more-as-text-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/show-more"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/show-more"],
       "files": [
         {
           "path": "src/components/examples/surfaces/show-more/show-more-as-text-example.tsx",
@@ -4794,12 +4398,8 @@
       "name": "show-more-controlled-example",
       "title": "Show More Controlled",
       "description": "show-more-controlled-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/show-more"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/show-more"],
       "files": [
         {
           "path": "src/components/examples/surfaces/show-more/show-more-controlled-example.tsx",
@@ -4815,13 +4415,8 @@
       "name": "show-more-example",
       "title": "Show More",
       "description": "show-more-example",
-      "dependencies": [
-        "@heroicons/react",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/show-more"
-      ],
+      "dependencies": ["@heroicons/react", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/show-more"],
       "files": [
         {
           "path": "src/components/examples/surfaces/show-more/show-more-example.tsx",
@@ -4837,9 +4432,7 @@
       "name": "show-more-orientation-example",
       "title": "Show More Orientation",
       "description": "show-more-orientation-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/show-more"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/show-more"],
       "files": [
         {
           "path": "src/components/examples/surfaces/show-more/show-more-orientation-example.tsx",
@@ -4855,9 +4448,7 @@
       "name": "separator-example",
       "title": "Separator",
       "description": "separator-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/separator"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/separator"],
       "files": [
         {
           "path": "src/components/examples/surfaces/separator/separator-example.tsx",
@@ -4873,9 +4464,7 @@
       "name": "separator-orientation-example",
       "title": "Separator Orientation",
       "description": "separator-orientation-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/separator"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/separator"],
       "files": [
         {
           "path": "src/components/examples/surfaces/separator/separator-orientation-example.tsx",
@@ -4891,9 +4480,7 @@
       "name": "heading-example",
       "title": "Heading",
       "description": "heading-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/heading"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/heading"],
       "files": [
         {
           "path": "src/components/examples/surfaces/heading/heading-example.tsx",
@@ -4909,9 +4496,7 @@
       "name": "heading-level-example",
       "title": "Heading Level",
       "description": "heading-level-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/heading"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/heading"],
       "files": [
         {
           "path": "src/components/examples/surfaces/heading/heading-level-example.tsx",
@@ -4948,9 +4533,7 @@
       "name": "description-list-example",
       "title": "Description List",
       "description": "description-list-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/description-list"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/description-list"],
       "files": [
         {
           "path": "src/components/examples/surfaces/description-list/description-list-example.tsx",
@@ -4985,9 +4568,7 @@
       "name": "card-action-example",
       "title": "Card Action",
       "description": "card-action-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/card",
@@ -5008,10 +4589,7 @@
       "name": "card-example",
       "title": "Card",
       "description": "card-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/card"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/card"],
       "files": [
         {
           "path": "src/components/examples/surfaces/card/card-example.tsx",
@@ -5027,9 +4605,7 @@
       "name": "card-login-form-example",
       "title": "Card Login Form",
       "description": "card-login-form-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/card",
@@ -5054,9 +4630,7 @@
       "name": "card-table-example",
       "title": "Card Table",
       "description": "card-table-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/menu",
@@ -5078,12 +4652,8 @@
       "name": "toast-action-example",
       "title": "Toast Action",
       "description": "toast-action-example",
-      "dependencies": [
-        "sonner"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["sonner"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/statuses/toast/toast-action-example.tsx",
@@ -5099,12 +4669,8 @@
       "name": "toast-description-example",
       "title": "Toast Description",
       "description": "toast-description-example",
-      "dependencies": [
-        "sonner"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["sonner"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/statuses/toast/toast-description-example.tsx",
@@ -5120,12 +4686,8 @@
       "name": "toast-example",
       "title": "Toast",
       "description": "toast-example",
-      "dependencies": [
-        "sonner"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["sonner"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/statuses/toast/toast-example.tsx",
@@ -5141,12 +4703,8 @@
       "name": "toast-positions-example",
       "title": "Toast Positions",
       "description": "toast-positions-example",
-      "dependencies": [
-        "sonner"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["sonner"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/statuses/toast/toast-positions-example.tsx",
@@ -5162,12 +4720,8 @@
       "name": "toast-promise-example",
       "title": "Toast Promise",
       "description": "toast-promise-example",
-      "dependencies": [
-        "sonner"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["sonner"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/statuses/toast/toast-promise-example.tsx",
@@ -5183,12 +4737,8 @@
       "name": "toast-status-example",
       "title": "Toast Status",
       "description": "toast-status-example",
-      "dependencies": [
-        "sonner"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["sonner"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/statuses/toast/toast-status-example.tsx",
@@ -5204,10 +4754,7 @@
       "name": "skeleton-dynamic-content-example",
       "title": "Skeleton Dynamic Content",
       "description": "skeleton-dynamic-content-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/skeleton",
-        "http://localhost:3000/r/text"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/skeleton", "http://localhost:3000/r/text"],
       "files": [
         {
           "path": "src/components/examples/statuses/skeleton/skeleton-dynamic-content-example.tsx",
@@ -5242,9 +4789,7 @@
       "name": "progress-circle-color-example",
       "title": "Progress Circle Color",
       "description": "progress-circle-color-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/progress-circle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/progress-circle"],
       "files": [
         {
           "path": "src/components/examples/statuses/progress-circle/progress-circle-color-example.tsx",
@@ -5280,9 +4825,7 @@
       "name": "progress-circle-custom-size-example",
       "title": "Progress Circle Custom Size",
       "description": "progress-circle-custom-size-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/progress-circle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/progress-circle"],
       "files": [
         {
           "path": "src/components/examples/statuses/progress-circle/progress-circle-custom-size-example.tsx",
@@ -5298,9 +4841,7 @@
       "name": "progress-circle-example",
       "title": "Progress Circle",
       "description": "progress-circle-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/progress-circle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/progress-circle"],
       "files": [
         {
           "path": "src/components/examples/statuses/progress-circle/progress-circle-example.tsx",
@@ -5316,9 +4857,7 @@
       "name": "progress-circle-indeterminate-example",
       "title": "Progress Circle Indeterminate",
       "description": "progress-circle-indeterminate-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/progress-circle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/progress-circle"],
       "files": [
         {
           "path": "src/components/examples/statuses/progress-circle/progress-circle-indeterminate-example.tsx",
@@ -5372,9 +4911,7 @@
       "name": "note-example",
       "title": "Note",
       "description": "note-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/note"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/note"],
       "files": [
         {
           "path": "src/components/examples/statuses/note/note-example.tsx",
@@ -5390,9 +4927,7 @@
       "name": "note-intent-example",
       "title": "Note Intent",
       "description": "note-intent-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/note"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/note"],
       "files": [
         {
           "path": "src/components/examples/statuses/note/note-intent-example.tsx",
@@ -5408,10 +4943,7 @@
       "name": "meter-currency-format-example",
       "title": "Meter Currency Format",
       "description": "meter-currency-format-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/meter"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/meter"],
       "files": [
         {
           "path": "src/components/examples/statuses/meter/meter-currency-format-example.tsx",
@@ -5427,10 +4959,7 @@
       "name": "meter-decimal-format-example",
       "title": "Meter Decimal Format",
       "description": "meter-decimal-format-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/meter"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/meter"],
       "files": [
         {
           "path": "src/components/examples/statuses/meter/meter-decimal-format-example.tsx",
@@ -5446,10 +4975,7 @@
       "name": "meter-example",
       "title": "Meter",
       "description": "meter-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/meter"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/meter"],
       "files": [
         {
           "path": "src/components/examples/statuses/meter/meter-example.tsx",
@@ -5465,9 +4991,7 @@
       "name": "loader-example",
       "title": "Loader",
       "description": "loader-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/loader"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/loader"],
       "files": [
         {
           "path": "src/components/examples/statuses/loader/loader-example.tsx",
@@ -5483,9 +5007,7 @@
       "name": "loader-size-example",
       "title": "Loader Size",
       "description": "loader-size-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/loader"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/loader"],
       "files": [
         {
           "path": "src/components/examples/statuses/loader/loader-size-example.tsx",
@@ -5501,9 +5023,7 @@
       "name": "loader-variant-example",
       "title": "Loader Variant",
       "description": "loader-variant-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/loader"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/loader"],
       "files": [
         {
           "path": "src/components/examples/statuses/loader/loader-variant-example.tsx",
@@ -5519,9 +5039,7 @@
       "name": "badge-example",
       "title": "Badge",
       "description": "badge-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/badge"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/badge"],
       "files": [
         {
           "path": "src/components/examples/statuses/badge/badge-example.tsx",
@@ -5537,9 +5055,7 @@
       "name": "badge-intent-example",
       "title": "Badge Intent",
       "description": "badge-intent-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/badge"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/badge"],
       "files": [
         {
           "path": "src/components/examples/statuses/badge/badge-intent-example.tsx",
@@ -5555,9 +5071,7 @@
       "name": "badge-shape-example",
       "title": "Badge Shape",
       "description": "badge-shape-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/badge"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/badge"],
       "files": [
         {
           "path": "src/components/examples/statuses/badge/badge-shape-example.tsx",
@@ -5573,13 +5087,8 @@
       "name": "select-controlled-example",
       "title": "Select Controlled",
       "description": "select-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/select"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-controlled-example.tsx",
@@ -5595,10 +5104,7 @@
       "name": "select-details-description-example",
       "title": "Select Details Description",
       "description": "select-details-description-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/select"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-details-description-example.tsx",
@@ -5614,10 +5120,7 @@
       "name": "select-disabled-example",
       "title": "Select Disabled",
       "description": "select-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/select"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-disabled-example.tsx",
@@ -5633,9 +5136,7 @@
       "name": "select-example",
       "title": "Select",
       "description": "select-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/select"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-example.tsx",
@@ -5651,12 +5152,8 @@
       "name": "select-multiple-example",
       "title": "Select Multiple",
       "description": "select-multiple-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/select"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-multiple-example.tsx",
@@ -5672,9 +5169,7 @@
       "name": "select-searchable-example",
       "title": "Select Searchable",
       "description": "select-searchable-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/dialog",
         "http://localhost:3000/r/field",
@@ -5697,9 +5192,7 @@
       "name": "select-section-example",
       "title": "Select Section",
       "description": "select-section-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/select"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-section-example.tsx",
@@ -5715,10 +5208,7 @@
       "name": "select-uncontrolled-example",
       "title": "Select Uncontrolled",
       "description": "select-uncontrolled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/select"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-uncontrolled-example.tsx",
@@ -5734,9 +5224,7 @@
       "name": "select-validation-example",
       "title": "Select Validation",
       "description": "select-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -5757,10 +5245,7 @@
       "name": "select-with-avatar-example",
       "title": "Select With Avatar",
       "description": "select-with-avatar-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar",
-        "http://localhost:3000/r/select"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/avatar", "http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-with-avatar-example.tsx",
@@ -5776,9 +5261,7 @@
       "name": "select-with-icon-example",
       "title": "Select With Icon",
       "description": "select-with-icon-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/select"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/select"],
       "files": [
         {
           "path": "src/components/examples/pickers/select/select-with-icon-example.tsx",
@@ -5851,9 +5334,7 @@
       "name": "native-select-example",
       "title": "Native Select",
       "description": "native-select-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/native-select"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/native-select"],
       "files": [
         {
           "path": "src/components/examples/pickers/native-select/native-select-example.tsx",
@@ -5926,9 +5407,7 @@
       "name": "multiple-select-controlled-example",
       "title": "Multiple Select Controlled",
       "description": "multiple-select-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/multiple-select"
@@ -5986,9 +5465,7 @@
       "name": "multiple-select-invalid-example",
       "title": "Multiple Select Invalid",
       "description": "multiple-select-invalid-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -6047,9 +5524,7 @@
       "name": "combo-box-controlled-selection-example",
       "title": "Combo Box Controlled Selection",
       "description": "combo-box-controlled-selection-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/combo-box",
         "http://localhost:3000/r/field"
@@ -6088,9 +5563,7 @@
       "name": "combo-box-detail-description-example",
       "title": "Combo Box Detail Description",
       "description": "combo-box-detail-description-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/combo-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/combo-box"],
       "files": [
         {
           "path": "src/components/examples/pickers/combo-box/combo-box-detail-description-example.tsx",
@@ -6126,9 +5599,7 @@
       "name": "combo-box-example",
       "title": "Combo Box",
       "description": "combo-box-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/combo-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/combo-box"],
       "files": [
         {
           "path": "src/components/examples/pickers/combo-box/combo-box-example.tsx",
@@ -6224,9 +5695,7 @@
       "name": "combo-box-validation-example",
       "title": "Combo Box Validation",
       "description": "combo-box-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
@@ -6248,10 +5717,7 @@
       "name": "tooltip-delay-example",
       "title": "Tooltip Delay",
       "description": "tooltip-delay-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/tooltip"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/tooltip"],
       "files": [
         {
           "path": "src/components/examples/overlays/tooltip/tooltip-delay-example.tsx",
@@ -6267,10 +5733,7 @@
       "name": "tooltip-example",
       "title": "Tooltip",
       "description": "tooltip-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/tooltip"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/tooltip"],
       "files": [
         {
           "path": "src/components/examples/overlays/tooltip/tooltip-example.tsx",
@@ -6286,13 +5749,8 @@
       "name": "tooltip-intent-example",
       "title": "Tooltip Intent",
       "description": "tooltip-intent-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/tooltip"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/tooltip"],
       "files": [
         {
           "path": "src/components/examples/overlays/tooltip/tooltip-intent-example.tsx",
@@ -6308,13 +5766,8 @@
       "name": "tooltip-placement-example",
       "title": "Tooltip Placement",
       "description": "tooltip-placement-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/tooltip"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/tooltip"],
       "files": [
         {
           "path": "src/components/examples/overlays/tooltip/tooltip-placement-example.tsx",
@@ -6416,10 +5869,7 @@
       "name": "sheet-float-example",
       "title": "Sheet Float",
       "description": "sheet-float-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/sheet"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/sheet"],
       "files": [
         {
           "path": "src/components/examples/overlays/sheet/sheet-float-example.tsx",
@@ -6435,10 +5885,7 @@
       "name": "sheet-menu-example",
       "title": "Sheet Menu",
       "description": "sheet-menu-example",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
@@ -6486,10 +5933,7 @@
       "name": "sheet-sticky-example",
       "title": "Sheet Sticky",
       "description": "sheet-sticky-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/sheet"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/sheet"],
       "files": [
         {
           "path": "src/components/examples/overlays/sheet/sheet-sticky-example.tsx",
@@ -6505,13 +5949,8 @@
       "name": "popover-arrow-example",
       "title": "Popover Arrow",
       "description": "popover-arrow-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/popover"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/popover"],
       "files": [
         {
           "path": "src/components/examples/overlays/popover/popover-arrow-example.tsx",
@@ -6527,9 +5966,7 @@
       "name": "popover-controlled-example",
       "title": "Popover Controlled",
       "description": "popover-controlled-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/loader",
@@ -6551,9 +5988,7 @@
       "name": "popover-custom-close",
       "title": "Popover Custom Close",
       "description": "popover-custom-close",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
@@ -6579,10 +6014,7 @@
       "name": "popover-example",
       "title": "Popover",
       "description": "popover-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/popover"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/popover"],
       "files": [
         {
           "path": "src/components/examples/overlays/popover/popover-example.tsx",
@@ -6598,13 +6030,8 @@
       "name": "popover-placement-example",
       "title": "Popover Placement",
       "description": "popover-placement-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/popover"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/popover"],
       "files": [
         {
           "path": "src/components/examples/overlays/popover/popover-placement-example.tsx",
@@ -6640,10 +6067,7 @@
       "name": "alert-dialog-example",
       "title": "Alert Dialog",
       "description": "alert-dialog-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/modal"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/modal"],
       "files": [
         {
           "path": "src/components/examples/overlays/modal/alert-dialog-example.tsx",
@@ -6659,10 +6083,7 @@
       "name": "modal-controlled-example",
       "title": "Modal Controlled",
       "description": "modal-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/modal"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/modal"],
       "files": [
         {
           "path": "src/components/examples/overlays/modal/modal-controlled-example.tsx",
@@ -6699,10 +6120,7 @@
       "name": "modal-nested-example",
       "title": "Modal Nested",
       "description": "modal-nested-example",
-      "dependencies": [
-        "react-aria-components",
-        "sonner"
-      ],
+      "dependencies": ["react-aria-components", "sonner"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -6745,10 +6163,7 @@
       "name": "modal-sticky-example",
       "title": "Modal Sticky",
       "description": "modal-sticky-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/modal"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/modal"],
       "files": [
         {
           "path": "src/components/examples/overlays/modal/modal-sticky-example.tsx",
@@ -6764,10 +6179,7 @@
       "name": "modal-triggered-by-menu-example",
       "title": "Modal Triggered by Menu",
       "description": "modal-triggered-by-menu-example",
-      "dependencies": [
-        "@heroicons/react",
-        "sonner"
-      ],
+      "dependencies": ["@heroicons/react", "sonner"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/loader",
@@ -6855,10 +6267,7 @@
       "name": "drawer-nested-example",
       "title": "Drawer Nested",
       "description": "drawer-nested-example",
-      "dependencies": [
-        "react-aria-components",
-        "sonner"
-      ],
+      "dependencies": ["react-aria-components", "sonner"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/drawer",
@@ -6902,10 +6311,7 @@
       "name": "drawer-sticky-example",
       "title": "Drawer Sticky",
       "description": "drawer-sticky-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/drawer"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/drawer"],
       "files": [
         {
           "path": "src/components/examples/overlays/drawer/drawer-sticky-example.tsx",
@@ -6921,10 +6327,7 @@
       "name": "drawer-without-notch-example",
       "title": "Drawer Without Notch",
       "description": "drawer-without-notch-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/drawer"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/drawer"],
       "files": [
         {
           "path": "src/components/examples/overlays/drawer/drawer-without-notch-example.tsx",
@@ -6940,9 +6343,7 @@
       "name": "option-preview",
       "title": "Option Preview",
       "description": "option-preview",
-      "dependencies": [
-        "tailwind-merge"
-      ],
+      "dependencies": ["tailwind-merge"],
       "files": [
         {
           "path": "src/components/examples/outside/option-preview.tsx",
@@ -6958,9 +6359,7 @@
       "name": "tabs-disabled-example",
       "title": "Tabs Disabled",
       "description": "tabs-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/tabs"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/tabs"],
       "files": [
         {
           "path": "src/components/examples/navigation/tabs/tabs-disabled-example.tsx",
@@ -6976,9 +6375,7 @@
       "name": "tabs-example",
       "title": "Tabs",
       "description": "tabs-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/tabs"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/tabs"],
       "files": [
         {
           "path": "src/components/examples/navigation/tabs/tabs-example.tsx",
@@ -6994,12 +6391,8 @@
       "name": "tabs-icons-example",
       "title": "Tabs Icons",
       "description": "tabs-icons-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/tabs"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/tabs"],
       "files": [
         {
           "path": "src/components/examples/navigation/tabs/tabs-icons-example.tsx",
@@ -7015,9 +6408,7 @@
       "name": "tabs-link-example",
       "title": "Tabs Link",
       "description": "tabs-link-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/tabs"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/tabs"],
       "files": [
         {
           "path": "src/components/examples/navigation/tabs/tabs-link-example.tsx",
@@ -7033,9 +6424,7 @@
       "name": "tabs-orientation-example",
       "title": "Tabs Orientation",
       "description": "tabs-orientation-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/tabs"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/tabs"],
       "files": [
         {
           "path": "src/components/examples/navigation/tabs/tabs-orientation-example.tsx",
@@ -7051,9 +6440,7 @@
       "name": "snippet-example",
       "title": "Snippet",
       "description": "snippet-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/snippet"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/snippet"],
       "files": [
         {
           "path": "src/components/examples/navigation/snippet/snippet-example.tsx",
@@ -7088,9 +6475,7 @@
       "name": "simple-pagination-example",
       "title": "Simple Pagination",
       "description": "simple-pagination-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/pagination"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/pagination"],
       "files": [
         {
           "path": "src/components/examples/navigation/pagination/simple-pagination-example.tsx",
@@ -7106,10 +6491,7 @@
       "name": "link-button-example",
       "title": "Link Button",
       "description": "link-button-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/examples/navigation/link/link-button-example.tsx",
@@ -7125,9 +6507,7 @@
       "name": "link-disabled-example",
       "title": "Link Disabled",
       "description": "link-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/link"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/examples/navigation/link/link-disabled-example.tsx",
@@ -7143,9 +6523,7 @@
       "name": "link-example",
       "title": "Link",
       "description": "link-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/link"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/examples/navigation/link/link-example.tsx",
@@ -7161,9 +6539,7 @@
       "name": "link-unstyled-example",
       "title": "Link Unstyled",
       "description": "link-unstyled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/link"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/examples/navigation/link/link-unstyled-example.tsx",
@@ -7179,9 +6555,7 @@
       "name": "disclosure-controlled-example",
       "title": "Disclosure Controlled",
       "description": "disclosure-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-controlled-example.tsx",
@@ -7197,9 +6571,7 @@
       "name": "disclosure-disabled-example",
       "title": "Disclosure Disabled",
       "description": "disclosure-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-disabled-example.tsx",
@@ -7215,9 +6587,7 @@
       "name": "disclosure-example",
       "title": "Disclosure",
       "description": "disclosure-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-example.tsx",
@@ -7233,9 +6603,7 @@
       "name": "disclosure-group-allow-multiple-expand-example",
       "title": "Disclosure Group Allow Multiple Expand",
       "description": "disclosure-group-allow-multiple-expand-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-group-allow-multiple-expand-example.tsx",
@@ -7251,9 +6619,7 @@
       "name": "disclosure-group-default-expand-example",
       "title": "Disclosure Group Default Expand",
       "description": "disclosure-group-default-expand-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-group-default-expand-example.tsx",
@@ -7269,9 +6635,7 @@
       "name": "disclosure-group-disabled-example",
       "title": "Disclosure Group Disabled",
       "description": "disclosure-group-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-group-disabled-example.tsx",
@@ -7287,9 +6651,7 @@
       "name": "disclosure-group-example",
       "title": "Disclosure Group",
       "description": "disclosure-group-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-group-example.tsx",
@@ -7305,12 +6667,8 @@
       "name": "disclosure-group-nested-example",
       "title": "Disclosure Group Nested",
       "description": "disclosure-group-nested-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-group-nested-example.tsx",
@@ -7326,12 +6684,8 @@
       "name": "disclosure-group-with-icon-example",
       "title": "Disclosure Group With Icon",
       "description": "disclosure-group-with-icon-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/disclosure-group"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/disclosure-group"],
       "files": [
         {
           "path": "src/components/examples/navigation/disclosure-group/disclosure-group-with-icon-example.tsx",
@@ -7347,12 +6701,8 @@
       "name": "breadcrumbs-collections-example",
       "title": "Breadcrumbs Collections",
       "description": "breadcrumbs-collections-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/breadcrumbs"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/breadcrumbs"],
       "files": [
         {
           "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-collections-example.tsx",
@@ -7368,9 +6718,7 @@
       "name": "breadcrumbs-current-example",
       "title": "Breadcrumbs Current",
       "description": "breadcrumbs-current-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/breadcrumbs"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/breadcrumbs"],
       "files": [
         {
           "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-current-example.tsx",
@@ -7386,9 +6734,7 @@
       "name": "breadcrumbs-example",
       "title": "Breadcrumbs",
       "description": "breadcrumbs-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/breadcrumbs"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/breadcrumbs"],
       "files": [
         {
           "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-example.tsx",
@@ -7404,9 +6750,7 @@
       "name": "breadcrumbs-menu-example",
       "title": "Breadcrumbs Menu",
       "description": "breadcrumbs-menu-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/breadcrumbs",
         "http://localhost:3000/r/button",
@@ -7427,9 +6771,7 @@
       "name": "breadcrumbs-separator-example",
       "title": "Breadcrumbs Separator",
       "description": "breadcrumbs-separator-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/breadcrumbs"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/breadcrumbs"],
       "files": [
         {
           "path": "src/components/examples/navigation/breadcrumbs/breadcrumbs-separator-example.tsx",
@@ -7445,14 +6787,8 @@
       "name": "carousel-api-example",
       "title": "Carousel Api",
       "description": "carousel-api-example",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/carousel"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/carousel"],
       "files": [
         {
           "path": "src/components/examples/media/carousel/carousel-api-example.tsx",
@@ -7468,13 +6804,8 @@
       "name": "carousel-autoplay-example",
       "title": "Carousel Autoplay",
       "description": "carousel-autoplay-example",
-      "dependencies": [
-        "embla-carousel-autoplay"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/carousel"
-      ],
+      "dependencies": ["embla-carousel-autoplay"],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/carousel"],
       "files": [
         {
           "path": "src/components/examples/media/carousel/carousel-autoplay-example.tsx",
@@ -7490,9 +6821,7 @@
       "name": "carousel-example",
       "title": "Carousel",
       "description": "carousel-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/carousel"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/carousel"],
       "files": [
         {
           "path": "src/components/examples/media/carousel/carousel-example.tsx",
@@ -7508,10 +6837,7 @@
       "name": "carousel-options-example",
       "title": "Carousel Options",
       "description": "carousel-options-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/carousel"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/carousel"],
       "files": [
         {
           "path": "src/components/examples/media/carousel/carousel-options-example.tsx",
@@ -7527,10 +6853,7 @@
       "name": "carousel-orientation-example",
       "title": "Carousel Orientation",
       "description": "carousel-orientation-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/card",
-        "http://localhost:3000/r/carousel"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/card", "http://localhost:3000/r/carousel"],
       "files": [
         {
           "path": "src/components/examples/media/carousel/carousel-orientation-example.tsx",
@@ -7546,9 +6869,7 @@
       "name": "avatar-basic-example",
       "title": "Avatar Basic",
       "description": "avatar-basic-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/avatar"],
       "files": [
         {
           "path": "src/components/examples/media/avatar/avatar-basic-example.tsx",
@@ -7564,9 +6885,7 @@
       "name": "avatar-group-example",
       "title": "Avatar Group",
       "description": "avatar-group-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/avatar"],
       "files": [
         {
           "path": "src/components/examples/media/avatar/avatar-group-example.tsx",
@@ -7582,9 +6901,7 @@
       "name": "avatar-initials-example",
       "title": "Avatar Initials",
       "description": "avatar-initials-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/avatar"],
       "files": [
         {
           "path": "src/components/examples/media/avatar/avatar-initials-example.tsx",
@@ -7600,9 +6917,7 @@
       "name": "avatar-shape-example",
       "title": "Avatar Shape",
       "description": "avatar-shape-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/avatar"],
       "files": [
         {
           "path": "src/components/examples/media/avatar/avatar-shape-example.tsx",
@@ -7618,9 +6933,7 @@
       "name": "avatar-size-example",
       "title": "Avatar Size",
       "description": "avatar-size-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/avatar"],
       "files": [
         {
           "path": "src/components/examples/media/avatar/avatar-size-example.tsx",
@@ -7636,10 +6949,7 @@
       "name": "textarea-autocomplete-example",
       "title": "Textarea Autocomplete",
       "description": "textarea-autocomplete-example",
-      "dependencies": [
-        "react-aria-components",
-        "textarea-caret"
-      ],
+      "dependencies": ["react-aria-components", "textarea-caret"],
       "registryDependencies": [
         "http://localhost:3000/r/text-field",
         "http://localhost:3000/r/textarea",
@@ -7781,9 +7091,7 @@
       "name": "textarea-validation-example",
       "title": "Textarea Validation",
       "description": "textarea-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -7884,9 +7192,7 @@
       "name": "text-field-prefix-suffix-example",
       "title": "Text Field Prefix Suffix",
       "description": "text-field-prefix-suffix-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/input",
@@ -7928,9 +7234,7 @@
       "name": "text-field-revealable-example",
       "title": "Text Field Revealable",
       "description": "text-field-revealable-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -7952,9 +7256,7 @@
       "name": "text-field-suffix-button-example",
       "title": "Text Field Suffix Button",
       "description": "text-field-suffix-button-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -7997,9 +7299,7 @@
       "name": "text-field-validation-example",
       "title": "Text Field Validation",
       "description": "text-field-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -8021,9 +7321,7 @@
       "name": "tag-field-controlled-example",
       "title": "Tag Field Controlled",
       "description": "tag-field-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/field",
@@ -8123,9 +7421,7 @@
       "name": "search-field-disabled-example",
       "title": "Search Field Disabled",
       "description": "search-field-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/search-field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/search-field"],
       "files": [
         {
           "path": "src/components/examples/forms/search-field/search-field-disabled-example.tsx",
@@ -8141,9 +7437,7 @@
       "name": "search-field-example",
       "title": "Search Field",
       "description": "search-field-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/search-field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/search-field"],
       "files": [
         {
           "path": "src/components/examples/forms/search-field/search-field-example.tsx",
@@ -8159,9 +7453,7 @@
       "name": "search-field-readonly-example",
       "title": "Search Field Readonly",
       "description": "search-field-readonly-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/search-field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/search-field"],
       "files": [
         {
           "path": "src/components/examples/forms/search-field/search-field-readonly-example.tsx",
@@ -8177,9 +7469,7 @@
       "name": "search-field-uncontrolled-example",
       "title": "Search Field Uncontrolled",
       "description": "search-field-uncontrolled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/search-field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/search-field"],
       "files": [
         {
           "path": "src/components/examples/forms/search-field/search-field-uncontrolled-example.tsx",
@@ -8195,9 +7485,7 @@
       "name": "search-field-validation-example",
       "title": "Search Field Validation",
       "description": "search-field-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -8237,10 +7525,7 @@
       "name": "radio-group-controlled-example",
       "title": "Radio Group Controlled",
       "description": "radio-group-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/radio"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/radio"],
       "files": [
         {
           "path": "src/components/examples/forms/radio-group/radio-group-controlled-example.tsx",
@@ -8256,10 +7541,7 @@
       "name": "radio-group-description-example",
       "title": "Radio Group Description",
       "description": "radio-group-description-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/radio"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/radio"],
       "files": [
         {
           "path": "src/components/examples/forms/radio-group/radio-group-description-example.tsx",
@@ -8275,10 +7557,7 @@
       "name": "radio-group-disabled-example",
       "title": "Radio Group Disabled",
       "description": "radio-group-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/radio"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/radio"],
       "files": [
         {
           "path": "src/components/examples/forms/radio-group/radio-group-disabled-example.tsx",
@@ -8294,10 +7573,7 @@
       "name": "radio-group-example",
       "title": "Radio Group",
       "description": "radio-group-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/radio"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/radio"],
       "files": [
         {
           "path": "src/components/examples/forms/radio-group/radio-group-example.tsx",
@@ -8313,10 +7589,7 @@
       "name": "radio-group-orientation-example",
       "title": "Radio Group Orientation",
       "description": "radio-group-orientation-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/radio"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/radio"],
       "files": [
         {
           "path": "src/components/examples/forms/radio-group/radio-group-orientation-example.tsx",
@@ -8332,10 +7605,7 @@
       "name": "radio-group-uncontrolled-example",
       "title": "Radio Group Uncontrolled",
       "description": "radio-group-uncontrolled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/radio"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/radio"],
       "files": [
         {
           "path": "src/components/examples/forms/radio-group/radio-group-uncontrolled-example.tsx",
@@ -8351,9 +7621,7 @@
       "name": "radio-group-validation-example",
       "title": "Radio Group Validation",
       "description": "radio-group-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -8431,9 +7699,7 @@
       "name": "number-field-invalid-example",
       "title": "Number Field Invalid",
       "description": "number-field-invalid-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -8511,9 +7777,7 @@
       "name": "input-otp-separator-example",
       "title": "Input Otp Separator",
       "description": "input-otp-separator-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/input-otp"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/input-otp"],
       "files": [
         {
           "path": "src/components/examples/forms/input-otp/input-otp-separator-example.tsx",
@@ -8529,9 +7793,7 @@
       "name": "input-basic-example",
       "title": "Input Basic",
       "description": "input-basic-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/input"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/input"],
       "files": [
         {
           "path": "src/components/examples/forms/input/input-basic-example.tsx",
@@ -8547,10 +7809,7 @@
       "name": "input-controlled-example",
       "title": "Input Controlled",
       "description": "input-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/input",
-        "http://localhost:3000/r/text"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/input", "http://localhost:3000/r/text"],
       "files": [
         {
           "path": "src/components/examples/forms/input/input-controlled-example.tsx",
@@ -8566,13 +7825,8 @@
       "name": "input-group-example",
       "title": "Input Group",
       "description": "input-group-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/input",
-        "http://localhost:3000/r/text"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/input", "http://localhost:3000/r/text"],
       "files": [
         {
           "path": "src/components/examples/forms/input/input-group-example.tsx",
@@ -8588,10 +7842,7 @@
       "name": "input-label-description-example",
       "title": "Input Label Description",
       "description": "input-label-description-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/input"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/input"],
       "files": [
         {
           "path": "src/components/examples/forms/input/input-label-description-example.tsx",
@@ -8627,9 +7878,7 @@
       "name": "field-example",
       "title": "Field",
       "description": "field-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/field",
@@ -8652,10 +7901,7 @@
       "name": "checkbox-controlled-example",
       "title": "Checkbox Controlled",
       "description": "checkbox-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-controlled-example.tsx",
@@ -8671,13 +7917,8 @@
       "name": "checkbox-description-example",
       "title": "Checkbox Description",
       "description": "checkbox-description-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/checkbox", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-description-example.tsx",
@@ -8693,9 +7934,7 @@
       "name": "checkbox-disabled-example",
       "title": "Checkbox Disabled",
       "description": "checkbox-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-disabled-example.tsx",
@@ -8711,9 +7950,7 @@
       "name": "checkbox-example",
       "title": "Checkbox",
       "description": "checkbox-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-example.tsx",
@@ -8729,10 +7966,7 @@
       "name": "checkbox-group-controlled-example",
       "title": "Checkbox Group Controlled",
       "description": "checkbox-group-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-group-controlled-example.tsx",
@@ -8748,10 +7982,7 @@
       "name": "checkbox-group-description-example",
       "title": "Checkbox Group Description",
       "description": "checkbox-group-description-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-group-description-example.tsx",
@@ -8767,10 +7998,7 @@
       "name": "checkbox-group-disabled-example",
       "title": "Checkbox Group Disabled",
       "description": "checkbox-group-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-group-disabled-example.tsx",
@@ -8786,10 +8014,7 @@
       "name": "checkbox-group-example",
       "title": "Checkbox Group",
       "description": "checkbox-group-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-group-example.tsx",
@@ -8805,10 +8030,7 @@
       "name": "checkbox-group-indeterminate-example",
       "title": "Checkbox Group Indeterminate",
       "description": "checkbox-group-indeterminate-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-group-indeterminate-example.tsx",
@@ -8824,10 +8046,7 @@
       "name": "checkbox-group-uncontrolled-example",
       "title": "Checkbox Group Uncontrolled",
       "description": "checkbox-group-uncontrolled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox",
-        "http://localhost:3000/r/field"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox", "http://localhost:3000/r/field"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-group-uncontrolled-example.tsx",
@@ -8843,9 +8062,7 @@
       "name": "checkbox-group-validation-example",
       "title": "Checkbox Group Validation",
       "description": "checkbox-group-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
@@ -8866,9 +8083,7 @@
       "name": "checkbox-indeterminate-example",
       "title": "Checkbox Indeterminate",
       "description": "checkbox-indeterminate-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-indeterminate-example.tsx",
@@ -8884,9 +8099,7 @@
       "name": "checkbox-invalid-example",
       "title": "Checkbox Invalid",
       "description": "checkbox-invalid-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/checkbox",
         "http://localhost:3000/r/field",
@@ -8907,9 +8120,7 @@
       "name": "checkbox-uncontrolled-example",
       "title": "Checkbox Uncontrolled",
       "description": "checkbox-uncontrolled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/checkbox"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/checkbox"],
       "files": [
         {
           "path": "src/components/examples/forms/checkbox/checkbox-uncontrolled-example.tsx",
@@ -8925,11 +8136,7 @@
       "name": "drop-zone-and-file-trigger-example",
       "title": "Drop Zone and File Trigger",
       "description": "drop-zone-and-file-trigger-example",
-      "dependencies": [
-        "@heroicons/react",
-        "@react-types/shared",
-        "react-aria-components"
-      ],
+      "dependencies": ["@heroicons/react", "@react-types/shared", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/drop-zone",
         "http://localhost:3000/r/field",
@@ -8969,9 +8176,7 @@
       "name": "time-field-controlled-example",
       "title": "Time Field Controlled",
       "description": "time-field-controlled-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
+      "dependencies": ["@internationalized/date"],
       "registryDependencies": [
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field",
@@ -9012,9 +8217,7 @@
       "name": "time-field-example",
       "title": "Time Field",
       "description": "time-field-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
+      "dependencies": ["@internationalized/date"],
       "registryDependencies": [
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field",
@@ -9035,9 +8238,7 @@
       "name": "time-field-hc-example",
       "title": "Time Field Hc",
       "description": "time-field-hc-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
+      "dependencies": ["@internationalized/date"],
       "registryDependencies": [
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field",
@@ -9059,9 +8260,7 @@
       "name": "time-field-readonly-example",
       "title": "Time Field Readonly",
       "description": "time-field-readonly-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
+      "dependencies": ["@internationalized/date"],
       "registryDependencies": [
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field",
@@ -9082,9 +8281,7 @@
       "name": "time-field-validation-example",
       "title": "Time Field Validation",
       "description": "time-field-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-field",
@@ -9106,10 +8303,7 @@
       "name": "date-range-picker-controlled-example",
       "title": "Date Range Picker Controlled",
       "description": "date-range-picker-controlled-example",
-      "dependencies": [
-        "@internationalized/date",
-        "@react-aria/i18n"
-      ],
+      "dependencies": ["@internationalized/date", "@react-aria/i18n"],
       "registryDependencies": [
         "http://localhost:3000/r/date-range-picker",
         "http://localhost:3000/r/field",
@@ -9130,10 +8324,7 @@
       "name": "date-range-picker-custom-validation-example",
       "title": "Date Range Picker Custom Validation",
       "description": "date-range-picker-custom-validation-example",
-      "dependencies": [
-        "@internationalized/date",
-        "react-aria-components"
-      ],
+      "dependencies": ["@internationalized/date", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-range-picker",
@@ -9192,9 +8383,7 @@
       "name": "date-range-picker-time-example",
       "title": "Date Range Picker Time",
       "description": "date-range-picker-time-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
+      "dependencies": ["@internationalized/date"],
       "registryDependencies": [
         "http://localhost:3000/r/date-range-picker",
         "http://localhost:3000/r/field"
@@ -9214,9 +8403,7 @@
       "name": "date-range-picker-validation-example",
       "title": "Date Range Picker Validation",
       "description": "date-range-picker-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-range-picker",
@@ -9256,10 +8443,7 @@
       "name": "date-picker-controlled-example",
       "title": "Date Picker Controlled",
       "description": "date-picker-controlled-example",
-      "dependencies": [
-        "@internationalized/date",
-        "@react-aria/i18n"
-      ],
+      "dependencies": ["@internationalized/date", "@react-aria/i18n"],
       "registryDependencies": [
         "http://localhost:3000/r/date-picker",
         "http://localhost:3000/r/field"
@@ -9279,10 +8463,7 @@
       "name": "date-picker-custom-validation-example",
       "title": "Date Picker Custom Validation",
       "description": "date-picker-custom-validation-example",
-      "dependencies": [
-        "@internationalized/date",
-        "react-aria-components"
-      ],
+      "dependencies": ["@internationalized/date", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-picker",
@@ -9341,9 +8522,7 @@
       "name": "date-picker-required-example",
       "title": "Date Picker Required",
       "description": "date-picker-required-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-picker",
@@ -9364,9 +8543,7 @@
       "name": "date-time-example",
       "title": "Date Time",
       "description": "date-time-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
+      "dependencies": ["@internationalized/date"],
       "registryDependencies": [
         "http://localhost:3000/r/date-picker",
         "http://localhost:3000/r/field"
@@ -9386,10 +8563,7 @@
       "name": "date-field-controlled-example",
       "title": "Date Field Controlled",
       "description": "date-field-controlled-example",
-      "dependencies": [
-        "@internationalized/date",
-        "@react-aria/i18n"
-      ],
+      "dependencies": ["@internationalized/date", "@react-aria/i18n"],
       "registryDependencies": [
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field"
@@ -9466,9 +8640,7 @@
       "name": "date-field-uncontrolled-example",
       "title": "Date Field Uncontrolled",
       "description": "date-field-uncontrolled-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
+      "dependencies": ["@internationalized/date"],
       "registryDependencies": [
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field"
@@ -9488,9 +8660,7 @@
       "name": "date-field-validation-example",
       "title": "Date Field Validation",
       "description": "date-field-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/date-field",
@@ -9511,9 +8681,7 @@
       "name": "date-time-field-example",
       "title": "Date Time Field",
       "description": "date-time-field-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
+      "dependencies": ["@internationalized/date"],
       "registryDependencies": [
         "http://localhost:3000/r/date-field",
         "http://localhost:3000/r/field"
@@ -9533,9 +8701,7 @@
       "name": "calendar-example",
       "title": "Calendar",
       "description": "calendar-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/calendar"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/calendar"],
       "files": [
         {
           "path": "src/components/examples/date-and-time/calendar/calendar-example.tsx",
@@ -9551,12 +8717,8 @@
       "name": "range-calendar-controlled-example",
       "title": "Range Calendar Controlled",
       "description": "range-calendar-controlled-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/range-calendar"
-      ],
+      "dependencies": ["@internationalized/date"],
+      "registryDependencies": ["http://localhost:3000/r/range-calendar"],
       "files": [
         {
           "path": "src/components/examples/date-and-time/calendar/range-calendar-controlled-example.tsx",
@@ -9572,9 +8734,7 @@
       "name": "range-calendar-example",
       "title": "Range Calendar",
       "description": "range-calendar-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/range-calendar"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/range-calendar"],
       "files": [
         {
           "path": "src/components/examples/date-and-time/calendar/range-calendar-example.tsx",
@@ -9590,12 +8750,8 @@
       "name": "range-calendar-uncontrolled-example",
       "title": "Range Calendar Uncontrolled",
       "description": "range-calendar-uncontrolled-example",
-      "dependencies": [
-        "@internationalized/date"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/range-calendar"
-      ],
+      "dependencies": ["@internationalized/date"],
+      "registryDependencies": ["http://localhost:3000/r/range-calendar"],
       "files": [
         {
           "path": "src/components/examples/date-and-time/calendar/range-calendar-uncontrolled-example.tsx",
@@ -9611,12 +8767,8 @@
       "name": "toolbar-disabled-example",
       "title": "Toolbar Disabled",
       "description": "toolbar-disabled-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/toolbar"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/toolbar"],
       "files": [
         {
           "path": "src/components/examples/controls/toolbar/toolbar-disabled-example.tsx",
@@ -9632,9 +8784,7 @@
       "name": "toolbar-example",
       "title": "Toolbar",
       "description": "toolbar-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/checkbox",
@@ -9656,12 +8806,8 @@
       "name": "toolbar-orientation-example",
       "title": "Toolbar Orientation",
       "description": "toolbar-orientation-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/toolbar"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/toolbar"],
       "files": [
         {
           "path": "src/components/examples/controls/toolbar/toolbar-orientation-example.tsx",
@@ -9677,10 +8823,7 @@
       "name": "switch-controlled-example",
       "title": "Switch Controlled",
       "description": "switch-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/switch"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/switch"],
       "files": [
         {
           "path": "src/components/examples/controls/switch/switch-controlled-example.tsx",
@@ -9696,9 +8839,7 @@
       "name": "switch-custom-layout-example",
       "title": "Switch Custom Layout",
       "description": "switch-custom-layout-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/switch"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/switch"],
       "files": [
         {
           "path": "src/components/examples/controls/switch/switch-custom-layout-example.tsx",
@@ -9734,9 +8875,7 @@
       "name": "switch-disabled-example",
       "title": "Switch Disabled",
       "description": "switch-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/switch"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/switch"],
       "files": [
         {
           "path": "src/components/examples/controls/switch/switch-disabled-example.tsx",
@@ -9752,9 +8891,7 @@
       "name": "switch-example",
       "title": "Switch",
       "description": "switch-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/switch"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/switch"],
       "files": [
         {
           "path": "src/components/examples/controls/switch/switch-example.tsx",
@@ -9770,10 +8907,7 @@
       "name": "switch-uncontrolled-example",
       "title": "Switch Uncontrolled",
       "description": "switch-uncontrolled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/switch"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/switch"],
       "files": [
         {
           "path": "src/components/examples/controls/switch/switch-uncontrolled-example.tsx",
@@ -9789,10 +8923,7 @@
       "name": "slider-controlled-example",
       "title": "Slider Controlled",
       "description": "slider-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/slider"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/slider"],
       "files": [
         {
           "path": "src/components/examples/controls/slider/slider-controlled-example.tsx",
@@ -9808,10 +8939,7 @@
       "name": "slider-description-example",
       "title": "Slider Description",
       "description": "slider-description-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/slider"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/slider"],
       "files": [
         {
           "path": "src/components/examples/controls/slider/slider-description-example.tsx",
@@ -9827,10 +8955,7 @@
       "name": "slider-disabled-example",
       "title": "Slider Disabled",
       "description": "slider-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/slider"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/slider"],
       "files": [
         {
           "path": "src/components/examples/controls/slider/slider-disabled-example.tsx",
@@ -9846,10 +8971,7 @@
       "name": "slider-example",
       "title": "Slider",
       "description": "slider-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/slider"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/slider"],
       "files": [
         {
           "path": "src/components/examples/controls/slider/slider-example.tsx",
@@ -9865,10 +8987,7 @@
       "name": "slider-orientation-example",
       "title": "Slider Orientation",
       "description": "slider-orientation-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/slider"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/slider"],
       "files": [
         {
           "path": "src/components/examples/controls/slider/slider-orientation-example.tsx",
@@ -9884,13 +9003,8 @@
       "name": "slider-prefix-suffix-example",
       "title": "Slider Prefix Suffix",
       "description": "slider-prefix-suffix-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/slider"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/slider"],
       "files": [
         {
           "path": "src/components/examples/controls/slider/slider-prefix-suffix-example.tsx",
@@ -9906,10 +9020,7 @@
       "name": "slider-range-example",
       "title": "Slider Range",
       "description": "slider-range-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/slider"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/slider"],
       "files": [
         {
           "path": "src/components/examples/controls/slider/slider-range-example.tsx",
@@ -9925,10 +9036,7 @@
       "name": "slider-step-example",
       "title": "Slider Step",
       "description": "slider-step-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/slider"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/slider"],
       "files": [
         {
           "path": "src/components/examples/controls/slider/slider-step-example.tsx",
@@ -9944,9 +9052,7 @@
       "name": "scroll-area-example",
       "title": "Scroll Area",
       "description": "scroll-area-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/scroll-area"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/scroll-area"],
       "files": [
         {
           "path": "src/components/examples/controls/scroll-area/scroll-area-example.tsx",
@@ -9962,9 +9068,7 @@
       "name": "scroll-area-fade-example",
       "title": "Scroll Area Fade",
       "description": "scroll-area-fade-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/scroll-area"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/scroll-area"],
       "files": [
         {
           "path": "src/components/examples/controls/scroll-area/scroll-area-fade-example.tsx",
@@ -9980,9 +9084,7 @@
       "name": "scroll-area-horizontal-example",
       "title": "Scroll Area Horizontal",
       "description": "scroll-area-horizontal-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/scroll-area"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/scroll-area"],
       "files": [
         {
           "path": "src/components/examples/controls/scroll-area/scroll-area-horizontal-example.tsx",
@@ -9998,9 +9100,7 @@
       "name": "scroll-area-vertical-example",
       "title": "Scroll Area Vertical",
       "description": "scroll-area-vertical-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/scroll-area"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/scroll-area"],
       "files": [
         {
           "path": "src/components/examples/controls/scroll-area/scroll-area-vertical-example.tsx",
@@ -10016,9 +9116,7 @@
       "name": "context-menu-danger-example",
       "title": "Context Menu Danger",
       "description": "context-menu-danger-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/context-menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/context-menu"],
       "files": [
         {
           "path": "src/components/examples/controls/context-menu/context-menu-danger-example.tsx",
@@ -10034,9 +9132,7 @@
       "name": "context-menu-detail-description-example",
       "title": "Context Menu Detail Description",
       "description": "context-menu-detail-description-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/context-menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/context-menu"],
       "files": [
         {
           "path": "src/components/examples/controls/context-menu/context-menu-detail-description-example.tsx",
@@ -10052,9 +9148,7 @@
       "name": "context-menu-disabled-example",
       "title": "Context Menu Disabled",
       "description": "context-menu-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/context-menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/context-menu"],
       "files": [
         {
           "path": "src/components/examples/controls/context-menu/context-menu-disabled-example.tsx",
@@ -10070,9 +9164,7 @@
       "name": "context-menu-example",
       "title": "Context Menu",
       "description": "context-menu-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/context-menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/context-menu"],
       "files": [
         {
           "path": "src/components/examples/controls/context-menu/context-menu-example.tsx",
@@ -10088,9 +9180,7 @@
       "name": "context-menu-separator-example",
       "title": "Context Menu Separator",
       "description": "context-menu-separator-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/context-menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/context-menu"],
       "files": [
         {
           "path": "src/components/examples/controls/context-menu/context-menu-separator-example.tsx",
@@ -10106,12 +9196,8 @@
       "name": "context-menu-with-icon-example",
       "title": "Context Menu With Icon",
       "description": "context-menu-with-icon-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/context-menu"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/context-menu"],
       "files": [
         {
           "path": "src/components/examples/controls/context-menu/context-menu-with-icon-example.tsx",
@@ -10224,9 +9310,7 @@
       "name": "command-menu-example",
       "title": "Command Menu",
       "description": "command-menu-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
@@ -10305,12 +9389,8 @@
       "name": "command-menu-trigger-by-keyboard-example",
       "title": "Command Menu Trigger by Keyboard",
       "description": "command-menu-trigger-by-keyboard-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/command-menu"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/command-menu"],
       "files": [
         {
           "path": "src/components/examples/controls/command-menu/command-menu-trigger-by-keyboard-example.tsx",
@@ -10326,9 +9406,7 @@
       "name": "controlled-values",
       "title": "Controlled Values",
       "description": "controlled-values",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/color-swatch"
@@ -10348,12 +9426,8 @@
       "name": "color-wheel-controlled-example",
       "title": "Color Wheel Controlled",
       "description": "color-wheel-controlled-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/color-wheel"
-      ],
+      "dependencies": ["@react-stately/color"],
+      "registryDependencies": ["http://localhost:3000/r/color-wheel"],
       "files": [
         {
           "path": "src/components/examples/colors/color-wheel/color-wheel-controlled-example.tsx",
@@ -10369,9 +9443,7 @@
       "name": "color-wheel-disabled-example",
       "title": "Color Wheel Disabled",
       "description": "color-wheel-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/color-wheel"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/color-wheel"],
       "files": [
         {
           "path": "src/components/examples/colors/color-wheel/color-wheel-disabled-example.tsx",
@@ -10387,9 +9459,7 @@
       "name": "color-wheel-example",
       "title": "Color Wheel",
       "description": "color-wheel-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/color-wheel"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/color-wheel"],
       "files": [
         {
           "path": "src/components/examples/colors/color-wheel/color-wheel-example.tsx",
@@ -10405,9 +9475,7 @@
       "name": "color-swatch-controlled-example",
       "title": "Color Swatch Controlled",
       "description": "color-swatch-controlled-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/color-swatch",
         "http://localhost:3000/r/color-swatch-picker"
@@ -10427,9 +9495,7 @@
       "name": "color-swatch-example",
       "title": "Color Swatch",
       "description": "color-swatch-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/color-swatch"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/color-swatch"],
       "files": [
         {
           "path": "src/components/examples/colors/color-swatch/color-swatch-example.tsx",
@@ -10445,9 +9511,7 @@
       "name": "color-swatch-picker-example",
       "title": "Color Swatch Picker",
       "description": "color-swatch-picker-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/color-swatch",
         "http://localhost:3000/r/color-swatch-picker"
@@ -10467,9 +9531,7 @@
       "name": "color-swatch-picker-item-disabled-example",
       "title": "Color Swatch Picker Item Disabled",
       "description": "color-swatch-picker-item-disabled-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/color-swatch",
         "http://localhost:3000/r/color-swatch-picker"
@@ -10489,9 +9551,7 @@
       "name": "color-swatch-size-example",
       "title": "Color Swatch Size",
       "description": "color-swatch-size-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/color-swatch"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/color-swatch"],
       "files": [
         {
           "path": "src/components/examples/colors/color-swatch/color-swatch-size-example.tsx",
@@ -10507,9 +9567,7 @@
       "name": "color-slider-controlled-example",
       "title": "Color Slider Controlled",
       "description": "color-slider-controlled-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/color-slider",
         "http://localhost:3000/r/color-thumb"
@@ -10607,9 +9665,7 @@
       "name": "color-picker-controlled-example",
       "title": "Color Picker Controlled",
       "description": "color-picker-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/color-area",
@@ -10636,9 +9692,7 @@
       "name": "color-picker-disabled-example",
       "title": "Color Picker Disabled",
       "description": "color-picker-disabled-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/color-area",
@@ -10665,9 +9719,7 @@
       "name": "color-picker-example",
       "title": "Color Picker",
       "description": "color-picker-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/color-area",
@@ -10694,9 +9746,7 @@
       "name": "color-field-controlled-example",
       "title": "Color Field Controlled",
       "description": "color-field-controlled-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/color-field",
         "http://localhost:3000/r/field",
@@ -10757,9 +9807,7 @@
       "name": "color-field-validation-example",
       "title": "Color Field Validation",
       "description": "color-field-validation-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/color-field",
@@ -10781,9 +9829,7 @@
       "name": "color-field-with-prefix-example",
       "title": "Color Field With Prefix",
       "description": "color-field-with-prefix-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/color-field",
         "http://localhost:3000/r/field",
@@ -10804,9 +9850,7 @@
       "name": "color-field-with-suffix-example",
       "title": "Color Field With Suffix",
       "description": "color-field-with-suffix-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/color-field",
         "http://localhost:3000/r/field",
@@ -10827,9 +9871,7 @@
       "name": "color-area-channel-example",
       "title": "Color Area Channel",
       "description": "color-area-channel-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/color-area"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/color-area"],
       "files": [
         {
           "path": "src/components/examples/colors/color-area/color-area-channel-example.tsx",
@@ -10845,9 +9887,7 @@
       "name": "color-area-controlled-example",
       "title": "Color Area Controlled",
       "description": "color-area-controlled-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/color-area",
         "http://localhost:3000/r/color-thumb"
@@ -10886,9 +9926,7 @@
       "name": "color-area-example",
       "title": "Color Area",
       "description": "color-area-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/color-area"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/color-area"],
       "files": [
         {
           "path": "src/components/examples/colors/color-area/color-area-example.tsx",
@@ -10923,9 +9961,7 @@
       "name": "color-area-with-slider-example",
       "title": "Color Area With Slider",
       "description": "color-area-with-slider-example",
-      "dependencies": [
-        "@react-stately/color"
-      ],
+      "dependencies": ["@react-stately/color"],
       "registryDependencies": [
         "http://localhost:3000/r/color-area",
         "http://localhost:3000/r/color-field",
@@ -10949,14 +9985,8 @@
       "name": "tree-drag-example",
       "title": "Tree Drag",
       "description": "tree-drag-example",
-      "dependencies": [
-        "@heroicons/react",
-        "@react-stately/data",
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/tree"
-      ],
+      "dependencies": ["@heroicons/react", "@react-stately/data", "react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/tree"],
       "files": [
         {
           "path": "src/components/examples/collections/tree/tree-drag-example.tsx",
@@ -10972,9 +10002,7 @@
       "name": "tree-example",
       "title": "Tree",
       "description": "tree-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/tree"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/tree"],
       "files": [
         {
           "path": "src/components/examples/collections/tree/tree-example.tsx",
@@ -10990,12 +10018,8 @@
       "name": "tree-folder-example",
       "title": "Tree Folder",
       "description": "tree-folder-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/tree"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/tree"],
       "files": [
         {
           "path": "src/components/examples/collections/tree/tree-folder-example.tsx",
@@ -11011,10 +10035,7 @@
       "name": "tree-infinite-scroll-example",
       "title": "Tree Infinite Scroll",
       "description": "tree-infinite-scroll-example",
-      "dependencies": [
-        "react-aria-components",
-        "react-stately"
-      ],
+      "dependencies": ["react-aria-components", "react-stately"],
       "registryDependencies": [
         "http://localhost:3000/r/progress-circle",
         "http://localhost:3000/r/tree"
@@ -11034,9 +10055,7 @@
       "name": "tree-multiple-example",
       "title": "Tree Multiple",
       "description": "tree-multiple-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/tree"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/tree"],
       "files": [
         {
           "path": "src/components/examples/collections/tree/tree-multiple-example.tsx",
@@ -11052,9 +10071,7 @@
       "name": "tag-group-controlled-example",
       "title": "Tag Group Controlled",
       "description": "tag-group-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/tag-group"
@@ -11112,9 +10129,7 @@
       "name": "tag-group-href-example",
       "title": "Tag Group Href",
       "description": "tag-group-href-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/tag-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/tag-group"],
       "files": [
         {
           "path": "src/components/examples/collections/tag-group/tag-group-href-example.tsx",
@@ -11130,12 +10145,8 @@
       "name": "tag-group-with-remove-example",
       "title": "Tag Group With Remove",
       "description": "tag-group-with-remove-example",
-      "dependencies": [
-        "react-stately"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/tag-group"
-      ],
+      "dependencies": ["react-stately"],
+      "registryDependencies": ["http://localhost:3000/r/tag-group"],
       "files": [
         {
           "path": "src/components/examples/collections/tag-group/tag-group-with-remove-example.tsx",
@@ -11151,13 +10162,8 @@
       "name": "table-bulk-example",
       "title": "Table Bulk",
       "description": "table-bulk-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/table"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/table"],
       "files": [
         {
           "path": "src/components/examples/collections/table/table-bulk-example.tsx",
@@ -11173,14 +10179,8 @@
       "name": "table-drag-example",
       "title": "Table Drag",
       "description": "table-drag-example",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components",
-        "react-stately"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/table"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components", "react-stately"],
+      "registryDependencies": ["http://localhost:3000/r/table"],
       "files": [
         {
           "path": "src/components/examples/collections/table/table-drag-example.tsx",
@@ -11196,10 +10196,7 @@
       "name": "table-example",
       "title": "Table",
       "description": "table-example",
-      "dependencies": [
-        "@heroicons/react",
-        "@internationalized/number"
-      ],
+      "dependencies": ["@heroicons/react", "@internationalized/number"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/menu",
@@ -11220,10 +10217,7 @@
       "name": "table-expandable-example",
       "title": "Table Expandable",
       "description": "table-expandable-example",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/badge",
         "http://localhost:3000/r/button",
@@ -11245,10 +10239,7 @@
       "name": "table-infinite-scroll-example",
       "title": "Table Infinite Scroll",
       "description": "table-infinite-scroll-example",
-      "dependencies": [
-        "react-aria-components",
-        "react-stately"
-      ],
+      "dependencies": ["react-aria-components", "react-stately"],
       "registryDependencies": [
         "http://localhost:3000/r/progress-circle",
         "http://localhost:3000/r/table"
@@ -11268,9 +10259,7 @@
       "name": "table-resize-example",
       "title": "Table Resize",
       "description": "table-resize-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/table"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/table"],
       "files": [
         {
           "path": "src/components/examples/collections/table/table-resize-example.tsx",
@@ -11286,13 +10275,8 @@
       "name": "table-sorting-example",
       "title": "Table Sorting",
       "description": "table-sorting-example",
-      "dependencies": [
-        "@react-stately/data"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/loader",
-        "http://localhost:3000/r/table"
-      ],
+      "dependencies": ["@react-stately/data"],
+      "registryDependencies": ["http://localhost:3000/r/loader", "http://localhost:3000/r/table"],
       "files": [
         {
           "path": "src/components/examples/collections/table/table-sorting-example.tsx",
@@ -11308,10 +10292,7 @@
       "name": "table-with-autocomplete-example",
       "title": "Table With Autocomplete",
       "description": "table-with-autocomplete-example",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/menu",
@@ -11333,10 +10314,7 @@
       "name": "autocomplete-menu-example",
       "title": "Autocomplete Menu",
       "description": "autocomplete-menu-example",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/menu",
@@ -11358,9 +10336,7 @@
       "name": "menu-basic-example",
       "title": "Menu Basic",
       "description": "menu-basic-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-basic-example.tsx",
@@ -11376,12 +10352,8 @@
       "name": "menu-danger-example",
       "title": "Menu Danger",
       "description": "menu-danger-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/menu"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-danger-example.tsx",
@@ -11397,9 +10369,7 @@
       "name": "menu-disabled-example",
       "title": "Menu Disabled",
       "description": "menu-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-disabled-example.tsx",
@@ -11415,10 +10385,7 @@
       "name": "menu-dynamic-example",
       "title": "Menu Dynamic",
       "description": "menu-dynamic-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-dynamic-example.tsx",
@@ -11434,13 +10401,8 @@
       "name": "menu-item-description-example",
       "title": "Menu Item Description",
       "description": "menu-item-description-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/menu"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-item-description-example.tsx",
@@ -11456,9 +10418,7 @@
       "name": "menu-section-example",
       "title": "Menu Section",
       "description": "menu-section-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-section-example.tsx",
@@ -11474,13 +10434,8 @@
       "name": "menu-section-level-selection",
       "title": "Menu Section Level Selection",
       "description": "menu-section-level-selection",
-      "dependencies": [
-        "@heroicons/react",
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/menu"
-      ],
+      "dependencies": ["@heroicons/react", "react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-section-level-selection.tsx",
@@ -11496,10 +10451,7 @@
       "name": "menu-sub-example",
       "title": "Menu Sub",
       "description": "menu-sub-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/menu"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-sub-example.tsx",
@@ -11515,13 +10467,8 @@
       "name": "menu-with-arrow-example",
       "title": "Menu With Arrow",
       "description": "menu-with-arrow-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar",
-        "http://localhost:3000/r/menu"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/avatar", "http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-with-arrow-example.tsx",
@@ -11537,13 +10484,8 @@
       "name": "menu-with-icon-example",
       "title": "Menu With Icon",
       "description": "menu-with-icon-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/avatar",
-        "http://localhost:3000/r/menu"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/avatar", "http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/menu-with-icon-example.tsx",
@@ -11559,13 +10501,8 @@
       "name": "multiple-menu-example",
       "title": "Multiple Menu",
       "description": "multiple-menu-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/menu"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/multiple-menu-example.tsx",
@@ -11581,13 +10518,8 @@
       "name": "single-menu-example",
       "title": "Single Menu",
       "description": "single-menu-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/menu"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/menu"],
       "files": [
         {
           "path": "src/components/examples/collections/menu/single-menu-example.tsx",
@@ -11603,13 +10535,8 @@
       "name": "list-box-controlled-example",
       "title": "List Box Controlled",
       "description": "list-box-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/list-box"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/list-box"],
       "files": [
         {
           "path": "src/components/examples/collections/list-box/list-box-controlled-example.tsx",
@@ -11625,12 +10552,8 @@
       "name": "list-box-description-example",
       "title": "List Box Description",
       "description": "list-box-description-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/list-box"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/list-box"],
       "files": [
         {
           "path": "src/components/examples/collections/list-box/list-box-description-example.tsx",
@@ -11646,9 +10569,7 @@
       "name": "list-box-disabled-example",
       "title": "List Box Disabled",
       "description": "list-box-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/list-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/list-box"],
       "files": [
         {
           "path": "src/components/examples/collections/list-box/list-box-disabled-example.tsx",
@@ -11664,9 +10585,7 @@
       "name": "list-box-example",
       "title": "List Box",
       "description": "list-box-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/list-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/list-box"],
       "files": [
         {
           "path": "src/components/examples/collections/list-box/list-box-example.tsx",
@@ -11682,10 +10601,7 @@
       "name": "list-box-infinite-scroll-example",
       "title": "List Box Infinite Scroll",
       "description": "list-box-infinite-scroll-example",
-      "dependencies": [
-        "react-aria-components",
-        "react-stately"
-      ],
+      "dependencies": ["react-aria-components", "react-stately"],
       "registryDependencies": [
         "http://localhost:3000/r/list-box",
         "http://localhost:3000/r/progress-circle"
@@ -11705,13 +10621,8 @@
       "name": "list-box-multiple-example",
       "title": "List Box Multiple",
       "description": "list-box-multiple-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/field",
-        "http://localhost:3000/r/list-box"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/field", "http://localhost:3000/r/list-box"],
       "files": [
         {
           "path": "src/components/examples/collections/list-box/list-box-multiple-example.tsx",
@@ -11727,13 +10638,8 @@
       "name": "list-box-rearrange-example",
       "title": "List Box Rearrange",
       "description": "list-box-rearrange-example",
-      "dependencies": [
-        "react-aria-components",
-        "react-stately"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/list-box"
-      ],
+      "dependencies": ["react-aria-components", "react-stately"],
+      "registryDependencies": ["http://localhost:3000/r/list-box"],
       "files": [
         {
           "path": "src/components/examples/collections/list-box/list-box-rearrange-example.tsx",
@@ -11749,9 +10655,7 @@
       "name": "list-box-section-example",
       "title": "List Box Section",
       "description": "list-box-section-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/list-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/list-box"],
       "files": [
         {
           "path": "src/components/examples/collections/list-box/list-box-section-example.tsx",
@@ -11767,9 +10671,7 @@
       "name": "grid-list-controlled-example",
       "title": "Grid List Controlled",
       "description": "grid-list-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/field",
         "http://localhost:3000/r/grid-list"
@@ -11789,9 +10691,7 @@
       "name": "grid-list-disabled-example",
       "title": "Grid List Disabled",
       "description": "grid-list-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/grid-list"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/grid-list"],
       "files": [
         {
           "path": "src/components/examples/collections/grid-list/grid-list-disabled-example.tsx",
@@ -11807,13 +10707,8 @@
       "name": "grid-list-drag-between-item-example",
       "title": "Grid List Drag Between Item",
       "description": "grid-list-drag-between-item-example",
-      "dependencies": [
-        "react-aria-components",
-        "react-stately"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/grid-list"
-      ],
+      "dependencies": ["react-aria-components", "react-stately"],
+      "registryDependencies": ["http://localhost:3000/r/grid-list"],
       "files": [
         {
           "path": "src/components/examples/collections/grid-list/grid-list-drag-between-item-example.tsx",
@@ -11829,13 +10724,8 @@
       "name": "grid-list-drag-example",
       "title": "Grid List Drag",
       "description": "grid-list-drag-example",
-      "dependencies": [
-        "react-aria-components",
-        "react-stately"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/grid-list"
-      ],
+      "dependencies": ["react-aria-components", "react-stately"],
+      "registryDependencies": ["http://localhost:3000/r/grid-list"],
       "files": [
         {
           "path": "src/components/examples/collections/grid-list/grid-list-drag-example.tsx",
@@ -11851,9 +10741,7 @@
       "name": "grid-list-example",
       "title": "Grid List",
       "description": "grid-list-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/grid-list"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/grid-list"],
       "files": [
         {
           "path": "src/components/examples/collections/grid-list/grid-list-example.tsx",
@@ -11869,10 +10757,7 @@
       "name": "grid-list-infinite-scroll-example",
       "title": "Grid List Infinite Scroll",
       "description": "grid-list-infinite-scroll-example",
-      "dependencies": [
-        "@react-stately/data",
-        "react-aria-components"
-      ],
+      "dependencies": ["@react-stately/data", "react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/grid-list",
         "http://localhost:3000/r/progress-circle"
@@ -11892,9 +10777,7 @@
       "name": "grid-list-multiple-example",
       "title": "Grid List Multiple",
       "description": "grid-list-multiple-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/grid-list"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/grid-list"],
       "files": [
         {
           "path": "src/components/examples/collections/grid-list/grid-list-multiple-example.tsx",
@@ -11910,9 +10793,7 @@
       "name": "grid-list-render-empty-state-example",
       "title": "Grid List Render Empty State",
       "description": "grid-list-render-empty-state-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/grid-list"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/grid-list"],
       "files": [
         {
           "path": "src/components/examples/collections/grid-list/grid-list-render-empty-state-example.tsx",
@@ -11928,12 +10809,8 @@
       "name": "grid-list-section-example",
       "title": "Grid List Section",
       "description": "grid-list-section-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/grid-list"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/grid-list"],
       "files": [
         {
           "path": "src/components/examples/collections/grid-list/grid-list-section-example.tsx",
@@ -11949,9 +10826,7 @@
       "name": "choicebox-columns-example",
       "title": "Choicebox Columns",
       "description": "choicebox-columns-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/choice-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/choice-box"],
       "files": [
         {
           "path": "src/components/examples/collections/choicebox/choicebox-columns-example.tsx",
@@ -11967,9 +10842,7 @@
       "name": "choicebox-controlled-example",
       "title": "Choicebox Controlled",
       "description": "choicebox-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/choice-box",
         "http://localhost:3000/r/field"
@@ -11989,9 +10862,7 @@
       "name": "choicebox-disabled-example",
       "title": "Choicebox Disabled",
       "description": "choicebox-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/choice-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/choice-box"],
       "files": [
         {
           "path": "src/components/examples/collections/choicebox/choicebox-disabled-example.tsx",
@@ -12007,9 +10878,7 @@
       "name": "choicebox-example",
       "title": "Choicebox",
       "description": "choicebox-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/choice-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/choice-box"],
       "files": [
         {
           "path": "src/components/examples/collections/choicebox/choicebox-example.tsx",
@@ -12025,9 +10894,7 @@
       "name": "choicebox-icon-example",
       "title": "Choicebox Icon",
       "description": "choicebox-icon-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/choice-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/choice-box"],
       "files": [
         {
           "path": "src/components/examples/collections/choicebox/choicebox-icon-example.tsx",
@@ -12043,9 +10910,7 @@
       "name": "choicebox-multiple-selection-example",
       "title": "Choicebox Multiple Selection",
       "description": "choicebox-multiple-selection-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/choice-box"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/choice-box"],
       "files": [
         {
           "path": "src/components/examples/collections/choicebox/choicebox-multiple-selection-example.tsx",
@@ -12061,12 +10926,8 @@
       "name": "toggle-group-controlled-example",
       "title": "Toggle Group Controlled",
       "description": "toggle-group-controlled-example",
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle-group"
-      ],
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/toggle-group"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle-group/toggle-group-controlled-example.tsx",
@@ -12082,9 +10943,7 @@
       "name": "toggle-group-disabled-example",
       "title": "Toggle Group Disabled",
       "description": "toggle-group-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle-group"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle-group/toggle-group-disabled-example.tsx",
@@ -12100,9 +10959,7 @@
       "name": "toggle-group-example",
       "title": "Toggle Group",
       "description": "toggle-group-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle-group"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle-group/toggle-group-example.tsx",
@@ -12118,12 +10975,8 @@
       "name": "toggle-group-orientation-example",
       "title": "Toggle Group Orientation",
       "description": "toggle-group-orientation-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle-group"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/toggle-group"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle-group/toggle-group-orientation-example.tsx",
@@ -12139,9 +10992,7 @@
       "name": "toggle-group-selection-example",
       "title": "Toggle Group Selection",
       "description": "toggle-group-selection-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle-group"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle-group/toggle-group-selection-example.tsx",
@@ -12157,9 +11008,7 @@
       "name": "toggle-group-size-example",
       "title": "Toggle Group Size",
       "description": "toggle-group-size-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle-group"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle-group"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle-group/toggle-group-size-example.tsx",
@@ -12175,12 +11024,8 @@
       "name": "toggle-group-square-size-example",
       "title": "Toggle Group Square Size",
       "description": "toggle-group-square-size-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle-group"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/toggle-group"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle-group/toggle-group-square-size-example.tsx",
@@ -12196,9 +11041,7 @@
       "name": "toggle-controlled-example",
       "title": "Toggle Controlled",
       "description": "toggle-controlled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle/toggle-controlled-example.tsx",
@@ -12214,9 +11057,7 @@
       "name": "toggle-disabled-example",
       "title": "Toggle Disabled",
       "description": "toggle-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle/toggle-disabled-example.tsx",
@@ -12232,9 +11073,7 @@
       "name": "toggle-example",
       "title": "Toggle",
       "description": "toggle-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle/toggle-example.tsx",
@@ -12250,9 +11089,7 @@
       "name": "toggle-intent-example",
       "title": "Toggle Intent",
       "description": "toggle-intent-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle/toggle-intent-example.tsx",
@@ -12268,9 +11105,7 @@
       "name": "toggle-shape-example",
       "title": "Toggle Shape",
       "description": "toggle-shape-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/toggle"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/toggle"],
       "files": [
         {
           "path": "src/components/examples/buttons/toggle/toggle-shape-example.tsx",
@@ -12286,9 +11121,7 @@
       "name": "toggle-size-example",
       "title": "Toggle Size",
       "description": "toggle-size-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/separator",
         "http://localhost:3000/r/toggle"
@@ -12308,11 +11141,7 @@
       "name": "file-trigger-avatar-example",
       "title": "File Trigger Avatar",
       "description": "file-trigger-avatar-example",
-      "dependencies": [
-        "@react-types/shared",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@react-types/shared", "react-aria-components", "tailwind-merge"],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/drop-zone",
@@ -12333,9 +11162,7 @@
       "name": "file-trigger-camera-example",
       "title": "File Trigger Camera",
       "description": "file-trigger-camera-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/file-trigger"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/file-trigger"],
       "files": [
         {
           "path": "src/components/examples/buttons/file-trigger/file-trigger-camera-example.tsx",
@@ -12351,9 +11178,7 @@
       "name": "file-trigger-circle-example",
       "title": "File Trigger Circle",
       "description": "file-trigger-circle-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/file-trigger"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/file-trigger"],
       "files": [
         {
           "path": "src/components/examples/buttons/file-trigger/file-trigger-circle-example.tsx",
@@ -12388,9 +11213,7 @@
       "name": "file-trigger-disabled-example",
       "title": "File Trigger Disabled",
       "description": "file-trigger-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/file-trigger"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/file-trigger"],
       "files": [
         {
           "path": "src/components/examples/buttons/file-trigger/file-trigger-disabled-example.tsx",
@@ -12406,9 +11229,7 @@
       "name": "file-trigger-example",
       "title": "File Trigger",
       "description": "file-trigger-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/file-trigger"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/file-trigger"],
       "files": [
         {
           "path": "src/components/examples/buttons/file-trigger/file-trigger-example.tsx",
@@ -12424,9 +11245,7 @@
       "name": "file-trigger-folder-example",
       "title": "File Trigger Folder",
       "description": "file-trigger-folder-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/file-trigger"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/file-trigger"],
       "files": [
         {
           "path": "src/components/examples/buttons/file-trigger/file-trigger-folder-example.tsx",
@@ -12442,9 +11261,7 @@
       "name": "file-trigger-multiple-example",
       "title": "File Trigger Multiple",
       "description": "file-trigger-multiple-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/file-trigger"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/file-trigger"],
       "files": [
         {
           "path": "src/components/examples/buttons/file-trigger/file-trigger-multiple-example.tsx",
@@ -12460,9 +11277,7 @@
       "name": "file-trigger-pending-example",
       "title": "File Trigger Pending",
       "description": "file-trigger-pending-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/file-trigger"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/file-trigger"],
       "files": [
         {
           "path": "src/components/examples/buttons/file-trigger/file-trigger-pending-example.tsx",
@@ -12497,9 +11312,7 @@
       "name": "button-group-orientation-example",
       "title": "Button Group Orientation",
       "description": "button-group-orientation-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/button-group"
@@ -12519,9 +11332,7 @@
       "name": "button-group-with-menu-example",
       "title": "Button Group With Menu",
       "description": "button-group-with-menu-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/button-group",
@@ -12542,9 +11353,7 @@
       "name": "button-group-with-text-example",
       "title": "Button Group With Text",
       "description": "button-group-with-text-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/button-group"
@@ -12564,9 +11373,7 @@
       "name": "button-basic-example",
       "title": "Button Basic",
       "description": "button-basic-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/buttons/button/button-basic-example.tsx",
@@ -12582,9 +11389,7 @@
       "name": "button-disabled-example",
       "title": "Button Disabled",
       "description": "button-disabled-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/buttons/button/button-disabled-example.tsx",
@@ -12600,12 +11405,8 @@
       "name": "button-icon-example",
       "title": "Button Icon",
       "description": "button-icon-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/buttons/button/button-icon-example.tsx",
@@ -12621,12 +11422,8 @@
       "name": "button-intent-example",
       "title": "Button Intent",
       "description": "button-intent-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/buttons/button/button-intent-example.tsx",
@@ -12642,10 +11439,7 @@
       "name": "button-link-example",
       "title": "Button Link",
       "description": "button-link-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/link"],
       "files": [
         {
           "path": "src/components/examples/buttons/button/button-link-example.tsx",
@@ -12661,13 +11455,8 @@
       "name": "button-loader-example",
       "title": "Button Loader",
       "description": "button-loader-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button",
-        "http://localhost:3000/r/loader"
-      ],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["http://localhost:3000/r/button", "http://localhost:3000/r/loader"],
       "files": [
         {
           "path": "src/components/examples/buttons/button/button-loader-example.tsx",
@@ -12683,9 +11472,7 @@
       "name": "button-pending-example",
       "title": "Button Pending",
       "description": "button-pending-example",
-      "dependencies": [
-        "@heroicons/react"
-      ],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "http://localhost:3000/r/button",
         "http://localhost:3000/r/progress-circle"
@@ -12705,12 +11492,8 @@
       "name": "button-render-example",
       "title": "Button Render",
       "description": "button-render-example",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "dependencies": ["motion"],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/buttons/button/button-render-example.tsx",
@@ -12726,9 +11509,7 @@
       "name": "button-shape-example",
       "title": "Button Shape",
       "description": "button-shape-example",
-      "registryDependencies": [
-        "http://localhost:3000/r/button"
-      ],
+      "registryDependencies": ["http://localhost:3000/r/button"],
       "files": [
         {
           "path": "src/components/examples/buttons/button/button-shape-example.tsx",
@@ -12777,10 +11558,7 @@
       "name": "primitive",
       "title": "primitive",
       "description": "primitive",
-      "dependencies": [
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["react-aria-components", "tailwind-merge"],
       "files": [
         {
           "path": "src/lib/primitive.ts",
@@ -13490,9 +12268,7 @@
       "name": "auth-03",
       "title": "auth-03",
       "description": "auth-03",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
@@ -13518,9 +12294,7 @@
       "name": "auth-02",
       "title": "auth-02",
       "description": "auth-02",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",
@@ -13545,9 +12319,7 @@
       "name": "auth-01",
       "title": "auth-01",
       "description": "auth-01",
-      "dependencies": [
-        "react-aria-components"
-      ],
+      "dependencies": ["react-aria-components"],
       "registryDependencies": [
         "http://localhost:3000/r/avatar",
         "http://localhost:3000/r/button",

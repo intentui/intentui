@@ -54,7 +54,6 @@ export function OpenIn({
       const res = await fetch(llmUrl, { method: 'GET' })
       const text = res.ok ? await res.text() : page
       await copy(text)
-      window.aurelie?.track?.(`copy page: ${fullUrl}`, { url: fullUrl })
     } finally {
       setPending(false)
     }

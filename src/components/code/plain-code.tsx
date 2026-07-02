@@ -60,9 +60,6 @@ export const PlainCode = ({
     for (const node of clone.querySelectorAll('.nd-copy-ignore')) {
       node.remove()
     }
-    window.aurelie?.track?.('copy', {
-      name: clone.textContent,
-    })
     await copy(clone.textContent ?? '')
   }, [copy])
   return (

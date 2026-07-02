@@ -12,12 +12,3 @@ declare module 'rehype-pretty-code' {
     onVisitHighlightedWord?: (node: any) => void
   }
 }
-
-declare global {
-  interface Window {
-    aurelie?: {
-      track?: (name: string, properties?: Record<string, unknown>) => void
-      trackPageview?: () => void
-    }
-  }
-}
