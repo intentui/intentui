@@ -27,7 +27,7 @@ export function Navigation() {
   return (
     <>
       <CommandPalette setOpen={setOpen} openCmd={open} />
-      <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden border-page border-b bg-navbar/50 backdrop-blur-3xl lg:block">
+      <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden border-page border-b backdrop-blur-3xl lg:block">
         <PageContainer>
           <div className="relative flex items-center justify-between border-page border-x px-3 py-1">
             <div className="flex items-center gap-x-1.5">
@@ -52,13 +52,12 @@ export function Navigation() {
               <NavLink isNextLink isActive={pathname.startsWith('/blocks')} href="/blocks">
                 Blocks
               </NavLink>
-              <NavLink isNextLink href="/colors">
-                Colors
-              </NavLink>
               <NavLink isNextLink href="/sponsor">
                 Sponsor
               </NavLink>
-
+              <NavLink isNextLink href="/showcase">
+                Showcase
+              </NavLink>
               <NavLink target="_blank" href="https://design.intentui.com/themes">
                 Themes
               </NavLink>

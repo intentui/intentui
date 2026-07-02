@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Screencast",
+    "description": "Screencast",
+    "slug": "screencast",
+    "url": "https://screencast.justui.com"
+  },
+  {
+    "name": "Commerce",
+    "description": "Ecommerce platform",
+    "slug": "commerce",
+    "url": "https://commerce.justui.com"
+  },
+  {
+    "name": "Signal",
+    "description": "SaaS marketing platform",
+    "slug": "signal",
+    "url": "https://signal.justui.com"
+  },
+  {
+    "name": "Scale",
+    "description": "SaaS marketing platform",
+    "slug": "scale",
+    "url": "https://scale.justui.com"
+  },
+  {
+    "name": "Personal",
+    "description": "Personal website",
+    "slug": "personal",
+    "url": "https://personal.justui.com"
+  },
+  {
+    "name": "Spotlight",
+    "description": "Personal website",
+    "slug": "spotlight",
+    "url": "https://spotlight.justui.com"
+  }
+]

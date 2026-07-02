@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <div className="border-page border-t sm:border-none">
       <PageContainer>
-        <div className="border-page pt-6 pb-6 sm:border-x sm:bg-muted/50 sm:p-6 sm:pt-32">
+        <div className="border-page pt-6 pb-6 sm:border-x sm:p-6 sm:pt-32">
           <div className="text-left">
             <h1 className="mt-4 mb-4 max-w-3xl pb-1 font-medium text-3xl text-fg tracking-tight lg:mb-6 lg:text-5xl/14">
               Accessible React components to copy, customize, and make your own.
