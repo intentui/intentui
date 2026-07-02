@@ -44,16 +44,16 @@ const Badge = (props: React.ComponentProps<'span'>) => (
 
 export function SponsorPlan() {
   return (
-    <div className="-mb-px [--border:var(--color-muted-fg)]/18 [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)] lg:[--gutter:--spacing(12)]">
-      <div className="border-y bg-muted">
+    <div className="-mb-px [--border:var(--color-muted-fg)]/18 [--gutter:--spacing(6)] sm:[--gutter:--spacing(6)]">
+      <div className="border-y border-page bg-muted">
         <div className="border-b border-page">
           <PageContainer>
-            <div className="border-x bg-bg p-(--gutter)">
+            <div className="border-x border-muted-fg/30 bg-bg p-(--gutter)">
               <div className="max-w-xl">
                 <Badge>
                   <UserCircleIcon /> Individual
                 </Badge>
-                <h3 className="mt-4 mb-2 font-semibold text-2xl text-fg tracking-tight">
+                <h3 className="my-2 font-semibold text-2xl text-fg tracking-tight">
                   Fund Intent UI
                 </h3>
                 <Text className="text-pretty">
@@ -66,10 +66,10 @@ export function SponsorPlan() {
           </PageContainer>
         </div>
         <PageContainer>
-          <div className="grid grid-cols-1 divide-y border-x sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div className="grid grid-cols-1 divide-y border-x border-page divide-page sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {individualPlans.map((plan) => (
               <div key={plan.id} className="flex flex-col bg-bg p-(--gutter)">
-                <div className="mb-6 flex flex-1 flex-col gap-y-5">
+                <div className="mb-6 flex flex-1 flex-col gap-y-4">
                   <div>
                     <span className="font-medium text-fg px-2.5 py-1.5 bg-secondary text-sm/6 rounded-full">
                       {plan.name}
@@ -109,12 +109,12 @@ export function SponsorPlan() {
 
       <div className="bg-muted">
         <PageContainer>
-          <div className="border-x bg-bg p-(--gutter)">
+          <div className="border-x border-muted-fg/30 bg-bg p-(--gutter)">
             <div className="max-w-xl">
               <Badge>
                 <BuildingOffice2Icon /> Company
               </Badge>
-              <h3 className="mt-4 mb-2 font-semibold text-2xl text-fg tracking-tight">
+              <h3 className="my-2 font-semibold text-2xl text-fg tracking-tight">
                 Invest in the tools your team uses
               </h3>
               <Text className="text-pretty">
@@ -131,7 +131,7 @@ export function SponsorPlan() {
           <div className="grid grid-cols-1 divide-y border-x sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {companyPlans.map((plan) => (
               <div key={plan.id} className="flex flex-col bg-bg p-(--gutter)">
-                <div className="mb-6 flex flex-1 flex-col gap-y-5">
+                <div className="mb-6 flex flex-1 flex-col gap-y-4">
                   <div>
                     <span className="font-medium text-fg px-2.5 py-1.5 bg-secondary text-sm/6 rounded-full">
                       {plan.name}
