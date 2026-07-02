@@ -111,7 +111,7 @@
   color-scheme: light dark;
   interpolate-size: allow-keywords;
 
-  --radius: 0.35rem;
+  --radius: 0.4rem;
   --bg: oklch(1 0 0);
   --fg: oklch(0.21 0.006 285.885);
 

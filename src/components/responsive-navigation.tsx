@@ -34,13 +34,16 @@ export const menus = [
     icon: BookOpenIcon,
   },
   { href: '/components', label: 'Components', icon: CubeIcon },
-  { href: '/colors', label: 'Colors', icon: SwatchIcon },
   { href: '/blocks', label: 'Blocks', icon: Squares2X2Icon },
+  { href: 'https://design.intentui.com/themes', label: 'Themes', on: true },
   {
-    href: 'https://design.intentui.com/themes',
-    label: 'Themes',
+    href: 'https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=navprobutton',
+    label: 'Design.',
     on: true,
   },
+  { href: '/sponsor', label: 'Sponsor', icon: Squares2X2Icon },
+  { href: '/showcase', label: 'Showcase', icon: Squares2X2Icon },
+  { href: '/colors', label: 'Colors', icon: SwatchIcon },
 ]
 
 interface ResponsiveNavigationProps {
@@ -122,24 +125,16 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                 <MenuSection>
                   <NavHeading>Pages</NavHeading>
                   <NavLink href="/">Home</NavLink>
-                  {menus
-                    .filter((i) => i.label !== 'Themes')
-                    .map((menu) => (
-                      <NavLink key={menu.href} href={menu.href}>
-                        {menu.label}
-                      </NavLink>
-                    ))}
-                  <NavLink href="https://design.intentui.com/themes" target="_blank">
-                    Themes <ArrowUpRightIcon className="size-4" />
-                  </NavLink>
-                  <NavLink
-                    href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=navprobutton"
-                    target="_blank"
-                  >
-                    Pro <ArrowUpRightIcon className="size-4" />
-                  </NavLink>
-                  <NavLink href="/sponsor">Sponsor</NavLink>
-                  <NavLink href="/blog">Blog</NavLink>
+                  {menus.map((menu) => (
+                    <NavLink
+                      target={menu.on ? '_blank' : undefined}
+                      key={menu.href}
+                      href={menu.href}
+                    >
+                      {menu.label}
+                      {menu.on && <ArrowUpRightIcon className="size-4" />}
+                    </NavLink>
+                  ))}
                 </MenuSection>
                 <MenuSection>
                   <NavHeading>{prologue?.section}</NavHeading>

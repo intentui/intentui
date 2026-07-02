@@ -6,8 +6,12 @@ import {
   CubeIcon,
   DocumentTextIcon,
   HashtagIcon,
+  HeartIcon,
   HomeIcon,
+  Square3Stack3DIcon,
+  Squares2X2Icon,
   SwatchIcon,
+  WindowIcon,
 } from '@heroicons/react/24/outline'
 import { formatHex, parse } from 'culori'
 import { useRouter } from 'next/navigation'
@@ -128,24 +132,38 @@ export function CommandPalette({ openCmd, setOpen }: OpenCloseProps) {
             <CubeIcon />
             <CommandMenuLabel>Components</CommandMenuLabel>
           </CommandMenuItem>
+          <CommandMenuItem textValue="blocks" href="/blocks">
+            <WindowIcon />
+            <CommandMenuLabel>Blocks</CommandMenuLabel>
+          </CommandMenuItem>
           <CommandMenuItem textValue="colors" href="/colors">
             <SwatchIcon />
             <CommandMenuLabel>Colors</CommandMenuLabel>
           </CommandMenuItem>
-          <CommandMenuItem textValue="blocks" href="/blocks">
-            <CommandMenuLabel>Blocks</CommandMenuLabel>
+          <CommandMenuItem textValue="sponsor" href="/sponsor">
+            <HeartIcon />
+            <CommandMenuLabel>Sponsor</CommandMenuLabel>
           </CommandMenuItem>
-          <CommandMenuSeparator className="my-1.5" />
+          <CommandMenuItem textValue="showcase" href="/showcase">
+            <Squares2X2Icon />
+            <CommandMenuLabel>Showcase</CommandMenuLabel>
+          </CommandMenuItem>
           <CommandMenuItem textValue="blog" href="/blog">
             <DocumentTextIcon />
             <CommandMenuLabel>Blog</CommandMenuLabel>
           </CommandMenuItem>
+          <CommandMenuSeparator className="my-1.5" />
           <CommandMenuItem textValue="premium block" href="https://dub.sh/designiui">
             <CommandMenuLabel>Premium blocks</CommandMenuLabel>
             <ArrowTopRightOnSquareIcon />
           </CommandMenuItem>
           <CommandMenuItem textValue="themes" href="https://design.intentui.com/themes">
             <CommandMenuLabel>Themes</CommandMenuLabel>
+            <ArrowTopRightOnSquareIcon />
+          </CommandMenuItem>
+          <CommandMenuItem textValue="themes" href="https://design.intentui.com/templates">
+            <Square3Stack3DIcon />
+            <CommandMenuLabel>Templates</CommandMenuLabel>
             <ArrowTopRightOnSquareIcon />
           </CommandMenuItem>
         </CommandMenuSection>
