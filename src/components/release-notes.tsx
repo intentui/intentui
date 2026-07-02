@@ -53,8 +53,8 @@ export function ReleaseNotes() {
                     {notes.length} {notes.length === 1 ? 'change' : 'changes'}
                   </Text>
                   <ul className="not-prose space-y-1.5 text-sm/6">
-                    {notes.map((note) => (
-                      <li key={note.component}>
+                    {notes.map((note, i) => (
+                      <li key={i}>
                         <div className="flex gap-x-2.5">
                           <CheckIcon className="h-lh w-4 shrink-0 text-success-subtle-fg" />
                           <div className="space-y-1">

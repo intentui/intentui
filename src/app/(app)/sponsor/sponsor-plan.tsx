@@ -46,29 +46,37 @@ export function SponsorPlan() {
   return (
     <div className="-mb-px [--border:var(--color-muted-fg)]/18 [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)] lg:[--gutter:--spacing(12)]">
       <div className="border-y bg-muted">
-        <PageContainer>
-          <div className="border-x bg-bg p-(--gutter)">
-            <div className="max-w-xl">
-              <Badge>
-                <UserCircleIcon /> Individual
-              </Badge>
-              <h3 className="mt-4 mb-2 font-semibold text-2xl text-fg tracking-tight">
-                Fund Intent UI
-              </h3>
-              <Text className="text-pretty">
-                Your sponsorship directly funds development time. Every new component, every bug
-                fix, every release. Even a small contribution helps keep Intent UI free and actively
-                maintained for everyone.
-              </Text>
+        <div className="border-b border-page">
+          <PageContainer>
+            <div className="border-x bg-bg p-(--gutter)">
+              <div className="max-w-xl">
+                <Badge>
+                  <UserCircleIcon /> Individual
+                </Badge>
+                <h3 className="mt-4 mb-2 font-semibold text-2xl text-fg tracking-tight">
+                  Fund Intent UI
+                </h3>
+                <Text className="text-pretty">
+                  Your sponsorship directly funds development time. Every new component, every bug
+                  fix, every release. Even a small contribution helps keep Intent UI free and
+                  actively maintained for everyone.
+                </Text>
+              </div>
             </div>
-          </div>
-          <div className="grid grid-cols-1 divide-y border-x border-t sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          </PageContainer>
+        </div>
+        <PageContainer>
+          <div className="grid grid-cols-1 divide-y border-x sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {individualPlans.map((plan) => (
               <div key={plan.id} className="flex flex-col bg-bg p-(--gutter)">
                 <div className="mb-6 flex flex-1 flex-col gap-y-5">
-                  <div className="font-medium text-fg text-sm">{plan.name}</div>
+                  <div>
+                    <span className="font-medium text-fg px-2.5 py-1.5 bg-secondary text-sm/6 rounded-full">
+                      {plan.name}
+                    </span>
+                  </div>
 
-                  <div className="font-semibold text-3xl tabular-nums tracking-tight">
+                  <div className="text-3xl tabular-nums tracking-tight">
                     ${plan.price.amount}
                     <span className="ml-1 font-normal text-base text-muted-fg">
                       {plan.id === 'o-sponsor' ? 'one time' : '/ month'}
@@ -124,8 +132,12 @@ export function SponsorPlan() {
             {companyPlans.map((plan) => (
               <div key={plan.id} className="flex flex-col bg-bg p-(--gutter)">
                 <div className="mb-6 flex flex-1 flex-col gap-y-5">
-                  <div className="font-medium text-fg text-sm">{plan.name}</div>
-                  <div className="font-semibold text-3xl tabular-nums tracking-tight">
+                  <div>
+                    <span className="font-medium text-fg px-2.5 py-1.5 bg-secondary text-sm/6 rounded-full">
+                      {plan.name}
+                    </span>
+                  </div>
+                  <div className="text-3xl tabular-nums tracking-tight">
                     ${plan.price.amount}
                     <span className="ml-1 font-normal text-base text-muted-fg">/ month</span>
                   </div>

@@ -8,7 +8,7 @@ import { app } from '@/config/app'
 
 export function Hero() {
   return (
-    <div className="border-page border-t sm:border-none">
+    <div>
       <PageContainer>
         <div className="border-page pt-6 pb-6 sm:border-x sm:p-6 sm:pt-32">
           <div className="text-left">

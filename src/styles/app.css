@@ -188,7 +188,7 @@
   --shiki-bg: #111114;
   --shiki-da--bg: oklch(0.091 0.005 285.823);
 
-  --bg: var(--color-zinc-950);
+  --bg: oklch(0 0 1);
   --fg: oklch(0.985 0 0);
 
   --card: oklch(0.21 0.006 285.885);
