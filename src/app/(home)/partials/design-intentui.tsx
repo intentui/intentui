@@ -7,7 +7,7 @@ import { buttonStyles } from '@/components/ui/button'
 
 export function DesignIntentui() {
   return (
-    <div className="border-page border-t bg-overlay text-fg">
+    <div className="border-page border-t text-fg">
       <PageContainer>
         <div className="border-page sm:border-x sm:p-6">
           <div className="relative mx-auto max-w-3xl py-12 text-center">

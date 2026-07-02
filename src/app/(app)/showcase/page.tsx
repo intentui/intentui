@@ -5,6 +5,7 @@ import { createMetadata } from '@/lib/metadata'
 import { Showcases } from '@/app/(app)/showcase/showcases'
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from '@/components/header'
 import { Cta } from '@/app/(app)/showcase/cta'
+import { DesignIntentui } from '@/app/(home)/partials/design-intentui'
 
 export const metadata = createMetadata({
   title: 'Showcase',
@@ -46,10 +47,11 @@ export default async function Page() {
       </Header>
       <PageContainer>
         <Showcases />
-        <div className="border-x border-t p-6">
+        <div className="border-x border-page border-t p-6">
           <Cta />
         </div>
       </PageContainer>
+      <DesignIntentui />
     </>
   )
 }
