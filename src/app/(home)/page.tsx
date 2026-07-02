@@ -30,9 +30,9 @@ export const metadata = createMetadata({
 })
 export default function Page() {
   return (
-    <div className="relative flex min-h-svh flex-col overflow-hidden">
+    <div className="relative flex min-h-svh flex-col overflow-clip">
+      <Navigation />
       <div className="relative isolate overflow-hidden border-page border-b">
-        <Navigation />
         <Hero />
       </div>
       {/*<Examples />*/}

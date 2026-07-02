@@ -96,7 +96,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
             onOpenChange={setOpen}
             isOpen={open}
             className={cx(
-              'placement-bottom:entering:slide-in-from-top-1 -mt-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]',
+              'placement-bottom:entering:slide-in-from-top-1 bg-clip-padding -mt-1 w-full overflow-y-auto bg-linear-to-b from-bg to-bg/90 px-2 outline-hidden backdrop-blur-xl entering:ease-out [--gap:--spacing(6)]',
               'entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out',
               'slide-out-to-top-1 slide-in-from-top-1',
               pathname === '/' && 'from-blue-50 dark:from-bg',
@@ -118,7 +118,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
                   />
                 </SearchField>
               </div>
-              <Menu className="outline-hidden">
+              <Menu className="outline-hidden -mt-3">
                 <MenuSection>
                   <NavHeading>Pages</NavHeading>
                   <NavLink href="/">Home</NavLink>
