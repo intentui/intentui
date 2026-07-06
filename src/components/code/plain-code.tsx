@@ -99,7 +99,7 @@ export const PlainCode = ({
       ) : (
         allowCopy && (
           <CopyButton
-            className="vto-shiki-bg absolute top-1 right-1 z-2 grid size-10 place-content-center bg-linear-to-r from-20% from-transparent to-shiki-bg"
+            className="absolute top-1 right-1 z-2 grid size-10 place-content-center"
             onPress={onCopy}
             isCopied={copied}
           />

@@ -7,7 +7,7 @@ import {
   useFilter,
 } from 'react-aria-components/Autocomplete'
 import { CardAction, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from '@/components/ui/menu'
+import { Menu, MenuContent, MenuItem, MenuSeparator } from '@/components/ui/menu'
 import { SearchField, SearchInput } from '@/components/ui/search-field'
 import {
   Table,
@@ -17,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Button } from '@/components/ui/button'
 
 export default function TableDemo() {
   const { contains } = useFilter({
@@ -64,9 +65,9 @@ export default function TableDemo() {
                 <TableCell>
                   <div className="flex justify-end">
                     <Menu>
-                      <MenuTrigger className="size-6">
+                      <Button intent="plain" size="sq-sm" className="sm:w-6">
                         <EllipsisVerticalIcon />
-                      </MenuTrigger>
+                      </Button>
                       <MenuContent aria-label="Actions" placement="left top">
                         <MenuItem>View</MenuItem>
                         <MenuItem>Edit</MenuItem>
