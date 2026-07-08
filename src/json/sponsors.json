@@ -19,7 +19,7 @@
   },
   {
     "id": "gold-sponsor",
-    "name": "Gold sponsor",
+    "name": "Builder",
     "price": {
       "amount": 30,
       "currency": "USD",
@@ -47,7 +47,7 @@
     "benefits": [
       {
         "title": "Profile link",
-        "description": "Your profile link shown for 2 months."
+        "description": "Add your profile link or social media link for 2 months."
       }
     ],
     "checkout_url": "https://buy.polar.sh/polar_cl_ykUxq1qfcntnSVruv3fXfmy1dKCVBWP6iDSLd4KyYcw",
@@ -97,7 +97,7 @@
         "description": "Your site featured in showcase."
       },
       {
-        "title": "Intent UI homepage logo",
+        "title": "Homepage logo",
         "description": "Your logo shown on homepage."
       },
       {
@@ -126,8 +126,8 @@
         "description": "Your site featured in showcase."
       },
       {
-        "title": "Intent UI homepage logo",
-        "description": "Your logo featured on the main homepage."
+        "title": "Homepage logo",
+        "description": "Your logo shown on homepage"
       },
       {
         "title": "Repo logo",
