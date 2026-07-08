@@ -1,7 +1,6 @@
 'use client'
 
 import { CheckIcon } from '@heroicons/react/20/solid'
-import { BuildingOffice2Icon, UserCircleIcon } from '@heroicons/react/24/outline'
 import { PageContainer } from '@/components/page-container'
 import { buttonStyles } from '@/components/ui/button'
 import { Strong, Text } from '@/components/ui/text'
@@ -35,13 +34,6 @@ const sponsorButton = buttonStyles({
   className: 'bg-fg hover:bg-fg/90 text-bg',
 })
 
-const Badge = (props: React.ComponentProps<'span'>) => (
-  <span
-    className="inline-flex items-center gap-x-2 font-medium text-primary-subtle-fg text-sm/6 *:[svg]:size-4"
-    {...props}
-  />
-)
-
 export function SponsorPlan() {
   return (
     <div className="-mb-px [--border:var(--color-muted-fg)]/18 [--gutter:--spacing(6)] sm:[--gutter:--spacing(6)]">
@@ -50,16 +42,10 @@ export function SponsorPlan() {
           <PageContainer>
             <div className="border-x border-muted-fg/30 bg-bg p-(--gutter)">
               <div className="max-w-xl">
-                <Badge>
-                  <UserCircleIcon /> Individual
-                </Badge>
-                <h3 className="my-2 font-semibold text-2xl text-fg tracking-tight">
-                  Fund Intent UI
-                </h3>
+                <h3 className="my-2 font-semibold text-2xl text-fg tracking-tight">Individual</h3>
                 <Text className="text-pretty">
                   Your sponsorship directly funds development time. Every new component, every bug
-                  fix, every release. Even a small contribution helps keep Intent UI free and
-                  actively maintained for everyone.
+                  fix, every release.
                 </Text>
               </div>
             </div>
@@ -111,12 +97,7 @@ export function SponsorPlan() {
         <PageContainer>
           <div className="border-x border-muted-fg/30 bg-bg p-(--gutter)">
             <div className="max-w-xl">
-              <Badge>
-                <BuildingOffice2Icon /> Company
-              </Badge>
-              <h3 className="my-2 font-semibold text-2xl text-fg tracking-tight">
-                Invest in the tools your team uses
-              </h3>
+              <h3 className="my-2 font-semibold text-2xl text-fg tracking-tight">Company</h3>
               <Text className="text-pretty">
                 A monthly sponsorship for companies who want to fund ongoing development, keep the
                 project sustainable, and get public recognition across the Intent UI ecosystem.
