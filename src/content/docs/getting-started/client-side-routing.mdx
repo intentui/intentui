@@ -49,15 +49,7 @@ export function Link({ className, ref, ...props }: LinkProps) {
   return (
     <LinkPrimitive
       ref={ref}
-      className={cx(
-        [
-          "font-medium text-(--text)",
-          "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
-          "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
-          "href" in props && "cursor-pointer",
-        ],
-        className,
-      )}
+      className={...}
       render={(domProps) =>
         "href" in domProps ? (
           <InertiaLink {...(props as InertiaLinkProps)} {...(domProps as InertiaLinkProps)} />
@@ -65,73 +57,53 @@ export function Link({ className, ref, ...props }: LinkProps) {
           <div {...domProps} />
         )
       }
-      {...(props as LinkPrimitiveProps)}
+      {...props}
     />
   )
 }
 ```
 
 ## Next.js
-When using Next.js, you can still use `RouteProvider`. For now, this remains the best option at the time of writing, May 13, 2026.
 
-```
+When using Next.js, render React Aria links through Next.js’s `Link` component. React Aria manages accessibility, interactions, and styling, while Next.js handles client-side navigation.
+
+```tsx
 "use client"
 
-import { useRouter } from "next/navigation"
+import NextLink from "next/link"
+import {
+  Link as LinkPrimitive,
+  type LinkProps as LinkPrimitiveProps,
+} from "react-aria-components/Link"
+import { cx } from "@/lib/primitive"
 
-import { RouterProvider } from "react-aria-components"
-import { I18nProvider } from "react-aria-components/I18nProvider"
+export interface LinkProps extends LinkPrimitiveProps {
+  ref?: React.RefObject<HTMLAnchorElement>
+}
 
-declare module "react-aria-components" {
-  interface RouterConfig {
-    routerOptions: NonNullable<Parameters<ReturnType<typeof useRouter>["push"]>[1]>
+export function Link({ className, ref, ...props }: LinkProps) {
+  return (
+    <LinkPrimitive
+      ref={ref}
+      className={...}
+      render={(domProps) =>
+        "href" in domProps ? <NextLink {...domProps} /> : <span {...domProps} />
+      }
+      {...props}
+    />
+  )
+}
+```
+
+Use the same pattern for components such as `MenuItem`. Render items with an `href` through Next.js’s `Link`, and use a `div` when the item is not a link.
+
+```tsx
+<MenuItem
+  {...props}
+  render={(domProps) =>
+    "href" in domProps ? <NextLink {...domProps} /> : <div {...domProps} />
   }
-}
-
-interface ProvidersProps {
-  children: React.ReactNode
-  lang?: string
-}
-
-export function Providers ({ children, lang }: ProvidersProps) {
-  const router = useRouter()
-  return (
-    <RouterProvider navigate={router.push}>
-      <I18nProvider locale={lang}>
-        {children}
-      </I18nProvider>
-    </RouterProvider>
-  )
-}
-```
-
-Then, in your main layout file, such as `app/layout.tsx`, wrap your application with the `Providers` component.
-
-```
-import { headers } from "next/headers"
-import { Providers } from "@/components/providers"
-
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  const acceptLanguage = (await headers()).get("accept-language")
-  const lang = acceptLanguage?.split(/[,;]/)[0] || "en-US"
-  return (
-    <html
-      lang={lang}
-      suppressHydrationWarning
-      data-scroll-behavior="smooth"
-    >
-      <body className="h-full antialiased">
-        <Providers lang={lang}>
-          {children}
-        </Providers>
-      </body>
-    </html>
-  )
-}
+/>
 ```
 
 ## TanStack Router
