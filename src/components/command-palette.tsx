@@ -254,7 +254,7 @@ function ColorItem({ label, value, colorName = label, textValue }: ColorItemProp
   return (
     <CommandMenuItem onAction={() => copy(value)} textValue={textValue}>
       <ColorSwatch
-        className="mt-0.5 mr-2 [--color-swatch-size:--spacing(5)]"
+        className="mt-0.5 mr-2 [--size:--spacing(5)]"
         color={formatHex(parse(value))}
         colorName={colorName}
       />
