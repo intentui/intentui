@@ -19,7 +19,7 @@
     font-family: var(--typeset-font-body);
     font-size: calc(var(--typeset-size) * 1.125);
     line-height: var(--typeset-leading);
-    color: var(--color-foreground, currentColor);
+    color: var(--color-fg, currentColor);
     overflow-wrap: break-word;
     margin-trim: block-start;
 
@@ -27,10 +27,7 @@
       font-size: var(--typeset-size);
     }
 
-    --typeset-muted: var(
-      --color-muted-foreground,
-      color-mix(in oklab, currentColor 60%, transparent)
-    );
+    --typeset-muted: var(--color-muted-fg, color-mix(in oklab, currentColor 60%, transparent));
     --typeset-rule: var(--color-border, color-mix(in oklab, currentColor 20%, transparent));
   }
 
@@ -43,7 +40,7 @@
 
     /* Headings. */
     &:where(h1, h2, h3, h4, h5, h6) {
-      color: var(--color-foreground, currentColor);
+      color: var(--color-fg, currentColor);
       font-family: var(--typeset-font-heading);
       font-weight: 600;
       margin-block-end: 0;
