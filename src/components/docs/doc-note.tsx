@@ -8,7 +8,7 @@ interface DocsNoteProps extends NoteProps {
 
 export function DocNote({ className, intent = 'info', children }: DocsNoteProps) {
   return (
-    <Note indicator={false} intent={intent} className={twMerge('not-prose mt-4', className)}>
+    <Note indicator={false} intent={intent} className={twMerge('not-typeset mt-4', className)}>
       {children}
     </Note>
   )

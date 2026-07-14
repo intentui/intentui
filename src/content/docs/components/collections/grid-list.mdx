@@ -11,14 +11,14 @@ references: ["https://react-aria.adobe.com/GridList#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/grid-list"/>
+<PackageCommand command="npx shadcn@latest add @intentui/grid-list"/>
 
 ## Composed components
 <Composed components={['checkbox']}/>
 
 ## Manual installation
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='grid-list'/>
 
@@ -97,74 +97,84 @@ To disable items via the parent component, you can use the `disabledKeys` prop l
 
 ### GridList
 
-The `GridList` component displays selectable items in a grid or list.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **GridList** extends the React Aria Components [**`<GridList>`**](https://react-aria.adobe.com/GridList#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### GridListDescription
 
-The `GridListDescription` component renders secondary text for a grid list item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **GridListDescription** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### GridListEmptyState
 
-The `GridListEmptyState` component renders content when a grid list is empty.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **GridListEmptyState** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### GridListHeader
 
-The `GridListHeader` component renders header content for a grid list item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **GridListHeader** extends the React Aria Components [**`<GridListHeader>`**](https://react-aria.adobe.com/GridList#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### GridListItem
 
-The `GridListItem` component represents one grid list item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **GridListItem** extends the React Aria Components [**`<GridListItem>`**](https://react-aria.adobe.com/GridList#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### GridListLabel
 
-The `GridListLabel` component renders label text for a grid list item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **GridListLabel** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### GridListSection
 
-The `GridListSection` component groups related grid list items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **GridListSection** extends the React Aria Components [**`<GridListSection>`**](https://react-aria.adobe.com/GridList#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### GridListSpacer
 
-The `GridListSpacer` component adds layout spacing inside grid list items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **GridListSpacer** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### GridListStart
 
-The `GridListStart` component renders leading content in a grid list item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/GridList#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **GridListStart** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/GridList#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

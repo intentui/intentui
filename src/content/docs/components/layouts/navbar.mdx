@@ -20,7 +20,7 @@ references: ["https://react-aria.adobe.com/Link#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/navbar"/>
+<PackageCommand command="npx shadcn@latest add @intentui/navbar"/>
 
 ## Composed components
 <Composed components={['button', 'sheet']} />
@@ -28,7 +28,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components motion @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components motion @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow={'navbar'} />
 
@@ -320,104 +320,116 @@ app/
 
 ### Navbar
 
-The `Navbar` component renders the main navigation bar.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `Intent` | `default` |
-| `isSticky` | `true` | - |
-| `placement` | `Placement` | `top` |
-| `side` | `Side` | `left` |
+<ApiParameters>
+  <ApiDescription>
+    **Navbar** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="intent" type='Intent' defaultValue='default' />
+  <ApiParameter name="isSticky" type='true' />
+  <ApiParameter name="placement" type='Placement' defaultValue='top' />
+  <ApiParameter name="side" type='Side' defaultValue='left' />
+</ApiParameters>
 
 ### NavbarGap
 
-The `NavbarGap` component adds spacing between navbar sections.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarGap** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NavbarInset
 
-The `NavbarInset` component aligns page content with the navbar.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarInset** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NavbarItem
 
-The `NavbarItem` component represents one navbar link or action.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isCurrent` | `boolean` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarItem** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCurrent" type='boolean' />
+</ApiParameters>
 
 ### NavbarLabel
 
-The `NavbarLabel` component renders text inside a navbar item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarLabel** extends the native **`<span>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NavbarMobile
 
-The `NavbarMobile` component renders mobile navbar content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarMobile** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NavbarProvider
 
-The `NavbarProvider` component manages navbar open state.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `defaultOpen` | `boolean` | `false` |
-| `isOpen` | `boolean` | - |
-| `onOpenChange` | `(open: boolean) => void` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarProvider** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="defaultOpen" type='boolean' defaultValue='false' />
+  <ApiParameter name="isOpen" type='boolean' />
+  <ApiParameter name="onOpenChange" type='(open: boolean) => void' />
+</ApiParameters>
 
 ### NavbarSection
 
-The `NavbarSection` component groups navbar items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarSection** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NavbarSeparator
 
-The `NavbarSeparator` component separates navbar sections.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarSeparator** extends the Intent UI [**`<Separator>`**](/docs/components/surfaces/separator#separator) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NavbarSpacer
 
-The `NavbarSpacer` component pushes navbar content apart.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarSpacer** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NavbarStart
 
-The `NavbarStart` component renders leading navbar content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarStart** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NavbarTrigger
 
-The `NavbarTrigger` component toggles mobile navbar content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NavbarTrigger** extends the Intent UI [**`<Button>`**](/docs/components/buttons/button#button) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

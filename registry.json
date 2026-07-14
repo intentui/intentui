@@ -10297,7 +10297,8 @@
         "http://localhost:3000/r/card",
         "http://localhost:3000/r/menu",
         "http://localhost:3000/r/search-field",
-        "http://localhost:3000/r/table"
+        "http://localhost:3000/r/table",
+        "http://localhost:3000/r/button"
       ],
       "files": [
         {

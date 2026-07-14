@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Toolbar#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/toolbar"/>
+<PackageCommand command="npx shadcn@latest add @intentui/toolbar"/>
 
 ## Composed components
 <Composed components={['toggle', 'separator']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='toolbar'/>
 
@@ -55,35 +55,40 @@ You can disable a toolbar either as a group or individually by using the `isDisa
 
 ### Toolbar
 
-The `Toolbar` component groups related controls.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isCircle` | `boolean` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Toolbar** extends the React Aria Components [**`<Toolbar>`**](https://react-aria.adobe.com/Toolbar#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCircle" type='boolean' />
+</ApiParameters>
 
 ### ToolbarGroup
 
-The `ToolbarGroup` component groups toolbar items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ToolbarGroup** extends the React Aria Components [**`<Group>`**](https://react-aria.adobe.com/Group#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ToolbarItem
 
-The `ToolbarItem` component represents one toolbar toggle item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ToolbarItem** extends the Intent UI [**`<Toggle>`**](/docs/components/buttons/toggle#toggle) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ToolbarSeparator
 
-The `ToolbarSeparator` component separates toolbar groups.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Toolbar#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ToolbarSeparator** extends the React Aria Components [**`<Separator>`**](https://react-aria.adobe.com/Separator#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Toolbar#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

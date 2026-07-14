@@ -19,14 +19,14 @@ references: ["https://react-aria.adobe.com/Link#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/sidebar"/>
+<PackageCommand command="npx shadcn@latest add @intentui/sidebar"/>
 
 ## Composed components
 <Composed components={['tooltip', 'sheet', 'link', 'button']} />
 
 ## Manual installation
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 <SourceCode toShow={'sidebar'}/>
 
 ## CSS variables
@@ -285,6 +285,7 @@ The example previews will appear similar to the ones in the YouTube sidebar.
 
 ### Tooltip
 The sidebar supports tooltips, which can be used to display additional information when you're on docked mode.
+
 <Sandbox
   registries={[
     "sidebar-12",
@@ -375,199 +376,222 @@ export default async function Layout({ children }: Readonly<{ children: React.Re
 
 ### Sidebar
 
-The `Sidebar` component renders an application side navigation panel.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `closeButton` | `boolean` | `true` |
-| `collapsible` | `"hidden" \| "dock" \| "none"` | `hidden` |
-| `intent` | `"default" \| "float" \| "inset"` | `default` |
-| `side` | `"left" \| "right"` | `left` |
+<ApiParameters>
+  <ApiDescription>
+    **Sidebar** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="closeButton" type='boolean' defaultValue='true' />
+  <ApiParameter name="collapsible" type='"hidden" | "dock" | "none"' defaultValue='hidden' />
+  <ApiParameter name="intent" type='"default" | "float" | "inset"' defaultValue='default' />
+  <ApiParameter name="side" type='"left" | "right"' defaultValue='left' />
+</ApiParameters>
 
 ### SidebarContent
 
-The `SidebarContent` component wraps the main sidebar content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarContent** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarDisclosure
 
-The `SidebarDisclosure` component wraps a collapsible sidebar item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarDisclosure** extends the React Aria Components [**`<Disclosure>`**](https://react-aria.adobe.com/Disclosure#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarDisclosureGroup
 
-The `SidebarDisclosureGroup` component groups collapsible sidebar items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarDisclosureGroup** extends the React Aria Components [**`<DisclosureGroup>`**](https://react-aria.adobe.com/DisclosureGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarDisclosurePanel
 
-The `SidebarDisclosurePanel` component contains collapsible sidebar content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarDisclosurePanel** extends the React Aria Components [**`<DisclosurePanel>`**](https://react-aria.adobe.com/Disclosure#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarDisclosureTrigger
 
-The `SidebarDisclosureTrigger` component toggles sidebar disclosure content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarDisclosureTrigger** extends the React Aria Components [**`<Button>`**](https://react-aria.adobe.com/Button#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarFooter
 
-The `SidebarFooter` component renders footer content in the sidebar.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarFooter** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarHeader
 
-The `SidebarHeader` component renders header content in the sidebar.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarHeader** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarInset
 
-The `SidebarInset` component aligns page content next to the sidebar.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarInset** extends the native **`<main>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarItem
 
-The `SidebarItem` component represents one sidebar link or action.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `badge` | `string \| number \| undefined` | - |
-| `className` | `string` | - |
-| `isCurrent` | `boolean` | - |
-| `tooltip` | `string \| React.ComponentProps<typeof TooltipContent>` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarItem** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+  </ApiDescription>
+  <ApiParameter name="badge" type='string | number | undefined' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCurrent" type='boolean' />
+  <ApiParameter name="tooltip" type='string | React.ComponentProps<typeof TooltipContent>' />
+</ApiParameters>
 
 ### SidebarLabel
 
-The `SidebarLabel` component renders text inside a sidebar item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarLabel** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarLink
 
-The `SidebarLink` component renders a sidebar link.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarLink** extends the React Aria Components [**`<Link>`**](https://react-aria.adobe.com/Link#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarMenuTrigger
 
-The `SidebarMenuTrigger` component renders a sidebar menu trigger.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `alwaysVisible` | `boolean` | `false` |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarMenuTrigger** extends the React Aria Components [**`<Button>`**](https://react-aria.adobe.com/Button#api) component.
+  </ApiDescription>
+  <ApiParameter name="alwaysVisible" type='boolean' defaultValue='false' />
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarNav
 
-The `SidebarNav` component wraps sidebar navigation content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isSticky` | `boolean` | `false` |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarNav** extends the native **`<nav>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isSticky" type='boolean' defaultValue='false' />
+</ApiParameters>
 
 ### SidebarProvider
 
-The `SidebarProvider` component manages sidebar open state.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `defaultOpen` | `boolean` | `true` |
-| `isOpen` | `boolean` | - |
-| `onOpenChange` | `(open: boolean) => void` | - |
-| `shortcut` | `string` | `b` |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarProvider** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="defaultOpen" type='boolean' defaultValue='true' />
+  <ApiParameter name="isOpen" type='boolean' />
+  <ApiParameter name="onOpenChange" type='(open: boolean) => void' />
+  <ApiParameter name="shortcut" type='string' defaultValue='b' />
+</ApiParameters>
 
 ### SidebarRail
 
-The `SidebarRail` component renders the collapsed sidebar rail.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarRail** extends the native **`<button>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarSection
 
-The `SidebarSection` component groups sidebar items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `label` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarSection** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="label" type='string' />
+</ApiParameters>
 
 ### SidebarSectionGroup
 
-The `SidebarSectionGroup` component groups sidebar sections.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarSectionGroup** extends the native **`<section>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarSeparator
 
-The `SidebarSeparator` component separates sidebar content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarSeparator** extends the React Aria Components [**`<Separator>`**](https://react-aria.adobe.com/Separator#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarTree
 
-The `SidebarTree` component renders nested sidebar navigation.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarTree** extends the React Aria Components [**`<Tree>`**](https://react-aria.adobe.com/Tree#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarTreeContent
 
-The `SidebarTreeContent` component renders content inside a sidebar tree item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isCurrent` | `boolean` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarTreeContent** extends the React Aria Components [**`<TreeItemContent>`**](https://react-aria.adobe.com/Tree#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCurrent" type='boolean' />
+</ApiParameters>
 
 ### SidebarTreeItem
 
-The `SidebarTreeItem` component represents one sidebar tree item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarTreeItem** extends the React Aria Components [**`<TreeItem>`**](https://react-aria.adobe.com/Tree#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SidebarTrigger
 
-The `SidebarTrigger` component toggles the sidebar.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SidebarTrigger** extends the Intent UI [**`<Button>`**](/docs/components/buttons/button#button) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

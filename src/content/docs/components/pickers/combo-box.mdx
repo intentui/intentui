@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/ComboBoxhtml#props"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/combo-box"/>
+<PackageCommand command="npx shadcn@latest add @intentui/combo-box"/>
 
 ## Composed components
 <Composed components={['field', 'dropdown', 'popover', 'button']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react"/>
 
 <SourceCode toShow='combo-box'/>
 
@@ -109,69 +109,78 @@ When the combo box is disabled, it becomes non-interactive and cannot be edited.
 
 ### ComboBox
 
-The `ComboBox` component combines an input with selectable options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ComboBox** extends the React Aria Components [**`<ComboBox>`**](https://react-aria.adobe.com/ComboBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ComboBoxContent
 
-The `ComboBoxContent` component renders the combo box option list.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `popover` | `Omit<PopoverProps, "children">` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ComboBoxContent** extends the React Aria Components [**`<ListBox>`**](https://react-aria.adobe.com/ListBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="popover" type='Omit<PopoverProps, "children">' />
+</ApiParameters>
 
 ### ComboBoxInput
 
-The `ComboBoxInput` component renders the searchable combo box input.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ComboBoxInput** extends the React Aria Components [**`<Input>`**](https://react-aria.adobe.com/forms) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ComboBoxValue
 
-The `ComboBoxValue` component renders the selected combo box value.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ComboBoxValue** extends the React Aria Components [**`<ComboBoxValue>`**](https://react-aria.adobe.com/ComboBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ComboBoxItem
 
-The `ComboBoxItem` component represents one combo box option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"danger" \| "warning"` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ComboBoxItem** extends the Intent UI [**`<DropdownItem>`**](/docs/components/collections/dropdown#dropdownitem) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="intent" type='"danger" | "warning"' />
+</ApiParameters>
 
 ### ComboBoxLabel
 
-The `ComboBoxLabel` component renders the primary text for an option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ComboBoxLabel** extends the Intent UI [**`<DropdownLabel>`**](/docs/components/collections/dropdown#dropdownlabel) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ComboBoxDescription
 
-The `ComboBoxDescription` component renders supporting text for an option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ComboBoxDescription** extends the Intent UI [**`<DropdownDescription>`**](/docs/components/collections/dropdown#dropdowndescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ComboBoxSection
 
-The `ComboBoxSection` component groups related combo box options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `title` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ComboBoxhtml#props) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ComboBoxSection** extends the Intent UI [**`<DropdownSection>`**](/docs/components/collections/dropdown#dropdownsection) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="title" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ComboBoxhtml#props) for the full API reference.
+  </ApiReference>
+</ApiParameters>

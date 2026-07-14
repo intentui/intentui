@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Select#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/select"/>
+<PackageCommand command="npx shadcn@latest add @intentui/select"/>
 
 ## Composed components
 <Composed components={['field', 'dropdown', 'popover']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='select'/>
 
@@ -111,72 +111,81 @@ When the select component is disabled, it cannot be interacted with.
 
 ### Select
 
-The `Select` component lets users choose from a list of options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `items` | `Iterable<T, M>` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Select** extends the React Aria Components [**`<Select>`**](https://react-aria.adobe.com/Select#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="items" type='Iterable<T, M>' />
+</ApiParameters>
 
 ### SelectContent
 
-The `SelectContent` component renders select options inside a popover.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `items` | `Iterable<T>` | - |
-| `popover` | `Omit<PopoverProps, "children">` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SelectContent** extends the React Aria Components [**`<ListBox>`**](https://react-aria.adobe.com/ListBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="items" type='Iterable<T>' />
+  <ApiParameter name="popover" type='Omit<PopoverProps, "children">' />
+</ApiParameters>
 
 ### SelectItem
 
-The `SelectItem` component represents one select option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"danger" \| "warning"` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SelectItem** extends the Intent UI [**`<DropdownItem>`**](/docs/components/collections/dropdown#dropdownitem) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="intent" type='"danger" | "warning"' />
+</ApiParameters>
 
 ### SelectLabel
 
-The `SelectLabel` component renders the primary text for a select option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SelectLabel** extends the Intent UI [**`<DropdownLabel>`**](/docs/components/collections/dropdown#dropdownlabel) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SelectDescription
 
-The `SelectDescription` component renders supporting text for a select option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SelectDescription** extends the Intent UI [**`<DropdownDescription>`**](/docs/components/collections/dropdown#dropdowndescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SelectSection
 
-The `SelectSection` component groups related select options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `title` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SelectSection** extends the Intent UI [**`<DropdownSection>`**](/docs/components/collections/dropdown#dropdownsection) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="title" type='string' />
+</ApiParameters>
 
 ### SelectSeparator
 
-The `SelectSeparator` component separates select option groups.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SelectSeparator** extends the Intent UI [**`<DropdownSeparator>`**](/docs/components/collections/dropdown#dropdownseparator) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SelectTrigger
 
-The `SelectTrigger` component opens the select popover and displays the selected value.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `prefix` | `ReactNode` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Select#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **SelectTrigger** extends the React Aria Components [**`<Button>`**](https://react-aria.adobe.com/Button#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="prefix" type='ReactNode' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Select#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

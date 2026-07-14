@@ -10,12 +10,12 @@ order: 1
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/text"/>
+<PackageCommand command="npx shadcn@latest add @intentui/text"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge tailwind-variants"/>
+<PackageCommand command="npm i tailwind-merge tailwind-variants"/>
 <SourceCode toShow='text'/>
 
 ## Anatomy
@@ -35,32 +35,36 @@ import { Text } from "@/components/ui/text"
 
 ### Code
 
-The `Code` component renders inline code text.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Code** extends the native **`<code>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Strong
 
-The `Strong` component renders emphasized text.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Strong** extends the native **`<strong>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Text
 
-The `Text` component renders paragraph text.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Text** extends the native **`<p>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TextLink
 
-The `TextLink` component renders a styled text link.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TextLink** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

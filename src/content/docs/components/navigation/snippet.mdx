@@ -11,13 +11,13 @@ references: ["https://react-aria.adobe.com/Tabs#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/snippet"/>
+<PackageCommand command="npx shadcn@latest add @intentui/snippet"/>
 
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
+<PackageCommand command="npm i react-aria-components"/>
 
 <SourceCode toShow='snippet' />
 
@@ -54,42 +54,48 @@ const commands = [
 
 ### Snippet
 
-The `Snippet` component wraps tabbed code snippets.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Snippet** extends the React Aria Components [**`<Tabs>`**](https://react-aria.adobe.com/Tabs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SnippetTab
 
-The `SnippetTab` component represents one snippet tab.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SnippetTab** extends the Intent UI [**`<Tab>`**](/docs/components/navigation/tabs#tab) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SnippetTabPanel
 
-The `SnippetTabPanel` component renders snippet tab content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SnippetTabPanel** extends the React Aria Components [**`<TabPanel>`**](https://react-aria.adobe.com/Tabs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SnippetTabPanels
 
-The `SnippetTabPanels` component groups snippet tab panels.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SnippetTabPanels** extends the Intent UI [**`<TabPanels>`**](/docs/components/navigation/tabs#tabpanels) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SnippetTabsList
 
-The `SnippetTabsList` component groups snippet tabs.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Tabs#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **SnippetTabsList** extends the Intent UI [**`<TabList>`**](/docs/components/navigation/tabs#tablist) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Tabs#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

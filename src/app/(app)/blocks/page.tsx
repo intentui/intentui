@@ -33,7 +33,9 @@ export default function Page() {
   return (
     <>
       <JsonLd data={jsonLd} />
-      <Sandbox registries={['sidebar-02', 'navbar-01', 'auth-01']} />
+      <div className="**:data-[slot=registry-viewer]:mt-0">
+        <Sandbox registries={['sidebar-02', 'navbar-01', 'auth-01']} />
+      </div>
     </>
   )
 }

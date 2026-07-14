@@ -10,7 +10,7 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/heading"/>
+<PackageCommand command="npx shadcn@latest add @intentui/heading"/>
 
 ## Anatomy
 ```
@@ -29,7 +29,7 @@ import { Heading } from "@/components/ui/heading"
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
+<PackageCommand command="npm i tailwind-merge"/>
 <SourceCode toShow='heading'/>
 
 ## Examples
@@ -39,9 +39,10 @@ By default, when a heading is used on a [card component](/docs/components/surfac
 <How toUse="surfaces/heading/heading-level-example" />
 
 ## Component API
-The `Heading` component renders a styled heading.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `level` | `1 \| 2 \| 3 \| 4` | `1` |
+<ApiParameters>
+  <ApiDescription>
+    **Heading** extends the native **`<h1>`**, **`<h2>`**, **`<h3>`**, and **`<h4>`** elements.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="level" type='1 | 2 | 3 | 4' defaultValue='1' />
+</ApiParameters>

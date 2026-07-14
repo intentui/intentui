@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Breadcrumbs#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/breadcrumbs"/>
+<PackageCommand command="npx shadcn@latest add @intentui/breadcrumbs"/>
 
 ## Composed components
 <Composed components={['link']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow={'breadcrumbs'}/>
 
@@ -69,20 +69,23 @@ if you think you want to render an element inside that current breadcrumb, you c
 
 ### Breadcrumbs
 
-The `Breadcrumbs` component groups breadcrumb navigation items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `separator` | `"chevron" \| "slash" \| boolean` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Breadcrumbs** extends the React Aria Components [**`<Breadcrumbs>`**](https://react-aria.adobe.com/Breadcrumbs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="separator" type='"chevron" | "slash" | boolean' />
+</ApiParameters>
 
 ### BreadcrumbsItem
 
-The `BreadcrumbsItem` component represents one step in a breadcrumb trail.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `href` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Breadcrumbs#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **BreadcrumbsItem** extends the React Aria Components [**`<Breadcrumb>`**](https://react-aria.adobe.com/Breadcrumbs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="href" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Breadcrumbs#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

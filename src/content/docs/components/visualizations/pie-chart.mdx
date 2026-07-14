@@ -11,12 +11,12 @@ references: ["https://recharts.org/en-US/api/PieChart"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/pie-chart"/>
+<PackageCommand command="npx shadcn@latest add @intentui/pie-chart"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i recharts react-aria-components"/>
+<PackageCommand command="npm i recharts react-aria-components"/>
 
 <SourceCode toShow={'pie-chart'} />
 
@@ -41,25 +41,45 @@ Add spacing between pie slices for better visibility and aesthetics.
 
 ## Component API
 
-The `PieChart` component renders proportional data as pie or donut charts.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `chartProps` | `Omit<ComponentProps<typeof PieChartPrimitive>, "data" \| "stackOffset">` | - |
-| `children` | `React.ReactNode` | - |
-| `className` | `string` | - |
-| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
-| `config` | `ChartConfig` | - |
-| `containerHeight` | `number` | `370 desktop / 200 mobile` |
-| `data` | `Record<string, any>[]` | `[]` |
-| `dataKey` | `string` | - |
-| `label` | `string` | - |
-| `nameKey` | `string` | - |
-| `pieProps` | `Omit<ComponentProps<typeof Pie>, "data" \| "dataKey" \| "name">` | - |
-| `showLabel` | `boolean` | - |
-| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
-| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
-| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
-| `variant` | `"pie" \| "donut"` | `pie` |
-
-See the [Recharts](https://recharts.org/en-US/api/PieChart) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **PieChart** extends the internal Intent UI **`<BaseChart>`** component.
+  </ApiDescription>
+  <ApiParameter
+    name="chartProps"
+    type='Omit<ComponentProps<typeof PieChartPrimitive>, "data" | "stackOffset">'
+  />
+  <ApiParameter name="children" type='React.ReactNode' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="colors"
+    type='readonly (ChartColorKeys | string)[]'
+    defaultValue='DEFAULT_COLORS'
+  />
+  <ApiParameter name="config" type='ChartConfig' />
+  <ApiParameter name="containerHeight" type='number' defaultValue='370 desktop / 200 mobile' />
+  <ApiParameter name="data" type='Record<string, any>[]' defaultValue='[]' />
+  <ApiParameter name="dataKey" type='string' />
+  <ApiParameter name="label" type='string' />
+  <ApiParameter name="nameKey" type='string' />
+  <ApiParameter
+    name="pieProps"
+    type='Omit<ComponentProps<typeof Pie>, "data" | "dataKey" | "name">'
+  />
+  <ApiParameter name="showLabel" type='boolean' />
+  <ApiParameter
+    name="tooltip"
+    type='TooltipContentType<ValueType, NameType> | boolean'
+    defaultValue='true'
+  />
+  <ApiParameter name="tooltipProps" type='BaseChartProps["tooltipProps"]' />
+  <ApiParameter
+    name="valueFormatter"
+    type='(value: number) => string'
+    defaultValue='(value) => value.toString()'
+  />
+  <ApiParameter name="variant" type='"pie" | "donut"' defaultValue='pie' />
+  <ApiReference>
+    See the [Recharts](https://recharts.org/en-US/api/PieChart) for the full API reference.
+  </ApiReference>
+</ApiParameters>

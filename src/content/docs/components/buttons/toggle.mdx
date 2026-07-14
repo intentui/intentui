@@ -11,12 +11,12 @@ references: [https://react-aria.adobe.com/ToggleButton#api]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/toggle"/>
+<PackageCommand command="npx shadcn@latest add @intentui/toggle"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-variants tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-variants tailwind-merge"/>
 <SourceCode toShow='toggle'/>
 
 ## Examples
@@ -70,13 +70,19 @@ Sometimes you may want to use this button with only an icon. In that case, you c
 
 ### Toggle
 
-The `Toggle` component is a pressable control that can stay selected.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"outline" \| "plain"` | `plain` |
-| `isCircle` | `true \| false` | `false` |
-| `size` | `"xs" \| "sm" \| "md" \| "lg" \| "sq-xs" \| "sq-sm" \| "sq-md" \| "sq-lg"` | `md` |
-
-See the [React Aria](https://react-aria.adobe.com/ToggleButton#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **Toggle** extends the React Aria Components [**`<ToggleButton>`**](https://react-aria.adobe.com/ToggleButton#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type="string" />
+  <ApiParameter name="intent" type='"outline" | "plain"' defaultValue="plain" />
+  <ApiParameter name="isCircle" type="boolean" defaultValue="false" />
+  <ApiParameter
+    name="size"
+    type='"xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"'
+    defaultValue="md"
+  />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ToggleButton#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

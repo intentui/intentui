@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Popover#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/popover"/>
+<PackageCommand command="npx shadcn@latest add @intentui/popover"/>
 
 ## Composed components
 <Composed components={['button', 'dialog']}/>
@@ -20,7 +20,7 @@ Install the component via the CLI in one command.
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 
-<InstallCommand command="npm i react-aria-components"/>
+<PackageCommand command="npm i react-aria-components"/>
 
 <SourceCode toShow='popover'/>
 
@@ -97,74 +97,91 @@ All the examples above use `<Button/>` as the trigger, but what if you wanna swi
 
 ### Popover
 
-The `Popover` component controls the popover trigger and content.
+<ApiParameters>
+  <ApiDescription>
+    **Popover** extends the React Aria Components [**`<Popover>`**](https://react-aria.adobe.com/Popover#api) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### PopoverTrigger
 
-The `PopoverTrigger` component defines the element that opens a popover.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PopoverTrigger** extends the Intent UI [**`<DialogTrigger>`**](/docs/components/overlays/dialog#dialogtrigger) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PopoverContent
 
-The `PopoverContent` component renders floating popover content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `arrow` | `boolean` | `false` |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PopoverContent** extends the React Aria Components [**`<Popover>`**](https://react-aria.adobe.com/Popover#api) component.
+  </ApiDescription>
+  <ApiParameter name="arrow" type='boolean' defaultValue='false' />
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PopoverHeader
 
-The `PopoverHeader` component groups the popover title and description.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `title` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PopoverHeader** extends the Intent UI [**`<DialogHeader>`**](/docs/components/overlays/dialog#dialogheader) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="description" type='string' />
+  <ApiParameter name="title" type='string' />
+</ApiParameters>
 
 ### PopoverTitle
 
-The `PopoverTitle` component renders the popover heading.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PopoverTitle** extends the Intent UI [**`<DialogTitle>`**](/docs/components/overlays/dialog#dialogtitle) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PopoverDescription
 
-The `PopoverDescription` component renders supporting text inside a popover.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PopoverDescription** extends the Intent UI [**`<DialogDescription>`**](/docs/components/overlays/dialog#dialogdescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PopoverBody
 
-The `PopoverBody` component wraps the main popover content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PopoverBody** extends the Intent UI [**`<DialogBody>`**](/docs/components/overlays/dialog#dialogbody) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PopoverFooter
 
-The `PopoverFooter` component groups popover actions.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PopoverFooter** extends the Intent UI [**`<DialogFooter>`**](/docs/components/overlays/dialog#dialogfooter) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PopoverClose
 
-The `PopoverClose` component renders a button that closes the popover.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
-
-See the [React Aria](https://react-aria.adobe.com/Popover#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **PopoverClose** extends the Intent UI [**`<DialogClose>`**](/docs/components/overlays/dialog#dialogclose) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="intent"
+    type='"primary" | "secondary" | "warning" | "danger" | "success" | "outline" | "plain"'
+    defaultValue='plain'
+  />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Popover#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

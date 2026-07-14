@@ -12,7 +12,7 @@ references: ["https://react-aria.adobe.com/ListBox#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/pagination"/>
+<PackageCommand command="npx shadcn@latest add @intentui/pagination"/>
 
 ## Composed components
 <Composed components={['button']}/>
@@ -20,7 +20,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='pagination'/>
 
@@ -85,99 +85,112 @@ The simple pagination setup doesn’t display page numbers, using only basic arr
 
 ### Pagination
 
-The `Pagination` component wraps pagination controls.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Pagination** extends the native **`<nav>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationFirst
 
-The `PaginationFirst` component links to the first page.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationFirst** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationGap
 
-The `PaginationGap` component represents skipped pages.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationGap** extends the native **`<li>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationInfo
 
-The `PaginationInfo` component displays pagination status text.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationInfo** extends the native **`<p>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationItem
 
-The `PaginationItem` component represents one pagination link.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isCurrent` | `boolean` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationItem** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCurrent" type='boolean' />
+</ApiParameters>
 
 ### PaginationLabel
 
-The `PaginationLabel` component renders pagination label text.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationLabel** extends the native **`<li>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationLast
 
-The `PaginationLast` component links to the last page.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationLast** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationList
 
-The `PaginationList` component groups pagination items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationList** extends the native **`<ul>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationNext
 
-The `PaginationNext` component links to the next page.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationNext** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationPrevious
 
-The `PaginationPrevious` component links to the previous page.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationPrevious** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationSection
 
-The `PaginationSection` component groups pagination content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **PaginationSection** extends the native **`<ul>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### PaginationSpacer
 
-The `PaginationSpacer` component pushes pagination content apart.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ListBox#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **PaginationSpacer** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ListBox#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

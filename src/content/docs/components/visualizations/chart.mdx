@@ -10,12 +10,12 @@ references: ["https://recharts.org"]
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/chart"/>
+<PackageCommand command="npx shadcn@latest add @intentui/chart"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i recharts tailwind-merge"/>
+<PackageCommand command="npm i recharts tailwind-merge"/>
 
 <SourceCode toShow={'chart'} />
 
@@ -76,86 +76,108 @@ If you do not set a height, the chart defaults to 370 on desktop and 200 on mobi
 
 ### CartesianGrid
 
-The `CartesianGrid` component renders chart grid lines.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CartesianGrid** extends the Recharts [**`<CartesianGrid>`**](https://recharts.org/en-US/api/CartesianGrid) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Chart
 
-The `Chart` component provides shared chart context and layout.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `children` | `ReactElement \| ((props: ChartContextProps) => ReactElement)` | - |
-| `className` | `string` | - |
-| `config` | `ChartConfig` | - |
-| `containerHeight` | `number` | `370 desktop / 200 mobile` |
-| `data` | `Record<string, any>[]` | `[]` |
-| `dataKey` | `string` | `value` |
-| `id` | `string` | generated |
-| `layout` | `ChartLayout` | `horizontal` |
+<ApiParameters>
+  <ApiDescription>
+    **Chart** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter
+    name="children"
+    type='ReactElement | ((props: ChartContextProps) => ReactElement)'
+  />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="config" type='ChartConfig' />
+  <ApiParameter name="containerHeight" type='number' defaultValue='370 desktop / 200 mobile' />
+  <ApiParameter name="data" type='Record<string, any>[]' defaultValue='[]' />
+  <ApiParameter name="dataKey" type='string' defaultValue='value' />
+  <ApiParameter name="id" type='string' defaultValue='generated' />
+  <ApiParameter name="layout" type='ChartLayout' defaultValue='horizontal' />
+</ApiParameters>
 
 ### ChartLegendContent
 
-The `ChartLegendContent` component renders the chart legend items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `align` | `LegendProps["align"]` | `right` |
-| `className` | `string` | - |
-| `hideIcon` | `boolean` | `false` |
-| `nameKey` | `string` | - |
-| `payload` | `ReadonlyArray<LegendPayload>` | - |
-| `verticalAlign` | `LegendProps["verticalAlign"]` | `bottom` |
+<ApiParameters>
+  <ApiDescription>
+    **ChartLegendContent** extends the React Aria Components [**`<ToggleButtonGroup>`**](https://react-aria.adobe.com/ToggleButtonGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="align" type='LegendProps["align"]' defaultValue='right' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="hideIcon" type='boolean' defaultValue='false' />
+  <ApiParameter name="nameKey" type='string' />
+  <ApiParameter name="payload" type='ReadonlyArray<LegendPayload>' />
+  <ApiParameter name="verticalAlign" type='LegendProps["verticalAlign"]' defaultValue='bottom' />
+</ApiParameters>
 
 ### ChartLegend
 
-The `ChartLegend` component renders the chart legend container.
+<ApiParameters>
+  <ApiDescription>
+    **ChartLegend** extends the Recharts [**`<Legend>`**](https://recharts.org/en-US/api/Legend) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### ChartTooltip
 
-The `ChartTooltip` component renders the chart tooltip container.
+<ApiParameters>
+  <ApiDescription>
+    **ChartTooltip** extends the Recharts [**`<Tooltip>`**](https://recharts.org/en-US/api/Tooltip) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### ChartTooltipContent
 
-The `ChartTooltipContent` component renders chart tooltip content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `color` | `string` | - |
-| `formatter` | `TooltipContentProps["formatter"]` | - |
-| `hideIndicator` | `boolean` | `false` |
-| `hideLabel` | `boolean` | `false` |
-| `indicator` | `"line" \| "dot" \| "dashed"` | `dot` |
-| `labelClassName` | `string` | - |
-| `labelFormatter` | `TooltipContentProps["labelFormatter"]` | - |
-| `labelKey` | `string` | - |
-| `labelSeparator` | `boolean` | `true` |
-| `nameKey` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ChartTooltipContent** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="color" type='string' />
+  <ApiParameter name="formatter" type='TooltipContentProps["formatter"]' />
+  <ApiParameter name="hideIndicator" type='boolean' defaultValue='false' />
+  <ApiParameter name="hideLabel" type='boolean' defaultValue='false' />
+  <ApiParameter name="indicator" type='"line" | "dot" | "dashed"' defaultValue='dot' />
+  <ApiParameter name="labelClassName" type='string' />
+  <ApiParameter name="labelFormatter" type='TooltipContentProps["labelFormatter"]' />
+  <ApiParameter name="labelKey" type='string' />
+  <ApiParameter name="labelSeparator" type='boolean' defaultValue='true' />
+  <ApiParameter name="nameKey" type='string' />
+</ApiParameters>
 
 ### XAxis
 
-The `XAxis` component renders the chart x-axis.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `displayEdgeLabelsOnly` | `boolean` | - |
-| `intervalType` | `IntervalType` | `preserveStartEnd` |
-| `minTickGap` | `number` | `5` |
+<ApiParameters>
+  <ApiDescription>
+    **XAxis** extends the Recharts [**`<XAxis>`**](https://recharts.org/en-US/api/XAxis) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="displayEdgeLabelsOnly" type='boolean' />
+  <ApiParameter name="intervalType" type='IntervalType' defaultValue='preserveStartEnd' />
+  <ApiParameter name="minTickGap" type='number' defaultValue='5' />
+</ApiParameters>
 
 ### YAxis
 
-The `YAxis` component renders the chart y-axis.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `domain` | `YAxisPrimitiveProps["domain"]` | `["auto", "auto"]` |
-| `type` | `YAxisPrimitiveProps["type"]` | layout-based |
-| `width` | `number` | layout-based |
-
-See the [Recharts](https://recharts.org) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **YAxis** extends the Recharts [**`<YAxis>`**](https://recharts.org/en-US/api/YAxis) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="domain"
+    type='YAxisPrimitiveProps["domain"]'
+    defaultValue='["auto", "auto"]'
+  />
+  <ApiParameter name="type" type='YAxisPrimitiveProps["type"]' defaultValue='layout-based' />
+  <ApiParameter name="width" type='number' defaultValue='layout-based' />
+  <ApiReference>
+    See the [Recharts](https://recharts.org) for the full API reference.
+  </ApiReference>
+</ApiParameters>

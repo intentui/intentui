@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import type { Key } from 'react-aria-components/Breadcrumbs'
-import { CodeHighlighter } from '@/components/code/code-highlighter'
+import { CodeHighlighter } from '@/components/docs/code-highlighter'
 import {
   Snippet,
   SnippetTab,

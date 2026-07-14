@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/FileTrigger#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/file-trigger"/>
+<PackageCommand command="npx shadcn@latest add @intentui/file-trigger"/>
 
 ## Composed components
 <Composed components={['button']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-variants"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-variants"/>
 <SourceCode toShow='file-trigger'/>
 
 ## Anatomy
@@ -74,15 +74,25 @@ A FileTrigger that is disabled.
 
 ### FileTrigger
 
-The `FileTrigger` component opens the system file picker from a styled trigger.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `outline` |
-| `isCircle` | `true \| false` | `false` |
-| `isDisabled` | `boolean` | - |
-| `isPending` | `boolean` | - |
-| `size` | `"xs" \| "sm" \| "md" \| "lg" \| "sq-xs" \| "sq-sm" \| "sq-md" \| "sq-lg"` | `md` |
-
-See the [React Aria](https://react-aria.adobe.com/FileTrigger#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **FileTrigger** extends the React Aria Components [**`<FileTrigger>`**](https://react-aria.adobe.com/FileTrigger#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="intent"
+    type='"primary" | "secondary" | "warning" | "danger" | "success" | "outline" | "plain"'
+    defaultValue='outline'
+  />
+  <ApiParameter name="isCircle" type='true | false' defaultValue='false' />
+  <ApiParameter name="isDisabled" type='boolean' />
+  <ApiParameter name="isPending" type='boolean' />
+  <ApiParameter
+    name="size"
+    type='"xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"'
+    defaultValue='md'
+  />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/FileTrigger#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

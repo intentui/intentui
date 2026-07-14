@@ -10,13 +10,13 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/button-group"/>
+<PackageCommand command="npx shadcn@latest add @intentui/button-group"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 
-<InstallCommand command="npm i tailwind-variants tailwind-merge"/>
+<PackageCommand command="npm i tailwind-variants tailwind-merge"/>
 
 <SourceCode toShow='button-group'/>
 
@@ -52,17 +52,19 @@ You can also combine button groups with text to provide context or instructions.
 
 ### ButtonGroup
 
-The `ButtonGroup` component arranges related buttons as a single control.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `orientation` | `"horizontal" \| "vertical"` | `horizontal` |
+<ApiParameters>
+  <ApiDescription>
+    **ButtonGroup** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="orientation" type='"horizontal" | "vertical"' defaultValue='horizontal' />
+</ApiParameters>
 
 ### ButtonGroupText
 
-The `ButtonGroupText` component renders text inside a button group.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ButtonGroupText** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

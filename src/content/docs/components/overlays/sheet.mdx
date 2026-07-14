@@ -12,7 +12,7 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/sheet"/>
+<PackageCommand command="npx shadcn@latest add @intentui/sheet"/>
 
 ## Composed components
 <Composed components={['dialog']} />
@@ -21,7 +21,7 @@ Install the component via the CLI in one command.
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 
-<InstallCommand command="npm i react-aria-components tailwind-merge tailwind-variants"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge tailwind-variants"/>
 
 <SourceCode toShow='sheet' />
 
@@ -92,77 +92,94 @@ You can use the `SheetBody` component to make the sheet sticky.
 
 ### Sheet
 
-The `Sheet` component controls the sheet trigger and content.
+<ApiParameters>
+  <ApiDescription>
+    **Sheet** extends the React Aria Components [**`<DialogTrigger>`**](https://react-aria.adobe.com/Dialog#api) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### SheetTrigger
 
-The `SheetTrigger` component defines the element that opens a sheet.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SheetTrigger** extends the Intent UI [**`<DialogTrigger>`**](/docs/components/overlays/dialog#dialogtrigger) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SheetContent
 
-The `SheetContent` component renders the slide-in sheet panel.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `closeButton` | `boolean` | `true` |
-| `isFloat` | `boolean` | `true` |
-| `overlay` | `Omit<ModalOverlayProps, "children">` | - |
-| `side` | `"top" \| "bottom" \| "left" \| "right"` | `right` |
+<ApiParameters>
+  <ApiDescription>
+    **SheetContent** extends the React Aria Components [**`<ModalOverlay>`**](https://react-aria.adobe.com/Modal#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="closeButton" type='boolean' defaultValue='true' />
+  <ApiParameter name="isFloat" type='boolean' defaultValue='true' />
+  <ApiParameter name="overlay" type='Omit<ModalOverlayProps, "children">' />
+  <ApiParameter name="side" type='"top" | "bottom" | "left" | "right"' defaultValue='right' />
+</ApiParameters>
 
 ### SheetHeader
 
-The `SheetHeader` component groups the sheet title and description.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `title` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SheetHeader** extends the Intent UI [**`<DialogHeader>`**](/docs/components/overlays/dialog#dialogheader) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="description" type='string' />
+  <ApiParameter name="title" type='string' />
+</ApiParameters>
 
 ### SheetTitle
 
-The `SheetTitle` component renders the sheet heading.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SheetTitle** extends the Intent UI [**`<DialogTitle>`**](/docs/components/overlays/dialog#dialogtitle) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SheetDescription
 
-The `SheetDescription` component renders supporting text inside a sheet.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SheetDescription** extends the Intent UI [**`<DialogDescription>`**](/docs/components/overlays/dialog#dialogdescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SheetBody
 
-The `SheetBody` component wraps the main sheet content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SheetBody** extends the Intent UI [**`<DialogBody>`**](/docs/components/overlays/dialog#dialogbody) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SheetFooter
 
-The `SheetFooter` component groups sheet actions.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SheetFooter** extends the Intent UI [**`<DialogFooter>`**](/docs/components/overlays/dialog#dialogfooter) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SheetClose
 
-The `SheetClose` component renders a button that closes the sheet.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
-
-See the [React Aria](https://react-aria.adobe.com/Modal#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **SheetClose** extends the Intent UI [**`<DialogClose>`**](/docs/components/overlays/dialog#dialogclose) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="intent"
+    type='"primary" | "secondary" | "warning" | "danger" | "success" | "outline" | "plain"'
+    defaultValue='plain'
+  />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Modal#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

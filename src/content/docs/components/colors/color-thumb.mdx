@@ -11,12 +11,12 @@ status: primitive
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/color-thumb"/>
+<PackageCommand command="npx shadcn@latest add @intentui/color-thumb"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
+<PackageCommand command="npm i react-aria-components"/>
 
 <SourceCode toShow='color-thumb'/>
 
@@ -24,8 +24,9 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 ### ColorThumb
 
-The `ColorThumb` component renders the draggable color control handle.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ColorThumb** extends the React Aria Components [**`<ColorThumb>`**](https://react-aria.adobe.com/ColorThumb#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

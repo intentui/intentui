@@ -9,7 +9,7 @@ status: primitive
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/dropdown"/>
+<PackageCommand command="npx shadcn@latest add @intentui/dropdown"/>
 
 ## Composed components
 <Composed components={['keyboard']}/>
@@ -17,7 +17,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants"/>
 
 <SourceCode toShow='dropdown' />
 
@@ -25,50 +25,56 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 ### DropdownDescription
 
-The `DropdownDescription` component renders secondary text for a dropdown item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DropdownDescription** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DropdownItem
 
-The `DropdownItem` component represents one dropdown option or action.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"danger" \| "warning"` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DropdownItem** extends the React Aria Components [**`<ListBoxItem>`**](https://react-aria.adobe.com/ListBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="intent" type='"danger" | "warning"' />
+</ApiParameters>
 
 ### DropdownKeyboard
 
-The `DropdownKeyboard` component displays a keyboard shortcut in a dropdown item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DropdownKeyboard** extends the Intent UI [**`<Keyboard>`**](/docs/components/controls/keyboard#keyboard) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DropdownLabel
 
-The `DropdownLabel` component renders dropdown item label text.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DropdownLabel** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DropdownSection
 
-The `DropdownSection` component groups related dropdown items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `title` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DropdownSection** extends the React Aria Components [**`<ListBoxSection>`**](https://react-aria.adobe.com/ListBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="title" type='string' />
+</ApiParameters>
 
 ### DropdownSeparator
 
-The `DropdownSeparator` component separates dropdown groups.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DropdownSeparator** extends the React Aria Components [**`<Separator>`**](https://react-aria.adobe.com/Separator#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

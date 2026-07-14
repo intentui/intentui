@@ -1,5 +1,6 @@
-import { remarkHeading, remarkImage } from 'fumadocs-core/mdx-plugins'
+import { rehypeCodeDefaultOptions, remarkHeading, remarkImage } from 'fumadocs-core/mdx-plugins'
 import { defineCollections, defineConfig, defineDocs, frontmatterSchema } from 'fumadocs-mdx/config'
+import { transformerMetaHighlight } from '@shikijs/transformers'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import { z } from 'zod'
@@ -36,6 +37,7 @@ export default defineConfig({
       themes: app.editorThemes,
       langs: ['ts', 'tsx', 'json', 'css', 'bash', 'toml'],
       defaultLanguage: 'tsx',
+      transformers: [...(rehypeCodeDefaultOptions.transformers ?? []), transformerMetaHighlight()],
     },
     remarkPlugins: [[remarkHeading, { generateToc: true }], remarkImage],
     rehypePlugins: (plugins) => [

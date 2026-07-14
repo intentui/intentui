@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/ColorPicker.html"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/color-picker"/>
+<PackageCommand command="npx shadcn@latest add @intentui/color-picker"/>
 
 ## Composed components
 <Composed components={[
@@ -29,7 +29,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 <SourceCode toShow='color-picker'/>
 
 ## Anatomy
@@ -91,14 +91,20 @@ Disable the color picker by setting the `isDisabled` prop, making it non-interac
 
 ### ColorPicker
 
-The `ColorPicker` component coordinates color input controls.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ColorPicker** extends the React Aria Components [**`<ColorPicker>`**](https://react-aria.adobe.com/ColorPicker#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### EyeDropper
 
-The `EyeDropper` component lets users pick a color from the screen when the browser supports it.
-
-See the [React Aria](https://react-aria.adobe.com/ColorPicker.html) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **EyeDropper** extends the Intent UI [**`<Button>`**](/docs/components/buttons/button#button) component.
+  </ApiDescription>
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ColorPicker.html) for the full API reference.
+  </ApiReference>
+</ApiParameters>

@@ -14,12 +14,12 @@ The **Input OTP** component is a versatile and customizable component that allow
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/input-otp"/>
+<PackageCommand command="npx shadcn@latest add @intentui/input-otp"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i input-otp @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i input-otp @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='input-otp'/>
 
@@ -65,47 +65,57 @@ To control the Input OTP component, utilize the `value` and `onChange` props.
 
 ### InputOTP
 
-The `InputOTP` component renders the OTP input root.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `containerClassName` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **InputOTP** extends the Input OTP [**`<OTPInput>`**](https://github.com/guilhermerodz/input-otp) component.
+  </ApiDescription>
+  <ApiParameter name="containerClassName" type='string' />
+</ApiParameters>
 
 ### InputOTPControl
 
-The `InputOTPControl` component wraps OTP input slots.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **InputOTPControl** extends the native **`<span>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### InputOTPGroup
 
-The `InputOTPGroup` component groups OTP slots.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **InputOTPGroup** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### InputOTPSlot
 
-The `InputOTPSlot` component renders one OTP input slot.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `index` | `number` | - |
+<ApiParameters>
+  <ApiDescription>
+    **InputOTPSlot** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="index" type='number' />
+</ApiParameters>
 
 ### InputOTPSeparator
 
-The `InputOTPSeparator` component renders a separator between OTP groups.
+<ApiParameters>
+  <ApiDescription>
+    **InputOTPSeparator** extends the native **`<div>`** element.
+  </ApiDescription>
+</ApiParameters>
 
 ### InputOTPLabel
 
-The `InputOTPLabel` component renders the OTP input label.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [Input OTP documentation](https://github.com/guilhermerodz/input-otp) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **InputOTPLabel** extends the Intent UI [**`<Label>`**](/docs/components/forms/field#label) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [Input OTP documentation](https://github.com/guilhermerodz/input-otp) for the full API reference.
+  </ApiReference>
+</ApiParameters>

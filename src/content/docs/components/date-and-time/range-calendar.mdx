@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/RangeCalendar#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/range-calendar"/>
+<PackageCommand command="npx shadcn@latest add @intentui/range-calendar"/>
 
 ## Composed components
 <Composed components={['button']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='range-calendar'/>
 
@@ -40,11 +40,17 @@ You can see the calendar in action within the [Date Picker](/docs/components/dat
 
 ### RangeCalendar
 
-The `RangeCalendar` component lets users select a date range.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `visibleDuration` | `RangeCalendarProps<T>["visibleDuration"]` | `{ months: 1 }` |
-
-See the [React Aria](https://react-aria.adobe.com/RangeCalendar#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **RangeCalendar** extends the React Aria Components [**`<RangeCalendar>`**](https://react-aria.adobe.com/RangeCalendar#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="visibleDuration"
+    type='RangeCalendarProps<T>["visibleDuration"]'
+    defaultValue='{ months: 1 }'
+  />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/RangeCalendar#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

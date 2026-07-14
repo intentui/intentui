@@ -1,4 +1,4 @@
-import { Aside } from '@/components/aside'
+import { Aside } from '@/components/docs/aside'
 import { PageContainer } from '@/components/page-container'
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {

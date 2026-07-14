@@ -52,7 +52,7 @@ export function ReleaseNotes() {
                   <Text>
                     {notes.length} {notes.length === 1 ? 'change' : 'changes'}
                   </Text>
-                  <ul className="not-prose space-y-1.5 text-sm/6">
+                  <ul className="not-typeset space-y-1.5 text-sm/6">
                     {notes.map((note, i) => (
                       <li key={i}>
                         <div className="flex gap-x-2.5">

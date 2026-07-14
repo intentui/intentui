@@ -8,11 +8,11 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/container"/>
+<PackageCommand command="npx shadcn@latest add @intentui/container"/>
 
 ## Manual installation
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
+<PackageCommand command="npm i tailwind-merge"/>
 <SourceCode toShow='container'/>
 
 ## Examples
@@ -27,9 +27,10 @@ The Container component has constrained props, which means it won't have padding
 
 ### Container
 
-The `Container` component constrains page content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `constrained` | `boolean` | `false` |
+<ApiParameters>
+  <ApiDescription>
+    **Container** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="constrained" type='boolean' defaultValue='false' />
+</ApiParameters>

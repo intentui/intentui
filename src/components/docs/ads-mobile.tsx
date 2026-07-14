@@ -11,7 +11,7 @@ export function AdsMobile({ className }: { className?: string }) {
         target="_blank"
         href="https://design.intentui.com/?utm_source=intentui.com&utm_medium=referral&utm_campaign=docs_intentui"
         className={twMerge(
-          'not-prose mt-6 block border-page border-t border-b bg-radial-[at_50%_75%] from-sky-600 via-blue-600 to-90% to-blue-900 p-4 sm:hidden sm:border-b-0 sm:p-6',
+          'not-typeset mt-6 block border-page border-t border-b bg-radial-[at_50%_75%] from-sky-600 via-blue-600 to-90% to-blue-900 p-4 sm:hidden sm:border-b-0 sm:p-6',
           className
         )}
         rel="noopener"

@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { CodeHighlighter } from '@/components/code/code-highlighter'
-import { CopyButton } from '@/components/code/copy-button'
+import { CodeHighlighter } from '@/components/docs/code-highlighter'
+import { CopyButton } from '@/components/docs/copy-button'
 import { BrandReactjsIcon } from '@/components/icons/brand-reactjs-icon'
 import { createFetchRegistryFile } from '@/lib/fetch-registry'
 
@@ -28,7 +28,7 @@ export const SourceCode = ({ toShow, ...props }: SourceCodeProps) => {
 
   if (processedSourceCode) {
     return (
-      <section {...props} className="group not-prose relative my-6">
+      <section {...props} className="group not-typeset relative my-6">
         <p className="mb-3 text-base/6">
           {props.message
             ? props.message

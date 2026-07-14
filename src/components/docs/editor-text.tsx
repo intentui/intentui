@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react'
 import { Tab } from 'react-aria-components/Tabs'
 import { twMerge } from 'tailwind-merge'
 import generated from '@/../__registry__/generated'
-import { CodeHighlighter } from '@/components/code/code-highlighter'
-import { CopyButton } from '@/components/code/copy-button'
+import { CodeHighlighter } from '@/components/docs/code-highlighter'
+import { CopyButton } from '@/components/docs/copy-button'
 import { BrandCssIcon } from '@/components/icons/brand-css-icon'
 import { BrandReactjsIcon } from '@/components/icons/brand-reactjs-icon'
 import { BrandTypescriptIcon } from '@/components/icons/brand-typescript-icon'
@@ -78,7 +78,7 @@ export function EditorText({ source }: Props) {
   return (
     <>
       {rawSourceCode && Object.keys(rawSourceCode).length > 0 ? (
-        <Tabs className="relative gap-0">
+        <Tabs className="relative mt-6 gap-0">
           <div className="flex items-center justify-between overflow-hidden rounded-t-lg border-x border-y">
             <TabList className="gap-0 border-0 py-0">
               {Object.keys(rawSourceCode).map((key) => (

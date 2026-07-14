@@ -41,7 +41,7 @@ export const MobilePager = ({ tree, url, toc = [], className }: MobilePagerProps
   }
 
   return (
-    <div className={twMerge('not-prose flex items-center gap-x-1.5', className)}>
+    <div className={twMerge('not-typeset flex items-center gap-x-1.5', className)}>
       {toc.length > 0 && (
         <Menu>
           <Button

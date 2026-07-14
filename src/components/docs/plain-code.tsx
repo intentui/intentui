@@ -2,7 +2,7 @@
 
 import { useCallback, useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
-import { CopyButton } from '@/components/code/copy-button'
+import { CopyButton } from '@/components/docs/copy-button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { useClipboard } from '@/hooks/use-clipboard'
 
@@ -67,7 +67,7 @@ export const PlainCode = ({
       ref={ref}
       {...props}
       className={twMerge(
-        'not-prose group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6',
+        'not-typeset group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6',
         className
       )}
     >

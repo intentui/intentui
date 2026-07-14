@@ -50,7 +50,12 @@ const frameworks = [
 
 export function FrameworkGuides() {
   return (
-    <ChoiceBox selectionMode="single" aria-label="Framework guides" items={frameworks}>
+    <ChoiceBox
+      className="mt-6 not-typeset"
+      selectionMode="single"
+      aria-label="Framework guides"
+      items={frameworks}
+    >
       {(item) => (
         <ChoiceBoxItem href={item.href} id={item.name} textValue={item.name}>
           <item.logo />

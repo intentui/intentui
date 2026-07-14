@@ -10,11 +10,11 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/loader"/>
+<PackageCommand command="npx shadcn@latest add @intentui/loader"/>
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='loader'/>
 
@@ -44,11 +44,12 @@ The loader defaults to a small size, but you can also select medium, large, or e
 
 ## Component API
 
-The `Loader` component displays loading feedback.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `formatOptions` | `Intl.NumberFormatOptions` | - |
-| `isIndeterminate` | `boolean` | `true` |
-| `percentage` | `number` | - |
-| `variant` | `keyof typeof LOADERS` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Loader** extends the native **`<svg>`** element.
+  </ApiDescription>
+  <ApiParameter name="formatOptions" type='Intl.NumberFormatOptions' />
+  <ApiParameter name="isIndeterminate" type='boolean' defaultValue='true' />
+  <ApiParameter name="percentage" type='number' />
+  <ApiParameter name="variant" type='keyof typeof LOADERS' />
+</ApiParameters>

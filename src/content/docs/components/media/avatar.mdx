@@ -10,11 +10,11 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/avatar"/>
+<PackageCommand command="npx shadcn@latest add @intentui/avatar"/>
 
 ## Manual installation
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
+<PackageCommand command="npm i tailwind-merge"/>
 <SourceCode toShow='avatar'/>
 
 ## Anatomy
@@ -50,13 +50,18 @@ You can use the `AvatarGroup` component to display a group of avatars.
 <How toUse="media/avatar/avatar-group-example" />
 
 ## Component API
-The `Avatar` component displays a user image, initials, or fallback identity.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `alt` | `string` | - |
-| `className` | `string` | - |
-| `initials` | `string` | - |
-| `isSquare` | `boolean` | `false` |
-| `size` | `\| "xs" \| "sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl" \| "7xl" \| "8xl" \| "9xl"` | `md` |
-| `src` | `string \| null` | `null` |
+<ApiParameters>
+  <ApiDescription>
+    **Avatar** extends the native **`<span>`** element.
+  </ApiDescription>
+  <ApiParameter name="alt" type='string' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="initials" type='string' />
+  <ApiParameter name="isSquare" type='boolean' defaultValue='false' />
+  <ApiParameter
+    name="size"
+    type='| "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl"'
+    defaultValue='md'
+  />
+  <ApiParameter name="src" type='string | null' defaultValue='null' />
+</ApiParameters>

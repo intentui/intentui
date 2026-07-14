@@ -12,7 +12,7 @@ references: ["https://react-aria.adobe.com/Modal#api", "https://motion.dev/anima
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/drawer"/>
+<PackageCommand command="npx shadcn@latest add @intentui/drawer"/>
 
 ## Composed components
 
@@ -22,7 +22,7 @@ Install the component via the CLI in one command.
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 
-<InstallCommand command="npm i react-aria-components motion tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components motion tailwind-merge"/>
 <SourceCode toShow="drawer" />
 
 ## Anatomy
@@ -88,74 +88,87 @@ Drawers can be nested inside each other for advanced layouts.
 
 ### Drawer
 
-The `Drawer` component controls the drawer trigger and content.
+<ApiParameters>
+  <ApiDescription>
+    **Drawer** extends the React Aria Components [**`<DialogTrigger>`**](https://react-aria.adobe.com/Dialog#api) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### DrawerTrigger
 
-The `DrawerTrigger` component defines the element that opens a drawer.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DrawerTrigger** extends the React Aria Components [**`<Button>`**](https://react-aria.adobe.com/Button#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DrawerBody
 
-The `DrawerBody` component wraps the main drawer content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DrawerBody** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DrawerClose
 
-The `DrawerClose` component renders a button that closes the drawer.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DrawerClose** extends the Intent UI [**`<Button>`**](/docs/components/buttons/button#button) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DrawerContent
 
-The `DrawerContent` component renders the drawer panel.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isFloat` | `boolean` | `false` |
-| `notch` | `boolean` | `true` |
-| `overlay` | `Pick<ModalOverlayProps, "className">` | - |
-| `side` | `"top" \| "bottom" \| "left" \| "right"` | `bottom` |
+<ApiParameters>
+  <ApiDescription>
+    **DrawerContent** extends the React Aria Components [**`<ModalOverlay>`**](https://react-aria.adobe.com/Modal#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isFloat" type='boolean' defaultValue='false' />
+  <ApiParameter name="notch" type='boolean' defaultValue='true' />
+  <ApiParameter name="overlay" type='Pick<ModalOverlayProps, "className">' />
+  <ApiParameter name="side" type='"top" | "bottom" | "left" | "right"' defaultValue='bottom' />
+</ApiParameters>
 
 ### DrawerDescription
 
-The `DrawerDescription` component renders supporting text inside a drawer.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DrawerDescription** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DrawerFooter
 
-The `DrawerFooter` component groups drawer actions.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DrawerFooter** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DrawerHeader
 
-The `DrawerHeader` component groups the drawer title and description.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DrawerHeader** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DrawerTitle
 
-The `DrawerTitle` component renders the drawer heading.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Modal#api) and [Motion](https://motion.dev/animate-presence) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **DrawerTitle** extends the React Aria Components [**`<Heading>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Modal#api) and [Motion](https://motion.dev/animate-presence) for the full API reference.
+  </ApiReference>
+</ApiParameters>

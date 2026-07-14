@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/ListBox#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/list-box"/>
+<PackageCommand command="npx shadcn@latest add @intentui/list-box"/>
 
 ## Composed components
 <Composed components={['dropdown']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='list-box'/>
 
@@ -78,42 +78,48 @@ You can also disable an item directly by passing the `isDisabled` prop to `ListB
 
 ### ListBox
 
-The `ListBox` component displays selectable options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ListBox** extends the React Aria Components [**`<ListBox>`**](https://react-aria.adobe.com/ListBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ListBoxItem
 
-The `ListBoxItem` component represents one list box option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ListBoxItem** extends the React Aria Components [**`<ListBoxItem>`**](https://react-aria.adobe.com/ListBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ListBoxLabel
 
-The `ListBoxLabel` component renders the primary text for a list box item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ListBoxLabel** extends the Intent UI [**`<DropdownLabel>`**](/docs/components/collections/dropdown#dropdownlabel) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ListBoxDescription
 
-The `ListBoxDescription` component renders supporting text for a list box item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ListBoxDescription** extends the Intent UI [**`<DropdownDescription>`**](/docs/components/collections/dropdown#dropdowndescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ListBoxSection
 
-The `ListBoxSection` component groups related list box options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ListBox#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ListBoxSection** extends the React Aria Components [**`<ListBoxSection>`**](https://react-aria.adobe.com/ListBox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ListBox#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

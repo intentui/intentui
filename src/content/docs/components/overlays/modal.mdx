@@ -11,14 +11,14 @@ references: ["https://react-aria.adobe.com/Modal#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/modal"/>
+<PackageCommand command="npx shadcn@latest add @intentui/modal"/>
 
 ## Composed components
 <Composed components={['button', 'dialog']}/>
 
 ## Manual installation
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
+<PackageCommand command="npm i react-aria-components"/>
 
 <SourceCode toShow='modal'/>
 
@@ -189,76 +189,93 @@ const actionType = (t: string | null) => {
 
 ### Modal
 
-The `Modal` component controls the modal trigger and content.
+<ApiParameters>
+  <ApiDescription>
+    **Modal** extends the React Aria Components [**`<DialogTrigger>`**](https://react-aria.adobe.com/Dialog#api) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### ModalTrigger
 
-The `ModalTrigger` component defines the element that opens a modal.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ModalTrigger** extends the Intent UI [**`<DialogTrigger>`**](/docs/components/overlays/dialog#dialogtrigger) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ModalContent
 
-The `ModalContent` component renders the modal panel.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `closeButton` | `boolean` | `true` |
-| `overlay` | `Pick<ModalOverlayProps, "className">` | - |
-| `size` | `keyof typeof sizes` | `md` |
+<ApiParameters>
+  <ApiDescription>
+    **ModalContent** extends the React Aria Components [**`<ModalOverlay>`**](https://react-aria.adobe.com/Modal#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="closeButton" type='boolean' defaultValue='true' />
+  <ApiParameter name="overlay" type='Pick<ModalOverlayProps, "className">' />
+  <ApiParameter name="size" type='keyof typeof sizes' defaultValue='md' />
+</ApiParameters>
 
 ### ModalHeader
 
-The `ModalHeader` component groups the modal title and description.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `title` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ModalHeader** extends the Intent UI [**`<DialogHeader>`**](/docs/components/overlays/dialog#dialogheader) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="description" type='string' />
+  <ApiParameter name="title" type='string' />
+</ApiParameters>
 
 ### ModalTitle
 
-The `ModalTitle` component renders the modal heading.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ModalTitle** extends the Intent UI [**`<DialogTitle>`**](/docs/components/overlays/dialog#dialogtitle) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ModalDescription
 
-The `ModalDescription` component renders supporting text inside a modal.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ModalDescription** extends the Intent UI [**`<DialogDescription>`**](/docs/components/overlays/dialog#dialogdescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ModalBody
 
-The `ModalBody` component wraps the main modal content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ModalBody** extends the Intent UI [**`<DialogBody>`**](/docs/components/overlays/dialog#dialogbody) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ModalFooter
 
-The `ModalFooter` component groups modal actions.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ModalFooter** extends the Intent UI [**`<DialogFooter>`**](/docs/components/overlays/dialog#dialogfooter) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ModalClose
 
-The `ModalClose` component renders a button that closes the modal.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
-
-See the [React Aria](https://react-aria.adobe.com/Modal#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ModalClose** extends the Intent UI [**`<DialogClose>`**](/docs/components/overlays/dialog#dialogclose) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="intent"
+    type='"primary" | "secondary" | "warning" | "danger" | "success" | "outline" | "plain"'
+    defaultValue='plain'
+  />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Modal#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/TimeField#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/time-field"/>
+<PackageCommand command="npx shadcn@latest add @intentui/time-field"/>
 
 ## Composed components
 <Composed components={['field', 'date-field']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
+<PackageCommand command="npm i react-aria-components"/>
 
 <SourceCode toShow='time-field'/>
 
@@ -49,18 +49,21 @@ A disabled time field cannot be interacted with and is visually represented as b
 
 ### TimeField
 
-The `TimeField` component lets users enter time values.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TimeField** extends the React Aria Components [**`<TimeField>`**](https://react-aria.adobe.com/TimeField#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TimeInput
 
-The `TimeInput` component renders the segmented time input.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/TimeField#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **TimeInput** extends the Intent UI [**`<DateInput>`**](/docs/components/date-and-time/date-field#dateinput) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/TimeField#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

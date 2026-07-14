@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Checkbox#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/checkbox"/>
+<PackageCommand command="npx shadcn@latest add @intentui/checkbox"/>
 
 ## Composed components
 <Composed components={['field']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='checkbox'/>
 
@@ -66,26 +66,30 @@ The checkbox is disabled.
 
 ### CheckboxGroup
 
-The `CheckboxGroup` component groups related checkbox options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CheckboxGroup** extends the React Aria Components [**`<CheckboxGroup>`**](https://react-aria.adobe.com/CheckboxGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### CheckboxField
 
-The `CheckboxField` component renders the checkbox label.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CheckboxField** extends the React Aria Components [**`<CheckboxField>`**](https://react-aria.adobe.com/Checkbox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Checkbox
 
-The `Checkbox` component renders the checkbox label.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Checkbox#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **Checkbox** extends the React Aria Components [**`<CheckboxButton>`**](https://react-aria.adobe.com/Checkbox#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Checkbox#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

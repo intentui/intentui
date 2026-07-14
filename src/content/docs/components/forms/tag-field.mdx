@@ -14,7 +14,7 @@ Install the component via the CLI in one command.
 
 To install, run the following command:
 
-<InstallCommand command="npx shadcn@latest add @intentui/tag-field"/>
+<PackageCommand command="npx shadcn@latest add @intentui/tag-field"/>
 
 ## Composed components
 
@@ -28,7 +28,7 @@ Use this approach if you prefer to install and wire up the component yourself in
 
 For manual installation, use:
 
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='tag-field' />
 
@@ -51,19 +51,21 @@ import { TagField } from "@/components/ui/tag-field"
 
 ### TagField
 
-The `TagField` component lets users enter and remove tags.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `defaultValue` | `string[]` | `[]` |
-| `inputValue` | `string` | - |
-| `isRequired` | `boolean` | - |
-| `name` | `string` | `tags` |
-| `onChange` | `(next: Selection) => void` | - |
-| `onInputValueChange` | `(v: string) => void` | - |
-| `requiredMessage` | `string` | - |
-| `splitPattern` | `RegExp` | `/[,;]/` |
-| `value` | `Selection` | - |
-
-See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **TagField** extends the React Aria Components [**`<TextField>`**](https://react-aria.adobe.com/TextField#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="defaultValue" type='string[]' defaultValue='[]' />
+  <ApiParameter name="inputValue" type='string' />
+  <ApiParameter name="isRequired" type='boolean' />
+  <ApiParameter name="name" type='string' defaultValue='tags' />
+  <ApiParameter name="onChange" type='(next: Selection) => void' />
+  <ApiParameter name="onInputValueChange" type='(v: string) => void' />
+  <ApiParameter name="requiredMessage" type='string' />
+  <ApiParameter name="splitPattern" type='RegExp' defaultValue='/[,;]/' />
+  <ApiParameter name="value" type='Selection' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

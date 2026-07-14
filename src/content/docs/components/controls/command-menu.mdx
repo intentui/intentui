@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Autocomplete#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/command-menu"/>
+<PackageCommand command="npx shadcn@latest add @intentui/command-menu"/>
 
 ## Composed components
 <Composed components={['modal', 'menu', 'keyboard']} />
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 <SourceCode toShow='command-menu' />
 
 ## Anatomy
@@ -241,88 +241,99 @@ To close the command palette when an action is performed, use the `onAction` pro
 
 ### CommandMenu
 
-The `CommandMenu` component displays a searchable command palette.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `aria-label` | `string` | - |
-| `className` | `string` | - |
-| `isDismissable` | `boolean` | `true` |
-| `overlay` | `Pick<ModalOverlayProps, "className">` | - |
-| `shortcut` | `string` | - |
-| `size` | `keyof typeof sizes` | `lg` |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenu** extends the React Aria Components [**`<Autocomplete>`**](https://react-aria.adobe.com/Autocomplete#api) component.
+  </ApiDescription>
+  <ApiParameter name="aria-label" type='string' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isDismissable" type='boolean' defaultValue='true' />
+  <ApiParameter name="overlay" type='Pick<ModalOverlayProps, "className">' />
+  <ApiParameter name="shortcut" type='string' />
+  <ApiParameter name="size" type='keyof typeof sizes' defaultValue='lg' />
+</ApiParameters>
 
 ### CommandMenuDescription
 
-The `CommandMenuDescription` component renders secondary text for a command item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuDescription** extends the Intent UI [**`<MenuDescription>`**](/docs/components/collections/menu#menudescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### CommandMenuFooter
 
-The `CommandMenuFooter` component renders footer content inside the command menu.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuFooter** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### CommandMenuItem
 
-The `CommandMenuItem` component represents one command menu action.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuItem** extends the Intent UI [**`<MenuItem>`**](/docs/components/collections/menu#menuitem) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### CommandMenuLabel
 
-The `CommandMenuLabel` component renders the primary text for a command item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuLabel** extends the Intent UI [**`<MenuLabel>`**](/docs/components/collections/menu#menulabel) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### CommandMenuList
 
-The `CommandMenuList` component contains command menu items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuList** extends the React Aria Components [**`<Menu>`**](https://react-aria.adobe.com/Menu#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### CommandMenuSearch
 
-The `CommandMenuSearch` component renders the command menu search input.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `placeholder` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuSearch** extends the React Aria Components [**`<SearchField>`**](https://react-aria.adobe.com/SearchField#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="placeholder" type='string' />
+</ApiParameters>
 
 ### CommandMenuSection
 
-The `CommandMenuSection` component groups related command menu items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuSection** extends the Intent UI [**`<MenuSection>`**](/docs/components/collections/menu#menusection) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### CommandMenuSeparator
 
-The `CommandMenuSeparator` component separates command menu groups.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuSeparator** extends the Intent UI [**`<MenuSeparator>`**](/docs/components/collections/menu#menuseparator) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### CommandMenuShortcut
 
-The `CommandMenuShortcut` component displays a keyboard shortcut for a command item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Autocomplete#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **CommandMenuShortcut** extends the Intent UI [**`<DropdownKeyboard>`**](/docs/components/collections/dropdown#dropdownkeyboard) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Autocomplete#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

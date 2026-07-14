@@ -11,12 +11,12 @@ references: ["https://react-aria.adobe.com/Disclosure#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/disclosure-group"/>
+<PackageCommand command="npx shadcn@latest add @intentui/disclosure-group"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='disclosure-group'/>
 
@@ -53,43 +53,49 @@ If you're looking for a more advanced accordion, check out the [Disclosure Group
 
 ### Disclosure
 
-The `Disclosure` component wraps a collapsible content item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Disclosure** extends the React Aria Components [**`<Disclosure>`**](https://react-aria.adobe.com/Disclosure#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DisclosureGroup
 
-The `DisclosureGroup` component groups related disclosure items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DisclosureGroup** extends the React Aria Components [**`<DisclosureGroup>`**](https://react-aria.adobe.com/DisclosureGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DisclosureIndicator
 
-The `DisclosureIndicator` component renders the disclosure expand icon.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DisclosureIndicator** extends the native **`<span>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DisclosurePanel
 
-The `DisclosurePanel` component contains collapsible disclosure content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DisclosurePanel** extends the React Aria Components [**`<DisclosurePanel>`**](https://react-aria.adobe.com/DisclosureGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DisclosureTrigger
 
-The `DisclosureTrigger` component toggles a disclosure item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `triggerIndicator` | `boolean` | `true` |
-
-See the [React Aria](https://react-aria.adobe.com/Disclosure#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **DisclosureTrigger** extends the React Aria Components [**`<Button>`**](https://react-aria.adobe.com/Button#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="triggerIndicator" type='boolean' defaultValue='true' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Disclosure#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

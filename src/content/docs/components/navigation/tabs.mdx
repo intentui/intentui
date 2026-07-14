@@ -11,13 +11,13 @@ references: ["https://react-aria.adobe.com/Tabs#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/tabs"/>
+<PackageCommand command="npx shadcn@latest add @intentui/tabs"/>
 
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='tabs' />
 
@@ -74,50 +74,57 @@ You can also disable individual tabs by setting the `isDisabled` prop for each o
 
 ### Tab
 
-The `Tab` component represents one tab option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Tab** extends the React Aria Components [**`<Tab>`**](https://react-aria.adobe.com/Tabs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TabList
 
-The `TabList` component groups tabs.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TabList** extends the React Aria Components [**`<TabList>`**](https://react-aria.adobe.com/Tabs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TabPanel
 
-The `TabPanel` component renders tab content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TabPanel** extends the React Aria Components [**`<TabPanel>`**](https://react-aria.adobe.com/Tabs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TabPanels
 
-The `TabPanels` component groups tab panels.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TabPanels** extends the React Aria Components [**`<TabPanels>`**](https://react-aria.adobe.com/Tabs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Tabs
 
-The `Tabs` component organizes content into panels.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Tabs** extends the React Aria Components [**`<Tabs>`**](https://react-aria.adobe.com/Tabs#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TabScrollArea
 
-The `TabScrollArea` component makes overflowing tabs scrollable.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Tabs#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **TabScrollArea** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Tabs#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

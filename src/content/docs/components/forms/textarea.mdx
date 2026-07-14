@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/TextField.html#textarea-1"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/textarea"/>
+<PackageCommand command="npx shadcn@latest add @intentui/textarea"/>
 
 ## Composed components
 <Composed components={['field']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='textarea'/>
 
@@ -68,10 +68,12 @@ When the textarea is disabled, it becomes non-editable and appears inactive.
 
 ### Textarea
 
-The `Textarea` component renders a multi-line text input.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/TextField.html#textarea-1) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **Textarea** extends the React Aria Components [**`<TextArea>`**](https://react-aria.adobe.com/forms) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/TextField.html#textarea-1) for the full API reference.
+  </ApiReference>
+</ApiParameters>

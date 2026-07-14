@@ -16,7 +16,7 @@ import {
   type PopoverProps,
 } from 'react-aria-components/Menu'
 import { twJoin, twMerge } from 'tailwind-merge'
-import { components, dm, gs, prologue, sortedGsChildren } from '@/components/aside'
+import { components, dm, gs, prologue, sortedGsChildren } from '@/components/docs/aside'
 import { BrandDiscordIcon } from '@/components/icons/brand-discord-icon'
 import { BrandGithubIcon } from '@/components/icons/brand-github-icon'
 import { BrandXIcon } from '@/components/icons/brand-x-icon'

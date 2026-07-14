@@ -6,6 +6,16 @@
   color: var(--shiki-light);
 }
 
+.shiki code {
+  display: grid;
+  min-width: 100%;
+}
+
+.shiki .line {
+  display: inline-block;
+  width: 100%;
+}
+
 html.dark .shiki,
 html.dark .shiki span {
   color: var(--shiki-dark) !important;
@@ -66,7 +76,7 @@ html.dark .shiki span {
 }
 
 .shiki .highlighted {
-  @apply -ml-4 border-l border-blue-400 bg-linear-to-r from-blue-600/10 via-shiki-bg to-shiki-bg pl-4;
+  @apply -ml-4 w-[calc(100%+2rem)] bg-info-subtle pl-4;
 }
 
 html .shiki span.highlighted-word {
@@ -141,27 +151,27 @@ span[data-rehype-pretty-code-figure] > code > span {
   color: var(--color-emerald-600);
 }
 .prose
-  :where(h1, h2, h3, h4, h5, h6):not(:where([class~='not-prose'], [class~='not-prose'] *))
+  :where(h1, h2, h3, h4, h5, h6):not(:where([class~='not-typeset'], [class~='not-typeset'] *))
   > a {
   @apply text-fg no-underline hover:no-underline;
 }
 
 .prose-headings\:scroll-mt-24:is(
-  :where(h1, h2, h3, h4, h5, h6, th):not(:where([class~='not-prose'], [class~='not-prose'] *))
+  :where(h1, h2, h3, h4, h5, h6, th):not(:where([class~='not-typeset'], [class~='not-typeset'] *))
 ) {
   @apply tracking-tight;
   text-decoration: none !important;
   color: var(--fg) !important;
 }
 
-.prose :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+.prose :where(h2):not(:where([class~='not-typeset'], [class~='not-typeset'] *)) {
   @apply text-xl;
 }
 
-.prose :where(h3):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+.prose :where(h3):not(:where([class~='not-typeset'], [class~='not-typeset'] *)) {
   @apply text-lg;
 }
 
-.prose :where(h4):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+.prose :where(h4):not(:where([class~='not-typeset'], [class~='not-typeset'] *)) {
   @apply text-base;
 }

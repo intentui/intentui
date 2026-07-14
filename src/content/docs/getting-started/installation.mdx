@@ -15,7 +15,7 @@ Before executing the command, ensure that **tailwind** is installed. If not, fol
 ### Initial setup
 Begin by executing this command:
 
-<InstallCommand command="npx shadcn@latest init @intentui/theme-default"/>
+<PackageCommand command="npx shadcn@latest init @intentui/theme-default"/>
 
 If you see this output:
 
@@ -45,19 +45,19 @@ npx shadcn@latest add @intentui/theme-cyan
 
 We use [shadcn CLI](https://ui.shadcn.com/docs/cli) to manage the installation of Intent UI components.
 
-<InstallCommand command="npx shadcn@latest add @intentui/combo-box"/>
+<PackageCommand command="npx shadcn@latest add @intentui/combo-box"/>
 
 Sometimes, you may want to add components individually, such as `select` and `text-field`. You can easily do this by using the following command:
-<InstallCommand command="npx shadcn@latest add @intentui/select @intentui/text-field"/>
+<PackageCommand command="npx shadcn@latest add @intentui/select @intentui/text-field"/>
 
 ### Add all components
 To add all components at once, use `@intentui/all`. This will install every available component in Intent UI in a single step.
-<InstallCommand command="npx shadcn@latest add @intentui/all"/>
+<PackageCommand command="npx shadcn@latest add @intentui/all"/>
 
 ### Overwrite
 You can override the existing components by using the `-o` flag. This will overwrite the existing files with the new ones.
 
-<InstallCommand command="npx shadcn@latest add @intentui/text-field -o"/>
+<PackageCommand command="npx shadcn@latest add @intentui/text-field -o"/>
 
 
 ## Formatter
@@ -71,15 +71,15 @@ Intent UI utilizes the <NewTab href='https://biomejs.dev/'>Biome</NewTab> format
 ## Manual installation
 To begin setting up the design system, start by installing these packages:
 
-<InstallCommand command="npm i react-aria-components tailwindcss-react-aria-components"/>
+<PackageCommand command="npm i react-aria-components tailwindcss-react-aria-components"/>
 
 Next, add **Tailwind Variant**, **Tailwind Merge**, and for utility functions:
 
-<InstallCommand command="npm i tailwind-variants tailwind-merge"/>
+<PackageCommand command="npm i tailwind-variants tailwind-merge"/>
 
 Following that, include the **Tailwind Animate** for managing animations and **Intent Icons** for icons:
 
-<InstallCommand command="npm i @heroicons/react tw-animate-css"/>
+<PackageCommand command="npm i @heroicons/react tw-animate-css"/>
 
 ### Style and primitive
 After installing the required packages, you can copy the CSS below into your global CSS file and move the primitives to your UI folder. Primitives serve as utilities for managing states, including `focusRing`, `focusStyles`, and `focusButtonStyles`.
