@@ -3,7 +3,6 @@
 @import './code.css';
 @import './typeset.css';
 
-@plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-react-aria-components';
 
 @theme inline {
