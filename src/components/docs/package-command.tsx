@@ -14,7 +14,7 @@ interface CommandItem {
   command: string
 }
 
-type InstallCommandProps = {
+type PackageCommandProps = {
   command: string
   mode?: 'auto' | 'install' | 'exec'
 }
@@ -39,7 +39,7 @@ function setStoredPackageManager(pm: PackageManager) {
 
 function parseCommand(
   input: string,
-  mode: InstallCommandProps['mode']
+  mode: PackageCommandProps['mode']
 ): { mode: 'install' | 'exec'; args: string } {
   const cmd = input.trim().replace(/\s+/g, ' ')
 
@@ -97,7 +97,7 @@ function buildItems(parsed: { mode: 'install' | 'exec'; args: string }): Command
   ]
 }
 
-export default function InstallCommand({ command, mode = 'auto' }: InstallCommandProps) {
+export default function PackageCommand({ command, mode = 'auto' }: PackageCommandProps) {
   const parsed = useMemo(() => parseCommand(command, mode), [command, mode])
   const items = useMemo(() => buildItems(parsed), [parsed])
   const [selectedPM, setSelectedPM] = useState<PackageManager>('npm')
@@ -121,7 +121,11 @@ export default function InstallCommand({ command, mode = 'auto' }: InstallComman
   }
 
   return (
-    <Snippet selectedKey={selectedPM} onSelectionChange={handleSelectionChange}>
+    <Snippet
+      className="mt-6 not-typeset"
+      selectedKey={selectedPM}
+      onSelectionChange={handleSelectionChange}
+    >
       <SnippetTabsList className="bg-shiki-bg" items={items}>
         {(cmd) => (
           <SnippetTab id={cmd.id} key={cmd.id}>

@@ -5,8 +5,8 @@ import { ToggleButton } from 'react-aria-components/ToggleButton'
 import { Toolbar } from 'react-aria-components/Toolbar'
 import { twJoin, twMerge } from 'tailwind-merge'
 import generated from '@/../__registry__/generated'
-import { CodeHighlighter } from '@/components/code/code-highlighter'
-import { PullRegistry } from '@/components/code/pull-registry'
+import { CodeHighlighter } from '@/components/docs/code-highlighter'
+import { PullRegistry } from '@/components/docs/pull-registry'
 import { Loader } from '@/components/ui/loader'
 import { createFetchRegistryFile } from '@/lib/fetch-registry'
 import type { RegistryItem } from '@/types'
@@ -69,7 +69,7 @@ export const DocHow = ({
     return <p>Component "{toUse}" not found in the registry.</p>
   }
   return (
-    <div className="not-prose">
+    <div className="not-typeset">
       <Toolbar className="mb-1 flex items-center justify-between sm:*:-mx-2">
         <Group>
           <ToggleButton
@@ -119,7 +119,7 @@ export const DocHow = ({
                   </div>
                 }
               >
-                <div className={twMerge(minW60 && 'min-w-60', 'not-prose', className)}>
+                <div className={twMerge(minW60 && 'min-w-60', 'not-typeset', className)}>
                   <Component />
                 </div>
               </Suspense>

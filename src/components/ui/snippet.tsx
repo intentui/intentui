@@ -10,7 +10,7 @@ import { cx } from '@/lib/primitive'
 export const Snippet = ({ className, ...props }: TabsProps) => (
   <Tabs
     className={cx(
-      'not-prose group w-full gap-0 overflow-hidden rounded-md border bg-bg',
+      'not-typeset group w-full gap-0 overflow-hidden rounded-md border bg-bg',
       className
     )}
     {...props}

@@ -12,12 +12,12 @@ references: ["https://react-aria.adobe.com/ProgressBar#api"]
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/leaderboard"/>
+<PackageCommand command="npx shadcn@latest add @intentui/leaderboard"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow={'leaderboard'} />
 
@@ -47,67 +47,76 @@ Manage leaderboard data programmatically for dynamic updates.
 
 ### Leaderboard
 
-The `Leaderboard` component displays ranked items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Leaderboard** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### LeaderboardAction
 
-The `LeaderboardAction` component places actions in the leaderboard header.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **LeaderboardAction** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### LeaderboardContent
 
-The `LeaderboardContent` component contains leaderboard rows.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **LeaderboardContent** extends the native **`<ul>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### LeaderboardEnd
 
-The `LeaderboardEnd` component renders trailing content for a leaderboard row.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **LeaderboardEnd** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### LeaderboardHeader
 
-The `LeaderboardHeader` component groups the leaderboard title and actions.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **LeaderboardHeader** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### LeaderboardItem
 
-The `LeaderboardItem` component represents one ranked leaderboard row.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `onAction` | `() => void` | - |
+<ApiParameters>
+  <ApiDescription>
+    **LeaderboardItem** extends the React Aria Components [**`<ProgressBar>`**](https://react-aria.adobe.com/ProgressBar#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="onAction" type='() => void' />
+</ApiParameters>
 
 ### LeaderboardStart
 
-The `LeaderboardStart` component renders leading content for a leaderboard row.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **LeaderboardStart** extends the React Aria Components [**`<Label>`**](https://react-aria.adobe.com/forms) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### LeaderboardTitle
 
-The `LeaderboardTitle` component renders the leaderboard heading.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **LeaderboardTitle** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

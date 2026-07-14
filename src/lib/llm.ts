@@ -15,7 +15,7 @@ const HOW_RE = /<How[\s\S]*?toUse=(?:"([^"]+)"|'([^']+)')[\s\S]*?\/>/g
 const SOURCE_RE = /<SourceCode[\s\S]*?toShow=(?:"([^"]+)"|'([^']+)')[\s\S]*?\/>/g
 const SANDBOX_RE = /<Sandbox[\s\S]*?\/>/g
 const COMPOSED_RE = /<Composed[\s\S]*?\/>/g
-const INSTALL_COMMAND_RE = /<InstallCommand[\s\S]*?command=(?:"([^"]+)"|'([^']+)')[\s\S]*?\/>/g
+const INSTALL_COMMAND_RE = /<PackageCommand[\s\S]*?command=(?:"([^"]+)"|'([^']+)')[\s\S]*?\/>/g
 
 export function processMdxForLLMs(content: string) {
   const llmsIndex = buildLlmsUrlIndex()

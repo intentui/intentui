@@ -11,12 +11,12 @@ references: ["https://react-aria.adobe.com/ProgressBar#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/progress-circle"/>
+<PackageCommand command="npx shadcn@latest add @intentui/progress-circle"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 <SourceCode toShow='progress-circle'/>
 
 ## Anatomy
@@ -50,10 +50,12 @@ The progress circle can be customized with the `color` prop.
 
 ## Component API
 
-The `ProgressCircle` component displays circular progress feedback.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ProgressCircle** extends the React Aria Components [**`<ProgressBar>`**](https://react-aria.adobe.com/ProgressBar#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

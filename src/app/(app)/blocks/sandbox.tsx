@@ -4,7 +4,7 @@ import { useInView } from 'motion/react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Button } from 'react-aria-components/Button'
 import { type Key, Tab, TabList, TabPanel, Tabs } from 'react-aria-components/Tabs'
-import { CodeHighlighter } from '@/components/code/code-highlighter'
+import { CodeHighlighter } from '@/components/docs/code-highlighter'
 import { BrandReactjsIcon } from '@/components/icons/brand-reactjs-icon'
 import { ShadcnuiLogo } from '@/components/icons/shadcn-logo'
 import { Heading } from '@/components/ui/heading'
@@ -129,9 +129,9 @@ function RegistryItemViewer({ imgSrc, item }: { imgSrc?: SandboxImageSrc; item: 
   const { copied, copy } = useClipboard()
   const previewImgSrc = imgSrc ?? item.imgSrc
   return (
-    <section className="not-prose space-y-4">
+    <section data-slot="registry-viewer" className="not-typeset mt-6 space-y-4">
       <Tabs selectedKey={tab} onSelectionChange={setTab} className="flex flex-col gap-3">
-        <div className="not-prose flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div className="not-typeset flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <header className="space-y-1">
             <Heading className="font-medium capitalize sm:text-base" level={2}>
               {item.title.replaceAll('-', ' ')}
@@ -211,9 +211,9 @@ function LazyRegistryItem({ imgSrc, name }: { imgSrc?: SandboxImageSrc; name: st
     return () => ac.abort()
   }, [isInView, name, item, error])
   return (
-    <div ref={ref} className="not-prose min-h-90">
+    <div ref={ref} className="not-typeset min-h-90">
       {error ? (
-        <div className="rounded-lg border p-4 text-red-600 text-sm">{error}</div>
+        <div className="rounded-lg border p-4 text-danger-subtle-fg text-sm">{error}</div>
       ) : item ? (
         <RegistryItemViewer imgSrc={imgSrc} item={item} />
       ) : null}

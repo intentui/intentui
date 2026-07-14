@@ -11,12 +11,12 @@ references: ["https://react-aria.adobe.com/ColorSwatch#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/color-swatch"/>
+<PackageCommand command="npx shadcn@latest add @intentui/color-swatch"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
+<PackageCommand command="npm i react-aria-components"/>
 <SourceCode toShow='color-swatch'/>
 
 ## Anatomy
@@ -36,10 +36,12 @@ You can use the `--color-swatch-size` variable to adjust the size of the color s
 
 ### ColorSwatch
 
-The `ColorSwatch` component displays a color preview.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ColorSwatch#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ColorSwatch** extends the React Aria Components [**`<ColorSwatch>`**](https://react-aria.adobe.com/ColorSwatch#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ColorSwatch#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

@@ -10,12 +10,12 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/note"/>
+<PackageCommand command="npx shadcn@latest add @intentui/note"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 <SourceCode toShow='note'/>
 
 ## Anatomy
@@ -41,10 +41,15 @@ By default, the note is displayed with a primary intent. You can change the inte
 
 ## Component API
 
-The `Note` component highlights contextual information.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `indicator` | `boolean` | `true` |
-| `intent` | `"default" \| "info" \| "warning" \| "danger" \| "success"` | `default` |
+<ApiParameters>
+  <ApiDescription>
+    **Note** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="indicator" type='boolean' defaultValue='true' />
+  <ApiParameter
+    name="intent"
+    type='"default" | "info" | "warning" | "danger" | "success"'
+    defaultValue='default'
+  />
+</ApiParameters>

@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/TagGroup#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/tag-group"/>
+<PackageCommand command="npx shadcn@latest add @intentui/tag-group"/>
 
 ## Composed components
 <Composed components={['field', 'badge']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='tag-group'/>
 
@@ -68,26 +68,30 @@ Disable tags either by setting the `isDisabled` prop or using `disabledKeys` on 
 
 ### Tag
 
-The `Tag` component renders one tag item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Tag** extends the React Aria Components [**`<Tag>`**](https://react-aria.adobe.com/TagGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TagGroup
 
-The `TagGroup` component groups related tags.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TagGroup** extends the React Aria Components [**`<TagGroup>`**](https://react-aria.adobe.com/TagGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TagList
 
-The `TagList` component contains tag items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **TagList** extends the React Aria Components [**`<TagList>`**](https://react-aria.adobe.com/TagGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

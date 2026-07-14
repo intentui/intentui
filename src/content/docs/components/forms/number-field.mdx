@@ -12,7 +12,7 @@ references: ["https://react-aria.adobe.com/NumberField#api"]
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/number-field"/>
+<PackageCommand command="npx shadcn@latest add @intentui/number-field"/>
 
 ## Composed components
 <Composed components={['field']}/>
@@ -21,7 +21,7 @@ Install the component via the CLI in one command.
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
 
-<InstallCommand command="npm i react-aria-components @heroicons/react"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react"/>
 
 <SourceCode toShow='number-field'/>
 
@@ -60,18 +60,21 @@ The field is disabled and cannot be interacted with.
 
 ### NumberField
 
-The `NumberField` component lets users enter numeric values.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NumberField** extends the React Aria Components [**`<NumberField>`**](https://react-aria.adobe.com/NumberField#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NumberInput
 
-The `NumberInput` component renders the number field input.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/NumberField#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **NumberInput** extends the React Aria Components [**`<Input>`**](https://react-aria.adobe.com/forms) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/NumberField#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

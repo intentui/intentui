@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/GridList#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/choice-box"/>
+<PackageCommand command="npx shadcn@latest add @intentui/choice-box"/>
 
 ## Composed components
 <Composed components={['checkbox']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants"/>
 
 <SourceCode toShow='choice-box' />
 
@@ -95,39 +95,48 @@ Individual items can also be disabled by specifying their keys in the `disabledK
 
 ### ChoiceBox
 
-The `ChoiceBox` component displays selectable options in a boxed layout.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `columns` | `"1" \| "2" \| "3" \| "4" \| "5" \| "6"` | `1` |
-| `gap` | `"0" \| "1" \| "2" \| "3" \| "4" \| "5" \| "6" \| "8" \| "10" \| "12"` | `0` |
-| `isReadOnly` | `boolean` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ChoiceBox** extends the React Aria Components [**`<GridList>`**](https://react-aria.adobe.com/GridList#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="columns" type='"1" | "2" | "3" | "4" | "5" | "6"' defaultValue='1' />
+  <ApiParameter
+    name="gap"
+    type='"0" | "1" | "2" | "3" | "4" | "5" | "6" | "8" | "10" | "12"'
+    defaultValue='0'
+  />
+  <ApiParameter name="isReadOnly" type='boolean' />
+</ApiParameters>
 
 ### ChoiceBoxDescription
 
-The `ChoiceBoxDescription` component renders supporting text for a choice item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ChoiceBoxDescription** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ChoiceBoxItem
 
-The `ChoiceBoxItem` component represents one selectable choice.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `label` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ChoiceBoxItem** extends the React Aria Components [**`<GridListItem>`**](https://react-aria.adobe.com/GridListItem#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="description" type='string' />
+  <ApiParameter name="label" type='string' />
+</ApiParameters>
 
 ### ChoiceBoxLabel
 
-The `ChoiceBoxLabel` component renders the label for a choice item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/GridList#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ChoiceBoxLabel** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/GridList#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

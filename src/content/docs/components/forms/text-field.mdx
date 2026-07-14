@@ -12,7 +12,7 @@ references: ["https://react-aria.adobe.com/TextField#api"]
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/text-field"/>
+<PackageCommand command="npx shadcn@latest add @intentui/text-field"/>
 
 ## Composed components
 <Composed components={['field']}/>
@@ -20,7 +20,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react"/>
 
 <SourceCode toShow='text-field'/>
 
@@ -85,10 +85,12 @@ When the TextField is disabled, it becomes non-editable and appears inactive.
 
 ### TextField
 
-The `TextField` component renders a labeled text input.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/TextField#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **TextField** extends the React Aria Components [**`<TextField>`**](https://react-aria.adobe.com/TextField#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/TextField#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

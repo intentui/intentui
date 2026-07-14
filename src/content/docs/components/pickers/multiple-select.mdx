@@ -12,7 +12,7 @@ references: ["https://react-aria.adobe.com/TagGroup#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/multiple-select"/>
+<PackageCommand command="npx shadcn@latest add @intentui/multiple-select"/>
 
 ## Composed components
 <Composed components={['field', 'list-box', 'popover', 'tag-group', 'search-field']} />
@@ -20,7 +20,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components react-aria @heroicons/react"/>
+<PackageCommand command="npm i react-aria-components react-aria @heroicons/react"/>
 
 <SourceCode toShow='multiple-select' />
 
@@ -65,31 +65,35 @@ When the component is disabled, it prevents the user from adding or removing tag
 
 ### MultipleSelect
 
-The `MultipleSelect` component lets users select multiple options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `name` | `string` | - |
-| `onSearchChange` | `(value: string) => void` | - |
-| `placeholder` | `string` | `No selected items` |
-| `searchPlaceholder` | `string` | - |
-| `searchValue` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MultipleSelect** extends the React Aria Components [**`<Select>`**](https://react-aria.adobe.com/Select#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="name" type='string' />
+  <ApiParameter name="onSearchChange" type='(value: string) => void' />
+  <ApiParameter name="placeholder" type='string' defaultValue='No selected items' />
+  <ApiParameter name="searchPlaceholder" type='string' />
+  <ApiParameter name="searchValue" type='string' />
+</ApiParameters>
 
 ### MultipleSelectContent
 
-The `MultipleSelectContent` component renders multiple select options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `items` | `Iterable<T>` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MultipleSelectContent** is a custom declarative slot and does not extend a DOM or React Aria component.
+  </ApiDescription>
+  <ApiParameter name="items" type='Iterable<T>' />
+</ApiParameters>
 
 ### MultipleSelectItem
 
-The `MultipleSelectItem` component represents one multiple select option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **MultipleSelectItem** extends the Intent UI [**`<ListBoxItem>`**](/docs/components/collections/list-box#listboxitem) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/TagGroup#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

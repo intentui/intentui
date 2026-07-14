@@ -12,7 +12,7 @@ references: ["https://react-aria.adobe.com/DateField#api"]
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/date-field"/>
+<PackageCommand command="npx shadcn@latest add @intentui/date-field"/>
 
 ## Composed components
 <Composed components={['field']}/>
@@ -20,7 +20,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='date-field'/>
 
@@ -54,18 +54,21 @@ A disabled date field is non-interactive and visually represented in a disabled 
 
 ### DateField
 
-The `DateField` component lets users enter a date with segmented fields.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DateField** extends the React Aria Components [**`<DateField>`**](https://react-aria.adobe.com/DateField#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DateInput
 
-The `DateInput` component renders the segmented date input.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/DateField#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **DateInput** extends the React Aria Components [**`<DateInput>`**](https://react-aria.adobe.com/DateField#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/DateField#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

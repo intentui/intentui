@@ -11,14 +11,14 @@ references: ["https://react-aria.adobe.com/Switch#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/switch"/>
+<PackageCommand command="npx shadcn@latest add @intentui/switch"/>
 
 ## Composed components
 <Composed components={['field']}/>
 
 ## Manual installation
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='switch'/>
 
@@ -70,18 +70,21 @@ Sometimes you may want a switch to use a checkbox-like layout, with the control 
 
 ### SwitchField
 
-The `SwitchField` component toggles a setting on or off.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SwitchField** extends the React Aria Components [**`<SwitchField>`**](https://react-aria.adobe.com/Switch#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Switch
 
-The `Switch` component renders the switch label.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Switch#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **Switch** extends the React Aria Components [**`<SwitchButton>`**](https://react-aria.adobe.com/Switch#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Switch#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

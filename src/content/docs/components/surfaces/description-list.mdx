@@ -10,7 +10,7 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/description-list"/>
+<PackageCommand command="npx shadcn@latest add @intentui/description-list"/>
 <SourceCode toShow='description-list' />
 
 ## Anatomy
@@ -29,7 +29,7 @@ import { DescriptionDetails, DescriptionList, DescriptionTerm } from "@/componen
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
+<PackageCommand command="npm i tailwind-merge"/>
 <SourceCode toShow='description-list'/>
 
 ## Examples
@@ -46,24 +46,27 @@ Sometimes, you may want to use a card to display the description list. This exam
 
 ### DescriptionDetails
 
-The `DescriptionDetails` component renders the value in a description list.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DescriptionDetails** extends the native **`<dd>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DescriptionList
 
-The `DescriptionList` component displays terms and details in a structured list.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DescriptionList** extends the native **`<dl>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DescriptionTerm
 
-The `DescriptionTerm` component renders the label in a description list.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DescriptionTerm** extends the native **`<dt>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

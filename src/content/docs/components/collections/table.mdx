@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Table#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/table"/>
+<PackageCommand command="npx shadcn@latest add @intentui/table"/>
 
 ## Composed components
 <Composed components={['checkbox']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='table'/>
 
@@ -116,55 +116,62 @@ See the full demo at [Sidebar 15](/pre-blocks/sidebar/sidebar-15).
 
 ### Table
 
-The `Table` component displays data in rows and columns.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `allowResize` | `boolean` | - |
-| `bleed` | `boolean` | `false` |
-| `className` | `string` | - |
-| `grid` | `boolean` | `false` |
-| `striped` | `boolean` | `false` |
+<ApiParameters>
+  <ApiDescription>
+    **Table** extends the React Aria Components [**`<Table>`**](https://react-aria.adobe.com/Table#api) component.
+  </ApiDescription>
+  <ApiParameter name="allowResize" type='boolean' />
+  <ApiParameter name="bleed" type='boolean' defaultValue='false' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="grid" type='boolean' defaultValue='false' />
+  <ApiParameter name="striped" type='boolean' defaultValue='false' />
+</ApiParameters>
 
 ### TableBody
 
-The `TableBody` component renders table rows.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TableBody** extends the React Aria Components [**`<TableBody>`**](https://react-aria.adobe.com/Table#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TableCell
 
-The `TableCell` component renders one table cell.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TableCell** extends the React Aria Components [**`<Cell>`**](https://react-aria.adobe.com/Table#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TableColumn
 
-The `TableColumn` component defines a table column.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isResizable` | `boolean` | `false` |
+<ApiParameters>
+  <ApiDescription>
+    **TableColumn** extends the React Aria Components [**`<Column>`**](https://react-aria.adobe.com/Table#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isResizable" type='boolean' defaultValue='false' />
+</ApiParameters>
 
 ### TableHeader
 
-The `TableHeader` component groups table columns.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TableHeader** extends the React Aria Components [**`<TableHeader>`**](https://react-aria.adobe.com/Table#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TableRow
 
-The `TableRow` component renders one table row.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Table#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **TableRow** extends the React Aria Components [**`<Row>`**](https://react-aria.adobe.com/Table#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Table#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

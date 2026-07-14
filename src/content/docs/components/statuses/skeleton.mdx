@@ -10,12 +10,12 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/skeleton"/>
+<PackageCommand command="npx shadcn@latest add @intentui/skeleton"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
+<PackageCommand command="npm i tailwind-merge"/>
 <SourceCode toShow='skeleton'/>
 
 ## Anatomy
@@ -29,14 +29,19 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 ## Examples
 ### Dynamic content
-The `Skeleton` component can be used to display a placeholder while content loads dynamically, improving perceived performance and reducing loading anxiety.
+<ApiParameters>
+  <ApiDescription>
+    **Skeleton** extends the native **`<div>`** element.
+  </ApiDescription>
+</ApiParameters>
 <How toUse="statuses/skeleton/skeleton-dynamic-content-example" />
 
 ## Component API
 
-The `Skeleton` component displays a placeholder while content loads.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isLoading` | `boolean` | `-` |
+<ApiParameters>
+  <ApiDescription>
+    **Skeleton** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isLoading" type='boolean' />
+</ApiParameters>

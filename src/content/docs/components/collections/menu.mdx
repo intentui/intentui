@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Menu#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/menu"/>
+<PackageCommand command="npx shadcn@latest add @intentui/menu"/>
 
 ## Composed components
 <Composed components={['dropdown', 'popover']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge tailwind-variants"/>
 
 <SourceCode toShow='menu' />
 
@@ -173,90 +173,108 @@ Trigger a modal from a menu item. Refer to the [modal demo](/docs/components/ove
 
 ### Menu
 
-The `Menu` component controls the menu trigger and content.
+<ApiParameters>
+  <ApiDescription>
+    **Menu** extends the React Aria Components [**`<MenuTrigger>`**](https://react-aria.adobe.com/Menu#api) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### MenuTrigger
 
-The `MenuTrigger` component opens the menu.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MenuTrigger** extends the React Aria Components [**`<Button>`**](https://react-aria.adobe.com/Button#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### MenuContent
 
-The `MenuContent` component renders menu items inside a popover.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `popover` | `Pick< PopoverContentProps, \| "arrow" \| "className" \| "placement" \| "offset" \| "crossOffset" \| "arrowBoundaryOffset" \| "triggerRef" \| "isOpen" \| "onOpenChange" \| "shouldFlip" >` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MenuContent** extends the React Aria Components [**`<Menu>`**](https://react-aria.adobe.com/Menu#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="popover"
+    type='Pick< PopoverContentProps, | "arrow" | "className" | "placement" | "offset" | "crossOffset" | "arrowBoundaryOffset" | "triggerRef" | "isOpen" | "onOpenChange" | "shouldFlip" >'
+  />
+</ApiParameters>
 
 ### MenuSubMenu
 
-The `MenuSubMenu` component opens a nested menu.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `delay` | `number` | `0` |
+<ApiParameters>
+  <ApiDescription>
+    **MenuSubMenu** extends the React Aria Components [**`<SubmenuTrigger>`**](https://react-aria.adobe.com/Menu#api) component.
+  </ApiDescription>
+  <ApiParameter name="delay" type='number' defaultValue='0' />
+</ApiParameters>
 
 ### MenuHeader
 
-The `MenuHeader` component renders header content inside a menu.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `separator` | `boolean` | `false` |
+<ApiParameters>
+  <ApiDescription>
+    **MenuHeader** extends the React Aria Components [**`<Header>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="separator" type='boolean' defaultValue='false' />
+</ApiParameters>
 
 ### MenuItem
 
-The `MenuItem` component represents one menu option or action.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"danger" \| "warning"` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MenuItem** extends the React Aria Components [**`<MenuItem>`**](https://react-aria.adobe.com/Menu#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="intent" type='"danger" | "warning"' />
+</ApiParameters>
 
 ### MenuLabel
 
-The `MenuLabel` component renders the primary text for a menu item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MenuLabel** extends the Intent UI [**`<DropdownLabel>`**](/docs/components/collections/dropdown#dropdownlabel) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### MenuDescription
 
-The `MenuDescription` component renders supporting text for a menu item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MenuDescription** extends the Intent UI [**`<DropdownDescription>`**](/docs/components/collections/dropdown#dropdowndescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### MenuSection
 
-The `MenuSection` component groups related menu items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `label` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MenuSection** extends the React Aria Components [**`<MenuSection>`**](https://react-aria.adobe.com/Menu#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="label" type='string' />
+</ApiParameters>
 
 ### MenuSeparator
 
-The `MenuSeparator` component separates menu groups.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MenuSeparator** extends the Intent UI [**`<DropdownSeparator>`**](/docs/components/collections/dropdown#dropdownseparator) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### MenuShortcut
 
-The `MenuShortcut` component displays a keyboard shortcut for a menu item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Menu#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **MenuShortcut** extends the Intent UI [**`<DropdownKeyboard>`**](/docs/components/collections/dropdown#dropdownkeyboard) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Menu#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Tree#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/tree"/>
+<PackageCommand command="npx shadcn@latest add @intentui/tree"/>
 
 ## Composed components
 <Composed components={['checkbox']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='tree' />
 
@@ -100,34 +100,42 @@ The tree supports drag and drop functionalities if you use the `dragAndDropHooks
 
 ### Tree
 
-The `Tree` component displays hierarchical items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Tree** extends the React Aria Components [**`<Tree>`**](https://react-aria.adobe.com/Tree#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TreeContent
 
-The `TreeContent` component renders content inside a tree item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TreeContent** extends the React Aria Components [**`<TreeItemContent>`**](https://react-aria.adobe.com/Tree#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### TreeIndicator
 
-The `TreeIndicator` component renders the tree expand icon.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `values` | `Pick<TreeItemContentRenderProps, "isDisabled" \| "isExpanded">` | - |
+<ApiParameters>
+  <ApiDescription>
+    **TreeIndicator** extends the React Aria Components [**`<Button>`**](https://react-aria.adobe.com/Button#api) component.
+  </ApiDescription>
+  <ApiParameter
+    name="values"
+    type='Pick<TreeItemContentRenderProps, "isDisabled" | "isExpanded">'
+  />
+</ApiParameters>
 
 ### TreeItem
 
-The `TreeItem` component represents one tree node.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Tree#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **TreeItem** extends the React Aria Components [**`<TreeItem>`**](https://react-aria.adobe.com/Tree#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Tree#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

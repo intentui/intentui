@@ -11,12 +11,12 @@ status: primitive
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/field"/>
+<PackageCommand command="npx shadcn@latest add @intentui/field"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge tailwind-variants"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge tailwind-variants"/>
 
 <SourceCode toShow='field'/>
 
@@ -55,48 +55,54 @@ import { TextField } from "@/components/ui/text-field"
 
 ### Description
 
-The `Description` component renders helper text for a field.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Description** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### FieldError
 
-The `FieldError` component renders validation error text.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **FieldError** extends the React Aria Components [**`<FieldError>`**](https://react-aria.adobe.com/forms) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### FieldGroup
 
-The `FieldGroup` component groups field controls.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **FieldGroup** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Fieldset
 
-The `Fieldset` component groups related form fields.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Fieldset** extends the native **`<fieldset>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Label
 
-The `Label` component renders a field label.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Label** extends the React Aria Components [**`<Label>`**](https://react-aria.adobe.com/forms) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Legend
 
-The `Legend` component renders a fieldset legend.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Legend** extends the native **`<legend>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

@@ -10,12 +10,12 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/scroll-area"/>
+<PackageCommand command="npx shadcn@latest add @intentui/scroll-area"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
+<PackageCommand command="npm i tailwind-merge"/>
 <SourceCode toShow='scroll-area'/>
 
 ## Examples
@@ -33,11 +33,12 @@ Add fade effects to the edges of the scroll area for visual cues.
 
 ### ScrollArea
 
-The `ScrollArea` component renders custom scrollable content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `orientation` | `ScrollAreaOrientation` | `both` |
-| `scrollbarGutter` | `boolean` | `false` |
-| `scrollFade` | `boolean` | `false` |
+<ApiParameters>
+  <ApiDescription>
+    **ScrollArea** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="orientation" type='ScrollAreaOrientation' defaultValue='both' />
+  <ApiParameter name="scrollbarGutter" type='boolean' defaultValue='false' />
+  <ApiParameter name="scrollFade" type='boolean' defaultValue='false' />
+</ApiParameters>

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { blog } from '#site/content'
 import type { DocPageProps } from '@/app/(app)/docs/[...slug]/page'
 import { JsonLd } from '@/components/json-ld'
-import { mdxComponents } from '@/components/mdx-components'
+import { mdxComponents } from '@/components/docs/mdx-components'
 import { Toc } from '@/components/toc'
 import { app } from '@/config/app'
 import { formatDate } from '@/lib/date'
@@ -62,9 +62,9 @@ export default async function Page(props: DocPageProps) {
     <>
       <JsonLd data={jsonLd} />
       <div className="min-w-0 max-w-2xl flex-auto px-4 pt-16 pb-32 lg:max-w-none lg:pr-0">
-        <main className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
+        <main className="typeset-docs typeset max-w-[inherit]">
           <div className="-mx-4 sm:mx-0">
-            <div className="not-prose relative inset-shadow-xs isolate -mt-8 overflow-hidden p-4 ring-1 ring-fg/5 sm:mt-0 sm:rounded-xl sm:p-10 sm:ring-inset dark:ring-fg/10">
+            <div className="not-typeset relative inset-shadow-xs isolate -mt-8 overflow-hidden p-4 ring-1 ring-fg/5 sm:mt-0 sm:rounded-xl sm:p-10 sm:ring-inset dark:ring-fg/10">
               {article.published && (
                 <div className="font-mono text-blue-600 text-xs uppercase dark:text-blue-400">
                   {formatDate(article.published)}

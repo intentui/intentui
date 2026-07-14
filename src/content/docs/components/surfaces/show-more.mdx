@@ -11,12 +11,12 @@ references: ["https://react-aria.adobe.com/ToggleButton#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/show-more"/>
+<PackageCommand command="npx shadcn@latest add @intentui/show-more"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-variants"/>
+<PackageCommand command="npm i react-aria-components tailwind-variants"/>
 <SourceCode toShow='show-more'/>
 
 ## Anatomy
@@ -56,12 +56,14 @@ The default orientation for the `ShowMore` component is horizontal. However, it 
 <How toUse="surfaces/show-more/show-more-orientation-example" />
 
 ## Component API
-The `ShowMore` component expands and collapses overflowing content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `orientation` | `"horizontal" \| "vertical"` | `horizontal` |
-| `text` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ToggleButton#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ShowMore** extends the React Aria Components [**`<ToggleButton>`**](https://react-aria.adobe.com/ToggleButton#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="orientation" type='"horizontal" | "vertical"' defaultValue='horizontal' />
+  <ApiParameter name="text" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ToggleButton#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

@@ -5,14 +5,14 @@ import type { Root as PageTreeRoot } from 'fumadocs-core/page-tree'
 import type { TableOfContents } from 'fumadocs-core/toc'
 import { useState } from 'react'
 import { BrandGithubIcon } from '@/components/icons/brand-github-icon'
-import { MobilePager } from '@/components/mobile-pager'
+import { MobilePager } from '@/components/docs/mobile-pager'
 import { Button } from '@/components/ui/button'
 import { ButtonGroup } from '@/components/ui/button-group'
 import { Loader } from '@/components/ui/loader'
 import { Menu, MenuContent, MenuItem, MenuSeparator } from '@/components/ui/menu'
 import { app } from '@/config/app'
 import { useClipboard } from '@/hooks/use-clipboard'
-import { DuplicateIcon } from './icons/duplicate-icon'
+import { DuplicateIcon } from '@/components/icons/duplicate-icon'
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
@@ -59,7 +59,7 @@ export function OpenIn({
   }
 
   return (
-    <div className="not-prose ml-auto flex items-center justify-between gap-x-1.5 md:border-transparent">
+    <div className="not-typeset ml-auto flex items-center justify-between gap-x-1.5 md:border-transparent">
       <ButtonGroup className="hidden sm:flex">
         <Button
           className="h-10 rounded-sm sm:h-auto dark:bg-secondary/50 dark:hover:bg-secondary"

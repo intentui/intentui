@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/RadioGroup#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/radio"/>
+<PackageCommand command="npx shadcn@latest add @intentui/radio"/>
 
 ## Composed components
 <Composed components={['field']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='radio'/>
 
@@ -86,26 +86,30 @@ When the radio group is disabled, it cannot be interacted with.
 
 ### RadioField
 
-The `RadioField` component represents one radio option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **RadioField** extends the React Aria Components [**`<RadioField>`**](https://react-aria.adobe.com/RadioGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### Radio
 
-The `Radio` component represents one radio option.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Radio** extends the React Aria Components [**`<RadioButton>`**](https://react-aria.adobe.com/RadioGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### RadioGroup
 
-The `RadioGroup` component groups mutually exclusive radio options.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/RadioGroup#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **RadioGroup** extends the React Aria Components [**`<RadioGroup>`**](https://react-aria.adobe.com/RadioGroup#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/RadioGroup#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

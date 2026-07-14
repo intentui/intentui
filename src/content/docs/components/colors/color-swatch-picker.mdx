@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/ColorSwatchPicker#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/color-swatch-picker"/>
+<PackageCommand command="npx shadcn@latest add @intentui/color-swatch-picker"/>
 
 ## Composed components
 <Composed components={['color-swatch']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components"/>
+<PackageCommand command="npm i react-aria-components"/>
 <SourceCode toShow='color-swatch-picker'/>
 
 ## Anatomy
@@ -52,18 +52,21 @@ While you can disable individual picker items, disabling the entire picker is po
 
 ### ColorSwatchPicker
 
-The `ColorSwatchPicker` component groups selectable color swatches.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ColorSwatchPicker** extends the React Aria Components [**`<ColorSwatchPicker>`**](https://react-aria.adobe.com/ColorSwatchPicker#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ColorSwatchPickerItem
 
-The `ColorSwatchPickerItem` component represents one selectable swatch.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ColorSwatchPicker#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ColorSwatchPickerItem** extends the React Aria Components [**`<ColorSwatchPickerItem>`**](https://react-aria.adobe.com/ColorSwatchPicker#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ColorSwatchPicker#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

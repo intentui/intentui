@@ -10,12 +10,12 @@ published: true
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/tracker"/>
+<PackageCommand command="npx shadcn@latest add @intentui/tracker"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='tracker' />
 
@@ -26,10 +26,11 @@ Sometimes you might want to display the tracker without tooltips for a cleaner l
 <How toUse="visualizations/tracker/tracker-without-tooltip-example" />
 
 ## Component API
-The `Tracker` component visualizes segmented progress or distribution data.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `data` | `TrackerBlockProps[]` | `[]` |
-| `defaultBackgroundColor` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Tracker** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="data" type='TrackerBlockProps[]' defaultValue='[]' />
+  <ApiParameter name="defaultBackgroundColor" type='string' />
+</ApiParameters>

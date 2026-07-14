@@ -1,7 +1,7 @@
 'use client'
 
 import { twMerge } from 'tailwind-merge'
-import { IconBrandTanstack, IconBrandVite } from '@/components/framework-guides'
+import { IconBrandTanstack, IconBrandVite } from '@/components/docs/framework-guides'
 import { BrandLaravelIcon } from '@/components/icons/brand-laravel-icon'
 import { BrandNextjsIcon } from '@/components/icons/brand-nextjs-icon'
 import { PageContainer } from '@/components/page-container'

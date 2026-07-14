@@ -14,12 +14,12 @@ The toast components are built on top of the [Sonner](https://sonner.emilkowalsk
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/toast"/>
+<PackageCommand command="npx shadcn@latest add @intentui/toast"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i sonner tailwind-merge"/>
+<PackageCommand command="npm i sonner tailwind-merge"/>
 
 <SourceCode toShow='toast'/>
 
@@ -46,7 +46,7 @@ And next, just use the `toast()` function to show a toast.
 ## Next.js
 If you're slapping this toast into your Next.js gig, you're gonna wanna roll with the `next-themes` package to flip the theme on that toast. Peep how you hook it up:
 
-<InstallCommand command="npm i next-themes"/>
+<PackageCommand command="npm i next-themes"/>
 
 Don't forget to include a theme provider component. Check out the setup [here](/docs/dark-mode/next-js).
 
@@ -120,10 +120,12 @@ toast('Someone requested to delete this product', {
 ```
 
 ## Component API
-The `Toast` component renders the app-level toast container.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [Sonner toast API reference](https://sonner.emilkowal.ski/toast) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **Toast** extends the Sonner [**`<Toaster>`**](https://sonner.emilkowal.ski/) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [Sonner toast API reference](https://sonner.emilkowal.ski/toast) for the full API reference.
+  </ApiReference>
+</ApiParameters>

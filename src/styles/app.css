@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import './code.css';
+@import './typeset.css';
 
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-react-aria-components';
@@ -182,6 +183,15 @@
   --chart-3: oklch(0.707 0.165 254.624);
   --chart-4: oklch(0.809 0.105 251.813);
   --chart-5: oklch(0.882 0.059 254.128);
+}
+
+.typeset-docs {
+  --typeset-font-body: var(--font-inter);
+  --typeset-font-heading: var(--font-inter);
+  --typeset-font-mono: var(--font-docs-mono);
+  --typeset-size: 15px;
+  --typeset-leading: 1.75;
+  --typeset-flow: 1.25em;
 }
 
 .dark {

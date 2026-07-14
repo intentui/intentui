@@ -10,7 +10,7 @@ references: ["https://react-aria.adobe.com/Dialog#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/dialog"/>
+<PackageCommand command="npx shadcn@latest add @intentui/dialog"/>
 
 ## Composed components
 <Composed components={['button']}/>
@@ -18,85 +18,99 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 <SourceCode toShow='dialog' />
 
 ## Component API
 
 ### Dialog
 
-The `Dialog` component is the accessible dialog container.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Dialog** extends the React Aria Components [**`<Dialog>`**](https://react-aria.adobe.com/Dialog#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DialogBody
 
-The `DialogBody` component wraps the main dialog content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DialogBody** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DialogCloseIcon
 
-The `DialogCloseIcon` component renders the dialog close icon button.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isDismissable` | `boolean \| undefined` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DialogCloseIcon** extends the Intent UI [**`<Button>`**](/docs/components/buttons/button#button) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isDismissable" type='boolean | undefined' />
+</ApiParameters>
 
 ### DialogClose
 
-The `DialogClose` component renders a button that closes the dialog.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"primary" \| "secondary" \| "warning" \| "danger" \| "success" \| "outline" \| "plain"` | `plain` |
+<ApiParameters>
+  <ApiDescription>
+    **DialogClose** extends the Intent UI [**`<Button>`**](/docs/components/buttons/button#button) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="intent"
+    type='"primary" | "secondary" | "warning" | "danger" | "success" | "outline" | "plain"'
+    defaultValue='plain'
+  />
+</ApiParameters>
 
 ### DialogDescription
 
-The `DialogDescription` component renders supporting text inside a dialog.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DialogDescription** extends the React Aria Components [**`<Text>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DialogFooter
 
-The `DialogFooter` component groups dialog actions.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DialogFooter** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DialogHeader
 
-The `DialogHeader` component groups the dialog title and description.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `description` | `string` | - |
-| `title` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DialogHeader** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="description" type='string' />
+  <ApiParameter name="title" type='string' />
+</ApiParameters>
 
 ### DialogTitle
 
-The `DialogTitle` component renders the dialog heading.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **DialogTitle** extends the React Aria Components [**`<Heading>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### DialogTrigger
 
-The `DialogTrigger` component defines the element that opens a dialog.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Dialog#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **DialogTrigger** extends the Intent UI [**`<Button>`**](/docs/components/buttons/button#button) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Dialog#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

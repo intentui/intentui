@@ -11,7 +11,7 @@ status: beta
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/context-menu"/>
+<PackageCommand command="npx shadcn@latest add @intentui/context-menu"/>
 
 ## Composed components
 <Composed components={['menu']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='context-menu' />
 
@@ -57,79 +57,92 @@ Also, you can disable items directly in `MenuContent` by using the `disabledKeys
 
 ### ContextMenu
 
-The `ContextMenu` component provides context menu state for its trigger and content.
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenu** is a custom React context provider and does not extend a React Aria component.
+  </ApiDescription>
+</ApiParameters>
 
 ### ContextMenuTrigger
 
-The `ContextMenuTrigger` component defines the element that opens a context menu.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuTrigger** extends the native **`<button>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ContextMenuContent
 
-The `ContextMenuContent` component renders menu items at the pointer position.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuContent** extends the Intent UI [**`<MenuContent>`**](/docs/components/collections/menu#menucontent) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ContextMenuHeader
 
-The `ContextMenuHeader` component renders header content inside a context menu.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `separator` | `boolean` | `false` |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuHeader** extends the Intent UI [**`<MenuHeader>`**](/docs/components/collections/menu#menuheader) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="separator" type='boolean' defaultValue='false' />
+</ApiParameters>
 
 ### ContextMenuItem
 
-The `ContextMenuItem` component represents one context menu action.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `intent` | `"danger" \| "warning"` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuItem** extends the Intent UI [**`<MenuItem>`**](/docs/components/collections/menu#menuitem) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="intent" type='"danger" | "warning"' />
+</ApiParameters>
 
 ### ContextMenuLabel
 
-The `ContextMenuLabel` component renders the primary text for a context menu item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuLabel** extends the Intent UI [**`<MenuLabel>`**](/docs/components/collections/menu#menulabel) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ContextMenuDescription
 
-The `ContextMenuDescription` component renders supporting text for a context menu item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuDescription** extends the Intent UI [**`<MenuDescription>`**](/docs/components/collections/menu#menudescription) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ContextMenuSection
 
-The `ContextMenuSection` component groups related context menu items.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `label` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuSection** extends the Intent UI [**`<MenuSection>`**](/docs/components/collections/menu#menusection) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="label" type='string' />
+</ApiParameters>
 
 ### ContextMenuSeparator
 
-The `ContextMenuSeparator` component separates context menu groups.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuSeparator** extends the Intent UI [**`<MenuSeparator>`**](/docs/components/collections/menu#menuseparator) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ContextMenuShortcut
 
-The `ContextMenuShortcut` component displays a keyboard shortcut for a context menu item.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuShortcut** extends the Intent UI [**`<MenuShortcut>`**](/docs/components/collections/menu#menushortcut) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>

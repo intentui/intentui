@@ -36,9 +36,12 @@ export function Toc({ className, items }: Props) {
 
   return (
     <LayoutGroup id={id}>
-      <aside ref={tocRef} className={twMerge('not-prose w-72 forced-color-adjust-none', className)}>
+      <aside
+        ref={tocRef}
+        className={twMerge('not-typeset w-72 forced-color-adjust-none', className)}
+      >
         <ScrollArea scrollFade orientation="vertical" className="xl:h-[calc(100vh-22rem)]">
-          <nav aria-labelledby="on-this-page-title" className="not-prose relative w-56 p-6">
+          <nav aria-labelledby="on-this-page-title" className="not-typeset relative w-56 p-6">
             <Suspense>
               {items.length > 0 && (
                 <>

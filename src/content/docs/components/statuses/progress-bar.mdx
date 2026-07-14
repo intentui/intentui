@@ -11,12 +11,12 @@ references: ["https://react-aria.adobe.com/ProgressBar#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/progress-bar"/>
+<PackageCommand command="npx shadcn@latest add @intentui/progress-bar"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
+<PackageCommand command="npm i tailwind-merge"/>
 <SourceCode toShow='progress-bar'/>
 
 ## Anatomy
@@ -50,34 +50,39 @@ An indeterminate progress bar is a type of progress indicator that does not show
 
 ### ProgressBar
 
-The `ProgressBar` component displays determinate or indeterminate progress.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ProgressBar** extends the React Aria Components [**`<ProgressBar>`**](https://react-aria.adobe.com/ProgressBar#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ProgressBarHeader
 
-The `ProgressBarHeader` component groups progress label and value content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ProgressBarHeader** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ProgressBarTrack
 
-The `ProgressBarTrack` component renders the progress track.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **ProgressBarTrack** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### ProgressBarValue
 
-The `ProgressBarValue` component displays the formatted progress value.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **ProgressBarValue** extends the native **`<span>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/ProgressBar#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

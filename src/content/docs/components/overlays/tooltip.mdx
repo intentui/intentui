@@ -11,12 +11,12 @@ references: ["https://react-aria.adobe.com/Tooltip#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/tooltip"/>
+<PackageCommand command="npx shadcn@latest add @intentui/tooltip"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge tailwind-variants"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge tailwind-variants"/>
 <SourceCode toShow='tooltip'/>
 
 ## Anatomy
@@ -74,20 +74,30 @@ Tooltip rolls out the welcome mat after you hover for 1.5 secs. Wanna speed it u
 
 ### Tooltip
 
-The `Tooltip` component controls when tooltip content is shown.
+<ApiParameters>
+  <ApiDescription>
+    **Tooltip** extends the React Aria Components [**`<TooltipTrigger>`**](https://react-aria.adobe.com/Tooltip#api) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### TooltipTrigger
 
-The `TooltipTrigger` component defines the element that opens a tooltip.
+<ApiParameters>
+  <ApiDescription>
+    **TooltipTrigger** extends the React Aria Components [**`<Button>`**](https://react-aria.adobe.com/Button#api) component.
+  </ApiDescription>
+</ApiParameters>
 
 ### TooltipContent
 
-The `TooltipContent` component renders tooltip content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `arrow` | `boolean` | `true` |
-| `className` | `string` | - |
-| `inverse` | `true \| false` | `false` |
-
-See the [React Aria](https://react-aria.adobe.com/Tooltip#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **TooltipContent** extends the React Aria Components [**`<Tooltip>`**](https://react-aria.adobe.com/Tooltip#api) component.
+  </ApiDescription>
+  <ApiParameter name="arrow" type='boolean' defaultValue='true' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="inverse" type='true | false' defaultValue='false' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Tooltip#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Ads } from '@/components/ads'
-import { AdsMobile } from '@/components/ads-mobile'
-import { DocRefs } from '@/components/doc-refs'
+import { Ads } from '@/components/docs/ads'
+import { AdsMobile } from '@/components/docs/ads-mobile'
+import { DocRefs } from '@/components/docs/doc-refs'
 import { JsonLd } from '@/components/json-ld'
-import { mdxComponents } from '@/components/mdx-components'
-import { OpenIn } from '@/components/open-in'
-import { Pager } from '@/components/pager'
+import { mdxComponents } from '@/components/docs/mdx-components'
+import { OpenIn } from '@/components/docs/open-in'
+import { Pager } from '@/components/docs/pager'
 import { Toc } from '@/components/toc'
 import { app } from '@/config/app'
 import { ogImage } from '@/lib/og'
@@ -144,10 +144,10 @@ export default async function Page(props: DocPageProps) {
       <JsonLd data={jsonLd} />
       {/* Center */}
       <div className="w-full min-w-0 border-page py-8 sm:py-16 xl:border-x">
-        <div className="prose prose-blue dark:prose-invert prose-headings:mb-[0.3rem] max-w-[inherit] prose-headings:scroll-mt-24 prose-img:rounded-lg prose-pre:p-0">
+        <div className="typeset typeset-docs max-w-[inherit]">
           {/* center */}
           <div className="mx-auto max-w-3xl sm:px-6">
-            <div className="not-prose mb-3 sm:mb-6">
+            <div className="not-typeset mb-3 sm:mb-6">
               <div className="flex flex-col justify-between gap-y-6 sm:flex-row sm:items-center sm:gap-y-0">
                 <h1 className="flex-1 font-normal text-4xl tracking-tight">{doc.title}</h1>
                 {!doc.references && (

@@ -12,7 +12,7 @@ export function DocComposed({
   text?: string | React.ReactNode
 }) {
   return (
-    <div className="not-prose">
+    <div className="not-typeset">
       {!text ? (
         <>
           <p className="mb-6">

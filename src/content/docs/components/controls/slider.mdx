@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Slider#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/slider"/>
+<PackageCommand command="npx shadcn@latest add @intentui/slider"/>
 
 ## Composed components
 <Composed components={['field']}/>
@@ -19,7 +19,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='slider'/>
 
@@ -57,50 +57,57 @@ When the slider is disabled, it appears grayed out and becomes non-interactive.
 
 ### Slider
 
-The `Slider` component lets users select values from a range.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Slider** extends the React Aria Components [**`<Slider>`**](https://react-aria.adobe.com/Slider#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SliderFill
 
-The `SliderFill` component renders the filled portion of the slider track.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SliderFill** extends the React Aria Components [**`<SliderFill>`**](https://react-aria.adobe.com/Slider#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SliderGroup
 
-The `SliderGroup` component groups slider controls.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SliderGroup** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SliderOutput
 
-The `SliderOutput` component displays the current slider value.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SliderOutput** extends the React Aria Components [**`<SliderOutput>`**](https://react-aria.adobe.com/Slider#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SliderThumb
 
-The `SliderThumb` component renders a draggable slider handle.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **SliderThumb** extends the React Aria Components [**`<SliderThumb>`**](https://react-aria.adobe.com/Slider#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### SliderTrack
 
-The `SliderTrack` component renders the slider track.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Slider#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **SliderTrack** extends the React Aria Components [**`<SliderTrack>`**](https://react-aria.adobe.com/Slider#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Slider#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

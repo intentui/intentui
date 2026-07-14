@@ -11,7 +11,7 @@ published: true
 
 Add the component with the CLI.
 
-<InstallCommand command="npx shadcn@latest add @intentui/native-select" />
+<PackageCommand command="npx shadcn@latest add @intentui/native-select" />
 
 ## Composed components
 
@@ -19,7 +19,7 @@ Add the component with the CLI.
 
 ## Manual installation
 
-<InstallCommand command="npm i @heroicons/react tailwind-merge"/>
+<PackageCommand command="npm i @heroicons/react tailwind-merge"/>
 <SourceCode toShow="native-select" />
 
 ## Anatomy
@@ -82,17 +82,19 @@ Disable the select to prevent interaction and communicate that the field is curr
 
 ### NativeSelect
 
-The `NativeSelect` component wraps a native select control.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NativeSelect** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### NativeSelectContent
 
-The `NativeSelectContent` component renders the native select element.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `isInvalid` | `boolean` | - |
+<ApiParameters>
+  <ApiDescription>
+    **NativeSelectContent** extends the native **`<select>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isInvalid" type='boolean' />
+</ApiParameters>

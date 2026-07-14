@@ -11,7 +11,7 @@ references: ["https://react-aria.adobe.com/Meter#api"]
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/meter"/>
+<PackageCommand command="npx shadcn@latest add @intentui/meter"/>
 
 
 ## Composed components
@@ -20,7 +20,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 
 <SourceCode toShow='meter'/>
 
@@ -47,34 +47,39 @@ You can also change the currency format of the value by passing a `formatOptions
 
 ### Meter
 
-The `Meter` component displays a value within a known range.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **Meter** extends the React Aria Components [**`<Meter>`**](https://react-aria.adobe.com/Meter#api) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### MeterHeader
 
-The `MeterHeader` component groups meter label and value content.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MeterHeader** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### MeterTrack
 
-The `MeterTrack` component renders the meter track.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
+<ApiParameters>
+  <ApiDescription>
+    **MeterTrack** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+</ApiParameters>
 
 ### MeterValue
 
-The `MeterValue` component displays the formatted meter value.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria](https://react-aria.adobe.com/Meter#api) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **MeterValue** extends the native **`<span>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria](https://react-aria.adobe.com/Meter#api) for the full API reference.
+  </ApiReference>
+</ApiParameters>

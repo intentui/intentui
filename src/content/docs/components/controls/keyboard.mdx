@@ -10,22 +10,24 @@ status: primitive
 ## Installation
 
 Install the component via the CLI in one command.
-<InstallCommand command="npx shadcn@latest add @intentui/keyboard"/>
+<PackageCommand command="npx shadcn@latest add @intentui/keyboard"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i react-aria-components tailwind-merge"/>
+<PackageCommand command="npm i react-aria-components tailwind-merge"/>
 <SourceCode toShow='keyboard' />
 
 ## Component API
 
 ### Keyboard
 
-The `Keyboard` component renders keyboard shortcut text.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-
-See the [React Aria interactions reference](https://react-aria.adobe.com/interactions.html#keyboard-and-focus-behavior) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **Keyboard** extends the React Aria Components [**`<Keyboard>`**](https://react-aria.adobe.com/collections) component.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiReference>
+    See the [React Aria interactions reference](https://react-aria.adobe.com/interactions.html#keyboard-and-focus-behavior) for the full API reference.
+  </ApiReference>
+</ApiParameters>

@@ -12,7 +12,7 @@ references: ["https://recharts.org/en-US/api/BarChart"]
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/bar-chart"/>
+<PackageCommand command="npx shadcn@latest add @intentui/bar-chart"/>
 
 ## Composed components
 <Composed components={['chart']}/>
@@ -20,7 +20,7 @@ Install the component via the CLI in one command.
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i recharts react-aria-components"/>
+<PackageCommand command="npm i recharts react-aria-components"/>
 
 <SourceCode toShow={'bar-chart'} />
 
@@ -63,37 +63,57 @@ Controlled bar charts let you dynamically manage state. You can filter datasets,
 
 ## Component API
 
-The `BarChart` component renders categorical data with vertical or horizontal bars.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `barCategoryGap` | `number` | `5` |
-| `barGap` | `number` | - |
-| `barProps` | `Partial<React.ComponentProps<typeof Bar>>` | - |
-| `barRadius` | `number` | - |
-| `barSize` | `number` | - |
-| `cartesianGridProps` | `CartesianGridProps` | - |
-| `chartProps` | `Omit<ComponentProps<typeof BarChartPrimitive>, "data" \| "stackOffset">` | - |
-| `children` | `React.ReactNode` | - |
-| `className` | `string` | - |
-| `colors` | `readonly (ChartColorKeys \| string)[]` | `DEFAULT_COLORS` |
-| `config` | `ChartConfig` | - |
-| `containerHeight` | `number` | `370 desktop / 200 mobile` |
-| `data` | `Record<string, any>[]` | `[]` |
-| `dataKey` | `string` | - |
-| `displayEdgeLabelsOnly` | `boolean` | `false` |
-| `hideGridLines` | `boolean` | `false` |
-| `hideXAxis` | `boolean` | `false` |
-| `hideYAxis` | `boolean` | `false` |
-| `intervalType` | `IntervalType` | `equidistantPreserveStart` |
-| `layout` | `ChartLayout` | `horizontal` |
-| `legend` | `LegendContentType \| boolean` | `true` |
-| `legendProps` | `Omit<ComponentProps<typeof LegendPrimitive>, "content" \| "ref">` | - |
-| `tooltip` | `TooltipContentType<ValueType, NameType> \| boolean` | `true` |
-| `tooltipProps` | `BaseChartProps["tooltipProps"]` | - |
-| `type` | `ChartType` | `default` |
-| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
-| `xAxisProps` | `XAxisPropsPrimitive` | - |
-| `yAxisProps` | `YAxisPrimitiveProps` | - |
-
-See the [Recharts](https://recharts.org/en-US/api/BarChart) for the full API reference.
+<ApiParameters>
+  <ApiDescription>
+    **BarChart** extends the internal Intent UI **`<BaseChart>`** component.
+  </ApiDescription>
+  <ApiParameter name="barCategoryGap" type='number' defaultValue='5' />
+  <ApiParameter name="barGap" type='number' />
+  <ApiParameter name="barProps" type='Partial<React.ComponentProps<typeof Bar>>' />
+  <ApiParameter name="barRadius" type='number' />
+  <ApiParameter name="barSize" type='number' />
+  <ApiParameter name="cartesianGridProps" type='CartesianGridProps' />
+  <ApiParameter
+    name="chartProps"
+    type='Omit<ComponentProps<typeof BarChartPrimitive>, "data" | "stackOffset">'
+  />
+  <ApiParameter name="children" type='React.ReactNode' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter
+    name="colors"
+    type='readonly (ChartColorKeys | string)[]'
+    defaultValue='DEFAULT_COLORS'
+  />
+  <ApiParameter name="config" type='ChartConfig' />
+  <ApiParameter name="containerHeight" type='number' defaultValue='370 desktop / 200 mobile' />
+  <ApiParameter name="data" type='Record<string, any>[]' defaultValue='[]' />
+  <ApiParameter name="dataKey" type='string' />
+  <ApiParameter name="displayEdgeLabelsOnly" type='boolean' defaultValue='false' />
+  <ApiParameter name="hideGridLines" type='boolean' defaultValue='false' />
+  <ApiParameter name="hideXAxis" type='boolean' defaultValue='false' />
+  <ApiParameter name="hideYAxis" type='boolean' defaultValue='false' />
+  <ApiParameter name="intervalType" type='IntervalType' defaultValue='equidistantPreserveStart' />
+  <ApiParameter name="layout" type='ChartLayout' defaultValue='horizontal' />
+  <ApiParameter name="legend" type='LegendContentType | boolean' defaultValue='true' />
+  <ApiParameter
+    name="legendProps"
+    type='Omit<ComponentProps<typeof LegendPrimitive>, "content" | "ref">'
+  />
+  <ApiParameter
+    name="tooltip"
+    type='TooltipContentType<ValueType, NameType> | boolean'
+    defaultValue='true'
+  />
+  <ApiParameter name="tooltipProps" type='BaseChartProps["tooltipProps"]' />
+  <ApiParameter name="type" type='ChartType' defaultValue='default' />
+  <ApiParameter
+    name="valueFormatter"
+    type='(value: number) => string'
+    defaultValue='(value) => value.toString()'
+  />
+  <ApiParameter name="xAxisProps" type='XAxisPropsPrimitive' />
+  <ApiParameter name="yAxisProps" type='YAxisPrimitiveProps' />
+  <ApiReference>
+    See the [Recharts](https://recharts.org/en-US/api/BarChart) for the full API reference.
+  </ApiReference>
+</ApiParameters>

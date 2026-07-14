@@ -16,12 +16,12 @@ published: true
 
 Install the component via the CLI in one command.
 
-<InstallCommand command="npx shadcn@latest add @intentui/bar-list"/>
+<PackageCommand command="npx shadcn@latest add @intentui/bar-list"/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<InstallCommand command="npm i tailwind-merge"/>
+<PackageCommand command="npm i tailwind-merge"/>
 <SourceCode toShow={'bar-list'} />
 
 ## Examples
@@ -32,12 +32,21 @@ Controlled bar lists allow you to manage the data and interactions dynamically, 
 
 ## Component API
 
-The `BarList` component displays ranked values as horizontal bars.
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `className` | `string` | - |
-| `data` | `Bar<T>[]` | `[]` |
-| `onValueChange` | `(payload: Bar<T>) => void` | - |
-| `sortOrder` | `"ascending" \| "descending" \| "none"` | `descending` |
-| `valueFormatter` | `(value: number) => string` | `(value) => value.toString()` |
+<ApiParameters>
+  <ApiDescription>
+    **BarList** extends the native **`<div>`** element.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="data" type='Bar<T>[]' defaultValue='[]' />
+  <ApiParameter name="onValueChange" type='(payload: Bar<T>) => void' />
+  <ApiParameter
+    name="sortOrder"
+    type='"ascending" | "descending" | "none"'
+    defaultValue='descending'
+  />
+  <ApiParameter
+    name="valueFormatter"
+    type='(value: number) => string'
+    defaultValue='(value) => value.toString()'
+  />
+</ApiParameters>
