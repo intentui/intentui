@@ -16,7 +16,7 @@ export function ApiDescription({ children }: { children: React.ReactNode }) {
 
 export function ApiReference({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-muted/30 p-4 text-muted-fg text-sm/5 [&_a]:text-primary-subtle-fg [&_a]:underline-offset-4 [&_a]:hover:underline [&_p]:m-0">
+    <div className="bg-muted/30 px-4 py-2 text-muted-fg text-sm/5 [&_a]:text-primary-subtle-fg [&_a]:underline-offset-4 [&_a]:hover:underline [&_p]:m-0">
       {children}
     </div>
   )
