@@ -33,7 +33,7 @@ export const sortedGsChildren =
 
 export function Aside() {
   return (
-    <div className="sticky h-screen w-full [--gap:--spacing(6)] sm:top-12 sm:w-64 sm:[--gap:--spacing(8)]">
+    <div className="sticky h-screen w-full [--gap:--spacing(6)] sm:top-[53px] sm:h-[calc(100dvh-53px)] sm:w-64 sm:[--gap:--spacing(8)]">
       <div
         data-docs-sidebar-scroll
         className="flex **:data-[slot=section]:px-4 flex-col gap-y-(--gap) h-full py-10 scrollbar-thin scroll-fade-y overflow-y-auto"
