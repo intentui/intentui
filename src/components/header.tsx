@@ -5,7 +5,7 @@ import { Text } from '@/components/ui/text'
 
 export function Header({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <div className={twMerge('', className)}>
+    <div className={twMerge('border-page', className)}>
       <PageContainer>
         <div className="border-page pt-14 pb-6 lg:border-x lg:p-6 lg:pt-32">{props.children}</div>
       </PageContainer>

@@ -2,6 +2,7 @@
 @import 'tw-animate-css';
 @import './code.css';
 @import './typeset.css';
+@import './shadcn.css';
 
 @plugin 'tailwindcss-react-aria-components';
 
@@ -184,20 +185,11 @@
   --chart-5: oklch(0.882 0.059 254.128);
 }
 
-.typeset-docs {
-  --typeset-font-body: var(--font-inter);
-  --typeset-font-heading: var(--font-inter);
-  --typeset-font-mono: var(--font-docs-mono);
-  --typeset-size: 15px;
-  --typeset-leading: 1.75;
-  --typeset-flow: 1.25em;
-}
-
 .dark {
   --shiki-bg: #111114;
   --shiki-da--bg: oklch(0.091 0.005 285.823);
 
-  --bg: oklch(0 0 1);
+  --bg: var(--color-zinc-950);
   --fg: oklch(0.985 0 0);
 
   --card: oklch(0.21 0.006 285.885);
@@ -264,6 +256,15 @@
   --chart-3: oklch(0.707 0.165 254.624);
   --chart-4: oklch(0.809 0.105 251.813);
   --chart-5: oklch(0.882 0.059 254.128);
+}
+
+.typeset-docs {
+  --typeset-font-body: var(--font-inter);
+  --typeset-font-heading: var(--font-inter);
+  --typeset-font-mono: var(--font-docs-mono);
+  --typeset-size: 15px;
+  --typeset-leading: 1.75;
+  --typeset-flow: 1.25em;
 }
 
 @utility touch-target {
