@@ -2,15 +2,14 @@
 
 import type { TableOfContents, TOCItemType } from 'fumadocs-core/toc'
 import { LayoutGroup, motion } from 'motion/react'
-import { Suspense, useEffect, useId, useRef, useState } from 'react'
-import scrollIntoView from 'scroll-into-view-if-needed'
+import { Suspense, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { tv } from 'tailwind-variants'
 import { twMerge } from 'tailwind-merge'
 
 const tocStyles = tv({
   slots: {
     root: 'not-typeset forced-color-adjust-none',
-    nav: 'scrollbar-thin scroll-fade-y relative overflow-y-auto p-6',
+    nav: 'scrollbar-none scroll-fade-y relative overflow-y-auto p-6',
   },
   variants: {
     context: {
@@ -36,33 +35,35 @@ interface TocProps {
 }
 
 export function Toc({ className, context = 'docs', items }: TocProps) {
-  const tocRef = useRef<HTMLElement>(null)
-  const ids = items.map((item) => item.url.split('#')[1])
-  const activeId = useActiveItem(ids as string[])
-  const activeIndex = activeId?.length || 0
+  const navRef = useRef<HTMLElement>(null)
+  const ids = useMemo(() => items.map((item) => item.url.split('#')[1] as string), [items])
+  const activeId = useActiveItem(ids)
+  const activeIndex = activeId ? ids.indexOf(activeId) : -1
   const id = useId()
   const minDepth = items.reduce((acc, item) => Math.min(acc, item.depth), 1000)
   const styles = tocStyles({ context })
 
   useEffect(() => {
     if (!activeId || activeIndex < 2) return
-    const anchor = tocRef.current?.querySelector(`li > a[href="#${activeId}"]`)
+    const nav = navRef.current
+    const anchor = nav?.querySelector<HTMLElement>(`li > a[href="#${activeId}"]`)
 
-    if (anchor) {
-      scrollIntoView(anchor, {
+    if (nav && anchor) {
+      const anchorRect = anchor.getBoundingClientRect()
+      const navRect = nav.getBoundingClientRect()
+
+      nav.scrollTo({
+        top:
+          nav.scrollTop + anchorRect.top - navRect.top - (nav.clientHeight - anchorRect.height) / 2,
         behavior: 'smooth',
-        block: 'center',
-        inline: 'center',
-        scrollMode: 'always',
-        boundary: tocRef.current,
       })
     }
   }, [activeId, activeIndex])
 
   return (
     <LayoutGroup id={id}>
-      <aside ref={tocRef} className={styles.root({ className })}>
-        <nav aria-labelledby="on-this-page-title" className={styles.nav()}>
+      <aside className={styles.root({ className })}>
+        <nav ref={navRef} aria-labelledby="on-this-page-title" className={styles.nav()}>
           <Suspense>
             {items.length > 0 && (
               <>
