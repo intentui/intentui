@@ -41,7 +41,7 @@ export default function PieChartAudienceSegmentDemo() {
             size="sm"
           >
             {data.map((d) => (
-              <ToggleGroupItem key={d.code} id={d.code} className="rounded-lg">
+              <ToggleGroupItem key={d.code} id={d.code}>
                 {d.code}
               </ToggleGroupItem>
             ))}

@@ -1,5 +1,29 @@
 [
   {
+    "name": "Leaderboard example",
+    "component": "leaderboard-example.tsx",
+    "url": "/leaderboard",
+    "type": "example",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 10,
+    "deletions": 19,
+    "date": "2026-07-16"
+  },
+  {
+    "name": "Pie chart interactive example",
+    "component": "pie-chart-interactive-example.tsx",
+    "url": "/pie-chart",
+    "type": "example",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-07-16"
+  },
+  {
     "name": "Card login form example",
     "component": "card-login-form-example.tsx",
     "url": "/card",

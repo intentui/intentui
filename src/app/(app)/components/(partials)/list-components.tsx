@@ -69,7 +69,7 @@ export function ListComponents() {
         </HeaderInner>
       </Header>
 
-      <div className="border-page border-t bg-muted/50">
+      <div className="border-page border-t">
         <PageContainer>
           <div className="border-page sm:border-x">
             <GridList
@@ -77,7 +77,7 @@ export function ListComponents() {
               layout="grid"
               className="grid grid-cols-1 gap-8 py-6 sm:grid-cols-2 sm:gap-px sm:bg-page sm:py-0 lg:grid-cols-4"
               renderEmptyState={() => (
-                <div className="p-6 bg-bg col-span-full">
+                <div className="p-6 bg-muted col-span-full">
                   <Text className="text-fg">
                     No results found. Try searching for something else!
                   </Text>
@@ -94,7 +94,7 @@ export function ListComponents() {
                     className="group flex cursor-pointer flex-col outline-hidden hover:opacity-80 sm:bg-bg/60"
                     href={item.slug}
                   >
-                    <div className="mb-3 lg:mb-0 lg:p-2">
+                    <div className="mb-3 lg:mb-0 lg:p-6">
                       <Image
                         width={708}
                         className="rounded-lg border border-page shadow-xs"
@@ -103,12 +103,14 @@ export function ListComponents() {
                         alt={item.title}
                       />
                     </div>
-                    <span className="border-page font-medium sm:p-4 sm:text-sm lg:border-t lg:bg-bg">
+                    <span className="border-page font-medium sm:py-3 sm:px-6 sm:text-sm lg:border-t lg:bg-bg">
                       {item.title}
                     </span>
                   </GridListItem>
                 )
               })}
+
+              <GridListItem textValue="Space" className="hidden xl:block sm:bg-bg/60" />
             </GridList>
           </div>
         </PageContainer>
