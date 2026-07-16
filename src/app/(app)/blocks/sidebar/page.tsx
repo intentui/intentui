@@ -33,25 +33,23 @@ export default function Page() {
   return (
     <>
       <JsonLd data={jsonLd} />
-      <div className="**:data-[slot=registry-viewer]:mt-0">
-        <Sandbox
-          registries={[
-            'sidebar-01',
-            'sidebar-02',
-            'sidebar-03',
-            'sidebar-04',
-            'sidebar-05',
-            'sidebar-06',
-            'sidebar-07',
-            'sidebar-09',
-            'sidebar-12',
-            'sidebar-15',
-            'sidebar-16',
-            'sidebar-17',
-            'sidebar-19',
-          ]}
-        />
-      </div>
+      <Sandbox
+        registries={[
+          'sidebar-01',
+          'sidebar-02',
+          'sidebar-03',
+          'sidebar-04',
+          'sidebar-05',
+          'sidebar-06',
+          'sidebar-07',
+          'sidebar-09',
+          'sidebar-12',
+          'sidebar-15',
+          'sidebar-16',
+          'sidebar-17',
+          'sidebar-19',
+        ]}
+      />
     </>
   )
 }
