@@ -91,7 +91,7 @@ export function ListComponents() {
                   <GridListItem
                     textValue={`${item.slug} ${item.title}`}
                     key={item.slug}
-                    className="group flex cursor-pointer flex-col outline-hidden hover:opacity-80 sm:bg-bg/60"
+                    className="group flex cursor-pointer flex-col outline-hidden hover:opacity-80 sm:bg-bg"
                     href={item.slug}
                   >
                     <div className="mb-3 lg:mb-0 lg:p-6">

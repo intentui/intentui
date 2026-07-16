@@ -1,123 +1,119 @@
-## Contribution Guide
+# Contributing to Intent UI
 
-Thanks for jumping in to contribute at intentui.com, we’re thrilled to have you on board!
+Thanks for helping make Intent UI better. Contributions of all sizes are
+welcome, from fixing a typo to improving an accessible component.
 
-Quick ask: take a moment to review this doc before submitting your first pull request. Also, check out the open issues and pull requests to avoid doubling up on any efforts.
+Before starting, search the existing [issues](https://github.com/intentui/intentui/issues)
+and [pull requests](https://github.com/intentui/intentui/pulls) to avoid duplicating
+work. For large features or breaking changes, open an issue first so we can agree
+on the direction. Small fixes can go straight to a pull request.
 
-## Getting Started
+## Ways to contribute
 
-1. Fork the repository.
-2. Clone the forked repository.
-3. Install the dependencies with `bun run first-time`.
-4. Create a new branch: `git checkout -b my-branch-name`.
-5. Make your changes.
-6. Commit your changes: `git commit -m 'Add some feature'`.
-7. Push to the branch: `git push origin my-branch-name`.
-8. Submit a pull request.
+You can help by:
+
+- Reporting reproducible bugs.
+- Suggesting improvements or new components.
+- Improving documentation and examples.
+- Fixing accessibility, styling, or interaction issues.
+- Contributing components and blocks.
+
+When reporting a bug, include the affected component, reproduction steps,
+expected behavior, browser information, and screenshots or a minimal reproduction
+when relevant.
+
+## Local setup
+
+Intent UI uses Node.js 20 or later and npm.
+
+1. Fork the repository and clone your fork.
+2. Create a branch from `main` with a descriptive name.
+3. Install dependencies and start the development server:
+
+```bash
+npm install
+npm run dev
+```
+
+The documentation site will be available at [http://localhost:3000](http://localhost:3000).
+
+## Project structure
+
+Most contributions touch one or more of these directories:
+
+```text
+src/
+├── app/pre-blocks/          # Block source files
+├── components/
+│   ├── examples/            # Component examples shown in the docs
+│   └── ui/                  # Registry-distributed UI components
+├── content/docs/            # MDX documentation
+├── hooks/                   # Shared React hooks
+├── lib/                     # Shared utilities
+├── scripts/                 # Registry and documentation generators
+└── stubs/                   # Installation templates
+```
+
+The registry is assembled by `src/scripts/generate-registry.ts`. Generated files
+under `__registry__/`, `public/r/`, `public/registry/`, and `public/stubs/` must
+not be edited directly.
+
+## Component contributions
+
+Intent UI is built on React Aria Components and Tailwind CSS. New and updated
+components should follow the patterns already established in `src/components/ui/`.
+
+- Use a React Aria primitive when an appropriate one exists.
+- Preserve keyboard navigation, focus management, labeling, validation, and
+  disabled states.
+- Use existing semantic color tokens instead of hard-coded theme colors.
+- Use `intent` for visual-purpose variants and follow existing component APIs.
+- Include or update examples in `src/components/examples/` for visible behavior.
+- Update the matching file in `src/content/docs/` when public APIs or behavior
+  change.
+- Avoid editing generated registry output manually.
+
+After changing registry-distributed components, examples, hooks, shared
+dependencies, blocks, or installation stubs, regenerate the registry:
+
+```bash
+npm run r
+```
+
+Review the generated result, but only commit generated files that are already
+tracked by the repository.
+
+## Before opening a pull request
+
+Run the standard checks:
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
+If formatting needs to be fixed, run `npm run format`, review its changes, and
+then run the checks again. Registry-affecting changes should also run `npm run r`
+before the standard checks.
+
+## Pull request checklist
+
+- Keep the pull request focused on one change.
+- Explain what changed and why.
+- Link the relevant issue when one exists.
+- Include screenshots or recordings for visual changes.
+- Describe keyboard and screen-reader behavior for interaction changes.
+- Call out breaking changes and migration steps clearly.
+- Confirm the documented checks pass locally.
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [Intent Code of Conduct](https://github.com/intentui/intentui/blob/main/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [irsyadadl@pm.me](mailto:irsyadadl@pm.me).
-
-## How to Contribute
-
-### Reporting Bugs
-
-Before creating bug reports, please check the existing issues as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible.
-
-### Suggesting Enhancements
-
-Enhancement suggestions are tracked as GitHub issues. When you are creating an enhancement suggestion, please include as many details as possible.
-
-### Pull Requests
-
-Please follow these guidelines when submitting pull requests:
-
-1. Fork the repository and create your branch from `main`.
-2. Run `bun run lint` to check your code for linting errors.
-3. If you've added code that should be tested, add tests.
-4. Format your code with `bun run format`.
-5. Ensure everything is working as expected by running `bun run b` which will build the registry and generate the sidebar.
-6. Make sure your code lints.
-7. Make sure your commit messages are clear.
-
-## Folder Structure
-
-The folder structure is as follows:
-
-### Components
-
-The components folder is the core of this project, it contains `ui`, `docs` and `blocks` folders.
-
-```
-components
-├── blocks
-├── code
-├── docs
-│   ├── anatomies
-│   ├── buttons ...
-│   ├── charts ...
-│   ├── collections ...
-│   ├── colors ...
-│   ├── controls ...
-│   ├── date-and-time ...
-│   ├── drag-and-drop ...
-│   ├── forms ...
-│   ├── media ...
-│   ├── navigation ...
-│   ├── outside ...
-│   ├── overlays ...
-│   ├── pickers ...
-│   ├── statuses ...
-│   └── surfaces ...
-├── experimental
-└── ui
-```
-
-The core ui is inside `components/ui`, and the demo you see on the docs is inside `components/examples`.
-
-### Registry
-
-The registry is a file that contains all the components and their files. It is used to generate the `demo`, `ui`, `blocks` and `anatomies` on the docs.
-
-```
-public/registry
-├── anatomies
-├── blocks
-│   ├── navbar ...
-│   └── sidebar ...
-├── demo
-│   ├── buttons ...
-│   ├── charts ...
-│   ├── collections ...
-│   ├── colors ...
-│   ├── controls ...
-│   ├── date-and-time ...
-│   ├── drag-and-drop
-│   ├── forms ...
-│   ├── media
-│   ├── navigation ...
-│   ├── outside
-│   ├── overlays ...
-│   ├── pickers ...
-│   ├── statuses ...
-│   └── surfaces ...
-├── docs
-│   └── installation
-└── ui
-```
-
-All of this is generated by the `resources/scripts/build-registry.ts` script by running `bun run b`.
-
-## Code of Conduct
-
-The Intent UI code of conduct is inspired by the Laravel and Ruby code of conduct. Any violations of this code may be reported to Irsyad (irsyadadl@pm.me):
-
-- Participants will respect and be tolerant of differing views and opinions.
-- Participants must ensure that their language and actions remain professional and free of personal attacks or disparaging remarks.
-- When interpreting the words and actions of others, participants should always assume good intentions.
-- Behavior that can reasonably be considered harassment or discrimination will not be tolerated.
+Everyone participating in Intent UI must follow our
+[Code of Conduct](https://github.com/intentui/intentui/blob/main/CODE_OF_CONDUCT.md).
+Unacceptable behavior can be reported to [irsyadadl@pm.me](mailto:irsyadadl@pm.me).
 
 ## License
 
-By contributing to Intent UI, you agree that your contributions will be licensed under its MIT license.
+By contributing to Intent UI, you agree that your contributions will be licensed
+under the project's [MIT License](https://github.com/intentui/intentui/blob/main/LICENSE).
