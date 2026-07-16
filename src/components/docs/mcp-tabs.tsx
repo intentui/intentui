@@ -42,7 +42,7 @@ const commands = [
 export function McpTabs() {
   const [tab, setTab] = useState<Key>('codex')
   return (
-    <div>
+    <div className="mt-6">
       <Snippet onSelectionChange={setTab} selectedKey={tab}>
         <SnippetTabsList items={commands}>
           {(command) => <SnippetTab key={command.label}>{command.label}</SnippetTab>}
@@ -59,6 +59,7 @@ export function McpTabs() {
               Add the following to <code>~/.codex/config.toml</code>:
             </p>
             <CodeHighlighter
+              className="mt-6"
               lang="toml"
               code={`[mcp_servers.shadcn]
 command = "npx"

@@ -43,7 +43,7 @@ const commands = [
 export function McpRac() {
   const [tab, setTab] = useState<Key>('codex')
   return (
-    <div>
+    <div className="mt-6">
       <Snippet onSelectionChange={setTab} selectedKey={tab}>
         <SnippetTabsList items={commands}>
           {(command) => <SnippetTab key={command.label}>{command.label}</SnippetTab>}
@@ -61,6 +61,7 @@ export function McpRac() {
             </p>
 
             <CodeHighlighter
+              className="mt-6"
               lang="toml"
               code={`[mcp_servers.react-aria]
 command = "npx"
@@ -70,6 +71,7 @@ args = ["@react-aria/mcp@latest"]`}
             <p className="mt-4">If you use both MCP servers, your config should look like this:</p>
 
             <CodeHighlighter
+              className="mt-6"
               lang="toml"
               code={`[mcp_servers.shadcn]
 command = "npx"
