@@ -13,7 +13,7 @@ export function ControlledValues({ color }: { color: any }) {
           <span className="flex items-center gap-x-1.5">
             <ColorSwatch
               aria-label="color picked"
-              className="rounded [--color-swatch-size:--spacing(5)]"
+              className="rounded [--size:--spacing(5)]"
               color={color.toString(format as ColorFormat | 'css' | undefined)}
             />
             <span className="text-xs uppercase tabular-nums">{format}</span>

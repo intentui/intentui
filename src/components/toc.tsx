@@ -1,23 +1,48 @@
 'use client'
+
 import type { TableOfContents, TOCItemType } from 'fumadocs-core/toc'
 import { LayoutGroup, motion } from 'motion/react'
 import { Suspense, useEffect, useId, useRef, useState } from 'react'
 import scrollIntoView from 'scroll-into-view-if-needed'
+import { tv } from 'tailwind-variants'
 import { twMerge } from 'tailwind-merge'
-import { ScrollArea } from '@/components/ui/scroll-area'
 
-interface Props {
+const tocStyles = tv({
+  slots: {
+    root: 'not-typeset forced-color-adjust-none',
+    nav: 'scrollbar-thin scroll-fade-y relative overflow-y-auto p-6',
+  },
+  variants: {
+    context: {
+      docs: {
+        root: 'w-72',
+        nav: 'h-[calc(100vh-22rem)]',
+      },
+      blog: {
+        root: 'w-86 shrink-0',
+        nav: 'h-full w-86',
+      },
+    },
+  },
+  defaultVariants: {
+    context: 'docs',
+  },
+})
+
+interface TocProps {
   className?: string
+  context?: 'docs' | 'blog'
   items: TableOfContents
 }
 
-export function Toc({ className, items }: Props) {
-  const tocRef = useRef<HTMLDivElement>(null)
+export function Toc({ className, context = 'docs', items }: TocProps) {
+  const tocRef = useRef<HTMLElement>(null)
   const ids = items.map((item) => item.url.split('#')[1])
   const activeId = useActiveItem(ids as string[])
   const activeIndex = activeId?.length || 0
   const id = useId()
   const minDepth = items.reduce((acc, item) => Math.min(acc, item.depth), 1000)
+  const styles = tocStyles({ context })
 
   useEffect(() => {
     if (!activeId || activeIndex < 2) return
@@ -36,27 +61,24 @@ export function Toc({ className, items }: Props) {
 
   return (
     <LayoutGroup id={id}>
-      <aside
-        ref={tocRef}
-        className={twMerge('not-typeset w-72 forced-color-adjust-none', className)}
-      >
-        <ScrollArea scrollFade orientation="vertical" className="xl:h-[calc(100vh-22rem)]">
-          <nav aria-labelledby="on-this-page-title" className="not-typeset relative w-56 p-6">
-            <Suspense>
-              {items.length > 0 && (
-                <>
-                  <h2 className="mb-3 font-medium text-fg text-sm/6">On this page</h2>
+      <aside ref={tocRef} className={styles.root({ className })}>
+        <nav aria-labelledby="on-this-page-title" className={styles.nav()}>
+          <Suspense>
+            {items.length > 0 && (
+              <>
+                <h2 id="on-this-page-title" className="text-sm/6 mb-4 text-muted-fg">
+                  On this page
+                </h2>
 
-                  <ul className="flex flex-col gap-y-2.5">
-                    {items.map((item) => (
-                      <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
-                    ))}
-                  </ul>
-                </>
-              )}
-            </Suspense>
-          </nav>
-        </ScrollArea>
+                <ul className="flex flex-col gap-y-2.5">
+                  {items.map((item) => (
+                    <TocLink key={item.url} item={item} activeId={activeId} minDepth={minDepth} />
+                  ))}
+                </ul>
+              </>
+            )}
+          </Suspense>
+        </nav>
       </aside>
     </LayoutGroup>
   )
@@ -70,7 +92,7 @@ interface TocLinkProps {
 
 function TocLink({ item, activeId, minDepth }: TocLinkProps) {
   return (
-    <li key={item.url} className="relative">
+    <li className="relative">
       {item.url.split('#')[1] === activeId && (
         <motion.span
           transition={{

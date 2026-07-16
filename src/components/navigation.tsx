@@ -27,7 +27,7 @@ export function Navigation() {
   return (
     <>
       <CommandPalette setOpen={setOpen} openCmd={open} />
-      <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden border-page border-b backdrop-blur-3xl lg:block">
+      <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden bg-bg/70 border-page border-b backdrop-blur-3xl lg:block">
         <PageContainer>
           <div className="relative flex items-center justify-between border-page border-x px-3 py-1">
             <div className="flex items-center gap-x-1.5">
@@ -63,7 +63,12 @@ export function Navigation() {
               </NavLink>
             </div>
             <div className="flex items-center gap-x-1.5">
-              <Button onPress={() => setOpen((open: boolean) => !open)} size="sq-sm" intent="plain">
+              <Button
+                isCircle
+                onPress={() => setOpen((open: boolean) => !open)}
+                size="sq-sm"
+                intent="plain"
+              >
                 <MagnifyingGlassIcon />
               </Button>
 
@@ -72,6 +77,7 @@ export function Navigation() {
                 className={buttonStyles({
                   intent: 'plain',
                   size: 'sq-sm',
+                  isCircle: true,
                 })}
                 target="_blank"
                 href={app.links.discord}
@@ -83,6 +89,7 @@ export function Navigation() {
                 className={buttonStyles({
                   intent: 'plain',
                   size: 'sq-sm',
+                  isCircle: true,
                   className: '**:data-[slot=icon]:text-fg',
                 })}
                 target="_blank"
@@ -92,9 +99,9 @@ export function Navigation() {
               </Link>
 
               <GithubLink />
-              <ThemeSwitcher intent="plain" />
+              <ThemeSwitcher intent="plain" isCircle />
               <Menu>
-                <Button intent="plain" size="sm">
+                <Button intent="plain" size="sm" isCircle>
                   3.x
                   <ChevronDownIcon />
                 </Button>

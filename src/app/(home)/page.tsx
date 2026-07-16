@@ -57,7 +57,7 @@ export default function Page() {
           </div>
         </>
       </div>
-      <Footer currentYear={new Date().getUTCFullYear()} />
+      <Footer />
     </div>
   )
 }

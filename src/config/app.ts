@@ -36,5 +36,5 @@ export type SiteConfig = typeof app
 
 export const META_THEME_COLORS = {
   light: '#ffffff',
-  dark: 'oklch(0.17 0.006 285.885)',
+  dark: 'oklch(0.141 0.005 285.823)',
 }

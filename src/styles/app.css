@@ -2,6 +2,7 @@
 @import 'tw-animate-css';
 @import './code.css';
 @import './typeset.css';
+@import './shadcn.css';
 
 @plugin 'tailwindcss-react-aria-components';
 

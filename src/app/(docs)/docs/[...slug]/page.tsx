@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Ads } from '@/components/docs/ads'
-import { AdsMobile } from '@/components/docs/ads-mobile'
 import { DocRefs } from '@/components/docs/doc-refs'
 import { JsonLd } from '@/components/json-ld'
 import { mdxComponents } from '@/components/docs/mdx-components'
@@ -143,40 +142,24 @@ export default async function Page(props: DocPageProps) {
     <div className="flex w-full items-start">
       <JsonLd data={jsonLd} />
       {/* Center */}
-      <div className="w-full min-w-0 border-page py-8 sm:py-16 xl:border-x">
-        <div className="typeset typeset-docs max-w-[inherit]">
-          {/* center */}
-          <div className="mx-auto max-w-3xl sm:px-6">
-            <div className="not-typeset mb-3 sm:mb-6">
-              <div className="flex flex-col justify-between gap-y-6 sm:flex-row sm:items-center sm:gap-y-0">
-                <h1 className="flex-1 font-normal text-4xl tracking-tight">{doc.title}</h1>
-                {!doc.references && (
-                  <OpenIn
-                    page={pageText}
-                    tree={source.pageTree}
-                    url={page.url}
-                    toc={page.data.toc}
-                  />
-                )}
-              </div>
+      <div className="w-full min-w-0 border-page py-8 sm:pb-24 sm:pt-10 xl:border-x">
+        <div className="mx-auto xl:max-w-3xl sm:px-6">
+          <div className="mb-3 flex flex-col justify-between sm:flex-row gap-6 sm:items-center sm:mb-12">
+            <h1 className="flex-1 font-normal text-3xl tracking-tight">{doc.title}</h1>
+            <div className="flex items-center gap-x-1.5">
               {doc.references && doc.references?.length > 0 && (
-                <div className="mt-6 flex items-center gap-x-1.5">
-                  <DocRefs references={doc.references} />
-                  <OpenIn
-                    page={pageText}
-                    tree={source.pageTree}
-                    url={page.url}
-                    toc={page.data.toc}
-                  />
-                </div>
+                <DocRefs references={doc.references} />
               )}
+              <OpenIn page={pageText} url={page.url} />
             </div>
-            <MDX components={mdxComponents} />
-
-            <AdsMobile />
-
-            <Pager tree={source.pageTree} url={page.url} />
           </div>
+          <div className="typeset typeset-docs">
+            <MDX components={mdxComponents} />
+          </div>
+
+          <Ads className="xl:hidden mt-6 *:rounded-3xl *:overflow-hidden *:border-t-0" />
+
+          <Pager tree={source.pageTree} url={page.url} />
         </div>
       </div>
 

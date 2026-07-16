@@ -16,12 +16,12 @@ export const Pager = ({ tree, url, className }: PageProps) => {
 
   return (
     <div
-      className={twMerge('not-typeset mt-6 flex w-full justify-between gap-3 sm:mt-8', className)}
+      className={twMerge('not-typeset mt-6 flex w-full justify-between gap-3 sm:mt-12', className)}
     >
       {neighbours.previous && (
         <div className="group w-40">
           <Link
-            className={buttonStyles({ intent: 'outline', className: 'rounded-sm' })}
+            className={buttonStyles({ intent: 'plain', isCircle: true })}
             href={neighbours.previous.url}
           >
             <ChevronLeftIcon className="transition-transform group-hover:-translate-x-0.5" />
@@ -33,7 +33,7 @@ export const Pager = ({ tree, url, className }: PageProps) => {
       {neighbours.next && (
         <div className="group flex w-40 justify-end">
           <Link
-            className={buttonStyles({ intent: 'outline', className: 'rounded-sm' })}
+            className={buttonStyles({ intent: 'plain', isCircle: true })}
             href={neighbours.next.url}
           >
             <span className="line-clamp-1 text-fg">{neighbours.next.name}</span>
