@@ -31,10 +31,10 @@ export default function ButtonLoaderDemo() {
         <KeyIcon />
       )}
       {loading === 'loading'
-        ? 'Generating Key...'
+        ? 'Generating key...'
         : loading === 'success'
-          ? 'Key Generated!'
-          : 'Generate API Key'}
+          ? 'Key generated!'
+          : 'Generate API key'}
     </Button>
   )
 }
