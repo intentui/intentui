@@ -46,7 +46,7 @@ export default function Page() {
       <PageContainer>
         <div className="border-x border-page">
           <div className="mx-auto flex flex-col">
-            <div className="grid gap-px bg-page grid-cols-4">
+            <div className="grid gap-px bg-page grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
               {blog
                 .sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime())
                 .map((item) => (
