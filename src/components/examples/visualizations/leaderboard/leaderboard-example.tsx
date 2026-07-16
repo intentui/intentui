@@ -1,6 +1,5 @@
 'use client'
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   Leaderboard,
   LeaderboardContent,
@@ -35,23 +34,15 @@ const maxValue = Math.max(...data.map((item) => item.value))
 
 export default function LeaderboardDemo() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Page visits by section</CardTitle>
-        <CardDescription>Unique visits for the most viewed docs pages this month</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Leaderboard>
-          <LeaderboardContent>
-            {data.map((item) => (
-              <LeaderboardItem key={item.name} maxValue={maxValue} value={item.value}>
-                <LeaderboardStart>{item.name}</LeaderboardStart>
-                <LeaderboardEnd>{item.value.toLocaleString()} visits</LeaderboardEnd>
-              </LeaderboardItem>
-            ))}
-          </LeaderboardContent>
-        </Leaderboard>
-      </CardContent>
-    </Card>
+    <Leaderboard>
+      <LeaderboardContent>
+        {data.map((item) => (
+          <LeaderboardItem key={item.name} maxValue={maxValue} value={item.value}>
+            <LeaderboardStart>{item.name}</LeaderboardStart>
+            <LeaderboardEnd>{item.value.toLocaleString()} visits</LeaderboardEnd>
+          </LeaderboardItem>
+        ))}
+      </LeaderboardContent>
+    </Leaderboard>
   )
 }

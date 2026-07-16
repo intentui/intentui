@@ -29,7 +29,7 @@ export function Navigation() {
       <CommandPalette setOpen={setOpen} openCmd={open} />
       <div className="xnw2 sticky top-0 z-40 hidden overflow-hidden bg-bg/70 border-page border-b backdrop-blur-3xl lg:block">
         <PageContainer>
-          <div className="relative flex items-center justify-between border-page border-x px-3 py-1">
+          <div className="relative flex items-center justify-between border-page border-x pl-5 pr-3 py-2">
             <div className="flex items-center gap-x-1.5">
               <div className="mx-auto flex items-center">
                 <BrandLogoLink />
@@ -105,7 +105,7 @@ export function Navigation() {
                   3.x
                   <ChevronDownIcon />
                 </Button>
-                <MenuContent>
+                <MenuContent placement="bottom end">
                   <MenuItem href={`${app.url}/docs/getting-started/introduction`} className="group">
                     3.x{' '}
                     <Badge intent="primary" isCircle={false} className="ml-auto">

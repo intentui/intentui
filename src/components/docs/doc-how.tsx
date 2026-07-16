@@ -128,7 +128,7 @@ export const DocHow = ({
         ) : (
           <div>
             {processedSourceCode ? (
-              <div className={twJoin('group relative rounded-lg border')}>
+              <div className={twJoin('group relative rounded-lg bg-shiki-bg border')}>
                 <CodeHighlighter
                   className="h-full rounded-[calc(var(--radius-lg)-1px)]"
                   removeLastLine

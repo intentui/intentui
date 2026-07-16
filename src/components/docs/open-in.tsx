@@ -71,11 +71,11 @@ export function OpenIn({ url, page }: { url: string; page: string }) {
       </Button>
       <Menu>
         <Button
-          className="h-10 rounded-sm pressed:bg-secondary pressed:*:text-fg sm:h-auto dark:bg-secondary/50 dark:hover:bg-secondary"
+          className="h-10 group rounded-sm pressed:bg-secondary pressed:*:text-fg sm:h-auto dark:bg-secondary/50 dark:hover:bg-secondary"
           intent="outline"
           size="sm"
         >
-          <ChevronDownIcon className="rotate-180 sm:rotate-0" />
+          <ChevronDownIcon className="group-pressed:rotate-180 transition-transform" />
         </Button>
         <MenuContent className="min-w-64" placement="bottom end">
           <MenuItem href={`${url}.md`} target="_blank" rel="noopener noreferrer">

@@ -13,6 +13,7 @@
 
 .shiki .line {
   display: inline-block;
+  min-height: 1lh;
   width: 100%;
 }
 
