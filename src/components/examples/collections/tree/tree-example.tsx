@@ -1,3 +1,5 @@
+'use client'
+
 import { Tree, TreeContent, TreeItem } from '@/components/ui/tree'
 
 export default function TreeDemo() {

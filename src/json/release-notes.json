@@ -1,5 +1,29 @@
 [
   {
+    "name": "Autocomplete menu example",
+    "component": "autocomplete-menu-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 0,
+    "date": "2026-07-16"
+  },
+  {
+    "name": "Tree example",
+    "component": "tree-example.tsx",
+    "url": "/tree",
+    "type": "example",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 0,
+    "date": "2026-07-16"
+  },
+  {
     "name": "Leaderboard example",
     "component": "leaderboard-example.tsx",
     "url": "/leaderboard",
