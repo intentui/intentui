@@ -23,7 +23,7 @@ export default function SelectValidationDemo() {
             </SelectItem>
           )}
         </SelectContent>
-        <FieldError/>
+        <FieldError />
       </Select>
       <Button type="submit">Submit</Button>
     </Form>

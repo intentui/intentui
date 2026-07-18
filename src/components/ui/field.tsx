@@ -4,7 +4,7 @@ import {
   FieldError as FieldErrorPrimitive,
   type FieldErrorProps,
 } from 'react-aria-components/FieldError'
-import { Label as LabelPrimitive, type LabelProps } from 'react-aria-components/Label'
+import { LabelContext, Label as LabelPrimitive, type LabelProps } from 'react-aria-components/Label'
 import { Text, type TextProps } from 'react-aria-components/Text'
 import { twMerge } from 'tailwind-merge'
 import { tv } from 'tailwind-variants'
@@ -40,8 +40,22 @@ export const fieldStyles = tv({
   ],
 })
 
-export function Label({ className, ...props }: LabelProps) {
-  return <LabelPrimitive data-slot="label" {...props} className={labelStyles({ className })} />
+export function Label({ className, htmlFor, slot, ...props }: LabelProps) {
+  const label = (
+    <LabelPrimitive
+      data-slot="label"
+      htmlFor={htmlFor}
+      slot={slot}
+      {...props}
+      className={labelStyles({ className })}
+    />
+  )
+
+  if (htmlFor && slot === undefined) {
+    return <LabelContext.Provider value={null}>{label}</LabelContext.Provider>
+  }
+
+  return label
 }
 
 export function Description({ className, ...props }: TextProps) {
