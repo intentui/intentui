@@ -29,6 +29,7 @@ import {
 } from '@/components/ui/menu'
 import {
   Sidebar,
+  SidebarBadge,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
@@ -62,15 +63,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
         <SidebarSectionGroup>
           <SidebarSection>
             {navigation.map((item, index) => (
-              <SidebarItem
-                tooltip={item.label}
-                key={index}
-                isCurrent={item.isCurrent}
-                href="#"
-                badge={item?.badge}
-              >
+              <SidebarItem tooltip={item.label} key={index} isCurrent={item.isCurrent} href="#">
                 {item.icon}
                 <SidebarLabel>{item.label}</SidebarLabel>
+                <SidebarBadge>{item.badge}</SidebarBadge>
               </SidebarItem>
             ))}
           </SidebarSection>
