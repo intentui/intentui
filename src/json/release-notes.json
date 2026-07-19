@@ -1,5 +1,53 @@
 [
   {
+    "name": "App sidebar",
+    "component": "app-sidebar/page.tsx",
+    "url": null,
+    "type": "block",
+    "category": "sidebar",
+    "kind": "improvement",
+    "description": null,
+    "additions": 5,
+    "deletions": 2,
+    "date": "2026-07-19"
+  },
+  {
+    "name": "Sidebar 09",
+    "component": "sidebar-09/page.tsx",
+    "url": null,
+    "type": "block",
+    "category": "sidebar",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 2,
+    "date": "2026-07-19"
+  },
+  {
+    "name": "Sidebar 12",
+    "component": "sidebar-12/page.tsx",
+    "url": null,
+    "type": "block",
+    "category": "sidebar",
+    "kind": "improvement",
+    "description": null,
+    "additions": 4,
+    "deletions": 2,
+    "date": "2026-07-19"
+  },
+  {
+    "name": "Sidebar",
+    "component": "sidebar.tsx",
+    "url": "/sidebar",
+    "type": "component",
+    "category": "layouts",
+    "kind": "improvement",
+    "description": null,
+    "additions": 39,
+    "deletions": 32,
+    "date": "2026-07-19"
+  },
+  {
     "name": "Autocomplete menu example",
     "component": "autocomplete-menu-example.tsx",
     "url": null,

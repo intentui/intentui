@@ -2,7 +2,7 @@
 
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { createContext, use, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Button as Trigger, type ButtonProps } from 'react-aria-components/Button'
+import { type ButtonProps, Button as ButtonPrimitive } from 'react-aria-components/Button'
 import { composeRenderProps } from 'react-aria-components/composeRenderProps'
 import type { DisclosurePanelProps, DisclosureProps } from 'react-aria-components/Disclosure'
 import { Disclosure, DisclosurePanel } from 'react-aria-components/Disclosure'
@@ -214,7 +214,6 @@ const Sidebar = ({
           data-intent="default"
           className="w-(--sidebar-width) entering:blur-in exiting:blur-out [--sidebar-width:18rem] has-data-[slot=calendar]:[--sidebar-width:23rem]"
           side={side}
-          dir={side === 'right' ? 'rtl' : 'ltr'}
         >
           {children}
         </SheetContent>
@@ -241,9 +240,9 @@ const Sidebar = ({
           'relative h-svh bg-transparent transition-[width] duration-200 ease-linear',
           intent === 'default' && 'group-data-[collapsible=dock]:w-(--sidebar-width-dock)',
           intent === 'float' &&
-            'group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(4))]',
+            'group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+(--spacing(4)))]',
           intent === 'inset' &&
-            'group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(2))]',
+            'group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+(--spacing(2)))]',
         ])}
       />
       <div
@@ -251,14 +250,12 @@ const Sidebar = ({
         className={twMerge(
           'fixed inset-y-0 z-10 hidden w-(--sidebar-width) bg-sidebar not-has-data-[slot=sidebar-footer]:pb-2 md:flex',
           'transition-[left,right,width] duration-200 ease-linear',
-          side === 'left' &&
-            'left-0 group-data-[collapsible=hidden]:left-[calc(var(--sidebar-width)*-1)]',
-          side === 'right' &&
-            'right-0 group-data-[collapsible=hidden]:right-[calc(var(--sidebar-width)*-1)]',
+          side === 'left' && 'left-0 group-data-[collapsible=hidden]:-left-(--sidebar-width)',
+          side === 'right' && 'right-0 group-data-[collapsible=hidden]:-right-(--sidebar-width)',
           intent === 'float' &&
             'bg-bg p-2 group-data-[collapsible=dock]:w-[calc(--spacing(4)+2px)]',
           intent === 'inset' &&
-            'group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+--spacing(2)+2px)] dark:bg-bg',
+            'group-data-[collapsible=dock]:w-[calc(var(--sidebar-width-dock)+(--spacing(2))+2px)] dark:bg-bg',
           intent === 'default' && [
             'group-data-[collapsible=dock]:w-(--sidebar-width-dock)',
             'border-sidebar-border group-data-[side=left]:border-r group-data-[side=right]:border-l',
@@ -271,7 +268,7 @@ const Sidebar = ({
           data-sidebar="default"
           data-slot="sidebar-inner"
           className={twJoin(
-            'flex h-full w-full flex-col text-sidebar-fg',
+            'flex size-full flex-col text-sidebar-fg',
             'group-data-[intent=float]:rounded-lg group-data-[intent=float]:border group-data-[intent=float]:border-sidebar-border group-data-[intent=float]:bg-sidebar group-data-[intent=float]:shadow-xs'
           )}
         >
@@ -409,7 +406,6 @@ interface SidebarItemProps extends Omit<React.ComponentProps<typeof Link>, 'chil
     | ((
         values: LinkRenderProps & { defaultChildren: React.ReactNode; isCollapsed: boolean }
       ) => React.ReactNode)
-  badge?: string | number | undefined
   tooltip?: string | React.ComponentProps<typeof TooltipContent>
 }
 
@@ -417,7 +413,6 @@ const SidebarItem = ({
   isCurrent,
   tooltip,
   children,
-  badge,
   className,
   ref,
   ...props
@@ -459,21 +454,7 @@ const SidebarItem = ({
       {...props}
     >
       {(values) => (
-        <>
-          {typeof children === 'function' ? children({ ...values, isCollapsed }) : children}
-
-          {badge &&
-            (state !== 'collapsed' ? (
-              <span
-                data-slot="sidebar-badge"
-                className="absolute inset-ring-1 inset-ring-sidebar-border inset-y-1/2 end-1.5 h-5.5 w-auto -translate-y-1/2 rounded-full bg-fg/5 px-2 text-[10px]/5.5 group-hover/sidebar-item:inset-ring-muted-fg/30 group-current:inset-ring-transparent"
-              >
-                {badge}
-              </span>
-            ) : (
-              <div aria-hidden className="absolute end-1 top-1 size-1.5 rounded-full bg-primary" />
-            ))}
-        </>
+        <>{typeof children === 'function' ? children({ ...values, isCollapsed }) : children}</>
       )}
     </Link>
   )
@@ -495,6 +476,31 @@ const SidebarItem = ({
         {...tooltip}
       />
     </Tooltip>
+  )
+}
+
+function SidebarBadge({ className, ...props }: React.ComponentProps<'span'>) {
+  const { state, isMobile } = useSidebar()
+
+  if (state === 'collapsed' && !isMobile) {
+    return (
+      <span
+        aria-hidden
+        data-slot="sidebar-badge"
+        className="absolute end-1 top-1 size-1.5 rounded-full bg-primary"
+      />
+    )
+  }
+
+  return (
+    <span
+      data-slot="sidebar-badge"
+      className={twMerge(
+        'absolute inset-ring-1 inset-ring-sidebar-border inset-y-1/2 end-1.5 h-5.5 w-auto -translate-y-1/2 rounded-full bg-fg/5 px-2 text-[10px]/5.5 group-hover/sidebar-item:inset-ring-muted-fg/30 group-current:inset-ring-transparent',
+        className
+      )}
+      {...props}
+    />
   )
 }
 
@@ -523,7 +529,7 @@ const SidebarInset = ({ className, ref, ...props }: React.ComponentProps<'main'>
       ref={ref}
       className={twMerge(
         'relative flex w-full flex-1 flex-col bg-bg lg:min-w-0',
-        'group-has-data-[intent=inset]/sidebar-root:border group-has-data-[intent=inset]/sidebar-root:border-sidebar-border group-has-data-[intent=inset]/sidebar-root:bg-muted',
+        'md:group-has-data-[intent=inset]/sidebar-root:border group-has-data-[intent=inset]/sidebar-root:border-sidebar-border group-has-data-[intent=inset]/sidebar-root:bg-muted',
         'md:group-has-data-[intent=inset]/sidebar-root:m-2',
         'md:group-has-data-[side=left]:group-has-data-[intent=inset]/sidebar-root:ms-0',
         'md:group-has-data-[side=right]:group-has-data-[intent=inset]/sidebar-root:me-0',
@@ -579,7 +585,7 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
   const { state } = useSidebar()
   return (
     <Heading level={3}>
-      <Trigger
+      <ButtonPrimitive
         ref={ref}
         slot="trigger"
         className={composeRenderProps(
@@ -613,7 +619,7 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
             )}
           </>
         )}
-      </Trigger>
+      </ButtonPrimitive>
     </Heading>
   )
 }
@@ -644,7 +650,7 @@ const SidebarSeparator = ({ className, ...props }: SidebarSeparatorProps) => {
       data-slot="sidebar-separator"
       orientation="horizontal"
       className={twMerge(
-        'mx-auto h-px w-[calc(var(--sidebar-width)---spacing(10))] border-0 bg-sidebar-border forced-colors:bg-[ButtonBorder]',
+        'mx-auto h-px w-[calc(var(--sidebar-width)-(--spacing(10)))] border-0 bg-sidebar-border forced-colors:bg-[ButtonBorder]',
         className
       )}
       {...props}
@@ -764,7 +770,7 @@ const SidebarMenuTrigger = ({
   ...props
 }: SidebarMenuTriggerProps) => {
   return (
-    <Trigger
+    <ButtonPrimitive
       className={cx(
         !alwaysVisible &&
           'pressed:text-fg text-muted-fg opacity-0 pressed:opacity-100 hover:text-fg',
@@ -886,6 +892,7 @@ export {
   SidebarFooter,
   SidebarHeader,
   SidebarInset,
+  SidebarBadge,
   SidebarItem,
   SidebarLabel,
   SidebarLink,

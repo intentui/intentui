@@ -37,6 +37,7 @@ import {
 } from '@/components/ui/menu'
 import {
   Sidebar,
+  SidebarBadge,
   SidebarContent,
   SidebarDisclosure,
   SidebarDisclosureGroup,
@@ -167,9 +168,10 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
               )}
             </SidebarItem>
 
-            <SidebarItem href="#" badge="4 Pending" tooltip="Payments">
+            <SidebarItem href="#" tooltip="Payments">
               <CreditCardIcon />
               <SidebarLabel>Payments</SidebarLabel>
+              <SidebarBadge>4 Pending</SidebarBadge>
             </SidebarItem>
           </SidebarSection>
 
@@ -210,9 +212,11 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="Stock Levels">
                   <SidebarLabel>Stock Levels</SidebarLabel>
+                  <SidebarBadge>12</SidebarBadge>
                 </SidebarItem>
                 <SidebarItem href="#" tooltip="Shipping">
                   <SidebarLabel>Shipping</SidebarLabel>
+                  <SidebarBadge>3</SidebarBadge>
                 </SidebarItem>
               </SidebarDisclosurePanel>
             </SidebarDisclosure>

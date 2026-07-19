@@ -246,9 +246,10 @@ The sidebar supports badges, which can be used to indicate the number of unread 
 ```
 <SidebarSection>
   {navigation.map((item, index) => (
-    <SidebarItem key={index} isCurrent={item.isCurrent} href="#" badge={item?.badge}>
+    <SidebarItem key={index} isCurrent={item.isCurrent} href="#">
       {item.icon}
       <SidebarLabel>{item.label}</SidebarLabel>
+      <SidebarBadge>{item.badge}</SidebarBadge>
     </SidebarItem>
   ))}
 </SidebarSection>
