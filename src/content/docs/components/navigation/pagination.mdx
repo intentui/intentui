@@ -4,7 +4,7 @@ description: A structured navigation system that divides content into multiple p
 order: 3
 published: true
 status: beta
-references: ["https://react-aria.adobe.com/ListBox#api"]
+references: ["https://react-aria.adobe.com/Link#api"]
 ---
 
 <How isCenter={false} toUse="navigation/pagination/pagination-example" />
@@ -96,9 +96,16 @@ The simple pagination setup doesn’t display page numbers, using only basic arr
 
 <ApiParameters>
   <ApiDescription>
-    **PaginationFirst** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+    **PaginationFirst** extends the **`<PaginationItem>`** component.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCircle" type='boolean' defaultValue='false' />
+  <ApiParameter name="isCurrent" type='boolean' defaultValue='false' />
+  <ApiParameter
+    name="size"
+    type='"xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"'
+    defaultValue='sm'
+  />
 </ApiParameters>
 
 ### PaginationGap
@@ -114,7 +121,7 @@ The simple pagination setup doesn’t display page numbers, using only basic arr
 
 <ApiParameters>
   <ApiDescription>
-    **PaginationInfo** extends the native **`<p>`** element.
+    **PaginationInfo** is an alias of the Intent UI [**`<Text>`**](/docs/components/surfaces/text#text) component.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
 </ApiParameters>
@@ -126,7 +133,16 @@ The simple pagination setup doesn’t display page numbers, using only basic arr
     **PaginationItem** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
-  <ApiParameter name="isCurrent" type='boolean' />
+  <ApiParameter name="isCircle" type='boolean' defaultValue='false' />
+  <ApiParameter name="isCurrent" type='boolean' defaultValue='false' />
+  <ApiParameter
+    name="size"
+    type='"xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"'
+    defaultValue='sm'
+  />
+  <ApiReference>
+    See the [React Aria Link](https://react-aria.adobe.com/Link#api) documentation for the full inherited API.
+  </ApiReference>
 </ApiParameters>
 
 ### PaginationLabel
@@ -142,9 +158,16 @@ The simple pagination setup doesn’t display page numbers, using only basic arr
 
 <ApiParameters>
   <ApiDescription>
-    **PaginationLast** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+    **PaginationLast** extends the **`<PaginationItem>`** component.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCircle" type='boolean' defaultValue='false' />
+  <ApiParameter name="isCurrent" type='boolean' defaultValue='false' />
+  <ApiParameter
+    name="size"
+    type='"xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"'
+    defaultValue='sm'
+  />
 </ApiParameters>
 
 ### PaginationList
@@ -160,18 +183,32 @@ The simple pagination setup doesn’t display page numbers, using only basic arr
 
 <ApiParameters>
   <ApiDescription>
-    **PaginationNext** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+    **PaginationNext** extends the **`<PaginationItem>`** component.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCircle" type='boolean' defaultValue='false' />
+  <ApiParameter name="isCurrent" type='boolean' defaultValue='false' />
+  <ApiParameter
+    name="size"
+    type='"xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"'
+    defaultValue='sm'
+  />
 </ApiParameters>
 
 ### PaginationPrevious
 
 <ApiParameters>
   <ApiDescription>
-    **PaginationPrevious** extends the Intent UI [**`<Link>`**](/docs/components/navigation/link#link) component.
+    **PaginationPrevious** extends the **`<PaginationItem>`** component.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
+  <ApiParameter name="isCircle" type='boolean' defaultValue='false' />
+  <ApiParameter name="isCurrent" type='boolean' defaultValue='false' />
+  <ApiParameter
+    name="size"
+    type='"xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"'
+    defaultValue='sm'
+  />
 </ApiParameters>
 
 ### PaginationSection
@@ -190,7 +227,4 @@ The simple pagination setup doesn’t display page numbers, using only basic arr
     **PaginationSpacer** extends the native **`<div>`** element.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
-  <ApiReference>
-    See the [React Aria](https://react-aria.adobe.com/ListBox#api) for the full API reference.
-  </ApiReference>
 </ApiParameters>
