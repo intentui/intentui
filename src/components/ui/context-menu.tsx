@@ -17,6 +17,7 @@ import { createPortal } from 'react-dom'
 import { MenuTrigger, type MenuTriggerProps } from 'react-aria-components/Menu'
 import { PopoverContext } from 'react-aria-components/Popover'
 import { type PopoverContentProps } from '@/components/ui/popover'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 function ContextMenu({
   children,
@@ -31,9 +32,11 @@ function ContextMenu({
     y: number
   } | null>(null)
   const positionRef = useRef<HTMLDivElement>(null)
+  const isMobile = useIsMobile()
   return (
     <MenuTrigger
       data-slot="context-menu"
+      trigger={isMobile ? 'longPress' : undefined}
       {...props}
       isOpen={!!position}
       onOpenChange={(isOpen) => {
