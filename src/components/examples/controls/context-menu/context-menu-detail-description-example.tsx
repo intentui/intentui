@@ -6,22 +6,28 @@ import {
   ContextMenuDescription,
   ContextMenuItem,
   ContextMenuLabel,
-  ContextMenuTrigger,
 } from '@/components/ui/context-menu'
+import { Pressable } from 'react-aria-components'
 
 export default function ContextMenuDetailDescriptionDemo() {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
-        Right click me
-      </ContextMenuTrigger>
-      <ContextMenuContent items={roles}>
-        {(item) => (
-          <ContextMenuItem id={item.id} textValue={item.name}>
+      <Pressable>
+        <div
+          role="button"
+          className="flex aspect-video w-56 items-center justify-center rounded-xl border border-dashed text-sm"
+        >
+          <span className="hidden pointer-fine:inline-block">Right click here</span>
+          <span className="hidden pointer-coarse:inline-block">Long press here</span>
+        </div>
+      </Pressable>
+      <ContextMenuContent>
+        {roles.map((item) => (
+          <ContextMenuItem key={item.id} textValue={item.name}>
             <ContextMenuLabel>{item.name}</ContextMenuLabel>
             <ContextMenuDescription>{item.description}</ContextMenuDescription>
           </ContextMenuItem>
-        )}
+        ))}
       </ContextMenuContent>
     </ContextMenu>
   )

@@ -1,6 +1,6 @@
 ---
 title: "Context Menu"
-description: Opens a menu at your cursor on right click, giving fast access to relevant actions based on the current context, boosting productivity and usability.
+description: Displays a menu at the pointer on right click or long press, providing actions relevant to the selected target.
 order: 6
 published: true
 status: beta
@@ -8,47 +8,66 @@ status: beta
 
 <How toUse="controls/context-menu/context-menu-example" />
 
+Wrap the target and menu content in `ContextMenu`. A separate trigger component is not required.
+
 ## Installation
 
 Install the component via the CLI in one command.
+
 <PackageCommand command="npx shadcn@latest add @intentui/context-menu"/>
 
 ## Composed components
+
 <Composed components={['menu']}/>
 
 ## Manual installation
 
 Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+
 <PackageCommand command="npm i react-aria-components @heroicons/react tailwind-merge"/>
 
 <SourceCode toShow='context-menu' />
 
 ## Examples
 
-### Description
-You can add details to menu items by using the `ContextMenuDescription` component.
+### Item description
+
+Add supporting details to a menu item with `ContextMenuDescription`.
+
 <How toUse="controls/context-menu/context-menu-detail-description-example" />
 
 ### Danger
-Designate a menu item as dangerous.
+
+Use the danger intent for destructive actions.
+
 <How toUse="controls/context-menu/context-menu-danger-example" />
 
-### With icon
-Enhance context menu item by adding icons.
+### Icons
+
+Add icons to make actions easier to identify.
+
 <How toUse="controls/context-menu/context-menu-with-icon-example" />
 
 ### Separator
-Separate context menu items with a separator.
+
+Use `ContextMenuSeparator` to divide related groups of actions.
+
 <How toUse="controls/context-menu/context-menu-separator-example" />
 
+### Submenu
 
-### Context sub menu
-Sorry, this component doesn't exist yet. It's on our roadmap.
+Nest another menu with `ContextMenuSub`.
+
+<How toUse="controls/context-menu/context-menu-sub-example" />
 
 ### Disabled
-Disable specific menu items.
+
+Disable individual items with `isDisabled`.
+
 <How toUse="controls/context-menu/context-menu-disabled-example" />
-Also, you can disable items directly in `MenuContent` by using the `disabledKeys` prop.
+
+You can also disable multiple items from `ContextMenuContent` with `disabledKeys`.
+
 ```tsx
 <ContextMenuContent disabledKeys={['gsu']} />
 ```
@@ -59,17 +78,10 @@ Also, you can disable items directly in `MenuContent` by using the `disabledKeys
 
 <ApiParameters>
   <ApiDescription>
-    **ContextMenu** is a custom React context provider and does not extend a React Aria component.
-  </ApiDescription>
-</ApiParameters>
-
-### ContextMenuTrigger
-
-<ApiParameters>
-  <ApiDescription>
-    **ContextMenuTrigger** extends the native **`<button>`** element.
+    **ContextMenu** extends the React Aria Components [**`<MenuTrigger>`**](https://react-aria.adobe.com/Menu#api) component and opens its menu at the pointer position.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
+  <ApiParameter name="onOpenChange" type='(isOpen: boolean) => void' />
 </ApiParameters>
 
 ### ContextMenuContent
@@ -79,6 +91,18 @@ Also, you can disable items directly in `MenuContent` by using the `disabledKeys
     **ContextMenuContent** extends the Intent UI [**`<MenuContent>`**](/docs/components/collections/menu#menucontent) component.
   </ApiDescription>
   <ApiParameter name="className" type='string' />
+  <ApiParameter name="placement" type='Placement' defaultValue='"bottom start"' />
+  <ApiParameter name="offset" type='number' defaultValue='4' />
+  <ApiParameter name="crossOffset" type='number' defaultValue='0' />
+</ApiParameters>
+
+### ContextMenuSub
+
+<ApiParameters>
+  <ApiDescription>
+    **ContextMenuSub** extends the Intent UI [**`<MenuSubMenu>`**](/docs/components/collections/menu#menusubmenu) component.
+  </ApiDescription>
+  <ApiParameter name="delay" type='number' defaultValue='0' />
 </ApiParameters>
 
 ### ContextMenuHeader
