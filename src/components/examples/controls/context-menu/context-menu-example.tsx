@@ -6,15 +6,21 @@ import {
   ContextMenuItem,
   ContextMenuSeparator,
   ContextMenuShortcut,
-  ContextMenuTrigger,
 } from '@/components/ui/context-menu'
+import { Pressable } from 'react-aria-components'
 
 export default function ContextMenuDemo() {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="grid h-28 w-56 place-content-center rounded-lg border-2 border-dashed">
-        Right click me
-      </ContextMenuTrigger>
+      <Pressable>
+        <div
+          role="button"
+          className="flex aspect-video w-56 items-center justify-center rounded-xl border border-dashed text-sm"
+        >
+          <span className="hidden pointer-fine:inline-block">Right click here</span>
+          <span className="hidden pointer-coarse:inline-block">Long press here</span>
+        </div>
+      </Pressable>
       <ContextMenuContent className="min-w-56">
         <ContextMenuItem>Back</ContextMenuItem>
         <ContextMenuItem isDisabled>Forward</ContextMenuItem>
