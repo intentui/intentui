@@ -79,7 +79,7 @@
     "encoding": "^0.1.13",
     "oxfmt": "^0.55.0",
     "oxlint": "^1.64.0",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.18",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "tailwind-merge": "^3.6.0",
