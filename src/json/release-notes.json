@@ -1,5 +1,17 @@
 [
   {
+    "name": "Context menu",
+    "component": "context-menu.tsx",
+    "url": "/context-menu",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 114,
+    "deletions": 116,
+    "date": "2026-08-11"
+  },
+  {
     "name": "App sidebar",
     "component": "app-sidebar/page.tsx",
     "url": null,

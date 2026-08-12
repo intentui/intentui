@@ -25,7 +25,7 @@ export const blog = defineCollections({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    published: z.date(),
+    published: z.coerce.date(),
     author: z.string().optional(),
   }),
 })

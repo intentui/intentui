@@ -1,0 +1,89 @@
+---
+title: Preview
+description: Displays a non-modal popover on hover, focus, or long press. Unlike a tooltip, a preview can contain interactive content.
+order: 5
+published: true
+references: ["https://react-spectrum.adobe.com/react-aria/PreviewTrigger.html"]
+---
+
+<How toUse="overlays/preview/preview-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+<PackageCommand command="npx shadcn@latest add @intentui/preview"/>
+
+## Composed components
+
+<Composed components={['popover']}/>
+
+## Manual installation
+
+Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
+
+<PackageCommand command="npm i react-aria-components"/>
+
+<SourceCode toShow='preview'/>
+
+## Anatomy
+
+```tsx
+import { Preview, PreviewContent } from "@/components/ui/preview"
+```
+
+```tsx
+<Preview>
+  <Link href="#">View issue</Link>
+  <PreviewContent>
+    <p>Issue details</p>
+    <Button size="sm">Open issue</Button>
+  </PreviewContent>
+</Preview>
+```
+
+The first child must be a focusable trigger, such as a link or button. The preview remains open while the pointer or keyboard focus moves into `PreviewContent`, so its buttons, links, and other controls can be used.
+
+## Examples
+
+### Without delay
+
+By default, a preview opens after 600 milliseconds. Set `delay` to `0` to show it immediately on hover or keyboard focus.
+<How toUse="overlays/preview/preview-no-delay-example" />
+
+### Custom trigger
+
+Wrap a custom element with React Aria's `Focusable` component when it is not already a focusable component. This allows `Preview` to attach the required hover, focus, keyboard, and long-press behavior.
+<How toUse="overlays/preview/preview-custom-trigger" />
+
+## Accessibility
+
+`Preview` opens on hover, keyboard focus, or long press on touch devices. When it is open, pressing <kbd>Tab</kbd> moves focus into its interactive content, and pressing <kbd>Escape</kbd> closes it and restores focus to the trigger.
+
+Use a tooltip for short, non-interactive descriptions. Use a preview when users need richer details or actions without opening a modal dialog.
+
+## Component API
+
+### Preview
+
+<ApiParameters>
+  <ApiDescription>
+    **Preview** extends the React Aria Components [**`<PreviewTrigger>`**](https://react-spectrum.adobe.com/react-aria/PreviewTrigger.html) component.
+  </ApiDescription>
+  <ApiParameter name="delay" type='number' defaultValue='600' />
+  <ApiParameter name="closeDelay" type='number' defaultValue='200' />
+  <ApiParameter name="isDisabled" type='boolean' defaultValue='false' />
+</ApiParameters>
+
+### PreviewContent
+
+<ApiParameters>
+  <ApiDescription>
+    **PreviewContent** extends the Intent UI [**`<PopoverContent>`**](/docs/components/overlays/popover#popovercontent) component, with default padding and a maximum width.
+  </ApiDescription>
+  <ApiParameter name="arrow" type='boolean' defaultValue='false' />
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="placement" type='Placement' defaultValue='bottom' />
+  <ApiReference>
+    See the [React Aria Popover documentation](https://react-spectrum.adobe.com/react-aria/Popover.html#props) for the full positioning and overlay API.
+  </ApiReference>
+</ApiParameters>
