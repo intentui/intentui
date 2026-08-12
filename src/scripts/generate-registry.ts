@@ -32,7 +32,7 @@ makeRegistry()
 const LIB_ALLOW = ['number', 'date', 'primitive']
 const HOOKS_ALLOW = ['use-media-query', 'use-clipboard', 'use-theme', 'use-mobile']
 const REGISTRY_NAME = process.env.REGISTRY_NAME || 'intentui'
-const REGISTRY_HOMEPAGE = process.env.NEXT_PUBLIC_APP_URL
+const REGISTRY_HOMEPAGE = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
 const REGISTRY_STYLE = process.env.REGISTRY_STYLE || 'blocks'
 const REGISTRY_IMPORT_PREFIX = process.env.REGISTRY_IMPORT_PREFIX || '@/registry'
 const PAGE_TARGET_ROOT = process.env.PAGE_TARGET_ROOT || 'app'
