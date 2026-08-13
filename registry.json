@@ -5973,7 +5973,6 @@
       "registryDependencies": [
         "http://localhost:3000/r/preview",
         "http://localhost:3000/r/button",
-        "http://localhost:3000/r/link",
         "http://localhost:3000/r/text"
       ],
       "files": [
@@ -10097,6 +10096,94 @@
           "path": "src/components/examples/colors/color-area/color-area-with-slider-example.tsx",
           "type": "registry:page",
           "target": "app/color-area-with-slider-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "combo-box-virtualizer-example",
+      "title": "Combo Box Virtualizer",
+      "description": "combo-box-virtualizer-example",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": [
+        "http://localhost:3000/r/combo-box",
+        "http://localhost:3000/r/popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/examples/collections/virtualizer/combo-box-virtualizer-example.tsx",
+          "type": "registry:page",
+          "target": "app/combo-box-virtualizer-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "grid-list-virtualizer-example",
+      "title": "Grid List Virtualizer",
+      "description": "grid-list-virtualizer-example",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/grid-list"],
+      "files": [
+        {
+          "path": "src/components/examples/collections/virtualizer/grid-list-virtualizer-example.tsx",
+          "type": "registry:page",
+          "target": "app/grid-list-virtualizer-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "list-box-virtualizer-example",
+      "title": "List Box Virtualizer",
+      "description": "list-box-virtualizer-example",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/list-box"],
+      "files": [
+        {
+          "path": "src/components/examples/collections/virtualizer/list-box-virtualizer-example.tsx",
+          "type": "registry:page",
+          "target": "app/list-box-virtualizer-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "select-virtualizer-example",
+      "title": "Select Virtualizer",
+      "description": "select-virtualizer-example",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/popover", "http://localhost:3000/r/select"],
+      "files": [
+        {
+          "path": "src/components/examples/collections/virtualizer/select-virtualizer-example.tsx",
+          "type": "registry:page",
+          "target": "app/select-virtualizer-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "table-virtualizer-example",
+      "title": "Table Virtualizer",
+      "description": "table-virtualizer-example",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["http://localhost:3000/r/table"],
+      "files": [
+        {
+          "path": "src/components/examples/collections/virtualizer/table-virtualizer-example.tsx",
+          "type": "registry:page",
+          "target": "app/table-virtualizer-example/page.tsx"
         }
       ],
       "type": "registry:page"

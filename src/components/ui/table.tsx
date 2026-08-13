@@ -365,6 +365,9 @@ const TableHeader = <T extends object>({
       )}
       {selectionBehavior === 'toggle' && (
         <Column
+          width={32}
+          minWidth={32}
+          style={{ width: 32 }}
           data-slot="table-column"
           className={twMerge(
             'first:ps-(--gutter,--spacing(2))',

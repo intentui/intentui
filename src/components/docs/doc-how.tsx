@@ -69,7 +69,7 @@ export const DocHow = ({
     return <p>Component "{toUse}" not found in the registry.</p>
   }
   return (
-    <div className="not-typeset">
+    <div className="not-typeset mt-3">
       <Toolbar className="mb-1 flex items-center justify-between sm:*:-mx-2">
         <Group>
           <ToggleButton
