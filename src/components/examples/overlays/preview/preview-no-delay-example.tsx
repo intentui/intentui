@@ -1,12 +1,12 @@
-import { Preview, PreviewContent } from "@/components/ui/preview"
-import { Button } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
-import { Text } from "@/components/ui/text"
+import { Preview, PreviewContent } from '@/components/ui/preview'
+import { Button } from '@/components/ui/button'
+import { Link } from '@/components/ui/link'
+import { Text } from '@/components/ui/text'
 
 export default function Basic() {
   return (
     <div>
-      Deployment is currently blocked by{" "}
+      Deployment is currently blocked by{' '}
       <Preview delay={0}>
         <Link href="#" className="text-primary-subtle-fg">
           #1842
@@ -26,8 +26,8 @@ export default function Basic() {
             </Button>
           </div>
         </PreviewContent>
-      </Preview>{" "}
-      and{" "}
+      </Preview>{' '}
+      and{' '}
       <Preview delay={0}>
         <Link href="#" className="text-primary-subtle-fg">
           #1917

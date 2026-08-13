@@ -20,7 +20,7 @@ import iconMetadata from '@/generated/icon-metadata.json'
 import { useClipboard } from '@/hooks/use-clipboard'
 import { Controller } from './controller'
 import { IconSearchProvider, useIconSearch } from './controller/use-icon-search'
-import { box, item } from './styles'
+import { PageContainer } from '@/components/page-container'
 
 export interface SearchParamsProps {
   searchParams: {
@@ -71,14 +71,27 @@ function IconsListContent({ searchParams }: SearchParamsProps) {
 
   return (
     <>
-      <Controller searchParams={searchParams} />
-      <div className="sm:-mx-2">
-        <ListBox selectionMode="single" aria-label="List Icon" layout="grid" className={box()}>
-          {filteredIcons.map(([name, Icon]) => (
-            <IconListItem key={name} name={name} Icon={Icon} />
-          ))}
-        </ListBox>
+      <div className="border-y border-page">
+        <PageContainer>
+          <div className="border-x border-page px-2 lg:px-6 py-2">
+            <Controller searchParams={searchParams} />
+          </div>
+        </PageContainer>
       </div>
+      <PageContainer>
+        <div className="border-x p-2 lg:p-6 lg:bg-muted border-page">
+          <ListBox
+            selectionMode="single"
+            aria-label="List Icon"
+            layout="grid"
+            className="grid grid-cols-5 md:grid-cols-9 xl:grid-cols-16 gap-px bg-page *:bg-bg border border-page rounded-lg overflow-hidden"
+          >
+            {filteredIcons.map(([name, Icon]) => (
+              <IconListItem key={name} name={name} Icon={Icon} />
+            ))}
+          </ListBox>
+        </div>
+      </PageContainer>
     </>
   )
 }
@@ -112,7 +125,7 @@ export function IconListItem({ name, Icon }: IconListItemProps) {
       data-open={isSelected}
       ref={triggerRef}
       onAction={() => setSelected(true)}
-      className={item()}
+      className="h-12 lg:h-14 shrink-0 items-center justify-center flex hover:bg-secondary"
       textValue={name}
     >
       <Icon className={selectedSize} key={name} />

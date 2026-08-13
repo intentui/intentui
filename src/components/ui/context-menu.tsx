@@ -1,45 +1,45 @@
-"use client"
+'use client'
 
 import {
-    MenuContent,
-    MenuDescription,
-    MenuHeader,
-    MenuItem,
-    MenuLabel,
-    MenuSection,
-    MenuSeparator,
-    MenuShortcut,
-    MenuSubMenu,
-} from "./menu"
-import { MenuTrigger, type MenuTriggerProps } from "react-aria-components/Menu"
-import { type PopoverContentProps } from "@/components/ui/popover"
+  MenuContent,
+  MenuDescription,
+  MenuHeader,
+  MenuItem,
+  MenuLabel,
+  MenuSection,
+  MenuSeparator,
+  MenuShortcut,
+  MenuSubMenu,
+} from './menu'
+import { MenuTrigger, type MenuTriggerProps } from 'react-aria-components/Menu'
+import { type PopoverContentProps } from '@/components/ui/popover'
 
-function ContextMenu(props: Omit<MenuTriggerProps, "trigger">) {
-    return <MenuTrigger trigger="contextMenu" {...props} />
+function ContextMenu(props: Omit<MenuTriggerProps, 'trigger'>) {
+  return <MenuTrigger trigger="contextMenu" {...props} />
 }
 
 function ContextMenuContent({
-                                placement = "bottom start",
-                                offset = 4,
-                                crossOffset = 0,
-                                children,
-                                ...props
-                            }: Omit<React.ComponentProps<typeof MenuContent<object>>, "children"> &
-    Pick<PopoverContentProps, "placement" | "offset" | "crossOffset"> & {
+  placement = 'bottom start',
+  offset = 4,
+  crossOffset = 0,
+  children,
+  ...props
+}: Omit<React.ComponentProps<typeof MenuContent<object>>, 'children'> &
+  Pick<PopoverContentProps, 'placement' | 'offset' | 'crossOffset'> & {
     children?: React.ReactNode
-}) {
-    return (
-        <MenuContent
-            popover={{
-                placement,
-                offset,
-                crossOffset,
-            }}
-            {...props}
-        >
-            {children}
-        </MenuContent>
-    )
+  }) {
+  return (
+    <MenuContent
+      popover={{
+        placement,
+        offset,
+        crossOffset,
+      }}
+      {...props}
+    >
+      {children}
+    </MenuContent>
+  )
 }
 
 const ContextMenuItem = MenuItem
@@ -52,14 +52,14 @@ const ContextMenuLabel = MenuLabel
 const ContextMenuSub = MenuSubMenu
 
 export {
-    ContextMenu,
-    ContextMenuSub,
-    ContextMenuContent,
-    ContextMenuDescription,
-    ContextMenuHeader,
-    ContextMenuItem,
-    ContextMenuLabel,
-    ContextMenuSection,
-    ContextMenuSeparator,
-    ContextMenuShortcut,
+  ContextMenu,
+  ContextMenuSub,
+  ContextMenuContent,
+  ContextMenuDescription,
+  ContextMenuHeader,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuSection,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
 }

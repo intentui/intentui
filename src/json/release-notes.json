@@ -1,5 +1,77 @@
 [
   {
+    "name": "Keyboard example",
+    "component": "keyboard-example.tsx",
+    "url": "/command-menu",
+    "type": "example",
+    "category": "controls",
+    "kind": "new",
+    "description": null,
+    "additions": 11,
+    "deletions": 0,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Preview custom trigger",
+    "component": "preview-custom-trigger.tsx",
+    "url": "/preview",
+    "type": "example",
+    "category": "overlays",
+    "kind": "improvement",
+    "description": null,
+    "additions": 57,
+    "deletions": 54,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Preview example",
+    "component": "preview-example.tsx",
+    "url": "/preview",
+    "type": "example",
+    "category": "overlays",
+    "kind": "improvement",
+    "description": null,
+    "additions": 53,
+    "deletions": 53,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Preview no delay example",
+    "component": "preview-no-delay-example.tsx",
+    "url": "/preview",
+    "type": "example",
+    "category": "overlays",
+    "kind": "improvement",
+    "description": null,
+    "additions": 7,
+    "deletions": 7,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Context menu",
+    "component": "context-menu.tsx",
+    "url": "/context-menu",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 45,
+    "deletions": 45,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Preview",
+    "component": "preview.tsx",
+    "url": "/preview",
+    "type": "component",
+    "category": "overlays",
+    "kind": "improvement",
+    "description": null,
+    "additions": 4,
+    "deletions": 4,
+    "date": "2026-08-13"
+  },
+  {
     "name": "Context menu",
     "component": "context-menu.tsx",
     "url": "/context-menu",
