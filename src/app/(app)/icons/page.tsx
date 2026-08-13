@@ -1,7 +1,6 @@
 import { Suspense } from 'react'
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from '@/components/header'
 import { JsonLd } from '@/components/json-ld'
-import { PageContainer } from '@/components/page-container'
 import { Loader } from '@/components/ui/loader'
 import { app } from '@/config/app'
 import { createMetadata } from '@/lib/metadata'
@@ -56,7 +55,7 @@ export default async function Page({ searchParams }: Props) {
           </HeaderDescription>
         </HeaderInner>
       </Header>
-      <PageContainer className="pb-6">
+      <>
         <Suspense
           fallback={
             <div className="flex min-h-96 items-center justify-center">
@@ -66,7 +65,7 @@ export default async function Page({ searchParams }: Props) {
         >
           <IconsList searchParams={{ query, t }} />
         </Suspense>
-      </PageContainer>
+      </>
     </>
   )
 }
