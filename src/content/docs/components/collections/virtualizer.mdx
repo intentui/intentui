@@ -1,0 +1,127 @@
+---
+title: "Virtualizer"
+description: Render large collections efficiently by mounting only the items visible in the scrollable viewport.
+order: 6
+published: true
+references: ["https://react-aria.adobe.com/Virtualizer"]
+---
+
+## Introduction
+
+A Virtualizer improves the performance of large collections by rendering only the items that are visible in the scrollable viewport. As the user scrolls, visible views are reused and updated rather than mounting every item at once.
+
+Use a Virtualizer when a ListBox, GridList, Table, Select, or ComboBox contains hundreds or thousands of items. For small collections, render the collection normally because virtualization adds layout and measurement complexity.
+
+The examples below contain 5,000 items, but only a small number of rows are mounted at any time.
+
+## Installation
+
+Virtualizer and its layouts are provided by React Aria Components.
+
+<PackageCommand command="npm i react-aria-components" />
+
+## Anatomy
+
+Pair `Virtualizer` with a layout and a supported collection component.
+
+```tsx
+import {
+  ListLayout,
+  Virtualizer,
+} from "react-aria-components/Virtualizer"
+```
+
+```tsx
+<Virtualizer
+  layout={ListLayout}
+  layoutOptions={{ rowSize: 36, gap: 4, padding: 4 }}
+>
+  <ListBox items={items}>{/* items */}</ListBox>
+</Virtualizer>
+```
+
+## Layout and styling
+
+Virtualized items are positioned by the selected layout rather than normal CSS flow. Grid, flexbox, `gap`, and parent `subgrid` relationships do not pass through the presentation wrappers created by Virtualizer.
+
+- Give the collection a fixed or constrained height and enable scrolling.
+- Define row height, gap, and padding in `layoutOptions`.
+- Set virtualized items to `h-full min-h-0` so they fill their layout slot.
+- Use `ListLayout` for vertically stacked ListBox, GridList, Select, and ComboBox items.
+- Use `TableLayout` for tables so rows and columns remain synchronized.
+
+Intent UI dropdown items use subgrid to align their optional check indicator. The ListBox, Select, and ComboBox examples preserve this behavior with a shared CSS variable that opens the check column only when a selected item renders an indicator.
+
+## Examples
+
+### ListBox
+
+Use `ListLayout` for a vertically scrolling ListBox. Selection, keyboard navigation, and the shared check-indicator column continue to work across all 5,000 items.
+
+<How toUse="collections/virtualizer/list-box-virtualizer-example" />
+
+### GridList
+
+A stacked GridList also uses `ListLayout`. The fixed `rowSize` matches the standard Intent UI row height, while the border is applied to each item because parent `divide-y` cannot cross Virtualizer presentation wrappers.
+
+<How toUse="collections/virtualizer/grid-list-virtualizer-example" />
+
+### Table
+
+Use `TableLayout` with explicit column widths. The header and each row fill the dimensions assigned by the layout, keeping columns aligned while only the visible body rows are mounted.
+
+<How isCenter={false} withNoPadding toUse="collections/virtualizer/table-virtualizer-example" />
+
+### Select
+
+The Select trigger remains unchanged. Virtualizer wraps the ListBox inside the popover, limiting DOM work when the menu contains thousands of options.
+
+<How toUse="collections/virtualizer/select-virtualizer-example" />
+
+### ComboBox
+
+ComboBox combines filtering with virtualization. Typing narrows the collection before the visible options are calculated, so searching remains responsive even with 5,000 items.
+
+<How toUse="collections/virtualizer/combo-box-virtualizer-example" />
+
+## Accessibility
+
+Virtualization does not change the collection's accessible interaction model. Keep the collection labeled, provide a stable `id` and `textValue` for each item, and use the matching layout orientation so keyboard navigation follows the visual direction.
+
+React Aria exposes the complete collection size through ARIA metadata even though only visible items exist in the DOM.
+
+## API
+
+### Virtualizer
+
+<ApiParameters>
+  <ApiDescription>
+    **Virtualizer** renders the visible portion of a supported React Aria collection using the supplied layout.
+  </ApiDescription>
+  <ApiParameter name="layout" type="Layout" required />
+  <ApiParameter name="layoutOptions" type="object" />
+  <ApiParameter name="shouldObserveItemSize" type="boolean" defaultValue="false" />
+  <ApiReference>
+    See [React Aria Virtualizer](https://react-aria.adobe.com/Virtualizer) for the complete API reference.
+  </ApiReference>
+</ApiParameters>
+
+### ListLayout options
+
+<ApiParameters>
+  <ApiParameter name="orientation" type="'vertical' | 'horizontal'" defaultValue="'vertical'" />
+  <ApiParameter name="rowSize" type="number" />
+  <ApiParameter name="estimatedRowSize" type="number" />
+  <ApiParameter name="gap" type="number" defaultValue="0" />
+  <ApiParameter name="padding" type="number" defaultValue="0" />
+</ApiParameters>
+
+Use `rowSize` when every row has a fixed size. Use `estimatedRowSize` with `shouldObserveItemSize` when content can change the row height.
+
+### TableLayout options
+
+<ApiParameters>
+  <ApiParameter name="rowHeight" type="number" />
+  <ApiParameter name="estimatedRowHeight" type="number" />
+  <ApiParameter name="headingHeight" type="number" />
+</ApiParameters>

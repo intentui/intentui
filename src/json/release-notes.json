@@ -1,5 +1,77 @@
 [
   {
+    "name": "Table",
+    "component": "table.tsx",
+    "url": "/table",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 0,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Combo box virtualizer example",
+    "component": "combo-box-virtualizer-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "virtualizer",
+    "kind": "new",
+    "description": null,
+    "additions": 0,
+    "deletions": 0,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Grid list virtualizer example",
+    "component": "grid-list-virtualizer-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "virtualizer",
+    "kind": "new",
+    "description": null,
+    "additions": 0,
+    "deletions": 0,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "List box virtualizer example",
+    "component": "list-box-virtualizer-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "virtualizer",
+    "kind": "new",
+    "description": null,
+    "additions": 0,
+    "deletions": 0,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Select virtualizer example",
+    "component": "select-virtualizer-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "virtualizer",
+    "kind": "new",
+    "description": null,
+    "additions": 0,
+    "deletions": 0,
+    "date": "2026-08-13"
+  },
+  {
+    "name": "Table virtualizer example",
+    "component": "table-virtualizer-example.tsx",
+    "url": null,
+    "type": "example",
+    "category": "virtualizer",
+    "kind": "new",
+    "description": null,
+    "additions": 0,
+    "deletions": 0,
+    "date": "2026-08-13"
+  },
+  {
     "name": "Keyboard example",
     "component": "keyboard-example.tsx",
     "url": "/command-menu",
