@@ -27,7 +27,9 @@ export default function TableVirtualizerExample() {
         <TableHeader
           style={{ width: '100%', height: '100%', backgroundColor: 'var(--color-secondary)' }}
         >
-          <TableColumn width={80}>#</TableColumn>
+          <TableColumn width={54} minWidth={54} style={{ width: 54 }}>
+            #
+          </TableColumn>
           <TableColumn width="2fr" isRowHeader>
             Name
           </TableColumn>

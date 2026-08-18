@@ -15,7 +15,7 @@ export default function SelectVirtualizerExample() {
     <Select
       aria-label="Select a virtualized item"
       placeholder="Select an item"
-      className="max-w-sm"
+      className="min-w-40"
     >
       <SelectTrigger />
       <PopoverContent
