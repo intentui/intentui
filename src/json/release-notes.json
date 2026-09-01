@@ -6,9 +6,9 @@
     "type": "component",
     "category": "layouts",
     "kind": "improvement",
-    "description": "Updated Sidebar with tree navigation support.",
-    "additions": 0,
-    "deletions": 0,
+    "description": null,
+    "additions": 601,
+    "deletions": 580,
     "date": "2026-09-01"
   },
   {
