@@ -6,9 +6,33 @@
     "type": "component",
     "category": "layouts",
     "kind": "improvement",
-    "description": null,
+    "description": "Updated Sidebar with tree navigation support.",
     "additions": 601,
     "deletions": 580,
+    "date": "2026-09-01"
+  },
+  {
+    "name": "Sidebar tree example",
+    "component": "sidebar-18/page.tsx",
+    "url": "/pre-blocks/sidebar/sidebar-18",
+    "type": "block",
+    "category": "sidebar",
+    "kind": "new",
+    "description": "Added a hierarchical navigation example using SidebarTree.",
+    "additions": 0,
+    "deletions": 0,
+    "date": "2026-09-01"
+  },
+  {
+    "name": "Menu infinite scroll example",
+    "component": "menu-infinite-scroll-example.tsx",
+    "url": "/menu",
+    "type": "example",
+    "category": "collections",
+    "kind": "new",
+    "description": null,
+    "additions": 0,
+    "deletions": 0,
     "date": "2026-09-01"
   },
   {

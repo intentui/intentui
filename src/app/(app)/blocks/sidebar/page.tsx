@@ -47,6 +47,7 @@ export default function Page() {
           'sidebar-15',
           'sidebar-16',
           'sidebar-17',
+          'sidebar-18',
           'sidebar-19',
         ]}
       />

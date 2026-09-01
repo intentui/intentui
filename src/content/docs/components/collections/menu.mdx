@@ -62,6 +62,10 @@ Enhance menu items by adding icons.
 Generate menu items dynamically.
 <How toUse="collections/menu/menu-dynamic-example" />
 
+### Asynchronous loading
+Load more menu items as the user scrolls using `MenuLoadMoreItem`.
+<How toUse="collections/menu/menu-infinite-scroll-example" />
+
 ### Multiple
 Display a selection of actions or options.
 <How toUse="collections/menu/multiple-menu-example" />
@@ -163,6 +167,17 @@ Trigger a modal from a menu item. Refer to the [modal demo](/docs/components/ove
   </ApiDescription>
   <ApiParameter name="className" type='string' />
   <ApiParameter name="intent" type='"danger" | "warning"' />
+</ApiParameters>
+
+### MenuLoadMoreItem
+
+<ApiParameters>
+  <ApiDescription>
+    **MenuLoadMoreItem** extends the React Aria Components [**`<MenuLoadMoreItem>`**](https://react-aria.adobe.com/Menu#api) component and loads additional items when the scroll sentinel becomes visible.
+  </ApiDescription>
+  <ApiParameter name="className" type='string' />
+  <ApiParameter name="isLoading" type='boolean' />
+  <ApiParameter name="onLoadMore" type='() => void' />
 </ApiParameters>
 
 ### MenuLabel

@@ -824,9 +824,9 @@ interface SidebarTreeContentProps extends NavigationTreeItemContentProps {
   isCurrent?: boolean
 }
 
-function SidebarTreeContent({ className, isCurrent, children }: SidebarTreeContentProps) {
+function SidebarTreeContent({ className, isCurrent, children, ...props }: SidebarTreeContentProps) {
   return (
-    <NavigationTreeItemContent>
+    <NavigationTreeItemContent {...props}>
       {(values) => (
         <div data-slot="sidebar-item-content" className="relative flex w-full min-w-0 items-center">
           <div
