@@ -10608,6 +10608,27 @@
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "extends": "none",
+      "name": "menu-infinite-scroll-example",
+      "title": "Menu Infinite Scroll",
+      "description": "menu-infinite-scroll-example",
+      "dependencies": ["react-aria-components", "react-stately"],
+      "registryDependencies": [
+        "http://localhost:3000/r/button",
+        "http://localhost:3000/r/menu",
+        "http://localhost:3000/r/progress-circle"
+      ],
+      "files": [
+        {
+          "path": "src/components/examples/collections/menu/menu-infinite-scroll-example.tsx",
+          "type": "registry:page",
+          "target": "app/menu-infinite-scroll-example/page.tsx"
+        }
+      ],
+      "type": "registry:page"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
       "name": "menu-item-description-example",
       "title": "Menu Item Description",
       "description": "menu-item-description-example",
@@ -11846,6 +11867,37 @@
         },
         {
           "path": "registry/blocks/sidebar-19/app-sidebar.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "extends": "none",
+      "name": "sidebar-18",
+      "title": "sidebar-18",
+      "description": "sidebar-18",
+      "registryDependencies": [
+        "http://localhost:3000/r/heading",
+        "http://localhost:3000/r/avatar",
+        "http://localhost:3000/r/breadcrumbs",
+        "http://localhost:3000/r/menu",
+        "http://localhost:3000/r/sidebar",
+        "http://localhost:3000/r/link"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/sidebar-18/page.tsx",
+          "type": "registry:page",
+          "target": "app/sidebar-18/page.tsx"
+        },
+        {
+          "path": "registry/blocks/sidebar-18/app-sidebar-nav.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/sidebar-18/app-sidebar.tsx",
           "type": "registry:component"
         }
       ],
