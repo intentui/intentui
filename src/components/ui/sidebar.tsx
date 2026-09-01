@@ -10,13 +10,21 @@ import { DisclosureGroup, type DisclosureGroupProps } from 'react-aria-component
 import { Header } from 'react-aria-components/Header'
 import { Heading } from 'react-aria-components/Heading'
 import type { LinkProps, LinkRenderProps } from 'react-aria-components/Link'
+import type {
+  NavigationTreeItemContentProps,
+  NavigationTreeItemProps,
+  NavigationTreeProps,
+} from 'react-aria-components/NavigationTree'
+import {
+  NavigationTree,
+  NavigationTreeItem,
+  NavigationTreeItemContent,
+} from 'react-aria-components/NavigationTree'
 import {
   Separator,
   type SeparatorProps as SidebarSeparatorProps,
 } from 'react-aria-components/Separator'
 import { Text } from 'react-aria-components/Text'
-import type { TreeItemContentProps, TreeItemProps, TreeProps } from 'react-aria-components/Tree'
-import { Tree, TreeItem, TreeItemContent } from 'react-aria-components/Tree'
 import { twJoin, twMerge } from 'tailwind-merge'
 import { SheetContent } from '@/components/ui/sheet'
 import { TreeIndicator } from '@/components/ui/tree'
@@ -785,15 +793,10 @@ const SidebarMenuTrigger = ({
   )
 }
 
-interface SidebarTreeProps<T extends object> extends TreeProps<T> {}
-function SidebarTree<T extends object>({
-  className,
-  selectionMode = 'none',
-  ...props
-}: SidebarTreeProps<T>) {
+interface SidebarTreeProps<T extends object> extends NavigationTreeProps<T> {}
+function SidebarTree<T extends object>({ className, ...props }: SidebarTreeProps<T>) {
   return (
-    <Tree
-      selectionMode={selectionMode}
+    <NavigationTree
       className={cx(
         'col-span-full flex w-full min-w-0 cursor-default flex-col gap-y-0.5 in-data-[state=collapsed]:p-2 p-4 outline-hidden forced-color-adjust-none',
         className
@@ -803,9 +806,9 @@ function SidebarTree<T extends object>({
   )
 }
 
-const SidebarTreeItem = <T extends object>({ className, ...props }: TreeItemProps<T>) => {
+function SidebarTreeItem<T extends object>({ className, ...props }: NavigationTreeItemProps<T>) {
   return (
-    <TreeItem
+    <NavigationTreeItem
       className={cx(
         'min-w-0 shrink-0 cursor-default select-none outline-hidden',
         'href' in props && 'cursor-pointer',
@@ -816,21 +819,16 @@ const SidebarTreeItem = <T extends object>({ className, ...props }: TreeItemProp
   )
 }
 
-interface SidebarTreeContentProps extends TreeItemContentProps {
+interface SidebarTreeContentProps extends NavigationTreeItemContentProps {
   className?: string
   isCurrent?: boolean
 }
 
-const SidebarTreeContent = ({
-  className,
-  isCurrent,
-  children,
-  ...props
-}: SidebarTreeContentProps) => {
+function SidebarTreeContent({ className, isCurrent, children }: SidebarTreeContentProps) {
   return (
-    <TreeItemContent data-slot="sidebar-item-content" {...props}>
+    <NavigationTreeItemContent>
       {(values) => (
-        <div className="relative flex w-full min-w-0 items-center">
+        <div data-slot="sidebar-item-content" className="relative flex w-full min-w-0 items-center">
           <div
             aria-hidden
             className="shrink-0"
@@ -847,7 +845,7 @@ const SidebarTreeContent = ({
               values.isFocusVisible && 'inset-ring inset-ring-sidebar-ring',
               values.isPressed &&
                 "bg-sidebar-accent text-sidebar-accent-fg [&_svg:not([class*='text-'])]:text-sidebar-accent-fg",
-              isCurrent &&
+              (values.isCurrent || isCurrent) &&
                 "font-medium text-(--sidebar-current-fg) hover:bg-(--sidebar-current-bg) hover:text-(--sidebar-current-fg) [&_.text-muted-fg]:text-fg/80 [&_svg:not([class*='text-'])]:text-(--sidebar-current-fg) hover:[&_svg:not([class*='text-'])]:text-(--sidebar-current-fg)",
               values.isDisabled && 'opacity-50',
               className
@@ -865,7 +863,22 @@ const SidebarTreeContent = ({
           </div>
         </div>
       )}
-    </TreeItemContent>
+    </NavigationTreeItemContent>
+  )
+}
+
+interface SidebarTreeLinkProps extends Omit<LinkProps, 'href'> {}
+
+function SidebarTreeLink({ className, ...props }: SidebarTreeLinkProps) {
+  return (
+    <Link
+      data-slot="sidebar-tree-link"
+      className={cx(
+        'flex min-w-0 flex-1 items-center gap-x-2 outline-hidden focus-visible:outline-hidden',
+        className
+      )}
+      {...props}
+    />
   )
 }
 
@@ -906,6 +919,7 @@ export {
   SidebarTree,
   SidebarTreeContent,
   SidebarTreeItem,
+  SidebarTreeLink,
   SidebarTrigger,
   useSidebar,
 }

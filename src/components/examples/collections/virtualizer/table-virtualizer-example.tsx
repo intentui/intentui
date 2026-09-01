@@ -25,7 +25,7 @@ export default function TableVirtualizerExample() {
         className="block h-96 w-full min-w-full overflow-auto rounded-lg border text-sm/6 outline-hidden [--gutter-y:--spacing(2)] [--table-selected-bg:var(--color-secondary)]/50 [&_[data-slot=table-cell]]:h-full [&_[data-slot=table-column]]:h-full [&_[data-slot=table-column]:has([slot=selection])]:flex [&_[data-slot=table-column]:has([slot=selection])]:items-center"
       >
         <TableHeader
-          style={{ width: '100%', height: '100%', backgroundColor: 'var(--color-secondary)' }}
+          style={{ width: '100%', height: '100%', backgroundColor: 'var(--color-muted)' }}
         >
           <TableColumn width={54} minWidth={54} style={{ width: 54 }}>
             #
