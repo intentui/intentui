@@ -39,7 +39,7 @@
     "id": "o-sponsor",
     "name": "One time sponsor",
     "price": {
-      "amount": 75,
+      "amount": 39,
       "currency": "USD",
       "interval": "month"
     },
