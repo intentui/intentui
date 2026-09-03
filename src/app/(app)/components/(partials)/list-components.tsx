@@ -16,6 +16,44 @@ import menus from '@/components-search.json'
 const components = menus[3]
 const allChildren = (components?.children ?? []).flatMap((s: any) => s?.children ?? [])
 
+function ComponentThumbnail({
+  name,
+  title,
+  suffix,
+}: {
+  name: string
+  title: string
+  suffix: string
+}) {
+  const src = `/images/thumbnails/${name}${suffix}.png`
+  const [hasError, setHasError] = useState(false)
+
+  useEffect(() => setHasError(false), [src])
+
+  if (hasError) {
+    return (
+      <div
+        aria-hidden="true"
+        data-slot="component-thumbnail-placeholder"
+        className="grid aspect-[59/40] w-full place-items-center rounded-lg border border-page bg-muted/40 px-6 text-center shadow-xs"
+      >
+        <span className="text-sm text-fg">{title}</span>
+      </div>
+    )
+  }
+
+  return (
+    <Image
+      width={708}
+      className="rounded-lg border border-page shadow-xs"
+      height={480}
+      src={src}
+      alt={title}
+      onError={() => setHasError(true)}
+    />
+  )
+}
+
 export function ListComponents() {
   const { contains } = useFilter({ sensitivity: 'base' })
   const { resolvedTheme } = useTheme()
@@ -95,13 +133,7 @@ export function ListComponents() {
                     href={item.slug}
                   >
                     <div className="mb-3 lg:mb-0 lg:p-6">
-                      <Image
-                        width={708}
-                        className="rounded-lg border border-page shadow-xs"
-                        height={480}
-                        src={`/images/thumbnails/${name}${suffix}.png`}
-                        alt={item.title}
-                      />
+                      <ComponentThumbnail name={name} title={item.title} suffix={suffix} />
                     </div>
                     <span className="border-page font-medium sm:py-3 sm:px-6 sm:text-sm lg:border-t lg:bg-bg">
                       {item.title}
