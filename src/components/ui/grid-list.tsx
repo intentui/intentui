@@ -9,7 +9,7 @@ import {
   GridListSection as GridListSectionPrimitive,
 } from 'react-aria-components/GridList'
 import { Text, type TextProps } from 'react-aria-components/Text'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Checkbox, CheckboxField } from './checkbox'
 
@@ -31,7 +31,7 @@ const GridListSection = <T extends object>({
   return (
     <GridListSectionPrimitive
       data-slot="grid-list-section"
-      className={twMerge('divide-y', className)}
+      className={cn('divide-y', className)}
       {...props}
     />
   )
@@ -44,7 +44,7 @@ const GridListHeader = ({
   return (
     <GridListHeaderPrimitive
       data-slot="grid-list-header"
-      className={twMerge('px-3 py-2.5 font-semibold text-sm/6', className)}
+      className={cn('px-3 py-2.5 font-semibold text-sm/6', className)}
       {...props}
     />
   )
@@ -118,18 +118,18 @@ const GridListItem = ({ className, children, ...props }: GridListItemProps) => {
 }
 
 const GridListEmptyState = ({ ref, className, ...props }: React.ComponentProps<'div'>) => (
-  <div ref={ref} className={twMerge('p-6', className)} {...props} />
+  <div ref={ref} className={cn('p-6', className)} {...props} />
 )
 
 const GridListSpacer = ({ className, ref, ...props }: React.ComponentProps<'div'>) => {
-  return <div ref={ref} aria-hidden className={twMerge('-ms-4 flex-1', className)} {...props} />
+  return <div ref={ref} aria-hidden className={cn('-ms-4 flex-1', className)} {...props} />
 }
 
 const GridListStart = ({ className, ref, ...props }: React.ComponentProps<'div'>) => {
   return (
     <div
       ref={ref}
-      className={twMerge('relative flex items-center gap-x-2.5 sm:gap-x-3', className)}
+      className={cn('relative flex items-center gap-x-2.5 sm:gap-x-3', className)}
       {...props}
     />
   )
@@ -140,14 +140,14 @@ interface GridListTextProps extends TextProps {
 }
 
 const GridListLabel = ({ className, ref, ...props }: GridListTextProps) => (
-  <Text ref={ref} className={twMerge('font-medium', className)} {...props} />
+  <Text ref={ref} className={cn('font-medium', className)} {...props} />
 )
 
 const GridListDescription = ({ className, ref, ...props }: GridListTextProps) => (
   <Text
     slot="description"
     ref={ref}
-    className={twMerge('font-normal text-muted-fg text-sm', className)}
+    className={cn('font-normal text-muted-fg text-sm', className)}
     {...props}
   />
 )

@@ -17,7 +17,7 @@ import {
   DisclosureStateContext,
 } from 'react-aria-components/DisclosureGroup'
 import { Heading } from 'react-aria-components/Heading'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { cx } from '@/lib/primitive'
 
 export function DisclosureGroup({ className, ...props }: DisclosureGroupProps) {
@@ -46,7 +46,7 @@ export function Disclosure({ className, ...props }: DisclosureProps) {
   return (
     <PrimitiveDisclosure
       className={composeRenderProps(className, (className, { isExpanded, isFocusVisibleWithin }) =>
-        twMerge(
+        cn(
           'group/disclosure-item inset-ring inset-ring-(--disclosure-collapsed-border,transparent) w-full rounded-(--disclosure-radius,--spacing(0)) bg-(--disclosure-collapsed-bg,transparent) duration-200',
           (isExpanded || isFocusVisibleWithin) &&
             'inset-ring-(--disclosure-expanded-border,transparent) bg-(--disclosure-expanded-bg)',
@@ -104,7 +104,7 @@ export function DisclosureIndicator({ className, ...props }: React.ComponentProp
   return (
     <span
       data-slot="disclosure-indicator"
-      className={twMerge(
+      className={cn(
         'pointer-events-none relative ms-(--disclosure-gutter-x,--spacing(0)) -me-[calc(var(--disclosure-gutter-x,--spacing(0))-(--spacing(2)))] flex size-6 shrink-0 items-center justify-center [--width:--spacing(2.5)]',
         className
       )}

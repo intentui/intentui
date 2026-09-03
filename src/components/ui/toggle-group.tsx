@@ -7,7 +7,7 @@ import {
   ToggleButtonGroup,
   type ToggleButtonGroupProps,
 } from 'react-aria-components/ToggleButtonGroup'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { tv } from 'tailwind-variants'
 import { cx } from '@/lib/primitive'
 
@@ -170,7 +170,7 @@ const ToggleGroupItem = ({ className, ...props }: ToggleGroupItemProps) => {
     <ToggleButton
       data-slot="toggle-group-item"
       className={composeRenderProps(className, (className, renderProps) =>
-        twMerge(
+        cn(
           toggleGroupItemStyles({
             ...renderProps,
             size,

@@ -6,7 +6,7 @@ import {
   RangeCalendar as RangeCalendarPrimitive,
   type RangeCalendarProps,
 } from 'react-aria-components/RangeCalendar'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { CalendarGridHeader, CalendarHeader } from './calendar'
 
 export function RangeCalendar<T extends DateValue>({
@@ -52,7 +52,7 @@ export function RangeCalendar<T extends DateValue>({
                       isDisabled,
                     }) => (
                       <span
-                        className={twMerge(
+                        className={cn(
                           'flex size-full items-center justify-center rounded-lg tabular-nums forced-color-adjust-none',
                           isSelected && (isSelectionStart || isSelectionEnd)
                             ? 'bg-primary text-primary-fg group-invalid/calendar-cell:bg-danger group-invalid/calendar-cell:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] forced-colors:group-invalid/calendar-cell:bg-[Mark]'

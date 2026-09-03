@@ -8,7 +8,7 @@ import type { ListBoxItemProps, ListBoxSectionProps } from 'react-aria-component
 import { ListBoxItem as ListBoxItemPrimitive, ListBoxSection } from 'react-aria-components/ListBox'
 import { Separator, type SeparatorProps } from 'react-aria-components/Separator'
 import { Text, type TextProps } from 'react-aria-components/Text'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { tv } from 'tailwind-variants'
 import { Keyboard } from './keyboard'
 
@@ -134,13 +134,13 @@ const DropdownItem = ({ className, children, intent, ...props }: DropdownItemPro
 }
 
 const DropdownLabel = ({ className, ...props }: TextProps) => (
-  <Text slot="label" className={twMerge('col-start-2 [&:has(+svg)]:pe-6', className)} {...props} />
+  <Text slot="label" className={cn('col-start-2 [&:has(+svg)]:pe-6', className)} {...props} />
 )
 
 const DropdownDescription = ({ className, ...props }: TextProps) => (
   <Text
     slot="description"
-    className={twMerge('col-start-2 font-normal text-muted-fg text-sm', className)}
+    className={cn('col-start-2 font-normal text-muted-fg text-sm', className)}
     {...props}
   />
 )
@@ -148,7 +148,7 @@ const DropdownDescription = ({ className, ...props }: TextProps) => (
 const DropdownSeparator = ({ className, ...props }: Omit<SeparatorProps, 'orientation'>) => (
   <Separator
     orientation="horizontal"
-    className={twMerge('col-span-full -mx-1 h-px bg-fg/10', className)}
+    className={cn('col-span-full -mx-1 h-px bg-fg/10', className)}
     {...props}
   />
 )
@@ -156,7 +156,7 @@ const DropdownSeparator = ({ className, ...props }: Omit<SeparatorProps, 'orient
 const DropdownKeyboard = ({ className, ...props }: React.ComponentProps<typeof Keyboard>) => {
   return (
     <Keyboard
-      className={twMerge(
+      className={cn(
         'absolute end-2 ps-2 group-hover:text-primary-fg group-focus:text-primary-fg',
         className
       )}

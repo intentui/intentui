@@ -7,7 +7,7 @@ import {
   SearchField as SearchFieldPrimitive,
   type SearchFieldProps,
 } from 'react-aria-components/SearchField'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { fieldStyles } from '@/components/ui/field'
 import { cx } from '@/lib/primitive'
 import { Input, InputGroup } from './input'

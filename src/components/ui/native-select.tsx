@@ -1,7 +1,7 @@
 'use client'
 
 import { ChevronUpDownIcon } from '@heroicons/react/20/solid'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { fieldStyles } from '@/components/ui/field'
 
 export function NativeSelect({ className, ...props }: React.ComponentProps<'div'>) {
@@ -9,7 +9,7 @@ export function NativeSelect({ className, ...props }: React.ComponentProps<'div'
     <div
       data-slot="control"
       className={fieldStyles({
-        className: twMerge('relative w-full has-[select:disabled]:opacity-50', className),
+        className: cn('relative w-full has-[select:disabled]:opacity-50', className),
       })}
       {...props}
     />
@@ -25,7 +25,7 @@ export function NativeSelectContent({ className, isInvalid, ...props }: NativeSe
       <select
         data-slot="select"
         aria-invalid={isInvalid ? 'true' : undefined}
-        className={twMerge(
+        className={cn(
           'relative block w-full appearance-none rounded-lg px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2.5)-1px)] sm:py-[calc(--spacing(1.5)-1px)] sm:pr-8 sm:pl-[calc(--spacing(3)-1px)]',
           'text-base/6 text-fg placeholder:text-muted-fg sm:text-sm/6',
           'bg-(--control-bg,transparent)',

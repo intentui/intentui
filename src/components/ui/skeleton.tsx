@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 
 export interface SkeletonProps extends React.ComponentProps<'div'> {
   isLoading?: boolean
@@ -10,7 +10,7 @@ export function Skeleton({ ref, isLoading = false, className, ...props }: Skelet
       data-slot="skeleton"
       data-loading={isLoading ? '' : undefined}
       ref={ref}
-      className={twMerge(
+      className={cn(
         isLoading
           ? [
               'pointer-events-none',

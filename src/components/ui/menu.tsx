@@ -18,7 +18,7 @@ import {
   MenuTrigger as MenuTriggerPrimitive,
   SubmenuTrigger as SubmenuTriggerPrimitive,
 } from 'react-aria-components/Menu'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { cx } from '@/lib/primitive'
 import {
@@ -114,7 +114,7 @@ const MenuItem = ({ className, intent, children, ...props }: MenuItemProps) => {
           ...renderProps,
           intent,
           className: hasSubmenu
-            ? twMerge(
+            ? cn(
                 intent === 'danger' && 'open:bg-danger-subtle open:text-danger-subtle-fg',
                 intent === 'warning' && 'open:bg-warning-subtle open:text-warning-subtle-fg',
                 intent === undefined &&
@@ -156,7 +156,7 @@ export interface MenuHeaderProps extends React.ComponentProps<typeof Header> {
 
 const MenuHeader = ({ className, separator = false, ...props }: MenuHeaderProps) => (
   <Header
-    className={twMerge(
+    className={cn(
       'col-span-full px-2.5 py-2 font-medium text-base sm:text-sm',
       separator && '-mx-1 border-b sm:px-3 sm:pb-2.5',
       className

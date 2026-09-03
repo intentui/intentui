@@ -1,7 +1,7 @@
 'use client'
 
 import { useLayoutEffect, useRef } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 
 type ScrollAreaOrientation = 'vertical' | 'horizontal' | 'both'
 
@@ -80,7 +80,7 @@ export function ScrollArea({
   }, [allowX, allowY])
 
   return (
-    <div ref={forwardedRef} className={twMerge('size-full min-h-0', className)} {...props}>
+    <div ref={forwardedRef} className={cn('size-full min-h-0', className)} {...props}>
       <div
         ref={viewportRef}
         className={twJoin(

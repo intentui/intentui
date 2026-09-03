@@ -1,7 +1,7 @@
 'use client'
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
 import { usePathname } from 'next/navigation'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { Header, HeaderDescription, HeaderInner, HeaderTitle } from '@/components/header'
 import { PageContainer } from '@/components/page-container'
 import { buttonStyles } from '@/components/ui/button'

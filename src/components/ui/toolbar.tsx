@@ -8,7 +8,7 @@ import {
   Toolbar as ToolbarPrimitive,
   type ToolbarProps as ToolbarPrimitiveProps,
 } from 'react-aria-components/Toolbar'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Separator } from './separator'
 import { Toggle, type ToggleProps } from './toggle'
@@ -29,7 +29,7 @@ const Toolbar = ({ orientation = 'horizontal', isCircle, className, ...props }: 
         orientation={orientation}
         {...props}
         className={composeRenderProps(className, (className, { orientation }) =>
-          twMerge(
+          cn(
             'group scrollbar-none inset-ring inset-ring-border inline-flex flex-row gap-1.5 bg-overlay p-1.5 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden',
             isCircle ? 'rounded-full' : 'rounded-lg',
             orientation === 'horizontal'
@@ -99,7 +99,7 @@ const ToolbarSeparator = ({ className, ...props }: ToolbarSeparatorProps) => {
   return (
     <Separator
       orientation={reverseOrientation}
-      className={twMerge(
+      className={cn(
         reverseOrientation === 'vertical' ? 'mx-0.5 h-6' : 'my-0.5 w-8',
         className
       )}

@@ -2,7 +2,7 @@
 
 import { composeRenderProps } from 'react-aria-components/composeRenderProps'
 import { ToggleButton, type ToggleButtonProps } from 'react-aria-components/ToggleButton'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 export const toggleStyles = tv({
@@ -71,7 +71,7 @@ export function Toggle({ className, size, intent, isCircle, ref, ...props }: Tog
     <ToggleButton
       ref={ref}
       className={composeRenderProps(className, (className, renderProps) =>
-        twMerge(
+        cn(
           toggleStyles({
             ...renderProps,
             isCircle,

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Pressable } from 'react-aria-components/Pressable'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { Tooltip, TooltipContent } from './tooltip'
 
 interface TrackerBlockProps {
@@ -71,7 +71,7 @@ const Tracker = ({
   ...props
 }: TrackerProps) => {
   return (
-    <div ref={ref} className={twMerge('group flex h-8 w-full items-center', className)} {...props}>
+    <div ref={ref} className={cn('group flex h-8 w-full items-center', className)} {...props}>
       {data.map((props, index) => (
         <Block disabledTooltip={disabledTooltip} key={props.key ?? index} {...props} />
       ))}

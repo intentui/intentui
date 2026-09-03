@@ -3,7 +3,7 @@
 import { CodeBracketIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
 import { useEffect, useState } from 'react'
 import { Tab } from 'react-aria-components/Tabs'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { CodeHighlighter } from '@/components/docs/code-highlighter'
 import { CopyButton } from '@/components/docs/copy-button'
 import { BrandCssIcon } from '@/components/icons/brand-css-icon'
@@ -58,7 +58,7 @@ export function CodeBlock({ source }: Props) {
               {Object.keys(contents).map((key) => (
                 <Tab
                   className={(values) =>
-                    twMerge(
+                    cn(
                       'flex min-w-0 cursor-default items-center gap-x-1 truncate py-2 text-sm/6 *:data-[slot=icon]:hidden sm:*:data-[slot=icon]:block',
                       values.isSelected || values.isFocused || values.isFocusVisible
                         ? 'text-fg'

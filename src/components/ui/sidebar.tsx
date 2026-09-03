@@ -24,7 +24,7 @@ import {
   Separator,
   type SeparatorProps as SidebarSeparatorProps,
 } from "react-aria-components/Separator"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twJoin, cn } from "cn"
 import { SheetContent } from "@/components/ui/sheet"
 import { TreeIndicator } from "@/components/ui/tree"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -159,7 +159,7 @@ const SidebarProvider = ({
                 ...style,
               } as React.CSSProperties
             }
-            className={twMerge(
+            className={cn(
                 "@container **:[svg]:shrink-0",
                 "flex w-full text-sidebar-fg",
                 "group/sidebar-root peer/sidebar-root has-data-[intent=inset]:bg-sidebar dark:has-data-[intent=inset]:bg-bg",
@@ -197,7 +197,7 @@ const Sidebar = ({
             data-intent={intent}
             data-collapsible="none"
             data-slot="sidebar"
-            className={twMerge(
+            className={cn(
                 "flex h-full w-(--sidebar-width) flex-col bg-sidebar text-sidebar-fg",
                 className,
             )}
@@ -241,7 +241,7 @@ const Sidebar = ({
         <div
             data-slot="sidebar-gap"
             aria-hidden="true"
-            className={twMerge([
+            className={cn([
               "w-(--sidebar-width) group-data-[collapsible=hidden]:w-0",
               "group-data-[side=right]:-rotate-180",
               "relative h-svh bg-transparent transition-[width] duration-200 ease-linear",
@@ -254,7 +254,7 @@ const Sidebar = ({
         />
         <div
             data-slot="sidebar-container"
-            className={twMerge(
+            className={cn(
                 "fixed inset-y-0 z-10 hidden w-(--sidebar-width) bg-sidebar not-has-data-[slot=sidebar-footer]:pb-2 md:flex",
                 "transition-[left,right,width] duration-200 ease-linear",
                 side === "left" && "left-0 group-data-[collapsible=hidden]:-left-(--sidebar-width)",
@@ -292,7 +292,7 @@ const SidebarHeader = ({ className, ref, ...props }: React.ComponentProps<"div">
       <div
           ref={ref}
           data-slot="sidebar-header"
-          className={twMerge(
+          className={cn(
               "flex flex-col gap-2 p-2.5 [.border-b]:border-sidebar-border",
               "in-data-[intent=inset]:p-4",
               state === "collapsed" ? "items-center p-2.5" : "p-4",
@@ -307,7 +307,7 @@ const SidebarFooter = ({ className, ...props }: React.ComponentProps<"div">) => 
   return (
       <div
           data-slot="sidebar-footer"
-          className={twMerge([
+          className={cn([
             "mt-auto flex shrink-0 items-center justify-center p-4 **:data-[slot=chevron]:text-muted-fg",
             "in-data-[intent=inset]:px-6 in-data-[intent=inset]:py-4",
             className,
@@ -347,7 +347,7 @@ const SidebarContent = ({ className, ...props }: React.ComponentProps<"div">) =>
       <div
           ref={ref}
           data-slot="sidebar-content"
-          className={twMerge(
+          className={cn(
               "flex min-h-0 flex-1 scroll-mb-96 flex-col overflow-auto *:data-[slot=sidebar-section]:border-l-0",
               state === "collapsed" ? "items-center" : !isAtBottom && "mask-b-from-95%",
               className,
@@ -365,7 +365,7 @@ const SidebarSectionGroup = ({ className, ...props }: React.ComponentProps<"sect
   return (
       <section
           data-slot="sidebar-section-group"
-          className={twMerge(
+          className={cn(
               "flex w-full min-w-0 flex-col gap-y-0.5",
               collapsed && "items-center justify-center",
               className,
@@ -384,7 +384,7 @@ const SidebarSection = ({ className, ...props }: SidebarSectionProps) => {
   return (
       <div
           data-slot="sidebar-section"
-          className={twMerge(
+          className={cn(
               "col-span-full flex min-w-0 flex-col gap-y-0.5 **:data-[slot=sidebar-section]:**:gap-y-0",
               "in-data-[state=collapsed]:p-2 p-4",
               className,
@@ -434,7 +434,7 @@ const SidebarItem = ({
           className={composeRenderProps(
               className,
               (className, { isFocusVisible, isPressed, isHovered, isDisabled }) =>
-                  twMerge(
+                  cn(
                       "w-full min-w-0 items-center rounded-lg p-2 text-start font-medium text-base/6 text-sidebar-fg has-[a]:p-0",
                       "group/sidebar-item relative col-span-full overflow-hidden focus-visible:outline-hidden",
                       "grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] supports-[grid-template-columns:subgrid]:grid-cols-subgrid sm:text-sm/5 **:last:[svg]:ms-auto",
@@ -502,7 +502,7 @@ function SidebarBadge({ className, ...props }: React.ComponentProps<"span">) {
   return (
       <span
           data-slot="sidebar-badge"
-          className={twMerge(
+          className={cn(
               "absolute inset-ring-1 inset-ring-sidebar-border inset-y-1/2 end-1.5 h-5.5 w-auto -translate-y-1/2 rounded-full bg-fg/5 px-2 text-[10px]/5.5 group-hover/sidebar-item:inset-ring-muted-fg/30 group-current:inset-ring-transparent",
               className,
           )}
@@ -534,7 +534,7 @@ const SidebarInset = ({ className, ref, ...props }: React.ComponentProps<"main">
       <main
           data-slot="sidebar-inset"
           ref={ref}
-          className={twMerge(
+          className={cn(
               "relative flex w-full flex-1 flex-col bg-bg lg:min-w-0",
               "md:group-has-data-[intent=inset]/sidebar-root:border group-has-data-[intent=inset]/sidebar-root:border-sidebar-border group-has-data-[intent=inset]/sidebar-root:bg-muted",
               "md:group-has-data-[intent=inset]/sidebar-root:m-2",
@@ -598,7 +598,7 @@ const SidebarDisclosureTrigger = ({ className, ref, ...props }: SidebarDisclosur
             className={composeRenderProps(
                 className,
                 (className, { isPressed, isFocusVisible, isHovered, isDisabled }) =>
-                    twMerge(
+                    cn(
                         "flex w-full min-w-0 items-center rounded-lg text-start font-medium text-base/6 text-sidebar-fg",
                         "group/sidebar-disclosure-trigger relative col-span-full overflow-hidden focus-visible:outline-hidden",
                         "**:[svg]:size-5 **:[svg]:shrink-0 **:[svg]:text-muted-fg sm:**:[svg]:size-4",
@@ -656,7 +656,7 @@ const SidebarSeparator = ({ className, ...props }: SidebarSeparatorProps) => {
       <Separator
           data-slot="sidebar-separator"
           orientation="horizontal"
-          className={twMerge(
+          className={cn(
               "mx-auto h-px w-[calc(var(--sidebar-width)-(--spacing(10)))] border-0 bg-sidebar-border forced-colors:bg-[ButtonBorder]",
               className,
           )}
@@ -715,7 +715,7 @@ const SidebarRail = ({ className, ref, ...props }: React.ComponentProps<"button"
           title="Toggle Sidebar"
           tabIndex={-1}
           onClick={toggleSidebar}
-          className={twMerge(
+          className={cn(
               "absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 outline-hidden transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-0.5 hover:after:bg-transparent group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex",
               "in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize",
               "[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize",
@@ -739,7 +739,7 @@ function SidebarLabel({ className, ref, ...props }: React.ComponentProps<"span">
             data-slot="sidebar-label"
             tabIndex={-1}
             ref={ref}
-            className={twMerge("col-start-2 truncate pe-6 outline-hidden", className)}
+            className={cn("col-start-2 truncate pe-6 outline-hidden", className)}
             {...props}
         />
     )
@@ -755,7 +755,7 @@ const SidebarNav = ({ isSticky = false, className, ...props }: SidebarNavProps) 
   return (
       <nav
           data-slot="sidebar-nav"
-          className={twMerge(
+          className={cn(
               "isolate flex items-center justify-between gap-x-2 px-(--container-padding,--spacing(4)) py-2.5 text-navbar-fg sm:justify-start sm:px-(--gutter,--spacing(4)) md:w-full",
               isSticky && "static top-0 z-40 group-has-data-[intent=default]/sidebar-root:sticky",
               className,
@@ -840,7 +840,7 @@ function SidebarTreeContent({
                   }}
               />
               <div
-                  className={twMerge(
+                  className={cn(
                       "group/tree-item flex min-w-0 flex-1 items-center gap-x-2 rounded-lg p-2 font-medium text-base/6 text-sidebar-fg sm:text-sm/5",
                       "[&_svg:not([class*='size-'])]:size-5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-fg **:[svg]:-mx-0.5 **:[svg]:shrink-0",
                       "hover:bg-sidebar-accent hover:text-sidebar-accent-fg hover:[&_svg:not([class*='text-'])]:text-sidebar-accent-fg",
@@ -897,7 +897,7 @@ function SidebarTreeLabel({ className, ...props }: React.ComponentProps<"span">)
   return (
       <span
           data-slot="sidebar-label"
-          className={twMerge("col-start-2 truncate pe-6 outline-hidden", className)}
+          className={cn("col-start-2 truncate pe-6 outline-hidden", className)}
           {...props}
       />
   )

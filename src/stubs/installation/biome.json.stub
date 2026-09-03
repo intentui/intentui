@@ -62,7 +62,7 @@
           "options": {
             "attributes": ["classList"],
             "functions": [
-              "twMerge",
+              "cn",
               "twJoin",
               "tv",
               "composeRenderProps",

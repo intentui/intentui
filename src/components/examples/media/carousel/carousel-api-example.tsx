@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Button } from 'react-aria-components/Button'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,

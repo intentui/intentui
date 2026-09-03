@@ -1,6 +1,6 @@
 'use client'
 
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { buttonStyles } from '@/components/ui/button'
 import { Link } from '@/components/ui/link'
 
@@ -11,7 +11,7 @@ export function SponsorButton({ className }: { className?: string }) {
       className={buttonStyles({
         size: 'sm',
         intent: 'outline',
-        className: twMerge(
+        className: cn(
           'rounded-sm border-fg bg-fg text-bg hover:bg-fg *:data-[slot=icon]:text-zinc-300 dark:*:data-[slot=icon]:text-zinc-600',
           className
         ),

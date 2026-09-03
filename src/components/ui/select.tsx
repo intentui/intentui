@@ -7,7 +7,7 @@ import {
   type SelectProps as SelectPrimitiveProps,
   SelectValue,
 } from 'react-aria-components/Select'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { cx } from '@/lib/primitive'
 import {
   DropdownDescription,

@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import type React from 'react'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { Sandbox } from '@/app/(app)/blocks/sandbox'
 import {
   ApiDescription,
@@ -74,13 +74,13 @@ export const mdxComponents = {
   McpTabs,
   How: DocHow,
   h2: (props: React.ComponentProps<'h2'>) => (
-    <Heading {...props} as="h2" className={twMerge('text-xl', props.className)} />
+    <Heading {...props} as="h2" className={cn('text-xl', props.className)} />
   ),
   h3: (props: React.ComponentProps<'h3'>) => (
-    <Heading {...props} as="h3" className={twMerge('text-lg', props.className)} />
+    <Heading {...props} as="h3" className={cn('text-lg', props.className)} />
   ),
   h4: (props: React.ComponentProps<'h4'>) => (
-    <Heading {...props} as="h4" className={twMerge('text-base', props.className)} />
+    <Heading {...props} as="h4" className={cn('text-base', props.className)} />
   ),
   // a: ({ className, ...props }: React.ComponentProps<'a'>) => {
   //   const isHeadingAnchor =
@@ -89,7 +89,7 @@ export const mdxComponents = {
   //   return (
   //     <a
   //       {...props}
-  //       className={twMerge(
+  //       className={cn(
   //         isHeadingAnchor
   //           ? 'text-inherit no-underline outline-hidden hover:no-underline focus-visible:ring-1'
   //           : 'not-typeset xd2432 text-primary-subtle-fg outline-hidden hover:underline focus-visible:ring-1',

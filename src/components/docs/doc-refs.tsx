@@ -1,7 +1,7 @@
 'use client'
 
 import { BellIcon, ChartPieIcon } from '@heroicons/react/24/outline'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { BrandGithubIcon } from '@/components/icons/brand-github-icon'
 import { BrandIntentuiIcon } from '@/components/icons/brand-intentui-icon'
 import { BrandReactAriaIcon } from '@/components/icons/brand-react-aria-icon'

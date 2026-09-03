@@ -16,7 +16,7 @@ import {
 import { composeRenderProps } from 'react-aria-components/composeRenderProps'
 import { Heading } from 'react-aria-components/Heading'
 import { useLocale } from 'react-aria-components/I18nProvider'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { Button } from './button'
 import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger } from './select'
 
@@ -37,7 +37,7 @@ const Calendar = <T extends DateValue>({ className, ...props }: CalendarProps<T>
               className={composeRenderProps(
                 className,
                 (className, { isSelected, isToday, isDisabled }) =>
-                  twMerge(
+                  cn(
                     'relative flex size-11 cursor-default items-center justify-center rounded-lg text-fg tabular-nums outline-hidden hover:bg-secondary-fg/15 sm:size-9 sm:text-sm/6 forced-colors:text-[ButtonText] forced-colors:outline-0',
                     isSelected &&
                       'bg-primary pressed:bg-primary text-primary-fg hover:bg-primary/90 data-invalid:bg-danger data-invalid:text-danger-fg forced-colors:bg-[Highlight] forced-colors:text-[Highlight] forced-colors:data-invalid:bg-[Mark]',
@@ -60,7 +60,7 @@ const CalendarHeader = ({ className, ...props }: React.ComponentProps<'header'>)
   return (
     <header
       data-slot="calendar-header"
-      className={twMerge(
+      className={cn(
         'flex w-full justify-between gap-1.5 ps-1.5 pe-1 pt-1 pb-5 sm:pb-4',
         className
       )}

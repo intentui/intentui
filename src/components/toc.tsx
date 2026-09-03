@@ -4,7 +4,7 @@ import type { TableOfContents, TOCItemType } from 'fumadocs-core/toc'
 import { LayoutGroup, motion } from 'motion/react'
 import { Suspense, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { tv } from 'tailwind-variants'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 
 const tocStyles = tv({
   slots: {
@@ -107,7 +107,7 @@ function TocLink({ item, activeId, minDepth }: TocLinkProps) {
         />
       )}
       <a
-        className={twMerge(
+        className={cn(
           'block text-sm/6 tracking-tight no-underline outline-hidden duration-200 focus-visible:text-fg focus-visible:outline-hidden',
           item.url.split('#')[1] === activeId
             ? 'text-fg forced-colors:text-[Highlight]'

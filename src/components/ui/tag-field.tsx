@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Key, Selection } from 'react-aria-components/TagGroup'
 import type { TextFieldProps } from 'react-aria-components/TextField'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { FieldError } from '@/components/ui/field'
 import { Tag, TagGroup, TagList } from '@/components/ui/tag-group'
 import { TextField } from '@/components/ui/text-field'
@@ -110,7 +110,7 @@ export function TagField({
   }
 
   return (
-    <div className={twMerge('flex flex-col gap-y-1', className)}>
+    <div className={cn('flex flex-col gap-y-1', className)}>
       <TextField
         value={inputValue}
         onChange={setInputValue}

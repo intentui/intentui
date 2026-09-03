@@ -24,14 +24,14 @@ Import the components and use them as shown below, adapting the structure to fit
 ```
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { ShowMore } from "@/components/ui/show-more"
-import { twMerge } from "tailwind-merge"
+import { cn } from "cn"
 
 <ShowMore>
   {({ isSelected }) => (
     <>
       Show {isSelected ? "less" : "more"}
       <ChevronDownIcon
-        className={twMerge(
+        className={cn(
           isSelected ? "rotate-180" : "",
           "size-4 transition-transform duration-200"
         )}

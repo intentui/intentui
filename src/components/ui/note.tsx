@@ -3,7 +3,7 @@ import {
   ExclamationCircleIcon,
   InformationCircleIcon,
 } from '@heroicons/react/24/solid'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 
 export interface NoteProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   intent?: 'default' | 'info' | 'warning' | 'danger' | 'success'
@@ -24,7 +24,7 @@ export function Note({ indicator = true, intent = 'default', className, ...props
   return (
     <div
       data-slot="note"
-      className={twMerge([
+      className={cn([
         'grid w-full grid-cols-[auto_1fr] overflow-hidden rounded-lg border border-current/15 p-4 text-base/6 backdrop-blur-2xl sm:text-sm/6',
         '*:[a]:hover:underline **:[strong]:font-medium',
         intent === 'default' && 'bg-muted/50 text-secondary-fg',

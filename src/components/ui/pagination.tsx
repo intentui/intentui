@@ -1,6 +1,6 @@
 'use client'
 
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { type ButtonProps, buttonStyles } from '@/components/ui/button'
 import { Link, type LinkProps } from '@/components/ui/link'
 import { Text } from '@/components/ui/text'
@@ -9,7 +9,7 @@ const Pagination = ({ className, ref, ...props }: React.ComponentProps<'nav'>) =
   <nav
     data-slot="pagination"
     aria-label="pagination"
-    className={twMerge(
+    className={cn(
       'mx-auto flex w-full items-center justify-center gap-(--pagination-gap) [--pagination-gap:--spacing(2)] [--section-radius:calc(var(--radius-lg)-1px)] **:data-[slot=control]:w-auto',
       '**:data-[slot=pagination-item]:cursor-default',
       className
@@ -21,7 +21,7 @@ const Pagination = ({ className, ref, ...props }: React.ComponentProps<'nav'>) =
 
 const PaginationSection = ({ className, ref, ...props }: React.ComponentProps<'ul'>) => (
   <li data-slot="pagination-section">
-    <ul ref={ref} className={twMerge('flex h-full gap-1.5 text-sm/6', className)} {...props} />
+    <ul ref={ref} className={cn('flex h-full gap-1.5 text-sm/6', className)} {...props} />
   </li>
 )
 
@@ -31,7 +31,7 @@ const PaginationList = ({ className, ref, ...props }: React.ComponentProps<'ul'>
       ref={ref}
       data-slot="pagination-list"
       aria-label={props['aria-label'] || 'Pagination'}
-      className={twMerge('flex gap-1.25', className)}
+      className={cn('flex gap-1.25', className)}
       {...props}
     />
   )
@@ -61,7 +61,7 @@ const PaginationItem = ({
           size: size,
           isCircle: isCircle,
           intent: isCurrent ? 'outline' : 'plain',
-          className: twMerge('touch-target min-w-9 shrink-0', className),
+          className: cn('touch-target min-w-9 shrink-0', className),
         })}
         {...props}
       />
@@ -168,7 +168,7 @@ const PaginationLast = (props: PaginationItemProps) => {
 }
 
 const PaginationSpacer = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) => {
-  return <div aria-hidden className={twMerge('flex-1', className)} {...props} />
+  return <div aria-hidden className={cn('flex-1', className)} {...props} />
 }
 
 const PaginationGap = ({
@@ -179,7 +179,7 @@ const PaginationGap = ({
   return (
     <li
       data-slot="pagination-gap"
-      className={twMerge(
+      className={cn(
         'w-9 select-none text-center font-semibold text-fg text-sm/6 outline-hidden',
         className
       )}
@@ -195,7 +195,7 @@ const PaginationLabel = ({ className, ...props }: React.ComponentPropsWithoutRef
   return (
     <li
       data-slot="pagination-label"
-      className={twMerge(
+      className={cn(
         'min-w-4 self-center text-fg *:[strong]:font-medium *:[strong]:text-fg',
         className
       )}

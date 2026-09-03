@@ -3,7 +3,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
 import { createContext, use, useCallback, useEffect, useState } from 'react'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Button, type ButtonProps } from './button'
 
@@ -133,7 +133,7 @@ const Carousel = ({
     >
       <div
         onKeyDownCapture={handleKeyDown}
-        className={twMerge('relative', className)}
+        className={cn('relative', className)}
         role="region"
         aria-roledescription="carousel"
         {...props}
@@ -150,7 +150,7 @@ const CarouselContent = ({ className, ...props }: React.ComponentProps<'div'>) =
   return (
     <div ref={carouselRef} className="overflow-hidden">
       <div
-        className={twMerge(
+        className={cn(
           'flex',
           orientation === 'horizontal' ? '-ms-4' : '-mt-4 flex-col',
           className
@@ -166,7 +166,7 @@ const CarouselItem = ({ className, ...props }: React.ComponentProps<'div'>) => {
 
   return (
     <div
-      className={twMerge(
+      className={cn(
         'group/carousel-item relative min-w-0 shrink-0 grow-0 basis-full focus:outline-hidden focus-visible:outline-hidden',
         orientation === 'horizontal' ? 'ps-4' : 'pt-4',
         className
@@ -182,7 +182,7 @@ const CarouselHandler = ({ ref, className, ...props }: React.ComponentProps<'div
     <div
       data-slot="carousel-handler"
       ref={ref}
-      className={twMerge(
+      className={cn(
         'relative z-10 mt-6 flex items-center gap-x-2',
         orientation === 'horizontal' ? 'justify-end' : 'justify-center',
         className

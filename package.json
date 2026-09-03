@@ -38,6 +38,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "@wandry/analytics-sdk": "^1.16.0",
+    "cn": "^0.2.4",
     "culori": "^4.0.2",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
@@ -82,7 +83,6 @@
     "postcss": "^8.5.14",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
-    "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3"

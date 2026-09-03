@@ -3,7 +3,7 @@
 import { MoonIcon, SunIcon } from '@intentui/icons'
 import { useEffect, useState } from 'react'
 import { Button } from '@/components/button/ui'
-import { twMerge } from 'tailwind-merge';
+import { cn } from 'cn';
 export function ThemeSwitcher() {
 const [theme, setTheme] = useState('light')
 const [isMounted, setIsMounted] = useState(false)
@@ -40,13 +40,13 @@ return (
     onPress={handleSwitchTheme}
   >
     <SunIcon
-      className={twMerge(
+      className={cn(
         'h-[1.2rem] w-[1.2rem] transition-all',
         theme === 'dark' ? 'opacity-0 scale-0 -rotate-90' : 'opacity-100 scale-100 rotate-0'
       )}
     />
     <MoonIcon
-      className={twMerge(
+      className={cn(
         'absolute h-[1.2rem] w-[1.2rem] transition-all',
         theme === 'dark' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-0 rotate-90'
       )}

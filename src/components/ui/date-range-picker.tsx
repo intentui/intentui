@@ -9,7 +9,7 @@ import {
   type DateRangePickerProps as DateRangePickerPrimitiveProps,
 } from 'react-aria-components/DateRangePicker'
 import type { PopoverProps } from 'react-aria-components/Popover'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { cx } from '@/lib/primitive'
 import { DateInput as PrimitiveDateInput } from './date-field'
 import { DatePickerOverlay } from './date-picker'

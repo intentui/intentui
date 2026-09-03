@@ -19,7 +19,7 @@ import {
   Tabs as TabsPrimitive,
   TabsContext,
 } from 'react-aria-components/Tabs'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 
 interface TabsProps extends TabsPrimitiveProps {
@@ -70,7 +70,7 @@ const TabList = <T extends object>({
         data-slot="tab-list"
         {...props}
         className={composeRenderProps(className, (className, { orientation }) =>
-          twMerge([
+          cn([
             '[--tab-list-gutter:--spacing(1)]',
             'relative flex forced-color-adjust-none',
             orientation === 'horizontal' &&
@@ -88,7 +88,7 @@ const TabList = <T extends object>({
 export function TabScrollArea({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div className="relative">
-      <div className={twMerge('scrollbar-none overflow-x-auto sm:overflow-x-visible', className)}>
+      <div className={cn('scrollbar-none overflow-x-auto sm:overflow-x-visible', className)}>
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 h-px w-full bg-border"
           aria-hidden
@@ -130,7 +130,7 @@ const Tab = ({ className, ref, ...props }: TabProps) => {
           {selectionIndicator && (
             <SelectionIndicator
               data-slot="selected-indicator"
-              className={twMerge(
+              className={cn(
                 'absolute bg-primary-subtle-fg duration-200 will-change-transform',
                 orientation === 'horizontal'
                   ? 'inset-e-(--tab-gutter-x) start-(--tab-gutter-x) -bottom-[calc(var(--tab-gutter-y)+1px)] h-0.5 motion-safe:transition-[translate,width]'

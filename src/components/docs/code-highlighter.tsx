@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 import { codeToHtml } from 'shiki'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { app } from '@/config/app'
 
 export interface CodeHighlighterProps {
@@ -54,7 +54,7 @@ export const CodeHighlighter = ({
   ) : (
     <div
       {...props}
-      className={twMerge(
+      className={cn(
         'not-typeset scrollbar-thin overflow-auto font-mono text-sm **:[pre]:outline-hidden **:[pre]:*:[code]:text-sm/8',
         max96 && 'max-h-96',
         !plain && 'rounded-lg bg-shiki-bg px-4 py-2.5 ring-1 ring-border',

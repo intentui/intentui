@@ -9,7 +9,7 @@ import {
   RadioGroup as RadioGroupPrimitive,
   type RadioGroupProps,
 } from 'react-aria-components/RadioGroup'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Label } from '@/components/ui/field'
 
@@ -55,7 +55,7 @@ export function Radio({ className, children, ...props }: RadioButtonProps) {
           <>
             <span
               data-slot="indicator"
-              className={twMerge([
+              className={cn([
                 "relative col-start-1 row-start-1 mt-0.75 sm:mt-1 inset-ring inset-ring-input isolate flex size-4.5 shrink-0 items-center justify-center rounded-full bg-(--control-bg,transparent) text-bg transition before:absolute before:inset-auto before:size-2 before:shrink-0 before:rounded-full before:content-[''] hover:before:bg-muted-fg/20 sm:size-4 sm:before:size-1.7",
                 'in-disabled:bg-muted',
                 isSelected && [

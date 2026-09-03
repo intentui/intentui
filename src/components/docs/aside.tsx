@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 import type { LinkProps } from 'react-aria-components/Link'
 import { Link } from 'react-aria-components/Link'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { ColorsIcon } from '@/components/icons/colors-icon'
 import { Package3DIcon } from '@/components/icons/package-3d-icon'
 import { PackageIcon } from '@/components/icons/package-icon'
@@ -195,7 +195,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
         {...props}
         href={href}
         ref={ref}
-        className={twMerge(
+        className={cn(
           'group relative mb-0.5 flex items-center gap-x-2 rounded-lg px-2 py-1 text-base text-fg/70 sm:text-sm/6',
           'hover:text-fg focus:text-fg focus:outline-hidden',
           '*:[svg]:size-4.5 *:[svg]:text-muted-fg hover:*:[svg]:text-fg',
@@ -223,7 +223,7 @@ function AsideLink({ href, ...props }: AsideLinkProps) {
 function AsideHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={twMerge(
+      className={cn(
         'relative mb-2 block px-6 font-mono text-[11px] text-muted-fg uppercase',
         className
       )}

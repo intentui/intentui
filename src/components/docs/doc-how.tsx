@@ -3,7 +3,7 @@ import { Suspense, useEffect, useMemo, useState } from 'react'
 import { Group } from 'react-aria-components/Group'
 import { ToggleButton } from 'react-aria-components/ToggleButton'
 import { Toolbar } from 'react-aria-components/Toolbar'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import generated from '@/../__registry__/generated'
 import { CodeHighlighter } from '@/components/docs/code-highlighter'
 import { PullRegistry } from '@/components/docs/pull-registry'
@@ -103,7 +103,7 @@ export const DocHow = ({
       <div className="h-fit w-full">
         {currentTab === 'tab_preview' ? (
           <div
-            className={twMerge(
+            className={cn(
               'w-full overflow-y-auto',
               !withNoPadding
                 ? 'relative gap-4 rounded-lg border px-4 py-8 *:w-full sm:p-8 dark:bg-muted/30'
@@ -119,7 +119,7 @@ export const DocHow = ({
                   </div>
                 }
               >
-                <div className={twMerge(minW60 && 'min-w-60', 'not-typeset', className)}>
+                <div className={cn(minW60 && 'min-w-60', 'not-typeset', className)}>
                   <Component />
                 </div>
               </Suspense>
