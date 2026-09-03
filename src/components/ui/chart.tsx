@@ -30,7 +30,7 @@ import type {
   ValueType,
 } from 'recharts/types/component/DefaultTooltipContent'
 import type { ContentType as TooltipContentType } from 'recharts/types/component/Tooltip'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cx } from '@/lib/primitive'
 
@@ -220,7 +220,7 @@ const Chart = ({
       <div
         data-chart={chartId}
         ref={ref}
-        className={twMerge(
+        className={cn(
           'z-20 flex w-full justify-center text-xs',
           "[&_.recharts-cartesian-axis-tick_text]:fill-muted-fg [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/80 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-layer]:outline-hidden [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-hidden [&_.recharts-surface]:outline-hidden [&_.recharts-surface_.recharts-text.recharts-cartesian-axis-tick-value]:*:fill-muted-fg",
           "[&_.recharts-dot[fill='#fff']]:fill-(--line-color)",
@@ -331,7 +331,7 @@ const XAxis = ({
   const tick = layout === 'horizontal' ? tickHorizontal : undefined
   return (
     <XAxisPrimitive
-      className={twMerge('text-muted-fg text-xs **:[text]:fill-muted-fg', className)}
+      className={cn('text-muted-fg text-xs **:[text]:fill-muted-fg', className)}
       interval={displayEdgeLabelsOnly ? 'preserveStartEnd' : intervalType}
       tick={tick}
       ticks={ticks}
@@ -365,7 +365,7 @@ const YAxis = ({
 
   return (
     <YAxisPrimitive
-      className={twMerge('text-muted-fg text-xs **:[text]:fill-muted-fg', className)}
+      className={cn('text-muted-fg text-xs **:[text]:fill-muted-fg', className)}
       width={(width ?? layout === 'horizontal') ? 40 : 80}
       domain={domain}
       tick={tick}
@@ -383,7 +383,7 @@ const CartesianGrid = ({ className, ...props }: CartesianGridPrimitiveProps) => 
   const { layout } = useChart()
   return (
     <CartesianGridPrimitive
-      className={twMerge('stroke-1 stroke-muted', className)}
+      className={cn('stroke-1 stroke-muted', className)}
       horizontal={layout !== 'vertical'}
       vertical={layout === 'vertical'}
       {...props}
@@ -455,7 +455,7 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
   return (
     <div
       ref={ref}
-      className={twMerge(
+      className={cn(
         'grid min-w-48 items-start rounded-lg bg-overlay/70 p-3 py-2 text-overlay-fg text-xs ring ring-current/10 backdrop-blur-lg',
         className
       )}
@@ -475,7 +475,7 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
           return (
             <div
               key={key}
-              className={twMerge(
+              className={cn(
                 'flex w-full flex-wrap items-stretch gap-2 *:[svg]:text-muted-fg',
                 indicator === 'dot' && 'items-center *:[svg]:size-2.5',
                 indicator === 'line' && '*:[svg]:h-full *:[svg]:w-2.5'
@@ -490,7 +490,7 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
                   ) : (
                     !hideIndicator && (
                       <div
-                        className={twMerge(
+                        className={cn(
                           'shrink-0 rounded-full border-(--color-border) bg-(--color-bg)',
                           indicator === 'dot' && 'size-2.5',
                           indicator === 'line' && 'w-1',
@@ -508,7 +508,7 @@ const ChartTooltipContent = <TValue extends ValueType, TName extends NameType>({
                     )
                   )}
                   <div
-                    className={twMerge(
+                    className={cn(
                       'flex flex-1 justify-between leading-none',
                       nestLabel ? 'items-end' : 'items-center'
                     )}
@@ -583,7 +583,7 @@ const ChartLegendContent = ({
           <ToggleButton
             key={key}
             id={key}
-            className={twMerge(
+            className={cn(
               'flex items-center gap-2 rounded-sm px-2 py-1 text-muted-fg *:[svg]:-mx-0.5 *:[svg]:size-2.5 *:[svg]:shrink-0 *:[svg]:text-muted-fg',
               'selected:bg-secondary/70 selected:text-secondary-fg',
               'hover:bg-secondary/70 hover:text-secondary-fg'

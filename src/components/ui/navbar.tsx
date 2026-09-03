@@ -3,7 +3,7 @@
 import { Bars2Icon } from '@heroicons/react/20/solid'
 import { LayoutGroup, motion } from 'motion/react'
 import { createContext, use, useCallback, useId, useMemo, useState } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { Link, type LinkProps } from '@/components/ui/link'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cx } from '@/lib/primitive'
@@ -79,7 +79,7 @@ const NavbarProvider = ({
   return (
     <NavbarContext value={contextValue}>
       <div
-        className={twMerge(
+        className={cn(
           'peer/navbar group/navbar relative isolate z-10 flex w-full flex-col',
           'has-data-navbar-inset:min-h-svh has-data-navbar-inset:bg-navbar dark:has-data-navbar-inset:bg-bg',
           className
@@ -152,7 +152,7 @@ const Navbar = ({
       ref={ref}
       data-placement={placement ?? undefined}
       data-navbar-sticky={isSticky}
-      className={twMerge([
+      className={cn([
         'group/navbar-intent relative isolate',
         isSticky && 'sticky top-0 z-40',
         placement === 'top' && intent === 'float' && 'md:pt-8',
@@ -162,7 +162,7 @@ const Navbar = ({
       {...props}
     >
       <div
-        className={twMerge(
+        className={cn(
           'relative isolate hidden py-(--navbar-gutter) [--navbar-gutter:--spacing(2.5)] md:block',
           intent === 'float' &&
             'rounded-xl bg-bg py-0 *:data-[navbar=content]:max-w-7xl *:data-[navbar=content]:rounded-xl *:data-[navbar=content]:border *:data-[navbar=content]:bg-navbar *:data-[navbar=content]:px-4 *:data-[navbar=content]:py-(--navbar-gutter) *:data-[navbar=content]:shadow-xs',
@@ -188,7 +188,7 @@ const NavbarSection = ({ className, ...props }: React.ComponentProps<'div'>) => 
     <LayoutGroup id={id}>
       <div
         data-slot="navbar-section"
-        className={twMerge(
+        className={cn(
           'col-span-full grid grid-cols-[auto_1fr] flex-col gap-3 gap-y-0.5 md:flex md:flex-none md:grid-cols-none md:flex-row md:items-center md:gap-2.5',
           className
         )}
@@ -251,19 +251,19 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
 }
 
 const NavbarSpacer = ({ className, ref, ...props }: React.ComponentProps<'div'>) => {
-  return <div ref={ref} className={twMerge('-ms-4 flex-1', className)} {...props} />
+  return <div ref={ref} className={cn('-ms-4 flex-1', className)} {...props} />
 }
 
 const NavbarStart = ({ className, ref, ...props }: React.ComponentProps<'div'>) => {
-  return <div ref={ref} className={twMerge('relative p-2 py-4 md:p-0.5', className)} {...props} />
+  return <div ref={ref} className={cn('relative p-2 py-4 md:p-0.5', className)} {...props} />
 }
 
 const NavbarGap = ({ className, ref, ...props }: React.ComponentProps<'div'>) => {
-  return <div ref={ref} className={twMerge('mx-2', className)} {...props} />
+  return <div ref={ref} className={cn('mx-2', className)} {...props} />
 }
 
 const NavbarSeparator = ({ className, ...props }: React.ComponentProps<typeof Separator>) => {
-  return <Separator orientation="vertical" className={twMerge('h-5', className)} {...props} />
+  return <Separator orientation="vertical" className={cn('h-5', className)} {...props} />
 }
 
 const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<'div'>) => {
@@ -271,7 +271,7 @@ const NavbarMobile = ({ className, ref, ...props }: React.ComponentProps<'div'>)
     <div
       ref={ref}
       data-slot="navbar-mobile"
-      className={twMerge(
+      className={cn(
         'group/navbar-mobile flex items-center gap-x-3 px-4 py-2.5 md:hidden',
         'group-has-data-navbar-sticky/navbar:sticky group-has-data-navbar-sticky/navbar:bg-navbar',
         // top
@@ -290,7 +290,7 @@ const NavbarInset = ({ className, ref, children, ...props }: React.ComponentProp
     <div
       ref={ref}
       data-navbar-inset={true}
-      className={twMerge('flex flex-1 flex-col bg-navbar pb-2 md:px-2 dark:bg-bg', className)}
+      className={cn('flex flex-1 flex-col bg-navbar pb-2 md:px-2 dark:bg-bg', className)}
       {...props}
     >
       <div className="grow bg-bg p-6 md:rounded-lg md:p-16 md:shadow-xs md:ring-1 md:ring-fg/15 md:dark:bg-navbar md:dark:ring-border md:dark:group-has-data-navbar-inset/navbar:bg-muted">

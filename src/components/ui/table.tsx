@@ -28,7 +28,7 @@ import {
   TableHeader as TableHeaderPrimitive,
   useTableOptions,
 } from 'react-aria-components/Table'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { CardDescription, CardTitle } from '@/components/ui/card'
 import { cx } from '@/lib/primitive'
 import { Checkbox, CheckboxField } from './checkbox'
@@ -70,7 +70,7 @@ const Table = ({
     <TableContext.Provider value={{ allowResize, bleed, grid, striped }}>
       <div className="flow-root">
         <div
-          className={twMerge(
+          className={cn(
             'relative -mx-(--gutter) overflow-x-auto whitespace-nowrap [--gutter-y:--spacing(2)] has-data-[slot=table-resizable-container]:overflow-auto',
             className
           )}
@@ -357,7 +357,7 @@ const TableHeader = <T extends object>({
       {allowsDragging && (
         <Column
           data-slot="table-column"
-          className={twMerge(
+          className={cn(
             'first:ps-(--gutter,--spacing(2))',
             !bleed && 'sm:last:pe-1 sm:first:ps-1'
           )}
@@ -369,7 +369,7 @@ const TableHeader = <T extends object>({
           minWidth={32}
           style={{ width: 32 }}
           data-slot="table-column"
-          className={twMerge(
+          className={cn(
             'first:ps-(--gutter,--spacing(2))',
             !bleed && 'sm:last:pe-1 sm:first:ps-1'
           )}
@@ -419,7 +419,7 @@ const TableRow = <T extends object>({
             isFocusVisible,
           }
         ) =>
-          twMerge(
+          cn(
             'group relative cursor-default outline outline-transparent',
             isFocusVisible &&
               'bg-primary/5 outline-primary ring-3 ring-ring/20 hover:bg-primary/10',
@@ -532,7 +532,7 @@ const TableCell = ({ className, ref, ...props }: TableCellProps) => {
 }
 
 const TableFooter = <T extends object>({ className, ...props }: TableFooterProps<T>) => {
-  return <TableFooterPrimitive className={twMerge('**:font-semibold', className)} {...props} />
+  return <TableFooterPrimitive className={cn('**:font-semibold', className)} {...props} />
 }
 
 export type { TableColumnProps, TableProps, TableRowProps }

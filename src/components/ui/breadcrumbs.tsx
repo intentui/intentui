@@ -5,7 +5,7 @@ import { createContext, use } from 'react'
 import type { BreadcrumbProps, BreadcrumbsProps } from 'react-aria-components/Breadcrumbs'
 import { Breadcrumb, Breadcrumbs as BreadcrumbsPrimitive } from 'react-aria-components/Breadcrumbs'
 import type { LinkProps } from 'react-aria-components/Link'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Link } from './link'
 
@@ -20,7 +20,7 @@ const Breadcrumbs = <T extends object>({
 }: BreadcrumbsProps<T> & BreadcrumbsContextProps) => {
   return (
     <BreadcrumbsProvider value={{ separator: props.separator }}>
-      <BreadcrumbsPrimitive {...props} className={twMerge('flex items-center gap-2', className)} />
+      <BreadcrumbsPrimitive {...props} className={cn('flex items-center gap-2', className)} />
     </BreadcrumbsProvider>
   )
 }

@@ -8,7 +8,7 @@ import {
   Tooltip as TooltipPrimitive,
   TooltipTrigger as TooltipTriggerPrimitive,
 } from 'react-aria-components/Tooltip'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
 

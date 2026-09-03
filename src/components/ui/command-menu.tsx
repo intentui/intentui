@@ -18,7 +18,7 @@ import { Menu as MenuPrimitive, MenuSection } from 'react-aria-components/Menu'
 import type { ModalOverlayProps } from 'react-aria-components/Modal'
 import { Modal, ModalContext, ModalOverlay } from 'react-aria-components/Modal'
 import { SearchField, type SearchFieldProps } from 'react-aria-components/SearchField'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { DropdownKeyboard } from './dropdown'
 import { Loader } from './loader'
@@ -184,7 +184,7 @@ const CommandMenuSection = <T extends object>({
   return (
     <MenuSection
       ref={ref}
-      className={twMerge(
+      className={cn(
         'col-span-full grid grid-cols-[auto_1fr] content-start gap-y-0.25',
         className
       )}
@@ -216,7 +216,7 @@ interface CommandMenuDescriptionProps extends React.ComponentProps<typeof MenuDe
 
 const CommandMenuDescription = ({ className, ...props }: CommandMenuDescriptionProps) => {
   return (
-    <MenuDescription className={twMerge('col-start-3 row-start-1 ms-auto', className)} {...props} />
+    <MenuDescription className={cn('col-start-3 row-start-1 ms-auto', className)} {...props} />
   )
 }
 
@@ -236,13 +236,13 @@ const CommandMenuSeparator = ({
   className,
   ...props
 }: React.ComponentProps<typeof MenuSeparator>) => (
-  <MenuSeparator className={twMerge('-mx-2', className)} {...props} />
+  <MenuSeparator className={cn('-mx-2', className)} {...props} />
 )
 
 const CommandMenuFooter = ({ className, ...props }: React.ComponentProps<'div'>) => {
   return (
     <div
-      className={twMerge(
+      className={cn(
         'col-span-full flex-none border-t px-2 py-1.5 text-muted-fg text-sm',
         '*:[kbd]:inset-ring *:[kbd]:inset-ring-fg/10 *:[kbd]:mx-1 *:[kbd]:inline-grid *:[kbd]:h-4 *:[kbd]:min-w-4 *:[kbd]:place-content-center *:[kbd]:rounded-xs *:[kbd]:bg-secondary',
         className
@@ -258,7 +258,7 @@ const CommandMenuShortcut = ({
   ...props
 }: React.ComponentProps<typeof DropdownKeyboard>) => (
   <DropdownKeyboard
-    className={twMerge(
+    className={cn(
       'gap-0.5 font-sans text-[10.5px] uppercase *:inset-ring *:inset-ring-muted-fg/20 *:grid *:size-5.5 *:place-content-center *:rounded-xs *:bg-bg',
       className
     )}

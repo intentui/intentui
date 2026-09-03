@@ -4,7 +4,7 @@ import {
   SwitchField as SwitchFieldPrimitive,
   type SwitchFieldProps,
 } from 'react-aria-components/Switch'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { Label } from '@/components/ui/field'
 import { cx } from '@/lib/primitive'
 
@@ -40,7 +40,7 @@ export function Switch({ children, className, ...props }: SwitchButtonProps) {
         <>
           <span
             data-slot="indicator"
-            className={twMerge(
+            className={cn(
               'relative isolate inline-flex h-6 w-10 cursor-default self-start rounded-full p-0.75 sm:mt-0.5 sm:h-5 sm:w-8 ltr:col-start-2 rtl:col-start-1',
               'transition duration-200 ease-in-out',
               'inset-ring inset-ring-input bg-input/30',

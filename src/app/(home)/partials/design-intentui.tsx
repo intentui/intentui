@@ -1,7 +1,7 @@
 'use client'
 
 import { Link } from 'react-aria-components/Link'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { PageContainer } from '@/components/page-container'
 import { buttonStyles } from '@/components/ui/button'
 
@@ -50,7 +50,7 @@ export function DesignIntentui() {
 export const MarkLogo = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      className={twMerge('mx-auto inline h-6', className)}
+      className={cn('mx-auto inline h-6', className)}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 21 7"

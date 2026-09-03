@@ -8,14 +8,14 @@ import {
   TagGroup as PrimitiveTagGroup,
   TagList as PrimitiveTagList,
 } from 'react-aria-components/TagGroup'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 
 export function TagGroup({ className, ...props }: TagGroupProps) {
   return (
     <PrimitiveTagGroup
       data-slot="control"
-      className={twMerge('flex flex-col gap-y-1 *:data-[slot=label]:font-medium', className)}
+      className={cn('flex flex-col gap-y-1 *:data-[slot=label]:font-medium', className)}
       {...props}
     />
   )

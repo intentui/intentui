@@ -1,5 +1,5 @@
 'use client'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import SwitchDescriptionDemo from '@/components/examples/controls/switch/switch-description-example'
 import CheckboxGroupDescriptionDemo from '@/components/examples/forms/checkbox/checkbox-group-description-example'
 import RadioGroupDescriptionDemo from '@/components/examples/forms/radio-group/radio-group-description-example'
@@ -96,7 +96,7 @@ export function BlocksCard({ className, ...props }: React.ComponentProps<'div'>)
   return (
     <div
       {...props}
-      className={twMerge(
+      className={cn(
         'flex min-h-32 items-center justify-center rounded-2xl border p-6 *:min-w-56 sm:min-h-48 sm:p-10 dark:bg-muted/30',
         className
       )}
@@ -108,6 +108,6 @@ export function BlocksCard({ className, ...props }: React.ComponentProps<'div'>)
 
 function Center({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <div className={twMerge('flex size-full items-center justify-center', className)} {...props} />
+    <div className={cn('flex size-full items-center justify-center', className)} {...props} />
   )
 }

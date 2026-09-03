@@ -10,7 +10,7 @@ import {
 } from 'react-aria-components/DatePicker'
 import type { GroupProps } from 'react-aria-components/Group'
 import type { PopoverProps } from 'react-aria-components/Popover'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cx } from '@/lib/primitive'
 import { Calendar } from './calendar'

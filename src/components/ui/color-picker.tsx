@@ -8,7 +8,7 @@ import {
   type ColorPickerProps as ColorPickerPrimitiveProps,
   ColorPickerStateContext,
 } from 'react-aria-components/ColorPicker'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { Button } from './button'
 import { fieldStyles } from './field'
 
@@ -18,7 +18,7 @@ interface ColorPickerProps extends ColorPickerPrimitiveProps {
 
 const ColorPicker = ({ className, ...props }: ColorPickerProps) => {
   return (
-    <div data-slot="control" className={twMerge(fieldStyles({ className: 'w-fit' }), className)}>
+    <div data-slot="control" className={cn(fieldStyles({ className: 'w-fit' }), className)}>
       <ColorPickerPrimitive {...props} />
     </div>
   )

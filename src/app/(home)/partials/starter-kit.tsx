@@ -1,6 +1,6 @@
 'use client'
 
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { IconBrandTanstack, IconBrandVite } from '@/components/docs/framework-guides'
 import { BrandLaravelIcon } from '@/components/icons/brand-laravel-icon'
 import { BrandNextjsIcon } from '@/components/icons/brand-nextjs-icon'
@@ -82,7 +82,7 @@ export function Wrapper({
   return (
     <div
       data-slot={slot}
-      className={twMerge(
+      className={cn(
         'relative rounded-md border bg-overlay px-4 py-10 sm:px-6 sm:py-8',
         className
       )}

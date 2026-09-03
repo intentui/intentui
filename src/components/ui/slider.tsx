@@ -9,13 +9,13 @@ import {
   SliderThumb as PrimitiveSliderThumb,
   SliderTrack as PrimitiveSliderTrack,
 } from 'react-aria-components/Slider'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 
 export function SliderGroup({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={twMerge('flex items-center gap-x-3 *:data-[slot=icon]:size-5', className)}
+      className={cn('flex items-center gap-x-3 *:data-[slot=icon]:size-5', className)}
       {...props}
     />
   )

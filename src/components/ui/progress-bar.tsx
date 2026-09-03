@@ -6,7 +6,7 @@ import {
   type ProgressBarProps,
   type ProgressBarRenderProps,
 } from 'react-aria-components/ProgressBar'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 
 const ProgressBarContext = createContext<ProgressBarRenderProps | null>(null)
@@ -41,7 +41,7 @@ export function ProgressBarHeader({ className, ...props }: React.ComponentProps<
   return (
     <div
       data-slot="progress-bar-header"
-      className={twMerge('flex items-center justify-between', className)}
+      className={cn('flex items-center justify-between', className)}
       {...props}
     />
   )
@@ -55,7 +55,7 @@ export function ProgressBarValue({
   return (
     <span
       data-slot="progress-bar-value"
-      className={twMerge('text-base/6 sm:text-sm/6', className)}
+      className={cn('text-base/6 sm:text-sm/6', className)}
       {...props}
     >
       {valueText}
@@ -77,7 +77,7 @@ export function ProgressBarTrack({ className, ref, ...props }: React.ComponentPr
       <div ref={ref} className="flex w-full items-center gap-x-2" {...props}>
         <div
           data-slot="progress-container"
-          className={twMerge(
+          className={cn(
             '[--progress-content-bg:var(--color-primary)]',
             'relative h-1.5 w-full min-w-52 overflow-hidden rounded-full bg-(--progress-container-bg,var(--color-secondary)) outline-1 outline-transparent -outline-offset-1 will-change-transform',
             className

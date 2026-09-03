@@ -1,7 +1,7 @@
 'use client'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { findNeighbour, type Root as PageTreeRoot } from 'fumadocs-core/page-tree'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { buttonStyles } from '@/components/ui/button'
 import { Link } from '@/components/ui/link'
 
@@ -16,7 +16,7 @@ export const Pager = ({ tree, url, className }: PageProps) => {
 
   return (
     <div
-      className={twMerge('not-typeset mt-6 flex w-full justify-between gap-3 sm:mt-12', className)}
+      className={cn('not-typeset mt-6 flex w-full justify-between gap-3 sm:mt-12', className)}
     >
       {neighbours.previous && (
         <div className="group w-40">

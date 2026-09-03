@@ -6,7 +6,7 @@ import {
   type MeterProps as PrimitiveMeterProps,
   type MeterRenderProps as PrimitiveMeterRenderProps,
 } from 'react-aria-components/Meter'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 
 interface MeterRenderProps extends PrimitiveMeterRenderProps {
@@ -48,7 +48,7 @@ export function MeterTrack({ className, ...props }: React.ComponentProps<'div'>)
   return (
     <div
       data-slot="meter-track"
-      className={twMerge(
+      className={cn(
         '[--meter-height:--spacing(1.5)]',
         'relative h-(--meter-height) w-full overflow-hidden rounded-full bg-secondary outline outline-transparent -outline-offset-1',
         className
@@ -72,7 +72,7 @@ export function MeterValue({
   return (
     <span
       data-slot="meter-value"
-      className={twMerge('text-base/6 sm:text-sm/6', className)}
+      className={cn('text-base/6 sm:text-sm/6', className)}
       {...props}
     >
       {valueText}
@@ -84,7 +84,7 @@ export function MeterHeader({ className, ...props }: React.ComponentProps<'div'>
   return (
     <div
       data-slot="meter-header"
-      className={twMerge('flex items-center justify-between', className)}
+      className={cn('flex items-center justify-between', className)}
       {...props}
     />
   )

@@ -13,7 +13,7 @@ import {
   TreeItem as TreeItemPrimitive,
   TreeItemContent,
 } from 'react-aria-components/Tree'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Checkbox, CheckboxField } from './checkbox'
 
@@ -62,7 +62,7 @@ const TreeContent = ({ className, children, ...props }: TreeContentProps) => {
     <TreeItemContent {...props}>
       {(values) => (
         <div
-          className={twMerge(
+          className={cn(
             'relative flex w-full min-w-0 items-center gap-x-1 truncate text-sm/6',
             className
           )}

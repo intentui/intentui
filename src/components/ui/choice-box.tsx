@@ -3,7 +3,7 @@
 import { createContext, use } from 'react'
 import type { GridListItemProps, GridListProps, TextProps } from 'react-aria-components'
 import { composeRenderProps, GridList, GridListItem, Text } from 'react-aria-components'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
 import { cx } from '@/lib/primitive'
@@ -201,7 +201,7 @@ const ChoiceBoxLabel = ({ className, ref, ...props }: ChoiceBoxLabelProps) => {
     <Text
       data-slot="label"
       ref={ref}
-      className={twMerge(
+      className={cn(
         'select-none text-base/6 text-fg group-disabled:opacity-50 sm:text-sm/6',
         'col-start-1 row-start-1',
         'group-has-[svg:not([data-slot=check-indicator])]:col-start-2',
@@ -220,7 +220,7 @@ const ChoiceBoxDescription = ({ className, ref, ...props }: ChoiceBoxDescription
     <Text
       slot="description"
       ref={ref}
-      className={twMerge(
+      className={cn(
         'col-start-1 row-start-2',
         'group-has-[svg:not([data-slot=check-indicator])]:col-start-2',
         'group-has-data-[slot=avatar]:col-start-2',

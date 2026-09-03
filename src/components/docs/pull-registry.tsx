@@ -3,7 +3,7 @@
 import { track } from '@vercel/analytics'
 import { useState } from 'react'
 import { Button } from 'react-aria-components/Button'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { Link } from '@/components/ui/link'
 import { app } from '@/config/app'
 import { useClipboard } from '@/hooks/use-clipboard'
@@ -31,7 +31,7 @@ export function CopyButton({
 }: CopyButtonProps) {
   return (
     <Button
-      className={twMerge(
+      className={cn(
         'relative h-8 w-14 overflow-hidden p-1.5 font-medium pressed:text-fg text-muted-fg text-sm/6 hover:text-fg',
         className
       )}

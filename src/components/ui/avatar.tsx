@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 
 export interface AvatarProps {
   src?: string | null
@@ -35,7 +35,7 @@ export function Avatar({
     <span
       data-slot="avatar"
       {...props}
-      className={twMerge(
+      className={cn(
         'inline-grid size-(--avatar-size) shrink-0 align-middle outline-1 outline-fg/(--ring-opacity) -outline-offset-1 [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1 *:size-(--avatar-size)',
         size === 'xs' && '[--avatar-size:--spacing(5)]',
         size === 'sm' && '[--avatar-size:--spacing(6)]',

@@ -12,7 +12,7 @@ import {
   type CheckboxGroupProps,
 } from 'react-aria-components/CheckboxGroup'
 import { composeRenderProps } from 'react-aria-components/composeRenderProps'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Label } from '@/components/ui/field'
 
@@ -64,13 +64,13 @@ export function Checkbox({ className, ...props }: CheckboxButtonProps) {
 
           return (
             <div
-              className={twMerge(
+              className={cn(
                 'grid grid-cols-[1.125rem_1fr] items-center gap-y-1 has-data-[slot=control-label]:gap-x-3 sm:grid-cols-[1rem_1fr]'
               )}
             >
               <span
                 data-slot="indicator"
-                className={twMerge([
+                className={cn([
                   'col-start-1 row-start-1 relative inset-ring inset-ring-input isolate flex shrink-0 items-center justify-center rounded bg-(--control-bg,transparent) text-bg transition group-hover:inset-ring-muted-fg/30 group-focus-visible:inset-ring-ring',
                   'size-4.5 *:data-[slot=check-indicator]:size-4 sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5',
                   'in-disabled:bg-muted',

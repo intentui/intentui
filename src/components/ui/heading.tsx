@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 
 type HeadingType = { level?: 1 | 2 | 3 | 4 } & React.ComponentPropsWithoutRef<
   'h1' | 'h2' | 'h3' | 'h4'
@@ -12,7 +12,7 @@ const Heading = ({ className, level = 1, ...props }: HeadingProps) => {
   const Element: `h${typeof level}` = `h${level}`
   return (
     <Element
-      className={twMerge(
+      className={cn(
         'font-display font-semibold text-fg tracking-tight',
         level === 1 && 'text-xl/8 sm:text-2xl/8',
         level === 2 && 'text-lg/6 sm:text-xl/8',

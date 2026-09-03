@@ -5,7 +5,7 @@ import { Button as PrimitiveButton } from 'react-aria-components/Button'
 import { Dialog as PrimitiveDialog } from 'react-aria-components/Dialog'
 import { Heading, type HeadingProps } from 'react-aria-components/Heading'
 import type { TextProps } from 'react-aria-components/Text'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Button, type ButtonProps } from './button'
 
@@ -18,7 +18,7 @@ const Dialog = ({
     <PrimitiveDialog
       data-slot="dialog"
       role={role}
-      className={twMerge(
+      className={cn(
         'peer/dialog group/dialog relative flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding))] flex-col overflow-hidden outline-hidden [--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]',
         className
       )}
@@ -40,7 +40,7 @@ const DialogHeader = ({ className, ...props }: DialogHeaderProps) => {
   return (
     <div
       data-slot="dialog-header"
-      className={twMerge(
+      className={cn(
         'relative space-y-1 p-(--gutter) pb-[calc(var(--gutter)---spacing(3))]',
         className
       )}
@@ -63,7 +63,7 @@ const DialogTitle = ({ className, ref, ...props }: DialogTitleProps) => (
   <Heading
     slot="title"
     ref={ref}
-    className={twMerge('text-balance font-semibold text-fg text-lg/6 sm:text-base/6', className)}
+    className={cn('text-balance font-semibold text-fg text-lg/6 sm:text-base/6', className)}
     {...props}
   />
 )
@@ -74,7 +74,7 @@ interface DialogDescriptionProps extends TextProps {
 const DialogDescription = ({ className, ref, ...props }: DialogDescriptionProps) => (
   <p
     data-slot="description"
-    className={twMerge(
+    className={cn(
       'text-pretty text-base/6 text-muted-fg group-disabled:opacity-50 sm:text-sm/6',
       className
     )}
@@ -87,7 +87,7 @@ interface DialogBodyProps extends React.ComponentProps<'div'> {}
 const DialogBody = ({ className, ...props }: DialogBodyProps) => (
   <div
     data-slot="dialog-body"
-    className={twMerge(
+    className={cn(
       'isolate flex min-h-0 flex-1 flex-col overflow-auto px-(--gutter) py-1',
       '**:data-[slot=dialog-footer]:px-0 **:data-[slot=dialog-footer]:pt-0',
       className
@@ -101,7 +101,7 @@ const DialogFooter = ({ className, ...props }: DialogFooterProps) => {
   return (
     <div
       data-slot="dialog-footer"
-      className={twMerge(
+      className={cn(
         'isolate mt-auto flex flex-col-reverse justify-end gap-3 p-(--gutter) pt-[calc(var(--gutter)---spacing(2))] group-not-has-data-[slot=dialog-body]/dialog:pt-0 group-not-has-data-[slot=dialog-body]/popover:pt-0 sm:flex-row',
         className
       )}

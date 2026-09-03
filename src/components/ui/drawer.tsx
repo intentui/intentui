@@ -12,7 +12,7 @@ import {
   type ModalOverlayProps,
 } from 'react-aria-components/Modal'
 import { Text, type TextProps } from 'react-aria-components/Text'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { cx } from '@/lib/primitive'
 import { Button, type ButtonProps } from './button'
 
@@ -165,24 +165,24 @@ const DrawerHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
   return (
     <div
       slot="header"
-      className={twMerge('flex flex-col p-4 text-center sm:text-start', className)}
+      className={cn('flex flex-col p-4 text-center sm:text-start', className)}
       {...props}
     />
   )
 }
 
 const DrawerTitle = ({ className, ...props }: HeadingProps) => (
-  <Heading slot="title" className={twMerge('font-semibold text-lg/8', className)} {...props} />
+  <Heading slot="title" className={cn('font-semibold text-lg/8', className)} {...props} />
 )
 
 const DrawerDescription = ({ className, ...props }: TextProps) => (
-  <Text slot="description" className={twMerge('text-muted-fg text-sm', className)} {...props} />
+  <Text slot="description" className={cn('text-muted-fg text-sm', className)} {...props} />
 )
 
 const DrawerBody = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     slot="body"
-    className={twMerge(
+    className={cn(
       'isolate flex max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding))] flex-col overflow-auto px-4 py-1 will-change-scroll',
       className
     )}
@@ -194,7 +194,7 @@ const DrawerFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
   return (
     <div
       slot="footer"
-      className={twMerge(
+      className={cn(
         'isolate mt-auto flex flex-col-reverse justify-end gap-2 p-4 sm:flex-row',
         className
       )}

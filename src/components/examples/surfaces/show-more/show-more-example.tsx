@@ -1,6 +1,6 @@
 'use client'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { ShowMore } from '@/components/ui/show-more'
 
 export default function ShowMoreDemo() {
@@ -11,7 +11,7 @@ export default function ShowMoreDemo() {
           <>
             Show {isSelected ? 'less' : 'more'}
             <ChevronDownIcon
-              className={twMerge(
+              className={cn(
                 isSelected ? 'rotate-180' : '',
                 'size-4 transition-transform duration-200'
               )}

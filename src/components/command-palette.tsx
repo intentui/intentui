@@ -16,7 +16,7 @@ import {
 import { formatHex, parse } from 'culori'
 import { useRouter } from 'next/navigation'
 import { useMemo, useState } from 'react'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { useDebounce } from 'use-debounce'
 import { ColorSwatch } from '@/components/ui/color-swatch'
 import {

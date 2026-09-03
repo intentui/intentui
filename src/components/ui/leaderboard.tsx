@@ -2,13 +2,13 @@
 
 import { Label, type LabelProps } from 'react-aria-components/Label'
 import { ProgressBar, type ProgressBarProps } from 'react-aria-components/ProgressBar'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { cx } from '@/lib/primitive'
 
 export function Leaderboard({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={twMerge('flex flex-col gap-y-(--leaderboard-gutter,--spacing(4))', className)}
+      className={cn('flex flex-col gap-y-(--leaderboard-gutter,--spacing(4))', className)}
       {...props}
     />
   )
@@ -18,7 +18,7 @@ export function LeaderboardHeader({ className, ...props }: React.ComponentProps<
   return (
     <div
       data-slot="leaderboard-header"
-      className={twMerge(
+      className={cn(
         'grid auto-rows-min grid-rows-[auto_auto] items-start gap-1 px-(--gutter) has-data-[slot=card-action]:grid-cols-[1fr_auto]',
         className
       )}
@@ -31,7 +31,7 @@ export function LeaderboardTitle({ className, ...props }: React.ComponentProps<'
   return (
     <div
       data-slot="leaderboard-title"
-      className={twMerge('text-balance font-semibold text-base/6', className)}
+      className={cn('text-balance font-semibold text-base/6', className)}
       {...props}
     />
   )
@@ -41,7 +41,7 @@ export function LeaderboardAction({ className, ...props }: React.ComponentProps<
   return (
     <div
       data-slot="leaderboard-action"
-      className={twMerge(
+      className={cn(
         'col-start-2 row-span-2 row-start-1 self-start justify-self-end',
         className
       )}
@@ -54,7 +54,7 @@ export function LeaderboardContent({ className, ...props }: React.ComponentProps
   return (
     <ul
       data-slot="leaderboard-content"
-      className={twMerge('flex max-h-96 list-none flex-col gap-y-1', className)}
+      className={cn('flex max-h-96 list-none flex-col gap-y-1', className)}
       {...props}
     />
   )
@@ -106,7 +106,7 @@ export function LeaderboardStart({ className, ...props }: LabelProps) {
   return (
     <Label
       data-slot="leaderboard-start"
-      className={twMerge('flex items-center gap-x-2', className)}
+      className={cn('flex items-center gap-x-2', className)}
       {...props}
     />
   )
@@ -114,6 +114,6 @@ export function LeaderboardStart({ className, ...props }: LabelProps) {
 
 export function LeaderboardEnd({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <div data-slot="leaderboard-start" className={twMerge('tabular-nums', className)} {...props} />
+    <div data-slot="leaderboard-start" className={cn('tabular-nums', className)} {...props} />
   )
 }

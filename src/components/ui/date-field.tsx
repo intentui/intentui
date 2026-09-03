@@ -5,7 +5,7 @@ import {
   DateInput as DateInputPrimitive,
   DateSegment,
 } from 'react-aria-components/DateField'
-import { twJoin } from 'tailwind-merge'
+import { twJoin } from 'cn'
 import { cx } from '@/lib/primitive'
 import { fieldStyles } from './field'
 

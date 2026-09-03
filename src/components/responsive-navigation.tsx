@@ -15,7 +15,7 @@ import {
   Popover,
   type PopoverProps,
 } from 'react-aria-components/Menu'
-import { twJoin, twMerge } from 'tailwind-merge'
+import { twJoin, cn } from 'cn'
 import { components, dm, gs, prologue, sortedGsChildren } from '@/components/docs/aside'
 import { BrandDiscordIcon } from '@/components/icons/brand-discord-icon'
 import { BrandGithubIcon } from '@/components/icons/brand-github-icon'
@@ -61,7 +61,7 @@ export function ResponsiveNavigation({ className, popover }: ResponsiveNavigatio
   }, [pathname])
   return (
     <nav
-      className={twMerge(
+      className={cn(
         'sticky top-0 z-40 flex items-center bg-bg px-2 py-2 lg:hidden',
         pathname === '/' && 'bg-bg',
         className
@@ -250,7 +250,7 @@ function NavLink({ href, ...props }: NavLinkProps) {
       render={(domProps) =>
         'href' in domProps ? <NextLink {...domProps} /> : <div {...domProps} />
       }
-      className={twMerge(
+      className={cn(
         'mb-0.5 flex items-center justify-between rounded-lg px-2 py-2.5 font-medium text-xl/6',
         'focus:outline-hidden',
         'hover:bg-fg/10 hover:text-secondary-fg',

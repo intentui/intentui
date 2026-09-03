@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useRef } from 'react'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { CopyButton } from '@/components/docs/copy-button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { useClipboard } from '@/hooks/use-clipboard'
@@ -33,7 +33,7 @@ export const Pre = ({ className, ref, ...props }: React.ComponentProps<'pre'>) =
   return (
     <pre
       ref={ref}
-      className={twMerge('w-full p-4 text-sm/8 focus-visible:outline-hidden', className)}
+      className={cn('w-full p-4 text-sm/8 focus-visible:outline-hidden', className)}
       {...props}
     >
       {props.children}
@@ -66,7 +66,7 @@ export const PlainCode = ({
     <figure
       ref={ref}
       {...props}
-      className={twMerge(
+      className={cn(
         'not-typeset group relative my-6 max-w-4xl overflow-hidden rounded-lg border bg-secondary/50 text-sm/6',
         className
       )}

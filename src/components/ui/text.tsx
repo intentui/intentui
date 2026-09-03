@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import { tv } from 'tailwind-variants'
 import { cx } from '@/lib/primitive'
 import { Link } from './link'
@@ -8,7 +8,7 @@ export function Text({ className, ...props }: React.ComponentPropsWithoutRef<'p'
     <p
       data-slot="text"
       {...props}
-      className={twMerge('text-base/6 text-muted-fg sm:text-sm/6', className)}
+      className={cn('text-base/6 text-muted-fg sm:text-sm/6', className)}
     />
   )
 }
@@ -22,14 +22,14 @@ export function TextLink({ className, ...props }: React.ComponentPropsWithoutRef
 }
 
 export function Strong({ className, ...props }: React.ComponentPropsWithoutRef<'strong'>) {
-  return <strong {...props} className={twMerge('font-medium', className)} />
+  return <strong {...props} className={cn('font-medium', className)} />
 }
 
 export function Code({ className, ...props }: React.ComponentPropsWithoutRef<'code'>) {
   return (
     <code
       {...props}
-      className={twMerge(
+      className={cn(
         'rounded-sm border bg-muted px-0.5 font-medium text-sm sm:text-[0.8125rem]',
         className
       )}

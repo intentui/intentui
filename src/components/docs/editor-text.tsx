@@ -3,7 +3,7 @@
 import { CodeBracketIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
 import { useEffect, useState } from 'react'
 import { Tab } from 'react-aria-components/Tabs'
-import { twMerge } from 'tailwind-merge'
+import { cn } from 'cn'
 import generated from '@/../__registry__/generated'
 import { CodeHighlighter } from '@/components/docs/code-highlighter'
 import { CopyButton } from '@/components/docs/copy-button'
@@ -84,7 +84,7 @@ export function EditorText({ source }: Props) {
               {Object.keys(rawSourceCode).map((key) => (
                 <Tab
                   className={(values) =>
-                    twMerge(
+                    cn(
                       'flex cursor-default items-center gap-x-1.5 whitespace-nowrap px-2 py-2.5 font-mono text-muted-fg text-xs tracking-tight first:pl-3',
                       'border-transparent border-x outline-hidden first:border-l-0 **:data-[slot=icon]:-ml-0.5 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0',
                       (values.isSelected || values.isFocused || values.isFocusVisible) &&
