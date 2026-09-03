@@ -37,6 +37,7 @@
 - [Table](https://intentui.com/docs/components/collections/table.md)
 - [Tag Group](https://intentui.com/docs/components/collections/tag-group.md)
 - [Tree](https://intentui.com/docs/components/collections/tree.md)
+- [Virtualizer](https://intentui.com/docs/components/collections/virtualizer.md)
 
 ### Colors
 - [Color Area](https://intentui.com/docs/components/colors/color-area.md)
@@ -104,6 +105,7 @@
 - [Drawer](https://intentui.com/docs/components/overlays/drawer.md)
 - [Modal](https://intentui.com/docs/components/overlays/modal.md)
 - [Popover](https://intentui.com/docs/components/overlays/popover.md)
+- [Preview](https://intentui.com/docs/components/overlays/preview.md)
 - [Sheet](https://intentui.com/docs/components/overlays/sheet.md)
 - [Tooltip](https://intentui.com/docs/components/overlays/tooltip.md)
 
