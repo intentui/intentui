@@ -14,7 +14,7 @@ const data = [
 export default function RadarChartCircularGridDemo() {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Site audit</CardTitle>
         <CardDescription>Latest quality scores across five categories.</CardDescription>
       </CardHeader>

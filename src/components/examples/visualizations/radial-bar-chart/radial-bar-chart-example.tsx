@@ -12,7 +12,7 @@ const data = [
 export default function RadialBarChartDemo() {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Visitors by device</CardTitle>
         <CardDescription>Unique visitors during the last 30 days.</CardDescription>
       </CardHeader>

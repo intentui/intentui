@@ -14,7 +14,7 @@ const data = [
 export default function RadarChartMultipleDemo() {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Product health</CardTitle>
         <CardDescription>Compare this quarter with the previous quarter.</CardDescription>
       </CardHeader>

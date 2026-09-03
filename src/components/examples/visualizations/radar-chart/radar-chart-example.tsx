@@ -15,7 +15,7 @@ const data = [
 export default function RadarChartDemo() {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Team capability</CardTitle>
         <CardDescription>Average score across the team&apos;s core skills.</CardDescription>
       </CardHeader>

@@ -8,7 +8,7 @@ const data = [{ period: 'This month', uptime: 98, performance: 84, coverage: 72 
 export default function RadialBarChartMultipleDemo() {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Service health</CardTitle>
         <CardDescription>Operational metrics for the current month.</CardDescription>
       </CardHeader>

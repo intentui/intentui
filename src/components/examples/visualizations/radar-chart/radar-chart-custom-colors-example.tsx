@@ -14,7 +14,7 @@ const data = [
 export default function RadarChartCustomColorsDemo() {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Campaign reach</CardTitle>
         <CardDescription>Reach score by acquisition channel.</CardDescription>
       </CardHeader>

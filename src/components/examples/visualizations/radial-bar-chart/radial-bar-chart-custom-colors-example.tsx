@@ -13,7 +13,7 @@ const data = [
 export default function RadialBarChartCustomColorsDemo() {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Sessions by source</CardTitle>
         <CardDescription>Traffic distribution across acquisition channels.</CardDescription>
       </CardHeader>
