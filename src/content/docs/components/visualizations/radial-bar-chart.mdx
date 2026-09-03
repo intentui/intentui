@@ -1,0 +1,102 @@
+---
+title: "Radial Bar Chart"
+description: Radial bar charts display values as concentric arcs, useful for compact category comparisons, progress, and goal-oriented metrics.
+order: 7
+published: true
+references: ["https://recharts.org/en-US/api/RadialBarChart"]
+---
+
+<How isCenter={false} withNoPadding toUse="visualizations/radial-bar-chart/radial-bar-chart-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+
+<PackageCommand command="npx shadcn@latest add @intentui/radial-bar-chart" />
+
+## Composed components
+
+<Composed components={['chart']} />
+
+## Manual installation
+
+Install the chart dependencies, then copy the component source into your project.
+
+<PackageCommand command="npm i recharts react-aria-components" />
+
+<SourceCode toShow="radial-bar-chart" />
+
+## Usage
+
+Use a single series with `nameKey` when each row is a category. The component then assigns each category a color from `config` or the default palette.
+
+```tsx
+<RadialBarChart
+  data={data}
+  dataKey="visitors"
+  nameKey="device"
+  series={[{ dataKey: "visitors", name: "Visitors" }]}
+  config={{
+    Desktop: { label: "Desktop" },
+    Mobile: { label: "Mobile" },
+  }}
+/>
+```
+
+For concentric metrics, place the metrics in one data row and add an entry to `series` and `config` for each numeric field.
+
+## Examples
+
+### Multiple series
+
+Render several metrics as concentric bars. A selectable legend is enabled automatically for multiple series.
+
+<How isCenter={false} withNoPadding toUse="visualizations/radial-bar-chart/radial-bar-chart-multiple-example" />
+
+### Custom colors
+
+Use category keys in `config` to control the color of every bar in a single-series chart.
+
+<How isCenter={false} withNoPadding toUse="visualizations/radial-bar-chart/radial-bar-chart-custom-colors-example" />
+
+### Gauge
+
+Set the start and end angles, add a background track, and provide custom children to build a compact progress gauge.
+
+<How isCenter={false} withNoPadding toUse="visualizations/radial-bar-chart/radial-bar-chart-gauge-example" />
+
+## Component API
+
+### RadialBarChart
+
+<ApiParameters>
+  <ApiDescription>
+    **RadialBarChart** extends the native **`<div>`** element and composes the Intent UI **`<Chart>`** component.
+  </ApiDescription>
+  <ApiParameter name="angleAxisProps" type="ComponentProps<typeof PolarAngleAxis>" />
+  <ApiParameter name="chartProps" type='Omit<ComponentProps<typeof RadialBarChartPrimitive>, "data">' />
+  <ApiParameter name="children" type="ReactNode" />
+  <ApiParameter name="className" type="string" />
+  <ApiParameter name="colors" type="readonly string[]" defaultValue="DEFAULT_COLORS" />
+  <ApiParameter name="config" type="ChartConfig" />
+  <ApiParameter name="containerHeight" type="number" defaultValue="360" />
+  <ApiParameter name="data" type="Record<string, any>[]" />
+  <ApiParameter name="dataKey" type="string" />
+  <ApiParameter name="legend" type='BaseChartProps["legend"]' defaultValue="series.length > 1" />
+  <ApiParameter name="legendProps" type='BaseChartProps["legendProps"]' />
+  <ApiParameter name="nameKey" type="string" />
+  <ApiParameter name="series" type="RadialBarChartSeries[]" />
+  <ApiParameter name="tooltip" type='boolean | ComponentProps<typeof ChartTooltip>["content"]' defaultValue="true" />
+  <ApiParameter name="tooltipProps" type='Omit<ComponentProps<typeof ChartTooltip>, "content">' />
+  <ApiReference>
+    See the [Recharts RadialBarChart API reference](https://recharts.org/en-US/api/RadialBarChart) for primitive-specific options.
+  </ApiReference>
+</ApiParameters>
+
+### RadialBarChartSeries
+
+<ApiParameters>
+  <ApiParameter name="dataKey" type="string" />
+  <ApiParameter name="name" type="string" />
+  <ApiParameter name="radialBarProps" type='Omit<ComponentProps<typeof RadialBar>, "dataKey" | "name">' />
+</ApiParameters>

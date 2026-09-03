@@ -17,10 +17,7 @@ const DescriptionTerm = ({ className, ref, ...props }: React.ComponentProps<'dt'
   return (
     <dt
       ref={ref}
-      className={cn(
-        'col-start-1 border-t pt-3 text-muted-fg first:border-none sm:py-3',
-        className
-      )}
+      className={cn('col-start-1 border-t pt-3 text-muted-fg first:border-none sm:py-3', className)}
       {...props}
     />
   )

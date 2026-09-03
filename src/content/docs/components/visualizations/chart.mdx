@@ -56,9 +56,21 @@ Bar charts help visualize data comparisons across categories. They are effective
 Pie charts are useful for showing how parts contribute to a whole. They are best for displaying proportions and percentages in a visually appealing way.
 <How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-example" />
 
+### Radar
+
+Radar charts compare multiple dimensions on the same scale, making profiles and relative strengths easy to scan.
+
+<How isCenter={false} withNoPadding toUse="visualizations/radar-chart/radar-chart-example" />
+
+### Radial bar
+
+Radial bar charts use concentric arcs for compact category comparisons and progress-oriented metrics.
+
+<How isCenter={false} withNoPadding toUse="visualizations/radial-bar-chart/radial-bar-chart-example" />
+
 ## Container height
 
-When using charts, whether area, bar, or pie, you can control the container height to match your layout. Setting an explicit height ensures the chart renders correctly. If you want different heights for desktop and mobile, you can use the `useIsMobile` hook:
+When using charts, you can control the container height to match your layout. Setting an explicit height ensures the chart renders correctly. If you want different heights for desktop and mobile, you can use the `useIsMobile` hook:
 
 ```tsx
 export default function App() {

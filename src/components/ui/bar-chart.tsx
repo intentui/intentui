@@ -23,8 +23,8 @@ export interface BarChartProps extends BaseChartProps {
   barRadius?: number
   barGap?: number
   barSize?: number
+  cartesianGridProps?: ComponentProps<typeof CartesianGrid>
   barProps?: Partial<React.ComponentProps<typeof Bar>>
-
   chartProps?: Omit<ComponentProps<typeof BarChartPrimitive>, 'data' | 'stackOffset'>
 }
 
@@ -64,6 +64,7 @@ export function BarChart({
   hideYAxis = false,
 
   hideGridLines = false,
+  cartesianGridProps,
   chartProps,
 
   ...props
@@ -100,7 +101,7 @@ export function BarChart({
           stackOffset={type === 'percent' ? 'expand' : stacked ? 'sign' : undefined}
           {...chartProps}
         >
-          {!hideGridLines && <CartesianGrid strokeDasharray="4 4" />}
+          {!hideGridLines && <CartesianGrid strokeDasharray="4 4" {...cartesianGridProps} />}
           <XAxis
             hide={hideXAxis}
             className="**:[text]:fill-muted-fg"

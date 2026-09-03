@@ -1,0 +1,102 @@
+---
+title: "Radar Chart"
+description: Radar charts compare one or more series across the same set of dimensions, making strengths, gaps, and overall profiles easy to see.
+order: 6
+published: true
+references: ["https://recharts.org/en-US/api/RadarChart"]
+---
+
+<How isCenter={false} withNoPadding toUse="visualizations/radar-chart/radar-chart-example" />
+
+## Installation
+
+Install the component via the CLI in one command.
+
+<PackageCommand command="npx shadcn@latest add @intentui/radar-chart" />
+
+## Composed components
+
+<Composed components={['chart']} />
+
+## Manual installation
+
+Install the chart dependencies, then copy the component source into your project.
+
+<PackageCommand command="npm i recharts react-aria-components" />
+
+<SourceCode toShow="radar-chart" />
+
+## Usage
+
+Pass the dimension field to `dataKey`, then describe every numeric field in `series`. The matching keys in `config` provide labels and optional colors for the tooltip and legend.
+
+```tsx
+<RadarChart
+  data={data}
+  dataKey="metric"
+  series={[
+    { dataKey: "current", name: "Current quarter" },
+    { dataKey: "previous", name: "Previous quarter" },
+  ]}
+  config={{
+    current: { label: "Current quarter" },
+    previous: { label: "Previous quarter" },
+  }}
+/>
+```
+
+## Examples
+
+### Multiple series
+
+Add multiple series to compare profiles. A selectable legend is shown automatically when more than one series is present.
+
+<How isCenter={false} withNoPadding toUse="visualizations/radar-chart/radar-chart-multiple-example" />
+
+### Custom colors
+
+Set a color on each series in the chart configuration to match your product or data semantics.
+
+<How isCenter={false} withNoPadding toUse="visualizations/radar-chart/radar-chart-custom-colors-example" />
+
+### Circular grid
+
+Forward options to the Recharts polar primitives to customize the grid and radial scale.
+
+<How isCenter={false} withNoPadding toUse="visualizations/radar-chart/radar-chart-circular-grid-example" />
+
+## Component API
+
+### RadarChart
+
+<ApiParameters>
+  <ApiDescription>
+    **RadarChart** extends the native **`<div>`** element and composes the Intent UI **`<Chart>`** component.
+  </ApiDescription>
+  <ApiParameter name="angleAxisProps" type='Omit<ComponentProps<typeof PolarAngleAxis>, "dataKey">' />
+  <ApiParameter name="chartProps" type='Omit<ComponentProps<typeof RadarChartPrimitive>, "data">' />
+  <ApiParameter name="children" type="ReactNode" />
+  <ApiParameter name="className" type="string" />
+  <ApiParameter name="colors" type="readonly string[]" defaultValue="DEFAULT_COLORS" />
+  <ApiParameter name="config" type="ChartConfig" />
+  <ApiParameter name="containerHeight" type="number" defaultValue="360" />
+  <ApiParameter name="data" type="Record<string, any>[]" />
+  <ApiParameter name="dataKey" type="string" />
+  <ApiParameter name="legend" type="boolean" defaultValue="series.length > 1" />
+  <ApiParameter name="polarGridProps" type="ComponentProps<typeof PolarGrid>" />
+  <ApiParameter name="radiusAxisProps" type="ComponentProps<typeof PolarRadiusAxis>" />
+  <ApiParameter name="series" type="RadarChartSeries[]" />
+  <ApiParameter name="tooltip" type='boolean | ComponentProps<typeof ChartTooltip>["content"]' defaultValue="true" />
+  <ApiParameter name="tooltipProps" type='Omit<ComponentProps<typeof ChartTooltip>, "content">' />
+  <ApiReference>
+    See the [Recharts RadarChart API reference](https://recharts.org/en-US/api/RadarChart) for primitive-specific options.
+  </ApiReference>
+</ApiParameters>
+
+### RadarChartSeries
+
+<ApiParameters>
+  <ApiParameter name="dataKey" type="string" />
+  <ApiParameter name="name" type="string" />
+  <ApiParameter name="radarProps" type='Omit<ComponentProps<typeof Radar>, "dataKey" | "name">' />
+</ApiParameters>

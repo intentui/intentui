@@ -15,9 +15,7 @@ export const Pager = ({ tree, url, className }: PageProps) => {
   const neighbours = findNeighbour(tree, url)
 
   return (
-    <div
-      className={cn('not-typeset mt-6 flex w-full justify-between gap-3 sm:mt-12', className)}
-    >
+    <div className={cn('not-typeset mt-6 flex w-full justify-between gap-3 sm:mt-12', className)}>
       {neighbours.previous && (
         <div className="group w-40">
           <Link

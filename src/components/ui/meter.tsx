@@ -70,11 +70,7 @@ export function MeterValue({
 }: Omit<React.ComponentProps<'span'>, 'children'>) {
   const { valueText } = use(MeterContext)!
   return (
-    <span
-      data-slot="meter-value"
-      className={cn('text-base/6 sm:text-sm/6', className)}
-      {...props}
-    >
+    <span data-slot="meter-value" className={cn('text-base/6 sm:text-sm/6', className)} {...props}>
       {valueText}
     </span>
   )

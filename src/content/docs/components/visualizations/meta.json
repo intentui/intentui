@@ -3,6 +3,8 @@
     "chart",
     "area-chart",
     "bar-chart",
-    "pie-chart"
+    "pie-chart",
+    "radar-chart",
+    "radial-bar-chart"
   ]
 }

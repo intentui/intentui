@@ -99,10 +99,7 @@ const ToolbarSeparator = ({ className, ...props }: ToolbarSeparatorProps) => {
   return (
     <Separator
       orientation={reverseOrientation}
-      className={cn(
-        reverseOrientation === 'vertical' ? 'mx-0.5 h-6' : 'my-0.5 w-8',
-        className
-      )}
+      className={cn(reverseOrientation === 'vertical' ? 'mx-0.5 h-6' : 'my-0.5 w-8', className)}
       {...props}
     />
   )

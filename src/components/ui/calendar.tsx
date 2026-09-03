@@ -60,10 +60,7 @@ const CalendarHeader = ({ className, ...props }: React.ComponentProps<'header'>)
   return (
     <header
       data-slot="calendar-header"
-      className={cn(
-        'flex w-full justify-between gap-1.5 ps-1.5 pe-1 pt-1 pb-5 sm:pb-4',
-        className
-      )}
+      className={cn('flex w-full justify-between gap-1.5 ps-1.5 pe-1 pt-1 pb-5 sm:pb-4', className)}
       {...props}
     >
       <div className="flex items-center gap-1.5">
