@@ -107,7 +107,5 @@ export function BlocksCard({ className, ...props }: React.ComponentProps<'div'>)
 }
 
 function Center({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div className={cn('flex size-full items-center justify-center', className)} {...props} />
-  )
+  return <div className={cn('flex size-full items-center justify-center', className)} {...props} />
 }

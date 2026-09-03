@@ -1,49 +1,84 @@
 ---
 title: "Pie Chart"
-description: Pie charts are used to represent proportions or percentages of a whole, making them ideal for showing part-to-whole relationships. They include donut variants.
+description: Pie charts show how categories contribute to a whole. Use the donut variant when you also need to display a summary value in the center.
 order: 5
 published: true
-references: ["https://recharts.github.io/en-US/api/PieChart"]
+references: ["https://recharts.org/en-US/api/PieChart"]
 ---
 
-<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-example"/>
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-example" />
 
 ## Installation
 
 Install the component via the CLI in one command.
-<PackageCommand command="npx shadcn@latest add @intentui/pie-chart"/>
+
+<PackageCommand command="npx shadcn@latest add @intentui/pie-chart" />
+
+## Composed components
+
+<Composed components={['chart']} />
 
 ## Manual installation
 
-Use this approach if you prefer to install and wire up the component yourself instead of using the CLI.
-<PackageCommand command="npm i recharts react-aria-components"/>
+Install the chart dependencies, then copy the component source into your project.
 
-<SourceCode toShow={'pie-chart'} />
+<PackageCommand command="npm i recharts react-aria-components" />
+
+<SourceCode toShow="pie-chart" />
+
+## Usage
+
+Pass the numeric field to `dataKey` and the category field to `nameKey`. Use the category values as keys in `config` to provide labels and optional colors.
+
+```tsx
+<PieChart
+  data={data}
+  dataKey="amount"
+  nameKey="name"
+  config={{
+    Organic: { label: "Organic" },
+    Paid: { label: "Paid" },
+  }}
+/>
+```
 
 ## Examples
 
 ### Donut
-Visualize data with a donut chart for a modern and clean look.
-<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-donut-example"/>
 
-### Label inside
-Enhance your donut chart by adding descriptive text for better understanding.
-<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-donut-label-example"/>
+Use the donut variant to leave room for a total or other summary in the center.
 
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-donut-example" />
 
-### Controlled
-Sometimes you might want to control the chart data dynamically.
-<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-interactive-example"/>
+### Custom center label
+
+Pass SVG text as children when the center needs more than the built-in single-line label.
+
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-donut-custom-label-example" />
+
+### Interactive
+
+Coordinate the chart with controls to emphasize a selected segment.
+
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-interactive-example" />
 
 ### Gap
-Add spacing between pie slices for better visibility and aesthetics.
-<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-gap-example"/>
+
+Forward Recharts options through `pieProps` to add spacing between slices.
+
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-gap-example" />
+
+### Custom colors
+
+Set colors by category in `config` to keep the visual meaning consistent across charts.
+
+<How isCenter={false} withNoPadding toUse="visualizations/pie-chart/pie-chart-custom-colors-example" />
 
 ## Component API
 
 <ApiParameters>
   <ApiDescription>
-    **PieChart** extends the internal Intent UI **`<BaseChart>`** component.
+    **PieChart** extends the Intent UI **`<BaseChart>`** props supported by radial charts.
   </ApiDescription>
   <ApiParameter
     name="chartProps"
@@ -80,6 +115,6 @@ Add spacing between pie slices for better visibility and aesthetics.
   />
   <ApiParameter name="variant" type='"pie" | "donut"' defaultValue='pie' />
   <ApiReference>
-    See the [Recharts](https://recharts.org/en-US/api/PieChart) for the full API reference.
+    See the [Recharts PieChart API reference](https://recharts.org/en-US/api/PieChart) for primitive-specific options.
   </ApiReference>
 </ApiParameters>

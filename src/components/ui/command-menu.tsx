@@ -184,10 +184,7 @@ const CommandMenuSection = <T extends object>({
   return (
     <MenuSection
       ref={ref}
-      className={cn(
-        'col-span-full grid grid-cols-[auto_1fr] content-start gap-y-0.25',
-        className
-      )}
+      className={cn('col-span-full grid grid-cols-[auto_1fr] content-start gap-y-0.25', className)}
       {...props}
     >
       {'label' in props && (
@@ -215,9 +212,7 @@ const CommandMenuItem = ({ className, ...props }: React.ComponentProps<typeof Me
 interface CommandMenuDescriptionProps extends React.ComponentProps<typeof MenuDescription> {}
 
 const CommandMenuDescription = ({ className, ...props }: CommandMenuDescriptionProps) => {
-  return (
-    <MenuDescription className={cn('col-start-3 row-start-1 ms-auto', className)} {...props} />
-  )
+  return <MenuDescription className={cn('col-start-3 row-start-1 ms-auto', className)} {...props} />
 }
 
 const renderer: CollectionRenderer = {

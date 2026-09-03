@@ -357,10 +357,7 @@ const TableHeader = <T extends object>({
       {allowsDragging && (
         <Column
           data-slot="table-column"
-          className={cn(
-            'first:ps-(--gutter,--spacing(2))',
-            !bleed && 'sm:last:pe-1 sm:first:ps-1'
-          )}
+          className={cn('first:ps-(--gutter,--spacing(2))', !bleed && 'sm:last:pe-1 sm:first:ps-1')}
         />
       )}
       {selectionBehavior === 'toggle' && (
@@ -369,10 +366,7 @@ const TableHeader = <T extends object>({
           minWidth={32}
           style={{ width: 32 }}
           data-slot="table-column"
-          className={cn(
-            'first:ps-(--gutter,--spacing(2))',
-            !bleed && 'sm:last:pe-1 sm:first:ps-1'
-          )}
+          className={cn('first:ps-(--gutter,--spacing(2))', !bleed && 'sm:last:pe-1 sm:first:ps-1')}
         >
           {selectionMode === 'multiple' && (
             <CheckboxField className="gap-x-0" slot="selection">

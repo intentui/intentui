@@ -11,25 +11,18 @@ import {
   getColorValue,
 } from './chart'
 
-type PieChartDatum = BaseChartProps['data'][number]
-
 function sumNumericArray(arr: number[]): number {
   return arr.reduce((sum, num) => sum + num, 0)
 }
 
-function calculateDefaultLabel(data: BaseChartProps['data'], valueKey: string): number {
-  return sumNumericArray(
-    data.map((dataPoint) => {
-      const value = dataPoint[valueKey]
-      return typeof value === 'number' ? value : 0
-    })
-  )
+function calculateDefaultLabel(data: any[], valueKey: string): number {
+  return sumNumericArray(data.map((dataPoint) => dataPoint[valueKey]))
 }
 
 function parseLabelInput(
   labelInput: string | undefined,
   valueFormatter: (value: number) => string,
-  data: BaseChartProps['data'],
+  data: any[],
   valueKey: string
 ): string {
   return labelInput || valueFormatter(calculateDefaultLabel(data, valueKey))
@@ -123,23 +116,20 @@ const PieChart = ({
               isAnimationActive
               {...pieProps}
             >
-              {data.map((datum: PieChartDatum, index: number) => {
-                const configKey =
-                  typeof datum.code === 'string'
-                    ? datum.code
-                    : typeof datum.name === 'string'
-                      ? datum.name
-                      : undefined
-
-                return (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={getColorValue(
-                      config?.[configKey ?? '']?.color ?? colors[index % colors.length]
-                    )}
-                  />
-                )
-              })}
+              {data.map((_, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={getColorValue(
+                    config?.[
+                      String(
+                        (nameKey ? data[index]?.[nameKey] : undefined) ??
+                          data[index]?.code ??
+                          data[index]?.name
+                      )
+                    ]?.color ?? colors[index % colors.length]
+                  )}
+                />
+              ))}
             </Pie>
           ) : (
             children

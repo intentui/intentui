@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
+import { Cell, Pie } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { PieChart } from '@/components/ui/pie-chart'
 
@@ -30,9 +31,6 @@ export default function PieChartDonutCustomLabelDemo() {
           dataKey="amount"
           nameKey="name"
           variant="donut"
-          showLabel
-          label=""
-          valueFormatter={() => ''}
           config={{
             Rent: { label: 'Rent' },
             Groceries: { label: 'Groceries' },
@@ -40,6 +38,22 @@ export default function PieChartDonutCustomLabelDemo() {
             Entertainment: { label: 'Entertainment' },
           }}
         >
+          <Pie
+            data={data}
+            dataKey="amount"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            innerRadius="50%"
+            outerRadius="80%"
+            startAngle={90}
+            endAngle={-270}
+            strokeLinejoin="round"
+          >
+            {data.map((item, index) => (
+              <Cell key={item.name} fill={`var(--chart-${index + 1})`} />
+            ))}
+          </Pie>
           <text
             x="50%"
             y="50%"

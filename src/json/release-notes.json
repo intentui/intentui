@@ -1,5 +1,221 @@
 [
   {
+    "name": "Pie chart donut custom label example",
+    "component": "pie-chart-donut-custom-label-example.tsx",
+    "url": "/pie-chart",
+    "type": "example",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 17,
+    "deletions": 3,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Pie chart interactive example",
+    "component": "pie-chart-interactive-example.tsx",
+    "url": "/pie-chart",
+    "type": "example",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 1,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Bar chart",
+    "component": "bar-chart.tsx",
+    "url": "/bar-chart",
+    "type": "component",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 2,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Calendar",
+    "component": "calendar.tsx",
+    "url": "/calendar",
+    "type": "component",
+    "category": "date-and-time",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 4,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Card",
+    "component": "card.tsx",
+    "url": "/card",
+    "type": "component",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 4,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Carousel",
+    "component": "carousel.tsx",
+    "url": "/carousel",
+    "type": "component",
+    "category": "media",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 5,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Chart",
+    "component": "chart.tsx",
+    "url": "/chart",
+    "type": "component",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 3,
+    "deletions": 3,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Command menu",
+    "component": "command-menu.tsx",
+    "url": "/command-menu",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 7,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Description list",
+    "component": "description-list.tsx",
+    "url": "/description-list",
+    "type": "component",
+    "category": "surfaces",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 4,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Input otp",
+    "component": "input-otp.tsx",
+    "url": "/input-otp",
+    "type": "component",
+    "category": "forms",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 5,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Leaderboard",
+    "component": "leaderboard.tsx",
+    "url": "/leaderboard",
+    "type": "component",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 7,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Meter",
+    "component": "meter.tsx",
+    "url": "/meter",
+    "type": "component",
+    "category": "statuses",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 5,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Pie chart",
+    "component": "pie-chart.tsx",
+    "url": "/pie-chart",
+    "type": "component",
+    "category": "visualizations",
+    "kind": "improvement",
+    "description": null,
+    "additions": 17,
+    "deletions": 27,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Radar chart",
+    "component": "radar-chart.tsx",
+    "url": "/radar-chart",
+    "type": "component",
+    "category": "visualizations",
+    "kind": "new",
+    "description": null,
+    "additions": 130,
+    "deletions": 0,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Radial bar chart",
+    "component": "radial-bar-chart.tsx",
+    "url": "/radial-bar-chart",
+    "type": "component",
+    "category": "visualizations",
+    "kind": "new",
+    "description": null,
+    "additions": 168,
+    "deletions": 0,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Sidebar",
+    "component": "sidebar.tsx",
+    "url": "/sidebar",
+    "type": "component",
+    "category": "layouts",
+    "kind": "improvement",
+    "description": null,
+    "additions": 582,
+    "deletions": 589,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Table",
+    "component": "table.tsx",
+    "url": "/table",
+    "type": "component",
+    "category": "collections",
+    "kind": "improvement",
+    "description": null,
+    "additions": 2,
+    "deletions": 8,
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Toolbar",
+    "component": "toolbar.tsx",
+    "url": "/toolbar",
+    "type": "component",
+    "category": "controls",
+    "kind": "improvement",
+    "description": null,
+    "additions": 1,
+    "deletions": 4,
+    "date": "2026-09-03"
+  },
+  {
     "name": "Sidebar 15",
     "component": "sidebar-15/page.tsx",
     "url": null,
@@ -108,54 +324,6 @@
     "date": "2026-09-03"
   },
   {
-    "name": "Calendar",
-    "component": "calendar.tsx",
-    "url": "/calendar",
-    "type": "component",
-    "category": "date-and-time",
-    "kind": "improvement",
-    "description": null,
-    "additions": 3,
-    "deletions": 3,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Card",
-    "component": "card.tsx",
-    "url": "/card",
-    "type": "component",
-    "category": "surfaces",
-    "kind": "improvement",
-    "description": null,
-    "additions": 8,
-    "deletions": 8,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Carousel",
-    "component": "carousel.tsx",
-    "url": "/carousel",
-    "type": "component",
-    "category": "media",
-    "kind": "improvement",
-    "description": null,
-    "additions": 5,
-    "deletions": 5,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Chart",
-    "component": "chart.tsx",
-    "url": "/chart",
-    "type": "component",
-    "category": "visualizations",
-    "kind": "improvement",
-    "description": null,
-    "additions": 10,
-    "deletions": 10,
-    "date": "2026-09-03"
-  },
-  {
     "name": "Checkbox",
     "component": "checkbox.tsx",
     "url": "/checkbox",
@@ -189,18 +357,6 @@
     "description": null,
     "additions": 2,
     "deletions": 2,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Command menu",
-    "component": "command-menu.tsx",
-    "url": "/command-menu",
-    "type": "component",
-    "category": "controls",
-    "kind": "improvement",
-    "description": null,
-    "additions": 6,
-    "deletions": 6,
     "date": "2026-09-03"
   },
   {
@@ -249,18 +405,6 @@
     "description": null,
     "additions": 1,
     "deletions": 1,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Description list",
-    "component": "description-list.tsx",
-    "url": "/description-list",
-    "type": "component",
-    "category": "surfaces",
-    "kind": "improvement",
-    "description": null,
-    "additions": 4,
-    "deletions": 4,
     "date": "2026-09-03"
   },
   {
@@ -360,18 +504,6 @@
     "date": "2026-09-03"
   },
   {
-    "name": "Input otp",
-    "component": "input-otp.tsx",
-    "url": "/input-otp",
-    "type": "component",
-    "category": "forms",
-    "kind": "improvement",
-    "description": null,
-    "additions": 5,
-    "deletions": 5,
-    "date": "2026-09-03"
-  },
-  {
     "name": "Keyboard",
     "component": "keyboard.tsx",
     "url": "/keyboard",
@@ -381,18 +513,6 @@
     "description": null,
     "additions": 2,
     "deletions": 2,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Leaderboard",
-    "component": "leaderboard.tsx",
-    "url": "/leaderboard",
-    "type": "component",
-    "category": "visualizations",
-    "kind": "improvement",
-    "description": null,
-    "additions": 8,
-    "deletions": 8,
     "date": "2026-09-03"
   },
   {
@@ -429,18 +549,6 @@
     "description": null,
     "additions": 3,
     "deletions": 3,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Meter",
-    "component": "meter.tsx",
-    "url": "/meter",
-    "type": "component",
-    "category": "statuses",
-    "kind": "improvement",
-    "description": null,
-    "additions": 4,
-    "deletions": 4,
     "date": "2026-09-03"
   },
   {
@@ -588,18 +696,6 @@
     "date": "2026-09-03"
   },
   {
-    "name": "Sidebar",
-    "component": "sidebar.tsx",
-    "url": "/sidebar",
-    "type": "component",
-    "category": "layouts",
-    "kind": "improvement",
-    "description": null,
-    "additions": 20,
-    "deletions": 20,
-    "date": "2026-09-03"
-  },
-  {
     "name": "Skeleton",
     "component": "skeleton.tsx",
     "url": "/skeleton",
@@ -633,18 +729,6 @@
     "description": null,
     "additions": 2,
     "deletions": 2,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Table",
-    "component": "table.tsx",
-    "url": "/table",
-    "type": "component",
-    "category": "collections",
-    "kind": "improvement",
-    "description": null,
-    "additions": 6,
-    "deletions": 6,
     "date": "2026-09-03"
   },
   {
@@ -729,18 +813,6 @@
     "description": null,
     "additions": 2,
     "deletions": 2,
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Toolbar",
-    "component": "toolbar.tsx",
-    "url": "/toolbar",
-    "type": "component",
-    "category": "controls",
-    "kind": "improvement",
-    "description": null,
-    "additions": 3,
-    "deletions": 3,
     "date": "2026-09-03"
   },
   {

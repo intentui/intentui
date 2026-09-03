@@ -82,10 +82,7 @@ export function Wrapper({
   return (
     <div
       data-slot={slot}
-      className={cn(
-        'relative rounded-md border bg-overlay px-4 py-10 sm:px-6 sm:py-8',
-        className
-      )}
+      className={cn('relative rounded-md border bg-overlay px-4 py-10 sm:px-6 sm:py-8', className)}
       {...props}
     />
   )

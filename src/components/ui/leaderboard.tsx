@@ -41,10 +41,7 @@ export function LeaderboardAction({ className, ...props }: React.ComponentProps<
   return (
     <div
       data-slot="leaderboard-action"
-      className={cn(
-        'col-start-2 row-span-2 row-start-1 self-start justify-self-end',
-        className
-      )}
+      className={cn('col-start-2 row-span-2 row-start-1 self-start justify-self-end', className)}
       {...props}
     />
   )
@@ -113,7 +110,5 @@ export function LeaderboardStart({ className, ...props }: LabelProps) {
 }
 
 export function LeaderboardEnd({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div data-slot="leaderboard-start" className={cn('tabular-nums', className)} {...props} />
-  )
+  return <div data-slot="leaderboard-start" className={cn('tabular-nums', className)} {...props} />
 }
