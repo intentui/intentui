@@ -141,4 +141,6 @@
 - [Leaderboard](https://intentui.com/docs/components/visualizations/leaderboard.md)
 - [Line Chart](https://intentui.com/docs/components/visualizations/line-chart.md)
 - [Pie Chart](https://intentui.com/docs/components/visualizations/pie-chart.md)
+- [Radar Chart](https://intentui.com/docs/components/visualizations/radar-chart.md)
+- [Radial Bar Chart](https://intentui.com/docs/components/visualizations/radial-bar-chart.md)
 - [Tracker](https://intentui.com/docs/components/visualizations/tracker.md)
