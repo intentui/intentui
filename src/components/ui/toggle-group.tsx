@@ -46,6 +46,7 @@ const ToggleGroup = ({
       <ToggleButtonGroup
         data-slot="control"
         selectionMode={selectionMode}
+        orientation={orientation}
         className={cx(
           [
             '[--toggle-group-radius:var(--radius-lg)] [--toggle-gutter:--spacing(0.5)]',
