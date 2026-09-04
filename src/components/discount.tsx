@@ -41,9 +41,9 @@ export function Discount() {
         (toastId) => (
           <Note intent="default" className="bg-bg">
             <CardHeader>
-              <CardTitle>Get 30% off Intent UI Design</CardTitle>
+              <CardTitle>🔥 Get 20% off Intent UI Design</CardTitle>
               <CardDescription className="*:[strong]:text-fg">
-                Use code <Code className="text-fg">4PFLLZIU</Code> to get <Strong>30% off</Strong>.
+                Use code <Code className="text-fg">TVGCGSAU</Code> to get <Strong>20% off</Strong>.
                 Includes instant access to all <Strong>templates</Strong>, <Strong>blocks</Strong>,
                 and <Strong>patterns</Strong>.
               </CardDescription>
