@@ -93,7 +93,7 @@ const ModalContent = ({
           className
         )}
       >
-        <Dialog role={role}>
+        <Dialog role={role} aria-label={props['aria-label'] ?? undefined}>
           {(values) => (
             <>
               {typeof children === 'function' ? children(values) : children}
