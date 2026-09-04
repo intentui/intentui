@@ -9,7 +9,7 @@ import { Code, Strong } from '@/components/ui/text'
 
 const DISCOUNT_TOAST_DELAY_MS = 3_000
 const DISCOUNT_DISMISS_DURATION_MS = 5 * 24 * 60 * 60 * 1000
-const DISCOUNT_DISMISSED_UNTIL_KEY = 'discount-toast-dismissed-until:v1'
+const DISCOUNT_DISMISSED_UNTIL_KEY = 'discount-toast-dismissed-until:v2'
 
 function hasActiveDiscountDismissal() {
   try {
